@@ -1,1 +1,5 @@
+# config files storing passwords and client-specific options
+www/.htaccess
+
+# backups
 *~

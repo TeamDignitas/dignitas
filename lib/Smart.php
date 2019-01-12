@@ -7,14 +7,17 @@ class Smart {
   private static $includedCss = [];
   private static $includedJs = [];
   private static $cssMap = [
+    'bootstrap' => [ 'third-party/bootstrap-4.2.1.min.css' ],
   ];
   private static $jsMap = [
+    'jquery' => [ 'third-party/jquery-3.3.1.min.js' ],
+    'bootstrap' => [ 'third-party/bootstrap-4.2.1.min.js' ],
   ];
 
   static function init() {
     self::$theSmarty = new Smarty();
     self::$theSmarty->template_dir = Core::getRootPath() . 'templates';
-    self::$theSmarty->compile_dir = Config::TEMP_DIR . 'templates_c';
+    self::$theSmarty->compile_dir = Config::TMP_DIR . 'templates_c';
   }
 
   // Add $template.css and $template.js to the file lists, if they exist.
@@ -65,7 +68,7 @@ class Smart {
 
     // generate the output file if it doesn't exist or if it's too old
     if (!file_exists($output) || (filemtime($output) < $maxTimestamp)) {
-      $tmpFile = tempnam(Core::getTempPath(), 'merge_');
+      $tmpFile = tempnam(Config::TMP_DIR, 'merge_');
       foreach ($full as $f) {
         $contents = file_get_contents($f);
         if ($type == 'css') {
@@ -136,8 +139,7 @@ class Smart {
   static function addCss(...$ids) {
     foreach ($ids as $id) {
       if (!isset(self::$cssMap[$id])) {
-        FlashMessage::add("Cannot load CSS file {$id}");
-        Util::redirect(Core::getWwwRoot());
+        die("Cannot load CSS file {$id}.");
       }
       self::$includedCss[$id] = true;
     }
@@ -146,8 +148,7 @@ class Smart {
   static function addJs(...$ids) {
     foreach ($ids as $id) {
       if (!isset(self::$jsMap[$id])) {
-        FlashMessage::add("Cannot load JS script {$id}");
-        Util::redirect(Core::getWwwRoot());
+        die("Cannot load JS script {$id}.");
       }
       self::$includedJs[$id] = true;
     }
@@ -160,8 +161,7 @@ class Smart {
   }
 
   /* Prepare and display a template. */
-  /* $hardened = assume nothing about the availability of the database */
-  static function display($templateName, $hardened = false) {
+  static function display($templateName) {
     self::addCss('bootstrap');
     self::addJs('jquery', 'bootstrap');
     self::addSameNameFiles($templateName);
@@ -177,15 +177,19 @@ class Smart {
       self::orderResources(self::$cssMap, self::$includedCss),
       self::$cssFiles
     );
-    self::assign('cssFile', self::mergeResources(self::$cssFiles, 'css'));
+    self::assign([
+      'cssFile' => self::mergeResources(self::$cssFiles, 'css'),
+    ]);
 
     self::$jsFiles = array_merge(
       self::orderResources(self::$jsMap, self::$includedJs),
       self::$jsFiles
     );
-    self::assign('jsFile', self::mergeResources(self::$jsFiles, 'js'));
+    self::assign([
+      'jsFile' => self::mergeResources(self::$jsFiles, 'js'),
+    ]);
 
-    self::assign('flashMessages', FlashMessage::getMessages());
+    self::assign(['flashMessages' => FlashMessage::getMessages()]);
     return self::$theSmarty->fetch($templateName);
   }
 }

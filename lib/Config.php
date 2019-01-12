@@ -1,5 +1,5 @@
 <?php
 
 class Config {
-  const TEMP_DIR = '/tmp/';
+  const TMP_DIR = '/tmp/';
 }

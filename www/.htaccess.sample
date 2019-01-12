@@ -1,0 +1,11 @@
+Order Deny,Allow
+Allow from all
+
+Options -MultiViews
+
+RewriteEngine on
+
+# Append .php when a file by that name exists
+RewriteCond %{REQUEST_URI} /[-a-zA-Z]+$
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule (.*)$ $1.php [L]
