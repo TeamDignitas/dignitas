@@ -2,10 +2,9 @@
 
 class Util {
 
-  static function redirect($location) {
+  static function redirect($location, $statusCode = 303) {
     FlashMessage::saveToSession();
-    header("HTTP/1.1 301 Moved Permanently");
-    header("Location: $location");
+    header("Location: $location", true, $statusCode);
     exit;
   }
 

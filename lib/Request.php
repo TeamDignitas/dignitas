@@ -20,22 +20,12 @@ class Request {
     return array_key_exists($name, $_REQUEST);
   }
 
-  /* Returns an array of values from a parameter in CSV format */
-  static function getCsv($name) {
-    return explode(',', self::get($name, []));
-  }
-
   /* Use when the parameter is expected to have array type. */
   static function getArray($name) {
-    $val = self::get($name);
-    return empty($val) ? [] : $val;
+    $val = self::get($name, []);
   }
 
-  /**
-   * Use when the parameter is encoded JSON.
-   * Note that the JSON string must be decoded before cleanup. Otherwise entities like „”
-   * can be replaced with "", which will corrupt the JSON string.
-   **/
+  /* Use when the parameter is JSON-encoded. */
   static function getJson($name, $default = null, $assoc = false) {
     if (!array_key_exists($name, $_REQUEST)) {
       return $default;
@@ -46,8 +36,8 @@ class Request {
   }
 
   /**
-   * Returns true if this script is running in response to a web request, false
-   * otherwise.
+   * Returns true if this script is running in response to a web request,
+   * false otherwise.
    */
   static function isWeb() {
     return isset($_SERVER['REMOTE_ADDR']);

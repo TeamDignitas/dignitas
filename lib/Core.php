@@ -7,12 +7,17 @@ class Core {
 
   private static $AUTOLOAD_PATHS = [
     'lib',
-    'lib' . DIRECTORY_SEPARATOR . 'models',
+    'lib/models',
   ];
+
+  // Make a path portable across OS's
+  static function portable($s) {
+    return str_replace('/', DIRECTORY_SEPARATOR, $s);
+  }
 
   static function autoload($className) {
     foreach (self::$AUTOLOAD_PATHS as $path) {
-      $filename = self::getRootPath() . $path . DIRECTORY_SEPARATOR . $className . '.php';
+      $filename = self::portable(self::$rootPath . $path . '/' . $className . '.php');
       if (file_exists($filename)) {
         require_once $filename;
         return;
@@ -26,19 +31,13 @@ class Core {
 
     self::defineRootPath();
     self::defineWwwRoot();
-    self::requireOtherFiles();
+
+    require_once self::portable(__DIR__ . '/third-party/smarty-3.1.33/Smarty.class.php');
     Smart::init();
   }
 
   static function defineRootPath() {
-    $ds = DIRECTORY_SEPARATOR;
-    $fileName = realpath($_SERVER['SCRIPT_FILENAME']);
-    $pos = strrpos($fileName, "{$ds}www{$ds}");
-    // for scripts
-    if ($pos === FALSE) {
-      $pos = strrpos($fileName, "{$ds}scripts{$ds}");
-    }
-    self::$rootPath = substr($fileName, 0, $pos + 1);
+    self::$rootPath = self::portable(dirname(__DIR__) . '/');
   }
 
   /**
@@ -87,10 +86,6 @@ class Core {
     return self::getWwwRoot() . 'css';
   }
 
-  static function requireOtherFiles() {
-    $root = self::getRootPath();
-    require_once Str::portable("{$root}lib/third-party/smarty-3.1.33/Smarty.class.php");
-  }
 }
 
 Core::init();
