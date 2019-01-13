@@ -3,7 +3,6 @@
 class Core {
 
   private static $wwwRoot;
-  private static $rootPath;
 
   private static $AUTOLOAD_PATHS = [
     'lib',
@@ -18,7 +17,7 @@ class Core {
 
   static function autoload($className) {
     foreach (self::$AUTOLOAD_PATHS as $path) {
-      $filename = self::portable(self::$rootPath . $path . '/' . $className . '.php');
+      $filename = self::portable(self::getRootPath() . $path . '/' . $className . '.php');
       if (file_exists($filename)) {
         require_once $filename;
         return;
@@ -30,22 +29,17 @@ class Core {
     spl_autoload_register(); // clear the autoload stack
     spl_autoload_register('Core::autoload', false, true);
 
-    self::defineRootPath();
     self::defineWwwRoot();
 
     DB::init();
     Smart::init();
   }
 
-  static function defineRootPath() {
-    self::$rootPath = self::portable(dirname(__DIR__) . '/');
-  }
-
   /**
    * Returns the absolute path of the project folder in the file system.
    */
   static function getRootPath() {
-    return self::$rootPath;
+    return self::portable(dirname(__DIR__) . '/');
   }
 
   /**
