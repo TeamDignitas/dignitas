@@ -1,5 +1,7 @@
 <?php
 
+require_once Core::portable(__DIR__ . '/third-party/smarty-3.1.33/Smarty.class.php');
+
 class Smart {
   private static $theSmarty = null;
   private static $cssFiles = [];

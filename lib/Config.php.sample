@@ -1,5 +1,16 @@
 <?php
 
 class Config {
+  /* database connection */
+  const DB_HOST = 'localhost';
+  const DB_DATABASE = 'tbd';
+  const DB_USER = 'root';
+  const DB_PASSWORD = '';
+
+  /* logging */
+  const LOG_FILE = '/var/log/tbd.log';
+  const LOG_LEVEL = LOG_DEBUG;
+
+  /* system stuff */
   const TMP_DIR = '/tmp/';
 }

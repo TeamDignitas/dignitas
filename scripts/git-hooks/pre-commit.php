@@ -50,7 +50,6 @@ function getConstants($filename) {
   }
 
   $newName = 'c' . md5($filename);
-  var_dump($newName);
   $code = file_get_contents($filename);
   $code = str_replace('class Config', "class {$newName}", $code);
   eval('?>' . $code);

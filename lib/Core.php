@@ -7,10 +7,11 @@ class Core {
 
   private static $AUTOLOAD_PATHS = [
     'lib',
-    'lib/models',
+    'lib/model',
   ];
 
-  // Make a path portable across OS's
+  // Make a path portable across OS's. This belongs in OS.php, but we need it
+  // here *in order to* include OS.php.
   static function portable($s) {
     return str_replace('/', DIRECTORY_SEPARATOR, $s);
   }
@@ -32,7 +33,7 @@ class Core {
     self::defineRootPath();
     self::defineWwwRoot();
 
-    require_once self::portable(__DIR__ . '/third-party/smarty-3.1.33/Smarty.class.php');
+    DB::init();
     Smart::init();
   }
 
