@@ -33,6 +33,7 @@ class Core {
 
     DB::init();
     Smart::init();
+    LocaleUtil::init();
   }
 
   /**

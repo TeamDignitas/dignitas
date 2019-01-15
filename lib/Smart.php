@@ -20,6 +20,7 @@ class Smart {
     self::$theSmarty = new Smarty();
     self::$theSmarty->template_dir = Core::getRootPath() . 'templates';
     self::$theSmarty->compile_dir = Config::TMP_DIR . 'templates_c';
+    self::$theSmarty->addPluginsDir(__DIR__ . '/smarty-plugins');
   }
 
   // Add $template.css and $template.js to the file lists, if they exist.
@@ -191,7 +192,10 @@ class Smart {
       'jsFile' => self::mergeResources(self::$jsFiles, 'js'),
     ]);
 
-    self::assign(['flashMessages' => FlashMessage::getMessages()]);
+    self::assign([
+      'flashMessages' => FlashMessage::getMessages(),
+      'wwwRoot' => Core::getWwwRoot(),
+    ]);
     return self::$theSmarty->fetch($templateName);
   }
 }

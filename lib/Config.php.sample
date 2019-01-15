@@ -11,6 +11,13 @@ class Config {
   const LOG_FILE = '/var/log/tbd.log';
   const LOG_LEVEL = LOG_DEBUG;
 
+  /* localization */
+  const LOCALES = [
+    'en_US.utf8' => "English",
+    'ro_RO.utf8' => "română",
+  ];
+  const DEFAULT_LOCALE = 'ro_RO.utf8';
+
   /* system stuff */
   const TMP_DIR = '/tmp/';
 }
