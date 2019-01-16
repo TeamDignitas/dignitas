@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-01-16 15:14+0200\n"
-"PO-Revision-Date: 2019-01-16 15:14+0200\n"
+"POT-Creation-Date: 2019-01-16 16:22+0200\n"
+"PO-Revision-Date: 2019-01-16 16:24+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -21,6 +21,35 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: wwwbase/js/merged\n"
 "X-Poedit-SearchPathExcluded-2: wwwbase/js/third-party\n"
 
+#: templates/auth/login.tpl:3 templates/auth/login.tpl:18
+#: templates/auth/login.tpl:68 templates/bits/navmenu.tpl:70
+msgid "log in"
+msgstr "autentificare"
+
+#: templates/auth/login.tpl:35
+msgid "email"
+msgstr "adresa de e-mail"
+
+#: templates/auth/login.tpl:49
+msgid "password"
+msgstr "parola"
+
+#: templates/auth/login.tpl:62
+msgid "remember me for one year"
+msgstr "ține-mă minte un an"
+
+#: templates/auth/login.tpl:73
+msgid "I forgot my password"
+msgstr "mi-am uitat parola"
+
+#: templates/auth/login.tpl:76
+msgid "sign up"
+msgstr "mă înregistrez"
+
+#: templates/bits/fakeLogin.tpl:3 templates/bits/fakeLogin.tpl:25
+msgid "test user login"
+msgstr "autentificare ca utilizator de test"
+
 #: templates/bits/navmenu.tpl:9
 msgid "toggle menu"
 msgstr "arată/ascunde meniul"
@@ -33,9 +62,17 @@ msgstr "pagina principală"
 msgid "log out"
 msgstr "închide sesiunea"
 
-#: templates/bits/navmenu.tpl:70
-msgid "log in"
-msgstr "autentificare"
+#: www/auth/login.php:54
+msgid "Please enter an email address."
+msgstr "Vă rugăm să introduceți o adresă de e-mail."
+
+#: www/auth/login.php:58
+msgid "Please enter a password."
+msgstr "Vă rugăm să introduceți o parolă."
+
+#: www/auth/login.php:65
+msgid "Incorrect email address or password."
+msgstr "Adresa de e-mail sau parola sînt greșite."
 
 #: www/changeLocale.php:9
 msgid "Interface language changed. Page contents are always in Romanian."
