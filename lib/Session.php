@@ -19,7 +19,7 @@ class Session {
     self::set('userId', $user->id);
     if ($remember) {
       $cookie = Cookie::create($user->id);
-      setcookie('login', $cookie->cookieString, time() + self::ONE_YEAR_IN_SECONDS, '/');
+      setcookie('login', $cookie->string, time() + self::ONE_YEAR_IN_SECONDS, '/');
     }
 
     User::setActive($user->id); // for logging purposes only
@@ -29,8 +29,8 @@ class Session {
 
   static function logout() {
     Log::info('Logged out, IP=' . $_SERVER['REMOTE_ADDR']);
-    $cookieString = $_COOKIE['login'] ?? '';
-    $cookie = Cookie::get_by_cookieString($cookieString);
+    $string = $_COOKIE['login'] ?? '';
+    $cookie = Cookie::get_by_string($string);
     if ($cookie) {
       $cookie->delete();
     }
@@ -44,7 +44,7 @@ class Session {
   static function loadUserFromCookie() {
     $lll = $_COOKIE['login'] ?? null;
     if ($lll) {
-      $cookie = Cookie::get_by_cookieString($lll);
+      $cookie = Cookie::get_by_string($lll);
       $user = $cookie ? User::get_by_id($cookie->userId) : null;
       if ($user) {
         self::set('userId', $user->id);

@@ -7,6 +7,9 @@ class Config {
   const DB_USER = 'root';
   const DB_PASSWORD = '';
 
+  /* development mode */
+  const DEVELOPMENT_MODE = true;
+
   /* logging */
   const LOG_FILE = '/var/log/tbd.log';
   const LOG_LEVEL = LOG_DEBUG;

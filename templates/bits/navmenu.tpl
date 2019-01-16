@@ -54,7 +54,7 @@
             aria-haspopup="true"
             aria-expanded="false">
             <i class="icon icon-user"></i>
-            username
+            {User::getActive()}
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarUserDropdown">
             <a class="dropdown-item" href="{$wwwRoot}auth/logout">

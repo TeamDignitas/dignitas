@@ -12,4 +12,8 @@ class User extends BaseObject implements DatedObject {
     self::$active = User::get_by_id($userId);
   }
 
+  public function __toString() {
+    return $this->email;
+  }
+
 }
