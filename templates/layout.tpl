@@ -5,9 +5,7 @@
   <head>
     <title>{block "title"}home page{/block} | tbd</title>
     <meta charset="utf-8">
-    <meta
-      content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes"
-      name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="{$cssFile.path}?v={$cssFile.date}" rel="stylesheet" type="text/css">
     <script src="{$jsFile.path}?v={$jsFile.date}"></script>
@@ -20,14 +18,12 @@
     </header>
 
     <div class="container">
-      <main class="row">
-        <div class="col-md-12 main-content">
-          {include "bits/flashMessages.tpl"}
-          {block "content"}{/block}
-        </div>
+      <main>
+        {include "bits/flashMessages.tpl"}
+        {block "content"}{/block}
       </main>
 
-      <footer class="footer">
+      <footer>
 
         <div class="text-center">
           © 2019 <a href="https://catalin.francu.com/">Cătălin Frâncu</a></li>
