@@ -2,8 +2,6 @@
 
 {block "title"}{cap}{t}log in{/t}{/cap}{/block}
 
-{block "search"}{/block}
-
 {block "content"}
   {$allowFakeLogins=$allowFakeLogins|default:false}
 
@@ -24,7 +22,7 @@
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-prepend">
-                <i class="input-group-text icon icon-user"></i>
+                <i class="input-group-text icon icon-mail"></i>
               </span>
               <input
                 class="form-control {if isset($errors.email)}is-invalid{/if}"
@@ -40,7 +38,7 @@
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-prepend">
-                <i class="input-group-text icon icon-user"></i>
+                <i class="input-group-text icon icon-lock"></i>
               </span>
               <input
                 class="form-control {if isset($errors.password)}is-invalid{/if}"
