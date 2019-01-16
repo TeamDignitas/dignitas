@@ -43,4 +43,9 @@ class Request {
     return isset($_SERVER['REMOTE_ADDR']);
   }
 
+  static function isAjax() {
+    return isset($_SERVER['REQUEST_URI']) &&
+      Str::startsWith($_SERVER['REQUEST_URI'], Core::getWwwRoot() . 'ajax/');
+  }
+
 }

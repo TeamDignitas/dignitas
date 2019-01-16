@@ -32,6 +32,10 @@ class Core {
     self::defineWwwRoot();
 
     DB::init();
+    Session::init();
+    if (!Request::isAjax()) {
+      FlashMessage::restoreFromSession();
+    }
     Smart::init();
     LocaleUtil::init();
   }

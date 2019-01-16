@@ -1,18 +1,16 @@
 {if $flashMessages}
-  <div class="row voffset2">
-    <div class="col-md-7 col-md-offset-3">
-      {foreach $flashMessages as $m}
-        <div class="alert alert-{$m.type} alert-dismissible" role="alert">
-          <button
-            type="button"
-            class="close"
-            data-dismiss="alert"
-            aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          {$m.text}
-        </div>
-      {/foreach}
-    </div>
+  <div class="w-75 mx-auto">
+    {foreach $flashMessages as $m}
+      <div class="alert alert-{$m.type} alert-dismissible fade show" role="alert">
+        {$m.text}
+        <button
+          type="button"
+          class="close"
+          data-dismiss="alert"
+          aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    {/foreach}
   </div>
 {/if}

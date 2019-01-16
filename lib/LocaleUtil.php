@@ -47,7 +47,7 @@ class LocaleUtil {
     }
 
     // delete the existing cookie if it matches the config value
-    if ($id == self::getFromConfig()) {
+    if ($id == Config::DEFAULT_LOCALE) {
       Session::unsetCookie(self::COOKIE_NAME);
     } else {
       setcookie(self::COOKIE_NAME, $id, time() + Session::ONE_YEAR_IN_SECONDS, '/');
