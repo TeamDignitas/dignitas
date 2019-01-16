@@ -6,14 +6,14 @@
     data-target="#navbarContent"
     aria-controls="navbarContent"
     aria-expanded="false"
-    aria-label="{t}toggle navigation{/t}">
+    aria-label="{t}toggle menu{/t}">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarContent">
     <ul class="navbar-nav mr-auto">
 
-      {if $pageType == 'home'}
+      {if $pageType != 'home'}
         <li class="nav-item">
           <a class="nav-link" href="{$wwwRoot}">
             {t}home page{/t}

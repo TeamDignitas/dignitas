@@ -1,0 +1,42 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2019-01-16 15:14+0200\n"
+"PO-Revision-Date: 2019-01-16 15:14+0200\n"
+"Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
+"Language-Team: \n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-Basepath: ../../..\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n==0 || (n!=1 && n%100>=1 && n"
+"%100<=19) ? 1 : 2);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: lib\n"
+"X-Poedit-SearchPath-1: templates\n"
+"X-Poedit-SearchPath-2: www\n"
+"X-Poedit-SearchPathExcluded-0: lib/third-party\n"
+"X-Poedit-SearchPathExcluded-1: wwwbase/js/merged\n"
+"X-Poedit-SearchPathExcluded-2: wwwbase/js/third-party\n"
+
+#: templates/bits/navmenu.tpl:9
+msgid "toggle menu"
+msgstr "arată/ascunde meniul"
+
+#: templates/bits/navmenu.tpl:19
+msgid "home page"
+msgstr "pagina principală"
+
+#: templates/bits/navmenu.tpl:62
+msgid "log out"
+msgstr "închide sesiunea"
+
+#: templates/bits/navmenu.tpl:70
+msgid "log in"
+msgstr "autentificare"
+
+#: www/changeLocale.php:9
+msgid "Interface language changed. Page contents are always in Romanian."
+msgstr "Am schimbat limba interfeței. Conținutul paginii este mereu în română."
