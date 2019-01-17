@@ -17,7 +17,7 @@ if ($submitButton) {
 
     $user = User::get_by_email($email);
     if ($user) {
-      Log::notice("Password recovery requested for $email from " . $_SERVER['REMOTE_ADDR']);
+      Log::notice("Password reset requested for $email from " . $_SERVER['REMOTE_ADDR']);
 
       $pt = PasswordToken::create($user->id);
 

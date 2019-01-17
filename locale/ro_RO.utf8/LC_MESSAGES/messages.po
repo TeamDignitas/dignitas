@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-01-16 16:52+0200\n"
-"PO-Revision-Date: 2019-01-16 16:52+0200\n"
+"POT-Creation-Date: 2019-01-17 17:04+0200\n"
+"PO-Revision-Date: 2019-01-17 17:04+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -26,11 +26,13 @@ msgstr ""
 msgid "log in"
 msgstr "autentificare"
 
-#: templates/auth/login.tpl:33 templates/auth/register.tpl:25
+#: templates/auth/login.tpl:33 templates/auth/lostPassword.tpl:31
+#: templates/auth/register.tpl:25
 msgid "email"
 msgstr "adresa de e-mail"
 
 #: templates/auth/login.tpl:47 templates/auth/register.tpl:40
+#: templates/auth/resetPassword.tpl:25
 msgid "password"
 msgstr "parola"
 
@@ -38,22 +40,46 @@ msgstr "parola"
 msgid "remember me for one year"
 msgstr "ține-mă minte un an"
 
-#: templates/auth/login.tpl:71
+#: templates/auth/login.tpl:72
 msgid "I forgot my password"
 msgstr "mi-am uitat parola"
 
-#: templates/auth/login.tpl:74 templates/auth/register.tpl:3
+#: templates/auth/login.tpl:77 templates/auth/register.tpl:3
 #: templates/auth/register.tpl:8 templates/auth/register.tpl:73
 msgid "sign up"
 msgstr "înregistrare"
 
-#: templates/auth/register.tpl:55
+#: templates/auth/lostPassword.tpl:3 templates/auth/lostPassword.tpl:10
+#: templates/auth/lostPasswordEmailSent.tpl:3
+msgid "lost password"
+msgstr "parolă uitată"
+
+#: templates/auth/lostPassword.tpl:15
+msgid ""
+"Enter your email address and we will send you a link to reset your password."
+msgstr ""
+"Introduceți adresa dumneavoastră de e-mail și vă vom trimite un mesaj pentru "
+"resetarea parolei."
+
+#: templates/auth/lostPassword.tpl:37
+msgid "send"
+msgstr "trimite"
+
+#: templates/auth/register.tpl:55 templates/auth/resetPassword.tpl:39
 msgid "password (again)"
 msgstr "parola (din nou)"
 
 #: templates/auth/register.tpl:77
 msgid "I already have an account"
 msgstr "am deja un cont"
+
+#: templates/auth/resetPassword.tpl:3 templates/auth/resetPassword.tpl:9
+msgid "password change"
+msgstr "schimbarea parolei"
+
+#: templates/auth/resetPassword.tpl:45
+msgid "save"
+msgstr "salvează"
 
 #: templates/bits/fakeLogin.tpl:3 templates/bits/fakeLogin.tpl:25
 msgid "test user login"
@@ -71,7 +97,7 @@ msgstr "pagina principală"
 msgid "log out"
 msgstr "închide sesiunea"
 
-#: lib/model/User.php:23 www/auth/login.php:54
+#: lib/model/User.php:23 www/auth/login.php:54 www/auth/lostPassword.php:51
 msgid "Please enter an email address."
 msgstr "Vă rugăm să introduceți o adresă de e-mail."
 
@@ -79,7 +105,7 @@ msgstr "Vă rugăm să introduceți o adresă de e-mail."
 msgid "This email address is already taken."
 msgstr "Această adresă de e-mail este deja folosită."
 
-#: lib/model/User.php:32
+#: lib/model/User.php:32 www/auth/lostPassword.php:53
 msgid "This email address looks incorrect."
 msgstr "Adresa de e-mail pare incorectă."
 
@@ -102,6 +128,18 @@ msgstr "Parola trebuie să aibă cel puțin 8 caractere."
 #: www/auth/login.php:65
 msgid "Incorrect email address or password."
 msgstr "Adresa de e-mail sau parola sînt greșite."
+
+#: www/auth/resetPassword.php:16 www/auth/resetPassword.php:22
+msgid "The password reset token is incorrect."
+msgstr "Codul de resetare a parolei este incorect."
+
+#: www/auth/resetPassword.php:18
+msgid "The password reset token has expired."
+msgstr "Codul de recuperare a parolei a expirat."
+
+#: www/auth/resetPassword.php:36
+msgid "Password changed successfully."
+msgstr "Parola a fost schimbată cu succes."
 
 #: www/changeLocale.php:9
 msgid "Interface language changed. Page contents are always in Romanian."

@@ -13,13 +13,13 @@ $pt = PasswordToken::get_by_token($token);
 // Validate the token and load the user
 $user = null;
 if (!$pt) {
-  FlashMessage::add(_('The password recovery token is incorrect.'));
+  FlashMessage::add(_('The password reset token is incorrect.'));
 } else if ($pt->createDate < time() - 24 * 3600) {
-  FlashMessage::add(_('The password recovery token has expired.'));
+  FlashMessage::add(_('The password reset token has expired.'));
 } else {
   $user = User::get_by_id($pt->userId);
   if (!$user) {
-    FlashMessage::add(_('The password recovery token is incorrect.'));
+    FlashMessage::add(_('The password reset token is incorrect.'));
   }
 }
 
