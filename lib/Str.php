@@ -26,8 +26,8 @@ class Str {
     return mb_strtoupper(self::getCharAt($s, 0)) . mb_substr($s, 1);
   }
 
-  function randomString($length = 10) {
-    $alphabet = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  static function randomString($length = 10) {
+    $alphabet = '0123456789abcdefghijklmnopqrstuvwxyz';
     $sigma = strlen($alphabet);
 
     $result = '';

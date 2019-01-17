@@ -32,7 +32,6 @@ class DB {
                        Config::DB_DATABASE,
                        Config::DB_PASSWORD ? ('-p' . Config::$password) : '',
                        $filename);
-    var_dump($command);
     OS::executeAndAssert($command);
   }
 

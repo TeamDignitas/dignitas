@@ -48,4 +48,15 @@ class Request {
       Str::startsWith($_SERVER['REQUEST_URI'], Core::getWwwRoot() . 'ajax/');
   }
 
+  static function getFullServerUrl() {
+    $protocol = Config::PROTOCOL;
+    $host = $_SERVER['SERVER_NAME'];
+    $port =  $_SERVER['SERVER_PORT'];
+    $path = Core::getWwwRoot();
+
+    return ($port == '80')
+      ? "{$protocol}://{$host}{$path}"
+      : "{$protocol}://{$host}:{$port}{$path}";
+  }
+
 }

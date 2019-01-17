@@ -67,13 +67,13 @@
             </button>
 
             <div class="float-right">
-              <a class="btn btn-outline-secondary" href="parola-uitata">
+              <a class="btn btn-outline-secondary" href="lostPassword">
                 <i class="icon icon-help"></i>
                 {t}I forgot my password{/t}
               </a>
 
               <a class="btn btn-outline-secondary" href="register">
-                <i class="icon icon-plus"></i>
+                <i class="icon icon-user-plus"></i>
                 {t}sign up{/t}
               </a>
             </div>

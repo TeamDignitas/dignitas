@@ -1,26 +1,39 @@
 <?php
 
 class Config {
-  /* database connection */
+  // database connection
   const DB_HOST = 'localhost';
   const DB_DATABASE = 'tbd';
   const DB_USER = 'root';
   const DB_PASSWORD = '';
 
-  /* development mode */
+  // development mode
   const DEVELOPMENT_MODE = true;
 
-  /* logging */
+  // logging
   const LOG_FILE = '/var/log/tbd.log';
   const LOG_LEVEL = LOG_DEBUG;
 
-  /* localization */
+  // web server info
+  const PROTOCOL = 'http';
+
+  // email info
+  const CONTACT_EMAIL = 'test@test.com';
+  const SMTP_SERVER = 'tls://your-server.com:587'; // for outgoing emails
+  const EMAIL_IDENTITIES = [
+    'test@test.com' => [
+      'name' => 'tbd',
+      'password' => 'Chybwiand6FribUbEgEppIzo',
+    ],
+  ];
+
+  // localization
   const LOCALES = [
     'en_US.utf8' => "English",
     'ro_RO.utf8' => "română",
   ];
   const DEFAULT_LOCALE = 'ro_RO.utf8';
 
-  /* system stuff */
+  // system stuff
   const TMP_DIR = '/tmp/';
 }
