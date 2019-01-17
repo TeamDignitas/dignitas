@@ -131,10 +131,11 @@ class Smart {
       $relDestImage = $relImageDir . $relImage;
       $absDestImage = $absImageDir . $relImage;
 
-      if (!file_exists($absDestImage)) {
-        @mkdir($absImageDir);
-        copy($absSrcImage, $absDestImage);
-      }
+      // Copy the file to be safe. It could have changed, for example if we
+      // added new icons to our icon font.
+      @mkdir($absImageDir);
+      copy($absSrcImage, $absDestImage);
+
       $url = $relDestImage . $anchor;
     }
     return "url($url)";
