@@ -10,11 +10,11 @@ cd $ROOT_DIR
 echo "The root of your client appears to be $ROOT_DIR"
 
 # Create a copy of the config file unless it already exists
-if [ ! -e lib/Config.php ]; then
-  echo "* copying lib/Config.php.sample to lib/Config.php"
-  cp lib/Config.php.sample lib/Config.php
+if [ ! -e Config.php ]; then
+  echo "* copying Config.php.sample to Config.php"
+  cp Config.php.sample Config.php
 else
-  echo "* lib/Config.php already exists, skipping"
+  echo "* Config.php already exists, skipping"
 fi
 
 # Create a copy of the .htaccess file unless it already exists

@@ -4,7 +4,9 @@
 
 {block "content"}
   <p>
-    We sent an email to <b>{$email}</b>. Please click the link inside to reset
+    {t 1=$email}
+    We sent an email to <b>%1</b>. Please click the link inside to reset
     your password.
+    {/t}
   </p>
 {/block}

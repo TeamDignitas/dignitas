@@ -5,7 +5,9 @@ Options -MultiViews
 
 RewriteEngine on
 
-# Append .php when a file by that name exists
-RewriteCond %{REQUEST_URI} /[-a-zA-Z]+$
-RewriteCond %{REQUEST_FILENAME}.php -f
-RewriteRule (.*)$ $1.php [L]
+# Special case for index.php
+RewriteRule ^$ index.php [L]
+
+# Pass everything else through the router
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^.*$ router.php [L]

@@ -1,6 +1,5 @@
 <?php
 
-require_once '../../lib/Core.php';
 Util::assertNotLoggedIn();
 
 $email = Request::get('email');

@@ -1,7 +1,7 @@
 <?php
 
-require_once Core::portable(__DIR__ . '/third-party/idiorm-1.5.6.php');
-require_once Core::portable(__DIR__ . '/third-party/paris-1.5.6.php');
+require_once 'third-party/idiorm-1.5.6.php';
+require_once 'third-party/paris-1.5.6.php';
 
 class DB {
   static $dsn;

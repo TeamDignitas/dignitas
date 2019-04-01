@@ -1,6 +1,18 @@
 <?php
 
 class Config {
+  // Filesystem root of this installation. Include a trailing slash.
+  const ROOT = __DIR__ . '/';
+
+  // The concatenation URL_HOST + URL_PREFIX should yield the URL of the home
+  // page of your installation.
+
+  // protocol://host[:port] . No trailing slash.
+  const URL_HOST = 'http://localhost';
+
+  // URL path relative to URL_HOST. Include a trailing slash.
+  const URL_PREFIX = '/tbd/www/';
+
   // database connection
   const DB_HOST = 'localhost';
   const DB_DATABASE = 'tbd';
@@ -29,10 +41,15 @@ class Config {
 
   // localization
   const LOCALES = [
-    'en_US.utf8' => "English",
-    'ro_RO.utf8' => "română",
+    'en_US.utf8' => 'English',
+    'ro_RO.utf8' => 'română',
   ];
   const DEFAULT_LOCALE = 'ro_RO.utf8';
+
+  // When a file cannot be mapped to a URL in the current locale, use this
+  // locale instead. This locale should be fully defined in Router::ROUTES for
+  // all files and should match the language in which our PHP files are named.
+  const DEFAULT_ROUTING_LOCALE = 'en_US.utf8';
 
   // system stuff
   const TMP_DIR = '/tmp/';

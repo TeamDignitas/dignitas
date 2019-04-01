@@ -15,7 +15,7 @@
 
       {if $pageType != 'home'}
         <li class="nav-item">
-          <a class="nav-link" href="{$wwwRoot}">
+          <a class="nav-link" href="{Config::URL_PREFIX}">
             {t}home page{/t}
           </a>
         </li>
@@ -36,7 +36,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarLangDropdown">
           {foreach LocaleUtil::getAll() as $id => $name}
-            <a class="dropdown-item" href="{$wwwRoot}changeLocale?id={$id}">
+            <a class="dropdown-item" href="{Router::link('helpers/changeLocale')}?id={$id}">
               <i class="icon icon-ok {if $id != LocaleUtil::getCurrent()}invisible{/if}"></i>
               {$name}
             </a>
@@ -57,7 +57,7 @@
             {User::getActive()}
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarUserDropdown">
-            <a class="dropdown-item" href="{$wwwRoot}auth/logout">
+            <a class="dropdown-item" href="{Router::link('auth/logout')}">
               <i class="icon icon-logout"></i>
               {t}log out{/t}
             </a>
@@ -65,7 +65,7 @@
         </li>
       {else}
         <li class="nav-item">
-          <a class="nav-link" href="{$wwwRoot}auth/login">
+          <a class="nav-link" href="{Router::link('auth/login')}">
             <i class="icon icon-login"></i>
             {t}log in{/t}
           </a>

@@ -45,18 +45,7 @@ class Request {
 
   static function isAjax() {
     return isset($_SERVER['REQUEST_URI']) &&
-      Str::startsWith($_SERVER['REQUEST_URI'], Core::getWwwRoot() . 'ajax/');
-  }
-
-  static function getFullServerUrl() {
-    $protocol = Config::PROTOCOL;
-    $host = $_SERVER['SERVER_NAME'];
-    $port =  $_SERVER['SERVER_PORT'];
-    $path = Core::getWwwRoot();
-
-    return ($port == '80')
-      ? "{$protocol}://{$host}{$path}"
-      : "{$protocol}://{$host}:{$port}{$path}";
+      Str::startsWith($_SERVER['REQUEST_URI'], Config::URL_PREFIX . 'ajax/');
   }
 
 }

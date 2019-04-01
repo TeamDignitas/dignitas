@@ -73,7 +73,7 @@
             {t}sign up{/t}
           </button>
 
-          <a class="btn btn-link float-right" href="login">
+          <a class="btn btn-link float-right" href="{Router::link('auth/login')}">
             {t}I already have an account{/t}
           </a>
         </div>

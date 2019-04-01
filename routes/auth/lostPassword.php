@@ -1,6 +1,5 @@
 <?php
 
-require_once '../../lib/Core.php';
 Util::assertNotLoggedIn();
 
 $email = Request::get('email');
@@ -23,7 +22,7 @@ if ($submitButton) {
 
       // Send email
       Smart::assign([
-        'homePage' => Request::getFullServerUrl(),
+        'homePage' => Config::URL_HOST . Config::URL_PREFIX,
         'token' => $pt->token,
       ]);
       $from = Config::CONTACT_EMAIL;

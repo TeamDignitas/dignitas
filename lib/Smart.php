@@ -1,6 +1,6 @@
 <?php
 
-require_once Core::portable(__DIR__ . '/third-party/smarty-3.1.33/Smarty.class.php');
+require_once 'third-party/smarty-3.1.33/Smarty.class.php';
 
 class Smart {
   private static $theSmarty = null;
@@ -19,7 +19,7 @@ class Smart {
 
   static function init() {
     self::$theSmarty = new Smarty();
-    self::$theSmarty->template_dir = Core::getRootPath() . 'templates';
+    self::$theSmarty->template_dir = Config::ROOT . 'templates';
     self::$theSmarty->compile_dir = Config::TMP_DIR . 'templates_c';
     self::$theSmarty->addPluginsDir(__DIR__ . '/smarty-plugins');
   }
@@ -30,14 +30,14 @@ class Smart {
 
     // Add {$template}.css if the file exists
     $cssFile = "autoload/{$baseName}.css";
-    $fileName = Core::getRootPath() . 'www/css/' . $cssFile;
+    $fileName = Config::ROOT . 'www/css/' . $cssFile;
     if (file_exists($fileName)) {
       self::$cssFiles[] = $cssFile;
     }
 
     // Add {$template}.js if the file exists
     $jsFile = "autoload/{$baseName}.js";
-    $fileName = Core::getRootPath() . 'www/js/' . $jsFile;
+    $fileName = Config::ROOT . 'www/js/' . $jsFile;
     if (file_exists($fileName)) {
       self::$jsFiles[] = $jsFile;
     }
@@ -59,7 +59,7 @@ class Smart {
     $full = [];
     $maxTimestamp = 0;
     foreach ($files as $file) {
-      $name = sprintf('%swww/%s/%s', Core::getRootPath(), $type, $file);
+      $name = sprintf('%swww/%s/%s', Config::ROOT, $type, $file);
       $full[] = $name;
       $timestamp = filemtime($name);
       $maxTimestamp = max($maxTimestamp, $timestamp);
@@ -67,7 +67,7 @@ class Smart {
 
     // compute the output file name
     $hash = md5(implode(',', $full));
-    $outputDir = sprintf('%swww/%s/merged/', Core::getRootPath(), $type);
+    $outputDir = sprintf('%swww/%s/merged/', Config::ROOT, $type);
     $output = sprintf('%s%s.%s', $outputDir, $hash, $type);
 
     // generate the output file if it doesn't exist or if it's too old
@@ -91,7 +91,7 @@ class Smart {
     }
 
     // return the URL path and the timestamp
-    $path = sprintf('%s%s/merged/%s.%s', Core::getWwwRoot(), $type, $hash, $type);
+    $path = sprintf('%s%s/merged/%s.%s', Config::URL_PREFIX, $type, $hash, $type);
     $date = date('YmdHis', filemtime($output));
     return [
       'path' => $path,
@@ -196,7 +196,6 @@ class Smart {
 
     self::assign([
       'flashMessages' => FlashMessage::getMessages(),
-      'wwwRoot' => Core::getWwwRoot(),
     ]);
     return self::$theSmarty->fetch($templateName);
   }

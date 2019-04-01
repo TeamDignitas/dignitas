@@ -24,7 +24,7 @@ class Session {
 
     User::setActive($user->id); // for logging purposes only
     Log::info('Logged in, IP=' . $_SERVER['REMOTE_ADDR']);
-    Util::redirect(Core::getWwwRoot());
+    Util::redirectToHome();
   }
 
   static function logout() {
@@ -37,7 +37,7 @@ class Session {
     self::unsetCookie('login');
     unset($_COOKIE['login']);
     self::kill();
-    Util::redirect(Core::getWwwRoot());
+    Util::redirectToHome();
   }
 
   // Try to load logging information from the long-lived cookie
