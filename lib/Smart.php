@@ -6,16 +6,22 @@ class Smart {
   private static $theSmarty = null;
   private static $cssFiles = [];
   private static $jsFiles = [];
-  private static $includedCss = [];
-  private static $includedJs = [];
-  private static $cssMap = [
-    'bootstrap' => [ 'third-party/bootstrap-4.2.1.min.css' ],
-    'fontello' => [ 'third-party/fontello/css/icons.css' ],
-    'main' => [ 'main.css' ],
-  ];
-  private static $jsMap = [
-    'jquery' => [ 'third-party/jquery-3.3.1.min.js' ],
-    'bootstrap' => [ 'third-party/bootstrap-4.2.1.min.js' ],
+  private static $includedResources = [];
+
+  const RESOURCE_MAP = [
+    'jquery' => [
+      'js' => [ 'third-party/jquery-3.3.1.min.js' ],
+    ],
+    'bootstrap' => [
+      'css' => [ 'third-party/bootstrap-4.2.1.min.css' ],
+      'js' => [ 'third-party/bootstrap-4.2.1.min.js' ],
+    ],
+    'fontello' => [
+      'css' => [ 'third-party/fontello/css/icons.css' ],
+    ],
+    'main' => [
+      'css' => [ 'main.css' ],
+    ],
   ];
 
   static function init() {
@@ -27,7 +33,7 @@ class Smart {
 
   // Add $template.css and $template.js to the file lists, if they exist.
   static function addSameNameFiles($template) {
-    $baseName = pathinfo($template)['filename'];
+    $baseName = str_replace('.tpl', '', $template);
 
     // Add {$template}.css if the file exists
     $cssFile = "autoload/{$baseName}.css";
@@ -44,18 +50,46 @@ class Smart {
     }
   }
 
-  static function orderResources($mapping, $selected) {
-    $result = [];
-    foreach ($mapping as $name => $files) {
-      if (isset($selected[$name])) {
-        $result = array_merge($result, $files);
+  // Returns lists of css and js files to include. Selects CSS and JS files
+  // from the included resources and RESOURCE_MAP and adds self::$cssFiles
+  // and self::$jsFiles at the end.
+  static function orderResources() {
+    // first add all dependencies
+    $map = [];
+    while ($key = array_pop(self::$includedResources)) {
+      $map[$key] = true;
+      $deps = self::RESOURCE_MAP[$key]['deps'] ?? [];
+      foreach ($deps as $dep) {
+        if (!isset($map[$dep])) {
+          self::$includedResources[] = $dep;
+        }
       }
     }
-    return $result;
+
+    // now collect CSS and JS files in map order
+    $resultCss = [];
+    $resultJs = [];
+    foreach (self::RESOURCE_MAP as $key => $data) {
+      if (isset($map[$key])) {
+        $list = $data['css'] ?? [];
+        foreach ($list as $css) {
+          $resultCss[] = $css;
+        }
+
+        $list = $data['js'] ?? [];
+        foreach ($list as $js) {
+          $resultJs[] = $js;
+        }
+      }
+    }
+
+    // finally, append $cssFiles and $jsFiles
+    $resultCss = array_merge($resultCss, self::$cssFiles);
+    $resultJs = array_merge($resultJs, self::$jsFiles);
+    return [ $resultCss, $resultJs ];
   }
 
   static function mergeResources($files, $type) {
-    // Note the priorities. This allows files to be added in any order, regardless of dependencies
     // compute the full file names and get the latest timestamp
     $full = [];
     $maxTimestamp = 0;
@@ -132,31 +166,24 @@ class Smart {
       $relDestImage = $relImageDir . $relImage;
       $absDestImage = $absImageDir . $relImage;
 
-      // Copy the file to be safe. It could have changed, for example if we
-      // added new icons to our icon font.
-      @mkdir($absImageDir);
-      copy($absSrcImage, $absDestImage);
-
+      if (!file_exists($absDestImage)) {
+        @mkdir($absImageDir);
+        copy($absSrcImage, $absDestImage);
+      }
       $url = $relDestImage . $anchor;
     }
     return "url($url)";
   }
 
-  static function addCss(...$ids) {
-    foreach ($ids as $id) {
-      if (!isset(self::$cssMap[$id])) {
-        die("Cannot load CSS file {$id}.");
+  // Marks required CSS and JS files for inclusion.
+  // $keys: array of keys in self::RESOURCE_MAP
+  static function addResources(...$keys) {
+    foreach ($keys as $key) {
+      if (!isset(self::RESOURCE_MAP[$key])) {
+        FlashMessage::add("Unknown resource ID {$key}");
+        Util::redirectToHome();
       }
-      self::$includedCss[$id] = true;
-    }
-  }
-
-  static function addJs(...$ids) {
-    foreach ($ids as $id) {
-      if (!isset(self::$jsMap[$id])) {
-        die("Cannot load JS script {$id}.");
-      }
-      self::$includedJs[$id] = true;
+      self::$includedResources[] = $key;
     }
   }
 
@@ -168,8 +195,7 @@ class Smart {
 
   /* Prepare and display a template. */
   static function display($templateName) {
-    self::addCss('bootstrap', 'fontello', 'main');
-    self::addJs('jquery', 'bootstrap');
+    self::addResources('jquery', 'bootstrap', 'fontello', 'main');
     self::addSameNameFiles($templateName);
     print self::fetch($templateName);
   }
@@ -179,23 +205,10 @@ class Smart {
   }
 
   static function fetch($templateName) {
-    self::$cssFiles = array_merge(
-      self::orderResources(self::$cssMap, self::$includedCss),
-      self::$cssFiles
-    );
+    list ($cssFiles, $jsFiles) = self::orderResources();
     self::assign([
-      'cssFile' => self::mergeResources(self::$cssFiles, 'css'),
-    ]);
-
-    self::$jsFiles = array_merge(
-      self::orderResources(self::$jsMap, self::$includedJs),
-      self::$jsFiles
-    );
-    self::assign([
-      'jsFile' => self::mergeResources(self::$jsFiles, 'js'),
-    ]);
-
-    self::assign([
+      'cssFile' => self::mergeResources($cssFiles, 'css'),
+      'jsFile' => self::mergeResources($jsFiles, 'js'),
       'flashMessages' => FlashMessage::getMessages(),
     ]);
     return self::$theSmarty->fetch($templateName);
