@@ -3,8 +3,6 @@
 Util::assertLoggedIn();
 
 $id = Request::get('id');
-$entityId = Request::get('entityId');
-$contents = Request::get('contents');
 $saveButton = Request::has('saveButton');
 
 if ($id) {
@@ -15,8 +13,8 @@ if ($id) {
 }
 
 if ($saveButton) {
-  $statement->entityId = $entityId;
-  $statement->contents = $contents;
+  $statement->entityId = Request::get('entityId');
+  $statement->contents = Request::get('contents');
 
   $errors = validate($statement);
   if (empty($errors)) {
