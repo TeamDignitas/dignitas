@@ -35,6 +35,12 @@ class Router {
       'ro_RO.utf8' => 'inregistrare',
     ],
 
+    // entities
+    'entity/edit' => [
+      'en_US.utf8' => 'edit-author',
+      'ro_RO.utf8' => 'editeaza-autor',
+    ],
+
     // helpers
     'helpers/changeLocale' => [
       'en_US.utf8' => 'changeLocale',

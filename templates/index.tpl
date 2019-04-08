@@ -14,8 +14,15 @@
     {/foreach}
   </ul>
 
-  <a href="{Router::link('statement/edit')}" class="btn-link">
-    {t}add a statement{/t}
-  </a>
+
+  <div>
+    <a href="{Router::link('statement/edit')}" class="btn btn-link">
+      {t}add a statement{/t}
+    </a>
+
+    <a href="{Router::link('entity/edit')}" class="btn btn-link">
+      {t}add an author{/t}
+    </a>
+  </div>
 
 {/block}

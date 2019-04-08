@@ -1,0 +1,40 @@
+{extends "layout.tpl"}
+
+{block "title"}{cap}{t}add an author{/t}{/cap}{/block}
+
+{block "content"}
+  <h3>{t}add an author{/t}</h3>
+
+  <form method="post">
+    <input type="hidden" name="id" value="{$entity->id}">
+    <div class="form-group">
+      <label for="fieldName">{t}name{/t}</label>
+      <input
+        name="name"
+        value="{$entity->name}"
+        id="fieldName"
+        class="form-control {if isset($errors.name)}is-invalid{/if}">
+      {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
+    </div>
+
+    <div class="form-group">
+      <label for="fieldType">{t}type{/t}</label>
+      <select
+        name="type"
+        id="fieldType"
+        class="form-control {if isset($errors.type)}is-invalid{/if}">
+        {foreach Entity::TYPES as $t}
+          <option value="{$t}" {if $entity->type == $t}selected{/if}>
+            {Entity::getTypeName($t)}
+          </option>
+        {/foreach}
+      </select>
+      {include "bits/fieldErrors.tpl" errors=$errors.type|default:null}
+    </div>
+
+    <button name="saveButton" type="submit" class="btn btn-primary">
+      <i class="icon icon-floppy"></i>
+      {t}save{/t}
+    </button>
+  </form>
+{/block}
