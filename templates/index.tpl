@@ -4,6 +4,8 @@
 
 {block "content"}
 
-  <b>{$message}</b>
+  <a href="{Router::link('statement/edit')}" class="btn-link">
+    {t}add a statement{/t}
+  </a>
 
 {/block}

@@ -11,6 +11,7 @@ class Smart {
   private static $cssMap = [
     'bootstrap' => [ 'third-party/bootstrap-4.2.1.min.css' ],
     'fontello' => [ 'third-party/fontello/css/icons.css' ],
+    'main' => [ 'main.css' ],
   ];
   private static $jsMap = [
     'jquery' => [ 'third-party/jquery-3.3.1.min.js' ],
@@ -167,7 +168,7 @@ class Smart {
 
   /* Prepare and display a template. */
   static function display($templateName) {
-    self::addCss('bootstrap', 'fontello');
+    self::addCss('bootstrap', 'fontello', 'main');
     self::addJs('jquery', 'bootstrap');
     self::addSameNameFiles($templateName);
     print self::fetch($templateName);

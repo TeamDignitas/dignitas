@@ -8,6 +8,13 @@ class Util {
     }
   }
 
+  static function assertLoggedIn() {
+    if (!User::getActive()) {
+      FlashMessage::add(_('You need to be logged in to perform this action.'));
+      Util::redirectToHome();
+    }
+  }
+
   static function redirect($location, $statusCode = 303) {
     FlashMessage::saveToSession();
     header("Location: $location", true, $statusCode);

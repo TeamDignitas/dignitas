@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-04-01 15:50+0300\n"
-"PO-Revision-Date: 2019-04-01 15:50+0300\n"
+"POT-Creation-Date: 2019-04-08 11:30+0300\n"
+"PO-Revision-Date: 2019-04-08 11:30+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -117,6 +117,10 @@ msgstr "pagina principală"
 #: templates/bits/navmenu.tpl:62
 msgid "log out"
 msgstr "închide sesiunea"
+
+#: templates/index.tpl:8
+msgid "add a statement"
+msgstr "adaugă o afirmație"
 
 #: lib/model/User.php:23 routes/auth/login.php:53
 #: routes/auth/lostPassword.php:50

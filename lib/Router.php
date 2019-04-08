@@ -39,6 +39,12 @@ class Router {
     'helpers/changeLocale' => [
       'en_US.utf8' => 'changeLocale',
     ],
+
+    // statements
+    'statement/edit' => [
+      'en_US.utf8' => 'edit-statement',
+      'ro_RO.utf8' => 'editeaza-afirmatie',
+    ],
   ];
 
   // file => list of parameters expected in the URL (none by default)
