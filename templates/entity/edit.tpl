@@ -1,9 +1,17 @@
 {extends "layout.tpl"}
 
-{block "title"}{cap}{t}add an author{/t}{/cap}{/block}
+{capture "title"}
+{if $entity->id}
+  {t}edit author{/t}
+{else}
+  {t}add an author{/t}
+{/if}
+{/capture}
+
+{block "title"}{cap}{$smarty.capture.title}{/cap}{/block}
 
 {block "content"}
-  <h3>{t}add an author{/t}</h3>
+  <h3>{$smarty.capture.title}</h3>
 
   <form method="post">
     <input type="hidden" name="id" value="{$entity->id}">

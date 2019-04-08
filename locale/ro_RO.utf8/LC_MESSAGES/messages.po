@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-04-08 11:30+0300\n"
-"PO-Revision-Date: 2019-04-08 11:30+0300\n"
+"POT-Creation-Date: 2019-04-08 16:49+0300\n"
+"PO-Revision-Date: 2019-04-08 16:49+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -98,7 +98,8 @@ msgstr "am deja un cont"
 msgid "password change"
 msgstr "schimbarea parolei"
 
-#: templates/auth/resetPassword.tpl:45
+#: templates/auth/resetPassword.tpl:45 templates/entity/edit.tpl:45
+#: templates/statement/edit.tpl:40
 msgid "save"
 msgstr "salvează"
 
@@ -118,9 +119,53 @@ msgstr "pagina principală"
 msgid "log out"
 msgstr "închide sesiunea"
 
-#: templates/index.tpl:8
+#: templates/entity/edit.tpl:5
+msgid "edit author"
+msgstr "editează autor"
+
+#: templates/entity/edit.tpl:7 templates/index.tpl:24
+msgid "add an author"
+msgstr "adaugă un autor"
+
+#: templates/entity/edit.tpl:19
+msgid "name"
+msgstr "nume"
+
+#: templates/entity/edit.tpl:29
+msgid "type"
+msgstr "tip"
+
+#: templates/index.tpl:20 templates/statement/edit.tpl:7
 msgid "add a statement"
 msgstr "adaugă o afirmație"
+
+#: templates/statement/edit.tpl:5
+msgid "edit statement"
+msgstr "editează afirmație"
+
+#: templates/statement/edit.tpl:19
+msgid "author"
+msgstr "autor"
+
+#: templates/statement/edit.tpl:29
+msgid "contents"
+msgstr "conținut"
+
+#: lib/Util.php:13
+msgid "You need to be logged in to perform this action."
+msgstr "Trebuie să vă autentificați pentru a continua."
+
+#: lib/model/Entity.php:17
+msgid "person"
+msgstr "persoană"
+
+#: lib/model/Entity.php:18
+msgid "party"
+msgstr "partid"
+
+#: lib/model/Entity.php:19
+msgid "union"
+msgstr "uniune"
 
 #: lib/model/User.php:23 routes/auth/login.php:53
 #: routes/auth/lostPassword.php:50
@@ -167,6 +212,22 @@ msgstr "Codul de recuperare a parolei a expirat."
 msgid "Password changed successfully."
 msgstr "Parola a fost schimbată cu succes."
 
+#: routes/entity/edit.php:42
+msgid "Please enter a name."
+msgstr "Vă rugăm să introduceți un nume."
+
+#: routes/entity/edit.php:46
+msgid "Please choose a type."
+msgstr "Vă rugăm să alegeți un tip."
+
 #: routes/helpers/changeLocale.php:7
 msgid "Interface language changed. Page contents are always in Romanian."
 msgstr "Am schimbat limba interfeței. Conținutul paginii este mereu în română."
+
+#: routes/statement/edit.php:42
+msgid "Please enter an author."
+msgstr "Vă rugăm să introduceți un autor."
+
+#: routes/statement/edit.php:46
+msgid "Please enter the statement contents."
+msgstr "Vă rugăm să introduceți conținutul afirmației."

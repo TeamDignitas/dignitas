@@ -1,9 +1,17 @@
 {extends "layout.tpl"}
 
-{block "title"}{cap}{t}add a statement{/t}{/cap}{/block}
+{capture "title"}
+{if $statement->id}
+  {t}edit statement{/t}
+{else}
+  {t}add a statement{/t}
+{/if}
+{/capture}
+
+{block "title"}{cap}{$smarty.capture.title}{/cap}{/block}
 
 {block "content"}
-  <h3>{t}add a statement{/t}</h3>
+  <h3>{$smarty.capture.title}</h3>
 
   <form method="post">
     <input type="hidden" name="id" value="{$statement->id}">
