@@ -187,9 +187,18 @@ class Smart {
     }
   }
 
-  static function assign($data) {
-    foreach ($data as $name => $value) {
-      self::$theSmarty->assign($name, $value);
+  /**
+   * Can be called as
+   * assign($name, $value) or
+   * assign([$name1 => $value1, $name2 => $value2, ...])
+   **/
+  static function assign($arg1, $arg2 = null) {
+    if (is_array($arg1)) {
+      foreach ($arg1 as $name => $value) {
+        self::$theSmarty->assign($name, $value);
+      }
+    } else {
+      self::$theSmarty->assign($arg1, $arg2);
     }
   }
 

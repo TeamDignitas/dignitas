@@ -2,9 +2,13 @@
 
 require_once '../lib/Core.php';
 
-$user = Model::factory('User')->where('id', 1)->find_one();
+$statements = Model::factory('Statement')
+  ->order_by_desc('createDate')
+  ->limit(10)
+  ->find_many();
 
 Smart::assign([
   'pageType' => 'home',
+  'statements' => $statements,
 ]);
 Smart::display('index.tpl');

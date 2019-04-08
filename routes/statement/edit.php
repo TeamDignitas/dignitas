@@ -2,34 +2,49 @@
 
 Util::assertLoggedIn();
 
+$id = Request::get('id');
 $entityId = Request::get('entityId');
 $contents = Request::get('contents');
 $saveButton = Request::has('saveButton');
 
-Smart::assign([
-]);
+if ($id) {
+  $statement = Statement::get_by_id($id);
+} else {
+  $statement = Model::factory('Statement')->create();
+  $statement->userId = User::getActiveId();
+}
+
+if ($saveButton) {
+  $statement->entityId = $entityId;
+  $statement->contents = $contents;
+
+  $errors = validate($statement);
+  if (empty($errors)) {
+    $statement->save();
+    FlashMessage::add('Changes saved.', 'success');
+    Util::redirect('?id=' . $statement->id);
+  } else {
+    Smart::assign('errors', $errors);
+  }
+} else {
+  // first time loading the page
+}
+
+Smart::assign('statement', $statement);
 Smart::display('statement/edit.tpl');
 
 /*************************************************************************/
 
-function validate($email, $password, &$errors) {
+function validate($statement) {
   $errors = [];
 
-  if (!$email) {
-    $errors['email'][] = _('Please enter an email address.');
+  if (!$statement->entityId) {
+    $errors['entityId'][] = _('Please enter an author.');
   }
 
-  if (!$password) {
-    $errors['password'][] = _('Please enter a password.');
+  if (!$statement->contents) {
+    $errors['contents'][] = _('Please enter the statement contents.');
   }
 
-  $user = null;
-  if ($email && $password) {
-    $user = User::get_by_email_password($email, md5($password));
-    if (!$user) {
-      $errors['password'][] = _('Incorrect email address or password.');
-    }
-  }
-
-  return $user;
+  return $errors;
 }

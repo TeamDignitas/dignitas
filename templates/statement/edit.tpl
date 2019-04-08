@@ -6,12 +6,15 @@
   <h3>{t}add a statement{/t}</h3>
 
   <form method="post">
+    <input type="hidden" name="id" value="{$statement->id}">
     <div class="form-group">
       <label for="fieldEntityId">{t}author{/t}</label>
       <input
         name="entityId"
+        value="{$statement->entityId}"
         id="fieldEntityId"
-        class="form-control">
+        class="form-control {if isset($errors.entityId)}is-invalid{/if}">
+      {include "bits/fieldErrors.tpl" errors=$errors.entityId|default:null}
     </div>
 
     <div class="form-group">
@@ -19,8 +22,9 @@
       <textarea
         name="contents"
         id="fieldContents"
-        class="form-control"
-        rows="10"></textarea>
+        class="form-control {if isset($errors.contents)}is-invalid{/if}"
+        rows="10">{$statement->contents}</textarea>
+      {include "bits/fieldErrors.tpl" errors=$errors.contents|default:null}
     </div>
 
     <button name="saveButton" type="submit" class="btn btn-primary">
