@@ -40,9 +40,23 @@
       {include "bits/fieldErrors.tpl" errors=$errors.type|default:null}
     </div>
 
-    <button name="saveButton" type="submit" class="btn btn-primary">
-      <i class="icon icon-floppy"></i>
-      {t}save{/t}
-    </button>
+    <div>
+      <button name="saveButton" type="submit" class="btn btn-primary">
+        <i class="icon icon-floppy"></i>
+        {t}save{/t}
+      </button>
+
+      {if $entity->id}
+        <button
+          name="deleteButton"
+          type="submit"
+          class="btn btn-danger float-right deleteButton"
+          data-confirm="{t}Are you sure you want to delete this entity?{/t}">
+          <i class="icon icon-trash"></i>
+          {t}delete{/t}
+        </button>
+      {/if}
+    </div>
+
   </form>
 {/block}

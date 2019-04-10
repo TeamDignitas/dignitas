@@ -41,9 +41,22 @@
       {$statement->contents|md}
     </div>
 
-    <button name="saveButton" type="submit" class="btn btn-primary">
-      <i class="icon icon-floppy"></i>
-      {t}save{/t}
-    </button>
+    <div>
+      <button name="saveButton" type="submit" class="btn btn-primary">
+        <i class="icon icon-floppy"></i>
+        {t}save{/t}
+      </button>
+
+      {if $statement->id}
+        <button
+          name="deleteButton"
+          type="submit"
+          class="btn btn-danger float-right deleteButton"
+          data-confirm="{t}Are you sure you want to delete this statement?{/t}">
+          <i class="icon icon-trash"></i>
+          {t}delete{/t}
+        </button>
+      {/if}
+    </div>
   </form>
 {/block}

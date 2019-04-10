@@ -4,12 +4,19 @@ Util::assertLoggedIn();
 
 $id = Request::get('id');
 $saveButton = Request::has('saveButton');
+$deleteButton = Request::has('deleteButton');
 
 if ($id) {
   $entity = Entity::get_by_id($id);
 } else {
   $entity = Model::factory('Entity')->create();
   $entity->userId = User::getActiveId();
+}
+
+if ($deleteButton) {
+  $entity->delete();
+  FlashMessage::add(_('Entity deleted.'), 'success');
+  Util::redirectToHome();
 }
 
 if ($saveButton) {
@@ -19,7 +26,7 @@ if ($saveButton) {
   $errors = validate($entity);
   if (empty($errors)) {
     $entity->save();
-    FlashMessage::add('Changes saved.', 'success');
+    FlashMessage::add(_('Changes saved.'), 'success');
     Util::redirect(Router::link('entity/edit') . '/' . $entity->id);
   } else {
     Smart::assign('errors', $errors);

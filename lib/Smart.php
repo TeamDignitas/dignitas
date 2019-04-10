@@ -24,6 +24,7 @@ class Smart {
     ],
     'main' => [
       'css' => [ 'main.css' ],
+      'js' => [ 'main.js' ],
     ],
   ];
 

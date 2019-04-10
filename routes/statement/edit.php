@@ -4,12 +4,19 @@ Util::assertLoggedIn();
 
 $id = Request::get('id');
 $saveButton = Request::has('saveButton');
+$deleteButton = Request::has('deleteButton');
 
 if ($id) {
   $statement = Statement::get_by_id($id);
 } else {
   $statement = Model::factory('Statement')->create();
   $statement->userId = User::getActiveId();
+}
+
+if ($deleteButton) {
+  $statement->delete();
+  FlashMessage::add(_('Statement deleted.'), 'success');
+  Util::redirectToHome();
 }
 
 if ($saveButton) {
@@ -19,7 +26,7 @@ if ($saveButton) {
   $errors = validate($statement);
   if (empty($errors)) {
     $statement->save();
-    FlashMessage::add('Changes saved.', 'success');
+    FlashMessage::add(_('Changes saved.'), 'success');
     Util::redirect(Router::link('statement/edit') . '/' . $statement->id);
   } else {
     Smart::assign('errors', $errors);
