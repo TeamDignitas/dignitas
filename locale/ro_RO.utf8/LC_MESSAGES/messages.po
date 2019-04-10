@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-04-10 13:01+0300\n"
-"PO-Revision-Date: 2019-04-10 13:01+0300\n"
+"POT-Creation-Date: 2019-04-10 15:37+0300\n"
+"PO-Revision-Date: 2019-04-10 15:37+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -99,7 +99,7 @@ msgid "password change"
 msgstr "schimbarea parolei"
 
 #: templates/auth/resetPassword.tpl:45 templates/entity/edit.tpl:45
-#: templates/statement/edit.tpl:40
+#: templates/statement/edit.tpl:46
 msgid "save"
 msgstr "salvează"
 
@@ -158,6 +158,10 @@ msgstr "autor"
 #: templates/statement/edit.tpl:29
 msgid "contents"
 msgstr "conținut"
+
+#: templates/statement/edit.tpl:38
+msgid "preview"
+msgstr "previzualizare"
 
 #: lib/Util.php:13
 msgid "You need to be logged in to perform this action."
@@ -232,10 +236,10 @@ msgstr "Vă rugăm să alegeți un tip."
 msgid "Interface language changed. Page contents are always in Romanian."
 msgstr "Am schimbat limba interfeței. Conținutul paginii este mereu în română."
 
-#: routes/statement/edit.php:40
+#: routes/statement/edit.php:41
 msgid "Please enter an author."
 msgstr "Vă rugăm să introduceți un autor."
 
-#: routes/statement/edit.php:44
+#: routes/statement/edit.php:45
 msgid "Please enter the statement contents."
 msgstr "Vă rugăm să introduceți conținutul afirmației."

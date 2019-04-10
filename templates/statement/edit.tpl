@@ -35,6 +35,12 @@
       {include "bits/fieldErrors.tpl" errors=$errors.contents|default:null}
     </div>
 
+    <h4>{t}preview{/t}</h4>
+
+    <div id="markdownPreview">
+      {$statement->contents|md}
+    </div>
+
     <button name="saveButton" type="submit" class="btn btn-primary">
       <i class="icon icon-floppy"></i>
       {t}save{/t}

@@ -19,6 +19,9 @@ class Smart {
     'fontello' => [
       'css' => [ 'third-party/fontello/css/icons.css' ],
     ],
+    'marked' => [
+      'js' => [ 'third-party/marked-0.6.2.min.js' ],
+    ],
     'main' => [
       'css' => [ 'main.css' ],
     ],

@@ -28,6 +28,7 @@ if ($saveButton) {
   // first time loading the page
 }
 
+Smart::addResources('marked');
 Smart::assign('statement', $statement);
 Smart::display('statement/edit.tpl');
 
