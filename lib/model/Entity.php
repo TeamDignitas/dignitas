@@ -12,12 +12,16 @@ class Entity extends BaseObject implements DatedObject {
     self::TYPE_UNION,
   ];
 
-  static function getTypeName($type) {
+  static function typeName($type) {
     switch ($type) {
       case self::TYPE_PERSON: return _('person');
       case self::TYPE_PARTY:  return _('party');
       case self::TYPE_UNION:  return _('union');
     }
+  }
+
+  function getTypeName() {
+    return self::typeName($this->type);
   }
 
 }

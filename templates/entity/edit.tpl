@@ -33,7 +33,7 @@
         class="form-control {if isset($errors.type)}is-invalid{/if}">
         {foreach Entity::TYPES as $t}
           <option value="{$t}" {if $entity->type == $t}selected{/if}>
-            {Entity::getTypeName($t)}
+            {Entity::typeName($t)}
           </option>
         {/foreach}
       </select>

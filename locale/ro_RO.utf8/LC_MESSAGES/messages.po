@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-04-10 15:37+0300\n"
-"PO-Revision-Date: 2019-04-10 15:37+0300\n"
+"POT-Creation-Date: 2019-04-10 15:52+0300\n"
+"PO-Revision-Date: 2019-04-10 15:52+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -123,7 +123,7 @@ msgstr "închide sesiunea"
 msgid "edit author"
 msgstr "editează autor"
 
-#: templates/entity/edit.tpl:7 templates/index.tpl:27
+#: templates/entity/edit.tpl:7 templates/index.tpl:41
 msgid "add an author"
 msgstr "adaugă un autor"
 
@@ -139,11 +139,15 @@ msgstr "tip"
 msgid "statements"
 msgstr "afirmații"
 
-#: templates/index.tpl:15
+#: templates/index.tpl:15 templates/index.tpl:29
 msgid "edit"
 msgstr "editează"
 
-#: templates/index.tpl:23 templates/statement/edit.tpl:7
+#: templates/index.tpl:21
+msgid "entities"
+msgstr "autori"
+
+#: templates/index.tpl:37 templates/statement/edit.tpl:7
 msgid "add a statement"
 msgstr "adaugă o afirmație"
 

@@ -18,6 +18,20 @@
       <hr>
   {/foreach}
 
+  <h3>{t}entities{/t}</h3>
+
+  {foreach $entities as $e}
+    <div>
+      <b>{$e->name|escape}</b>
+      <div>{$e->getTypeName()}</div>
+
+      <div>
+        <a href="{Router::link('entity/edit')}?id={$e->id}">{t}edit{/t}</a>
+      </div>
+
+      <hr>
+  {/foreach}
+
   <div>
     <a href="{Router::link('statement/edit')}" class="btn btn-link">
       {t}add a statement{/t}
