@@ -12,7 +12,7 @@
       <div>{$s->contents|md}</div>
 
       <div>
-        <a href="{Router::link('statement/edit')}?id={$s->id}">{t}edit{/t}</a>
+        <a href="{Router::link('statement/edit')}/{$s->id}">{t}edit{/t}</a>
       </div>
 
       <hr>
@@ -26,7 +26,7 @@
       <div>{$e->getTypeName()}</div>
 
       <div>
-        <a href="{Router::link('entity/edit')}?id={$e->id}">{t}edit{/t}</a>
+        <a href="{Router::link('entity/edit')}/{$e->id}">{t}edit{/t}</a>
       </div>
 
       <hr>

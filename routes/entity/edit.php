@@ -20,7 +20,7 @@ if ($saveButton) {
   if (empty($errors)) {
     $entity->save();
     FlashMessage::add('Changes saved.', 'success');
-    Util::redirect('?id=' . $entity->id);
+    Util::redirect(Router::link('entity/edit') . '/' . $entity->id);
   } else {
     Smart::assign('errors', $errors);
   }

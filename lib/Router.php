@@ -55,6 +55,8 @@ class Router {
 
   // file => list of parameters expected in the URL (none by default)
   const PARAMS = [
+    'entity/edit' => [ 'id' ],
+    'statement/edit' => [ 'id' ],
   ];
 
   private static $fwdRoutes = [];
