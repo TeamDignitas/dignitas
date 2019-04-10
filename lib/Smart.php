@@ -25,10 +25,12 @@ class Smart {
   ];
 
   static function init() {
-    self::$theSmarty = new Smarty();
-    self::$theSmarty->template_dir = Config::ROOT . 'templates';
-    self::$theSmarty->compile_dir = Config::TMP_DIR . 'templates_c';
-    self::$theSmarty->addPluginsDir(__DIR__ . '/smarty-plugins');
+    $s = new Smarty();
+    $s->template_dir = Config::ROOT . 'templates';
+    $s->compile_dir = Config::TMP_DIR . 'templates_c';
+    $s->addPluginsDir(__DIR__ . '/smarty-plugins');
+    $s->registerPlugin('modifier', 'md', 'Str::markdown');
+    self::$theSmarty = $s;
   }
 
   // Add $template.css and $template.js to the file lists, if they exist.

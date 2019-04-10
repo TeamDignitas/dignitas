@@ -4,16 +4,19 @@
 
 {block "content"}
 
-  <ul>
-    {foreach $statements as $s}
-      <li>
-        <b>{$s->entityId|escape}</b>
-        &nbsp;
-        {$s->contents|escape}
-      </li>
-    {/foreach}
-  </ul>
+  <h3>{t}statements{/t}</h3>
 
+  {foreach $statements as $s}
+    <div>
+      <b>{$s->entityId|escape}</b>
+      <div>{$s->contents|md}</div>
+
+      <div>
+        <a href="{Router::link('statement/edit')}?id={$s->id}">{t}edit{/t}</a>
+      </div>
+
+      <hr>
+  {/foreach}
 
   <div>
     <a href="{Router::link('statement/edit')}" class="btn btn-link">

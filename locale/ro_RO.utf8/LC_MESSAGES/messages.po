@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-04-08 16:49+0300\n"
-"PO-Revision-Date: 2019-04-08 16:49+0300\n"
+"POT-Creation-Date: 2019-04-10 13:01+0300\n"
+"PO-Revision-Date: 2019-04-10 13:01+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -123,7 +123,7 @@ msgstr "închide sesiunea"
 msgid "edit author"
 msgstr "editează autor"
 
-#: templates/entity/edit.tpl:7 templates/index.tpl:24
+#: templates/entity/edit.tpl:7 templates/index.tpl:27
 msgid "add an author"
 msgstr "adaugă un autor"
 
@@ -135,7 +135,15 @@ msgstr "nume"
 msgid "type"
 msgstr "tip"
 
-#: templates/index.tpl:20 templates/statement/edit.tpl:7
+#: templates/index.tpl:7
+msgid "statements"
+msgstr "afirmații"
+
+#: templates/index.tpl:15
+msgid "edit"
+msgstr "editează"
+
+#: templates/index.tpl:23 templates/statement/edit.tpl:7
 msgid "add a statement"
 msgstr "adaugă o afirmație"
 
@@ -212,11 +220,11 @@ msgstr "Codul de recuperare a parolei a expirat."
 msgid "Password changed successfully."
 msgstr "Parola a fost schimbată cu succes."
 
-#: routes/entity/edit.php:42
+#: routes/entity/edit.php:40
 msgid "Please enter a name."
 msgstr "Vă rugăm să introduceți un nume."
 
-#: routes/entity/edit.php:46
+#: routes/entity/edit.php:44
 msgid "Please choose a type."
 msgstr "Vă rugăm să alegeți un tip."
 
@@ -224,10 +232,10 @@ msgstr "Vă rugăm să alegeți un tip."
 msgid "Interface language changed. Page contents are always in Romanian."
 msgstr "Am schimbat limba interfeței. Conținutul paginii este mereu în română."
 
-#: routes/statement/edit.php:42
+#: routes/statement/edit.php:40
 msgid "Please enter an author."
 msgstr "Vă rugăm să introduceți un autor."
 
-#: routes/statement/edit.php:46
+#: routes/statement/edit.php:44
 msgid "Please enter the statement contents."
 msgstr "Vă rugăm să introduceți conținutul afirmației."

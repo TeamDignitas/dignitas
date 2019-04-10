@@ -36,4 +36,17 @@ class Str {
     }
     return $result;
   }
+
+  static function markdown($s) {
+    $s = trim($s);
+
+    $fileName = tempnam(Config::TMP_DIR, 'tbd_');
+    file_put_contents($fileName, $s);
+
+    OS::execute("marked < {$fileName}", $output);
+
+    @unlink($fileName);
+
+    return $output;
+  }
 }

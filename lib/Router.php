@@ -115,7 +115,7 @@ class Router {
       exit;
     }
 
-    Log::debug('no route found for %s', $path);
+    Log::notice('no route found for %s', $path);
     return null;
   }
 
