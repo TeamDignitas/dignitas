@@ -8,7 +8,7 @@
 
   {foreach $statements as $s}
     <div>
-      <b>{$s->entityId|escape}</b>
+      <b>{$s->getEntity()->name|escape}</b>
       <div>{$s->contents|md}</div>
 
       <div>
