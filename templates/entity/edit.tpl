@@ -46,6 +46,11 @@
         {t}save{/t}
       </button>
 
+      <a href="" class="btn btn-light">
+        <i class="icon icon-cancel"></i>
+        {t}cancel{/t}
+      </a>
+
       {if $entity->id}
         <button
           name="deleteButton"
