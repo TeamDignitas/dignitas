@@ -33,7 +33,7 @@
       <textarea
         name="contents"
         id="fieldContents"
-        class="form-control {if isset($errors.contents)}is-invalid{/if}"
+        class="form-control hasUnloadWarning {if isset($errors.contents)}is-invalid{/if}"
         rows="10">{$statement->contents}</textarea>
       {include "bits/fieldErrors.tpl" errors=$errors.contents|default:null}
     </div>

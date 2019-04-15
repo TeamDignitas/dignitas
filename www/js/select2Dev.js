@@ -52,7 +52,6 @@ function initSelect2(sel, url, options) {
   return resolveSelectDeferred(sel, url)
     .done(function() {
       var s = $(sel);
-      console.log(options);
       s.select2(options);
     });
 }

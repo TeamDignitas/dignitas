@@ -7,7 +7,6 @@ $(function() {
 
     // start the timer on keyup
     $('#fieldContents').on('keyup', function() {
-      console.log('timer!');
       clearTimeout(typingTimer);
       typingTimer = setTimeout(doneTyping, DELAY);
     });
