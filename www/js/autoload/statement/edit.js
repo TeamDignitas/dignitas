@@ -16,6 +16,13 @@ $(function() {
     $('#fieldContents').on('keydown', function () {
       clearTimeout(typingTimer);
     });
+
+    initSelect2('#fieldEntityId', URL_PREFIX + 'ajax/load-entities', {
+      ajax: {
+        url: URL_PREFIX + 'ajax/search-entities',
+      },
+      minimumInputLength: 2,
+    });
   }
 
   // runs after DELAY milliseconds from the last keypress

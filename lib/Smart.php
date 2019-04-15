@@ -22,6 +22,17 @@ class Smart {
     'marked' => [
       'js' => [ 'third-party/marked-0.6.2.min.js' ],
     ],
+    'select2' => [
+      'css' => [ 'third-party/select2-4.0.5.min.css' ],
+      'js' => [
+        'third-party/select2/select2-4.0.5.min.js',
+        'third-party/select2/i18n/ro.js',
+      ],
+    ],
+    'select2Dev' => [
+      'js' => [ 'select2Dev.js' ],
+      'deps' => [ 'select2' ],
+    ],
     'main' => [
       'css' => [ 'main.css' ],
       'js' => [ 'main.js' ],

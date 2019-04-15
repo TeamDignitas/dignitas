@@ -9,6 +9,11 @@
 
     <link href="{$cssFile.path}?v={$cssFile.date}" rel="stylesheet" type="text/css">
     <script src="{$jsFile.path}?v={$jsFile.date}"></script>
+
+    {* expose some PHP constants *}
+    <script>
+      const URL_PREFIX = '{Config::URL_PREFIX}';
+    </script>
   </head>
 
   <body>

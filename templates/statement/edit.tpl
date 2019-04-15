@@ -17,11 +17,14 @@
     <input type="hidden" name="id" value="{$statement->id}">
     <div class="form-group">
       <label for="fieldEntityId">{t}author{/t}</label>
-      <input
+      <select
         name="entityId"
-        value="{$statement->entityId}"
         id="fieldEntityId"
         class="form-control {if isset($errors.entityId)}is-invalid{/if}">
+        {if $statement->entityId}
+          <option value="{$statement->entityId}"></option>
+        {/if}
+      </select>
       {include "bits/fieldErrors.tpl" errors=$errors.entityId|default:null}
     </div>
 

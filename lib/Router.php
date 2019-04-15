@@ -40,6 +40,12 @@ class Router {
       'en_US.utf8' => 'edit-author',
       'ro_RO.utf8' => 'editeaza-autor',
     ],
+    'entity/load' => [
+      'en_US.utf8' => 'ajax/load-entities',
+    ],
+    'entity/search' => [
+      'en_US.utf8' => 'ajax/search-entities',
+    ],
 
     // helpers
     'helpers/changeLocale' => [
@@ -56,6 +62,8 @@ class Router {
   // file => list of parameters expected in the URL (none by default)
   const PARAMS = [
     'entity/edit' => [ 'id' ],
+    'entity/load' => [ 'ids' ],
+    'entity/search' => [ 'term' ],
     'statement/edit' => [ 'id' ],
   ];
 

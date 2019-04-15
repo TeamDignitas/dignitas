@@ -26,9 +26,6 @@ class Config {
   const LOG_FILE = '/var/log/tbd.log';
   const LOG_LEVEL = LOG_DEBUG;
 
-  // web server info
-  const PROTOCOL = 'http';
-
   // email info
   const CONTACT_EMAIL = 'test@test.com';
   const SMTP_SERVER = 'tls://your-server.com:587'; // for outgoing emails
