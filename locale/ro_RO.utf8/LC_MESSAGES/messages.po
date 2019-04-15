@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-04-10 17:44+0300\n"
-"PO-Revision-Date: 2019-04-10 17:44+0300\n"
+"POT-Creation-Date: 2019-04-15 18:34+0300\n"
+"PO-Revision-Date: 2019-04-15 18:35+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -99,7 +99,7 @@ msgid "password change"
 msgstr "schimbarea parolei"
 
 #: templates/auth/resetPassword.tpl:45 templates/entity/edit.tpl:46
-#: templates/statement/edit.tpl:47
+#: templates/statement/edit.tpl:55
 msgid "save"
 msgstr "salvează"
 
@@ -139,7 +139,7 @@ msgstr "tip"
 msgid "Are you sure you want to delete this entity?"
 msgstr "Confirmați ștergerea acestui autor?"
 
-#: templates/entity/edit.tpl:56 templates/statement/edit.tpl:57
+#: templates/entity/edit.tpl:56 templates/statement/edit.tpl:70
 msgid "delete"
 msgstr "șterge"
 
@@ -167,15 +167,23 @@ msgstr "editează afirmație"
 msgid "author"
 msgstr "autor"
 
-#: templates/statement/edit.tpl:29
+#: templates/statement/edit.tpl:32
 msgid "contents"
 msgstr "conținut"
 
-#: templates/statement/edit.tpl:38
+#: templates/statement/edit.tpl:40
+msgid "Markdown help"
+msgstr "ajutor pentru Markdown"
+
+#: templates/statement/edit.tpl:46
 msgid "preview"
 msgstr "previzualizare"
 
-#: templates/statement/edit.tpl:55
+#: templates/statement/edit.tpl:60
+msgid "cancel"
+msgstr "renunță"
+
+#: templates/statement/edit.tpl:68
 msgid "Are you sure you want to delete this statement?"
 msgstr "Confirmați ștergerea acestei afirmații?"
 

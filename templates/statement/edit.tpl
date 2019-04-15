@@ -37,7 +37,7 @@
         rows="10">{$statement->contents}</textarea>
       {include "bits/fieldErrors.tpl" errors=$errors.contents|default:null}
       <small class="form-text text-muted float-right">
-        Markdown help: <a href="https://commonmark.org/help/">CommonMark</a>
+        {t}Markdown help{/t}: <a href="https://commonmark.org/help/">CommonMark</a>
         •
         <a href="https://guides.github.com/features/mastering-markdown/">GitHub Flavored</a>
       </small>
@@ -54,6 +54,11 @@
         <i class="icon icon-floppy"></i>
         {t}save{/t}
       </button>
+
+      <a href="" class="btn btn-light">
+        <i class="icon icon-cancel"></i>
+        {t}cancel{/t}
+      </a>
 
       {if $statement->id}
         <button
