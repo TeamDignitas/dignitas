@@ -36,6 +36,11 @@
         class="form-control hasUnloadWarning {if isset($errors.contents)}is-invalid{/if}"
         rows="10">{$statement->contents}</textarea>
       {include "bits/fieldErrors.tpl" errors=$errors.contents|default:null}
+      <small class="form-text text-muted float-right">
+        Markdown help: <a href="https://commonmark.org/help/">CommonMark</a>
+        •
+        <a href="https://guides.github.com/features/mastering-markdown/">GitHub Flavored</a>
+      </small>
     </div>
 
     <h4>{t}preview{/t}</h4>
