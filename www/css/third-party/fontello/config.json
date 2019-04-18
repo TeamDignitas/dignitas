@@ -77,6 +77,12 @@
       "css": "cancel",
       "code": 59399,
       "src": "fontawesome"
+    },
+    {
+      "uid": "0bda4bc779d4c32623dec2e43bd67ee8",
+      "css": "gauge",
+      "code": 61668,
+      "src": "fontawesome"
     }
   ]
 }

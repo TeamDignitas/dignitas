@@ -57,6 +57,10 @@
             {User::getActive()}
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarUserDropdown">
+            <a class="dropdown-item" href="{Router::link('aggregate/dashboard')}">
+              <i class="icon icon-gauge"></i>
+              {t}dashboard{/t}
+            </a>
             <a class="dropdown-item" href="{Router::link('auth/logout')}">
               <i class="icon icon-logout"></i>
               {t}log out{/t}

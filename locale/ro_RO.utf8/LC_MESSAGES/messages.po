@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-04-15 18:34+0300\n"
-"PO-Revision-Date: 2019-04-15 18:35+0300\n"
+"POT-Creation-Date: 2019-04-18 17:00+0300\n"
+"PO-Revision-Date: 2019-04-18 17:00+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -34,8 +34,23 @@ msgstr ""
 "Ne pare rău, pagina pe care ați cerut-o nu există. Vă rugăm verificați că "
 "ați tastat adresa corectă sau vizitați <a href=\"%1\">pagina principală</a>."
 
+#: templates/aggregate/dashboard.tpl:3 templates/aggregate/dashboard.tpl:6
+#: templates/bits/navmenu.tpl:62
+msgid "dashboard"
+msgstr "panou de control"
+
+#: templates/aggregate/dashboard.tpl:10 templates/index.tpl:37
+#: templates/statement/edit.tpl:7
+msgid "add a statement"
+msgstr "adaugă o afirmație"
+
+#: templates/aggregate/dashboard.tpl:16 templates/entity/edit.tpl:7
+#: templates/index.tpl:41
+msgid "add an author"
+msgstr "adaugă un autor"
+
 #: templates/auth/login.tpl:3 templates/auth/login.tpl:16
-#: templates/auth/login.tpl:66 templates/bits/navmenu.tpl:70
+#: templates/auth/login.tpl:66 templates/bits/navmenu.tpl:74
 msgid "log in"
 msgstr "autentificare"
 
@@ -115,17 +130,13 @@ msgstr "arată/ascunde meniul"
 msgid "home page"
 msgstr "pagina principală"
 
-#: templates/bits/navmenu.tpl:62
+#: templates/bits/navmenu.tpl:66
 msgid "log out"
 msgstr "închide sesiunea"
 
 #: templates/entity/edit.tpl:5
 msgid "edit author"
 msgstr "editează autor"
-
-#: templates/entity/edit.tpl:7 templates/index.tpl:41
-msgid "add an author"
-msgstr "adaugă un autor"
 
 #: templates/entity/edit.tpl:19
 msgid "name"
@@ -135,11 +146,15 @@ msgstr "nume"
 msgid "type"
 msgstr "tip"
 
-#: templates/entity/edit.tpl:54
+#: templates/entity/edit.tpl:51 templates/statement/edit.tpl:60
+msgid "cancel"
+msgstr "renunță"
+
+#: templates/entity/edit.tpl:59
 msgid "Are you sure you want to delete this entity?"
 msgstr "Confirmați ștergerea acestui autor?"
 
-#: templates/entity/edit.tpl:56 templates/statement/edit.tpl:70
+#: templates/entity/edit.tpl:61 templates/statement/edit.tpl:70
 msgid "delete"
 msgstr "șterge"
 
@@ -154,10 +169,6 @@ msgstr "editează"
 #: templates/index.tpl:21
 msgid "entities"
 msgstr "autori"
-
-#: templates/index.tpl:37 templates/statement/edit.tpl:7
-msgid "add a statement"
-msgstr "adaugă o afirmație"
 
 #: templates/statement/edit.tpl:5
 msgid "edit statement"
@@ -178,10 +189,6 @@ msgstr "ajutor pentru Markdown"
 #: templates/statement/edit.tpl:46
 msgid "preview"
 msgstr "previzualizare"
-
-#: templates/statement/edit.tpl:60
-msgid "cancel"
-msgstr "renunță"
 
 #: templates/statement/edit.tpl:68
 msgid "Are you sure you want to delete this statement?"

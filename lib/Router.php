@@ -13,6 +13,12 @@ class Router {
   // compute the forward routes upon initialization. Files have an implicit
   // .php extension.
   const ROUTES = [
+    // aggregate
+    'aggregate/dashboard' => [
+      'en_US.utf8' => 'dashboard',
+      'ro_RO.utf8' => 'panou-control',
+    ],
+
     // auth
     'auth/login' => [
       'en_US.utf8' => 'login',
