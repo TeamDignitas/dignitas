@@ -43,16 +43,28 @@
     <div class="form-group">
       <label>{t}relationships{/t}</label>
 
-      <div id="relationContainer">
-        {include "bits/relationEdit.tpl" id="stem"}
-        {foreach $relations as $r}
-          {include "bits/relationEdit.tpl" relation=$r}
-        {/foreach}
-      </div>
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th class="colOrder">order</th>
+            <th class="colType">type</th>
+            <th class="colTarget">target</th>
+            <th class="colDatePicker">start date</th>
+            <th class="colDatePicker">end date</th>
+            <th class="colActions">actions</th>
+          </tr>
+        </thead>
+        <tbody id="relationContainer">
+          {include "bits/relationEdit.tpl" id="stem"}
+          {foreach $relations as $r}
+            {include "bits/relationEdit.tpl" relation=$r}
+          {/foreach}
+        </tbody>
+      </table>
 
       {include "bits/fieldErrors.tpl" errors=$errors.relations|default:null}
 
-      <div class="pt-2">
+      <div>
         <button id="addRelationButton" class="btn btn-light btn-sm" type="button">
           <i class="icon icon-plus"></i>
           {t}add a relationship{/t}

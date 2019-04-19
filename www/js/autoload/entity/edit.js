@@ -30,7 +30,7 @@ $(function() {
   }
 
   function deleteRelation() {
-    $(this).closest('.relationWrapper').remove();
+    $(this).closest('tr').remove();
   }
 
   init();

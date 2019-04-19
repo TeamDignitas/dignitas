@@ -2,13 +2,14 @@
 {$id=$id|default:''}
 {$relation=$relation|default:null}
 
-<div {if $id}id="{$id}"{/if} class="form-row relationWrapper my-1">
-  <input type="hidden" name="relIds[]" value="{$relation->id|default:''}">
-  <div class="col-auto">
+<tr {if $id}id="{$id}"{/if}>
+  <td>
+    <input type="hidden" name="relIds[]" value="{$relation->id|default:''}">
     <label class="col-form-label icon icon-move">
     </label>
-  </div>
-  <div class="col">
+  </td>
+
+  <td>
     <select class="form-control" name="relTypes[]">
       {foreach Relation::TYPES as $t}
         <option value="{$t}" {if $relation && $relation->type == $t}selected{/if}>
@@ -16,33 +17,33 @@
         </option>
       {/foreach}
     </select>
-  </div>
+  </td>
 
-  <div class="col-4">
+  <td>
     <select name="relEntityIds[]" class="form-control toEntityId">
       <option value="{$relation->toEntityId|default:''}"></option>
     </select>
-  </div>
+  </td>
 
-  <div class="col">
+  <td>
     <input
-      type="text"
+      type="date"
       name="relStartDates[]"
       value="{$relation->startDate|default:''}"
       class="form-control">
-  </div>
+  </td>
 
-  <div class="col">
+  <td>
     <input
-      type="text"
+      type="date"
       name="relEndDates[]"
       value="{$relation->endDate|default:''}"
       class="form-control">
-  </div>
+  </td>
 
-  <div class="col">
+  <td>
     <button type="button" class="btn btn-danger deleteRelationButton">
       <i class="icon icon-trash"></i>
     </button>
-  </div>
-</div>
+  </td>
+</tr>

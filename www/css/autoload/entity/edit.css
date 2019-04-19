@@ -1,0 +1,11 @@
+.colDatePicker, .colOrder, .colActions {
+  width: 1%;
+}
+
+.colTarget {
+  width: 400px;
+}
+
+.icon-move {
+  cursor: pointer;
+}
