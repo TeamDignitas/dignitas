@@ -48,6 +48,29 @@ class BaseObject extends Model {
     }
   }
 
+  // Updates a list of dependants, e.g. a list of Relations for an
+  // Entity. Deletes DB records not present in this list, inserts new DB
+  // records where needed, and updates the rank field.
+  static function updateDependants($objects, $fkField, $fkValue, $rankField) {
+    $class = get_called_class();
+
+    // delete vanishing DB records
+    $existingIds = array_filter(Util::objectProperty($objects, 'id'));
+    $existingIds[] = 0; // ensure array is non-empty
+    $dbRecords = Model::factory($class)
+      ->where($fkField, $fkValue)
+      ->where_not_in('id', $existingIds)
+      ->delete_many();
+
+    // update or insert existing objects
+    $rank = 0;
+    foreach ($objects as $o) {
+      $o->$fkField = $fkValue;
+      $o->$rankField = ++$rank;
+      $o->save();
+    }
+  }
+
   function save() {
     /* auto-save the createDate and modDate fields if the model has them */
     if ($this instanceof DatedObject) {

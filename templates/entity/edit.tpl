@@ -40,6 +40,26 @@
       {include "bits/fieldErrors.tpl" errors=$errors.type|default:null}
     </div>
 
+    <div class="form-group">
+      <label>{t}relationships{/t}</label>
+
+      <div id="relationContainer">
+        {include "bits/relationEdit.tpl" id="stem"}
+        {foreach $relations as $r}
+          {include "bits/relationEdit.tpl" relation=$r}
+        {/foreach}
+      </div>
+
+      {include "bits/fieldErrors.tpl" errors=$errors.relations|default:null}
+
+      <div class="pt-2">
+        <button id="addRelationButton" class="btn btn-light btn-sm" type="button">
+          <i class="icon icon-plus"></i>
+          {t}add a relationship{/t}
+        </button>
+      </div>
+    </div>
+
     <div>
       <button name="saveButton" type="submit" class="btn btn-primary">
         <i class="icon icon-floppy"></i>

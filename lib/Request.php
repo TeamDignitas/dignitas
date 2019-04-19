@@ -22,7 +22,7 @@ class Request {
 
   /* Use when the parameter is expected to have array type. */
   static function getArray($name) {
-    $val = self::get($name, []);
+    return self::get($name, []);
   }
 
   /* Use when the parameter is JSON-encoded. */

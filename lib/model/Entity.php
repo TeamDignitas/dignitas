@@ -24,4 +24,11 @@ class Entity extends BaseObject implements DatedObject {
     return self::typeName($this->type);
   }
 
+  function getRelations() {
+    return Model::factory('Relation')
+      ->where('fromEntityId', $this->id)
+      ->order_by_asc('rank')
+      ->find_many();
+  }
+
 }

@@ -15,6 +15,15 @@ class Util {
     }
   }
 
+  /* Returns $obj->$prop for every $obj in $a */
+  static function objectProperty($a, $prop) {
+    $results = [];
+    foreach ($a as $obj) {
+      $results[] = $obj->$prop;
+    }
+    return $results;
+  }
+
   static function redirect($location, $statusCode = 303) {
     FlashMessage::saveToSession();
     header("Location: $location", true, $statusCode);

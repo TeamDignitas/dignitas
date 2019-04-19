@@ -1,6 +1,7 @@
 /* Custom code built on top of select2.min.js */
 
 $.fn.select2.defaults.set('language', 'ro');
+$.fn.select2.defaults.set('theme', 'bootstrap4');
 
 /**
  * Resolves a select element whose <option>s contain only IDs.

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-04-18 17:00+0300\n"
-"PO-Revision-Date: 2019-04-18 17:00+0300\n"
+"POT-Creation-Date: 2019-04-19 15:31+0300\n"
+"PO-Revision-Date: 2019-04-19 15:32+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -113,7 +113,7 @@ msgstr "am deja un cont"
 msgid "password change"
 msgstr "schimbarea parolei"
 
-#: templates/auth/resetPassword.tpl:45 templates/entity/edit.tpl:46
+#: templates/auth/resetPassword.tpl:45 templates/entity/edit.tpl:66
 #: templates/statement/edit.tpl:55
 msgid "save"
 msgstr "salvează"
@@ -146,15 +146,23 @@ msgstr "nume"
 msgid "type"
 msgstr "tip"
 
-#: templates/entity/edit.tpl:51 templates/statement/edit.tpl:60
+#: templates/entity/edit.tpl:44
+msgid "relationships"
+msgstr "relații"
+
+#: templates/entity/edit.tpl:58
+msgid "add a relationship"
+msgstr "adaugă o relație"
+
+#: templates/entity/edit.tpl:71 templates/statement/edit.tpl:60
 msgid "cancel"
 msgstr "renunță"
 
-#: templates/entity/edit.tpl:59
+#: templates/entity/edit.tpl:79
 msgid "Are you sure you want to delete this entity?"
 msgstr "Confirmați ștergerea acestui autor?"
 
-#: templates/entity/edit.tpl:61 templates/statement/edit.tpl:70
+#: templates/entity/edit.tpl:81 templates/statement/edit.tpl:70
 msgid "delete"
 msgstr "șterge"
 
@@ -210,6 +218,10 @@ msgstr "partid"
 msgid "union"
 msgstr "uniune"
 
+#: lib/model/Relation.php:13
+msgid "member of"
+msgstr "membru al"
+
 #: lib/model/User.php:23 routes/auth/login.php:53
 #: routes/auth/lostPassword.php:50
 msgid "Please enter an email address."
@@ -259,17 +271,33 @@ msgstr "Parola a fost schimbată cu succes."
 msgid "Entity deleted."
 msgstr "Am șters autorul."
 
-#: routes/entity/edit.php:29 routes/statement/edit.php:29
+#: routes/entity/edit.php:38 routes/statement/edit.php:29
 msgid "Changes saved."
 msgstr "Am salvat modificările."
 
-#: routes/entity/edit.php:47
+#: routes/entity/edit.php:59
 msgid "Please enter a name."
 msgstr "Vă rugăm să introduceți un nume."
 
-#: routes/entity/edit.php:51
+#: routes/entity/edit.php:63
 msgid "Please choose a type."
 msgstr "Vă rugăm să alegeți un tip."
+
+#: routes/entity/edit.php:88
+msgid "Please choose a target entity."
+msgstr "Vă rugăm să alegeți o entitate-țintă."
+
+#: routes/entity/edit.php:91
+msgid "An entity cannot be related to itself."
+msgstr "O entitate nu poate fi în relație cu ea însăși."
+
+#: routes/entity/edit.php:94
+msgid "The start date cannot be past the end date."
+msgstr "Data de start nu poate depăși data de sfîrșit."
+
+#: routes/entity/edit.php:97
+msgid "An entity cannot be a member of a person."
+msgstr "O entitate nu poate fi membră a unei persoane."
 
 #: routes/helpers/changeLocale.php:7
 msgid "Interface language changed. Page contents are always in Romanian."

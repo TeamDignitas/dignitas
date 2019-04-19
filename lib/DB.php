@@ -32,7 +32,7 @@ class DB {
                        Config::DB_DATABASE,
                        Config::DB_PASSWORD ? ('-p' . Config::$password) : '',
                        $filename);
-    OS::executeAndAssert($command);
+    OS::executeAndAssert($command, $ignored);
   }
 
   static function tableExists($tableName) {
