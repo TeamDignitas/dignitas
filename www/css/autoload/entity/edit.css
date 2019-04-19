@@ -1,4 +1,5 @@
 .colDatePicker, .colOrder, .colActions {
+  white-space: nowrap;
   width: 1%;
 }
 

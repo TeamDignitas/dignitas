@@ -44,14 +44,16 @@
       <label>{t}relationships{/t}</label>
 
       <table class="table table-sm">
-        <thead>
+        <thead
+          id="relationHeader"
+          {if empty($relations)}hidden{/if}>
           <tr>
-            <th class="colOrder">order</th>
-            <th class="colType">type</th>
-            <th class="colTarget">target</th>
-            <th class="colDatePicker">start date</th>
-            <th class="colDatePicker">end date</th>
-            <th class="colActions">actions</th>
+            <th class="colOrder">{t}order{/t}</th>
+            <th class="colType">{t}type{/t}</th>
+            <th class="colTarget">{t}target{/t}</th>
+            <th class="colDatePicker">{t}start date{/t}</th>
+            <th class="colDatePicker">{t}end date{/t}</th>
+            <th class="colActions">{t}actions{/t}</th>
           </tr>
         </thead>
         <tbody id="relationContainer">

@@ -5,6 +5,7 @@ $(function() {
       url: URL_PREFIX + 'ajax/search-entities',
     },
     minimumInputLength: 2,
+    width: '100%',
   };
 
   var stem = null; // stem relation
@@ -27,6 +28,7 @@ $(function() {
   function addRelation() {
     var t = stem.clone(true).appendTo('#relationContainer');
     t.find('.toEntityId').select2(TO_ENTITY_ID_OPTIONS);
+    $('#relationHeader').removeAttr('hidden');
   }
 
   function deleteRelation() {

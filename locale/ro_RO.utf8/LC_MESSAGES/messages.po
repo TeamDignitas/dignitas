@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-04-19 15:31+0300\n"
-"PO-Revision-Date: 2019-04-19 15:32+0300\n"
+"POT-Creation-Date: 2019-04-19 17:02+0300\n"
+"PO-Revision-Date: 2019-04-19 17:02+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -113,7 +113,7 @@ msgstr "am deja un cont"
 msgid "password change"
 msgstr "schimbarea parolei"
 
-#: templates/auth/resetPassword.tpl:45 templates/entity/edit.tpl:66
+#: templates/auth/resetPassword.tpl:45 templates/entity/edit.tpl:80
 #: templates/statement/edit.tpl:55
 msgid "save"
 msgstr "salvează"
@@ -142,7 +142,7 @@ msgstr "editează autor"
 msgid "name"
 msgstr "nume"
 
-#: templates/entity/edit.tpl:29
+#: templates/entity/edit.tpl:29 templates/entity/edit.tpl:52
 msgid "type"
 msgstr "tip"
 
@@ -150,19 +150,39 @@ msgstr "tip"
 msgid "relationships"
 msgstr "relații"
 
-#: templates/entity/edit.tpl:58
+#: templates/entity/edit.tpl:51
+msgid "order"
+msgstr "ordine"
+
+#: templates/entity/edit.tpl:53
+msgid "target"
+msgstr "țintă"
+
+#: templates/entity/edit.tpl:54
+msgid "start date"
+msgstr "de la"
+
+#: templates/entity/edit.tpl:55
+msgid "end date"
+msgstr "pînă la"
+
+#: templates/entity/edit.tpl:56
+msgid "actions"
+msgstr "acțiuni"
+
+#: templates/entity/edit.tpl:72
 msgid "add a relationship"
 msgstr "adaugă o relație"
 
-#: templates/entity/edit.tpl:71 templates/statement/edit.tpl:60
+#: templates/entity/edit.tpl:85 templates/statement/edit.tpl:60
 msgid "cancel"
 msgstr "renunță"
 
-#: templates/entity/edit.tpl:79
+#: templates/entity/edit.tpl:93
 msgid "Are you sure you want to delete this entity?"
 msgstr "Confirmați ștergerea acestui autor?"
 
-#: templates/entity/edit.tpl:81 templates/statement/edit.tpl:70
+#: templates/entity/edit.tpl:95 templates/statement/edit.tpl:70
 msgid "delete"
 msgstr "șterge"
 
