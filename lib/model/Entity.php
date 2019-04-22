@@ -31,4 +31,44 @@ class Entity extends BaseObject implements DatedObject {
       ->find_many();
   }
 
+  function copyUploadedImage($tmpImageName) {
+    $dest = $this->getImageLocation();
+    @mkdir(dirname($dest), 0777, true);
+
+    // clean up old images and thumbnails
+    $cmd = sprintf('rm -f %simg/entity/%d.* %simg/entity/thumb-*/%d.*',
+                   Config::SHARED_DRIVE, $this->id,
+                   Config::SHARED_DRIVE, $this->id);
+    OS::execute($cmd, $ignored);
+
+    copy($tmpImageName, $dest);
+  }
+
+  function getImageLocation() {
+    return ($this->imageExtension && $this->id)
+      ? sprintf('%simg/entity/%d.%s', Config::SHARED_DRIVE, $this->id, $this->imageExtension)
+      : '';
+  }
+
+  // assumes $thumbIndex is a valid index in Config::THUMB_SIZES
+  function getThumbLocation($thumbIndex) {
+    $rec = Config::THUMB_SIZES[$thumbIndex];
+    return ($this->imageExtension && $this->id)
+      ? sprintf('%simg/entity/thumb-%dx%d/%d.%s',
+                Config::SHARED_DRIVE,
+                $rec[0],
+                $rec[1],
+                $this->id,
+                $this->imageExtension)
+      : '';
+  }
+
+  function getThumbLink($thumbIndex) {
+    return sprintf('%s/%d/%d.%s',
+                   Router::link('entity/image'),
+                   $this->id,
+                   $thumbIndex,
+                   $this->imageExtension);
+  }
+
 }

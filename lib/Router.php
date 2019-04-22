@@ -52,6 +52,10 @@ class Router {
     'entity/search' => [
       'en_US.utf8' => 'ajax/search-entities',
     ],
+    'entity/image' => [
+      'en_US.utf8' => 'entity-image',
+      'ro_RO.utf8' => 'imagine-entitate',
+    ],
 
     // helpers
     'helpers/changeLocale' => [
@@ -68,6 +72,7 @@ class Router {
   // file => list of parameters expected in the URL (none by default)
   const PARAMS = [
     'entity/edit' => [ 'id' ],
+    'entity/image' => [ 'id', 'fileName' ],
     'entity/load' => [ 'ids' ],
     'entity/search' => [ 'term' ],
     'statement/edit' => [ 'id' ],

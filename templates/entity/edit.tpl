@@ -13,7 +13,7 @@
 {block "content"}
   <h3>{$smarty.capture.title}</h3>
 
-  <form method="post">
+  <form method="post" enctype="multipart/form-data">
     <input type="hidden" name="id" value="{$entity->id}">
     <div class="form-group">
       <label for="fieldName">{t}name{/t}</label>
@@ -72,6 +72,28 @@
           {t}add a relationship{/t}
         </button>
       </div>
+    </div>
+
+    <div class="form-group">
+      <label for="fieldImage">{t}image{/t}</label>
+      {if $entity->imageExtension}
+        <div class="mb-2">
+          <img src="{$entity->getThumbLink(0)}" class="img-thumbnail rounded mx-auto d-block">
+        </div>
+      {/if}
+      <div class="input-group mb-3">
+        <div class="custom-file">
+          <input
+            name="image"
+            type="file"
+            class="custom-file-input {if isset($errors.image)}is-invalid{/if}"
+            id="fieldImage">
+          <label class="custom-file-label" for="fieldImage">
+            {t}choose an image to upload or leave empty to keep existing image{/t}
+          </label>
+        </div>
+      </div>
+      {include "bits/fieldErrors.tpl" errors=$errors.image|default:null}
     </div>
 
     <div>

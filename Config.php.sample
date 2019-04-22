@@ -22,6 +22,23 @@ class Config {
   // development mode
   const DEVELOPMENT_MODE = true;
 
+  // Shared drive (common to all backends). Include a trailing slash.
+  const SHARED_DRIVE = '/tmp/tbd-shared/';
+
+  // image configuration
+  const MAX_IMAGE_SIZE = 16 << 20; // 16 MB
+
+  // allowed MIME type => file extension
+  const IMAGE_MIME_TYPES = [
+    'image/gif' => 'gif',
+    'image/jpeg' => 'jpg',
+    'image/png' => 'png',
+    'image/svg+xml' => 'svg',
+  ];
+  const THUMB_SIZES = [
+    [ 200, 300 ],
+  ];
+
   // logging
   const LOG_FILE = '/var/log/tbd.log';
   const LOG_LEVEL = LOG_DEBUG;

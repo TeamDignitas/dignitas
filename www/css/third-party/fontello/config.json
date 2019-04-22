@@ -95,6 +95,12 @@
       "css": "move",
       "code": 61511,
       "src": "fontawesome"
+    },
+    {
+      "uid": "c95735c17a10af81448c7fed98a04546",
+      "css": "folder-open",
+      "code": 59401,
+      "src": "fontawesome"
     }
   ]
 }

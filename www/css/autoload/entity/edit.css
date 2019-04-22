@@ -10,3 +10,9 @@
 .icon-move {
   cursor: pointer;
 }
+
+.custom-file-input ~ .custom-file-label::after {
+  font-family: 'icons';
+  /* hack: this hardcodes the glyph for icon-folder-open */
+  content: '\e809';
+}

@@ -31,9 +31,19 @@ if ($saveButton) {
     Request::getArray('relStartDates'),
     Request::getArray('relEndDates'));
 
-  $errors = validate($entity, $relations);
+  $imageData = Request::getImage('image', $tmpImageName);
+
+  $errors = validate($entity, $relations, $imageData['status']);
   if (empty($errors)) {
+    if ($imageData['status'] == Request::UPLOAD_OK) {
+      $entity->imageExtension = $imageData['extension'];
+      // otherwise leave it unchanged
+    }
     $entity->save();
+    if ($imageData['status'] == Request::UPLOAD_OK) {
+      $entity->copyUploadedImage($imageData['tmpImageName']);
+    }
+
     Relation::updateDependants($relations, 'fromEntityId', $entity->id, 'rank');
     FlashMessage::add(_('Changes saved.'), 'success');
     Util::redirect(Router::link('entity/edit') . '/' . $entity->id);
@@ -52,9 +62,10 @@ Smart::display('entity/edit.tpl');
 
 /*************************************************************************/
 
-function validate($entity, $relations) {
+function validate($entity, $relations, $imageStatus) {
   $errors = [];
 
+  // misc fields
   if (!$entity->name) {
     $errors['name'][] = _('Please enter a name.');
   }
@@ -63,6 +74,7 @@ function validate($entity, $relations) {
     $errors['type'][] = _('Please choose a type.');
   }
 
+  // relations
   $countNoEntityIds = 0;
   $countSelf = 0;
   $countBadDates = 0;
@@ -95,6 +107,22 @@ function validate($entity, $relations) {
   }
   if ($countPersonMembers) {
     $errors['relations'][] = _('An entity cannot be a member of a person.');
+  }
+
+  // image field
+  switch ($imageStatus) {
+    case Request::UPLOAD_TOO_LARGE:
+      $mb = Config::MAX_IMAGE_SIZE >> 20;
+      $errors['image'][] = sprintf(_('Maximum image size is %s MB.'), $mb);
+      break;
+
+    case Request::UPLOAD_BAD_MIME_TYPE:
+      $errors['image'][] = _('Supported image types are JPEG, PNG, GIF and SVG.');
+      break;
+
+    case Request::UPLOAD_OTHER_ERROR:
+      $errors['image'][] = _('An error occurred while uploading the image.');
+      break;
   }
 
   return $errors;
