@@ -2,7 +2,7 @@
 {$id=$id|default:''}
 {$relation=$relation|default:null}
 
-<tr {if $id}id="{$id}"{/if}>
+<tr {if $id}id="{$id}" hidden{/if}>
   <td>
     <input type="hidden" name="relIds[]" value="{$relation->id|default:''}">
     <label class="col-form-label icon icon-move">

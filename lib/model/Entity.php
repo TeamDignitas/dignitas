@@ -71,4 +71,21 @@ class Entity extends BaseObject implements DatedObject {
                    $this->imageExtension);
   }
 
+  /**
+   * If the thumbnail exists, returns its dimensions. If not, falls back to
+   * the Config.php values. The two may differ due to differences in aspect.
+   **/
+  function getThumbSize($thumbIndex) {
+    $file = $this->getThumbLocation($thumbIndex);
+
+    $rec = ($file && file_exists($file))
+      ? getimagesize($file)
+      : Config::THUMB_SIZES[$thumbIndex];
+
+    return [
+      'width' => $rec[0],
+      'height' => $rec[1],
+    ];
+  }
+
 }
