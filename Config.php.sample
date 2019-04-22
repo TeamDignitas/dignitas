@@ -36,6 +36,7 @@ class Config {
     'image/svg+xml' => 'svg',
   ];
   const THUMB_SIZES = [
+    [ 40, 60 ],
     [ 200, 300 ],
   ];
 

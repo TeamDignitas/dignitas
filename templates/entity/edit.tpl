@@ -78,7 +78,7 @@
       <label for="fieldImage">{t}image{/t}</label>
       {if $entity->imageExtension}
         <div class="mb-2">
-          <img src="{$entity->getThumbLink(0)}" class="img-thumbnail rounded mx-auto d-block">
+          <img src="{$entity->getThumbLink(1)}" class="img-thumbnail rounded mx-auto d-block">
         </div>
       {/if}
       <div class="input-group mb-3">

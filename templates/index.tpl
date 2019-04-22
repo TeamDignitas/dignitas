@@ -22,6 +22,11 @@
 
   {foreach $entities as $e}
     <div>
+      {if $e->imageExtension}
+        <img
+          src="{$e->getThumbLink(0)}"
+          class="img-thumbnail rounded float-right">
+        {/if}
       <b>{$e->name|escape}</b>
       <div>{$e->getTypeName()}</div>
 
