@@ -22,7 +22,9 @@ if ($deleteButton) {
 
 if ($saveButton) {
   $statement->entityId = Request::get('entityId');
-  $statement->contents = Request::get('contents');
+  $statement->summary = Request::get('summary');
+  $statement->context = Request::get('context');
+  $statement->goal = Request::get('goal');
   $statement->dateMade = Request::get('dateMade');
 
   $errors = validate($statement);
@@ -50,8 +52,16 @@ function validate($statement) {
     $errors['entityId'][] = _('Please enter an author.');
   }
 
-  if (!$statement->contents) {
-    $errors['contents'][] = _('Please enter the statement contents.');
+  if (!$statement->summary) {
+    $errors['summary'][] = _('Please enter the statement summary.');
+  }
+
+  if (!$statement->context) {
+    $errors['context'][] = _('Please enter the statement context.');
+  }
+
+  if (!$statement->goal) {
+    $errors['goal'][] = _('Please enter the statement goal.');
   }
 
   if (!$statement->dateMade) {

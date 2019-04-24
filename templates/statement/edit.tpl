@@ -29,21 +29,6 @@
     </div>
 
     <div class="form-group">
-      <label for="fieldContents">{t}contents{/t}</label>
-      <textarea
-        name="contents"
-        id="fieldContents"
-        class="form-control hasUnloadWarning {if isset($errors.contents)}is-invalid{/if}"
-        rows="10">{$statement->contents}</textarea>
-      {include "bits/fieldErrors.tpl" errors=$errors.contents|default:null}
-      <small class="form-text text-muted float-right">
-        {t}Markdown help{/t}: <a href="https://commonmark.org/help/">CommonMark</a>
-        •
-        <a href="https://guides.github.com/features/mastering-markdown/">GitHub Flavored</a>
-      </small>
-    </div>
-
-    <div class="form-group">
       <label for="fieldDateMade">{t}statement date{/t}</label>
       <input
         type="date"
@@ -55,10 +40,49 @@
       {include "bits/fieldErrors.tpl" errors=$errors.dateMade|default:null}
     </div>
 
+    <div class="form-group">
+      <label for="fieldSummary">{t}summary{/t}</label>
+      <input
+        type="text"
+        name="summary"
+        id="fieldSummary"
+        value="{$statement->summary|escape}"
+        class="form-control hasUnloadWarning {if isset($errors.summary)}is-invalid{/if}"
+        required>
+      {include "bits/fieldErrors.tpl" errors=$errors.summary|default:null}
+    </div>
+
+    <div class="form-group">
+      <label for="fieldContext">{t}context{/t}</label>
+      <textarea
+        name="context"
+        id="fieldContext"
+        class="form-control hasUnloadWarning {if isset($errors.context)}is-invalid{/if}"
+        rows="10">{$statement->context}</textarea>
+      {include "bits/fieldErrors.tpl" errors=$errors.context|default:null}
+      <small class="form-text text-muted float-right">
+        {t}Markdown help{/t}: <a href="https://commonmark.org/help/">CommonMark</a>
+        •
+        <a href="https://guides.github.com/features/mastering-markdown/">GitHub Flavored</a>
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="fieldGoal">{t}goal{/t}</label>
+      <input
+        type="text"
+        name="goal"
+        id="fieldGoal"
+        value="{$statement->goal|escape}"
+        class="form-control hasUnloadWarning {if isset($errors.goal)}is-invalid{/if}"
+        required>
+      {include "bits/fieldErrors.tpl" errors=$errors.goal|default:null}
+    </div>
+
     <h4>{t}preview{/t}</h4>
 
     <div id="markdownPreview">
-      {$statement->contents|md}
+      {$statement->context|md}
     </div>
 
     <div>

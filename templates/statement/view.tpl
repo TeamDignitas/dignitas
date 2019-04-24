@@ -1,20 +1,49 @@
 {extends "layout.tpl"}
 
-{block "title"}{cap}{$statement->contents|md}{/cap}{/block}
+{block "title"}{cap}{$statement->summary|escape}{/cap}{/block}
 
 {block "content"}
-  <h3>{$statement->contents|md}</h3>
+  <div class="clearfix">
+    {if $entity->imageExtension}
+      <img
+        src="{$entity->getThumbLink(1)}"
+        class="img-thumbnail rounded float-right ml-5">
+    {/if}
 
-  --
-  {strip}
-  <a href="{Router::link('entity/view')}/{$entity->id}">
-    {$entity->name|escape}
-  </a>,
-  {/strip}
-  {$statement->dateMade|ld}
+    <h3>{$statement->summary|escape}</h3>
 
-  <div class="text-muted">
-    {t}added by{/t} <b>{$statement->getUser()|escape}</b>
-    {$statement->createDate|moment}
+    <p>
+      --
+      {strip}
+      <a href="{Router::link('entity/view')}/{$entity->id}">
+        {$entity->name|escape}
+      </a>,
+      {/strip}
+      {$statement->dateMade|ld}
+    </p>
+
+    <h4>{t}context{/t}</h4>
+
+    {$statement->context|md}
+
+    <h4>{t}goal{/t}</h4>
+
+    {$statement->goal|escape}
   </div>
+
+  <div class="mt-3 clearfix">
+    {if $statement->isEditable()}
+      <div class="float-left">
+        <a href="{Router::link('statement/edit')}/{$statement->id}">
+          {t}edit{/t}
+        </a>
+      </div>
+    {/if}
+
+    <p class="text-muted float-right">
+      {t}added by{/t} <b>{$statement->getUser()|escape}</b>
+      {$statement->createDate|moment}
+    </p>
+  </div>
+
 {/block}

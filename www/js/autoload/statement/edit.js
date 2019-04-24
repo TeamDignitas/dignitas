@@ -6,13 +6,13 @@ $(function() {
     var typingTimer;
 
     // start the timer on keyup
-    $('#fieldContents').on('keyup', function() {
+    $('#fieldContext').on('keyup', function() {
       clearTimeout(typingTimer);
       typingTimer = setTimeout(doneTyping, DELAY);
     });
 
     // clear the timer on keydown
-    $('#fieldContents').on('keydown', function () {
+    $('#fieldContext').on('keydown', function () {
       clearTimeout(typingTimer);
     });
 
@@ -26,7 +26,7 @@ $(function() {
 
   // runs after DELAY milliseconds from the last keypress
   function doneTyping () {
-    var raw = $('#fieldContents').val();
+    var raw = $('#fieldContext').val();
     $('#markdownPreview').html(marked(raw));
   }
 

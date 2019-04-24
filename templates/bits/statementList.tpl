@@ -10,9 +10,9 @@
     {/if}
 
     <div>
-      <div class="mb-n2">
+      <div>
         <a href="{Router::link('statement/view')}/{$s->id}">
-          {$s->contents|md}
+          {$s->summary|escape}
         </a>
       </div>
 

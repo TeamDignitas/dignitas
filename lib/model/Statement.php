@@ -10,4 +10,8 @@ class Statement extends BaseObject implements DatedObject {
     return User::get_by_id($this->userId);
   }
 
+  function isEditable() {
+    return User::getActiveId();
+  }
+
 }
