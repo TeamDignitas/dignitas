@@ -88,4 +88,8 @@ class Entity extends BaseObject implements DatedObject {
     ];
   }
 
+  public function __toString() {
+    return $this->name;
+  }
+
 }

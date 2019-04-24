@@ -46,15 +46,19 @@ class Router {
       'en_US.utf8' => 'edit-author',
       'ro_RO.utf8' => 'editeaza-autor',
     ],
+    'entity/image' => [
+      'en_US.utf8' => 'entity-image',
+      'ro_RO.utf8' => 'imagine-entitate',
+    ],
     'entity/load' => [
       'en_US.utf8' => 'ajax/load-entities',
     ],
     'entity/search' => [
       'en_US.utf8' => 'ajax/search-entities',
     ],
-    'entity/image' => [
-      'en_US.utf8' => 'entity-image',
-      'ro_RO.utf8' => 'imagine-entitate',
+    'entity/view' => [
+      'en_US.utf8' => 'entity',
+      'ro_RO.utf8' => 'autor',
     ],
 
     // helpers
@@ -79,6 +83,7 @@ class Router {
     'entity/image' => [ 'id', 'fileName' ],
     'entity/load' => [ 'ids' ],
     'entity/search' => [ 'term' ],
+    'entity/view' => [ 'id' ],
     'statement/edit' => [ 'id' ],
     'statement/view' => [ 'id' ],
   ];

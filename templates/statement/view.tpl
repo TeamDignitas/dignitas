@@ -5,7 +5,13 @@
 {block "content"}
   <h3>{$statement->contents|md}</h3>
 
-  -- <b>{$entity->name|escape}</b>, {$statement->dateMade|ld}
+  --
+  {strip}
+  <a href="{Router::link('entity/view')}/{$entity->id}">
+    {$entity->name|escape}
+  </a>,
+  {/strip}
+  {$statement->dateMade|ld}
 
   <div class="text-muted">
     {t}added by{/t} <b>{$statement->getUser()|escape}</b>

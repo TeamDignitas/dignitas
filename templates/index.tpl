@@ -4,36 +4,9 @@
 
 {block "content"}
 
-  <h3>{t}statements{/t}</h3>
+  <h3>{t}recent statements{/t}</h3>
 
-  {foreach $statements as $s}
-    <div class="statement clearfix">
-      {$entity=$s->getEntity()}
-      {if $entity->imageExtension}
-        <img
-          src="{$entity->getThumbLink(1)}"
-          class="img-thumbnail rounded float-right ml-5">
-      {/if}
-
-      <div>
-        <div class="mb-n2">
-          <a href="{Router::link('statement/view')}/{$s->id}">
-            {$s->contents|md}
-          </a>
-        </div>
-
-        <div class="text-right">
-          -- <b>{$entity->name|escape}</b>,
-          {$s->dateMade|ld}
-        </div>
-
-        <div class="text-right text-muted">
-          {t}added by{/t} <b>{$s->getUser()|escape}</b>
-          {$s->createDate|moment}
-        </div>
-      </div>
-    </div>
-  {/foreach}
+  {include "bits/statementList.tpl"}
 
   <h3>{t}entities{/t}</h3>
 

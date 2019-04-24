@@ -63,7 +63,10 @@ class Util {
    * $date: formatted as YYYY-MM-DD, e.g. '2019-04-24'.
    * @return same as localTimestamp().
    **/
-  static function localDate($date, $shortMonthName = false) {
+  static function localDate($date, $shortMonthName = false, $default = '') {
+    if (!$date) {
+      return $default;
+    }
     return self::localTimestamp(strtotime($date), $shortMonthName);
   }
 

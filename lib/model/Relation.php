@@ -18,4 +18,8 @@ class Relation extends BaseObject implements DatedObject {
     return self::typeName($this->type);
   }
 
+  function getToEntity() {
+    return Entity::get_by_id($this->toEntityId);
+  }
+
 }
