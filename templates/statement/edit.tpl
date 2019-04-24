@@ -43,6 +43,18 @@
       </small>
     </div>
 
+    <div class="form-group">
+      <label for="fieldDateMade">{t}statement date{/t}</label>
+      <input
+        type="date"
+        name="dateMade"
+        id="fieldDateMade"
+        value="{$statement->dateMade}"
+        class="form-control {if isset($errors.dateMade)}is-invalid{/if}"
+        required>
+      {include "bits/fieldErrors.tpl" errors=$errors.dateMade|default:null}
+    </div>
+
     <h4>{t}preview{/t}</h4>
 
     <div id="markdownPreview">

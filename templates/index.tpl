@@ -7,15 +7,27 @@
   <h3>{t}statements{/t}</h3>
 
   {foreach $statements as $s}
-    <div>
-      <b>{$s->getEntity()->name|escape}</b>
-      <div>{$s->contents|md}</div>
-
-      <div>
-        <a href="{Router::link('statement/edit')}/{$s->id}">{t}edit{/t}</a>
+    <div class="statement">
+      <div class="mb-n2">
+        <a href="{Router::link('statement/edit')}/{$s->id}">
+          {$s->contents|md}
+        </a>
       </div>
 
-      <hr>
+      <div class="clearfix">
+        <div class="float-right">
+          -- <b>{$s->getEntity()->name|escape}</b>,
+          {$s->dateMade|ld}
+        </div>
+      </div>
+
+      <div class="clearfix">
+        <div class="float-right text-muted">
+          {t}added by{/t} <b>{$s->getUser()|escape}</b>
+          {$s->createDate|moment}
+        </div>
+      </div>
+    </div>
   {/foreach}
 
   <h3>{t}entities{/t}</h3>

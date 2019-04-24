@@ -6,4 +6,8 @@ class Statement extends BaseObject implements DatedObject {
     return Entity::get_by_id($this->entityId);
   }
 
+  function getUser() {
+    return User::get_by_id($this->userId);
+  }
+
 }

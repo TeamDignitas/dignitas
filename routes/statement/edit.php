@@ -10,6 +10,7 @@ if ($id) {
   $statement = Statement::get_by_id($id);
 } else {
   $statement = Model::factory('Statement')->create();
+  $statement->dateMade = Util::today();
   $statement->userId = User::getActiveId();
 }
 
@@ -22,6 +23,7 @@ if ($deleteButton) {
 if ($saveButton) {
   $statement->entityId = Request::get('entityId');
   $statement->contents = Request::get('contents');
+  $statement->dateMade = Request::get('dateMade');
 
   $errors = validate($statement);
   if (empty($errors)) {
@@ -50,6 +52,12 @@ function validate($statement) {
 
   if (!$statement->contents) {
     $errors['contents'][] = _('Please enter the statement contents.');
+  }
+
+  if (!$statement->dateMade) {
+    $errors['dateMade'][] = _('Please enter a date.');
+  } else if ($statement->dateMade > Util::today()) {
+    $errors['dateMade'][] = _('This date may not be in the future.');
   }
 
   return $errors;

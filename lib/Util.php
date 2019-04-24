@@ -46,4 +46,54 @@ class Util {
     self::redirect($path);
   }
 
+  static function today() {
+    return date('Y-m-d');
+  }
+
+  /**
+   * @return the localized date with long month names (e.g. 'April 24, 2019')
+   * or short month names (e.g. 'Apr 24, 2019').
+   **/
+  static function localTimestamp($timestamp, $shortMonthName = false) {
+    $format = $shortMonthName ? _('%b %e, %Y') : _('%B %e, %Y');
+    return trim(strftime($format, $timestamp));
+  }
+
+  /**
+   * $date: formatted as YYYY-MM-DD, e.g. '2019-04-24'.
+   * @return same as localTimestamp().
+   **/
+  static function localDate($date, $shortMonthName = false) {
+    return self::localTimestamp(strtotime($date), $shortMonthName);
+  }
+
+  static function moment($timestamp) {
+    $delta = time() - $timestamp;
+
+    $exact = self::localTimestamp($timestamp);
+
+    $days = (int)($delta / (60 * 60 * 24));
+    if ($days >= 4) {
+      return sprintf(_('on %s'), self::localTimestamp($timestamp));
+    } else if ($days >= 2) {
+      return sprintf(_('%d days ago') . ' (%s)', $days, $exact);
+    } else if ($days == 1) {
+      return sprintf(_('yesterday') . ' (%s)', $exact);
+    }
+
+    $hours = (int)($delta / (60 * 60));
+    if ($hours) {
+      return sprintf(ngettext('one hour ago', '%d hours ago', $hours) . ' (%s)',
+                     $hours, $exact);
+    }
+
+    $minutes = (int)$delta / 60;
+    if ($minutes) {
+      return sprintf(ngettext('one minute ago', '%d minutes ago', $minutes) . ' (%s)',
+                     $minutes, $exact);
+    }
+
+    return sprintf(ngettext('one second ago', '%d seconds ago', $delta) . ' (%s)',
+                     $delta, $exact);
+  }
 }
