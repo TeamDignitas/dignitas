@@ -1,3 +1,19 @@
 h3::first-letter {
   text-transform: capitalize;
 }
+
+footer {
+  border-top: 1px solid #ddd;
+  margin-top: 15px;
+  padding-top: 5px;
+}
+
+#footerLinks li {
+  padding-left: 0;
+}
+
+#footerLinks li:not(:first-child):before {
+  content: '•';
+  padding-right: 8px;
+  color: #999;
+}

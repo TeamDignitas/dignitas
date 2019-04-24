@@ -7,22 +7,27 @@
   <h3>{t}statements{/t}</h3>
 
   {foreach $statements as $s}
-    <div class="statement">
-      <div class="mb-n2">
-        <a href="{Router::link('statement/edit')}/{$s->id}">
-          {$s->contents|md}
-        </a>
-      </div>
+    <div class="statement clearfix">
+      {$entity=$s->getEntity()}
+      {if $entity->imageExtension}
+        <img
+          src="{$entity->getThumbLink(1)}"
+          class="img-thumbnail rounded float-right ml-5">
+      {/if}
 
-      <div class="clearfix">
-        <div class="float-right">
-          -- <b>{$s->getEntity()->name|escape}</b>,
+      <div>
+        <div class="mb-n2">
+          <a href="{Router::link('statement/view')}/{$s->id}">
+            {$s->contents|md}
+          </a>
+        </div>
+
+        <div class="text-right">
+          -- <b>{$entity->name|escape}</b>,
           {$s->dateMade|ld}
         </div>
-      </div>
 
-      <div class="clearfix">
-        <div class="float-right text-muted">
+        <div class="text-right text-muted">
           {t}added by{/t} <b>{$s->getUser()|escape}</b>
           {$s->createDate|moment}
         </div>

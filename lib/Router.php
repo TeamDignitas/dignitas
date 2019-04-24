@@ -67,6 +67,10 @@ class Router {
       'en_US.utf8' => 'edit-statement',
       'ro_RO.utf8' => 'editeaza-afirmatie',
     ],
+    'statement/view' => [
+      'en_US.utf8' => 'statement',
+      'ro_RO.utf8' => 'afirmatie',
+    ],
   ];
 
   // file => list of parameters expected in the URL (none by default)
@@ -76,6 +80,7 @@ class Router {
     'entity/load' => [ 'ids' ],
     'entity/search' => [ 'term' ],
     'statement/edit' => [ 'id' ],
+    'statement/view' => [ 'id' ],
   ];
 
   private static $fwdRoutes = [];

@@ -30,8 +30,15 @@
 
       <footer>
 
-        <div class="text-center">
-          © 2019 <a href="https://catalin.francu.com/">Cătălin Frâncu</a></li>
+        <div id="footerLinks" class="text-right">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              © 2019 <a href="https://catalin.francu.com/">Cătălin Frâncu</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/CatalinFrancu/tbd">GitHub</a>
+            </li>
+          </ul>
         </div>
 
       </footer>
