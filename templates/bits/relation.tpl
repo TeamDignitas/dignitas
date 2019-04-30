@@ -3,7 +3,12 @@
 {assign var="ended" value=($r->endDate && $r->endDate < Util::today())}
 
 <div {if $ended}class="text-muted"{/if}>
-  {$r->getTypeName()} <b>{$r->getToEntity()}</b>
+  {$r->getTypeName()}
+
+  {$to=$r->getToEntity()}
+  <a href="{Router::link('entity/view')}/{$to->id}">
+    {$to->name}
+  </a>
 
   {if $r->startDate && $r->endDate}
     {t 1=$sd 2=$ed}from %1 to %2{/t}

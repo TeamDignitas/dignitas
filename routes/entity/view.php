@@ -14,9 +14,22 @@ $statements = Model::factory('Statement')
   ->limit(10)
   ->find_many();
 
+$members = [];
+if ($entity->type == Entity::TYPE_PARTY) {
+  $members = Model::factory('Entity')
+    ->table_alias('m')
+    ->select('m.*')
+    ->distinct()
+    ->join('relation', ['m.id', '=', 'r.fromEntityId'], 'r')
+    ->where('r.toEntityId', $entity->id)
+    ->where('r.type', Relation::TYPE_MEMBER)
+    ->find_many();
+}
+
 Smart::assign([
   'entity' => $entity,
   'relations' => $entity->getRelations(),
   'statements' => $statements,
+  'members' => $members,
 ]);
 Smart::display('entity/view.tpl');

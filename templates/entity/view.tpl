@@ -36,6 +36,20 @@
     </div>
   </div>
 
+  {if count($members)}
+    <h4>{cap}{t}members{/t}{/cap}</h4>
+
+    <ul>
+      {foreach $members as $m}
+        <li>
+          <a href="{Router::link('entity/view')}/{$m->id}">
+            {$m->name}
+          </a>
+        </li>
+      {/foreach}
+    </ul>
+  {/if}
+
   {if count($statements)}
     <h4>{cap}{t}statements{/t}{/cap}</h4>
     {include "bits/statementList.tpl" entityImages=false}
