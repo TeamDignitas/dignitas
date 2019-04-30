@@ -1,7 +1,5 @@
 <?php
 
-Util::assertLoggedIn();
-
 $id = Request::get('id');
 $saveButton = Request::has('saveButton');
 $deleteButton = Request::has('deleteButton');
@@ -15,9 +13,14 @@ if ($id) {
 }
 
 if ($deleteButton) {
+  User::enforce(User::PRIV_DELETE_STATEMENT);
   $statement->delete();
   FlashMessage::add(_('Statement deleted.'), 'success');
   Util::redirectToHome();
+}
+
+if (!$statement->isEditable()) {
+  User::enforce($statement->id ? User::PRIV_EDIT_STATEMENT : User::PRIV_ADD_STATEMENT);
 }
 
 if ($saveButton) {

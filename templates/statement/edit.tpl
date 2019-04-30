@@ -96,7 +96,7 @@
         {t}cancel{/t}
       </a>
 
-      {if $statement->id}
+      {if $statement->id && User::may(User::PRIV_DELETE_STATEMENT)}
         <button
           name="deleteButton"
           type="submit"

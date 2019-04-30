@@ -16,25 +16,28 @@
         <img
           src="{$e->getThumbLink(0)}"
           class="img-thumbnail rounded float-right">
-        {/if}
-      <b>{$e->name|escape}</b>
-      <div>{$e->getTypeName()}</div>
+      {/if}
 
-      <div>
-        <a href="{Router::link('entity/edit')}/{$e->id}">{t}edit{/t}</a>
-      </div>
+      <a href="{Router::link('entity/view')}/{$e->id}">
+        {$e->name|escape}
+      </a>
+      <div>{$e->getTypeName()}</div>
 
       <hr>
   {/foreach}
 
   <div>
-    <a href="{Router::link('statement/edit')}" class="btn btn-link">
-      {t}add a statement{/t}
-    </a>
+    {if User::may(User::PRIV_ADD_STATEMENT)}
+      <a href="{Router::link('statement/edit')}" class="btn btn-link">
+        {t}add a statement{/t}
+      </a>
+    {/if}
 
-    <a href="{Router::link('entity/edit')}" class="btn btn-link">
+    {if User::may(User::PRIV_ADD_ENTITY)}
+      <a href="{Router::link('entity/edit')}" class="btn btn-link">
       {t}add an author{/t}
-    </a>
+      </a>
+    {/if}
   </div>
 
 {/block}

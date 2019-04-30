@@ -112,7 +112,7 @@
         {t}cancel{/t}
       </a>
 
-      {if $entity->id}
+      {if $entity->id && User::may(User::PRIV_DELETE_ENTITY)}
         <button
           name="deleteButton"
           type="submit"

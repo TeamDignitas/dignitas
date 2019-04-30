@@ -1,7 +1,5 @@
 <?php
 
-Util::assertLoggedIn();
-
 $id = Request::get('id');
 $saveButton = Request::has('saveButton');
 $deleteButton = Request::has('deleteButton');
@@ -14,10 +12,13 @@ if ($id) {
 }
 
 if ($deleteButton) {
+  User::enforce(User::PRIV_DELETE_ENTITY);
   $entity->delete();
   FlashMessage::add(_('Entity deleted.'), 'success');
   Util::redirectToHome();
 }
+
+User::enforce($entity->id ? User::PRIV_EDIT_ENTITY : User::PRIV_ADD_ENTITY);
 
 if ($saveButton) {
   $entity->name = Request::get('name');

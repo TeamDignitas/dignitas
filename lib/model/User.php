@@ -6,6 +6,9 @@ class User extends BaseObject implements DatedObject {
   const PRIV_ADD_ENTITY = 0x01;
   const PRIV_EDIT_ENTITY = 0x02;
   const PRIV_DELETE_ENTITY = 0x04;
+  const PRIV_ADD_STATEMENT = 0x08;
+  const PRIV_EDIT_STATEMENT = 0x10;
+  const PRIV_DELETE_STATEMENT = 0x20;
 
   private static $active = null; // user currently logged in
 
@@ -58,6 +61,15 @@ class User extends BaseObject implements DatedObject {
   // checks whether the active user has any privilege in the mask
   static function may($privilegeMask) {
     return self::$active !== null;
+  }
+
+  // checks whether the active user has any privilege in the mask and bounces
+  // them if not
+  static function enforce($privilegeMask) {
+    if (!self::may($privilegeMask)) {
+      FlashMessage::add(_('You are not allowed to perform this action.'));
+      Util::redirectToHome();
+    }
   }
 
   public function __toString() {

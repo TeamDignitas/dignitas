@@ -33,17 +33,16 @@
 
   <div class="mt-3 clearfix">
     {if $statement->isEditable()}
-      <div class="float-left">
-        <a href="{Router::link('statement/edit')}/{$statement->id}">
-          {t}edit{/t}
-        </a>
-      </div>
+      <a href="{Router::link('statement/edit')}/{$statement->id}" class="btn btn-light">
+        <i class="icon icon-edit"></i>
+        {t}edit{/t}
+      </a>
     {/if}
 
-    <p class="text-muted float-right">
+    <small class="btn text-muted float-right">
       {t}added by{/t} <b>{$statement->getUser()|escape}</b>
       {$statement->createDate|moment}
-    </p>
+    </small>
   </div>
 
 {/block}
