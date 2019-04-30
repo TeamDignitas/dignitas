@@ -25,6 +25,15 @@
         </li>
       {/foreach}
     </ul>
+
+    <div>
+      {if User::may(User::PRIV_EDIT_ENTITY)}
+        <a href="{Router::link('entity/edit')}/{$entity->id}" class="btn btn-light">
+          <i class="icon icon-edit"></i>
+          {t}edit{/t}
+        </a>
+      {/if}
+    </div>
   </div>
 
   {if count($statements)}

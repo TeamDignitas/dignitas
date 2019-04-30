@@ -2,6 +2,11 @@
 
 class User extends BaseObject implements DatedObject {
 
+  // privileges
+  const PRIV_ADD_ENTITY = 0x01;
+  const PRIV_EDIT_ENTITY = 0x02;
+  const PRIV_DELETE_ENTITY = 0x04;
+
   private static $active = null; // user currently logged in
 
   static function getActive() {
@@ -48,6 +53,11 @@ class User extends BaseObject implements DatedObject {
     } else {
       return null;
     }
+  }
+
+  // checks whether the active user has any privilege in the mask
+  static function may($privilegeMask) {
+    return self::$active !== null;
   }
 
   public function __toString() {
