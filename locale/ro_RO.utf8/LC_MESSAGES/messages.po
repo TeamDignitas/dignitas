@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-04-24 17:51+0300\n"
-"PO-Revision-Date: 2019-04-24 17:52+0300\n"
+"POT-Creation-Date: 2019-04-30 15:44+0300\n"
+"PO-Revision-Date: 2019-04-30 15:44+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -39,12 +39,12 @@ msgstr ""
 msgid "dashboard"
 msgstr "panou de control"
 
-#: templates/aggregate/dashboard.tpl:10 templates/index.tpl:32
+#: templates/aggregate/dashboard.tpl:11 templates/index.tpl:30
 #: templates/statement/edit.tpl:7
 msgid "add a statement"
 msgstr "adaugă o afirmație"
 
-#: templates/aggregate/dashboard.tpl:16 templates/entity/edit.tpl:7
+#: templates/aggregate/dashboard.tpl:19 templates/entity/edit.tpl:7
 #: templates/index.tpl:36
 msgid "add an author"
 msgstr "adaugă un autor"
@@ -134,19 +134,19 @@ msgstr "pagina principală"
 msgid "log out"
 msgstr "închide sesiunea"
 
-#: templates/bits/relation.tpl:9
+#: templates/bits/relation.tpl:12
 msgid "from %1 to %2"
 msgstr "de pe %1 pe %2"
 
-#: templates/bits/relation.tpl:11
+#: templates/bits/relation.tpl:14
 msgid "since %1"
 msgstr "de pe %1"
 
-#: templates/bits/relation.tpl:13
+#: templates/bits/relation.tpl:16
 msgid "until %1"
 msgstr "pînă pe %1"
 
-#: templates/bits/statementList.tpl:30 templates/statement/view.tpl:36
+#: templates/bits/statementList.tpl:26 templates/statement/view.tpl:39
 msgid "added by"
 msgstr "adăugată de"
 
@@ -212,7 +212,15 @@ msgstr "Confirmați ștergerea acestui autor?"
 msgid "delete"
 msgstr "șterge"
 
-#: templates/entity/view.tpl:31
+#: templates/entity/view.tpl:33 templates/statement/view.tpl:34
+msgid "edit"
+msgstr "editează"
+
+#: templates/entity/view.tpl:40
+msgid "members"
+msgstr "membri"
+
+#: templates/entity/view.tpl:52
 msgid "statements"
 msgstr "afirmații"
 
@@ -223,10 +231,6 @@ msgstr "afirmații recente"
 #: templates/index.tpl:11
 msgid "entities"
 msgstr "autori"
-
-#: templates/index.tpl:24 templates/statement/view.tpl:30
-msgid "edit"
-msgstr "editează"
 
 #: templates/statement/edit.tpl:5
 msgid "edit statement"
@@ -244,7 +248,7 @@ msgstr "data afirmației"
 msgid "summary"
 msgstr "sumar"
 
-#: templates/statement/edit.tpl:56 templates/statement/view.tpl:18
+#: templates/statement/edit.tpl:56 templates/statement/view.tpl:21
 msgid "context"
 msgstr "context"
 
@@ -252,7 +256,7 @@ msgstr "context"
 msgid "Markdown help"
 msgstr "ajutor pentru Markdown"
 
-#: templates/statement/edit.tpl:71 templates/statement/view.tpl:22
+#: templates/statement/edit.tpl:71 templates/statement/view.tpl:25
 msgid "goal"
 msgstr "scop"
 
@@ -278,22 +282,21 @@ msgstr "%e %b %Y"
 msgid "%B %e, %Y"
 msgstr "%e %B %Y"
 
-#: lib/Util.php:80
+#: lib/Util.php:81
 #, php-format
 msgid "on %s"
 msgstr "pe %s"
 
-#: lib/Util.php:82
+#: lib/Util.php:83
 #, php-format
 msgid "%d days ago"
 msgstr "acum %d zile"
 
-#: lib/Util.php:84
-#, php-format
+#: lib/Util.php:85
 msgid "yesterday"
 msgstr "ieri"
 
-#: lib/Util.php:89
+#: lib/Util.php:90
 #, php-format
 msgid "one hour ago"
 msgid_plural "%d hours ago"
@@ -301,7 +304,7 @@ msgstr[0] "acum o oră"
 msgstr[1] "acum %d ore"
 msgstr[2] "acum %d de ore"
 
-#: lib/Util.php:95
+#: lib/Util.php:96
 #, php-format
 msgid "one minute ago"
 msgid_plural "%d minutes ago"
@@ -309,7 +312,7 @@ msgstr[0] "acum un minut"
 msgstr[1] "acum %d minute"
 msgstr[2] "acum %d de minute"
 
-#: lib/Util.php:99
+#: lib/Util.php:100
 #, php-format
 msgid "one second ago"
 msgid_plural "%d seconds ago"
@@ -333,34 +336,38 @@ msgstr "uniune"
 msgid "member of"
 msgstr "membru în"
 
-#: lib/model/User.php:23 routes/auth/login.php:53
+#: lib/model/User.php:31 routes/auth/login.php:53
 #: routes/auth/lostPassword.php:50
 msgid "Please enter an email address."
 msgstr "Vă rugăm să introduceți o adresă de e-mail."
 
-#: lib/model/User.php:28
+#: lib/model/User.php:36
 msgid "This email address is already taken."
 msgstr "Această adresă de e-mail este deja folosită."
 
-#: lib/model/User.php:32 routes/auth/lostPassword.php:52
+#: lib/model/User.php:40 routes/auth/lostPassword.php:52
 msgid "This email address looks incorrect."
 msgstr "Adresa de e-mail pare incorectă."
 
-#: lib/model/User.php:41 routes/auth/login.php:57
+#: lib/model/User.php:49 routes/auth/login.php:57
 msgid "Please enter a password."
 msgstr "Vă rugăm să introduceți o parolă."
 
-#: lib/model/User.php:43
+#: lib/model/User.php:51
 msgid "Please enter your password twice to prevent typos."
 msgstr "Vă rugăm să introduceți parola de două ori pentru verificare."
 
-#: lib/model/User.php:45
+#: lib/model/User.php:53
 msgid "Passwords don't match."
 msgstr "Parolele nu coincid."
 
-#: lib/model/User.php:47
+#: lib/model/User.php:55
 msgid "Your password must be at least 8 characters long."
 msgstr "Parola trebuie să aibă cel puțin 8 caractere."
+
+#: lib/model/User.php:70
+msgid "You are not allowed to perform this action."
+msgstr "Nu aveți permisiunea să faceți această acțiune."
 
 #: routes/auth/login.php:64
 msgid "Incorrect email address or password."
@@ -378,48 +385,52 @@ msgstr "Codul de recuperare a parolei a expirat."
 msgid "Password changed successfully."
 msgstr "Parola a fost schimbată cu succes."
 
-#: routes/entity/edit.php:18
+#: routes/entity/edit.php:17
 msgid "Entity deleted."
 msgstr "Am șters autorul."
 
-#: routes/entity/edit.php:48 routes/statement/edit.php:33
+#: routes/entity/edit.php:49 routes/statement/edit.php:36
 msgid "Changes saved."
 msgstr "Am salvat modificările."
 
-#: routes/entity/edit.php:70
+#: routes/entity/edit.php:71
 msgid "Please enter a name."
 msgstr "Vă rugăm să introduceți un nume."
 
-#: routes/entity/edit.php:74
+#: routes/entity/edit.php:75
 msgid "Please choose a type."
 msgstr "Vă rugăm să alegeți un tip."
 
-#: routes/entity/edit.php:100
+#: routes/entity/edit.php:101
 msgid "Please choose a target entity."
 msgstr "Vă rugăm să alegeți o entitate-țintă."
 
-#: routes/entity/edit.php:103
+#: routes/entity/edit.php:104
 msgid "An entity cannot be related to itself."
 msgstr "O entitate nu poate fi în relație cu ea însăși."
 
-#: routes/entity/edit.php:106
+#: routes/entity/edit.php:107
 msgid "The start date cannot be past the end date."
 msgstr "Data de start nu poate depăși data de sfîrșit."
 
-#: routes/entity/edit.php:109
-msgid "An entity cannot be a member of a person."
-msgstr "O entitate nu poate fi membră a unei persoane."
+#: routes/entity/edit.php:111
+msgid ""
+"Persons can be members of parties and parties can be members of unions. No "
+"other types of memberships are allowed."
+msgstr ""
+"Persoanele pot fi membre ale partidelor și partidele pot fi membre ale "
+"uniunilor. Alte tipuri de apartenență nu sînt permise."
 
-#: routes/entity/edit.php:116
+#: routes/entity/edit.php:119
 #, php-format
 msgid "Maximum image size is %s MB."
 msgstr "Dimensiunea maximă pentru imagini este de %s MB."
 
-#: routes/entity/edit.php:120
+#: routes/entity/edit.php:123
 msgid "Supported image types are JPEG, PNG, GIF and SVG."
 msgstr "Tipurile de imagini acceptate sînt JPEG, PNG, GIF și SVG."
 
-#: routes/entity/edit.php:124
+#: routes/entity/edit.php:127
 msgid "An error occurred while uploading the image."
 msgstr "A apărut o eroare la încărcarea imaginii."
 
@@ -431,34 +442,37 @@ msgstr "Autorul pe care îl căutați nu există."
 msgid "Interface language changed. Page contents are always in Romanian."
 msgstr "Am schimbat limba interfeței. Conținutul paginii este mereu în română."
 
-#: routes/statement/edit.php:19
+#: routes/statement/edit.php:18
 msgid "Statement deleted."
 msgstr "Am șters afirmația."
 
-#: routes/statement/edit.php:52
+#: routes/statement/edit.php:55
 msgid "Please enter an author."
 msgstr "Vă rugăm să introduceți un autor."
 
-#: routes/statement/edit.php:56
+#: routes/statement/edit.php:59
 msgid "Please enter the statement summary."
 msgstr "Vă rugăm să introduceți sumarul afirmației."
 
-#: routes/statement/edit.php:60
+#: routes/statement/edit.php:63
 msgid "Please enter the statement context."
 msgstr "Vă rugăm să introduceți contextul afirmației."
 
-#: routes/statement/edit.php:64
+#: routes/statement/edit.php:67
 msgid "Please enter the statement goal."
 msgstr "Vă rugăm să introduceți scopul afirmației."
 
-#: routes/statement/edit.php:68
+#: routes/statement/edit.php:71
 msgid "Please enter a date."
 msgstr "Vă rugăm să introduceți o dată."
 
-#: routes/statement/edit.php:70
+#: routes/statement/edit.php:73
 msgid "This date may not be in the future."
 msgstr "Această dată nu poate fi în viitor."
 
 #: routes/statement/view.php:7
 msgid "The statement you are looking for does not exist."
 msgstr "Afirmația pe care o căutați nu există."
+
+#~ msgid "An entity cannot be a member of a person."
+#~ msgstr "O entitate nu poate fi membră a unei persoane."

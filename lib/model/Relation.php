@@ -22,4 +22,10 @@ class Relation extends BaseObject implements DatedObject {
     return Entity::get_by_id($this->toEntityId);
   }
 
+  // checks if an entity of type A can be a member of an entity of type B
+  static function validMembership($a, $b) {
+    return ($a == Entity::TYPE_PERSON && $b == Entity::TYPE_PARTY) ||
+      ($a == Entity::TYPE_PARTY && $b == Entity::TYPE_UNION);
+  }
+
 }

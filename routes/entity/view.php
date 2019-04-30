@@ -14,17 +14,17 @@ $statements = Model::factory('Statement')
   ->limit(10)
   ->find_many();
 
-$members = [];
-if ($entity->type == Entity::TYPE_PARTY) {
-  $members = Model::factory('Entity')
-    ->table_alias('m')
-    ->select('m.*')
-    ->distinct()
-    ->join('relation', ['m.id', '=', 'r.fromEntityId'], 'r')
-    ->where('r.toEntityId', $entity->id)
-    ->where('r.type', Relation::TYPE_MEMBER)
-    ->find_many();
-}
+$members = Model::factory('Entity')
+  ->table_alias('m')
+  ->select('m.*')
+  ->distinct()
+  ->join('relation', ['m.id', '=', 'r.fromEntityId'], 'r')
+  ->where('r.toEntityId', $entity->id)
+  ->where('r.type', Relation::TYPE_MEMBER)
+  // where_any_is does not work with null values
+  ->where_raw('((r.startDate is null) or (r.startDate <= ?))', [ Util::today() ])
+  ->where_raw('((r.endDate is null) or (r.endDate >= ?))', [ Util::today() ])
+  ->find_many();
 
 Smart::assign([
   'entity' => $entity,
