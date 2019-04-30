@@ -42,9 +42,7 @@
     <ul>
       {foreach $members as $m}
         <li>
-          <a href="{Router::link('entity/view')}/{$m->id}">
-            {$m->name}
-          </a>
+          {include "bits/entityLink.tpl" e=$m}
         </li>
       {/foreach}
     </ul>

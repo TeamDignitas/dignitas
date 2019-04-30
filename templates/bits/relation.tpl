@@ -6,9 +6,7 @@
   {$r->getTypeName()}
 
   {$to=$r->getToEntity()}
-  <a href="{Router::link('entity/view')}/{$to->id}">
-    {$to->name}
-  </a>
+  {include "bits/entityLink.tpl" e=$to}
 
   {if $r->startDate && $r->endDate}
     {t 1=$sd 2=$ed}from %1 to %2{/t}

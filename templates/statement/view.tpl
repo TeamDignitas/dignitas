@@ -14,11 +14,7 @@
 
     <p>
       --
-      {strip}
-      <a href="{Router::link('entity/view')}/{$entity->id}">
-        {$entity->name|escape}
-      </a>,
-      {/strip}
+      {include "bits/entityLink.tpl" e=$entity},
       {$statement->dateMade|ld}
     </p>
 

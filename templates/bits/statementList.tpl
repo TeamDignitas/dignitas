@@ -18,12 +18,8 @@
 
       <div class="text-right">
         --
-        {strip}
-        <a href="{Router::link('entity/view')}/{$entity->id}">
-          {$entity->name|escape}
-        </a>,
-          {/strip}
-          {$s->dateMade|ld}
+        {include "bits/entityLink.tpl" e=$entity},
+        {$s->dateMade|ld}
       </div>
 
       <div class="text-right text-muted small">

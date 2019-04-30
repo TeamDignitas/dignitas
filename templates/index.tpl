@@ -18,9 +18,7 @@
           class="img-thumbnail rounded float-right">
       {/if}
 
-      <a href="{Router::link('entity/view')}/{$e->id}">
-        {$e->name|escape}
-      </a>
+      {include "bits/entityLink.tpl" e=$e}
       <div>{$e->getTypeName()}</div>
     </div>
     <hr>
