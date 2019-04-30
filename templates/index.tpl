@@ -11,7 +11,7 @@
   <h3>{t}entities{/t}</h3>
 
   {foreach $entities as $e}
-    <div>
+    <div class="clearfix">
       {if $e->imageExtension}
         <img
           src="{$e->getThumbLink(0)}"
@@ -22,8 +22,8 @@
         {$e->name|escape}
       </a>
       <div>{$e->getTypeName()}</div>
-
-      <hr>
+    </div>
+    <hr>
   {/foreach}
 
   <div>

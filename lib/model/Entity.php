@@ -88,6 +88,14 @@ class Entity extends BaseObject implements DatedObject {
     ];
   }
 
+  public function delete() {
+    Log::warning("Deleted entity {$this->id} ({$this->name})");
+    Statement::delete_all_by_entityId($this->id);
+    Relation::delete_all_by_fromEntityId($this->id);
+    Relation::delete_all_by_toEntityId($this->id);
+    parent::delete();
+  }
+
   public function __toString() {
     return $this->name;
   }

@@ -26,7 +26,7 @@
           {$s->dateMade|ld}
       </div>
 
-      <div class="text-right text-muted">
+      <div class="text-right text-muted small">
         {t}added by{/t} <b>{$s->getUser()|escape}</b>
         {$s->createDate|moment}
       </div>

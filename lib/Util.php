@@ -74,29 +74,30 @@ class Util {
     $delta = time() - $timestamp;
 
     $exact = self::localTimestamp($timestamp);
+    $exactBracket = " ({$exact})";
 
     $days = (int)($delta / (60 * 60 * 24));
     if ($days >= 4) {
       return sprintf(_('on %s'), self::localTimestamp($timestamp));
     } else if ($days >= 2) {
-      return sprintf(_('%d days ago') . ' (%s)', $days, $exact);
+      return sprintf(_('%d days ago'), $days) . $exactBracket;
     } else if ($days == 1) {
-      return sprintf(_('yesterday') . ' (%s)', $exact);
+      return _('yesterday') . $exactBracket;
     }
 
     $hours = (int)($delta / (60 * 60));
     if ($hours) {
-      return sprintf(ngettext('one hour ago', '%d hours ago', $hours) . ' (%s)',
-                     $hours, $exact);
+      return sprintf(ngettext('one hour ago', '%d hours ago', $hours), $hours)
+        . $exactBracket;
     }
 
-    $minutes = (int)$delta / 60;
+    $minutes = (int)($delta / 60);
     if ($minutes) {
-      return sprintf(ngettext('one minute ago', '%d minutes ago', $minutes) . ' (%s)',
-                     $minutes, $exact);
+      return sprintf(ngettext('one minute ago', '%d minutes ago', $minutes), $minutes)
+        . $exactBracket;
     }
 
-    return sprintf(ngettext('one second ago', '%d seconds ago', $delta) . ' (%s)',
-                     $delta, $exact);
+    return sprintf(ngettext('one second ago', '%d seconds ago', $delta), $delta)
+      . $exactBracket;
   }
 }
