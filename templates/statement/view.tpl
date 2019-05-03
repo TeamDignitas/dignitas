@@ -54,4 +54,45 @@
     </small>
   </div>
 
+  {if count($answers)}
+    <h4 class="mt-3">
+      {t count=count($answers) 1=count($answers) plural="%1 answers"}One answer{/t}
+    </h4>
+
+    {foreach $answers as $a}
+      <div class="answer clearfix {if $a->id == $answerId}highlightedAnswer{/if}">
+        {$a->contents|md}
+
+        <small class="btn text-muted float-right">
+          {t}posted by{/t} <b>{$a->getUser()|escape}</b>
+          {$a->createDate|moment}
+        </small>
+      </div>
+    {/foreach}
+  {/if}
+
+  {if User::may(User::PRIV_ADD_ANSWER)}
+    <h4 class="mt-3">{cap}{t}your answer{/t}{/cap}</h4>
+
+    <form method="post">
+      <input type="hidden" name="statementId" value="{$statement->id}">
+
+      <div class="form-group">
+        <textarea
+          name="contents"
+          class="form-control hasUnloadWarning {if isset($errors.contents)}is-invalid{/if}"
+          rows="10"></textarea>
+        {include "bits/fieldErrors.tpl" errors=$errors.contents|default:null}
+        {include "bits/markdownHelp.tpl"}
+      </div>
+
+      <div>
+        <button name="postAnswerButton" type="submit" class="btn btn-primary">
+          <i class="icon icon-floppy"></i>
+          {t}post your answer{/t}
+        </button>
+      </div>
+    </form>
+  {/if}
+
 {/block}

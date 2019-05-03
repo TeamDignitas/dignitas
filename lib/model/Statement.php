@@ -10,6 +10,13 @@ class Statement extends BaseObject implements DatedObject {
     return User::get_by_id($this->userId);
   }
 
+  function getAnswers() {
+    return Model::factory('Answer')
+      ->where('statementId', $this->id)
+      ->order_by_desc('createDate')
+      ->find_many();
+  }
+
   function getSources() {
     return Model::factory('StatementSource')
       ->where('statementId', $this->id)

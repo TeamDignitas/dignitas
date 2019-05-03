@@ -60,11 +60,7 @@
         class="form-control hasUnloadWarning {if isset($errors.context)}is-invalid{/if}"
         rows="10">{$statement->context}</textarea>
       {include "bits/fieldErrors.tpl" errors=$errors.context|default:null}
-      <small class="form-text text-muted float-right">
-        {t}Markdown help{/t}: <a href="https://commonmark.org/help/">CommonMark</a>
-        •
-        <a href="https://guides.github.com/features/mastering-markdown/">GitHub Flavored</a>
-      </small>
+      {include "bits/markdownHelp.tpl"}
     </div>
 
     <div class="form-group">

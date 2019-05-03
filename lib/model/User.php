@@ -9,6 +9,7 @@ class User extends BaseObject implements DatedObject {
   const PRIV_ADD_STATEMENT = 0x08;
   const PRIV_EDIT_STATEMENT = 0x10;
   const PRIV_DELETE_STATEMENT = 0x20;
+  const PRIV_ADD_ANSWER = 0x40;
 
   private static $active = null; // user currently logged in
 

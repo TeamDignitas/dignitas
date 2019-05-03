@@ -7,3 +7,13 @@
   padding-right: 8px;
   color: #999;
 }
+
+.answer {
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.highlightedAnswer {
+  background: #ddd;
+  padding-left: 10px;
+}

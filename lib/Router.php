@@ -85,7 +85,7 @@ class Router {
     'entity/search' => [ 'term' ],
     'entity/view' => [ 'id' ],
     'statement/edit' => [ 'id' ],
-    'statement/view' => [ 'id' ],
+    'statement/view' => [ 'id', 'answerId' ],
   ];
 
   private static $fwdRoutes = [];
