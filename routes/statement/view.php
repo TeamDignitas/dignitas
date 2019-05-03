@@ -12,5 +12,6 @@ Smart::addResources('marked');
 Smart::assign([
   'statement' => $statement,
   'entity' => $statement->getEntity(),
+  'sources' => $statement->getSources(),
 ]);
 Smart::display('statement/view.tpl');

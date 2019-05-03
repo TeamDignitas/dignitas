@@ -18,6 +18,19 @@
       {$statement->dateMade|ld}
     </p>
 
+    {if count($sources)}
+      <div id="sources" class="my-2">
+        {t}sources{/t}:
+        <ul class="list-inline">
+          {foreach $sources as $s}
+            <li class="list-inline-item">
+              <a href="{$s->url}">{$s->getDisplayName()}</a>
+            </li>
+          {/foreach}
+        </ul>
+      </div>
+    {/if}
+
     <h4>{t}context{/t}</h4>
 
     {$statement->context|md}

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-04-30 15:44+0300\n"
-"PO-Revision-Date: 2019-04-30 15:44+0300\n"
+"POT-Creation-Date: 2019-05-03 15:17+0300\n"
+"PO-Revision-Date: 2019-05-03 15:17+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -114,7 +114,7 @@ msgid "password change"
 msgstr "schimbarea parolei"
 
 #: templates/auth/resetPassword.tpl:45 templates/entity/edit.tpl:107
-#: templates/statement/edit.tpl:91
+#: templates/statement/edit.tpl:113
 msgid "save"
 msgstr "salvează"
 
@@ -146,7 +146,7 @@ msgstr "de pe %1"
 msgid "until %1"
 msgstr "pînă pe %1"
 
-#: templates/bits/statementList.tpl:26 templates/statement/view.tpl:39
+#: templates/bits/statementList.tpl:26 templates/statement/view.tpl:52
 msgid "added by"
 msgstr "adăugată de"
 
@@ -200,7 +200,7 @@ msgstr ""
 "alegeți o imagine pentru încărcare sau lăsați gol pentru a păstra imaginea "
 "existentă"
 
-#: templates/entity/edit.tpl:112 templates/statement/edit.tpl:96
+#: templates/entity/edit.tpl:112 templates/statement/edit.tpl:118
 msgid "cancel"
 msgstr "renunță"
 
@@ -208,11 +208,11 @@ msgstr "renunță"
 msgid "Are you sure you want to delete this entity?"
 msgstr "Confirmați ștergerea acestui autor?"
 
-#: templates/entity/edit.tpl:122 templates/statement/edit.tpl:106
+#: templates/entity/edit.tpl:122 templates/statement/edit.tpl:128
 msgid "delete"
 msgstr "șterge"
 
-#: templates/entity/view.tpl:33 templates/statement/view.tpl:34
+#: templates/entity/view.tpl:33 templates/statement/view.tpl:47
 msgid "edit"
 msgstr "editează"
 
@@ -248,7 +248,7 @@ msgstr "data afirmației"
 msgid "summary"
 msgstr "sumar"
 
-#: templates/statement/edit.tpl:56 templates/statement/view.tpl:21
+#: templates/statement/edit.tpl:56 templates/statement/view.tpl:34
 msgid "context"
 msgstr "context"
 
@@ -256,17 +256,29 @@ msgstr "context"
 msgid "Markdown help"
 msgstr "ajutor pentru Markdown"
 
-#: templates/statement/edit.tpl:71 templates/statement/view.tpl:25
+#: templates/statement/edit.tpl:71 templates/statement/view.tpl:38
 msgid "goal"
 msgstr "scop"
 
-#: templates/statement/edit.tpl:82
+#: templates/statement/edit.tpl:83
+msgid "source URLs"
+msgstr "URL-uri sursă"
+
+#: templates/statement/edit.tpl:99
+msgid "add a source"
+msgstr "adaugă o sursă"
+
+#: templates/statement/edit.tpl:104
 msgid "preview"
 msgstr "previzualizare"
 
-#: templates/statement/edit.tpl:104
+#: templates/statement/edit.tpl:126
 msgid "Are you sure you want to delete this statement?"
 msgstr "Confirmați ștergerea acestei afirmații?"
+
+#: templates/statement/view.tpl:23
+msgid "sources"
+msgstr "surse"
 
 #: lib/Util.php:13
 msgid "You need to be logged in to perform this action."
@@ -389,7 +401,7 @@ msgstr "Parola a fost schimbată cu succes."
 msgid "Entity deleted."
 msgstr "Am șters autorul."
 
-#: routes/entity/edit.php:49 routes/statement/edit.php:36
+#: routes/entity/edit.php:49 routes/statement/edit.php:43
 msgid "Changes saved."
 msgstr "Am salvat modificările."
 
@@ -446,29 +458,33 @@ msgstr "Am schimbat limba interfeței. Conținutul paginii este mereu în român
 msgid "Statement deleted."
 msgstr "Am șters afirmația."
 
-#: routes/statement/edit.php:55
+#: routes/statement/edit.php:64
 msgid "Please enter an author."
 msgstr "Vă rugăm să introduceți un autor."
 
-#: routes/statement/edit.php:59
+#: routes/statement/edit.php:68
 msgid "Please enter the statement summary."
 msgstr "Vă rugăm să introduceți sumarul afirmației."
 
-#: routes/statement/edit.php:63
+#: routes/statement/edit.php:72
 msgid "Please enter the statement context."
 msgstr "Vă rugăm să introduceți contextul afirmației."
 
-#: routes/statement/edit.php:67
+#: routes/statement/edit.php:76
 msgid "Please enter the statement goal."
 msgstr "Vă rugăm să introduceți scopul afirmației."
 
-#: routes/statement/edit.php:71
+#: routes/statement/edit.php:80
 msgid "Please enter a date."
 msgstr "Vă rugăm să introduceți o dată."
 
-#: routes/statement/edit.php:73
+#: routes/statement/edit.php:82
 msgid "This date may not be in the future."
 msgstr "Această dată nu poate fi în viitor."
+
+#: routes/statement/edit.php:92
+msgid "Some source URLS are invalid."
+msgstr "Unele URL-uri sursă sînt invalide."
 
 #: routes/statement/view.php:7
 msgid "The statement you are looking for does not exist."

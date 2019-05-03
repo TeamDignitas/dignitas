@@ -30,25 +30,34 @@ if ($saveButton) {
   $statement->goal = Request::get('goal');
   $statement->dateMade = Request::get('dateMade');
 
-  $errors = validate($statement);
+  $sources = buildSources(
+    $statement,
+    Request::getArray('ssIds'),
+    Request::getArray('ssUrls'));
+
+  $errors = validate($statement, $sources);
   if (empty($errors)) {
     $statement->save();
+    StatementSource::updateDependants($sources, 'statementId', $statement->id, 'rank');
+
     FlashMessage::add(_('Changes saved.'), 'success');
     Util::redirect(Router::link('statement/edit') . '/' . $statement->id);
   } else {
     Smart::assign('errors', $errors);
+    Smart::assign('sources', $sources);
   }
 } else {
   // first time loading the page
+  Smart::assign('sources', $statement->getSources());
 }
 
-Smart::addResources('marked', 'select2Dev');
+Smart::addResources('marked', 'select2Dev', 'sortable');
 Smart::assign('statement', $statement);
 Smart::display('statement/edit.tpl');
 
 /*************************************************************************/
 
-function validate($statement) {
+function validate($statement, $sources) {
   $errors = [];
 
   if (!$statement->entityId) {
@@ -73,5 +82,33 @@ function validate($statement) {
     $errors['dateMade'][] = _('This date may not be in the future.');
   }
 
+  $countBadUrls = 0;
+  foreach ($sources as $s) {
+    if (!filter_var($s->url, FILTER_VALIDATE_URL)) {
+      $countBadUrls++;
+    }
+  }
+  if ($countBadUrls) {
+    $errors['sources'][] = _('Some source URLS are invalid.');
+  }
+
   return $errors;
+}
+
+function buildSources($statement, $ids, $urls) {
+  $result = [];
+
+  foreach ($ids as $i => $id) {
+    $ss = $id
+      ? StatementSource::get_by_id($id)
+      : Model::factory('StatementSource')->create();
+    $ss->url = $urls[$i];
+
+    // ignore empty records
+    if ($ss->url) {
+      $result[] = $ss;
+    }
+  }
+
+  return $result;
 }
