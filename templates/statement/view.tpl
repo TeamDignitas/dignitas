@@ -56,7 +56,7 @@
 
   {if count($answers)}
     <h4 class="mt-3">
-      {t count=count($answers) 1=count($answers) plural="%1 answers"}One answer{/t}
+      {t count=count($answers) 1=count($answers) plural="%1 answers"}one answer{/t}
     </h4>
 
     {foreach $answers as $a}
@@ -72,13 +72,14 @@
   {/if}
 
   {if User::may(User::PRIV_ADD_ANSWER)}
-    <h4 class="mt-3">{cap}{t}your answer{/t}{/cap}</h4>
+    <h4 class="mt-3">{t}your answer{/t}</h4>
 
     <form method="post">
       <input type="hidden" name="statementId" value="{$statement->id}">
 
       <div class="form-group">
         <textarea
+          id="fieldContents"
           name="contents"
           class="form-control hasUnloadWarning {if isset($errors.contents)}is-invalid{/if}"
           rows="10"></textarea>
@@ -93,6 +94,10 @@
         </button>
       </div>
     </form>
+
+    <h4 class="mt-3">{t}preview{/t}</h4>
+
+    <div id="markdownPreview"></div>
   {/if}
 
 {/block}

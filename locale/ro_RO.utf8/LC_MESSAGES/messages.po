@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-05-03 15:17+0300\n"
-"PO-Revision-Date: 2019-05-03 15:17+0300\n"
+"POT-Creation-Date: 2019-05-03 16:32+0300\n"
+"PO-Revision-Date: 2019-05-03 16:33+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -114,13 +114,17 @@ msgid "password change"
 msgstr "schimbarea parolei"
 
 #: templates/auth/resetPassword.tpl:45 templates/entity/edit.tpl:107
-#: templates/statement/edit.tpl:113
+#: templates/statement/edit.tpl:109
 msgid "save"
 msgstr "salvează"
 
 #: templates/bits/fakeLogin.tpl:3 templates/bits/fakeLogin.tpl:25
 msgid "test user login"
 msgstr "autentificare ca utilizator de test"
+
+#: templates/bits/markdownHelp.tpl:2
+msgid "Markdown help"
+msgstr "ajutor pentru Markdown"
 
 #: templates/bits/navmenu.tpl:9
 msgid "toggle menu"
@@ -200,7 +204,7 @@ msgstr ""
 "alegeți o imagine pentru încărcare sau lăsați gol pentru a păstra imaginea "
 "existentă"
 
-#: templates/entity/edit.tpl:112 templates/statement/edit.tpl:118
+#: templates/entity/edit.tpl:112 templates/statement/edit.tpl:114
 msgid "cancel"
 msgstr "renunță"
 
@@ -208,7 +212,7 @@ msgstr "renunță"
 msgid "Are you sure you want to delete this entity?"
 msgstr "Confirmați ștergerea acestui autor?"
 
-#: templates/entity/edit.tpl:122 templates/statement/edit.tpl:128
+#: templates/entity/edit.tpl:122 templates/statement/edit.tpl:124
 msgid "delete"
 msgstr "șterge"
 
@@ -252,33 +256,48 @@ msgstr "sumar"
 msgid "context"
 msgstr "context"
 
-#: templates/statement/edit.tpl:64
-msgid "Markdown help"
-msgstr "ajutor pentru Markdown"
-
-#: templates/statement/edit.tpl:71 templates/statement/view.tpl:38
+#: templates/statement/edit.tpl:67 templates/statement/view.tpl:38
 msgid "goal"
 msgstr "scop"
 
-#: templates/statement/edit.tpl:83
+#: templates/statement/edit.tpl:79
 msgid "source URLs"
 msgstr "URL-uri sursă"
 
-#: templates/statement/edit.tpl:99
+#: templates/statement/edit.tpl:95
 msgid "add a source"
 msgstr "adaugă o sursă"
 
-#: templates/statement/edit.tpl:104
+#: templates/statement/edit.tpl:100 templates/statement/view.tpl:98
 msgid "preview"
 msgstr "previzualizare"
 
-#: templates/statement/edit.tpl:126
+#: templates/statement/edit.tpl:122
 msgid "Are you sure you want to delete this statement?"
 msgstr "Confirmați ștergerea acestei afirmații?"
 
 #: templates/statement/view.tpl:23
 msgid "sources"
 msgstr "surse"
+
+#: templates/statement/view.tpl:59
+msgid "one answer"
+msgid_plural "%1 answers"
+msgstr[0] "un răspuns"
+msgstr[1] "%d răspunsuri"
+msgstr[2] "%d de răspunsuri"
+
+#: templates/statement/view.tpl:67
+msgid "posted by"
+msgstr "publicat de"
+
+#: templates/statement/view.tpl:75
+msgid "your answer"
+msgstr "răspunsul dumneavoastră"
+
+#: templates/statement/view.tpl:93
+msgid "post your answer"
+msgstr "publică răspunsul"
 
 #: lib/Util.php:13
 msgid "You need to be logged in to perform this action."
@@ -348,36 +367,36 @@ msgstr "uniune"
 msgid "member of"
 msgstr "membru în"
 
-#: lib/model/User.php:31 routes/auth/login.php:53
+#: lib/model/User.php:32 routes/auth/login.php:53
 #: routes/auth/lostPassword.php:50
 msgid "Please enter an email address."
 msgstr "Vă rugăm să introduceți o adresă de e-mail."
 
-#: lib/model/User.php:36
+#: lib/model/User.php:37
 msgid "This email address is already taken."
 msgstr "Această adresă de e-mail este deja folosită."
 
-#: lib/model/User.php:40 routes/auth/lostPassword.php:52
+#: lib/model/User.php:41 routes/auth/lostPassword.php:52
 msgid "This email address looks incorrect."
 msgstr "Adresa de e-mail pare incorectă."
 
-#: lib/model/User.php:49 routes/auth/login.php:57
+#: lib/model/User.php:50 routes/auth/login.php:57
 msgid "Please enter a password."
 msgstr "Vă rugăm să introduceți o parolă."
 
-#: lib/model/User.php:51
+#: lib/model/User.php:52
 msgid "Please enter your password twice to prevent typos."
 msgstr "Vă rugăm să introduceți parola de două ori pentru verificare."
 
-#: lib/model/User.php:53
+#: lib/model/User.php:54
 msgid "Passwords don't match."
 msgstr "Parolele nu coincid."
 
-#: lib/model/User.php:55
+#: lib/model/User.php:56
 msgid "Your password must be at least 8 characters long."
 msgstr "Parola trebuie să aibă cel puțin 8 caractere."
 
-#: lib/model/User.php:70
+#: lib/model/User.php:71
 msgid "You are not allowed to perform this action."
 msgstr "Nu aveți permisiunea să faceți această acțiune."
 
@@ -486,9 +505,17 @@ msgstr "Această dată nu poate fi în viitor."
 msgid "Some source URLS are invalid."
 msgstr "Unele URL-uri sursă sînt invalide."
 
-#: routes/statement/view.php:7
+#: routes/statement/view.php:9
 msgid "The statement you are looking for does not exist."
 msgstr "Afirmația pe care o căutați nu există."
+
+#: routes/statement/view.php:25
+msgid "Answer posted."
+msgstr "Am publicat răspunsul."
+
+#: routes/statement/view.php:54
+msgid "Cannot post an empty answer."
+msgstr "Nu pot publica un răspuns vid."
 
 #~ msgid "An entity cannot be a member of a person."
 #~ msgstr "O entitate nu poate fi membră a unei persoane."
