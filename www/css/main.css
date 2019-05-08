@@ -2,6 +2,10 @@ body.waiting * {
   cursor: progress;
 }
 
+ul.navbar-nav a:hover {
+  background: #ccc; /* slightly more visible */
+}
+
 h3::first-letter {
   text-transform: capitalize;
 }

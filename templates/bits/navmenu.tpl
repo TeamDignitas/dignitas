@@ -44,7 +44,8 @@
         </div>
       </li>
 
-      {if User::getActive()}
+      {$u=User::getActive()}
+      {if $u}
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle"
             href="#"
@@ -54,7 +55,8 @@
             aria-haspopup="true"
             aria-expanded="false">
             <i class="icon icon-user"></i>
-            {User::getActive()}
+            {$u}
+            <span class="badge badge-secondary align-text-top">{$u->reputation}</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarUserDropdown">
             <a class="dropdown-item" href="{Router::link('aggregate/dashboard')}">
