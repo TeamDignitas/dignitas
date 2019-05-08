@@ -2,18 +2,18 @@
 
 class User extends BaseObject implements DatedObject {
 
-  // privileges
-  const PRIV_ADD_ENTITY = 0x01;
-  const PRIV_EDIT_ENTITY = 0x02;
-  const PRIV_DELETE_ENTITY = 0x04;
-  const PRIV_ADD_STATEMENT = 0x08;
-  const PRIV_EDIT_STATEMENT = 0x10;
-  const PRIV_DELETE_STATEMENT = 0x20;
-  const PRIV_ADD_ANSWER = 0x40;
-  const PRIV_UPVOTE_STATEMENT = 0x80;
-  const PRIV_DOWNVOTE_STATEMENT = 0x100;
-  const PRIV_UPVOTE_ANSWER = 0x200;
-  const PRIV_DOWNVOTE_ANSWER = 0x400;
+  // privileges and their required reputation
+  const PRIV_ADD_ENTITY = 1;
+  const PRIV_EDIT_ENTITY = 10;
+  const PRIV_DELETE_ENTITY = 100;
+  const PRIV_ADD_STATEMENT = 1;
+  const PRIV_EDIT_STATEMENT = 2000;
+  const PRIV_DELETE_STATEMENT = 10000;
+  const PRIV_ADD_ANSWER = 1;
+  const PRIV_UPVOTE_STATEMENT = 15;
+  const PRIV_DOWNVOTE_STATEMENT = 125;
+  const PRIV_UPVOTE_ANSWER = 15;
+  const PRIV_DOWNVOTE_ANSWER = 125;
 
   private static $active = null; // user currently logged in
 
@@ -63,16 +63,17 @@ class User extends BaseObject implements DatedObject {
     }
   }
 
-  // checks whether the active user has any privilege in the mask
-  static function may($privilegeMask) {
-    return self::$active !== null;
+  // checks whether the active user has the privilege
+  static function may($privilege) {
+    return self::$active && (self::$active->reputation >= $privilege);
   }
 
-  // checks whether the active user has any privilege in the mask and bounces
-  // them if not
-  static function enforce($privilegeMask) {
-    if (!self::may($privilegeMask)) {
-      FlashMessage::add(_('You are not allowed to perform this action.'));
+  // checks whether the active user has the privilege and bounces them if not
+  static function enforce($privilege) {
+    if (!self::may($privilege)) {
+      FlashMessage::add(sprintf(
+        _('You need at least %d reputation to perform this action.'),
+        $privilege));
       Util::redirectToHome();
     }
   }

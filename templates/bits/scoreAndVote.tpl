@@ -7,6 +7,10 @@
 <div class="scoreAndVote {$classes}">
   <button
     class="btn btn-sm btn-light voteButton {if $voteValue == 1}voted{/if}"
+    {if !User::may($upvotePriv)}
+    disabled
+    title="{t 1=$upvotePriv}You need at least %1 reputation to upvote.{/t}"
+    {/if}
     data-type="{$type}"
     data-object-id="{$object->id}"
     data-value="1">
@@ -17,6 +21,10 @@
 
   <button
     class="btn btn-sm btn-light voteButton {if $voteValue == -1}voted{/if}"
+    {if !User::may($downvotePriv)}
+    disabled
+    title="{t 1=$downvotePriv}You need at least %1 reputation to downvote.{/t}"
+    {/if}
     data-type="{$type}"
     data-object-id="{$object->id}"
     data-value="-1">

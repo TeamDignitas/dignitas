@@ -12,7 +12,7 @@ $objectId = Request::get('objectId');
 $userId = User::getActiveId();
 $error = null;
 
-$priv = null;
+$priv = 0;
 if ($type == Vote::TYPE_STATEMENT && $value == 1) {
   $priv = User::PRIV_UPVOTE_STATEMENT;
 } else if ($type == Vote::TYPE_STATEMENT && $value == -1) {
@@ -26,7 +26,7 @@ if ($type == Vote::TYPE_STATEMENT && $value == 1) {
 }
 
 if ($priv && !User::may($priv)) {
-  $error = _('You are not allowed to vote in this matter.');
+  $error = sprintf(_('You need at least %d reputation to vote.'), $priv);
 }
 
 $vote = Vote::loadOrCreate($userId, $type, $objectId);

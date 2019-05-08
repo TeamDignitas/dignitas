@@ -20,7 +20,9 @@
 
     {include "bits/scoreAndVote.tpl"
       type=Vote::TYPE_STATEMENT
-      object=$statement}
+      object=$statement
+      upvotePriv=User::PRIV_UPVOTE_STATEMENT
+      downvotePriv=User::PRIV_DOWNVOTE_STATEMENT}
 
     {if count($sources)}
       <div id="sources" class="my-2">
@@ -70,6 +72,8 @@
         {include "bits/scoreAndVote.tpl"
           type=Vote::TYPE_ANSWER
           object=$a
+          upvotePriv=User::PRIV_UPVOTE_ANSWER
+          downvotePriv=User::PRIV_DOWNVOTE_ANSWER
           classes="float-left"}
 
         <small class="btn text-muted float-right">
