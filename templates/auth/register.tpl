@@ -14,14 +14,29 @@
         <div class="form-group">
           <div class="input-group">
             <span class="input-group-prepend">
+              <i class="input-group-text icon icon-user"></i>
+            </span>
+            <input
+              class="form-control {if isset($errors.nickname)}is-invalid{/if}"
+              type="text"
+              name="nickname"
+              value="{$nickname}"
+              autofocus
+              placeholder="{t}nickname{/t}">
+          </div>
+          {include "bits/fieldErrors.tpl" errors=$errors.nickname|default:null}
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-prepend">
               <i class="input-group-text icon icon-mail"></i>
             </span>
             <input
               class="form-control {if isset($errors.email)}is-invalid{/if}"
-              type="text"
+              type="email"
               name="email"
               value="{$email}"
-              autofocus
               placeholder="{t}email{/t}">
           </div>
           {include "bits/fieldErrors.tpl" errors=$errors.email|default:null}

@@ -49,6 +49,16 @@ class User extends BaseObject implements DatedObject {
   }
 
   // returns null on success or an error message on failure
+  static function validateNickname($nickname) {
+    if (!preg_match('/^(\p{L}|\d)(\p{L}|\d|[-_.]){2,29}$/u', $nickname)) {
+      return _(
+        'Your nickname must begin with a letter or digit and consist of ' .
+        '3 to 30 letters, digits and punctuation from among -_.');
+    }
+    return null;
+  }
+
+  // returns null on success or an error message on failure
   static function validateNewPassword($password, $password2) {
     if (!$password) {
       return _('Please enter a password.');
@@ -79,7 +89,7 @@ class User extends BaseObject implements DatedObject {
   }
 
   public function __toString() {
-    return $this->email;
+    return $this->nickname;
   }
 
 }

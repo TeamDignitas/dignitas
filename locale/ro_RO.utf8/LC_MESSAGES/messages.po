@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-05-03 16:32+0300\n"
-"PO-Revision-Date: 2019-05-06 12:14+0300\n"
+"POT-Creation-Date: 2019-05-08 17:30+0300\n"
+"PO-Revision-Date: 2019-05-08 17:30+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -35,7 +35,7 @@ msgstr ""
 "ați tastat adresa corectă sau vizitați <a href=\"%1\">pagina principală</a>."
 
 #: templates/aggregate/dashboard.tpl:3 templates/aggregate/dashboard.tpl:6
-#: templates/bits/navmenu.tpl:62
+#: templates/bits/navmenu.tpl:64
 msgid "dashboard"
 msgstr "panou de control"
 
@@ -50,21 +50,21 @@ msgid "add an author"
 msgstr "adaugă un autor"
 
 #: templates/auth/login.tpl:3 templates/auth/login.tpl:16
-#: templates/auth/login.tpl:66 templates/bits/navmenu.tpl:74
+#: templates/auth/login.tpl:66 templates/bits/navmenu.tpl:76
 msgid "log in"
 msgstr "autentificare"
 
 #: templates/auth/login.tpl:33 templates/auth/lostPassword.tpl:31
-#: templates/auth/register.tpl:25
+#: templates/auth/register.tpl:40
 msgid "email"
 msgstr "adresa de e-mail"
 
-#: templates/auth/login.tpl:47 templates/auth/register.tpl:40
+#: templates/auth/login.tpl:47 templates/auth/register.tpl:55
 #: templates/auth/resetPassword.tpl:25
 msgid "password"
 msgstr "parola"
 
-#: templates/auth/login.tpl:60 templates/auth/register.tpl:67
+#: templates/auth/login.tpl:60 templates/auth/register.tpl:82
 msgid "remember me for one year"
 msgstr "ține-mă minte un an"
 
@@ -73,7 +73,7 @@ msgid "I forgot my password"
 msgstr "mi-am uitat parola"
 
 #: templates/auth/login.tpl:77 templates/auth/register.tpl:3
-#: templates/auth/register.tpl:8 templates/auth/register.tpl:73
+#: templates/auth/register.tpl:8 templates/auth/register.tpl:88
 msgid "sign up"
 msgstr "înregistrare"
 
@@ -101,11 +101,15 @@ msgstr ""
 "Am trimis un e-mail către <b>%1</b>. Vă rugăm dați clic pe legătura din "
 "mesaj pentru a vă reseta parola."
 
-#: templates/auth/register.tpl:55 templates/auth/resetPassword.tpl:39
+#: templates/auth/register.tpl:25
+msgid "nickname"
+msgstr "poreclă"
+
+#: templates/auth/register.tpl:70 templates/auth/resetPassword.tpl:39
 msgid "password (again)"
 msgstr "parola (din nou)"
 
-#: templates/auth/register.tpl:77
+#: templates/auth/register.tpl:92
 msgid "I already have an account"
 msgstr "am deja un cont"
 
@@ -134,7 +138,7 @@ msgstr "arată/ascunde meniul"
 msgid "home page"
 msgstr "pagina principală"
 
-#: templates/bits/navmenu.tpl:66
+#: templates/bits/navmenu.tpl:68
 msgid "log out"
 msgstr "închide sesiunea"
 
@@ -150,7 +154,19 @@ msgstr "de pe %1"
 msgid "until %1"
 msgstr "pînă pe %1"
 
-#: templates/bits/statementList.tpl:26 templates/statement/view.tpl:52
+#: templates/bits/scoreAndVote.tpl:12
+msgid "You need at least %1 reputation to upvote."
+msgstr "Vă trebuie o reputație de cel puțin %1 pentru a vota pozitiv."
+
+#: templates/bits/scoreAndVote.tpl:20
+msgid "score"
+msgstr "scor"
+
+#: templates/bits/scoreAndVote.tpl:26
+msgid "You need at least %1 reputation to downvote."
+msgstr "Vă trebuie o reputație de cel puțin %1 pentru a vota negativ."
+
+#: templates/bits/statementList.tpl:26 templates/statement/view.tpl:58
 msgid "added by"
 msgstr "adăugată de"
 
@@ -216,7 +232,7 @@ msgstr "Confirmați ștergerea acestui autor?"
 msgid "delete"
 msgstr "șterge"
 
-#: templates/entity/view.tpl:33 templates/statement/view.tpl:47
+#: templates/entity/view.tpl:33 templates/statement/view.tpl:53
 msgid "edit"
 msgstr "editează"
 
@@ -252,11 +268,11 @@ msgstr "data afirmației"
 msgid "summary"
 msgstr "sumar"
 
-#: templates/statement/edit.tpl:56 templates/statement/view.tpl:34
+#: templates/statement/edit.tpl:56 templates/statement/view.tpl:40
 msgid "context"
 msgstr "context"
 
-#: templates/statement/edit.tpl:67 templates/statement/view.tpl:38
+#: templates/statement/edit.tpl:67 templates/statement/view.tpl:44
 msgid "goal"
 msgstr "scop"
 
@@ -268,7 +284,7 @@ msgstr "URL-uri sursă"
 msgid "add a source"
 msgstr "adaugă o sursă"
 
-#: templates/statement/edit.tpl:100 templates/statement/view.tpl:98
+#: templates/statement/edit.tpl:100 templates/statement/view.tpl:111
 msgid "preview"
 msgstr "previzualizare"
 
@@ -276,26 +292,26 @@ msgstr "previzualizare"
 msgid "Are you sure you want to delete this statement?"
 msgstr "Confirmați ștergerea acestei afirmații?"
 
-#: templates/statement/view.tpl:23
+#: templates/statement/view.tpl:29
 msgid "sources"
 msgstr "surse"
 
-#: templates/statement/view.tpl:59
+#: templates/statement/view.tpl:65
 msgid "one answer"
 msgid_plural "%1 answers"
 msgstr[0] "un răspuns"
 msgstr[1] "%1 răspunsuri"
 msgstr[2] "%1 de răspunsuri"
 
-#: templates/statement/view.tpl:67
+#: templates/statement/view.tpl:80
 msgid "posted by"
 msgstr "publicat de"
 
-#: templates/statement/view.tpl:75
+#: templates/statement/view.tpl:88
 msgid "your answer"
 msgstr "răspunsul dumneavoastră"
 
-#: templates/statement/view.tpl:93
+#: templates/statement/view.tpl:106
 msgid "post your answer"
 msgstr "publică răspunsul"
 
@@ -367,38 +383,47 @@ msgstr "uniune"
 msgid "member of"
 msgstr "membru în"
 
-#: lib/model/User.php:32 routes/auth/login.php:53
+#: lib/model/User.php:36 routes/auth/login.php:53
 #: routes/auth/lostPassword.php:50
 msgid "Please enter an email address."
 msgstr "Vă rugăm să introduceți o adresă de e-mail."
 
-#: lib/model/User.php:37
+#: lib/model/User.php:41
 msgid "This email address is already taken."
 msgstr "Această adresă de e-mail este deja folosită."
 
-#: lib/model/User.php:41 routes/auth/lostPassword.php:52
+#: lib/model/User.php:45 routes/auth/lostPassword.php:52
 msgid "This email address looks incorrect."
 msgstr "Adresa de e-mail pare incorectă."
 
-#: lib/model/User.php:50 routes/auth/login.php:57
+#: lib/model/User.php:55
+msgid ""
+"Your nickname must begin with a letter or digit and consist of 3 to 30 "
+"letters, digits and punctuation from among -_."
+msgstr ""
+"Porecla dumneavoastră trebuie să înceapă cu o literă sau cifră și să conțină "
+"între 3 și 30 de litere, cifre și punctuație din setul -_."
+
+#: lib/model/User.php:64 routes/auth/login.php:57
 msgid "Please enter a password."
 msgstr "Vă rugăm să introduceți o parolă."
 
-#: lib/model/User.php:52
+#: lib/model/User.php:66
 msgid "Please enter your password twice to prevent typos."
 msgstr "Vă rugăm să introduceți parola de două ori pentru verificare."
 
-#: lib/model/User.php:54
+#: lib/model/User.php:68
 msgid "Passwords don't match."
 msgstr "Parolele nu coincid."
 
-#: lib/model/User.php:56
+#: lib/model/User.php:70
 msgid "Your password must be at least 8 characters long."
 msgstr "Parola trebuie să aibă cel puțin 8 caractere."
 
-#: lib/model/User.php:71
-msgid "You are not allowed to perform this action."
-msgstr "Nu aveți permisiunea să faceți această acțiune."
+#: lib/model/User.php:85
+#, php-format
+msgid "You need at least %d reputation to perform this action."
+msgstr "Vă trebuie o reputație de cel puțin %d pentru această acțiune."
 
 #: routes/auth/login.php:64
 msgid "Incorrect email address or password."
@@ -517,5 +542,15 @@ msgstr "Am publicat răspunsul."
 msgid "Cannot post an empty answer."
 msgstr "Nu pot publica un răspuns vid."
 
-#~ msgid "An entity cannot be a member of a person."
-#~ msgstr "O entitate nu poate fi membră a unei persoane."
+#: routes/vote/save.php:25
+msgid "Bad vote format."
+msgstr "Formatul votului este incorect."
+
+#: routes/vote/save.php:29
+#, php-format
+msgid "You need at least %d reputation to vote."
+msgstr "Vă trebuie o reputație de cel puțin %d pentru a vota."
+
+#: routes/vote/save.php:36
+msgid "Cannot vote: object does not exist."
+msgstr "Nu puteți vota: obiectul nu există."

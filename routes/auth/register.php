@@ -2,6 +2,7 @@
 
 Util::assertNotLoggedIn();
 
+$nickname = Request::get('nickname');
 $email = Request::get('email');
 $password = Request::get('password');
 $password2 = Request::get('password2');
@@ -9,21 +10,24 @@ $remember = Request::has('remember');
 $submitButton = Request::has('submitButton');
 
 if ($submitButton) {
-  $errors = validate($email, $password, $password2);
+  $errors = validate($nickname, $email, $password, $password2);
 
   if ($errors) {
     Smart::assign(['errors' => $errors]);
   } else {
 
     $user = Model::factory('User')->create();
+    $user->nickname = $nickname;
     $user->email = $email;
     $user->password = md5($password);
+    $user->reputation = 1;
     $user->save();
     Session::login($user, $remember);
   }
 }
 
 Smart::assign([
+  'nickname' => $nickname,
   'email' => $email,
   'password' => $password,
   'password2' => $password2,
@@ -33,8 +37,13 @@ Smart::display('auth/register.tpl');
 
 /*************************************************************************/
 
-function validate($email, $password, $password2) {
+function validate($nickname, $email, $password, $password2) {
   $errors = [];
+
+  $msg = User::validateNickname($nickname);
+  if ($msg) {
+    $errors['nickname'][] = $msg;
+  }
 
   $msg = User::canChooseEmail($email);
   if ($msg) {
