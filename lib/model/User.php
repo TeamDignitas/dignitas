@@ -10,6 +10,10 @@ class User extends BaseObject implements DatedObject {
   const PRIV_EDIT_STATEMENT = 0x10;
   const PRIV_DELETE_STATEMENT = 0x20;
   const PRIV_ADD_ANSWER = 0x40;
+  const PRIV_UPVOTE_STATEMENT = 0x80;
+  const PRIV_DOWNVOTE_STATEMENT = 0x100;
+  const PRIV_UPVOTE_ANSWER = 0x200;
+  const PRIV_DOWNVOTE_ANSWER = 0x400;
 
   private static $active = null; // user currently logged in
 

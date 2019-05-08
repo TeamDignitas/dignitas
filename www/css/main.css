@@ -1,3 +1,7 @@
+body.waiting * {
+  cursor: progress;
+}
+
 h3::first-letter {
   text-transform: capitalize;
 }
@@ -16,4 +20,8 @@ footer {
   content: '•';
   padding-right: 8px;
   color: #999;
+}
+
+.voteButton.voted {
+  background: orange;
 }

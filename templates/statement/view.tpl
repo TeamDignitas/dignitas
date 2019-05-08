@@ -18,6 +18,10 @@
       {$statement->dateMade|ld}
     </p>
 
+    {include "bits/scoreAndVote.tpl"
+      type=Vote::TYPE_STATEMENT
+      object=$statement}
+
     {if count($sources)}
       <div id="sources" class="my-2">
         {t}sources{/t}:
@@ -62,6 +66,11 @@
     {foreach $answers as $a}
       <div class="answer clearfix {if $a->id == $answerId}highlightedAnswer{/if}">
         {$a->contents|md}
+
+        {include "bits/scoreAndVote.tpl"
+          type=Vote::TYPE_ANSWER
+          object=$a
+          classes="float-left"}
 
         <small class="btn text-muted float-right">
           {t}posted by{/t} <b>{$a->getUser()|escape}</b>

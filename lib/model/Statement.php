@@ -30,4 +30,10 @@ class Statement extends BaseObject implements DatedObject {
       $this->userId = User::getActiveId();     // can always edit user's own statements
   }
 
+  // get the current user's vote on this statement
+  function getVote() {
+    return Vote::get_by_userId_type_objectId(
+      User::getActiveId(), Vote::TYPE_STATEMENT, $this->id);
+  }
+
 }

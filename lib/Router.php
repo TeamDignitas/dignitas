@@ -75,6 +75,11 @@ class Router {
       'en_US.utf8' => 'statement',
       'ro_RO.utf8' => 'afirmatie',
     ],
+
+    // votes
+    'vote/save' => [
+      'en_US.utf8' => 'ajax/save-vote',
+    ],
   ];
 
   // file => list of parameters expected in the URL (none by default)

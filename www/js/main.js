@@ -1,3 +1,4 @@
+/********** Confirmations before discarding pending changes **********/
 $(function() {
   var beforeUnloadHandlerAttached = false;
 
@@ -21,5 +22,38 @@ $(function() {
   $('.hasUnloadWarning').closest('form').submit(function() {
     $(window).unbind('beforeunload');
   });
+
+});
+
+/********** Vote submissions **********/
+$(function() {
+  $('.voteButton').click(submitVote);
+
+  function submitVote() {
+    var btn = $(this);
+    $('body').addClass('waiting');
+    $.get(URL_PREFIX + 'ajax/save-vote', {
+      value: btn.data('value'),
+      type: btn.data('type'),
+      objectId: btn.data('objectId'),
+    }).done(function(newScore) {
+
+      // update the score
+      btn.closest('.scoreAndVote').find('.score').text(newScore);
+
+      // enable the opposite button
+      btn.siblings('.voted').removeClass('voted');
+
+      // toggle this button
+      btn.toggleClass('voted');
+
+    }).fail(function(errorMsg) {
+      if (errorMsg.responseJSON) {
+        alert(errorMsg.responseJSON);
+      }
+    }).always(function() {
+      $('body').removeClass('waiting');
+    });
+  }
 
 });
