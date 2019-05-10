@@ -74,32 +74,43 @@
       </div>
     </div>
 
-    <div class="form-group">
-      <label for="fieldImage">{t}image{/t}</label>
-      {if $entity->imageExtension}
-        <div class="mb-2">
-          {$sz=$entity->getThumbSize(1)}
-          <img
-            src="{$entity->getThumbLink(1)}"
-            class="img-thumbnail rounded mx-auto d-block"
-            width="{$sz.width}"
-            height="{$sz.height}">
-        </div>
-      {/if}
-      <div class="input-group mb-3">
+    <div class="row">
+      <div class="col">
+        <label for="fieldImage">{t}image{/t}</label>
+
         <div class="custom-file">
           <input
             name="image"
             type="file"
-            class="custom-file-input {if isset($errors.image)}is-invalid{/if}"
+            class="form-control-file {if isset($errors.image)}is-invalid{/if}"
             id="fieldImage">
           <label class="custom-file-label" for="fieldImage">
             {t}choose an image to upload or leave empty to keep existing image{/t}
           </label>
         </div>
+        {include "bits/fieldErrors.tpl" errors=$errors.image|default:null}
+
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="checkbox" name="deleteImage" class="form-check-input">
+            {t}delete image{/t}
+          </label>
+        </div>
       </div>
-      {include "bits/fieldErrors.tpl" errors=$errors.image|default:null}
+
+      {if $entity->imageExtension}
+        <div class="col-3">
+          {$sz=$entity->getThumbSize(1)}
+          <img
+            src="{$entity->getThumbLink(1)}"
+            class="img-thumbnail rounded mx-auto d-block float-right"
+            width="{$sz.width}"
+            height="{$sz.height}">
+        </div>
+      {/if}
     </div>
+
+    <hr>
 
     <div>
       <button name="saveButton" type="submit" class="btn btn-primary">

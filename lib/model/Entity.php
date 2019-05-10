@@ -44,6 +44,11 @@ class Entity extends BaseObject implements DatedObject {
     copy($tmpImageName, $dest);
   }
 
+  function deleteImage() {
+    @unlink($this->getImageLocation());
+    $this->imageExtension = '';
+  }
+
   function getImageLocation() {
     return ($this->imageExtension && $this->id)
       ? sprintf('%simg/entity/%d.%s', Config::SHARED_DRIVE, $this->id, $this->imageExtension)

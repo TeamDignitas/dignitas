@@ -32,16 +32,19 @@ if ($saveButton) {
     Request::getArray('relStartDates'),
     Request::getArray('relEndDates'));
 
+  $deleteImage = Request::has('deleteImage');
   $imageData = Request::getImage('image', $tmpImageName);
 
   $errors = validate($entity, $relations, $imageData['status']);
   if (empty($errors)) {
-    if ($imageData['status'] == Request::UPLOAD_OK) {
+    if ($deleteImage) {
+      $entity->deleteImage();
+    } else if ($imageData['status'] == Request::UPLOAD_OK) {
       $entity->imageExtension = $imageData['extension'];
       // otherwise leave it unchanged
     }
     $entity->save();
-    if ($imageData['status'] == Request::UPLOAD_OK) {
+    if (!$deleteImage && ($imageData['status'] == Request::UPLOAD_OK)) {
       $entity->copyUploadedImage($imageData['tmpImageName']);
     }
 
