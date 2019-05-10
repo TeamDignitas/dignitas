@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-05-10 14:38+0300\n"
-"PO-Revision-Date: 2019-05-10 14:38+0300\n"
+"POT-Creation-Date: 2019-05-10 14:58+0300\n"
+"PO-Revision-Date: 2019-05-10 14:58+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -122,9 +122,13 @@ msgstr "schimbarea parolei"
 msgid "save"
 msgstr "salvează"
 
-#: templates/bits/fakeLogin.tpl:3 templates/bits/fakeLogin.tpl:26
+#: templates/bits/fakeLogin.tpl:3 templates/bits/fakeLogin.tpl:49
 msgid "test user login"
 msgstr "autentificare ca utilizator de test"
+
+#: templates/bits/fakeLogin.tpl:33
+msgid "reputation"
+msgstr "reputație"
 
 #: templates/bits/markdownHelp.tpl:2
 msgid "Markdown help"
@@ -387,7 +391,7 @@ msgstr "uniune"
 msgid "member of"
 msgstr "membru în"
 
-#: lib/model/User.php:36 routes/auth/login.php:55
+#: lib/model/User.php:36 routes/auth/login.php:57
 #: routes/auth/lostPassword.php:50
 msgid "Please enter an email address."
 msgstr "Vă rugăm să introduceți o adresă de e-mail."
@@ -408,7 +412,7 @@ msgstr ""
 "Porecla dumneavoastră trebuie să înceapă cu o literă sau cifră și să conțină "
 "între 3 și 30 de litere, cifre și punctuație din setul -_."
 
-#: lib/model/User.php:64 routes/auth/login.php:59
+#: lib/model/User.php:64 routes/auth/login.php:61
 msgid "Please enter a password."
 msgstr "Vă rugăm să introduceți o parolă."
 
@@ -429,7 +433,12 @@ msgstr "Parola trebuie să aibă cel puțin 8 caractere."
 msgid "You need at least %d reputation to perform this action."
 msgstr "Vă trebuie o reputație de cel puțin %d pentru această acțiune."
 
-#: routes/auth/login.php:66
+#: routes/auth/login.php:16
+msgid "Fake logins are only allowed in development mode."
+msgstr ""
+"Autentificarea cu utilizatori de test este permisă doar în modul development."
+
+#: routes/auth/login.php:68
 msgid "Incorrect email address or password."
 msgstr "Adresa de e-mail sau parola sînt greșite."
 

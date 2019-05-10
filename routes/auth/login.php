@@ -8,11 +8,12 @@ $remember = Request::has('remember');
 $submitButton = Request::has('submitButton');
 
 $fakeEmail = Request::get('fakeEmail');
+$fakeReputation = Request::get('fakeReputation') ?: 1;
 $referrer = Util::getReferrer();
 
 if ($fakeEmail) {
   if (!Config::DEVELOPMENT_MODE) {
-    FlashMessage::add('Conectarea cu utilizatori de test este permisă doar în development.');
+    FlashMessage::add(_('Fake logins are only allowed in development mode.'));
     Util::redirect('login');
   }
   $user = User::get_by_email($fakeEmail);
@@ -20,6 +21,7 @@ if ($fakeEmail) {
     $user = Model::factory('User')->create();
   }
   $user->email = $fakeEmail;
+  $user->reputation = $fakeReputation;
   $user->save();
   Session::login($user, true, $referrer);
 }
