@@ -74,12 +74,7 @@ class Session {
   }
 
   static function get($name, $default = null) {
-    if (isset($_SESSION)){
-      if (array_key_exists($name, $_SESSION)) {
-        return $_SESSION[$name];
-      }
-    }
-    return $default;
+    return $_SESSION['name'] ?? $default;
   }
 
   static function set($var, $value) {
