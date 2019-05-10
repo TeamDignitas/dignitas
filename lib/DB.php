@@ -24,6 +24,11 @@ class DB {
     ]);
   }
 
+  // Returns a DB result set that you can iterate with foreach ($result as $row)
+  static function execute($query, $fetchStyle = PDO::FETCH_BOTH) {
+    return ORM::get_db()->query($query, $fetchStyle);
+  }
+
   static function executeSqlFile($filename, $database = null) {
     $filename = realpath(Core::portable($filename));
     $command = sprintf('mysql -h %s -u %s %s %s < %s',

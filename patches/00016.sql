@@ -1,0 +1,10 @@
+alter table answer           convert to character set utf8mb4;
+alter table cookie           convert to character set utf8mb4;
+alter table entity           convert to character set utf8mb4;
+alter table password_token   convert to character set utf8mb4;
+alter table relation         convert to character set utf8mb4;
+alter table statement        convert to character set utf8mb4;
+alter table statement_source convert to character set utf8mb4;
+alter table user             convert to character set utf8mb4;
+alter table variable         convert to character set utf8mb4;
+alter table vote             convert to character set utf8mb4;
