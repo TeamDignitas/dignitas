@@ -15,7 +15,7 @@ class Session {
     // Otherwise we're being called by a local script, not a web-based one.
   }
 
-  static function login($user, $remember = false, $referer = null) {
+  static function login($user, $remember = false, $referrer = null) {
     self::set('userId', $user->id);
     if ($remember) {
       $cookie = Cookie::create($user->id);
@@ -25,8 +25,8 @@ class Session {
     User::setActive($user->id); // for logging purposes only
     Log::info('Logged in, IP=' . $_SERVER['REMOTE_ADDR']);
 
-    if ($referer) {
-      Util::redirect($referer);
+    if ($referrer) {
+      Util::redirect($referrer);
     } else {
       Util::redirectToHome();
     }

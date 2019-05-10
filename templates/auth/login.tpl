@@ -18,7 +18,7 @@
 
       <div class="card-body">
         <form method="post">
-          <input type="hidden" name="referer" value="{$referer|escape}">
+          <input type="hidden" name="referrer" value="{$referrer|escape}">
 
           <div class="form-group">
             <div class="input-group">

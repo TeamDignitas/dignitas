@@ -80,7 +80,10 @@ class User extends BaseObject implements DatedObject {
 
   // checks whether the active user has the privilege and bounces them if not
   static function enforce($privilege) {
-    if (!self::may($privilege)) {
+    // redirect to log in page if there is no active user
+    if (!self::$active) {
+      Util::redirectToLogin();
+    } else if (self::$active->reputation < $privilege) {
       FlashMessage::add(sprintf(
         _('You need at least %d reputation to perform this action.'),
         $privilege));
