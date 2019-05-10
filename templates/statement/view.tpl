@@ -13,8 +13,7 @@
     <h3>{$statement->summary|escape}</h3>
 
     <p>
-      --
-      {include "bits/entityLink.tpl" e=$entity},
+      — {include "bits/entityLink.tpl" e=$entity},
       {$statement->dateMade|ld}
     </p>
 

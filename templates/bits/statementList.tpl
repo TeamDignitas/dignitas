@@ -17,8 +17,7 @@
       </div>
 
       <div class="text-right">
-        --
-        {include "bits/entityLink.tpl" e=$entity},
+        — {include "bits/entityLink.tpl" e=$entity},
         {$s->dateMade|ld}
       </div>
 

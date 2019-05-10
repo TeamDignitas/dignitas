@@ -74,7 +74,7 @@ class Session {
   }
 
   static function get($name, $default = null) {
-    return $_SESSION['name'] ?? $default;
+    return $_SESSION[$name] ?? $default;
   }
 
   static function set($var, $value) {

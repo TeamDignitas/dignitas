@@ -4,7 +4,7 @@
 
 {$voteValue=$object->getVote()->value|default:0}
 
-<div class="scoreAndVote {$classes}">
+<div class="scoreAndVote {$classes|default:''}">
   <button
     class="btn btn-sm btn-light voteButton {if $voteValue == 1}voted{/if}"
     {if !User::may($upvotePriv)}

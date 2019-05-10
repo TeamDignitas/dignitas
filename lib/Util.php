@@ -4,13 +4,7 @@ class Util {
 
   static function assertNotLoggedIn() {
     if (User::getActive()) {
-      Util::redirectToHome();
-    }
-  }
-
-  static function assertLoggedIn() {
-    if (!User::getActive()) {
-      FlashMessage::add(_('You need to be logged in to perform this action.'));
+      FlashMessage::add(_('You are already logged in.'));
       Util::redirectToHome();
     }
   }
