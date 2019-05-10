@@ -9,7 +9,7 @@
     class="btn btn-sm btn-light voteButton {if $voteValue == 1}voted{/if}"
     {if !User::may($upvotePriv)}
     disabled
-    title="{t 1=$upvotePriv}You need at least %1 reputation to upvote.{/t}"
+    title="{t 1=$upvotePriv|nf}You need at least %1 reputation to upvote.{/t}"
     {/if}
     data-type="{$type}"
     data-object-id="{$object->id}"
@@ -23,7 +23,7 @@
     class="btn btn-sm btn-light voteButton {if $voteValue == -1}voted{/if}"
     {if !User::may($downvotePriv)}
     disabled
-    title="{t 1=$downvotePriv}You need at least %1 reputation to downvote.{/t}"
+    title="{t 1=$downvotePriv|nf}You need at least %1 reputation to downvote.{/t}"
     {/if}
     data-type="{$type}"
     data-object-id="{$object->id}"

@@ -49,4 +49,9 @@ class Str {
 
     return $output;
   }
+
+  static function formatNumber($n, int $decimals = 0) {
+    $l = localeconv();
+    return number_format($n, $decimals, $l['decimal_point'], $l['thousands_sep']);
+  }
 }

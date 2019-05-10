@@ -85,8 +85,8 @@ class User extends BaseObject implements DatedObject {
       Util::redirectToLogin();
     } else if (self::$active->reputation < $privilege) {
       FlashMessage::add(sprintf(
-        _('You need at least %d reputation to perform this action.'),
-        $privilege));
+        _('You need at least %s reputation to perform this action.'),
+        Str::formatNumber($privilege)));
       Util::redirectToHome();
     }
   }

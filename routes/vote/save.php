@@ -26,7 +26,8 @@ if ($type == Vote::TYPE_STATEMENT && $value == 1) {
 }
 
 if ($priv && !User::may($priv)) {
-  $error = sprintf(_('You need at least %d reputation to vote.'), $priv);
+  $error = sprintf(_('You need at least %s reputation to vote.'),
+                   Str::formatNumber($priv));
 }
 
 $vote = Vote::loadOrCreate($userId, $type, $objectId);

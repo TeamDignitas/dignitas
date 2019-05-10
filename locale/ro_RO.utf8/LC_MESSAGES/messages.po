@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-05-10 14:58+0300\n"
-"PO-Revision-Date: 2019-05-10 14:58+0300\n"
+"POT-Creation-Date: 2019-05-10 15:15+0300\n"
+"PO-Revision-Date: 2019-05-10 15:15+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -430,8 +430,8 @@ msgstr "Parola trebuie să aibă cel puțin 8 caractere."
 
 #: lib/model/User.php:88
 #, php-format
-msgid "You need at least %d reputation to perform this action."
-msgstr "Vă trebuie o reputație de cel puțin %d pentru această acțiune."
+msgid "You need at least %s reputation to perform this action."
+msgstr "Vă trebuie o reputație de cel puțin %s pentru această acțiune."
 
 #: routes/auth/login.php:16
 msgid "Fake logins are only allowed in development mode."
@@ -561,9 +561,9 @@ msgstr "Formatul votului este incorect."
 
 #: routes/vote/save.php:29
 #, php-format
-msgid "You need at least %d reputation to vote."
-msgstr "Vă trebuie o reputație de cel puțin %d pentru a vota."
+msgid "You need at least %s reputation to vote."
+msgstr "Vă trebuie o reputație de cel puțin %s pentru a vota."
 
-#: routes/vote/save.php:36
+#: routes/vote/save.php:37
 msgid "Cannot vote: object does not exist."
 msgstr "Nu puteți vota: obiectul nu există."
