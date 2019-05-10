@@ -5,3 +5,7 @@ tbd is server-side software for collaborative fact checking. It will have a bett
 ## Installation instructions
 
 Please see [the wiki page](https://github.com/CatalinFrancu/tbd/wiki/Installation-instructions).
+
+## Localization instructions
+
+See [Localization](https://github.com/CatalinFrancu/tbd/wiki/Localization).
