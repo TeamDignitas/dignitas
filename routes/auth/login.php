@@ -5,6 +5,7 @@ Util::assertNotLoggedIn();
 $email = Request::get('email');
 $password = Request::get('password');
 $remember = Request::has('remember');
+$referer = Request::get('referer', $_SERVER['HTTP_REFERER'] ?? null);
 $submitButton = Request::has('submitButton');
 
 $fakeEmail = Request::get('fakeEmail');
@@ -20,14 +21,14 @@ if ($fakeEmail) {
   }
   $user->email = $fakeEmail;
   $user->save();
-  Session::login($user, true);
+  Session::login($user, true, $referer);
 }
 
 if ($submitButton) {
   $user = validate($email, $password, $errors);
 
   if ($user) {
-    Session::login($user, $remember);
+    Session::login($user, $remember, $referer);
   } else {
     Smart::assign(['errors' => $errors]);
   }
@@ -40,6 +41,7 @@ if (Config::DEVELOPMENT_MODE) {
 Smart::assign([
   'email' => $email,
   'remember' => $remember,
+  'referer' => $referer,
 ]);
 Smart::display('auth/login.tpl');
 
