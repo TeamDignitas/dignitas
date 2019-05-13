@@ -5,18 +5,18 @@
 {block "content"}
   <h3>{t}user{/t} {$user}</h3>
 
-  <dl>
-    <dd>{t}reputation{/t}</dd>
-    <dt>{$user->reputation}</dt>
-    <dd>{t}statements{/t}</dd>
-    <dt>{$statements}</dt>
-    <dd>{t}answers{/t}</dd>
-    <dt>{$answers}</dt>
-    <dd>{t}member since{/t}</dd>
-    <dt>{$user->createDate|lt}</dt>
+  <dl class="row">
+    <dd class="col-2">{t}reputation{/t}</dd>
+    <dt class="col-10">{$user->reputation}</dt>
+    <dd class="col-2">{t}statements{/t}</dd>
+    <dt class="col-10">{$statements}</dt>
+    <dd class="col-2">{t}answers{/t}</dd>
+    <dt class="col-10">{$answers}</dt>
+    <dd class="col-2">{t}member since{/t}</dd>
+    <dt class="col-10">{$user->createDate|lt}</dt>
     {if $user->lastSeen}
-      <dd>{t}last seen{/t}</dd>
-      <dt>{$user->lastSeen|moment}</dt>
+      <dd class="col-2">{t}last seen{/t}</dd>
+      <dt class="col-10">{$user->lastSeen|moment}</dt>
     {/if}
   </dl>
 
