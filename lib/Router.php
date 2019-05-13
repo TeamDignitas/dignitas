@@ -76,6 +76,12 @@ class Router {
       'ro_RO.utf8' => 'afirmatie',
     ],
 
+    // users
+    'user/view' => [
+      'en_US.utf8' => 'user',
+      'ro_RO.utf8' => 'utilizator',
+    ],
+
     // votes
     'vote/save' => [
       'en_US.utf8' => 'ajax/save-vote',
@@ -91,6 +97,7 @@ class Router {
     'entity/view' => [ 'id' ],
     'statement/edit' => [ 'id' ],
     'statement/view' => [ 'id', 'answerId' ],
+    'user/view' => [ 'id', 'nickname' ],
   ];
 
   private static $fwdRoutes = [];

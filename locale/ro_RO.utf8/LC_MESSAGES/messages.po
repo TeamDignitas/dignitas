@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-05-13 12:27+0300\n"
-"PO-Revision-Date: 2019-05-13 12:27+0300\n"
+"POT-Creation-Date: 2019-05-13 15:17+0300\n"
+"PO-Revision-Date: 2019-05-13 15:17+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -35,7 +35,7 @@ msgstr ""
 "ați tastat adresa corectă sau vizitați <a href=\"%1\">pagina principală</a>."
 
 #: templates/aggregate/dashboard.tpl:3 templates/aggregate/dashboard.tpl:6
-#: templates/bits/navmenu.tpl:64
+#: templates/bits/navmenu.tpl:70
 msgid "dashboard"
 msgstr "panou de control"
 
@@ -50,7 +50,7 @@ msgid "add an author"
 msgstr "adaugă un autor"
 
 #: templates/auth/login.tpl:3 templates/auth/login.tpl:16
-#: templates/auth/login.tpl:67 templates/bits/navmenu.tpl:76
+#: templates/auth/login.tpl:67 templates/bits/navmenu.tpl:82
 msgid "log in"
 msgstr "autentificare"
 
@@ -138,7 +138,7 @@ msgstr "salvează"
 msgid "test user login"
 msgstr "autentificare ca utilizator de test"
 
-#: templates/bits/fakeLogin.tpl:33
+#: templates/bits/fakeLogin.tpl:33 templates/user/view.tpl:9
 msgid "reputation"
 msgstr "reputație"
 
@@ -154,7 +154,11 @@ msgstr "arată/ascunde meniul"
 msgid "home page"
 msgstr "pagina principală"
 
-#: templates/bits/navmenu.tpl:68
+#: templates/bits/navmenu.tpl:66
+msgid "my profile"
+msgstr "profilul meu"
+
+#: templates/bits/navmenu.tpl:74
 msgid "log out"
 msgstr "închide sesiunea"
 
@@ -264,7 +268,7 @@ msgstr "editează"
 msgid "members"
 msgstr "membri"
 
-#: templates/entity/view.tpl:52
+#: templates/entity/view.tpl:52 templates/user/view.tpl:11
 msgid "statements"
 msgstr "afirmații"
 
@@ -338,6 +342,18 @@ msgstr "răspunsul dumneavoastră"
 #: templates/statement/view.tpl:105
 msgid "post your answer"
 msgstr "publică răspunsul"
+
+#: templates/user/view.tpl:3 templates/user/view.tpl:6
+msgid "user"
+msgstr "utilizator"
+
+#: templates/user/view.tpl:13
+msgid "answers"
+msgstr "răspunsuri"
+
+#: templates/user/view.tpl:15
+msgid "member since"
+msgstr "membru de pe"
 
 #: lib/Util.php:7
 msgid "You are already logged in."
@@ -574,6 +590,10 @@ msgstr "Am publicat răspunsul."
 #: routes/statement/view.php:54
 msgid "Cannot post an empty answer."
 msgstr "Nu pot publica un răspuns vid."
+
+#: routes/user/view.php:9
+msgid "The user you are looking for does not exist."
+msgstr "Utilizatorul pe care îl căutați nu există."
 
 #: routes/vote/save.php:25
 msgid "Bad vote format."

@@ -59,6 +59,12 @@
             <span class="badge badge-secondary align-text-top">{$u->reputation|nf}</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarUserDropdown">
+            <a
+              class="dropdown-item"
+              href="{Router::link('user/view')}/{$u->id}/{$u->nickname|escape:url}">
+              <i class="icon icon-user"></i>
+              {t}my profile{/t}
+            </a>
             <a class="dropdown-item" href="{Router::link('aggregate/dashboard')}">
               <i class="icon icon-gauge"></i>
               {t}dashboard{/t}
