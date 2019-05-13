@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-05-13 12:23+0300\n"
-"PO-Revision-Date: 2019-05-13 12:24+0300\n"
+"POT-Creation-Date: 2019-05-13 12:27+0300\n"
+"PO-Revision-Date: 2019-05-13 12:27+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -170,15 +170,19 @@ msgstr "de pe %1"
 msgid "until %1"
 msgstr "pînă pe %1"
 
-#: templates/bits/scoreAndVote.tpl:12
+#: templates/bits/scoreAndVote.tpl:12 templates/bits/scoreAndVote.tpl:29
+msgid "Please log in to vote."
+msgstr "Vă rugăm să vă autentificați pentru a vota."
+
+#: templates/bits/scoreAndVote.tpl:15
 msgid "You need at least %1 reputation to upvote."
 msgstr "Vă trebuie o reputație de cel puțin %1 pentru a vota pozitiv."
 
-#: templates/bits/scoreAndVote.tpl:20
+#: templates/bits/scoreAndVote.tpl:23
 msgid "score"
 msgstr "scor"
 
-#: templates/bits/scoreAndVote.tpl:26
+#: templates/bits/scoreAndVote.tpl:32
 msgid "You need at least %1 reputation to downvote."
 msgstr "Vă trebuie o reputație de cel puțin %1 pentru a vota negativ."
 
