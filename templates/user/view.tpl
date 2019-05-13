@@ -16,6 +16,12 @@
     <dt>{$user->createDate|lt}</dt>
   </dl>
 
+  {if $user->aboutMe}
+    <h4>{t}about me{/t}</h4>
+
+    {$user->aboutMe|md}
+  {/if}
+
   {if $user->id == User::getActiveId()}
     <a href="{Router::link('user/edit')}" class="btn btn-light">
       <i class="icon icon-edit"></i>

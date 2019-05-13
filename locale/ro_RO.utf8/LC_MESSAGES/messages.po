@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-05-13 16:15+0300\n"
-"PO-Revision-Date: 2019-05-13 16:15+0300\n"
+"POT-Creation-Date: 2019-05-13 16:32+0300\n"
+"PO-Revision-Date: 2019-05-13 16:32+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -106,7 +106,7 @@ msgid "nickname"
 msgstr "poreclă"
 
 #: templates/auth/register.tpl:70 templates/auth/resetPassword.tpl:39
-#: templates/user/edit.tpl:62
+#: templates/user/edit.tpl:78
 msgid "password (again)"
 msgstr "parola (din nou)"
 
@@ -131,7 +131,7 @@ msgid "password change"
 msgstr "schimbarea parolei"
 
 #: templates/auth/resetPassword.tpl:45 templates/entity/edit.tpl:118
-#: templates/statement/edit.tpl:109 templates/user/edit.tpl:78
+#: templates/statement/edit.tpl:109 templates/user/edit.tpl:94
 msgid "save"
 msgstr "salvează"
 
@@ -250,7 +250,7 @@ msgid "delete image"
 msgstr "șterge imaginea"
 
 #: templates/entity/edit.tpl:123 templates/statement/edit.tpl:114
-#: templates/user/edit.tpl:83
+#: templates/user/edit.tpl:99
 msgid "cancel"
 msgstr "renunță"
 
@@ -263,7 +263,7 @@ msgid "delete"
 msgstr "șterge"
 
 #: templates/entity/view.tpl:33 templates/statement/view.tpl:52
-#: templates/user/view.tpl:22
+#: templates/user/view.tpl:28
 msgid "edit"
 msgstr "editează"
 
@@ -316,6 +316,7 @@ msgid "add a source"
 msgstr "adaugă o sursă"
 
 #: templates/statement/edit.tpl:100 templates/statement/view.tpl:110
+#: templates/user/edit.tpl:53
 msgid "preview"
 msgstr "previzualizare"
 
@@ -350,7 +351,11 @@ msgstr "publică răspunsul"
 msgid "edit your profile"
 msgstr "editați-vă profilul"
 
-#: templates/user/edit.tpl:46
+#: templates/user/edit.tpl:44 templates/user/view.tpl:20
+msgid "about me"
+msgstr "despre mine"
+
+#: templates/user/edit.tpl:62
 msgid "password (only if you wish to change it)"
 msgstr "parola (doar dacă doriți să o schimbați)"
 
@@ -506,7 +511,7 @@ msgid "Entity deleted."
 msgstr "Am șters autorul."
 
 #: routes/entity/edit.php:52 routes/statement/edit.php:43
-#: routes/user/edit.php:22
+#: routes/user/edit.php:23
 msgid "Changes saved."
 msgstr "Am salvat modificările."
 

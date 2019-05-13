@@ -9,6 +9,7 @@ $user = User::getActive();
 if ($saveButton) {
   $user->nickname = Request::get('nickname');
   $user->email = Request::get('email');
+  $user->aboutMe = Request::get('aboutMe');
   $password = Request::get('password');
   $password2 = Request::get('password2');
 
@@ -32,6 +33,7 @@ if ($saveButton) {
   // first time loading the page
 }
 
+Smart::addResources('marked');
 Smart::assign([
   'user' => $user,
 ]);

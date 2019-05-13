@@ -40,6 +40,22 @@
       {include "bits/fieldErrors.tpl" errors=$errors.email|default:null}
     </div>
 
+    <div class="form-group">
+      <label>{t}about me{/t}</label>
+      <textarea
+        id="fieldAboutMe"
+        name="aboutMe"
+        class="form-control hasUnloadWarning"
+        rows="5">{$user->aboutMe}</textarea>
+      {include "bits/markdownHelp.tpl"}
+    </div>
+
+    <h4>{t}preview{/t}</h4>
+
+    <div id="markdownPreview">
+      {$user->aboutMe|md}
+    </div>
+
     <hr>
 
     <div class="form-group">
