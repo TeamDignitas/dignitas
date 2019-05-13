@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-05-13 15:17+0300\n"
-"PO-Revision-Date: 2019-05-13 15:17+0300\n"
+"POT-Creation-Date: 2019-05-13 16:15+0300\n"
+"PO-Revision-Date: 2019-05-13 16:15+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -55,7 +55,7 @@ msgid "log in"
 msgstr "autentificare"
 
 #: templates/auth/login.tpl:34 templates/auth/lostPassword.tpl:31
-#: templates/auth/register.tpl:40
+#: templates/auth/register.tpl:40 templates/user/edit.tpl:28
 msgid "email"
 msgstr "adresa de e-mail"
 
@@ -101,11 +101,12 @@ msgstr ""
 "Am trimis un e-mail către <b>%1</b>. Vă rugăm dați clic pe legătura din "
 "mesaj pentru a vă reseta parola."
 
-#: templates/auth/register.tpl:25
+#: templates/auth/register.tpl:25 templates/user/edit.tpl:11
 msgid "nickname"
 msgstr "poreclă"
 
 #: templates/auth/register.tpl:70 templates/auth/resetPassword.tpl:39
+#: templates/user/edit.tpl:62
 msgid "password (again)"
 msgstr "parola (din nou)"
 
@@ -130,7 +131,7 @@ msgid "password change"
 msgstr "schimbarea parolei"
 
 #: templates/auth/resetPassword.tpl:45 templates/entity/edit.tpl:118
-#: templates/statement/edit.tpl:109
+#: templates/statement/edit.tpl:109 templates/user/edit.tpl:78
 msgid "save"
 msgstr "salvează"
 
@@ -249,6 +250,7 @@ msgid "delete image"
 msgstr "șterge imaginea"
 
 #: templates/entity/edit.tpl:123 templates/statement/edit.tpl:114
+#: templates/user/edit.tpl:83
 msgid "cancel"
 msgstr "renunță"
 
@@ -261,6 +263,7 @@ msgid "delete"
 msgstr "șterge"
 
 #: templates/entity/view.tpl:33 templates/statement/view.tpl:52
+#: templates/user/view.tpl:22
 msgid "edit"
 msgstr "editează"
 
@@ -342,6 +345,14 @@ msgstr "răspunsul dumneavoastră"
 #: templates/statement/view.tpl:105
 msgid "post your answer"
 msgstr "publică răspunsul"
+
+#: templates/user/edit.tpl:3 templates/user/edit.tpl:6
+msgid "edit your profile"
+msgstr "editați-vă profilul"
+
+#: templates/user/edit.tpl:46
+msgid "password (only if you wish to change it)"
+msgstr "parola (doar dacă doriți să o schimbați)"
 
 #: templates/user/view.tpl:3 templates/user/view.tpl:6
 msgid "user"
@@ -495,6 +506,7 @@ msgid "Entity deleted."
 msgstr "Am șters autorul."
 
 #: routes/entity/edit.php:52 routes/statement/edit.php:43
+#: routes/user/edit.php:22
 msgid "Changes saved."
 msgstr "Am salvat modificările."
 

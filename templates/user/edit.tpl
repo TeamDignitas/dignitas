@@ -1,0 +1,87 @@
+{extends "layout.tpl"}
+
+{block "title"}{t}edit your profile{/t}{/block}
+
+{block "content"}
+  <h3>{t}edit your profile{/t}</h3>
+
+  <form method="post">
+
+    <div class="form-group">
+      <label>{t}nickname{/t}</label>
+
+      <div class="input-group">
+        <span class="input-group-prepend">
+          <i class="input-group-text icon icon-user"></i>
+        </span>
+        <input
+          class="form-control {if isset($errors.nickname)}is-invalid{/if}"
+          type="text"
+          name="nickname"
+          value="{$user->nickname}"
+          autofocus>
+      </div>
+      {include "bits/fieldErrors.tpl" errors=$errors.nickname|default:null}
+    </div>
+
+    <div class="form-group">
+      <label>{t}email{/t}</label>
+
+      <div class="input-group">
+        <span class="input-group-prepend">
+          <i class="input-group-text icon icon-mail"></i>
+        </span>
+        <input
+          class="form-control {if isset($errors.email)}is-invalid{/if}"
+          type="email"
+          name="email"
+          value="{$user->email}">
+      </div>
+      {include "bits/fieldErrors.tpl" errors=$errors.email|default:null}
+    </div>
+
+    <hr>
+
+    <div class="form-group">
+      <label>{t}password (only if you wish to change it){/t}</label>
+
+      <div class="input-group">
+        <span class="input-group-prepend">
+          <i class="input-group-text icon icon-lock"></i>
+        </span>
+        <input
+          class="form-control {if isset($errors.password)}is-invalid{/if}"
+          type="password"
+          name="password"
+          value="{$password|default:''}">
+      </div>
+      {include "bits/fieldErrors.tpl" errors=$errors.password|default:null}
+    </div>
+
+    <div class="form-group">
+      <label>{t}password (again){/t}</label>
+      <div class="input-group">
+        <span class="input-group-prepend">
+          <i class="input-group-text icon icon-lock"></i>
+        </span>
+        <input
+          class="form-control"
+          type="password"
+          name="password2"
+          value="{$password2|default:''}">
+      </div>
+    </div>
+
+    <div>
+      <button name="saveButton" type="submit" class="btn btn-primary">
+        <i class="icon icon-floppy"></i>
+        {t}save{/t}
+      </button>
+
+      <a href="" class="btn btn-light">
+        <i class="icon icon-cancel"></i>
+        {t}cancel{/t}
+      </a>
+    </div>
+  </form>
+{/block}

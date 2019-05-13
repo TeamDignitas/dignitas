@@ -81,6 +81,10 @@ class Router {
       'en_US.utf8' => 'user',
       'ro_RO.utf8' => 'utilizator',
     ],
+    'user/edit' => [
+      'en_US.utf8' => 'edit-user',
+      'ro_RO.utf8' => 'editeaza-utilizator',
+    ],
 
     // votes
     'vote/save' => [
@@ -97,6 +101,7 @@ class Router {
     'entity/view' => [ 'id' ],
     'statement/edit' => [ 'id' ],
     'statement/view' => [ 'id', 'answerId' ],
+    'user/edit' => [ 'id' ],
     'user/view' => [ 'id', 'nickname' ],
   ];
 

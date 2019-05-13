@@ -15,4 +15,11 @@
     <dd>{t}member since{/t}</dd>
     <dt>{$user->createDate|lt}</dt>
   </dl>
+
+  {if $user->id == User::getActiveId()}
+    <a href="{Router::link('user/edit')}" class="btn btn-light">
+      <i class="icon icon-edit"></i>
+      {t}edit{/t}
+    </a>
+  {/if}
 {/block}
