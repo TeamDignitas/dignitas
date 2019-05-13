@@ -14,6 +14,10 @@
     <dt>{$answers}</dt>
     <dd>{t}member since{/t}</dd>
     <dt>{$user->createDate|lt}</dt>
+    {if $user->lastSeen}
+      <dd>{t}last seen{/t}</dd>
+      <dt>{$user->lastSeen|moment}</dt>
+    {/if}
   </dl>
 
   {if $user->aboutMe}

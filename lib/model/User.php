@@ -26,6 +26,10 @@ class User extends BaseObject implements DatedObject {
   }
 
   static function setActive($userId) {
+    // update lastSeen before loading the user
+    $query = sprintf('update user set lastSeen = %d where id = %d', time(), $userId);
+    DB::execute($query);
+
     self::$active = User::get_by_id($userId);
   }
 

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-05-13 16:32+0300\n"
-"PO-Revision-Date: 2019-05-13 16:32+0300\n"
+"POT-Creation-Date: 2019-05-13 16:51+0300\n"
+"PO-Revision-Date: 2019-05-13 16:51+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -263,7 +263,7 @@ msgid "delete"
 msgstr "șterge"
 
 #: templates/entity/view.tpl:33 templates/statement/view.tpl:52
-#: templates/user/view.tpl:28
+#: templates/user/view.tpl:32
 msgid "edit"
 msgstr "editează"
 
@@ -351,7 +351,7 @@ msgstr "publică răspunsul"
 msgid "edit your profile"
 msgstr "editați-vă profilul"
 
-#: templates/user/edit.tpl:44 templates/user/view.tpl:20
+#: templates/user/edit.tpl:44 templates/user/view.tpl:24
 msgid "about me"
 msgstr "despre mine"
 
@@ -370,6 +370,10 @@ msgstr "răspunsuri"
 #: templates/user/view.tpl:15
 msgid "member since"
 msgstr "membru de pe"
+
+#: templates/user/view.tpl:18
+msgid "last seen"
+msgstr "ultima vizită"
 
 #: lib/Util.php:7
 msgid "You are already logged in."
@@ -443,20 +447,20 @@ msgstr "uniune"
 msgid "member of"
 msgstr "membru în"
 
-#: lib/model/User.php:36 routes/auth/login.php:57
+#: lib/model/User.php:40 routes/auth/login.php:57
 #: routes/auth/lostPassword.php:50
 msgid "Please enter an email address."
 msgstr "Vă rugăm să introduceți o adresă de e-mail."
 
-#: lib/model/User.php:41
+#: lib/model/User.php:45
 msgid "This email address is already taken."
 msgstr "Această adresă de e-mail este deja folosită."
 
-#: lib/model/User.php:45 routes/auth/lostPassword.php:52
+#: lib/model/User.php:49 routes/auth/lostPassword.php:52
 msgid "This email address looks incorrect."
 msgstr "Adresa de e-mail pare incorectă."
 
-#: lib/model/User.php:55
+#: lib/model/User.php:59
 msgid ""
 "Your nickname must begin with a letter or digit and consist of 3 to 30 "
 "letters, digits and punctuation from among -_."
@@ -464,23 +468,23 @@ msgstr ""
 "Porecla dumneavoastră trebuie să înceapă cu o literă sau cifră și să conțină "
 "între 3 și 30 de litere, cifre și punctuație din setul -_."
 
-#: lib/model/User.php:64 routes/auth/login.php:61
+#: lib/model/User.php:68 routes/auth/login.php:61
 msgid "Please enter a password."
 msgstr "Vă rugăm să introduceți o parolă."
 
-#: lib/model/User.php:66
+#: lib/model/User.php:70
 msgid "Please enter your password twice to prevent typos."
 msgstr "Vă rugăm să introduceți parola de două ori pentru verificare."
 
-#: lib/model/User.php:68
+#: lib/model/User.php:72
 msgid "Passwords don't match."
 msgstr "Parolele nu coincid."
 
-#: lib/model/User.php:70
+#: lib/model/User.php:74
 msgid "Your password must be at least 8 characters long."
 msgstr "Parola trebuie să aibă cel puțin 8 caractere."
 
-#: lib/model/User.php:88
+#: lib/model/User.php:92
 #, php-format
 msgid "You need at least %s reputation to perform this action."
 msgstr "Vă trebuie o reputație de cel puțin %s pentru această acțiune."
