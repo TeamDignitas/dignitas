@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-05-10 17:47+0300\n"
-"PO-Revision-Date: 2019-05-10 17:48+0300\n"
+"POT-Creation-Date: 2019-05-13 12:23+0300\n"
+"PO-Revision-Date: 2019-05-13 12:24+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -112,6 +112,18 @@ msgstr "parola (din nou)"
 #: templates/auth/register.tpl:92
 msgid "I already have an account"
 msgstr "am deja un cont"
+
+#: templates/auth/repost.tpl:3
+msgid "redirecting"
+msgstr "vă redirecționăm"
+
+#: templates/auth/repost.tpl:6
+msgid "Redirecting you back"
+msgstr "Vă redirecționăm înapoi"
+
+#: templates/auth/repost.tpl:18
+msgid "click here if you are not redirected automatically"
+msgstr "clic aici dacă nu sînteți redirecționat automat"
 
 #: templates/auth/resetPassword.tpl:3 templates/auth/resetPassword.tpl:9
 msgid "password change"
@@ -327,35 +339,35 @@ msgstr "publică răspunsul"
 msgid "You are already logged in."
 msgstr "Sînteți deja autentificat."
 
-#: lib/Util.php:36
+#: lib/Util.php:39
 msgid "Please log in to perform this action."
 msgstr "Vă rugăm să vă autentificați pentru a continua."
 
 # Date format in your locale, where %e is the day (1 to 31), %b is the abbreviated month name (Jan to Dec) and %Y is the four-digit year.
-#: lib/Util.php:73
+#: lib/Util.php:76
 msgid "%b %e, %Y"
 msgstr "%e %b %Y"
 
 # Date format in your locale, where %e is the day (1 to 31), %B is the full month name (January to December) and %Y is the four-digit year.
-#: lib/Util.php:73
+#: lib/Util.php:76
 msgid "%B %e, %Y"
 msgstr "%e %B %Y"
 
-#: lib/Util.php:96
+#: lib/Util.php:99
 #, php-format
 msgid "on %s"
 msgstr "pe %s"
 
-#: lib/Util.php:98
+#: lib/Util.php:101
 #, php-format
 msgid "%d days ago"
 msgstr "acum %d zile"
 
-#: lib/Util.php:100
+#: lib/Util.php:103
 msgid "yesterday"
 msgstr "ieri"
 
-#: lib/Util.php:105
+#: lib/Util.php:108
 #, php-format
 msgid "one hour ago"
 msgid_plural "%d hours ago"
@@ -363,7 +375,7 @@ msgstr[0] "acum o oră"
 msgstr[1] "acum %d ore"
 msgstr[2] "acum %d de ore"
 
-#: lib/Util.php:111
+#: lib/Util.php:114
 #, php-format
 msgid "one minute ago"
 msgid_plural "%d minutes ago"
@@ -371,7 +383,7 @@ msgstr[0] "acum un minut"
 msgstr[1] "acum %d minute"
 msgstr[2] "acum %d de minute"
 
-#: lib/Util.php:115
+#: lib/Util.php:118
 #, php-format
 msgid "one second ago"
 msgid_plural "%d seconds ago"

@@ -33,6 +33,9 @@ class Util {
   }
 
   static function redirectToLogin() {
+    if (!empty($_POST)) {
+      Session::set('postData', $_POST);
+    }
     FlashMessage::add(_('Please log in to perform this action.'), 'warning');
     Session::set('REAL_REFERRER', $_SERVER['REQUEST_URI']);
     self::redirectToRoute('auth/login');

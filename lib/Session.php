@@ -2,7 +2,6 @@
 
 class Session {
 
-  const ONE_MONTH_IN_SECONDS = 30 * 86400;
   const ONE_YEAR_IN_SECONDS = 365 * 86400;
 
   static function init() {
@@ -25,10 +24,22 @@ class Session {
     User::setActive($user->id); // for logging purposes only
     Log::info('Logged in, IP=' . $_SERVER['REMOTE_ADDR']);
 
-    if ($referrer) {
+    $postData = self::get('postData');
+
+    if (!$referrer) {
+      Util::redirectToHome();
+    } else if (empty($postData)) {
       Util::redirect($referrer);
     } else {
-      Util::redirectToHome();
+      // print the post data in a form and submit it with javascript
+      Smart::assign([
+        'postData' => $postData,
+        'referrer' => $referrer,
+      ]);
+
+      self::unsetVar('postData');
+      Smart::display('auth/repost.tpl');
+      exit;
     }
   }
 

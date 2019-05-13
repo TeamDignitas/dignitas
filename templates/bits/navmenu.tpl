@@ -56,7 +56,7 @@
             aria-expanded="false">
             <i class="icon icon-user"></i>
             {$u}
-            <span class="badge badge-secondary align-text-top">{$u->reputation}</span>
+            <span class="badge badge-secondary align-text-top">{$u->reputation|nf}</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarUserDropdown">
             <a class="dropdown-item" href="{Router::link('aggregate/dashboard')}">
