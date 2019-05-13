@@ -41,7 +41,7 @@ if ($saveButton) {
     StatementSource::updateDependants($sources, 'statementId', $statement->id, 'rank');
 
     FlashMessage::add(_('Changes saved.'), 'success');
-    Util::redirect(Router::link('statement/edit') . '/' . $statement->id);
+    Util::redirectToSelf();
   } else {
     Smart::assign('errors', $errors);
     Smart::assign('sources', $sources);

@@ -50,7 +50,7 @@ if ($saveButton) {
 
     Relation::updateDependants($relations, 'fromEntityId', $entity->id, 'rank');
     FlashMessage::add(_('Changes saved.'), 'success');
-    Util::redirect(Router::link('entity/edit') . '/' . $entity->id);
+    Util::redirectToSelf();
   } else {
     Smart::assign('errors', $errors);
     Smart::assign('relations', $relations);
