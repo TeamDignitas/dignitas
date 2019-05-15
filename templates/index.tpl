@@ -12,11 +12,10 @@
 
   {foreach $entities as $e}
     <div class="clearfix">
-      {if $e->imageExtension}
-        <img
-          src="{Img::getThumbLink($e, Config::THUMB_ENTITY_SMALL)}"
-          class="img-thumbnail rounded float-right">
-      {/if}
+      {include "bits/image.tpl"
+        obj=$e
+        size=Config::THUMB_ENTITY_SMALL
+        imgClass="img-thumbnail rounded float-right"}
 
       {include "bits/entityLink.tpl" e=$e}
       <div>{$e->getTypeName()}</div>

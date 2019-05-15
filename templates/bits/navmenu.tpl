@@ -55,12 +55,10 @@
             aria-haspopup="true"
             aria-expanded="false">
             {if $u->imageExtension}
-              {$sz=Img::getThumbSize($u, Config::THUMB_NAVBAR)}
-              <img
-                src="{Img::getThumbLink($u, Config::THUMB_NAVBAR)}"
-                class="rounded"
-                width="{$sz.width}"
-                height="{$sz.height}">
+              {include "bits/image.tpl"
+                obj=$u
+                size=Config::THUMB_NAVBAR
+                imgClass="rounded"}
             {else}
               <i class="icon icon-user"></i>
             {/if}

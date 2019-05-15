@@ -4,14 +4,10 @@
 
 {block "content"}
   <div class="clearfix">
-    {if $entity->imageExtension}
-      {$sz=Img::getThumbSize($entity, Config::THUMB_ENTITY_LARGE)}
-      <img
-        src="{Img::getThumbLink($entity, Config::THUMB_ENTITY_LARGE)}"
-        class="img-thumbnail rounded float-right"
-        width="{$sz.width}"
-        height="{$sz.height}">
-    {/if}
+    {include "bits/image.tpl"
+      obj=$entity
+      size=Config::THUMB_ENTITY_LARGE
+      imgClass="img-thumbnail rounded float-right"}
 
     <h3>{$entity->name|escape}</h3>
     <h4>{$entity->getTypeName()}</h4>

@@ -4,11 +4,11 @@
 
 {block "content"}
   <div class="clearfix">
-    {if $entity->imageExtension}
-      <img
-        src="{Img::getThumbLink($entity, Config::THUMB_ENTITY_LARGE)}"
-        class="img-thumbnail rounded float-right ml-5">
-    {/if}
+    {include "bits/image.tpl"
+      obj=$entity
+      size=Config::THUMB_ENTITY_LARGE
+      spanClass="col-3"
+      imgClass="img-thumbnail rounded float-right ml-5"}
 
     <h3>{$statement->summary|escape}</h3>
 

@@ -98,16 +98,11 @@
         </div>
       </div>
 
-      {if $entity->imageExtension}
-        <div class="col-3">
-          {$sz=Img::getThumbSize($entity, Config::THUMB_ENTITY_LARGE)}
-          <img
-            src="{Img::getThumbLink($entity, Config::THUMB_ENTITY_LARGE)}"
-            class="img-thumbnail rounded float-right"
-            width="{$sz.width}"
-            height="{$sz.height}">
-        </div>
-      {/if}
+      {include "bits/image.tpl"
+        obj=$entity
+        size=Config::THUMB_ENTITY_LARGE
+        spanClass="col-3"
+        imgClass="img-thumbnail rounded float-right"}
     </div>
 
     <hr>

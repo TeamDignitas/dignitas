@@ -64,16 +64,11 @@
         </div>
       </div>
 
-      {if $user->imageExtension}
-        <div class="col-3">
-          {$sz=Img::getThumbSize($user, Config::THUMB_USER_PROFILE)}
-          <img
-            src="{Img::getThumbLink($user, Config::THUMB_USER_PROFILE)}"
-            class="img-thumbnail rounded float-right"
-            width="{$sz.width}"
-            height="{$sz.height}">
-        </div>
-      {/if}
+      {include "bits/image.tpl"
+        obj=$user
+        size=Config::THUMB_USER_PROFILE
+        spanClass="col-3"
+        imgClass="img-thumbnail rounded float-right"}
     </div>
 
     <div class="form-group">

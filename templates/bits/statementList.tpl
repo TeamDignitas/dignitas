@@ -3,11 +3,11 @@
 {foreach $statements as $s}
   <div class="statement clearfix">
     {$entity=$s->getEntity()}
-    {if $entityImages && $entity->imageExtension}
-      <img
-        src="{Img::getThumbLink($entity, Config::THUMB_ENTITY_LARGE)}"
-        class="img-thumbnail rounded float-right ml-5">
-    {/if}
+    {include "bits/image.tpl"
+      obj=$entity
+      condition=$entityImages && $entity->imageExtension
+      size=Config::THUMB_ENTITY_LARGE
+      imgClass="img-thumbnail rounded float-right ml-5"}
 
     <div>
       <div>

@@ -4,14 +4,10 @@
 
 {block "content"}
   <div class="clearfix">
-    {if $user->imageExtension}
-      {$sz=Img::getThumbSize($user, Config::THUMB_USER_PROFILE)}
-      <img
-        src="{Img::getThumbLink($user, Config::THUMB_USER_PROFILE)}"
-        class="img-thumbnail rounded float-right"
-        width="{$sz.width}"
-        height="{$sz.height}">
-    {/if}
+    {include "bits/image.tpl"
+      obj=$user
+      size=Config::THUMB_USER_PROFILE
+      imgClass="img-thumbnail rounded float-right"}
 
     <h3>{t}user{/t} {$user}</h3>
 
