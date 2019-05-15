@@ -13,12 +13,15 @@ if ($saveButton) {
   $password = Request::get('password');
   $password2 = Request::get('password2');
 
-  $errors = validate($user, $password, $password2);
+  $deleteImage = Request::has('deleteImage');
+  $imageData = Request::getImage('image');
+
+  $errors = validate($user, $password, $password2, $imageData['status']);
   if (empty($errors)) {
     if ($password) {
       $user->password = md5($password);
     }
-    $user->save();
+    Img::saveWithImage($user, $imageData, $deleteImage);
 
     FlashMessage::add(_('Changes saved.'), 'success');
     Util::redirectToSelf();
@@ -41,7 +44,7 @@ Smart::display('user/edit.tpl');
 
 /*************************************************************************/
 
-function validate($user, $password, $password2) {
+function validate($user, $password, $password2, $imageStatus) {
   $errors = [];
 
   $msg = User::validateNickname($user->nickname);
@@ -59,6 +62,12 @@ function validate($user, $password, $password2) {
     if ($msg) {
       $errors['password'][] = $msg;
     }
+  }
+
+  // image field
+  $imgError = Img::validateImageStatus($imageStatus);
+  if ($imgError) {
+    $errors['image'][] = $imgError;
   }
 
   return $errors;

@@ -46,7 +46,7 @@ class Request {
    * code (one of the UPLOAD_* constants) and possibly the temporary file name
    * and the file extension.
    **/
-  static function getImage($name, &$tmpImageName) {
+  static function getImage($name) {
     $rec = self::getFile($name);
 
     if (!$rec ||

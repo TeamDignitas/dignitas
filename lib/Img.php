@@ -72,7 +72,7 @@ class Img {
     OS::execute($cmd, $ignored);
   }
 
-  static function copyUploadedImage($obj, $tmpImageName) {
+  private static function copyUploadedImage($obj, $tmpImageName) {
     self::deleteImages($obj);
 
     $dest = self::getImageLocation($obj);
@@ -117,5 +117,42 @@ class Img {
     } else {
       http_response_code(404);
     }
+  }
+
+  // checks if an image file was uploaded successfully and sets an error if not
+  static function validateImageStatus($imageStatus) {
+    switch ($imageStatus) {
+      case Request::UPLOAD_TOO_LARGE:
+        $mb = Config::MAX_IMAGE_SIZE >> 20;
+        return sprintf(_('Maximum image size is %s MB.'), $mb);
+
+      case Request::UPLOAD_BAD_MIME_TYPE:
+        return _('Supported image types are JPEG, PNG, GIF and SVG.');
+
+      case Request::UPLOAD_OTHER_ERROR:
+        return _('An error occurred while uploading the image.');
+
+      default:
+        return null;
+    }
+  }
+
+  // Saves an object that may contain a new image or a "delete image" command.
+  // Assumes all fields in $obj are correctly populated with the exception of
+  // imageExtension and possibly id if $obj is new.
+  static function saveWithImage($obj, $imageData, $deleteImage) {
+    if ($deleteImage) {
+      self::deleteImages($obj);
+      $obj->imageExtension = '';
+    } else if ($imageData['status'] == Request::UPLOAD_OK) {
+      $obj->imageExtension = $imageData['extension'];
+    } // otherwise leave it unchanged
+
+    $obj->save();
+
+    if (!$deleteImage && ($imageData['status'] == Request::UPLOAD_OK)) {
+      self::copyUploadedImage($obj, $imageData['tmpImageName']);
+    }
+
   }
 }

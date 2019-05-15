@@ -5,7 +5,7 @@
 {block "content"}
   <h3>{t}edit your profile{/t}</h3>
 
-  <form method="post">
+  <form method="post" enctype="multipart/form-data">
 
     <div class="form-group">
       <label>{t}nickname{/t}</label>
@@ -38,6 +38,42 @@
           value="{$user->email}">
       </div>
       {include "bits/fieldErrors.tpl" errors=$errors.email|default:null}
+    </div>
+
+    <div class="form-group row">
+      <div class="col">
+        <label for="fieldImage">{t}image{/t}</label>
+
+        <div class="custom-file">
+          <input
+            name="image"
+            type="file"
+            class="form-control-file {if isset($errors.image)}is-invalid{/if}"
+            id="fieldImage">
+          <label class="custom-file-label" for="fieldImage">
+            {t}choose an image to upload or leave empty to keep existing image{/t}
+          </label>
+        </div>
+        {include "bits/fieldErrors.tpl" errors=$errors.image|default:null}
+
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="checkbox" name="deleteImage" class="form-check-input">
+            {t}delete image{/t}
+          </label>
+        </div>
+      </div>
+
+      {if $user->imageExtension}
+        <div class="col-3">
+          {$sz=Img::getThumbSize($user, 1)}
+          <img
+            src="{Img::getThumbLink($user, 1)}"
+            class="img-thumbnail rounded mx-auto d-block float-right"
+            width="{$sz.width}"
+            height="{$sz.height}">
+        </div>
+      {/if}
     </div>
 
     <div class="form-group">

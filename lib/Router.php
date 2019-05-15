@@ -77,13 +77,16 @@ class Router {
     ],
 
     // users
-    'user/view' => [
-      'en_US.utf8' => 'user',
-      'ro_RO.utf8' => 'utilizator',
-    ],
     'user/edit' => [
       'en_US.utf8' => 'edit-user',
       'ro_RO.utf8' => 'editeaza-utilizator',
+    ],
+    'user/image' => [
+      'en_US.utf8' => 'avatar',
+    ],
+    'user/view' => [
+      'en_US.utf8' => 'user',
+      'ro_RO.utf8' => 'utilizator',
     ],
 
     // votes
@@ -102,6 +105,7 @@ class Router {
     'statement/edit' => [ 'id' ],
     'statement/view' => [ 'id', 'answerId' ],
     'user/edit' => [ 'id' ],
+    'user/image' => [ 'id', 'fileName' ],
     'user/view' => [ 'id', 'nickname' ],
   ];
 

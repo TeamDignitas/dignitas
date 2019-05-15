@@ -33,21 +33,11 @@ if ($saveButton) {
     Request::getArray('relEndDates'));
 
   $deleteImage = Request::has('deleteImage');
-  $imageData = Request::getImage('image', $tmpImageName);
+  $imageData = Request::getImage('image');
 
   $errors = validate($entity, $relations, $imageData['status']);
   if (empty($errors)) {
-    if ($deleteImage) {
-      Img::deleteImages($entity);
-      $entity->imageExtension = '';
-    } else if ($imageData['status'] == Request::UPLOAD_OK) {
-      $entity->imageExtension = $imageData['extension'];
-      // otherwise leave it unchanged
-    }
-    $entity->save();
-    if (!$deleteImage && ($imageData['status'] == Request::UPLOAD_OK)) {
-      Img::copyUploadedImage($entity, $imageData['tmpImageName']);
-    }
+    Img::saveWithImage($entity, $imageData, $deleteImage);
 
     Relation::updateDependants($relations, 'fromEntityId', $entity->id, 'rank');
     FlashMessage::add(_('Changes saved.'), 'success');
@@ -117,19 +107,9 @@ function validate($entity, $relations, $imageStatus) {
   }
 
   // image field
-  switch ($imageStatus) {
-    case Request::UPLOAD_TOO_LARGE:
-      $mb = Config::MAX_IMAGE_SIZE >> 20;
-      $errors['image'][] = sprintf(_('Maximum image size is %s MB.'), $mb);
-      break;
-
-    case Request::UPLOAD_BAD_MIME_TYPE:
-      $errors['image'][] = _('Supported image types are JPEG, PNG, GIF and SVG.');
-      break;
-
-    case Request::UPLOAD_OTHER_ERROR:
-      $errors['image'][] = _('An error occurred while uploading the image.');
-      break;
+  $imgError = Img::validateImageStatus($imageStatus);
+  if ($imgError) {
+    $errors['image'][] = $imgError;
   }
 
   return $errors;
