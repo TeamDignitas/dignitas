@@ -7,7 +7,7 @@
       obj=$entity
       condition=$entityImages && $entity->imageExtension
       size=Config::THUMB_ENTITY_LARGE
-      imgClass="img-thumbnail rounded float-right ml-5"}
+      imgClass="pic float-right ml-5"}
 
     <div>
       <div>

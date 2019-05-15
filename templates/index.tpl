@@ -15,7 +15,7 @@
       {include "bits/image.tpl"
         obj=$e
         size=Config::THUMB_ENTITY_SMALL
-        imgClass="img-thumbnail rounded float-right"}
+        imgClass="pic float-right"}
 
       {include "bits/entityLink.tpl" e=$e}
       <div>{$e->getTypeName()}</div>

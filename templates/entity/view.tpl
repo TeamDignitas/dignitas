@@ -7,7 +7,7 @@
     {include "bits/image.tpl"
       obj=$entity
       size=Config::THUMB_ENTITY_LARGE
-      imgClass="img-thumbnail rounded float-right"}
+      imgClass="pic float-right"}
 
     <h3>{$entity->name|escape}</h3>
     <h4>{$entity->getTypeName()}</h4>

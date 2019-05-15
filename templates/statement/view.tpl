@@ -8,7 +8,7 @@
       obj=$entity
       size=Config::THUMB_ENTITY_LARGE
       spanClass="col-3"
-      imgClass="img-thumbnail rounded float-right ml-5"}
+      imgClass="pic float-right ml-5"}
 
     <h3>{$statement->summary|escape}</h3>
 

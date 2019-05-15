@@ -68,7 +68,7 @@
         obj=$user
         size=Config::THUMB_USER_PROFILE
         spanClass="col-3"
-        imgClass="img-thumbnail rounded float-right"}
+        imgClass="pic float-right"}
     </div>
 
     <div class="form-group">

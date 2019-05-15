@@ -102,7 +102,7 @@
         obj=$entity
         size=Config::THUMB_ENTITY_LARGE
         spanClass="col-3"
-        imgClass="img-thumbnail rounded float-right"}
+        imgClass="pic float-right"}
     </div>
 
     <hr>

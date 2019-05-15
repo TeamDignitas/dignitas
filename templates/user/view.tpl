@@ -7,7 +7,7 @@
     {include "bits/image.tpl"
       obj=$user
       size=Config::THUMB_USER_PROFILE
-      imgClass="img-thumbnail rounded float-right"}
+      imgClass="pic float-right"}
 
     <h3>{t}user{/t} {$user}</h3>
 
