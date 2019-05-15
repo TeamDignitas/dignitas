@@ -5,7 +5,7 @@
     {$entity=$s->getEntity()}
     {if $entityImages && $entity->imageExtension}
       <img
-        src="{Img::getThumbLink($entity, 1)}"
+        src="{Img::getThumbLink($entity, Config::THUMB_ENTITY_LARGE)}"
         class="img-thumbnail rounded float-right ml-5">
     {/if}
 

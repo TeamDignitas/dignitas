@@ -66,10 +66,10 @@
 
       {if $user->imageExtension}
         <div class="col-3">
-          {$sz=Img::getThumbSize($user, 1)}
+          {$sz=Img::getThumbSize($user, Config::THUMB_USER_PROFILE)}
           <img
-            src="{Img::getThumbLink($user, 1)}"
-            class="img-thumbnail rounded mx-auto d-block float-right"
+            src="{Img::getThumbLink($user, Config::THUMB_USER_PROFILE)}"
+            class="img-thumbnail rounded float-right"
             width="{$sz.width}"
             height="{$sz.height}">
         </div>

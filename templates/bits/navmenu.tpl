@@ -54,7 +54,16 @@
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false">
-            <i class="icon icon-user"></i>
+            {if $u->imageExtension}
+              {$sz=Img::getThumbSize($u, Config::THUMB_NAVBAR)}
+              <img
+                src="{Img::getThumbLink($u, Config::THUMB_NAVBAR)}"
+                class="rounded"
+                width="{$sz.width}"
+                height="{$sz.height}">
+            {else}
+              <i class="icon icon-user"></i>
+            {/if}
             {$u}
             <span class="badge badge-secondary align-text-top">{$u->reputation|nf}</span>
           </a>

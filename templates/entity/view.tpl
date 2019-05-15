@@ -5,14 +5,12 @@
 {block "content"}
   <div class="clearfix">
     {if $entity->imageExtension}
-      <div class="mb-2">
-        {$sz=Img::getThumbSize($entity, 1)}
-        <img
-          src="{Img::getThumbLink($entity, 1)}"
-          class="img-thumbnail rounded float-right"
-          width="{$sz.width}"
-          height="{$sz.height}">
-      </div>
+      {$sz=Img::getThumbSize($entity, Config::THUMB_ENTITY_LARGE)}
+      <img
+        src="{Img::getThumbLink($entity, Config::THUMB_ENTITY_LARGE)}"
+        class="img-thumbnail rounded float-right"
+        width="{$sz.width}"
+        height="{$sz.height}">
     {/if}
 
     <h3>{$entity->name|escape}</h3>

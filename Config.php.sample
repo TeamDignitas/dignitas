@@ -35,9 +35,18 @@ class Config {
     'image/png' => 'png',
     'image/svg+xml' => 'svg',
   ];
+
+  // thumb types and sizes
+  const THUMB_NAVBAR = 0;
+  const THUMB_USER_PROFILE = 1;
+  const THUMB_ENTITY_SMALL = 2;
+  const THUMB_ENTITY_LARGE = 3;
+
   const THUMB_SIZES = [
-    [ 40, 60 ],
-    [ 200, 300 ],
+    self::THUMB_NAVBAR => [ 24, 24 ],
+    self::THUMB_USER_PROFILE => [ 200, 300 ],
+    self::THUMB_ENTITY_SMALL => [ 40, 60 ],
+    self::THUMB_ENTITY_LARGE => [ 200, 300 ],
   ];
 
   // logging

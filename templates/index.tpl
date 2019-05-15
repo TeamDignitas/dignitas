@@ -14,7 +14,7 @@
     <div class="clearfix">
       {if $e->imageExtension}
         <img
-          src="{Img::getThumbLink($e, 0)}"
+          src="{Img::getThumbLink($e, Config::THUMB_ENTITY_SMALL)}"
           class="img-thumbnail rounded float-right">
       {/if}
 
