@@ -14,7 +14,7 @@
     <div class="clearfix">
       {if $e->imageExtension}
         <img
-          src="{$e->getThumbLink(0)}"
+          src="{Img::getThumbLink($e, 0)}"
           class="img-thumbnail rounded float-right">
       {/if}
 
@@ -33,7 +33,7 @@
 
     {if User::may(User::PRIV_ADD_ENTITY)}
       <a href="{Router::link('entity/edit')}" class="btn btn-link">
-      {t}add an author{/t}
+        {t}add an author{/t}
       </a>
     {/if}
   </div>

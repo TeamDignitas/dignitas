@@ -38,14 +38,15 @@ if ($saveButton) {
   $errors = validate($entity, $relations, $imageData['status']);
   if (empty($errors)) {
     if ($deleteImage) {
-      $entity->deleteImage();
+      Img::deleteImages($entity);
+      $entity->imageExtension = '';
     } else if ($imageData['status'] == Request::UPLOAD_OK) {
       $entity->imageExtension = $imageData['extension'];
       // otherwise leave it unchanged
     }
     $entity->save();
     if (!$deleteImage && ($imageData['status'] == Request::UPLOAD_OK)) {
-      $entity->copyUploadedImage($imageData['tmpImageName']);
+      Img::copyUploadedImage($entity, $imageData['tmpImageName']);
     }
 
     Relation::updateDependants($relations, 'fromEntityId', $entity->id, 'rank');

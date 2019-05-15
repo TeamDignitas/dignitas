@@ -6,7 +6,7 @@
   <div class="clearfix">
     {if $entity->imageExtension}
       <img
-        src="{$entity->getThumbLink(1)}"
+        src="{Img::getThumbLink($entity, 1)}"
         class="img-thumbnail rounded float-right ml-5">
     {/if}
 

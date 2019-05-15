@@ -6,9 +6,9 @@
   <div class="clearfix">
     {if $entity->imageExtension}
       <div class="mb-2">
-        {$sz=$entity->getThumbSize(1)}
+        {$sz=Img::getThumbSize($entity, 1)}
         <img
-          src="{$entity->getThumbLink(1)}"
+          src="{Img::getThumbLink($entity, 1)}"
           class="img-thumbnail rounded float-right"
           width="{$sz.width}"
           height="{$sz.height}">

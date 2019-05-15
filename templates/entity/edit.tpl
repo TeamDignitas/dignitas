@@ -100,9 +100,9 @@
 
       {if $entity->imageExtension}
         <div class="col-3">
-          {$sz=$entity->getThumbSize(1)}
+          {$sz=Img::getThumbSize($entity, 1)}
           <img
-            src="{$entity->getThumbLink(1)}"
+            src="{Img::getThumbLink($entity, 1)}"
             class="img-thumbnail rounded mx-auto d-block float-right"
             width="{$sz.width}"
             height="{$sz.height}">
