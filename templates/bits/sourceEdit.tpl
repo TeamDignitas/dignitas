@@ -12,7 +12,7 @@
     <input
       type="text"
       name="ssUrls[]"
-      value="{$source->url|default:''}"
+      value="{$source->url|escape|default:''}"
       class="form-control">
   </td>
 

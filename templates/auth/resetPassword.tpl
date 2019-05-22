@@ -21,7 +21,7 @@
                 class="form-control {if isset($errors.password)}is-invalid{/if}"
                 type="password"
                 name="password"
-                value="{$password}"
+                value="{$password|escape}"
                 placeholder="{t}password{/t}">
             </div>
           </div>
@@ -35,7 +35,7 @@
                 class="form-control"
                 type="password"
                 name="password2"
-                value="{$password2}"
+                value="{$password2|escape}"
                 placeholder="{t}password (again){/t}">
             </div>
             {include "bits/fieldErrors.tpl" errors=$errors.password|default:null}

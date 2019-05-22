@@ -26,7 +26,7 @@
                 class="form-control {if isset($errors.email)}is-invalid{/if}"
                 type="text"
                 name="email"
-                value="{$email}"
+                value="{$email|escape}"
                 autofocus
                 placeholder="{t}email{/t}">
             </div>

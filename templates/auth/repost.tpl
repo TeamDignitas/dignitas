@@ -4,7 +4,7 @@
 
 {block "content"}
   <h3>{t}Redirecting you back{/t}</h3>
-  <form id="repostForm" action="{$referrer}" method="post">
+  <form id="repostForm" action="{$referrer|escape}" method="post">
     {foreach $postData as $key => $value}
       {if is_array($value)}
         {foreach $value as $v}

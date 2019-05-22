@@ -58,7 +58,7 @@
         name="context"
         id="fieldContext"
         class="form-control hasUnloadWarning {if isset($errors.context)}is-invalid{/if}"
-        rows="10">{$statement->context}</textarea>
+        rows="10">{$statement->context|escape}</textarea>
       {include "bits/fieldErrors.tpl" errors=$errors.context|default:null}
       {include "bits/markdownHelp.tpl"}
     </div>

@@ -20,7 +20,7 @@
               class="form-control {if isset($errors.nickname)}is-invalid{/if}"
               type="text"
               name="nickname"
-              value="{$nickname}"
+              value="{$nickname|escape}"
               autofocus
               placeholder="{t}nickname{/t}">
           </div>
@@ -36,7 +36,7 @@
               class="form-control {if isset($errors.email)}is-invalid{/if}"
               type="email"
               name="email"
-              value="{$email}"
+              value="{$email|escape}"
               placeholder="{t}email{/t}">
           </div>
           {include "bits/fieldErrors.tpl" errors=$errors.email|default:null}
@@ -51,7 +51,7 @@
               class="form-control {if isset($errors.password)}is-invalid{/if}"
               type="password"
               name="password"
-              value="{$password}"
+              value="{$password|escape}"
               placeholder="{t}password{/t}">
           </div>
           {include "bits/fieldErrors.tpl" errors=$errors.password|default:null}
@@ -66,7 +66,7 @@
               class="form-control"
               type="password"
               name="password2"
-              value="{$password2}"
+              value="{$password2|escape}"
               placeholder="{t}password (again){/t}">
           </div>
         </div>

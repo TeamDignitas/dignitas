@@ -35,7 +35,7 @@
           class="form-control {if isset($errors.email)}is-invalid{/if}"
           type="email"
           name="email"
-          value="{$user->email}">
+          value="{$user->email|escape}">
       </div>
       {include "bits/fieldErrors.tpl" errors=$errors.email|default:null}
     </div>
@@ -77,7 +77,7 @@
         id="fieldAboutMe"
         name="aboutMe"
         class="form-control hasUnloadWarning"
-        rows="5">{$user->aboutMe}</textarea>
+        rows="5">{$user->aboutMe|escape}</textarea>
       {include "bits/markdownHelp.tpl"}
     </div>
 

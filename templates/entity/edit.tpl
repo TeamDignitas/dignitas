@@ -19,7 +19,7 @@
       <label for="fieldName">{t}name{/t}</label>
       <input
         name="name"
-        value="{$entity->name}"
+        value="{$entity->name|escape}"
         id="fieldName"
         class="form-control {if isset($errors.name)}is-invalid{/if}">
       {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
