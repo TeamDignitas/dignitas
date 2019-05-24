@@ -33,3 +33,7 @@ footer {
 .voteButton.voted {
   background: orange;
 }
+
+.tagTooltip {
+  cursor: help;
+}

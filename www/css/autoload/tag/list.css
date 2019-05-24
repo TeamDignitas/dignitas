@@ -1,0 +1,17 @@
+#tagTree {
+  line-height: 200%;
+}
+
+#tagTree > ul {
+  padding-left: 0px;
+}
+
+#tagTree li {
+  list-style: none;
+}
+
+.expand {
+  cursor: pointer;
+  vertical-align: middle;
+  width: 20px;
+}

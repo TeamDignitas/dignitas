@@ -14,6 +14,9 @@ class User extends BaseObject implements DatedObject {
   const PRIV_DOWNVOTE_STATEMENT = 125;
   const PRIV_UPVOTE_ANSWER = 15;
   const PRIV_DOWNVOTE_ANSWER = 125;
+  const PRIV_ADD_TAG = 1500;
+  const PRIV_EDIT_TAG = 1500;
+  const PRIV_DELETE_TAG = 5000;
 
   private static $active = null; // user currently logged in
 

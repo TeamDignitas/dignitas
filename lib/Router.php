@@ -76,6 +76,22 @@ class Router {
       'ro_RO.utf8' => 'afirmatie',
     ],
 
+    // tags
+    'tag/edit' => [
+      'en_US.utf8' => 'edit-tag',
+      'ro_RO.utf8' => 'editeaza-eticheta',
+    ],
+    'tag/list' => [
+      'en_US.utf8' => 'tags',
+      'ro_RO.utf8' => 'etichete',
+    ],
+    'tag/load' => [
+      'en_US.utf8' => 'ajax/load-tags',
+    ],
+    'tag/search' => [
+      'en_US.utf8' => 'ajax/search-tags',
+    ],
+
     // users
     'user/edit' => [
       'en_US.utf8' => 'edit-user',
@@ -104,6 +120,8 @@ class Router {
     'entity/view' => [ 'id' ],
     'statement/edit' => [ 'id' ],
     'statement/view' => [ 'id', 'answerId' ],
+    'tag/edit' => [ 'id' ],
+    'tag/load' => [ 'ids' ],
     'user/edit' => [ 'id' ],
     'user/image' => [ 'id', 'fileName' ],
     'user/view' => [ 'id', 'nickname' ],

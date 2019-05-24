@@ -13,8 +13,13 @@ class Smart {
       'js' => [ 'third-party/jquery-3.3.1.min.js' ],
     ],
     'bootstrap' => [
-      'css' => [ 'third-party/bootstrap-4.2.1.min.css' ],
-      'js' => [ 'third-party/bootstrap-4.2.1.min.js' ],
+      'css' => [ 'third-party/bootstrap-4.3.1.min.css' ],
+      'js' => [ 'third-party/bootstrap-4.3.1.bundle.min.js' ],
+    ],
+    'colorpicker' => [
+      'css' => [ 'third-party/bootstrap-colorpicker.min.css' ],
+      'js' => [ 'third-party/bootstrap-colorpicker.min.js' ],
+      'deps' => [ 'bootstrap'],
     ],
     'fontello' => [
       'css' => [ 'third-party/fontello/css/icons.css' ],
