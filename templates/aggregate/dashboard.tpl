@@ -20,4 +20,10 @@
       </a>
     </div>
   {/if}
+
+  <div>
+    <a href="{Router::link('tag/list')}">
+      {t}tags{/t}
+    </a>
+  </div>
 {/block}

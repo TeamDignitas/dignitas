@@ -24,6 +24,10 @@ class Statement extends BaseObject implements DatedObject {
       ->find_many();
   }
 
+  function getTags() {
+    return ObjectTag::getTags(ObjectTag::TYPE_STATEMENT, $this->id);
+  }
+
   function isEditable() {
     return
       User::may(User::PRIV_EDIT_STATEMENT) ||  // can edit any statements

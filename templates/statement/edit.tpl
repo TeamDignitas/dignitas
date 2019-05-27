@@ -63,6 +63,12 @@
       {include "bits/markdownHelp.tpl"}
     </div>
 
+    <h6>{t}preview{/t}</h6>
+
+    <div id="markdownPreview">
+      {$statement->context|md}
+    </div>
+
     <div class="form-group">
       <label for="fieldGoal">{t}goal{/t}</label>
       <input
@@ -97,10 +103,14 @@
       </div>
     </div>
 
-    <h4>{t}preview{/t}</h4>
+    <div class="form-group">
+      <label>{t}tags{/t}</label>
 
-    <div id="markdownPreview">
-      {$statement->context|md}
+      <select name="tagIds[]" class="form-control select2Tags" multiple>
+        {foreach $tagIds as $tagId}
+          <option value="{$tagId}" selected></option>
+        {/foreach}
+      </select>
     </div>
 
     <div>
@@ -113,6 +123,13 @@
         <i class="icon icon-cancel"></i>
         {t}cancel{/t}
       </a>
+
+      {if $statement->id}
+        <a href="{Router::link('statement/view')}/{$statement->id}" class="btn btn-light">
+          <i class="icon icon-left"></i>
+          {t}back to statement{/t}
+        </a>
+      {/if}
 
       {if $statement->id && User::may(User::PRIV_DELETE_STATEMENT)}
         <button

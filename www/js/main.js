@@ -1,4 +1,4 @@
-/********** Confirmations before discarding pending changes **********/
+/************ Confirmations before discarding pending changes ************/
 $(function() {
   var beforeUnloadHandlerAttached = false;
 
@@ -25,7 +25,7 @@ $(function() {
 
 });
 
-/********** Vote submissions **********/
+/*************************** Vote submissions ***************************/
 $(function() {
   $('.voteButton').click(submitVote);
 

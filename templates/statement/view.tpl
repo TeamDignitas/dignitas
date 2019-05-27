@@ -43,6 +43,12 @@
     <h4>{t}goal{/t}</h4>
 
     {$statement->goal|escape}
+
+    <div>
+      {foreach $statement->getTags() as $t}
+        {include "bits/tag.tpl"}
+      {/foreach}
+    </div>
   </div>
 
   <div class="mt-3 clearfix">

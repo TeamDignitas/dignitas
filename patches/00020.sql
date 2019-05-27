@@ -20,6 +20,7 @@ create table object_tag (
   objectId int not null default 0,
   objectType int not null default 0,
   tagId int not null default 0,
+  rank int not null default 0,
   createDate int not null default 0,
   modDate int not null default 0,
   primary key (id),

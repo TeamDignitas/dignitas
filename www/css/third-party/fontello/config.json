@@ -143,6 +143,12 @@
       "css": "up-open",
       "code": 59406,
       "src": "fontawesome"
+    },
+    {
+      "uid": "f6d72aa5ef8e8f0e553012af9a29a87e",
+      "css": "left",
+      "code": 61815,
+      "src": "fontawesome"
     }
   ]
 }

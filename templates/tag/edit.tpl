@@ -69,7 +69,7 @@
 
       </div>
     </div>
-    
+
     <div class="form-group"">
       <label for="color" class="col-2 control-label">
         {t}text color{/t}
@@ -150,7 +150,7 @@
 
     <button name="saveButton" type="submit" class="btn btn-primary">
       <i class="icon icon-floppy"></i>
-      {t}save{/t}      
+      {t}save{/t}
     </button>
 
     <a href="" class="btn btn-light">
@@ -159,7 +159,7 @@
     </a>
 
     <a class="btn btn-light" href="{Router::link('tag/list')}">
-      <i class="icon icon-arrow-left"></i>
+      <i class="icon icon-left"></i>
       {t}back to the tag list{/t}
     </a>
 

@@ -3,6 +3,15 @@
 $.fn.select2.defaults.set('language', 'ro');
 $.fn.select2.defaults.set('theme', 'bootstrap4');
 
+
+$(function() {
+  initSelect2('.select2Tags', URL_PREFIX + 'ajax/load-tags', {
+    ajax: { url: URL_PREFIX + 'ajax/search-tags' },
+    minimumInputLength: 1,
+    width: '100%',
+  });
+});
+
 /**
  * Resolves a select element whose <option>s contain only IDs.
  * Fetches the display value and possibly other attributes.

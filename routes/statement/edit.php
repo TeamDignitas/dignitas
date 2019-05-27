@@ -35,20 +35,25 @@ if ($saveButton) {
     Request::getArray('ssIds'),
     Request::getArray('ssUrls'));
 
+  $tagIds = Request::getArray('tagIds');
+
   $errors = validate($statement, $sources);
   if (empty($errors)) {
     $statement->save();
     StatementSource::updateDependants($sources, 'statementId', $statement->id, 'rank');
+    ObjectTag::update(ObjectTag::TYPE_STATEMENT, $statement->id, $tagIds);
 
     FlashMessage::add(_('Changes saved.'), 'success');
     Util::redirectToSelf();
   } else {
     Smart::assign('errors', $errors);
     Smart::assign('sources', $sources);
+    Smart::assign('tagIds', $tagIds);
   }
 } else {
   // first time loading the page
   Smart::assign('sources', $statement->getSources());
+  Smart::assign('tagIds', ObjectTag::getTagIds(ObjectTag::TYPE_STATEMENT, $statement->id));
 }
 
 Smart::addResources('marked', 'select2Dev', 'sortable');

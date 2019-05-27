@@ -57,7 +57,7 @@ class BaseObject extends Model {
     // delete vanishing DB records
     $existingIds = array_filter(Util::objectProperty($objects, 'id'));
     $existingIds[] = 0; // ensure array is non-empty
-    $dbRecords = Model::factory($class)
+    Model::factory($class)
       ->where($fkField, $fkValue)
       ->where_not_in('id', $existingIds)
       ->delete_many();
