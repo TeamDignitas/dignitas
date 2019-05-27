@@ -15,6 +15,7 @@ $(function() {
           options: { colors: collectFrequentColors('#frequent-color') },
         }
       ],
+      fallbackColor: '#ffffff',
     });
     $('#background').closest('.colorpicker-component').colorpicker({
       extensions: [
@@ -23,6 +24,7 @@ $(function() {
           options: { colors: collectFrequentColors('#frequent-background') },
         }
       ],
+      fallbackColor: '#1e83c2',
     });
   }
 

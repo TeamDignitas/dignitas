@@ -158,10 +158,12 @@
       {t}cancel{/t}
     </a>
 
-    <a class="btn btn-light" href="{Router::link('tag/list')}">
-      <i class="icon icon-left"></i>
-      {t}back to the tag list{/t}
-    </a>
+    {if $t->id}
+      <a class="btn btn-light" href="{Router::link('tag/view')}/{$t->id}">
+        <i class="icon icon-left"></i>
+        {t}back to tag{/t}
+      </a>
+    {/if}
 
     {if $t->id && User::may(User::PRIV_DELETE_TAG)}
       <button

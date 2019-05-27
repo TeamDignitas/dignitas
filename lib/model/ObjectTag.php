@@ -3,8 +3,6 @@
 class ObjectTag extends BaseObject implements DatedObject {
 
   const TYPE_STATEMENT = 1;
-  const TYPE_ANSWER = 2;
-  const TYPE_ENTITY = 3;
 
   static function create($objectType, $objectId, $tagId) {
     $ot = Model::factory('ObjectTag')->create();
@@ -24,14 +22,6 @@ class ObjectTag extends BaseObject implements DatedObject {
 
   static function getStatementTags($statementId) {
     return self::getAllByTypeId(self::TYPE_STATEMENT, $statementId);
-  }
-
-  static function getAnswerTags($answerId) {
-    return self::getAllByTypeId(self::TYPE_ANSWER, $answerId);
-  }
-
-  static function getEntityTags($entityId) {
-    return self::getAllByTypeId(self::TYPE_ENTITY, $entityId);
   }
 
   // returns just the tag IDs

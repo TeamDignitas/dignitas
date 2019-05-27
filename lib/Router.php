@@ -91,6 +91,10 @@ class Router {
     'tag/search' => [
       'en_US.utf8' => 'ajax/search-tags',
     ],
+    'tag/view' => [
+      'en_US.utf8' => 'tag',
+      'ro_RO.utf8' => 'eticheta',
+    ],
 
     // users
     'user/edit' => [
@@ -122,6 +126,7 @@ class Router {
     'statement/view' => [ 'id', 'answerId' ],
     'tag/edit' => [ 'id' ],
     'tag/load' => [ 'ids' ],
+    'tag/view' => [ 'id' ],
     'user/edit' => [ 'id' ],
     'user/image' => [ 'id', 'fileName' ],
     'user/view' => [ 'id', 'nickname' ],

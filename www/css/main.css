@@ -34,6 +34,10 @@ footer {
   background: orange;
 }
 
+.tag {
+  font-size: 120%;
+}
+
 .tagTooltip {
   cursor: help;
 }
