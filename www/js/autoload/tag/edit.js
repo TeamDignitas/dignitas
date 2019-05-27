@@ -9,21 +9,28 @@ $(function() {
     });
 
     $('#color').closest('.colorpicker-component').colorpicker({
-      align: 'left',
-      colorSelectors: collectFrequentColors('#frequent-color'),
-      format: 'hex',
+      extensions: [
+        {
+          name: 'swatches',
+          options: { colors: collectFrequentColors('#frequent-color') },
+        }
+      ],
     });
     $('#background').closest('.colorpicker-component').colorpicker({
-      align: 'left',
-      colorSelectors: collectFrequentColors('#frequent-background'),
-      format: 'hex',
+      extensions: [
+        {
+          name: 'swatches',
+          options: { colors: collectFrequentColors('#frequent-background') },
+        }
+      ],
     });
   }
 
   function collectFrequentColors(sel) {
-    var result = [];
+    var result = {};
     $(sel).find('div').each(function() {
-      result.push($(this).text());
+      var hex = $(this).text();
+      result[hex] = hex;
     });
     return result;
   }
