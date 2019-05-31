@@ -18,6 +18,13 @@ class Router {
       'en_US.utf8' => 'dashboard',
       'ro_RO.utf8' => 'panou-control',
     ],
+    'aggregate/search' => [
+      'en_US.utf8' => 'search',
+      'ro_RO.utf8' => 'cautare',
+    ],
+    'aggregate/ajaxSearch' => [
+      'en_US.utf8' => 'ajax/search',
+    ],
 
     // auth
     'auth/login' => [
@@ -120,6 +127,7 @@ class Router {
 
   // file => list of parameters expected in the URL (none by default)
   const PARAMS = [
+    'aggregate/search' => [ 'q' ],
     'entity/edit' => [ 'id' ],
     'entity/image' => [ 'id', 'fileName' ],
     'entity/load' => [ 'ids' ],

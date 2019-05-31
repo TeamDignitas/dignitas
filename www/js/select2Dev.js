@@ -1,6 +1,8 @@
 /* Custom code built on top of select2.min.js */
 
-$.fn.select2.defaults.set('language', 'ro');
+if (SELECT2_LOCALE) {
+  $.fn.select2.defaults.set('language', SELECT2_LOCALE);
+}
 $.fn.select2.defaults.set('theme', 'bootstrap4');
 
 

@@ -56,15 +56,9 @@ class LocaleUtil {
     self::set($id);
   }
 
-  // formats a number according to the current locale
-  static function number($x, $decimals = 0) {
-    $locale = localeconv();
-    return number_format(
-      $x, $decimals, $locale['decimal_point'], $locale['thousands_sep']);
-  }
-
-  static function date($timestamp, $format = "%e %b %Y") {
-    return strftime($format, $timestamp);
+  static function getSelect2Locale() {
+    $locale = self::getCurrent();
+    return Config::SELECT2_LOCALES[$locale] ?? null;
   }
 
 }

@@ -8,12 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="{$cssFile.path}?v={$cssFile.date}" rel="stylesheet" type="text/css">
-    <script src="{$jsFile.path}?v={$jsFile.date}"></script>
 
     {* expose some PHP constants *}
     <script>
+      const SELECT2_LOCALE = '{LocaleUtil::getSelect2Locale()}';
       const URL_PREFIX = '{Config::URL_PREFIX}';
     </script>
+
+    <script src="{$jsFile.path}?v={$jsFile.date}"></script>
+
   </head>
 
   <body>
