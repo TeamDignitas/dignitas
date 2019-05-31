@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-05-13 16:51+0300\n"
-"PO-Revision-Date: 2019-05-13 16:51+0300\n"
+"POT-Creation-Date: 2019-05-31 15:52+0300\n"
+"PO-Revision-Date: 2019-05-31 15:52+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -35,22 +35,27 @@ msgstr ""
 "ați tastat adresa corectă sau vizitați <a href=\"%1\">pagina principală</a>."
 
 #: templates/aggregate/dashboard.tpl:3 templates/aggregate/dashboard.tpl:6
-#: templates/bits/navmenu.tpl:70
+#: templates/bits/navmenu.tpl:81
 msgid "dashboard"
 msgstr "panou de control"
 
-#: templates/aggregate/dashboard.tpl:11 templates/index.tpl:30
+#: templates/aggregate/dashboard.tpl:11 templates/index.tpl:29
 #: templates/statement/edit.tpl:7
 msgid "add a statement"
 msgstr "adaugă o afirmație"
 
 #: templates/aggregate/dashboard.tpl:19 templates/entity/edit.tpl:7
-#: templates/index.tpl:36
+#: templates/index.tpl:35
 msgid "add an author"
 msgstr "adaugă un autor"
 
+#: templates/aggregate/dashboard.tpl:26 templates/statement/edit.tpl:107
+#: templates/tag/list.tpl:3 templates/tag/list.tpl:7
+msgid "tags"
+msgstr "etichete"
+
 #: templates/auth/login.tpl:3 templates/auth/login.tpl:16
-#: templates/auth/login.tpl:67 templates/bits/navmenu.tpl:82
+#: templates/auth/login.tpl:67 templates/bits/navmenu.tpl:111
 msgid "log in"
 msgstr "autentificare"
 
@@ -106,7 +111,7 @@ msgid "nickname"
 msgstr "poreclă"
 
 #: templates/auth/register.tpl:70 templates/auth/resetPassword.tpl:39
-#: templates/user/edit.tpl:78
+#: templates/user/edit.tpl:109
 msgid "password (again)"
 msgstr "parola (din nou)"
 
@@ -130,8 +135,9 @@ msgstr "clic aici dacă nu sînteți redirecționat automat"
 msgid "password change"
 msgstr "schimbarea parolei"
 
-#: templates/auth/resetPassword.tpl:45 templates/entity/edit.tpl:118
-#: templates/statement/edit.tpl:109 templates/user/edit.tpl:94
+#: templates/auth/resetPassword.tpl:45 templates/entity/edit.tpl:113
+#: templates/statement/edit.tpl:119 templates/tag/edit.tpl:153
+#: templates/user/edit.tpl:125
 msgid "save"
 msgstr "salvează"
 
@@ -139,7 +145,8 @@ msgstr "salvează"
 msgid "test user login"
 msgstr "autentificare ca utilizator de test"
 
-#: templates/bits/fakeLogin.tpl:33 templates/user/view.tpl:9
+#: templates/bits/fakeLogin.tpl:33 templates/bits/navmenu.tpl:92
+#: templates/user/view.tpl:15
 msgid "reputation"
 msgstr "reputație"
 
@@ -155,11 +162,15 @@ msgstr "arată/ascunde meniul"
 msgid "home page"
 msgstr "pagina principală"
 
-#: templates/bits/navmenu.tpl:66
+#: templates/bits/navmenu.tpl:77
 msgid "my profile"
 msgstr "profilul meu"
 
-#: templates/bits/navmenu.tpl:74
+#: templates/bits/navmenu.tpl:95
+msgid "change reputation manually"
+msgstr "schimbă reputația manual"
+
+#: templates/bits/navmenu.tpl:103
 msgid "log out"
 msgstr "închide sesiunea"
 
@@ -191,7 +202,7 @@ msgstr "scor"
 msgid "You need at least %1 reputation to downvote."
 msgstr "Vă trebuie o reputație de cel puțin %1 pentru a vota negativ."
 
-#: templates/bits/statementList.tpl:25 templates/statement/view.tpl:57
+#: templates/bits/statementList.tpl:25 templates/statement/view.tpl:63
 msgid "added by"
 msgstr "adăugată de"
 
@@ -199,7 +210,7 @@ msgstr "adăugată de"
 msgid "edit author"
 msgstr "editează autor"
 
-#: templates/entity/edit.tpl:19
+#: templates/entity/edit.tpl:19 templates/tag/edit.tpl:23
 msgid "name"
 msgstr "nume"
 
@@ -235,43 +246,44 @@ msgstr "acțiuni"
 msgid "add a relationship"
 msgstr "adaugă o relație"
 
-#: templates/entity/edit.tpl:79
+#: templates/entity/edit.tpl:79 templates/user/edit.tpl:45
 msgid "image"
 msgstr "imagine"
 
-#: templates/entity/edit.tpl:88
+#: templates/entity/edit.tpl:88 templates/user/edit.tpl:54
 msgid "choose an image to upload or leave empty to keep existing image"
 msgstr ""
 "alegeți o imagine pentru încărcare sau lăsați gol pentru a păstra imaginea "
 "existentă"
 
-#: templates/entity/edit.tpl:96
+#: templates/entity/edit.tpl:96 templates/user/edit.tpl:62
 msgid "delete image"
 msgstr "șterge imaginea"
 
-#: templates/entity/edit.tpl:123 templates/statement/edit.tpl:114
-#: templates/user/edit.tpl:99
+#: templates/entity/edit.tpl:118 templates/statement/edit.tpl:124
+#: templates/tag/edit.tpl:158 templates/user/edit.tpl:130
 msgid "cancel"
 msgstr "renunță"
 
-#: templates/entity/edit.tpl:131
+#: templates/entity/edit.tpl:126
 msgid "Are you sure you want to delete this entity?"
 msgstr "Confirmați ștergerea acestui autor?"
 
-#: templates/entity/edit.tpl:133 templates/statement/edit.tpl:124
+#: templates/entity/edit.tpl:128 templates/statement/edit.tpl:141
+#: templates/tag/edit.tpl:180
 msgid "delete"
 msgstr "șterge"
 
-#: templates/entity/view.tpl:33 templates/statement/view.tpl:52
-#: templates/user/view.tpl:32
+#: templates/entity/view.tpl:27 templates/statement/view.tpl:58
+#: templates/tag/view.tpl:14 templates/user/view.tpl:39
 msgid "edit"
 msgstr "editează"
 
-#: templates/entity/view.tpl:40
+#: templates/entity/view.tpl:34
 msgid "members"
 msgstr "membri"
 
-#: templates/entity/view.tpl:52 templates/user/view.tpl:11
+#: templates/entity/view.tpl:46 templates/user/view.tpl:17
 msgid "statements"
 msgstr "afirmații"
 
@@ -303,24 +315,28 @@ msgstr "sumar"
 msgid "context"
 msgstr "context"
 
-#: templates/statement/edit.tpl:67 templates/statement/view.tpl:43
-msgid "goal"
-msgstr "scop"
-
-#: templates/statement/edit.tpl:79
-msgid "source URLs"
-msgstr "URL-uri sursă"
-
-#: templates/statement/edit.tpl:95
-msgid "add a source"
-msgstr "adaugă o sursă"
-
-#: templates/statement/edit.tpl:100 templates/statement/view.tpl:110
-#: templates/user/edit.tpl:53
+#: templates/statement/edit.tpl:66 templates/statement/view.tpl:116
+#: templates/user/edit.tpl:84
 msgid "preview"
 msgstr "previzualizare"
 
-#: templates/statement/edit.tpl:122
+#: templates/statement/edit.tpl:73 templates/statement/view.tpl:43
+msgid "goal"
+msgstr "scop"
+
+#: templates/statement/edit.tpl:85
+msgid "source URLs"
+msgstr "URL-uri sursă"
+
+#: templates/statement/edit.tpl:101
+msgid "add a source"
+msgstr "adaugă o sursă"
+
+#: templates/statement/edit.tpl:130
+msgid "back to statement"
+msgstr "înapoi la afirmație"
+
+#: templates/statement/edit.tpl:139
 msgid "Are you sure you want to delete this statement?"
 msgstr "Confirmați ștergerea acestei afirmații?"
 
@@ -328,58 +344,154 @@ msgstr "Confirmați ștergerea acestei afirmații?"
 msgid "sources"
 msgstr "surse"
 
-#: templates/statement/view.tpl:64
+#: templates/statement/view.tpl:70
 msgid "one answer"
 msgid_plural "%1 answers"
 msgstr[0] "un răspuns"
 msgstr[1] "%1 răspunsuri"
 msgstr[2] "%1 de răspunsuri"
 
-#: templates/statement/view.tpl:79
+#: templates/statement/view.tpl:85
 msgid "posted by"
 msgstr "publicat de"
 
-#: templates/statement/view.tpl:87
+#: templates/statement/view.tpl:93
 msgid "your answer"
 msgstr "răspunsul dumneavoastră"
 
-#: templates/statement/view.tpl:105
+#: templates/statement/view.tpl:111
 msgid "post your answer"
 msgstr "publică răspunsul"
+
+#: templates/tag/edit.tpl:5
+msgid "edit tag"
+msgstr "editează eticheta"
+
+#: templates/tag/edit.tpl:7 templates/tag/list.tpl:12
+msgid "add a tag"
+msgstr "adaugă o etichetă"
+
+#: templates/tag/edit.tpl:39
+msgid "details"
+msgstr "detalii"
+
+#: templates/tag/edit.tpl:48
+msgid "optional; visible in a tooltip while hovering"
+msgstr "opțional; vizibile la survol"
+
+#: templates/tag/edit.tpl:55
+msgid "parent tag"
+msgstr "eticheta părinte"
+
+#: templates/tag/edit.tpl:75
+msgid "text color"
+msgstr "culoarea textului"
+
+#: templates/tag/edit.tpl:93
+msgid "background color"
+msgstr "culoarea fundalului"
+
+#: templates/tag/edit.tpl:111
+msgid "icon"
+msgstr "iconiță"
+
+#: templates/tag/edit.tpl:133
+msgid "show only the icon, no text"
+msgstr "arată doar iconița, fără text"
+
+#: templates/tag/edit.tpl:139
+msgid ""
+"Optionally, an <a href=\"%1\">icon name</a>. Copy the portion after <i>icon-"
+"</i>, for example <i>globe</i> or <i>user</i>. If we don't have the icon, "
+"you can contact us and ask that we add it to our set. You can preview the "
+"set of available icons on <a href=\"%2\">Fontello</a>."
+msgstr ""
+"Opțional, un <a href=\"%1\">nume de iconiță</a>. Copiați porțiunea de după "
+"<i>icon-</i>, de exemplu <i>globe</i> sau <i>user</i>. Dacă nu avem iconița, "
+"ne puteți contacta ca să ne cereți să o adăugăm la set. Puteți previzualiza "
+"setul de iconițe disponibile la <a href=\"%2\">Fontello</a>."
+
+#: templates/tag/edit.tpl:164
+msgid "back to tag"
+msgstr "înapoi la etichetă"
+
+#: templates/tag/edit.tpl:173
+msgid "Are you sure you want to delete this tag?"
+msgstr "Confirmați ștergerea acestei etichete?"
+
+#: templates/tag/edit.tpl:176
+msgid ""
+"Cannot delete this tag because (1) it has descendants or (2) it is being "
+"used."
+msgstr ""
+"Nu pot șterge eticheta deoarece (1) are descendenți sau (2) este folosită."
+
+#: templates/tag/edit.tpl:186
+msgid "direct descendants"
+msgstr "descendenți direcți"
+
+#: templates/tag/edit.tpl:194
+msgid "duplicate tags"
+msgstr "etichete duplicate"
+
+#: templates/tag/view.tpl:3 templates/tag/view.tpl:6
+msgid "tag"
+msgstr "etichetă"
+
+#: templates/tag/view.tpl:22
+msgid "statements (%1 of %2 shown)"
+msgstr "afirmații (%1 din %2 afișate)"
+
+#: templates/tag/view.tpl:26
+msgid "statements (%1)"
+msgstr "afirmații (%1)"
 
 #: templates/user/edit.tpl:3 templates/user/edit.tpl:6
 msgid "edit your profile"
 msgstr "editați-vă profilul"
 
-#: templates/user/edit.tpl:44 templates/user/view.tpl:24
+#: templates/user/edit.tpl:75 templates/user/view.tpl:31
 msgid "about me"
 msgstr "despre mine"
 
-#: templates/user/edit.tpl:62
+#: templates/user/edit.tpl:93
 msgid "password (only if you wish to change it)"
 msgstr "parola (doar dacă doriți să o schimbați)"
 
-#: templates/user/view.tpl:3 templates/user/view.tpl:6
+#: templates/user/view.tpl:3 templates/user/view.tpl:12
 msgid "user"
 msgstr "utilizator"
 
-#: templates/user/view.tpl:13
+#: templates/user/view.tpl:19
 msgid "answers"
 msgstr "răspunsuri"
 
-#: templates/user/view.tpl:15
+#: templates/user/view.tpl:21
 msgid "member since"
 msgstr "membru de pe"
 
-#: templates/user/view.tpl:18
+#: templates/user/view.tpl:24
 msgid "last seen"
 msgstr "ultima vizită"
+
+#: lib/Img.php:127
+#, php-format
+msgid "Maximum image size is %s MB."
+msgstr "Dimensiunea maximă pentru imagini este de %s MB."
+
+#: lib/Img.php:130
+msgid "Supported image types are JPEG, PNG, GIF and SVG."
+msgstr "Tipurile de imagini acceptate sînt JPEG, PNG, GIF și SVG."
+
+#: lib/Img.php:133
+msgid "An error occurred while uploading the image."
+msgstr "A apărut o eroare la încărcarea imaginii."
 
 #: lib/Util.php:7
 msgid "You are already logged in."
 msgstr "Sînteți deja autentificat."
 
-#: lib/Util.php:39
+#: lib/Util.php:39 routes/user/changeReputation.php:15
 msgid "Please log in to perform this action."
 msgstr "Vă rugăm să vă autentificați pentru a continua."
 
@@ -447,20 +559,20 @@ msgstr "uniune"
 msgid "member of"
 msgstr "membru în"
 
-#: lib/model/User.php:40 routes/auth/login.php:57
+#: lib/model/User.php:43 routes/auth/login.php:57
 #: routes/auth/lostPassword.php:50
 msgid "Please enter an email address."
 msgstr "Vă rugăm să introduceți o adresă de e-mail."
 
-#: lib/model/User.php:45
+#: lib/model/User.php:48
 msgid "This email address is already taken."
 msgstr "Această adresă de e-mail este deja folosită."
 
-#: lib/model/User.php:49 routes/auth/lostPassword.php:52
+#: lib/model/User.php:52 routes/auth/lostPassword.php:52
 msgid "This email address looks incorrect."
 msgstr "Adresa de e-mail pare incorectă."
 
-#: lib/model/User.php:59
+#: lib/model/User.php:62
 msgid ""
 "Your nickname must begin with a letter or digit and consist of 3 to 30 "
 "letters, digits and punctuation from among -_."
@@ -468,23 +580,23 @@ msgstr ""
 "Porecla dumneavoastră trebuie să înceapă cu o literă sau cifră și să conțină "
 "între 3 și 30 de litere, cifre și punctuație din setul -_."
 
-#: lib/model/User.php:68 routes/auth/login.php:61
+#: lib/model/User.php:71 routes/auth/login.php:61
 msgid "Please enter a password."
 msgstr "Vă rugăm să introduceți o parolă."
 
-#: lib/model/User.php:70
+#: lib/model/User.php:73
 msgid "Please enter your password twice to prevent typos."
 msgstr "Vă rugăm să introduceți parola de două ori pentru verificare."
 
-#: lib/model/User.php:72
+#: lib/model/User.php:75
 msgid "Passwords don't match."
 msgstr "Parolele nu coincid."
 
-#: lib/model/User.php:74
+#: lib/model/User.php:77
 msgid "Your password must be at least 8 characters long."
 msgstr "Parola trebuie să aibă cel puțin 8 caractere."
 
-#: lib/model/User.php:92
+#: lib/model/User.php:95
 #, php-format
 msgid "You need at least %s reputation to perform this action."
 msgstr "Vă trebuie o reputație de cel puțin %s pentru această acțiune."
@@ -514,51 +626,38 @@ msgstr "Parola a fost schimbată cu succes."
 msgid "Entity deleted."
 msgstr "Am șters autorul."
 
-#: routes/entity/edit.php:52 routes/statement/edit.php:43
-#: routes/user/edit.php:23
+#: routes/entity/edit.php:43 routes/statement/edit.php:46
+#: routes/user/edit.php:26
 msgid "Changes saved."
 msgstr "Am salvat modificările."
 
-#: routes/entity/edit.php:74
+#: routes/entity/edit.php:65
 msgid "Please enter a name."
 msgstr "Vă rugăm să introduceți un nume."
 
-#: routes/entity/edit.php:78
+#: routes/entity/edit.php:69
 msgid "Please choose a type."
 msgstr "Vă rugăm să alegeți un tip."
 
-#: routes/entity/edit.php:104
+#: routes/entity/edit.php:95
 msgid "Please choose a target entity."
 msgstr "Vă rugăm să alegeți o entitate-țintă."
 
-#: routes/entity/edit.php:107
+#: routes/entity/edit.php:98
 msgid "An entity cannot be related to itself."
 msgstr "O entitate nu poate fi în relație cu ea însăși."
 
-#: routes/entity/edit.php:110
+#: routes/entity/edit.php:101
 msgid "The start date cannot be past the end date."
 msgstr "Data de start nu poate depăși data de sfîrșit."
 
-#: routes/entity/edit.php:114
+#: routes/entity/edit.php:105
 msgid ""
 "Persons can be members of parties and parties can be members of unions. No "
 "other types of memberships are allowed."
 msgstr ""
 "Persoanele pot fi membre ale partidelor și partidele pot fi membre ale "
 "uniunilor. Alte tipuri de apartenență nu sînt permise."
-
-#: routes/entity/edit.php:122
-#, php-format
-msgid "Maximum image size is %s MB."
-msgstr "Dimensiunea maximă pentru imagini este de %s MB."
-
-#: routes/entity/edit.php:126
-msgid "Supported image types are JPEG, PNG, GIF and SVG."
-msgstr "Tipurile de imagini acceptate sînt JPEG, PNG, GIF și SVG."
-
-#: routes/entity/edit.php:130
-msgid "An error occurred while uploading the image."
-msgstr "A apărut o eroare la încărcarea imaginii."
 
 #: routes/entity/view.php:7
 msgid "The entity you are looking for does not exist."
@@ -572,31 +671,31 @@ msgstr "Am schimbat limba interfeței. Conținutul paginii este mereu în român
 msgid "Statement deleted."
 msgstr "Am șters afirmația."
 
-#: routes/statement/edit.php:64
+#: routes/statement/edit.php:69
 msgid "Please enter an author."
 msgstr "Vă rugăm să introduceți un autor."
 
-#: routes/statement/edit.php:68
+#: routes/statement/edit.php:73
 msgid "Please enter the statement summary."
 msgstr "Vă rugăm să introduceți sumarul afirmației."
 
-#: routes/statement/edit.php:72
+#: routes/statement/edit.php:77
 msgid "Please enter the statement context."
 msgstr "Vă rugăm să introduceți contextul afirmației."
 
-#: routes/statement/edit.php:76
+#: routes/statement/edit.php:81
 msgid "Please enter the statement goal."
 msgstr "Vă rugăm să introduceți scopul afirmației."
 
-#: routes/statement/edit.php:80
+#: routes/statement/edit.php:85
 msgid "Please enter a date."
 msgstr "Vă rugăm să introduceți o dată."
 
-#: routes/statement/edit.php:82
+#: routes/statement/edit.php:87
 msgid "This date may not be in the future."
 msgstr "Această dată nu poate fi în viitor."
 
-#: routes/statement/edit.php:92
+#: routes/statement/edit.php:97
 msgid "Some source URLS are invalid."
 msgstr "Unele URL-uri sursă sînt invalide."
 
@@ -611,6 +710,36 @@ msgstr "Am publicat răspunsul."
 #: routes/statement/view.php:54
 msgid "Cannot post an empty answer."
 msgstr "Nu pot publica un răspuns vid."
+
+#: routes/tag/edit.php:28
+#, php-format
+msgid "Tag «%s» deleted."
+msgstr "Am șters eticheta «%s»."
+
+#: routes/tag/edit.php:54
+msgid "Tag saved."
+msgstr "Am salvat eticheta."
+
+#: routes/tag/edit.php:89
+msgid "Please enter a tag name."
+msgstr "Vă rugăm să introduceți un nume de etichetă."
+
+#: routes/tag/edit.php:98
+msgid "You cannot select a descendant as the parent."
+msgstr "Nu puteți alege un descendent ca părinte."
+
+#: routes/tag/view.php:10
+msgid "The tag you are looking for does not exist."
+msgstr "Eticheta pe care o căutați nu există."
+
+#: routes/user/changeReputation.php:17
+msgid "Changing your reputation is only allowed in development mode."
+msgstr "Nu vă puteți schimba reputația decît în modul development."
+
+#: routes/user/changeReputation.php:19
+#, php-format
+msgid "Reputation must be an integer between 1 and %d."
+msgstr "Reputația trebuie să fie un întreg între 1 și %d."
 
 #: routes/user/view.php:9
 msgid "The user you are looking for does not exist."

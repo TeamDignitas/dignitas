@@ -16,7 +16,7 @@ if (!$user) {
 } else if (!Config::DEVELOPMENT_MODE) {
   $error = _('Changing your reputation is only allowed in development mode.');
 } else if ($value < 1 || $value > MAX_REPUTATION) {
-  $error = sprintf(_('Reputation must be an integer between 1 and %d'), MAX_REPUTATION);
+  $error = sprintf(_('Reputation must be an integer between 1 and %d.'), MAX_REPUTATION);
 } else {
   $error = null;
   $user->reputation = $value;
