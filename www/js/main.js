@@ -1,4 +1,4 @@
-/************ Confirmations before discarding pending changes ************/
+/************ confirmations before discarding pending changes ************/
 $(function() {
   var beforeUnloadHandlerAttached = false;
 
@@ -25,14 +25,14 @@ $(function() {
 
 });
 
-/*************************** Vote submissions ***************************/
+/*************************** vote submissions ***************************/
 $(function() {
   $('.voteButton').click(submitVote);
 
   function submitVote() {
     var btn = $(this);
     $('body').addClass('waiting');
-    $.get(URL_PREFIX + 'ajax/save-vote', {
+    $.post(URL_PREFIX + 'ajax/save-vote', {
       value: btn.data('value'),
       type: btn.data('type'),
       objectId: btn.data('objectId'),
@@ -54,6 +54,36 @@ $(function() {
     }).always(function() {
       $('body').removeClass('waiting');
     });
+  }
+
+});
+
+/******************* changing the reputation manually *******************/
+$(function() {
+
+  $('#repChange').submit(changeReputation);
+
+  function changeReputation(evt) {
+    evt.preventDefault();
+
+    var rep = $(this).find('input').val();
+    $.post(URL_PREFIX + 'ajax/change-reputation', {
+      value: rep,
+    }).done(function(newRep) {
+
+      // update the reputation badge
+      $('#repBadge').text(newRep);
+
+      // close the user dropdown
+      $('#navbarUserDropdown').dropdown('toggle');
+
+    }).fail(function(errorMsg) {
+      if (errorMsg.responseJSON) {
+        alert(errorMsg.responseJSON);
+      }
+    });
+
+    return false;
   }
 
 });

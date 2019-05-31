@@ -63,7 +63,11 @@
               <i class="icon icon-user"></i>
             {/if}
             {$u}
-            <span class="badge badge-secondary align-text-top">{$u->reputation|nf}</span>
+            <span
+              id="repBadge"
+              class="badge badge-secondary align-text-top">
+              {$u->reputation|nf}
+            </span>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarUserDropdown">
             <a
@@ -76,6 +80,24 @@
               <i class="icon icon-gauge"></i>
               {t}dashboard{/t}
             </a>
+            {if Config::DEVELOPMENT_MODE}
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-item">
+                <form id="repChange" class="form-inline">
+                  <div class="input-group">
+                    <label class="icon icon-award"></label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="{t}reputation{/t}">
+                  </div>
+                  <small class="form-text text-muted">
+                    {t}change reputation manually{/t}
+                  </small>
+                </form>
+              </div>
+            {/if}
+            <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{Router::link('auth/logout')}">
               <i class="icon icon-logout"></i>
               {t}log out{/t}

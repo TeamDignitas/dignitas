@@ -97,6 +97,9 @@ class Router {
     ],
 
     // users
+    'user/changeReputation' => [
+      'en_US.utf8' => 'ajax/change-reputation',
+    ],
     'user/edit' => [
       'en_US.utf8' => 'edit-user',
       'ro_RO.utf8' => 'editeaza-utilizator',
