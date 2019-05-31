@@ -44,7 +44,7 @@ if ($saveButton) {
     ObjectTag::update(ObjectTag::TYPE_STATEMENT, $statement->id, $tagIds);
 
     FlashMessage::add(_('Changes saved.'), 'success');
-    Util::redirectToSelf();
+    Util::redirect(Router::link('statement/edit') . '/' . $statement->id);
   } else {
     Smart::assign('errors', $errors);
     Smart::assign('sources', $sources);
