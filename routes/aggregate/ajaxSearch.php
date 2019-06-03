@@ -5,90 +5,72 @@ const SCORE_ENTITY = 10;
 const SCORE_ENTITY_BEGINNING_OF_WORD = 20;
 const SCORE_TAG = 30;
 
+Log::info(var_export($_REQUEST, true));
+
 $q = Request::get('q');
 
 $results = [];
 
-// load entities by substring match (name)
-$entities = Model::factory('Entity')
-  ->where_like('name', "%{$q}%")
-  ->limit(LIMIT)
-  ->find_many();
+searchEntities($q, $results);
+searchTags($q, $results);
 
-foreach ($entities as $e) {
-  $results[] = new EntitySearchResult($e, $q);
-}
-
-// load tags by prefix match
-$tags = Model::factory('Tag')
-  ->where_like('value', "{$q}%")
-  ->limit(LIMIT)
-  ->find_many();
-
-foreach ($tags as $t) {
-  $results[] = new TagSearchResult($t, SCORE_TAG);
-}
-
-$output = [
-  'results' => [],
-];
-foreach ($results as $r) {
-  $output['results'][] = [
-    'id' => $r->getId(),
-    'text' => $r->getDisplayText(),
-  ];
-}
+$output['results'] = $results;
 
 header('Content-Type: application/json');
 print json_encode($output);
 
 /*************************************************************************/
 
-abstract class GenericSearchResult {
-  protected $score;
+// Load entities by substring match at word boundary. MariaDB has a problem
+// with regexp and collations, so this one-liner won't work:
+//
+//   name regexp "[[:<:]]%s" collate utf8mb4_general_ci
+function searchEntities($q, &$results) {
+  $escapedQ = addslashes($q);
+  $entities = Model::factory('Entity')
+    ->where_any_is([
+      [ 'name' => "{$escapedQ}%" ],
+      [ 'name' => "% {$escapedQ}%" ],
+      [ 'name' => "%-{$escapedQ}%" ],
+    ], 'like')
+    ->order_by_asc('name')
+    ->limit(LIMIT)
+    ->find_many();
 
-  abstract function getId();
-  abstract function getDisplayText();
+  if (count($entities)) {
+    $data = [];
+    foreach ($entities as $e) {
+      $data[] = [
+        'id' => $e->id,
+        'text' => $e->name,
+      ];
+    }
+    $results[] = [
+      'text' => _('entities'),
+      'children' => $data,
+    ];
+  }
 }
 
-class EntitySearchResult extends GenericSearchResult {
-  private $entity;
+// load tags by prefix match
+function searchTags($q, &$results) {
+  $escapedQ = addslashes($q);
+  $tags = Model::factory('Tag')
+    ->where_like('value', "{$escapedQ}%")
+    ->limit(LIMIT)
+    ->find_many();
 
-  function __construct($entity, $query) {
-    // better scores at word boundaries
-    $regex = sprintf('/\b%s/ui', $query);
-    $score = preg_match($regex, $entity->name)
-      ? SCORE_ENTITY_BEGINNING_OF_WORD
-      : SCORE_ENTITY;
-
-    $this->entity = $entity;
-    $this->score = $score;
+  if (count($tags)) {
+    $data = [];
+    foreach ($tags as $t) {
+      $data[] = [
+        'id' => $t->id,
+        'text' => $t->value,
+      ];
+    }
+    $results[] = [
+      'text' => _('tags'),
+      'children' => $data,
+    ];
   }
-
-  function getId() {
-    return $this->entity->id;
-  }
-
-  function getDisplayText() {
-    return $this->entity->name . ' (' . $this->score . ')';
-  }
-
-}
-
-class TagSearchResult extends GenericSearchResult {
-  private $tag;
-
-  function __construct($tag) {
-    $this->tag = $tag;
-    $this->score = SCORE_TAG;
-  }
-
-  function getId() {
-    return $this->tag->id;
-  }
-
-  function getDisplayText() {
-    return $this->tag->value . ' (' . $this->score . ')';
-  }
-
 }
