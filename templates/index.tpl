@@ -59,4 +59,9 @@
     {/if}
   </div>
 
+  {* expose the localized search URL *}
+  <script>
+    const SEARCH_URL = '{Router::link('aggregate/search')}';
+  </script>
+
 {/block}

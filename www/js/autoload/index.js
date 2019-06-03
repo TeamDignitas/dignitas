@@ -8,16 +8,9 @@ $(function() {
       },
       delay: 300,
     },
-    templateResult: formatResult,
     minimumInputLength: 1,
-  });
-
-  // redirect before the selection takes place, so that the user doesn't get
-  // to see the pill being added to the pillbox
-  $('#searchField').on('select2:selecting', function(e) {
-    var data = e.params.args.data;
-    window.location.href = data.url;
-    return false;
+    tags: true,
+    templateResult: formatResult,
   });
 
   function formatResult(data) {
@@ -28,4 +21,27 @@ $(function() {
     // fallback to the plain text for optgroups and other messages
     return data.text;
   }
+
+  // redirect before the selection takes place, so that the user doesn't get
+  // to see the pill being added to the pillbox
+  $('#searchField').on('select2:selecting', function(e) {
+    var data = e.params.args.data;
+    if (data.url) {
+      // existing option
+      window.location.href = data.url;
+    } else {
+      // newly added option (possible because tags = true)
+      window.location.href = SEARCH_URL + '/' + data.text;
+    }
+    return false;
+  });
+
+  // intercept the submit button because Select2 doesn't populate the <select>
+  // element properly and the search term is not submitted.
+  $('#searchForm').submit(function() {
+    var value = $('#searchField').find('option').val();
+    window.location.href = SEARCH_URL + '/' + value;
+    return false;
+  });
+
 });
