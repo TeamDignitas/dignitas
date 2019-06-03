@@ -2,7 +2,7 @@
   {include "bits/image.tpl"
     obj=$entity
     size=Config::THUMB_ENTITY_SEARCH_AUTOCOMPLETE
-    imgClass="pic float-left mr-2"}
+    imgClass="pic mr-2 align-middle"}
 
   {$entity->name|escape}
 
