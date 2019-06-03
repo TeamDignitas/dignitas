@@ -41,12 +41,14 @@ class Config {
   const THUMB_USER_PROFILE = 1;
   const THUMB_ENTITY_SMALL = 2;
   const THUMB_ENTITY_LARGE = 3;
+  const THUMB_ENTITY_SEARCH_AUTOCOMPLETE = 4;
 
   const THUMB_SIZES = [
     self::THUMB_NAVBAR => [ 24, 24 ],
     self::THUMB_USER_PROFILE => [ 200, 300 ],
     self::THUMB_ENTITY_SMALL => [ 40, 60 ],
     self::THUMB_ENTITY_LARGE => [ 200, 300 ],
+    self::THUMB_ENTITY_SEARCH_AUTOCOMPLETE => [ 20, 20 ],
   ];
 
   // logging

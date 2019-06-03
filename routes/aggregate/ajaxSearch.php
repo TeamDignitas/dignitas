@@ -37,17 +37,12 @@ function searchEntities($q, &$results) {
     ->limit(LIMIT)
     ->find_many();
 
-  if (count($entities)) {
-    $data = [];
-    foreach ($entities as $e) {
-      $data[] = [
-        'id' => $e->id,
-        'text' => $e->name,
-      ];
-    }
+  foreach ($entities as $e) {
+    Smart::assign('entity', $e);
     $results[] = [
-      'text' => _('entities'),
-      'children' => $data,
+      'id' => $e->id,
+      'url' => Router::link('entity/view') . '/' . $e->id,
+      'html' => Smart::fetch('bits/ajaxSearchResultEntity.tpl'),
     ];
   }
 }
@@ -60,17 +55,12 @@ function searchTags($q, &$results) {
     ->limit(LIMIT)
     ->find_many();
 
-  if (count($tags)) {
-    $data = [];
-    foreach ($tags as $t) {
-      $data[] = [
-        'id' => $t->id,
-        'text' => $t->value,
-      ];
-    }
+  foreach ($tags as $t) {
+    Smart::assign('tag', $t);
     $results[] = [
-      'text' => _('tags'),
-      'children' => $data,
+      'id' => $t->id,
+      'url' => Router::link('tag/view') . '/' . $t->id,
+      'html' => Smart::fetch('bits/ajaxSearchResultTag.tpl'),
     ];
   }
 }
