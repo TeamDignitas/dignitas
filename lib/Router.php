@@ -188,11 +188,17 @@ class Router {
 
     $absolute = Config::ROOT . 'routes/' . $file;
     if (file_exists($absolute)) {
-
-      // set additional params if the file expects them and the URL has them
+      // Set additional params if the file expects them and the URL has them.
+      // If there are more parts than params defined, then the last param
+      // collects all remaining parts.
       $params = self::PARAMS[$rec] ?? [];
-      for ($i = 0; $i < min(count($params), count($parts)); $i++) {
-        $_REQUEST[$params[$i]] = urldecode($parts[$i]);
+
+      while (($part = array_shift($parts)) &&
+             ($param = array_shift($params))) {
+        if (empty($params) && !empty($parts)) {
+          $part .= '/' . implode('/', $parts);
+        }
+        $_REQUEST[$param] = urldecode($part);
       }
 
       Log::debug('routing %s to %s', $path, $file);

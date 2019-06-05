@@ -40,4 +40,10 @@ class Statement extends BaseObject implements DatedObject {
       User::getActiveId(), Vote::TYPE_STATEMENT, $this->id);
   }
 
+  function delete() {
+    Log::warning("Deleted statement {$this->id} ({$this->sumary})");
+    ObjectTag::delete_all_by_objectType_objectId(ObjectTag::TYPE_STATEMENT, $this->id);
+    parent::delete();
+  }
+
 }
