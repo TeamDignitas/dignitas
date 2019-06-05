@@ -22,6 +22,16 @@ body.waiting * {
   width: 1%;
 }
 
+.aliasListAjax {
+  display: inline;
+}
+
+.aliasListAjax li:not(:first-child):before {
+  content: "•";
+  padding-right: 8px;
+}
+
+
 h3::first-letter {
   text-transform: capitalize;
 }

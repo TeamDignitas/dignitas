@@ -20,12 +20,17 @@ class Search {
   //   name regexp "[[:<:]]%s" collate utf8mb4_general_ci
   private static function searchEntities($escapedQuery, $limit) {
     return Model::factory('Entity')
+      ->table_alias('e')
+      ->select('e.*')
+      ->distinct()
+      ->left_outer_join('alias', ['e.id', '=', 'a.entityId'], 'a')
       ->where_any_is([
-        [ 'name' => "{$escapedQuery}%" ],
-        [ 'name' => "% {$escapedQuery}%" ],
-        [ 'name' => "%-{$escapedQuery}%" ],
+        [ 'e.name' => "{$escapedQuery}%" ],
+        [ 'e.name' => "% {$escapedQuery}%" ],
+        [ 'e.name' => "%-{$escapedQuery}%" ],
+        [ 'a.name' => "{$escapedQuery}%" ],
       ], 'like')
-      ->order_by_asc('name')
+      ->order_by_asc('e.name')
       ->limit($limit)
       ->find_many();
   }

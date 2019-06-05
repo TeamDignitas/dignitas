@@ -8,6 +8,7 @@ $results = [];
 
 foreach ($objects['entities'] as $e) {
   Smart::assign('entity', $e);
+  Smart::assign('aliases', $e->getAliases());
   $results[] = [
     'id' => $e->id,
     'url' => Router::link('entity/view') . '/' . $e->id,
