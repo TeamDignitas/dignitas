@@ -42,7 +42,7 @@
   </td>
 
   <td>
-    <button type="button" class="btn btn-danger deleteRelationButton">
+    <button type="button" class="btn btn-danger deleteDependantButton">
       <i class="icon icon-trash"></i>
     </button>
   </td>

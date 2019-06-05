@@ -24,6 +24,13 @@ class Entity extends BaseObject implements DatedObject {
     return self::typeName($this->type);
   }
 
+  function getAliases() {
+    return Model::factory('Alias')
+      ->where('entityId', $this->id)
+      ->order_by_asc('rank')
+      ->find_many();
+  }
+
   function getRelations() {
     return Model::factory('Relation')
       ->where('fromEntityId', $this->id)
@@ -33,6 +40,7 @@ class Entity extends BaseObject implements DatedObject {
 
   public function delete() {
     Log::warning("Deleted entity {$this->id} ({$this->name})");
+    Alias::delete_all_by_entityId($this->id);
     Img::deleteImages($this);
     Statement::delete_all_by_entityId($this->id);
     Relation::delete_all_by_fromEntityId($this->id);

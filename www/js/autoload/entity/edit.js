@@ -8,30 +8,41 @@ $(function() {
     width: '100%',
   };
 
-  var stem = null; // stem relation
+  var stemAlias = null;
+  var stemRelation = null;
 
   function init() {
-    stem = $('#stem').detach().removeAttr('hidden');
+    stemAlias = $('#stemAlias').detach().removeAttr('hidden');
+    stemRelation = $('#stemRelation').detach().removeAttr('hidden');
 
     initSelect2('.toEntityId', URL_PREFIX + 'ajax/load-entities', TO_ENTITY_ID_OPTIONS);
 
+    $('#addAliasButton').click(addAlias);
     $('#addRelationButton').click(addRelation);
-    $('#relationContainer').on('click', '.deleteRelationButton', deleteRelation);
 
-    Sortable.create(relationContainer, {
+    $('#relationContainer, #aliasContainer').on('click', '.deleteDependantButton', deleteDependant);
+
+    var sortableOpts = {
       handle: '.icon-move',
 	    animation: 150,
-    });
+    };
 
+    Sortable.create(aliasContainer, sortableOpts);
+    Sortable.create(relationContainer, sortableOpts);
+  }
+
+  function addAlias() {
+    var t = stemAlias.clone(true).appendTo('#aliasContainer');
+    $('#aliasHeader').removeAttr('hidden');
   }
 
   function addRelation() {
-    var t = stem.clone(true).appendTo('#relationContainer');
+    var t = stemRelation.clone(true).appendTo('#relationContainer');
     t.find('.toEntityId').select2(TO_ENTITY_ID_OPTIONS);
     $('#relationHeader').removeAttr('hidden');
   }
 
-  function deleteRelation() {
+  function deleteDependant() {
     $(this).closest('tr').remove();
   }
 

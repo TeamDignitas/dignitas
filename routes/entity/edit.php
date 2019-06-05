@@ -31,6 +31,10 @@ if ($saveButton) {
     Request::getArray('relEntityIds'),
     Request::getArray('relStartDates'),
     Request::getArray('relEndDates'));
+  $aliases = buildAliases(
+    $entity,
+    Request::getArray('aliasIds'),
+    Request::getArray('aliasNames'));
 
   $deleteImage = Request::has('deleteImage');
   $imageData = Request::getImage('image');
@@ -40,15 +44,18 @@ if ($saveButton) {
     Img::saveWithImage($entity, $imageData, $deleteImage);
 
     Relation::updateDependants($relations, 'fromEntityId', $entity->id, 'rank');
+    Alias::updateDependants($aliases, 'entityId', $entity->id, 'rank');
     FlashMessage::add(_('Changes saved.'), 'success');
     Util::redirect(Router::link('entity/edit') . '/' . $entity->id);
   } else {
     Smart::assign('errors', $errors);
     Smart::assign('relations', $relations);
+    Smart::assign('aliases', $aliases);
   }
 } else {
   // first time loading the page
   Smart::assign('relations', $entity->getRelations());
+  Smart::assign('aliases', $entity->getAliases());
 }
 
 Smart::addResources('sortable');
@@ -131,6 +138,24 @@ function buildRelations($entity, $ids, $types, $toEntityIds, $startDates, $endDa
     // ignore empty records
     if ($r->toEntityId || $r->startDate || $r->endDate) {
       $result[] = $r;
+    }
+  }
+
+  return $result;
+}
+
+function buildAliases($entity, $ids, $names) {
+  $result = [];
+
+  foreach ($ids as $i => $id) {
+    $a = $id
+      ? Alias::get_by_id($id)
+      : Model::factory('Alias')->create();
+    $a->name = $names[$i];
+
+    // ignore empty records
+    if ($a->name) {
+      $result[] = $a;
     }
   }
 

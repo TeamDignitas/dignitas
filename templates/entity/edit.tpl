@@ -26,6 +26,35 @@
     </div>
 
     <div class="form-group">
+      <label>{t}also known as{/t}</label>
+
+      <table class="table table-sm">
+        <thead
+          id="aliasHeader"
+          {if empty($aliases)}hidden{/if}>
+          <tr>
+            <th class="colOrder">{t}order{/t}</th>
+            <th class="colName">{t}alias{/t}</th>
+            <th class="colActions">{t}actions{/t}</th>
+          </tr>
+        </thead>
+        <tbody id="aliasContainer">
+          {include "bits/aliasEdit.tpl" id="stemAlias"}
+          {foreach $aliases as $a}
+            {include "bits/aliasEdit.tpl" alias=$a}
+          {/foreach}
+        </tbody>
+      </table>
+
+      <div>
+        <button id="addAliasButton" class="btn btn-light btn-sm" type="button">
+          <i class="icon icon-plus"></i>
+          {t}add an alias{/t}
+        </button>
+      </div>
+    </div>
+
+    <div class="form-group">
       <label for="fieldType">{t}type{/t}</label>
       <select
         name="type"
@@ -57,7 +86,7 @@
           </tr>
         </thead>
         <tbody id="relationContainer">
-          {include "bits/relationEdit.tpl" id="stem"}
+          {include "bits/relationEdit.tpl" id="stemRelation"}
           {foreach $relations as $r}
             {include "bits/relationEdit.tpl" relation=$r}
           {/foreach}
