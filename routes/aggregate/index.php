@@ -1,7 +1,5 @@
 <?php
 
-require_once '../lib/Core.php';
-
 $statements = Model::factory('Statement')
   ->order_by_desc('createDate')
   ->limit(10)
@@ -17,4 +15,4 @@ Smart::assign([
   'statements' => $statements,
   'entities' => $entities,
 ]);
-Smart::display('index.tpl');
+Smart::display('aggregate/index.tpl');

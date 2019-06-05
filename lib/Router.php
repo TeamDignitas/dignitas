@@ -25,6 +25,9 @@ class Router {
     'aggregate/ajaxSearch' => [
       'en_US.utf8' => 'ajax/search',
     ],
+    'aggregate/index' => [
+      'en_US.utf8' => '',
+    ],
 
     // auth
     'auth/login' => [
