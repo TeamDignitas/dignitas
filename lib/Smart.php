@@ -38,11 +38,8 @@ class Smart {
       'js' => [
         'third-party/select2/select2-4.0.5.min.js',
         'third-party/select2/i18n/ro.js',
+        'select2Dev.js',
       ],
-    ],
-    'select2Dev' => [
-      'js' => [ 'select2Dev.js' ],
-      'deps' => [ 'select2' ],
     ],
     'sortable' => [
       'js' => [ 'third-party/Sortable.min.js' ],
@@ -239,7 +236,7 @@ class Smart {
 
   /* Prepare and display a template. */
   static function display($templateName) {
-    self::addResources('bootstrap', 'fontello', 'jquery', 'main', 'select2Dev');
+    self::addResources('bootstrap', 'fontello', 'jquery', 'main', 'select2');
     self::addSameNameFiles($templateName);
     print self::fetch($templateName);
   }
