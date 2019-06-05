@@ -11,7 +11,7 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav">
 
       {if $pageType != 'home'}
         <li class="nav-item">
@@ -22,6 +22,8 @@
       {/if}
 
     </ul>
+
+    {include "bits/searchForm.tpl"}
 
     <ul class="navbar-nav">
       <li class="nav-item dropdown">

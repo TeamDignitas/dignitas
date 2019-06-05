@@ -239,7 +239,7 @@ class Smart {
 
   /* Prepare and display a template. */
   static function display($templateName) {
-    self::addResources('jquery', 'bootstrap', 'fontello', 'main');
+    self::addResources('bootstrap', 'fontello', 'jquery', 'main', 'select2Dev');
     self::addSameNameFiles($templateName);
     print self::fetch($templateName);
   }

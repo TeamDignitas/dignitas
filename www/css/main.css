@@ -2,8 +2,16 @@ body.waiting * {
   cursor: progress;
 }
 
-ul.navbar-nav a:hover {
+.navbar-nav a:hover {
   background: #ccc; /* slightly more visible */
+}
+
+.navbar-nav {
+  white-space: nowrap;
+}
+
+.navbar .select2-search input {
+  background-color: #f8f9fa;
 }
 
 h3::first-letter {

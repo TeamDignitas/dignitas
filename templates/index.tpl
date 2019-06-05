@@ -4,28 +4,6 @@
 
 {block "content"}
 
-  {***************************** search form *****************************}
-  <div class="row">
-    <div class="col-md-8 offset-md-2">
-      <form id="searchForm" action="{Router::link('aggregate/search')}">
-        <div class="input-group">
-          <select
-            id="searchField"
-            class="form-control"
-            name="q"
-            multiple
-            aria-label="search">
-          </select>
-          <div class="input-group-append">
-            <button type="submit" class="btn btn-primary">
-              <i class="icon icon-search"></i>
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-
   <h3>{t}recent statements{/t}</h3>
 
   {include "bits/statementList.tpl"}
@@ -58,10 +36,5 @@
       </a>
     {/if}
   </div>
-
-  {* expose the localized search URL *}
-  <script>
-    const SEARCH_URL = '{Router::link('aggregate/search')}';
-  </script>
 
 {/block}

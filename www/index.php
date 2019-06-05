@@ -12,7 +12,6 @@ $entities = Model::factory('Entity')
   ->limit(10)
   ->find_many();
 
-Smart::addResources('select2Dev');
 Smart::assign([
   'pageType' => 'home',
   'statements' => $statements,

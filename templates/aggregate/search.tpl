@@ -33,4 +33,8 @@
     {/foreach}
   {/if}
 
+  {if empty($entities) && empty($tags)}
+    <h3>{t 1=$query|escape}your search «%1» produced no results{/t}
+  {/if}
+
 {/block}

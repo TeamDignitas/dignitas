@@ -51,7 +51,7 @@ if ($saveButton) {
   Smart::assign('relations', $entity->getRelations());
 }
 
-Smart::addResources('select2Dev', 'sortable');
+Smart::addResources('sortable');
 Smart::assign('entity', $entity);
 Smart::display('entity/edit.tpl');
 
