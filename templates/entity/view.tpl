@@ -30,6 +30,16 @@
     </div>
   </div>
 
+  {if count($aliases)}
+    <h4>{cap}{t}also known as{/t}{/cap}</h4>
+
+    <ul class="list-unstyled">
+      {foreach $aliases as $a}
+        <li>{$a->name|escape}
+      {/foreach}
+    </ul>
+  {/if}
+
   {if count($members)}
     <h4>{cap}{t}members{/t}{/cap}</h4>
 

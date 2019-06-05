@@ -13,7 +13,7 @@
     <input
       type="text"
       name="aliasNames[]"
-      value="{$alias->name|default:''}"
+      value="{$alias->name|escape|default:''}"
       class="form-control">
   </td>
 

@@ -28,6 +28,7 @@ $members = Model::factory('Entity')
 
 Smart::assign([
   'entity' => $entity,
+  'aliases' => $entity->getAliases(),
   'relations' => $entity->getRelations(),
   'statements' => $statements,
   'members' => $members,
