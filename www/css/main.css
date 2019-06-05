@@ -10,8 +10,16 @@ body.waiting * {
   white-space: nowrap;
 }
 
-.navbar .select2-search input {
-  background-color: #f8f9fa;
+.navbar .select2 {
+  background-color: #fff;
+}
+
+/* Firefox and Chrome insert a <div> in place of the <noscript> element, which
+   breaks Bootstrap's CSS because it uses the > selector. */
+#searchFieldContainer div {
+  position: relative;
+  flex: 1 1 auto;
+  width: 1%;
 }
 
 h3::first-letter {

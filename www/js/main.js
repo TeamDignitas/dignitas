@@ -1,5 +1,13 @@
 /****************************** search form ******************************/
 $(function() {
+
+  $('<select>', {
+    id: 'searchField',
+    class: 'formControl',
+    name: 'q',
+    multiple: true,
+  }).prependTo('#searchFieldContainer');
+
   $('#searchField').select2({
     ajax: {
       url: URL_PREFIX + 'ajax/search',
