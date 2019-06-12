@@ -20,6 +20,10 @@
       {/foreach}
     </ul>
 
+    {if $entity->type == Entity::TYPE_PERSON}
+      <h4>{t}loyalty{/t}</h4>
+    {/if}
+
     <div>
       {if User::may(User::PRIV_EDIT_ENTITY)}
         <a href="{Router::link('entity/edit')}/{$entity->id}" class="btn btn-light">

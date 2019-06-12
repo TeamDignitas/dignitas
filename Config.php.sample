@@ -82,4 +82,20 @@ class Config {
 
   // system stuff
   const TMP_DIR = '/tmp/';
+
+  // Loyalty settings. Define a set of adjacent intervals going back in time
+  // and give points for every day in each interval. Then loyalty is the sum
+  // of scores computed for each party that the person belonged to, normalized
+  // to 1.0.
+  //
+  // In the sample definition,
+  //
+  // * the most recent three months are worth 1 point per day
+  // * the previous three months are worth 0.5 points per day
+  // * the previous six months are worth 0.25 points per day
+  // * the previous year is worth 0.1 points per day
+  // * the previous year is worth 0.05 points per day
+  const LOYALTY_INTERVALS = [
+    [ 91, 1.0 ], [ 182, 0.5 ], [ 365, 0.25 ], [ 730, 0.1 ], [ 1095, 0.05 ],
+  ];
 }

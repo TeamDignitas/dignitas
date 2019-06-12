@@ -53,6 +53,44 @@ class Entity extends BaseObject implements DatedObject {
       ->find_many();
   }
 
+  // returns a map of Entity (party) => fraction, where the fractions add up to 1.
+  function getLoyalty() {
+    // entityId (party ID) => sum of coefficients
+    $map = [];
+
+    foreach ($this->getRelations() as $rel) {
+      $relStartDays = Util::daysAgo($rel->startDate) ?? 10000;
+      $relEndDays = Util::daysAgo($rel->endDate) ?? 0;
+      // now intersect this interval with each predefined loyalty interval
+
+      $prevBoundary = 0; // today
+      foreach (Config::LOYALTY_INTERVALS as $rec) {
+        list ($boundary, $score) = $rec;
+
+        // invariant: $relEndDays < $relStartDays and $prevBoundary < $prevBoundary
+        $left = max($relEndDays, $prevBoundary);
+        $right = min($relStartDays, $boundary);
+
+        if ($left < $right) {
+          $existing = $map[$rel->toEntityId] ?? 0;
+          $map[$rel->toEntityId] = $existing + ($right - $left) * $score;
+        }
+
+        $prevBoundary = $boundary;
+      }
+    }
+
+    // normalization
+    if (!empty($map)) {
+      $sum = array_sum($map);
+      foreach ($map as $k => &$value) {
+        $value /= $sum;
+      }
+    }
+
+    return $map;
+  }
+
   public function delete() {
     Log::warning("Deleted entity {$this->id} ({$this->name})");
     Alias::delete_all_by_entityId($this->id);

@@ -118,4 +118,13 @@ class Util {
     return sprintf(ngettext('one second ago', '%d seconds ago', $delta), $delta)
       . $exactBracket;
   }
+
+  // $date: formatted as YYYY-MM-DD, e.g. '2019-04-24'
+  static function daysAgo($date) {
+    if ($date) {
+      return (int)((time() - strtotime($date)) / 86400);
+    } else {
+      return null;
+    }
+  }
 }
