@@ -13,7 +13,7 @@ class Tag extends BaseObject implements DatedObject {
   }
 
   function setColor($color) {
-    $this->color = ($color == self::DEFAULT_COLOR) ? '' : $color;
+    $this->color = strcasecmp($color, self::DEFAULT_COLOR) ? $color : '';
   }
 
   function getBackground() {
@@ -21,7 +21,7 @@ class Tag extends BaseObject implements DatedObject {
   }
 
   function setBackground($background) {
-    $this->background = ($background == self::DEFAULT_BACKGROUND) ? '' : $background;
+    $this->background = strcasecmp($background, self::DEFAULT_BACKGROUND) ? $background : '';
   }
 
   static function getFrequentValues($field, $default) {

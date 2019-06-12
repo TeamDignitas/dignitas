@@ -6,10 +6,13 @@ class Entity extends BaseObject implements DatedObject {
   const TYPE_PARTY = 2;
   const TYPE_UNION = 3; // of parties
 
+  const DEFAULT_COLOR = '#ffffff';
+
+  // parties and unions have colors
   const TYPES = [
-    self::TYPE_PERSON,
-    self::TYPE_PARTY,
-    self::TYPE_UNION,
+    self::TYPE_PERSON => [ 'hasColor' => false ],
+    self::TYPE_PARTY => [ 'hasColor' => true ],
+    self::TYPE_UNION => [ 'hasColor' => true ],
   ];
 
   static function typeName($type) {
@@ -22,6 +25,18 @@ class Entity extends BaseObject implements DatedObject {
 
   function getTypeName() {
     return self::typeName($this->type);
+  }
+
+  function getColor() {
+    return $this->color ? $this->color : self::DEFAULT_COLOR;
+  }
+
+  function setColor($color) {
+    $this->color = strcasecmp($color, self::DEFAULT_COLOR) ? $color : '';
+  }
+
+  function hasColor() {
+    return self::TYPES[$this->type]['hasColor'];
   }
 
   function getAliases() {

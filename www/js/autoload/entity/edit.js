@@ -29,6 +29,11 @@ $(function() {
 
     Sortable.create(aliasContainer, sortableOpts);
     Sortable.create(relationContainer, sortableOpts);
+
+    $('.colorpicker-component').colorpicker({
+      fallbackColor: '#ffffff',
+    });
+    $('#fieldType').change(updateColorVisibility);
   }
 
   function addAlias() {
@@ -44,6 +49,11 @@ $(function() {
 
   function deleteDependant() {
     $(this).closest('tr').remove();
+  }
+
+  function updateColorVisibility() {
+    var sel = $('option:selected', this);
+    $('#colorFieldWrapper').prop('hidden', !sel.data('has-color'));
   }
 
   init();

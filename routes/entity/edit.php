@@ -23,6 +23,8 @@ User::enforce($entity->id ? User::PRIV_EDIT_ENTITY : User::PRIV_ADD_ENTITY);
 if ($saveButton) {
   $entity->name = Request::get('name');
   $entity->type = Request::get('type');
+  $color = $entity->hasColor() ? Request::get('color') : Entity::DEFAULT_COLOR;
+  $entity->setColor($color);
 
   $relations = buildRelations(
     $entity,
@@ -58,7 +60,7 @@ if ($saveButton) {
   Smart::assign('aliases', $entity->getAliases());
 }
 
-Smart::addResources('sortable');
+Smart::addResources('colorpicker', 'sortable');
 Smart::assign('entity', $entity);
 Smart::display('entity/edit.tpl');
 

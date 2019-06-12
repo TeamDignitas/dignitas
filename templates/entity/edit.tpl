@@ -60,13 +60,32 @@
         name="type"
         id="fieldType"
         class="form-control {if isset($errors.type)}is-invalid{/if}">
-        {foreach Entity::TYPES as $t}
-          <option value="{$t}" {if $entity->type == $t}selected{/if}>
+        {foreach Entity::TYPES as $t => $data}
+          <option
+            value="{$t}"
+            data-has-color="{$data.hasColor}"
+            {if $entity->type == $t}selected{/if}>
             {Entity::typeName($t)}
           </option>
         {/foreach}
       </select>
       {include "bits/fieldErrors.tpl" errors=$errors.type|default:null}
+    </div>
+
+    <div id="colorFieldWrapper"
+      class="form-group""
+      {if !$entity->hasColor()}hidden{/if}>
+      <label for="color">{t}color{/t}</label>
+      <div class="input-group colorpicker-component">
+        <span class="input-group-prepend input-group-text colorpicker-input-addon">
+          <i></i>
+        </span>
+        <input type="text"
+          class="form-control"
+          id="fieldColor"
+          name="color"
+          value="{$entity->getColor()}">
+      </div>
     </div>
 
     <div class="form-group">
