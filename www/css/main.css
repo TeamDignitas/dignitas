@@ -2,6 +2,14 @@ body.waiting * {
   cursor: progress;
 }
 
+h3::first-letter {
+  text-transform: capitalize;
+}
+
+img.pic {
+  outline: 1px solid #ddd;
+}
+
 .navbar-nav a:hover {
   background: #ccc; /* slightly more visible */
 }
@@ -9,6 +17,8 @@ body.waiting * {
 .navbar-nav {
   white-space: nowrap;
 }
+
+/*************************** navbar search box ***************************/
 
 .navbar .select2 {
   background-color: #fff;
@@ -31,14 +41,7 @@ body.waiting * {
   padding-right: 8px;
 }
 
-
-h3::first-letter {
-  text-transform: capitalize;
-}
-
-img.pic {
-  outline: 1px solid #ddd;
-}
+/******************************** footer ********************************/
 
 footer {
   border-top: 1px solid #ddd;
@@ -60,10 +63,27 @@ footer {
   background: orange;
 }
 
+/********************************* tags *********************************/
+
 .tag {
   font-size: 120%;
 }
 
 .tagTooltip {
   cursor: help;
+}
+
+/**************************** loyalty widget ****************************/
+
+.loyaltyWidget {
+  border-radius: 5px;
+  height: 20px;
+  margin: 5px 0;
+  overflow: hidden;
+  width: 300px;
+}
+
+.loyaltyWidget div {
+  display: inline-block;
+  height: 20px;
 }

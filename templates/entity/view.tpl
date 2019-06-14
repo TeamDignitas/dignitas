@@ -22,6 +22,8 @@
 
     {if $entity->type == Entity::TYPE_PERSON}
       <h4>{t}loyalty{/t}</h4>
+
+      {include "bits/loyalty.tpl" data=$entity->getLoyalty()}
     {/if}
 
     <div>

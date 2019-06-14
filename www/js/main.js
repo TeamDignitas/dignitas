@@ -145,3 +145,18 @@ $(function() {
   }
 
 });
+
+/*************************** loyalty popovers ***************************/
+
+$(function() {
+  $('[data-toggle="popover"]').popover({
+    content: getPopoverContent,
+    html: true,
+    placement: 'bottom',
+    trigger: 'hover',
+  });
+
+  function getPopoverContent() {
+    return $(this).parent().find('.loyaltyPopover').html();
+  }
+});

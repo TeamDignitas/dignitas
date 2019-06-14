@@ -36,7 +36,7 @@ class Entity extends BaseObject implements DatedObject {
   }
 
   function hasColor() {
-    return self::TYPES[$this->type]['hasColor'];
+    return self::TYPES[$this->type]['hasColor'] ?? false;
   }
 
   function getAliases() {
@@ -86,9 +86,19 @@ class Entity extends BaseObject implements DatedObject {
       foreach ($map as $k => &$value) {
         $value /= $sum;
       }
+      arsort($map);
     }
 
-    return $map;
+    // load the entities for the given IDs
+    $results = [];
+    foreach ($map as $entityId => $value) {
+      $results[] = [
+        'entity' => Entity::get_by_id($entityId),
+        'value' => $value,
+      ];
+    }
+
+    return $results;
   }
 
   public function delete() {
