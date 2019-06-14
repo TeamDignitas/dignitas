@@ -64,7 +64,7 @@ class Config {
   const EMAIL_IDENTITIES = [
     'test@test.com' => [
       'name' => 'tbd',
-      'password' => 'Chybwiand6FribUbEgEppIzo',
+      'password' => '1234',
     ],
   ];
 
