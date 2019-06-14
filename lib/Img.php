@@ -176,10 +176,24 @@ class Img {
   static function getSvgSize($file, $maxWidth, $maxHeight) {
     $xml = simplexml_load_file($file);
     $attr = $xml->attributes();
+
+    // sometimes there are width and height attributes
     $rec = [
       (float)$attr->width,
       (float)$attr->height,
     ];
+
+    // sometimes there is a viewBox attribute
+    if (!$rec[0] || !$rec[1]) {
+      $viewBox = (string)$attr->viewBox;
+      if ($viewBox) {
+        $parts = explode(' ', $viewBox);
+        $rec = [
+          (float)$parts[2],
+          (float)$parts[3],
+        ];
+      }
+    }
 
     if ($rec[0] && $rec[1]) {
       // fit it
