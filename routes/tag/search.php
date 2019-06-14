@@ -3,11 +3,7 @@
 $term = Request::get('term');
 
 if ($term) {
-  $tags = Model::factory('Tag')
-    ->where_like('value', "%{$term}%")
-    ->order_by_asc('value')
-    ->limit(20)
-    ->find_many();
+  $tags = Search::searchTags($term);
 } else {
   $tags = [];
 }

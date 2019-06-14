@@ -18,7 +18,7 @@ class Search {
   // with regexp and collations, so this one-liner won't work:
   //
   //   name regexp "[[:<:]]%s" collate utf8mb4_general_ci
-  private static function searchEntities($escapedQuery, $limit) {
+  static function searchEntities($escapedQuery, $limit = self::LIMIT) {
     return Model::factory('Entity')
       ->table_alias('e')
       ->select('e.*')
@@ -36,9 +36,10 @@ class Search {
   }
 
   // load tags by prefix match
-  private static function searchTags($escapedQuery, $limit) {
+  static function searchTags($escapedQuery, $limit = self::LIMIT) {
     return Model::factory('Tag')
       ->where_like('value', "{$escapedQuery}%")
+      ->order_by_asc('value')
       ->limit($limit)
       ->find_many();
   }

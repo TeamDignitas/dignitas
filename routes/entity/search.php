@@ -3,11 +3,7 @@
 $term = Request::get('term');
 
 if ($term) {
-  $entities = Model::factory('Entity')
-    ->where_like('name', "%{$term}%")
-    ->order_by_asc('name')
-    ->limit(10)
-    ->find_many();
+  $entities = Search::searchEntities($term);
 } else {
   $entities = [];
 }
