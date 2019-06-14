@@ -13,7 +13,7 @@
 
     <dl class="row">
       <dd class="col-2">{t}reputation{/t}</dd>
-      <dt class="col-10">{$user->reputation}</dt>
+      <dt class="col-10">{$user->reputation|nf}</dt>
       <dd class="col-2">{t}statements{/t}</dd>
       <dt class="col-10">{$statements}</dt>
       <dd class="col-2">{t}answers{/t}</dd>
