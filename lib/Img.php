@@ -25,6 +25,10 @@ class Img {
       return '';
     }
 
+    if ($obj->imageExtension == 'svg') {
+      return self::getImageLocation($obj); // never scale SVGs
+    }
+
     $rec = Config::THUMB_SIZES[$thumbIndex];
     $subdir = self::getSubdirectory($obj);
     $path = sprintf('%simg/%s/thumb-%dx%d/%d.%s',
@@ -53,9 +57,20 @@ class Img {
   static function getThumbSize($obj, $thumbIndex) {
     $file = self::getThumbLocation($obj, $thumbIndex);
 
-    $rec = ($file && file_exists($file))
-      ? getimagesize($file)
-      : Config::THUMB_SIZES[$thumbIndex];
+    if (!$file || !file_exists($file)) {
+      // no image
+      $rec = Config::THUMB_SIZES[$thumbIndex];
+
+    } else if ($obj->imageExtension == 'svg') {
+      // SVG image
+      $box = Config::THUMB_SIZES[$thumbIndex];
+      $rec = self::getSvgSize($file, $box[0], $box[1]);
+
+    } else {
+      // non-vector image
+      $rec = getimagesize($file);
+
+    }
 
     return [
       'width' => $rec[0],
@@ -106,7 +121,6 @@ class Img {
     }
 
     // now dump it
-
     if (file_exists($thumbLocation)) {
 
       $mimeType = array_search($extension, Config::IMAGE_MIME_TYPES);
@@ -153,6 +167,30 @@ class Img {
     if (!$deleteImage && ($imageData['status'] == Request::UPLOAD_OK)) {
       self::copyUploadedImage($obj, $imageData['tmpImageName']);
     }
+
+  }
+
+  // Tries to figure out the SVG size from the file and fit it to $maxWidth x
+  // $maxHeight while keeping the aspect ration. If it fails, then it simply
+  // returns $maxWidth x $maxHeight.
+  static function getSvgSize($file, $maxWidth, $maxHeight) {
+    $xml = simplexml_load_file($file);
+    $attr = $xml->attributes();
+    $rec = [
+      (float)$attr->width,
+      (float)$attr->height,
+    ];
+
+    if ($rec[0] && $rec[1]) {
+      // fit it
+      $scale = min($maxWidth / $rec[0], $maxHeight / $rec[1]);
+      $rec = [ (int)($scale * $rec[0]), (int)($scale * $rec[1]) ];
+    } else {
+      // unknown size, use the default
+      $rec = [ $maxWidth, $maxHeight ];
+    }
+
+    return $rec;
 
   }
 }
