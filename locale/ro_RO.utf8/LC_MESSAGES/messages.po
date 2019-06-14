@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-06-05 17:33+0300\n"
-"PO-Revision-Date: 2019-06-05 17:34+0300\n"
+"POT-Creation-Date: 2019-06-14 15:51+0300\n"
+"PO-Revision-Date: 2019-06-14 15:51+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -107,7 +107,7 @@ msgstr "ține-mă minte un an"
 msgid "I forgot my password"
 msgstr "mi-am uitat parola"
 
-#: templates/auth/login.tpl:78 templates/auth/register.tpl:3
+#: templates/auth/login.tpl:79 templates/auth/register.tpl:3
 #: templates/auth/register.tpl:8 templates/auth/register.tpl:88
 msgid "sign up"
 msgstr "înregistrare"
@@ -165,7 +165,7 @@ msgstr "clic aici dacă nu sînteți redirecționat automat"
 msgid "password change"
 msgstr "schimbarea parolei"
 
-#: templates/auth/resetPassword.tpl:45 templates/entity/edit.tpl:142
+#: templates/auth/resetPassword.tpl:45 templates/entity/edit.tpl:161
 #: templates/statement/edit.tpl:119 templates/tag/edit.tpl:153
 #: templates/user/edit.tpl:125
 msgid "save"
@@ -249,11 +249,11 @@ msgstr "editează autor"
 msgid "name"
 msgstr "nume"
 
-#: templates/entity/edit.tpl:29 templates/entity/view.tpl:34
+#: templates/entity/edit.tpl:29 templates/entity/view.tpl:40
 msgid "also known as"
 msgstr "cunoscut și ca"
 
-#: templates/entity/edit.tpl:36 templates/entity/edit.tpl:80
+#: templates/entity/edit.tpl:36 templates/entity/edit.tpl:99
 msgid "order"
 msgstr "ordine"
 
@@ -261,7 +261,7 @@ msgstr "ordine"
 msgid "alias"
 msgstr "alias"
 
-#: templates/entity/edit.tpl:38 templates/entity/edit.tpl:85
+#: templates/entity/edit.tpl:38 templates/entity/edit.tpl:104
 msgid "actions"
 msgstr "acțiuni"
 
@@ -269,68 +269,76 @@ msgstr "acțiuni"
 msgid "add an alias"
 msgstr "adaugă un alias"
 
-#: templates/entity/edit.tpl:58 templates/entity/edit.tpl:81
+#: templates/entity/edit.tpl:58 templates/entity/edit.tpl:100
 msgid "type"
 msgstr "tip"
 
-#: templates/entity/edit.tpl:73
+#: templates/entity/edit.tpl:78
+msgid "color"
+msgstr "culoare"
+
+#: templates/entity/edit.tpl:92
 msgid "relationships"
 msgstr "relații"
 
-#: templates/entity/edit.tpl:82
+#: templates/entity/edit.tpl:101
 msgid "target"
 msgstr "țintă"
 
-#: templates/entity/edit.tpl:83
+#: templates/entity/edit.tpl:102
 msgid "start date"
 msgstr "de la"
 
-#: templates/entity/edit.tpl:84
+#: templates/entity/edit.tpl:103
 msgid "end date"
 msgstr "pînă la"
 
-#: templates/entity/edit.tpl:101
+#: templates/entity/edit.tpl:120
 msgid "add a relationship"
 msgstr "adaugă o relație"
 
-#: templates/entity/edit.tpl:108 templates/user/edit.tpl:45
+#: templates/entity/edit.tpl:127 templates/user/edit.tpl:45
 msgid "image"
 msgstr "imagine"
 
-#: templates/entity/edit.tpl:117 templates/user/edit.tpl:54
+#: templates/entity/edit.tpl:136 templates/user/edit.tpl:54
 msgid "choose an image to upload or leave empty to keep existing image"
 msgstr ""
 "alegeți o imagine pentru încărcare sau lăsați gol pentru a păstra imaginea "
 "existentă"
 
-#: templates/entity/edit.tpl:125 templates/user/edit.tpl:62
+#: templates/entity/edit.tpl:144 templates/user/edit.tpl:62
 msgid "delete image"
 msgstr "șterge imaginea"
 
-#: templates/entity/edit.tpl:147 templates/statement/edit.tpl:124
+#: templates/entity/edit.tpl:166 templates/statement/edit.tpl:124
 #: templates/tag/edit.tpl:158 templates/user/edit.tpl:130
 msgid "cancel"
 msgstr "renunță"
 
-#: templates/entity/edit.tpl:155
+#: templates/entity/edit.tpl:174
 msgid "Are you sure you want to delete this entity?"
 msgstr "Confirmați ștergerea acestui autor?"
 
-#: templates/entity/edit.tpl:157 templates/statement/edit.tpl:141
+#: templates/entity/edit.tpl:176 templates/statement/edit.tpl:141
 #: templates/tag/edit.tpl:180
 msgid "delete"
 msgstr "șterge"
 
-#: templates/entity/view.tpl:27 templates/statement/view.tpl:58
+#: templates/entity/view.tpl:24
+msgid "loyalty"
+msgstr "loialitate"
+
+#: templates/entity/view.tpl:33 templates/statement/view.tpl:58
 #: templates/tag/view.tpl:14 templates/user/view.tpl:39
 msgid "edit"
 msgstr "editează"
 
-#: templates/entity/view.tpl:44
+#: templates/entity/view.tpl:50
 msgid "members"
 msgstr "membri"
 
-#: templates/entity/view.tpl:56 templates/user/view.tpl:17
+#: templates/entity/view.tpl:62 templates/user/view.tpl:17
 msgid "statements"
 msgstr "afirmații"
 
@@ -578,15 +586,15 @@ msgstr[0] "acum o secundă"
 msgstr[1] "acum %d secunde"
 msgstr[2] "acum %d de secunde"
 
-#: lib/model/Entity.php:17
+#: lib/model/Entity.php:20
 msgid "person"
 msgstr "persoană"
 
-#: lib/model/Entity.php:18
+#: lib/model/Entity.php:21
 msgid "party"
 msgstr "partid"
 
-#: lib/model/Entity.php:19
+#: lib/model/Entity.php:22
 msgid "union"
 msgstr "uniune"
 
@@ -657,36 +665,40 @@ msgstr "Codul de recuperare a parolei a expirat."
 msgid "Password changed successfully."
 msgstr "Parola a fost schimbată cu succes."
 
+#: routes/auth/register.php:6
+msgid "Registration is disabled."
+msgstr "Înregistrarea este dezactivată."
+
 #: routes/entity/edit.php:17
 msgid "Entity deleted."
 msgstr "Am șters autorul."
 
-#: routes/entity/edit.php:48 routes/statement/edit.php:46
+#: routes/entity/edit.php:50 routes/statement/edit.php:46
 #: routes/user/edit.php:26
 msgid "Changes saved."
 msgstr "Am salvat modificările."
 
-#: routes/entity/edit.php:72
+#: routes/entity/edit.php:74
 msgid "Please enter a name."
 msgstr "Vă rugăm să introduceți un nume."
 
-#: routes/entity/edit.php:76
+#: routes/entity/edit.php:78
 msgid "Please choose a type."
 msgstr "Vă rugăm să alegeți un tip."
 
-#: routes/entity/edit.php:102
+#: routes/entity/edit.php:104
 msgid "Please choose a target entity."
 msgstr "Vă rugăm să alegeți o entitate-țintă."
 
-#: routes/entity/edit.php:105
+#: routes/entity/edit.php:107
 msgid "An entity cannot be related to itself."
 msgstr "O entitate nu poate fi în relație cu ea însăși."
 
-#: routes/entity/edit.php:108
+#: routes/entity/edit.php:110
 msgid "The start date cannot be past the end date."
 msgstr "Data de start nu poate depăși data de sfîrșit."
 
-#: routes/entity/edit.php:112
+#: routes/entity/edit.php:114
 msgid ""
 "Persons can be members of parties and parties can be members of unions. No "
 "other types of memberships are allowed."

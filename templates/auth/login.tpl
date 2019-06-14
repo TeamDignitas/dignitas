@@ -73,10 +73,12 @@
                 {t}I forgot my password{/t}
               </a>
 
-              <a class="btn btn-outline-secondary" href="{Router::link('auth/register')}">
-                <i class="icon icon-user-plus"></i>
-                {t}sign up{/t}
-              </a>
+              {if Config::ALLOW_REGISTRATION}
+                <a class="btn btn-outline-secondary" href="{Router::link('auth/register')}">
+                  <i class="icon icon-user-plus"></i>
+                  {t}sign up{/t}
+                </a>
+              {/if}
             </div>
           </div>
         </form>

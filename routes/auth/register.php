@@ -2,6 +2,11 @@
 
 Util::assertNotLoggedIn();
 
+if (!Config::ALLOW_REGISTRATION) {
+  FlashMessage::add(_('Registration is disabled.'));
+  Util::redirectToHome();
+}
+
 $nickname = Request::get('nickname');
 $email = Request::get('email');
 $password = Request::get('password');

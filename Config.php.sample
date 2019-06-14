@@ -22,6 +22,9 @@ class Config {
   // development mode
   const DEVELOPMENT_MODE = true;
 
+  // allow account creation
+  const ALLOW_REGISTRATION = true;
+
   // Shared drive (common to all backends). Include a trailing slash.
   const SHARED_DRIVE = '/tmp/tbd-shared/';
 
