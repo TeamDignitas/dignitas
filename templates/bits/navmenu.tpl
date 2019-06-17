@@ -71,7 +71,7 @@
               {$u->reputation|nf}
             </span>
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarUserDropdown">
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarUserDropdown">
             <a
               class="dropdown-item"
               href="{Router::link('user/view')}/{$u->id}/{$u->nickname|escape:url}">
