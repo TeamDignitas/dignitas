@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-06-14 15:51+0300\n"
-"PO-Revision-Date: 2019-06-14 15:51+0300\n"
+"POT-Creation-Date: 2019-07-04 17:10+0300\n"
+"PO-Revision-Date: 2019-07-04 17:11+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -517,16 +517,16 @@ msgstr "membru de pe"
 msgid "last seen"
 msgstr "ultima vizită"
 
-#: lib/Img.php:127
+#: lib/Img.php:141
 #, php-format
 msgid "Maximum image size is %s MB."
 msgstr "Dimensiunea maximă pentru imagini este de %s MB."
 
-#: lib/Img.php:130
+#: lib/Img.php:144
 msgid "Supported image types are JPEG, PNG, GIF and SVG."
 msgstr "Tipurile de imagini acceptate sînt JPEG, PNG, GIF și SVG."
 
-#: lib/Img.php:133
+#: lib/Img.php:147
 msgid "An error occurred while uploading the image."
 msgstr "A apărut o eroare la încărcarea imaginii."
 
@@ -804,3 +804,7 @@ msgstr "Vă trebuie o reputație de cel puțin %s pentru a vota."
 #: routes/vote/save.php:37
 msgid "Cannot vote: object does not exist."
 msgstr "Nu puteți vota: obiectul nu există."
+
+#: routes/vote/save.php:42
+msgid "You cannot vote for your own messages."
+msgstr "Nu puteți vota propriile mesaje."

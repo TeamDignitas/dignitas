@@ -34,6 +34,13 @@ class Vote extends BaseObject implements DatedObject {
     return $this->object;
   }
 
+  // encapsulate it here because we want to stress that every votable object
+  // should have a user that created it
+  function getObjectUserId() {
+    $obj = $this->getObject();
+    return $obj->userId ?? null;
+  }
+
   function getObjectScore() {
     return $this->object->score;
   }

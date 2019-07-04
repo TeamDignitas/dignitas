@@ -37,6 +37,11 @@ if (!$error && !$vote->getObject()) {
   $error = _('Cannot vote: object does not exist.');
 }
 
+// prevent self votes
+if (!$error && ($vote->getObjectUserId() == $userId)) {
+  $error = _('You cannot vote for your own messages.');
+}
+
 if (!$error) {
   $vote->saveValue($value);
 }
