@@ -6,13 +6,13 @@
   {$r->getTypeName()}
 
   {$to=$r->getToEntity()}
-  {include "bits/entityLink.tpl" e=$to}
+  {include "bits/entityLink.tpl" e=$to},
 
   {if $r->startDate && $r->endDate}
-    {t 1=$sd 2=$ed}from %1 to %2{/t}
+    {$sd} – {$ed}
   {else if $r->startDate}
-    {t 1=$sd}since %1{/t}
+    {$sd}
   {else if $r->endDate}
-    {t 1=$ed}until %1{/t}
+    {$ed}
   {/if}
 </div>

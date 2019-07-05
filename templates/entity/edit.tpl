@@ -33,9 +33,9 @@
           id="aliasHeader"
           {if empty($aliases)}hidden{/if}>
           <tr>
-            <th class="colOrder">{t}order{/t}</th>
-            <th class="colName">{t}alias{/t}</th>
-            <th class="colActions">{t}actions{/t}</th>
+            <th>{t}order{/t}</th>
+            <th>{t}alias{/t}</th>
+            <th>{t}actions{/t}</th>
           </tr>
         </thead>
         <tbody id="aliasContainer">
@@ -91,17 +91,17 @@
     <div class="form-group">
       <label>{t}relationships{/t}</label>
 
-      <table class="table table-sm">
+      <table class="table table-sm relTable">
         <thead
           id="relationHeader"
           {if empty($relations)}hidden{/if}>
           <tr>
-            <th class="colOrder">{t}order{/t}</th>
-            <th class="colType">{t}type{/t}</th>
-            <th class="colTarget">{t}target{/t}</th>
-            <th class="colDatePicker">{t}start date{/t}</th>
-            <th class="colDatePicker">{t}end date{/t}</th>
-            <th class="colActions">{t}actions{/t}</th>
+            <th>{t}order{/t}</th>
+            <th>{t}type{/t}</th>
+            <th>{t}target{/t}</th>
+            <th>{t}start date{/t}</th>
+            <th>{t}end date{/t}</th>
+            <th>{t}actions{/t}</th>
           </tr>
         </thead>
         <tbody id="relationContainer">

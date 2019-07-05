@@ -26,19 +26,17 @@
   </td>
 
   <td>
-    <input
-      type="date"
-      name="relStartDates[]"
-      value="{$relation->startDate|default:''}"
-      class="form-control">
+    {include "bits/dateFields.tpl"
+      namePrefix="relStartDates"
+      nameSuffix="[]"
+      date=$relation->startDate|default:null}
   </td>
 
   <td>
-    <input
-      type="date"
-      name="relEndDates[]"
-      value="{$relation->endDate|default:''}"
-      class="form-control">
+    {include "bits/dateFields.tpl"
+      namePrefix="relEndDates"
+      nameSuffix="[]"
+      date=$relation->endDate|default:null}
   </td>
 
   <td>

@@ -18,6 +18,15 @@ img.pic {
   white-space: nowrap;
 }
 
+.dateFieldContainer {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.dateFieldContainer .form-control {
+  display: inline;
+}
+
 /*************************** navbar search box ***************************/
 
 .navbar .select2 {

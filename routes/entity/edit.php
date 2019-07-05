@@ -31,8 +31,12 @@ if ($saveButton) {
     Request::getArray('relIds'),
     Request::getArray('relTypes'),
     Request::getArray('relEntityIds'),
-    Request::getArray('relStartDates'),
-    Request::getArray('relEndDates'));
+    Request::getArray('relStartDatesY'),
+    Request::getArray('relStartDatesM'),
+    Request::getArray('relStartDatesD'),
+    Request::getArray('relEndDatesY'),
+    Request::getArray('relEndDatesM'),
+    Request::getArray('relEndDatesD'));
   $aliases = buildAliases(
     $entity,
     Request::getArray('aliasIds'),
@@ -82,6 +86,7 @@ function validate($entity, $relations, $imageStatus) {
   $countNoEntityIds = 0;
   $countSelf = 0;
   $countBadDates = 0;
+  $countBadDateOrder = 0;
   $countBadMemberships = 0;
   foreach ($relations as $r) {
     $otherEntity = Entity::get_by_id($r->toEntityId);
@@ -91,8 +96,13 @@ function validate($entity, $relations, $imageStatus) {
     if ($r->toEntityId == $entity->id) {
       $countSelf++;
     }
-    if ($r->startDate && $r->endDate && ($r->startDate > $r->endDate)) {
+    if (!$r->startDate || !$r->endDate) {
       $countBadDates++;
+    }
+    if (($r->startDate != '0000-00-00') &&
+        ($r->endDate != '0000-00-00') &&
+        ($r->startDate > $r->endDate)) {
+      $countBadDateOrder++;
     }
     if ($r->type == Relation::TYPE_MEMBER &&
         $otherEntity &&
@@ -107,6 +117,8 @@ function validate($entity, $relations, $imageStatus) {
     $errors['relations'][] = _('An entity cannot be related to itself.');
   }
   if ($countBadDates) {
+    $errors['relations'][] = _('Some of the dates are invalid.');
+  } else if ($countBadDateOrder) {
     $errors['relations'][] = _('The start date cannot be past the end date.');
   }
   if ($countBadMemberships) {
@@ -124,7 +136,9 @@ function validate($entity, $relations, $imageStatus) {
   return $errors;
 }
 
-function buildRelations($entity, $ids, $types, $toEntityIds, $startDates, $endDates) {
+function buildRelations($entity, $ids, $types, $toEntityIds,
+                        $startYears, $startMonths, $startDays,
+                        $endYears, $endMonths, $endDays) {
   $result = [];
 
   foreach ($ids as $i => $id) {
@@ -134,11 +148,13 @@ function buildRelations($entity, $ids, $types, $toEntityIds, $startDates, $endDa
     $r->type = $types[$i];
     $r->fromEntityId = $entity->id;
     $r->toEntityId = $toEntityIds[$i];
-    $r->startDate = $startDates[$i] ?: null;
-    $r->endDate = $endDates[$i] ?: null;
+    $r->startDate = Util::partialDate($startYears[$i], $startMonths[$i], $startDays[$i]);
+    $r->endDate = Util::partialDate($endYears[$i], $endMonths[$i], $endDays[$i]);
 
     // ignore empty records
-    if ($r->toEntityId || $r->startDate || $r->endDate) {
+    if ($r->toEntityId ||
+        ($r->startDate != '0000-00-00') ||
+        ($r->endDate != '0000-00-00')) {
       $result[] = $r;
     }
   }

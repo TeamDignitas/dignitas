@@ -91,7 +91,7 @@ class Entity extends BaseObject implements DatedObject {
 
     // load the entities for the given IDs
     $results = [];
-    foreach ($map as $entityId => $value) {
+    foreach ($map as $entityId => &$value) {
       $results[] = [
         'entity' => Entity::get_by_id($entityId),
         'value' => $value,

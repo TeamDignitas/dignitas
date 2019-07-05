@@ -1,10 +1,9 @@
-.colDatePicker, .colOrder, .colActions {
-  white-space: nowrap;
-  width: 1%;
+.relTable .dateFieldContainer input {
+  width: 100px !important;
 }
 
-.colTarget {
-  width: 400px;
+.relTable input, .relTable select {
+  width: auto !important;
 }
 
 .icon-move {

@@ -59,6 +59,7 @@ class Smart {
     $s->registerPlugin('modifier', 'lt', 'Util::localTimestamp');
     $s->registerPlugin('modifier', 'md', 'Str::markdown');
     $s->registerPlugin('modifier', 'moment', 'Util::moment');
+    $s->registerPlugin('modifier', 'monthName', 'Util::getMonthName');
     $s->registerPlugin('modifier', 'nf', 'Str::formatNumber');
     self::$theSmarty = $s;
   }
