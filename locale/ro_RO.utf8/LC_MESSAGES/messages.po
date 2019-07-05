@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-07-04 17:10+0300\n"
-"PO-Revision-Date: 2019-07-04 17:11+0300\n"
+"POT-Creation-Date: 2019-07-05 16:39+0300\n"
+"PO-Revision-Date: 2019-07-05 16:40+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -208,18 +208,6 @@ msgstr "schimbă reputația manual"
 #: templates/bits/navmenu.tpl:105
 msgid "log out"
 msgstr "închide sesiunea"
-
-#: templates/bits/relation.tpl:12
-msgid "from %1 to %2"
-msgstr "de pe %1 pe %2"
-
-#: templates/bits/relation.tpl:14
-msgid "since %1"
-msgstr "de pe %1"
-
-#: templates/bits/relation.tpl:16
-msgid "until %1"
-msgstr "pînă pe %1"
 
 #: templates/bits/scoreAndVote.tpl:12 templates/bits/scoreAndVote.tpl:29
 msgid "Please log in to vote."
@@ -539,30 +527,40 @@ msgid "Please log in to perform this action."
 msgstr "Vă rugăm să vă autentificați pentru a continua."
 
 # Date format in your locale, where %e is the day (1 to 31), %b is the abbreviated month name (Jan to Dec) and %Y is the four-digit year.
-#: lib/Util.php:76
+#: lib/Util.php:82 lib/Util.php:104
 msgid "%b %e, %Y"
 msgstr "%e %b %Y"
 
 # Date format in your locale, where %e is the day (1 to 31), %B is the full month name (January to December) and %Y is the four-digit year.
-#: lib/Util.php:76
+#: lib/Util.php:82 lib/Util.php:104
 msgid "%B %e, %Y"
 msgstr "%e %B %Y"
 
-#: lib/Util.php:99
+# Date format in your locale, where %e is the day (1 to 31), %b is the abbreviated month name (Jan to Dec) and %Y is the four-digit year.
+#: lib/Util.php:101
+msgid "%b %Y"
+msgstr "%b %Y"
+
+# Date format in your locale, where %e is the day (1 to 31), %B is the full month name (January to December) and %Y is the four-digit year.
+#: lib/Util.php:101
+msgid "%B %Y"
+msgstr "%B %Y"
+
+#: lib/Util.php:117
 #, php-format
 msgid "on %s"
 msgstr "pe %s"
 
-#: lib/Util.php:101
+#: lib/Util.php:119
 #, php-format
 msgid "%d days ago"
 msgstr "acum %d zile"
 
-#: lib/Util.php:103
+#: lib/Util.php:121
 msgid "yesterday"
 msgstr "ieri"
 
-#: lib/Util.php:108
+#: lib/Util.php:126
 #, php-format
 msgid "one hour ago"
 msgid_plural "%d hours ago"
@@ -570,7 +568,7 @@ msgstr[0] "acum o oră"
 msgstr[1] "acum %d ore"
 msgstr[2] "acum %d de ore"
 
-#: lib/Util.php:114
+#: lib/Util.php:132
 #, php-format
 msgid "one minute ago"
 msgid_plural "%d minutes ago"
@@ -578,7 +576,7 @@ msgstr[0] "acum un minut"
 msgstr[1] "acum %d minute"
 msgstr[2] "acum %d de minute"
 
-#: lib/Util.php:118
+#: lib/Util.php:136
 #, php-format
 msgid "one second ago"
 msgid_plural "%d seconds ago"
@@ -586,17 +584,21 @@ msgstr[0] "acum o secundă"
 msgstr[1] "acum %d secunde"
 msgstr[2] "acum %d de secunde"
 
-#: lib/model/Entity.php:20
+#: lib/model/Entity.php:22
 msgid "person"
 msgstr "persoană"
 
-#: lib/model/Entity.php:21
+#: lib/model/Entity.php:23
 msgid "party"
 msgstr "partid"
 
-#: lib/model/Entity.php:22
+#: lib/model/Entity.php:24
 msgid "union"
 msgstr "uniune"
+
+#: lib/model/Entity.php:25
+msgid "website"
+msgstr "site web"
 
 #: lib/model/Relation.php:13
 msgid "member of"
@@ -673,32 +675,36 @@ msgstr "Înregistrarea este dezactivată."
 msgid "Entity deleted."
 msgstr "Am șters autorul."
 
-#: routes/entity/edit.php:50 routes/statement/edit.php:46
+#: routes/entity/edit.php:54 routes/statement/edit.php:46
 #: routes/user/edit.php:26
 msgid "Changes saved."
 msgstr "Am salvat modificările."
 
-#: routes/entity/edit.php:74
+#: routes/entity/edit.php:78
 msgid "Please enter a name."
 msgstr "Vă rugăm să introduceți un nume."
 
-#: routes/entity/edit.php:78
+#: routes/entity/edit.php:82
 msgid "Please choose a type."
 msgstr "Vă rugăm să alegeți un tip."
 
-#: routes/entity/edit.php:104
+#: routes/entity/edit.php:114
 msgid "Please choose a target entity."
 msgstr "Vă rugăm să alegeți o entitate-țintă."
 
-#: routes/entity/edit.php:107
+#: routes/entity/edit.php:117
 msgid "An entity cannot be related to itself."
 msgstr "O entitate nu poate fi în relație cu ea însăși."
 
-#: routes/entity/edit.php:110
+#: routes/entity/edit.php:120
+msgid "Some of the dates are invalid."
+msgstr "Unele dintre date sînt incorecte."
+
+#: routes/entity/edit.php:122
 msgid "The start date cannot be past the end date."
 msgstr "Data de start nu poate depăși data de sfîrșit."
 
-#: routes/entity/edit.php:114
+#: routes/entity/edit.php:126
 msgid ""
 "Persons can be members of parties and parties can be members of unions. No "
 "other types of memberships are allowed."
