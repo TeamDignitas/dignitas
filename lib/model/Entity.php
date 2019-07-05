@@ -5,6 +5,7 @@ class Entity extends BaseObject implements DatedObject {
   const TYPE_PERSON = 1;
   const TYPE_PARTY = 2;
   const TYPE_UNION = 3; // of parties
+  const TYPE_WEBSITE = 4;
 
   const DEFAULT_COLOR = '#ffffff';
 
@@ -13,6 +14,7 @@ class Entity extends BaseObject implements DatedObject {
     self::TYPE_PERSON => [ 'hasColor' => false ],
     self::TYPE_PARTY => [ 'hasColor' => true ],
     self::TYPE_UNION => [ 'hasColor' => true ],
+    self::TYPE_WEBSITE => [ 'hasColor' => false ],
   ];
 
   static function typeName($type) {
@@ -20,6 +22,7 @@ class Entity extends BaseObject implements DatedObject {
       case self::TYPE_PERSON: return _('person');
       case self::TYPE_PARTY:  return _('party');
       case self::TYPE_UNION:  return _('union');
+      case self::TYPE_WEBSITE:  return _('website');
     }
   }
 
