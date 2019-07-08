@@ -19,7 +19,7 @@
     </select>
   </td>
 
-  <td>
+  <td class="colEntityId">
     <select name="relEntityIds[]" class="form-control toEntityId">
       <option value="{$relation->toEntityId|default:''}"></option>
     </select>

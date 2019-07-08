@@ -10,6 +10,10 @@
   cursor: pointer;
 }
 
+.colEntityId {
+  min-width: 200px;
+}
+
 .custom-file-input ~ .custom-file-label::after {
   font-family: 'icons';
   /* hack: this hardcodes the glyph for icon-folder-open */
