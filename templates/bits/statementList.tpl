@@ -22,7 +22,8 @@
       </div>
 
       <div class="text-right text-muted small">
-        {t}added by{/t} <b>{$s->getUser()|escape}</b>
+        {t}added by{/t}
+        {include 'bits/userLink.tpl' u=$s->getUser()}
         {$s->createDate|moment}
       </div>
     </div>
