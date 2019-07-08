@@ -60,7 +60,8 @@
     {/if}
 
     <small class="btn text-muted float-right">
-      {t}added by{/t} <b>{$statement->getUser()|escape}</b>
+      {t}added by{/t}
+      {include 'bits/userLink.tpl' u=$statement->getUser()}
       {$statement->createDate|moment}
     </small>
   </div>
@@ -82,7 +83,8 @@
           classes="float-left"}
 
         <small class="btn text-muted float-right">
-          {t}posted by{/t} <b>{$a->getUser()|escape}</b>
+          {t}posted by{/t}
+          {include 'bits/userLink.tpl' u=$a->getUser()}
           {$a->createDate|moment}
         </small>
       </div>

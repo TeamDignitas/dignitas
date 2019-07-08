@@ -27,6 +27,10 @@ img.pic {
   display: inline;
 }
 
+.userLink {
+  font-weight: bold;
+}
+
 /*************************** navbar search box ***************************/
 
 .navbar .select2 {
