@@ -1,6 +1,6 @@
 {assign var="sd" value=$r->startDate|ld|default:'?'}
 {assign var="ed" value=$r->endDate|ld|default:'?'}
-{assign var="ended" value=($r->endDate && $r->endDate < Util::today())}
+{assign var="ended" value=($r->endDate && $r->endDate < Time::today())}
 
 <div {if $ended}class="text-muted"{/if}>
   {$r->getTypeName()}

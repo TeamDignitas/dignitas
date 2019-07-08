@@ -55,11 +55,11 @@ class Smart {
     $s->template_dir = Config::ROOT . 'templates';
     $s->compile_dir = Config::TMP_DIR . 'templates_c';
     $s->addPluginsDir(__DIR__ . '/smarty-plugins');
-    $s->registerPlugin('modifier', 'ld', 'Util::localDate');
-    $s->registerPlugin('modifier', 'lt', 'Util::localTimestamp');
+    $s->registerPlugin('modifier', 'ld', 'Time::localDate');
+    $s->registerPlugin('modifier', 'lt', 'Time::localTimestamp');
     $s->registerPlugin('modifier', 'md', 'Str::markdown');
-    $s->registerPlugin('modifier', 'moment', 'Util::moment');
-    $s->registerPlugin('modifier', 'monthName', 'Util::getMonthName');
+    $s->registerPlugin('modifier', 'moment', 'Time::moment');
+    $s->registerPlugin('modifier', 'monthName', 'Time::getMonthName');
     $s->registerPlugin('modifier', 'nf', 'Str::formatNumber');
     self::$theSmarty = $s;
   }

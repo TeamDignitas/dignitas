@@ -148,8 +148,8 @@ function buildRelations($entity, $ids, $types, $toEntityIds,
     $r->type = $types[$i];
     $r->fromEntityId = $entity->id;
     $r->toEntityId = $toEntityIds[$i];
-    $r->startDate = Util::partialDate($startYears[$i], $startMonths[$i], $startDays[$i]);
-    $r->endDate = Util::partialDate($endYears[$i], $endMonths[$i], $endDays[$i]);
+    $r->startDate = Time::partialDate($startYears[$i], $startMonths[$i], $startDays[$i]);
+    $r->endDate = Time::partialDate($endYears[$i], $endMonths[$i], $endDays[$i]);
 
     // ignore empty records
     if ($r->toEntityId ||

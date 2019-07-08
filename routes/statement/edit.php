@@ -8,7 +8,7 @@ if ($id) {
   $statement = Statement::get_by_id($id);
 } else {
   $statement = Model::factory('Statement')->create();
-  $statement->dateMade = Util::today();
+  $statement->dateMade = Time::today();
   $statement->userId = User::getActiveId();
 }
 
@@ -83,7 +83,7 @@ function validate($statement, $sources) {
 
   if (!$statement->dateMade) {
     $errors['dateMade'][] = _('Please enter a date.');
-  } else if ($statement->dateMade > Util::today()) {
+  } else if ($statement->dateMade > Time::today()) {
     $errors['dateMade'][] = _('This date may not be in the future.');
   }
 

@@ -19,9 +19,9 @@ class Entity extends BaseObject implements DatedObject {
 
   static function typeName($type) {
     switch ($type) {
-      case self::TYPE_PERSON: return _('person');
-      case self::TYPE_PARTY:  return _('party');
-      case self::TYPE_UNION:  return _('union');
+      case self::TYPE_PERSON:   return _('person');
+      case self::TYPE_PARTY:    return _('party');
+      case self::TYPE_UNION:    return _('union');
       case self::TYPE_WEBSITE:  return _('website');
     }
   }
@@ -62,8 +62,8 @@ class Entity extends BaseObject implements DatedObject {
     $map = [];
 
     foreach ($this->getRelations() as $rel) {
-      $relStartDays = Util::daysAgo($rel->startDate) ?? 10000;
-      $relEndDays = Util::daysAgo($rel->endDate) ?? 0;
+      $relStartDays = Time::daysAgo($rel->startDate) ?? 10000;
+      $relEndDays = Time::daysAgo($rel->endDate) ?? 0;
       // now intersect this interval with each predefined loyalty interval
 
       $prevBoundary = 0; // today
