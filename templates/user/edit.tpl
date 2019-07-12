@@ -121,6 +121,14 @@
         <i class="icon icon-cancel"></i>
         {t}cancel{/t}
       </a>
+
+      <a
+        href="{Router::link('user/view')}/{$user->id}/{$user->nickname|escape:url}"
+        class="btn btn-light">
+        <i class="icon icon-left"></i>
+        {t}back to my profile{/t}
+      </a>
+
     </div>
   </form>
 {/block}

@@ -166,6 +166,13 @@
         {t}cancel{/t}
       </a>
 
+      {if $entity->id}
+        <a href="{Router::link('entity/view')}/{$entity->id}" class="btn btn-light">
+          <i class="icon icon-left"></i>
+          {t}back to author{/t}
+        </a>
+      {/if}
+
       {if $entity->id && User::may(User::PRIV_DELETE_ENTITY)}
         <button
           name="deleteButton"
