@@ -81,14 +81,6 @@
       {include "bits/markdownHelp.tpl"}
     </div>
 
-    <h4>{t}preview{/t}</h4>
-
-    <div id="markdownPreview">
-      {$user->aboutMe|md}
-    </div>
-
-    <hr>
-
     <div class="form-group">
       <label>{t}password (only if you wish to change it){/t}</label>
 

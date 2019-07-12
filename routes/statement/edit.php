@@ -56,7 +56,7 @@ if ($saveButton) {
   Smart::assign('tagIds', ObjectTag::getTagIds(ObjectTag::TYPE_STATEMENT, $statement->id));
 }
 
-Smart::addResources('marked', 'sortable');
+Smart::addResources('simplemde', 'sortable');
 Smart::assign('statement', $statement);
 Smart::display('statement/edit.tpl');
 

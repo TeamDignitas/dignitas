@@ -1,9 +1,5 @@
 $(function() {
 
-  function init() {
-    setMarkdownPreview($('#fieldAboutMe'), $('#markdownPreview'));
-  }
-
-  init();
+  initSimpleMde('fieldAboutMe');
 
 });

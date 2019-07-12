@@ -63,12 +63,6 @@
       {include "bits/markdownHelp.tpl"}
     </div>
 
-    <h6>{t}preview{/t}</h6>
-
-    <div id="markdownPreview">
-      {$statement->context|md}
-    </div>
-
     <div class="form-group">
       <label for="fieldGoal">{t}goal{/t}</label>
       <input

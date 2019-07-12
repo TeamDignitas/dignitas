@@ -115,9 +115,6 @@
       </div>
     </form>
 
-    <h4 class="mt-3">{t}preview{/t}</h4>
-
-    <div id="markdownPreview"></div>
   {/if}
 
 {/block}

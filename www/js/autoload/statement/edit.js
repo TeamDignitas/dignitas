@@ -12,7 +12,7 @@ $(function() {
 	    animation: 150,
     });
 
-    setMarkdownPreview($('#fieldContext'), $('#markdownPreview'));
+    initSimpleMde('fieldContext');
 
     initSelect2('#fieldEntityId', URL_PREFIX + 'ajax/load-entities', {
       ajax: {

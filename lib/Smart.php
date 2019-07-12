@@ -24,12 +24,6 @@ class Smart {
     'fontello' => [
       'css' => [ 'third-party/fontello/css/icons.css' ],
     ],
-    'marked' => [
-      'js' => [
-        'third-party/marked-0.6.2.min.js',
-        'markedDev.js',
-      ],
-    ],
     'select2' => [
       'css' => [
         'third-party/select2-4.0.5.min.css',
@@ -39,6 +33,13 @@ class Smart {
         'third-party/select2/select2-4.0.5.min.js',
         'third-party/select2/i18n/ro.js',
         'select2Dev.js',
+      ],
+    ],
+    'simplemde' => [
+      'css' => [ 'third-party/simplemde.min.css' ],
+      'js' => [
+        'third-party/simplemde.min.js',
+        'simpleMdeDev.js',
       ],
     ],
     'sortable' => [

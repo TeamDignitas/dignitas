@@ -35,7 +35,7 @@ if ($postAnswerButton) {
   // first time loading the page
 }
 
-Smart::addResources('marked');
+Smart::addResources('simplemde');
 Smart::assign([
   'statement' => $statement,
   'entity' => $statement->getEntity(),

@@ -31,6 +31,13 @@ img.pic {
   font-weight: bold;
 }
 
+blockquote {
+  border-left: 3px solid #777;
+  color: #777;
+  margin: 1em 2em;
+  padding-left: 1em;
+}
+
 /*************************** navbar search box ***************************/
 
 .navbar .select2 {
