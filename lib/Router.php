@@ -229,6 +229,13 @@ class Router {
     return $url;
   }
 
+  static function userLink($user) {
+    return sprintf('%s/%s/%s',
+                   self::link('user/view'),
+                   $user->id,
+                   urlencode($user->nickname));
+  }
+
   // Collect URLs for localized versions of this page.
   // See https://support.google.com/webmasters/answer/189077
   static function setRelAlternate($route, $uri) {

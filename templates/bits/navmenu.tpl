@@ -72,9 +72,7 @@
             </span>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarUserDropdown">
-            <a
-              class="dropdown-item"
-              href="{Router::link('user/view')}/{$u->id}/{$u->nickname|escape:url}">
+            <a class="dropdown-item" href="{Router::userLink($u)}">
               <i class="icon icon-user"></i>
               {t}my profile{/t}
             </a>

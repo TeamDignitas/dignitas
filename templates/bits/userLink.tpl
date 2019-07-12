@@ -9,9 +9,7 @@
   <i class="icon icon-user"></i>
 {/if}
 
-<a
-  href="{Router::link('user/view')}/{$u->id}/{$u->nickname|escape:url}"
-  class="userLink text-muted">
+<a href="{Router::userLink($u)}" class="userLink text-muted">
   {$u|escape}
 </a>
 
