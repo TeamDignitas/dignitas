@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-07-12 14:58+0300\n"
-"PO-Revision-Date: 2019-07-12 14:58+0300\n"
+"POT-Creation-Date: 2019-07-12 17:32+0300\n"
+"PO-Revision-Date: 2019-07-12 17:32+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -35,7 +35,7 @@ msgstr ""
 "ați tastat adresa corectă sau vizitați <a href=\"%1\">pagina principală</a>."
 
 #: templates/aggregate/dashboard.tpl:3 templates/aggregate/dashboard.tpl:6
-#: templates/bits/navmenu.tpl:83
+#: templates/bits/navmenu.tpl:81
 msgid "dashboard"
 msgstr "panou de control"
 
@@ -85,7 +85,7 @@ msgid "your search «%1» produced no results"
 msgstr "căutarea «%1» nu a produs rezultate"
 
 #: templates/auth/login.tpl:3 templates/auth/login.tpl:16
-#: templates/auth/login.tpl:67 templates/bits/navmenu.tpl:113
+#: templates/auth/login.tpl:67 templates/bits/navmenu.tpl:111
 msgid "log in"
 msgstr "autentificare"
 
@@ -180,7 +180,7 @@ msgstr "etichetă"
 msgid "test user login"
 msgstr "autentificare ca utilizator de test"
 
-#: templates/bits/fakeLogin.tpl:33 templates/bits/navmenu.tpl:94
+#: templates/bits/fakeLogin.tpl:33 templates/bits/navmenu.tpl:92
 #: templates/user/view.tpl:15
 msgid "reputation"
 msgstr "reputație"
@@ -197,15 +197,15 @@ msgstr "arată/ascunde meniul"
 msgid "home page"
 msgstr "pagina principală"
 
-#: templates/bits/navmenu.tpl:79
+#: templates/bits/navmenu.tpl:77
 msgid "my profile"
 msgstr "profilul meu"
 
-#: templates/bits/navmenu.tpl:97
+#: templates/bits/navmenu.tpl:95
 msgid "change reputation manually"
 msgstr "schimbă reputația manual"
 
-#: templates/bits/navmenu.tpl:105
+#: templates/bits/navmenu.tpl:103
 msgid "log out"
 msgstr "închide sesiunea"
 
@@ -304,11 +304,15 @@ msgstr "șterge imaginea"
 msgid "cancel"
 msgstr "renunță"
 
-#: templates/entity/edit.tpl:174
+#: templates/entity/edit.tpl:172
+msgid "back to author"
+msgstr "înapoi la autor"
+
+#: templates/entity/edit.tpl:181
 msgid "Are you sure you want to delete this entity?"
 msgstr "Confirmați ștergerea acestui autor?"
 
-#: templates/entity/edit.tpl:176 templates/statement/edit.tpl:135
+#: templates/entity/edit.tpl:183 templates/statement/edit.tpl:135
 #: templates/tag/edit.tpl:180
 msgid "delete"
 msgstr "șterge"
@@ -483,6 +487,10 @@ msgstr "despre mine"
 #: templates/user/edit.tpl:85
 msgid "password (only if you wish to change it)"
 msgstr "parola (doar dacă doriți să o schimbați)"
+
+#: templates/user/edit.tpl:129
+msgid "back to my profile"
+msgstr "înapoi la profilul meu"
 
 #: templates/user/view.tpl:3 templates/user/view.tpl:12
 msgid "user"
