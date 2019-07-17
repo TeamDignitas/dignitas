@@ -51,6 +51,14 @@ class Router {
       'ro_RO.utf8' => 'inregistrare',
     ],
 
+    // docs (user-uploaded)
+    'doc/upload' => [
+      'en_US.utf8' => 'ajax/upload-document',
+    ],
+    'doc/view' => [
+      'en_US.utf8' => 'document',
+    ],
+
     // entities
     'entity/edit' => [
       'en_US.utf8' => 'edit-author',
@@ -131,6 +139,7 @@ class Router {
   // file => list of parameters expected in the URL (none by default)
   const PARAMS = [
     'aggregate/search' => [ 'q' ],
+    'doc/view' => [ 'fileName' ],
     'entity/edit' => [ 'id' ],
     'entity/image' => [ 'id', 'fileName' ],
     'entity/load' => [ 'ids' ],

@@ -67,11 +67,39 @@ const SIMPLE_MDE_TOOLBAR = [
 ];
 
 function initSimpleMde(elementId) {
-  return new SimpleMDE({
+  var simpleMde = new SimpleMDE({
     autoDownloadFontAwesome: false,
     element: document.getElementById(elementId),
     spellChecker: false,
     status: false,
     toolbar: SIMPLE_MDE_TOOLBAR,
   });
+
+  // allow drag-and-drop file uploads, see
+  // https://github.com/sparksuite/simplemde-markdown-editor/issues/328
+  inlineAttachment.editors.codemirror4.attach(simpleMde.codemirror, {
+    onFileUploadResponse: handleAjaxResponse,
+    uploadUrl: URL_PREFIX + 'ajax/upload-document',
+  });
+
+  return simpleMde;
+}
+
+function handleAjaxResponse(xhr) {
+  console.log(this);
+  var result = JSON.parse(xhr.responseText),
+      filename = result[this.settings.jsonFieldName];
+
+  if (result && filename) {
+    var newValue;
+    if (typeof this.settings.urlText === 'function') {
+      newValue = this.settings.urlText.call(this, filename, result);
+    } else {
+      newValue = this.settings.urlText.replace(this.filenameTag, filename);
+    }
+    var text = this.editor.getValue().replace(this.lastValue, newValue);
+    this.editor.setValue(text);
+    this.settings.onFileUploaded.call(this, filename);
+  }
+  return false;
 }
