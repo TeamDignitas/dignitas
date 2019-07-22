@@ -66,7 +66,7 @@
 
       {include "bits/image.tpl"
         obj=$user
-        size=Config::THUMB_USER_PROFILE
+        geometry=Config::THUMB_USER_PROFILE
         spanClass="col-3"
         imgClass="pic float-right"}
     </div>

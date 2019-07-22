@@ -19,8 +19,7 @@ class Img {
     return $path;
   }
 
-  // assumes $thumbIndex is a valid index in Config::THUMB_SIZES
-  private static function getThumbLocation($obj, $thumbIndex) {
+  private static function getThumbLocation($obj, $geometry) {
     if (!$obj->imageExtension || !$obj->id) {
       return '';
     }
@@ -29,47 +28,42 @@ class Img {
       return self::getImageLocation($obj); // never scale SVGs
     }
 
-    $rec = Config::THUMB_SIZES[$thumbIndex];
     $subdir = self::getSubdirectory($obj);
-    $path = sprintf('%simg/%s/thumb-%dx%d/%d.%s',
+    $path = sprintf('%simg/%s/thumb-%s/%d.%s',
                     Config::SHARED_DRIVE,
                     $subdir,
-                    $rec[0],
-                    $rec[1],
+                    $geometry,
                     $obj->id,
                     $obj->imageExtension);
     return $path;
   }
 
-  static function getThumbLink($obj, $thumbIndex) {
+  static function getThumbLink($obj, $geometry) {
     $subdir = self::getSubdirectory($obj);
-    return sprintf('%s/%d/%d.%s',
+    return sprintf('%s/%d/%s.%s',
                    Router::link("{$subdir}/image"),
                    $obj->id,
-                   $thumbIndex,
+                   $geometry,
                    $obj->imageExtension);
   }
 
   /**
-   * If the thumbnail exists, returns its dimensions. If not, falls back to
-   * the Config.php values. The two may differ due to differences in aspect.
+   * If the thumbnail exists, returns its dimensions. If not, returns null
    **/
-  static function getThumbSize($obj, $thumbIndex) {
-    $file = self::getThumbLocation($obj, $thumbIndex);
+  static function getThumbSize($obj, $geometry) {
+    $file = self::getThumbLocation($obj, $geometry);
 
     if (!$file || !file_exists($file)) {
       // no image
-      $rec = Config::THUMB_SIZES[$thumbIndex];
+      return null;
+    }
 
-    } else if ($obj->imageExtension == 'svg') {
+    if ($obj->imageExtension == 'svg') {
       // SVG image
-      $box = Config::THUMB_SIZES[$thumbIndex];
-      $rec = self::getSvgSize($file, $box[0], $box[1]);
-
+      $rec = self::getSvgSize($file, $geometry);
     } else {
       // non-vector image
       $rec = getimagesize($file);
-
     }
 
     return [
@@ -95,35 +89,35 @@ class Img {
     copy($tmpImageName, $dest);
   }
 
+  // $class: also serves as index in UPLOAD_SPECS
   static function renderThumb($class, $id, $fileName) {
 
-    @list($thumb, $extension) = explode('.', $fileName, 2);
+    @list($geometry, $extension) = explode('.', $fileName, 2);
 
     $obj = $class::get_by_id($id);
 
     if (!$obj ||
         !$obj->imageExtension ||
         ($obj->imageExtension != $extension) ||
-        !isset(Config::THUMB_SIZES[$thumb])) {
+        !in_array($geometry, Config::UPLOAD_SPECS[$class]['geometries'])) {
       http_response_code(404);
       exit;
     }
 
     // generate the thumb unless it already exists
     $imgLocation =  self::getImageLocation($obj);
-    $thumbLocation = self::getThumbLocation($obj, $thumb);
+    $thumbLocation = self::getThumbLocation($obj, $geometry);
     if (!file_exists($thumbLocation)) {
-      list($width, $height) = Config::THUMB_SIZES[$thumb];
       @mkdir(dirname($thumbLocation), 0777, true);
-      $cmd = sprintf('convert -geometry %dx%d -sharpen 1x1 %s %s',
-                     $width, $height, $imgLocation, $thumbLocation);
+      $cmd = sprintf('convert -geometry %s -sharpen 1x1 %s %s',
+                     $geometry, $imgLocation, $thumbLocation);
       OS::execute($cmd, $ignored);
     }
 
     // now dump it
     if (file_exists($thumbLocation)) {
 
-      $mimeType = array_search($extension, Config::IMAGE_MIME_TYPES);
+      $mimeType = array_search($extension, Config::MIME_TYPES);
       header('Content-Type:' . $mimeType);
       header('Content-Length: ' . filesize($thumbLocation));
       readfile($thumbLocation);
@@ -170,41 +164,62 @@ class Img {
 
   }
 
-  // Tries to figure out the SVG size from the file and fit it to $maxWidth x
-  // $maxHeight while keeping the aspect ratio. If it fails, then it simply
-  // returns $maxWidth x $maxHeight.
-  static function getSvgSize($file, $maxWidth, $maxHeight) {
+  // Parses the basic cases of ImageMagick-style geometries. Returns an array
+  // [ 'width' => $width, 'height' => $height ] where unspecified values are missing.
+  static function parseGeometry($geometry) {
+    $result = [];
+
+    if ($geometry && preg_match('/^(\d*)(x(\d+))?$/', $geometry, $matches)) {
+      if (isset($matches[1])) {
+        $result['width'] = $matches[1];
+      }
+      if (isset($matches[3])) {
+        $result['height'] = $matches[3];
+      }
+    }
+
+    return $result;
+  }
+
+  // Tries to figure out the SVG size from the file and fit it to $geometry
+  // while keeping the aspect ratio. If it fails, then it returns null.
+  static function getSvgSize($file, $geometry) {
     $xml = simplexml_load_file($file);
     $attr = $xml->attributes();
 
     // sometimes there are width and height attributes
-    $rec = [
-      (float)$attr->width,
-      (float)$attr->height,
+    $size = [
+      'width' => (float)$attr->width,
+      'height' => (float)$attr->height,
     ];
 
     // sometimes there is a viewBox attribute
-    if (!$rec[0] || !$rec[1]) {
+    if (!$size['width'] || !$size['height']) {
       $viewBox = (string)$attr->viewBox;
       if ($viewBox) {
         $parts = explode(' ', $viewBox);
-        $rec = [
-          (float)$parts[2],
-          (float)$parts[3],
+        $size = [
+          'width' => (float)$parts[2],
+          'height' => (float)$parts[3],
         ];
       }
     }
 
-    if ($rec[0] && $rec[1]) {
-      // fit it
-      $scale = min($maxWidth / $rec[0], $maxHeight / $rec[1]);
-      $rec = [ (int)($scale * $rec[0]), (int)($scale * $rec[1]) ];
-    } else {
-      // unknown size, use the default
-      $rec = [ $maxWidth, $maxHeight ];
+    if (!$size['width'] || !$size['height']) {
+      return null;
     }
 
-    return $rec;
+    // fit it
+    $gsize = self::parseGeometry($geometry);
+    $scales = [];
+    foreach ($gsize as $axis => $value) { // $axis = width and/or height
+      $scales[] = $value / $size[$axis];
+    }
+    $scale = @min($scales) ?? 1.0;
 
+    return [
+      (int)($scale * $size['width']),
+      (int)($scale * $size['height']),
+    ];
   }
 }

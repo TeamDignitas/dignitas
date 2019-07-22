@@ -6,7 +6,7 @@
     {include "bits/image.tpl"
       obj=$entity
       condition=$entityImages && $entity->imageExtension
-      size=Config::THUMB_ENTITY_LARGE
+      geometry=Config::THUMB_ENTITY_LARGE
       imgClass="pic float-right ml-5"}
 
     <div>

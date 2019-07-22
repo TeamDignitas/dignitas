@@ -28,30 +28,53 @@ class Config {
   // Shared drive (common to all backends). Include a trailing slash.
   const SHARED_DRIVE = '/tmp/tbd-shared/';
 
-  // image configuration
-  const MAX_IMAGE_SIZE = 16 << 20; // 16 MB
-
-  // allowed MIME type => file extension
-  const IMAGE_MIME_TYPES = [
+  // Allowed MIME type => canonical file extension
+  // In particular, we accept .jpg and .jpeg uploads, but canonicalize both to .jpg.
+  const MIME_TYPES = [
+    'application/pdf' => 'pdf',
     'image/gif' => 'gif',
     'image/jpeg' => 'jpg',
     'image/png' => 'png',
     'image/svg+xml' => 'svg',
   ];
 
-  // thumb types and sizes
-  const THUMB_NAVBAR = 0;
-  const THUMB_USER_PROFILE = 1;
-  const THUMB_ENTITY_SMALL = 2;
-  const THUMB_ENTITY_LARGE = 3;
-  const THUMB_ENTITY_SEARCH_AUTOCOMPLETE = 4;
+  // thumbnail geometries
+  const THUMB_USER_NAVBAR = '24x24';
+  const THUMB_USER_PROFILE = '200';
+  const THUMB_ENTITY_AUTOCOMPLETE = '20x20';
+  const THUMB_ENTITY_SMALL = '40';
+  const THUMB_ENTITY_LARGE = '200';
 
-  const THUMB_SIZES = [
-    self::THUMB_NAVBAR => [ 24, 24 ],
-    self::THUMB_USER_PROFILE => [ 200, 300 ],
-    self::THUMB_ENTITY_SMALL => [ 40, 60 ],
-    self::THUMB_ENTITY_LARGE => [ 200, 300 ],
-    self::THUMB_ENTITY_SEARCH_AUTOCOMPLETE => [ 20, 20 ],
+  // Upload specifications.
+  // Values in 'extensions' refer to the MIME types above.
+  // Values in 'geometries' are passed to "convert -resize". Refer to [1] for geometry specs.
+  // [1] https://www.imagemagick.org/script/command-line-processing.php#geometry
+  const UPLOAD_SPECS = [
+    // user profile images
+    'User' => [
+      'extensions' => [ 'gif', 'jpeg', 'png', 'svg' ],
+      'limit' => 16 << 20, // 16 MB,
+      'geometries' => [
+        self::THUMB_USER_NAVBAR,
+        self::THUMB_USER_PROFILE,
+      ],
+    ],
+    // entity profile images
+    'Entity' => [
+      'extensions' => [ 'gif', 'jpeg', 'png', 'svg' ],
+      'limit' => 16 << 20, // 16 MB,
+      'geometries' => [
+        self::THUMB_ENTITY_AUTOCOMPLETE,
+        self::THUMB_ENTITY_SMALL,
+        self::THUMB_ENTITY_LARGE,
+      ],
+    ],
+    // uploaded attachments
+    'Attachment' => [
+      'extensions' => [ 'gif', 'jpeg', 'pdf', 'png', 'svg' ],
+      'limit' => 64 << 20, // 16 MB,
+      'geometries' => [ '100', '200', '300', '400', 'x100', 'x200', 'x300', 'x400' ],
+    ],
   ];
 
   // logging

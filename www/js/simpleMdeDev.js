@@ -87,9 +87,17 @@ function initSimpleMde(elementId) {
 }
 
 function handleAjaxError(xhr) {
-  var jsonResponse = JSON.parse(xhr.responseText),
-      error = jsonResponse.error,
-      text = this.editor.getValue().replace(this.lastValue, error);
+  var jsonResponse;
+
+  try {
+    jsonResponse = JSON.parse(xhr.responseText);
+    error = jsonResponse.error;
+  } catch (e) {
+    error = 'An error occurred while uploading the file. Possibly the file was too large.';
+  }
+
+  var text = this.editor.getValue().replace(this.lastValue, error);
+
   this.editor.setValue(text);
   return false;
 }

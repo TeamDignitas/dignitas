@@ -148,7 +148,7 @@
 
       {include "bits/image.tpl"
         obj=$entity
-        size=Config::THUMB_ENTITY_LARGE
+        geometry=Config::THUMB_ENTITY_LARGE
         spanClass="col-3"
         imgClass="pic float-right"}
     </div>

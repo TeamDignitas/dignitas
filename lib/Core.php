@@ -31,6 +31,7 @@ class Core {
 
     DB::init();
     Session::init();
+    Request::init();
     if (!Request::isAjax()) {
       FlashMessage::restoreFromSession();
     }

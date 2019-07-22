@@ -6,7 +6,7 @@
   <div class="clearfix">
     {include "bits/image.tpl"
       obj=$user
-      size=Config::THUMB_USER_PROFILE
+      geometry=Config::THUMB_USER_PROFILE
       imgClass="pic float-right"}
 
     <h3>{t}user{/t} {$user}</h3>

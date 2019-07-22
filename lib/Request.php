@@ -11,6 +11,21 @@ class Request {
   const UPLOAD_BAD_MIME_TYPE = 3; // file has incorrect MIME type
   const UPLOAD_OTHER_ERROR = 4;
 
+  static function init() {
+    // PHP silently discards files exceeding the post limit, leaving no trace
+    // in $_FILES and in $_POST.
+    // https://stackoverflow.com/questions/7852910/php-empty-post-and-files-when-uploading-larger-files
+    $length = $_SERVER['CONTENT_LENGTH'] ?? 0;
+    if (empty($_POST) &&
+        empty($_FILES) &&
+        ((int)$length > 0)) {
+      http_response_code(404);
+      throw new Exception(
+        'PHP discarded POST data because it was too large. ' .
+        'We promise to handle this error gracefully one day.');
+    }
+  }
+
   /* Reads a request parameter. Cleans up string and array values. */
   static function get($name, $default = null) {
     return $_REQUEST[$name] ?? $default;
@@ -41,17 +56,11 @@ class Request {
    * code (one of the UPLOAD_* constants) and possibly the temporary file name
    * and the file extension.
    **/
-  static function getFile($name, $maxSize, $allowedMimeTypes) {
+  static function getFile($name, $class) {
     $rec = $_FILES[$name] ?? null;
-
-    // PHP silently discards files exceeding the post limit, leaving no trace
-    // in $_FILES and in $_POST. Simulate adding the information back.
-    if (!$rec && ((int)$_SERVER['CONTENT_LENGTH'] > $maxSize)) {
-      $rec = [
-        'error' => UPLOAD_ERR_OK,
-        'size' => $maxSize + 1,
-      ];
-    }
+    $extension = Config::MIME_TYPES[$rec['type']] ?? null;
+    $allowedExtensions = Config::UPLOAD_SPECS[$class]['extensions'];
+    $limit = Config::UPLOAD_SPECS[$class]['limit'];
 
     if (!$rec ||
         !$rec['size'] ||
@@ -60,13 +69,13 @@ class Request {
 
     } else if ($rec['error'] == UPLOAD_ERR_INI_SIZE ||
                $rec['error'] == UPLOAD_ERR_FORM_SIZE ||
-               $rec['size'] > $maxSize) {
+               $rec['size'] > $limit) {
       return [
         'status' => self::UPLOAD_TOO_LARGE,
-        'limit' => $maxSize,
+        'limit' => $limit,
       ];
 
-    } else if (!isset($allowedMimeTypes[$rec['type']])) {
+    } else if (!$extension || !in_array($extension, $allowedExtensions)) {
       return [ 'status' => self::UPLOAD_BAD_MIME_TYPE ];
 
     } else if ($rec['error'] != UPLOAD_ERR_OK) {
@@ -77,7 +86,7 @@ class Request {
       return [
         'status' => self::UPLOAD_OK,
         'tmpImageName' => $rec['tmp_name'],
-        'extension' => $allowedMimeTypes[$rec['type']],
+        'extension' => $extension,
       ];
     }
   }

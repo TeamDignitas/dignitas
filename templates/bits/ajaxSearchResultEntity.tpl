@@ -1,7 +1,7 @@
 <div>
   {include "bits/image.tpl"
     obj=$entity
-    size=Config::THUMB_ENTITY_SEARCH_AUTOCOMPLETE
+    geometry=Config::THUMB_ENTITY_AUTOCOMPLETE
     imgClass="pic mr-2 align-middle"}
 
   {$entity->name|escape}

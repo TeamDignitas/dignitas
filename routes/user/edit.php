@@ -14,7 +14,7 @@ if ($saveButton) {
   $password2 = Request::get('password2');
 
   $deleteImage = Request::has('deleteImage');
-  $imageData = Request::getFile('image', Config::MAX_IMAGE_SIZE, Config::IMAGE_MIME_TYPES);
+  $imageData = Request::getFile('image', 'User');
 
   $errors = validate($user, $password, $password2, $imageData);
   if (empty($errors)) {

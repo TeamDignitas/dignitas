@@ -2,11 +2,11 @@
 {$spanClass=$spanClass|default:''}
 {if $condition}
   <span class="{$spanClass}">
-    {$sz=Img::getThumbSize($obj, $size)}
+    {$sz=Img::getThumbSize($obj, $geometry)}
     <img
-      src="{Img::getThumbLink($obj, $size)}"
+      src="{Img::getThumbLink($obj, $geometry)}"
       class="{$imgClass}"
-      width="{$sz.width}"
-      height="{$sz.height}">
+      width="{$sz.width|default:''}"
+      height="{$sz.height|default:''}">
   </span>
 {/if}

@@ -43,7 +43,7 @@ if ($saveButton) {
     Request::getArray('aliasNames'));
 
   $deleteImage = Request::has('deleteImage');
-  $imageData = Request::getFile('image', Config::MAX_IMAGE_SIZE, Config::IMAGE_MIME_TYPES);
+  $imageData = Request::getFile('image', 'Entity');
 
   $errors = validate($entity, $relations, $imageData);
   if (empty($errors)) {

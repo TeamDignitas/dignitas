@@ -18,7 +18,7 @@ if (!file_exists($fullPath)) {
   exit;
 }
 
-$mimeType = array_search($extension, Config::ATTACHMENT_MIME_TYPES);
+$mimeType = array_search($extension, Config::MIME_TYPES);
 header('Content-Type:' . $mimeType);
 header('Content-Length: ' . filesize($fullPath));
 readfile($fullPath);

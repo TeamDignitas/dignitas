@@ -2,8 +2,7 @@
 
 $output = [];
 
-$imageData = Request::getFile(
-  'file', Config::MAX_ATTACHMENT_SIZE, Config::ATTACHMENT_MIME_TYPES);
+$imageData = Request::getFile('file', 'Attachment');
 $imgError = Img::validateImageData($imageData);
 
 if (!User::may(User::PRIV_UPLOAD_ATTACHMENT)) {
