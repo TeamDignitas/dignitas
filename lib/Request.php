@@ -16,11 +16,6 @@ class Request {
     return $_REQUEST[$name] ?? $default;
   }
 
-  /* Reads a file record from $_FILES. */
-  static function getFile($name, $default = null) {
-    return $_FILES[$name] ?? $default;
-  }
-
   /* Reads a present-or-not parameter (checkbox, button etc.). */
   static function has($name) {
     return array_key_exists($name, $_REQUEST);
@@ -46,8 +41,17 @@ class Request {
    * code (one of the UPLOAD_* constants) and possibly the temporary file name
    * and the file extension.
    **/
-  static function getImage($name) {
-    $rec = self::getFile($name);
+  static function getFile($name, $maxSize, $allowedMimeTypes) {
+    $rec = $_FILES[$name] ?? null;
+
+    // PHP silently discards files exceeding the post limit, leaving no trace
+    // in $_FILES and in $_POST. Simulate adding the information back.
+    if (!$rec && ((int)$_SERVER['CONTENT_LENGTH'] > $maxSize)) {
+      $rec = [
+        'error' => UPLOAD_ERR_OK,
+        'size' => $maxSize + 1,
+      ];
+    }
 
     if (!$rec ||
         !$rec['size'] ||
@@ -56,10 +60,13 @@ class Request {
 
     } else if ($rec['error'] == UPLOAD_ERR_INI_SIZE ||
                $rec['error'] == UPLOAD_ERR_FORM_SIZE ||
-               $rec['size'] > Config::MAX_IMAGE_SIZE) {
-      return [ 'status' => self::UPLOAD_TOO_LARGE ];
+               $rec['size'] > $maxSize) {
+      return [
+        'status' => self::UPLOAD_TOO_LARGE,
+        'limit' => $maxSize,
+      ];
 
-    } else if (!isset(Config::IMAGE_MIME_TYPES[$rec['type']])) {
+    } else if (!isset($allowedMimeTypes[$rec['type']])) {
       return [ 'status' => self::UPLOAD_BAD_MIME_TYPE ];
 
     } else if ($rec['error'] != UPLOAD_ERR_OK) {
@@ -70,7 +77,7 @@ class Request {
       return [
         'status' => self::UPLOAD_OK,
         'tmpImageName' => $rec['tmp_name'],
-        'extension' => Config::IMAGE_MIME_TYPES[$rec['type']],
+        'extension' => $allowedMimeTypes[$rec['type']],
       ];
     }
   }

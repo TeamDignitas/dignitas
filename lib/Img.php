@@ -134,10 +134,10 @@ class Img {
   }
 
   // checks if an image file was uploaded successfully and sets an error if not
-  static function validateImageStatus($imageStatus) {
-    switch ($imageStatus) {
+  static function validateImageData($imageData) {
+    switch ($imageData['status']) {
       case Request::UPLOAD_TOO_LARGE:
-        $mb = Config::MAX_IMAGE_SIZE >> 20;
+        $mb = $imageData['limit'] >> 20;
         return sprintf(_('Maximum image size is %s MB.'), $mb);
 
       case Request::UPLOAD_BAD_MIME_TYPE:
@@ -171,7 +171,7 @@ class Img {
   }
 
   // Tries to figure out the SVG size from the file and fit it to $maxWidth x
-  // $maxHeight while keeping the aspect ration. If it fails, then it simply
+  // $maxHeight while keeping the aspect ratio. If it fails, then it simply
   // returns $maxWidth x $maxHeight.
   static function getSvgSize($file, $maxWidth, $maxHeight) {
     $xml = simplexml_load_file($file);

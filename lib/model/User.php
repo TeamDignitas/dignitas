@@ -17,6 +17,7 @@ class User extends BaseObject implements DatedObject {
   const PRIV_ADD_TAG = 1500;
   const PRIV_EDIT_TAG = 1500;
   const PRIV_DELETE_TAG = 5000;
+  const PRIV_UPLOAD_ATTACHMENT = 100;
 
   private static $active = null; // user currently logged in
 

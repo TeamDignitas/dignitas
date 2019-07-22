@@ -43,9 +43,9 @@ if ($saveButton) {
     Request::getArray('aliasNames'));
 
   $deleteImage = Request::has('deleteImage');
-  $imageData = Request::getImage('image');
+  $imageData = Request::getFile('image', Config::MAX_IMAGE_SIZE, Config::IMAGE_MIME_TYPES);
 
-  $errors = validate($entity, $relations, $imageData['status']);
+  $errors = validate($entity, $relations, $imageData);
   if (empty($errors)) {
     Img::saveWithImage($entity, $imageData, $deleteImage);
 
@@ -70,7 +70,7 @@ Smart::display('entity/edit.tpl');
 
 /*************************************************************************/
 
-function validate($entity, $relations, $imageStatus) {
+function validate($entity, $relations, $imageData) {
   $errors = [];
 
   // misc fields
@@ -128,7 +128,7 @@ function validate($entity, $relations, $imageStatus) {
   }
 
   // image field
-  $imgError = Img::validateImageStatus($imageStatus);
+  $imgError = Img::validateImageData($imageData);
   if ($imgError) {
     $errors['image'][] = $imgError;
   }

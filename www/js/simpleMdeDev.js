@@ -78,15 +78,23 @@ function initSimpleMde(elementId) {
   // allow drag-and-drop file uploads, see
   // https://github.com/sparksuite/simplemde-markdown-editor/issues/328
   inlineAttachment.editors.codemirror4.attach(simpleMde.codemirror, {
-    onFileUploadResponse: handleAjaxResponse,
-    uploadUrl: URL_PREFIX + 'ajax/upload-document',
+    onFileUploadError: handleAjaxError,
+    onFileUploadResponse: handleAjaxSuccess,
+    uploadUrl: URL_PREFIX + 'ajax/upload-attachment',
   });
 
   return simpleMde;
 }
 
-function handleAjaxResponse(xhr) {
-  console.log(this);
+function handleAjaxError(xhr) {
+  var jsonResponse = JSON.parse(xhr.responseText),
+      error = jsonResponse.error,
+      text = this.editor.getValue().replace(this.lastValue, error);
+  this.editor.setValue(text);
+  return false;
+}
+
+function handleAjaxSuccess(xhr) {
   var result = JSON.parse(xhr.responseText),
       filename = result[this.settings.jsonFieldName];
 

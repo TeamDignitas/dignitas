@@ -29,6 +29,14 @@ class Router {
       'en_US.utf8' => '',
     ],
 
+    // attachments
+    'attachment/upload' => [
+      'en_US.utf8' => 'ajax/upload-attachment',
+    ],
+    'attachment/view' => [
+      'en_US.utf8' => 'attachment',
+    ],
+
     // auth
     'auth/login' => [
       'en_US.utf8' => 'login',
@@ -49,14 +57,6 @@ class Router {
     'auth/register' => [
       'en_US.utf8' => 'register',
       'ro_RO.utf8' => 'inregistrare',
-    ],
-
-    // docs (user-uploaded)
-    'doc/upload' => [
-      'en_US.utf8' => 'ajax/upload-document',
-    ],
-    'doc/view' => [
-      'en_US.utf8' => 'document',
     ],
 
     // entities
@@ -139,7 +139,7 @@ class Router {
   // file => list of parameters expected in the URL (none by default)
   const PARAMS = [
     'aggregate/search' => [ 'q' ],
-    'doc/view' => [ 'fileName' ],
+    'attachment/view' => [ 'fileName' ],
     'entity/edit' => [ 'id' ],
     'entity/image' => [ 'id', 'fileName' ],
     'entity/load' => [ 'ids' ],
