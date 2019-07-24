@@ -4,7 +4,7 @@
   <span class="{$spanClass}">
     {$sz=$obj->getFileSize($geometry)}
     <img
-      src="{$obj->getFileLink($geometry)}"
+      src="{$obj->getFileUrl($geometry)}"
       class="{$imgClass}"
       width="{$sz.width|default:''}"
       height="{$sz.height|default:''}">

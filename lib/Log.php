@@ -28,6 +28,9 @@ class Log {
       if ($user) {
         fprintf(self::$file, "[{$user->email}] ");
       }
+      if (is_array($format) || is_object($format)) {
+        $format = var_export($format, true);
+      }
       vfprintf(self::$file, "{$format}\n", $args);
     }
   }

@@ -104,19 +104,12 @@ function handleAjaxError(xhr) {
 }
 
 function handleAjaxSuccess(xhr) {
-  var result = JSON.parse(xhr.responseText),
-      filename = result[this.settings.jsonFieldName];
+  var result = JSON.parse(xhr.responseText);
 
-  if (result && filename) {
-    var newValue;
-    if (typeof this.settings.urlText === 'function') {
-      newValue = this.settings.urlText.call(this, filename, result);
-    } else {
-      newValue = this.settings.urlText.replace(this.filenameTag, filename);
-    }
-    var text = this.editor.getValue().replace(this.lastValue, newValue);
+  if (result) {
+    // ditch the built-in urlText and compute the output value ourselves
+    var text = this.editor.getValue().replace(this.lastValue, result.html);
     this.editor.setValue(text);
-    this.settings.onFileUploaded.call(this, filename);
   }
   return false;
 }

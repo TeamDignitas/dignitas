@@ -38,12 +38,18 @@ class Config {
     'image/svg+xml' => 'svg',
   ];
 
+  // Extensions for generated thumbnails, when different from the original file.
+  const THUMB_EXTENSIONS = [
+    'pdf' => 'jpg',
+  ];
+
   // thumbnail geometries
   const THUMB_USER_NAVBAR = '24x24';
   const THUMB_USER_PROFILE = '200';
   const THUMB_ENTITY_AUTOCOMPLETE = '20x20';
   const THUMB_ENTITY_SMALL = '40';
   const THUMB_ENTITY_LARGE = '200';
+  const THUMB_INLINE_ATTACHMENT = '200'; // default geometry for inline attachments
 
   // Upload specifications.
   // Values in 'extensions' refer to the MIME types above.
@@ -52,7 +58,7 @@ class Config {
   const UPLOAD_SPECS = [
     // user profile images
     'User' => [
-      'extensions' => [ 'gif', 'jpeg', 'png', 'svg' ],
+      'extensions' => [ 'gif', 'jpg', 'png', 'svg' ],
       'limit' => 16 << 20, // 16 MB,
       'geometries' => [
         self::THUMB_USER_NAVBAR,
@@ -61,7 +67,7 @@ class Config {
     ],
     // entity profile images
     'Entity' => [
-      'extensions' => [ 'gif', 'jpeg', 'png', 'svg' ],
+      'extensions' => [ 'gif', 'jpg', 'png', 'svg' ],
       'limit' => 16 << 20, // 16 MB,
       'geometries' => [
         self::THUMB_ENTITY_AUTOCOMPLETE,
@@ -71,9 +77,9 @@ class Config {
     ],
     // uploaded attachments
     'Attachment' => [
-      'extensions' => [ 'gif', 'jpeg', 'pdf', 'png', 'svg' ],
+      'extensions' => [ 'gif', 'jpg', 'pdf', 'png', 'svg' ],
       'limit' => 64 << 20, // 16 MB,
-      'geometries' => [ '100', '200', '300', '400', 'x100', 'x200', 'x300', 'x400' ],
+      'geometries' => [ '100', '200', '300', '400', 'x100', 'x200', 'x300', 'x400', 'full' ],
     ],
   ];
 

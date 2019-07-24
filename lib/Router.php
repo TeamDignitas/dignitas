@@ -139,7 +139,7 @@ class Router {
   // file => list of parameters expected in the URL (none by default)
   const PARAMS = [
     'aggregate/search' => [ 'q' ],
-    'attachment/view' => [ 'fileName' ],
+    'attachment/view' => [ 'id', 'fileName' ],
     'entity/edit' => [ 'id' ],
     'entity/image' => [ 'id', 'fileName' ],
     'entity/load' => [ 'ids' ],

@@ -18,16 +18,18 @@ if (!User::may(User::PRIV_UPLOAD_ATTACHMENT)) {
 } else {
 
   $a = Model::factory('Attachment')->create();
-  $a->fileExtension = $fileData['extension'];
   $a->userId = User::getActiveId();
-  $a->save();
+  $a->saveWithFile($fileData, false);
 
-  $fullPath = $a->getFullPath();
-  @mkdir(dirname($fullPath), 0777, true);
-  copy($fileData['tmpFileName'], $fullPath);
+  Smart::assign([
+    'fullUrl' => $a->getFileUrl(UploadTrait::$FULL_GEOMETRY),
+    'thumbUrl' => $a->getFileUrl(Config::THUMB_INLINE_ATTACHMENT),
+  ]);
+  $output['html'] = Smart::fetch('bits/inlineAttachment.tpl');
 
-  $output['filename'] = $a->getUrl();
-  Log::info('uploaded attachment %s to %s', $a->id, $fullPath);
+  Log::info('uploaded attachment %s to %s',
+            $a->id,
+            $a->getFileLocation(UploadTrait::$FULL_GEOMETRY));
 
 }
 

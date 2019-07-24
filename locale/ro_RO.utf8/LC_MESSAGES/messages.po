@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-07-12 17:32+0300\n"
-"PO-Revision-Date: 2019-07-12 17:32+0300\n"
+"POT-Creation-Date: 2019-07-24 17:59+0300\n"
+"PO-Revision-Date: 2019-07-24 18:01+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -184,6 +184,16 @@ msgstr "autentificare ca utilizator de test"
 #: templates/user/view.tpl:15
 msgid "reputation"
 msgstr "reputație"
+
+#: templates/bits/inlineAttachment.tpl:1
+msgid "Please read TODO for ways of customizing the thumbnail and link."
+msgstr ""
+"Vă rugăm citiți TODO pentru moduri de personalizare a iconiței și a "
+"legăturii."
+
+#: templates/bits/inlineAttachment.tpl:3
+msgid "uploaded file"
+msgstr "fișier încărcat"
 
 #: templates/bits/markdownHelp.tpl:3
 msgid "Markdown help"
@@ -508,19 +518,6 @@ msgstr "membru de pe"
 msgid "last seen"
 msgstr "ultima vizită"
 
-#: lib/Img.php:141
-#, php-format
-msgid "Maximum image size is %s MB."
-msgstr "Dimensiunea maximă pentru imagini este de %s MB."
-
-#: lib/Img.php:144
-msgid "Supported image types are JPEG, PNG, GIF and SVG."
-msgstr "Tipurile de imagini acceptate sînt JPEG, PNG, GIF și SVG."
-
-#: lib/Img.php:147
-msgid "An error occurred while uploading the image."
-msgstr "A apărut o eroare la încărcarea imaginii."
-
 # Date format in your locale, where %e is the day (1 to 31), %b is the abbreviated month name (Jan to Dec) and %Y is the four-digit year.
 #: lib/Time.php:22 lib/Time.php:44
 msgid "%b %e, %Y"
@@ -587,19 +584,19 @@ msgstr "Sînteți deja autentificat."
 msgid "Please log in to perform this action."
 msgstr "Vă rugăm să vă autentificați pentru a continua."
 
-#: lib/model/Entity.php:22
+#: lib/model/Entity.php:23
 msgid "person"
 msgstr "persoană"
 
-#: lib/model/Entity.php:23
+#: lib/model/Entity.php:24
 msgid "party"
 msgstr "partid"
 
-#: lib/model/Entity.php:24
+#: lib/model/Entity.php:25
 msgid "union"
 msgstr "uniune"
 
-#: lib/model/Entity.php:25
+#: lib/model/Entity.php:26
 msgid "website"
 msgstr "site web"
 
@@ -607,20 +604,33 @@ msgstr "site web"
 msgid "member of"
 msgstr "membru în"
 
-#: lib/model/User.php:43 routes/auth/login.php:57
+#: lib/model/UploadTrait.php:152
+#, php-format
+msgid "Maximum file size is %s MB."
+msgstr "Dimensiunea maximă a fișierului este de %s MB."
+
+#: lib/model/UploadTrait.php:156
+msgid "Supported file types are JPEG, PNG, GIF and SVG."
+msgstr "Tipurile de fișier acceptate sînt JPEG, PNG, GIF și SVG."
+
+#: lib/model/UploadTrait.php:159
+msgid "An error occurred while uploading the file."
+msgstr "A apărut o eroare la încărcarea fișierului."
+
+#: lib/model/User.php:53 routes/auth/login.php:57
 #: routes/auth/lostPassword.php:50
 msgid "Please enter an email address."
 msgstr "Vă rugăm să introduceți o adresă de e-mail."
 
-#: lib/model/User.php:48
+#: lib/model/User.php:58
 msgid "This email address is already taken."
 msgstr "Această adresă de e-mail este deja folosită."
 
-#: lib/model/User.php:52 routes/auth/lostPassword.php:52
+#: lib/model/User.php:62 routes/auth/lostPassword.php:52
 msgid "This email address looks incorrect."
 msgstr "Adresa de e-mail pare incorectă."
 
-#: lib/model/User.php:62
+#: lib/model/User.php:72
 msgid ""
 "Your nickname must begin with a letter or digit and consist of 3 to 30 "
 "letters, digits and punctuation from among -_."
@@ -628,26 +638,31 @@ msgstr ""
 "Porecla dumneavoastră trebuie să înceapă cu o literă sau cifră și să conțină "
 "între 3 și 30 de litere, cifre și punctuație din setul -_."
 
-#: lib/model/User.php:71 routes/auth/login.php:61
+#: lib/model/User.php:81 routes/auth/login.php:61
 msgid "Please enter a password."
 msgstr "Vă rugăm să introduceți o parolă."
 
-#: lib/model/User.php:73
+#: lib/model/User.php:83
 msgid "Please enter your password twice to prevent typos."
 msgstr "Vă rugăm să introduceți parola de două ori pentru verificare."
 
-#: lib/model/User.php:75
+#: lib/model/User.php:85
 msgid "Passwords don't match."
 msgstr "Parolele nu coincid."
 
-#: lib/model/User.php:77
+#: lib/model/User.php:87
 msgid "Your password must be at least 8 characters long."
 msgstr "Parola trebuie să aibă cel puțin 8 caractere."
 
-#: lib/model/User.php:95
+#: lib/model/User.php:105
 #, php-format
 msgid "You need at least %s reputation to perform this action."
 msgstr "Vă trebuie o reputație de cel puțin %s pentru această acțiune."
+
+#: routes/attachment/upload.php:11
+#, php-format
+msgid "You need at least %s reputation to upload documents."
+msgstr "Vă trebuie o reputație de cel puțin %s pentru a încărca fișiere."
 
 #: routes/auth/login.php:16
 msgid "Fake logins are only allowed in development mode."

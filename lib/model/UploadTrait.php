@@ -27,7 +27,17 @@ trait UploadTrait {
     return (int)($this->id / 1000);
   }
 
-  private function getFileLocation($geometry) {
+  // sometimes thumbnails have a different extension than the original file
+  // (e.g. PDF files have JPG thumbnails)
+  private function getExtension($geometry) {
+    if ($geometry == self::$FULL_GEOMETRY) {
+      return $this->fileExtension;
+    } else {
+      return Config::THUMB_EXTENSIONS[$this->fileExtension] ?? $this->fileExtension;
+    }
+  }
+
+  function getFileLocation($geometry) {
     if (!$this->fileExtension || !$this->id) {
       return '';
     }
@@ -42,15 +52,15 @@ trait UploadTrait {
                    $geometry,
                    $this->getShard(),
                    $this->id,
-                   $this->fileExtension);
+                   $this->getExtension($geometry));
   }
 
-  function getFileLink($geometry) {
+  function getFileUrl($geometry) {
     return sprintf(self::$URL_PATTERN,
                    Router::link($this->getFileRoute()),
                    $this->id,
                    $geometry,
-                   $this->fileExtension);
+                   $this->getExtension($geometry));
   }
 
   /**
@@ -105,7 +115,7 @@ trait UploadTrait {
     $class = get_class(); // serves as index in UPLOAD_SPECS
 
     if (!$this->fileExtension ||
-        ($this->fileExtension != $extension) ||
+        ($this->getExtension($geometry) != $extension) ||
         !in_array($geometry, Config::UPLOAD_SPECS[$class]['geometries'])) {
       http_response_code(404);
       exit;
@@ -167,7 +177,7 @@ trait UploadTrait {
 
     $this->save();
 
-    if (!$deleteFiles && ($fileData['status'] == Request::UPLOAD_OK)) {
+    if (!$deleteFile && ($fileData['status'] == Request::UPLOAD_OK)) {
       $this->copyUploadedFile($fileData['tmpFileName']);
     }
 
