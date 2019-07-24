@@ -1,6 +1,6 @@
 {strip}
 
-{if $u->imageExtension}
+{if $u->fileExtension}
   {include "bits/image.tpl"
     obj=$u
     geometry=Config::THUMB_USER_NAVBAR

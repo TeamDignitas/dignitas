@@ -1,19 +1,19 @@
 <?php
 
 class Attachment extends BaseObject implements DatedObject {
+  use UploadTrait;
 
-  function getFullPath() {
-    $subdir = $this->id / 1000;
-    return sprintf('%supload/%d/%d.%s',
-                   Config::SHARED_DRIVE, $subdir, $this->id, $this->extension);
+  private function getFileSubdirectory() {
+    return 'attachment';
   }
 
-  function getUrl() {
-    return sprintf('%s/%s.%s', Router::link('attachment/view'), $this->id, $this->extension);
+  private function getFileRoute() {
+    return 'attachment/view';
   }
 
   function delete() {
-    Log::warning("Deleted attachment {$this->id} ({$this->name}.{$this->extension})");
+    Log::warning("Deleted attachment {$this->id} ({$this->name}.{$this->fileExtension})");
+    $this->deleteFiles();
     ObjectAttachment::delete_all_by_attachmentId($this->id);
     parent::delete();
   }

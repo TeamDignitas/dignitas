@@ -1,6 +1,7 @@
 <?php
 
 class User extends BaseObject implements DatedObject {
+  use UploadTrait;
 
   // privileges and their required reputation
   const PRIV_ADD_ENTITY = 1;
@@ -20,6 +21,14 @@ class User extends BaseObject implements DatedObject {
   const PRIV_UPLOAD_ATTACHMENT = 100;
 
   private static $active = null; // user currently logged in
+
+  private function getFileSubdirectory() {
+    return 'user';
+  }
+
+  private function getFileRoute() {
+    return 'user/image';
+  }
 
   static function getActive() {
     return self::$active;

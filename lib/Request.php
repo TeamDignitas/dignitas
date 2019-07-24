@@ -52,9 +52,9 @@ class Request {
   }
 
   /**
-   * Reads an uploaded image file. Returns an array consisting of a status
-   * code (one of the UPLOAD_* constants) and possibly the temporary file name
-   * and the file extension.
+   * Reads an uploaded file. Returns an array consisting of a status code (one
+   * of the UPLOAD_* constants) and possibly the temporary file name and the
+   * file extension.
    **/
   static function getFile($name, $class) {
     $rec = $_FILES[$name] ?? null;
@@ -85,7 +85,7 @@ class Request {
       // actual upload
       return [
         'status' => self::UPLOAD_OK,
-        'tmpImageName' => $rec['tmp_name'],
+        'tmpFileName' => $rec['tmp_name'],
         'extension' => $extension,
       ];
     }

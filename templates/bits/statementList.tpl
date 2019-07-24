@@ -5,7 +5,7 @@
     {$entity=$s->getEntity()}
     {include "bits/image.tpl"
       obj=$entity
-      condition=$entityImages && $entity->imageExtension
+      condition=$entityImages && $entity->fileExtension
       geometry=Config::THUMB_ENTITY_LARGE
       imgClass="pic float-right ml-5"}
 

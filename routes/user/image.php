@@ -3,4 +3,10 @@
 $id = Request::get('id');
 $fileName = Request::get('fileName');
 
-Img::renderThumb('User', $id, $fileName);
+$user = User::get_by_id($id);
+
+if (!$user) {
+  http_response_code(404);
+} else {
+  $user->renderFile($fileName);
+}

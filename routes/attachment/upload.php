@@ -2,8 +2,8 @@
 
 $output = [];
 
-$imageData = Request::getFile('file', 'Attachment');
-$imgError = Img::validateImageData($imageData);
+$fileData = Request::getFile('file', 'Attachment');
+$fileError = UploadTrait::validateFileData($fileData);
 
 if (!User::may(User::PRIV_UPLOAD_ATTACHMENT)) {
 
@@ -11,20 +11,20 @@ if (!User::may(User::PRIV_UPLOAD_ATTACHMENT)) {
     _('You need at least %s reputation to upload documents.'),
     Str::formatNumber(User::PRIV_UPLOAD_ATTACHMENT));
 
-} else if ($imgError) {
+} else if ($fileError) {
 
-  $output['error'] = $imgError;
+  $output['error'] = $fileError;
 
 } else {
 
   $a = Model::factory('Attachment')->create();
-  $a->extension = $imageData['extension'];
+  $a->fileExtension = $fileData['extension'];
   $a->userId = User::getActiveId();
   $a->save();
 
   $fullPath = $a->getFullPath();
   @mkdir(dirname($fullPath), 0777, true);
-  copy($imageData['tmpImageName'], $fullPath);
+  copy($fileData['tmpFileName'], $fullPath);
 
   $output['filename'] = $a->getUrl();
   Log::info('uploaded attachment %s to %s', $a->id, $fullPath);

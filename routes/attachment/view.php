@@ -6,7 +6,7 @@ $fileName = Request::get('fileName');
 
 $a = Attachment::get_by_id($id);
 
-if (!$a || $a->extension != $extension) {
+if (!$a || $a->fileExtension != $extension) {
   http_response_code(404);
   exit;
 }

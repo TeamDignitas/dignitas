@@ -1,10 +1,10 @@
-{$condition=$condition|default:$obj->imageExtension}
+{$condition=$condition|default:$obj->fileExtension}
 {$spanClass=$spanClass|default:''}
 {if $condition}
   <span class="{$spanClass}">
-    {$sz=Img::getThumbSize($obj, $geometry)}
+    {$sz=$obj->getFileSize($geometry)}
     <img
-      src="{Img::getThumbLink($obj, $geometry)}"
+      src="{$obj->getFileLink($geometry)}"
       class="{$imgClass}"
       width="{$sz.width|default:''}"
       height="{$sz.height|default:''}">

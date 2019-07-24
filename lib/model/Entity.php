@@ -1,6 +1,7 @@
 <?php
 
 class Entity extends BaseObject implements DatedObject {
+  use UploadTrait;
 
   const TYPE_PERSON = 1;
   const TYPE_PARTY = 2;
@@ -28,6 +29,14 @@ class Entity extends BaseObject implements DatedObject {
 
   function getTypeName() {
     return self::typeName($this->type);
+  }
+
+  private function getFileSubdirectory() {
+    return 'entity';
+  }
+
+  private function getFileRoute() {
+    return 'entity/image';
   }
 
   function getColor() {
@@ -106,8 +115,8 @@ class Entity extends BaseObject implements DatedObject {
 
   public function delete() {
     Log::warning("Deleted entity {$this->id} ({$this->name})");
+    $this->deleteFiles();
     Alias::delete_all_by_entityId($this->id);
-    Img::deleteImages($this);
     Statement::delete_all_by_entityId($this->id);
     Relation::delete_all_by_fromEntityId($this->id);
     Relation::delete_all_by_toEntityId($this->id);

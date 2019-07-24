@@ -43,11 +43,11 @@ if ($saveButton) {
     Request::getArray('aliasNames'));
 
   $deleteImage = Request::has('deleteImage');
-  $imageData = Request::getFile('image', 'Entity');
+  $fileData = Request::getFile('image', 'Entity');
 
-  $errors = validate($entity, $relations, $imageData);
+  $errors = validate($entity, $relations, $fileData);
   if (empty($errors)) {
-    Img::saveWithImage($entity, $imageData, $deleteImage);
+    $entity->saveWithFile($entity, $fileData, $deleteImage);
 
     Relation::updateDependants($relations, 'fromEntityId', $entity->id, 'rank');
     Alias::updateDependants($aliases, 'entityId', $entity->id, 'rank');
@@ -70,7 +70,7 @@ Smart::display('entity/edit.tpl');
 
 /*************************************************************************/
 
-function validate($entity, $relations, $imageData) {
+function validate($entity, $relations, $fileData) {
   $errors = [];
 
   // misc fields
@@ -128,9 +128,9 @@ function validate($entity, $relations, $imageData) {
   }
 
   // image field
-  $imgError = Img::validateImageData($imageData);
-  if ($imgError) {
-    $errors['image'][] = $imgError;
+  $fileError = UploadTrait::validateFileData($fileData);
+  if ($fileError) {
+    $errors['image'][] = $fileError;
   }
 
   return $errors;
