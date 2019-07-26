@@ -64,29 +64,27 @@ trait UploadTrait {
   }
 
   /**
-   * If the file exists, returns its width and height. If not, returns null
+   * If the file exists, returns its width and height. If not, returns []
    **/
   function getFileSize($geometry) {
+    $this->ensureThumbnail($geometry);
     $file = $this->getFileLocation($geometry);
 
     if (!$file || !file_exists($file)) {
       // no file
-      return null;
-    }
-
-    if ($this->fileExtension == 'svg') {
+      return [];
+    } else if ($this->fileExtension == 'svg') {
       // SVG image
-      $rec = $this->getSvgSize($file, $geometry);
+      return $this->getSvgSize($file, $geometry);
     } else {
       // non-vector image
       // TODO: or PDF
       $rec = getimagesize($file);
+      return [
+        'width' => $rec[0],
+        'height' => $rec[1],
+      ];
     }
-
-    return [
-      'width' => $rec[0],
-      'height' => $rec[1],
-    ];
   }
 
   // delete the uploaded file and all its thumbnails
@@ -108,20 +106,8 @@ trait UploadTrait {
     copy($tmpFileName, $dest);
   }
 
-  // geometry will be derived from the filename
-  function renderFile($fileName) {
-
-    @list($geometry, $extension) = explode('.', $fileName, 2);
-    $class = get_class(); // serves as index in UPLOAD_SPECS
-
-    if (!$this->fileExtension ||
-        ($this->getExtension($geometry) != $extension) ||
-        !in_array($geometry, Config::UPLOAD_SPECS[$class]['geometries'])) {
-      http_response_code(404);
-      exit;
-    }
-
     // generate the thumb unless it already exists
+  private function ensureThumbnail($geometry) {
     $thumbLocation = $this->getFileLocation($geometry);
     if (!file_exists($thumbLocation)) {
       $origLocation =  $this->getFileLocation(self::$FULL_GEOMETRY);
@@ -130,8 +116,25 @@ trait UploadTrait {
                      $geometry, $origLocation, $thumbLocation);
       OS::execute($cmd, $ignored);
     }
+  }
+
+  // geometry will be derived from the filename
+  function renderFile($fileName) {
+
+    @list($geometry, $extension) = explode('.', $fileName, 2);
+    $class = get_class(); // serves as index in UPLOAD_SPECS
+
+    // sanity checks
+    if (!$this->fileExtension ||
+        ($this->getExtension($geometry) != $extension) ||
+        !in_array($geometry, Config::UPLOAD_SPECS[$class]['geometries'])) {
+      http_response_code(404);
+      exit;
+    }
 
     // now dump it
+    $this->ensureThumbnail($geometry);
+    $thumbLocation = $this->getFileLocation($geometry);
     if (file_exists($thumbLocation)) {
 
       $mimeType = array_search($extension, Config::MIME_TYPES);
@@ -140,6 +143,7 @@ trait UploadTrait {
       readfile($thumbLocation);
 
     } else {
+       // no thumbnail and we could not generate it
       http_response_code(404);
     }
   }
@@ -200,45 +204,45 @@ trait UploadTrait {
     return $result;
   }
 
-  // Tries to figure out the SVG size from the file and fit it to $geometry
-  // while keeping the aspect ratio. If it fails, then it returns null.
+  // Tries to figure out the aspect ratio from the file or assumes a square
+  // aspect. Then returns the width and height fitted to $geometry.
   private function getSvgSize($file, $geometry) {
     $xml = simplexml_load_file($file);
     $attr = $xml->attributes();
 
-    // sometimes there are width and height attributes
-    $size = [
-      'width' => (float)$attr->width,
-      'height' => (float)$attr->height,
-    ];
+    if ((float)$attr->width && (float)$attr->height) {
 
-    // sometimes there is a viewBox attribute
-    if (!$size['width'] || !$size['height']) {
-      $viewBox = (string)$attr->viewBox;
-      if ($viewBox) {
-        $parts = explode(' ', $viewBox);
-        $size = [
-          'width' => (float)$parts[2],
-          'height' => (float)$parts[3],
-        ];
-      }
-    }
+      // sometimes there are width and height attributes
+      $ratio = (float)$attr->width / (float)$attr->height;
 
-    if (!$size['width'] || !$size['height']) {
-      return null;
+    } else if ((string)$attr->viewBox) {
+
+      // sometimes there is a viewBox attribute
+      $parts = explode(' ', (string)$attr->viewBox);
+      $ratio = (float)$parts[2] / (float)$parts[3];
+
+    } else {
+
+      // assume a square aspect
+      $ratio = 1.0;
+
     }
 
     // fit it
-    $gsize = $this->parseGeometry($geometry);
-    $scales = [];
-    foreach ($gsize as $axis => $value) { // $axis = width and/or height
-      $scales[] = $value / $size[$axis];
+    $g = $this->parseGeometry($geometry);
+    if (isset($g['height']) &&
+        (!isset($g['width']) || ($g['height'] * $ratio < $g['width']))) {
+      return [
+        'width' => (int)($g['height'] * $ratio),
+        'height' => $g['height'],
+      ];
+    } else if ($g['width']) {
+      return [
+        'width' => $g['width'],
+        'height' => (int)($g['width'] / $ratio),
+      ];
+    } else {
+      return []; // no recommendations, e.g. if $geometry is 'full'
     }
-    $scale = @min($scales) ?? 1.0;
-
-    return [
-      (int)($scale * $size['width']),
-      (int)($scale * $size['height']),
-    ];
   }
 }

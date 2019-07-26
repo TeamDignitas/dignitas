@@ -73,7 +73,9 @@
 
     {foreach $answers as $a}
       <div class="answer clearfix {if $a->id == $answerId}highlightedAnswer{/if}">
-        {$a->contents|md}
+        <div>
+          {$a->contents|md}
+        </div>
 
         {include "bits/scoreAndVote.tpl"
           type=Vote::TYPE_ANSWER

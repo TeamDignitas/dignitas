@@ -6,7 +6,7 @@
     <img
       src="{$obj->getFileUrl($geometry)}"
       class="{$imgClass}"
-      width="{$sz.width|default:''}"
-      height="{$sz.height|default:''}">
+      {if $sz.width}width="{$sz.width}"{/if}
+      {if $sz.height}height="{$sz.height}"{/if}>
   </span>
 {/if}
