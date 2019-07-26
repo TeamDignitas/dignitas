@@ -68,8 +68,6 @@ $homonyms = Model::factory('Tag')
   ->where_not_equal('id', $tag->id)
   ->find_many();
 
-// TODO: objects and counts
-
 Smart::assign([
   't' => $tag,
   'children' => $children,

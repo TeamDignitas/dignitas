@@ -76,7 +76,10 @@ class Request {
       ];
 
     } else if (!$extension || !in_array($extension, $allowedExtensions)) {
-      return [ 'status' => self::UPLOAD_BAD_MIME_TYPE ];
+      return [
+        'status' => self::UPLOAD_BAD_MIME_TYPE,
+        'allowedExtensions' => $allowedExtensions,
+      ];
 
     } else if ($rec['error'] != UPLOAD_ERR_OK) {
       return [ 'status' => self::UPLOAD_OTHER_ERROR ];

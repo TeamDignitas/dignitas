@@ -77,8 +77,8 @@ trait UploadTrait {
       // SVG image
       return $this->getSvgSize($file, $geometry);
     } else {
-      // non-vector image
-      // TODO: or PDF
+      // Non-vector image. There should be no PDFs here. This applies only to
+      // images included from image.tpl, not to user-uploaded documents.
       $rec = getimagesize($file);
       return [
         'width' => $rec[0],
@@ -156,8 +156,9 @@ trait UploadTrait {
         return sprintf(_('Maximum file size is %s MB.'), $mb);
 
       case Request::UPLOAD_BAD_MIME_TYPE:
-        // TODO get extensions from the Config file
-        return _('Supported file types are JPEG, PNG, GIF and SVG.');
+        $extString = implode(', ', $fileData['allowedExtensions']);
+        $extString = strtoupper($extString);
+        return sprintf(_('Supported file types are: %s.'), $extString);
 
       case Request::UPLOAD_OTHER_ERROR:
         return _('An error occurred while uploading the file.');
