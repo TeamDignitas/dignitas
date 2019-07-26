@@ -79,7 +79,7 @@ $(function() {
     // allow drag-and-drop file uploads, see
     // https://github.com/sparksuite/simplemde-markdown-editor/issues/328
     inlineAttachment.editors.codemirror4.attach(simpleMde.codemirror, {
-      allowedTypes: [ 'application/pdf', 'image/gif', 'image/jpeg', 'image/png', 'image/svg+xml' ],
+      allowedTypes: UPLOAD_MIME_TYPES,
       onFileUploadError: handleAjaxError,
       onFileUploadResponse: handleAjaxSuccess,
       uploadUrl: URL_PREFIX + 'ajax/upload-attachment',

@@ -64,4 +64,15 @@ class Util {
     return $referrer;
   }
 
+  static function getUploadMimeTypes() {
+    $extensions = Config::UPLOAD_SPECS['Attachment']['extensions'];
+    $extMap = array_flip(Config::MIME_TYPES);
+
+    $results = [];
+    foreach ($extensions as $ext) {
+      $results[] = $extMap[$ext];
+    }
+    return $results;
+  }
+
 }
