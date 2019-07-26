@@ -24,6 +24,10 @@ class Smart {
     'fontello' => [
       'css' => [ 'third-party/fontello/css/icons.css' ],
     ],
+    'imageModal' => [
+      'css' => [ 'imageModal.css' ],
+      'js' => [ 'imageModal.js' ],
+    ],
     'select2' => [
       'css' => [
         'third-party/select2-4.0.5.min.css',

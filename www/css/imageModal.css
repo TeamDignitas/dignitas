@@ -1,0 +1,67 @@
+/* Adapted from https://www.w3schools.com/howto/howto_css_modal_images.asp */
+.expand:hover {
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+#imageModal {
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  display: none;
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  padding-top: 100px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+#imageModal img {
+  display: block;
+  margin: auto;
+  max-width: 700px;
+  width: 80%;
+}
+
+/* 100% image width on smaller screens */
+@media only screen and (max-width: 700px){
+  #imageModal img {
+    width: 100%;
+  }
+}
+
+#imageModal .caption {
+  color: #ccc;
+  display: block;
+  height: 150px;
+  margin: auto;
+  max-width: 700px;
+  padding: 10px 0;
+  text-align: center;
+  width: 80%;
+}
+
+#imageModal img, #imageModal .caption {
+  animation-duration: 0.6s;
+  animation-name: zoom;
+}
+
+@keyframes zoom {
+  from {transform:scale(0.75)}
+  to {transform:scale(1)}
+}
+
+#imageModal .close {
+  color: #d0d0d0;
+  font-size: 40px;
+  font-weight: bold;
+  position: absolute;
+  right: 35px;
+  top: 15px;
+}
+
+#imageModal .close:hover {
+  color: #bbb;
+  cursor: pointer;
+}
