@@ -3,11 +3,29 @@
 $id = Request::get('id');
 $answerId = Request::get('answerId'); // answer to be highlighted
 $postAnswerButton = Request::has('postAnswerButton');
+$deleteAnswerId = Request::get('deleteAnswerId');
 
 $statement = Statement::get_by_id($id);
 if (!$statement) {
   FlashMessage::add(_('The statement you are looking for does not exist.'));
   Util::redirectToHome();
+}
+
+if ($deleteAnswerId) {
+  $answer = Answer::get_by_id($deleteAnswerId);
+  if (!$answer) {
+    FlashMessage::add(_('No such answer exists.'));
+  } else if ($answer->statementId != $statement->id) {
+    FlashMessage::add(_('The answer does not belong to this statement.'));
+  } else if (!$answer->isDeletable()) {
+    FlashMessage::add(_('You cannot delete this answer.'));
+  } else {
+
+    $answer->delete();
+    FlashMessage::add(_('Answer deleted.'), 'success');
+    Util::redirectToSelf();
+
+  }
 }
 
 if ($postAnswerButton) {

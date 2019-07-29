@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-07-26 16:09+0300\n"
-"PO-Revision-Date: 2019-07-26 16:09+0300\n"
+"POT-Creation-Date: 2019-07-29 15:34+0300\n"
+"PO-Revision-Date: 2019-07-29 15:36+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -323,7 +323,7 @@ msgid "Are you sure you want to delete this entity?"
 msgstr "Confirmați ștergerea acestui autor?"
 
 #: templates/entity/edit.tpl:183 templates/statement/edit.tpl:135
-#: templates/tag/edit.tpl:180
+#: templates/statement/view.tpl:97 templates/tag/edit.tpl:180
 msgid "delete"
 msgstr "șterge"
 
@@ -395,15 +395,19 @@ msgstr[0] "un răspuns"
 msgstr[1] "%1 răspunsuri"
 msgstr[2] "%1 de răspunsuri"
 
-#: templates/statement/view.tpl:88
+#: templates/statement/view.tpl:89
 msgid "posted by"
 msgstr "publicat de"
 
-#: templates/statement/view.tpl:97
+#: templates/statement/view.tpl:96
+msgid "Are you sure you want to delete this answer?"
+msgstr "Confirmați ștergerea acestui răspuns?"
+
+#: templates/statement/view.tpl:106
 msgid "your answer"
 msgstr "răspunsul dumneavoastră"
 
-#: templates/statement/view.tpl:115
+#: templates/statement/view.tpl:124
 msgid "post your answer"
 msgstr "publică răspunsul"
 
@@ -771,15 +775,31 @@ msgstr "Această dată nu poate fi în viitor."
 msgid "Some source URLS are invalid."
 msgstr "Unele URL-uri sursă sînt invalide."
 
-#: routes/statement/view.php:9
+#: routes/statement/view.php:10
 msgid "The statement you are looking for does not exist."
 msgstr "Afirmația pe care o căutați nu există."
 
+#: routes/statement/view.php:17
+msgid "No such answer exists."
+msgstr "Răspunsul nu există."
+
+#: routes/statement/view.php:19
+msgid "The answer does not belong to this statement."
+msgstr "Răspunsul nu aparține acestei afirmații."
+
+#: routes/statement/view.php:21
+msgid "You cannot delete this answer."
+msgstr "Nu puteți șterge acest răspuns."
+
 #: routes/statement/view.php:25
+msgid "Answer deleted."
+msgstr "Am șters răspunsul."
+
+#: routes/statement/view.php:43
 msgid "Answer posted."
 msgstr "Am publicat răspunsul."
 
-#: routes/statement/view.php:54
+#: routes/statement/view.php:72
 msgid "Cannot post an empty answer."
 msgstr "Nu pot publica un răspuns vid."
 

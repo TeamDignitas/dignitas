@@ -16,4 +16,14 @@ class Answer extends BaseObject implements DatedObject {
       User::getActiveId(), Vote::TYPE_ANSWER, $this->id);
   }
 
+  function isDeletable() {
+    return $this->userId == User::getActiveId();
+  }
+
+  function delete() {
+    Log::warning("Deleted answer %d (%s)",
+                 $this->id, Str::shorten($this->contents, 100));
+    Vote::delete_all_by_type_objectId(Vote::TYPE_STATEMENT, $this->id);
+    parent::delete();
+  }
 }

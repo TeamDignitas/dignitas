@@ -54,4 +54,13 @@ class Str {
     $l = localeconv();
     return number_format($n, $decimals, $l['decimal_point'], $l['thousands_sep']);
   }
+
+  static function shorten($s, $maxLength) {
+    $l = mb_strlen($s);
+    if ($l >= $maxLength + 3) {
+      return mb_substr($s, 0, $maxLength - 3) . '...';
+    }
+    return $s;
+  }
+
 }

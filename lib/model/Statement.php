@@ -41,7 +41,7 @@ class Statement extends BaseObject implements DatedObject {
   }
 
   function delete() {
-    Log::warning("Deleted statement {$this->id} ({$this->sumary})");
+    Log::warning("Deleted statement {$this->id} ({$this->summary})");
     ObjectTag::delete_all_by_objectType_objectId(ObjectTag::TYPE_STATEMENT, $this->id);
     parent::delete();
   }

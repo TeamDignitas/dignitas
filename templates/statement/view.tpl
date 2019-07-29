@@ -84,10 +84,19 @@
           downvotePriv=User::PRIV_DOWNVOTE_ANSWER
           classes="float-left"}
 
-        <small class="btn text-muted float-right">
-          {t}posted by{/t}
-          {include 'bits/userLink.tpl' u=$a->getUser()}
-          {$a->createDate|moment}
+        <ul class="list-inline text-muted float-right">
+          <li class="list-inline-item">
+            {t}posted by{/t}
+            {include 'bits/userLink.tpl' u=$a->getUser()}
+            {$a->createDate|moment}
+          </li>
+          <li class="list-inline-item">
+            <a
+              href="?deleteAnswerId={$a->id}"
+              data-confirm="{t}Are you sure you want to delete this answer?{/t}">
+              {t}delete{/t}
+            </a>
+          </li>
         </small>
       </div>
     {/foreach}

@@ -60,7 +60,7 @@ $(function() {
 $(function() {
   var beforeUnloadHandlerAttached = false;
 
-  $('.deleteButton').click(function() {
+  $('[data-confirm]').click(function() {
     var msg = $(this).data('confirm');
     return confirm(msg);
   });
