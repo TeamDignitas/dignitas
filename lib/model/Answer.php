@@ -23,7 +23,7 @@ class Answer extends BaseObject implements DatedObject {
   function delete() {
     Log::warning("Deleted answer %d (%s)",
                  $this->id, Str::shorten($this->contents, 100));
-    Vote::delete_all_by_type_objectId(Vote::TYPE_STATEMENT, $this->id);
+    Vote::delete_all_by_type_objectId(Vote::TYPE_ANSWER, $this->id);
     parent::delete();
   }
 }
