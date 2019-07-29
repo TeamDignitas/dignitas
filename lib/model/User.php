@@ -1,7 +1,7 @@
 <?php
 
 class User extends BaseObject implements DatedObject {
-  use UploadTrait;
+  use MarkdownTrait, UploadTrait;
 
   // privileges and their required reputation
   const PRIV_ADD_ENTITY = 1;
@@ -21,6 +21,10 @@ class User extends BaseObject implements DatedObject {
   const PRIV_UPLOAD_ATTACHMENT = 100;
 
   private static $active = null; // user currently logged in
+
+  function getMarkdownFields() {
+    return [ 'aboutMe' ];
+  }
 
   private function getFileSubdirectory() {
     return 'user';

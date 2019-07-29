@@ -7,13 +7,14 @@ trait UploadTrait {
 
   // Traits cannot have constants because PHP.
   // <shared_drive>/upload/<object_class>/<geometry>/<shard>/<id>.<extension>
-  static $FILE_PATTERN = '%supload/%s/%s/%d/%d.%s';
+  private static $FILE_PATTERN = '%supload/%s/%s/%d/%d.%s';
 
   // <shared_drive>/upload/<object_class>/*/<shard>/<id>.*
-  static $DELETE_COMMAND = 'rm -rf %supload/%s/*/%d/%d.*';
+  private static $DELETE_COMMAND = 'rm -rf %supload/%s/*/%d/%d.*';
 
   // <route>/<id>/<geometry>.<extension>
-  static $URL_PATTERN = '%s/%d/%s.%s';
+  // keep in sync with MarkdownTrait::URL_PCRE
+  private static $URL_PATTERN = '%s/%d/%s.%s';
 
   static $FULL_GEOMETRY = 'full';
 

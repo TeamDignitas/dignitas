@@ -1,6 +1,11 @@
 <?php
 
 class Answer extends BaseObject implements DatedObject {
+  use MarkdownTrait;
+
+  function getMarkdownFields() {
+    return [ 'contents' ];
+  }
 
   function getUser() {
     return User::get_by_id($this->userId);

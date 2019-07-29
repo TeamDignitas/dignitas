@@ -30,10 +30,13 @@
   {if $user->aboutMe}
     <h4>{t}about me{/t}</h4>
 
-    {$user->aboutMe|md}
+    <div>
+      {$user->aboutMe|md}
+    </div>
   {/if}
 
   {if $user->id == User::getActiveId()}
+    <hr>
     <a href="{Router::link('user/edit')}" class="btn btn-light">
       <i class="icon icon-edit"></i>
       {t}edit{/t}
