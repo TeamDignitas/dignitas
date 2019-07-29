@@ -14,7 +14,7 @@ class Attachment extends BaseObject implements DatedObject {
   function delete() {
     Log::warning("Deleted attachment {$this->id} ({$this->name}.{$this->fileExtension})");
     $this->deleteFiles();
-    ObjectAttachment::delete_all_by_attachmentId($this->id);
+    AttachmentReference::delete_all_by_attachmentId($this->id);
     parent::delete();
   }
 
