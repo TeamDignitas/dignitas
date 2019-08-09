@@ -24,13 +24,13 @@ trait UploadTrait {
   // route to call when viewing the file or its thumbs
   abstract function getFileRoute();
 
-  private function getShard() {
+  function getShard() {
     return (int)($this->id / 1000);
   }
 
   // sometimes thumbnails have a different extension than the original file
   // (e.g. PDF files have JPG thumbnails)
-  private function getExtension($geometry) {
+  function getExtension($geometry) {
     if ($geometry == self::$FULL_GEOMETRY) {
       return $this->fileExtension;
     } else {
