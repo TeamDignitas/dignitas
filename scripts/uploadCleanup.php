@@ -5,6 +5,7 @@
  *
  * - Remove files and folders that don't look like uploads or thumbnails.
  * - Remove attachment records that don't have matching files.
+ * - Remove unused attachments (those having no references)
  *
  * Use with -n or --dry-run to see what the script would do without actually
  * executing anything.
@@ -29,6 +30,10 @@ const OBJECT_MAP = [
   'user' => 'User',
 ];
 
+
+// time allowed to use an uploaded file and create a reference to it
+const REFERENCE_GRACE_PERIOD = 86400;
+
 $opts = getopt('n', ['dry-run']);
 $dryRun = isset($opts['n']) || isset($opts['dry-run']);
 
@@ -38,6 +43,7 @@ if ($dryRun) {
 
 recursiveScan(Config::SHARED_DRIVE . 'upload');
 deleteAttachmentsWithoutFiles();
+deleteUnusedAttachments();
 
 /*************************************************************************/
 
@@ -139,9 +145,9 @@ function recursiveScan($path) {
   }
 }
 
-// Checks that each Attachment record has a corresponding file. To save time,
-// we count files and records per shard and only perform the 1:1 match if
-// there is a mismatch.
+// Deletes Attachment records without a corresponding file. To save time, we
+// count files and records per shard and only perform the 1:1 match if there
+// is a mismatch.
 function deleteAttachmentsWithoutFiles() {
   $shard = 0;
 
@@ -168,4 +174,21 @@ function deleteAttachmentsWithoutFiles() {
       $shard++;
     }
   } while (count($attachments));
+}
+
+// Deletes unused Attachment records (those having no references). Only
+// considers attachments older than a grace period.
+function deleteUnusedAttachments() {
+  $newest = time() - REFERENCE_GRACE_PERIOD;
+
+  $attachments = Model::factory('Attachment')
+    ->table_alias('a')
+    ->select('a.*')
+    ->left_outer_join('attachment_reference', [ 'a.id', '=', 'ar.attachmentId' ], 'ar')
+    ->where_lt('a.createDate', $newest)
+    ->where_null('ar.id')
+    ->find_many();
+  foreach ($attachments as $a) {
+    deleteAttachmentWithMessage($a, 'unused attachment');
+  }
 }
