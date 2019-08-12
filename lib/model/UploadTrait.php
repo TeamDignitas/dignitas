@@ -17,6 +17,7 @@ trait UploadTrait {
   private static $URL_PATTERN = '%s/%d/%s.%s';
 
   static $FULL_GEOMETRY = 'full';
+  static $SHARD_SIZE = 1000;
 
   // subdirectory on the shared drive where the file and its thumbs reside
   abstract function getFileSubdirectory();
@@ -25,7 +26,7 @@ trait UploadTrait {
   abstract function getFileRoute();
 
   function getShard() {
-    return (int)($this->id / 1000);
+    return (int)($this->id / self::$SHARD_SIZE);
   }
 
   // sometimes thumbnails have a different extension than the original file
