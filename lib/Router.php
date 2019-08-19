@@ -83,6 +83,9 @@ class Router {
     'flag/save' => [
       'en_US.utf8' => 'ajax/save-flag',
     ],
+    'flag/delete' => [
+      'en_US.utf8' => 'ajax/delete-flag',
+    ],
 
     // helpers
     'helpers/changeLocale' => [

@@ -61,15 +61,30 @@
 
     {if User::may(User::PRIV_FLAG)}
       <a
-        href=""
+        id="flagStatementLink"
+        href="#"
         class="btn text-muted btn-link"
         data-toggle="modal"
         data-target="#flagModal"
         data-object-type="{Flag::TYPE_STATEMENT}"
         data-object-id="{$statement->id}"
+        data-unflag-link="#unflagStatementLink"
+        {if $statement->isFlagged()}hidden{/if}
       >
         <i class="icon icon-flag"></i>
         {t}flag{/t}
+      </a>
+      <a
+        id="unflagStatementLink"
+        href="#"
+        class="btn text-muted btn-link unflag"
+        data-object-type="{Flag::TYPE_STATEMENT}"
+        data-object-id="{$statement->id}"
+        data-flag-link="#flagStatementLink"
+        {if !$statement->isFlagged()}hidden{/if}
+      >
+        <i class="icon icon-flag"></i>
+        {t}unflag{/t}
       </a>
     {/if}
 
@@ -115,13 +130,28 @@
           {if User::may(User::PRIV_FLAG)}
             <li class="list-inline-item">
               <a
-                href=""
+                id="flagAnswerLink{$a->id}"
+                href="#"
                 data-toggle="modal"
                 data-target="#flagModal"
                 data-object-type="{Flag::TYPE_ANSWER}"
                 data-object-id="{$a->id}"
+                data-unflag-link="#unflagAnswerLink{$a->id}"
+                {if $a->isFlagged()}hidden{/if}
               >
                 {t}flag{/t}
+              </a>
+              <a
+                id="unflagAnswerLink{$a->id}"
+                href="#"
+                class="unflag"
+                data-object-type="{Flag::TYPE_ANSWER}"
+                data-object-id="{$a->id}"
+                data-flag-link="#flagAnswerLink{$a->id}"
+                {if !$a->isFlagged()}hidden{/if}
+              >
+                <i class="icon icon-flag"></i>
+                {t}unflag{/t}
               </a>
             </li>
           {/if}

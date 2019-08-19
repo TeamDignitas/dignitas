@@ -35,5 +35,5 @@ if ($error) {
   http_response_code(404);
   print json_encode($error);
 } else {
-  print json_encode('');
+  print json_encode(_('Your flag was saved.'));
 }

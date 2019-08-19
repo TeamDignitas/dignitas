@@ -3,6 +3,13 @@ $(function() {
   var objectType;
   var objectId;
 
+  // Every flag link has an opposite unflag link. When the page is first
+  // displayed we show the correct link depending on whether the object is
+  // currently flagged. However, we need Javascript to offer the opposite
+  // action without reloading the page.
+  var flagLink;
+  var unflagLink;
+
   // hide and clear extra fields (other -> details, duplicate -> select2)
   function clearRelatedFields() {
     $('.flagRelated').attr('hidden', true);
@@ -11,7 +18,6 @@ $(function() {
   }
 
   function submitFlag() {
-    var btn = $(this);
     $('body').addClass('waiting');
     $.post(URL_PREFIX + 'ajax/save-flag', {
       objectType: objectType,
@@ -20,9 +26,11 @@ $(function() {
       duplicateId: $('#flagDuplicateId').val(),
       details: $('#flagDetails').val(),
 
-    }).done(function() {
-
+    }).done(function(successMsg) {
+      flagLink.prop('hidden', true);
+      unflagLink.prop('hidden', false);
       $('#flagModal').modal('hide');
+      showConfirmModal(successMsg);
 
     }).fail(function(errorMsg) {
 
@@ -35,15 +43,62 @@ $(function() {
       $('body').removeClass('waiting');
 
     });
+
+    return false;
+  }
+
+  function submitUnflag() {
+    unflagLink = $(this);
+    flagLink = $(unflagLink.data('flagLink'));
+    objectType = unflagLink.data('objectType');
+    objectId = unflagLink.data('objectId');
+
+    $('body').addClass('waiting');
+
+    $.post(URL_PREFIX + 'ajax/delete-flag', {
+      objectType: objectType,
+      objectId: objectId,
+
+    }).done(function(successMsg) {
+
+      // swap link visibility
+      flagLink.prop('hidden', false);
+      unflagLink.prop('hidden', true);
+      showConfirmModal(successMsg);
+
+    }).fail(function(errorMsg) {
+
+      // this shouldn't happen, but the request may occasionally time out
+      if (errorMsg.responseJSON) {
+        alert(errorMsg.responseJSON);
+      }
+
+    }).always(function() {
+
+      $('body').removeClass('waiting');
+
+    });
+
+    return false;
+  }
+
+  function showConfirmModal(msg) {
+    $('#confirmModal .modal-body').html(msg);
+    $('#confirmModal').modal('show');
+
+    setTimeout(function() {
+      $('#confirmModal').modal('hide');
+    }, 1500);
   }
 
   initSimpleMde('fieldContents');
 
   // reset the form before displaying the modal (user could open it multiple times)
   $('#flagModal').on('show.bs.modal', function(evt) {
-    var caller = $(evt.relatedTarget);
-    objectType = caller.data('objectType');
-    objectId = caller.data('objectId');
+    flagLink = $(evt.relatedTarget);
+    unflagLink = $(flagLink.data('unflagLink'));
+    objectType = flagLink.data('objectType');
+    objectId = flagLink.data('objectId');
 
     $('*[data-flag-visibility]').hide();
     $('*[data-flag-visibility="' + objectType + '"]').show();
@@ -86,5 +141,6 @@ $(function() {
   });
 
   $('#flagButton').click(submitFlag);
+  $('a.unflag').click(submitUnflag);
 
 });

@@ -21,6 +21,12 @@ class Answer extends BaseObject implements DatedObject {
       User::getActiveId(), Vote::TYPE_ANSWER, $this->id);
   }
 
+  function isFlagged() { // by the current user
+    return Flag::get_by_userId_objectType_objectId(
+      User::getActiveId(), Flag::TYPE_ANSWER, $this->id
+    );
+  }
+
   function isDeletable() {
     return $this->userId == User::getActiveId();
   }
