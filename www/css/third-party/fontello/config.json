@@ -227,6 +227,12 @@
       "css": "resize-full-alt",
       "code": 61618,
       "src": "fontawesome"
+    },
+    {
+      "uid": "57a0ac800df728aad61a7cf9e12f5fef",
+      "css": "flag",
+      "code": 59415,
+      "src": "fontawesome"
     }
   ]
 }

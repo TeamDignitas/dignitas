@@ -35,6 +35,15 @@ class Search {
       ->find_many();
   }
 
+  // load statements by substring match
+  static function searchStatements($escapedQuery, $limit = self::LIMIT) {
+    return Model::factory('Statement')
+      ->where_like('summary', "%{$escapedQuery}%")
+      ->order_by_asc('summary')
+      ->limit($limit)
+      ->find_many();
+  }
+
   // load tags by prefix match
   static function searchTags($escapedQuery, $limit = self::LIMIT) {
     return Model::factory('Tag')

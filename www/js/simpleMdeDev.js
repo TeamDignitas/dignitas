@@ -68,9 +68,14 @@ $(function() {
   ];
 
   window.initSimpleMde = function(elementId) {
+    var element = document.getElementById(elementId);
+    if (!element) {
+      return null;
+    }
+
     var simpleMde = new SimpleMDE({
       autoDownloadFontAwesome: false,
-      element: document.getElementById(elementId),
+      element: element,
       spellChecker: false,
       status: false,
       toolbar: SIMPLE_MDE_TOOLBAR,

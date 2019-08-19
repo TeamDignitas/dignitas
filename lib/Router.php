@@ -79,6 +79,11 @@ class Router {
       'ro_RO.utf8' => 'autor',
     ],
 
+    // flags
+    'flag/save' => [
+      'en_US.utf8' => 'ajax/save-flag',
+    ],
+
     // helpers
     'helpers/changeLocale' => [
       'en_US.utf8' => 'changeLocale',
@@ -88,6 +93,9 @@ class Router {
     'statement/edit' => [
       'en_US.utf8' => 'edit-statement',
       'ro_RO.utf8' => 'editeaza-afirmatie',
+    ],
+    'statement/search' => [
+      'en_US.utf8' => 'ajax/search-statements',
     ],
     'statement/view' => [
       'en_US.utf8' => 'statement',

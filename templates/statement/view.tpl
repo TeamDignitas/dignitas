@@ -59,6 +59,20 @@
       </a>
     {/if}
 
+    {if User::may(User::PRIV_FLAG)}
+      <a
+        href=""
+        class="btn text-muted btn-link"
+        data-toggle="modal"
+        data-target="#flagModal"
+        data-object-type="{Flag::TYPE_STATEMENT}"
+        data-object-id="{$statement->id}"
+      >
+        <i class="icon icon-flag"></i>
+        {t}flag{/t}
+      </a>
+    {/if}
+
     <small class="btn text-muted float-right">
       {t}added by{/t}
       {include 'bits/userLink.tpl' u=$statement->getUser()}
@@ -97,7 +111,21 @@
               {t}delete{/t}
             </a>
           </li>
-        </small>
+
+          {if User::may(User::PRIV_FLAG)}
+            <li class="list-inline-item">
+              <a
+                href=""
+                data-toggle="modal"
+                data-target="#flagModal"
+                data-object-type="{Flag::TYPE_ANSWER}"
+                data-object-id="{$a->id}"
+              >
+                {t}flag{/t}
+              </a>
+            </li>
+          {/if}
+        </ul>
       </div>
     {/foreach}
   {/if}
@@ -127,5 +155,7 @@
     </form>
 
   {/if}
+
+  {include "bits/flagModal.tpl"}
 
 {/block}

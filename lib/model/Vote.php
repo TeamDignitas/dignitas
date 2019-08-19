@@ -21,10 +21,10 @@ class Vote extends BaseObject implements DatedObject {
   function getObject() {
     if ($this->object === false) {
       switch ($this->type) {
-        case Vote::TYPE_STATEMENT:
+        case self::TYPE_STATEMENT:
           $this->object = Statement::get_by_id($this->objectId);
           break;
-        case Vote::TYPE_ANSWER:
+        case self::TYPE_ANSWER:
           $this->object = Answer::get_by_id($this->objectId);
           break;
         default:
