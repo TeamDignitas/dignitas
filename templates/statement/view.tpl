@@ -83,7 +83,7 @@
         data-flag-link="#flagStatementLink"
         {if !$statement->isFlagged()}hidden{/if}
       >
-        <i class="icon icon-flag"></i>
+        <i class="icon icon-flag-empty"></i>
         {t}unflag{/t}
       </a>
     {/if}
@@ -139,6 +139,7 @@
                 data-unflag-link="#unflagAnswerLink{$a->id}"
                 {if $a->isFlagged()}hidden{/if}
               >
+                <i class="icon icon-flag"></i>
                 {t}flag{/t}
               </a>
               <a
@@ -150,7 +151,7 @@
                 data-flag-link="#flagAnswerLink{$a->id}"
                 {if !$a->isFlagged()}hidden{/if}
               >
-                <i class="icon icon-flag"></i>
+                <i class="icon icon-flag-empty"></i>
                 {t}unflag{/t}
               </a>
             </li>

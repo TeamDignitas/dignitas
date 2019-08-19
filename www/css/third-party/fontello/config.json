@@ -233,6 +233,12 @@
       "css": "flag",
       "code": 59415,
       "src": "fontawesome"
+    },
+    {
+      "uid": "6c83092421441296f5c4e8074b0cf32c",
+      "css": "flag-empty",
+      "code": 61725,
+      "src": "fontawesome"
     }
   ]
 }
