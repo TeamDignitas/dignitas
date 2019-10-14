@@ -23,7 +23,7 @@ foreach ($actual as $name => $value) {
   }
 
   $actualType = gettype($value);
-  $sampleType = getType($sample[$name]);
+  $sampleType = gettype($sample[$name]);
   if ($sampleType != $actualType) {
     error("The constant *** $name *** has type '$actualType' in Config.php, " .
           "but type '$sampleType' in Config.php.sample. Please reconcile them.");
