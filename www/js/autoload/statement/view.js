@@ -147,4 +147,8 @@ $(function() {
   $('#flagButton').click(submitFlag);
   $('a.unflag').click(submitUnflag);
 
+  // Prevent form submission, e.g. by pressing Enter while in the "other
+  // reason" field. Instead, submit the flag via an Ajax call.
+  $('#flagModal').submit(submitFlag);
+
 });
