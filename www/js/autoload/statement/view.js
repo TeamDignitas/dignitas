@@ -132,6 +132,10 @@ $(function() {
       url: URL_PREFIX + 'ajax/search-statements',
       delay: 300,
     },
+    // Without dropdownParent, the select2 won't receive focus because the
+    // modal has tabIndex="-1" (and it needs to have that so that we can close
+    // it by pressing Escape).
+    dropdownParent: $('#flagModal'),
     minimumInputLength: 1,
     width: 'resolve',
   });
