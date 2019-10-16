@@ -11,10 +11,9 @@ if (!$tag) {
   Util::redirectToHome();
 }
 
-$statementCount = Model::factory('ObjectTag')
-  ->where('objectType', ObjectTag::TYPE_STATEMENT)
-  ->where('tagId', $tag->id)
-  ->count();
+$statementCount = ObjectTag::count_by_objectType_tagId(
+  ObjectTag::TYPE_STATEMENT, $tag->id);
+
 $statements = Model::factory('Statement')
   ->table_alias('s')
   ->select('s.*')

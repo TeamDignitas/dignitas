@@ -10,12 +10,8 @@ if (!$user) {
   Util::redirectToHome();
 }
 
-$statements = Model::factory('Statement')
-  ->where('userId', $user->id)
-  ->count();
-$answers = Model::factory('Answer')
-  ->where('userId', $user->id)
-  ->count();
+$statements = Statement::count_by_userId($user->id);
+$answers = Answer::count_by_userId($user->id);
 
 Smart::assign([
   'user' => $user,

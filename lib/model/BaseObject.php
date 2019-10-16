@@ -3,7 +3,8 @@
 class BaseObject extends Model {
   const ACTION_SELECT = 1;
   const ACTION_SELECT_ALL = 2;
-  const ACTION_DELETE_ALL = 3;
+  const ACTION_COUNT = 3;
+  const ACTION_DELETE_ALL = 4;
 
   function __call($name, $arguments) {
     return $this->callHandler($name, $arguments);
@@ -19,6 +20,8 @@ class BaseObject extends Model {
       return self::action(substr($name, 7), $arguments, self::ACTION_SELECT);
     } else if (substr($name, 0, 11) == 'get_all_by_') {
       return self::action(substr($name, 11), $arguments, self::ACTION_SELECT_ALL);
+    } else if (substr($name, 0, 9) == 'count_by_') {
+      return self::action(substr($name, 9), $arguments, self::ACTION_COUNT);
     } else if (substr($name, 0, 14) == 'delete_all_by_') {
       self::action(substr($name, 14), $arguments, self::ACTION_DELETE_ALL);
     } else {
@@ -39,6 +42,7 @@ class BaseObject extends Model {
     switch ($action) {
       case self::ACTION_SELECT: return $clause->find_one();
       case self::ACTION_SELECT_ALL: return $clause->find_many();
+      case self::ACTION_COUNT: return $clause->count();
       case self::ACTION_DELETE_ALL:
         $objects = $clause->find_many();
         foreach ($objects as $o) {
