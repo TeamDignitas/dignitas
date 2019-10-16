@@ -12,6 +12,9 @@ class Flag extends BaseObject implements DatedObject {
   const REASON_LOW_QUALITY = 5;
   const REASON_OTHER = 6;
 
+  const STATUS_PENDING = 0;
+  const STATUS_RESOLVED = 1;
+
   private $object = false; // not to be confused with null
 
   static function create($userId, $objectType, $objectId, $reason, $duplicateId, $details) {

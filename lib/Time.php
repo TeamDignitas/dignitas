@@ -4,6 +4,8 @@
 
 class Time {
 
+  const ONE_DAY_IN_SECONDS = 24 * 3600;
+
   static function today() {
     return date('Y-m-d');
   }

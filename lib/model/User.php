@@ -27,6 +27,11 @@ class User extends BaseObject implements DatedObject {
 
   const PRIV_UPLOAD_ATTACHMENT = 100;
 
+  // flag earning
+  const BASE_FLAGS_PER_DAY = 10;
+  const REPUTATION_FOR_NEW_FLAG = 2000;
+  const MAX_FLAGS_PER_DAY = 100;
+
   private static $active = null; // user currently logged in
 
   function getMarkdownFields() {
@@ -55,6 +60,26 @@ class User extends BaseObject implements DatedObject {
     DB::execute($query);
 
     self::$active = User::get_by_id($userId);
+  }
+
+  static function getFlagsPerDay() {
+    if (!self::$active) {
+      return 0;
+    }
+
+    $earned = (int)(self::$active->reputation / self::REPUTATION_FOR_NEW_FLAG);
+    return min(self::BASE_FLAGS_PER_DAY + $earned,
+               self::MAX_FLAGS_PER_DAY);
+  }
+
+  static function getRemainingFlags() {
+    $pending = Model::factory('Flag')
+      ->where('userId', self::getActiveId())
+      ->where('status', Flag::STATUS_PENDING)
+      ->where_gte('createDate', Time::ONE_DAY_IN_SECONDS)
+      ->count();
+
+    return self::getFlagsPerDay() - $pending;
   }
 
   // Checks if the user can claim this email when registering or editing their profile.
