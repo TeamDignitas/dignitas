@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-10-16 15:07+0300\n"
-"PO-Revision-Date: 2019-10-16 15:09+0300\n"
+"POT-Creation-Date: 2019-10-16 15:20+0300\n"
+"PO-Revision-Date: 2019-10-16 15:21+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -634,14 +634,17 @@ msgstr "pe %s"
 
 #: lib/Time.php:61
 #, php-format
-msgid "%d days ago"
-msgstr "acum %d zile"
+msgid "one day ago"
+msgid_plural "%d days ago"
+msgstr[0] "acum o zi"
+msgstr[1] "acum %d zile"
+msgstr[2] "acum %d de zile"
 
-#: lib/Time.php:63
+#: lib/Time.php:64
 msgid "yesterday"
 msgstr "ieri"
 
-#: lib/Time.php:68
+#: lib/Time.php:69
 #, php-format
 msgid "one hour ago"
 msgid_plural "%d hours ago"
@@ -649,7 +652,7 @@ msgstr[0] "acum o oră"
 msgstr[1] "acum %d ore"
 msgstr[2] "acum %d de ore"
 
-#: lib/Time.php:74
+#: lib/Time.php:75
 #, php-format
 msgid "one minute ago"
 msgid_plural "%d minutes ago"
@@ -657,7 +660,7 @@ msgstr[0] "acum un minut"
 msgstr[1] "acum %d minute"
 msgstr[2] "acum %d de minute"
 
-#: lib/Time.php:78
+#: lib/Time.php:79
 #, php-format
 msgid "one second ago"
 msgid_plural "%d seconds ago"

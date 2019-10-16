@@ -58,7 +58,8 @@ class Time {
     if ($days >= 4) {
       return sprintf(_('on %s'), self::localTimestamp($timestamp));
     } else if ($days >= 2) {
-      return sprintf(_('%d days ago'), $days) . $exactBracket;
+      return sprintf(ngettext('one day ago', '%d days ago', $days), $days)
+        . $exactBracket;
     } else if ($days == 1) {
       return _('yesterday') . $exactBracket;
     }
