@@ -53,9 +53,7 @@ if ($postAnswerButton) {
   // first time loading the page
 }
 
-$showFlagBox =
-  User::canFlag(Flag::TYPE_STATEMENT, $statement->id) ||
-  $statement->isFlagged();
+$canFlag = User::canFlag(Flag::TYPE_STATEMENT, $statement->id);
 
 Smart::addResources('imageModal', 'simplemde');
 Smart::assign([
@@ -63,7 +61,7 @@ Smart::assign([
   'entity' => $statement->getEntity(),
   'answers' => $statement->getAnswers(),
   'sources' => $statement->getSources(),
-  'showFlagBox' => $showFlagBox,
+  'canFlag' => $canFlag,
   'answerId' => $answerId,
 ]);
 Smart::display('statement/view.tpl');

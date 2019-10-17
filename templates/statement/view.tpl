@@ -59,7 +59,7 @@
       </a>
     {/if}
 
-    {if $showFlagBox}
+    {if $canFlag || $statement->isFlagged()}
       <a
         id="flagStatementLink"
         href="#"
@@ -127,7 +127,7 @@
             </a>
           </li>
 
-          {if User::may(User::PRIV_FLAG)}
+          {if $canFlag}
             <li class="list-inline-item">
               <a
                 id="flagAnswerLink{$a->id}"
