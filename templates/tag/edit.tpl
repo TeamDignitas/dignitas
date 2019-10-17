@@ -136,7 +136,7 @@
 
         <small class="form-text text-muted">
           {t
-            1="https://github.com/CatalinFrancu/tbd/blob/master/www/css/third-party/fontello/css/icons.css"
+            1="https://github.com/CatalinFrancu/dignitas/blob/master/www/css/third-party/fontello/css/icons.css"
             2="http://fontello.com/"}
           Optionally, an <a href="%1">icon name</a>. Copy the portion after <i>icon-</i>,
           for example <i>globe</i> or <i>user</i>. If we don't have the icon,

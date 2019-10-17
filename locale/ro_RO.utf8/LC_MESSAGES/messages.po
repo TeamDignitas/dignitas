@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-10-16 15:20+0300\n"
-"PO-Revision-Date: 2019-10-16 15:21+0300\n"
+"POT-Creation-Date: 2019-10-17 19:31+0300\n"
+"PO-Revision-Date: 2019-10-17 19:32+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -206,17 +206,18 @@ msgid "insults or rudeness"
 msgstr "insulte sau impolitețe"
 
 #: templates/bits/flagModal.tpl:45
-msgid "This message is insulting or rude toward other users of TBD."
+msgid "This message is insulting or rude toward other users of Dignitas."
 msgstr ""
-"Acest mesaj este insultător sau nepoliticos față de alți utilizatori ai TBD."
+"Acest mesaj este insultător sau nepoliticos față de alți utilizatori ai "
+"Dignitas."
 
 #: templates/bits/flagModal.tpl:58
 msgid "duplicate of..."
 msgstr "duplicat al lui..."
 
 #: templates/bits/flagModal.tpl:61
-msgid "This statement already appears in TBD."
-msgstr "Această afirmație apare deja în TBD."
+msgid "This statement already appears in Dignitas."
+msgstr "Această afirmație apare deja în Dignitas."
 
 #: templates/bits/flagModal.tpl:68
 msgid "type in some keywords..."
@@ -231,8 +232,8 @@ msgid "This answer does not address the topic of the original statement."
 msgstr "Acest răspuns nu tratează subiectul afirmației originale."
 
 #: templates/bits/flagModal.tpl:87
-msgid "This statement is outside the intended scope of TBD."
-msgstr "Această afirmație este în afara scopului TBD."
+msgid "This statement is outside the intended scope of Dignitas."
+msgstr "Această afirmație este în afara scopului Dignitas."
 
 #: templates/bits/flagModal.tpl:99
 msgid "low quality"
@@ -312,7 +313,7 @@ msgstr "scor"
 msgid "You need at least %1 reputation to downvote."
 msgstr "Vă trebuie o reputație de cel puțin %1 pentru a vota negativ."
 
-#: templates/bits/statementList.tpl:25 templates/statement/view.tpl:93
+#: templates/bits/statementList.tpl:25 templates/statement/view.tpl:92
 msgid "added by"
 msgstr "adăugată de"
 
@@ -400,7 +401,7 @@ msgid "Are you sure you want to delete this entity?"
 msgstr "Confirmați ștergerea acestui autor?"
 
 #: templates/entity/edit.tpl:183 templates/statement/edit.tpl:135
-#: templates/statement/view.tpl:127 templates/tag/edit.tpl:180
+#: templates/statement/view.tpl:126 templates/tag/edit.tpl:180
 msgid "delete"
 msgstr "șterge"
 
@@ -465,34 +466,34 @@ msgstr "Confirmați ștergerea acestei afirmații?"
 msgid "sources"
 msgstr "surse"
 
-#: templates/statement/view.tpl:76 templates/statement/view.tpl:144
+#: templates/statement/view.tpl:75 templates/statement/view.tpl:143
 msgid "flag"
 msgstr "raportează"
 
-#: templates/statement/view.tpl:88 templates/statement/view.tpl:156
+#: templates/statement/view.tpl:87 templates/statement/view.tpl:155
 msgid "unflag"
 msgstr "șterge raportarea"
 
-#: templates/statement/view.tpl:101
+#: templates/statement/view.tpl:100
 msgid "one answer"
 msgid_plural "%1 answers"
 msgstr[0] "un răspuns"
 msgstr[1] "%1 răspunsuri"
 msgstr[2] "%1 de răspunsuri"
 
-#: templates/statement/view.tpl:119
+#: templates/statement/view.tpl:118
 msgid "posted by"
 msgstr "publicat de"
 
-#: templates/statement/view.tpl:126
+#: templates/statement/view.tpl:125
 msgid "Are you sure you want to delete this answer?"
 msgstr "Confirmați ștergerea acestui răspuns?"
 
-#: templates/statement/view.tpl:166
+#: templates/statement/view.tpl:165
 msgid "your answer"
 msgstr "răspunsul dumneavoastră"
 
-#: templates/statement/view.tpl:184
+#: templates/statement/view.tpl:183
 msgid "post your answer"
 msgstr "publică răspunsul"
 
@@ -752,6 +753,27 @@ msgstr "Parola trebuie să aibă cel puțin 8 caractere."
 msgid "You need at least %s reputation to perform this action."
 msgstr "Vă trebuie o reputație de cel puțin %s pentru această acțiune."
 
+#: lib/model/User.php:161
+#, php-format
+msgid "You need at least %s reputation to flag."
+msgstr "Vă trebuie o reputație de cel puțin %s pentru a raporta."
+
+#: lib/model/User.php:169
+#, php-format
+msgid "You can use at most one flag every 24 hours."
+msgid_plural "You can use at most %d flags every 24 hours."
+msgstr[0] "Puteți face cel mult o raportare la fiecare 24 de ore."
+msgstr[1] "Puteți face cel mult %d raportări la fiecare 24 de ore."
+msgstr[2] "Puteți face cel mult %d de raportări la fiecare 24 de ore."
+
+#: lib/model/User.php:178
+msgid "Cannot flag: object does not exist."
+msgstr "Nu puteți raporta: obiectul nu există."
+
+#: lib/model/User.php:182
+msgid "You already have a pending flag for this object."
+msgstr "Aveți deja o raportare în așteptare pentru acest obiect."
+
 #: routes/attachment/upload.php:11
 #, php-format
 msgid "You need at least %s reputation to upload documents."
@@ -831,28 +853,7 @@ msgstr "Autorul pe care îl căutați nu există."
 msgid "Your flag was deleted."
 msgstr "Raportarea a fost ștearsă."
 
-#: routes/flag/save.php:19
-#, php-format
-msgid "You need at least %s reputation to flag."
-msgstr "Vă trebuie o reputație de cel puțin %s pentru a raporta."
-
-#: routes/flag/save.php:25
-#, php-format
-msgid "You can use at most one flag every 24 hours."
-msgid_plural "You can use at most %d flags every 24 hours."
-msgstr[0] "Puteți face cel mult o raportare la fiecare 24 de ore."
-msgstr[1] "Puteți face cel mult %d raportări la fiecare 24 de ore."
-msgstr[2] "Puteți face cel mult %d de raportări la fiecare 24 de ore."
-
-#: routes/flag/save.php:34
-msgid "Cannot flag: object does not exist."
-msgstr "Nu puteți raporta: obiectul nu există."
-
-#: routes/flag/save.php:38
-msgid "You already have a pending flag for this object."
-msgstr "Aveți deja o raportare în așteptare pentru acest obiect."
-
-#: routes/flag/save.php:50
+#: routes/flag/save.php:23
 msgid "Your flag was saved."
 msgstr "Am salvat raportarea."
 
@@ -916,7 +917,7 @@ msgstr "Am șters răspunsul."
 msgid "Answer posted."
 msgstr "Am publicat răspunsul."
 
-#: routes/statement/view.php:72
+#: routes/statement/view.php:75
 msgid "Cannot post an empty answer."
 msgstr "Nu pot publica un răspuns vid."
 

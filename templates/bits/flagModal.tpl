@@ -42,7 +42,7 @@
               {t}insults or rudeness{/t}
             </label>
             <p class="text-muted">
-              {t}This message is insulting or rude toward other users of TBD.{/t}
+              {t}This message is insulting or rude toward other users of Dignitas.{/t}
             </p>
           </div>
 
@@ -58,7 +58,7 @@
               {t}duplicate of...{/t}
             </label>
             <p class="text-muted">
-              {t}This statement already appears in TBD.{/t}
+              {t}This statement already appears in Dignitas.{/t}
             </p>
             <div class="form-group flagRelated" id="duplicateSearch">
               <select
@@ -84,7 +84,7 @@
                 {t}This answer does not address the topic of the original statement.{/t}
               </span>
               <span data-flag-visibility="{Flag::TYPE_STATEMENT}">
-                {t}This statement is outside the intended scope of TBD.{/t}
+                {t}This statement is outside the intended scope of Dignitas.{/t}
               </span>
             </p>
           </div>

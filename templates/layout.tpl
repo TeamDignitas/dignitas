@@ -3,7 +3,7 @@
 <html>
 
   <head>
-    <title>{block "title"}{/block} | tbd</title>
+    <title>{block "title"}{/block} | Dignitas</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -40,7 +40,7 @@
               © 2019 <a href="https://catalin.francu.com/">Cătălin Frâncu</a>
             </li>
             <li class="list-inline-item">
-              <a href="https://github.com/CatalinFrancu/tbd">GitHub</a>
+              <a href="https://github.com/CatalinFrancu/dignitas">GitHub</a>
             </li>
           </ul>
         </div>

@@ -53,7 +53,7 @@ msgstr "Content-Type: text/plain; charset=UTF-8\n"
 ');
 
 // "fix" string - strip slashes, escape and convert new lines to \n
-// Changes made for tbd: trim string, convert all whitespace to ' ' and
+// Changes made for dignitas: trim string, convert all whitespace to ' ' and
 // compress whitespace.
 function fs($str) {
 	$str = stripslashes($str);

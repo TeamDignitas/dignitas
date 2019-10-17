@@ -47,7 +47,7 @@ function smarty_gettext_strarg($str/*, $varargs... */) {
  *
  * Any parameter that is sent to the function will be represented as %n in the translation text,
  * where n is 1 for the first parameter. The following parameters are reserved:
- * **** changes made for tbd: NO is the default ****
+ * **** changes made for dignitas: NO is the default ****
  *   - escape - sets escape mode:
  *       - 'html' for HTML escaping, this is the default.
  *       - 'js' for javascript escaping.
@@ -68,7 +68,7 @@ function smarty_block_t($params, $text) {
 		return $text;
 	}
 
-  // changes made for tbd: trim $text and compress whitespace
+  // changes made for dignitas: trim $text and compress whitespace
   $text = trim(preg_replace('/\s+/', ' ', $text));
 
 	// set escape mode, default html escape
@@ -76,7 +76,7 @@ function smarty_block_t($params, $text) {
 		$escape = $params['escape'];
 		unset($params['escape']);
 	} else {
-    // change made for tbd, was 'html'
+    // change made for dignitas, was 'html'
 		$escape = 'no';
 	}
 

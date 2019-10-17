@@ -11,11 +11,11 @@ class Config {
   const URL_HOST = 'http://localhost';
 
   // URL path relative to URL_HOST. Include a trailing slash.
-  const URL_PREFIX = '/tbd/www/';
+  const URL_PREFIX = '/dignitas/www/';
 
   // database connection
   const DB_HOST = 'localhost';
-  const DB_DATABASE = 'tbd';
+  const DB_DATABASE = 'dignitas';
   const DB_USER = 'root';
   const DB_PASSWORD = '';
 
@@ -26,7 +26,7 @@ class Config {
   const ALLOW_REGISTRATION = true;
 
   // Shared drive (common to all backends). Include a trailing slash.
-  const SHARED_DRIVE = '/tmp/tbd-shared/';
+  const SHARED_DRIVE = '/tmp/dignitas-shared/';
 
   // Allowed MIME type => canonical file extension
   // In particular, we accept .jpg and .jpeg uploads, but canonicalize both to .jpg.
@@ -84,7 +84,7 @@ class Config {
   ];
 
   // logging
-  const LOG_FILE = '/var/log/tbd.log';
+  const LOG_FILE = '/var/log/dignitas.log';
   const LOG_LEVEL = LOG_DEBUG;
 
   // email info
@@ -92,7 +92,7 @@ class Config {
   const SMTP_SERVER = 'tls://your-server.com:587'; // for outgoing emails
   const EMAIL_IDENTITIES = [
     'test@test.com' => [
-      'name' => 'tbd',
+      'name' => 'dignitas',
       'password' => '1234',
     ],
   ];
