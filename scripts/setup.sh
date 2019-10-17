@@ -35,8 +35,15 @@ chmod 777 www/css/merged www/js/merged
 
 # Symlink hooks unless they already exist
 if [ ! -e .git/hooks/pre-commit ]; then
-  echo "* symlinking scripts/git-hooks/pre-commit.php as .git/hooks/pre-commit"
+  echo "* symlinking scripts/git-hooks/pre-commit.sh as .git/hooks/pre-commit"
   ln -s $ROOT_DIR/scripts/git-hooks/pre-commit.sh .git/hooks/pre-commit
 else
   echo "* .git/hooks/pre-commit already exists, skipping"
+fi
+
+if [ ! -e .git/hooks/post-merge ]; then
+  echo "* symlinking scripts/git-hooks/post-merge.sh as .git/hooks/post-merge"
+  ln -s $ROOT_DIR/scripts/git-hooks/post-merge.sh .git/hooks/post-merge
+else
+  echo "* .git/hooks/post-merge already exists, skipping"
 fi
