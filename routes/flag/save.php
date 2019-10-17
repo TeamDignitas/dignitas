@@ -15,7 +15,7 @@ header('Content-Type: application/json');
 
 try {
 
-  User::checkFlag($objectType, $objectId);
+  User::canFlag($objectType, $objectId, true);
   $userId = User::getActiveId();
   $flag = Flag::create($objectType, $objectId, $userId, $reason, $duplicateId, $details);
   $flag->save();

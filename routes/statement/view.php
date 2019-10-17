@@ -53,12 +53,9 @@ if ($postAnswerButton) {
   // first time loading the page
 }
 
-try {
-  User::checkFlag(Flag::TYPE_STATEMENT, $statement->id);
-  $showFlagBox = true;
-} catch (Exception $e) {
-  $showFlagBox = $statement->isFlagged();
-}
+$showFlagBox =
+  User::canFlag(Flag::TYPE_STATEMENT, $statement->id) ||
+  $statement->isFlagged();
 
 Smart::addResources('imageModal', 'simplemde');
 Smart::assign([
