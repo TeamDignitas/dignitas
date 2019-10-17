@@ -17,7 +17,8 @@ class Flag extends BaseObject implements DatedObject {
 
   private $object = false; // not to be confused with null
 
-  static function create($userId, $objectType, $objectId, $reason, $duplicateId, $details) {
+  static function create($objectType, $objectId, $userId = null, $reason = null,
+                         $duplicateId = null, $details = null) {
     $f = Model::factory('Flag')->create();
     $f->userId = $userId;
     $f->objectType = $objectType;

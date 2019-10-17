@@ -59,8 +59,7 @@
       </a>
     {/if}
 
-    {if (User::may(User::PRIV_FLAG) && User::getRemainingFlags() > 0) ||
-        $statement->isFlagged()}
+    {if $showFlagBox}
       <a
         id="flagStatementLink"
         href="#"

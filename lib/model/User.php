@@ -144,6 +144,36 @@ class User extends BaseObject implements DatedObject {
     }
   }
 
+  // Throws an error with a message on failure.
+  static function checkFlag($objectType, $objectId) {
+    // check the user's reputation
+    if (!self::may(self::PRIV_FLAG)) {
+      throw new Exception(
+        sprintf(_('You need at least %s reputation to flag.'),
+                Str::formatNumber(User::PRIV_FLAG)));
+    }
+
+    // check the user's remaining flags
+    if (self::getRemainingFlags() <= 0) {
+      $fpd = User::getFlagsPerDay();
+      throw new Exception(
+        sprintf(ngettext('You can use at most one flag every 24 hours.',
+                         'You can use at most %d flags every 24 hours.',
+                         $fpd), $fpd));
+    }
+
+    $f = Flag::create($objectType, $objectId);
+
+    // check that the object exists and is not flagged
+    if (!$f->getObject()) {
+      throw new Exception(_('Cannot flag: object does not exist.'));
+    }
+
+    if ($f->getObject()->isFlagged()) {
+      throw new Exception(_('You already have a pending flag for this object.'));
+    }
+  }
+
   public function __toString() {
     return $this->nickname;
   }

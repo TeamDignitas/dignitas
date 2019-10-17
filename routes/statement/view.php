@@ -53,12 +53,20 @@ if ($postAnswerButton) {
   // first time loading the page
 }
 
+try {
+  User::checkFlag(Flag::TYPE_STATEMENT, $statement->id);
+  $showFlagBox = true;
+} catch (Exception $e) {
+  $showFlagBox = $statement->isFlagged();
+}
+
 Smart::addResources('imageModal', 'simplemde');
 Smart::assign([
   'statement' => $statement,
   'entity' => $statement->getEntity(),
   'answers' => $statement->getAnswers(),
   'sources' => $statement->getSources(),
+  'showFlagBox' => $showFlagBox,
   'answerId' => $answerId,
 ]);
 Smart::display('statement/view.tpl');
