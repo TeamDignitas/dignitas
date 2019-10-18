@@ -20,6 +20,8 @@ try {
   $flag = Flag::create($objectType, $objectId, $userId, $reason, $duplicateId, $details);
   $flag->save();
 
+  Queue::check($objectType, $objectId);
+
   print json_encode(_('Your flag was saved.'));
 
 } catch (Exception $e) {
