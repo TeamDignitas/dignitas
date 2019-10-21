@@ -26,4 +26,18 @@
       {t}tags{/t}
     </a>
   </div>
+
+  {if User::may(User::PRIV_QUEUE)}
+    <h4>{cap}{t}review queues{/t}{/cap}</h4>
+
+    <ul>
+      {foreach Queue::TYPES as $t}
+        <li>
+          <a href="{Router::link('queue/view')}/{Queue::getUrlName($t)}">
+            {Queue::getDescription($t)}
+          </a>
+        </li>
+      {/foreach}
+    </ul>
+  {/if}
 {/block}

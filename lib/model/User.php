@@ -27,6 +27,8 @@ class User extends BaseObject implements DatedObject {
 
   const PRIV_UPLOAD_ATTACHMENT = 100;
 
+  const PRIV_QUEUE = 2000;
+
   // flag earning
   const BASE_FLAGS_PER_DAY = 10;
   const REPUTATION_FOR_NEW_FLAG = 2000;

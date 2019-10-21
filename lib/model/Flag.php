@@ -1,9 +1,7 @@
 <?php
 
-class Flag extends BaseObject implements DatedObject {
-
-  const TYPE_STATEMENT = 1;
-  const TYPE_ANSWER = 2;
+class Flag extends BaseObject implements DatedObject, ObjectTypes {
+  use ObjectTypeIdTrait;
 
   const REASON_SPAM = 1;
   const REASON_ABUSE = 2;
@@ -14,8 +12,6 @@ class Flag extends BaseObject implements DatedObject {
 
   const STATUS_PENDING = 0;
   const STATUS_RESOLVED = 1;
-
-  private $object = false; // not to be confused with null
 
   static function create($objectType, $objectId, $userId = null, $reason = null,
                          $duplicateId = null, $details = null) {
@@ -30,22 +26,6 @@ class Flag extends BaseObject implements DatedObject {
       $f->details = $details;
     }
     return $f;
-  }
-
-  function getObject() {
-    if ($this->object === false) {
-      switch ($this->objectType) {
-        case self::TYPE_STATEMENT:
-          $this->object = Statement::get_by_id($this->objectId);
-          break;
-        case self::TYPE_ANSWER:
-          $this->object = Answer::get_by_id($this->objectId);
-          break;
-        default:
-          $this->object = null; // prevents future attempts to look it up again
-      }
-    }
-    return $this->object;
   }
 
 }

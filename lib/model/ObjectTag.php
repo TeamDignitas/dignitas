@@ -1,8 +1,7 @@
 <?php
 
-class ObjectTag extends BaseObject implements DatedObject {
-
-  const TYPE_STATEMENT = 1;
+class ObjectTag extends BaseObject implements DatedObject, ObjectTypes {
+  use ObjectTypeIdTrait;
 
   static function create($objectType, $objectId, $tagId) {
     $ot = Model::factory('ObjectTag')->create();

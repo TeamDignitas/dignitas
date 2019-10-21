@@ -56,9 +56,7 @@ if ($postAnswerButton) {
 Smart::addResources('imageModal', 'simplemde');
 Smart::assign([
   'statement' => $statement,
-  'entity' => $statement->getEntity(),
   'answers' => $statement->getAnswers(),
-  'sources' => $statement->getSources(),
   'answerId' => $answerId,
 ]);
 Smart::display('statement/view.tpl');

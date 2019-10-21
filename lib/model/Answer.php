@@ -15,6 +15,10 @@ class Answer extends BaseObject implements DatedObject {
     return User::get_by_id($this->userId);
   }
 
+  function getStatement() {
+    return Statement::get_by_id($this->statementId);
+  }
+
   function sanitize() {
     $this->contents = trim($this->contents);
   }

@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-10-17 19:31+0300\n"
-"PO-Revision-Date: 2019-10-17 19:32+0300\n"
+"POT-Creation-Date: 2019-10-21 12:53+0300\n"
+"PO-Revision-Date: 2019-10-21 12:55+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Poedit-Basepath: ../../..\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n==0 || (n!=1 && n%100>=1 && n"
 "%100<=19) ? 1 : 2);\n"
@@ -53,6 +53,10 @@ msgstr "adaugă un autor"
 #: templates/tag/list.tpl:3 templates/tag/list.tpl:7
 msgid "tags"
 msgstr "etichete"
+
+#: templates/aggregate/dashboard.tpl:31
+msgid "review queues"
+msgstr "cozi de evaluare"
 
 #: templates/aggregate/index.tpl:7
 msgid "recent statements"
@@ -608,6 +612,30 @@ msgstr "membru de pe"
 msgid "last seen"
 msgstr "ultima vizită"
 
+#: lib/Queue.php:39
+msgid "queue for items flagged as unhelpful"
+msgstr "coadă pentru articole raportate ca nefolositoare"
+
+#: lib/Queue.php:40
+msgid "queue for items flagged as duplicate"
+msgstr "coadă pentru articole raportate ca duplicate"
+
+#: lib/Queue.php:41
+msgid "queue for other items"
+msgstr "coadă pentru articole cu alte raportări"
+
+#: lib/Queue.php:53
+msgid "unhelpful"
+msgstr "nefolositoare"
+
+#: lib/Queue.php:54
+msgid "duplicate"
+msgstr "duplicate"
+
+#: lib/Queue.php:55
+msgid "other"
+msgstr "altele"
+
 # Date format in your locale, where %e is the day (1 to 31), %b is the abbreviated month name (Jan to Dec) and %Y is the four-digit year.
 #: lib/Time.php:24 lib/Time.php:46
 msgid "%b %e, %Y"
@@ -711,20 +739,20 @@ msgstr "Tipurile de fișier acceptate sînt: %s."
 msgid "An error occurred while uploading the file."
 msgstr "A apărut o eroare la încărcarea fișierului."
 
-#: lib/model/User.php:89 routes/auth/login.php:57
+#: lib/model/User.php:91 routes/auth/login.php:57
 #: routes/auth/lostPassword.php:50
 msgid "Please enter an email address."
 msgstr "Vă rugăm să introduceți o adresă de e-mail."
 
-#: lib/model/User.php:94
+#: lib/model/User.php:96
 msgid "This email address is already taken."
 msgstr "Această adresă de e-mail este deja folosită."
 
-#: lib/model/User.php:98 routes/auth/lostPassword.php:52
+#: lib/model/User.php:100 routes/auth/lostPassword.php:52
 msgid "This email address looks incorrect."
 msgstr "Adresa de e-mail pare incorectă."
 
-#: lib/model/User.php:108
+#: lib/model/User.php:110
 msgid ""
 "Your nickname must begin with a letter or digit and consist of 3 to 30 "
 "letters, digits and punctuation from among -_."
@@ -732,33 +760,33 @@ msgstr ""
 "Porecla dumneavoastră trebuie să înceapă cu o literă sau cifră și să conțină "
 "între 3 și 30 de litere, cifre și punctuație din setul -_."
 
-#: lib/model/User.php:117 routes/auth/login.php:61
+#: lib/model/User.php:119 routes/auth/login.php:61
 msgid "Please enter a password."
 msgstr "Vă rugăm să introduceți o parolă."
 
-#: lib/model/User.php:119
+#: lib/model/User.php:121
 msgid "Please enter your password twice to prevent typos."
 msgstr "Vă rugăm să introduceți parola de două ori pentru verificare."
 
-#: lib/model/User.php:121
+#: lib/model/User.php:123
 msgid "Passwords don't match."
 msgstr "Parolele nu coincid."
 
-#: lib/model/User.php:123
+#: lib/model/User.php:125
 msgid "Your password must be at least 8 characters long."
 msgstr "Parola trebuie să aibă cel puțin 8 caractere."
 
-#: lib/model/User.php:141
+#: lib/model/User.php:143
 #, php-format
 msgid "You need at least %s reputation to perform this action."
 msgstr "Vă trebuie o reputație de cel puțin %s pentru această acțiune."
 
-#: lib/model/User.php:161
+#: lib/model/User.php:163
 #, php-format
 msgid "You need at least %s reputation to flag."
 msgstr "Vă trebuie o reputație de cel puțin %s pentru a raporta."
 
-#: lib/model/User.php:169
+#: lib/model/User.php:171
 #, php-format
 msgid "You can use at most one flag every 24 hours."
 msgid_plural "You can use at most %d flags every 24 hours."
@@ -766,11 +794,11 @@ msgstr[0] "Puteți face cel mult o raportare la fiecare 24 de ore."
 msgstr[1] "Puteți face cel mult %d raportări la fiecare 24 de ore."
 msgstr[2] "Puteți face cel mult %d de raportări la fiecare 24 de ore."
 
-#: lib/model/User.php:178
+#: lib/model/User.php:180
 msgid "Cannot flag: object does not exist."
 msgstr "Nu puteți raporta: obiectul nu există."
 
-#: lib/model/User.php:182
+#: lib/model/User.php:184
 msgid "You already have a pending flag for this object."
 msgstr "Aveți deja o raportare în așteptare pentru acest obiect."
 
@@ -849,17 +877,45 @@ msgstr ""
 msgid "The entity you are looking for does not exist."
 msgstr "Autorul pe care îl căutați nu există."
 
-#: routes/flag/delete.php:13
+#: routes/flag/delete.php:16
 msgid "Your flag was deleted."
 msgstr "Raportarea a fost ștearsă."
 
-#: routes/flag/save.php:23
+#: routes/flag/save.php:25
 msgid "Your flag was saved."
 msgstr "Am salvat raportarea."
 
 #: routes/helpers/changeLocale.php:7
 msgid "Interface language changed. Page contents are always in Romanian."
 msgstr "Am schimbat limba interfeței. Conținutul paginii este mereu în română."
+
+#: routes/queue/view.php:14 routes/statement/view.php:10
+msgid "The statement you are looking for does not exist."
+msgstr "Afirmația pe care o căutați nu există."
+
+#: routes/queue/view.php:21 routes/statement/view.php:17
+msgid "No such answer exists."
+msgstr "Răspunsul nu există."
+
+#: routes/queue/view.php:23 routes/statement/view.php:19
+msgid "The answer does not belong to this statement."
+msgstr "Răspunsul nu aparține acestei afirmații."
+
+#: routes/queue/view.php:25 routes/statement/view.php:21
+msgid "You cannot delete this answer."
+msgstr "Nu puteți șterge acest răspuns."
+
+#: routes/queue/view.php:29 routes/statement/view.php:25
+msgid "Answer deleted."
+msgstr "Am șters răspunsul."
+
+#: routes/queue/view.php:47 routes/statement/view.php:43
+msgid "Answer posted."
+msgstr "Am publicat răspunsul."
+
+#: routes/queue/view.php:76 routes/statement/view.php:72
+msgid "Cannot post an empty answer."
+msgstr "Nu pot publica un răspuns vid."
 
 #: routes/statement/edit.php:18
 msgid "Statement deleted."
@@ -892,34 +948,6 @@ msgstr "Această dată nu poate fi în viitor."
 #: routes/statement/edit.php:97
 msgid "Some source URLS are invalid."
 msgstr "Unele URL-uri sursă sînt invalide."
-
-#: routes/statement/view.php:10
-msgid "The statement you are looking for does not exist."
-msgstr "Afirmația pe care o căutați nu există."
-
-#: routes/statement/view.php:17
-msgid "No such answer exists."
-msgstr "Răspunsul nu există."
-
-#: routes/statement/view.php:19
-msgid "The answer does not belong to this statement."
-msgstr "Răspunsul nu aparține acestei afirmații."
-
-#: routes/statement/view.php:21
-msgid "You cannot delete this answer."
-msgstr "Nu puteți șterge acest răspuns."
-
-#: routes/statement/view.php:25
-msgid "Answer deleted."
-msgstr "Am șters răspunsul."
-
-#: routes/statement/view.php:43
-msgid "Answer posted."
-msgstr "Am publicat răspunsul."
-
-#: routes/statement/view.php:75
-msgid "Cannot post an empty answer."
-msgstr "Nu pot publica un răspuns vid."
 
 #: routes/tag/edit.php:28
 #, php-format
