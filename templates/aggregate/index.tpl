@@ -1,6 +1,6 @@
 {extends "layout.tpl"}
 
-{block "title"}to be determined{/block}
+{block "title"}Dignitas{/block}
 
 {block "content"}
 

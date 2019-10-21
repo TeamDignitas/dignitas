@@ -3,7 +3,10 @@
 <html>
 
   <head>
-    <title>{block "title"}{/block} | Dignitas</title>
+    <title>
+      {block "title"}{/block}
+      {if $pageType != 'home'}| Dignitas{/if}
+    </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
