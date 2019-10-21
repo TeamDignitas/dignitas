@@ -5,6 +5,7 @@ class Core {
   const AUTOLOAD_PATHS = [
     'lib',
     'lib/model',
+    'lib/trait',
   ];
 
   // Make a path portable across OS's. This belongs in OS.php, but we need it
