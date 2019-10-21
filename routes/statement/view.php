@@ -53,15 +53,12 @@ if ($postAnswerButton) {
   // first time loading the page
 }
 
-$canFlag = User::canFlag(Flag::TYPE_STATEMENT, $statement->id);
-
 Smart::addResources('imageModal', 'simplemde');
 Smart::assign([
   'statement' => $statement,
   'entity' => $statement->getEntity(),
   'answers' => $statement->getAnswers(),
   'sources' => $statement->getSources(),
-  'canFlag' => $canFlag,
   'answerId' => $answerId,
 ]);
 Smart::display('statement/view.tpl');

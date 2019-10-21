@@ -1,7 +1,11 @@
 <?php
 
 class Statement extends BaseObject implements DatedObject {
-  use MarkdownTrait;
+  use FlaggableTrait, MarkdownTrait;
+
+  function getFlagType() {
+    return Flag::TYPE_STATEMENT;
+  }
 
   function getMarkdownFields() {
     return [ 'context' ];
@@ -37,12 +41,6 @@ class Statement extends BaseObject implements DatedObject {
     return
       User::may(User::PRIV_EDIT_STATEMENT) ||  // can edit any statements
       $this->userId == User::getActiveId();     // can always edit user's own statements
-  }
-
-  function isFlagged() { // by the current user
-    return Flag::get_by_userId_objectType_objectId(
-      User::getActiveId(), Flag::TYPE_STATEMENT, $this->id
-    );
   }
 
   // get the current user's vote on this statement

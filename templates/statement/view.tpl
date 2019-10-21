@@ -59,7 +59,7 @@
       </a>
     {/if}
 
-    {if $canFlag || $statement->isFlagged()}
+    {if $statement->isFlaggable() || $statement->isFlagged()}
       <a
         id="flagStatementLink"
         href="#"
@@ -127,7 +127,7 @@
             </a>
           </li>
 
-          {if $canFlag}
+          {if $a->isFlaggable() || $a->isFlagged()}
             <li class="list-inline-item">
               <a
                 id="flagAnswerLink{$a->id}"
