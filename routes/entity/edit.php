@@ -47,7 +47,7 @@ if ($saveButton) {
 
   $errors = validate($entity, $relations, $fileData);
   if (empty($errors)) {
-    $entity->saveWithFile($entity, $fileData, $deleteImage);
+    $entity->saveWithFile($fileData, $deleteImage);
 
     Relation::updateDependants($relations, 'fromEntityId', $entity->id, 'rank');
     Alias::updateDependants($aliases, 'entityId', $entity->id, 'rank');
