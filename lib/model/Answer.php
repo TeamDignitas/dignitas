@@ -7,6 +7,10 @@ class Answer extends BaseObject implements DatedObject {
     return Flag::TYPE_ANSWER;
   }
 
+  function getObjectType() {
+    return ObjectTypes::TYPE_ANSWER;
+  }
+
   function getMarkdownFields() {
     return [ 'contents' ];
   }
@@ -37,7 +41,9 @@ class Answer extends BaseObject implements DatedObject {
     Log::warning("Deleted answer %d (%s)",
                  $this->id, Str::shorten($this->contents, 100));
     Vote::delete_all_by_type_objectId(Vote::TYPE_ANSWER, $this->id);
-    AttachmentReference::delete_all_by_objectClass_objectId('answer', $this->id);
+    $this->deleteFlagsAndQueueItems();
+    AttachmentReference::delete_all_by_objectType_objectId(
+      $this->getObjectType(), $this->id);
     parent::delete();
   }
 }

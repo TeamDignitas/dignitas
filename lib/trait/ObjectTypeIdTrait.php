@@ -28,4 +28,13 @@ trait ObjectTypeIdTrait {
     return $this->objectReference;
   }
 
+  /**
+   * Deletes all mentions of $o.
+   *
+   * @param $o An instance of FlaggableTrait
+   */
+  static function deleteObject($o) {
+    self::delete_all_by_objectType_objectId($o->getFlagType(), $o->id);
+  }
+
 }

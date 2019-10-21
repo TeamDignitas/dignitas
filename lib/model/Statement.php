@@ -7,6 +7,10 @@ class Statement extends BaseObject implements DatedObject {
     return Flag::TYPE_STATEMENT;
   }
 
+  function getObjectType() {
+    return ObjectTypes::TYPE_STATEMENT;
+  }
+
   function getMarkdownFields() {
     return [ 'context' ];
   }
@@ -55,7 +59,9 @@ class Statement extends BaseObject implements DatedObject {
     ObjectTag::delete_all_by_objectType_objectId(ObjectTag::TYPE_STATEMENT, $this->id);
     StatementSource::delete_all_by_statementId($this->id);
     Vote::delete_all_by_type_objectId(Vote::TYPE_STATEMENT, $this->id);
-    AttachmentReference::delete_all_by_objectClass_objectId('statement', $this->id);
+    $this->deleteFlagsAndQueueItems();
+    AttachmentReference::delete_all_by_objectType_objectId(
+      $this->getObjectType(), $this->id);
     parent::delete();
   }
 

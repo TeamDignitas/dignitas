@@ -7,4 +7,5 @@
 interface ObjectTypes {
   const TYPE_STATEMENT = 1;
   const TYPE_ANSWER = 2;
+  const TYPE_USER = 3;
 }
