@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-10-21 12:53+0300\n"
-"PO-Revision-Date: 2019-10-21 12:55+0300\n"
+"POT-Creation-Date: 2019-10-21 15:58+0300\n"
+"PO-Revision-Date: 2019-10-21 15:58+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -180,6 +180,27 @@ msgstr "salvează"
 msgid "tag"
 msgstr "etichetă"
 
+#: templates/bits/answer.tpl:21
+msgid "posted by"
+msgstr "publicat de"
+
+#: templates/bits/answer.tpl:28
+msgid "Are you sure you want to delete this answer?"
+msgstr "Confirmați ștergerea acestui răspuns?"
+
+#: templates/bits/answer.tpl:29 templates/entity/edit.tpl:183
+#: templates/statement/edit.tpl:135 templates/tag/edit.tpl:180
+msgid "delete"
+msgstr "șterge"
+
+#: templates/bits/answer.tpl:46 templates/bits/statement.tpl:76
+msgid "flag"
+msgstr "raportează"
+
+#: templates/bits/answer.tpl:58 templates/bits/statement.tpl:88
+msgid "unflag"
+msgstr "șterge raportarea"
+
 #: templates/bits/fakeLogin.tpl:3 templates/bits/fakeLogin.tpl:49
 msgid "test user login"
 msgstr "autentificare ca utilizator de test"
@@ -317,7 +338,24 @@ msgstr "scor"
 msgid "You need at least %1 reputation to downvote."
 msgstr "Vă trebuie o reputație de cel puțin %1 pentru a vota negativ."
 
-#: templates/bits/statementList.tpl:25 templates/statement/view.tpl:92
+#: templates/bits/statement.tpl:29
+msgid "sources"
+msgstr "surse"
+
+#: templates/bits/statement.tpl:40 templates/statement/edit.tpl:56
+msgid "context"
+msgstr "context"
+
+#: templates/bits/statement.tpl:44 templates/statement/edit.tpl:67
+msgid "goal"
+msgstr "scop"
+
+#: templates/bits/statement.tpl:59 templates/entity/view.tpl:33
+#: templates/tag/view.tpl:14 templates/user/view.tpl:42
+msgid "edit"
+msgstr "editează"
+
+#: templates/bits/statement.tpl:93 templates/bits/statementList.tpl:25
 msgid "added by"
 msgstr "adăugată de"
 
@@ -404,19 +442,9 @@ msgstr "înapoi la autor"
 msgid "Are you sure you want to delete this entity?"
 msgstr "Confirmați ștergerea acestui autor?"
 
-#: templates/entity/edit.tpl:183 templates/statement/edit.tpl:135
-#: templates/statement/view.tpl:126 templates/tag/edit.tpl:180
-msgid "delete"
-msgstr "șterge"
-
 #: templates/entity/view.tpl:24
 msgid "loyalty"
 msgstr "loialitate"
-
-#: templates/entity/view.tpl:33 templates/statement/view.tpl:58
-#: templates/tag/view.tpl:14 templates/user/view.tpl:42
-msgid "edit"
-msgstr "editează"
 
 #: templates/entity/view.tpl:50
 msgid "members"
@@ -425,6 +453,10 @@ msgstr "membri"
 #: templates/entity/view.tpl:62 templates/user/view.tpl:17
 msgid "statements"
 msgstr "afirmații"
+
+#: templates/queue/view.tpl:30
+msgid "This queue is empty."
+msgstr "Această coadă este goală."
 
 #: templates/statement/edit.tpl:5
 msgid "edit statement"
@@ -442,14 +474,6 @@ msgstr "data afirmației"
 msgid "summary"
 msgstr "sumar"
 
-#: templates/statement/edit.tpl:56 templates/statement/view.tpl:39
-msgid "context"
-msgstr "context"
-
-#: templates/statement/edit.tpl:67 templates/statement/view.tpl:43
-msgid "goal"
-msgstr "scop"
-
 #: templates/statement/edit.tpl:79
 msgid "source URLs"
 msgstr "URL-uri sursă"
@@ -466,38 +490,18 @@ msgstr "înapoi la afirmație"
 msgid "Are you sure you want to delete this statement?"
 msgstr "Confirmați ștergerea acestei afirmații?"
 
-#: templates/statement/view.tpl:28
-msgid "sources"
-msgstr "surse"
-
-#: templates/statement/view.tpl:75 templates/statement/view.tpl:143
-msgid "flag"
-msgstr "raportează"
-
-#: templates/statement/view.tpl:87 templates/statement/view.tpl:155
-msgid "unflag"
-msgstr "șterge raportarea"
-
-#: templates/statement/view.tpl:100
+#: templates/statement/view.tpl:10
 msgid "one answer"
 msgid_plural "%1 answers"
 msgstr[0] "un răspuns"
 msgstr[1] "%1 răspunsuri"
 msgstr[2] "%1 de răspunsuri"
 
-#: templates/statement/view.tpl:118
-msgid "posted by"
-msgstr "publicat de"
-
-#: templates/statement/view.tpl:125
-msgid "Are you sure you want to delete this answer?"
-msgstr "Confirmați ștergerea acestui răspuns?"
-
-#: templates/statement/view.tpl:165
+#: templates/statement/view.tpl:19
 msgid "your answer"
 msgstr "răspunsul dumneavoastră"
 
-#: templates/statement/view.tpl:183
+#: templates/statement/view.tpl:37
 msgid "post your answer"
 msgstr "publică răspunsul"
 
@@ -889,33 +893,9 @@ msgstr "Am salvat raportarea."
 msgid "Interface language changed. Page contents are always in Romanian."
 msgstr "Am schimbat limba interfeței. Conținutul paginii este mereu în română."
 
-#: routes/queue/view.php:14 routes/statement/view.php:10
-msgid "The statement you are looking for does not exist."
-msgstr "Afirmația pe care o căutați nu există."
-
-#: routes/queue/view.php:21 routes/statement/view.php:17
-msgid "No such answer exists."
-msgstr "Răspunsul nu există."
-
-#: routes/queue/view.php:23 routes/statement/view.php:19
-msgid "The answer does not belong to this statement."
-msgstr "Răspunsul nu aparține acestei afirmații."
-
-#: routes/queue/view.php:25 routes/statement/view.php:21
-msgid "You cannot delete this answer."
-msgstr "Nu puteți șterge acest răspuns."
-
-#: routes/queue/view.php:29 routes/statement/view.php:25
-msgid "Answer deleted."
-msgstr "Am șters răspunsul."
-
-#: routes/queue/view.php:47 routes/statement/view.php:43
-msgid "Answer posted."
-msgstr "Am publicat răspunsul."
-
-#: routes/queue/view.php:76 routes/statement/view.php:72
-msgid "Cannot post an empty answer."
-msgstr "Nu pot publica un răspuns vid."
+#: routes/queue/view.php:9
+msgid "No queue exists by that name."
+msgstr "Nu există nicio coadă cu acest nume."
 
 #: routes/statement/edit.php:18
 msgid "Statement deleted."
@@ -948,6 +928,34 @@ msgstr "Această dată nu poate fi în viitor."
 #: routes/statement/edit.php:97
 msgid "Some source URLS are invalid."
 msgstr "Unele URL-uri sursă sînt invalide."
+
+#: routes/statement/view.php:10
+msgid "The statement you are looking for does not exist."
+msgstr "Afirmația pe care o căutați nu există."
+
+#: routes/statement/view.php:17
+msgid "No such answer exists."
+msgstr "Răspunsul nu există."
+
+#: routes/statement/view.php:19
+msgid "The answer does not belong to this statement."
+msgstr "Răspunsul nu aparține acestei afirmații."
+
+#: routes/statement/view.php:21
+msgid "You cannot delete this answer."
+msgstr "Nu puteți șterge acest răspuns."
+
+#: routes/statement/view.php:25
+msgid "Answer deleted."
+msgstr "Am șters răspunsul."
+
+#: routes/statement/view.php:43
+msgid "Answer posted."
+msgstr "Am publicat răspunsul."
+
+#: routes/statement/view.php:70
+msgid "Cannot post an empty answer."
+msgstr "Nu pot publica un răspuns vid."
 
 #: routes/tag/edit.php:28
 #, php-format
