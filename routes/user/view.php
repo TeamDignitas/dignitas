@@ -18,4 +18,5 @@ Smart::assign([
   'answers' => $answers,
   'statements' => $statements,
 ]);
+Smart::addResources('imageModal');
 Smart::display('user/view.tpl');
