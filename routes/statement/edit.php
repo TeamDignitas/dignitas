@@ -41,7 +41,7 @@ if ($saveButton) {
   if (empty($errors)) {
     $statement->save();
     StatementSource::updateDependants($sources, 'statementId', $statement->id, 'rank');
-    ObjectTag::update(ObjectTag::TYPE_STATEMENT, $statement->id, $tagIds);
+    ObjectTag::update($statement, $tagIds);
 
     FlashMessage::add(_('Changes saved.'), 'success');
     Util::redirect(Router::link('statement/edit') . '/' . $statement->id);
@@ -53,7 +53,7 @@ if ($saveButton) {
 } else {
   // first time loading the page
   Smart::assign('sources', $statement->getSources());
-  Smart::assign('tagIds', ObjectTag::getTagIds(ObjectTag::TYPE_STATEMENT, $statement->id));
+  Smart::assign('tagIds', ObjectTag::getTagIds($statement));
 }
 
 Smart::addResources('imageModal', 'simplemde', 'sortable');

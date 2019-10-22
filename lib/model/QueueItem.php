@@ -1,6 +1,6 @@
 <?php
 
-class QueueItem extends BaseObject implements DatedObject, ObjectTypes {
+class QueueItem extends BaseObject implements DatedObject {
   use ObjectTypeIdTrait;
 
 }

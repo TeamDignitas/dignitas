@@ -41,7 +41,7 @@ class User extends BaseObject implements DatedObject {
   }
 
   function getObjectType() {
-    return ObjectTypes::TYPE_USER;
+    return self::TYPE_USER;
   }
 
   private function getFileSubdirectory() {

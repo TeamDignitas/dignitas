@@ -3,12 +3,8 @@
 class Statement extends BaseObject implements DatedObject {
   use FlaggableTrait, MarkdownTrait;
 
-  function getFlagType() {
-    return Flag::TYPE_STATEMENT;
-  }
-
   function getObjectType() {
-    return ObjectTypes::TYPE_STATEMENT;
+    return self::TYPE_STATEMENT;
   }
 
   function getMarkdownFields() {
@@ -38,7 +34,7 @@ class Statement extends BaseObject implements DatedObject {
   }
 
   function getTags() {
-    return ObjectTag::getTags(ObjectTag::TYPE_STATEMENT, $this->id);
+    return ObjectTag::getTags($this);
   }
 
   function isEditable() {
@@ -50,7 +46,7 @@ class Statement extends BaseObject implements DatedObject {
   // get the current user's vote on this statement
   function getVote() {
     return Vote::get_by_userId_objectType_objectId(
-      User::getActiveId(), Vote::TYPE_STATEMENT, $this->id);
+      User::getActiveId(), self::TYPE_STATEMENT, $this->id);
   }
 
   function delete() {

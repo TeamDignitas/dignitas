@@ -1,6 +1,6 @@
 <?php
 
-class Vote extends BaseObject implements DatedObject, ObjectTypes {
+class Vote extends BaseObject implements DatedObject {
   use ObjectTypeIdTrait;
 
   static function loadOrCreate($userId, $objectType, $objectId) {

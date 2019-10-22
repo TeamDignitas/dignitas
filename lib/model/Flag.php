@@ -1,6 +1,6 @@
 <?php
 
-class Flag extends BaseObject implements DatedObject, ObjectTypes {
+class Flag extends BaseObject implements DatedObject {
   use ObjectTypeIdTrait;
 
   const REASON_SPAM = 1;

@@ -6,20 +6,13 @@
 trait FlaggableTrait {
 
   /**
-   * Returns the flag type that this object uses.
-   *
-   * @return int Returns one of the Flag::TYPE_* constants.
-   */
-  abstract function getFlagType();
-
-  /**
    * Checks if the object is flagged by the active user.
    *
    * @return object Returns the flag object or false if there is no flag.
    */
   function isFlagged() {
     return Flag::get_by_userId_objectType_objectId(
-      User::getActiveId(), $this->getFlagType(), $this->id
+      User::getActiveId(), $this->getObjectType(), $this->id
     );
   }
 
@@ -29,7 +22,7 @@ trait FlaggableTrait {
    * @return bool
    */
   function isFlaggable() {
-    return User::canFlag($this->getFlagType(), $this->id);
+    return User::canFlag($this->getObjectType(), $this->id);
   }
 
   /**

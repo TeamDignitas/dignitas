@@ -2,8 +2,7 @@
 
 /**
  * Method implementations for objects that contain an ($objectType, $objectId)
- * reference to another object. Classes that use this trait should also
- * implement ObjectTypes to gain access to its constants.
+ * reference to another object.
  */
 trait ObjectTypeIdTrait {
 
@@ -12,10 +11,10 @@ trait ObjectTypeIdTrait {
   function getObject() {
     if ($this->objectReference === false) {
       switch ($this->objectType) {
-        case ObjectTypes::TYPE_STATEMENT:
+        case self::TYPE_STATEMENT:
           $this->objectReference = Statement::get_by_id($this->objectId);
           break;
-        case ObjectTypes::TYPE_ANSWER:
+        case self::TYPE_ANSWER:
           $this->objectReference = Answer::get_by_id($this->objectId);
           break;
         default:
@@ -31,7 +30,7 @@ trait ObjectTypeIdTrait {
    * @param $o An instance of FlaggableTrait
    */
   static function deleteObject($o) {
-    self::delete_all_by_objectType_objectId($o->getFlagType(), $o->id);
+    self::delete_all_by_objectType_objectId($o->getObjectType(), $o->id);
   }
 
 }

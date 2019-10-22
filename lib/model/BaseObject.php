@@ -6,6 +6,12 @@ class BaseObject extends Model {
   const ACTION_COUNT = 3;
   const ACTION_DELETE_ALL = 4;
 
+  // types of objects for use in (objectType, objectId) references
+  const TYPE_UNKNOWN = 0;
+  const TYPE_STATEMENT = 1;
+  const TYPE_ANSWER = 2;
+  const TYPE_USER = 3;
+
   function __call($name, $arguments) {
     return $this->callHandler($name, $arguments);
   }
@@ -50,6 +56,15 @@ class BaseObject extends Model {
         }
         break;
     }
+  }
+
+  /**
+   * What type of object are we? Children may override this.
+   *
+   * @return int One of the BaseObject::TYPE_* values.
+   */
+  function getObjectType() {
+    return self::TYPE_UNKNOWN;
   }
 
   // Updates a list of dependants, e.g. a list of Relations for an
@@ -98,13 +113,6 @@ class BaseObject extends Model {
       }
     }
     return $clone;
-  }
-
-  static function getField($colname, $id) {
-    $result = Model::factory(get_called_class())
-        ->select_many($colname)
-        ->find_one($id);
-    return $result->$colname;
   }
 
   static function _die($error, $name, $arguments) {

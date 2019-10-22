@@ -3,12 +3,8 @@
 class Answer extends BaseObject implements DatedObject {
   use FlaggableTrait, MarkdownTrait;
 
-  function getFlagType() {
-    return Flag::TYPE_ANSWER;
-  }
-
   function getObjectType() {
-    return ObjectTypes::TYPE_ANSWER;
+    return self::TYPE_ANSWER;
   }
 
   function getMarkdownFields() {
@@ -30,7 +26,7 @@ class Answer extends BaseObject implements DatedObject {
   // get the current user's vote on this answer
   function getVote() {
     return Vote::get_by_userId_objectType_objectId(
-      User::getActiveId(), Vote::TYPE_ANSWER, $this->id);
+      User::getActiveId(), self::TYPE_ANSWER, $this->id);
   }
 
   function isDeletable() {

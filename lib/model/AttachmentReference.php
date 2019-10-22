@@ -3,10 +3,10 @@
 class AttachmentReference extends BaseObject implements DatedObject {
   use ObjectTypeIdTrait;
 
-  static function insert($objectType, $objectId, $attachmentId) {
+  static function insert($object, $attachmentId) {
     $ar = Model::factory('AttachmentReference')->create();
-    $ar->objectType = $objectType;
-    $ar->objectId = $objectId;
+    $ar->objectType = $object->getObjectType();
+    $ar->objectId = $object->id;
     $ar->attachmentId = $attachmentId;
     $ar->save();
   }
