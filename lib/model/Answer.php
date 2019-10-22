@@ -29,7 +29,7 @@ class Answer extends BaseObject implements DatedObject {
 
   // get the current user's vote on this answer
   function getVote() {
-    return Vote::get_by_userId_type_objectId(
+    return Vote::get_by_userId_objectType_objectId(
       User::getActiveId(), Vote::TYPE_ANSWER, $this->id);
   }
 
@@ -40,10 +40,9 @@ class Answer extends BaseObject implements DatedObject {
   function delete() {
     Log::warning("Deleted answer %d (%s)",
                  $this->id, Str::shorten($this->contents, 100));
-    Vote::delete_all_by_type_objectId(Vote::TYPE_ANSWER, $this->id);
     $this->deleteFlagsAndQueueItems();
-    AttachmentReference::delete_all_by_objectType_objectId(
-      $this->getObjectType(), $this->id);
+    AttachmentReference::deleteObject($this);
+    Vote::deleteObject($this);
     parent::delete();
   }
 }

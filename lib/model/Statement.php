@@ -49,19 +49,18 @@ class Statement extends BaseObject implements DatedObject {
 
   // get the current user's vote on this statement
   function getVote() {
-    return Vote::get_by_userId_type_objectId(
+    return Vote::get_by_userId_objectType_objectId(
       User::getActiveId(), Vote::TYPE_STATEMENT, $this->id);
   }
 
   function delete() {
     Log::warning("Deleted statement {$this->id} ({$this->summary})");
     Answer::delete_all_by_statementId($this->id);
-    ObjectTag::delete_all_by_objectType_objectId(ObjectTag::TYPE_STATEMENT, $this->id);
     StatementSource::delete_all_by_statementId($this->id);
-    Vote::delete_all_by_type_objectId(Vote::TYPE_STATEMENT, $this->id);
     $this->deleteFlagsAndQueueItems();
-    AttachmentReference::delete_all_by_objectType_objectId(
-      $this->getObjectType(), $this->id);
+    AttachmentReference::deleteObject($this);
+    ObjectTag::deleteObject($this);
+    Vote::deleteObject($this);
     parent::delete();
   }
 
