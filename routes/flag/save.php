@@ -17,10 +17,10 @@ try {
 
   User::canFlag($objectType, $objectId, true);
   $userId = User::getActiveId();
-  $flag = Flag::create($objectType, $objectId, $userId, $reason, $duplicateId, $details);
+  $reviewReason = Flag::REVIEW_REASONS[$reason];
+  $review = Review::ensure($objectType, $objectId, $reviewReason);
+  $flag = Flag::create($userId, $review->id, $reason, $duplicateId, $details);
   $flag->save();
-
-  Queue::check($objectType, $objectId);
 
   print json_encode(_('Your flag was saved.'));
 

@@ -53,7 +53,7 @@ class Statement extends BaseObject implements DatedObject {
     Log::warning("Deleted statement {$this->id} ({$this->summary})");
     Answer::delete_all_by_statementId($this->id);
     StatementSource::delete_all_by_statementId($this->id);
-    $this->deleteFlagsAndQueueItems();
+    Review::deleteObject($this);
     AttachmentReference::deleteObject($this);
     ObjectTag::deleteObject($this);
     Vote::deleteObject($this);

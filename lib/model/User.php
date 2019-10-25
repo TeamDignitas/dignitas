@@ -27,7 +27,7 @@ class User extends BaseObject implements DatedObject {
 
   const PRIV_UPLOAD_ATTACHMENT = 100;
 
-  const PRIV_QUEUE = 2000;
+  const PRIV_REVIEW = 2000;
 
   // flag earning
   const BASE_FLAGS_PER_DAY = 10;
@@ -177,14 +177,15 @@ class User extends BaseObject implements DatedObject {
                            $fpd), $fpd));
       }
 
-      $f = Flag::create($objectType, $objectId);
-
-      // check that the object exists and is not flagged
-      if (!$f->getObject()) {
+      // check that the object exists
+      $f = Review::create($objectType, $objectId);
+      $obj = $f->getObject();
+      if (!$obj) {
         throw new Exception(_('Cannot flag: object does not exist.'));
       }
 
-      if ($f->getObject()->isFlagged()) {
+      // check that the user does not already have a pending flag
+      if ($obj->isFlagged()) {
         throw new Exception(_('You already have a pending flag for this object.'));
       }
 

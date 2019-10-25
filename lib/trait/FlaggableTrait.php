@@ -8,12 +8,18 @@ trait FlaggableTrait {
   /**
    * Checks if the object is flagged by the active user.
    *
-   * @return object Returns the flag object or false if there is no flag.
+   * @return bool
    */
   function isFlagged() {
-    return Flag::get_by_userId_objectType_objectId(
-      User::getActiveId(), $this->getObjectType(), $this->id
-    );
+    $count = Model::factory('Flag')
+      ->table_alias('f')
+      ->join('review', ['f.reviewId', '=', 'r.id'], 'r')
+      ->where('f.userId', User::getActiveId())
+      ->where('f.status', Flag::STATUS_PENDING)
+      ->where('r.objectType', $this->getObjectType())
+      ->where('r.objectId', $this->id)
+      ->count();
+    return ($count > 0);
   }
 
   /**
@@ -23,13 +29,5 @@ trait FlaggableTrait {
    */
   function isFlaggable() {
     return User::canFlag($this->getObjectType(), $this->id);
-  }
-
-  /**
-   * Deletes all flags pertaining to this object and removes it from all queues.
-   */
-  function deleteFlagsAndQueueItems() {
-    Flag::deleteObject($this);
-    QueueItem::deleteObject($this);
   }
 }

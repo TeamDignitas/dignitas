@@ -28,7 +28,7 @@
               {t}spam{/t}
             </label>
             <p class="text-muted">
-              {t}This message appears to promote a product or service.{/t}
+              {t}This post appears to promote a product or service.{/t}
             </p>
           </div>
 
@@ -42,7 +42,7 @@
               {t}insults or rudeness{/t}
             </label>
             <p class="text-muted">
-              {t}This message is insulting or rude toward other users of Dignitas.{/t}
+              {t}This post is insulting or rude toward other users of Dignitas.{/t}
             </p>
           </div>
 
@@ -84,8 +84,23 @@
                 {t}This answer does not address the topic of the original statement.{/t}
               </span>
               <span data-flag-visibility="{Flag::TYPE_STATEMENT}">
-                {t}This statement is outside the intended scope of Dignitas.{/t}
+                {t}This statement is outside the intended scope of Dignitas or
+                is too broad to prove or disprove.{/t}
               </span>
+            </p>
+          </div>
+
+          <div class="form-check" data-flag-visibility="{Flag::TYPE_STATEMENT}">
+            <label class="form-check-label">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flagReason"
+                value="{Flag::REASON_UNVERIFIABLE}">
+              {t}unverifiable{/t}
+            </label>
+            <p class="text-muted">
+              {t}It is not obvious that the author really made the statement.{/t}
             </p>
           </div>
 

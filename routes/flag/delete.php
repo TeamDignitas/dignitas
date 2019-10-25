@@ -3,14 +3,27 @@
 $objectType = Request::get('objectType');
 $objectId = Request::get('objectId');
 
-$userId = User::getActiveId();
-
-// Skip error checking. If the user somehow flagged the object, the user
-// should be able to unflag.
-if ($userId) {
-  Flag::delete_all_by_userId_objectType_objectId($userId, $objectType, $objectId);
-  Queue::check($objectType, $objectId);
-}
-
 header('Content-Type: application/json');
-print json_encode(_('Your flag was deleted.'));
+
+try {
+  $review = Review::get_by_objectType_objectId_status(
+    $objectType, $objectId, Review::STATUS_PENDING);
+
+  if ($review) {
+    $flag = Flag::get_by_userId_reviewId_status(
+      User::getActiveId(), $review->id, Flag::STATUS_PENDING);
+
+    if ($flag) {
+      $flag->delete();
+      $review->checkDelete();
+    }
+  }
+
+  print json_encode(_('Your flag was deleted.'));
+
+} catch (Exception $e) {
+
+  http_response_code(404);
+  print json_encode($e->getMessage());
+
+}

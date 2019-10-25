@@ -92,10 +92,10 @@ class Router {
       'en_US.utf8' => 'changeLocale',
     ],
 
-    // queues
-    'queue/view' => [
-      'en_US.utf8' => 'queue',
-      'ro_RO.utf8' => 'coada',
+    // reviews
+    'review/view' => [
+      'en_US.utf8' => 'review',
+      'ro_RO.utf8' => 'evaluare',
     ],
 
     // statements
@@ -162,7 +162,7 @@ class Router {
     'entity/load' => [ 'ids' ],
     'entity/search' => [ 'term' ],
     'entity/view' => [ 'id' ],
-    'queue/view' => [ 'name' ],
+    'review/view' => [ 'name' ],
     'statement/edit' => [ 'id' ],
     'statement/view' => [ 'id', 'answerId' ],
     'tag/edit' => [ 'id' ],

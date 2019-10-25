@@ -36,7 +36,7 @@ class Answer extends BaseObject implements DatedObject {
   function delete() {
     Log::warning("Deleted answer %d (%s)",
                  $this->id, Str::shorten($this->contents, 100));
-    $this->deleteFlagsAndQueueItems();
+    Review::deleteObject($this);
     AttachmentReference::deleteObject($this);
     Vote::deleteObject($this);
     parent::delete();

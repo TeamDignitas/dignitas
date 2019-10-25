@@ -1,9 +1,9 @@
 {extends "layout.tpl"}
 
-{block "title"}{cap}{t}{Queue::getDescription($queueType)}{/t}{/cap}{/block}
+{block "title"}{cap}{t}{Review::getDescription($reason)}{/t}{/cap}{/block}
 
 {block "content"}
-  <h3>{t}{Queue::getDescription($queueType)}{/t}</h3>
+  <h3>{t}{Review::getDescription($reason)}{/t}</h3>
 
   {if isset($object)}
     {if $object instanceof Statement}
@@ -27,6 +27,6 @@
 
     {/if}
   {else}
-    {t}This queue is empty.{/t}
+    {t}This review queue is empty.{/t}
   {/if}
 {/block}
