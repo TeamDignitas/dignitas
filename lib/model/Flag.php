@@ -20,7 +20,7 @@ class Flag extends BaseObject implements DatedObject {
     self::REASON_OFF_TOPIC => Review::REASON_UNHELPFUL,
     self::REASON_UNVERIFIABLE => Review::REASON_UNHELPFUL,
     self::REASON_LOW_QUALITY => Review::REASON_UNHELPFUL,
-    self::REASON_OFF_TOPIC => Review::REASON_OTHER,
+    self::REASON_OTHER => Review::REASON_OTHER,
   ];
 
   static function create($userId, $reviewId, $reason, $duplicateId, $details) {
