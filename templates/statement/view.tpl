@@ -3,7 +3,7 @@
 {block "title"}{cap}{$statement->summary|escape}{/cap}{/block}
 
 {block "content"}
-  {include "bits/statement.tpl"}
+  {include "bits/statement.tpl" editLink=true}
 
   {if count($answers)}
     <h4 class="mt-3">

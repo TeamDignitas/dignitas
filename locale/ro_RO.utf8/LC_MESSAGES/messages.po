@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-10-28 16:48+0200\n"
-"PO-Revision-Date: 2019-10-28 16:49+0200\n"
+"POT-Creation-Date: 2019-10-28 17:27+0200\n"
+"PO-Revision-Date: 2019-10-28 17:28+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -184,20 +184,20 @@ msgstr "etichetă"
 msgid "posted by"
 msgstr "publicat de"
 
-#: templates/bits/answer.tpl:28
+#: templates/bits/answer.tpl:29
 msgid "Are you sure you want to delete this answer?"
 msgstr "Confirmați ștergerea acestui răspuns?"
 
-#: templates/bits/answer.tpl:29 templates/entity/edit.tpl:183
+#: templates/bits/answer.tpl:30 templates/entity/edit.tpl:183
 #: templates/statement/edit.tpl:129 templates/tag/edit.tpl:180
 msgid "delete"
 msgstr "șterge"
 
-#: templates/bits/answer.tpl:46 templates/bits/statement.tpl:76
+#: templates/bits/answer.tpl:48 templates/bits/statement.tpl:77
 msgid "flag"
 msgstr "raportează"
 
-#: templates/bits/answer.tpl:58 templates/bits/statement.tpl:88
+#: templates/bits/answer.tpl:60 templates/bits/statement.tpl:89
 msgid "unflag"
 msgstr "șterge raportarea"
 
@@ -379,24 +379,24 @@ msgstr "scor"
 msgid "You need at least %1 reputation to downvote."
 msgstr "Vă trebuie o reputație de cel puțin %1 pentru a vota negativ."
 
-#: templates/bits/statement.tpl:29
+#: templates/bits/statement.tpl:30
 msgid "sources"
 msgstr "surse"
 
-#: templates/bits/statement.tpl:40 templates/statement/edit.tpl:57
+#: templates/bits/statement.tpl:41 templates/statement/edit.tpl:57
 msgid "context"
 msgstr "context"
 
-#: templates/bits/statement.tpl:44 templates/statement/edit.tpl:68
+#: templates/bits/statement.tpl:45 templates/statement/edit.tpl:68
 msgid "goal"
 msgstr "scop"
 
-#: templates/bits/statement.tpl:59 templates/entity/view.tpl:33
+#: templates/bits/statement.tpl:60 templates/entity/view.tpl:33
 #: templates/tag/view.tpl:14 templates/user/view.tpl:42
 msgid "edit"
 msgstr "editează"
 
-#: templates/bits/statement.tpl:93 templates/bits/statementList.tpl:25
+#: templates/bits/statement.tpl:94 templates/bits/statementList.tpl:25
 msgid "added by"
 msgstr "adăugată de"
 
@@ -495,7 +495,11 @@ msgstr "membri"
 msgid "statements"
 msgstr "afirmații"
 
-#: templates/review/view.tpl:37
+#: templates/review/view.tpl:25
+msgid "pertaining to statement:"
+msgstr "referitor la afirmația:"
+
+#: templates/review/view.tpl:41
 msgid "This review queue is empty."
 msgstr "Această coadă de evaluare este goală."
 
@@ -790,20 +794,20 @@ msgstr "inchidere"
 msgid "reopen"
 msgstr "redeschidere"
 
-#: lib/model/User.php:95 routes/auth/login.php:58
+#: lib/model/User.php:96 routes/auth/login.php:58
 #: routes/auth/lostPassword.php:50
 msgid "Please enter an email address."
 msgstr "Vă rugăm să introduceți o adresă de e-mail."
 
-#: lib/model/User.php:100
+#: lib/model/User.php:101
 msgid "This email address is already taken."
 msgstr "Această adresă de e-mail este deja folosită."
 
-#: lib/model/User.php:104 routes/auth/lostPassword.php:52
+#: lib/model/User.php:105 routes/auth/lostPassword.php:52
 msgid "This email address looks incorrect."
 msgstr "Adresa de e-mail pare incorectă."
 
-#: lib/model/User.php:114
+#: lib/model/User.php:115
 msgid ""
 "Your nickname must begin with a letter or digit and consist of 3 to 30 "
 "letters, digits and punctuation from among -_."
@@ -811,33 +815,33 @@ msgstr ""
 "Porecla dumneavoastră trebuie să înceapă cu o literă sau cifră și să conțină "
 "între 3 și 30 de litere, cifre și punctuație din setul -_."
 
-#: lib/model/User.php:123 routes/auth/login.php:62
+#: lib/model/User.php:124 routes/auth/login.php:62
 msgid "Please enter a password."
 msgstr "Vă rugăm să introduceți o parolă."
 
-#: lib/model/User.php:125
+#: lib/model/User.php:126
 msgid "Please enter your password twice to prevent typos."
 msgstr "Vă rugăm să introduceți parola de două ori pentru verificare."
 
-#: lib/model/User.php:127
+#: lib/model/User.php:128
 msgid "Passwords don't match."
 msgstr "Parolele nu coincid."
 
-#: lib/model/User.php:129
+#: lib/model/User.php:130
 msgid "Your password must be at least 8 characters long."
 msgstr "Parola trebuie să aibă cel puțin 8 caractere."
 
-#: lib/model/User.php:147
+#: lib/model/User.php:148
 #, php-format
 msgid "You need at least %s reputation to perform this action."
 msgstr "Vă trebuie o reputație de cel puțin %s pentru această acțiune."
 
-#: lib/model/User.php:167
+#: lib/model/User.php:168
 #, php-format
 msgid "You need at least %s reputation to flag."
 msgstr "Vă trebuie o reputație de cel puțin %s pentru a raporta."
 
-#: lib/model/User.php:175
+#: lib/model/User.php:176
 #, php-format
 msgid "You can use at most one flag every 24 hours."
 msgid_plural "You can use at most %d flags every 24 hours."
@@ -845,11 +849,11 @@ msgstr[0] "Puteți face cel mult o raportare la fiecare 24 de ore."
 msgstr[1] "Puteți face cel mult %d raportări la fiecare 24 de ore."
 msgstr[2] "Puteți face cel mult %d de raportări la fiecare 24 de ore."
 
-#: lib/model/User.php:184
+#: lib/model/User.php:185
 msgid "Cannot flag: object does not exist."
 msgstr "Nu puteți raporta: obiectul nu există."
 
-#: lib/model/User.php:189
+#: lib/model/User.php:190
 msgid "You already have a pending flag for this object."
 msgstr "Aveți deja o raportare în așteptare pentru acest obiect."
 
@@ -1010,15 +1014,15 @@ msgstr "Răspunsul nu aparține acestei afirmații."
 msgid "You cannot delete this answer."
 msgstr "Nu puteți șterge acest răspuns."
 
-#: routes/statement/view.php:25
+#: routes/statement/view.php:24
 msgid "Answer deleted."
 msgstr "Am șters răspunsul."
 
-#: routes/statement/view.php:43
+#: routes/statement/view.php:42
 msgid "Answer posted."
 msgstr "Am publicat răspunsul."
 
-#: routes/statement/view.php:70
+#: routes/statement/view.php:69
 msgid "Cannot post an empty answer."
 msgstr "Nu pot publica un răspuns vid."
 

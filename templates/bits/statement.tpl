@@ -1,4 +1,5 @@
 {* mandatory argument: $statement *}
+{$editLink=$editLink|default:false}
 {$flagBox=$flagBox|default:true}
 {$voteBox=$voteBox|default:true}
 
@@ -53,7 +54,7 @@
 </div>
 
 <div class="mt-3 clearfix">
-  {if $statement->isEditable()}
+  {if $editLink && $statement->isEditable()}
     <a href="{Router::link('statement/edit')}/{$statement->id}" class="btn btn-light">
       <i class="icon icon-edit"></i>
       {t}edit{/t}

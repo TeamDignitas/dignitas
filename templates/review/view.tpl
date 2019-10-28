@@ -22,10 +22,14 @@
         flagBox=false
         voteBox=false}
 
-      {include "bits/statement.tpl"
-        statement=$object->getStatement()
-        flagBox=false
-        voteBox=false}
+      <h3>{cap}{t}pertaining to statement:{/t}{/cap}</h3>
+
+      <div class="parentStatement">
+        {include "bits/statement.tpl"
+          statement=$object->getStatement()
+          flagBox=false
+          voteBox=false}
+      </div>
 
     {/if}
 
