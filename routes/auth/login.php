@@ -20,6 +20,7 @@ if ($fakeEmail) {
   if (!$user) {
     $user = Model::factory('User')->create();
   }
+  $user->nickname = $fakeEmail;
   $user->email = $fakeEmail;
   $user->reputation = $fakeReputation;
   $user->save();
