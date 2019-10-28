@@ -30,7 +30,9 @@ class Answer extends BaseObject implements DatedObject {
   }
 
   function isDeletable() {
-    return $this->userId == User::getActiveId();
+    return
+      User::may(User::PRIV_DELETE_ANSWER) ||  // can delete any answer
+      $this->userId == User::getActiveId();   // can always delete user's own answers
   }
 
   function delete() {

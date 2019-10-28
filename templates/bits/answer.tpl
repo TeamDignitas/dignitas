@@ -22,13 +22,15 @@
       {include 'bits/userLink.tpl' u=$answer->getUser()}
       {$answer->createDate|moment}
     </li>
-    <li class="list-inline-item">
-      <a
-        href="?deleteAnswerId={$answer->id}"
-        data-confirm="{t}Are you sure you want to delete this answer?{/t}">
-        {t}delete{/t}
-      </a>
-    </li>
+    {if $answer->isDeletable()}
+      <li class="list-inline-item">
+        <a
+          href="?deleteAnswerId={$answer->id}"
+          data-confirm="{t}Are you sure you want to delete this answer?{/t}">
+          {t}delete{/t}
+        </a>
+      </li>
+    {/if}
 
     {if $flagBox && ($answer->isFlaggable() || $answer->isFlagged())}
       <li class="list-inline-item">

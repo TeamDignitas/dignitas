@@ -20,12 +20,11 @@ if ($deleteAnswerId) {
   } else if (!$answer->isDeletable()) {
     FlashMessage::add(_('You cannot delete this answer.'));
   } else {
-
     $answer->delete();
     FlashMessage::add(_('Answer deleted.'), 'success');
-    Util::redirectToSelf();
-
   }
+
+  Util::redirectToSelf();
 }
 
 if ($postAnswerButton) {
