@@ -3,6 +3,7 @@
 $id = Request::get('id');
 $saveButton = Request::has('saveButton');
 $deleteButton = Request::has('deleteButton');
+$referrer = Request::get('referrer');
 
 if ($id) {
   $statement = Statement::get_by_id($id);
@@ -44,16 +45,22 @@ if ($saveButton) {
     ObjectTag::update($statement, $tagIds);
 
     FlashMessage::add(_('Changes saved.'), 'success');
-    Util::redirect(Router::link('statement/edit') . '/' . $statement->id);
+    Util::redirect($referrer);
   } else {
-    Smart::assign('errors', $errors);
-    Smart::assign('sources', $sources);
-    Smart::assign('tagIds', $tagIds);
+    Smart::assign([
+      'errors' => $errors,
+      'referrer' => $referrer,
+      'sources' =>  $sources,
+      'tagIds' => $tagIds,
+    ]);
   }
 } else {
   // first time loading the page
-  Smart::assign('sources', $statement->getSources());
-  Smart::assign('tagIds', ObjectTag::getTagIds($statement));
+  Smart::assign([
+    'referrer' => Util::getReferrer(),
+    'sources' => $statement->getSources(),
+    'tagIds' => ObjectTag::getTagIds($statement),
+  ]);
 }
 
 Smart::addResources('imageModal', 'simplemde', 'sortable');

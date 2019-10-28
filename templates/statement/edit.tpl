@@ -15,6 +15,7 @@
 
   <form method="post">
     <input type="hidden" name="id" value="{$statement->id}">
+    <input type="hidden" name="referrer" value="{$referrer}">
     <div class="form-group">
       <label for="fieldEntityId">{t}author{/t}</label>
       <select
@@ -113,17 +114,10 @@
         {t}save{/t}
       </button>
 
-      <a href="" class="btn btn-light">
+      <a href="{$referrer}" class="btn btn-link">
         <i class="icon icon-cancel"></i>
         {t}cancel{/t}
       </a>
-
-      {if $statement->id}
-        <a href="{Router::link('statement/view')}/{$statement->id}" class="btn btn-light">
-          <i class="icon icon-left"></i>
-          {t}back to statement{/t}
-        </a>
-      {/if}
 
       {if $statement->id && User::may(User::PRIV_DELETE_STATEMENT)}
         <button

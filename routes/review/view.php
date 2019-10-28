@@ -1,6 +1,9 @@
 <?php
 
-$urlName = Request::get('name');
+$urlName = Request::get('reason');
+
+// optional argument
+$reviewId = Request::get('reviewId');
 
 User::enforce(User::PRIV_REVIEW);
 
@@ -10,21 +13,28 @@ if ($reason === null) {
   Util::redirectToHome();
 }
 
-// load an item from the review queue at random
-$qi = Model::factory('Review')
-  ->where('reason', $reason)
-  //  ->order_by_expr('rand()')
-  ->order_by_desc('id')
-  ->find_one();
-
-if ($qi) {
-
-  // load the corresponding object
-  $object = $qi->getObject();
-  Smart::assign('object', $object);
+// load the specified review or load any available review
+if ($reviewId) {
+  $r = Review::get_by_id_reason($reviewId, $reason);
+  if (!$r) {
+    FlashMessage::add(_('No review exists with the given ID.'));
+    Util::redirectToHome();
+  }
+} else {
+  $r = Model::factory('Review')
+    ->where('reason', $reason)
+    //  ->order_by_expr('rand()')
+    ->order_by_desc('id')
+    ->find_one();
+  if ($r) {
+    $l = sprintf('%s/%s/%d', Router::link('review/view'), $urlName, $r->id);
+    Util::redirect($l);
+  }
 }
 
-Smart::assign([
-  'reason' => $reason,
-]);
+Smart::assign('reason', $reason);
+if ($r) {
+  Smart::assign('object', $r->getObject());
+}
+
 Smart::display('review/view.tpl');

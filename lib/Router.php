@@ -162,7 +162,7 @@ class Router {
     'entity/load' => [ 'ids' ],
     'entity/search' => [ 'term' ],
     'entity/view' => [ 'id' ],
-    'review/view' => [ 'name' ],
+    'review/view' => [ 'reason', 'reviewId', ],
     'statement/edit' => [ 'id' ],
     'statement/view' => [ 'id', 'answerId' ],
     'tag/edit' => [ 'id' ],

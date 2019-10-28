@@ -178,8 +178,8 @@ class User extends BaseObject implements DatedObject {
       }
 
       // check that the object exists
-      $f = Review::create($objectType, $objectId);
-      $obj = $f->getObject();
+      $r = Review::create($objectType, $objectId);
+      $obj = $r->getObject();
       if (!$obj) {
         throw new Exception(_('Cannot flag: object does not exist.'));
       }

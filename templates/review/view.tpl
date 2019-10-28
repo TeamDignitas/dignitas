@@ -6,14 +6,14 @@
   <h3>{t}{Review::getDescription($reason)}{/t}</h3>
 
   {if isset($object)}
-    {if $object instanceof Statement}
+    {if $object->getObjectType() == BaseObject::TYPE_STATEMENT}
 
       {include "bits/statement.tpl"
         statement=$object
         flagBox=false
         voteBox=false}
 
-    {elseif $object instanceof Answer}
+      {elseif $object->getObjectType() == BaseObject::TYPE_ANSWER}
 
       {include "bits/answer.tpl"
         answer=$object
