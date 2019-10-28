@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-10-25 16:12+0300\n"
-"PO-Revision-Date: 2019-10-25 16:13+0300\n"
+"POT-Creation-Date: 2019-10-28 16:48+0200\n"
+"PO-Revision-Date: 2019-10-28 16:49+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -49,7 +49,7 @@ msgstr "adaugă o afirmație"
 msgid "add an author"
 msgstr "adaugă un autor"
 
-#: templates/aggregate/dashboard.tpl:26 templates/statement/edit.tpl:101
+#: templates/aggregate/dashboard.tpl:26 templates/statement/edit.tpl:102
 #: templates/tag/list.tpl:3 templates/tag/list.tpl:7
 msgid "tags"
 msgstr "etichete"
@@ -170,7 +170,7 @@ msgid "password change"
 msgstr "schimbarea parolei"
 
 #: templates/auth/resetPassword.tpl:45 templates/entity/edit.tpl:161
-#: templates/statement/edit.tpl:113 templates/tag/edit.tpl:153
+#: templates/statement/edit.tpl:114 templates/tag/edit.tpl:153
 #: templates/user/edit.tpl:117
 msgid "save"
 msgstr "salvează"
@@ -189,7 +189,7 @@ msgid "Are you sure you want to delete this answer?"
 msgstr "Confirmați ștergerea acestui răspuns?"
 
 #: templates/bits/answer.tpl:29 templates/entity/edit.tpl:183
-#: templates/statement/edit.tpl:135 templates/tag/edit.tpl:180
+#: templates/statement/edit.tpl:129 templates/tag/edit.tpl:180
 msgid "delete"
 msgstr "șterge"
 
@@ -218,7 +218,7 @@ msgstr "Raportați acest răspuns pentru motivul:"
 msgid "Flag this statement for the following reason:"
 msgstr "Raportați această afirmație pentru motivul:"
 
-#: templates/bits/flagModal.tpl:28
+#: templates/bits/flagModal.tpl:28 templates/bits/reviewFlags.tpl:21
 msgid "spam"
 msgstr "spam"
 
@@ -248,7 +248,7 @@ msgstr "Această afirmație apare deja în Dignitas."
 msgid "type in some keywords..."
 msgstr "tastați niște cuvinte..."
 
-#: templates/bits/flagModal.tpl:80
+#: templates/bits/flagModal.tpl:80 templates/bits/reviewFlags.tpl:28
 msgid "off-topic"
 msgstr "pe lîngă subiect"
 
@@ -264,7 +264,7 @@ msgstr ""
 "Această afirmație este în afara scopului Dignitas sau este prea generală "
 "pentru a fi demonstrată sau infirmată."
 
-#: templates/bits/flagModal.tpl:100
+#: templates/bits/flagModal.tpl:100 templates/bits/reviewFlags.tpl:30
 msgid "unverifiable"
 msgstr "neverificabil(ă)"
 
@@ -272,7 +272,7 @@ msgstr "neverificabil(ă)"
 msgid "It is not obvious that the author really made the statement."
 msgstr "Nu este evident că autorul chiar a făcut afirmația."
 
-#: templates/bits/flagModal.tpl:114
+#: templates/bits/flagModal.tpl:114 templates/bits/reviewFlags.tpl:32
 msgid "low quality"
 msgstr "de slabă calitate"
 
@@ -334,6 +334,35 @@ msgstr "schimbă reputația manual"
 msgid "log out"
 msgstr "închide sesiunea"
 
+#: templates/bits/reviewFlags.tpl:1
+msgid "Flags in this review"
+msgstr "Raportări în această evaluare"
+
+#: templates/bits/reviewFlags.tpl:6 templates/user/view.tpl:3
+#: templates/user/view.tpl:12
+msgid "user"
+msgstr "utilizator"
+
+#: templates/bits/reviewFlags.tpl:7
+msgid "reason"
+msgstr "motiv"
+
+#: templates/bits/reviewFlags.tpl:8
+msgid "date"
+msgstr "data"
+
+#: templates/bits/reviewFlags.tpl:23
+msgid "abuse"
+msgstr "insultă"
+
+#: templates/bits/reviewFlags.tpl:25
+msgid "duplicate of"
+msgstr "duplicat al lui"
+
+#: templates/bits/reviewFlags.tpl:34 lib/model/Review.php:63
+msgid "other"
+msgstr "altele"
+
 #: templates/bits/scoreAndVote.tpl:12 templates/bits/scoreAndVote.tpl:29
 msgid "Please log in to vote."
 msgstr "Vă rugăm să vă autentificați pentru a vota."
@@ -354,11 +383,11 @@ msgstr "Vă trebuie o reputație de cel puțin %1 pentru a vota negativ."
 msgid "sources"
 msgstr "surse"
 
-#: templates/bits/statement.tpl:40 templates/statement/edit.tpl:56
+#: templates/bits/statement.tpl:40 templates/statement/edit.tpl:57
 msgid "context"
 msgstr "context"
 
-#: templates/bits/statement.tpl:44 templates/statement/edit.tpl:67
+#: templates/bits/statement.tpl:44 templates/statement/edit.tpl:68
 msgid "goal"
 msgstr "scop"
 
@@ -441,7 +470,7 @@ msgstr ""
 msgid "delete image"
 msgstr "șterge imaginea"
 
-#: templates/entity/edit.tpl:166 templates/statement/edit.tpl:118
+#: templates/entity/edit.tpl:166 templates/statement/edit.tpl:119
 #: templates/tag/edit.tpl:158 templates/user/edit.tpl:122
 msgid "cancel"
 msgstr "renunță"
@@ -466,7 +495,7 @@ msgstr "membri"
 msgid "statements"
 msgstr "afirmații"
 
-#: templates/review/view.tpl:30
+#: templates/review/view.tpl:37
 msgid "This review queue is empty."
 msgstr "Această coadă de evaluare este goală."
 
@@ -474,31 +503,27 @@ msgstr "Această coadă de evaluare este goală."
 msgid "edit statement"
 msgstr "editează afirmație"
 
-#: templates/statement/edit.tpl:19
+#: templates/statement/edit.tpl:20
 msgid "author"
 msgstr "autor"
 
-#: templates/statement/edit.tpl:32
+#: templates/statement/edit.tpl:33
 msgid "statement date"
 msgstr "data afirmației"
 
-#: templates/statement/edit.tpl:44
+#: templates/statement/edit.tpl:45
 msgid "summary"
 msgstr "sumar"
 
-#: templates/statement/edit.tpl:79
+#: templates/statement/edit.tpl:80
 msgid "source URLs"
 msgstr "URL-uri sursă"
 
-#: templates/statement/edit.tpl:95
+#: templates/statement/edit.tpl:96
 msgid "add a source"
 msgstr "adaugă o sursă"
 
-#: templates/statement/edit.tpl:124
-msgid "back to statement"
-msgstr "înapoi la afirmație"
-
-#: templates/statement/edit.tpl:133
+#: templates/statement/edit.tpl:127
 msgid "Are you sure you want to delete this statement?"
 msgstr "Confirmați ștergerea acestei afirmații?"
 
@@ -611,10 +636,6 @@ msgstr "parola (doar dacă doriți să o schimbați)"
 #: templates/user/edit.tpl:129
 msgid "back to my profile"
 msgstr "înapoi la profilul meu"
-
-#: templates/user/view.tpl:3 templates/user/view.tpl:12
-msgid "user"
-msgstr "utilizator"
 
 #: templates/user/view.tpl:19
 msgid "answers"
@@ -769,11 +790,7 @@ msgstr "inchidere"
 msgid "reopen"
 msgstr "redeschidere"
 
-#: lib/model/Review.php:63
-msgid "other"
-msgstr "altele"
-
-#: lib/model/User.php:95 routes/auth/login.php:57
+#: lib/model/User.php:95 routes/auth/login.php:58
 #: routes/auth/lostPassword.php:50
 msgid "Please enter an email address."
 msgstr "Vă rugăm să introduceți o adresă de e-mail."
@@ -794,7 +811,7 @@ msgstr ""
 "Porecla dumneavoastră trebuie să înceapă cu o literă sau cifră și să conțină "
 "între 3 și 30 de litere, cifre și punctuație din setul -_."
 
-#: lib/model/User.php:123 routes/auth/login.php:61
+#: lib/model/User.php:123 routes/auth/login.php:62
 msgid "Please enter a password."
 msgstr "Vă rugăm să introduceți o parolă."
 
@@ -860,7 +877,7 @@ msgid "Fake logins are only allowed in development mode."
 msgstr ""
 "Autentificarea cu utilizatori de test este permisă doar în modul development."
 
-#: routes/auth/login.php:68
+#: routes/auth/login.php:69
 msgid "Incorrect email address or password."
 msgstr "Adresa de e-mail sau parola sînt greșite."
 
@@ -884,7 +901,7 @@ msgstr "Înregistrarea este dezactivată."
 msgid "Entity deleted."
 msgstr "Am șters autorul."
 
-#: routes/entity/edit.php:54 routes/statement/edit.php:46
+#: routes/entity/edit.php:54 routes/statement/edit.php:47
 #: routes/user/edit.php:26
 msgid "Changes saved."
 msgstr "Am salvat modificările."
@@ -937,39 +954,43 @@ msgstr "Am salvat raportarea."
 msgid "Interface language changed. Page contents are always in Romanian."
 msgstr "Am schimbat limba interfeței. Conținutul paginii este mereu în română."
 
-#: routes/review/view.php:9
+#: routes/review/view.php:12
 msgid "No review queue exists by that name."
 msgstr "Nu există nicio coadă de evaluare cu acest nume."
 
-#: routes/statement/edit.php:18
+#: routes/review/view.php:20
+msgid "No review exists with the given ID."
+msgstr "Nu există nicio evaluare cu ID-ul indicat."
+
+#: routes/statement/edit.php:19
 msgid "Statement deleted."
 msgstr "Am șters afirmația."
 
-#: routes/statement/edit.php:69
+#: routes/statement/edit.php:76
 msgid "Please enter an author."
 msgstr "Vă rugăm să introduceți un autor."
 
-#: routes/statement/edit.php:73
+#: routes/statement/edit.php:80
 msgid "Please enter the statement summary."
 msgstr "Vă rugăm să introduceți sumarul afirmației."
 
-#: routes/statement/edit.php:77
+#: routes/statement/edit.php:84
 msgid "Please enter the statement context."
 msgstr "Vă rugăm să introduceți contextul afirmației."
 
-#: routes/statement/edit.php:81
+#: routes/statement/edit.php:88
 msgid "Please enter the statement goal."
 msgstr "Vă rugăm să introduceți scopul afirmației."
 
-#: routes/statement/edit.php:85
+#: routes/statement/edit.php:92
 msgid "Please enter a date."
 msgstr "Vă rugăm să introduceți o dată."
 
-#: routes/statement/edit.php:87
+#: routes/statement/edit.php:94
 msgid "This date may not be in the future."
 msgstr "Această dată nu poate fi în viitor."
 
-#: routes/statement/edit.php:97
+#: routes/statement/edit.php:104
 msgid "Some source URLS are invalid."
 msgstr "Unele URL-uri sursă sînt invalide."
 
@@ -1051,3 +1072,6 @@ msgstr "Nu puteți vota: obiectul nu există."
 #: routes/vote/save.php:42
 msgid "You cannot vote for your own messages."
 msgstr "Nu puteți vota propriile mesaje."
+
+#~ msgid "back to statement"
+#~ msgstr "înapoi la afirmație"

@@ -5,15 +5,17 @@
 {block "content"}
   <h3>{t}{Review::getDescription($reason)}{/t}</h3>
 
-  {if isset($object)}
-    {if $object->getObjectType() == BaseObject::TYPE_STATEMENT}
+  {if isset($review)}
+    {$object=$review->getObject()}
+    {$type=$object->getObjectType()}
+    {if $type == BaseObject::TYPE_STATEMENT}
 
       {include "bits/statement.tpl"
         statement=$object
         flagBox=false
         voteBox=false}
 
-      {elseif $object->getObjectType() == BaseObject::TYPE_ANSWER}
+    {elseif $type == BaseObject::TYPE_ANSWER}
 
       {include "bits/answer.tpl"
         answer=$object
@@ -26,6 +28,11 @@
         voteBox=false}
 
     {/if}
+
+    <hr>
+
+    {include "bits/reviewFlags.tpl"}
+
   {else}
     {t}This review queue is empty.{/t}
   {/if}

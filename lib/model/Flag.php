@@ -37,4 +37,22 @@ class Flag extends BaseObject implements DatedObject {
     return $f;
   }
 
+  function getUser() {
+    return User::get_by_id($this->userId);
+  }
+
+  /**
+   * If this Flag has type "duplicate of", return the duplicate statement;
+   * otherwise return null.
+   *
+   * @return Statement Statement object or null.
+   */
+  function getDuplicate() {
+    if ($this->reason == Flag::REASON_DUPLICATE) {
+      return Statement::get_by_id($this->duplicateId);
+    } else {
+      return null;
+    }
+  }
+
 }

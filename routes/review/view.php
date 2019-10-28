@@ -34,7 +34,7 @@ if ($reviewId) {
 
 Smart::assign('reason', $reason);
 if ($r) {
-  Smart::assign('object', $r->getObject());
+  Smart::assign('review', $r);
 }
 
 Smart::display('review/view.tpl');

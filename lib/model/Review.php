@@ -89,6 +89,17 @@ class Review extends BaseObject implements DatedObject {
     return $r;
   }
 
+  /**
+   * Loads the flags for this review in reverse chronological order.
+   *
+   * @return array Array of Flag objects.
+   */
+  function getFlags() {
+    return Model::factory('Flag')
+      ->where('reviewId', $this->id)
+      ->order_by_desc('createDate')
+      ->find_many();
+  }
 
   /**
    * Returns the existing review for this object. If no review exists, starts
