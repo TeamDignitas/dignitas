@@ -29,6 +29,12 @@ class Router {
       'en_US.utf8' => '',
     ],
 
+    // answers
+    'answer/edit' => [
+      'en_US.utf8' => 'edit-answer',
+      'ro_RO.utf8' => 'editeaza-raspuns',
+    ],
+
     // attachments
     'attachment/upload' => [
       'en_US.utf8' => 'ajax/upload-attachment',
@@ -156,6 +162,7 @@ class Router {
   // file => list of parameters expected in the URL (none by default)
   const PARAMS = [
     'aggregate/search' => [ 'q' ],
+    'answer/edit' => [ 'id' ],
     'attachment/view' => [ 'id', 'fileName' ],
     'entity/edit' => [ 'id' ],
     'entity/image' => [ 'id', 'fileName' ],
@@ -280,6 +287,24 @@ class Router {
 
   static function getRelAlternate() {
     return self::$relAlternate;
+  }
+
+  /**
+   * Returns the edit link for this object.
+   *
+   * @param object $object
+   * @return string The edit link for this object or null if the object
+   * doesn't have an edit page.
+   */
+  static function getEditLink($object) {
+    switch ($object->getObjectType()) {
+      case BaseObject::TYPE_ANSWER:
+        return Router::link('answer/edit') . '/' . $object->id;
+      case BaseObject::TYPE_STATEMENT:
+        return Router::link('statement/edit') . '/' . $object->id;
+      default:
+        return null;
+    }
   }
 
 }

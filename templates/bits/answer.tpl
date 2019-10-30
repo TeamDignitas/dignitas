@@ -26,8 +26,18 @@
       <li class="list-inline-item">
         <a
           href="?deleteAnswerId={$answer->id}"
+          class="btn btn-sm btn-link"
           data-confirm="{t}Are you sure you want to delete this answer?{/t}">
           {t}delete{/t}
+        </a>
+      </li>
+    {/if}
+
+    {if $answer->isEditable()}
+      <li class="list-inline-item">
+        <a href="{Router::link('answer/edit')}/{$answer->id}" class="btn btn-sm btn-link">
+          <i class="icon icon-edit"></i>
+          {t}edit{/t}
         </a>
       </li>
     {/if}
@@ -37,6 +47,7 @@
         <a
           id="flagAnswerLink{$answer->id}"
           href="#"
+          class="btn btn-sm btn-link"
           data-toggle="modal"
           data-target="#flagModal"
           data-object-type="{Flag::TYPE_ANSWER}"
@@ -50,7 +61,7 @@
         <a
           id="unflagAnswerLink{$answer->id}"
           href="#"
-          class="unflag"
+          class="unflag btn btn-sm btn-link"
           data-object-type="{Flag::TYPE_ANSWER}"
           data-object-id="{$answer->id}"
           data-flag-link="#flagAnswerLink{$answer->id}"

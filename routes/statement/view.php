@@ -2,7 +2,6 @@
 
 $id = Request::get('id');
 $answerId = Request::get('answerId'); // answer to be highlighted
-$postAnswerButton = Request::has('postAnswerButton');
 $deleteAnswerId = Request::get('deleteAnswerId');
 
 $statement = Statement::get_by_id($id);
@@ -24,50 +23,15 @@ if ($deleteAnswerId) {
     FlashMessage::add(_('Answer deleted.'), 'success');
   }
 
-  Util::redirectToSelf();
-}
-
-if ($postAnswerButton) {
-  User::enforce(User::PRIV_ADD_ANSWER);
-  $answer = Model::factory('Answer')->create();
-  $answer->contents = Request::get('contents');
-  $answer->statementId = $statement->id;
-  $answer->userId = User::getActiveId();
-  $answer->sanitize();
-
-  $errors = validate($answer);
-  if (empty($errors)) {
-    $answer->save();
-
-    FlashMessage::add(_('Answer posted.'), 'success');
-    Util::redirect(sprintf('%s/%s/%s',
-                           Router::link('statement/view'),
-                           $statement->id,
-                           $answer->id));
-  } else {
-    Smart::assign('errors', $errors);
-    Smart::assign('answer', $answer);
-  }
-} else {
-  // first time loading the page
+  Util::redirect(Router::link('statement/view') . '/' . $answer->statementId);
 }
 
 Smart::addResources('imageModal', 'simplemde');
 Smart::assign([
-  'statement' => $statement,
-  'answers' => $statement->getAnswers(),
   'answerId' => $answerId,
+  'answers' => $statement->getAnswers(),
+  'newAnswer' => Answer::create($statement->id),
+  'referrer' => Router::link('statement/view', true) . '/' . $statement->id,
+  'statement' => $statement,
 ]);
 Smart::display('statement/view.tpl');
-
-/*************************************************************************/
-
-function validate($answer) {
-  $errors = [];
-
-  if (!$answer->contents) {
-    $errors['contents'][] = _('Cannot post an empty answer.');
-  }
-
-  return $errors;
-}

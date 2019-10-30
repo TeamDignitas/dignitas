@@ -1,3 +1,7 @@
-.parentStatement {
+#reviewActions {
+  margin-bottom: 10px;
+}
+
+#parentStatement {
   opacity: 0.5;
 }

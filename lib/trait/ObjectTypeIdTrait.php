@@ -27,7 +27,7 @@ trait ObjectTypeIdTrait {
   /**
    * Deletes all mentions of $o.
    *
-   * @param $o An instance of FlaggableTrait
+   * @param object $o An instance of FlaggableTrait
    */
   static function deleteObject($o) {
     self::delete_all_by_objectType_objectId($o->getObjectType(), $o->id);

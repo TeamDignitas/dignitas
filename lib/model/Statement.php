@@ -40,7 +40,7 @@ class Statement extends BaseObject implements DatedObject {
   function isEditable() {
     return
       User::may(User::PRIV_EDIT_STATEMENT) ||  // can edit any statements
-      $this->userId == User::getActiveId();     // can always edit user's own statements
+      $this->userId == User::getActiveId();    // can always edit user's own statements
   }
 
   // get the current user's vote on this statement

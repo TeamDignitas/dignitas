@@ -13,6 +13,7 @@ class User extends BaseObject implements DatedObject {
   const PRIV_DELETE_STATEMENT = 10000;
 
   const PRIV_ADD_ANSWER = 1;
+  const PRIV_EDIT_ANSWER = 2000;
   const PRIV_DELETE_ANSWER = 10000;
 
   const PRIV_UPVOTE_STATEMENT = 15;

@@ -10,12 +10,16 @@
     {$type=$object->getObjectType()}
     {if $type == BaseObject::TYPE_STATEMENT}
 
+      {include "bits/reviewActions.tpl"}
+
       {include "bits/statement.tpl"
         statement=$object
         flagBox=false
         voteBox=false}
 
     {elseif $type == BaseObject::TYPE_ANSWER}
+
+      {include "bits/reviewActions.tpl"}
 
       {include "bits/answer.tpl"
         answer=$object
@@ -24,7 +28,7 @@
 
       <h3>{cap}{t}pertaining to statement:{/t}{/cap}</h3>
 
-      <div class="parentStatement">
+      <div id="parentStatement">
         {include "bits/statement.tpl"
           statement=$object->getStatement()
           flagBox=false

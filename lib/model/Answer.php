@@ -19,6 +19,18 @@ class Answer extends BaseObject implements DatedObject {
     return Statement::get_by_id($this->statementId);
   }
 
+  /**
+   * Create a blank answer assigned to a statement.
+   *
+   * @param int $statementId
+   * @return Answer
+   */
+  static function create($statementId) {
+    $a = Model::factory('Answer')->create();
+    $a->statementId = $statementId;
+    return $a;
+  }
+
   function sanitize() {
     $this->contents = trim($this->contents);
   }
@@ -27,6 +39,12 @@ class Answer extends BaseObject implements DatedObject {
   function getVote() {
     return Vote::get_by_userId_objectType_objectId(
       User::getActiveId(), self::TYPE_ANSWER, $this->id);
+  }
+
+  function isEditable() {
+    return
+      User::may(User::PRIV_EDIT_ANSWER) ||    // can edit any answers
+      $this->userId == User::getActiveId();   // can always edit user's own answers
   }
 
   function isDeletable() {
