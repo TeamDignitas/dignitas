@@ -15,7 +15,7 @@
       {include "bits/statement.tpl"
         statement=$object
         flagBox=false
-        voteBox=false}
+        voteBox=true}
 
     {elseif $type == BaseObject::TYPE_ANSWER}
 

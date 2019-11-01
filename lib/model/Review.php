@@ -102,6 +102,29 @@ class Review extends BaseObject implements DatedObject {
   }
 
   /**
+   * Loads a review to present to the given user. Filters out reviews that the
+   * user has already signed off.
+   *
+   * @param int $userId User ID
+   * @param int $reason One of Review::REASON_* values.
+   * @return Review a review object or null if one does not exist.
+   */
+  static function load($userId, $reason) {
+    return Model::factory('Review')
+      ->table_alias('r')
+      ->select('r.*')
+      ->raw_join(
+        'left join review_log',
+        'r.id = rl.reviewId and rl.userId = ?',
+        'rl',
+        [$userId])
+      ->where('r.reason', $reason)
+      ->where_null('rl.id')
+      ->order_by_desc('r.id')
+      ->find_one();
+  }
+
+  /**
    * Returns the existing review for this object. If no review exists, starts
    * one for the given reason.
    *
