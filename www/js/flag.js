@@ -10,6 +10,11 @@ $(function() {
   var flagLink;
   var unflagLink;
 
+  // Answers and statements have a different set of legal weights. Therefore,
+  // remove the weight options on page load and copy back the applicable ones
+  // on modal shown.
+  var weightOptions;
+
   // hide and clear extra fields (other -> details, duplicate -> select2)
   function clearRelatedFields() {
     $('.flagRelated').attr('hidden', true);
@@ -25,6 +30,7 @@ $(function() {
       reason: $('input[name="flagReason"]:checked').val(),
       duplicateId: $('#flagDuplicateId').val(),
       details: $('#flagDetails').val(),
+      weight: $('#flagWeight').val(),
 
     }).done(function(successMsg) {
       flagLink.prop('hidden', true);
@@ -103,6 +109,12 @@ $(function() {
     $('input[type=radio][name=flagReason]').prop('checked', false);
     $('#flagButton').attr('disabled', true);
 
+    $('#flagWeight option').remove();
+    weightOptions
+      .filter('[data-option-visibility="' + objectType + '"]')
+      .appendTo('#flagWeight');
+    $("#flagWeight").prop('selectedIndex', 0);
+
     // clear the details fields
     clearRelatedFields();
   })
@@ -137,6 +149,8 @@ $(function() {
     minimumInputLength: 1,
     width: 'resolve',
   });
+
+  weightOptions = $('#flagWeight option').remove();
 
   $('#flagDuplicateId').on('select2:select', function() {
     $('#flagButton').prop('disabled', false);

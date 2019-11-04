@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-10-30 17:01+0200\n"
-"PO-Revision-Date: 2019-10-30 17:01+0200\n"
+"POT-Creation-Date: 2019-11-04 16:25+0200\n"
+"PO-Revision-Date: 2019-11-04 16:26+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -197,7 +197,7 @@ msgstr "Confirmați ștergerea acestui răspuns?"
 msgid "delete"
 msgstr "șterge"
 
-#: templates/bits/answer.tpl:40 templates/bits/reviewActions.tpl:6
+#: templates/bits/answer.tpl:40 templates/bits/reviewActions.tpl:8
 #: templates/bits/statement.tpl:60 templates/entity/view.tpl:33
 #: templates/tag/view.tpl:14 templates/user/view.tpl:42
 msgid "edit"
@@ -308,11 +308,27 @@ msgstr "alt motiv"
 msgid "please provide details..."
 msgstr "vă rugăm să dați detalii..."
 
-#: templates/bits/flagModal.tpl:152
+#: templates/bits/flagModal.tpl:148
+msgid "I propose"
+msgstr "Propun"
+
+#: templates/bits/flagModal.tpl:158
+msgid "closing this statement"
+msgstr "închiderea acestei afirmații"
+
+#: templates/bits/flagModal.tpl:163
+msgid "deleting this statement"
+msgstr "ștergerea acestei afirmații"
+
+#: templates/bits/flagModal.tpl:168
+msgid "deleting this answer"
+msgstr "ștergerea acestui răspuns"
+
+#: templates/bits/flagModal.tpl:190
 msgid "flag answer"
 msgstr "raportează răspunsul"
 
-#: templates/bits/flagModal.tpl:155
+#: templates/bits/flagModal.tpl:193
 msgid "flag statement"
 msgstr "raportează afirmația"
 
@@ -349,6 +365,10 @@ msgstr "schimbă reputația manual"
 #: templates/bits/navmenu.tpl:103
 msgid "log out"
 msgstr "închide sesiunea"
+
+#: templates/bits/reviewActions.tpl:20
+msgid "I'm done"
+msgstr "am terminat"
 
 #: templates/bits/reviewFlags.tpl:1
 msgid "Flags in this review"
@@ -800,20 +820,20 @@ msgstr "inchidere"
 msgid "reopen"
 msgstr "redeschidere"
 
-#: lib/model/User.php:97 routes/auth/login.php:58
+#: lib/model/User.php:98 routes/auth/login.php:58
 #: routes/auth/lostPassword.php:50
 msgid "Please enter an email address."
 msgstr "Vă rugăm să introduceți o adresă de e-mail."
 
-#: lib/model/User.php:102
+#: lib/model/User.php:103
 msgid "This email address is already taken."
 msgstr "Această adresă de e-mail este deja folosită."
 
-#: lib/model/User.php:106 routes/auth/lostPassword.php:52
+#: lib/model/User.php:107 routes/auth/lostPassword.php:52
 msgid "This email address looks incorrect."
 msgstr "Adresa de e-mail pare incorectă."
 
-#: lib/model/User.php:116
+#: lib/model/User.php:117
 msgid ""
 "Your nickname must begin with a letter or digit and consist of 3 to 30 "
 "letters, digits and punctuation from among -_."
@@ -821,33 +841,33 @@ msgstr ""
 "Porecla dumneavoastră trebuie să înceapă cu o literă sau cifră și să conțină "
 "între 3 și 30 de litere, cifre și punctuație din setul -_."
 
-#: lib/model/User.php:125 routes/auth/login.php:62
+#: lib/model/User.php:126 routes/auth/login.php:62
 msgid "Please enter a password."
 msgstr "Vă rugăm să introduceți o parolă."
 
-#: lib/model/User.php:127
+#: lib/model/User.php:128
 msgid "Please enter your password twice to prevent typos."
 msgstr "Vă rugăm să introduceți parola de două ori pentru verificare."
 
-#: lib/model/User.php:129
+#: lib/model/User.php:130
 msgid "Passwords don't match."
 msgstr "Parolele nu coincid."
 
-#: lib/model/User.php:131
+#: lib/model/User.php:132
 msgid "Your password must be at least 8 characters long."
 msgstr "Parola trebuie să aibă cel puțin 8 caractere."
 
-#: lib/model/User.php:149
+#: lib/model/User.php:150
 #, php-format
 msgid "You need at least %s reputation to perform this action."
 msgstr "Vă trebuie o reputație de cel puțin %s pentru această acțiune."
 
-#: lib/model/User.php:169
+#: lib/model/User.php:170
 #, php-format
 msgid "You need at least %s reputation to flag."
 msgstr "Vă trebuie o reputație de cel puțin %s pentru a raporta."
 
-#: lib/model/User.php:177
+#: lib/model/User.php:178
 #, php-format
 msgid "You can use at most one flag every 24 hours."
 msgid_plural "You can use at most %d flags every 24 hours."
@@ -855,11 +875,11 @@ msgstr[0] "Puteți face cel mult o raportare la fiecare 24 de ore."
 msgstr[1] "Puteți face cel mult %d raportări la fiecare 24 de ore."
 msgstr[2] "Puteți face cel mult %d de raportări la fiecare 24 de ore."
 
-#: lib/model/User.php:186
+#: lib/model/User.php:187
 msgid "Cannot flag: object does not exist."
 msgstr "Nu puteți raporta: obiectul nu există."
 
-#: lib/model/User.php:191
+#: lib/model/User.php:192
 msgid "You already have a pending flag for this object."
 msgstr "Aveți deja o raportare în așteptare pentru acest obiect."
 
@@ -964,7 +984,11 @@ msgstr "Autorul pe care îl căutați nu există."
 msgid "Your flag was deleted."
 msgstr "Raportarea a fost ștearsă."
 
-#: routes/flag/save.php:25
+#: routes/flag/save.php:28
+msgid "Invalid flag recommendation."
+msgstr "Raportare cu recomandare incorectă."
+
+#: routes/flag/save.php:37
 msgid "Your flag was saved."
 msgstr "Am salvat raportarea."
 
@@ -972,11 +996,11 @@ msgstr "Am salvat raportarea."
 msgid "Interface language changed. Page contents are always in Romanian."
 msgstr "Am schimbat limba interfeței. Conținutul paginii este mereu în română."
 
-#: routes/review/view.php:12
+#: routes/review/view.php:13
 msgid "No review queue exists by that name."
 msgstr "Nu există nicio coadă de evaluare cu acest nume."
 
-#: routes/review/view.php:20
+#: routes/review/view.php:22
 msgid "No review exists with the given ID."
 msgstr "Nu există nicio evaluare cu ID-ul indicat."
 

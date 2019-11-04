@@ -10,6 +10,12 @@ class Flag extends BaseObject implements DatedObject {
   const REASON_LOW_QUALITY = 6;
   const REASON_OTHER = 7;
 
+  // Recommendation made by this flag. Unprivileged users always raise
+  // advisory flags. Answers can never have close flags.
+  const WEIGHT_ADVISORY = 0;
+  const WEIGHT_CLOSE = 1;
+  const WEIGHT_DELETE = 2;
+
   const STATUS_PENDING = 1;
   const STATUS_RESOLVED = 2;
 
@@ -23,7 +29,7 @@ class Flag extends BaseObject implements DatedObject {
     self::REASON_OTHER => Review::REASON_OTHER,
   ];
 
-  static function create($userId, $reviewId, $reason, $duplicateId, $details) {
+  static function create($userId, $reviewId, $reason, $duplicateId, $details, $weight) {
     $f = Model::factory('Flag')->create();
     $f->userId = $userId;
     $f->reviewId = $reviewId;
@@ -33,6 +39,7 @@ class Flag extends BaseObject implements DatedObject {
     } else if ($reason == self::REASON_OTHER) {
       $f->details = $details;
     }
+    $f->weight = $weight;
     $f->status = self::STATUS_PENDING;
     return $f;
   }

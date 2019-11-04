@@ -23,7 +23,7 @@
 
       {include "bits/answer.tpl"
         answer=$object
-        flagBox=false
+        flagBox=true
         voteBox=false}
 
       <h3>{cap}{t}pertaining to statement:{/t}{/cap}</h3>
