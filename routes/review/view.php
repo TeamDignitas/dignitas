@@ -2,9 +2,10 @@
 
 $urlName = Request::get('reason');
 
-// optional argument
+// optional arguments
 $reviewId = Request::get('reviewId');
-$doneButton = Request::has('doneButton');
+$nextButton = Request::has('nextButton');
+$looksOkButton = Request::has('looksOkButton');
 
 User::enforce(User::PRIV_REVIEW);
 
@@ -23,8 +24,23 @@ if ($reviewId) {
     Util::redirectToHome();
   }
 
-  if ($doneButton) {
-    // submit a flag to remember that the user has processed this review
+  if ($looksOkButton) {
+    // add a "looks ok" flag and remove the existing flag, if any
+    $userId = User::getActiveId();
+    Flag::delete_all_by_userId_reviewId($userId, $r->id);
+    $flag = Flag::create($userId, $r->id, Flag::REASON_LOOKS_OK,
+                         null, null, Flag::WEIGHT_ADVISORY);
+    $flag->save();
+
+    // if there are any down votes, remove those too
+    $vote = $r->getObject()->getVote();
+    if ($vote && $vote->value == -1) {
+      $vote->saveValue(-1); // simulate clicking the downvote button again
+    }
+  }
+
+  if ($nextButton || $looksOkButton) {
+    // sign the log to remember that the user has processed this review
     ReviewLog::signOff(User::getActiveId(), $r->id);
     Util::redirect(Router::link('review/view') . '/' . $urlName);
   }

@@ -3,21 +3,26 @@
   <div class="card-body">
     <form>
 
-      <a href="{Router::getEditLink($object)}" class="btn btn-light">
+      <button
+        name="looksOkButton"
+        class="btn btn-info"
+        type="submit">
+        <i class="icon icon-thumbs-up-alt"></i>
+        {t}looks OK{/t}
+      </button>
+
+      <a href="{Router::getEditLink($object)}" class="btn btn-info">
         <i class="icon icon-edit"></i>
         {t}edit{/t}
       </a>
 
-      {$disabledDone=!$object->getVote() && !$object->isFlagged()}
       <button
-        id="doneButton"
-        name="doneButton"
+        id="nextButton"
+        name="nextButton"
         type="submit"
-        class="btn btn-success"
-        {if $disabledDone}disabled{/if}
-      >
-        <i class="icon icon-ok"></i>
-        {t}I'm done{/t}
+        class="btn btn-info">
+        <i class="icon icon-right-open"></i>
+        {t}next{/t}
       </button>
 
     </form>

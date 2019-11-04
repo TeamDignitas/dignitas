@@ -9,6 +9,7 @@ class Flag extends BaseObject implements DatedObject {
   const REASON_UNVERIFIABLE = 5;
   const REASON_LOW_QUALITY = 6;
   const REASON_OTHER = 7;
+  const REASON_LOOKS_OK = 8;
 
   // Recommendation made by this flag. Unprivileged users always raise
   // advisory flags. Answers can never have close flags.
