@@ -43,4 +43,5 @@ if ($r) {
   Smart::assign('review', $r);
 }
 
+Smart::addResources('flag');
 Smart::display('review/view.tpl');

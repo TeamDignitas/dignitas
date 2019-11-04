@@ -26,7 +26,7 @@ if ($deleteAnswerId) {
   Util::redirect(Router::link('statement/view') . '/' . $answer->statementId);
 }
 
-Smart::addResources('imageModal', 'simplemde');
+Smart::addResources('flag', 'imageModal', 'simplemde');
 Smart::assign([
   'answerId' => $answerId,
   'answers' => $statement->getAnswers(),

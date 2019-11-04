@@ -21,6 +21,9 @@ class Smart {
       'js' => [ 'third-party/bootstrap-colorpicker.min.js' ],
       'deps' => [ 'bootstrap'],
     ],
+    'flag' => [
+      'js' => [ 'flag.js' ],
+    ],
     'fontello' => [
       'css' => [ 'third-party/fontello/css/icons.css' ],
     ],

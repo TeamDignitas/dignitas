@@ -14,7 +14,7 @@
 
       {include "bits/statement.tpl"
         statement=$object
-        flagBox=false
+        flagBox=true
         voteBox=true}
 
     {elseif $type == BaseObject::TYPE_ANSWER}
@@ -44,4 +44,7 @@
   {else}
     {t}This review queue is empty.{/t}
   {/if}
+
+  {include "bits/flagModal.tpl"}
+
 {/block}
