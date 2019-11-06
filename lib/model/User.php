@@ -158,13 +158,12 @@ class User extends BaseObject implements DatedObject {
   /**
    * Checks if the active user may flag the given object.
    *
-   * @param int $objectType Type of object to check
-   * @param int $objectId ID of object to check
+   * @param Flaggable $obj A flaggable object
    * @param boolean $throw Whether to also throw an exception with a detailed message
    * @return boolean Returns true iff the user should be allowed to flag
    * @throws Exception If the user should not be allowed to flag and $throw = true
    */
-  static function canFlag($objectType, $objectId, $throw = false) {
+  static function canFlag($obj, $throw = false) {
     try {
       // check the user's reputation
       if (!self::may(self::PRIV_FLAG)) {
@@ -183,8 +182,6 @@ class User extends BaseObject implements DatedObject {
       }
 
       // check that the object exists
-      $r = Review::create($objectType, $objectId);
-      $obj = $r->getObject();
       if (!$obj) {
         throw new Exception(_('Cannot flag: object does not exist.'));
       }

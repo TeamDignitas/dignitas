@@ -67,6 +67,17 @@ class BaseObject extends Model {
     return self::TYPE_UNKNOWN;
   }
 
+  static function getObjectByTypeId($objectType, $objectId) {
+    switch ($objectType) {
+      case self::TYPE_STATEMENT:
+        return Statement::get_by_id($objectId);
+      case self::TYPE_ANSWER:
+        return Answer::get_by_id($objectId);
+      default:
+        return null;
+    }
+  }
+
   // Updates a list of dependants, e.g. a list of Relations for an
   // Entity. Deletes DB records not present in this list, inserts new DB
   // records where needed, and updates the rank field.

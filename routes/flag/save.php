@@ -16,20 +16,16 @@ header('Content-Type: application/json');
 
 try {
 
-  User::canFlag($objectType, $objectId, true);
+  $obj = BaseObject::getObjectByTypeId($objectType, $objectId);
+  User::canFlag($obj, true);
 
   // also check the proposal
-  $allowedProps = User::may(User::PRIV_CLOSE_REOPEN_VOTE)
-    ? (($objectType == BaseObject::TYPE_STATEMENT)
-       ? [ Flag::PROP_NOTHING, Flag::PROP_CLOSE, Flag::PROP_DELETE ]
-       : [ Flag::PROP_NOTHING, Flag::PROP_DELETE ])
-    : [ Flag::PROP_NOTHING ];
-  if (!in_array($proposal, $allowedProps)) {
+  if (!$obj->isValidProposal($proposal)) {
     throw new Exception(_('Invalid flag proposal.'));
   }
 
   $reviewReason = Flag::REVIEW_REASONS[$reason];
-  $review = Review::ensure($objectType, $objectId, $reviewReason);
+  $review = Review::ensure($obj, $reviewReason);
   $flag = Flag::create($review->id, $reason, $duplicateId, $details, $proposal);
   $flag->save();
 

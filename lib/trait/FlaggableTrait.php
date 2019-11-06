@@ -28,6 +28,16 @@ trait FlaggableTrait {
    * @return bool
    */
   function isFlaggable() {
-    return User::canFlag($this->getObjectType(), $this->id);
+    return User::canFlag($this);
+  }
+
+  /**
+   * Checks if the active user may raise a flag with this proposal.
+   *
+   * @param int $proposal one of the Flag::PROP_* values
+   * @return boolean
+   */
+  function isValidProposal($proposal) {
+    return true;
   }
 }

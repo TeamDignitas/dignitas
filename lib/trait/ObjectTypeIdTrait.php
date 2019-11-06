@@ -10,16 +10,9 @@ trait ObjectTypeIdTrait {
 
   function getObject() {
     if ($this->objectReference === false) {
-      switch ($this->objectType) {
-        case self::TYPE_STATEMENT:
-          $this->objectReference = Statement::get_by_id($this->objectId);
-          break;
-        case self::TYPE_ANSWER:
-          $this->objectReference = Answer::get_by_id($this->objectId);
-          break;
-        default:
-          $this->objectReference = null; // prevents future attempts to look it up again
-      }
+      $this->objectReference = BaseObject::getObjectByTypeId(
+        $this->objectType, $this->objectId);
+      // if null, this prevents future attempts to look it up again
     }
     return $this->objectReference;
   }

@@ -80,10 +80,17 @@ class Review extends BaseObject implements DatedObject {
     return null;
   }
 
-  static function create($objectType, $objectId, $reason = null) {
+  /**
+   * Creates a Review for the given object and reason
+   *
+   * @param Flaggable $obj A flaggable object
+   * @param int $reason One of the Review::REASON_* values
+   * @return Review A new Review
+   */
+  static function create($obj, $reason = null) {
     $r = Model::factory('Review')->create();
-    $r->objectType = $objectType;
-    $r->objectId = $objectId;
+    $r->objectType = $obj->getObjectType();
+    $r->objectId = $obj->id;
     $r->reason = $reason;
     $r->status = self::STATUS_PENDING;
     return $r;
@@ -128,16 +135,15 @@ class Review extends BaseObject implements DatedObject {
    * Returns the existing review for this object. If no review exists, starts
    * one for the given reason.
    *
-   * @param int $objectType value from Review::TYPE_*
-   * @param int $objectId object ID
+   * @param Flaggable $obj a flaggable object
    * @param int $reason value from Review::REASON_*
    */
-  static function ensure($objectType, $objectId, $reason) {
+  static function ensure($obj, $reason) {
     $r = self::get_by_objectType_objectId_status(
-      $objectType, $objectId, self::STATUS_PENDING);
+      $obj->getObjectType(), $obj->id, self::STATUS_PENDING);
 
     if (!$r) {
-      $r = self::create($objectType, $objectId, $reason);
+      $r = self::create($obj, $reason);
       $r->save();
     }
 
