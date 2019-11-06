@@ -28,8 +28,8 @@ if ($reviewId) {
     // add a "looks ok" flag and remove the existing flag, if any
     $userId = User::getActiveId();
     Flag::delete_all_by_userId_reviewId($userId, $r->id);
-    $flag = Flag::create($userId, $r->id, Flag::REASON_LOOKS_OK,
-                         null, null, Flag::WEIGHT_ADVISORY);
+    $flag = Flag::create($r->id, Flag::REASON_LOOKS_OK, null, null,
+                         Flag::PROP_LEAVE);
     $flag->save();
 
     // if there are any down votes, remove those too

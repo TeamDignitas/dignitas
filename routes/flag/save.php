@@ -10,7 +10,7 @@ $objectId = Request::get('objectId');
 $reason = Request::get('reason');
 $duplicateId = Request::get('duplicateId');
 $details = Request::get('details');
-$weight = Request::get('weight');
+$proposal = Request::get('proposal');
 
 header('Content-Type: application/json');
 
@@ -18,20 +18,19 @@ try {
 
   User::canFlag($objectType, $objectId, true);
 
-  // also check the weight
-  $allowedWeights = User::may(User::PRIV_CLOSE_REOPEN_VOTE)
+  // also check the proposal
+  $allowedProps = User::may(User::PRIV_CLOSE_REOPEN_VOTE)
     ? (($objectType == BaseObject::TYPE_STATEMENT)
-       ? [ Flag::WEIGHT_ADVISORY, Flag::WEIGHT_CLOSE, Flag::WEIGHT_DELETE ]
-       : [ Flag::WEIGHT_ADVISORY, Flag::WEIGHT_DELETE ])
-    : [ Flag::WEIGHT_ADVISORY ];
-  if (!in_array($weight, $allowedWeights)) {
-    throw new Exception(_('Invalid flag recommendation.'));
+       ? [ Flag::PROP_NOTHING, Flag::PROP_CLOSE, Flag::PROP_DELETE ]
+       : [ Flag::PROP_NOTHING, Flag::PROP_DELETE ])
+    : [ Flag::PROP_NOTHING ];
+  if (!in_array($proposal, $allowedProps)) {
+    throw new Exception(_('Invalid flag proposal.'));
   }
 
-  $userId = User::getActiveId();
   $reviewReason = Flag::REVIEW_REASONS[$reason];
   $review = Review::ensure($objectType, $objectId, $reviewReason);
-  $flag = Flag::create($userId, $review->id, $reason, $duplicateId, $details, $weight);
+  $flag = Flag::create($review->id, $reason, $duplicateId, $details, $proposal);
   $flag->save();
 
   print json_encode(_('Your flag was saved.'));

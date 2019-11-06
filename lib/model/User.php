@@ -83,9 +83,11 @@ class User extends BaseObject implements DatedObject {
 
   static function getRemainingFlags() {
     $pending = Model::factory('Flag')
-      ->where('userId', self::getActiveId())
-      ->where('status', Flag::STATUS_PENDING)
-      ->where_gte('createDate', Time::ONE_DAY_IN_SECONDS)
+      ->table_alias('f')
+      ->join('review', ['f.reviewId', '=', 'r.id'], 'r')
+      ->where('f.userId', self::getActiveId())
+      ->where('r.status', Review::STATUS_PENDING)
+      ->where_gte('f.createDate', Time::ONE_DAY_IN_SECONDS)
       ->count();
 
     return self::getFlagsPerDay() - $pending;

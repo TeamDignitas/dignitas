@@ -15,7 +15,7 @@ trait FlaggableTrait {
       ->table_alias('f')
       ->join('review', ['f.reviewId', '=', 'r.id'], 'r')
       ->where('f.userId', User::getActiveId())
-      ->where('f.status', Flag::STATUS_PENDING)
+      ->where('r.status', Review::STATUS_PENDING)
       ->where('r.objectType', $this->getObjectType())
       ->where('r.objectId', $this->id)
       ->count();

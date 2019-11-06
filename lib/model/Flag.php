@@ -11,14 +11,16 @@ class Flag extends BaseObject implements DatedObject {
   const REASON_OTHER = 7;
   const REASON_LOOKS_OK = 8;
 
-  // Recommendation made by this flag. Unprivileged users always raise
-  // advisory flags. Answers can never have close flags.
-  const WEIGHT_ADVISORY = 0;
-  const WEIGHT_CLOSE = 1;
-  const WEIGHT_DELETE = 2;
+  // Action proposed by this flag. Unprivileged users always raise PROP_NOTHING
+  // flags. Answers can never have close flags.
+  const PROP_NOTHING = 0;
+  const PROP_CLOSE = 1;
+  const PROP_DELETE = 2;
+  const PROP_LEAVE = 3;
 
-  const STATUS_PENDING = 1;
-  const STATUS_RESOLVED = 2;
+  // Whether the flag was raised by a privileged user.
+  const WEIGHT_ADVISORY = 0;
+  const WEIGHT_EXECUTIVE = 1;
 
   const REVIEW_REASONS = [
     self::REASON_SPAM => Review::REASON_UNHELPFUL,
@@ -30,9 +32,9 @@ class Flag extends BaseObject implements DatedObject {
     self::REASON_OTHER => Review::REASON_OTHER,
   ];
 
-  static function create($userId, $reviewId, $reason, $duplicateId, $details, $weight) {
+  static function create($reviewId, $reason, $duplicateId, $details, $proposal) {
     $f = Model::factory('Flag')->create();
-    $f->userId = $userId;
+    $f->userId = User::getActiveId();
     $f->reviewId = $reviewId;
     $f->reason = $reason;
     if ($reason == self::REASON_DUPLICATE) {
@@ -40,8 +42,10 @@ class Flag extends BaseObject implements DatedObject {
     } else if ($reason == self::REASON_OTHER) {
       $f->details = $details;
     }
-    $f->weight = $weight;
-    $f->status = self::STATUS_PENDING;
+    $f->proposal = $proposal;
+    $f->weight = User::may(User::PRIV_CLOSE_REOPEN_VOTE)
+      ? self::WEIGHT_EXECUTIVE
+      : self::WEIGHT_ADVISORY;
     return $f;
   }
 

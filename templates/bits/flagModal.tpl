@@ -145,25 +145,25 @@
 
             <div class="row">
               <div class="col-3">
-                <label for="flagWeight" class="col-form-label">{t}I propose{/t}</label>
+                <label for="flagProposal" class="col-form-label">{t}I propose{/t}</label>
               </div>
               <div class="col-9">
                 <select
-                  id="flagWeight"
-                  name="flagWeight"
+                  id="flagProposal"
+                  name="flagProposal"
                   class="form-control">
                   <option
-                    value="{Flag::WEIGHT_CLOSE}"
+                    value="{Flag::PROP_CLOSE}"
                     data-option-visibility="{Flag::TYPE_STATEMENT}">
                     {t}closing this statement{/t}
                   </option>
                   <option
-                    value="{Flag::WEIGHT_DELETE}"
+                    value="{Flag::PROP_DELETE}"
                     data-option-visibility="{Flag::TYPE_STATEMENT}">
                     {t}deleting this statement{/t}
                   </option>
                   <option
-                    value="{Flag::WEIGHT_DELETE}"
+                    value="{Flag::PROP_DELETE}"
                     data-option-visibility="{Flag::TYPE_ANSWER}">
                     {t}deleting this answer{/t}
                   </option>
@@ -173,9 +173,9 @@
           {else}
             <input
               type="hidden"
-              id="flagWeight"
-              name="flagWeight"
-              value="{Flag::WEIGHT_ADVISORY}">
+              id="flagProposal"
+              name="flagProposal"
+              value="{Flag::PROP_NOTHING}">
           {/if}
 
         </form>
