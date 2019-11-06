@@ -1,7 +1,7 @@
 <?php
 
 class Answer extends BaseObject implements DatedObject {
-  use FlaggableTrait, MarkdownTrait;
+  use FlaggableTrait, MarkdownTrait, VotableTrait;
 
   function getObjectType() {
     return self::TYPE_ANSWER;
@@ -33,12 +33,6 @@ class Answer extends BaseObject implements DatedObject {
 
   function sanitize() {
     $this->contents = trim($this->contents);
-  }
-
-  // get the current user's vote on this answer
-  function getVote() {
-    return Vote::get_by_userId_objectType_objectId(
-      User::getActiveId(), self::TYPE_ANSWER, $this->id);
   }
 
   function isEditable() {

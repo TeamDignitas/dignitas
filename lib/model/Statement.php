@@ -1,7 +1,7 @@
 <?php
 
 class Statement extends BaseObject implements DatedObject {
-  use FlaggableTrait, MarkdownTrait;
+  use FlaggableTrait, MarkdownTrait, VotableTrait;
 
   function getObjectType() {
     return self::TYPE_STATEMENT;
@@ -41,12 +41,6 @@ class Statement extends BaseObject implements DatedObject {
     return
       User::may(User::PRIV_EDIT_STATEMENT) ||  // can edit any statements
       $this->userId == User::getActiveId();    // can always edit user's own statements
-  }
-
-  // get the current user's vote on this statement
-  function getVote() {
-    return Vote::get_by_userId_objectType_objectId(
-      User::getActiveId(), self::TYPE_STATEMENT, $this->id);
   }
 
   function delete() {
