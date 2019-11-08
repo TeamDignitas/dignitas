@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-11-04 16:25+0200\n"
-"PO-Revision-Date: 2019-11-04 16:26+0200\n"
+"POT-Creation-Date: 2019-11-08 15:10+0200\n"
+"PO-Revision-Date: 2019-11-08 15:14+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -197,7 +197,7 @@ msgstr "Confirmați ștergerea acestui răspuns?"
 msgid "delete"
 msgstr "șterge"
 
-#: templates/bits/answer.tpl:40 templates/bits/reviewActions.tpl:8
+#: templates/bits/answer.tpl:40 templates/bits/reviewActions.tpl:25
 #: templates/bits/statement.tpl:60 templates/entity/view.tpl:33
 #: templates/tag/view.tpl:14 templates/user/view.tpl:42
 msgid "edit"
@@ -234,7 +234,7 @@ msgstr "Raportați acest răspuns pentru motivul:"
 msgid "Flag this statement for the following reason:"
 msgstr "Raportați această afirmație pentru motivul:"
 
-#: templates/bits/flagModal.tpl:28 templates/bits/reviewFlags.tpl:21
+#: templates/bits/flagModal.tpl:28 lib/model/Review.php:54
 msgid "spam"
 msgstr "spam"
 
@@ -264,7 +264,7 @@ msgstr "Această afirmație apare deja în Dignitas."
 msgid "type in some keywords..."
 msgstr "tastați niște cuvinte..."
 
-#: templates/bits/flagModal.tpl:80 templates/bits/reviewFlags.tpl:28
+#: templates/bits/flagModal.tpl:80 lib/model/Review.php:57
 msgid "off-topic"
 msgstr "pe lîngă subiect"
 
@@ -280,7 +280,7 @@ msgstr ""
 "Această afirmație este în afara scopului Dignitas sau este prea generală "
 "pentru a fi demonstrată sau infirmată."
 
-#: templates/bits/flagModal.tpl:100 templates/bits/reviewFlags.tpl:30
+#: templates/bits/flagModal.tpl:100 lib/model/Review.php:58
 msgid "unverifiable"
 msgstr "neverificabil(ă)"
 
@@ -288,7 +288,7 @@ msgstr "neverificabil(ă)"
 msgid "It is not obvious that the author really made the statement."
 msgstr "Nu este evident că autorul chiar a făcut afirmația."
 
-#: templates/bits/flagModal.tpl:114 templates/bits/reviewFlags.tpl:32
+#: templates/bits/flagModal.tpl:114
 msgid "low quality"
 msgstr "de slabă calitate"
 
@@ -308,27 +308,11 @@ msgstr "alt motiv"
 msgid "please provide details..."
 msgstr "vă rugăm să dați detalii..."
 
-#: templates/bits/flagModal.tpl:148
-msgid "I propose"
-msgstr "Propun"
-
-#: templates/bits/flagModal.tpl:158
-msgid "closing this statement"
-msgstr "închiderea acestei afirmații"
-
-#: templates/bits/flagModal.tpl:163
-msgid "deleting this statement"
-msgstr "ștergerea acestei afirmații"
-
-#: templates/bits/flagModal.tpl:168
-msgid "deleting this answer"
-msgstr "ștergerea acestui răspuns"
-
-#: templates/bits/flagModal.tpl:190
+#: templates/bits/flagModal.tpl:152
 msgid "flag answer"
 msgstr "raportează răspunsul"
 
-#: templates/bits/flagModal.tpl:193
+#: templates/bits/flagModal.tpl:155
 msgid "flag statement"
 msgstr "raportează afirmația"
 
@@ -366,13 +350,25 @@ msgstr "schimbă reputația manual"
 msgid "log out"
 msgstr "închide sesiunea"
 
-#: templates/bits/reviewActions.tpl:20
-msgid "I'm done"
-msgstr "am terminat"
+#: templates/bits/reviewActions.tpl:12 lib/model/Flag.php:24
+msgid "yea"
+msgstr "da"
+
+#: templates/bits/reviewActions.tpl:20 lib/model/Flag.php:25
+msgid "nay"
+msgstr "nu"
+
+#: templates/bits/reviewActions.tpl:34
+msgid "next"
+msgstr "următoarea"
+
+#: templates/bits/reviewActions.tpl:45
+msgid "details (optional)"
+msgstr "detalii (opționale)"
 
 #: templates/bits/reviewFlags.tpl:1
-msgid "Flags in this review"
-msgstr "Raportări în această evaluare"
+msgid "Votes in this review"
+msgstr "Voturi în această evaluare"
 
 #: templates/bits/reviewFlags.tpl:6 templates/user/view.tpl:3
 #: templates/user/view.tpl:12
@@ -380,24 +376,16 @@ msgid "user"
 msgstr "utilizator"
 
 #: templates/bits/reviewFlags.tpl:7
-msgid "reason"
-msgstr "motiv"
+msgid "vote"
+msgstr "vot"
 
-#: templates/bits/reviewFlags.tpl:8
+#: templates/bits/reviewFlags.tpl:9 templates/tag/edit.tpl:39
+msgid "details"
+msgstr "detalii"
+
+#: templates/bits/reviewFlags.tpl:11
 msgid "date"
 msgstr "data"
-
-#: templates/bits/reviewFlags.tpl:23
-msgid "abuse"
-msgstr "insultă"
-
-#: templates/bits/reviewFlags.tpl:25
-msgid "duplicate of"
-msgstr "duplicat al lui"
-
-#: templates/bits/reviewFlags.tpl:34 lib/model/Review.php:63
-msgid "other"
-msgstr "altele"
 
 #: templates/bits/scoreAndVote.tpl:12 templates/bits/scoreAndVote.tpl:29
 msgid "Please log in to vote."
@@ -521,11 +509,15 @@ msgstr "membri"
 msgid "statements"
 msgstr "afirmații"
 
-#: templates/review/view.tpl:29
+#: templates/review/view.tpl:17
+msgid "This statement was flagged as a duplicate of"
+msgstr "Această afirmație a fost raportată ca duplicat al lui"
+
+#: templates/review/view.tpl:36
 msgid "pertaining to statement:"
 msgstr "referitor la afirmația:"
 
-#: templates/review/view.tpl:45
+#: templates/review/view.tpl:52
 msgid "This review queue is empty."
 msgstr "Această coadă de evaluare este goală."
 
@@ -579,10 +571,6 @@ msgstr "editează eticheta"
 #: templates/tag/edit.tpl:7 templates/tag/list.tpl:12
 msgid "add a tag"
 msgstr "adaugă o etichetă"
-
-#: templates/tag/edit.tpl:39
-msgid "details"
-msgstr "detalii"
 
 #: templates/tag/edit.tpl:48
 msgid "optional; visible in a tooltip while hovering"
@@ -768,72 +756,90 @@ msgstr "site web"
 msgid "member of"
 msgstr "membru în"
 
-#: lib/model/Review.php:39
-msgid "items flagged as unhelpful"
-msgstr "articole raportate ca nefolositoare"
+#: lib/model/Review.php:33
+msgid "items flagged as spam"
+msgstr "articole raportate ca spam"
 
-#: lib/model/Review.php:40
+#: lib/model/Review.php:34
+msgid "items flagged as abuse"
+msgstr "articole raportate ca insulte"
+
+#: lib/model/Review.php:35
 msgid "items flagged as duplicate"
 msgstr "articole raportate ca duplicate"
 
-#: lib/model/Review.php:41
+#: lib/model/Review.php:36
+msgid "items flagged as off-topic"
+msgstr "articole raportate ca pe lîngă subiect"
+
+#: lib/model/Review.php:37
+msgid "items flagged as unverifiable"
+msgstr "articole raportate ca neverificabile"
+
+#: lib/model/Review.php:38
+msgid "items flagged as low quality"
+msgstr "articole raportate ca de slabă calitate"
+
+#: lib/model/Review.php:39
 msgid "first posts"
 msgstr "prime mesaje"
 
-#: lib/model/Review.php:42
+#: lib/model/Review.php:40
 msgid "late answers"
 msgstr "răspunsuri tîrzii"
 
-#: lib/model/Review.php:43
-msgid "items flagged for closing"
-msgstr "articole marcate pentru închidere"
-
-#: lib/model/Review.php:44
+#: lib/model/Review.php:41
 msgid "items flagged for reopening"
 msgstr "articole marcate pentru redeschidere"
 
-#: lib/model/Review.php:45
+#: lib/model/Review.php:42
 msgid "items flagged for other reasons"
 msgstr "articole raportate pentru alte motive"
 
-#: lib/model/Review.php:57
-msgid "unhelpful"
-msgstr "nefolositoare"
+#: lib/model/Review.php:55
+msgid "abuse"
+msgstr "insultă"
 
-#: lib/model/Review.php:58
+#: lib/model/Review.php:56
 msgid "duplicate"
 msgstr "duplicate"
 
 #: lib/model/Review.php:59
+#, fuzzy
+#| msgid "low quality"
+msgid "low-quality"
+msgstr "de slabă calitate"
+
+#: lib/model/Review.php:60
 msgid "first-post"
 msgstr "prim-mesaj"
 
-#: lib/model/Review.php:60
+#: lib/model/Review.php:61
 msgid "late-answer"
 msgstr "raspuns-tirziu"
-
-#: lib/model/Review.php:61
-msgid "close"
-msgstr "inchidere"
 
 #: lib/model/Review.php:62
 msgid "reopen"
 msgstr "redeschidere"
 
-#: lib/model/User.php:98 routes/auth/login.php:58
+#: lib/model/Review.php:63
+msgid "other"
+msgstr "altele"
+
+#: lib/model/User.php:100 routes/auth/login.php:58
 #: routes/auth/lostPassword.php:50
 msgid "Please enter an email address."
 msgstr "Vă rugăm să introduceți o adresă de e-mail."
 
-#: lib/model/User.php:103
+#: lib/model/User.php:105
 msgid "This email address is already taken."
 msgstr "Această adresă de e-mail este deja folosită."
 
-#: lib/model/User.php:107 routes/auth/lostPassword.php:52
+#: lib/model/User.php:109 routes/auth/lostPassword.php:52
 msgid "This email address looks incorrect."
 msgstr "Adresa de e-mail pare incorectă."
 
-#: lib/model/User.php:117
+#: lib/model/User.php:119
 msgid ""
 "Your nickname must begin with a letter or digit and consist of 3 to 30 "
 "letters, digits and punctuation from among -_."
@@ -841,33 +847,33 @@ msgstr ""
 "Porecla dumneavoastră trebuie să înceapă cu o literă sau cifră și să conțină "
 "între 3 și 30 de litere, cifre și punctuație din setul -_."
 
-#: lib/model/User.php:126 routes/auth/login.php:62
+#: lib/model/User.php:128 routes/auth/login.php:62
 msgid "Please enter a password."
 msgstr "Vă rugăm să introduceți o parolă."
 
-#: lib/model/User.php:128
+#: lib/model/User.php:130
 msgid "Please enter your password twice to prevent typos."
 msgstr "Vă rugăm să introduceți parola de două ori pentru verificare."
 
-#: lib/model/User.php:130
+#: lib/model/User.php:132
 msgid "Passwords don't match."
 msgstr "Parolele nu coincid."
 
-#: lib/model/User.php:132
+#: lib/model/User.php:134
 msgid "Your password must be at least 8 characters long."
 msgstr "Parola trebuie să aibă cel puțin 8 caractere."
 
-#: lib/model/User.php:150
+#: lib/model/User.php:152
 #, php-format
 msgid "You need at least %s reputation to perform this action."
 msgstr "Vă trebuie o reputație de cel puțin %s pentru această acțiune."
 
-#: lib/model/User.php:170
+#: lib/model/User.php:171
 #, php-format
 msgid "You need at least %s reputation to flag."
 msgstr "Vă trebuie o reputație de cel puțin %s pentru a raporta."
 
-#: lib/model/User.php:178
+#: lib/model/User.php:179
 #, php-format
 msgid "You can use at most one flag every 24 hours."
 msgid_plural "You can use at most %d flags every 24 hours."
@@ -875,11 +881,11 @@ msgstr[0] "Puteți face cel mult o raportare la fiecare 24 de ore."
 msgstr[1] "Puteți face cel mult %d raportări la fiecare 24 de ore."
 msgstr[2] "Puteți face cel mult %d de raportări la fiecare 24 de ore."
 
-#: lib/model/User.php:187
+#: lib/model/User.php:186
 msgid "Cannot flag: object does not exist."
 msgstr "Nu puteți raporta: obiectul nu există."
 
-#: lib/model/User.php:192
+#: lib/model/User.php:191
 msgid "You already have a pending flag for this object."
 msgstr "Aveți deja o raportare în așteptare pentru acest obiect."
 
@@ -980,15 +986,11 @@ msgstr ""
 msgid "The entity you are looking for does not exist."
 msgstr "Autorul pe care îl căutați nu există."
 
-#: routes/flag/delete.php:22
+#: routes/flag/delete.php:21
 msgid "Your flag was deleted."
 msgstr "Raportarea a fost ștearsă."
 
-#: routes/flag/save.php:28
-msgid "Invalid flag recommendation."
-msgstr "Raportare cu recomandare incorectă."
-
-#: routes/flag/save.php:37
+#: routes/flag/save.php:25
 msgid "Your flag was saved."
 msgstr "Am salvat raportarea."
 
@@ -996,13 +998,17 @@ msgstr "Am salvat raportarea."
 msgid "Interface language changed. Page contents are always in Romanian."
 msgstr "Am schimbat limba interfeței. Conținutul paginii este mereu în română."
 
-#: routes/review/view.php:13
+#: routes/review/view.php:17
 msgid "No review queue exists by that name."
 msgstr "Nu există nicio coadă de evaluare cu acest nume."
 
-#: routes/review/view.php:22
+#: routes/review/view.php:26
 msgid "No review exists with the given ID."
 msgstr "Nu există nicio evaluare cu ID-ul indicat."
+
+#: routes/review/view.php:36
+msgid "Your vote was recorded."
+msgstr "Votul a fost înregistrat."
 
 #: routes/statement/edit.php:19
 msgid "Statement deleted."
