@@ -1,5 +1,5 @@
 {if $flashMessages}
-  <div class="w-75 mx-auto">
+  <div id="flashMessageWrapper" class="w-75 mx-auto">
     {foreach $flashMessages as $m}
       <div class="alert alert-{$m.type} alert-dismissible fade show" role="alert">
         {$m.text}

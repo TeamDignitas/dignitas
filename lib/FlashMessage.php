@@ -34,20 +34,6 @@ class FlashMessage {
     }
   }
 
-  /**
-   * Adds multiple messages. Each message can be a simple string or a
-   * [template, args] pair.
-   **/
-  static function bulkAdd($messages, $type = 'danger') {
-    foreach ($messages as $m) {
-      if (is_string($m)) {
-        FlashMessage::add($m, $type);
-      } else {
-        FlashMessage::addTemplate($m[0], $m[1], $type);
-      }
-    }
-  }
-
   static function getMessages() {
     return self::$messages;
   }

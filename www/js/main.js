@@ -1,3 +1,13 @@
+/*************************** vanishing alerts ***************************/
+$(function() {
+  setTimeout(function() {
+    $('#flashMessageWrapper > .alert').fadeTo(1000, 0, function() {
+      $(this).hide();
+    });
+  }, 5000);
+});
+
+
 /****************************** search form ******************************/
 $(function() {
 
