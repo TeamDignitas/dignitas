@@ -115,6 +115,10 @@ class Config {
   // system stuff
   const TMP_DIR = '/tmp/';
 
+  // Votes necessary for review completion
+  const YEA_VOTES_NECESSARY = 2;
+  const NAY_VOTES_NECESSARY = 2;
+
   // Loyalty settings. Define a set of adjacent intervals going back in time
   // and give points for every day in each interval. Then loyalty is the sum
   // of scores computed for each party that the person belonged to, normalized

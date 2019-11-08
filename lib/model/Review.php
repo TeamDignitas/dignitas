@@ -141,6 +141,7 @@ class Review extends BaseObject implements DatedObject {
         'rl',
         [$userId])
       ->where('r.reason', $reason)
+      ->where('r.status', Review::STATUS_PENDING)
       ->where_null('rl.id')
       ->order_by_desc('r.id')
       ->find_one();
@@ -164,6 +165,40 @@ class Review extends BaseObject implements DatedObject {
     }
 
     return $r;
+  }
+
+  /**
+   * Completes the review if possible.
+   */
+  function evaluate() {
+    // count the executive "nay" votes
+    $nays = Flag::count_by_reviewId_vote_weight(
+      $this->id, Flag::VOTE_NAY, Flag::WEIGHT_EXECUTIVE);
+    if ($nays >= Config::NAY_VOTES_NECESSARY) {
+      $this->completeNay();
+    }
+  }
+
+  /**
+   * Completes this review as a "nay".
+   */
+  function completeNay() {
+    $this->status = Review::STATUS_DECLINED;
+    $this->save();
+    $this->resolveFlags(Flag::VOTE_NAY);
+  }
+
+  /**
+   * Resolves flags aligned with $winningVote as accepted, the other ones as
+   * declined.
+   */
+  private function resolveFlags($winningVote) {
+    foreach ($this->getFlags() as $f) {
+      $f->status = ($f->vote == $winningVote)
+        ? Flag::STATUS_ACCEPTED
+        : Flag::STATUS_DECLINED;
+      $f->save();
+    }
   }
 
   /**

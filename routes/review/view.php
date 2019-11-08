@@ -33,6 +33,7 @@ if ($reviewId) {
     Flag::delete_all_by_userId_reviewId($userId, $r->id);
     $flag = Flag::create($r->id, $details, $vote);
     $flag->save();
+    $r->evaluate();
     FlashMessage::add(_('Your vote was recorded.'), 'success');
   }
 

@@ -21,6 +21,7 @@ try {
   $review = Review::ensure($obj, $reason, $duplicateId);
   $flag = Flag::create($review->id, $details, Flag::VOTE_YEA);
   $flag->save();
+  $review->evaluate();
 
   print json_encode(_('Your flag was saved.'));
 
