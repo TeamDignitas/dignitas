@@ -10,7 +10,6 @@ $objectId = Request::get('objectId');
 $reason = Request::get('reason');
 $duplicateId = Request::get('duplicateId');
 $details = Request::get('details');
-$proposal = Request::get('proposal');
 
 header('Content-Type: application/json');
 
@@ -19,14 +18,8 @@ try {
   $obj = BaseObject::getObjectByTypeId($objectType, $objectId);
   User::canFlag($obj, true);
 
-  // also check the proposal
-  if (!$obj->isValidProposal($proposal)) {
-    throw new Exception(_('Invalid flag proposal.'));
-  }
-
-  $reviewReason = Flag::REVIEW_REASONS[$reason];
-  $review = Review::ensure($obj, $reviewReason);
-  $flag = Flag::create($review->id, $reason, $duplicateId, $details, $proposal);
+  $review = Review::ensure($obj, $reason, $duplicateId);
+  $flag = Flag::create($review->id, $details, Flag::VOTE_YEA);
   $flag->save();
 
   print json_encode(_('Your flag was saved.'));

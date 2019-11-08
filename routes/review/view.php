@@ -4,10 +4,13 @@ $urlName = Request::get('reason');
 
 // optional arguments
 $reviewId = Request::get('reviewId');
+$details = Request::get('details');
+$yeaButton = Request::has('yeaButton');
+$nayButton = Request::has('nayButton');
 $nextButton = Request::has('nextButton');
-$looksOkButton = Request::has('looksOkButton');
 
 User::enforce(User::PRIV_REVIEW);
+$userId = User::getActiveId();
 
 $reason = Review::getReasonFromUrlName($urlName);
 if ($reason === null) {
@@ -24,30 +27,24 @@ if ($reviewId) {
     Util::redirectToHome();
   }
 
-  if ($looksOkButton) {
-    // add a "looks ok" flag and remove the existing flag, if any
-    $userId = User::getActiveId();
+  if ($yeaButton || $nayButton) {
+    // remove existing flags
+    $vote = $yeaButton ? Flag::VOTE_YEA : Flag::VOTE_NAY;
     Flag::delete_all_by_userId_reviewId($userId, $r->id);
-    $flag = Flag::create($r->id, Flag::REASON_LOOKS_OK, null, null,
-                         Flag::PROP_LEAVE);
+    $flag = Flag::create($r->id, $details, $vote);
     $flag->save();
-
-    // if there are any down votes, remove those too
-    $vote = $r->getObject()->getVote();
-    if ($vote && $vote->value == -1) {
-      $vote->saveValue(-1); // simulate clicking the downvote button again
-    }
+    FlashMessage::add(_('Your vote was recorded.'), 'success');
   }
 
-  if ($nextButton || $looksOkButton) {
+  if ($nextButton) {
     // sign the log to remember that the user has processed this review
-    ReviewLog::signOff(User::getActiveId(), $r->id);
+    ReviewLog::signOff($userId, $r->id);
     Util::redirect(Router::link('review/view') . '/' . $urlName);
   }
 
 } else {
 
-  $r = Review::load(User::getActiveId(), $reason);
+  $r = Review::load($userId, $reason);
   if ($r) {
     $l = sprintf('%s/%s/%d', Router::link('review/view'), $urlName, $r->id);
     Util::redirect($l);
@@ -57,6 +54,11 @@ if ($reviewId) {
 Smart::assign('reason', $reason);
 if ($r) {
   Smart::assign('review', $r);
+
+  if ($r->reason == Review::REASON_OTHER) {
+    $existingFlag = Flag::get_by_userId_reviewId($userId, $r->id);
+    Smart::assign('details', $existingFlag->details ?? null);
+  }
 }
 
 Smart::addResources('flag');

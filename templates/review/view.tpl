@@ -12,6 +12,13 @@
 
       {include "bits/reviewActions.tpl"}
 
+      {if $review->reason == Review::REASON_DUPLICATE}
+        <h5>
+          {t}This statement was flagged as a duplicate of{/t}
+          {include "bits/statementLink.tpl" statement=$review->getDuplicate()}
+        </h5>
+      {/if}
+
       {include "bits/statement.tpl"
         statement=$object
         flagBox=true

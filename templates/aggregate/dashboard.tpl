@@ -27,11 +27,11 @@
     </a>
   </div>
 
-  {if User::may(User::PRIV_REVIEW)}
+  {if User::may(User::PRIV_REVIEW) && !empty($activeReviewReasons)}
     <h4>{cap}{t}review queues{/t}{/cap}</h4>
 
     <ul>
-      {foreach Review::REASONS as $r}
+      {foreach $activeReviewReasons as $r}
         <li>
           <a href="{Router::link('review/view')}/{Review::getUrlName($r)}">
             {Review::getDescription($r)}

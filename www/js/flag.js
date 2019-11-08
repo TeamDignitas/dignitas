@@ -10,11 +10,6 @@ $(function() {
   var flagLink;
   var unflagLink;
 
-  // Answers and statements have a different set of valid proposals.
-  // Therefore, remove the proposal options on page load and copy back the
-  // applicable ones on modal shown.
-  var proposalOptions;
-
   // hide and clear extra fields (other -> details, duplicate -> select2)
   function clearRelatedFields() {
     $('.flagRelated').attr('hidden', true);
@@ -30,7 +25,6 @@ $(function() {
       reason: $('input[name="flagReason"]:checked').val(),
       duplicateId: $('#flagDuplicateId').val(),
       details: $('#flagDetails').val(),
-      proposal: $('#flagProposal').val(),
 
     }).done(function(successMsg) {
       flagLink.prop('hidden', true);
@@ -109,12 +103,6 @@ $(function() {
     $('input[type=radio][name=flagReason]').prop('checked', false);
     $('#flagButton').attr('disabled', true);
 
-    $('#flagProposal option').remove();
-    proposalOptions
-      .filter('[data-option-visibility="' + objectType + '"]')
-      .appendTo('#flagProposal');
-    $("#flagProposal").prop('selectedIndex', 0);
-
     // clear the details fields
     clearRelatedFields();
   })
@@ -149,8 +137,6 @@ $(function() {
     minimumInputLength: 1,
     width: 'resolve',
   });
-
-  proposalOptions = $('#flagProposal option').remove();
 
   $('#flagDuplicateId').on('select2:select', function() {
     $('#flagButton').prop('disabled', false);

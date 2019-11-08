@@ -24,7 +24,7 @@
                 class="form-check-input"
                 type="radio"
                 name="flagReason"
-                value="{Flag::REASON_SPAM}">
+                value="{Review::REASON_SPAM}">
               {t}spam{/t}
             </label>
             <p class="text-muted">
@@ -38,7 +38,7 @@
                 class="form-check-input"
                 type="radio"
                 name="flagReason"
-                value="{Flag::REASON_ABUSE}">
+                value="{Review::REASON_ABUSE}">
               {t}insults or rudeness{/t}
             </label>
             <p class="text-muted">
@@ -52,7 +52,7 @@
                 class="form-check-input"
                 type="radio"
                 name="flagReason"
-                value="{Flag::REASON_DUPLICATE}"
+                value="{Review::REASON_DUPLICATE}"
                 data-related="#duplicateSearch"
               >
               {t}duplicate of...{/t}
@@ -76,7 +76,7 @@
                 class="form-check-input"
                 type="radio"
                 name="flagReason"
-                value="{Flag::REASON_OFF_TOPIC}">
+                value="{Review::REASON_OFF_TOPIC}">
               {t}off-topic{/t}
             </label>
             <p class="text-muted">
@@ -96,7 +96,7 @@
                 class="form-check-input"
                 type="radio"
                 name="flagReason"
-                value="{Flag::REASON_UNVERIFIABLE}">
+                value="{Review::REASON_UNVERIFIABLE}">
               {t}unverifiable{/t}
             </label>
             <p class="text-muted">
@@ -110,7 +110,7 @@
                 class="form-check-input"
                 type="radio"
                 name="flagReason"
-                value="{Flag::REASON_LOW_QUALITY}">
+                value="{Review::REASON_LOW_QUALITY}">
               {t}low quality{/t}
             </label>
             <p class="text-muted">
@@ -125,7 +125,7 @@
                 class="form-check-input"
                 type="radio"
                 name="flagReason"
-                value="{Flag::REASON_OTHER}"
+                value="{Review::REASON_OTHER}"
                 data-related="#detailsWrapper"
               >
               {t}other reason{/t}
@@ -139,44 +139,6 @@
                 placeholder="{t}please provide details...{/t}">
             </p>
           </div>
-
-          {if User::may(User::PRIV_CLOSE_REOPEN_VOTE)}
-            <hr>
-
-            <div class="row">
-              <div class="col-3">
-                <label for="flagProposal" class="col-form-label">{t}I propose{/t}</label>
-              </div>
-              <div class="col-9">
-                <select
-                  id="flagProposal"
-                  name="flagProposal"
-                  class="form-control">
-                  <option
-                    value="{Flag::PROP_CLOSE}"
-                    data-option-visibility="{Flag::TYPE_STATEMENT}">
-                    {t}closing this statement{/t}
-                  </option>
-                  <option
-                    value="{Flag::PROP_DELETE}"
-                    data-option-visibility="{Flag::TYPE_STATEMENT}">
-                    {t}deleting this statement{/t}
-                  </option>
-                  <option
-                    value="{Flag::PROP_DELETE}"
-                    data-option-visibility="{Flag::TYPE_ANSWER}">
-                    {t}deleting this answer{/t}
-                  </option>
-                </select>
-              </div>
-            </div>
-          {else}
-            <input
-              type="hidden"
-              id="flagProposal"
-              name="flagProposal"
-              value="{Flag::PROP_NOTHING}">
-          {/if}
 
         </form>
 

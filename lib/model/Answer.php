@@ -19,10 +19,6 @@ class Answer extends BaseObject implements DatedObject {
     return Statement::get_by_id($this->statementId);
   }
 
-  function isValidProposal($proposal) {
-    return $proposal != Flag::PROP_CLOSE;
-  }
-
   /**
    * Create a blank answer assigned to a statement.
    *

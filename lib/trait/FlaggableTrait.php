@@ -15,6 +15,7 @@ trait FlaggableTrait {
       ->table_alias('f')
       ->join('review', ['f.reviewId', '=', 'r.id'], 'r')
       ->where('f.userId', User::getActiveId())
+      ->where('f.status', Flag::STATUS_PENDING)
       ->where('r.status', Review::STATUS_PENDING)
       ->where('r.objectType', $this->getObjectType())
       ->where('r.objectId', $this->id)
@@ -29,15 +30,5 @@ trait FlaggableTrait {
    */
   function isFlaggable() {
     return User::canFlag($this);
-  }
-
-  /**
-   * Checks if the active user may raise a flag with this proposal.
-   *
-   * @param int $proposal one of the Flag::PROP_* values
-   * @return boolean
-   */
-  function isValidProposal($proposal) {
-    return true;
   }
 }

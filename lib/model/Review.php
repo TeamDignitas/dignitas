@@ -6,27 +6,21 @@
 class Review extends BaseObject implements DatedObject {
   use ObjectTypeIdTrait;
 
-  // What is the current nature of this review?
-  const REASON_UNHELPFUL = 1;
-  const REASON_DUPLICATE = 2;
-  const REASON_FIRST_POST = 3;
-  const REASON_LATE_ANSWER = 4;
-  const REASON_CLOSE = 5;
-  const REASON_REOPEN = 6;
-  const REASON_OTHER = 7;
+  const REASON_SPAM = 1;
+  const REASON_ABUSE = 2;
+  const REASON_DUPLICATE = 3;
+  const REASON_OFF_TOPIC = 4;
+  const REASON_UNVERIFIABLE = 5;
+  const REASON_LOW_QUALITY = 6;
+  const REASON_FIRST_POST = 7;
+  const REASON_LATE_ANSWER = 8;
+  const REASON_REOPEN = 9;
+  const REASON_OTHER = 10;
+  const NUM_REASONS = 10;
 
-  const REASONS = [
-    self::REASON_UNHELPFUL,
-    self::REASON_DUPLICATE,
-    self::REASON_FIRST_POST,
-    self::REASON_LATE_ANSWER,
-    self::REASON_CLOSE,
-    self::REASON_REOPEN,
-    self::REASON_OTHER,
-  ];
-
-  const STATUS_PENDING = 1;
-  const STATUS_RESOLVED = 2;
+  const STATUS_PENDING = 0;
+  const STATUS_ACCEPTED = 1;
+  const STATUS_DECLINED = 2;
 
   /**
    * Returns a localized description for a review queue.
@@ -36,13 +30,16 @@ class Review extends BaseObject implements DatedObject {
    */
   static function getDescription($reason) {
     switch ($reason) {
-      case self::REASON_UNHELPFUL:   return _('items flagged as unhelpful');
-      case self::REASON_DUPLICATE:   return _('items flagged as duplicate');
-      case self::REASON_FIRST_POST:  return _('first posts');
-      case self::REASON_LATE_ANSWER: return _('late answers');
-      case self::REASON_CLOSE:       return _('items flagged for closing');
-      case self::REASON_REOPEN:      return _('items flagged for reopening');
-      case self::REASON_OTHER:       return _('items flagged for other reasons');
+      case self::REASON_SPAM:         return _('items flagged as spam');
+      case self::REASON_ABUSE:        return _('items flagged as abuse');
+      case self::REASON_DUPLICATE:    return _('items flagged as duplicate');
+      case self::REASON_OFF_TOPIC:    return _('items flagged as off-topic');
+      case self::REASON_UNVERIFIABLE: return _('items flagged as unverifiable');
+      case self::REASON_LOW_QUALITY:  return _('items flagged as low quality');
+      case self::REASON_FIRST_POST:   return _('first posts');
+      case self::REASON_LATE_ANSWER:  return _('late answers');
+      case self::REASON_REOPEN:       return _('items flagged for reopening');
+      case self::REASON_OTHER:        return _('items flagged for other reasons');
     }
   }
 
@@ -54,13 +51,16 @@ class Review extends BaseObject implements DatedObject {
    */
   static function getUrlName($reason) {
     switch ($reason) {
-      case self::REASON_UNHELPFUL:   return _('unhelpful');
-      case self::REASON_DUPLICATE:   return _('duplicate');
-      case self::REASON_FIRST_POST:  return _('first-post');
-      case self::REASON_LATE_ANSWER: return _('late-answer');
-      case self::REASON_CLOSE:       return _('close');
-      case self::REASON_REOPEN:      return _('reopen');
-      case self::REASON_OTHER:       return _('other');
+      case self::REASON_SPAM:         return _('spam');
+      case self::REASON_ABUSE:        return _('abuse');
+      case self::REASON_DUPLICATE:    return _('duplicate');
+      case self::REASON_OFF_TOPIC:    return _('off-topic');
+      case self::REASON_UNVERIFIABLE: return _('unverifiable');
+      case self::REASON_LOW_QUALITY:  return _('low-quality');
+      case self::REASON_FIRST_POST:   return _('first-post');
+      case self::REASON_LATE_ANSWER:  return _('late-answer');
+      case self::REASON_REOPEN:       return _('reopen');
+      case self::REASON_OTHER:        return _('other');
     }
   }
 
@@ -72,9 +72,9 @@ class Review extends BaseObject implements DatedObject {
    */
   static function getReasonFromUrlName($urlName) {
     // do this naively for now
-    foreach (self::REASONS as $t) {
-      if (self::getUrlName($t) == $urlName) {
-        return $t;
+    for ($r = 1; $r <= self::NUM_REASONS; $r++) {
+      if (self::getUrlName($r) == $urlName) {
+        return $r;
       }
     }
     return null;
@@ -87,11 +87,14 @@ class Review extends BaseObject implements DatedObject {
    * @param int $reason One of the Review::REASON_* values
    * @return Review A new Review
    */
-  static function create($obj, $reason = null) {
+  static function create($obj, $reason, $duplicateId) {
     $r = Model::factory('Review')->create();
     $r->objectType = $obj->getObjectType();
     $r->objectId = $obj->id;
     $r->reason = $reason;
+    if ($r->reason == self::REASON_DUPLICATE) {
+      $r->duplicateId = $duplicateId;
+    }
     $r->status = self::STATUS_PENDING;
     return $r;
   }
@@ -106,6 +109,18 @@ class Review extends BaseObject implements DatedObject {
       ->where('reviewId', $this->id)
       ->order_by_desc('createDate')
       ->find_many();
+  }
+
+  /**
+   * If this Review has type "duplicate of", return the duplicate statement;
+   * otherwise return null.
+   *
+   * @return Statement Statement object or null.
+   */
+  function getDuplicate() {
+    return ($this->reason == self::REASON_DUPLICATE)
+      ? Statement::get_by_id($this->duplicateId)
+      : null;
   }
 
   /**
@@ -132,18 +147,19 @@ class Review extends BaseObject implements DatedObject {
   }
 
   /**
-   * Returns the existing review for this object. If no review exists, starts
-   * one for the given reason.
+   * Returns the review for this object and reason. If no review exists,
+   * starts one.
    *
    * @param Flaggable $obj a flaggable object
    * @param int $reason value from Review::REASON_*
+   * @param int $duplicateId a Statement ID if $reason = REASON_DUPLICATE, null otherwise
    */
-  static function ensure($obj, $reason) {
-    $r = self::get_by_objectType_objectId_status(
-      $obj->getObjectType(), $obj->id, self::STATUS_PENDING);
+  static function ensure($obj, $reason, $duplicateId) {
+    $r = self::get_by_objectType_objectId_duplicateId_status(
+      $obj->getObjectType(), $obj->id, $duplicateId, self::STATUS_PENDING);
 
     if (!$r) {
-      $r = self::create($obj, $reason);
+      $r = self::create($obj, $reason, $duplicateId);
       $r->save();
     }
 
