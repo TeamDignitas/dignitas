@@ -3,6 +3,10 @@
 class Answer extends BaseObject implements DatedObject {
   use FlaggableTrait, MarkdownTrait, VotableTrait;
 
+  // for clarity, keep in sync with Statement equivalents
+  const STATUS_ACTIVE = 0;
+  const STATUS_DELETED = 2;
+
   function getObjectType() {
     return self::TYPE_ANSWER;
   }
@@ -47,12 +51,12 @@ class Answer extends BaseObject implements DatedObject {
       $this->userId == User::getActiveId();   // can always delete user's own answers
   }
 
+  function markDeleted() {
+    $this->status = self::STATUS_DELETED;
+    $this->save();
+  }
+
   function delete() {
-    Log::warning("Deleted answer %d (%s)",
-                 $this->id, Str::shorten($this->contents, 100));
-    Review::deleteObject($this);
-    AttachmentReference::deleteObject($this);
-    Vote::deleteObject($this);
-    parent::delete();
+    throw new Exception('Answers should never actually be deleted.');
   }
 }

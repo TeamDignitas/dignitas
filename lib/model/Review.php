@@ -22,6 +22,30 @@ class Review extends BaseObject implements DatedObject {
   const STATUS_ACCEPTED = 1;
   const STATUS_DECLINED = 2;
 
+  const ACTION_CLOSE = 1;
+  const ACTION_DELETE = 2;
+
+  // Maps object x reason to methods to run when a review is evaluated.
+  // It should be impossible to encounter cases not covered here.
+  const ACTION_MAP = [
+    BaseObject::TYPE_ANSWER => [
+      self::REASON_SPAM => self::ACTION_DELETE,
+      self::REASON_ABUSE => self::ACTION_DELETE,
+      self::REASON_OFF_TOPIC => self::ACTION_DELETE,
+      self::REASON_LOW_QUALITY => self::ACTION_DELETE,
+      self::REASON_OTHER => null,
+    ],
+    BaseObject::TYPE_STATEMENT => [
+      self::REASON_SPAM => self::ACTION_DELETE,
+      self::REASON_ABUSE => self::ACTION_DELETE,
+      self::REASON_DUPLICATE => self::ACTION_CLOSE,
+      self::REASON_OFF_TOPIC => self::ACTION_CLOSE,
+      self::REASON_UNVERIFIABLE => self::ACTION_CLOSE,
+      self::REASON_LOW_QUALITY => self::ACTION_CLOSE,
+      self::REASON_OTHER => null,
+    ],
+  ];
+
   /**
    * Returns a localized description for a review queue.
    *
@@ -105,11 +129,11 @@ class Review extends BaseObject implements DatedObject {
    * @return array Array of Flag objects.
    */
   function getFlags() {
-    return Model::factory('Flag')
-      ->where('reviewId', $this->id)
-      ->order_by_desc('createDate')
-      ->find_many();
-  }
+  return Model::factory('Flag')
+    ->where('reviewId', $this->id)
+    ->order_by_desc('createDate')
+    ->find_many();
+}
 
   /**
    * If this Review has type "duplicate of", return the duplicate statement;
@@ -118,10 +142,10 @@ class Review extends BaseObject implements DatedObject {
    * @return Statement Statement object or null.
    */
   function getDuplicate() {
-    return ($this->reason == self::REASON_DUPLICATE)
-      ? Statement::get_by_id($this->duplicateId)
-      : null;
-  }
+  return ($this->reason == self::REASON_DUPLICATE)
+    ? Statement::get_by_id($this->duplicateId)
+    : null;
+}
 
   /**
    * Loads a review to present to the given user. Filters out reviews that the
@@ -156,8 +180,8 @@ class Review extends BaseObject implements DatedObject {
    * @param int $duplicateId a Statement ID if $reason = REASON_DUPLICATE, null otherwise
    */
   static function ensure($obj, $reason, $duplicateId) {
-    $r = self::get_by_objectType_objectId_duplicateId_status(
-      $obj->getObjectType(), $obj->id, $duplicateId, self::STATUS_PENDING);
+    $r = self::get_by_objectType_objectId_reason_duplicateId_status(
+      $obj->getObjectType(), $obj->id, $reason, $duplicateId, self::STATUS_PENDING);
 
     if (!$r) {
       $r = self::create($obj, $reason, $duplicateId);
@@ -168,28 +192,44 @@ class Review extends BaseObject implements DatedObject {
   }
 
   /**
-   * Completes the review if possible.
+   * Resolves the review if possible.
    */
   function evaluate() {
-    // count the executive "nay" votes
-    $nays = Flag::count_by_reviewId_vote_weight(
-      $this->id, Flag::VOTE_NAY, Flag::WEIGHT_EXECUTIVE);
+    // never resolve reviews for which no resolution action is defined
+    $type = $this->getObject()->getObjectType();
+    $action = self::ACTION_MAP[$type][$this->reason] ?? null;
+
+    if (!$action) {
+      return;
+    }
+
+    $nays = Flag::count_by_reviewId_weight_vote(
+      $this->id, Flag::WEIGHT_EXECUTIVE, Flag::VOTE_NAY);
+    $yeas = Flag::count_by_reviewId_weight_vote(
+      $this->id, Flag::WEIGHT_EXECUTIVE, Flag::VOTE_YEA);
+
     if ($nays >= Config::NAY_VOTES_NECESSARY) {
-      $this->completeNay();
+      $this->resolve(Review::STATUS_DECLINED, Flag::VOTE_NAY);
+    } else if ($yeas >= Config::YEA_VOTES_NECESSARY) {
+      $this->resolve(Review::STATUS_ACCEPTED, Flag::VOTE_YEA);
+      $this->resolveObject($action);
     }
   }
 
   /**
-   * Completes this review as a "nay".
+   * Updates the review status and marks its flags as accepted or declined.
+   *
+   * @param int $status One of the Review::STATUS_* values.
+   * @param int $winningVote One of the Flag::VOTE_* values.
    */
-  function completeNay() {
-    $this->status = Review::STATUS_DECLINED;
+  private function resolve($status, $winningVote) {
+    $this->status = $status;
     $this->save();
-    $this->resolveFlags(Flag::VOTE_NAY);
+    $this->resolveFlags($winningVote);
   }
 
   /**
-   * Resolves flags aligned with $winningVote as accepted, the other ones as
+   * Marks flags aligned with $winningVote as accepted, the other ones as
    * declined.
    */
   private function resolveFlags($winningVote) {
@@ -198,6 +238,27 @@ class Review extends BaseObject implements DatedObject {
         ? Flag::STATUS_ACCEPTED
         : Flag::STATUS_DECLINED;
       $f->save();
+    }
+  }
+
+  /**
+   * Closes or deletes the reviewed object.
+   *
+   * @param int $action One of the Review::ACTION_* values.
+   */
+  private function resolveObject($action) {
+    $obj = $this->getObject();
+
+    if ($action == self::ACTION_CLOSE) {
+      if ($this->reason == self::REASON_DUPLICATE) {
+        $obj->closeAsDuplicate($this->duplicateId);
+      } else {
+        $obj->close();
+      }
+    } else if ($action == self::ACTION_DELETE) {
+      $obj->markDeleted();
+    } else {
+      Log::alert('Invalid action %s encountered in review #%s.', $action, $this->id);
     }
   }
 

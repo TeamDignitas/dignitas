@@ -3,6 +3,11 @@
 class Statement extends BaseObject implements DatedObject {
   use FlaggableTrait, MarkdownTrait, VotableTrait;
 
+  // for clarity, keep in sync with Answer equivalents
+  const STATUS_ACTIVE = 0;
+  const STATUS_CLOSED = 1;
+  const STATUS_DELETED = 2;
+
   function getObjectType() {
     return self::TYPE_STATEMENT;
   }
@@ -43,15 +48,23 @@ class Statement extends BaseObject implements DatedObject {
       $this->userId == User::getActiveId();    // can always edit user's own statements
   }
 
+  function close() {
+    $this->status = self::STATUS_CLOSED;
+    $this->save();
+  }
+
+  function closeAsDuplicate($duplicateId) {
+    $this->duplicateId = $duplicateId;
+    $this->close();
+  }
+
+  function markDeleted() {
+    $this->status = self::STATUS_DELETED;
+    $this->save();
+  }
+
   function delete() {
-    Log::warning("Deleted statement {$this->id} ({$this->summary})");
-    Answer::delete_all_by_statementId($this->id);
-    StatementSource::delete_all_by_statementId($this->id);
-    Review::deleteObject($this);
-    AttachmentReference::deleteObject($this);
-    ObjectTag::deleteObject($this);
-    Vote::deleteObject($this);
-    parent::delete();
+    throw new Exception('Statements should never actually be deleted.');
   }
 
 }

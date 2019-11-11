@@ -115,7 +115,7 @@ class Config {
   // system stuff
   const TMP_DIR = '/tmp/';
 
-  // Votes necessary for review completion
+  // Votes necessary for review resolution
   const YEA_VOTES_NECESSARY = 2;
   const NAY_VOTES_NECESSARY = 2;
 

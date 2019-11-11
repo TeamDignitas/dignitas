@@ -28,13 +28,18 @@ if ($reviewId) {
   }
 
   if ($yeaButton || $nayButton) {
+    redirectIfComplete($r, $urlName);
+
     // remove existing flags
     $vote = $yeaButton ? Flag::VOTE_YEA : Flag::VOTE_NAY;
     Flag::delete_all_by_userId_reviewId($userId, $r->id);
     $flag = Flag::create($r->id, $details, $vote);
     $flag->save();
-    $r->evaluate();
     FlashMessage::add(_('Your vote was recorded.'), 'success');
+
+    $r->evaluate();
+    redirectIfComplete($r, $urlName);
+    redirectToReview($r, $urlName);
   }
 
   if ($nextButton) {
@@ -47,8 +52,7 @@ if ($reviewId) {
 
   $r = Review::load($userId, $reason);
   if ($r) {
-    $l = sprintf('%s/%s/%d', Router::link('review/view'), $urlName, $r->id);
-    Util::redirect($l);
+    redirectToReview($r, $urlName);
   }
 }
 
@@ -64,3 +68,28 @@ if ($r) {
 
 Smart::addResources('flag');
 Smart::display('review/view.tpl');
+
+/*************************************************************************/
+
+/**
+ * Redirects to the queue if this review is complete, so that we can offer
+ * another item to review.
+ */
+function redirectIfComplete($review, $urlName) {
+  if ($review->status != Review::STATUS_PENDING) {
+    FlashMessage::add(
+      _('This review is now complete. We have redirected you to the next ' .
+        'review in this queue.'),
+      'success');
+    Util::redirect(Router::link('review/view') . '/' . $urlName);
+  }
+}
+
+/**
+ * Redirects to this review's URL. Useful after a save so that the POST data
+ * is lost.
+ */
+function redirectToReview($review, $urlName) {
+  $l = sprintf('%s/%s/%d', Router::link('review/view'), $urlName, $review->id);
+  Util::redirect($l);
+}

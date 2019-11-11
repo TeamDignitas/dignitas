@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-11-08 15:10+0200\n"
-"PO-Revision-Date: 2019-11-08 15:14+0200\n"
+"POT-Creation-Date: 2019-11-11 15:43+0200\n"
+"PO-Revision-Date: 2019-11-11 15:44+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -234,7 +234,7 @@ msgstr "Raportați acest răspuns pentru motivul:"
 msgid "Flag this statement for the following reason:"
 msgstr "Raportați această afirmație pentru motivul:"
 
-#: templates/bits/flagModal.tpl:28 lib/model/Review.php:54
+#: templates/bits/flagModal.tpl:28 lib/model/Review.php:78
 msgid "spam"
 msgstr "spam"
 
@@ -264,7 +264,7 @@ msgstr "Această afirmație apare deja în Dignitas."
 msgid "type in some keywords..."
 msgstr "tastați niște cuvinte..."
 
-#: templates/bits/flagModal.tpl:80 lib/model/Review.php:57
+#: templates/bits/flagModal.tpl:80 lib/model/Review.php:81
 msgid "off-topic"
 msgstr "pe lîngă subiect"
 
@@ -280,7 +280,7 @@ msgstr ""
 "Această afirmație este în afara scopului Dignitas sau este prea generală "
 "pentru a fi demonstrată sau infirmată."
 
-#: templates/bits/flagModal.tpl:100 lib/model/Review.php:58
+#: templates/bits/flagModal.tpl:100 lib/model/Review.php:82
 msgid "unverifiable"
 msgstr "neverificabil(ă)"
 
@@ -756,73 +756,71 @@ msgstr "site web"
 msgid "member of"
 msgstr "membru în"
 
-#: lib/model/Review.php:33
+#: lib/model/Review.php:57
 msgid "items flagged as spam"
 msgstr "articole raportate ca spam"
 
-#: lib/model/Review.php:34
+#: lib/model/Review.php:58
 msgid "items flagged as abuse"
 msgstr "articole raportate ca insulte"
 
-#: lib/model/Review.php:35
+#: lib/model/Review.php:59
 msgid "items flagged as duplicate"
 msgstr "articole raportate ca duplicate"
 
-#: lib/model/Review.php:36
+#: lib/model/Review.php:60
 msgid "items flagged as off-topic"
 msgstr "articole raportate ca pe lîngă subiect"
 
-#: lib/model/Review.php:37
+#: lib/model/Review.php:61
 msgid "items flagged as unverifiable"
 msgstr "articole raportate ca neverificabile"
 
-#: lib/model/Review.php:38
+#: lib/model/Review.php:62
 msgid "items flagged as low quality"
 msgstr "articole raportate ca de slabă calitate"
 
-#: lib/model/Review.php:39
+#: lib/model/Review.php:63
 msgid "first posts"
 msgstr "prime mesaje"
 
-#: lib/model/Review.php:40
+#: lib/model/Review.php:64
 msgid "late answers"
 msgstr "răspunsuri tîrzii"
 
-#: lib/model/Review.php:41
+#: lib/model/Review.php:65
 msgid "items flagged for reopening"
 msgstr "articole marcate pentru redeschidere"
 
-#: lib/model/Review.php:42
+#: lib/model/Review.php:66
 msgid "items flagged for other reasons"
 msgstr "articole raportate pentru alte motive"
 
-#: lib/model/Review.php:55
+#: lib/model/Review.php:79
 msgid "abuse"
 msgstr "insultă"
 
-#: lib/model/Review.php:56
+#: lib/model/Review.php:80
 msgid "duplicate"
 msgstr "duplicate"
 
-#: lib/model/Review.php:59
-#, fuzzy
-#| msgid "low quality"
+#: lib/model/Review.php:83
 msgid "low-quality"
-msgstr "de slabă calitate"
+msgstr "slaba-calitate"
 
-#: lib/model/Review.php:60
+#: lib/model/Review.php:84
 msgid "first-post"
 msgstr "prim-mesaj"
 
-#: lib/model/Review.php:61
+#: lib/model/Review.php:85
 msgid "late-answer"
 msgstr "raspuns-tirziu"
 
-#: lib/model/Review.php:62
+#: lib/model/Review.php:86
 msgid "reopen"
 msgstr "redeschidere"
 
-#: lib/model/Review.php:63
+#: lib/model/Review.php:87
 msgid "other"
 msgstr "altele"
 
@@ -986,11 +984,11 @@ msgstr ""
 msgid "The entity you are looking for does not exist."
 msgstr "Autorul pe care îl căutați nu există."
 
-#: routes/flag/delete.php:21
+#: routes/flag/delete.php:22
 msgid "Your flag was deleted."
 msgstr "Raportarea a fost ștearsă."
 
-#: routes/flag/save.php:25
+#: routes/flag/save.php:26
 msgid "Your flag was saved."
 msgstr "Am salvat raportarea."
 
@@ -1006,9 +1004,17 @@ msgstr "Nu există nicio coadă de evaluare cu acest nume."
 msgid "No review exists with the given ID."
 msgstr "Nu există nicio evaluare cu ID-ul indicat."
 
-#: routes/review/view.php:36
+#: routes/review/view.php:38
 msgid "Your vote was recorded."
 msgstr "Votul a fost înregistrat."
+
+#: routes/review/view.php:81
+msgid ""
+"This review is now complete. We have redirected you to the next review in "
+"this queue."
+msgstr ""
+"Această evaluare este completă. V-am redirecționat spre următoarea evaluare "
+"din această coadă."
 
 #: routes/statement/edit.php:19
 msgid "Statement deleted."

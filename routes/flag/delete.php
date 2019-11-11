@@ -10,7 +10,8 @@ try {
     $objectType, $objectId, Review::STATUS_PENDING);
 
   if ($review) {
-    $flag = Flag::get_by_userId_reviewId(User::getActiveId(), $review->id);
+    $flag = Flag::get_by_userId_reviewId_status(
+      User::getActiveId(), $review->id, Flag::STATUS_PENDING);
 
     if ($flag) {
       $flag->delete();
