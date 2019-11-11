@@ -17,6 +17,12 @@
     {$statement->dateMade|ld}
   </p>
 
+  {if $statement->status == Statement::STATUS_DELETED}
+    <p class="text-danger">
+      {t}This statement was deleted and is only visible to privileged users.{/t}
+    </p>
+  {/if}
+
   {if $voteBox}
     {include "bits/scoreAndVote.tpl"
       type=Vote::TYPE_STATEMENT

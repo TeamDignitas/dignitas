@@ -10,6 +10,11 @@ if (!$statement) {
   Util::redirectToHome();
 }
 
+if (!$statement->isViewable()) {
+  FlashMessage::add(_('This statement was deleted and is only visible to privileged users.'));
+  Util::redirectToHome();
+}
+
 if ($deleteAnswerId) {
   $answer = Answer::get_by_id($deleteAnswerId);
   if (!$answer) {

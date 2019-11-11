@@ -43,10 +43,22 @@ class Statement extends BaseObject implements DatedObject {
     return ObjectTag::getTags($this);
   }
 
+  function isViewable() {
+    return
+      ($this->status != self::STATUS_DELETED) ||
+      User::may(User::PRIV_DELETE_STATEMENT);
+  }
+
   function isEditable() {
     return
       User::may(User::PRIV_EDIT_STATEMENT) ||  // can edit any statements
       $this->userId == User::getActiveId();    // can always edit user's own statements
+  }
+
+  function isDeletable() {
+    return
+      User::may(User::PRIV_DELETE_STATEMENT) || // can delete any statement
+      $this->userId == User::getActiveId();     // can always delete user's own statements
   }
 
   function close() {
