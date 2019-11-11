@@ -27,6 +27,7 @@ class Statement extends BaseObject implements DatedObject {
   function getAnswers() {
     return Model::factory('Answer')
       ->where('statementId', $this->id)
+      ->where('status', self::STATUS_ACTIVE)
       ->order_by_desc('createDate')
       ->find_many();
   }

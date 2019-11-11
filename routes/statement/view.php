@@ -19,7 +19,7 @@ if ($deleteAnswerId) {
   } else if (!$answer->isDeletable()) {
     FlashMessage::add(_('You cannot delete this answer.'));
   } else {
-    $answer->delete();
+    $answer->markDeleted();
     FlashMessage::add(_('Answer deleted.'), 'success');
   }
 
