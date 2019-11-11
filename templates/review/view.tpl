@@ -8,9 +8,16 @@
   {if isset($review)}
     {$object=$review->getObject()}
     {$type=$object->getObjectType()}
-    {if $type == BaseObject::TYPE_STATEMENT}
 
+    {if $review->status == Review::STATUS_PENDING}
       {include "bits/reviewActions.tpl"}
+    {else}
+      <p>
+        {t}This review is now complete. No further actions can be taken.{/t}
+      </p>
+    {/if}
+
+    {if $type == BaseObject::TYPE_STATEMENT}
 
       {if $review->reason == Review::REASON_DUPLICATE}
         <h5>
@@ -25,8 +32,6 @@
         voteBox=true}
 
     {elseif $type == BaseObject::TYPE_ANSWER}
-
-      {include "bits/reviewActions.tpl"}
 
       {include "bits/answer.tpl"
         answer=$object

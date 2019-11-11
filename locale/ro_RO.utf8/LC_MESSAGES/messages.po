@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-11-11 15:43+0200\n"
-"PO-Revision-Date: 2019-11-11 15:44+0200\n"
+"POT-Creation-Date: 2019-11-11 16:38+0200\n"
+"PO-Revision-Date: 2019-11-11 16:38+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -509,15 +509,19 @@ msgstr "membri"
 msgid "statements"
 msgstr "afirmații"
 
-#: templates/review/view.tpl:17
+#: templates/review/view.tpl:16
+msgid "This review is now complete. No further actions can be taken."
+msgstr "Această evaluare este completă. Nu mai sînt permise alte acțiuni."
+
+#: templates/review/view.tpl:24
 msgid "This statement was flagged as a duplicate of"
 msgstr "Această afirmație a fost raportată ca duplicat al lui"
 
-#: templates/review/view.tpl:36
+#: templates/review/view.tpl:41
 msgid "pertaining to statement:"
 msgstr "referitor la afirmația:"
 
-#: templates/review/view.tpl:52
+#: templates/review/view.tpl:57
 msgid "This review queue is empty."
 msgstr "Această coadă de evaluare este goală."
 
@@ -798,7 +802,7 @@ msgstr "articole raportate pentru alte motive"
 
 #: lib/model/Review.php:79
 msgid "abuse"
-msgstr "insultă"
+msgstr "insulta"
 
 #: lib/model/Review.php:80
 msgid "duplicate"
