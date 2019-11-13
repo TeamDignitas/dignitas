@@ -20,10 +20,10 @@
     {if $type == BaseObject::TYPE_STATEMENT}
 
       {if $review->reason == Review::REASON_DUPLICATE}
-        <h5>
+        <div class="alert alert-warning">
           {t}This statement was flagged as a duplicate of{/t}
           {include "bits/statementLink.tpl" statement=$review->getDuplicate()}
-        </h5>
+        </div>
       {/if}
 
       {include "bits/statement.tpl"

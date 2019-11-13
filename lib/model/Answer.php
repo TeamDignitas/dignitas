@@ -3,10 +3,6 @@
 class Answer extends BaseObject implements DatedObject {
   use FlaggableTrait, MarkdownTrait, VotableTrait;
 
-  // for clarity, keep in sync with Statement equivalents
-  const STATUS_ACTIVE = 0;
-  const STATUS_DELETED = 2;
-
   function getObjectType() {
     return self::TYPE_ANSWER;
   }

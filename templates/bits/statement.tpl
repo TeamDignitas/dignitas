@@ -3,6 +3,8 @@
 {$flagBox=$flagBox|default:true}
 {$voteBox=$voteBox|default:true}
 
+{$statusInfo=$statement->getStatusInfo()}
+
 <div class="clearfix">
   {include "bits/image.tpl"
     obj=$statement->getEntity()
@@ -10,17 +12,27 @@
     spanClass="col-3"
     imgClass="pic float-right ml-5"}
 
-  <h3>{$statement->summary|escape}</h3>
+  <h3>
+    {$statement->summary|escape}
+    {if $statusInfo}
+      [{$statusInfo['status']}]
+    {/if}
+  </h3>
 
   <p>
     — {include "bits/entityLink.tpl" e=$statement->getEntity()},
     {$statement->dateMade|ld}
   </p>
 
-  {if $statement->status == Statement::STATUS_DELETED}
-    <p class="text-danger">
-      {t}This statement was deleted and is only visible to privileged users.{/t}
-    </p>
+  {if $statusInfo}
+    <div class="alert {$statusInfo['cssClass']} overflow-hidden">
+      {$statusInfo['details']}
+      {if $statusInfo['dup']}
+        {include "bits/statementLink.tpl"
+          statement=$statusInfo['dup']
+          class="alert-link"}
+      {/if}
+    </div>
   {/if}
 
   {if $voteBox}

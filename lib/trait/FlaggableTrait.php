@@ -31,4 +31,24 @@ trait FlaggableTrait {
   function isFlaggable() {
     return User::canFlag($this);
   }
+
+  /**
+   * If this object is active, returns null. Otherwise returns the reason of
+   * the most recent resolved review.
+   *
+   * @return int one of the Review::REASON_* values or null.
+   */
+  function getReviewReason() {
+    if ($this->status == self::STATUS_ACTIVE) {
+      return null;
+    }
+    $r = Model::factory('Review')
+      ->where('objectType', self::getObjectType())
+      ->where('objectId', $this->id)
+      ->where('status', Review::STATUS_ACCEPTED)
+      ->order_by_desc('createDate')
+      ->find_one();
+    return $r->reason ?? null;
+  }
+
 }

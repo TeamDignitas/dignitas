@@ -1,10 +1,18 @@
 <?php
 
-$statements = Model::factory('Statement')
+// load recent viewable statements
+$statements = Model::factory('Statement');
+
+if (!User::may(User::PRIV_DELETE_STATEMENT)) {
+  $statements = $statements->where_not_equal('status', Statement::STATUS_DELETED);
+}
+
+$statements = $statements
   ->order_by_desc('createDate')
   ->limit(10)
   ->find_many();
 
+// load recent entities
 $entities = Model::factory('Entity')
   ->order_by_desc('createDate')
   ->limit(10)

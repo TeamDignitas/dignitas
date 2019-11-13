@@ -11,9 +11,7 @@
 
     <div>
       <div>
-        <a href="{Router::link('statement/view')}/{$s->id}">
-          {$s->summary|escape}
-        </a>
+        {include "bits/statementLink.tpl" statement=$s}
       </div>
 
       <div class="text-right">

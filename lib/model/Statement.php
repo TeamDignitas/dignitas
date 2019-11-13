@@ -3,11 +3,6 @@
 class Statement extends BaseObject implements DatedObject {
   use FlaggableTrait, MarkdownTrait, VotableTrait;
 
-  // for clarity, keep in sync with Answer equivalents
-  const STATUS_ACTIVE = 0;
-  const STATUS_CLOSED = 1;
-  const STATUS_DELETED = 2;
-
   function getObjectType() {
     return self::TYPE_STATEMENT;
   }
@@ -41,6 +36,64 @@ class Statement extends BaseObject implements DatedObject {
 
   function getTags() {
     return ObjectTag::getTags($this);
+  }
+
+  /**
+   * If this Statement is closed as a duplicate, returns the duplicate statement;
+   * otherwise returns null.
+   *
+   * @return Statement Statement object or null.
+   */
+  function getDuplicate() {
+    return (($this->status == self::STATUS_CLOSED) && $this->duplicateId)
+      ? Statement::get_by_id($this->duplicateId)
+      : null;
+  }
+
+  /**
+   * Returns human-readable information about the status of this Statement.
+   *
+   * @return array a tuple of (human-readable status, human-readable sentence,
+   * CSS class). If the status is active, returns null.
+   */
+  function getStatusInfo() {
+    if ($this->status == self::STATUS_ACTIVE) {
+      return null;
+    }
+
+    $rec = [];
+    $dup = $this->getDuplicate();
+
+    $rec['status'] = $dup
+      ? _('duplicate')
+      : ($this->status == self::STATUS_CLOSED
+         ? _('closed')
+         : _('deleted'));
+
+    $rec['dup'] = $dup;
+
+    $rec['cssClass'] = ($this->status == self::STATUS_DELETED)
+      ? 'alert-danger'
+      : 'alert-warning';
+
+    $rec['details'] = ($this->status == self::STATUS_CLOSED)
+      ? _('This statement was closed')
+      : _('This statement was deleted');
+
+    $reason = $this->getReviewReason();
+    switch ($reason) {
+      case Review::REASON_SPAM: $r = _('because it is spam.'); break;
+      case Review::REASON_ABUSE: $r = _('because it is rude or abusive.'); break;
+      case Review::REASON_DUPLICATE: $r = _('as a duplicate of'); break;
+      case Review::REASON_OFF_TOPIC: $r = _('because it is off-topic.'); break;
+      case Review::REASON_UNVERIFIABLE: $r = _('because it is unverifiable.'); break;
+      case Review::REASON_LOW_QUALITY: $r = _('because it is low-quality.'); break;
+      case Review::REASON_OTHER: $r = _('for other reasons.');
+      default: $r = '';
+    }
+    $rec['details'] .= ' ' . $r;
+
+    return $rec;
   }
 
   function isViewable() {

@@ -133,7 +133,7 @@ class Review extends BaseObject implements DatedObject {
     ->where('reviewId', $this->id)
     ->order_by_desc('createDate')
     ->find_many();
-}
+  }
 
   /**
    * If this Review has type "duplicate of", return the duplicate statement;
@@ -142,10 +142,10 @@ class Review extends BaseObject implements DatedObject {
    * @return Statement Statement object or null.
    */
   function getDuplicate() {
-  return ($this->reason == self::REASON_DUPLICATE)
-    ? Statement::get_by_id($this->duplicateId)
-    : null;
-}
+    return ($this->reason == self::REASON_DUPLICATE)
+      ? Statement::get_by_id($this->duplicateId)
+      : null;
+  }
 
   /**
    * Loads a review to present to the given user. Filters out reviews that the
