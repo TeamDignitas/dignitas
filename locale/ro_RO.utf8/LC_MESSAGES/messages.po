@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-11-11 16:38+0200\n"
-"PO-Revision-Date: 2019-11-11 16:38+0200\n"
+"POT-Creation-Date: 2019-11-13 12:42+0200\n"
+"PO-Revision-Date: 2019-11-13 12:44+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -198,16 +198,16 @@ msgid "delete"
 msgstr "șterge"
 
 #: templates/bits/answer.tpl:40 templates/bits/reviewActions.tpl:25
-#: templates/bits/statement.tpl:60 templates/entity/view.tpl:33
+#: templates/bits/statement.tpl:78 templates/entity/view.tpl:33
 #: templates/tag/view.tpl:14 templates/user/view.tpl:42
 msgid "edit"
 msgstr "editează"
 
-#: templates/bits/answer.tpl:59 templates/bits/statement.tpl:77
+#: templates/bits/answer.tpl:59 templates/bits/statement.tpl:95
 msgid "flag"
 msgstr "raportează"
 
-#: templates/bits/answer.tpl:71 templates/bits/statement.tpl:89
+#: templates/bits/answer.tpl:71 templates/bits/statement.tpl:107
 msgid "unflag"
 msgstr "șterge raportarea"
 
@@ -403,19 +403,19 @@ msgstr "scor"
 msgid "You need at least %1 reputation to downvote."
 msgstr "Vă trebuie o reputație de cel puțin %1 pentru a vota negativ."
 
-#: templates/bits/statement.tpl:30
+#: templates/bits/statement.tpl:48
 msgid "sources"
 msgstr "surse"
 
-#: templates/bits/statement.tpl:41 templates/statement/edit.tpl:57
+#: templates/bits/statement.tpl:59 templates/statement/edit.tpl:57
 msgid "context"
 msgstr "context"
 
-#: templates/bits/statement.tpl:45 templates/statement/edit.tpl:68
+#: templates/bits/statement.tpl:63 templates/statement/edit.tpl:68
 msgid "goal"
 msgstr "scop"
 
-#: templates/bits/statement.tpl:94 templates/bits/statementList.tpl:25
+#: templates/bits/statement.tpl:112 templates/bits/statementList.tpl:23
 msgid "added by"
 msgstr "adăugată de"
 
@@ -804,7 +804,7 @@ msgstr "articole raportate pentru alte motive"
 msgid "abuse"
 msgstr "insulta"
 
-#: lib/model/Review.php:80
+#: lib/model/Review.php:80 lib/model/Statement.php:68
 msgid "duplicate"
 msgstr "duplicate"
 
@@ -827,6 +827,50 @@ msgstr "redeschidere"
 #: lib/model/Review.php:87
 msgid "other"
 msgstr "altele"
+
+#: lib/model/Statement.php:70
+msgid "closed"
+msgstr "închisă"
+
+#: lib/model/Statement.php:71
+msgid "deleted"
+msgstr "ștearsă"
+
+#: lib/model/Statement.php:80
+msgid "This statement was closed"
+msgstr "Această afirmație a fost închisă"
+
+#: lib/model/Statement.php:81
+msgid "This statement was deleted"
+msgstr "Această afirmație a fost ștearsă"
+
+#: lib/model/Statement.php:85
+msgid "because it is spam."
+msgstr "deoarece este spam."
+
+#: lib/model/Statement.php:86
+msgid "because it is rude or abusive."
+msgstr "deoarece conține insulte sau abuzuri."
+
+#: lib/model/Statement.php:87
+msgid "as a duplicate of"
+msgstr "ca duplicat al afirmației"
+
+#: lib/model/Statement.php:88
+msgid "because it is off-topic."
+msgstr "deoarece este pe lîngă subiect."
+
+#: lib/model/Statement.php:89
+msgid "because it is unverifiable."
+msgstr "deoarece este neverificabilă."
+
+#: lib/model/Statement.php:90
+msgid "because it is low-quality."
+msgstr "deoarece este de slabă calitate."
+
+#: lib/model/Statement.php:91
+msgid "for other reasons."
+msgstr "pentru alte motive."
 
 #: lib/model/User.php:100 routes/auth/login.php:58
 #: routes/auth/lostPassword.php:50
@@ -1056,19 +1100,25 @@ msgstr "Unele URL-uri sursă sînt invalide."
 msgid "The statement you are looking for does not exist."
 msgstr "Afirmația pe care o căutați nu există."
 
-#: routes/statement/view.php:16
+#: routes/statement/view.php:14
+msgid "This statement was deleted and is only visible to privileged users."
+msgstr ""
+"Această afirmație a fost ștearsă și poate fi văzută doar de utilizatori "
+"privilegiați."
+
+#: routes/statement/view.php:21
 msgid "No such answer exists."
 msgstr "Răspunsul nu există."
 
-#: routes/statement/view.php:18
+#: routes/statement/view.php:23
 msgid "The answer does not belong to this statement."
 msgstr "Răspunsul nu aparține acestei afirmații."
 
-#: routes/statement/view.php:20
+#: routes/statement/view.php:25
 msgid "You cannot delete this answer."
 msgstr "Nu puteți șterge acest răspuns."
 
-#: routes/statement/view.php:23
+#: routes/statement/view.php:28
 msgid "Answer deleted."
 msgstr "Am șters răspunsul."
 
