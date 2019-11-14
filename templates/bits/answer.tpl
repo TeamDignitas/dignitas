@@ -7,6 +7,12 @@
     {$answer->contents|md}
   </div>
 
+  {if $answer->status == Answer::STATUS_DELETED}
+    <div class="alert alert-secondary">
+      {$answer->getDeletedMessage()}
+    </div>
+  {/if}
+
   {if $voteBox}
     {include "bits/scoreAndVote.tpl"
       type=Vote::TYPE_ANSWER

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-11-13 12:42+0200\n"
-"PO-Revision-Date: 2019-11-13 12:44+0200\n"
+"POT-Creation-Date: 2019-11-14 15:00+0200\n"
+"PO-Revision-Date: 2019-11-14 15:00+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -184,30 +184,30 @@ msgstr "schimbarea parolei"
 msgid "tag"
 msgstr "etichetă"
 
-#: templates/bits/answer.tpl:21
+#: templates/bits/answer.tpl:27
 msgid "posted by"
 msgstr "publicat de"
 
-#: templates/bits/answer.tpl:30
+#: templates/bits/answer.tpl:36
 msgid "Are you sure you want to delete this answer?"
 msgstr "Confirmați ștergerea acestui răspuns?"
 
-#: templates/bits/answer.tpl:31 templates/entity/edit.tpl:183
+#: templates/bits/answer.tpl:37 templates/entity/edit.tpl:183
 #: templates/statement/edit.tpl:129 templates/tag/edit.tpl:180
 msgid "delete"
 msgstr "șterge"
 
-#: templates/bits/answer.tpl:40 templates/bits/reviewActions.tpl:25
+#: templates/bits/answer.tpl:46 templates/bits/reviewActions.tpl:25
 #: templates/bits/statement.tpl:78 templates/entity/view.tpl:33
 #: templates/tag/view.tpl:14 templates/user/view.tpl:42
 msgid "edit"
 msgstr "editează"
 
-#: templates/bits/answer.tpl:59 templates/bits/statement.tpl:95
+#: templates/bits/answer.tpl:65 templates/bits/statement.tpl:95
 msgid "flag"
 msgstr "raportează"
 
-#: templates/bits/answer.tpl:71 templates/bits/statement.tpl:107
+#: templates/bits/answer.tpl:77 templates/bits/statement.tpl:107
 msgid "unflag"
 msgstr "șterge raportarea"
 
@@ -740,6 +740,30 @@ msgstr "Sînteți deja autentificat."
 msgid "Please log in to perform this action."
 msgstr "Vă rugăm să vă autentificați pentru a continua."
 
+#: lib/model/Answer.php:33
+msgid "This answer was deleted"
+msgstr "Acest răspuns a fost șters"
+
+#: lib/model/Answer.php:37 lib/model/Statement.php:95
+msgid "because it is spam."
+msgstr "deoarece este spam."
+
+#: lib/model/Answer.php:38 lib/model/Statement.php:96
+msgid "because it is rude or abusive."
+msgstr "deoarece conține insulte sau abuzuri."
+
+#: lib/model/Answer.php:39 lib/model/Statement.php:98
+msgid "because it is off-topic."
+msgstr "deoarece este pe lîngă subiect."
+
+#: lib/model/Answer.php:40 lib/model/Statement.php:100
+msgid "because it is low-quality."
+msgstr "deoarece este de slabă calitate."
+
+#: lib/model/Answer.php:41 lib/model/Statement.php:101
+msgid "for other reasons."
+msgstr "pentru alte motive."
+
 #: lib/model/Entity.php:23
 msgid "person"
 msgstr "persoană"
@@ -804,7 +828,7 @@ msgstr "articole raportate pentru alte motive"
 msgid "abuse"
 msgstr "insulta"
 
-#: lib/model/Review.php:80 lib/model/Statement.php:68
+#: lib/model/Review.php:80 lib/model/Statement.php:78
 msgid "duplicate"
 msgstr "duplicate"
 
@@ -828,49 +852,29 @@ msgstr "redeschidere"
 msgid "other"
 msgstr "altele"
 
-#: lib/model/Statement.php:70
+#: lib/model/Statement.php:80
 msgid "closed"
 msgstr "închisă"
 
-#: lib/model/Statement.php:71
+#: lib/model/Statement.php:81
 msgid "deleted"
 msgstr "ștearsă"
 
-#: lib/model/Statement.php:80
+#: lib/model/Statement.php:90
 msgid "This statement was closed"
 msgstr "Această afirmație a fost închisă"
 
-#: lib/model/Statement.php:81
+#: lib/model/Statement.php:91
 msgid "This statement was deleted"
 msgstr "Această afirmație a fost ștearsă"
 
-#: lib/model/Statement.php:85
-msgid "because it is spam."
-msgstr "deoarece este spam."
-
-#: lib/model/Statement.php:86
-msgid "because it is rude or abusive."
-msgstr "deoarece conține insulte sau abuzuri."
-
-#: lib/model/Statement.php:87
+#: lib/model/Statement.php:97
 msgid "as a duplicate of"
 msgstr "ca duplicat al afirmației"
 
-#: lib/model/Statement.php:88
-msgid "because it is off-topic."
-msgstr "deoarece este pe lîngă subiect."
-
-#: lib/model/Statement.php:89
+#: lib/model/Statement.php:99
 msgid "because it is unverifiable."
 msgstr "deoarece este neverificabilă."
-
-#: lib/model/Statement.php:90
-msgid "because it is low-quality."
-msgstr "deoarece este de slabă calitate."
-
-#: lib/model/Statement.php:91
-msgid "for other reasons."
-msgstr "pentru alte motive."
 
 #: lib/model/User.php:100 routes/auth/login.php:58
 #: routes/auth/lostPassword.php:50

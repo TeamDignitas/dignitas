@@ -19,10 +19,20 @@ class Statement extends BaseObject implements DatedObject {
     return User::get_by_id($this->userId);
   }
 
+  /**
+   * Returns this Statement's answers, filtered by visibility to the current
+   * user.
+   */
   function getAnswers() {
-    return Model::factory('Answer')
-      ->where('statementId', $this->id)
-      ->where('status', self::STATUS_ACTIVE)
+    $answers = Model::factory('Answer')
+      ->where('statementId', $this->id);
+
+    if (!User::may(User::PRIV_DELETE_ANSWER)) {
+      $answers = $answers
+        ->where('status', self::STATUS_ACTIVE);
+    }
+
+    return $answers
       ->order_by_desc('createDate')
       ->find_many();
   }

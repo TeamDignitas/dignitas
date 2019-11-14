@@ -20,6 +20,32 @@ class Answer extends BaseObject implements DatedObject {
   }
 
   /**
+   * Returns a human-readable message if this Answer is deleted or null
+   * otherwise.
+   *
+   * @return string
+   */
+  function getDeletedMessage() {
+    if ($this->status == self::STATUS_ACTIVE) {
+      return null;
+    }
+
+    $msg = _('This answer was deleted');
+
+    $reason = $this->getReviewReason();
+    switch ($reason) {
+      case Review::REASON_SPAM: $r = _('because it is spam.'); break;
+      case Review::REASON_ABUSE: $r = _('because it is rude or abusive.'); break;
+      case Review::REASON_OFF_TOPIC: $r = _('because it is off-topic.'); break;
+      case Review::REASON_LOW_QUALITY: $r = _('because it is low-quality.'); break;
+      case Review::REASON_OTHER: $r = _('for other reasons.');
+      default: $r = '';
+    }
+
+    return $msg . ' ' . $r;
+  }
+
+  /**
    * Create a blank answer assigned to a statement.
    *
    * @param int $statementId
@@ -43,6 +69,7 @@ class Answer extends BaseObject implements DatedObject {
 
   function isDeletable() {
     return
+      $this->status == self::STATUS_ACTIVE &&
       $this->userId == User::getActiveId();   // can always delete user's own answers
   }
 
