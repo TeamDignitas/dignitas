@@ -32,23 +32,33 @@ trait FlaggableTrait {
     return User::canFlag($this);
   }
 
+  private function changeStatus($status, $reason) {
+    $this->status = $status;
+    $this->reason = $reason;
+    $this->statusUserId = User::getActiveId();
+    $this->save();
+  }
+
   /**
-   * If this object is active, returns null. Otherwise returns the reason of
-   * the most recent resolved review.
-   *
-   * @return int one of the Ct::REASON_* values or null.
+   * Marks the object as deleted.
    */
-  function getReviewReason() {
-    if ($this->status == Ct::STATUS_ACTIVE) {
-      return null;
-    }
-    $r = Model::factory('Review')
-      ->where('objectType', self::getObjectType())
-      ->where('objectId', $this->id)
-      ->where('status', Review::STATUS_ACCEPTED)
-      ->order_by_desc('createDate')
-      ->find_one();
-    return $r->reason ?? null;
+  function markDeleted($reason) {
+    $this->changeStatus(Ct::STATUS_DELETED, $reason);
+  }
+
+  /**
+   * Closes the object.
+   */
+  function close($reason) {
+    $this->changeStatus(Ct::STATUS_CLOSED, $reason);
+  }
+
+  /**
+   * Closes the object as a duplicate.
+   */
+  function closeAsDuplicate($duplicateId) {
+    $this->duplicateId = $duplicateId;
+    $this->close(Ct::REASON_DUPLICATE);
   }
 
 }

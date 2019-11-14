@@ -241,10 +241,10 @@ class Review extends BaseObject implements DatedObject {
       if ($this->reason == Ct::REASON_DUPLICATE) {
         $obj->closeAsDuplicate($this->duplicateId);
       } else {
-        $obj->close();
+        $obj->close($this->reason);
       }
     } else if ($action == self::ACTION_DELETE) {
-      $obj->markDeleted();
+      $obj->markDeleted($this->reason);
     } else {
       Log::alert('Invalid action %s encountered in review #%s.', $action, $this->id);
     }

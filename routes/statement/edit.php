@@ -15,7 +15,7 @@ if ($id) {
 
 if ($deleteButton) {
   User::enforce(User::PRIV_DELETE_STATEMENT);
-  $statement->markDeleted();
+  $statement->markDeleted(Ct::REASON_BY_USER);
   FlashMessage::add(_('Statement deleted.'), 'success');
   Util::redirectToHome();
 }

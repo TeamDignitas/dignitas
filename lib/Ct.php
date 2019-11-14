@@ -22,8 +22,9 @@ class Ct {
   const REASON_LOW_QUALITY = 6;
   const REASON_FIRST_POST = 7;
   const REASON_LATE_ANSWER = 8;
-  const REASON_REOPEN = 9;
-  const REASON_OTHER = 10;
-  const NUM_REASONS = 10;
+  const REASON_BY_USER = 9;
+  const REASON_REOPEN = 10;
+  const REASON_OTHER = 11;
+  const NUM_REASONS = 11;
 
 }

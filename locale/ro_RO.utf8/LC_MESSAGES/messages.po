@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-11-14 15:00+0200\n"
-"PO-Revision-Date: 2019-11-14 15:00+0200\n"
+"POT-Creation-Date: 2019-11-14 15:46+0200\n"
+"PO-Revision-Date: 2019-11-14 15:46+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -234,7 +234,7 @@ msgstr "Raportați acest răspuns pentru motivul:"
 msgid "Flag this statement for the following reason:"
 msgstr "Raportați această afirmație pentru motivul:"
 
-#: templates/bits/flagModal.tpl:28 lib/model/Review.php:78
+#: templates/bits/flagModal.tpl:28 lib/model/Review.php:66
 msgid "spam"
 msgstr "spam"
 
@@ -264,7 +264,7 @@ msgstr "Această afirmație apare deja în Dignitas."
 msgid "type in some keywords..."
 msgstr "tastați niște cuvinte..."
 
-#: templates/bits/flagModal.tpl:80 lib/model/Review.php:81
+#: templates/bits/flagModal.tpl:80 lib/model/Review.php:69
 msgid "off-topic"
 msgstr "pe lîngă subiect"
 
@@ -280,7 +280,7 @@ msgstr ""
 "Această afirmație este în afara scopului Dignitas sau este prea generală "
 "pentru a fi demonstrată sau infirmată."
 
-#: templates/bits/flagModal.tpl:100 lib/model/Review.php:82
+#: templates/bits/flagModal.tpl:100 lib/model/Review.php:70
 msgid "unverifiable"
 msgstr "neverificabil(ă)"
 
@@ -744,21 +744,25 @@ msgstr "Vă rugăm să vă autentificați pentru a continua."
 msgid "This answer was deleted"
 msgstr "Acest răspuns a fost șters"
 
-#: lib/model/Answer.php:37 lib/model/Statement.php:95
+#: lib/model/Answer.php:36 lib/model/Statement.php:94
 msgid "because it is spam."
 msgstr "deoarece este spam."
 
-#: lib/model/Answer.php:38 lib/model/Statement.php:96
+#: lib/model/Answer.php:37 lib/model/Statement.php:95
 msgid "because it is rude or abusive."
 msgstr "deoarece conține insulte sau abuzuri."
 
-#: lib/model/Answer.php:39 lib/model/Statement.php:98
+#: lib/model/Answer.php:38 lib/model/Statement.php:97
 msgid "because it is off-topic."
 msgstr "deoarece este pe lîngă subiect."
 
-#: lib/model/Answer.php:40 lib/model/Statement.php:100
+#: lib/model/Answer.php:39 lib/model/Statement.php:99
 msgid "because it is low-quality."
 msgstr "deoarece este de slabă calitate."
+
+#: lib/model/Answer.php:40 lib/model/Statement.php:100
+msgid "by a user."
+msgstr "de către un utilizator."
 
 #: lib/model/Answer.php:41 lib/model/Statement.php:101
 msgid "for other reasons."
@@ -784,71 +788,71 @@ msgstr "site web"
 msgid "member of"
 msgstr "membru în"
 
-#: lib/model/Review.php:57
+#: lib/model/Review.php:45
 msgid "items flagged as spam"
 msgstr "articole raportate ca spam"
 
-#: lib/model/Review.php:58
+#: lib/model/Review.php:46
 msgid "items flagged as abuse"
 msgstr "articole raportate ca insulte"
 
-#: lib/model/Review.php:59
+#: lib/model/Review.php:47
 msgid "items flagged as duplicate"
 msgstr "articole raportate ca duplicate"
 
-#: lib/model/Review.php:60
+#: lib/model/Review.php:48
 msgid "items flagged as off-topic"
 msgstr "articole raportate ca pe lîngă subiect"
 
-#: lib/model/Review.php:61
+#: lib/model/Review.php:49
 msgid "items flagged as unverifiable"
 msgstr "articole raportate ca neverificabile"
 
-#: lib/model/Review.php:62
+#: lib/model/Review.php:50
 msgid "items flagged as low quality"
 msgstr "articole raportate ca de slabă calitate"
 
-#: lib/model/Review.php:63
+#: lib/model/Review.php:51
 msgid "first posts"
 msgstr "prime mesaje"
 
-#: lib/model/Review.php:64
+#: lib/model/Review.php:52
 msgid "late answers"
 msgstr "răspunsuri tîrzii"
 
-#: lib/model/Review.php:65
+#: lib/model/Review.php:53
 msgid "items flagged for reopening"
 msgstr "articole marcate pentru redeschidere"
 
-#: lib/model/Review.php:66
+#: lib/model/Review.php:54
 msgid "items flagged for other reasons"
 msgstr "articole raportate pentru alte motive"
 
-#: lib/model/Review.php:79
+#: lib/model/Review.php:67
 msgid "abuse"
 msgstr "insulta"
 
-#: lib/model/Review.php:80 lib/model/Statement.php:78
+#: lib/model/Review.php:68 lib/model/Statement.php:78
 msgid "duplicate"
 msgstr "duplicate"
 
-#: lib/model/Review.php:83
+#: lib/model/Review.php:71
 msgid "low-quality"
 msgstr "slaba-calitate"
 
-#: lib/model/Review.php:84
+#: lib/model/Review.php:72
 msgid "first-post"
 msgstr "prim-mesaj"
 
-#: lib/model/Review.php:85
+#: lib/model/Review.php:73
 msgid "late-answer"
 msgstr "raspuns-tirziu"
 
-#: lib/model/Review.php:86
+#: lib/model/Review.php:74
 msgid "reopen"
 msgstr "redeschidere"
 
-#: lib/model/Review.php:87
+#: lib/model/Review.php:75
 msgid "other"
 msgstr "altele"
 
@@ -868,11 +872,11 @@ msgstr "Această afirmație a fost închisă"
 msgid "This statement was deleted"
 msgstr "Această afirmație a fost ștearsă"
 
-#: lib/model/Statement.php:97
+#: lib/model/Statement.php:96
 msgid "as a duplicate of"
 msgstr "ca duplicat al afirmației"
 
-#: lib/model/Statement.php:99
+#: lib/model/Statement.php:98
 msgid "because it is unverifiable."
 msgstr "deoarece este neverificabilă."
 

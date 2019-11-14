@@ -32,12 +32,12 @@ class Answer extends BaseObject implements DatedObject {
 
     $msg = _('This answer was deleted');
 
-    $reason = $this->getReviewReason();
-    switch ($reason) {
+    switch ($this->reason) {
       case Ct::REASON_SPAM: $r = _('because it is spam.'); break;
       case Ct::REASON_ABUSE: $r = _('because it is rude or abusive.'); break;
       case Ct::REASON_OFF_TOPIC: $r = _('because it is off-topic.'); break;
       case Ct::REASON_LOW_QUALITY: $r = _('because it is low-quality.'); break;
+      case Ct::REASON_BY_USER: $r = _('by a user.'); break;
       case Ct::REASON_OTHER: $r = _('for other reasons.');
       default: $r = '';
     }
@@ -73,9 +73,12 @@ class Answer extends BaseObject implements DatedObject {
       $this->userId == User::getActiveId();   // can always delete user's own answers
   }
 
-  function markDeleted() {
-    $this->status = Ct::STATUS_DELETED;
-    $this->save();
+  function close($reason) {
+    throw new Exception('Answers should never be closed.');
+  }
+
+  function closeAsDuplicate($duplicateId) {
+    throw new Exception('Answers should never be closed as a duplicate.');
   }
 
   function delete() {

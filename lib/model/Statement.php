@@ -90,14 +90,14 @@ class Statement extends BaseObject implements DatedObject {
       ? _('This statement was closed')
       : _('This statement was deleted');
 
-    $reason = $this->getReviewReason();
-    switch ($reason) {
+    switch ($this->reason) {
       case Ct::REASON_SPAM: $r = _('because it is spam.'); break;
       case Ct::REASON_ABUSE: $r = _('because it is rude or abusive.'); break;
       case Ct::REASON_DUPLICATE: $r = _('as a duplicate of'); break;
       case Ct::REASON_OFF_TOPIC: $r = _('because it is off-topic.'); break;
       case Ct::REASON_UNVERIFIABLE: $r = _('because it is unverifiable.'); break;
       case Ct::REASON_LOW_QUALITY: $r = _('because it is low-quality.'); break;
+      case Ct::REASON_BY_USER: $r = _('by a user.'); break;
       case Ct::REASON_OTHER: $r = _('for other reasons.');
       default: $r = '';
     }
@@ -122,21 +122,6 @@ class Statement extends BaseObject implements DatedObject {
     return
       User::may(User::PRIV_DELETE_STATEMENT) || // can delete any statement
       $this->userId == User::getActiveId();     // can always delete user's own statements
-  }
-
-  function close() {
-    $this->status = Ct::STATUS_CLOSED;
-    $this->save();
-  }
-
-  function closeAsDuplicate($duplicateId) {
-    $this->duplicateId = $duplicateId;
-    $this->close();
-  }
-
-  function markDeleted() {
-    $this->status = Ct::STATUS_DELETED;
-    $this->save();
   }
 
   function delete() {
