@@ -32,6 +32,31 @@ trait FlaggableTrait {
     return User::canFlag($this);
   }
 
+  /**
+   * Returns the flags of the review that decided the object's current status.
+   */
+  function getReviewFlags() {
+    $flags = Model::factory('Flag')
+      ->table_alias('f')
+      ->select('f.*')
+      ->join('review', ['f.reviewId', '=', 'r.id'], 'r')
+      ->where('r.objectType', $this->getObjectType())
+      ->where('r.objectId', $this->id)
+      ->where('r.reason', $this->reason)
+      ->where('r.status', Review::STATUS_ACCEPTED);
+    if ($this->reason == Ct::REASON_DUPLICATE) {
+      $flags = $flags
+        ->where('r.duplicateId', $this->duplicateId);
+    }
+    return $flags
+      ->order_by_desc('f.createDate')
+      ->find_many();
+  }
+
+  function getStatusUser() {
+    return User::get_by_id($this->statusUserId);
+  }
+
   private function changeStatus($status, $reason) {
     $this->status = $status;
     $this->reason = $reason;

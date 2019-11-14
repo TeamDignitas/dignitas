@@ -10,6 +10,13 @@
   {if $answer->status == Ct::STATUS_DELETED}
     <div class="alert alert-secondary">
       {$answer->getDeletedMessage()}
+
+      {if $answer->reason == Ct::REASON_BY_USER}
+        {include "bits/userLink.tpl" u=$answer->getStatusUser()}
+      {else if $answer->reason != Ct::REASON_BY_OWNER}
+        <hr>
+        {include "bits/reviewFlagList.tpl"}
+      {/if}
     </div>
   {/if}
 

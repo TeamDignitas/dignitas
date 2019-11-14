@@ -97,8 +97,9 @@ class Statement extends BaseObject implements DatedObject {
       case Ct::REASON_OFF_TOPIC: $r = _('because it is off-topic.'); break;
       case Ct::REASON_UNVERIFIABLE: $r = _('because it is unverifiable.'); break;
       case Ct::REASON_LOW_QUALITY: $r = _('because it is low-quality.'); break;
-      case Ct::REASON_BY_USER: $r = _('by a user.'); break;
-      case Ct::REASON_OTHER: $r = _('for other reasons.');
+      case Ct::REASON_BY_OWNER: $r = _('by the user who added it.'); break;
+      case Ct::REASON_BY_USER: $r = _('by'); break;
+      case Ct::REASON_OTHER: $r = _('for other reasons.'); break;
       default: $r = '';
     }
     $rec['details'] .= ' ' . $r;

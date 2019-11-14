@@ -22,9 +22,10 @@ class Ct {
   const REASON_LOW_QUALITY = 6;
   const REASON_FIRST_POST = 7;
   const REASON_LATE_ANSWER = 8;
-  const REASON_BY_USER = 9;
-  const REASON_REOPEN = 10;
-  const REASON_OTHER = 11;
-  const NUM_REASONS = 11;
+  const REASON_BY_OWNER = 9;
+  const REASON_BY_USER = 10;
+  const REASON_REOPEN = 11;
+  const REASON_OTHER = 12;
+  const NUM_REASONS = 12;
 
 }

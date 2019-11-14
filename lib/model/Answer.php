@@ -37,8 +37,9 @@ class Answer extends BaseObject implements DatedObject {
       case Ct::REASON_ABUSE: $r = _('because it is rude or abusive.'); break;
       case Ct::REASON_OFF_TOPIC: $r = _('because it is off-topic.'); break;
       case Ct::REASON_LOW_QUALITY: $r = _('because it is low-quality.'); break;
-      case Ct::REASON_BY_USER: $r = _('by a user.'); break;
-      case Ct::REASON_OTHER: $r = _('for other reasons.');
+      case Ct::REASON_BY_OWNER: $r = _('by its author.'); break;
+      case Ct::REASON_BY_USER: $r = _('by'); break;
+      case Ct::REASON_OTHER: $r = _('for other reasons.'); break;
       default: $r = '';
     }
 
@@ -70,7 +71,8 @@ class Answer extends BaseObject implements DatedObject {
   function isDeletable() {
     return
       $this->status == Ct::STATUS_ACTIVE &&
-      $this->userId == User::getActiveId();   // can always delete user's own answers
+      (User::may(User::PRIV_DELETE_ANSWER) ||    // can delete any answer
+       $this->userId == User::getActiveId());    // can always delete user's own answers
   }
 
   function close($reason) {

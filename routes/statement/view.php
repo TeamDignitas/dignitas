@@ -24,7 +24,8 @@ if ($deleteAnswerId) {
   } else if (!$answer->isDeletable()) {
     FlashMessage::add(_('You cannot delete this answer.'));
   } else {
-    $answer->markDeleted(Ct::REASON_BY_USER);
+    $isOwner = ($answer->userId == User::getActiveId());
+    $answer->markDeleted($isOwner ? Ct::REASON_BY_OWNER : Ct::REASON_BY_USER);
     FlashMessage::add(_('Answer deleted.'), 'success');
   }
 
