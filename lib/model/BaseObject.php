@@ -12,12 +12,6 @@ class BaseObject extends Model {
   const TYPE_ANSWER = 2;
   const TYPE_USER = 3;
 
-  // these would fit better on FlaggableTrait objects (which can therefore be
-  // closed or deleted), but PHP won't let us define constants in traits
-  const STATUS_ACTIVE = 0;
-  const STATUS_CLOSED = 1;
-  const STATUS_DELETED = 2;
-
   function __call($name, $arguments) {
     return $this->callHandler($name, $arguments);
   }

@@ -35,7 +35,7 @@
         </button>
       </div>
 
-      {if $review->reason == Review::REASON_OTHER}
+      {if $review->reason == Ct::REASON_OTHER}
         <div class="form-group">
           <input
             type="text"

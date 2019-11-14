@@ -5,7 +5,7 @@
     <tr>
       <th>{t}user{/t}</th>
       <th>{t}vote{/t}</th>
-      {if $review->reason == Review::REASON_OTHER}
+      {if $review->reason == Ct::REASON_OTHER}
         <th>{t}details{/t}</th>
       {/if}
       <th>{t}date{/t}</th>
@@ -23,7 +23,7 @@
           {$f->getVoteName()}
         </td>
 
-        {if $review->reason == Review::REASON_OTHER}
+        {if $review->reason == Ct::REASON_OTHER}
           <td>
             {$f->details|escape}
           </td>

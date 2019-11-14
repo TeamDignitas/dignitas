@@ -6,18 +6,6 @@
 class Review extends BaseObject implements DatedObject {
   use ObjectTypeIdTrait;
 
-  const REASON_SPAM = 1;
-  const REASON_ABUSE = 2;
-  const REASON_DUPLICATE = 3;
-  const REASON_OFF_TOPIC = 4;
-  const REASON_UNVERIFIABLE = 5;
-  const REASON_LOW_QUALITY = 6;
-  const REASON_FIRST_POST = 7;
-  const REASON_LATE_ANSWER = 8;
-  const REASON_REOPEN = 9;
-  const REASON_OTHER = 10;
-  const NUM_REASONS = 10;
-
   const STATUS_PENDING = 0;
   const STATUS_ACCEPTED = 1;
   const STATUS_DECLINED = 2;
@@ -29,62 +17,62 @@ class Review extends BaseObject implements DatedObject {
   // It should be impossible to encounter cases not covered here.
   const ACTION_MAP = [
     BaseObject::TYPE_ANSWER => [
-      self::REASON_SPAM => self::ACTION_DELETE,
-      self::REASON_ABUSE => self::ACTION_DELETE,
-      self::REASON_OFF_TOPIC => self::ACTION_DELETE,
-      self::REASON_LOW_QUALITY => self::ACTION_DELETE,
-      self::REASON_OTHER => null,
+      Ct::REASON_SPAM => self::ACTION_DELETE,
+      Ct::REASON_ABUSE => self::ACTION_DELETE,
+      Ct::REASON_OFF_TOPIC => self::ACTION_DELETE,
+      Ct::REASON_LOW_QUALITY => self::ACTION_DELETE,
+      Ct::REASON_OTHER => null,
     ],
     BaseObject::TYPE_STATEMENT => [
-      self::REASON_SPAM => self::ACTION_DELETE,
-      self::REASON_ABUSE => self::ACTION_DELETE,
-      self::REASON_DUPLICATE => self::ACTION_CLOSE,
-      self::REASON_OFF_TOPIC => self::ACTION_CLOSE,
-      self::REASON_UNVERIFIABLE => self::ACTION_CLOSE,
-      self::REASON_LOW_QUALITY => self::ACTION_CLOSE,
-      self::REASON_OTHER => null,
+      Ct::REASON_SPAM => self::ACTION_DELETE,
+      Ct::REASON_ABUSE => self::ACTION_DELETE,
+      Ct::REASON_DUPLICATE => self::ACTION_CLOSE,
+      Ct::REASON_OFF_TOPIC => self::ACTION_CLOSE,
+      Ct::REASON_UNVERIFIABLE => self::ACTION_CLOSE,
+      Ct::REASON_LOW_QUALITY => self::ACTION_CLOSE,
+      Ct::REASON_OTHER => null,
     ],
   ];
 
   /**
    * Returns a localized description for a review queue.
    *
-   * @param int $reason One of the self::REASON_* values
+   * @param int $reason One of the Ct::REASON_* values
    * @return string A localized description
    */
   static function getDescription($reason) {
     switch ($reason) {
-      case self::REASON_SPAM:         return _('items flagged as spam');
-      case self::REASON_ABUSE:        return _('items flagged as abuse');
-      case self::REASON_DUPLICATE:    return _('items flagged as duplicate');
-      case self::REASON_OFF_TOPIC:    return _('items flagged as off-topic');
-      case self::REASON_UNVERIFIABLE: return _('items flagged as unverifiable');
-      case self::REASON_LOW_QUALITY:  return _('items flagged as low quality');
-      case self::REASON_FIRST_POST:   return _('first posts');
-      case self::REASON_LATE_ANSWER:  return _('late answers');
-      case self::REASON_REOPEN:       return _('items flagged for reopening');
-      case self::REASON_OTHER:        return _('items flagged for other reasons');
+      case Ct::REASON_SPAM:         return _('items flagged as spam');
+      case Ct::REASON_ABUSE:        return _('items flagged as abuse');
+      case Ct::REASON_DUPLICATE:    return _('items flagged as duplicate');
+      case Ct::REASON_OFF_TOPIC:    return _('items flagged as off-topic');
+      case Ct::REASON_UNVERIFIABLE: return _('items flagged as unverifiable');
+      case Ct::REASON_LOW_QUALITY:  return _('items flagged as low quality');
+      case Ct::REASON_FIRST_POST:   return _('first posts');
+      case Ct::REASON_LATE_ANSWER:  return _('late answers');
+      case Ct::REASON_REOPEN:       return _('items flagged for reopening');
+      case Ct::REASON_OTHER:        return _('items flagged for other reasons');
     }
   }
 
   /**
    * Returns a localized URL name for a review queue.
    *
-   * @param int $reason One of the self::REASON_* values
+   * @param int $reason One of the Ct::REASON_* values
    * @return string A localized URL name
    */
   static function getUrlName($reason) {
     switch ($reason) {
-      case self::REASON_SPAM:         return _('spam');
-      case self::REASON_ABUSE:        return _('abuse');
-      case self::REASON_DUPLICATE:    return _('duplicate');
-      case self::REASON_OFF_TOPIC:    return _('off-topic');
-      case self::REASON_UNVERIFIABLE: return _('unverifiable');
-      case self::REASON_LOW_QUALITY:  return _('low-quality');
-      case self::REASON_FIRST_POST:   return _('first-post');
-      case self::REASON_LATE_ANSWER:  return _('late-answer');
-      case self::REASON_REOPEN:       return _('reopen');
-      case self::REASON_OTHER:        return _('other');
+      case Ct::REASON_SPAM:         return _('spam');
+      case Ct::REASON_ABUSE:        return _('abuse');
+      case Ct::REASON_DUPLICATE:    return _('duplicate');
+      case Ct::REASON_OFF_TOPIC:    return _('off-topic');
+      case Ct::REASON_UNVERIFIABLE: return _('unverifiable');
+      case Ct::REASON_LOW_QUALITY:  return _('low-quality');
+      case Ct::REASON_FIRST_POST:   return _('first-post');
+      case Ct::REASON_LATE_ANSWER:  return _('late-answer');
+      case Ct::REASON_REOPEN:       return _('reopen');
+      case Ct::REASON_OTHER:        return _('other');
     }
   }
 
@@ -92,11 +80,11 @@ class Review extends BaseObject implements DatedObject {
    * Returns a review reason given a localized URL name.
    *
    * @param string $urlName A localized URL name
-   * @return int One of the self::REASON_* values or null if nothing matches
+   * @return int One of the Ct::REASON_* values or null if nothing matches
    */
   static function getReasonFromUrlName($urlName) {
     // do this naively for now
-    for ($r = 1; $r <= self::NUM_REASONS; $r++) {
+    for ($r = 1; $r <= Ct::NUM_REASONS; $r++) {
       if (self::getUrlName($r) == $urlName) {
         return $r;
       }
@@ -108,7 +96,7 @@ class Review extends BaseObject implements DatedObject {
    * Creates a Review for the given object and reason
    *
    * @param Flaggable $obj A flaggable object
-   * @param int $reason One of the Review::REASON_* values
+   * @param int $reason One of the Ct::REASON_* values
    * @return Review A new Review
    */
   static function create($obj, $reason, $duplicateId) {
@@ -116,7 +104,7 @@ class Review extends BaseObject implements DatedObject {
     $r->objectType = $obj->getObjectType();
     $r->objectId = $obj->id;
     $r->reason = $reason;
-    if ($r->reason == self::REASON_DUPLICATE) {
+    if ($r->reason == Ct::REASON_DUPLICATE) {
       $r->duplicateId = $duplicateId;
     }
     $r->status = self::STATUS_PENDING;
@@ -142,7 +130,7 @@ class Review extends BaseObject implements DatedObject {
    * @return Statement Statement object or null.
    */
   function getDuplicate() {
-    return ($this->reason == self::REASON_DUPLICATE)
+    return ($this->reason == Ct::REASON_DUPLICATE)
       ? Statement::get_by_id($this->duplicateId)
       : null;
   }
@@ -152,7 +140,7 @@ class Review extends BaseObject implements DatedObject {
    * user has already signed off.
    *
    * @param int $userId User ID
-   * @param int $reason One of Review::REASON_* values.
+   * @param int $reason One of Ct::REASON_* values.
    * @return Review a review object or null if one does not exist.
    */
   static function load($userId, $reason) {
@@ -176,7 +164,7 @@ class Review extends BaseObject implements DatedObject {
    * starts one.
    *
    * @param Flaggable $obj a flaggable object
-   * @param int $reason value from Review::REASON_*
+   * @param int $reason value from Ct::REASON_*
    * @param int $duplicateId a Statement ID if $reason = REASON_DUPLICATE, null otherwise
    */
   static function ensure($obj, $reason, $duplicateId) {
@@ -250,7 +238,7 @@ class Review extends BaseObject implements DatedObject {
     $obj = $this->getObject();
 
     if ($action == self::ACTION_CLOSE) {
-      if ($this->reason == self::REASON_DUPLICATE) {
+      if ($this->reason == Ct::REASON_DUPLICATE) {
         $obj->closeAsDuplicate($this->duplicateId);
       } else {
         $obj->close();

@@ -4,7 +4,7 @@
 $statements = Model::factory('Statement');
 
 if (!User::may(User::PRIV_DELETE_STATEMENT)) {
-  $statements = $statements->where_not_equal('status', Statement::STATUS_DELETED);
+  $statements = $statements->where_not_equal('status', Ct::STATUS_DELETED);
 }
 
 $statements = $statements

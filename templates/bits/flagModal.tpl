@@ -24,7 +24,7 @@
                 class="form-check-input"
                 type="radio"
                 name="flagReason"
-                value="{Review::REASON_SPAM}">
+                value="{Ct::REASON_SPAM}">
               {t}spam{/t}
             </label>
             <p class="text-muted">
@@ -38,7 +38,7 @@
                 class="form-check-input"
                 type="radio"
                 name="flagReason"
-                value="{Review::REASON_ABUSE}">
+                value="{Ct::REASON_ABUSE}">
               {t}insults or rudeness{/t}
             </label>
             <p class="text-muted">
@@ -52,7 +52,7 @@
                 class="form-check-input"
                 type="radio"
                 name="flagReason"
-                value="{Review::REASON_DUPLICATE}"
+                value="{Ct::REASON_DUPLICATE}"
                 data-related="#duplicateSearch"
               >
               {t}duplicate of...{/t}
@@ -76,7 +76,7 @@
                 class="form-check-input"
                 type="radio"
                 name="flagReason"
-                value="{Review::REASON_OFF_TOPIC}">
+                value="{Ct::REASON_OFF_TOPIC}">
               {t}off-topic{/t}
             </label>
             <p class="text-muted">
@@ -96,7 +96,7 @@
                 class="form-check-input"
                 type="radio"
                 name="flagReason"
-                value="{Review::REASON_UNVERIFIABLE}">
+                value="{Ct::REASON_UNVERIFIABLE}">
               {t}unverifiable{/t}
             </label>
             <p class="text-muted">
@@ -110,7 +110,7 @@
                 class="form-check-input"
                 type="radio"
                 name="flagReason"
-                value="{Review::REASON_LOW_QUALITY}">
+                value="{Ct::REASON_LOW_QUALITY}">
               {t}low quality{/t}
             </label>
             <p class="text-muted">
@@ -125,7 +125,7 @@
                 class="form-check-input"
                 type="radio"
                 name="flagReason"
-                value="{Review::REASON_OTHER}"
+                value="{Ct::REASON_OTHER}"
                 data-related="#detailsWrapper"
               >
               {t}other reason{/t}

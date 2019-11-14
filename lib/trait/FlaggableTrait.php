@@ -36,10 +36,10 @@ trait FlaggableTrait {
    * If this object is active, returns null. Otherwise returns the reason of
    * the most recent resolved review.
    *
-   * @return int one of the Review::REASON_* values or null.
+   * @return int one of the Ct::REASON_* values or null.
    */
   function getReviewReason() {
-    if ($this->status == self::STATUS_ACTIVE) {
+    if ($this->status == Ct::STATUS_ACTIVE) {
       return null;
     }
     $r = Model::factory('Review')

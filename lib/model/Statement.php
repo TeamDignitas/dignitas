@@ -29,7 +29,7 @@ class Statement extends BaseObject implements DatedObject {
 
     if (!User::may(User::PRIV_DELETE_ANSWER)) {
       $answers = $answers
-        ->where('status', self::STATUS_ACTIVE);
+        ->where('status', Ct::STATUS_ACTIVE);
     }
 
     return $answers
@@ -55,7 +55,7 @@ class Statement extends BaseObject implements DatedObject {
    * @return Statement Statement object or null.
    */
   function getDuplicate() {
-    return (($this->status == self::STATUS_CLOSED) && $this->duplicateId)
+    return (($this->status == Ct::STATUS_CLOSED) && $this->duplicateId)
       ? Statement::get_by_id($this->duplicateId)
       : null;
   }
@@ -67,7 +67,7 @@ class Statement extends BaseObject implements DatedObject {
    * CSS class). If the status is active, returns null.
    */
   function getStatusInfo() {
-    if ($this->status == self::STATUS_ACTIVE) {
+    if ($this->status == Ct::STATUS_ACTIVE) {
       return null;
     }
 
@@ -76,29 +76,29 @@ class Statement extends BaseObject implements DatedObject {
 
     $rec['status'] = $dup
       ? _('duplicate')
-      : ($this->status == self::STATUS_CLOSED
+      : ($this->status == Ct::STATUS_CLOSED
          ? _('closed')
          : _('deleted'));
 
     $rec['dup'] = $dup;
 
-    $rec['cssClass'] = ($this->status == self::STATUS_DELETED)
+    $rec['cssClass'] = ($this->status == Ct::STATUS_DELETED)
       ? 'alert-danger'
       : 'alert-warning';
 
-    $rec['details'] = ($this->status == self::STATUS_CLOSED)
+    $rec['details'] = ($this->status == Ct::STATUS_CLOSED)
       ? _('This statement was closed')
       : _('This statement was deleted');
 
     $reason = $this->getReviewReason();
     switch ($reason) {
-      case Review::REASON_SPAM: $r = _('because it is spam.'); break;
-      case Review::REASON_ABUSE: $r = _('because it is rude or abusive.'); break;
-      case Review::REASON_DUPLICATE: $r = _('as a duplicate of'); break;
-      case Review::REASON_OFF_TOPIC: $r = _('because it is off-topic.'); break;
-      case Review::REASON_UNVERIFIABLE: $r = _('because it is unverifiable.'); break;
-      case Review::REASON_LOW_QUALITY: $r = _('because it is low-quality.'); break;
-      case Review::REASON_OTHER: $r = _('for other reasons.');
+      case Ct::REASON_SPAM: $r = _('because it is spam.'); break;
+      case Ct::REASON_ABUSE: $r = _('because it is rude or abusive.'); break;
+      case Ct::REASON_DUPLICATE: $r = _('as a duplicate of'); break;
+      case Ct::REASON_OFF_TOPIC: $r = _('because it is off-topic.'); break;
+      case Ct::REASON_UNVERIFIABLE: $r = _('because it is unverifiable.'); break;
+      case Ct::REASON_LOW_QUALITY: $r = _('because it is low-quality.'); break;
+      case Ct::REASON_OTHER: $r = _('for other reasons.');
       default: $r = '';
     }
     $rec['details'] .= ' ' . $r;
@@ -108,7 +108,7 @@ class Statement extends BaseObject implements DatedObject {
 
   function isViewable() {
     return
-      ($this->status != self::STATUS_DELETED) ||
+      ($this->status != Ct::STATUS_DELETED) ||
       User::may(User::PRIV_DELETE_STATEMENT);
   }
 
@@ -125,7 +125,7 @@ class Statement extends BaseObject implements DatedObject {
   }
 
   function close() {
-    $this->status = self::STATUS_CLOSED;
+    $this->status = Ct::STATUS_CLOSED;
     $this->save();
   }
 
@@ -135,7 +135,7 @@ class Statement extends BaseObject implements DatedObject {
   }
 
   function markDeleted() {
-    $this->status = self::STATUS_DELETED;
+    $this->status = Ct::STATUS_DELETED;
     $this->save();
   }
 
