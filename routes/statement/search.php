@@ -1,10 +1,11 @@
 <?php
 
 $term = Request::get('term');
+$exceptId = Request::get('exceptId', 0);
 
 if ($term) {
   $term = addslashes($term);
-  $statements = Search::searchStatements($term);
+  $statements = Search::searchStatements($term, $exceptId);
 } else {
   $statements = [];
 }

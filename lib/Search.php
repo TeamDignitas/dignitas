@@ -35,10 +35,17 @@ class Search {
       ->find_many();
   }
 
-  // load statements by substring match
-  static function searchStatements($escapedQuery, $limit = self::LIMIT) {
+  /**
+   * Loads statements by substring match.
+   *
+   * @param string $escapedQuery Substring query, already escaped
+   * @param int $exceptId ID to exclude from results (useful for duplicate flags)
+   * @param int $limit Maximum results to return
+   */
+  static function searchStatements($escapedQuery, $exceptId = 0, $limit = self::LIMIT) {
     return Model::factory('Statement')
       ->where_like('summary', "%{$escapedQuery}%")
+      ->where_not_equal('id', $exceptId)
       ->order_by_asc('summary')
       ->limit($limit)
       ->find_many();

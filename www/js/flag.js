@@ -128,6 +128,12 @@ $(function() {
   $('#flagDuplicateId').select2({
     ajax: {
       url: URL_PREFIX + 'ajax/search-statements',
+      data: function(params, page) {
+        return {
+          term: params.term,
+          exceptId: objectId,
+        };
+      },
       delay: 300,
     },
     // Without dropdownParent, the select2 won't receive focus because the

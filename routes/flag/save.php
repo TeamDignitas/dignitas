@@ -18,6 +18,10 @@ try {
   $obj = BaseObject::getObjectByTypeId($objectType, $objectId);
   User::canFlag($obj, true);
 
+  if ($duplicateId == $objectId) {
+    throw new Exception(_('Cannot flag statement as a duplicate of itself.'));
+  }
+
   $review = Review::ensure($obj, $reason, $duplicateId);
   $flag = Flag::create($review->id, $details, Flag::VOTE_REMOVE);
   $flag->save();
