@@ -45,7 +45,7 @@ if ($saveButton) {
     $statement->save();
 
     if ($new) {
-      Review::checkFirstPost($answer);
+      Review::checkNewUser($answer);
     }
     StatementSource::updateDependants($sources, 'statementId', $statement->id, 'rank');
     ObjectTag::update($statement, $tagIds);

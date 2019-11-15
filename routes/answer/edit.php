@@ -28,7 +28,7 @@ if ($saveButton) {
     $answer->save();
 
     if ($new) {
-      Review::checkFirstPost($answer);
+      Review::checkNewUser($answer);
     }
 
     FlashMessage::add(

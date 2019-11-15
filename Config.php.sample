@@ -119,8 +119,8 @@ class Config {
   const REMOVE_VOTES_NECESSARY = 2;
   const KEEP_VOTES_NECESSARY = 2;
 
-  // Reputation below which posts trigger a review with REASON_FIRST_POST.
-  const FIRST_POST_REPUTATION = 100;
+  // Reputation below which posts trigger a review with REASON_NEW_USER.
+  const NEW_USER_REPUTATION = 100;
 
   // Loyalty settings. Define a set of adjacent intervals going back in time
   // and give points for every day in each interval. Then loyalty is the sum

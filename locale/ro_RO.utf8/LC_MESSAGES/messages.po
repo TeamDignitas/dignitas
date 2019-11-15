@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-11-15 11:09+0200\n"
-"PO-Revision-Date: 2019-11-15 11:10+0200\n"
+"POT-Creation-Date: 2019-11-15 12:49+0200\n"
+"PO-Revision-Date: 2019-11-15 12:49+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -234,7 +234,7 @@ msgstr "Raportați acest răspuns pentru motivul:"
 msgid "Flag this statement for the following reason:"
 msgstr "Raportați această afirmație pentru motivul:"
 
-#: templates/bits/flagModal.tpl:28 lib/model/Review.php:66
+#: templates/bits/flagModal.tpl:28 lib/model/Review.php:68
 msgid "spam"
 msgstr "spam"
 
@@ -264,7 +264,7 @@ msgstr "Această afirmație apare deja în Dignitas."
 msgid "type in some keywords..."
 msgstr "tastați niște cuvinte..."
 
-#: templates/bits/flagModal.tpl:80 lib/model/Review.php:69
+#: templates/bits/flagModal.tpl:80 lib/model/Review.php:71
 msgid "off-topic"
 msgstr "pe lîngă subiect"
 
@@ -280,7 +280,7 @@ msgstr ""
 "Această afirmație este în afara scopului Dignitas sau este prea generală "
 "pentru a fi demonstrată sau infirmată."
 
-#: templates/bits/flagModal.tpl:100 lib/model/Review.php:70
+#: templates/bits/flagModal.tpl:100 lib/model/Review.php:72
 msgid "unverifiable"
 msgstr "neverificabil(ă)"
 
@@ -367,12 +367,12 @@ msgid "details (optional)"
 msgstr "detalii (opționale)"
 
 #: templates/bits/reviewFlagList.tpl:7
-msgid "voted to remove"
-msgstr "a votat pentru eliminare"
-
-#: templates/bits/reviewFlagList.tpl:9
 msgid "voted to keep"
 msgstr "a votat pentru păstrare"
+
+#: templates/bits/reviewFlagList.tpl:9
+msgid "voted to remove"
+msgstr "a votat pentru eliminare"
 
 #: templates/bits/reviewFlagList.tpl:13
 msgid "executive"
@@ -808,71 +808,71 @@ msgstr "site web"
 msgid "member of"
 msgstr "membru în"
 
-#: lib/model/Review.php:45
+#: lib/model/Review.php:47
 msgid "items flagged as spam"
 msgstr "articole raportate ca spam"
 
-#: lib/model/Review.php:46
+#: lib/model/Review.php:48
 msgid "items flagged as abuse"
 msgstr "articole raportate ca insulte"
 
-#: lib/model/Review.php:47
+#: lib/model/Review.php:49
 msgid "items flagged as duplicate"
 msgstr "articole raportate ca duplicate"
 
-#: lib/model/Review.php:48
+#: lib/model/Review.php:50
 msgid "items flagged as off-topic"
 msgstr "articole raportate ca pe lîngă subiect"
 
-#: lib/model/Review.php:49
+#: lib/model/Review.php:51
 msgid "items flagged as unverifiable"
 msgstr "articole raportate ca neverificabile"
 
-#: lib/model/Review.php:50
+#: lib/model/Review.php:52
 msgid "items flagged as low quality"
 msgstr "articole raportate ca de slabă calitate"
 
-#: lib/model/Review.php:51
-msgid "first posts"
-msgstr "prime mesaje"
+#: lib/model/Review.php:53
+msgid "posts from new users"
+msgstr "mesaje de la utilizatori noi"
 
-#: lib/model/Review.php:52
+#: lib/model/Review.php:54
 msgid "late answers"
 msgstr "răspunsuri tîrzii"
 
-#: lib/model/Review.php:53
+#: lib/model/Review.php:55
 msgid "items flagged for reopening"
 msgstr "articole marcate pentru redeschidere"
 
-#: lib/model/Review.php:54
+#: lib/model/Review.php:56
 msgid "items flagged for other reasons"
 msgstr "articole raportate pentru alte motive"
 
-#: lib/model/Review.php:67
+#: lib/model/Review.php:69
 msgid "abuse"
 msgstr "insulta"
 
-#: lib/model/Review.php:68 lib/model/Statement.php:78
+#: lib/model/Review.php:70 lib/model/Statement.php:78
 msgid "duplicate"
 msgstr "duplicate"
 
-#: lib/model/Review.php:71
+#: lib/model/Review.php:73
 msgid "low-quality"
 msgstr "slaba-calitate"
 
-#: lib/model/Review.php:72
-msgid "first-post"
-msgstr "prim-mesaj"
+#: lib/model/Review.php:74
+msgid "new-user"
+msgstr "utilizator-nou"
 
-#: lib/model/Review.php:73
+#: lib/model/Review.php:75
 msgid "late-answer"
 msgstr "raspuns-tirziu"
 
-#: lib/model/Review.php:74
+#: lib/model/Review.php:76
 msgid "reopen"
 msgstr "redeschidere"
 
-#: lib/model/Review.php:75
+#: lib/model/Review.php:77
 msgid "other"
 msgstr "altele"
 
@@ -981,11 +981,15 @@ msgstr "Tipurile de fișier acceptate sînt: %s."
 msgid "An error occurred while uploading the file."
 msgstr "A apărut o eroare la încărcarea fișierului."
 
-#: routes/answer/edit.php:28
+#: routes/answer/edit.php:35
 msgid "Answer posted."
 msgstr "Am publicat răspunsul."
 
-#: routes/answer/edit.php:58
+#: routes/answer/edit.php:35
+msgid "Answer updated."
+msgstr "Am actualizat răspunsul."
+
+#: routes/answer/edit.php:66
 msgid "Cannot post an empty answer."
 msgstr "Nu pot publica un răspuns vid."
 
@@ -1023,8 +1027,7 @@ msgstr "Înregistrarea este dezactivată."
 msgid "Entity deleted."
 msgstr "Am șters autorul."
 
-#: routes/entity/edit.php:54 routes/statement/edit.php:48
-#: routes/user/edit.php:26
+#: routes/entity/edit.php:54 routes/user/edit.php:26
 msgid "Changes saved."
 msgstr "Am salvat modificările."
 
@@ -1100,31 +1103,39 @@ msgstr ""
 msgid "Statement deleted."
 msgstr "Am șters afirmația."
 
-#: routes/statement/edit.php:77
+#: routes/statement/edit.php:54
+msgid "Statement added."
+msgstr "Am adăugat afirmația."
+
+#: routes/statement/edit.php:54
+msgid "Statement updated."
+msgstr "Am actualizat afirmația."
+
+#: routes/statement/edit.php:84
 msgid "Please enter an author."
 msgstr "Vă rugăm să introduceți un autor."
 
-#: routes/statement/edit.php:81
+#: routes/statement/edit.php:88
 msgid "Please enter the statement summary."
 msgstr "Vă rugăm să introduceți sumarul afirmației."
 
-#: routes/statement/edit.php:85
+#: routes/statement/edit.php:92
 msgid "Please enter the statement context."
 msgstr "Vă rugăm să introduceți contextul afirmației."
 
-#: routes/statement/edit.php:89
+#: routes/statement/edit.php:96
 msgid "Please enter the statement goal."
 msgstr "Vă rugăm să introduceți scopul afirmației."
 
-#: routes/statement/edit.php:93
+#: routes/statement/edit.php:100
 msgid "Please enter a date."
 msgstr "Vă rugăm să introduceți o dată."
 
-#: routes/statement/edit.php:95
+#: routes/statement/edit.php:102
 msgid "This date may not be in the future."
 msgstr "Această dată nu poate fi în viitor."
 
-#: routes/statement/edit.php:105
+#: routes/statement/edit.php:112
 msgid "Some source URLS are invalid."
 msgstr "Unele URL-uri sursă sînt invalide."
 

@@ -21,7 +21,7 @@ class Review extends BaseObject implements DatedObject {
       Ct::REASON_ABUSE => self::ACTION_DELETE,
       Ct::REASON_OFF_TOPIC => self::ACTION_DELETE,
       Ct::REASON_LOW_QUALITY => self::ACTION_DELETE,
-      Ct::REASON_FIRST_POST => self::ACTION_DELETE,
+      Ct::REASON_NEW_USER => self::ACTION_DELETE,
       Ct::REASON_OTHER => null,
     ],
     BaseObject::TYPE_STATEMENT => [
@@ -31,7 +31,7 @@ class Review extends BaseObject implements DatedObject {
       Ct::REASON_OFF_TOPIC => self::ACTION_CLOSE,
       Ct::REASON_UNVERIFIABLE => self::ACTION_CLOSE,
       Ct::REASON_LOW_QUALITY => self::ACTION_CLOSE,
-      Ct::REASON_FIRST_POST => self::ACTION_CLOSE,
+      Ct::REASON_NEW_USER => self::ACTION_CLOSE,
       Ct::REASON_OTHER => null,
     ],
   ];
@@ -50,7 +50,7 @@ class Review extends BaseObject implements DatedObject {
       case Ct::REASON_OFF_TOPIC:    return _('items flagged as off-topic');
       case Ct::REASON_UNVERIFIABLE: return _('items flagged as unverifiable');
       case Ct::REASON_LOW_QUALITY:  return _('items flagged as low quality');
-      case Ct::REASON_FIRST_POST:   return _('first posts');
+      case Ct::REASON_NEW_USER:     return _('posts from new users');
       case Ct::REASON_LATE_ANSWER:  return _('late answers');
       case Ct::REASON_REOPEN:       return _('items flagged for reopening');
       case Ct::REASON_OTHER:        return _('items flagged for other reasons');
@@ -71,7 +71,7 @@ class Review extends BaseObject implements DatedObject {
       case Ct::REASON_OFF_TOPIC:    return _('off-topic');
       case Ct::REASON_UNVERIFIABLE: return _('unverifiable');
       case Ct::REASON_LOW_QUALITY:  return _('low-quality');
-      case Ct::REASON_FIRST_POST:   return _('first-post');
+      case Ct::REASON_NEW_USER:     return _('new-user');
       case Ct::REASON_LATE_ANSWER:  return _('late-answer');
       case Ct::REASON_REOPEN:       return _('reopen');
       case Ct::REASON_OTHER:        return _('other');
@@ -182,15 +182,15 @@ class Review extends BaseObject implements DatedObject {
   }
 
   /**
-   * Checks if $obj is a first post and starts a first post review if needed.
+   * Checks if $obj is from a new user starts a review if needed.
    * Assumes $obj is a newly-created object.
    *
    * @param Flaggable $obj a flaggable object
    */
-  static function checkFirstPost($obj) {
+  static function checkNewUser($obj) {
     $user = User::getActive();
-    if ($user->reputation < Config::FIRST_POST_REPUTATION) {
-      Review::ensure($obj, Ct::REASON_FIRST_POST);
+    if ($user->reputation < Config::NEW_USER_REPUTATION) {
+      Review::ensure($obj, Ct::REASON_NEW_USER);
     }
   }
 

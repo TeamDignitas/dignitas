@@ -20,7 +20,7 @@ class Ct {
   const REASON_OFF_TOPIC = 4;
   const REASON_UNVERIFIABLE = 5;
   const REASON_LOW_QUALITY = 6;
-  const REASON_FIRST_POST = 7;
+  const REASON_NEW_USER = 7;
   const REASON_LATE_ANSWER = 8;
   const REASON_BY_OWNER = 9;
   const REASON_BY_USER = 10;
