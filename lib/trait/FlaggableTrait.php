@@ -43,7 +43,7 @@ trait FlaggableTrait {
       ->where('r.objectType', $this->getObjectType())
       ->where('r.objectId', $this->id)
       ->where('r.reason', $this->reason)
-      ->where('r.status', Review::STATUS_ACCEPTED);
+      ->where('r.status', Review::STATUS_REMOVE);
     if ($this->reason == Ct::REASON_DUPLICATE) {
       $flags = $flags
         ->where('r.duplicateId', $this->duplicateId);

@@ -16,7 +16,7 @@ if ($id) {
 if ($deleteButton) {
   User::enforce(User::PRIV_DELETE_STATEMENT);
   $isOwner = ($statement->userId == User::getActiveId());
-  $answer->markDeleted($isOwner ? Ct::REASON_BY_OWNER : Ct::REASON_BY_USER);
+  $statement->markDeleted($isOwner ? Ct::REASON_BY_OWNER : Ct::REASON_BY_USER);
   FlashMessage::add(_('Statement deleted.'), 'success');
   Util::redirectToHome();
 }
@@ -41,11 +41,18 @@ if ($saveButton) {
 
   $errors = validate($statement, $sources);
   if (empty($errors)) {
+    $new = !$statement->id;
     $statement->save();
+
+    if ($new) {
+      Review::checkFirstPost($answer);
+    }
     StatementSource::updateDependants($sources, 'statementId', $statement->id, 'rank');
     ObjectTag::update($statement, $tagIds);
 
-    FlashMessage::add(_('Changes saved.'), 'success');
+    FlashMessage::add(
+      $new ? _('Statement added.') : _('Statement updated.'),
+      'success');
     Util::redirect($referrer);
   } else {
     Smart::assign([

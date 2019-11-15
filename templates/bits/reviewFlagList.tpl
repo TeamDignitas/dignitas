@@ -3,10 +3,10 @@
     <li>
       {include "bits/userLink.tpl" u=$f->getUser()}
 
-      {if $f->vote}
-        {t}voted to remove{/t}
-      {else}
+      {if $f->vote == Flag::VOTE_KEEP}
         {t}voted to keep{/t}
+      {else}
+        {t}voted to remove{/t}
       {/if}
 
       {if $f->weight}

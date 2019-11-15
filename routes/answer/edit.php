@@ -24,8 +24,16 @@ if ($saveButton) {
 
   $errors = validate($answer);
   if (empty($errors)) {
+    $new = !$answer->id;
     $answer->save();
-    FlashMessage::add(_('Answer posted.'), 'success');
+
+    if ($new) {
+      Review::checkFirstPost($answer);
+    }
+
+    FlashMessage::add(
+      $new ? _('Answer posted.') : _('Answer updated.'),
+      'success');
     $returnTo = getReturnTo($answer, $referrer);
     Util::redirect($returnTo);
   } else {

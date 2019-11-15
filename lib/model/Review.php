@@ -7,8 +7,8 @@ class Review extends BaseObject implements DatedObject {
   use ObjectTypeIdTrait;
 
   const STATUS_PENDING = 0;
-  const STATUS_ACCEPTED = 1;
-  const STATUS_DECLINED = 2;
+  const STATUS_KEEP = 1;
+  const STATUS_REMOVE = 2;
 
   const ACTION_CLOSE = 1;
   const ACTION_DELETE = 2;
@@ -21,6 +21,7 @@ class Review extends BaseObject implements DatedObject {
       Ct::REASON_ABUSE => self::ACTION_DELETE,
       Ct::REASON_OFF_TOPIC => self::ACTION_DELETE,
       Ct::REASON_LOW_QUALITY => self::ACTION_DELETE,
+      Ct::REASON_FIRST_POST => self::ACTION_DELETE,
       Ct::REASON_OTHER => null,
     ],
     BaseObject::TYPE_STATEMENT => [
@@ -30,6 +31,7 @@ class Review extends BaseObject implements DatedObject {
       Ct::REASON_OFF_TOPIC => self::ACTION_CLOSE,
       Ct::REASON_UNVERIFIABLE => self::ACTION_CLOSE,
       Ct::REASON_LOW_QUALITY => self::ACTION_CLOSE,
+      Ct::REASON_FIRST_POST => self::ACTION_CLOSE,
       Ct::REASON_OTHER => null,
     ],
   ];
@@ -167,7 +169,7 @@ class Review extends BaseObject implements DatedObject {
    * @param int $reason value from Ct::REASON_*
    * @param int $duplicateId a Statement ID if $reason = REASON_DUPLICATE, null otherwise
    */
-  static function ensure($obj, $reason, $duplicateId) {
+  static function ensure($obj, $reason, $duplicateId = 0) {
     $r = self::get_by_objectType_objectId_reason_duplicateId_status(
       $obj->getObjectType(), $obj->id, $reason, $duplicateId, self::STATUS_PENDING);
 
@@ -177,6 +179,19 @@ class Review extends BaseObject implements DatedObject {
     }
 
     return $r;
+  }
+
+  /**
+   * Checks if $obj is a first post and starts a first post review if needed.
+   * Assumes $obj is a newly-created object.
+   *
+   * @param Flaggable $obj a flaggable object
+   */
+  static function checkFirstPost($obj) {
+    $user = User::getActive();
+    if ($user->reputation < Config::FIRST_POST_REPUTATION) {
+      Review::ensure($obj, Ct::REASON_FIRST_POST);
+    }
   }
 
   /**
@@ -197,9 +212,9 @@ class Review extends BaseObject implements DatedObject {
       $this->id, Flag::WEIGHT_EXECUTIVE, Flag::VOTE_REMOVE);
 
     if ($keepVotes >= Config::KEEP_VOTES_NECESSARY) {
-      $this->resolve(Review::STATUS_DECLINED, Flag::VOTE_KEEP);
+      $this->resolve(Review::STATUS_KEEP, Flag::VOTE_KEEP);
     } else if ($removeVotes >= Config::REMOVE_VOTES_NECESSARY) {
-      $this->resolve(Review::STATUS_ACCEPTED, Flag::VOTE_REMOVE);
+      $this->resolve(Review::STATUS_REMOVE, Flag::VOTE_REMOVE);
       $this->resolveObject($action);
     }
   }
