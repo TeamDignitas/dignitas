@@ -5,8 +5,8 @@ $urlName = Request::get('reason');
 // optional arguments
 $reviewId = Request::get('reviewId');
 $details = Request::get('details');
-$yeaButton = Request::has('yeaButton');
-$nayButton = Request::has('nayButton');
+$removeButton = Request::has('removeButton');
+$keepButton = Request::has('keepButton');
 $nextButton = Request::has('nextButton');
 
 User::enforce(User::PRIV_REVIEW);
@@ -27,11 +27,11 @@ if ($reviewId) {
     Util::redirectToHome();
   }
 
-  if ($yeaButton || $nayButton) {
+  if ($keepButton || $removeButton) {
     redirectIfComplete($r, $urlName);
 
     // remove existing flags
-    $vote = $yeaButton ? Flag::VOTE_YEA : Flag::VOTE_NAY;
+    $vote = $keepButton ? Flag::VOTE_KEEP : Flag::VOTE_REMOVE;
     Flag::delete_all_by_userId_reviewId($userId, $r->id);
     $flag = Flag::create($r->id, $details, $vote);
     $flag->save();

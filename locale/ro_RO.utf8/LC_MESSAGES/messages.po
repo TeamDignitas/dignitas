@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-11-14 16:18+0200\n"
-"PO-Revision-Date: 2019-11-14 16:18+0200\n"
+"POT-Creation-Date: 2019-11-15 11:09+0200\n"
+"PO-Revision-Date: 2019-11-15 11:10+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -350,13 +350,13 @@ msgstr "schimbă reputația manual"
 msgid "log out"
 msgstr "închide sesiunea"
 
-#: templates/bits/reviewActions.tpl:12 lib/model/Flag.php:24
-msgid "yea"
-msgstr "da"
+#: templates/bits/reviewActions.tpl:12 lib/model/Flag.php:25
+msgid "remove"
+msgstr "elimină"
 
-#: templates/bits/reviewActions.tpl:20 lib/model/Flag.php:25
-msgid "nay"
-msgstr "nu"
+#: templates/bits/reviewActions.tpl:20 lib/model/Flag.php:24
+msgid "keep"
+msgstr "păstrează"
 
 #: templates/bits/reviewActions.tpl:34
 msgid "next"

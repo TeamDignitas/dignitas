@@ -115,9 +115,9 @@ class Config {
   // system stuff
   const TMP_DIR = '/tmp/';
 
-  // Votes necessary for review resolution
-  const YEA_VOTES_NECESSARY = 2;
-  const NAY_VOTES_NECESSARY = 2;
+  // Review votes necessary for removing or keeping a post.
+  const REMOVE_VOTES_NECESSARY = 2;
+  const KEEP_VOTES_NECESSARY = 2;
 
   // Loyalty settings. Define a set of adjacent intervals going back in time
   // and give points for every day in each interval. Then loyalty is the sum

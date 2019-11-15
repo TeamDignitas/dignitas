@@ -19,7 +19,7 @@ try {
   User::canFlag($obj, true);
 
   $review = Review::ensure($obj, $reason, $duplicateId);
-  $flag = Flag::create($review->id, $details, Flag::VOTE_YEA);
+  $flag = Flag::create($review->id, $details, Flag::VOTE_REMOVE);
   $flag->save();
   $review->evaluate();
 

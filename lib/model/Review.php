@@ -191,15 +191,15 @@ class Review extends BaseObject implements DatedObject {
       return;
     }
 
-    $nays = Flag::count_by_reviewId_weight_vote(
-      $this->id, Flag::WEIGHT_EXECUTIVE, Flag::VOTE_NAY);
-    $yeas = Flag::count_by_reviewId_weight_vote(
-      $this->id, Flag::WEIGHT_EXECUTIVE, Flag::VOTE_YEA);
+    $keepVotes = Flag::count_by_reviewId_weight_vote(
+      $this->id, Flag::WEIGHT_EXECUTIVE, Flag::VOTE_KEEP);
+    $removeVotes = Flag::count_by_reviewId_weight_vote(
+      $this->id, Flag::WEIGHT_EXECUTIVE, Flag::VOTE_REMOVE);
 
-    if ($nays >= Config::NAY_VOTES_NECESSARY) {
-      $this->resolve(Review::STATUS_DECLINED, Flag::VOTE_NAY);
-    } else if ($yeas >= Config::YEA_VOTES_NECESSARY) {
-      $this->resolve(Review::STATUS_ACCEPTED, Flag::VOTE_YEA);
+    if ($keepVotes >= Config::KEEP_VOTES_NECESSARY) {
+      $this->resolve(Review::STATUS_DECLINED, Flag::VOTE_KEEP);
+    } else if ($removeVotes >= Config::REMOVE_VOTES_NECESSARY) {
+      $this->resolve(Review::STATUS_ACCEPTED, Flag::VOTE_REMOVE);
       $this->resolveObject($action);
     }
   }

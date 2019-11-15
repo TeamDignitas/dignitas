@@ -5,19 +5,19 @@
 
       <div class="form-group">
         <button
-          name="yeaButton"
-          class="btn btn-info"
-          type="submit">
-          <i class="icon icon-ok"></i>
-          {t}yea{/t}
-        </button>
-
-        <button
-          name="nayButton"
+          name="removeButton"
           class="btn btn-info"
           type="submit">
           <i class="icon icon-cancel"></i>
-          {t}nay{/t}
+          {t}remove{/t}
+        </button>
+
+        <button
+          name="keepButton"
+          class="btn btn-info"
+          type="submit">
+          <i class="icon icon-ok"></i>
+          {t}keep{/t}
         </button>
 
         <a href="{Router::getEditLink($object)}" class="btn btn-info">
