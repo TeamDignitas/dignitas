@@ -35,16 +35,14 @@
         </button>
       </div>
 
-      {if $review->reason == Ct::REASON_OTHER}
-        <div class="form-group">
-          <input
-            type="text"
-            name="details"
-            value="{$details|default:''|escape}"
-            class="form-control"
+      <div class="form-group">
+        <input
+          type="text"
+          name="details"
+          value="{$details|default:''|escape}"
+          class="form-control"
             placeholder="{t}details (optional){/t}">
-        </div>
-      {/if}
+      </div>
 
     </form>
   </div>

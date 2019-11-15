@@ -60,10 +60,8 @@ Smart::assign('reason', $reason);
 if ($r) {
   Smart::assign('review', $r);
 
-  if ($r->reason == Ct::REASON_OTHER) {
-    $existingFlag = Flag::get_by_userId_reviewId($userId, $r->id);
-    Smart::assign('details', $existingFlag->details ?? null);
-  }
+  $existingFlag = Flag::get_by_userId_reviewId($userId, $r->id);
+  Smart::assign('details', $existingFlag->details ?? null);
 }
 
 Smart::addResources('flag');

@@ -1,5 +1,5 @@
 <ul>
-  {foreach $answer->getReviewFlags() as $f}
+  {foreach $obj->getReviewFlags() as $f}
     <li>
       {include "bits/userLink.tpl" u=$f->getUser()}
 
@@ -16,6 +16,11 @@
       {/if}
 
       {$f->createDate|moment}.
+
+      {if $f->details}
+        <br>
+        {$f->details|escape}
+      {/if}
     </li>
   {/foreach}
 </ul>

@@ -5,9 +5,7 @@
     <tr>
       <th>{t}user{/t}</th>
       <th>{t}vote{/t}</th>
-      {if $review->reason == Ct::REASON_OTHER}
-        <th>{t}details{/t}</th>
-      {/if}
+      <th>{t}details{/t}</th>
       <th>{t}date{/t}</th>
     </tr>
   </thead>
@@ -23,11 +21,9 @@
           {$f->getVoteName()}
         </td>
 
-        {if $review->reason == Ct::REASON_OTHER}
-          <td>
-            {$f->details|escape}
-          </td>
-        {/if}
+        <td>
+          {$f->details|escape}
+        </td>
 
         <td>{$f->createDate|moment}</td>
       </tr>

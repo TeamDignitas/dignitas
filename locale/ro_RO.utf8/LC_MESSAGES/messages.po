@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-11-15 12:49+0200\n"
-"PO-Revision-Date: 2019-11-15 12:49+0200\n"
+"POT-Creation-Date: 2019-11-15 13:24+0200\n"
+"PO-Revision-Date: 2019-11-15 13:24+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -198,16 +198,16 @@ msgid "delete"
 msgstr "șterge"
 
 #: templates/bits/answer.tpl:53 templates/bits/reviewActions.tpl:25
-#: templates/bits/statement.tpl:78 templates/entity/view.tpl:33
+#: templates/bits/statement.tpl:83 templates/entity/view.tpl:33
 #: templates/tag/view.tpl:14 templates/user/view.tpl:42
 msgid "edit"
 msgstr "editează"
 
-#: templates/bits/answer.tpl:72 templates/bits/statement.tpl:95
+#: templates/bits/answer.tpl:72 templates/bits/statement.tpl:100
 msgid "flag"
 msgstr "raportează"
 
-#: templates/bits/answer.tpl:84 templates/bits/statement.tpl:107
+#: templates/bits/answer.tpl:84 templates/bits/statement.tpl:112
 msgid "unflag"
 msgstr "șterge raportarea"
 
@@ -362,7 +362,7 @@ msgstr "păstrează"
 msgid "next"
 msgstr "următoarea"
 
-#: templates/bits/reviewActions.tpl:45
+#: templates/bits/reviewActions.tpl:44
 msgid "details (optional)"
 msgstr "detalii (opționale)"
 
@@ -395,11 +395,11 @@ msgstr "utilizator"
 msgid "vote"
 msgstr "vot"
 
-#: templates/bits/reviewFlags.tpl:9 templates/tag/edit.tpl:39
+#: templates/bits/reviewFlags.tpl:8 templates/tag/edit.tpl:39
 msgid "details"
 msgstr "detalii"
 
-#: templates/bits/reviewFlags.tpl:11
+#: templates/bits/reviewFlags.tpl:9
 msgid "date"
 msgstr "data"
 
@@ -419,19 +419,19 @@ msgstr "scor"
 msgid "You need at least %1 reputation to downvote."
 msgstr "Vă trebuie o reputație de cel puțin %1 pentru a vota negativ."
 
-#: templates/bits/statement.tpl:48
+#: templates/bits/statement.tpl:53
 msgid "sources"
 msgstr "surse"
 
-#: templates/bits/statement.tpl:59 templates/statement/edit.tpl:57
+#: templates/bits/statement.tpl:64 templates/statement/edit.tpl:57
 msgid "context"
 msgstr "context"
 
-#: templates/bits/statement.tpl:63 templates/statement/edit.tpl:68
+#: templates/bits/statement.tpl:68 templates/statement/edit.tpl:68
 msgid "goal"
 msgstr "scop"
 
-#: templates/bits/statement.tpl:112 templates/bits/statementList.tpl:23
+#: templates/bits/statement.tpl:117 templates/bits/statementList.tpl:23
 msgid "added by"
 msgstr "adăugată de"
 
@@ -1091,7 +1091,7 @@ msgstr "Nu există nicio evaluare cu ID-ul indicat."
 msgid "Your vote was recorded."
 msgstr "Votul a fost înregistrat."
 
-#: routes/review/view.php:81
+#: routes/review/view.php:79
 msgid ""
 "This review is now complete. We have redirected you to the next review in "
 "this queue."

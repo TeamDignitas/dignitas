@@ -22,7 +22,7 @@ class Review extends BaseObject implements DatedObject {
       Ct::REASON_OFF_TOPIC => self::ACTION_DELETE,
       Ct::REASON_LOW_QUALITY => self::ACTION_DELETE,
       Ct::REASON_NEW_USER => self::ACTION_DELETE,
-      Ct::REASON_OTHER => null,
+      Ct::REASON_OTHER => self::ACTION_DELETE,
     ],
     BaseObject::TYPE_STATEMENT => [
       Ct::REASON_SPAM => self::ACTION_DELETE,
@@ -32,7 +32,7 @@ class Review extends BaseObject implements DatedObject {
       Ct::REASON_UNVERIFIABLE => self::ACTION_CLOSE,
       Ct::REASON_LOW_QUALITY => self::ACTION_CLOSE,
       Ct::REASON_NEW_USER => self::ACTION_CLOSE,
-      Ct::REASON_OTHER => null,
+      Ct::REASON_OTHER => self::ACTION_CLOSE,
     ],
   ];
 
