@@ -30,6 +30,7 @@ if ($saveButton) {
     if ($new) {
       Review::checkNewUser($answer);
     }
+    Review::checkLateAnswer($answer);
 
     FlashMessage::add(
       $new ? _('Answer posted.') : _('Answer updated.'),

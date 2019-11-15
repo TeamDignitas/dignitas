@@ -122,6 +122,10 @@ class Config {
   // Reputation below which posts trigger a review with REASON_NEW_USER.
   const NEW_USER_REPUTATION = 100;
 
+  // Answers added at least this many days after their Statement trigger a
+  // review with REASON_LATE_ANSWER.
+  const LATE_ANSWER_DAYS = 3;
+
   // Loyalty settings. Define a set of adjacent intervals going back in time
   // and give points for every day in each interval. Then loyalty is the sum
   // of scores computed for each party that the person belonged to, normalized

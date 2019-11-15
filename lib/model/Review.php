@@ -22,6 +22,7 @@ class Review extends BaseObject implements DatedObject {
       Ct::REASON_OFF_TOPIC => self::ACTION_DELETE,
       Ct::REASON_LOW_QUALITY => self::ACTION_DELETE,
       Ct::REASON_NEW_USER => self::ACTION_DELETE,
+      Ct::REASON_LATE_ANSWER => self::ACTION_DELETE,
       Ct::REASON_OTHER => self::ACTION_DELETE,
     ],
     BaseObject::TYPE_STATEMENT => [
@@ -32,6 +33,7 @@ class Review extends BaseObject implements DatedObject {
       Ct::REASON_UNVERIFIABLE => self::ACTION_CLOSE,
       Ct::REASON_LOW_QUALITY => self::ACTION_CLOSE,
       Ct::REASON_NEW_USER => self::ACTION_CLOSE,
+      Ct::REASON_LATE_ANSWER => self::ACTION_CLOSE,
       Ct::REASON_OTHER => self::ACTION_CLOSE,
     ],
   ];
@@ -182,7 +184,7 @@ class Review extends BaseObject implements DatedObject {
   }
 
   /**
-   * Checks if $obj is from a new user starts a review if needed.
+   * Checks if $obj is from a new user and starts a review if needed.
    * Assumes $obj is a newly-created object.
    *
    * @param Flaggable $obj a flaggable object
@@ -191,6 +193,19 @@ class Review extends BaseObject implements DatedObject {
     $user = User::getActive();
     if ($user->reputation < Config::NEW_USER_REPUTATION) {
       Review::ensure($obj, Ct::REASON_NEW_USER);
+    }
+  }
+
+  /**
+   * Checks if $answer is a late answer and starts a review if needed.
+   *
+   * @param Answer $answer
+   */
+  static function checkLateAnswer($answer) {
+    $maxAge = Config::LATE_ANSWER_DAYS * Ct::ONE_DAY_IN_SECONDS;
+    $st = $answer->getStatement();
+    if ($answer->createDate - $st->createDate > $maxAge) {
+      Review::ensure($answer, Ct::REASON_LATE_ANSWER);
     }
   }
 

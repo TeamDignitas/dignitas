@@ -28,4 +28,6 @@ class Ct {
   const REASON_OTHER = 12;
   const NUM_REASONS = 12;
 
+  const ONE_DAY_IN_SECONDS = 24 * 3600;
+
 }
