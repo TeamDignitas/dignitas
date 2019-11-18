@@ -17,7 +17,7 @@ if ($deleteButton) {
     FlashMessage::add(_('You cannot delete this entity.'));
   } else {
     $entity->markDeleted(Ct::REASON_BY_USER);
-    FlashMessage::add(_('Entity deleted.'), 'success');
+    FlashMessage::add(_('Author deleted.'), 'success');
   }
   Util::redirectToHome();
 }
@@ -51,11 +51,14 @@ if ($saveButton) {
 
   $errors = validate($entity, $relations, $fileData);
   if (empty($errors)) {
+    $new = !$entity->id;
     $entity->saveWithFile($fileData, $deleteImage);
 
     Relation::updateDependants($relations, 'fromEntityId', $entity->id, 'rank');
     Alias::updateDependants($aliases, 'entityId', $entity->id, 'rank');
-    FlashMessage::add(_('Changes saved.'), 'success');
+    FlashMessage::add(
+      $new ? _('Author added.') : _('Author updated.'),
+      'success');
     Util::redirect($referrer);
   } else {
     Smart::assign([
