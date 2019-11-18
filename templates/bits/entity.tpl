@@ -7,6 +7,19 @@
   <h3>{$entity->name|escape}</h3>
   <h4>{$entity->getTypeName()}</h4>
 
+  {if $entity->status == Ct::STATUS_DELETED}
+    <div class="alert alert-secondary">
+      {$entity->getDeletedMessage()}
+
+      {if $entity->reason == Ct::REASON_BY_USER}
+        {include "bits/userLink.tpl" u=$entity->getStatusUser()}
+      {else if $entity->reason != Ct::REASON_BY_OWNER}
+        <hr>
+        {include "bits/reviewFlagList.tpl" obj=$entity}
+      {/if}
+    </div>
+  {/if}
+
   <ul>
     {foreach $entity->getRelations() as $r}
       <li>

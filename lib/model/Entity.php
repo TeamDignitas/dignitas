@@ -153,6 +153,32 @@ class Entity extends BaseObject implements DatedObject {
   }
 
   /**
+   * Returns a human-readable message if this entity is deleted or null
+   * otherwise.
+   *
+   * @return string
+   */
+  function getDeletedMessage() {
+    if ($this->status == Ct::STATUS_ACTIVE) {
+      return null;
+    }
+
+    $msg = _('This author profile was deleted');
+
+    switch ($this->reason) {
+      case Ct::REASON_SPAM: $r = _('because it is spam.'); break;
+      case Ct::REASON_ABUSE: $r = _('because it is rude or abusive.'); break;
+      case Ct::REASON_OFF_TOPIC: $r = _('because it is off-topic.'); break;
+      case Ct::REASON_BY_OWNER: $r = _('by its author.'); break;
+      case Ct::REASON_BY_USER: $r = _('by'); break;
+      case Ct::REASON_OTHER: $r = _('for other reasons.'); break;
+      default: $r = '';
+    }
+
+    return $msg . ' ' . $r;
+  }
+
+  /**
    * Checks whether the active user may delete this entity.
    *
    * @return boolean
