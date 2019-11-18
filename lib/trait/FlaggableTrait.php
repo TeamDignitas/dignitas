@@ -2,6 +2,12 @@
 
 /**
  * Method implementations for objects that can be flagged.
+ *
+ * Classes using this trait are assumed to have the fields:
+ * - status: one of the Ct::STATUS_* constants;
+ * - statusUserId: user who last changed the status;
+ * - reason: reason for last changing the status;
+ * - userId:user who created this object.
  */
 trait FlaggableTrait {
 
@@ -68,6 +74,11 @@ trait FlaggableTrait {
    * Marks the object as deleted.
    */
   function markDeleted($reason) {
+    // switch from REASON_BY_USER to REASON_BY_OWNER if applicable
+    if ($reason == Ct::REASON_BY_USER &&
+        ($this->userId == User::getActiveId())) {
+      $reason = Ct::REASON_BY_OWNER;
+    }
     $this->changeStatus(Ct::STATUS_DELETED, $reason);
   }
 

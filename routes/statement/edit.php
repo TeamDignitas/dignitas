@@ -15,8 +15,7 @@ if ($id) {
 
 if ($deleteButton) {
   User::enforce(User::PRIV_DELETE_STATEMENT);
-  $isOwner = ($statement->userId == User::getActiveId());
-  $statement->markDeleted($isOwner ? Ct::REASON_BY_OWNER : Ct::REASON_BY_USER);
+  $statement->markDeleted(Ct::REASON_BY_USER);
   FlashMessage::add(_('Statement deleted.'), 'success');
   Util::redirectToHome();
 }

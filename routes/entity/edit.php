@@ -15,8 +15,7 @@ if ($deleteButton) {
   if (!$entity->isDeletable()) {
     FlashMessage::add(_('You cannot delete this entity.'));
   } else {
-    $isOwner = ($entity->userId == User::getActiveId());
-    $entity->markDeleted($isOwner ? Ct::REASON_BY_OWNER : Ct::REASON_BY_USER);
+    $entity->markDeleted(Ct::REASON_BY_USER);
     FlashMessage::add(_('Entity deleted.'), 'success');
   }
   Util::redirectToHome();
