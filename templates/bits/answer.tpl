@@ -57,32 +57,7 @@
 
     {if $flagBox && ($answer->isFlaggable() || $answer->isFlagged())}
       <li class="list-inline-item">
-        <a
-          id="flagAnswerLink{$answer->id}"
-          href="#"
-          class="btn btn-sm btn-link"
-          data-toggle="modal"
-          data-target="#flagModal"
-          data-object-type="{Flag::TYPE_ANSWER}"
-          data-object-id="{$answer->id}"
-          data-unflag-link="#unflagAnswerLink{$answer->id}"
-          {if $answer->isFlagged()}hidden{/if}
-        >
-          <i class="icon icon-flag"></i>
-          {t}flag{/t}
-        </a>
-        <a
-          id="unflagAnswerLink{$answer->id}"
-          href="#"
-          class="unflag btn btn-sm btn-link"
-          data-object-type="{Flag::TYPE_ANSWER}"
-          data-object-id="{$answer->id}"
-          data-flag-link="#flagAnswerLink{$answer->id}"
-          {if !$answer->isFlagged()}hidden{/if}
-        >
-          <i class="icon icon-flag-empty"></i>
-          {t}unflag{/t}
-        </a>
+        {include "bits/flagLinks.tpl" obj=$answer class="btn btn-sm btn-link"}
       </li>
     {/if}
   </ul>

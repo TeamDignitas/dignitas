@@ -86,32 +86,7 @@
   {/if}
 
   {if $flagBox && ($statement->isFlaggable() || $statement->isFlagged())}
-    <a
-      id="flagStatementLink"
-      href="#"
-      class="btn text-muted btn-link"
-      data-toggle="modal"
-      data-target="#flagModal"
-      data-object-type="{Flag::TYPE_STATEMENT}"
-      data-object-id="{$statement->id}"
-      data-unflag-link="#unflagStatementLink"
-      {if $statement->isFlagged()}hidden{/if}
-    >
-      <i class="icon icon-flag"></i>
-      {t}flag{/t}
-    </a>
-    <a
-      id="unflagStatementLink"
-      href="#"
-      class="btn text-muted btn-link unflag"
-      data-object-type="{Flag::TYPE_STATEMENT}"
-      data-object-id="{$statement->id}"
-      data-flag-link="#flagStatementLink"
-      {if !$statement->isFlagged()}hidden{/if}
-    >
-      <i class="icon icon-flag-empty"></i>
-      {t}unflag{/t}
-    </a>
+    {include "bits/flagLinks.tpl" obj=$statement class="btn btn-link text-muted"}
   {/if}
 
   <small class="btn text-muted float-right">
