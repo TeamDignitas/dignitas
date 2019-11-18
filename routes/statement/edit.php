@@ -49,10 +49,13 @@ if ($saveButton) {
     StatementSource::updateDependants($sources, 'statementId', $statement->id, 'rank');
     ObjectTag::update($statement, $tagIds);
 
-    FlashMessage::add(
-      $new ? _('Statement added.') : _('Statement updated.'),
-      'success');
-    Util::redirect($referrer);
+    if ($new) {
+      FlashMessage::add(_('Statement added.'), 'success');
+      Util::redirect(Router::link('statement/view') . '/' . $statement->id);
+    } else {
+      FlashMessage::add(_('Statement updated.'), 'success');
+      Util::redirect($referrer);
+    }
   } else {
     Smart::assign([
       'errors' => $errors,

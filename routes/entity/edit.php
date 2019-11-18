@@ -56,10 +56,14 @@ if ($saveButton) {
 
     Relation::updateDependants($relations, 'fromEntityId', $entity->id, 'rank');
     Alias::updateDependants($aliases, 'entityId', $entity->id, 'rank');
-    FlashMessage::add(
-      $new ? _('Author added.') : _('Author updated.'),
-      'success');
-    Util::redirect($referrer);
+
+    if ($new) {
+      FlashMessage::add(_('Author added.'), 'success');
+      Util::redirect(Router::link('entity/view') . '/' . $entity->id);
+    } else {
+      FlashMessage::add(_('Author updated.'), 'success');
+      Util::redirect($referrer);
+    }
   } else {
     Smart::assign([
       'errors' => $errors,
