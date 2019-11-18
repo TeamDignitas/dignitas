@@ -300,6 +300,8 @@ class Router {
     switch ($object->getObjectType()) {
       case BaseObject::TYPE_ANSWER:
         return Router::link('answer/edit') . '/' . $object->id;
+      case BaseObject::TYPE_ENTITY:
+        return Router::link('entity/edit') . '/' . $object->id;
       case BaseObject::TYPE_STATEMENT:
         return Router::link('statement/edit') . '/' . $object->id;
       default:

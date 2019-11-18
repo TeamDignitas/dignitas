@@ -29,6 +29,7 @@ class Review extends BaseObject implements DatedObject {
       Ct::REASON_SPAM => self::ACTION_DELETE,
       Ct::REASON_ABUSE => self::ACTION_DELETE,
       Ct::REASON_OFF_TOPIC => self::ACTION_DELETE,
+      Ct::REASON_NEW_USER => self::ACTION_DELETE,
       Ct::REASON_OTHER => self::ACTION_DELETE,
     ],
     BaseObject::TYPE_STATEMENT => [

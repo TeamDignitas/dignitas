@@ -58,6 +58,7 @@ if ($saveButton) {
     Alias::updateDependants($aliases, 'entityId', $entity->id, 'rank');
 
     if ($new) {
+      Review::checkNewUser($entity);
       FlashMessage::add(_('Author added.'), 'success');
       Util::redirect(Router::link('entity/view') . '/' . $entity->id);
     } else {
