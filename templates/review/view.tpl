@@ -9,6 +9,7 @@
     {$object=$review->getObject()}
     {$type=$object->getObjectType()}
 
+    {* Display the action bar or a message explaining the lack of the action bar. *}
     {if $review->status == Review::STATUS_PENDING}
       {include "bits/reviewActions.tpl"}
     {else}
@@ -17,6 +18,7 @@
       </p>
     {/if}
 
+    {* Display the object being reviewed. *}
     {if $type == BaseObject::TYPE_STATEMENT}
 
       {if $review->reason == Ct::REASON_DUPLICATE}
@@ -46,6 +48,10 @@
           flagBox=false
           voteBox=false}
       </div>
+
+    {elseif $type == BaseObject::TYPE_ENTITY}
+
+      {include "bits/entity.tpl" entity=$object}
 
     {/if}
 

@@ -3,6 +3,7 @@
 $id = Request::get('id');
 $saveButton = Request::has('saveButton');
 $deleteButton = Request::has('deleteButton');
+$referrer = Request::get('referrer');
 
 if ($id) {
   $entity = Entity::get_by_id($id);
@@ -55,16 +56,22 @@ if ($saveButton) {
     Relation::updateDependants($relations, 'fromEntityId', $entity->id, 'rank');
     Alias::updateDependants($aliases, 'entityId', $entity->id, 'rank');
     FlashMessage::add(_('Changes saved.'), 'success');
-    Util::redirect(Router::link('entity/edit') . '/' . $entity->id);
+    Util::redirect($referrer);
   } else {
-    Smart::assign('errors', $errors);
-    Smart::assign('relations', $relations);
-    Smart::assign('aliases', $aliases);
+    Smart::assign([
+      'errors' => $errors,
+      'referrer' => $referrer,
+      'relations' => $relations,
+      'aliases' => $aliases,
+    ]);
   }
 } else {
   // first time loading the page
-  Smart::assign('relations', $entity->getRelations());
-  Smart::assign('aliases', $entity->getAliases());
+  Smart::assign([
+    'referrer' => Util::getReferrer(),
+    'relations' => $entity->getRelations(),
+    'aliases' => $entity->getAliases(),
+  ]);
 }
 
 Smart::addResources('colorpicker', 'sortable');

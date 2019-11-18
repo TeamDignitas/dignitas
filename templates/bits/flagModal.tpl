@@ -10,6 +10,9 @@
           <span data-flag-visibility="{Flag::TYPE_STATEMENT}">
             {t}Flag this statement for the following reason:{/t}
           </span>
+          <span data-flag-visibility="{Flag::TYPE_ENTITY}">
+            {t}Flag this author for the following reason:{/t}
+          </span>
         </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -87,6 +90,9 @@
                 {t}This statement is outside the intended scope of Dignitas or
                 is too broad to prove or disprove.{/t}
               </span>
+              <span data-flag-visibility="{Flag::TYPE_ENTITY}">
+                {t}Dignitas does not concern itself with this author's statements.{/t}
+              </span>
             </p>
           </div>
 
@@ -104,7 +110,9 @@
             </p>
           </div>
 
-          <div class="form-check">
+          <div
+            class="form-check"
+            data-flag-visibility="{Flag::TYPE_STATEMENT} {Flag::TYPE_ANSWER}">
             <label class="form-check-label">
               <input
                 class="form-check-input"
@@ -153,6 +161,9 @@
             </span>
             <span data-flag-visibility="{Flag::TYPE_STATEMENT}">
               {t}flag statement{/t}
+            </span>
+            <span data-flag-visibility="{Flag::TYPE_ENTITY}">
+              {t}flag author{/t}
             </span>
           </button>
         </div>

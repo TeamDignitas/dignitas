@@ -15,6 +15,7 @@
 
   <form method="post" enctype="multipart/form-data">
     <input type="hidden" name="id" value="{$entity->id}">
+    <input type="hidden" name="referrer" value="{$referrer}">
     <div class="form-group">
       <label for="fieldName">{t}name{/t}</label>
       <input
@@ -161,17 +162,10 @@
         {t}save{/t}
       </button>
 
-      <a href="" class="btn btn-light">
+      <a href="{$referrer}" class="btn btn-link">
         <i class="icon icon-cancel"></i>
         {t}cancel{/t}
       </a>
-
-      {if $entity->id}
-        <a href="{Router::link('entity/view')}/{$entity->id}" class="btn btn-light">
-          <i class="icon icon-left"></i>
-          {t}back to author{/t}
-        </a>
-      {/if}
 
       {if $entity->isDeletable()}
         <button

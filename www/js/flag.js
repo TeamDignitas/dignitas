@@ -99,7 +99,7 @@ $(function() {
     objectId = flagLink.data('objectId');
 
     $('*[data-flag-visibility]').hide();
-    $('*[data-flag-visibility="' + objectType + '"]').show();
+    $('*[data-flag-visibility~="' + objectType + '"]').show();
     $('input[type=radio][name=flagReason]').prop('checked', false);
     $('#flagButton').attr('disabled', true);
 

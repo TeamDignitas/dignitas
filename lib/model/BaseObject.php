@@ -74,6 +74,8 @@ class BaseObject extends Model {
         return Statement::get_by_id($objectId);
       case self::TYPE_ANSWER:
         return Answer::get_by_id($objectId);
+      case self::TYPE_ENTITY:
+        return Entity::get_by_id($objectId);
       default:
         return null;
     }
