@@ -32,8 +32,9 @@
           statement=$statusInfo['dup']
           class="alert-link"}
       {/if}
-      {if $statement->reason != Ct::REASON_BY_OWNER &&
-        $statement->reason != Ct::REASON_BY_USER}
+      {if $statement->reason == Ct::REASON_BY_USER}
+        {include "bits/userLink.tpl" u=$statement->getStatusUser()}
+      {elseif $statement->reason != Ct::REASON_BY_OWNER}
         <hr>
         {include "bits/reviewFlagList.tpl" obj=$statement}
       {/if}

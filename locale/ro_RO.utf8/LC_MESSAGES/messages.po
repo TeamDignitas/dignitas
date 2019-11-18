@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2019-11-15 13:24+0200\n"
-"PO-Revision-Date: 2019-11-15 13:24+0200\n"
+"PO-Revision-Date: 2019-11-18 15:06+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -902,7 +902,7 @@ msgstr "deoarece este neverificabilă."
 
 #: lib/model/Statement.php:100
 msgid "by the user who added it."
-msgstr "de către utilizatorul care l-a adăugat."
+msgstr "de către utilizatorul care a adăugat-o."
 
 #: lib/model/User.php:100 routes/auth/login.php:58
 #: routes/auth/lostPassword.php:50
