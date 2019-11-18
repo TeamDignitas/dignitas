@@ -121,8 +121,9 @@ class Statement extends BaseObject implements DatedObject {
 
   function isDeletable() {
     return
-      User::may(User::PRIV_DELETE_STATEMENT) || // can delete any statement
-      $this->userId == User::getActiveId();     // can always delete user's own statements
+      $this->id &&                                // not on the add statement page
+      (User::may(User::PRIV_DELETE_STATEMENT) ||  // can delete any statement
+       $this->userId == User::getActiveId());     // can always delete user's own statements
   }
 
 }

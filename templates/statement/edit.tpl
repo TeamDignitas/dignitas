@@ -119,7 +119,7 @@
         {t}cancel{/t}
       </a>
 
-      {if $statement->id && $statement->isDeletable()}
+      {if $statement->isDeletable()}
         <button
           name="deleteButton"
           type="submit"
