@@ -10,9 +10,9 @@
 
   {if $r->startDate && $r->endDate}
     {$sd} – {$ed}
-  {else if $r->startDate}
+  {elseif $r->startDate}
     {$sd}
-  {else if $r->endDate}
+  {elseif $r->endDate}
     {$ed}
   {/if}
 </div>

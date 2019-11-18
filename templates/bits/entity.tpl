@@ -13,7 +13,7 @@
 
       {if $entity->reason == Ct::REASON_BY_USER}
         {include "bits/userLink.tpl" u=$entity->getStatusUser()}
-      {else if $entity->reason != Ct::REASON_BY_OWNER}
+      {elseif $entity->reason != Ct::REASON_BY_OWNER}
         <hr>
         {include "bits/reviewFlagList.tpl" obj=$entity}
       {/if}
