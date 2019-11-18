@@ -173,7 +173,7 @@
         </a>
       {/if}
 
-      {if $entity->id && User::may(User::PRIV_DELETE_ENTITY)}
+      {if $entity->isDeletable()}
         <button
           name="deleteButton"
           type="submit"

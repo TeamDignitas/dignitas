@@ -8,12 +8,6 @@ if (!$entity) {
   Util::redirectToHome();
 }
 
-$statements = Model::factory('Statement')
-  ->where('entityId', $id)
-  ->order_by_desc('createDate')
-  ->limit(10)
-  ->find_many();
-
 $members = Model::factory('Entity')
   ->table_alias('m')
   ->select('m.*')
@@ -30,7 +24,7 @@ Smart::assign([
   'entity' => $entity,
   'aliases' => $entity->getAliases(),
   'relations' => $entity->getRelations(),
-  'statements' => $statements,
+  'statements' => $entity->getStatements(),
   'members' => $members,
 ]);
 Smart::display('entity/view.tpl');

@@ -125,8 +125,4 @@ class Statement extends BaseObject implements DatedObject {
       $this->userId == User::getActiveId();     // can always delete user's own statements
   }
 
-  function delete() {
-    throw new Exception('Statements should never actually be deleted.');
-  }
-
 }

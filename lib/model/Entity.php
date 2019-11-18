@@ -1,7 +1,7 @@
 <?php
 
 class Entity extends BaseObject implements DatedObject {
-  use UploadTrait;
+  use FlaggableTrait, UploadTrait;
 
   const TYPE_PERSON = 1;
   const TYPE_PARTY = 2;
@@ -25,6 +25,10 @@ class Entity extends BaseObject implements DatedObject {
       case self::TYPE_UNION:    return _('union');
       case self::TYPE_WEBSITE:  return _('website');
     }
+  }
+
+  function getObjectType() {
+    return BaseObject::TYPE_ENTITY;
   }
 
   function getTypeName() {
@@ -62,6 +66,27 @@ class Entity extends BaseObject implements DatedObject {
     return Model::factory('Relation')
       ->where('fromEntityId', $this->id)
       ->order_by_asc('rank')
+      ->find_many();
+  }
+
+  /**
+   * Returns a list of the entity's statements visible to the active user.
+   *
+   * @return Statement[]
+   */
+  function getStatements($limit = 10) {
+    $st = Model::factory('Statement')
+      ->where('entityId', $this->id);
+
+    if (!User::may(User::PRIV_DELETE_STATEMENT)) {
+      // keep in sync with Statement::isDeletable();
+      $st = $st->where_raw('(status != ? or userId = ?)',
+                           [ Ct::STATUS_DELETED, User::getActiveId() ]);
+    }
+
+    return $st
+      ->order_by_desc('createDate')
+      ->limit($limit)
       ->find_many();
   }
 
@@ -113,14 +138,31 @@ class Entity extends BaseObject implements DatedObject {
     return $results;
   }
 
-  public function delete() {
-    Log::warning("Deleted entity {$this->id} ({$this->name})");
-    $this->deleteFiles();
-    Alias::delete_all_by_entityId($this->id);
-    Statement::delete_all_by_entityId($this->id);
-    Relation::delete_all_by_fromEntityId($this->id);
-    Relation::delete_all_by_toEntityId($this->id);
-    parent::delete();
+  /**
+   * Checks whether the active user may delete this entity.
+   *
+   * @return boolean
+   */
+  function isDeletable() {
+    $numStatements = Model::factory('Statement')
+      ->where('entityId', $this->id)
+      ->where_not_equal('status', Ct::STATUS_DELETED)
+      ->count();
+
+    return
+      !$numStatements &&                       // no publicly visible statements
+      $this->id &&                             // not on the add entity page
+      $this->status == Ct::STATUS_ACTIVE &&
+      (User::may(User::PRIV_DELETE_ENTITY) ||  // can delete any entity
+       $this->userId == User::getActiveId());  // can always delete user's own entities
+  }
+
+  function close($reason) {
+    throw new Exception('Entities should never be closed.');
+  }
+
+  function closeAsDuplicate($duplicateId) {
+    throw new Exception('Entitites should never be closed as a duplicate.');
   }
 
   public function __toString() {

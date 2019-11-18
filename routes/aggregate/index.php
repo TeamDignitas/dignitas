@@ -14,6 +14,7 @@ $statements = $statements
 
 // load recent entities
 $entities = Model::factory('Entity')
+  ->where_not_equal('status', Ct::STATUS_DELETED)
   ->order_by_desc('createDate')
   ->limit(10)
   ->find_many();

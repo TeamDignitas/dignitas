@@ -68,6 +68,11 @@ class Answer extends BaseObject implements DatedObject {
       $this->userId == User::getActiveId();   // can always edit user's own answers
   }
 
+  /**
+   * Checks whether the active user may delete this answer.
+   *
+   * @return boolean
+   */
   function isDeletable() {
     return
       $this->status == Ct::STATUS_ACTIVE &&
@@ -83,7 +88,4 @@ class Answer extends BaseObject implements DatedObject {
     throw new Exception('Answers should never be closed as a duplicate.');
   }
 
-  function delete() {
-    throw new Exception('Answers should never actually be deleted.');
-  }
 }
