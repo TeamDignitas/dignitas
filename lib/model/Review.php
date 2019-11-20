@@ -28,6 +28,7 @@ class Review extends BaseObject implements DatedObject {
     BaseObject::TYPE_ENTITY => [
       Ct::REASON_SPAM => self::ACTION_DELETE,
       Ct::REASON_ABUSE => self::ACTION_DELETE,
+      Ct::REASON_DUPLICATE => self::ACTION_CLOSE,
       Ct::REASON_OFF_TOPIC => self::ACTION_DELETE,
       Ct::REASON_NEW_USER => self::ACTION_DELETE,
       Ct::REASON_OTHER => self::ACTION_DELETE,
@@ -134,15 +135,21 @@ class Review extends BaseObject implements DatedObject {
   }
 
   /**
-   * If this Review has type "duplicate of", return the duplicate statement;
+   * If this Review has type "duplicate of", return the duplicate object;
    * otherwise return null.
    *
-   * @return Statement Statement object or null.
+   * @return Object A duplicable object or null.
    */
   function getDuplicate() {
-    return ($this->reason == Ct::REASON_DUPLICATE)
-      ? Statement::get_by_id($this->duplicateId)
-      : null;
+    if ($this->reason != Ct::REASON_DUPLICATE) {
+      return null;
+    }
+
+    switch ($this->objectType) {
+      case BaseObject::TYPE_ENTITY: return Entity::get_by_id($this->duplicateId);
+      case BaseObject::TYPE_STATEMENT: return Statement::get_by_id($this->duplicateId);
+      default: return null;
+    }
   }
 
   /**

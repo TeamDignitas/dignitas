@@ -8,7 +8,7 @@ class Search {
   static function run($query, $limit = self::LIMIT) {
     $escapedQuery = addslashes($query);
     $results = [
-      'entities' => self::searchEntities($escapedQuery, $limit),
+      'entities' => self::searchEntities($escapedQuery, 0, $limit),
       'tags' => self::searchTags($escapedQuery, $limit),
     ];
     return $results;
@@ -18,12 +18,14 @@ class Search {
   // with regexp and collations, so this one-liner won't work:
   //
   //   name regexp "[[:<:]]%s" collate utf8mb4_general_ci
-  static function searchEntities($escapedQuery, $limit = self::LIMIT) {
+  static function searchEntities($escapedQuery, $exceptId = 0, $limit = self::LIMIT) {
     return Model::factory('Entity')
       ->table_alias('e')
       ->select('e.*')
       ->distinct()
       ->left_outer_join('alias', ['e.id', '=', 'a.entityId'], 'a')
+      ->where_not_equal('e.id', $exceptId ?? 0)
+      ->where('e.status', Ct::STATUS_ACTIVE)
       ->where_any_is([
         [ 'e.name' => "{$escapedQuery}%" ],
         [ 'e.name' => "% {$escapedQuery}%" ],

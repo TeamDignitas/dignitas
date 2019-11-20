@@ -51,6 +51,17 @@
 
     {elseif $type == BaseObject::TYPE_ENTITY}
 
+      {if $review->reason == Ct::REASON_DUPLICATE}
+        <div class="alert alert-warning">
+          {t}This entity was flagged as a duplicate of{/t}
+          {include "bits/entityLink.tpl" e=$review->getDuplicate()}.
+
+          {t}Accepting this flag will transfer all statements from this
+          duplicate to its canonical entity. The aliases, relationships and
+          other attributes will not be transferred.{/t}
+        </div>
+      {/if}
+
       {include "bits/entity.tpl" entity=$object}
 
     {/if}

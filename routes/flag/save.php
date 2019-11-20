@@ -19,7 +19,7 @@ try {
   User::canFlag($obj, true);
 
   if ($duplicateId == $objectId) {
-    throw new Exception(_('Cannot flag statement as a duplicate of itself.'));
+    throw new Exception(_('Cannot flag item as a duplicate of itself.'));
   }
 
   $review = Review::ensure($obj, $reason, $duplicateId);

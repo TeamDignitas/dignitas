@@ -1,6 +1,9 @@
 <?php
 
 class Entity extends BaseObject implements DatedObject {
+  use DuplicateTrait {
+    closeAsDuplicate as protected traitCloseAsDuplicate;
+  }
   use FlaggableTrait, UploadTrait;
 
   const TYPE_PERSON = 1;
@@ -53,6 +56,47 @@ class Entity extends BaseObject implements DatedObject {
 
   function hasColor() {
     return self::TYPES[$this->type]['hasColor'] ?? false;
+  }
+
+  /**
+   * Returns human-readable information about the status of this Entity.
+   *
+   * @return array a tuple of (human-readable status, human-readable sentence,
+   * CSS class). If the status is active, returns null.
+   */
+  function getStatusInfo() {
+    if ($this->status == Ct::STATUS_ACTIVE) {
+      return null;
+    }
+
+    $rec = [];
+    $dup = $this->getDuplicate();
+
+    $rec['status'] = $dup ? _('duplicate') : _('closed');
+
+    $rec['dup'] = $dup;
+
+    $rec['cssClass'] = ($this->status == Ct::STATUS_DELETED)
+      ? 'alert-danger'
+      : 'alert-warning';
+
+    $rec['details'] = ($this->status == Ct::STATUS_CLOSED)
+      ? _('This entity was closed')
+      : _('This entity was deleted');
+
+    switch ($this->reason) {
+      case Ct::REASON_SPAM: $r = _('because its profile contains spam.'); break;
+      case Ct::REASON_ABUSE: $r = _('because its profile contains insults or abuse.'); break;
+      case Ct::REASON_DUPLICATE: $r = _('as a duplicate of the entity'); break;
+      case Ct::REASON_OFF_TOPIC: $r = _('because it is off-topic.'); break;
+      case Ct::REASON_BY_OWNER: $r = _('by the user who added it.'); break;
+      case Ct::REASON_BY_USER: $r = _('by'); break;
+      case Ct::REASON_OTHER: $r = _('for other reasons.'); break;
+      default: $r = '';
+    }
+    $rec['details'] .= ' ' . $r;
+
+    return $rec;
   }
 
   function getAliases() {
@@ -153,32 +197,6 @@ class Entity extends BaseObject implements DatedObject {
   }
 
   /**
-   * Returns a human-readable message if this entity is deleted or null
-   * otherwise.
-   *
-   * @return string
-   */
-  function getDeletedMessage() {
-    if ($this->status == Ct::STATUS_ACTIVE) {
-      return null;
-    }
-
-    $msg = _('This author profile was deleted');
-
-    switch ($this->reason) {
-      case Ct::REASON_SPAM: $r = _('because it is spam.'); break;
-      case Ct::REASON_ABUSE: $r = _('because it is rude or abusive.'); break;
-      case Ct::REASON_OFF_TOPIC: $r = _('because it is off-topic.'); break;
-      case Ct::REASON_BY_OWNER: $r = _('by its author.'); break;
-      case Ct::REASON_BY_USER: $r = _('by'); break;
-      case Ct::REASON_OTHER: $r = _('for other reasons.'); break;
-      default: $r = '';
-    }
-
-    return $msg . ' ' . $r;
-  }
-
-  /**
    * Checks whether the active user may delete this entity.
    *
    * @return boolean
@@ -197,12 +215,18 @@ class Entity extends BaseObject implements DatedObject {
        $this->userId == User::getActiveId());  // can always delete user's own entities
   }
 
-  function close($reason) {
-    throw new Exception('Entities should never be closed.');
-  }
-
+  /**
+   * Closes the Entity as a duplicate.
+   */
   function closeAsDuplicate($duplicateId) {
-    throw new Exception('Entitites should never be closed as a duplicate.');
+    $this->traitCloseAsDuplicate($duplicateId);
+
+    // transfer statements to $duplicateId
+    $statements = Statement::get_all_by_entityId($this->id);
+    foreach ($statements as $s) {
+      $s->entityId = $duplicateId;
+      $s->save();
+    }
   }
 
   public function __toString() {

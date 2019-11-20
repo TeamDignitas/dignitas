@@ -1,16 +1,27 @@
+{$statusInfo=$entity->getStatusInfo()}
+
 <div class="clearfix">
   {include "bits/image.tpl"
     obj=$entity
     geometry=Config::THUMB_ENTITY_LARGE
     imgClass="pic float-right"}
 
-  <h3>{$entity->name|escape}</h3>
+  <h3>
+    {$entity->name|escape}
+    {if $statusInfo}
+      [{$statusInfo['status']}]
+    {/if}
+  </h3>
   <h4>{$entity->getTypeName()}</h4>
 
-  {if $entity->status == Ct::STATUS_DELETED}
-    <div class="alert alert-secondary">
-      {$entity->getDeletedMessage()}
-
+  {if $statusInfo}
+    <div class="alert {$statusInfo['cssClass']} overflow-hidden">
+      {$statusInfo['details']}
+      {if $statusInfo['dup']}
+        {include "bits/entityLink.tpl"
+          e=$statusInfo['dup']
+          class="alert-link"}
+      {/if}
       {if $entity->reason == Ct::REASON_BY_USER}
         {include "bits/userLink.tpl" u=$entity->getStatusUser()}
       {elseif $entity->reason != Ct::REASON_BY_OWNER}

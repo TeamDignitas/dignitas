@@ -17,7 +17,7 @@
         geometry=Config::THUMB_ENTITY_SMALL
         imgClass="pic float-right"}
 
-      {include "bits/entityLink.tpl" e=$e}
+      {include "bits/entityLink.tpl" e=$e showStatus=true}
       <div>{$e->getTypeName()}</div>
     </div>
     <hr>

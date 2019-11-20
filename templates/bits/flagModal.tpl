@@ -49,7 +49,9 @@
             </p>
           </div>
 
-          <div class="form-check" data-flag-visibility="{Flag::TYPE_STATEMENT}">
+          <div
+            class="form-check"
+            data-flag-visibility="{Flag::TYPE_STATEMENT} {Flag::TYPE_ENTITY}">
             <label class="form-check-label">
               <input
                 class="form-check-input"
@@ -60,8 +62,11 @@
               >
               {t}duplicate of...{/t}
             </label>
-            <p class="text-muted">
+            <p class="text-muted" data-flag-visibility="{Flag::TYPE_STATEMENT}">
               {t}This statement already appears in Dignitas.{/t}
+            </p>
+            <p class="text-muted" data-flag-visibility="{Flag::TYPE_ENTITY}">
+              {t}This entity already appears in Dignitas.{/t}
             </p>
             <div class="form-group flagRelated" id="duplicateSearch">
               <select

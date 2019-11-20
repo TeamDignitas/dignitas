@@ -1,9 +1,10 @@
 <?php
 
 $term = Request::get('term');
+$exceptId = Request::get('exceptId', 0);
 
 if ($term) {
-  $entities = Search::searchEntities($term);
+  $entities = Search::searchEntities($term, $exceptId);
 } else {
   $entities = [];
 }

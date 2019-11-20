@@ -1,7 +1,7 @@
 <?php
 
 class Statement extends BaseObject implements DatedObject {
-  use FlaggableTrait, MarkdownTrait, VotableTrait;
+  use DuplicateTrait, FlaggableTrait, MarkdownTrait, VotableTrait;
 
   function getObjectType() {
     return self::TYPE_STATEMENT;
@@ -49,18 +49,6 @@ class Statement extends BaseObject implements DatedObject {
   }
 
   /**
-   * If this Statement is closed as a duplicate, returns the duplicate statement;
-   * otherwise returns null.
-   *
-   * @return Statement Statement object or null.
-   */
-  function getDuplicate() {
-    return (($this->status == Ct::STATUS_CLOSED) && $this->duplicateId)
-      ? Statement::get_by_id($this->duplicateId)
-      : null;
-  }
-
-  /**
    * Returns human-readable information about the status of this Statement.
    *
    * @return array a tuple of (human-readable status, human-readable sentence,
@@ -93,7 +81,7 @@ class Statement extends BaseObject implements DatedObject {
     switch ($this->reason) {
       case Ct::REASON_SPAM: $r = _('because it is spam.'); break;
       case Ct::REASON_ABUSE: $r = _('because it is rude or abusive.'); break;
-      case Ct::REASON_DUPLICATE: $r = _('as a duplicate of'); break;
+      case Ct::REASON_DUPLICATE: $r = _('as a duplicate of the statement'); break;
       case Ct::REASON_OFF_TOPIC: $r = _('because it is off-topic.'); break;
       case Ct::REASON_UNVERIFIABLE: $r = _('because it is unverifiable.'); break;
       case Ct::REASON_LOW_QUALITY: $r = _('because it is low-quality.'); break;

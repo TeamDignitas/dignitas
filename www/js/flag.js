@@ -127,7 +127,11 @@ $(function() {
 
   $('#flagDuplicateId').select2({
     ajax: {
-      url: URL_PREFIX + 'ajax/search-statements',
+      url: function(params) {
+        return (objectType == TYPE_ENTITY)
+          ? URL_PREFIX + 'ajax/search-entities'
+          : URL_PREFIX + 'ajax/search-statements';
+      },
       data: function(params, page) {
         return {
           term: params.term,
