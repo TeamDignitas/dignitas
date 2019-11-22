@@ -50,9 +50,9 @@
   {/if}
 
   {if count($statement->getSources())}
-    <div id="sources" class="my-2">
+    <div class="my-2">
       {t}sources{/t}:
-      <ul class="list-inline">
+      <ul class="list-inline list-inline-bullet d-inline">
         {foreach $statement->getSources() as $s}
           <li class="list-inline-item">
             <a href="{$s->url}">{$s->getDisplayName()}</a>

@@ -1,13 +1,3 @@
-#sources ul {
-  display: inline;
-}
-
-#sources li:not(:first-child):before {
-  content: '•';
-  padding-right: 8px;
-  color: #999;
-}
-
 .answer {
   border-top: 1px solid #ddd;
   padding-top: 10px;

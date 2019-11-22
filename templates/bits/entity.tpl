@@ -69,7 +69,7 @@
 {if count($links)}
   <h4>{t}external links{/t}</h4>
 
-  <ul id="links" class="list-inline">
+  <ul id="links" class="list-inline list-inline-bullet">
     {foreach $links as $l}
       <li class="list-inline-item">
         <a href="{$l->url}">{$l->getDisplayName()}</a>

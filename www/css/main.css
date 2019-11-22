@@ -38,6 +38,16 @@ blockquote {
   padding-left: 1em;
 }
 
+.list-inline-bullet li:not(:first-child):before {
+  content: '•';
+  opacity: 0.5; /* don't force a color, use opacity instead */
+  padding-right: 8px;
+}
+
+.voteButton.voted {
+  background: orange;
+}
+
 /*************************** navbar search box ***************************/
 
 .navbar .select2 {
@@ -52,35 +62,12 @@ blockquote {
   width: 1%;
 }
 
-.aliasListAjax {
-  display: inline;
-}
-
-.aliasListAjax li:not(:first-child):before {
-  content: "•";
-  padding-right: 8px;
-}
-
 /******************************** footer ********************************/
 
 footer {
   border-top: 1px solid #ddd;
   margin-top: 15px;
   padding-top: 5px;
-}
-
-#footerLinks li {
-  padding-left: 0;
-}
-
-#footerLinks li:not(:first-child):before {
-  content: '•';
-  padding-right: 8px;
-  color: #999;
-}
-
-.voteButton.voted {
-  background: orange;
 }
 
 /********************************* tags *********************************/

@@ -31,8 +31,8 @@
 
       <footer>
 
-        <div id="footerLinks" class="text-right">
-          <ul class="list-inline">
+        <div class="text-right">
+          <ul class="list-inline list-inline-bullet">
             <li class="list-inline-item">
               © 2019 <a href="https://catalin.francu.com/">Cătălin Frâncu</a>
             </li>

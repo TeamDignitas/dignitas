@@ -10,7 +10,7 @@
     <small class="text-muted">
       {strip}
       (
-      <ul class="list-inline aliasListAjax">
+      <ul class="list-inline list-inline-bullet d-inline">
         {foreach $aliases as $a}
           <li class="list-inline-item">{$a->name}</li>
         {/foreach}
