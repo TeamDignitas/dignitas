@@ -56,17 +56,40 @@ class Relation extends BaseObject implements DatedObject {
   }
 
   /**
-   * Checks if this Relation is valid. The entity for fromEntityId is already
-   * loaded and known to exist.
+   * Validates this Relation. The entity for fromEntityId is already loaded
+   * and known to exist. Returns an array of error messages.
    *
    * @param $fromEntity Entity for $this->fromEntityId
-   * @return bool
+   * @return string[]
    */
-  function valid($fromEntity) {
+  function validate($fromEntity) {
+    $errors = [];
     $toEntity = $this->getToEntity();
-    $list = self::VALID_TYPES[$fromEntity->type][$this->type] ?? [];
 
-    return $toEntity && in_array($toEntity->type, $list);
+    if (!$toEntity) {
+      $errors[] = _('Please choose a target entity.');
+    } else if ($fromEntity->id == $this->toEntityId) {
+      $errors[] = _('An entity cannot be related to itself.');
+    } else {
+      // there exists a distinct $toEntity
+      $list = self::VALID_TYPES[$fromEntity->type][$this->type] ?? [];
+      if (!in_array($toEntity->type, $list)) {
+        $errors[] = _('Incorrect relation type.');
+      }
+
+      if (!$this->hasDates() &&
+          (($this->startDate != '0000-00-00') || ($this->endDate != '0000-00-00'))) {
+        $errors[] = _('This relation type cannot have dates.');
+      }
+
+      if (($this->startDate != '0000-00-00') &&
+          ($this->endDate != '0000-00-00') &&
+          ($this->startDate > $this->endDate)) {
+        $errors[] = _('The start date cannot be past the end date.');
+      }
+    }
+
+    return $errors;
   }
 
 }

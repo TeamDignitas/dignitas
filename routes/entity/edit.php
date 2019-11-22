@@ -109,44 +109,11 @@ function validate($entity, $relations, $fileData) {
   }
 
   // relations
-  $countNoEntityIds = 0;
-  $countSelf = 0;
-  $countBadDates = 0;
-  $countBadDateOrder = 0;
-  $countBadMemberships = 0;
+  $relErrors = [];
   foreach ($relations as $r) {
-    if (!$r->toEntityId) {
-      $countNoEntityIds++;
-    }
-    if ($r->toEntityId == $entity->id) {
-      $countSelf++;
-    }
-    if (!$r->startDate || !$r->endDate) {
-      $countBadDates++;
-    }
-    if (($r->startDate != '0000-00-00') &&
-        ($r->endDate != '0000-00-00') &&
-        ($r->startDate > $r->endDate)) {
-      $countBadDateOrder++;
-    }
-    if (!$r->valid($entity)) {
-      $countBadMemberships++;
-    }
+    $relErrors = array_merge($relErrors, $r->validate($entity));
   }
-  if ($countNoEntityIds) {
-    $errors['relations'][] = _('Please choose a target entity.');
-  }
-  if ($countSelf) {
-    $errors['relations'][] = _('An entity cannot be related to itself.');
-  }
-  if ($countBadDates) {
-    $errors['relations'][] = _('Some of the dates are invalid.');
-  } else if ($countBadDateOrder) {
-    $errors['relations'][] = _('The start date cannot be past the end date.');
-  }
-  if ($countBadMemberships) {
-    $errors['relations'][] = _('Incorrect relation type.');
-  }
+  $errors['relations'] = array_unique($relErrors);
 
   // image field
   $fileError = UploadTrait::validateFileData($fileData);

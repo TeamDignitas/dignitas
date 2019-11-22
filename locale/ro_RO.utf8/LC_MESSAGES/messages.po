@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-11-22 13:47+0200\n"
-"PO-Revision-Date: 2019-11-22 13:47+0200\n"
+"POT-Creation-Date: 2019-11-22 14:25+0200\n"
+"PO-Revision-Date: 2019-11-22 14:25+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -898,6 +898,26 @@ msgstr "rudă apropiată cu"
 msgid "distant relative of"
 msgstr "rudă îndepărtată cu"
 
+#: lib/model/Relation.php:70
+msgid "Please choose a target entity."
+msgstr "Vă rugăm să alegeți o entitate-țintă."
+
+#: lib/model/Relation.php:72
+msgid "An entity cannot be related to itself."
+msgstr "O entitate nu poate fi în relație cu ea însăși."
+
+#: lib/model/Relation.php:77
+msgid "Incorrect relation type."
+msgstr "Tip de relație incorect."
+
+#: lib/model/Relation.php:82
+msgid "This relation type cannot have dates."
+msgstr "Acest tip de relație nu admite date."
+
+#: lib/model/Relation.php:88
+msgid "The start date cannot be past the end date."
+msgstr "Data de start nu poate depăși data de sfîrșit."
+
 #: lib/model/Review.php:56
 msgid "items flagged as spam"
 msgstr "articole raportate ca spam"
@@ -1125,26 +1145,6 @@ msgstr "Vă rugăm să introduceți un nume."
 msgid "Please choose a type."
 msgstr "Vă rugăm să alegeți un tip."
 
-#: routes/entity/edit.php:137
-msgid "Please choose a target entity."
-msgstr "Vă rugăm să alegeți o entitate-țintă."
-
-#: routes/entity/edit.php:140
-msgid "An entity cannot be related to itself."
-msgstr "O entitate nu poate fi în relație cu ea însăși."
-
-#: routes/entity/edit.php:143
-msgid "Some of the dates are invalid."
-msgstr "Unele dintre date sînt incorecte."
-
-#: routes/entity/edit.php:145
-msgid "The start date cannot be past the end date."
-msgstr "Data de start nu poate depăși data de sfîrșit."
-
-#: routes/entity/edit.php:148
-msgid "Incorrect relation type."
-msgstr "Tip de relație incorect."
-
 #: routes/entity/view.php:7
 msgid "The entity you are looking for does not exist."
 msgstr "Autorul pe care îl căutați nu există."
@@ -1305,13 +1305,3 @@ msgstr "Nu puteți vota: obiectul nu există."
 #: routes/vote/save.php:42
 msgid "You cannot vote for your own messages."
 msgstr "Nu puteți vota propriile mesaje."
-
-#~ msgid ""
-#~ "Persons can be members of parties and parties can be members of unions. "
-#~ "No other types of memberships are allowed."
-#~ msgstr ""
-#~ "Persoanele pot fi membre ale partidelor și partidele pot fi membre ale "
-#~ "uniunilor. Alte tipuri de apartenență nu sînt permise."
-
-#~ msgid "This author profile was deleted"
-#~ msgstr "Acest profil de autor a fost șters"
