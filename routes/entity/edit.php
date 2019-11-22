@@ -46,6 +46,10 @@ if ($saveButton) {
     $entity,
     Request::getArray('aliasIds'),
     Request::getArray('aliasNames'));
+  $links = buildLinks(
+    $entity,
+    Request::getArray('linkIds'),
+    Request::getArray('linkUrls'));
 
   $deleteImage = Request::has('deleteImage');
   $fileData = Request::getFile('image', 'Entity');
@@ -57,6 +61,7 @@ if ($saveButton) {
 
     Relation::updateDependants($relations, 'fromEntityId', $entity->id, 'rank');
     Alias::updateDependants($aliases, 'entityId', $entity->id, 'rank');
+    EntityLink::updateDependants($links, 'entityId', $entity->id, 'rank');
 
     if ($new) {
       Review::checkNewUser($entity);
@@ -72,6 +77,7 @@ if ($saveButton) {
       'referrer' => $referrer,
       'relations' => $relations,
       'aliases' => $aliases,
+      'links' => $links,
     ]);
   }
 } else {
@@ -80,6 +86,7 @@ if ($saveButton) {
     'referrer' => Util::getReferrer(),
     'relations' => $entity->getRelations(),
     'aliases' => $entity->getAliases(),
+    'links' => $entity->getLinks(),
   ]);
 }
 
@@ -193,6 +200,24 @@ function buildAliases($entity, $ids, $names) {
     // ignore empty records
     if ($a->name) {
       $result[] = $a;
+    }
+  }
+
+  return $result;
+}
+
+function buildLinks($entity, $ids, $urls) {
+  $result = [];
+
+  foreach ($ids as $i => $id) {
+    $link = $id
+      ? EntityLink::get_by_id($id)
+      : Model::factory('EntityLink')->create();
+    $link->url = $urls[$i];
+
+    // ignore empty records
+    if ($link->url) {
+      $result[] = $link;
     }
   }
 

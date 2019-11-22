@@ -110,6 +110,13 @@ class Entity extends BaseObject implements DatedObject {
       ->find_many();
   }
 
+  function getLinks() {
+    return Model::factory('EntityLink')
+      ->where('entityId', $this->id)
+      ->order_by_asc('rank')
+      ->find_many();
+  }
+
   function getRelations() {
     return Model::factory('Relation')
       ->where('fromEntityId', $this->id)

@@ -9,18 +9,22 @@ $(function() {
   };
 
   var stemAlias = null;
+  var stemLink = null;
   var stemRelation = null;
 
   function init() {
     stemAlias = $('#stemAlias').detach().removeAttr('hidden');
+    stemLink = $('#stemLink').detach().removeAttr('hidden');
     stemRelation = $('#stemRelation').detach().removeAttr('hidden');
 
     initSelect2('.toEntityId', URL_PREFIX + 'ajax/load-entities', TO_ENTITY_ID_OPTIONS);
 
     $('#addAliasButton').click(addAlias);
+    $('#addLinkButton').click(addLink);
     $('#addRelationButton').click(addRelation);
 
-    $('#relationContainer, #aliasContainer').on('click', '.deleteDependantButton', deleteDependant);
+    $('#aliasContainer, #linkContainer, #relationContainer')
+      .on('click', '.deleteDependantButton', deleteDependant);
 
     var sortableOpts = {
       handle: '.icon-move',
@@ -28,6 +32,7 @@ $(function() {
     };
 
     Sortable.create(aliasContainer, sortableOpts);
+    Sortable.create(linkContainer, sortableOpts);
     Sortable.create(relationContainer, sortableOpts);
 
     $('.colorpicker-component').colorpicker({
@@ -41,6 +46,10 @@ $(function() {
   function addAlias() {
     var t = stemAlias.clone(true).appendTo('#aliasContainer');
     $('#aliasHeader').removeAttr('hidden');
+  }
+
+  function addLink() {
+    var t = stemLink.clone(true).appendTo('#linkContainer');
   }
 
   function addRelation() {

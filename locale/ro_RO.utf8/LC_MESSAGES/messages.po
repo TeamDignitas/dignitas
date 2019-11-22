@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-11-20 16:41+0200\n"
-"PO-Revision-Date: 2019-11-20 16:41+0200\n"
+"POT-Creation-Date: 2019-11-22 11:29+0200\n"
+"PO-Revision-Date: 2019-11-22 11:29+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -93,7 +93,7 @@ msgid "edit answer"
 msgstr "editează răspunsul"
 
 #: templates/answer/edit.tpl:9 templates/auth/resetPassword.tpl:45
-#: templates/entity/edit.tpl:162 templates/statement/edit.tpl:114
+#: templates/entity/edit.tpl:194 templates/statement/edit.tpl:114
 #: templates/tag/edit.tpl:153 templates/user/edit.tpl:117
 msgid "save"
 msgstr "salvează"
@@ -192,18 +192,18 @@ msgstr "publicat de"
 msgid "Are you sure you want to delete this answer?"
 msgstr "Confirmați ștergerea acestui răspuns?"
 
-#: templates/bits/answer.tpl:44 templates/entity/edit.tpl:177
+#: templates/bits/answer.tpl:44 templates/entity/edit.tpl:209
 #: templates/statement/edit.tpl:129 templates/tag/edit.tpl:180
 msgid "delete"
 msgstr "șterge"
 
-#: templates/bits/answer.tpl:53 templates/bits/entity.tpl:77
+#: templates/bits/answer.tpl:53 templates/bits/entity.tpl:98
 #: templates/bits/reviewActions.tpl:25 templates/bits/statement.tpl:84
 #: templates/tag/view.tpl:14 templates/user/view.tpl:42
 msgid "edit"
 msgstr "editează"
 
-#: templates/bits/answerEdit.tpl:24 templates/entity/edit.tpl:167
+#: templates/bits/answerEdit.tpl:24 templates/entity/edit.tpl:199
 #: templates/statement/edit.tpl:119 templates/tag/edit.tpl:158
 #: templates/user/edit.tpl:122
 msgid "cancel"
@@ -217,7 +217,15 @@ msgstr "loialitate"
 msgid "also known as"
 msgstr "cunoscut și ca"
 
-#: templates/bits/entity.tpl:62
+#: templates/bits/entity.tpl:61 templates/entity/edit.tpl:127
+msgid "profile"
+msgstr "profil"
+
+#: templates/bits/entity.tpl:70 templates/entity/edit.tpl:137
+msgid "external links"
+msgstr "legături externe"
+
+#: templates/bits/entity.tpl:83
 msgid "members"
 msgstr "membri"
 
@@ -515,21 +523,25 @@ msgstr "pînă la"
 msgid "add a relationship"
 msgstr "adaugă o relație"
 
-#: templates/entity/edit.tpl:128 templates/user/edit.tpl:45
+#: templates/entity/edit.tpl:153
+msgid "add a link"
+msgstr "adaugă o legătură"
+
+#: templates/entity/edit.tpl:160 templates/user/edit.tpl:45
 msgid "image"
 msgstr "imagine"
 
-#: templates/entity/edit.tpl:137 templates/user/edit.tpl:54
+#: templates/entity/edit.tpl:169 templates/user/edit.tpl:54
 msgid "choose an image to upload or leave empty to keep existing image"
 msgstr ""
 "alegeți o imagine pentru încărcare sau lăsați gol pentru a păstra imaginea "
 "existentă"
 
-#: templates/entity/edit.tpl:145 templates/user/edit.tpl:62
+#: templates/entity/edit.tpl:177 templates/user/edit.tpl:62
 msgid "delete image"
 msgstr "șterge imaginea"
 
-#: templates/entity/edit.tpl:175
+#: templates/entity/edit.tpl:207
 msgid "Are you sure you want to delete this entity?"
 msgstr "Confirmați ștergerea acestui autor?"
 
@@ -786,16 +798,15 @@ msgstr "Vă rugăm să vă autentificați pentru a continua."
 msgid "This answer was deleted"
 msgstr "Acest răspuns a fost șters"
 
-#: lib/model/Answer.php:36 lib/model/Entity.php:213 lib/model/Statement.php:82
+#: lib/model/Answer.php:36 lib/model/Statement.php:82
 msgid "because it is spam."
 msgstr "deoarece este spam."
 
-#: lib/model/Answer.php:37 lib/model/Entity.php:214 lib/model/Statement.php:83
+#: lib/model/Answer.php:37 lib/model/Statement.php:83
 msgid "because it is rude or abusive."
 msgstr "deoarece conține insulte sau abuzuri."
 
-#: lib/model/Answer.php:38 lib/model/Entity.php:91 lib/model/Entity.php:215
-#: lib/model/Statement.php:85
+#: lib/model/Answer.php:38 lib/model/Entity.php:95 lib/model/Statement.php:85
 msgid "because it is off-topic."
 msgstr "deoarece este pe lîngă subiect."
 
@@ -803,17 +814,15 @@ msgstr "deoarece este pe lîngă subiect."
 msgid "because it is low-quality."
 msgstr "deoarece este de slabă calitate."
 
-#: lib/model/Answer.php:40 lib/model/Entity.php:216
+#: lib/model/Answer.php:40
 msgid "by its author."
 msgstr "de către autor."
 
-#: lib/model/Answer.php:41 lib/model/Entity.php:93 lib/model/Entity.php:217
-#: lib/model/Statement.php:89
+#: lib/model/Answer.php:41 lib/model/Entity.php:97 lib/model/Statement.php:89
 msgid "by"
 msgstr "de către"
 
-#: lib/model/Answer.php:42 lib/model/Entity.php:94 lib/model/Entity.php:218
-#: lib/model/Statement.php:90
+#: lib/model/Answer.php:42 lib/model/Entity.php:98 lib/model/Statement.php:90
 msgid "for other reasons."
 msgstr "pentru alte motive."
 
@@ -833,41 +842,37 @@ msgstr "uniune"
 msgid "website"
 msgstr "site web"
 
-#: lib/model/Entity.php:75 lib/model/Review.php:79 lib/model/Statement.php:66
+#: lib/model/Entity.php:79 lib/model/Review.php:79 lib/model/Statement.php:66
 msgid "duplicate"
 msgstr "duplicate"
 
-#: lib/model/Entity.php:75 lib/model/Statement.php:68
+#: lib/model/Entity.php:79 lib/model/Statement.php:68
 msgid "closed"
 msgstr "închisă"
 
-#: lib/model/Entity.php:84
+#: lib/model/Entity.php:88
 msgid "This entity was closed"
 msgstr "Acest autor a fost închis"
 
-#: lib/model/Entity.php:85
+#: lib/model/Entity.php:89
 msgid "This entity was deleted"
 msgstr "Acest autor a fost șters"
 
-#: lib/model/Entity.php:88
+#: lib/model/Entity.php:92
 msgid "because its profile contains spam."
 msgstr "deoarece profilul său conține spam."
 
-#: lib/model/Entity.php:89
+#: lib/model/Entity.php:93
 msgid "because its profile contains insults or abuse."
 msgstr "deoarece profilul său conține insulte sau abuzuri."
 
-#: lib/model/Entity.php:90
+#: lib/model/Entity.php:94
 msgid "as a duplicate of the entity"
 msgstr "ca duplicat al autorului"
 
-#: lib/model/Entity.php:92 lib/model/Statement.php:88
+#: lib/model/Entity.php:96 lib/model/Statement.php:88
 msgid "by the user who added it."
 msgstr "de către utilizatorul care a adăugat-o."
-
-#: lib/model/Entity.php:210
-msgid "This author profile was deleted"
-msgstr "Acest profil de autor a fost șters"
 
 #: lib/model/Relation.php:13
 msgid "member of"
@@ -1084,39 +1089,39 @@ msgstr "Nu puteți șterge acest autor."
 msgid "Author deleted."
 msgstr "Am șters autorul."
 
-#: routes/entity/edit.php:62
+#: routes/entity/edit.php:68
 msgid "Author added."
 msgstr "Am adăugat autorul."
 
-#: routes/entity/edit.php:65
+#: routes/entity/edit.php:71
 msgid "Author updated."
 msgstr "Am actualizat autorul."
 
-#: routes/entity/edit.php:96
+#: routes/entity/edit.php:104
 msgid "Please enter a name."
 msgstr "Vă rugăm să introduceți un nume."
 
-#: routes/entity/edit.php:100
+#: routes/entity/edit.php:108
 msgid "Please choose a type."
 msgstr "Vă rugăm să alegeți un tip."
 
-#: routes/entity/edit.php:132
+#: routes/entity/edit.php:140
 msgid "Please choose a target entity."
 msgstr "Vă rugăm să alegeți o entitate-țintă."
 
-#: routes/entity/edit.php:135
+#: routes/entity/edit.php:143
 msgid "An entity cannot be related to itself."
 msgstr "O entitate nu poate fi în relație cu ea însăși."
 
-#: routes/entity/edit.php:138
+#: routes/entity/edit.php:146
 msgid "Some of the dates are invalid."
 msgstr "Unele dintre date sînt incorecte."
 
-#: routes/entity/edit.php:140
+#: routes/entity/edit.php:148
 msgid "The start date cannot be past the end date."
 msgstr "Data de start nu poate depăși data de sfîrșit."
 
-#: routes/entity/edit.php:144
+#: routes/entity/edit.php:152
 msgid ""
 "Persons can be members of parties and parties can be members of unions. No "
 "other types of memberships are allowed."
@@ -1284,3 +1289,6 @@ msgstr "Nu puteți vota: obiectul nu există."
 #: routes/vote/save.php:42
 msgid "You cannot vote for your own messages."
 msgstr "Nu puteți vota propriile mesaje."
+
+#~ msgid "This author profile was deleted"
+#~ msgstr "Acest profil de autor a fost șters"

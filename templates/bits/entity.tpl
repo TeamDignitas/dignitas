@@ -65,6 +65,19 @@
   </div>
 {/if}
 
+{$links=$entity->getLinks()}
+{if count($links)}
+  <h4>{t}external links{/t}</h4>
+
+  <ul id="links" class="list-inline">
+    {foreach $links as $l}
+      <li class="list-inline-item">
+        <a href="{$l->url}">{$l->getDisplayName()}</a>
+      </li>
+    {/foreach}
+  </ul>
+{/if}
+
 {$members=$entity->getMembers()}
 {if count($members)}
   <h4>{t}members{/t}</h4>
