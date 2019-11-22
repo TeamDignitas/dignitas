@@ -115,7 +115,6 @@ function validate($entity, $relations, $fileData) {
   $countBadDateOrder = 0;
   $countBadMemberships = 0;
   foreach ($relations as $r) {
-    $otherEntity = Entity::get_by_id($r->toEntityId);
     if (!$r->toEntityId) {
       $countNoEntityIds++;
     }
@@ -130,9 +129,7 @@ function validate($entity, $relations, $fileData) {
         ($r->startDate > $r->endDate)) {
       $countBadDateOrder++;
     }
-    if ($r->type == Relation::TYPE_MEMBER &&
-        $otherEntity &&
-        !Relation::validMembership($entity->type, $otherEntity->type)) {
+    if (!$r->valid($entity)) {
       $countBadMemberships++;
     }
   }
@@ -148,9 +145,7 @@ function validate($entity, $relations, $fileData) {
     $errors['relations'][] = _('The start date cannot be past the end date.');
   }
   if ($countBadMemberships) {
-    $errors['relations'][] = _(
-      'Persons can be members of parties and parties can be members of unions. ' .
-      'No other types of memberships are allowed.');
+    $errors['relations'][] = _('Incorrect relation type.');
   }
 
   // image field
