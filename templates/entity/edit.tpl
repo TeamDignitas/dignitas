@@ -123,6 +123,16 @@
       </div>
     </div>
 
+    <div class="form-group">
+      <label>{t}profile{/t}</label>
+      <textarea
+        id="fieldProfile"
+        name="profile"
+        class="form-control hasUnloadWarning"
+        rows="5">{$entity->profile|escape}</textarea>
+      {include "bits/markdownHelp.tpl"}
+    </div>
+
     <div class="row">
       <div class="col">
         <label for="fieldImage">{t}image{/t}</label>

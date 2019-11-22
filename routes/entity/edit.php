@@ -27,6 +27,7 @@ User::enforce($entity->id ? User::PRIV_EDIT_ENTITY : User::PRIV_ADD_ENTITY);
 if ($saveButton) {
   $entity->name = Request::get('name');
   $entity->type = Request::get('type');
+  $entity->profile = Request::get('profile');
   $color = $entity->hasColor() ? Request::get('color') : Entity::DEFAULT_COLOR;
   $entity->setColor($color);
 
@@ -82,7 +83,7 @@ if ($saveButton) {
   ]);
 }
 
-Smart::addResources('colorpicker', 'sortable');
+Smart::addResources('colorpicker', 'simplemde', 'sortable');
 Smart::assign('entity', $entity);
 Smart::display('entity/edit.tpl');
 

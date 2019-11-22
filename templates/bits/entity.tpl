@@ -48,7 +48,7 @@
 
 {$aliases=$entity->getAliases()}
 {if count($aliases)}
-  <h4>{cap}{t}also known as{/t}{/cap}</h4>
+  <h4>{t}also known as{/t}</h4>
 
   <ul class="list-unstyled">
     {foreach $aliases as $a}
@@ -57,9 +57,17 @@
   </ul>
 {/if}
 
+{if $entity->profile}
+  <h4>{t}profile{/t}</h4>
+
+  <div>
+    {$entity->profile|md}
+  </div>
+{/if}
+
 {$members=$entity->getMembers()}
 {if count($members)}
-  <h4>{cap}{t}members{/t}{/cap}</h4>
+  <h4>{t}members{/t}</h4>
 
   <ul>
     {foreach $members as $m}

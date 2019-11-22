@@ -4,7 +4,7 @@ class Entity extends BaseObject implements DatedObject {
   use DuplicateTrait {
     closeAsDuplicate as protected traitCloseAsDuplicate;
   }
-  use FlaggableTrait, UploadTrait;
+  use FlaggableTrait, MarkdownTrait, UploadTrait;
 
   const TYPE_PERSON = 1;
   const TYPE_PARTY = 2;
@@ -44,6 +44,10 @@ class Entity extends BaseObject implements DatedObject {
 
   private function getFileRoute() {
     return 'entity/image';
+  }
+
+  function getMarkdownFields() {
+    return [ 'profile' ];
   }
 
   function getColor() {
