@@ -48,8 +48,8 @@ if ($saveButton) {
     Request::getArray('aliasNames'));
   $links = buildLinks(
     $entity,
-    Request::getArray('linkIds'),
-    Request::getArray('linkUrls'));
+    Request::getArray('urlIds'),
+    Request::getArray('urls'));
 
   $deleteImage = Request::has('deleteImage');
   $fileData = Request::getFile('image', 'Entity');
@@ -90,7 +90,7 @@ if ($saveButton) {
   ]);
 }
 
-Smart::addResources('colorpicker', 'simplemde', 'sortable');
+Smart::addResources('colorpicker', 'simplemde', 'urlEditor');
 Smart::assign('entity', $entity);
 Smart::display('entity/edit.tpl');
 

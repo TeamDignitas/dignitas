@@ -133,27 +133,12 @@
       {include "bits/markdownHelp.tpl"}
     </div>
 
-    <div class="form-group">
-      <label>{t}external links{/t}</label>
-
-      <table class="table table-sm">
-        <tbody id="linkContainer">
-          {include "bits/entityLinkEdit.tpl" id="stemLink"}
-          {foreach $links as $link}
-            {include "bits/entityLinkEdit.tpl"}
-          {/foreach}
-        </tbody>
-      </table>
-
-      {include "bits/fieldErrors.tpl" errors=$errors.links|default:null}
-
-      <div>
-        <button id="addLinkButton" class="btn btn-light btn-sm" type="button">
-          <i class="icon icon-plus"></i>
-          {t}add a link{/t}
-        </button>
-      </div>
-    </div>
+    {capture "labelText" assign=labelText}{t}external links{/t}{/capture}
+    {capture "addButtonText" assign=addButtonText}{t}add a link{/t}{/capture}
+    {include "bits/urlEditor.tpl"
+      items=$links
+      errors=$errors.links|default:null
+    }
 
     <div class="row">
       <div class="col">

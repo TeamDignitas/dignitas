@@ -11,27 +11,12 @@
   <form method="post">
     <input type="hidden" name="id" value="{$relation->id}">
 
-    <div class="form-group">
-      <label>{t}source URLs{/t}</label>
-
-      <table class="table table-sm">
-        <tbody id="sourceContainer">
-          {include "bits/sourceEdit.tpl" id="stem"}
-          {foreach $sources as $s}
-            {include "bits/sourceEdit.tpl" source=$s}
-          {/foreach}
-        </tbody>
-      </table>
-
-      {include "bits/fieldErrors.tpl" errors=$errors.sources|default:null}
-
-      <div>
-        <button id="addSourceButton" class="btn btn-light btn-sm" type="button">
-          <i class="icon icon-plus"></i>
-          {t}add a source{/t}
-        </button>
-      </div>
-    </div>
+    {capture "labelText" assign=labelText}{t}source URLs{/t}{/capture}
+    {capture "addButtonText" assign=addButtonText}{t}add a source{/t}{/capture}
+    {include "bits/urlEditor.tpl"
+      items=$sources
+      errors=$errors.sources|default:null
+    }
 
     <hr>
 

@@ -33,8 +33,8 @@ if ($saveButton) {
 
   $sources = buildSources(
     $statement,
-    Request::getArray('ssIds'),
-    Request::getArray('ssUrls'));
+    Request::getArray('urlIds'),
+    Request::getArray('urls'));
 
   $tagIds = Request::getArray('tagIds');
 
@@ -73,7 +73,7 @@ if ($saveButton) {
   ]);
 }
 
-Smart::addResources('imageModal', 'simplemde', 'sortable');
+Smart::addResources('imageModal', 'simplemde', 'urlEditor');
 Smart::assign('statement', $statement);
 Smart::display('statement/edit.tpl');
 

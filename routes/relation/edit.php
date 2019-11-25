@@ -17,8 +17,8 @@ if (!$fromEntity || !$fromEntity->isEditable()) {
 if ($saveButton) {
   $sources = buildSources(
     $relation,
-    Request::getArray('ssIds'),
-    Request::getArray('ssUrls'));
+    Request::getArray('urlIds'),
+    Request::getArray('urls'));
 
   $errors = validate($sources);
   if (empty($errors)) {
@@ -38,7 +38,7 @@ if ($saveButton) {
   ]);
 }
 
-Smart::addResources('sortable');
+Smart::addResources('urlEditor');
 Smart::assign([
   'relation' => $relation,
   'fromEntity' => $fromEntity,
