@@ -31,8 +31,7 @@ if ($saveButton) {
   $statement->goal = Request::get('goal');
   $statement->dateMade = Request::get('dateMade');
 
-  $sources = buildSources(
-    $statement,
+  $sources = StatementSource::build(
     Request::getArray('urlIds'),
     Request::getArray('urls'));
 
@@ -115,22 +114,4 @@ function validate($statement, $sources) {
   }
 
   return $errors;
-}
-
-function buildSources($statement, $ids, $urls) {
-  $result = [];
-
-  foreach ($ids as $i => $id) {
-    $ss = $id
-      ? StatementSource::get_by_id($id)
-      : Model::factory('StatementSource')->create();
-    $ss->url = $urls[$i];
-
-    // ignore empty records
-    if ($ss->url) {
-      $result[] = $ss;
-    }
-  }
-
-  return $result;
 }

@@ -46,8 +46,7 @@ if ($saveButton) {
     $entity,
     Request::getArray('aliasIds'),
     Request::getArray('aliasNames'));
-  $links = buildLinks(
-    $entity,
+  $links = EntityLink::build(
     Request::getArray('urlIds'),
     Request::getArray('urls'));
 
@@ -175,24 +174,6 @@ function buildAliases($entity, $ids, $names) {
     // ignore empty records
     if ($a->name) {
       $result[] = $a;
-    }
-  }
-
-  return $result;
-}
-
-function buildLinks($entity, $ids, $urls) {
-  $result = [];
-
-  foreach ($ids as $i => $id) {
-    $link = $id
-      ? EntityLink::get_by_id($id)
-      : Model::factory('EntityLink')->create();
-    $link->url = $urls[$i];
-
-    // ignore empty records
-    if ($link->url) {
-      $result[] = $link;
     }
   }
 

@@ -15,8 +15,7 @@ if (!$fromEntity || !$fromEntity->isEditable()) {
 }
 
 if ($saveButton) {
-  $sources = buildSources(
-    $relation,
+  $sources = RelationSource::build(
     Request::getArray('urlIds'),
     Request::getArray('urls'));
 
@@ -61,22 +60,4 @@ function validate($sources) {
   }
 
   return $errors;
-}
-
-function buildSources($relation, $ids, $urls) {
-  $result = [];
-
-  foreach ($ids as $i => $id) {
-    $rs = $id
-      ? RelationSource::get_by_id($id)
-      : Model::factory('RelationSource')->create();
-    $rs->url = $urls[$i];
-
-    // ignore empty records
-    if ($rs->url) {
-      $result[] = $rs;
-    }
-  }
-
-  return $result;
 }
