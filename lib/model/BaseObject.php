@@ -90,10 +90,17 @@ class BaseObject extends Model {
     // delete vanishing DB records
     $existingIds = array_filter(Util::objectProperty($objects, 'id'));
     $existingIds[] = 0; // ensure array is non-empty
-    Model::factory($class)
+
+    // We cannot call delete_many() as the $class might have its own
+    // dependants which need to be deleted. For example, an entity's relations
+    // each have sources.
+    $gone = Model::factory($class)
       ->where($fkField, $fkValue)
       ->where_not_in('id', $existingIds)
-      ->delete_many();
+      ->find_many();
+    foreach ($gone as $g) {
+      $g->delete();
+    }
 
     // update or insert existing objects
     $rank = 0;

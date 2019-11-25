@@ -113,7 +113,9 @@ function validate($entity, $relations, $fileData) {
   foreach ($relations as $r) {
     $relErrors = array_merge($relErrors, $r->validate($entity));
   }
-  $errors['relations'] = array_unique($relErrors);
+  if (!empty($relErrors)) {
+    $errors['relations'] = array_unique($relErrors);
+  }
 
   // image field
   $fileError = UploadTrait::validateFileData($fileData);

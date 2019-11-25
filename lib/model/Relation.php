@@ -109,4 +109,9 @@ class Relation extends BaseObject implements DatedObject {
     return $errors;
   }
 
+  function delete() {
+    RelationSource::delete_all_by_relationId($this->id);
+    parent::delete();
+  }
+
 }
