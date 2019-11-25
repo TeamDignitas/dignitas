@@ -46,6 +46,13 @@ class Relation extends BaseObject implements DatedObject {
     return Entity::get_by_id($this->toEntityId);
   }
 
+  function getSources() {
+    return Model::factory('RelationSource')
+      ->where('relationId', $this->id)
+      ->order_by_asc('rank')
+      ->find_many();
+  }
+
   /**
    * Checks if the start/end dates are meaningful for this relation type.
    *
@@ -53,6 +60,16 @@ class Relation extends BaseObject implements DatedObject {
    */
   function hasDates() {
     return $this->type != self::TYPE_CLOSE_RELATIVE;
+  }
+
+  /**
+   * Checks if this Relation's end date is in the past.
+   *
+   * @return bool
+   */
+  function ended() {
+    return $this->endDate != '0000-00-00' &&
+      $this->endDate < Time::today();
   }
 
   /**

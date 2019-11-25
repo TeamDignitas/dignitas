@@ -210,6 +210,12 @@ class Entity extends BaseObject implements DatedObject {
     return $results;
   }
 
+  function isEditable() {
+    return
+      User::may(User::PRIV_EDIT_ENTITY) ||    // can edit any entities
+      $this->userId == User::getActiveId();   // can always edit user's own statements
+  }
+
   /**
    * Checks whether the active user may delete this entity.
    *

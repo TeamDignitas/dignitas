@@ -1,4 +1,4 @@
-{* a set of statement sources, to be used on the statement edit page *}
+{* a set of statement/relation sources, to be used on edit pages *}
 {$id=$id|default:''}
 
 <tr {if $id}id="{$id}" hidden{/if}>

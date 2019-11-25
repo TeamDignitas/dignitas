@@ -34,7 +34,7 @@
   <ul>
     {foreach $entity->getRelations() as $r}
       <li>
-        {include "bits/relation.tpl"}
+        {include "bits/relation.tpl" fromEntity=$entity}
       </li>
     {/foreach}
   </ul>
@@ -92,7 +92,7 @@
 {/if}
 
 <div>
-  {if User::may(User::PRIV_EDIT_ENTITY)}
+  {if $entity->isEditable()}
     <a href="{Router::link('entity/edit')}/{$entity->id}" class="btn btn-light">
       <i class="icon icon-edit"></i>
       {t}edit{/t}

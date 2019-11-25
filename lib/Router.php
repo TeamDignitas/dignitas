@@ -98,6 +98,12 @@ class Router {
       'en_US.utf8' => 'changeLocale',
     ],
 
+    // relations
+    'relation/edit' => [
+      'en_US.utf8' => 'edit-relation',
+      'ro_RO.utf8' => 'editare-relatie',
+    ],
+
     // reviews
     'review/view' => [
       'en_US.utf8' => 'review',
@@ -169,6 +175,7 @@ class Router {
     'entity/load' => [ 'ids' ],
     'entity/search' => [ 'term' ],
     'entity/view' => [ 'id' ],
+    'relation/edit' => [ 'id', ],
     'review/view' => [ 'reason', 'reviewId', ],
     'statement/edit' => [ 'id' ],
     'statement/view' => [ 'id', 'answerId' ],
