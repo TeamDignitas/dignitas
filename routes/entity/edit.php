@@ -54,7 +54,7 @@ if ($saveButton) {
   $deleteImage = Request::has('deleteImage');
   $fileData = Request::getFile('image', 'Entity');
 
-  $errors = validate($entity, $relations, $fileData);
+  $errors = validate($entity, $relations, $links, $fileData);
   if (empty($errors)) {
     $new = !$entity->id;
     $entity->saveWithFile($fileData, $deleteImage);
@@ -96,7 +96,7 @@ Smart::display('entity/edit.tpl');
 
 /*************************************************************************/
 
-function validate($entity, $relations, $fileData) {
+function validate($entity, $relations, $links, $fileData) {
   $errors = [];
 
   // misc fields
@@ -115,6 +115,17 @@ function validate($entity, $relations, $fileData) {
   }
   if (!empty($relErrors)) {
     $errors['relations'] = array_unique($relErrors);
+  }
+
+  // links
+  $countBadUrls = 0;
+  foreach ($links as $l) {
+    if (!$l->validUrl()) {
+      $countBadUrls++;
+    }
+  }
+  if ($countBadUrls) {
+    $errors['links'][] = _('Some link URLS are invalid.');
   }
 
   // image field

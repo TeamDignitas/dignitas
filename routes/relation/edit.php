@@ -52,7 +52,7 @@ function validate($sources) {
 
   $countBadUrls = 0;
   foreach ($sources as $s) {
-    if (!filter_var($s->url, FILTER_VALIDATE_URL)) {
+    if (!$s->validUrl()) {
       $countBadUrls++;
     }
   }

@@ -34,7 +34,7 @@
       <ul class="list-inline list-inline-bullet d-inline">
         {foreach $r->getSources() as $s}
           <li class="list-inline-item">
-            <a href="{$s->url}">{$s->getDisplayName()}</a>
+            <a href="{$s->url}">{$s->getDisplayUrl()}</a>
           </li>
         {/foreach}
       </ul>
