@@ -54,15 +54,6 @@ class Relation extends BaseObject implements DatedObject {
   }
 
   /**
-   * Checks if the start/end dates are meaningful for this relation type.
-   *
-   * @return bool
-   */
-  function hasDates() {
-    return $this->type != self::TYPE_CLOSE_RELATIVE;
-  }
-
-  /**
    * Checks if this Relation's end date is in the past.
    *
    * @return bool
@@ -92,11 +83,6 @@ class Relation extends BaseObject implements DatedObject {
       $list = self::VALID_TYPES[$fromEntity->type][$this->type] ?? [];
       if (!in_array($toEntity->type, $list)) {
         $errors[] = _('Incorrect relation type.');
-      }
-
-      if (!$this->hasDates() &&
-          (($this->startDate != '0000-00-00') || ($this->endDate != '0000-00-00'))) {
-        $errors[] = _('This relation type cannot have dates.');
       }
 
       if (($this->startDate != '0000-00-00') &&
