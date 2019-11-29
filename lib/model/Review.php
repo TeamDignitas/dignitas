@@ -234,16 +234,33 @@ class Review extends BaseObject implements DatedObject {
       return;
     }
 
-    $keepVotes = Flag::count_by_reviewId_weight_vote(
-      $this->id, Flag::WEIGHT_EXECUTIVE, Flag::VOTE_KEEP);
-    $removeVotes = Flag::count_by_reviewId_weight_vote(
-      $this->id, Flag::WEIGHT_EXECUTIVE, Flag::VOTE_REMOVE);
-
-    if ($keepVotes >= Config::KEEP_VOTES_NECESSARY) {
+    if ($this->hasEnoughVotes(Flag::VOTE_KEEP, Config::KEEP_VOTES_NECESSARY)) {
       $this->resolve(Review::STATUS_KEEP, Flag::VOTE_KEEP);
-    } else if ($removeVotes >= Config::REMOVE_VOTES_NECESSARY) {
+    } else if ($this->hasEnoughVotes(Flag::VOTE_REMOVE, Config::REMOVE_VOTES_NECESSARY)) {
       $this->resolve(Review::STATUS_REMOVE, Flag::VOTE_REMOVE);
       $this->resolveObject($action);
+    }
+  }
+
+  /**
+   * Checks if the review has enough votes to resolve as $vote.
+   *
+   * @param int $vote one of the Flag::VOTE_* values.
+   * @param int $threshold one of the Config::*_VOTES_NECESSARY values.
+   * @return boolean
+   */
+  function hasEnoughVotes($vote, $threshold) {
+    // one moderator vote suffices
+    $modVote = Flag::get_by_reviewId_weight_vote(
+      $this->id, Flag::WEIGHT_MODERATOR, $vote);
+
+    if ($modVote) {
+      return true;
+    } else {
+      // count the executive votes
+      $count = Flag::count_by_reviewId_weight_vote(
+        $this->id, Flag::WEIGHT_EXECUTIVE, $vote);
+      return ($count >= $threshold);
     }
   }
 

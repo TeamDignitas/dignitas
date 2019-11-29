@@ -9,7 +9,14 @@
       geometry=Config::THUMB_USER_PROFILE
       imgClass="pic float-right"}
 
-    <h3>{t}user{/t} {$user}</h3>
+    <h3>
+      {t}user{/t} {$user}
+      {if $user->moderator}
+        <span class="badge badge-info">
+          {t}moderator{/t}
+        </span>
+      {/if}
+    </h3>
 
     <dl class="row">
       <dd class="col-2">{t}reputation{/t}</dd>
