@@ -1,6 +1,6 @@
 <?php
 
-class Entity extends BaseObject implements DatedObject {
+class Entity extends BaseObject {
   use DuplicateTrait {
     closeAsDuplicate as protected traitCloseAsDuplicate;
   }

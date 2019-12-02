@@ -1,6 +1,6 @@
 <?php
 
-class StatementSource extends BaseObject implements DatedObject {
+class StatementSource extends BaseObject {
   use UrlTrait;
 
 }

@@ -1,6 +1,6 @@
 <?php
 
-class AttachmentReference extends BaseObject implements DatedObject {
+class AttachmentReference extends BaseObject {
   use ObjectTypeIdTrait;
 
   static function insert($object, $attachmentId) {

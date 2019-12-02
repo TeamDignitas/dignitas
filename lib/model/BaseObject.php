@@ -112,14 +112,13 @@ class BaseObject extends Model {
   }
 
   function save() {
-    /* auto-save the createDate and modDate fields if the model has them */
-    if ($this instanceof DatedObject) {
-      $this->modDate = time();
-      if (!$this->createDate) {
-        $this->createDate = $this->modDate;
-      }
-      $this->modUserId = User::getActiveId();
+    // auto-save the createDate, modDate and modUserId fields
+    $this->modDate = time();
+    if (!$this->createDate) {
+      $this->createDate = $this->modDate;
     }
+    $this->modUserId = User::getActiveId();
+
     return parent::save();
   }
 

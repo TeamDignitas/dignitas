@@ -1,6 +1,6 @@
 <?php
 
-class Answer extends BaseObject implements DatedObject {
+class Answer extends BaseObject {
   use FlaggableTrait, MarkdownTrait, VotableTrait;
 
   function getObjectType() {

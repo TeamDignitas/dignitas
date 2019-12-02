@@ -3,7 +3,7 @@
 /**
  * Class that handles an object review from start to resolution.
  */
-class Review extends BaseObject implements DatedObject {
+class Review extends BaseObject {
   use ObjectTypeIdTrait;
 
   const STATUS_PENDING = 0;

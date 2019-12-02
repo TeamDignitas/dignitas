@@ -1,6 +1,6 @@
 <?php
 
-class Tag extends BaseObject implements DatedObject {
+class Tag extends BaseObject {
 
   const DEFAULT_COLOR = '#ffffff';
   const DEFAULT_BACKGROUND = '#1e83c2';

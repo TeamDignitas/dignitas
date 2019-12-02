@@ -1,6 +1,6 @@
 <?php
 
-class Relation extends BaseObject implements DatedObject {
+class Relation extends BaseObject {
 
   const TYPE_MEMBER = 1;
   const TYPE_ASSOCIATE = 2;

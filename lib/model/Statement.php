@@ -1,6 +1,6 @@
 <?php
 
-class Statement extends BaseObject implements DatedObject {
+class Statement extends BaseObject {
   use DuplicateTrait, FlaggableTrait, MarkdownTrait, VotableTrait;
 
   function getObjectType() {

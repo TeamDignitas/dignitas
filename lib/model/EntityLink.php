@@ -1,6 +1,6 @@
 <?php
 
-class EntityLink extends BaseObject implements DatedObject {
+class EntityLink extends BaseObject {
   use UrlTrait;
 
 }

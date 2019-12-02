@@ -1,6 +1,6 @@
 <?php
 
-class Attachment extends BaseObject implements DatedObject {
+class Attachment extends BaseObject {
   use UploadTrait;
 
   private function getFileSubdirectory() {

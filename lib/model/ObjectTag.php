@@ -1,6 +1,6 @@
 <?php
 
-class ObjectTag extends BaseObject implements DatedObject {
+class ObjectTag extends BaseObject {
   use ObjectTypeIdTrait;
 
   static function create($objectType, $objectId, $tagId) {

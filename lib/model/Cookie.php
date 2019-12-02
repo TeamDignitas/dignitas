@@ -1,6 +1,6 @@
 <?php
 
-class Cookie extends BaseObject implements DatedObject {
+class Cookie extends BaseObject {
 
   static function create($userId) {
     $c = Model::factory('Cookie')->create();

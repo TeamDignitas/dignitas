@@ -1,6 +1,6 @@
 <?php
 
-class PasswordToken extends BaseObject implements DatedObject {
+class PasswordToken extends BaseObject {
 
   static function create($userId) {
     $pt = Model::factory('PasswordToken')->create();

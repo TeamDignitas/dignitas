@@ -1,6 +1,6 @@
 <?php
 
-class Flag extends BaseObject implements DatedObject {
+class Flag extends BaseObject {
 
   // Boolean constants, but hopefully clearer.
   const VOTE_KEEP = 0;

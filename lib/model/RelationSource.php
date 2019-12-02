@@ -1,6 +1,6 @@
 <?php
 
-class RelationSource extends BaseObject implements DatedObject {
+class RelationSource extends BaseObject {
   use UrlTrait;
 
 }

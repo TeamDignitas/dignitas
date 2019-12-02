@@ -1,6 +1,6 @@
 <?php
 
-class User extends BaseObject implements DatedObject {
+class User extends BaseObject {
   use MarkdownTrait, UploadTrait;
 
   // privileges and their required reputation

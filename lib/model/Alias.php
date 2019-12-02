@@ -1,5 +1,5 @@
 <?php
 
-class Alias extends BaseObject implements DatedObject {
+class Alias extends BaseObject {
 
 }
