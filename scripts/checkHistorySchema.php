@@ -49,7 +49,7 @@ foreach ($tables as $rec) {
       checkTriggers($table);
     }
 
-    checkCreateModDate($table);
+    checkCreateModFields($table);
   }
 }
 
@@ -169,13 +169,12 @@ function checkUniqueKeys($table) {
   }
 }
 
-function checkCreateModDate($table) {
+function checkCreateModFields($table) {
   $schema = getSchema($table);
-  if (!isset($schema['createDate'])) {
-    error("Table $table should have a createDate field.");
-  }
-  if (!isset($schema['modDate'])) {
-    error("Table $table should have a modDate field.");
+  foreach (['createDate', 'modDate', 'modUserId'] as $field) {
+    if (!isset($schema[$field])) {
+      error("Table $table should have a $field field.");
+    }
   }
 }
 

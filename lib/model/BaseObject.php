@@ -118,6 +118,7 @@ class BaseObject extends Model {
       if (!$this->createDate) {
         $this->createDate = $this->modDate;
       }
+      $this->modUserId = User::getActiveId();
     }
     return parent::save();
   }
