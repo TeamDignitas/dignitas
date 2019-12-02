@@ -26,7 +26,11 @@ $(function() {
       duplicateId: $('#flagDuplicateId').val(),
       details: $('#flagDetails').val(),
 
-    }).done(function(successMsg) {
+    }).done(function(successMsg, textStatus, xhr) {
+      if (xhr.status == 202) {
+        // backend signalled us that we should refresh
+        location.reload(true);
+      }
       flagLink.prop('hidden', true);
       unflagLink.prop('hidden', false);
       $('#flagModal').modal('hide');

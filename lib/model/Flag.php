@@ -26,6 +26,20 @@ class Flag extends BaseObject implements DatedObject {
       : _('remove');
   }
 
+  /**
+   * Returns a localized name for a vote's weight.
+   *
+   * @return string A localized name.
+   */
+  function getWeightName() {
+    switch ($this->weight) {
+      case self::WEIGHT_ADVISORY: return _('advisory');
+      case self::WEIGHT_EXECUTIVE: return _('executive');
+      case self::WEIGHT_MODERATOR: return _('moderator');
+      default: return '';
+    }
+  }
+
   static function create($reviewId, $details, $vote) {
     $f = Model::factory('Flag')->create();
     $f->userId = User::getActiveId();

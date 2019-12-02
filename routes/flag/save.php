@@ -27,6 +27,11 @@ try {
   $flag->save();
   $review->evaluate();
 
+  if ($review->status != Review::STATUS_PENDING) {
+    // if this was the last necessary vote, tell the frontend to refresh the page
+    http_response_code(202);
+  }
+
   print json_encode(_('Your flag was saved.'));
 
 } catch (Exception $e) {

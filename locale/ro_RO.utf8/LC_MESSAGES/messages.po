@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-11-29 18:07+0200\n"
-"PO-Revision-Date: 2019-11-29 18:08+0200\n"
+"POT-Creation-Date: 2019-12-02 13:59+0200\n"
+"PO-Revision-Date: 2019-12-02 14:00+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -198,7 +198,7 @@ msgstr "Confirmați ștergerea acestui răspuns?"
 msgid "delete"
 msgstr "șterge"
 
-#: templates/bits/answer.tpl:53 templates/bits/entity.tpl:98
+#: templates/bits/answer.tpl:53 templates/bits/entity.tpl:99
 #: templates/bits/reviewActions.tpl:25 templates/bits/statement.tpl:84
 #: templates/tag/view.tpl:14 templates/user/view.tpl:49
 msgid "edit"
@@ -210,23 +210,23 @@ msgstr "editează"
 msgid "cancel"
 msgstr "renunță"
 
-#: templates/bits/entity.tpl:43
+#: templates/bits/entity.tpl:44
 msgid "loyalty"
 msgstr "loialitate"
 
-#: templates/bits/entity.tpl:51 templates/entity/edit.tpl:30
+#: templates/bits/entity.tpl:52 templates/entity/edit.tpl:30
 msgid "also known as"
 msgstr "cunoscut și ca"
 
-#: templates/bits/entity.tpl:61 templates/entity/edit.tpl:127
+#: templates/bits/entity.tpl:62 templates/entity/edit.tpl:127
 msgid "profile"
 msgstr "profil"
 
-#: templates/bits/entity.tpl:70 templates/entity/edit.tpl:136
+#: templates/bits/entity.tpl:71 templates/entity/edit.tpl:136
 msgid "external links"
 msgstr "legături externe"
 
-#: templates/bits/entity.tpl:83
+#: templates/bits/entity.tpl:84
 msgid "members"
 msgstr "membri"
 
@@ -259,7 +259,7 @@ msgstr "Raportați această afirmație pentru motivul:"
 msgid "Flag this author for the following reason:"
 msgstr "Raportați acest autor pentru motivul:"
 
-#: templates/bits/flagModal.tpl:31 lib/model/Review.php:77
+#: templates/bits/flagModal.tpl:31 lib/model/Review.php:83
 msgid "spam"
 msgstr "spam"
 
@@ -293,7 +293,7 @@ msgstr "Acest autor apare deja în Dignitas."
 msgid "type in some keywords..."
 msgstr "tastați niște cuvinte..."
 
-#: templates/bits/flagModal.tpl:88 lib/model/Review.php:80
+#: templates/bits/flagModal.tpl:88 lib/model/Review.php:86
 msgid "off-topic"
 msgstr "pe lîngă subiect"
 
@@ -313,7 +313,7 @@ msgstr ""
 msgid "Dignitas does not concern itself with this author's statements."
 msgstr "Dignitas nu se preocupă de afirmațiile acestui autor."
 
-#: templates/bits/flagModal.tpl:111 lib/model/Review.php:81
+#: templates/bits/flagModal.tpl:111 lib/model/Review.php:87
 msgid "unverifiable"
 msgstr "neverificabil(ă)"
 
@@ -419,14 +419,6 @@ msgstr "a votat pentru păstrare"
 #: templates/bits/reviewFlagList.tpl:9
 msgid "voted to remove"
 msgstr "a votat pentru eliminare"
-
-#: templates/bits/reviewFlagList.tpl:13
-msgid "executive"
-msgstr "executoriu"
-
-#: templates/bits/reviewFlagList.tpl:15
-msgid "advisory"
-msgstr "consultativ"
 
 #: templates/bits/reviewFlags.tpl:1
 msgid "Votes in this review"
@@ -575,15 +567,15 @@ msgstr "Această evaluare este completă. Nu mai sînt permise alte acțiuni."
 msgid "This statement was flagged as a duplicate of"
 msgstr "Această afirmație a fost raportată ca duplicat al lui"
 
-#: templates/review/view.tpl:43
+#: templates/review/view.tpl:37
 msgid "pertaining to statement:"
 msgstr "referitor la afirmația:"
 
-#: templates/review/view.tpl:56
+#: templates/review/view.tpl:50
 msgid "This entity was flagged as a duplicate of"
 msgstr "Acest autor a fost raportat ca duplicat al autorului"
 
-#: templates/review/view.tpl:59
+#: templates/review/view.tpl:53
 msgid ""
 "Accepting this flag will transfer all statements from this duplicate to its "
 "canonical entity. The aliases, relationships and other attributes will not "
@@ -593,7 +585,7 @@ msgstr ""
 "duplicat la autorul canonic. Aliasurile, relațiile și alte atribute nu vor "
 "fi transferate."
 
-#: templates/review/view.tpl:74
+#: templates/review/view.tpl:68
 msgid "This review queue is empty."
 msgstr "Această coadă de evaluare este goală."
 
@@ -723,7 +715,7 @@ msgstr "parola (doar dacă doriți să o schimbați)"
 msgid "back to my profile"
 msgstr "înapoi la profilul meu"
 
-#: templates/user/view.tpl:16
+#: templates/user/view.tpl:16 lib/model/Flag.php:38
 msgid "moderator"
 msgstr "moderator"
 
@@ -860,7 +852,7 @@ msgstr "site web"
 msgid "company"
 msgstr "companie"
 
-#: lib/model/Entity.php:82 lib/model/Review.php:79 lib/model/Statement.php:66
+#: lib/model/Entity.php:82 lib/model/Review.php:85 lib/model/Statement.php:66
 msgid "duplicate"
 msgstr "duplicate"
 
@@ -891,6 +883,14 @@ msgstr "ca duplicat al autorului"
 #: lib/model/Entity.php:99 lib/model/Statement.php:88
 msgid "by the user who added it."
 msgstr "de către utilizatorul care a adăugat-o."
+
+#: lib/model/Flag.php:36
+msgid "advisory"
+msgstr "consultativ"
+
+#: lib/model/Flag.php:37
+msgid "executive"
+msgstr "executoriu"
 
 #: lib/model/Relation.php:34
 msgid "member of"
@@ -924,67 +924,67 @@ msgstr "Tip de relație incorect."
 msgid "The start date cannot be past the end date."
 msgstr "Data de start nu poate depăși data de sfîrșit."
 
-#: lib/model/Review.php:56
+#: lib/model/Review.php:62
 msgid "items flagged as spam"
 msgstr "articole raportate ca spam"
 
-#: lib/model/Review.php:57
+#: lib/model/Review.php:63
 msgid "items flagged as abuse"
 msgstr "articole raportate ca insulte"
 
-#: lib/model/Review.php:58
+#: lib/model/Review.php:64
 msgid "items flagged as duplicate"
 msgstr "articole raportate ca duplicate"
 
-#: lib/model/Review.php:59
+#: lib/model/Review.php:65
 msgid "items flagged as off-topic"
 msgstr "articole raportate ca pe lîngă subiect"
 
-#: lib/model/Review.php:60
+#: lib/model/Review.php:66
 msgid "items flagged as unverifiable"
 msgstr "articole raportate ca neverificabile"
 
-#: lib/model/Review.php:61
+#: lib/model/Review.php:67
 msgid "items flagged as low quality"
 msgstr "articole raportate ca de slabă calitate"
 
-#: lib/model/Review.php:62
+#: lib/model/Review.php:68
 msgid "posts from new users"
 msgstr "mesaje de la utilizatori noi"
 
-#: lib/model/Review.php:63
+#: lib/model/Review.php:69
 msgid "late answers"
 msgstr "răspunsuri tîrzii"
 
-#: lib/model/Review.php:64
+#: lib/model/Review.php:70
 msgid "items flagged for reopening"
 msgstr "articole marcate pentru redeschidere"
 
-#: lib/model/Review.php:65
+#: lib/model/Review.php:71
 msgid "items flagged for other reasons"
 msgstr "articole raportate pentru alte motive"
 
-#: lib/model/Review.php:78
+#: lib/model/Review.php:84
 msgid "abuse"
 msgstr "insulta"
 
-#: lib/model/Review.php:82
+#: lib/model/Review.php:88
 msgid "low-quality"
 msgstr "slaba-calitate"
 
-#: lib/model/Review.php:83
+#: lib/model/Review.php:89
 msgid "new-user"
 msgstr "utilizator-nou"
 
-#: lib/model/Review.php:84
+#: lib/model/Review.php:90
 msgid "late-answer"
 msgstr "raspuns-tirziu"
 
-#: lib/model/Review.php:85
+#: lib/model/Review.php:91
 msgid "reopen"
 msgstr "redeschidere"
 
-#: lib/model/Review.php:86
+#: lib/model/Review.php:92
 msgid "other"
 msgstr "altele"
 
@@ -1167,7 +1167,7 @@ msgstr "Raportarea a fost ștearsă."
 msgid "Cannot flag item as a duplicate of itself."
 msgstr "Nu puteți raporta obiectul ca duplicat al său însuși."
 
-#: routes/flag/save.php:30
+#: routes/flag/save.php:35
 msgid "Your flag was saved."
 msgstr "Am salvat raportarea."
 
@@ -1203,7 +1203,7 @@ msgstr "Nu există nicio evaluare cu ID-ul indicat."
 msgid "Your vote was recorded."
 msgstr "Votul a fost înregistrat."
 
-#: routes/review/view.php:79
+#: routes/review/view.php:78
 msgid ""
 "This review is now complete. We have redirected you to the next review in "
 "this queue."
@@ -1327,6 +1327,3 @@ msgstr "Nu puteți vota: obiectul nu există."
 #: routes/vote/save.php:42
 msgid "You cannot vote for your own messages."
 msgstr "Nu puteți vota propriile mesaje."
-
-#~ msgid "This relation type cannot have dates."
-#~ msgstr "Acest tip de relație nu admite date."

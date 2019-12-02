@@ -9,11 +9,7 @@
         {t}voted to remove{/t}
       {/if}
 
-      {if $f->weight}
-        ({t}executive{/t})
-      {else}
-        ({t}advisory{/t})
-      {/if}
+      ({$f->getWeightName()})
 
       {$f->createDate|moment}.
 

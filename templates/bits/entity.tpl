@@ -1,4 +1,5 @@
 {$statusInfo=$entity->getStatusInfo()}
+{$flagBox=$flagBox|default:true}
 
 <div class="clearfix">
   {include "bits/image.tpl"
@@ -99,7 +100,7 @@
     </a>
   {/if}
 
-  {if ($entity->isFlaggable() || $entity->isFlagged())}
+  {if $flagBox && ($entity->isFlaggable() || $entity->isFlagged())}
     {include "bits/flagLinks.tpl" obj=$entity class="btn btn-link text-muted"}
   {/if}
 </div>

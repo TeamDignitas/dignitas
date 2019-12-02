@@ -64,7 +64,6 @@ if ($r) {
   Smart::assign('details', $existingFlag->details ?? null);
 }
 
-Smart::addResources('flag');
 Smart::display('review/view.tpl');
 
 /*************************************************************************/

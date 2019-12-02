@@ -28,17 +28,11 @@
         </div>
       {/if}
 
-      {include "bits/statement.tpl"
-        statement=$object
-        flagBox=true
-        voteBox=true}
+      {include "bits/statement.tpl" statement=$object flagBox=false}
 
     {elseif $type == BaseObject::TYPE_ANSWER}
 
-      {include "bits/answer.tpl"
-        answer=$object
-        flagBox=true
-        voteBox=true}
+      {include "bits/answer.tpl" answer=$object flagBox=false}
 
       <h3>{cap}{t}pertaining to statement:{/t}{/cap}</h3>
 
@@ -62,7 +56,7 @@
         </div>
       {/if}
 
-      {include "bits/entity.tpl" entity=$object}
+      {include "bits/entity.tpl" entity=$object flagBox=false}
 
     {/if}
 
