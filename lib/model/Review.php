@@ -45,6 +45,12 @@ class Review extends BaseObject implements DatedObject {
     ],
   ];
 
+  // Reviews of this type may not be deleted even when they have no remaining
+  // flags (e.g. if the first reviewer retracts their flag).
+  const STICKY = [
+    Ct::REASON_NEW_USER, Ct::REASON_LATE_ANSWER,
+  ];
+
   /**
    * Returns a localized description for a review queue.
    *
@@ -314,7 +320,8 @@ class Review extends BaseObject implements DatedObject {
    * Checks if the review can be deleted (if it has no remaining flags).
    */
   function checkDelete() {
-    if (!Flag::count_by_reviewId($this->id)) {
+    if (!in_array($this->reason, self::STICKY) &&
+        !Flag::count_by_reviewId($this->id)) {
       $this->delete();
     }
   }
