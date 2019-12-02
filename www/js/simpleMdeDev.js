@@ -90,6 +90,8 @@ $(function() {
       uploadUrl: URL_PREFIX + 'ajax/upload-attachment',
     });
 
+    simpleMde.codemirror.on('change', unsavedChangesHandler);
+
     return simpleMde;
   }
 
@@ -116,6 +118,14 @@ $(function() {
       // ditch the built-in urlText and compute the output value ourselves
       var text = this.editor.getValue().replace(this.lastValue, result.html);
       this.editor.setValue(text);
+
+      // Also move the cursor to the end of the inserted block. Otherwise it
+      // would sit at the end of the text "![Uploading file...]()", whereas
+      // our HTML is longer.
+      var cm = this.editor.codeMirror;
+      var delta = result.html.length - this.lastValue.length;
+      // skip delta characters ahead
+      cm.doc.setCursor(cm.findPosH(cm.doc.getCursor(), delta, 'char'));
     }
     return false;
   }

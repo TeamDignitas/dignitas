@@ -75,8 +75,10 @@ $(function() {
     return confirm(msg);
   });
 
-  // ask for confirmation before navigating away from a modified field...
-  $('.hasUnloadWarning').on('change input', function() {
+  // Expose this as a function so that other objects can also attach the
+  // handler. For example, SimpleMDE fields don't obey the .hasUnloadWarning
+  // class.
+  window.unsavedChangesHandler = function() {
     if (!beforeUnloadHandlerAttached) {
       beforeUnloadHandlerAttached = true;
       $(window).on('beforeunload', function() {
@@ -84,7 +86,10 @@ $(function() {
         return 'Are you sure you want to leave?';
       });
     }
-  });
+  }
+
+  // ask for confirmation before navigating away from a modified field...
+  $('.hasUnloadWarning').on('change input', unsavedChangesHandler);
 
   // ...except when actually submitting the form
   $('.hasUnloadWarning').closest('form').submit(function() {
