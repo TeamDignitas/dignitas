@@ -25,7 +25,8 @@ class Statement extends BaseObject {
    */
   function getAnswers() {
     $answers = Model::factory('Answer')
-      ->where('statementId', $this->id);
+      ->where('statementId', $this->id)
+      ->where_not_equal('status', Ct::STATUS_PENDING_EDIT);
 
     if (!User::may(User::PRIV_DELETE_ANSWER)) {
       $answers = $answers
@@ -55,7 +56,7 @@ class Statement extends BaseObject {
    * CSS class). If the status is active, returns null.
    */
   function getStatusInfo() {
-    if ($this->status == Ct::STATUS_ACTIVE) {
+    if (!in_array($this->status, [Ct::STATUS_CLOSED, Ct::STATUS_DELETED])) {
       return null;
     }
 
@@ -97,14 +98,16 @@ class Statement extends BaseObject {
 
   function isViewable() {
     return
-      ($this->status != Ct::STATUS_DELETED) ||
-      User::may(User::PRIV_DELETE_STATEMENT);
+      ($this->status != Ct::STATUS_PENDING_EDIT) &&
+      (($this->status != Ct::STATUS_DELETED) ||
+       User::may(User::PRIV_DELETE_STATEMENT));
   }
 
   function isEditable() {
     return
-      User::may(User::PRIV_EDIT_STATEMENT) ||  // can edit any statements
-      $this->userId == User::getActiveId();    // can always edit user's own statements
+      ($this->status != Ct::STATUS_PENDING_EDIT) &&
+      (User::may(User::PRIV_EDIT_STATEMENT) ||   // can edit any statements
+       $this->userId == User::getActiveId());    // can always edit user's own statements
   }
 
   /**
@@ -128,8 +131,8 @@ class Statement extends BaseObject {
   function isDeletable() {
     if (!$this->id) {
       return false; // not on the add statement page
-    } else if ($this->status == Ct::STATUS_DELETED) {
-      return false; // already deleted
+    } else if (in_array($this->status, [Ct::STATUS_DELETED, Ct::STATUS_PENDING_EDIT])) {
+      return false; // already deleted or pending edit
     } else if (User::may(User::PRIV_DELETE_STATEMENT)) {
       return true;  // can delete any statement
     } else if (($this->userId == User::getActiveId()) && $this->isDeletableByOwner()) {

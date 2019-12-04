@@ -12,6 +12,7 @@ class Ct {
   const STATUS_ACTIVE = 0;
   const STATUS_CLOSED = 1;
   const STATUS_DELETED = 2;
+  const STATUS_PENDING_EDIT = 3;
 
   // Reasons for starting a review and for closing and deleting objects.
   const REASON_SPAM = 1;

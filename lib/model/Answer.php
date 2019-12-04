@@ -26,7 +26,7 @@ class Answer extends BaseObject {
    * @return string
    */
   function getDeletedMessage() {
-    if ($this->status == Ct::STATUS_ACTIVE) {
+    if ($this->status != Ct::STATUS_DELETED) {
       return null;
     }
 
@@ -64,8 +64,9 @@ class Answer extends BaseObject {
 
   function isEditable() {
     return
-      User::may(User::PRIV_EDIT_ANSWER) ||    // can edit any answers
-      $this->userId == User::getActiveId();   // can always edit user's own answers
+      ($this->status != Ct::STATUS_PENDING_EDIT) &&
+      (User::may(User::PRIV_EDIT_ANSWER) ||     // can edit any answers
+       $this->userId == User::getActiveId());   // can always edit user's own answers
   }
 
   /**

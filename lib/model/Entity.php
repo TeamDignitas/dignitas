@@ -72,7 +72,7 @@ class Entity extends BaseObject {
    * CSS class). If the status is active, returns null.
    */
   function getStatusInfo() {
-    if ($this->status == Ct::STATUS_ACTIVE) {
+    if (!in_array($this->status, [Ct::STATUS_CLOSED, Ct::STATUS_DELETED])) {
       return null;
     }
 
@@ -134,7 +134,8 @@ class Entity extends BaseObject {
    */
   function getStatements($limit = 10) {
     $st = Model::factory('Statement')
-      ->where('entityId', $this->id);
+      ->where('entityId', $this->id)
+      ->where_not_equal('status', Ct::STATUS_PENDING_EDIT);
 
     if (!User::may(User::PRIV_DELETE_STATEMENT)) {
       // keep in sync with Statement::isDeletable();
