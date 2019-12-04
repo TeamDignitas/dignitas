@@ -107,11 +107,36 @@ class Statement extends BaseObject {
       $this->userId == User::getActiveId();    // can always edit user's own statements
   }
 
+  /**
+   * Checks whether the statement's owner can delete it.
+   * Current policy: deletable if
+   *   - it has no answers; or
+   *   - it has one answer with a zero or negative score.
+   *
+   * @return bool
+   */
+  function isDeletableByOwner() {
+    $answers = Answer::get_all_by_statementId_status($this->id, Ct::STATUS_ACTIVE);
+
+    switch (count($answers)) {
+      case 0: return true;
+      case 1: return ($answers[0]->score <= 0);
+      default: return false;
+    }
+  }
+
   function isDeletable() {
-    return
-      $this->id &&                                // not on the add statement page
-      (User::may(User::PRIV_DELETE_STATEMENT) ||  // can delete any statement
-       $this->userId == User::getActiveId());     // can always delete user's own statements
+    if (!$this->id) {
+      return false; // not on the add statement page
+    } else if ($this->status == Ct::STATUS_DELETED) {
+      return false; // already deleted
+    } else if (User::may(User::PRIV_DELETE_STATEMENT)) {
+      return true;  // can delete any statement
+    } else if (($this->userId == User::getActiveId()) && $this->isDeletableByOwner()) {
+      return true;  // owner can delete it
+    } else {
+      return false;
+    }
   }
 
 }

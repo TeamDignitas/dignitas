@@ -14,7 +14,10 @@ if ($id) {
 }
 
 if ($deleteButton) {
-  User::enforce(User::PRIV_DELETE_STATEMENT);
+  if (!$statement->isDeletable()) {
+    FlashMessage::add(_('You have insufficient privileges to delete this statement.'));
+    Util::redirectToSelf();
+  }
   $statement->markDeleted(Ct::REASON_BY_USER);
   FlashMessage::add(_('Statement deleted.'), 'success');
   Util::redirectToHome();

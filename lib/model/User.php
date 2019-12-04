@@ -139,7 +139,8 @@ class User extends BaseObject {
 
   // checks whether the active user has the privilege
   static function may($privilege) {
-    return self::$active && (self::$active->reputation >= $privilege);
+    $u = self::$active;
+    return $u && (($u->reputation >= $privilege) || $u->moderator);
   }
 
   // checks whether the active user has the privilege and bounces them if not

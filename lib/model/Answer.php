@@ -74,6 +74,7 @@ class Answer extends BaseObject {
    * @return boolean
    */
   function isDeletable() {
+    // TODO: not deletable if accepted
     return
       $this->status == Ct::STATUS_ACTIVE &&
       (User::may(User::PRIV_DELETE_ANSWER) ||    // can delete any answer
