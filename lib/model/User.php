@@ -203,6 +203,16 @@ class User extends BaseObject {
     }
   }
 
+  /**
+   * Checks if the active user can suggest edits.
+   *
+   * @return boolean Returns true iff the user should be allowed to suggest edits.
+   */
+  static function canSuggestEdits() {
+    // TODO: check suggested edit limits and bans.
+    return User::getActive() != null;
+  }
+
   public function __toString() {
     return $this->nickname;
   }

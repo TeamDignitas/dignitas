@@ -99,6 +99,14 @@ class Relation extends BaseObject {
     return $errors;
   }
 
+  function dbClone(&$refs, $changes = []) {
+    $clone = parent::dbClone($refs, $changes);
+    foreach ($this->getSources() as $s) {
+      $s->dbClone($refs, [ 'relationId' => $clone->id]);
+    }
+    return $clone;
+  }
+
   function delete() {
     RelationSource::delete_all_by_relationId($this->id);
     parent::delete();

@@ -1,7 +1,7 @@
 <?php
 
 class Answer extends BaseObject {
-  use FlaggableTrait, MarkdownTrait, VotableTrait;
+  use FlaggableTrait, MarkdownTrait, PendingEditTrait, VotableTrait;
 
   function getObjectType() {
     return self::TYPE_ANSWER;

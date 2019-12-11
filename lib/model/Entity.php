@@ -4,7 +4,7 @@ class Entity extends BaseObject {
   use DuplicateTrait {
     closeAsDuplicate as protected traitCloseAsDuplicate;
   }
-  use FlaggableTrait, MarkdownTrait, UploadTrait;
+  use FlaggableTrait, MarkdownTrait, PendingEditTrait, UploadTrait;
 
   const TYPE_PERSON = 1;
   const TYPE_PARTY = 2;
@@ -248,6 +248,20 @@ class Entity extends BaseObject {
       $s->entityId = $duplicateId;
       $s->save();
     }
+  }
+
+  function dbClone(&$refs, $changes = []) {
+    $clone = parent::dbClone($refs, $changes);
+    foreach ($this->getAliases() as $a) {
+      $a->dbClone($refs, [ 'entityId' => $clone->id]);
+    }
+    foreach ($this->getRelations() as $r) {
+      $r->dbClone($refs, [ 'fromEntityId' => $clone->id]);
+    }
+    foreach ($this->getLinks() as $l) {
+      $l->dbClone($refs, [ 'entityId' => $clone->id]);
+    }
+    return $clone;
   }
 
   public function __toString() {

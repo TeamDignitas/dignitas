@@ -23,7 +23,7 @@ if ($deleteButton) {
   Util::redirectToHome();
 }
 
-if (!$statement->isEditable()) {
+if (!$statement->isEditable() && !User::canSuggestEdits()) {
   User::enforce($statement->id ? User::PRIV_EDIT_STATEMENT : User::PRIV_ADD_STATEMENT);
 }
 
@@ -43,20 +43,27 @@ if ($saveButton) {
   $errors = validate($statement, $sources);
   if (empty($errors)) {
     $new = !$statement->id;
-    $statement->save();
+    $refs = [];
+    $statement = $statement->saveOrClone($refs);
 
     if ($new) {
       Review::checkNewUser($statement);
     }
-    StatementSource::updateDependants($sources, 'statementId', $statement->id, 'rank');
+    StatementSource::updateDependants($sources, 'statementId', $statement->id, 'rank', $refs);
     ObjectTag::update($statement, $tagIds);
 
     if ($new) {
       FlashMessage::add(_('Statement added.'), 'success');
       Util::redirect(Router::link('statement/view') . '/' . $statement->id);
     } else {
-      FlashMessage::add(_('Statement updated.'), 'success');
-      Util::redirect($referrer);
+      if ($statement->status == Ct::STATUS_PENDING_EDIT) {
+        FlashMessage::add(_('Your changes were placed in the review queue.'), 'success');
+      } else {
+        FlashMessage::add(_('Statement updated.'), 'success');
+      }
+      Util::redirect($referrer
+                     ? $referrer
+                     : (Router::link('statement/view') . '/' . $statement->id));
     }
   } else {
     Smart::assign([

@@ -1,7 +1,7 @@
 <?php
 
 class Statement extends BaseObject {
-  use DuplicateTrait, FlaggableTrait, MarkdownTrait, VotableTrait;
+  use DuplicateTrait, FlaggableTrait, MarkdownTrait, PendingEditTrait, VotableTrait;
 
   function getObjectType() {
     return self::TYPE_STATEMENT;
@@ -140,6 +140,14 @@ class Statement extends BaseObject {
     } else {
       return false;
     }
+  }
+
+  function dbClone(&$refs, $changes = []) {
+    $clone = parent::dbClone($refs, $changes);
+    foreach ($this->getSources() as $s) {
+      $s->dbClone($refs, [ 'statementId' => $clone->id]);
+    }
+    return $clone;
   }
 
 }

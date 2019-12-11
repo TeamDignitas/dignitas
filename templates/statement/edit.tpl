@@ -13,6 +13,13 @@
 {block "content"}
   <h3>{$smarty.capture.title}</h3>
 
+  {if !$statement->isEditable()}
+    <div class="alert alert-warning">
+      {t}You do not have enough reputation to make changes directly. You can
+      suggest changes which will be placed in the review queue.{/t}
+    </div>
+  {/if}
+
   <form method="post">
     <input type="hidden" name="id" value="{$statement->id}">
     <input type="hidden" name="referrer" value="{$referrer}">

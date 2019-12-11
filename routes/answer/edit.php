@@ -14,7 +14,7 @@ if ($id) {
   $answer->userId = User::getActiveId();
 }
 
-if (!$answer->isEditable()) {
+if (!$answer->isEditable() && !User::canSuggestEdits()) {
   User::enforce($answer->id ? User::PRIV_EDIT_ANSWER : User::PRIV_ADD_ANSWER);
 }
 
@@ -25,16 +25,21 @@ if ($saveButton) {
   $errors = validate($answer);
   if (empty($errors)) {
     $new = !$answer->id;
-    $answer->save();
+    $refs = [];
+    $answer = $answer->saveOrClone($refs);
 
     if ($new) {
       Review::checkNewUser($answer);
     }
     Review::checkLateAnswer($answer);
 
-    FlashMessage::add(
-      $new ? _('Answer posted.') : _('Answer updated.'),
-      'success');
+    if ($answer->status == Ct::STATUS_PENDING_EDIT) {
+      FlashMessage::add(_('Your changes were placed in the review queue.'), 'success');
+    } else {
+      FlashMessage::add(
+        $new ? _('Answer posted.') : _('Answer updated.'),
+        'success');
+    }
     $returnTo = getReturnTo($answer, $referrer);
     Util::redirect($returnTo);
   } else {

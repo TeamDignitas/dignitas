@@ -22,7 +22,9 @@ if ($deleteButton) {
   Util::redirectToHome();
 }
 
-User::enforce($entity->id ? User::PRIV_EDIT_ENTITY : User::PRIV_ADD_ENTITY);
+if (!$entity->isEditable() && !User::canSuggestEdits()) {
+  User::enforce($entity->id ? User::PRIV_EDIT_ENTITY : User::PRIV_ADD_ENTITY);
+}
 
 if ($saveButton) {
   $entity->name = Request::get('name');
@@ -56,19 +58,29 @@ if ($saveButton) {
   $errors = validate($entity, $relations, $links, $fileData);
   if (empty($errors)) {
     $new = !$entity->id;
+
+    // this can cause two saves at the moment
+    $refs = [];
+    $entity = $entity->saveOrClone($refs);
     $entity->saveWithFile($fileData, $deleteImage);
 
-    Relation::updateDependants($relations, 'fromEntityId', $entity->id, 'rank');
-    Alias::updateDependants($aliases, 'entityId', $entity->id, 'rank');
-    EntityLink::updateDependants($links, 'entityId', $entity->id, 'rank');
+    Relation::updateDependants($relations, 'fromEntityId', $entity->id, 'rank', $refs);
+    Alias::updateDependants($aliases, 'entityId', $entity->id, 'rank', $refs);
+    EntityLink::updateDependants($links, 'entityId', $entity->id, 'rank', $refs);
 
     if ($new) {
       Review::checkNewUser($entity);
       FlashMessage::add(_('Author added.'), 'success');
       Util::redirect(Router::link('entity/view') . '/' . $entity->id);
     } else {
-      FlashMessage::add(_('Author updated.'), 'success');
-      Util::redirect($referrer);
+      if ($entity->status == Ct::STATUS_PENDING_EDIT) {
+        FlashMessage::add(_('Your changes were placed in the review queue.'), 'success');
+      } else {
+        FlashMessage::add(_('Author updated.'), 'success');
+      }
+      Util::redirect($referrer
+                     ? $referrer
+                     : (Router::link('entity/view') . '/' . $entity->id));
     }
   } else {
     Smart::assign([

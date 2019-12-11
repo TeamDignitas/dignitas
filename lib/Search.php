@@ -19,7 +19,8 @@ class Search {
   //
   //   name regexp "[[:<:]]%s" collate utf8mb4_general_ci
   static function searchEntities($escapedQuery, $exceptId = 0, $limit = self::LIMIT) {
-    return Model::factory('Entity')
+    // Suppress warning due to bad argument order in Idiorm's where_any_is()
+    return @Model::factory('Entity')
       ->table_alias('e')
       ->select('e.*')
       ->distinct()

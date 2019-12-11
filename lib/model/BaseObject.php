@@ -81,11 +81,26 @@ class BaseObject extends Model {
     }
   }
 
-  // Updates a list of dependants, e.g. a list of Relations for an
-  // Entity. Deletes DB records not present in this list, inserts new DB
-  // records where needed, and updates the rank field.
-  static function updateDependants($objects, $fkField, $fkValue, $rankField) {
+  /**
+   * Updates a list of dependants, e.g. a list of Relations for an Entity.
+   * Deletes DB records not present in this list, inserts new DB records where
+   * needed, and updates the rank field.
+   *
+   * @param object[] $objects List of objects saved by the user.
+   * @param string $fkField Field to filter by in existing records or to
+   * populate in new records.
+   * @param any $fkValue Value of $fkField.
+   * @param string $rankField Name of field holding sequential order of objects.
+   * @param Map $refs Map of old ID => new ID to be used during cloning (for
+   * pending edits).
+   */
+  static function updateDependants($objects, $fkField, $fkValue, $rankField, $refs) {
     $class = get_called_class();
+
+    // use new IDs if available
+    foreach ($objects as $o) {
+      $o->id = $refs[$class][$o->id] ?? $o->id;
+    }
 
     // delete vanishing DB records
     $existingIds = array_filter(Util::objectProperty($objects, 'id'));
@@ -133,6 +148,28 @@ class BaseObject extends Model {
         $clone->$key = $value;
       }
     }
+    return $clone;
+  }
+
+  /**
+   * Makes a DB copy of the object and makes a note of the old and new ID.
+   *
+   * @param Map $refs Collects the old ID => new ID map per object type.
+   * @param Map $changes Key => value changes to be made while cloning.
+   */
+  function dbClone(&$refs, $changes = []) {
+    if (!$this->id) {
+      return null;
+    }
+
+    $clone = $this->parisClone();
+    foreach ($changes as $key => $value) {
+      $clone->$key = $value;
+    }
+    $clone->save();
+
+    $refs[get_called_class()][$this->id] = $clone->id;
+
     return $clone;
   }
 

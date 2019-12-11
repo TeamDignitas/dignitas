@@ -93,12 +93,9 @@
 {/if}
 
 <div>
-  {if $entity->isEditable()}
-    <a href="{Router::link('entity/edit')}/{$entity->id}" class="btn btn-light">
-      <i class="icon icon-edit"></i>
-      {t}edit{/t}
-    </a>
-  {/if}
+  {include "bits/editButton.tpl"
+    obj=$entity
+    url="{Router::link('entity/edit')}/{$entity->id}"}
 
   {if $flagBox && ($entity->isFlaggable() || $entity->isFlagged())}
     {include "bits/flagLinks.tpl" obj=$entity class="btn btn-link text-muted"}
