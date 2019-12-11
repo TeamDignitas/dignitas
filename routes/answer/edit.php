@@ -40,7 +40,8 @@ if ($saveButton) {
         $new ? _('Answer posted.') : _('Answer updated.'),
         'success');
     }
-    $returnTo = getReturnTo($answer, $referrer);
+    // pass the original answer ID, not the pending edit one
+    $returnTo = getReturnTo($id, $answer->statementId, $referrer);
     Util::redirect($returnTo);
   } else {
     Smart::assign([
@@ -75,7 +76,7 @@ function validate($answer) {
   return $errors;
 }
 
-function getReturnTo($answer, $referrer) {
+function getReturnTo($answerId, $statementId, $referrer) {
   if (Str::startsWith($referrer, Router::link('review/view', true))) {
 
     // origin is a review view page
@@ -86,8 +87,8 @@ function getReturnTo($answer, $referrer) {
     // origin is a statement view page
     return sprintf('%s/%d/%d',
                    Router::link('statement/view'),
-                   $answer->statementId,
-                   $answer->id);
+                   $statementId,
+                   $answerId);
   }
 
 }
