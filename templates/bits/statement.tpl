@@ -79,9 +79,7 @@
 
 <div class="mt-3 clearfix">
   {if $editLink}
-    {include "bits/editButton.tpl"
-      obj=$statement
-      url="{Router::link('statement/edit')}/{$statement->id}"}
+    {include "bits/editButton.tpl" obj=$statement}
   {/if}
 
   {if $flagBox && ($statement->isFlaggable() || $statement->isFlagged())}

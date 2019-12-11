@@ -19,7 +19,7 @@
       {$buttonText}
     </button>
   {else}
-    <a href="{$url}" class="{$class}">
+    <a href="{Router::getEditLink($obj)}" class="{$class}">
       <i class="icon icon-edit"></i>
       {$buttonText}
     </a>

@@ -47,10 +47,7 @@
     {/if}
 
     <li class="list-inline-item">
-      {include "bits/editButton.tpl"
-        obj=$answer
-        url="{Router::link('answer/edit')}/{$answer->id}"
-        class="btn btn-sm btn-link"}
+      {include "bits/editButton.tpl" obj=$answer class="btn btn-sm btn-link"}
     </li>
 
     {if $flagBox && ($answer->isFlaggable() || $answer->isFlagged())}
