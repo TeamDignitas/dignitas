@@ -93,7 +93,8 @@ trait PendingEditTrait {
    *
    *   1. Clone the object and all its dependants.
    *   2. Set the pendingEditId field on the original object.
-   *   3. Return the new object.
+   *   3. Start a review for the pending edit.
+   *   4. Return the new object.
    *
    * @param Map $refs Will collect the old ID => new ID map by object type
    * @return PendingEditTrait The same object or its clone
@@ -105,14 +106,36 @@ trait PendingEditTrait {
     }
 
     // clone the object with its dependants and mark it as a pending edit
-    $clone = $this->dbClone($refs, [ 'status' => Ct::STATUS_PENDING_EDIT ]);
+    $clone = $this->deepClone($refs, [ 'status' => Ct::STATUS_PENDING_EDIT ]);
 
     // keep the original record unchanged with the exception of pendingEditId
     $original = self::get_by_id($this->id);
     $original->pendingEditId = $clone->id;
     $original->save();
 
+    // start a review
+    Review::ensure($original, Ct::REASON_PENDING_EDIT);
+
     return $clone;
+  }
+
+  /**
+   * Processes the pending edit associated with this object.
+   *
+   * @param bool $accept If true, incorporates the changes, otherwise discards them.
+   */
+  function processPendingEdit(bool $accept) {
+    $pending = static::get_by_id($this->pendingEditId);
+    if ($pending) {
+      if ($accept) {
+        // this will also clear $this->pendingEditId field and save $this
+        $this->deepMerge($pending);
+      } else {
+        $this->pendingEditId = 0;
+        $this->save();
+      }
+      $pending->delete();
+    }
   }
 
 }

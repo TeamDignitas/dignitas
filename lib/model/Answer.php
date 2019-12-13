@@ -99,4 +99,10 @@ class Answer extends BaseObject {
     throw new Exception('Answers should never be closed as a duplicate.');
   }
 
+  function delete() {
+    if ($this->status != Ct::STATUS_PENDING_EDIT) {
+      throw new Exception(
+        "Answers should never be deleted at the DB level.");
+    }
+  }
 }

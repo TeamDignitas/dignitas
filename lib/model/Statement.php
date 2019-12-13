@@ -151,12 +151,18 @@ class Statement extends BaseObject {
     }
   }
 
-  function dbClone(&$refs, $changes = []) {
-    $clone = parent::dbClone($refs, $changes);
+  function deepClone(&$refs, $changes = []) {
+    $clone = parent::deepClone($refs, $changes);
     foreach ($this->getSources() as $s) {
-      $s->dbClone($refs, [ 'statementId' => $clone->id]);
+      $s->deepClone($refs, [ 'statementId' => $clone->id]);
     }
     return $clone;
   }
 
+  function delete() {
+    if ($this->status != Ct::STATUS_PENDING_EDIT) {
+      throw new Exception(
+        "Statements should never be deleted at the DB level.");
+    }
+  }
 }

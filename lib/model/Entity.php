@@ -260,22 +260,70 @@ class Entity extends BaseObject {
     }
   }
 
-  function dbClone(&$refs, $changes = []) {
-    $clone = parent::dbClone($refs, $changes);
+  function deepClone(&$refs, $changes = []) {
+    $clone = parent::deepClone($refs, $changes);
     foreach ($this->getAliases() as $a) {
-      $a->dbClone($refs, [ 'entityId' => $clone->id]);
+      $a->deepClone($refs, [ 'entityId' => $clone->id]);
     }
     foreach ($this->getRelations() as $r) {
-      $r->dbClone($refs, [ 'fromEntityId' => $clone->id]);
+      $r->deepClone($refs, [ 'fromEntityId' => $clone->id]);
     }
     foreach ($this->getLinks() as $l) {
-      $l->dbClone($refs, [ 'entityId' => $clone->id]);
+      $l->deepClone($refs, [ 'entityId' => $clone->id]);
     }
 
     // copy the entity image if one exists
     $clone->copyUploadedFileFrom($this);
 
     return $clone;
+  }
+
+  /**
+   * Opposite of deepClone(). Copies fields from $other. Deletes own
+   * dependants. Transfers dependants from $other.
+   */
+  function deepMerge($other) {
+    $this->copyFrom($other);
+
+    // Delete own dependants. Note that unlike delete() below, we leave
+    // toEntityId alone.
+    Alias::delete_all_by_entityId($this->id);
+    Relation::delete_all_by_fromEntityId($this->id);
+    EntityLink::delete_all_by_entityId($this->id);
+
+    // Migrate $other's dependants.
+    foreach ($other->getAliases() as $a) {
+      $a->entityId = $this->id;
+      $a->save();
+    }
+    foreach ($other->getRelations() as $r) {
+      $r->fromEntityId = $this->id;
+      $r->save();
+    }
+    foreach ($other->getLinks() as $l) {
+      $l->entityId = $this->id;
+      $l->save();
+    }
+
+    $this->deleteFiles();
+    $this->copyUploadedFileFrom($other);
+  }
+
+  function delete() {
+    if ($this->status != Ct::STATUS_PENDING_EDIT) {
+      throw new Exception(
+        "Entities should never be deleted at the DB level.");
+    }
+
+    Alias::delete_all_by_entityId($this->id);
+    Relation::delete_all_by_fromEntityId($this->id);
+    Relation::delete_all_by_toEntityId($this->id);
+    EntityLink::delete_all_by_entityId($this->id);
+    // a pending edit entity should not have statements
+
+    $this->deleteFiles();
+
+    parent::delete();
   }
 
   public function __toString() {

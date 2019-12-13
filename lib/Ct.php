@@ -26,8 +26,9 @@ class Ct {
   const REASON_BY_OWNER = 9;
   const REASON_BY_USER = 10;
   const REASON_REOPEN = 11;
-  const REASON_OTHER = 12;
-  const NUM_REASONS = 12;
+  const REASON_PENDING_EDIT = 12;
+  const REASON_OTHER = 13;
+  const NUM_REASONS = 13;
 
   const ONE_DAY_IN_SECONDS = 24 * 3600;
 

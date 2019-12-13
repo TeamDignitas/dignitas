@@ -157,7 +157,7 @@ class BaseObject extends Model {
    * @param Map $refs Collects the old ID => new ID map per object type.
    * @param Map $changes Key => value changes to be made while cloning.
    */
-  function dbClone(&$refs, $changes = []) {
+  function deepClone(&$refs, $changes = []) {
     if (!$this->id) {
       return null;
     }
@@ -171,6 +171,25 @@ class BaseObject extends Model {
     $refs[get_called_class()][$this->id] = $clone->id;
 
     return $clone;
+  }
+
+  /**
+   * Copies fields from $other, excluding 'id', 'status', 'statusUserId',
+   * 'userId' and any additional fields passed in $exclude. Saves $this at the
+   * end.
+   *
+   * @param array Fields to exclude from copying.
+   */
+  function copyFrom($other, $exclude = []) {
+    array_push($exclude, 'id', 'status', 'statusUserId', 'userId');
+
+    $fields = $other->as_array();
+    foreach ($fields as $key => $value) {
+      if (!in_array($key, $exclude)) {
+        $this->$key = $value;
+      }
+    }
+    $this->save();
   }
 
   static function _die($error, $name, $arguments) {

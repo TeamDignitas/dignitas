@@ -12,10 +12,22 @@ class Review extends BaseObject {
 
   const ACTION_CLOSE = 1;
   const ACTION_DELETE = 2;
+  const ACTION_INCORPORATE_PENDING_EDIT = 3;
+  const ACTION_DELETE_PENDING_EDIT = 4;
 
-  // Maps object x reason to methods to run when a review is evaluated.
+  // Maps object x reason to methods to run when a review is resolved.
   // It should be impossible to encounter cases not covered here.
-  const ACTION_MAP = [
+  const KEEP_ACTION_MAP = [
+    BaseObject::TYPE_ANSWER => [
+    ],
+    BaseObject::TYPE_ENTITY => [
+      Ct::REASON_PENDING_EDIT => self::ACTION_INCORPORATE_PENDING_EDIT,
+    ],
+    BaseObject::TYPE_STATEMENT => [
+    ],
+  ];
+
+  const REMOVE_ACTION_MAP = [
     BaseObject::TYPE_ANSWER => [
       Ct::REASON_SPAM => self::ACTION_DELETE,
       Ct::REASON_ABUSE => self::ACTION_DELETE,
@@ -31,6 +43,7 @@ class Review extends BaseObject {
       Ct::REASON_DUPLICATE => self::ACTION_CLOSE,
       Ct::REASON_OFF_TOPIC => self::ACTION_DELETE,
       Ct::REASON_NEW_USER => self::ACTION_DELETE,
+      Ct::REASON_PENDING_EDIT => self::ACTION_DELETE_PENDING_EDIT,
       Ct::REASON_OTHER => self::ACTION_DELETE,
     ],
     BaseObject::TYPE_STATEMENT => [
@@ -68,6 +81,7 @@ class Review extends BaseObject {
       case Ct::REASON_NEW_USER:     return _('posts from new users');
       case Ct::REASON_LATE_ANSWER:  return _('late answers');
       case Ct::REASON_REOPEN:       return _('items flagged for reopening');
+      case Ct::REASON_PENDING_EDIT: return _('suggested changes');
       case Ct::REASON_OTHER:        return _('items flagged for other reasons');
     }
   }
@@ -89,6 +103,7 @@ class Review extends BaseObject {
       case Ct::REASON_NEW_USER:     return _('new-user');
       case Ct::REASON_LATE_ANSWER:  return _('late-answer');
       case Ct::REASON_REOPEN:       return _('reopen');
+      case Ct::REASON_PENDING_EDIT: return _('suggested-changes');
       case Ct::REASON_OTHER:        return _('other');
     }
   }
@@ -232,18 +247,15 @@ class Review extends BaseObject {
    * Resolves the review if possible.
    */
   function evaluate() {
-    // never resolve reviews for which no resolution action is defined
     $type = $this->getObject()->getObjectType();
-    $action = self::ACTION_MAP[$type][$this->reason] ?? null;
-
-    if (!$action) {
-      return;
-    }
 
     if ($this->hasEnoughVotes(Flag::VOTE_KEEP, Config::KEEP_VOTES_NECESSARY)) {
       $this->resolve(Review::STATUS_KEEP, Flag::VOTE_KEEP);
+      $action = self::KEEP_ACTION_MAP[$type][$this->reason] ?? null;
+      $this->resolveObject($action);
     } else if ($this->hasEnoughVotes(Flag::VOTE_REMOVE, Config::REMOVE_VOTES_NECESSARY)) {
       $this->resolve(Review::STATUS_REMOVE, Flag::VOTE_REMOVE);
+      $action = self::REMOVE_ACTION_MAP[$type][$this->reason] ?? null;
       $this->resolveObject($action);
     }
   }
@@ -303,7 +315,9 @@ class Review extends BaseObject {
   private function resolveObject($action) {
     $obj = $this->getObject();
 
-    if ($action == self::ACTION_CLOSE) {
+    if (!$action) {
+      // no action defined
+    } else if ($action == self::ACTION_CLOSE) {
       if ($this->reason == Ct::REASON_DUPLICATE) {
         $obj->closeAsDuplicate($this->duplicateId);
       } else {
@@ -311,6 +325,10 @@ class Review extends BaseObject {
       }
     } else if ($action == self::ACTION_DELETE) {
       $obj->markDeleted($this->reason);
+    } else if ($action == self::ACTION_INCORPORATE_PENDING_EDIT) {
+      $obj->processPendingEdit(true);
+    } else if ($action == self::ACTION_DELETE_PENDING_EDIT) {
+      $obj->processPendingEdit(false);
     } else {
       Log::alert('Invalid action %s encountered in review #%s.', $action, $this->id);
     }

@@ -97,12 +97,4 @@ trait FlaggableTrait {
     $this->close(Ct::REASON_DUPLICATE);
   }
 
-  /**
-   * Flaggable objects should be marked as deleted, never actually deleted.
-   */
-  function delete() {
-    $class = get_class($this);
-    throw new Exception(
-      "Objects of class '{$class}' should never be deleted at the DB level.");
-  }
 }
