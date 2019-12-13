@@ -108,7 +108,20 @@ trait UploadTrait {
     copy($tmpFileName, $dest);
   }
 
-    // generate the thumb unless it already exists
+  /**
+   * Copies the other object's file (if it has one) into this object. Does not
+   * perform any checks on fileExtension.
+   *
+   * @param UploadTrait $other Source object (e.g. this clone's original object).
+   */
+  function copyUploadedFileFrom($other) {
+    $path = $other->getFileLocation(self::$FULL_GEOMETRY);
+    if ($path) {
+      copy($path, $this->getFileLocation(self::$FULL_GEOMETRY));
+    }
+  }
+
+  // generate the thumb unless it already exists
   private function ensureThumbnail($geometry) {
     $thumbLocation = $this->getFileLocation($geometry);
     if (!file_exists($thumbLocation)) {

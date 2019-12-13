@@ -271,6 +271,10 @@ class Entity extends BaseObject {
     foreach ($this->getLinks() as $l) {
       $l->dbClone($refs, [ 'entityId' => $clone->id]);
     }
+
+    // copy the entity image if one exists
+    $clone->copyUploadedFileFrom($this);
+
     return $clone;
   }
 
