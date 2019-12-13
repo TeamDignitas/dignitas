@@ -22,9 +22,7 @@ if ($deleteButton) {
   Util::redirectToHome();
 }
 
-if (!$entity->isEditable() && !User::canSuggestEdits()) {
-  User::enforce($entity->id ? User::PRIV_EDIT_ENTITY : User::PRIV_ADD_ENTITY);
-}
+$entity->enforceEditPrivileges();
 
 if ($saveButton) {
   $entity->name = Request::get('name');

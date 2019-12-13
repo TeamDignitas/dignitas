@@ -12,6 +12,7 @@ if (!$relation) {
 $fromEntity = Entity::get_by_id($relation->fromEntityId);
 if (!$fromEntity || !$fromEntity->isEditable()) {
   FlashMessage::add(_("You may not edit this author's relations."));
+  Util::redirect(Router::link('entity/view') . '/' . $fromEntity->id);
 }
 
 if ($saveButton) {

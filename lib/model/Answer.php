@@ -62,11 +62,20 @@ class Answer extends BaseObject {
     $this->contents = trim($this->contents);
   }
 
-  function isEditable() {
-    return
-      ($this->status != Ct::STATUS_PENDING_EDIT) &&
-      (User::may(User::PRIV_EDIT_ANSWER) ||     // can edit any answers
-       $this->userId == User::getActiveId());   // can always edit user's own answers
+  protected function isEditableCore() {
+    if (!$this->id && !User::may(User::PRIV_ADD_ANSWER)) {
+      throw new Exception(sprintf(
+        _('You need at least %s reputation to add answers.'),
+        Str::formatNumber(User::PRIV_ADD_ANSWER)));
+    }
+
+    if ($this->id &&
+        !User::may(User::PRIV_EDIT_ANSWER) &&     // can edit any answers
+        $this->userId != User::getActiveId()) {   // can always edit user's own answers
+      throw new Exception(sprintf(
+        _('You need at least %s reputation to edit answers.'),
+        Str::formatNumber(User::PRIV_EDIT_ANSWER)));
+    }
   }
 
   /**

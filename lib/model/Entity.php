@@ -211,10 +211,20 @@ class Entity extends BaseObject {
     return $results;
   }
 
-  function isEditable() {
-    return
-      User::may(User::PRIV_EDIT_ENTITY) ||    // can edit any entities
-      $this->userId == User::getActiveId();   // can always edit user's own statements
+  protected function isEditableCore() {
+    if (!$this->id && !User::may(User::PRIV_ADD_ENTITY)) {
+      throw new Exception(sprintf(
+        _('You need at least %s reputation to add entities.'),
+        Str::formatNumber(User::PRIV_ADD_ENTITY)));
+    }
+
+    if ($this->id &&
+        !User::may(User::PRIV_EDIT_ENTITY) &&     // can edit any entities
+        $this->userId != User::getActiveId()) {   // can always edit user's own entities
+      throw new Exception(sprintf(
+        _('You need at least %s reputation to edit entities.'),
+        Str::formatNumber(User::PRIV_EDIT_ENTITY)));
+    }
   }
 
   /**

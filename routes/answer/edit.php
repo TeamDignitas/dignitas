@@ -14,9 +14,7 @@ if ($id) {
   $answer->userId = User::getActiveId();
 }
 
-if (!$answer->isEditable() && !User::canSuggestEdits()) {
-  User::enforce($answer->id ? User::PRIV_EDIT_ANSWER : User::PRIV_ADD_ANSWER);
-}
+$answer->enforceEditPrivileges();
 
 if ($saveButton) {
   $answer->contents = Request::get('contents');

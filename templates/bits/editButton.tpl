@@ -1,27 +1,25 @@
 {* edit / suggest edit button for objects that admit pending edits *}
 {$class=$class|default:"btn btn-light"}
 
-{capture assign="buttonText"}
-{if $obj->isEditable()}
-  {t}edit{/t}
-{else if User::canSuggestEdits()}
-  {t}suggest an edit{/t}
-{/if}
+{$editable=$obj->isEditable()}
+{$suggestable=$obj->acceptsSuggestions()}
+
+{capture "suggestMsg"}
+{t}You do not have enough reputation to make changes directly. You can suggest
+changes which will be placed in the review queue.{/t}
 {/capture}
 
-{if $buttonText}
-  {if $obj->hasPendingEdit()}
-    <button
-      class="{$class}"
-      disabled
-      title="{t}this item already has a pending edit; please wait for it to be reviewed{/t}">
-      <i class="icon icon-edit"></i>
-      {$buttonText}
-    </button>
-  {else}
-    <a href="{Router::getEditLink($obj)}" class="{$class}">
-      <i class="icon icon-edit"></i>
-      {$buttonText}
-    </a>
-  {/if}
+{if $editable || $suggestable}
+  <a
+    href="{Router::getEditLink($obj)}"
+    class="{$class}"
+    {if !$editable}title="{$smarty.capture.suggestMsg}"{/if}
+  >
+    <i class="icon icon-edit"></i>
+    {if $editable}
+      {t}edit{/t}
+    {else}
+      {t}suggest an edit{/t}
+    {/if}
+  </a>
 {/if}

@@ -103,11 +103,20 @@ class Statement extends BaseObject {
        User::may(User::PRIV_DELETE_STATEMENT));
   }
 
-  function isEditable() {
-    return
-      ($this->status != Ct::STATUS_PENDING_EDIT) &&
-      (User::may(User::PRIV_EDIT_STATEMENT) ||   // can edit any statements
-       $this->userId == User::getActiveId());    // can always edit user's own statements
+  protected function isEditableCore() {
+    if (!$this->id && !User::may(User::PRIV_ADD_STATEMENT)) {
+      throw new Exception(sprintf(
+        _('You need at least %s reputation to add statements.'),
+        Str::formatNumber(User::PRIV_ADD_STATEMENT)));
+    }
+
+    if ($this->id &&
+        !User::may(User::PRIV_EDIT_STATEMENT) &&  // can edit any statements
+        $this->userId != User::getActiveId()) {   // can always edit user's own statements
+      throw new Exception(sprintf(
+        _('You need at least %s reputation to edit statements.'),
+        Str::formatNumber(User::PRIV_EDIT_STATEMENT)));
+    }
   }
 
   /**

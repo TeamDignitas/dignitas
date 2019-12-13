@@ -23,9 +23,7 @@ if ($deleteButton) {
   Util::redirectToHome();
 }
 
-if (!$statement->isEditable() && !User::canSuggestEdits()) {
-  User::enforce($statement->id ? User::PRIV_EDIT_STATEMENT : User::PRIV_ADD_STATEMENT);
-}
+$statement->enforceEditPrivileges();
 
 if ($saveButton) {
   $statement->entityId = Request::get('entityId');
