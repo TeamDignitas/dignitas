@@ -316,6 +316,7 @@ class Entity extends BaseObject {
     Relation::delete_all_by_fromEntityId($this->id);
     Relation::delete_all_by_toEntityId($this->id);
     EntityLink::delete_all_by_entityId($this->id);
+    AttachmentReference::deleteObject($this);
     // a pending edit entity should not have statements, reviews, tags or votes
 
     $this->deleteFiles();

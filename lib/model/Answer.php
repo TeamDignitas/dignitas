@@ -109,6 +109,7 @@ class Answer extends BaseObject {
       throw new Exception(
         "Answers should never be deleted at the DB level.");
     }
+    AttachmentReference::deleteObject($this);
     // a pending edit answer should not have reviews, tags or votes
     parent::delete();
   }

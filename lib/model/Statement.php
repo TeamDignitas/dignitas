@@ -164,7 +164,7 @@ class Statement extends BaseObject {
 
     // Delete own dependants.
     StatementSource::delete_all_by_statementId($this->id);
-    ObjectTag::delete_all_by_objectType_objectId(self::TYPE_STATEMENT, $this->id);
+    ObjectTag::deleteObject($this);
 
     // Migrate $other's dependants.
     foreach ($other->getSources() as $s) {
@@ -185,7 +185,8 @@ class Statement extends BaseObject {
     }
 
     StatementSource::delete_all_by_statementId($this->id);
-    ObjectTag::delete_all_by_objectType_objectId(self::TYPE_STATEMENT, $this->id);
+    ObjectTag::deleteObject($this);
+    AttachmentReference::deleteObject($this);
     // a pending edit statement should not have answers, reviews or votes
 
     parent::delete();
