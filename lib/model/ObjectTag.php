@@ -41,11 +41,10 @@ class ObjectTag extends BaseObject {
     $type = $object->getObjectType();
 
     // delete vanishing DB records
-    $nonEmptyTagIds = empty($tagIds) ? [ 0 ] : $tagIds;
     Model::factory('ObjectTag')
       ->where('objectType', $type)
       ->where('objectId', $object->id)
-      ->where_not_in('tagId', $nonEmptyTagIds)
+      ->where_not_in('tagId', $tagIds ?: [ 0 ])    // ensure non-empty
       ->delete_many();
 
     // update or insert existing objects
