@@ -11,13 +11,17 @@ class ObjectTag extends BaseObject {
     return $ot;
   }
 
-  // returns just the tag IDs
-  static function getTagIds($object) {
-    $ots = Model::factory('ObjectTag')
+  static function getObjectTags($object) {
+    return Model::factory('ObjectTag')
       ->where('objectId', $object->id)
       ->where('objectType', $object->getObjectType())
       ->order_by_asc('rank')
       ->find_many();
+  }
+
+  // returns just the tag IDs
+  static function getTagIds($object) {
+    $ots = self::getObjectTags($object);
     return Util::objectProperty($ots, 'tagId');
   }
 
