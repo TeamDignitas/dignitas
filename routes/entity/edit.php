@@ -76,9 +76,7 @@ if ($saveButton) {
       } else {
         FlashMessage::add(_('Author updated.'), 'success');
       }
-      Util::redirect($referrer
-                     ? $referrer
-                     : (Router::link('entity/view') . '/' . $entity->id));
+      Util::redirect($referrer ?: Router::getViewLink($entity));
     }
   } else {
     Smart::assign([

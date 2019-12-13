@@ -59,9 +59,7 @@ if ($saveButton) {
       } else {
         FlashMessage::add(_('Statement updated.'), 'success');
       }
-      Util::redirect($referrer
-                     ? $referrer
-                     : (Router::link('statement/view') . '/' . $statement->id));
+      Util::redirect($referrer ?: Router::getViewLink($statement));
     }
   } else {
     Smart::assign([

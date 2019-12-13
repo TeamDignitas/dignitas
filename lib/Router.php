@@ -316,4 +316,22 @@ class Router {
     }
   }
 
+  /**
+   * Returns the view link for this object.
+   *
+   * @param object $object
+   * @return string The view link for this object or null if the object
+   * doesn't have a view page.
+   */
+  static function getViewLink($object) {
+    switch ($object->getObjectType()) {
+      case BaseObject::TYPE_ENTITY:
+        return Router::link('entity/view') . '/' . $object->id;
+      case BaseObject::TYPE_STATEMENT:
+        return Router::link('statement/view') . '/' . $object->id;
+      default:
+        return null;
+    }
+  }
+
 }
