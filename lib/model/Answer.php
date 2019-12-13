@@ -97,6 +97,7 @@ class Answer extends BaseObject {
 
   function closeAsDuplicate($duplicateId) {
     throw new Exception('Answers should never be closed as a duplicate.');
+    // a pending edit answer should not have reviews or votes
   }
 
   protected function deepMerge($other) {
@@ -108,6 +109,7 @@ class Answer extends BaseObject {
       throw new Exception(
         "Answers should never be deleted at the DB level.");
     }
+    // a pending edit answer should not have reviews or votes
     parent::delete();
   }
 }

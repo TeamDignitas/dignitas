@@ -300,6 +300,7 @@ class Entity extends BaseObject {
       $l->entityId = $this->id;
       $l->save();
     }
+    // a pending edit entity should not have statements, reviews or votes
 
     $this->deleteFiles();
     $this->copyUploadedFileFrom($other);
@@ -315,7 +316,7 @@ class Entity extends BaseObject {
     Relation::delete_all_by_fromEntityId($this->id);
     Relation::delete_all_by_toEntityId($this->id);
     EntityLink::delete_all_by_entityId($this->id);
-    // a pending edit entity should not have statements
+    // a pending edit entity should not have statements, reviews or votes
 
     $this->deleteFiles();
 

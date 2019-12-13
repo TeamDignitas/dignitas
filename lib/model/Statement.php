@@ -160,6 +160,17 @@ class Statement extends BaseObject {
   }
 
   protected function deepMerge($other) {
+    $this->copyFrom($other);
+
+    // Delete own dependants.
+    StatementSource::delete_all_by_statementId($this->id);
+
+    // Migrate $other's dependants.
+    foreach ($other->getSources() as $s) {
+      $s->statementId = $this->id;
+      $s->save();
+    }
+    // a pending edit statement should not have answers, reviews or votes
   }
 
   function delete() {
@@ -167,5 +178,10 @@ class Statement extends BaseObject {
       throw new Exception(
         "Statements should never be deleted at the DB level.");
     }
+
+    StatementSource::delete_all_by_statementId($this->id);
+    // a pending edit statement should not have answers, reviews or votes
+
+    parent::delete();
   }
 }

@@ -25,6 +25,7 @@ class Review extends BaseObject {
       Ct::REASON_PENDING_EDIT => self::ACTION_INCORPORATE_PENDING_EDIT,
     ],
     BaseObject::TYPE_STATEMENT => [
+      Ct::REASON_PENDING_EDIT => self::ACTION_INCORPORATE_PENDING_EDIT,
     ],
   ];
 
@@ -56,6 +57,7 @@ class Review extends BaseObject {
       Ct::REASON_UNVERIFIABLE => self::ACTION_CLOSE,
       Ct::REASON_LOW_QUALITY => self::ACTION_CLOSE,
       Ct::REASON_NEW_USER => self::ACTION_CLOSE,
+      Ct::REASON_PENDING_EDIT => self::ACTION_DELETE_PENDING_EDIT,
       Ct::REASON_OTHER => self::ACTION_CLOSE,
     ],
   ];
