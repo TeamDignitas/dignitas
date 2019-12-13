@@ -120,6 +120,12 @@ trait PendingEditTrait {
   }
 
   /**
+   * Opposite of deepClone(). Copies fields from $other. Deletes own
+   * dependants. Transfers dependants from $other.
+   */
+  abstract protected function deepMerge($other);
+
+  /**
    * Processes the pending edit associated with this object.
    *
    * @param bool $accept If true, incorporates the changes, otherwise discards them.

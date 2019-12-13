@@ -159,6 +159,9 @@ class Statement extends BaseObject {
     return $clone;
   }
 
+  protected function deepMerge($other) {
+  }
+
   function delete() {
     if ($this->status != Ct::STATUS_PENDING_EDIT) {
       throw new Exception(

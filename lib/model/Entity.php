@@ -278,11 +278,7 @@ class Entity extends BaseObject {
     return $clone;
   }
 
-  /**
-   * Opposite of deepClone(). Copies fields from $other. Deletes own
-   * dependants. Transfers dependants from $other.
-   */
-  function deepMerge($other) {
+  protected function deepMerge($other) {
     $this->copyFrom($other);
 
     // Delete own dependants. Note that unlike delete() below, we leave

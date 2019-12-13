@@ -99,10 +99,15 @@ class Answer extends BaseObject {
     throw new Exception('Answers should never be closed as a duplicate.');
   }
 
+  protected function deepMerge($other) {
+    $this->copyFrom($other);
+  }
+
   function delete() {
     if ($this->status != Ct::STATUS_PENDING_EDIT) {
       throw new Exception(
         "Answers should never be deleted at the DB level.");
     }
+    parent::delete();
   }
 }

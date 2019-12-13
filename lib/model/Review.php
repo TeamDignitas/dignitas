@@ -19,6 +19,7 @@ class Review extends BaseObject {
   // It should be impossible to encounter cases not covered here.
   const KEEP_ACTION_MAP = [
     BaseObject::TYPE_ANSWER => [
+      Ct::REASON_PENDING_EDIT => self::ACTION_INCORPORATE_PENDING_EDIT,
     ],
     BaseObject::TYPE_ENTITY => [
       Ct::REASON_PENDING_EDIT => self::ACTION_INCORPORATE_PENDING_EDIT,
@@ -35,6 +36,7 @@ class Review extends BaseObject {
       Ct::REASON_LOW_QUALITY => self::ACTION_DELETE,
       Ct::REASON_NEW_USER => self::ACTION_DELETE,
       Ct::REASON_LATE_ANSWER => self::ACTION_DELETE,
+      Ct::REASON_PENDING_EDIT => self::ACTION_DELETE_PENDING_EDIT,
       Ct::REASON_OTHER => self::ACTION_DELETE,
     ],
     BaseObject::TYPE_ENTITY => [
