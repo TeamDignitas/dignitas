@@ -3,11 +3,11 @@ rename table history_queue_item to history_review;
 
 alter table review
   change queueType reason int not null default 0,
-  add status int not null default 0 after type;
+  add status int not null default 0 after reason;
 
 alter table history_review
   change queueType reason int not null default 0,
-  add status int not null default 0 after type;
+  add status int not null default 0 after reason;
 
 alter table flag
   drop objectType,
