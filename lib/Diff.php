@@ -171,11 +171,21 @@ class Diff {
     $vb = Str::unicodeExplode($b);
 
     $ses = self::ses($va, $vb);
+    $i = 0; // position in $va
 
-    // implode character inserts to string inserts
     foreach ($ses as &$rec) {
-      if ($rec[0] == self::OP_INSERT) {
-        $rec[1] = implode($rec[1]);
+      switch ($rec[0]) {
+        case self::OP_COPY:
+        case self::OP_DELETE:
+          // include characters to copy/delete explicitly
+          $tmp = $i + $rec[1];
+          $rec[1] = implode(array_slice($va, $i, $rec[1]));
+          $i = $tmp;
+          break;
+        case self::OP_INSERT:
+          // implode character inserts to string inserts
+          $rec[1] = implode($rec[1]);
+          break;
       }
     }
     return $ses;

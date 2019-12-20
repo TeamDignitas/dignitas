@@ -17,11 +17,14 @@ class Time {
   }
 
   /**
-   * @return the localized date with long month names (e.g. 'April 24, 2019')
-   * or short month names (e.g. 'Apr 24, 2019').
+   * @return string The localized date with long month names (e.g. 'April 24,
+   * 2019') or short month names (e.g. 'Apr 24, 2019').
    **/
-  static function localTimestamp($timestamp, $shortMonthName = false) {
+  static function localTimestamp($timestamp, $shortMonthName = false, $withTime = false) {
     $format = $shortMonthName ? _('%b %e, %Y') : _('%B %e, %Y');
+    if ($withTime) {
+      $format .= ' %H:%M:%S';
+    }
     return trim(strftime($format, $timestamp));
   }
 
@@ -48,11 +51,15 @@ class Time {
     }
   }
 
-  static function moment($timestamp) {
+  static function moment($timestamp, $includeExact = false) {
     $delta = time() - $timestamp;
 
-    $exact = self::localTimestamp($timestamp);
-    $exactBracket = " ({$exact})";
+    if ($includeExact) {
+      $exact = self::localTimestamp($timestamp);
+      $exactBracket = " ({$exact})";
+    } else {
+      $exactBracket = '';
+    }
 
     $days = (int)($delta / (60 * 60 * 24));
     if ($days >= 4) {

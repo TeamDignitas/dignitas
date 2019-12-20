@@ -59,6 +59,43 @@ class BaseObject extends Model {
     }
   }
 
+  function getModUser() {
+    return User::get_by_id($this->modUserId);
+  }
+
+  /**
+   * Has the object been modified after its creation?
+   *
+   * @return boolean
+   */
+  function hasVersions() {
+    return $this->createDate != $this->modDate;
+  }
+
+  /**
+   * Returns all the historic versions of $this (newest first). The most
+   * recent version will be identical to $this.
+   *
+   * @return BaseObject[] An array of objects of the same class as $this.
+   */
+  function getHistory() {
+    // Load records from the history_* table. Do this at Idiorm level, not at
+    // Paris level, because we didn't define classes for history tables.
+    $class = get_class($this);
+    $tableName = $this->_get_table_name($class);
+    $historyTableName = 'history_' . $tableName;
+
+    $records = ORM::for_table($historyTableName)
+      ->where('id', $this->id)
+      ->order_by_desc('historyId')
+      ->find_array();
+
+    // Convert array data to objects. Keep the historyId and historyAction fields.
+    return array_map(function($rec) use ($class) {
+      return Model::factory($class)->create($rec);
+    }, $records);
+  }
+
   /**
    * What type of object are we? Children may override this.
    *

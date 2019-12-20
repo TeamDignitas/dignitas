@@ -115,6 +115,10 @@ class Router {
       'en_US.utf8' => 'edit-statement',
       'ro_RO.utf8' => 'editeaza-afirmatie',
     ],
+    'statement/history' => [
+      'en_US.utf8' => 'statement-history',
+      'ro_RO.utf8' => 'istoric-afirmatie',
+    ],
     'statement/search' => [
       'en_US.utf8' => 'ajax/search-statements',
     ],
@@ -178,6 +182,7 @@ class Router {
     'relation/edit' => [ 'id', ],
     'review/view' => [ 'reason', 'reviewId', ],
     'statement/edit' => [ 'id' ],
+    'statement/history' => [ 'id' ],
     'statement/view' => [ 'id', 'answerId' ],
     'tag/edit' => [ 'id' ],
     'tag/load' => [ 'ids' ],

@@ -1,0 +1,31 @@
+.versionHeader {
+  margin-top: 1em;
+}
+
+div.diffCard {
+  margin-top: 0.5em;
+}
+
+button.identicalToggle {
+  width: 100%;
+}
+
+pre.identicalBlock {
+  display: none;
+}
+
+pre.diff {
+  color: gray;
+  margin-top: 1em;
+  white-space: pre-wrap;
+}
+
+.diffOp1 {
+  background: #c8ffc8;
+  color: black;
+}
+
+.diffOp2 {
+  background: #ffc8c8;
+  color: black;
+}
