@@ -26,20 +26,21 @@
           old=$change.old
           new=$change.new}
       {/foreach}
-    </dl>
 
-    {if count($rec.tagChanges.added)}
-      {t}added tags{/t}
-      {foreach $tagChanges.added as $t}
-        {include "bits/tag.tpl"}
+      {foreach $rec.dependantChanges as $change}
+        {if count($change.objects)}
+          <dt class="col-sm-3">
+            {$change.title}
+          </dt>
+          <dd class="col-sm-9">
+            {foreach $change.objects as $o}
+              {assign var="{$change.param}" value=$o}
+              {include $change.template}
+            {/foreach}
+          </dd>
+        {/if}
       {/foreach}
-    {/if}
-    {if count($rec.tagChanges.deleted)}
-      {t}deleted tags{/t}
-      {foreach $tagChanges.deleted as $t}
-        {include "bits/tag.tpl"}
-      {/foreach}
-    {/if}
+    </dl>
   {/foreach}
 
 {/block}

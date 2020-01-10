@@ -24,34 +24,18 @@ trait HistoryTrait {
    */
   abstract function getFieldChanges($old);
 
-
   /**
-   * Returns a pair of arrays: the object's added and deleted tags.
-   * TODO there is no guarantee that the object has a getTags() method
+   * Returns an array of the object's added or deleted dependants. Each array
+   * element should be a tuple of
+   * - title;
+   * - template name;
+   * - argument name of each dependant being passed to the template;
+   * - array of dependants.
    *
    * @return array
    */
-  function getTagChanges($old) {
-    $added = [];
-    $deleted = [];
+  abstract function getDependantChanges();
 
-    foreach ($this->getTags() as $tag) {
-      $added[$tag->id] = $tag;
-    }
-
-    foreach ($old->getTags() as $tag) {
-      if (isset($added[$tag->id])) {
-        unset($added[$tag->id]);
-      } else {
-        $deleted[$tag->id] = $tag;
-      }
-    }
-
-    return [
-      'added' => $added,
-      'deleted' => $deleted,
-    ];
-  }
 
   /**
    * Returns an array of changes, one for each pair of consecutive
@@ -95,7 +79,7 @@ trait HistoryTrait {
       }
 
       $rec['fieldChanges'] = $new->getFieldChanges($old);
-      $rec['tagChanges'] = $new->getTagChanges($old);
+      $rec['dependantChanges'] = $new->getDependantChanges();
 
       $results[] = $rec;
     }

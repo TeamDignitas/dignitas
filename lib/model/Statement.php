@@ -90,6 +90,75 @@ class Statement extends BaseObject {
     return $results;
   }
 
+  function getDependantChanges() {
+    return [
+      [
+        'title' => _('added tags'),
+        'template' => 'bits/tag.tpl',
+        'param' => 't',
+        'objects' => $this->getTagChanges('insert'),
+      ],
+      [
+        'title' => _('deleted tags'),
+        'template' => 'bits/tag.tpl',
+        'param' => 't',
+        'objects' => $this->getTagChanges('delete'),
+      ],
+      [
+        'title' => _('added sources'),
+        'template' => 'bits/statementSource.tpl',
+        'param' => 's',
+        'objects' => $this->getSourceChanges('insert'),
+      ],
+      [
+        'title' => _('deleted sources'),
+        'template' => 'bits/statementSource.tpl',
+        'param' => 's',
+        'objects' => $this->getSourceChanges('delete'),
+      ],
+    ];
+  }
+
+  /**
+   * Returns tags that were added or deleted in this revision.
+   *
+   * @param string $historyAction Either 'insert' or 'delete'
+   * @return array An array of tags
+   */
+  function getTagChanges($historyAction) {
+    $records = ORM::for_table('history_object_tag')
+      ->select('tagId')
+      ->where('objectType', $this->getObjectType())
+      ->where('objectId', $this->id)
+      ->where('historyAction', $historyAction)
+      ->where('requestId', $this->requestId)
+      ->order_by_asc('rank')
+      ->find_array();
+
+    return array_map(function($rec) {
+      return Tag::get_by_id($rec['tagId']);
+    }, $records);
+  }
+
+  /**
+   * Returns statement sources that were added or deleted in this revision.
+   *
+   * @param string $historyAction Either 'insert' or 'delete'
+   * @return array An array of statement sources
+   */
+  function getSourceChanges($historyAction) {
+    $records = ORM::for_table('history_statement_source')
+      ->where('statementId', $this->id)
+      ->where('historyAction', $historyAction)
+      ->where('requestId', $this->requestId)
+      ->order_by_asc('rank')
+      ->find_array();
+
+    return array_map(function($rec) {
+      return Model::factory('StatementSource')->create($rec);
+    }, $records);
+  }
+
   /**
    * Returns human-readable information about the status of this Statement.
    *

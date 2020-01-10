@@ -55,7 +55,7 @@
       <ul class="list-inline list-inline-bullet d-inline">
         {foreach $statement->getSources() as $s}
           <li class="list-inline-item">
-            <a href="{$s->url}">{$s->getDisplayUrl()}</a>
+            {include "bits/statementSource.tpl"}
           </li>
         {/foreach}
       </ul>
