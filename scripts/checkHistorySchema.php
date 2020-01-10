@@ -21,6 +21,13 @@ const EXPECTED_PROPS = [
     'default' => 'insert',
     'extra' => '',
   ],
+  'requestId' => [
+    'type' => 'bigint(20)',
+    'null' => 'NO',
+    'key' => '',
+    'default' => 0,
+    'extra' => '',
+  ],
 ];
 
 $errors = false;
@@ -106,6 +113,11 @@ function compareSchemas($table, $historyTable) {
     error("Table $historyTable does not have a historyAction field.");
   } else {
     checkExpectedProps($historyTable, $hs, 'historyAction');
+  }
+  if (!isset($hs['requestId'])) {
+    error("Table $historyTable does not have a requestId field.");
+  } else {
+    checkExpectedProps($historyTable, $hs, 'requestId');
   }
 
   // check that each history field has a corresponding data field

@@ -19,8 +19,10 @@ class DB {
     // This allows var_dump(ORM::get_query_log()) or var_dump(ORM::get_last_query())
     // ORM::configure('logging', true);
 
+    // choose a random 63-bit request_id; should be reasonably distinct
     ORM::configure('driver_options', [
-      PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8mb4',
+      PDO::MYSQL_ATTR_INIT_COMMAND =>
+      'set names utf8mb4, @request_id = cast(floor(rand() * power(2,63)) as int)',
     ]);
   }
 
