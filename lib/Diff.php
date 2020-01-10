@@ -166,9 +166,9 @@ class Diff {
    * @return One of the shortest edit scripts.
    */
   static function sesStr(string $a, string $b) {
-    // explode strings to array of characters
-    $va = Str::unicodeExplode($a);
-    $vb = Str::unicodeExplode($b);
+    // explode strings to arrays of words
+    $va = preg_split("/([\s]+)/", $a, null, PREG_SPLIT_DELIM_CAPTURE);
+    $vb = preg_split("/([\s]+)/", $b, null, PREG_SPLIT_DELIM_CAPTURE);
 
     $ses = self::ses($va, $vb);
     $i = 0; // position in $va

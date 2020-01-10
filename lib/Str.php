@@ -63,43 +63,4 @@ class Str {
     return $s;
   }
 
-  /**
-   * Splits a multibyte string into characters. If we just extract each
-   * character with mb_substr, the complexity is O(N^2). This code runs about
-   * twice as fast as the one-liner:
-   *
-   *   return preg_split('//u', $s, null, PREG_SPLIT_NO_EMPTY);
-   */
-  static function unicodeExplode($s) {
-    $result = [];
-    $len = strlen($s);
-    $i = 0;
-
-    while ($i < $len) {
-      $c = ord($s[$i]);
-      if ($c >> 7 == 0) {
-        // 0vvvvvvv
-        $result[] = $s[$i];
-        $i++;
-      } else if ($c >> 5 == 6) {
-        // 110vvvvv 10vvvvvv
-        $result[] = $s[$i] . $s[$i + 1];
-        $i += 2;
-      } else if ($c >> 4 == 14) {
-        // 1110vvvv 10vvvvvv 10vvvvvv
-        $result[] = $s[$i] . $s[$i + 1] . $s[$i + 2];
-        $i += 3;
-      } else if ($c >> 3 == 30) {
-        // 11110vvv 10vvvvvv 10vvvvvv 10vvvvvv
-        $result[] = $s[$i] . $s[$i + 1] . $s[$i + 2] . $s[$i + 3];
-        $i += 4;
-      } else {
-        // dunno, skip it
-        $i++;
-      }
-    }
-
-    return $result;
-  }
-
 }
