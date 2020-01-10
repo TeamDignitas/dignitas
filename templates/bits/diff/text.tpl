@@ -1,5 +1,3 @@
-{$ses=Diff::sesText($from, $to)}
-
 {foreach $ses as $cmd}
   {include "bits/diff/ses.tpl" ses=$cmd.diff}
 

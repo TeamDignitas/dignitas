@@ -1,4 +1,4 @@
-<dt class="col-sm-3">{$name}</dt>
+<dt class="col-sm-3">{$title}</dt>
 <dd class="col-sm-9">
   <span class="diffOp2">{$old}</span>
   <i class="icon icon-right-open"></i>

@@ -1,7 +1,12 @@
 <?php
 
 class Statement extends BaseObject {
-  use DuplicateTrait, FlaggableTrait, MarkdownTrait, PendingEditTrait, VotableTrait;
+  use DuplicateTrait,
+    FlaggableTrait,
+    HistoryTrait,
+    MarkdownTrait,
+    PendingEditTrait,
+    VotableTrait;
 
   function getObjectType() {
     return self::TYPE_STATEMENT;
@@ -47,6 +52,42 @@ class Statement extends BaseObject {
 
   function getTags() {
     return ObjectTag::getTags($this);
+  }
+
+  function getTextDiffFields() {
+    return [
+      [ 'summary', _('changes to summary') ],
+      [ 'context', _('changes to context') ],
+      [ 'goal', _('changes to goal') ],
+    ];
+  }
+
+  function getFieldChanges($old) {
+    $results = [];
+
+    if ($this->entityId != $old->entityId) {
+      $results[] = [
+        'title' => _('author'),
+        'old' => (string)$old->getEntity(),
+        'new' => (string)$this->getEntity(),
+      ];
+    }
+    if ($this->dateMade != $old->dateMade) {
+      $results[] = [
+        'title' => _('statementDate'),
+        'old' => Time::localDate($old->dateMade),
+        'new' => Time::localDate($this->dateMade),
+      ];
+    }
+    if ($this->status != $old->status) {
+      $results[] = [
+        'title' => _('status'),
+        'old' => $old->getStatusName(),
+        'new' => $this->getStatusName(),
+      ];
+    }
+
+    return $results;
   }
 
   /**
@@ -155,6 +196,9 @@ class Statement extends BaseObject {
     $clone = parent::deepClone($refs, $changes);
     foreach ($this->getSources() as $s) {
       $s->deepClone($refs, [ 'statementId' => $clone->id]);
+    }
+    foreach (ObjectTag::getObjectTags($this) as $ot) {
+      $ot->deepClone($refs, [ 'objectId' => $clone->id]);
     }
     return $clone;
   }

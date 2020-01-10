@@ -14,7 +14,8 @@ if (!$statement->isViewable()) {
 }
 
 Smart::assign([
-  'history' => $statement->getHistory(),
+  'history' => $statement->getDisplayHistory(),
+  'statement' => $statement,
 ]);
 Smart::addResources('history');
 Smart::display('statement/history.tpl');
