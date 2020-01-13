@@ -32,4 +32,11 @@ class Ct {
 
   const ONE_DAY_IN_SECONDS = 24 * 3600;
 
+  // Applicable to HistoryTrait objects.
+  const FIELD_CHANGE_STRING = 1;
+  const FIELD_CHANGE_TAG_LIST = 2;
+  const FIELD_CHANGE_URL = 3;
+  const FIELD_CHANGE_URL_LIST = 4;
+  const FIELD_CHANGE_COLOR = 5;
+
 }

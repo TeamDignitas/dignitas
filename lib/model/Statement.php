@@ -120,46 +120,6 @@ class Statement extends BaseObject {
   }
 
   /**
-   * Returns tags that were added or deleted in this revision.
-   *
-   * @param string $historyAction Either 'insert' or 'delete'
-   * @return array An array of tags
-   */
-  function getTagChanges($historyAction) {
-    $records = ORM::for_table('history_object_tag')
-      ->select('tagId')
-      ->where('objectType', $this->getObjectType())
-      ->where('objectId', $this->id)
-      ->where('historyAction', $historyAction)
-      ->where('requestId', $this->requestId)
-      ->order_by_asc('rank')
-      ->find_array();
-
-    return array_map(function($rec) {
-      return Tag::get_by_id($rec['tagId']);
-    }, $records);
-  }
-
-  /**
-   * Returns statement sources that were added or deleted in this revision.
-   *
-   * @param string $historyAction Either 'insert' or 'delete'
-   * @return array An array of statement sources
-   */
-  function getSourceChanges($historyAction) {
-    $records = ORM::for_table('history_statement_source')
-      ->where('statementId', $this->id)
-      ->where('historyAction', $historyAction)
-      ->where('requestId', $this->requestId)
-      ->order_by_asc('rank')
-      ->find_array();
-
-    return array_map(function($rec) {
-      return Model::factory('StatementSource')->create($rec);
-    }, $records);
-  }
-
-  /**
    * Returns human-readable information about the status of this Statement.
    *
    * @return array a tuple of (human-readable status, human-readable sentence,

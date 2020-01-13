@@ -6,39 +6,26 @@
 {/block}
 
 {block "content"}
-  {foreach $history as $rec}
+  {foreach $history as $od}
     <h4 class="versionHeader">
       {t}changes by{/t}
-      {include "bits/userLink.tpl" u=$rec.modUser}
-      {$rec.modDate|lt:false:true}
+      {include "bits/userLink.tpl" u=$od->modUser}
+      {$od->modDate|lt:false:true}
     </h4>
 
-    {foreach $rec.textDiffs as $diff}
+    {foreach $od->getTextChanges() as $diff}
       {include "bits/diff/card.tpl"
         title=$diff.title
         ses=$diff.ses}
     {/foreach}
 
     <dl class="row">
-      {foreach $rec.fieldChanges as $change}
+      {foreach $od->getFieldChanges() as $change}
         {include "bits/diff/field.tpl"
+          type=$change.type
           title=$change.title
           old=$change.old
           new=$change.new}
-      {/foreach}
-
-      {foreach $rec.dependantChanges as $change}
-        {if count($change.objects)}
-          <dt class="col-sm-3">
-            {$change.title}
-          </dt>
-          <dd class="col-sm-9">
-            {foreach $change.objects as $o}
-              {assign var="{$change.param}" value=$o}
-              {include $change.template}
-            {/foreach}
-          </dd>
-        {/if}
       {/foreach}
     </dl>
   {/foreach}
