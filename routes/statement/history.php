@@ -13,10 +13,13 @@ if (!$statement->isViewable()) {
   Util::redirectToHome();
 }
 
+$title = _('Statement history for') . ': ' . $statement->summary;
+
 Smart::assign([
   'history' => ObjectDiff::getRevisions($statement),
   'statement' => $statement,
+  'title' => $title,
 ]);
 
 Smart::addResources('history');
-Smart::display('statement/history.tpl');
+Smart::display('bits/history.tpl');

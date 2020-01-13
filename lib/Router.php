@@ -34,6 +34,10 @@ class Router {
       'en_US.utf8' => 'edit-answer',
       'ro_RO.utf8' => 'editeaza-raspuns',
     ],
+    'answer/history' => [
+      'en_US.utf8' => 'answer-history',
+      'ro_RO.utf8' => 'istoric-raspuns',
+    ],
 
     // attachments
     'attachment/upload' => [
@@ -173,6 +177,7 @@ class Router {
   const PARAMS = [
     'aggregate/search' => [ 'q' ],
     'answer/edit' => [ 'id' ],
+    'answer/history' => [ 'id' ],
     'attachment/view' => [ 'id', 'fileName' ],
     'entity/edit' => [ 'id' ],
     'entity/image' => [ 'id', 'fileName' ],

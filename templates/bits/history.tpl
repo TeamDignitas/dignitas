@@ -1,9 +1,6 @@
 {extends "layout.tpl"}
 
-{block "title"}
-  {t}Statement history for{/t}:
-  {cap}{$statement->summary|escape}{/cap}
-{/block}
+{block "title"}{$title|escape}{/block}
 
 {block "content"}
   {foreach $history as $od}

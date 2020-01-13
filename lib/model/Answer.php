@@ -62,6 +62,13 @@ class Answer extends BaseObject {
     $this->contents = trim($this->contents);
   }
 
+  function isViewable() {
+    return
+      ($this->status != Ct::STATUS_PENDING_EDIT) &&
+      (($this->status != Ct::STATUS_DELETED) ||
+       User::may(User::PRIV_DELETE_ANSWER));
+  }
+
   protected function isEditableCore() {
     if (!$this->id && !User::may(User::PRIV_ADD_ANSWER)) {
       throw new Exception(sprintf(
