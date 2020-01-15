@@ -65,6 +65,10 @@ class Entity extends BaseObject {
     return self::TYPES[$this->type]['hasColor'] ?? false;
   }
 
+  function getTags() {
+    return ObjectTag::getTags($this);
+  }
+
   /**
    * Returns human-readable information about the status of this Entity.
    *

@@ -50,6 +50,8 @@ if ($saveButton) {
     Request::getArray('urlIds'),
     Request::getArray('urls'));
 
+  $tagIds = Request::getArray('tagIds');
+
   $deleteImage = Request::has('deleteImage');
   $fileData = Request::getFile('image', 'Entity');
 
@@ -65,6 +67,7 @@ if ($saveButton) {
     Relation::updateDependants($relations, 'fromEntityId', $entity->id, 'rank', $refs);
     Alias::updateDependants($aliases, 'entityId', $entity->id, 'rank', $refs);
     EntityLink::updateDependants($links, 'entityId', $entity->id, 'rank', $refs);
+    ObjectTag::update($entity, $tagIds);
 
     if ($new) {
       Review::checkNewUser($entity);
@@ -85,6 +88,7 @@ if ($saveButton) {
       'relations' => $relations,
       'aliases' => $aliases,
       'links' => $links,
+      'tagIds' => $tagIds,
     ]);
   }
 } else {
@@ -94,6 +98,7 @@ if ($saveButton) {
     'relations' => $entity->getRelations(),
     'aliases' => $entity->getAliases(),
     'links' => $entity->getLinks(),
+    'tagIds' => ObjectTag::getTagIds($entity),
   ]);
 }
 

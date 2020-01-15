@@ -147,6 +147,16 @@
       errors=$errors.links|default:null
     }
 
+    <div class="form-group">
+      <label>{t}tags{/t}</label>
+
+      <select name="tagIds[]" class="form-control select2Tags" multiple>
+        {foreach $tagIds as $tagId}
+          <option value="{$tagId}" selected></option>
+        {/foreach}
+      </select>
+    </div>
+
     <div class="row">
       <div class="col">
         <label for="fieldImage">{t}image{/t}</label>

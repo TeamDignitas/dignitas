@@ -79,6 +79,12 @@
   </ul>
 {/if}
 
+<div>
+  {foreach $entity->getTags() as $t}
+    {include "bits/tag.tpl"}
+  {/foreach}
+</div>
+
 {$members=$entity->getMembers()}
 {if count($members)}
   <h4>{t}members{/t}</h4>
