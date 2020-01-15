@@ -74,6 +74,10 @@ class Router {
       'en_US.utf8' => 'edit-author',
       'ro_RO.utf8' => 'editeaza-autor',
     ],
+    'entity/history' => [
+      'en_US.utf8' => 'author-history',
+      'ro_RO.utf8' => 'istoric-autor',
+    ],
     'entity/image' => [
       'en_US.utf8' => 'entity-image',
       'ro_RO.utf8' => 'imagine-entitate',
@@ -180,6 +184,7 @@ class Router {
     'answer/history' => [ 'id' ],
     'attachment/view' => [ 'id', 'fileName' ],
     'entity/edit' => [ 'id' ],
+    'entity/history' => [ 'id' ],
     'entity/image' => [ 'id', 'fileName' ],
     'entity/load' => [ 'ids' ],
     'entity/search' => [ 'term' ],

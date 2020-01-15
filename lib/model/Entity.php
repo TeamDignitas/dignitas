@@ -211,6 +211,13 @@ class Entity extends BaseObject {
     return $results;
   }
 
+  function isViewable() {
+    return
+      ($this->status != Ct::STATUS_PENDING_EDIT) &&
+      (($this->status != Ct::STATUS_DELETED) ||
+       User::may(User::PRIV_DELETE_ENTITY));
+  }
+
   protected function isEditableCore() {
     if (!$this->id && !User::may(User::PRIV_ADD_ENTITY)) {
       throw new Exception(sprintf(
@@ -324,7 +331,7 @@ class Entity extends BaseObject {
     parent::delete();
   }
 
-  public function __toString() {
+  function __toString() {
     return $this->name;
   }
 

@@ -1,18 +1,18 @@
 <?php
 
-class HistoryStatementSource extends StatementSource {
+class HistoryRelation extends Relation {
   use HistoryTrait;
 
  /**
-   * Returns statement sources that were modified in this revision.
+   * Returns relations that were modified in this revision.
    *
-   * @param HistoryStatement $rev A statement revision
+   * @param HistoryEntity $rev An entity revision
    * @param string $historyAction One of 'insert', 'update' or 'delete'
-   * @return HistoryStatementSource[]
+   * @return HistoryRelation[]
    */
   static function getChangesFor($rev, $historyAction) {
-    return Model::factory('HistoryStatementSource')
-      ->where('statementId', $rev->id)
+    return Model::factory('HistoryRelation')
+      ->where('fromEntityId', $rev->id)
       ->where('historyAction', $historyAction)
       ->where('requestId', $rev->requestId)
       ->order_by_asc('rank')

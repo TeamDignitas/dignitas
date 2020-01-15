@@ -17,7 +17,6 @@ $title = _('Answer history for') . ' #' . $answer->id;
 
 Smart::assign([
   'history' => ObjectDiff::getRevisions($answer),
-  'answer' => $answer,
   'title' => $title,
 ]);
 

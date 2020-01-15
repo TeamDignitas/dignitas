@@ -203,7 +203,7 @@ class User extends BaseObject {
     }
   }
 
-  public function __toString() {
+  function __toString() {
     return $this->nickname;
   }
 

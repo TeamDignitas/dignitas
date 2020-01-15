@@ -17,7 +17,6 @@ $title = _('Statement history for') . ': ' . $statement->summary;
 
 Smart::assign([
   'history' => ObjectDiff::getRevisions($statement),
-  'statement' => $statement,
   'title' => $title,
 ]);
 

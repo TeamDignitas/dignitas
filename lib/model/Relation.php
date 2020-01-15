@@ -57,6 +57,22 @@ class Relation extends BaseObject {
       ->find_many();
   }
 
+  function getDateRangeString() {
+    $sd = Time::localDate($this->startDate);
+    $ed = Time::localDate($this->endDate);
+
+    if ($sd && $ed) {
+      return "({$sd} – {$ed})";
+    } else if ($sd) {
+      return sprintf('(%s %s)', _('since'), $sd);
+    } else if ($ed) {
+      return sprintf('(%s %s)', _('until'), $ed);
+    } else {
+      return '';
+    }
+
+  }
+
   /**
    * Checks if this Relation's end date is in the past.
    *
@@ -110,6 +126,13 @@ class Relation extends BaseObject {
   function delete() {
     RelationSource::delete_all_by_relationId($this->id);
     parent::delete();
+  }
+
+  function __toString() {
+    return sprintf('%s %s %s',
+                   $this->getTypeName(),
+                   $this->getToEntity(),
+                   $this->getDateRangeString());
   }
 
 }

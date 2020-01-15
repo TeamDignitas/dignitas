@@ -34,9 +34,11 @@ class Ct {
 
   // Applicable to HistoryTrait objects.
   const FIELD_CHANGE_STRING = 1;
-  const FIELD_CHANGE_TAG_LIST = 2;
-  const FIELD_CHANGE_URL = 3;
-  const FIELD_CHANGE_URL_LIST = 4;
-  const FIELD_CHANGE_COLOR = 5;
+  const FIELD_CHANGE_URL = 2;
+  const FIELD_CHANGE_COLOR = 3;
+  const FIELD_CHANGE_STRING_LIST = 4;
+  const FIELD_CHANGE_URL_LIST = 5;
+  const FIELD_CHANGE_TAG_LIST = 6;
+  const FIELD_CHANGE_RELATION_LIST = 7;
 
 }

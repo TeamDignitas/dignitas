@@ -58,8 +58,8 @@ class HistoryStatement extends Statement {
     foreach ($ss as $source) {
       $prevSource = $source->getPreviousRevision();
       $this->compareField(_('changed source'),
-                          $prevSource->url,
-                          $source->url,
+                          (string)$prevSource,
+                          (string)$source,
                           $od, Ct::FIELD_CHANGE_URL);
     }
     return $od;

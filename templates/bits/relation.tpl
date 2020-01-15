@@ -10,13 +10,7 @@
   {$to=$r->getToEntity()}
   {include "bits/entityLink.tpl" e=$to}
 
-  {if $sd && $ed}
-    ({$sd} – {$ed})
-  {elseif $sd}
-    ({t}since{/t} {$sd})
-  {elseif $ed}
-    ({t}until {$ed}{/t})
-  {/if}
+  {$r->getDateRangeString()}
 
   {if $showSourceLink && $fromEntity->isEditable()}
     <a
