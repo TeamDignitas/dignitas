@@ -166,9 +166,10 @@ class Diff {
    * @return One of the shortest edit scripts.
    */
   static function sesStr(string $a, string $b) {
-    // explode strings to arrays of words
-    $va = preg_split("/([\s]+)/", $a, null, PREG_SPLIT_DELIM_CAPTURE);
-    $vb = preg_split("/([\s]+)/", $b, null, PREG_SPLIT_DELIM_CAPTURE);
+    // Explode strings to arrays of words. Make sure to return [], not ['']
+    // for empty strings.
+    $va = $a ? preg_split("/([\s]+)/", $a, null, PREG_SPLIT_DELIM_CAPTURE) : [];
+    $vb = $b ? preg_split("/([\s]+)/", $b, null, PREG_SPLIT_DELIM_CAPTURE) : [];
 
     $ses = self::ses($va, $vb);
     $i = 0; // position in $va
@@ -205,8 +206,9 @@ class Diff {
    * @param string $b String to obtain.
    */
   static function sesText(string $a, string $b) {
-    $va = explode("\n", trim($a));
-    $vb = explode("\n", trim($b));
+    // accept CR, LF or CR+LF as line separator
+    $va = $a ? preg_split('/\r\n|\r|\n/', trim($a)) : [];
+    $vb = $b ? preg_split('/\r\n|\r|\n/', trim($b)) : [];
 
     $ses = self::ses($va, $vb);
     $ses[] = [ self::OP_COPY, 0 ]; // make sure every ins+del is followed by a copy
