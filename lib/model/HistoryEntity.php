@@ -29,6 +29,10 @@ class HistoryEntity extends Entity {
                         $prev->getStatusName(),
                         $this->getStatusName(),
                         $od, Ct::FIELD_CHANGE_STRING);
+    $this->compareField(_('image file'),
+                        $prev->fileExtension,
+                        $this->fileExtension,
+                        $od, Ct::FIELD_CHANGE_STRING);
 
     // added / removed tags
     $tags = HistoryObjectTag::getChangesFor($this, 'insert');
