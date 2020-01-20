@@ -1,20 +1,20 @@
 <?php
 /**
- * This script goes through every table and checks that a consistent history
+ * This script goes through every table and checks that a consistent revision
  * table exists.
  **/
 
 require_once __DIR__ . '/../lib/Core.php';
 
 const EXPECTED_PROPS = [
-  'historyId' => [
+  'revisionId' => [
     'type' => 'int(11)',
     'null' => 'NO',
     'key' => 'PRI',
     'default' => null,
     'extra' => 'auto_increment',
   ],
-  'historyAction' => [
+  'revisionAction' => [
     'type' => 'varchar(8)',
     'null' => 'NO',
     'key' => '',
@@ -37,22 +37,22 @@ $tables = DB::execute('show tables');
 foreach ($tables as $rec) {
   $table = $rec[0];
 
-  if (preg_match('/^history_/', $table)) {
+  if (preg_match('/^revision_/', $table)) {
     // verify that a corresponding data table exists
-    $dataTable = substr($table, strlen('history_'));
+    $dataTable = substr($table, strlen('revision_'));
     if (!DB::tableExists($dataTable)) {
-      error("Stray history table {$table}.");
+      error("Stray revision table {$table}.");
     }
   } else {
-    // find the corresponding history table
-    $historyTable = 'history_' . $table;
-    if (!DB::tableExists($historyTable)) {
-      error("No history table for {$table}.");
+    // find the corresponding revision table
+    $revisionTable = 'revision_' . $table;
+    if (!DB::tableExists($revisionTable)) {
+      error("No revision table for {$table}.");
     } else {
 
-      // get the data and history schemas
-      compareSchemas($table, $historyTable);
-      checkUniqueKeys($historyTable);
+      // get the data and revision schemas
+      compareSchemas($table, $revisionTable);
+      checkUniqueKeys($revisionTable);
       checkTriggers($table);
     }
 
@@ -90,53 +90,53 @@ function getTriggers($table) {
   return $result;
 }
 
-function compareSchemas($table, $historyTable) {
+function compareSchemas($table, $revisionTable) {
   $ds = getSchema($table);
-  $hs = getSchema($historyTable);
+  $hs = getSchema($revisionTable);
 
-  // check that each data field has a corresponding history field
+  // check that each data field has a corresponding revision field
   foreach ($ds as $field => $props) {
     if (!isset($hs[$field])) {
-      error("Field $table.$field has no corresponding history field.");
+      error("Field $table.$field has no corresponding revision field.");
     } else {
-      compareProps($table, $historyTable, $field, $props, $hs[$field]);
+      compareProps($table, $revisionTable, $field, $props, $hs[$field]);
     }
   }
 
-  // check history-specific hields in the history table
-  if (!isset($hs['historyId'])) {
-    error("Table $historyTable does not have a historyId field.");
+  // check revision-specific hields in the revision table
+  if (!isset($hs['revisionId'])) {
+    error("Table $revisionTable does not have a revisionId field.");
   } else {
-    checkExpectedProps($historyTable, $hs, 'historyId');
+    checkExpectedProps($revisionTable, $hs, 'revisionId');
   }
-  if (!isset($hs['historyAction'])) {
-    error("Table $historyTable does not have a historyAction field.");
+  if (!isset($hs['revisionAction'])) {
+    error("Table $revisionTable does not have a revisionAction field.");
   } else {
-    checkExpectedProps($historyTable, $hs, 'historyAction');
+    checkExpectedProps($revisionTable, $hs, 'revisionAction');
   }
   if (!isset($hs['requestId'])) {
-    error("Table $historyTable does not have a requestId field.");
+    error("Table $revisionTable does not have a requestId field.");
   } else {
-    checkExpectedProps($historyTable, $hs, 'requestId');
+    checkExpectedProps($revisionTable, $hs, 'requestId');
   }
 
-  // check that each history field has a corresponding data field
+  // check that each revision field has a corresponding data field
   $diff = array_diff_key($hs, $ds, EXPECTED_PROPS);
   foreach ($diff as $field => $ignored) {
-    error("Stray history field {$historyTable}.{$field}");
+    error("Stray revision field {$revisionTable}.{$field}");
   }
 }
 
-function compareProps($table, $historyTable, $field, $dprops, $hprops) {
-  // compare data fields against history fields
+function compareProps($table, $revisionTable, $field, $dprops, $hprops) {
+  // compare data fields against revision fields
   foreach ($dprops as $prop => $value) {
     if ($field == 'id' && $prop == 'key') {
-      // id should be primary key in the data table, regular key in the history table
+      // id should be primary key in the data table, regular key in the revision table
       if ($value != 'PRI') {
         error("Field {$table}.id should be primary key.");
       }
       if ($hprops[$prop] != 'MUL') {
-        error("Field {$historyTable}.id should have a key.");
+        error("Field {$revisionTable}.id should have a key.");
       }
 
     } else if ($field == 'id' && $prop == 'extra') {
@@ -144,19 +144,19 @@ function compareProps($table, $historyTable, $field, $dprops, $hprops) {
         error("Field {$table}.id should have auto_increment.");
       }
       if ($hprops[$prop] != '') {
-        error("Field {$historyTable}.id should not have auto_increment.");
+        error("Field {$revisionTable}.id should not have auto_increment.");
       }
 
     } else if ($prop == 'key' && $value == 'UNI') {
       if ($hprops[$prop] != 'MUL') {
         error(sprintf('Field %s.%s has a unique key, field %s.%s should have a non-unique key.',
-                      $table, $field, $historyTable, $field));
+                      $table, $field, $revisionTable, $field));
       }
 
     } else if ($value != $hprops[$prop]) {
       error(sprintf('Field %s.%s has property %s=[%s], while field %s.%s has property %s=[%s].',
                     $table, $field, $prop, $value,
-                    $historyTable, $field, $prop, $hprops[$prop]));
+                    $revisionTable, $field, $prop, $hprops[$prop]));
     }
   }
 }
