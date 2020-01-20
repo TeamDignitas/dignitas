@@ -72,7 +72,7 @@ class Diff {
    *
    * @return array The matrix V.
    */
-  static function buildFRP($a, $b) {
+  private static function buildFRP($a, $b) {
     $la = count($a);
     $lb = count($b);
     $v[-1][-1] = -1;

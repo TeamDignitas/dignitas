@@ -31,6 +31,12 @@ if ($deleteAnswerId) {
   Util::redirect(Router::link('statement/view') . '/' . $answer->statementId);
 }
 
+if ($statement->hasPendingEdit() && User::may(User::PRIV_REVIEW)) {
+  Smart::assign([
+    'pendingEditReview' => Review::getForObject($statement, Ct::REASON_PENDING_EDIT),
+  ]);
+}
+
 Smart::addResources('flag', 'imageModal', 'simplemde');
 Smart::assign([
   'answerId' => $answerId,

@@ -8,6 +8,12 @@ if (!$entity) {
   Util::redirectToHome();
 }
 
+if ($entity->hasPendingEdit() && User::may(User::PRIV_REVIEW)) {
+  Smart::assign([
+    'pendingEditReview' => Review::getForObject($entity, Ct::REASON_PENDING_EDIT),
+  ]);
+}
+
 Smart::assign([
   'entity' => $entity,
   'statements' => $entity->getStatements(),

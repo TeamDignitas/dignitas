@@ -128,6 +128,13 @@ class Review extends BaseObject {
     return null;
   }
 
+  function getUrl() {
+    return sprintf('%s/%s/%s',
+                   Router::link('review/view'),
+                   self::getUrlName($this->reason),
+                   $this->id);
+  }
+
   /**
    * Creates a Review for the given object and reason
    *
@@ -195,10 +202,18 @@ class Review extends BaseObject {
         'rl',
         [$userId])
       ->where('r.reason', $reason)
-      ->where('r.status', Review::STATUS_PENDING)
+      ->where('r.status', self::STATUS_PENDING)
       ->where_null('rl.id')
       ->order_by_desc('r.id')
       ->find_one();
+  }
+
+  static function getForObject($object, $reason) {
+    return self::get_by_objectType_objectId_reason_status(
+      $object->getObjectType(),
+      $object->id,
+      $reason,
+      self::STATUS_PENDING);
   }
 
   /**
@@ -230,7 +245,7 @@ class Review extends BaseObject {
   static function checkNewUser($obj) {
     $user = User::getActive();
     if ($user->reputation < Config::NEW_USER_REPUTATION) {
-      Review::ensure($obj, Ct::REASON_NEW_USER);
+      self::ensure($obj, Ct::REASON_NEW_USER);
     }
   }
 
@@ -243,7 +258,7 @@ class Review extends BaseObject {
     $maxAge = Config::LATE_ANSWER_DAYS * Ct::ONE_DAY_IN_SECONDS;
     $st = $answer->getStatement();
     if ($answer->createDate - $st->createDate > $maxAge) {
-      Review::ensure($answer, Ct::REASON_LATE_ANSWER);
+      self::ensure($answer, Ct::REASON_LATE_ANSWER);
     }
   }
 
@@ -254,11 +269,11 @@ class Review extends BaseObject {
     $type = $this->getObject()->getObjectType();
 
     if ($this->hasEnoughVotes(Flag::VOTE_KEEP, Config::KEEP_VOTES_NECESSARY)) {
-      $this->resolve(Review::STATUS_KEEP, Flag::VOTE_KEEP);
+      $this->resolve(self::STATUS_KEEP, Flag::VOTE_KEEP);
       $action = self::KEEP_ACTION_MAP[$type][$this->reason] ?? null;
       $this->resolveObject($action);
     } else if ($this->hasEnoughVotes(Flag::VOTE_REMOVE, Config::REMOVE_VOTES_NECESSARY)) {
-      $this->resolve(Review::STATUS_REMOVE, Flag::VOTE_REMOVE);
+      $this->resolve(self::STATUS_REMOVE, Flag::VOTE_REMOVE);
       $action = self::REMOVE_ACTION_MAP[$type][$this->reason] ?? null;
       $this->resolveObject($action);
     }

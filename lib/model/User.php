@@ -5,8 +5,8 @@ class User extends BaseObject {
 
   // privileges and their required reputation
   const PRIV_ADD_ENTITY = 1;
-  const PRIV_EDIT_ENTITY = 10;
-  const PRIV_DELETE_ENTITY = 2000;
+  const PRIV_EDIT_ENTITY = 2000;
+  const PRIV_DELETE_ENTITY = 10000;
 
   const PRIV_ADD_STATEMENT = 1;
   const PRIV_EDIT_STATEMENT = 2000;
