@@ -1,7 +1,7 @@
 <?php
 
-class HistoryEntity extends Entity {
-  use HistoryTrait;
+class RevisionEntity extends Entity {
+  use RevisionTrait;
 
   /**
    * @param $prev The previous revision of the same statement.
@@ -35,32 +35,32 @@ class HistoryEntity extends Entity {
                         $od, Ct::FIELD_CHANGE_STRING);
 
     // added / removed tags
-    $tags = HistoryObjectTag::getChangesFor($this, 'insert');
+    $tags = RevisionObjectTag::getChangesFor($this, 'insert');
     $this->compareField(_('added tags'),
                         $tags,
                         [],
                         $od, Ct::FIELD_CHANGE_TAG_LIST);
 
-    $tags = HistoryObjectTag::getChangesFor($this, 'delete');
+    $tags = RevisionObjectTag::getChangesFor($this, 'delete');
     $this->compareField(_('deleted tags'),
                         $tags,
                         [],
                         $od, Ct::FIELD_CHANGE_TAG_LIST);
 
     // added / removed / edited aliases
-    $aliases = HistoryAlias::getChangesFor($this, 'insert');
+    $aliases = RevisionAlias::getChangesFor($this, 'insert');
     $this->compareField(_('added aliases'),
                         $aliases,
                         [],
                         $od, Ct::FIELD_CHANGE_STRING_LIST);
 
-    $aliases = HistoryAlias::getChangesFor($this, 'delete');
+    $aliases = RevisionAlias::getChangesFor($this, 'delete');
     $this->compareField(_('deleted aliases'),
                         $aliases,
                         [],
                         $od, Ct::FIELD_CHANGE_STRING_LIST);
 
-    $aliases = HistoryAlias::getChangesFor($this, 'update');
+    $aliases = RevisionAlias::getChangesFor($this, 'update');
     foreach ($aliases as $a) {
       $prevAlias = $a->getPreviousRevision();
       $this->compareField(_('changed alias'),
@@ -70,19 +70,19 @@ class HistoryEntity extends Entity {
     }
 
     // added / removed / edited entity links
-    $els = HistoryEntityLink::getChangesFor($this, 'insert');
+    $els = RevisionEntityLink::getChangesFor($this, 'insert');
     $this->compareField(_('added links'),
                         $els,
                         [],
                         $od, Ct::FIELD_CHANGE_URL_LIST);
 
-    $els = HistoryEntityLink::getChangesFor($this, 'delete');
+    $els = RevisionEntityLink::getChangesFor($this, 'delete');
     $this->compareField(_('deleted links'),
                         $els,
                         [],
                         $od, Ct::FIELD_CHANGE_URL_LIST);
 
-    $els = HistoryEntityLink::getChangesFor($this, 'update');
+    $els = RevisionEntityLink::getChangesFor($this, 'update');
     foreach ($els as $el) {
       $prevEl = $el->getPreviousRevision();
       $this->compareField(_('changed link'),
@@ -92,19 +92,19 @@ class HistoryEntity extends Entity {
     }
 
     // added / removed / edited relations
-    $relations = HistoryRelation::getChangesFor($this, 'insert');
+    $relations = RevisionRelation::getChangesFor($this, 'insert');
     $this->compareField(_('added relations'),
                         $relations,
                         [],
                         $od, Ct::FIELD_CHANGE_RELATION_LIST);
 
-    $relations = HistoryRelation::getChangesFor($this, 'delete');
+    $relations = RevisionRelation::getChangesFor($this, 'delete');
     $this->compareField(_('deleted relations'),
                         $relations,
                         [],
                         $od, Ct::FIELD_CHANGE_RELATION_LIST);
 
-    $relations = HistoryRelation::getChangesFor($this, 'update');
+    $relations = RevisionRelation::getChangesFor($this, 'update');
     foreach ($relations as $r) {
       $prevR = $r->getPreviousRevision();
       $this->compareField(_('changed relation'),

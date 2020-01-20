@@ -73,10 +73,10 @@ class BaseObject extends Model {
   }
 
   /**
-   * Returns the name of the history class for $this.
+   * Returns the name of the revision class for $this.
    */
-  function getHistoryClass() {
-    return 'History' . get_class($this);
+  function getRevisionClass() {
+    return 'Revision' . get_class($this);
   }
 
   /**
@@ -86,10 +86,10 @@ class BaseObject extends Model {
    * @return BaseObject[] An array of objects of the same class as $this.
    */
   function getHistory() {
-    $class = $this->getHistoryClass();
+    $class = $this->getRevisionClass();
     return Model::factory($class)
       ->where('id', $this->id)
-      ->order_by_desc('historyId')
+      ->order_by_desc('revisionId')
       ->find_many();
   }
 

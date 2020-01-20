@@ -3,7 +3,7 @@
 class Statement extends BaseObject {
   use DuplicateTrait,
     FlaggableTrait,
-    HistoryTrait,
+    RevisionTrait,
     MarkdownTrait,
     PendingEditTrait,
     VotableTrait;

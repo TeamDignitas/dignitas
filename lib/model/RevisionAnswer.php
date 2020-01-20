@@ -1,7 +1,7 @@
 <?php
 
-class HistoryAnswer extends Answer {
-  use HistoryTrait;
+class RevisionAnswer extends Answer {
+  use RevisionTrait;
 
   /**
    * @param $prev The previous revision of the same answer.

@@ -32,7 +32,7 @@ class Ct {
 
   const ONE_DAY_IN_SECONDS = 24 * 3600;
 
-  // Applicable to HistoryTrait objects.
+  // Applicable to RevisionTrait objects.
   const FIELD_CHANGE_STRING = 1;
   const FIELD_CHANGE_URL = 2;
   const FIELD_CHANGE_COLOR = 3;

@@ -1,20 +1,20 @@
 <?php
 
 /**
- * Method implementations for history objects.
+ * Method implementations for revision objects.
  */
-trait HistoryTrait {
+trait RevisionTrait {
 
   /**
    * Returns the revision immediately before this revision.
    *
-   * @return HistoryTrait An object of the same class as $this.
+   * @return RevisionTrait An object of the same class as $this.
    */
   function getPreviousRevision() {
     return Model::factory(get_class($this))
       ->where('id', $this->id)
-      ->where_lt('historyId', $this->historyId)
-      ->order_by_desc('historyId')
+      ->where_lt('revisionId', $this->revisionId)
+      ->order_by_desc('revisionId')
       ->find_one();
   }
 
