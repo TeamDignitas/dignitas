@@ -4,8 +4,8 @@
  * Method implementations for objects that admit pending edits.
  *
  * Classes using this trait are assumed to have the fields:
- * - pendingEditId: ID, in the same table, of the record containing the new version;
- * - status: one of the Ct::STATUS_* constants; the new version should have it set to
+ * - pendingEditId: ID, in the same table, of the record containing the new revision;
+ * - status: one of the Ct::STATUS_* constants; the new revision should have it set to
  *   Ct::STATUS_PENDING_EDIT.
  */
 trait PendingEditTrait {

@@ -18,9 +18,9 @@ class ObjectDiff {
   static function getRevisions($obj) {
     $results = [];
 
-    $versions = $obj->getHistory();
-    for ($i = 0; $i < count($versions) - 1; $i++) {
-      $od = $versions[$i]->compare($versions[$i + 1]);
+    $revisions = $obj->getHistory();
+    for ($i = 0; $i < count($revisions) - 1; $i++) {
+      $od = $revisions[$i]->compare($revisions[$i + 1]);
       if (!$od->isEmpty()) {
         $results[] = $od;
       }

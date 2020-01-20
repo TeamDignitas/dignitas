@@ -68,7 +68,7 @@ class BaseObject extends Model {
    *
    * @return boolean
    */
-  function hasVersions() {
+  function hasRevisions() {
     return $this->createDate != $this->modDate;
   }
 
@@ -81,7 +81,7 @@ class BaseObject extends Model {
 
   /**
    * Returns all the revisions of $this (newest first). The most recent
-   * version will be identical to $this.
+   * revision will be identical to $this.
    *
    * @return BaseObject[] An array of objects of the same class as $this.
    */

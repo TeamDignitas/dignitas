@@ -36,7 +36,7 @@
       {$answer->createDate|moment}
     </li>
 
-    {if $answer->modDate > $answer->createDate}
+    {if $answer->hasRevisions()}
       <li class="list-inline-item">
         <a href="{Router::link('answer/history')}/{$answer->id}" class="btn btn-sm btn-link">
           {t}show revisions{/t}

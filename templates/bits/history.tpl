@@ -4,7 +4,7 @@
 
 {block "content"}
   {foreach $history as $od}
-    <h4 class="versionHeader">
+    <h4 class="revisionHeader">
       {t}changes by{/t}
       {include "bits/userLink.tpl" u=$od->modUser}
       {$od->modDate|lt:false:true}
