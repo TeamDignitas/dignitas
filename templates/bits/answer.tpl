@@ -35,6 +35,15 @@
       {include 'bits/userLink.tpl' u=$answer->getUser()}
       {$answer->createDate|moment}
     </li>
+
+    {if $answer->modDate > $answer->createDate}
+      <li class="list-inline-item">
+        <a href="{Router::link('answer/history')}/{$answer->id}" class="btn btn-sm btn-link">
+          {t}show revisions{/t}
+        </a>
+      </li>
+    {/if}
+
     {if $answer->isDeletable()}
       <li class="list-inline-item">
         <a

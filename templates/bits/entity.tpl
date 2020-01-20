@@ -104,4 +104,11 @@
   {if $flagBox && ($entity->isFlaggable() || $entity->isFlagged())}
     {include "bits/flagLinks.tpl" obj=$entity class="btn btn-link text-muted"}
   {/if}
+
+  {if $entity->modDate > $entity->createDate}
+    <a href="{Router::link('entity/history')}/{$entity->id}" class="btn btn-sm btn-link">
+      {t}show revisions{/t}
+    </a>
+  {/if}
+
 </div>
