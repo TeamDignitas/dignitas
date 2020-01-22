@@ -59,7 +59,6 @@ if ($saveButton) {
   if (empty($errors)) {
     $new = !$entity->id;
 
-    // this can cause two saves at the moment
     $refs = [];
     $entity = $entity->maybeClone($refs);
     $entity->saveWithFile($fileData, $deleteImage);
