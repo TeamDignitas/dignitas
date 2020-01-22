@@ -282,6 +282,9 @@ class Entity extends BaseObject {
     foreach ($this->getLinks() as $l) {
       $l->deepClone($refs, [ 'entityId' => $clone->id]);
     }
+    foreach (ObjectTag::getObjectTags($this) as $ot) {
+      $ot->deepClone($refs, [ 'objectId' => $clone->id]);
+    }
 
     // copy the entity image if one exists
     $clone->copyUploadedFileFrom($this);
@@ -298,6 +301,7 @@ class Entity extends BaseObject {
     Alias::delete_all_by_entityId($this->id);
     Relation::delete_all_by_fromEntityId($this->id);
     EntityLink::delete_all_by_entityId($this->id);
+    ObjectTag::deleteObject($this);
 
     // Migrate $other's dependants.
     foreach ($other->getAliases() as $a) {
@@ -312,7 +316,11 @@ class Entity extends BaseObject {
       $l->entityId = $this->id;
       $l->save();
     }
-    // a pending edit entity should not have statements, reviews, tags or votes
+    foreach (ObjectTag::getObjectTags($other) as $ot) {
+      $ot->objectId = $this->id;
+      $ot->save();
+    }
+    // a pending edit entity should not have statements, reviews or votes
 
     $this->deleteFiles();
     $this->copyUploadedFileFrom($other);
@@ -329,7 +337,8 @@ class Entity extends BaseObject {
     Relation::delete_all_by_toEntityId($this->id);
     EntityLink::delete_all_by_entityId($this->id);
     AttachmentReference::deleteObject($this);
-    // a pending edit entity should not have statements, reviews, tags or votes
+    ObjectTag::deleteObject($this);
+    // a pending edit entity should not have statements, reviews or votes
 
     $this->deleteFiles();
 
