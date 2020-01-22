@@ -16,7 +16,7 @@ if (!$statement->isViewable()) {
 $title = _('Statement history for') . ': ' . $statement->summary;
 
 Smart::assign([
-  'history' => ObjectDiff::getRevisions($statement),
+  'history' => ObjectDiff::loadFor($statement),
   'title' => $title,
 ]);
 

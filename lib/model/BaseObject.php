@@ -209,8 +209,7 @@ class BaseObject extends Model {
 
   /**
    * Copies fields from $other, excluding 'id', 'status', 'statusUserId',
-   * 'userId' and any additional fields passed in $exclude. Saves $this at the
-   * end.
+   * 'userId' and any additional fields passed in $exclude.
    *
    * @param array Fields to exclude from copying.
    */
@@ -223,7 +222,6 @@ class BaseObject extends Model {
         $this->$key = $value;
       }
     }
-    $this->save();
   }
 
   static function _die($error, $name, $arguments) {

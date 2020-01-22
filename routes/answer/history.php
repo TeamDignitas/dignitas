@@ -16,7 +16,7 @@ if (!$answer->isViewable()) {
 $title = _('Answer history for') . ' #' . $answer->id;
 
 Smart::assign([
-  'history' => ObjectDiff::getRevisions($answer),
+  'history' => ObjectDiff::loadFor($answer),
   'title' => $title,
 ]);
 

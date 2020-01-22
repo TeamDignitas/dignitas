@@ -24,7 +24,8 @@ if ($saveButton) {
   if (empty($errors)) {
     $new = !$answer->id;
     $refs = [];
-    $answer = $answer->saveOrClone($refs);
+    $answer = $answer->maybeClone($refs);
+    $answer->save();
 
     if ($new) {
       Review::checkNewUser($answer);

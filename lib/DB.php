@@ -21,9 +21,23 @@ class DB {
 
     // choose a random 63-bit request_id; should be reasonably distinct
     ORM::configure('driver_options', [
-      PDO::MYSQL_ATTR_INIT_COMMAND =>
-      'set names utf8mb4, @request_id = cast(floor(rand() * power(2,63)) as int)',
+      PDO::MYSQL_ATTR_INIT_COMMAND => 'set names utf8mb4',
     ]);
+    self::pickRequestId();
+  }
+
+  /**
+   * Picks a random request ID for the duration of this request. This ID will
+   * not necessarily be unique, but should be extremely likely distinct in a
+   * short time frame. The request ID allows us to check the revision tables
+   * to track all the changes triggered by a save operation. On some occasions
+   * we change this ID during the request. Specifically, when we create a
+   * pending edit, we first clone the original object hierarchy, then change
+   * the request ID and only then apply the user modifications.
+   */
+  static function pickRequestId() {
+    $r = random_int(0, PHP_INT_MAX); // unsigned 63-bit
+    self::execute("set @request_id = {$r}");
   }
 
   // Returns a DB result set that you can iterate with foreach ($result as $row)

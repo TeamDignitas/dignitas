@@ -60,6 +60,11 @@ Smart::assign('reason', $reason);
 if ($r) {
   Smart::assign('review', $r);
 
+  if ($r->reason == Ct::REASON_PENDING_EDIT) {
+    Smart::assign('objectDiff', $r->getObject()->getObjectDiff());
+    Smart::addResources('history');
+  }
+
   $existingFlag = Flag::get_by_userId_reviewId($userId, $r->id);
   Smart::assign('details', $existingFlag->details ?? null);
 }

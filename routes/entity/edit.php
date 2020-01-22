@@ -61,7 +61,7 @@ if ($saveButton) {
 
     // this can cause two saves at the moment
     $refs = [];
-    $entity = $entity->saveOrClone($refs);
+    $entity = $entity->maybeClone($refs);
     $entity->saveWithFile($fileData, $deleteImage);
 
     Relation::updateDependants($relations, 'fromEntityId', $entity->id, 'rank', $refs);

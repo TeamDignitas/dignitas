@@ -14,8 +14,10 @@ class ObjectDiff {
   /**
    * Loads all the revisions of an object and returns an ObjectDiff for every
    * pair of consecutive revisions.
+   *
+   * @return ObjectDiff[]
    */
-  static function getRevisions($obj) {
+  static function loadFor($obj) {
     $results = [];
 
     $revisions = $obj->getHistory();

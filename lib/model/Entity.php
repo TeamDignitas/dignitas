@@ -291,6 +291,7 @@ class Entity extends BaseObject {
 
   protected function deepMerge($other) {
     $this->copyFrom($other);
+    $this->save();
 
     // Delete own dependants. Note that unlike delete() below, we leave
     // toEntityId alone.

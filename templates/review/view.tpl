@@ -19,7 +19,10 @@
     {/if}
 
     {* Display the object being reviewed. *}
-    {if $type == BaseObject::TYPE_STATEMENT}
+    {if isset($objectDiff)}
+      {include "bits/diff/objectDiff.tpl" od=$objectDiff}
+
+    {elseif $type == BaseObject::TYPE_STATEMENT}
 
       {if $review->reason == Ct::REASON_DUPLICATE}
         <div class="alert alert-warning">

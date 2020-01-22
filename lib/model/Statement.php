@@ -168,7 +168,8 @@ class Statement extends BaseObject {
   }
 
   protected function deepMerge($other) {
-    $this->copyFrom($other);
+    $this->copyFrom($other, ['score']);
+    $this->save();
 
     // Delete own dependants.
     StatementSource::delete_all_by_statementId($this->id);

@@ -16,7 +16,7 @@ if (!$entity->isViewable()) {
 $title = _('Entity history for') . ': ' . $entity;
 
 Smart::assign([
-  'history' => ObjectDiff::getRevisions($entity),
+  'history' => ObjectDiff::loadFor($entity),
   'title' => $title,
 ]);
 
