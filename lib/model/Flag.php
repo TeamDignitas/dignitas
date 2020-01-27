@@ -14,6 +14,7 @@ class Flag extends BaseObject {
   const STATUS_PENDING = 0;
   const STATUS_ACCEPTED = 1;
   const STATUS_DECLINED = 2;
+  const STATUS_STALE = 3; // closed due to lack of activity
 
   /**
    * Returns a localized name for a keep/remove vote.

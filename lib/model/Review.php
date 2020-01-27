@@ -9,6 +9,7 @@ class Review extends BaseObject {
   const STATUS_PENDING = 0;
   const STATUS_KEEP = 1;
   const STATUS_REMOVE = 2;
+  const STATUS_STALE = 3; // closed due to lack of activity
 
   const ACTION_CLOSE = 1;
   const ACTION_DELETE = 2;
@@ -323,6 +324,24 @@ class Review extends BaseObject {
         ? Flag::STATUS_ACCEPTED
         : Flag::STATUS_DECLINED;
       $f->save();
+    }
+  }
+
+  /**
+   * Marks the review and its flags as STATUS_STALE. Rejects any pending edits.
+   */
+  public function resolveStale() {
+    $this->status = self::STATUS_STALE;
+    $this->save();
+
+    foreach ($this->getFlags() as $f) {
+      $f->status = Flag::STATUS_STALE;
+      $f->save();
+    }
+
+    $obj = $this->getObject();
+    if ($obj && $this->reason == Ct::REASON_PENDING_EDIT) {
+      $obj->processPendingEdit(false);
     }
   }
 
