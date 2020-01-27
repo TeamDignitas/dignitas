@@ -10,6 +10,7 @@ class ObjectDiff {
   public $modDate;
   private $textChanges;
   private $fieldChanges;
+  public $review;
 
   /**
    * Loads all the revisions of an object and returns an ObjectDiff for every
@@ -36,6 +37,7 @@ class ObjectDiff {
     $this->modDate = $revision->modDate;
     $this->textChanges = [];
     $this->fieldChanges = [];
+    $this->review = null;
   }
 
   function addTextChange($title, $ses) {
@@ -52,6 +54,38 @@ class ObjectDiff {
       'old' => $old,
       'new' => $new,
     ];
+  }
+
+  /**
+   * Adds the review that approved this pending edit, if applicable.
+   *
+   * @param PendingEditTrait $old revision that created the pending edit
+   * @param PendingEditTrait $new revision that approved the pending edit
+   */
+  function checkReview($old, $new) {
+    if ($old->pendingEditId) {
+      // rev1 should exist, but rev2 may not exist if the pending edit was rejected
+      $rev1 = RevisionReview::get_by_revisionAction_requestId_objectType_objectId_reason_status(
+        'insert',
+        $old->requestId,
+        $old->getObjectType(),
+        $old->id,
+        Ct::REASON_PENDING_EDIT,
+        Review::STATUS_PENDING);
+      $rev2 = RevisionReview::get_by_revisionAction_requestId_id_objectType_objectId_reason_status(
+        'update',
+        $new->requestId,
+        $rev1->id ?? null,
+        $new->getObjectType(),
+        $new->id,
+        Ct::REASON_PENDING_EDIT,
+        Review::STATUS_KEEP);
+      if ($rev1 && $rev2) {
+        $this->review = Review::get_by_id($rev2->id);
+        Log::info('Adding review #%d for revisions #%d and #%d.',
+                  $rev2->id, $new->revisionId, $old->revisionId);
+      }
+    }
   }
 
   function getTextChanges() {

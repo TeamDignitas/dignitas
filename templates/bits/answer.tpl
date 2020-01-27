@@ -15,7 +15,7 @@
         {include "bits/userLink.tpl" u=$answer->getStatusUser()}
       {elseif $answer->reason != Ct::REASON_BY_OWNER}
         <hr>
-        {include "bits/reviewFlagList.tpl" obj=$answer}
+        {include "bits/reviewFlagList.tpl" flags=$answer->getReviewFlags()}
       {/if}
     </div>
   {/if}

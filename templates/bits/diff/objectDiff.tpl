@@ -1,5 +1,9 @@
 <h4 class="revisionHeader">
-  {t}changes by{/t}
+  {if $od->review}
+    {t}changes suggested by{/t}
+  {else}
+    {t}changes by{/t}
+  {/if}
   {include "bits/userLink.tpl" u=$od->modUser}
   {$od->modDate|lt:false:true}
 </h4>
@@ -19,3 +23,11 @@
       new=$change.new}
   {/foreach}
 </dl>
+
+{if $od->review}
+  <div class="alert alert-light">
+    {include "bits/reviewFlagList.tpl" flags=$od->review->getFlags()}
+  </div>
+{/if}
+
+<hr>

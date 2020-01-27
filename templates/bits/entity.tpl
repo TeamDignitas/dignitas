@@ -27,7 +27,7 @@
         {include "bits/userLink.tpl" u=$entity->getStatusUser()}
       {elseif $entity->reason != Ct::REASON_BY_OWNER}
         <hr>
-        {include "bits/reviewFlagList.tpl" obj=$entity}
+        {include "bits/reviewFlagList.tpl" flags=$entity->getReviewFlags()}
       {/if}
     </div>
   {/if}

@@ -36,7 +36,7 @@
         {include "bits/userLink.tpl" u=$statement->getStatusUser()}
       {elseif $statement->reason != Ct::REASON_BY_OWNER}
         <hr>
-        {include "bits/reviewFlagList.tpl" obj=$statement}
+        {include "bits/reviewFlagList.tpl" flags=$statement->getReviewFlags()}
       {/if}
     </div>
   {/if}

@@ -1,5 +1,5 @@
 <ul>
-  {foreach $obj->getReviewFlags() as $f}
+  {foreach $flags as $f}
     <li>
       {include "bits/userLink.tpl" u=$f->getUser()}
 

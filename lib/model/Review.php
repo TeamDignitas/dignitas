@@ -160,10 +160,10 @@ class Review extends BaseObject {
    * @return array Array of Flag objects.
    */
   function getFlags() {
-  return Model::factory('Flag')
-    ->where('reviewId', $this->id)
-    ->order_by_desc('createDate')
-    ->find_many();
+    return Model::factory('Flag')
+      ->where('reviewId', $this->id)
+      ->order_by_desc('createDate')
+      ->find_many();
   }
 
   /**
