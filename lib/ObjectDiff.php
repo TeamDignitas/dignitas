@@ -59,6 +59,9 @@ class ObjectDiff {
   /**
    * Adds the review that approved this pending edit, if applicable.
    *
+   * TODO: this can bug out if the object is flagged while edits are pending.
+   * This inserts additional revisions.
+   *
    * @param PendingEditTrait $old revision that created the pending edit
    * @param PendingEditTrait $new revision that approved the pending edit
    */
