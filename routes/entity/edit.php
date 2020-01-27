@@ -32,7 +32,6 @@ if ($saveButton) {
   $entity->setColor($color);
 
   $relations = buildRelations(
-    $entity,
     Request::getArray('relIds'),
     Request::getArray('relTypes'),
     Request::getArray('relEntityIds'),
@@ -43,7 +42,6 @@ if ($saveButton) {
     Request::getArray('relEndDatesM'),
     Request::getArray('relEndDatesD'));
   $aliases = buildAliases(
-    $entity,
     Request::getArray('aliasIds'),
     Request::getArray('aliasNames'));
   $links = EntityLink::build(
@@ -147,7 +145,7 @@ function validate($entity, $relations, $links, $fileData) {
   return $errors;
 }
 
-function buildRelations($entity, $ids, $types, $toEntityIds,
+function buildRelations($ids, $types, $toEntityIds,
                         $startYears, $startMonths, $startDays,
                         $endYears, $endMonths, $endDays) {
   $result = [];
@@ -157,7 +155,6 @@ function buildRelations($entity, $ids, $types, $toEntityIds,
       ? Relation::get_by_id($id)
       : Model::factory('Relation')->create();
     $r->type = $types[$i];
-    $r->fromEntityId = $entity->id;
     $r->toEntityId = $toEntityIds[$i];
     $r->startDate = Time::partialDate($startYears[$i], $startMonths[$i], $startDays[$i]);
     $r->endDate = Time::partialDate($endYears[$i], $endMonths[$i], $endDays[$i]);
@@ -173,7 +170,7 @@ function buildRelations($entity, $ids, $types, $toEntityIds,
   return $result;
 }
 
-function buildAliases($entity, $ids, $names) {
+function buildAliases($ids, $names) {
   $result = [];
 
   foreach ($ids as $i => $id) {
