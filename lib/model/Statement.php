@@ -157,7 +157,7 @@ class Statement extends BaseObject {
   }
 
   function deepClone($root = null, $changes = []) {
-    $clone = parent::deepClone(null, $changes);
+    $clone = parent::deepClone($root, $changes);
     foreach ($this->getSources() as $s) {
       $s->deepClone($clone, [ 'statementId' => $clone->id]);
     }

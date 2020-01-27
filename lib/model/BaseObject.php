@@ -185,17 +185,14 @@ class BaseObject extends Model {
   }
 
   /**
-   * Makes a DB copy of the object and its dependants. If called during the
-   * creation of a pending edit, also creates a CloneMap record.
+   * Makes database copies of the object and its dependants. Called while
+   * creating a pending edit. Creates CloneMap objects, except for the
+   * top-level object being cloned.
    *
    * @param PendingEditTrait $root top-level clone
    * @param Map $changes Key => value changes to be made while cloning.
    */
-  function deepClone($root = null, $changes = []) {
-    if (!$this->id) {
-      return null;
-    }
-
+  function deepClone($root, $changes = []) {
     $clone = $this->parisClone();
     foreach ($changes as $key => $value) {
       $clone->$key = $value;

@@ -272,7 +272,7 @@ class Entity extends BaseObject {
   }
 
   function deepClone($root = null, $changes = []) {
-    $clone = parent::deepClone(null, $changes);
+    $clone = parent::deepClone($root, $changes);
     foreach ($this->getAliases() as $a) {
       $a->deepClone($clone, [ 'entityId' => $clone->id]);
     }

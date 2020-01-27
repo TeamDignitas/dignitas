@@ -116,9 +116,9 @@ class Relation extends BaseObject {
   }
 
   function deepClone($root = null, $changes = []) {
-    $clone = parent::deepClone(null, $changes);
+    $clone = parent::deepClone($root, $changes);
     foreach ($this->getSources() as $s) {
-      $s->deepClone($clone, [ 'relationId' => $clone->id]);
+      $s->deepClone($root, [ 'relationId' => $clone->id]);
     }
     return $clone;
   }
