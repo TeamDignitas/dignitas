@@ -109,7 +109,7 @@ class Answer extends BaseObject {
 
   protected function deepMerge($other) {
     $this->copyFrom($other, ['score']);
-    $this->save();
+    $this->save($other->modUserId);
   }
 
   function delete() {

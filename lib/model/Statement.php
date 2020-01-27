@@ -169,21 +169,13 @@ class Statement extends BaseObject {
 
   protected function deepMerge($other) {
     $this->copyFrom($other, ['score']);
-    $this->save();
+    $this->save($other->modUserId);
 
-    // Delete own dependants.
-    StatementSource::delete_all_by_statementId($this->id);
-    ObjectTag::deleteObject($this);
+    $this->mergeDependants(
+      $other, $this->getSources(), $other->getSources(), 'statementId');
+    $this->mergeDependants(
+      $other, ObjectTag::getObjectTags($this), ObjectTag::getObjectTags($other), 'objectId');
 
-    // Migrate $other's dependants.
-    foreach ($other->getSources() as $s) {
-      $s->statementId = $this->id;
-      $s->save();
-    }
-    foreach (ObjectTag::getObjectTags($other) as $ot) {
-      $ot->objectId = $this->id;
-      $ot->save();
-    }
     // a pending edit statement should not have answers, reviews or votes
   }
 
