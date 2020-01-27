@@ -156,13 +156,13 @@ class Statement extends BaseObject {
     }
   }
 
-  function deepClone(&$refs, $changes = []) {
-    $clone = parent::deepClone($refs, $changes);
+  function deepClone($root = null, $changes = []) {
+    $clone = parent::deepClone(null, $changes);
     foreach ($this->getSources() as $s) {
-      $s->deepClone($refs, [ 'statementId' => $clone->id]);
+      $s->deepClone($clone, [ 'statementId' => $clone->id]);
     }
     foreach (ObjectTag::getObjectTags($this) as $ot) {
-      $ot->deepClone($refs, [ 'objectId' => $clone->id]);
+      $ot->deepClone($clone, [ 'objectId' => $clone->id]);
     }
     return $clone;
   }

@@ -271,19 +271,19 @@ class Entity extends BaseObject {
     }
   }
 
-  function deepClone(&$refs, $changes = []) {
-    $clone = parent::deepClone($refs, $changes);
+  function deepClone($root = null, $changes = []) {
+    $clone = parent::deepClone(null, $changes);
     foreach ($this->getAliases() as $a) {
-      $a->deepClone($refs, [ 'entityId' => $clone->id]);
+      $a->deepClone($clone, [ 'entityId' => $clone->id]);
     }
     foreach ($this->getRelations() as $r) {
-      $r->deepClone($refs, [ 'fromEntityId' => $clone->id]);
+      $r->deepClone($clone, [ 'fromEntityId' => $clone->id]);
     }
     foreach ($this->getLinks() as $l) {
-      $l->deepClone($refs, [ 'entityId' => $clone->id]);
+      $l->deepClone($clone, [ 'entityId' => $clone->id]);
     }
     foreach (ObjectTag::getObjectTags($this) as $ot) {
-      $ot->deepClone($refs, [ 'objectId' => $clone->id]);
+      $ot->deepClone($clone, [ 'objectId' => $clone->id]);
     }
 
     // copy the entity image if one exists
@@ -296,30 +296,15 @@ class Entity extends BaseObject {
     $this->copyFrom($other);
     $this->save();
 
-    // Delete own dependants. Note that unlike delete() below, we leave
-    // toEntityId alone.
-    Alias::delete_all_by_entityId($this->id);
-    Relation::delete_all_by_fromEntityId($this->id);
-    EntityLink::delete_all_by_entityId($this->id);
-    ObjectTag::deleteObject($this);
+    $this->mergeDependants(
+      $other, $this->getAliases(), $other->getAliases(), 'entityId');
+    $this->mergeDependants(
+      $other, $this->getRelations(), $other->getRelations(), 'fromEntityId');
+    $this->mergeDependants(
+      $other, $this->getLinks(), $other->getLinks(), 'entityId');
+    $this->mergeDependants(
+      $other, ObjectTag::getObjectTags($this), ObjectTag::getObjectTags($other), 'objectId');
 
-    // Migrate $other's dependants.
-    foreach ($other->getAliases() as $a) {
-      $a->entityId = $this->id;
-      $a->save();
-    }
-    foreach ($other->getRelations() as $r) {
-      $r->fromEntityId = $this->id;
-      $r->save();
-    }
-    foreach ($other->getLinks() as $l) {
-      $l->entityId = $this->id;
-      $l->save();
-    }
-    foreach (ObjectTag::getObjectTags($other) as $ot) {
-      $ot->objectId = $this->id;
-      $ot->save();
-    }
     // a pending edit entity should not have statements, reviews or votes
 
     $this->deleteFiles();

@@ -59,13 +59,12 @@ if ($saveButton) {
   if (empty($errors)) {
     $new = !$entity->id;
 
-    $refs = [];
-    $entity = $entity->maybeClone($refs);
+    $entity = $entity->maybeClone();
     $entity->saveWithFile($fileData, $deleteImage);
 
-    Relation::updateDependants($relations, 'fromEntityId', $entity->id, 'rank', $refs);
-    Alias::updateDependants($aliases, 'entityId', $entity->id, 'rank', $refs);
-    EntityLink::updateDependants($links, 'entityId', $entity->id, 'rank', $refs);
+    Relation::updateDependants($relations, $entity, 'fromEntityId', 'rank');
+    Alias::updateDependants($aliases, $entity, 'entityId', 'rank');
+    EntityLink::updateDependants($links, $entity, 'entityId', 'rank');
     ObjectTag::update($entity, $tagIds);
 
     if ($new) {

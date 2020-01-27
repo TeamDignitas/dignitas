@@ -22,7 +22,7 @@ if ($saveButton) {
 
   $errors = validate($sources);
   if (empty($errors)) {
-    RelationSource::updateDependants($sources, 'relationId', $relation->id, 'rank');
+    RelationSource::updateDependants($sources, $relation, 'relationId', 'rank');
     FlashMessage::add(_('Relation sources updated.'), 'success');
     Util::redirect(Router::link('entity/view') . '/' . $fromEntity->id);
   } else {

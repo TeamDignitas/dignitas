@@ -41,14 +41,13 @@ if ($saveButton) {
   $errors = validate($statement, $sources);
   if (empty($errors)) {
     $new = !$statement->id;
-    $refs = [];
-    $statement = $statement->maybeClone($refs);
+    $statement = $statement->maybeClone();
     $statement->save();
 
     if ($new) {
       Review::checkNewUser($statement);
     }
-    StatementSource::updateDependants($sources, 'statementId', $statement->id, 'rank', $refs);
+    StatementSource::updateDependants($sources, $statement, 'statementId' 'rank');
     ObjectTag::update($statement, $tagIds);
 
     if ($new) {

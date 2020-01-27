@@ -120,20 +120,19 @@ class BaseObject extends Model {
    * Deletes DB records not present in this list, inserts new DB records where
    * needed, and updates the rank field.
    *
-   * @param object[] $objects List of objects saved by the user.
+   * @param object[] $objects List of objects saved by the user
+   * @param BaseObject $root Root of these dependants
    * @param string $fkField Field to filter by in existing records or to
-   * populate in new records.
-   * @param any $fkValue Value of $fkField.
-   * @param string $rankField Name of field holding sequential order of objects.
-   * @param Map $refs Map of old ID => new ID to be used during cloning (for
-   * pending edits).
+   * populate in new records
+   * @param string $rankField Name of field holding sequential order of objects
    */
-  static function updateDependants($objects, $fkField, $fkValue, $rankField, $refs) {
+  static function updateDependants($objects, $root, $fkField, $rankField) {
     $class = get_called_class();
 
-    // use new IDs if available
+    // If this is called during a clone operation for pending edits, then we
+    // should be using the clones' IDs. If not, keep the same IDs.
     foreach ($objects as $o) {
-      $o->id = $refs[$class][$o->id] ?? $o->id;
+      $o->id = CloneMap::getNewId($root, $o);
     }
 
     // delete vanishing DB records
@@ -144,7 +143,7 @@ class BaseObject extends Model {
     // dependants which need to be deleted. For example, an entity's relations
     // each have sources.
     $gone = Model::factory($class)
-      ->where($fkField, $fkValue)
+      ->where($fkField, $root->id)
       ->where_not_in('id', $existingIds)
       ->find_many();
     foreach ($gone as $g) {
@@ -154,7 +153,7 @@ class BaseObject extends Model {
     // update or insert existing objects
     $rank = 0;
     foreach ($objects as $o) {
-      $o->$fkField = $fkValue;
+      $o->$fkField = $root->id;
       $o->$rankField = ++$rank;
       $o->save();
     }
@@ -186,12 +185,13 @@ class BaseObject extends Model {
   }
 
   /**
-   * Makes a DB copy of the object and makes a note of the old and new ID.
+   * Makes a DB copy of the object and its dependants. If called during the
+   * creation of a pending edit, also creates a CloneMap record.
    *
-   * @param Map $refs Collects the old ID => new ID map per object type.
+   * @param PendingEditTrait $root top-level clone
    * @param Map $changes Key => value changes to be made while cloning.
    */
-  function deepClone(&$refs, $changes = []) {
+  function deepClone($root = null, $changes = []) {
     if (!$this->id) {
       return null;
     }
@@ -202,7 +202,9 @@ class BaseObject extends Model {
     }
     $clone->save();
 
-    $refs[get_called_class()][$this->id] = $clone->id;
+    if ($root) {
+      CloneMap::create($root, $this, $clone);
+    }
 
     return $clone;
   }

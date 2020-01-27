@@ -115,17 +115,16 @@ trait PendingEditTrait {
    * and its dependants are identical to the original object. The second one
    * captures the changes in this edit. This makes the diff easy to compute.
    *
-   * @param Map $refs Will collect the old ID => new ID map by object type
    * @return PendingEditTrait The same object or its clone
    */
-  function maybeClone(&$refs) {
+  function maybeClone() {
     if (!$this->id || $this->isEditable()) {
       return $this;
     }
 
     // 1
     $original = self::get_by_id($this->id);
-    $clone = $original->deepClone($refs, [ 'status' => Ct::STATUS_PENDING_EDIT ]);
+    $clone = $original->deepClone(null, [ 'status' => Ct::STATUS_PENDING_EDIT ]);
 
     // change the request ID so that edits applied on top of the clone can be
     // tracked separately
@@ -146,10 +145,43 @@ trait PendingEditTrait {
   }
 
   /**
-   * Opposite of deepClone(). Copies fields from $other. Deletes own
-   * dependants. Transfers dependants from $other.
+   * Opposite of deepClone(). Copies fields from $other. Deletes, inserts or
+   * updates dependants as dictated by CloneMap records.
    */
   abstract protected function deepMerge($other);
+
+  /**
+   * Merges a list of $other's dependants into $this. Called while merging a
+   * pending edit.
+   *
+   * @param PendingEditTrait $other Pending edit of $this
+   * @param BaseObject[] $origDeps Array of original dependants
+   * @param BaseObject[] $clonedDeps Array of cloned dependants
+   * @param string $fkField Field whose value should change from $other->id to
+   * $this->id
+   */
+  function mergeDependants($other, $origDeps, $clonedDeps, $fkField) {
+    $seenIdsMap = [];
+    foreach ($clonedDeps as $c) {
+      // Look for a corresponding original dependant
+      $orig = CloneMap::getOriginal($other, $c);
+      if ($orig) {
+        $orig->copyFrom($c);
+      } else {
+        $orig = $c->parisClone();
+      }
+      $orig->$fkField = $this->id;
+      $orig->save();
+      $seenIdsMap[$orig->id] = true;
+    }
+
+    // delete original dependants that we have not seen among $clonedDeps
+    foreach ($origDeps as $o) {
+      if (!isset($seenIdsMap[$o->id])) {
+        $o->delete();
+      }
+    }
+  }
 
   /**
    * Processes the pending edit associated with this object.
@@ -160,12 +192,13 @@ trait PendingEditTrait {
     $pending = static::get_by_id($this->pendingEditId);
     if ($pending) {
       if ($accept) {
-        // this will also clear $this->pendingEditId field and save $this
+        // this will also clear the $this->pendingEditId field and save $this
         $this->deepMerge($pending);
       } else {
         $this->pendingEditId = 0;
         $this->save();
       }
+      CloneMap::deleteRoot($pending);
       $pending->delete();
     }
   }

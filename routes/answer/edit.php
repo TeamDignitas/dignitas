@@ -23,8 +23,7 @@ if ($saveButton) {
   $errors = validate($answer);
   if (empty($errors)) {
     $new = !$answer->id;
-    $refs = [];
-    $answer = $answer->maybeClone($refs);
+    $answer = $answer->maybeClone();
     $answer->save();
 
     if ($new) {
