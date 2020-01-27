@@ -33,8 +33,8 @@ trait MarkdownTrait {
 
   }
 
-  function save() {
-    parent::save();
+  function save($modUserId = null) {
+    parent::save($modUserId);
     $this->extractAttachmentReferences();
   }
 }

@@ -294,7 +294,7 @@ class Entity extends BaseObject {
 
   protected function deepMerge($other) {
     $this->copyFrom($other);
-    $this->save();
+    $this->save($other->modUserId);
 
     $this->mergeDependants(
       $other, $this->getAliases(), $other->getAliases(), 'entityId');
@@ -307,7 +307,6 @@ class Entity extends BaseObject {
 
     // a pending edit entity should not have statements, reviews or votes
 
-    $this->deleteFiles();
     $this->copyUploadedFileFrom($other);
   }
 

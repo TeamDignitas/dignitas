@@ -159,13 +159,19 @@ class BaseObject extends Model {
     }
   }
 
-  function save() {
+  /**
+   * Assigns some historic fields and saves the object.
+   *
+   * @param int $modUserId Attribute the change to a different user than the
+   * one currently logged in. Useful when merging pending edits.
+   */
+  function save($modUserId = null) {
     // auto-save the createDate, modDate and modUserId fields
     $this->modDate = time();
     if (!$this->createDate) {
       $this->createDate = $this->modDate;
     }
-    $this->modUserId = User::getActiveId();
+    $this->modUserId = $modUserId ?: User::getActiveId();
 
     return parent::save();
   }

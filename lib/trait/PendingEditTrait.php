@@ -171,7 +171,7 @@ trait PendingEditTrait {
         $orig = $c->parisClone();
       }
       $orig->$fkField = $this->id;
-      $orig->save();
+      $orig->save($other->modUserId);
       $seenIdsMap[$orig->id] = true;
     }
 
