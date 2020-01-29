@@ -49,6 +49,7 @@ class Search {
     return Model::factory('Statement')
       ->where_like('summary', "%{$escapedQuery}%")
       ->where_not_equal('id', $exceptId)
+      ->where_not_equal('status', Ct::STATUS_PENDING_EDIT)
       ->order_by_asc('summary')
       ->limit($limit)
       ->find_many();
