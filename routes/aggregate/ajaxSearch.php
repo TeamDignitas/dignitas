@@ -16,6 +16,16 @@ foreach ($objects['entities'] as $e) {
   ];
 }
 
+foreach ($objects['statements'] as $s) {
+  Smart::assign('statement', $s);
+  Smart::assign('entity', $s->getEntity());
+  $results[] = [
+    'id' => $s->id,
+    'url' => Router::link('statement/view') . '/' . $s->id,
+    'html' => Smart::fetch('bits/ajaxSearchResultStatement.tpl'),
+  ];
+}
+
 foreach ($objects['tags'] as $t) {
   Smart::assign('tag', $t);
   $results[] = [

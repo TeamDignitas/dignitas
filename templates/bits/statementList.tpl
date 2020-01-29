@@ -1,4 +1,5 @@
 {$entityImages=$entityImages|default:true}
+{$addedBy=$addedBy|default:true}
 
 {foreach $statements as $s}
   <div class="statement clearfix">
@@ -19,11 +20,13 @@
         {$s->dateMade|ld}
       </div>
 
-      <div class="text-right text-muted small">
-        {t}added by{/t}
-        {include 'bits/userLink.tpl' u=$s->getUser()}
-        {$s->createDate|moment}
-      </div>
+      {if $addedBy}
+        <div class="text-right text-muted small">
+          {t}added by{/t}
+          {include 'bits/userLink.tpl' u=$s->getUser()}
+          {$s->createDate|moment}
+        </div>
+      {/if}
     </div>
   </div>
 {/foreach}

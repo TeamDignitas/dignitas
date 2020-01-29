@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-29 12:51+0200\n"
-"PO-Revision-Date: 2020-01-29 13:03+0200\n"
+"POT-Creation-Date: 2020-01-29 15:25+0200\n"
+"PO-Revision-Date: 2020-01-29 15:26+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -79,13 +79,20 @@ msgstr[1] "%1 autori"
 msgstr[2] "%1 de autori"
 
 #: templates/aggregate/search.tpl:28
+msgid "one statement"
+msgid_plural "%1 statements"
+msgstr[0] "o afirmație"
+msgstr[1] "%1 afirmații"
+msgstr[2] "%1 de afirmații"
+
+#: templates/aggregate/search.tpl:36
 msgid "one tag"
 msgid_plural "%1 tags"
 msgstr[0] "o etichetă"
 msgstr[1] "%1 etichete"
 msgstr[2] "%1 de etichete"
 
-#: templates/aggregate/search.tpl:37
+#: templates/aggregate/search.tpl:45
 msgid "your search «%1» produced no results"
 msgstr "căutarea «%1» nu a produs rezultate"
 
@@ -493,7 +500,7 @@ msgstr "context"
 msgid "goal"
 msgstr "scop"
 
-#: templates/bits/statement.tpl:90 templates/bits/statementList.tpl:23
+#: templates/bits/statement.tpl:90 templates/bits/statementList.tpl:25
 msgid "added by"
 msgstr "adăugată de"
 

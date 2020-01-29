@@ -9,6 +9,7 @@ class Search {
     $escapedQuery = addslashes($query);
     $results = [
       'entities' => self::searchEntities($escapedQuery, 0, $limit),
+      'statements' => self::searchStatements($escapedQuery, 0, $limit),
       'tags' => self::searchTags($escapedQuery, $limit),
     ];
     return $results;

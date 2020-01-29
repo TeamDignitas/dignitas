@@ -6,6 +6,7 @@ $objects = Search::run($q);
 
 Smart::assign([
   'entities' => $objects['entities'],
+  'statements' => $objects['statements'],
   'tags' => $objects['tags'],
   'query' => $q,
 ]);

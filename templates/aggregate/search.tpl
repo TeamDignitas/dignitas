@@ -23,6 +23,14 @@
     {/foreach}
   {/if}
 
+  {if count($statements)}
+    <h3>
+      {t count=count($statements) 1=count($statements) plural="%1 statements"}one statement{/t}
+    </h3>
+
+    {include "bits/statementList.tpl" entityImages=false addedBy=false}
+  {/if}
+
   {if count($tags)}
     <h3>
       {t count=count($tags) 1=count($tags) plural="%1 tags"}one tag{/t}
@@ -33,7 +41,7 @@
     {/foreach}
   {/if}
 
-  {if empty($entities) && empty($tags)}
+  {if empty($entities) && empty($statements) && empty($tags)}
     <h3>{t 1=$query|escape}your search «%1» produced no results{/t}
   {/if}
 
