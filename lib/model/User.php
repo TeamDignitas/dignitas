@@ -71,6 +71,19 @@ class User extends BaseObject {
     self::$active = User::get_by_id($userId);
   }
 
+  function incrementPendingEdits() {
+    $this->changeNumPendingEdits(1);
+  }
+
+  function decrementPendingEdits() {
+    $this->changeNumPendingEdits(-1);
+  }
+
+  private function changeNumPendingEdits(int $delta) {
+    $this->numPendingEdits += $delta;
+    $this->save();
+  }
+
   static function getFlagsPerDay() {
     if (!self::$active) {
       return 0;

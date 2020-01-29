@@ -56,6 +56,14 @@ trait PendingEditTrait {
           _('This item already has a pending edit; please wait for it to be reviewed.'));
       }
 
+      $u = User::getActive();
+      if ($u && $u->numPendingEdits >= Config::MAX_PENDING_EDITS) {
+        throw new Exception(
+          sprintf(_('You have reached your limit of %d pending edits.' .
+                    'Please wait for some of them to be reviewed.'),
+                  Config::MAX_PENDING_EDITS));
+      }
+
       $this->isEditableCore();
 
       return true;
@@ -75,10 +83,20 @@ trait PendingEditTrait {
    * @return boolean
    */
   function acceptsSuggestions() {
+    $u = User::getActive();
     return
-      (User::getActive() != null) &&                // must be logged in
-      ($this->status != Ct::STATUS_PENDING_EDIT) && // object is not itself a pending edit
-      !$this->pendingEditId;                        // object does not already have pending edits
+      // must be logged in
+      $u &&
+
+      // object is not itself a pending edit
+      ($this->status != Ct::STATUS_PENDING_EDIT) &&
+
+      // object does not already have pending edits
+      !$this->pendingEditId &&
+
+       // must not exceed pending edit limit
+      ($u->numPendingEdits < Config::MAX_PENDING_EDITS);
+
   }
 
   /**
@@ -109,7 +127,8 @@ trait PendingEditTrait {
    *   2. Populate the new field values on the clone, but don't save it yet.
    *   3. Set the pendingEditId field on the original object.
    *   4. Start a review for the pending edit.
-   *   5. Return the clone.
+   *   5. Increment the active user's pending edit count.
+   *   6. Return the clone.
    *
    * We do things this way so that the clone has two revisions. The first one
    * and its dependants are identical to the original object. The second one
@@ -141,6 +160,9 @@ trait PendingEditTrait {
     Review::ensure($original, Ct::REASON_PENDING_EDIT);
 
     // 5
+    User::getActive()->incrementPendingEdits();
+
+    // 6
     return $clone;
   }
 
@@ -199,6 +221,8 @@ trait PendingEditTrait {
         $this->save();
       }
       CloneMap::deleteRoot($pending);
+      $u = User::get_by_id($pending->modUserId);
+      $u->decrementPendingEdits();
       $pending->delete();
     }
   }
