@@ -15,7 +15,7 @@ messages=()
 check_run Config.php.sample "Please reconcile your Config.php with Config.php.sample"
 check_run www/.htaccess.sample "Please reconcile your www/.htaccess with www/.htaccess.sample"
 check_run scripts/setup.sh "Please rerun scripts/setup.sh on your client"
-check_run patches/ 'The database schema has changed. Please run "php tools/migration.php"'
+check_run patches/ 'The database schema has changed. Please run "php scripts/migration.php"'
 
 if [ ${#messages[@]} -gt 0 ]; then
   echo "**********************************************************************"
