@@ -51,7 +51,7 @@ class DB {
                        Config::DB_HOST,
                        Config::DB_USER,
                        Config::DB_DATABASE,
-                       Config::DB_PASSWORD ? ('-p' . Config::$password) : '',
+                       Config::DB_PASSWORD ? ('-p' . Config::DB_PASSWORD) : '',
                        $filename);
     OS::executeAndAssert($command, $ignored);
   }
