@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-31 16:39+0200\n"
-"PO-Revision-Date: 2020-01-31 16:40+0200\n"
+"POT-Creation-Date: 2020-01-31 17:08+0200\n"
+"PO-Revision-Date: 2020-01-31 17:08+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -801,12 +801,12 @@ msgstr "%b %Y"
 msgid "%B %Y"
 msgstr "%B %Y"
 
-#: lib/Time.php:66
+#: lib/Time.php:59
 #, php-format
 msgid "on %s"
 msgstr "pe %s"
 
-#: lib/Time.php:68
+#: lib/Time.php:61
 #, php-format
 msgid "one day ago"
 msgid_plural "%d days ago"
@@ -814,11 +814,11 @@ msgstr[0] "acum o zi"
 msgstr[1] "acum %d zile"
 msgstr[2] "acum %d de zile"
 
-#: lib/Time.php:71
+#: lib/Time.php:63
 msgid "yesterday"
 msgstr "ieri"
 
-#: lib/Time.php:76
+#: lib/Time.php:68
 #, php-format
 msgid "one hour ago"
 msgid_plural "%d hours ago"
@@ -826,7 +826,7 @@ msgstr[0] "acum o oră"
 msgstr[1] "acum %d ore"
 msgstr[2] "acum %d de ore"
 
-#: lib/Time.php:82
+#: lib/Time.php:73
 #, php-format
 msgid "one minute ago"
 msgid_plural "%d minutes ago"
@@ -834,7 +834,7 @@ msgstr[0] "acum un minut"
 msgstr[1] "acum %d minute"
 msgstr[2] "acum %d de minute"
 
-#: lib/Time.php:86
+#: lib/Time.php:76
 #, php-format
 msgid "one second ago"
 msgid_plural "%d seconds ago"
@@ -854,19 +854,19 @@ msgstr "Vă rugăm să vă autentificați pentru a continua."
 msgid "This answer was deleted"
 msgstr "Acest răspuns a fost șters"
 
-#: lib/model/Answer.php:36 lib/model/Statement.php:85
+#: lib/model/Answer.php:36 lib/model/Statement.php:86
 msgid "because it is spam."
 msgstr "deoarece este spam."
 
-#: lib/model/Answer.php:37 lib/model/Statement.php:86
+#: lib/model/Answer.php:37 lib/model/Statement.php:87
 msgid "because it is rude or abusive."
 msgstr "deoarece conține insulte sau abuzuri."
 
-#: lib/model/Answer.php:38 lib/model/Entity.php:102 lib/model/Statement.php:88
+#: lib/model/Answer.php:38 lib/model/Entity.php:102 lib/model/Statement.php:89
 msgid "because it is off-topic."
 msgstr "deoarece este pe lîngă subiect."
 
-#: lib/model/Answer.php:39 lib/model/Statement.php:90
+#: lib/model/Answer.php:39 lib/model/Statement.php:91
 msgid "because it is low-quality."
 msgstr "deoarece este de slabă calitate."
 
@@ -874,11 +874,11 @@ msgstr "deoarece este de slabă calitate."
 msgid "by its author."
 msgstr "de către autor."
 
-#: lib/model/Answer.php:41 lib/model/Entity.php:104 lib/model/Statement.php:92
+#: lib/model/Answer.php:41 lib/model/Entity.php:104 lib/model/Statement.php:93
 msgid "by"
 msgstr "de către"
 
-#: lib/model/Answer.php:42 lib/model/Entity.php:105 lib/model/Statement.php:93
+#: lib/model/Answer.php:42 lib/model/Entity.php:105 lib/model/Statement.php:94
 msgid "for other reasons."
 msgstr "pentru alte motive."
 
@@ -912,12 +912,12 @@ msgstr "site web"
 msgid "company"
 msgstr "companie"
 
-#: lib/model/Entity.php:86 lib/model/Review.php:104 lib/model/Statement.php:69
+#: lib/model/Entity.php:86 lib/model/Review.php:104 lib/model/Statement.php:70
 #: lib/trait/FlaggableTrait.php:69
 msgid "duplicate"
 msgstr "duplicate"
 
-#: lib/model/Entity.php:86 lib/model/Statement.php:71
+#: lib/model/Entity.php:86 lib/model/Statement.php:72
 #: lib/trait/FlaggableTrait.php:69
 msgid "closed"
 msgstr "închisă"
@@ -942,7 +942,7 @@ msgstr "deoarece profilul său conține insulte sau abuzuri."
 msgid "as a duplicate of the entity"
 msgstr "ca duplicat al autorului"
 
-#: lib/model/Entity.php:103 lib/model/Statement.php:91
+#: lib/model/Entity.php:103 lib/model/Statement.php:92
 msgid "by the user who added it."
 msgstr "de către utilizatorul care a adăugat-o."
 
@@ -1161,32 +1161,32 @@ msgstr "surse șterse"
 msgid "changed source"
 msgstr "sursă modificată"
 
-#: lib/model/Statement.php:72 lib/trait/FlaggableTrait.php:70
+#: lib/model/Statement.php:73 lib/trait/FlaggableTrait.php:70
 msgid "deleted"
 msgstr "ștearsă"
 
-#: lib/model/Statement.php:81
+#: lib/model/Statement.php:82
 msgid "This statement was closed"
 msgstr "Această afirmație a fost închisă"
 
-#: lib/model/Statement.php:82
+#: lib/model/Statement.php:83
 msgid "This statement was deleted"
 msgstr "Această afirmație a fost ștearsă"
 
-#: lib/model/Statement.php:87
+#: lib/model/Statement.php:88
 msgid "as a duplicate of the statement"
 msgstr "ca duplicat al afirmației"
 
-#: lib/model/Statement.php:89
+#: lib/model/Statement.php:90
 msgid "because it is unverifiable."
 msgstr "deoarece este neverificabilă."
 
-#: lib/model/Statement.php:111
+#: lib/model/Statement.php:112
 #, php-format
 msgid "You need at least %s reputation to add statements."
 msgstr "Vă trebuie o reputație de cel puțin %s pentru a adăuga afirmații."
 
-#: lib/model/Statement.php:119
+#: lib/model/Statement.php:120
 #, php-format
 msgid "You need at least %s reputation to edit statements."
 msgstr "Vă trebuie o reputație de cel puțin %s pentru a edita afirmații."
@@ -1373,15 +1373,19 @@ msgstr "Am adăugat autorul."
 msgid "Author updated."
 msgstr "Am actualizat autorul."
 
-#: routes/entity/edit.php:112
+#: routes/entity/edit.php:81 routes/statement/edit.php:65
+msgid "There are some errors in the data. Please fix them below."
+msgstr "Unele date sînt greșite. Vă rugăm să le corectați."
+
+#: routes/entity/edit.php:113
 msgid "Please enter a name."
 msgstr "Vă rugăm să introduceți un nume."
 
-#: routes/entity/edit.php:116
+#: routes/entity/edit.php:117
 msgid "Please choose a type."
 msgstr "Vă rugăm să alegeți un tip."
 
-#: routes/entity/edit.php:136
+#: routes/entity/edit.php:137
 msgid "Some link URLS are invalid."
 msgstr "Unele URL-uri sînt incorecte."
 
@@ -1430,7 +1434,7 @@ msgstr "Nu puteți edita relațiile acestui autor."
 msgid "Relation sources updated."
 msgstr "Am actualizat sursele relației."
 
-#: routes/relation/edit.php:60 routes/statement/edit.php:119
+#: routes/relation/edit.php:60 routes/statement/edit.php:120
 msgid "Some source URLS are invalid."
 msgstr "Unele URL-uri sursă sînt invalide."
 
@@ -1470,27 +1474,27 @@ msgstr "Am adăugat afirmația."
 msgid "Statement updated."
 msgstr "Am actualizat afirmația."
 
-#: routes/statement/edit.php:91
+#: routes/statement/edit.php:92
 msgid "Please enter an author."
 msgstr "Vă rugăm să introduceți un autor."
 
-#: routes/statement/edit.php:95
+#: routes/statement/edit.php:96
 msgid "Please enter the statement summary."
 msgstr "Vă rugăm să introduceți sumarul afirmației."
 
-#: routes/statement/edit.php:99
+#: routes/statement/edit.php:100
 msgid "Please enter the statement context."
 msgstr "Vă rugăm să introduceți contextul afirmației."
 
-#: routes/statement/edit.php:103
+#: routes/statement/edit.php:104
 msgid "Please enter the statement goal."
 msgstr "Vă rugăm să introduceți scopul afirmației."
 
-#: routes/statement/edit.php:107
+#: routes/statement/edit.php:108
 msgid "Please enter a date."
 msgstr "Vă rugăm să introduceți o dată."
 
-#: routes/statement/edit.php:109
+#: routes/statement/edit.php:110
 msgid "This date may not be in the future."
 msgstr "Această dată nu poate fi în viitor."
 

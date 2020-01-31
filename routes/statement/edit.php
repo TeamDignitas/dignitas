@@ -62,6 +62,7 @@ if ($saveButton) {
       Util::redirect($referrer ?: Router::getViewLink($statement));
     }
   } else {
+    FlashMessage::add(_('There are some errors in the data. Please fix them below.'));
     Smart::assign([
       'errors' => $errors,
       'referrer' => $referrer,
