@@ -26,7 +26,7 @@
       <dd class="col-2">{t}answers{/t}</dd>
       <dt class="col-10">{$answers}</dt>
       <dd class="col-2">{t}member since{/t}</dd>
-      <dt class="col-10">{$user->createDate|lt}</dt>
+      <dt class="col-10">{$user->createDate|lt:false}</dt>
       {if $user->lastSeen}
         <dd class="col-2">{t}last seen{/t}</dd>
         <dt class="col-10">{include 'bits/moment.tpl' t=$user->lastSeen}</dt>

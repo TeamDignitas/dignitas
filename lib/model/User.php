@@ -100,7 +100,7 @@ class User extends BaseObject {
       ->join('review', ['f.reviewId', '=', 'r.id'], 'r')
       ->where('f.userId', self::getActiveId())
       ->where('r.status', Review::STATUS_PENDING)
-      ->where_gte('f.createDate', Time::ONE_DAY_IN_SECONDS)
+      ->where_gte('f.createDate', Ct::ONE_DAY_IN_SECONDS)
       ->count();
 
     return self::getFlagsPerDay() - $pending;

@@ -5,7 +5,7 @@
     {t}changes by{/t}
   {/if}
   {include "bits/userLink.tpl" u=$od->modUser}
-  {$od->modDate|lt:false:true}
+  {include 'bits/moment.tpl' t=$od->modDate}
 </h4>
 
 {foreach $od->getTextChanges() as $diff}

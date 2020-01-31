@@ -4,8 +4,6 @@
 
 class Time {
 
-  const ONE_DAY_IN_SECONDS = 24 * 3600;
-
   static function today() {
     return date('Y-m-d');
   }
@@ -17,11 +15,10 @@ class Time {
   }
 
   /**
-   * @return string The localized date with long month names (e.g. 'April 24,
-   * 2019') or short month names (e.g. 'Apr 24, 2019').
+   * @return string The localized date with long month names.
    **/
-  static function localTimestamp($timestamp, $shortMonthName = false, $withTime = false) {
-    $format = $shortMonthName ? _('%b %e, %Y') : _('%B %e, %Y');
+  static function localTimestamp($timestamp, $withTime = true) {
+    $format = _('%B %e, %Y');
     if ($withTime) {
       $format .= ' %H:%M:%S';
     }
@@ -29,25 +26,22 @@ class Time {
   }
 
   /**
-   * $date: formatted as YYYY-MM-DD, e.g. '2019-04-24'. Possibly partial.
-   * @return same as localTimestamp().
+   * @param string $date: formatted as YYYY-MM-DD, e.g. '2019-04-24'. Possibly partial.
+   * @return string The localized date with long month names.
    **/
-  static function localDate($date, $shortMonthName = false, $default = '') {
-    $monthFormat = $shortMonthName ? '%b' : '%B';
+  static function localDate($date) {
     list($year, $month, $day) = explode('-', $date);
     $date = str_replace('-00', '-01', $date); // handle partial dates
     $timestamp = strtotime($date);
 
     if ($year == '0000') {
-      return $default;
+      return '';
     } else if ($month == '00') {
       return $year;
     } else if ($day == '00') {
-      $format = $shortMonthName ? _('%b %Y') : _('%B %Y');
-      return trim(strftime($format, $timestamp));
+      return trim(strftime(_('%B %Y'), $timestamp));
     } else {
-      $format = $shortMonthName ? _('%b %e, %Y') : _('%B %e, %Y');
-      return trim(strftime($format, $timestamp));
+      return trim(strftime(_('%B %e, %Y'), $timestamp));
     }
   }
 
@@ -56,7 +50,7 @@ class Time {
 
     $days = (int)($delta / (60 * 60 * 24));
     if ($days >= 4) {
-      return sprintf(_('on %s'), self::localTimestamp($timestamp));
+      return sprintf(_('on %s'), self::localTimestamp($timestamp, false));
     } else if ($days >= 2) {
       return sprintf(ngettext('one day ago', '%d days ago', $days), $days);
     } else if ($days == 1) {

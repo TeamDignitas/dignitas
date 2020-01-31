@@ -1,3 +1,3 @@
-<span title="{$t|lt:false:true}">
+<span title="{$t|lt}">
   {$t|moment}
 </span>
