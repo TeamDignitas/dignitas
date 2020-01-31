@@ -1,9 +1,18 @@
 .answer {
-  border-top: 1px solid #ddd;
   padding-top: 10px;
+  border-bottom: 1px solid #ddd;
 }
 
-.highlightedAnswer {
-  background: #ddd;
-  padding-left: 10px;
+.answer.highlighted {
+  animation-name: answer-highlight-animation;
+  animation-duration: 2s;
+}
+
+@keyframes answer-highlight-animation {
+  from { background-color: #777; }
+  to { background-color: white; }
+}
+
+.answerFooter {
+  text-align: right;
 }

@@ -1,12 +1,12 @@
 {* $type: type of object being voted *}
 {* $object: object being voted (should have id and score fields) *}
-{* $classes: additional CSS classes for the wrapper div *}
 
 {$voteValue=$object->getVote()->value|default:0}
 
-<div class="scoreAndVote {$classes|default:''}">
+<div class="scoreAndVote mx-auto">
+
   <button
-    class="btn btn-sm btn-light voteButton {if $voteValue == 1}voted{/if}"
+    class="btn btn-vote {if $voteValue == 1}voted{/if}"
     {if !User::getActive()}
     disabled
     title="{t}Please log in to vote.{/t}"
@@ -17,13 +17,13 @@
     data-type="{$type}"
     data-object-id="{$object->id}"
     data-value="1">
-    <i class="icon icon-thumbs-up-alt"></i>
+    <i class="icon icon-up-open"></i>
   </button>
 
-  {t}score{/t}: <span class="score">{$object->score}</span>
+  <div class="score">{$object->score}</div>
 
   <button
-    class="btn btn-sm btn-light voteButton {if $voteValue == -1}voted{/if}"
+    class="btn btn-vote {if $voteValue == -1}voted{/if}"
     {if !User::getActive()}
     disabled
     title="{t}Please log in to vote.{/t}"
@@ -34,7 +34,7 @@
     data-type="{$type}"
     data-object-id="{$object->id}"
     data-value="-1">
-    <i class="icon icon-thumbs-down-alt"></i>
+    <i class="icon icon-down-open"></i>
   </button>
 
 </div>

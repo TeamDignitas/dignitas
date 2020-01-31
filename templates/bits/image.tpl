@@ -1,6 +1,6 @@
 {$condition=$condition|default:$obj->fileExtension}
 {$spanClass=$spanClass|default:''}
-{if $condition}
+{if $obj->fileExtension && $condition}
   <span class="{$spanClass}">
     {$sz=$obj->getFileSize($geometry)}
     <img

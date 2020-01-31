@@ -44,10 +44,6 @@ blockquote {
   padding-right: 8px;
 }
 
-.voteButton.voted {
-  background: orange;
-}
-
 /*************************** navbar search box ***************************/
 
 .navbar .select2 {
@@ -60,6 +56,44 @@ blockquote {
   position: relative;
   flex: 1 1 auto;
   width: 1%;
+}
+
+/***************************** vote sidebar *****************************/
+
+.voteContainer {
+  align-items: flex-start;
+  display: flex;
+}
+
+.voteSidebar {
+  flex-basis: 75px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin-right: 1em;
+  text-align: center;
+}
+
+.voteMain {
+  flex-grow: 100; /* occupy all available width */
+}
+
+.score {
+  color: #777;
+  font-size: 130%;
+}
+
+.btn-vote {
+  color: #777;
+  font-size: 30px;
+  padding: 0;
+}
+
+.btn-vote:focus {
+  box-shadow: none;
+}
+
+.btn-vote.voted {
+  color: green;
 }
 
 /******************************** footer ********************************/

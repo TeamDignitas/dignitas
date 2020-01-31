@@ -100,7 +100,7 @@ $(function() {
 
 /*************************** vote submissions ***************************/
 $(function() {
-  $('.voteButton').click(submitVote);
+  $('.btn-vote').click(submitVote);
 
   function submitVote() {
     var btn = $(this);
