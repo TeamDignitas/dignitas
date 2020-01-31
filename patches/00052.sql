@@ -1,3 +1,5 @@
+set @request_id = 0;
+
 create table link (
   id int not null auto_increment,
 
