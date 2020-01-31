@@ -73,6 +73,7 @@ class Config {
       'geometries' => [
         self::THUMB_ENTITY_AUTOCOMPLETE,
         self::THUMB_ENTITY_SMALL,
+        self::THUMB_ENTITY_MEDIUM,
         self::THUMB_ENTITY_LARGE,
       ],
     ],
