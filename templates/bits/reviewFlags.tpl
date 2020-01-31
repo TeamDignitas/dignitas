@@ -25,7 +25,7 @@
           {$f->details|escape}
         </td>
 
-        <td>{$f->createDate|moment}</td>
+        <td>{include 'bits/moment.tpl' t=$f->createDate}</td>
       </tr>
     {/foreach}
   </tbody>

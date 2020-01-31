@@ -24,7 +24,7 @@
         <div class="text-right text-muted small">
           {t}added by{/t}
           {include 'bits/userLink.tpl' u=$s->getUser()}
-          {$s->createDate|moment}
+          {include 'bits/moment.tpl' t=$s->createDate}
         </div>
       {/if}
     </div>

@@ -11,7 +11,7 @@
 
       ({$f->getWeightName()})
 
-      {$f->createDate|moment}.
+      {include 'bits/moment.tpl' t=$f->createDate}
 
       {if $f->details}
         <br>

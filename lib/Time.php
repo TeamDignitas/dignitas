@@ -51,40 +51,29 @@ class Time {
     }
   }
 
-  static function moment($timestamp, $includeExact = false) {
+  static function moment($timestamp) {
     $delta = time() - $timestamp;
-
-    if ($includeExact) {
-      $exact = self::localTimestamp($timestamp);
-      $exactBracket = " ({$exact})";
-    } else {
-      $exactBracket = '';
-    }
 
     $days = (int)($delta / (60 * 60 * 24));
     if ($days >= 4) {
       return sprintf(_('on %s'), self::localTimestamp($timestamp));
     } else if ($days >= 2) {
-      return sprintf(ngettext('one day ago', '%d days ago', $days), $days)
-        . $exactBracket;
+      return sprintf(ngettext('one day ago', '%d days ago', $days), $days);
     } else if ($days == 1) {
-      return _('yesterday') . $exactBracket;
+      return _('yesterday');
     }
 
     $hours = (int)($delta / (60 * 60));
     if ($hours) {
-      return sprintf(ngettext('one hour ago', '%d hours ago', $hours), $hours)
-        . $exactBracket;
+      return sprintf(ngettext('one hour ago', '%d hours ago', $hours), $hours);
     }
 
     $minutes = (int)($delta / 60);
     if ($minutes) {
-      return sprintf(ngettext('one minute ago', '%d minutes ago', $minutes), $minutes)
-        . $exactBracket;
+      return sprintf(ngettext('one minute ago', '%d minutes ago', $minutes), $minutes);
     }
 
-    return sprintf(ngettext('one second ago', '%d seconds ago', $delta), $delta)
-      . $exactBracket;
+    return sprintf(ngettext('one second ago', '%d seconds ago', $delta), $delta);
   }
 
   // $date: formatted as YYYY-MM-DD, e.g. '2019-04-24'

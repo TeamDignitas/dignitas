@@ -20,7 +20,7 @@
     <li class="list-inline-item">
       {t}posted by{/t}
       {include 'bits/userLink.tpl' u=$answer->getUser()}
-      {$answer->createDate|moment}
+      {include 'bits/moment.tpl' t=$answer->createDate}
     </li>
 
     {if $answer->hasRevisions()}

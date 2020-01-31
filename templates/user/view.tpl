@@ -29,7 +29,7 @@
       <dt class="col-10">{$user->createDate|lt}</dt>
       {if $user->lastSeen}
         <dd class="col-2">{t}last seen{/t}</dd>
-        <dt class="col-10">{$user->lastSeen|moment}</dt>
+        <dt class="col-10">{include 'bits/moment.tpl' t=$user->lastSeen}</dt>
       {/if}
     </dl>
   </div>

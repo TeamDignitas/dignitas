@@ -76,7 +76,7 @@
   <small class="btn text-muted float-right">
     {t}added by{/t}
     {include 'bits/userLink.tpl' u=$statement->getUser()}
-    {$statement->createDate|moment}
+    {include 'bits/moment.tpl' t=$statement->createDate}
 
     {if $statement->hasRevisions()}
       •
