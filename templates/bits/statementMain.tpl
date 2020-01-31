@@ -78,12 +78,11 @@
     {include 'bits/userLink.tpl' u=$statement->getUser()}
     {$statement->createDate|moment}
 
-    {if $statement->hasRevisions() && $statement->modUserId != $statement->userId}
+    {if $statement->hasRevisions()}
       •
       <a href="{Router::link('statement/history')}/{$statement->id}">
-        {t}edited{/t}
+        {t}show revisions{/t}
       </a>
-      {$statement->modDate|moment}
     {/if}
   </small>
 </div>
