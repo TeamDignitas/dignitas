@@ -39,6 +39,7 @@ class Statement extends BaseObject {
     }
 
     return $answers
+      ->order_by_desc('score')
       ->order_by_desc('createDate')
       ->find_many();
   }
