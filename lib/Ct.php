@@ -34,10 +34,10 @@ class Ct {
 
   // Applicable to RevisionTrait objects.
   const FIELD_CHANGE_STRING = 1;
-  const FIELD_CHANGE_URL = 2;
+  const FIELD_CHANGE_LINK = 2;
   const FIELD_CHANGE_COLOR = 3;
   const FIELD_CHANGE_STRING_LIST = 4;
-  const FIELD_CHANGE_URL_LIST = 5;
+  const FIELD_CHANGE_LINK_LIST = 5;
   const FIELD_CHANGE_TAG_LIST = 6;
   const FIELD_CHANGE_RELATION_LIST = 7;
 

@@ -12,6 +12,7 @@ class BaseObject extends Model {
   const TYPE_ANSWER = 2;
   const TYPE_USER = 3;
   const TYPE_ENTITY = 4;
+  const TYPE_RELATION = 5;
 
   function __call($name, $arguments) {
     return $this->callHandler($name, $arguments);
@@ -108,8 +109,12 @@ class BaseObject extends Model {
         return Statement::get_by_id($objectId);
       case self::TYPE_ANSWER:
         return Answer::get_by_id($objectId);
+      case self::TYPE_USER:
+        return User::get_by_id($objectId);
       case self::TYPE_ENTITY:
         return Entity::get_by_id($objectId);
+      case self::TYPE_RELATION:
+        return Relation::get_by_id($objectId);
       default:
         return null;
     }
@@ -141,7 +146,7 @@ class BaseObject extends Model {
 
     // We cannot call delete_many() as the $class might have its own
     // dependants which need to be deleted. For example, an entity's relations
-    // each have sources.
+    // each have links.
     $gone = Model::factory($class)
       ->where($fkField, $root->id)
       ->where_not_in('id', $existingIds)

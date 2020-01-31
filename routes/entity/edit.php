@@ -44,9 +44,9 @@ if ($saveButton) {
   $aliases = buildAliases(
     Request::getArray('aliasIds'),
     Request::getArray('aliasNames'));
-  $links = EntityLink::build(
-    Request::getArray('urlIds'),
-    Request::getArray('urls'));
+  $links = Link::build(
+    Request::getArray('linkIds'),
+    Request::getArray('linkUrls'));
 
   $tagIds = Request::getArray('tagIds');
 
@@ -62,7 +62,7 @@ if ($saveButton) {
 
     Relation::updateDependants($relations, $entity, 'fromEntityId', 'rank');
     Alias::updateDependants($aliases, $entity, 'entityId', 'rank');
-    EntityLink::updateDependants($links, $entity, 'entityId', 'rank');
+    Link::update($entity, $links);
     ObjectTag::update($entity, $tagIds);
 
     if ($new) {
@@ -98,7 +98,7 @@ if ($saveButton) {
   ]);
 }
 
-Smart::addResources('colorpicker', 'simplemde', 'urlEditor');
+Smart::addResources('colorpicker', 'simplemde', 'linkEditor');
 Smart::assign('entity', $entity);
 Smart::display('entity/edit.tpl');
 

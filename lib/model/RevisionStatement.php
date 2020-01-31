@@ -41,26 +41,26 @@ class RevisionStatement extends Statement {
                         [],
                         $od, Ct::FIELD_CHANGE_TAG_LIST);
 
-    // added / removed / edited statement sources
-    $ss = RevisionStatementSource::getChangesFor($this, 'insert');
+    // added / removed / edited links
+    $links = RevisionLink::getChangesFor($this, 'insert');
     $this->compareField(_('added sources'),
-                        $ss,
+                        $links,
                         [],
-                        $od, Ct::FIELD_CHANGE_URL_LIST);
+                        $od, Ct::FIELD_CHANGE_LINK_LIST);
 
-    $ss = RevisionStatementSource::getChangesFor($this, 'delete');
+    $links = RevisionLink::getChangesFor($this, 'delete');
     $this->compareField(_('deleted sources'),
-                        $ss,
+                        $links,
                         [],
-                        $od, Ct::FIELD_CHANGE_URL_LIST);
+                        $od, Ct::FIELD_CHANGE_LINK_LIST);
 
-    $ss = RevisionStatementSource::getChangesFor($this, 'update');
-    foreach ($ss as $source) {
-      $prevSource = $source->getPreviousRevision();
+    $links = RevisionLink::getChangesFor($this, 'update');
+    foreach ($links as $l) {
+      $prevL = $l->getPreviousRevision();
       $this->compareField(_('changed source'),
-                          (string)$prevSource,
-                          (string)$source,
-                          $od, Ct::FIELD_CHANGE_URL);
+                          (string)$prevL,
+                          (string)$l,
+                          $od, Ct::FIELD_CHANGE_LINK);
     }
     return $od;
   }

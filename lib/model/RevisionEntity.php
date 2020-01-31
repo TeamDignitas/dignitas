@@ -69,26 +69,26 @@ class RevisionEntity extends Entity {
                           $od, Ct::FIELD_CHANGE_STRING);
     }
 
-    // added / removed / edited entity links
-    $els = RevisionEntityLink::getChangesFor($this, 'insert');
+    // added / removed / edited links
+    $links = RevisionLink::getChangesFor($this, 'insert');
     $this->compareField(_('added links'),
-                        $els,
+                        $links,
                         [],
-                        $od, Ct::FIELD_CHANGE_URL_LIST);
+                        $od, Ct::FIELD_CHANGE_LINK_LIST);
 
-    $els = RevisionEntityLink::getChangesFor($this, 'delete');
+    $links = RevisionLink::getChangesFor($this, 'delete');
     $this->compareField(_('deleted links'),
-                        $els,
+                        $links,
                         [],
-                        $od, Ct::FIELD_CHANGE_URL_LIST);
+                        $od, Ct::FIELD_CHANGE_LINK_LIST);
 
-    $els = RevisionEntityLink::getChangesFor($this, 'update');
-    foreach ($els as $el) {
-      $prevEl = $el->getPreviousRevision();
+    $links = RevisionLink::getChangesFor($this, 'update');
+    foreach ($links as $l) {
+      $prevL = $l->getPreviousRevision();
       $this->compareField(_('changed link'),
-                          (string)$prevEl,
-                          (string)$el,
-                          $od, Ct::FIELD_CHANGE_URL);
+                          (string)$prevL,
+                          (string)$l,
+                          $od, Ct::FIELD_CHANGE_LINK);
     }
 
     // added / removed / edited relations

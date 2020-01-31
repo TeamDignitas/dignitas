@@ -1,6 +1,6 @@
 {* mandatory arguments: $r, $fromEntity *}
 {$class=$class|default:''}
-{$showSourceLink=$showSourceLink|default:true}
+{$showEditLink=$showEditLink|default:true}
 {assign var="sd" value=$r->startDate|ld}
 {assign var="ed" value=$r->endDate|ld}
 
@@ -12,7 +12,7 @@
 
   {$r->getDateRangeString()}
 
-  {if $showSourceLink && $fromEntity->isEditable()}
+  {if $showEditLink && $fromEntity->isEditable()}
     <a
       class="small text-muted ml-2"
       href="{Router::link('relation/edit')}/{$r->id}">
@@ -21,14 +21,14 @@
     </a>
   {/if}
 
-  {$sources=$r->getSources()}
-  {if count($sources)}
+  {$links=$r->getLinks()}
+  {if count($links)}
     <div class="small text-muted">
       {t}sources{/t}:
       <ul class="list-inline list-inline-bullet d-inline">
-        {foreach $r->getSources() as $s}
+        {foreach $links as $l}
           <li class="list-inline-item">
-            <a href="{$s->url}">{$s->getDisplayUrl()}</a>
+            {include "bits/link.tpl"}
           </li>
         {/foreach}
       </ul>

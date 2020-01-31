@@ -142,8 +142,7 @@
 
     {capture "labelText" assign=labelText}{t}external links{/t}{/capture}
     {capture "addButtonText" assign=addButtonText}{t}add a link{/t}{/capture}
-    {include "bits/urlEditor.tpl"
-      items=$links
+    {include "bits/linkEditor.tpl"
       errors=$errors.links|default:null
     }
 

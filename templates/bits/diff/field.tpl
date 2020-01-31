@@ -7,16 +7,16 @@
       {include "bits/tag.tpl"}
     {/foreach}
 
-  {elseif $change.type == Ct::FIELD_CHANGE_URL_LIST}
+  {elseif $change.type == Ct::FIELD_CHANGE_LINK_LIST}
 
-    {foreach $old as $s}
-      {include "bits/statementSource.tpl"}
+    {foreach $old as $l}
+      {include "bits/link.tpl"}
     {/foreach}
 
   {elseif $change.type == Ct::FIELD_CHANGE_RELATION_LIST}
 
     {foreach $old as $r}
-      {include "bits/relation.tpl" showSourceLink=false}
+      {include "bits/relation.tpl" showEditLink=false}
     {/foreach}
 
   {elseif $change.type == Ct::FIELD_CHANGE_STRING_LIST}

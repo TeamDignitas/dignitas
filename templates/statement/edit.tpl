@@ -85,9 +85,8 @@
 
     {capture "labelText" assign=labelText}{t}source URLs{/t}{/capture}
     {capture "addButtonText" assign=addButtonText}{t}add a source{/t}{/capture}
-    {include "bits/urlEditor.tpl"
-      items=$sources
-      errors=$errors.sources|default:null
+    {include "bits/linkEditor.tpl"
+      errors=$errors.links|default:null
     }
 
     <div class="form-group">

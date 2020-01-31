@@ -16,29 +16,29 @@ if (!$fromEntity || !$fromEntity->isEditable()) {
 }
 
 if ($saveButton) {
-  $sources = RelationSource::build(
-    Request::getArray('urlIds'),
-    Request::getArray('urls'));
+  $links = Link::build(
+    Request::getArray('linkIds'),
+    Request::getArray('linkUrls'));
 
-  $errors = validate($sources);
+  $errors = validate($links);
   if (empty($errors)) {
-    RelationSource::updateDependants($sources, $relation, 'relationId', 'rank');
+    Link::update($relation, $links);
     FlashMessage::add(_('Relation sources updated.'), 'success');
     Util::redirect(Router::link('entity/view') . '/' . $fromEntity->id);
   } else {
     Smart::assign([
       'errors' => $errors,
-      'sources' => $sources,
+      'links' => $links,
     ]);
   }
 } else {
   // first time loading the page
   Smart::assign([
-    'sources' => $relation->getSources(),
+    'links' => $relation->getLinks(),
   ]);
 }
 
-Smart::addResources('urlEditor');
+Smart::addResources('linkEditor');
 Smart::assign([
   'relation' => $relation,
   'fromEntity' => $fromEntity,
@@ -47,17 +47,17 @@ Smart::display('relation/edit.tpl');
 
 /*************************************************************************/
 
-function validate($sources) {
+function validate($links) {
   $errors = [];
 
   $countBadUrls = 0;
-  foreach ($sources as $s) {
-    if (!$s->validUrl()) {
+  foreach ($links as $l) {
+    if (!$l->validUrl()) {
       $countBadUrls++;
     }
   }
   if ($countBadUrls) {
-    $errors['sources'][] = _('Some source URLS are invalid.');
+    $errors['links'][] = _('Some source URLS are invalid.');
   }
 
   return $errors;

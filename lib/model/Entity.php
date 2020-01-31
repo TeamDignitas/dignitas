@@ -118,10 +118,7 @@ class Entity extends BaseObject {
   }
 
   function getLinks() {
-    return Model::factory('EntityLink')
-      ->where('entityId', $this->id)
-      ->order_by_asc('rank')
-      ->find_many();
+    return Link::getFor($this);
   }
 
   function getRelations() {
@@ -280,7 +277,7 @@ class Entity extends BaseObject {
       $r->deepClone($clone, [ 'fromEntityId' => $clone->id]);
     }
     foreach ($this->getLinks() as $l) {
-      $l->deepClone($clone, [ 'entityId' => $clone->id]);
+      $l->deepClone($clone, [ 'objectId' => $clone->id]);
     }
     foreach (ObjectTag::getObjectTags($this) as $ot) {
       $ot->deepClone($clone, [ 'objectId' => $clone->id]);
@@ -301,7 +298,7 @@ class Entity extends BaseObject {
     $this->mergeDependants(
       $other, $this->getRelations(), $other->getRelations(), 'fromEntityId');
     $this->mergeDependants(
-      $other, $this->getLinks(), $other->getLinks(), 'entityId');
+      $other, $this->getLinks(), $other->getLinks(), 'objectId');
     $this->mergeDependants(
       $other, ObjectTag::getObjectTags($this), ObjectTag::getObjectTags($other), 'objectId');
 
@@ -319,7 +316,7 @@ class Entity extends BaseObject {
     Alias::delete_all_by_entityId($this->id);
     Relation::delete_all_by_fromEntityId($this->id);
     Relation::delete_all_by_toEntityId($this->id);
-    EntityLink::delete_all_by_entityId($this->id);
+    Link::deleteObject($this);
     AttachmentReference::deleteObject($this);
     ObjectTag::deleteObject($this);
     // a pending edit entity should not have statements, reviews or votes

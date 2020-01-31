@@ -73,7 +73,7 @@
   <ul id="links" class="list-inline list-inline-bullet">
     {foreach $links as $l}
       <li class="list-inline-item">
-        <a href="{$l->url}">{$l->getDisplayUrl()}</a>
+        {include "bits/link.tpl"}
       </li>
     {/foreach}
   </ul>

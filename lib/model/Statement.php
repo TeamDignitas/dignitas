@@ -43,11 +43,8 @@ class Statement extends BaseObject {
       ->find_many();
   }
 
-  function getSources() {
-    return Model::factory('StatementSource')
-      ->where('statementId', $this->id)
-      ->order_by_asc('rank')
-      ->find_many();
+  function getLinks() {
+    return Link::getFor($this);
   }
 
   function getTags() {
@@ -158,8 +155,8 @@ class Statement extends BaseObject {
 
   function deepClone($root = null, $changes = []) {
     $clone = parent::deepClone($root, $changes);
-    foreach ($this->getSources() as $s) {
-      $s->deepClone($clone, [ 'statementId' => $clone->id]);
+    foreach ($this->getLinks() as $l) {
+      $l->deepClone($clone, [ 'objectId' => $clone->id]);
     }
     foreach (ObjectTag::getObjectTags($this) as $ot) {
       $ot->deepClone($clone, [ 'objectId' => $clone->id]);
@@ -172,7 +169,7 @@ class Statement extends BaseObject {
     $this->save($other->modUserId);
 
     $this->mergeDependants(
-      $other, $this->getSources(), $other->getSources(), 'statementId');
+      $other, $this->getLinks(), $other->getLinks(), 'objectId');
     $this->mergeDependants(
       $other, ObjectTag::getObjectTags($this), ObjectTag::getObjectTags($other), 'objectId');
 
@@ -185,7 +182,7 @@ class Statement extends BaseObject {
         "Statements should never be deleted at the DB level.");
     }
 
-    StatementSource::delete_all_by_statementId($this->id);
+    Link::deleteObject($this);
     ObjectTag::deleteObject($this);
     AttachmentReference::deleteObject($this);
     // a pending edit statement should not have answers, reviews or votes

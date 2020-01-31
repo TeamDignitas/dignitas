@@ -12,13 +12,13 @@
   {$statement->dateMade|ld}
 </h5>
 
-{if count($statement->getSources())}
+{if count($statement->getLinks())}
   <div class="text-muted mb-3">
     {t}sources{/t}:
     <ul class="list-inline list-inline-bullet d-inline">
-      {foreach $statement->getSources() as $s}
+      {foreach $statement->getLinks() as $l}
         <li class="list-inline-item">
-          {include "bits/statementSource.tpl"}
+          {include "bits/link.tpl"}
         </li>
       {/foreach}
     </ul>

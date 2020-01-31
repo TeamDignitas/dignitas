@@ -32,13 +32,13 @@ if ($saveButton) {
   $statement->goal = Request::get('goal');
   $statement->dateMade = Request::get('dateMade');
 
-  $sources = StatementSource::build(
-    Request::getArray('urlIds'),
-    Request::getArray('urls'));
+  $links = Link::build(
+    Request::getArray('linkIds'),
+    Request::getArray('linkUrls'));
 
   $tagIds = Request::getArray('tagIds');
 
-  $errors = validate($statement, $sources);
+  $errors = validate($statement, $links);
   if (empty($errors)) {
     $new = !$statement->id;
     $statement = $statement->maybeClone();
@@ -47,7 +47,7 @@ if ($saveButton) {
     if ($new) {
       Review::checkNewUser($statement);
     }
-    StatementSource::updateDependants($sources, $statement, 'statementId', 'rank');
+    Link::update($statement, $links);
     ObjectTag::update($statement, $tagIds);
 
     if ($new) {
@@ -65,7 +65,7 @@ if ($saveButton) {
     Smart::assign([
       'errors' => $errors,
       'referrer' => $referrer,
-      'sources' =>  $sources,
+      'links' =>  $links,
       'tagIds' => $tagIds,
     ]);
   }
@@ -73,18 +73,18 @@ if ($saveButton) {
   // first time loading the page
   Smart::assign([
     'referrer' => Util::getReferrer(),
-    'sources' => $statement->getSources(),
+    'links' => $statement->getLinks(),
     'tagIds' => ObjectTag::getTagIds($statement),
   ]);
 }
 
-Smart::addResources('imageModal', 'simplemde', 'urlEditor');
+Smart::addResources('imageModal', 'simplemde', 'linkEditor');
 Smart::assign('statement', $statement);
 Smart::display('statement/edit.tpl');
 
 /*************************************************************************/
 
-function validate($statement, $sources) {
+function validate($statement, $links) {
   $errors = [];
 
   if (!$statement->entityId) {
@@ -110,13 +110,13 @@ function validate($statement, $sources) {
   }
 
   $countBadUrls = 0;
-  foreach ($sources as $s) {
-    if (!$s->validUrl()) {
+  foreach ($links as $l) {
+    if (!$l->validUrl()) {
       $countBadUrls++;
     }
   }
   if ($countBadUrls) {
-    $errors['sources'][] = _('Some source URLS are invalid.');
+    $errors['links'][] = _('Some source URLS are invalid.');
   }
 
   return $errors;

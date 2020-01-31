@@ -42,6 +42,10 @@ class Relation extends BaseObject {
     return self::typeName($this->type);
   }
 
+  function getObjectType() {
+    return BaseObject::TYPE_RELATION;
+  }
+
   function getFromEntity() {
     return Entity::get_by_id($this->fromEntityId);
   }
@@ -50,11 +54,8 @@ class Relation extends BaseObject {
     return Entity::get_by_id($this->toEntityId);
   }
 
-  function getSources() {
-    return Model::factory('RelationSource')
-      ->where('relationId', $this->id)
-      ->order_by_asc('rank')
-      ->find_many();
+  function getLinks() {
+    return Link::getFor($this);
   }
 
   function getDateRangeString() {
@@ -116,7 +117,7 @@ class Relation extends BaseObject {
   }
 
   function delete() {
-    RelationSource::delete_all_by_relationId($this->id);
+    Link::deleteObject($this);
     parent::delete();
   }
 
