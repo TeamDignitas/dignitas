@@ -179,8 +179,7 @@ class Statement extends BaseObject {
 
   function delete() {
     if ($this->status != Ct::STATUS_PENDING_EDIT) {
-      throw new Exception(
-        "Statements should never be deleted at the DB level.");
+      throw new Exception('Statements should never be deleted at the DB level.');
     }
 
     Link::deleteObject($this);

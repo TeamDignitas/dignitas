@@ -104,7 +104,6 @@ class Answer extends BaseObject {
 
   function closeAsDuplicate($duplicateId) {
     throw new Exception('Answers should never be closed as a duplicate.');
-    // a pending edit answer should not have reviews, tags or votes
   }
 
   protected function deepMerge($other) {
@@ -114,8 +113,7 @@ class Answer extends BaseObject {
 
   function delete() {
     if ($this->status != Ct::STATUS_PENDING_EDIT) {
-      throw new Exception(
-        "Answers should never be deleted at the DB level.");
+      throw new Exception('Answers should never be deleted at the DB level.');
     }
     AttachmentReference::deleteObject($this);
     // a pending edit answer should not have reviews, tags or votes

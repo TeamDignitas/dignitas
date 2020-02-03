@@ -3,6 +3,7 @@
 {block "title"}{cap}{$statement->summary|escape}{/cap}{/block}
 
 {block "content"}
+  {$addComment=User::canComment($statement)}
   {include "bits/statement.tpl" editLink=true}
 
   {if count($answers)}
@@ -24,6 +25,8 @@
       buttonText=$smarty.capture.buttonText}
 
   {/if}
+
+  {include "bits/commentForm.tpl"}
 
   {include "bits/flagModal.tpl"}
 

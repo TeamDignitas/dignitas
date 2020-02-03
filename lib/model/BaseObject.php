@@ -13,6 +13,7 @@ class BaseObject extends Model {
   const TYPE_USER = 3;
   const TYPE_ENTITY = 4;
   const TYPE_RELATION = 5;
+  const TYPE_COMMENT = 6;
 
   function __call($name, $arguments) {
     return $this->callHandler($name, $arguments);

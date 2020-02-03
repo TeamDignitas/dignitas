@@ -53,3 +53,11 @@
     {/if}
   </ul>
 </div>
+
+{foreach Comment::getFor($answer) as $comment}
+  {include 'bits/comment.tpl'}
+{/foreach}
+
+{if $addComment}
+  {include "bits/addCommentLink.tpl" object=$answer}
+{/if}

@@ -23,6 +23,8 @@ class User extends BaseObject {
 
   const PRIV_FLAG = 15;
 
+  const PRIV_COMMENT = 50;
+
   const PRIV_ADD_TAG = 1500;
   const PRIV_EDIT_TAG = 1500;
   const PRIV_DELETE_TAG = 5000;
@@ -68,7 +70,7 @@ class User extends BaseObject {
     $query = sprintf('update user set lastSeen = %d where id = %d', time(), $userId);
     DB::execute($query);
 
-    self::$active = User::get_by_id($userId);
+    self::$active = self::get_by_id($userId);
   }
 
   function incrementPendingEdits() {
@@ -113,7 +115,7 @@ class User extends BaseObject {
       return _('Please enter an email address.');
     }
 
-    $u = User::get_by_email($email);
+    $u = self::get_by_email($email);
     if ($u && $u->id != self::getActiveId()) {
       return _('This email address is already taken.');
     }
@@ -156,6 +158,11 @@ class User extends BaseObject {
     return $u && (($u->reputation >= $privilege) || $u->moderator);
   }
 
+  static function isModerator() {
+    $u = self::$active;
+    return $u && $u->moderator;
+  }
+
   // checks whether the active user has the privilege and bounces them if not
   static function enforce($privilege) {
     // redirect to log in page if there is no active user
@@ -183,12 +190,12 @@ class User extends BaseObject {
       if (!self::may(self::PRIV_FLAG)) {
         throw new Exception(
           sprintf(_('You need at least %s reputation to flag.'),
-                  Str::formatNumber(User::PRIV_FLAG)));
+                  Str::formatNumber(self::PRIV_FLAG)));
       }
 
       // check the user's remaining flags
       if (self::getRemainingFlags() <= 0) {
-        $fpd = User::getFlagsPerDay();
+        $fpd = self::getFlagsPerDay();
         throw new Exception(
           sprintf(ngettext('You can use at most one flag every 24 hours.',
                            'You can use at most %d flags every 24 hours.',
@@ -206,6 +213,49 @@ class User extends BaseObject {
       }
 
       return true;
+    } catch (Exception $e) {
+
+      if ($throw) {
+        throw $e;
+      }
+
+      return false;
+    }
+  }
+
+  /**
+   * Checks if the active user may comment on the given object.
+   *
+   * @param object $obj A statement or answer
+   * @param boolean $throw Whether to also throw an exception with a detailed message
+   * @return boolean Returns true iff the user should be allowed to comment
+   * @throws Exception If the user should not be allowed to comment and $throw = true
+   */
+  static function canComment($obj, $throw = false) {
+    try {
+      $userId = self::getActiveId();
+
+      // owner
+      if ($obj instanceof Statement) {
+        if ($obj->userId == $userId) {
+          return true;
+        }
+      } else if ($obj instanceof Answer) {
+        if ($obj->getStatement()->userId == $userId) {
+          return true;
+        }
+      } else {
+        throw new Exception('You cannot comment on items of this type.');
+      }
+
+      // sufficient reputation to comment everywhere
+      if (self::may(self::PRIV_COMMENT)) {
+        return true;
+      } else {
+        throw new Exception(
+          sprintf(_('You need at least %s reputation to comment.'),
+                  Str::formatNumber(self::PRIV_COMMENT)));
+      }
     } catch (Exception $e) {
 
       if ($throw) {

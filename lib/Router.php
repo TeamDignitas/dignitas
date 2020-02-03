@@ -69,6 +69,11 @@ class Router {
       'ro_RO.utf8' => 'inregistrare',
     ],
 
+    // comments
+    'comment/save' => [
+      'en_US.utf8' => 'ajax/save-comment',
+    ],
+
     // entities
     'entity/edit' => [
       'en_US.utf8' => 'edit-author',

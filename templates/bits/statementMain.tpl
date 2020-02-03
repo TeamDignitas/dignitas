@@ -86,3 +86,11 @@
     {/if}
   </small>
 </div>
+
+{foreach Comment::getFor($statement) as $comment}
+  {include 'bits/comment.tpl'}
+{/foreach}
+
+{if $addComment}
+  {include "bits/addCommentLink.tpl" object=$statement}
+{/if}

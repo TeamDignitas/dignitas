@@ -2,6 +2,7 @@
 {$editLink=$editLink|default:false}
 {$flagBox=$flagBox|default:true}
 {$voteBox=$voteBox|default:true}
+{$addComment=$addComment|default:false}
 
 {$entity=$statement->getEntity()}
 

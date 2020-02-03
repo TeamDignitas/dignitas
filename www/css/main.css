@@ -128,3 +128,16 @@ footer {
   display: inline-block;
   height: 20px;
 }
+
+/******************************* comments *******************************/
+
+.comment {
+  border-top: 1px solid #eee;
+  font-size: 80%;
+  color: #777;
+  padding: 5px 0px;
+}
+
+.comment p {
+  display: inline;
+}
