@@ -116,6 +116,8 @@ class BaseObject extends Model {
         return Entity::get_by_id($objectId);
       case self::TYPE_RELATION:
         return Relation::get_by_id($objectId);
+      case self::TYPE_COMMENT:
+        return Comment::get_by_id($objectId);
       default:
         return null;
     }

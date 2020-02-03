@@ -65,26 +65,35 @@ blockquote {
   display: flex;
 }
 
-.voteSidebar {
-  flex-basis: 75px;
+.voteLeft {
   flex-grow: 0;
   flex-shrink: 0;
-  margin-right: 1em;
   text-align: center;
+}
+
+.statement > .voteLeft,
+.answer > .voteLeft {
+  flex-basis: 75px;
+}
+
+.comment > .voteLeft {
+  flex-basis: 10px;
+  margin-right: 5px;
+}
+
+.comment > .voteLeft .btn-vote {
+  font-size: 10px;
 }
 
 .voteMain {
   flex-grow: 100; /* occupy all available width */
 }
 
-.score {
-  color: #777;
-  font-size: 130%;
-}
-
 .btn-vote {
   color: #777;
+  display: block;
   font-size: 30px;
+  margin: 0px auto;
   padding: 0;
 }
 
@@ -127,17 +136,4 @@ footer {
 .loyaltyWidget div {
   display: inline-block;
   height: 20px;
-}
-
-/******************************* comments *******************************/
-
-.comment {
-  border-top: 1px solid #eee;
-  font-size: 80%;
-  color: #777;
-  padding: 5px 0px;
-}
-
-.comment p {
-  display: inline;
 }

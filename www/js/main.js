@@ -112,7 +112,7 @@ $(function() {
     }).done(function(newScore) {
 
       // update the score
-      btn.closest('.scoreAndVote').find('.score').text(newScore);
+      $(btn.data('scoreId')).text(newScore);
 
       // enable the opposite button
       btn.siblings('.voted').removeClass('voted');

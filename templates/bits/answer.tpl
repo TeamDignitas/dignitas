@@ -4,28 +4,16 @@
 {$voteBox=$voteBox|default:true}
 {$addComment=$addComment|default:false}
 
-<div class="answer {if $highlighted}highlighted{/if}">
+<div class="voteContainer answer {if $highlighted}highlighted{/if}">
   {if $voteBox}
-    <div class="voteContainer">
-      <div class="voteSidebar">
-
-        {if $voteBox}
-          {include "bits/scoreAndVote.tpl"
-            type=Vote::TYPE_ANSWER
-            object=$answer
-            upvotePriv=User::PRIV_UPVOTE_ANSWER
-            downvotePriv=User::PRIV_DOWNVOTE_ANSWER}
-        {/if}
-
-      </div>
-
-      <div class="voteMain">
-        {include "bits/answerMain.tpl"}
-      </div>
-    </div>
-  {else}
-    <div class="voteMain">
-      {include "bits/answerMain.tpl"}
-    </div>
+    {include "bits/scoreAndVote.tpl"
+      type=Vote::TYPE_ANSWER
+      object=$answer
+      upvotePriv=User::PRIV_UPVOTE_ANSWER
+      downvotePriv=User::PRIV_DOWNVOTE_ANSWER}
   {/if}
+
+  <div class="voteMain">
+    {include "bits/answerMain.tpl"}
+  </div>
 </div>

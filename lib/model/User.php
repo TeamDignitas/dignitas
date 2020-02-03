@@ -20,6 +20,8 @@ class User extends BaseObject {
   const PRIV_DOWNVOTE_STATEMENT = 125;
   const PRIV_UPVOTE_ANSWER = 15;
   const PRIV_DOWNVOTE_ANSWER = 125;
+  const PRIV_UPVOTE_COMMENT = 15;
+  const PRIV_DOWNVOTE_COMMENT = 125;
 
   const PRIV_FLAG = 15;
 

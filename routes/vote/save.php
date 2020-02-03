@@ -21,6 +21,10 @@ if ($type == Vote::TYPE_STATEMENT && $value == 1) {
   $priv = User::PRIV_UPVOTE_ANSWER;
 } else if ($type == Vote::TYPE_ANSWER && $value == -1) {
   $priv = User::PRIV_DOWNVOTE_ANSWER;
+} else if ($type == Vote::TYPE_COMMENT && $value == 1) {
+  $priv = User::PRIV_UPVOTE_COMMENT;
+} else if ($type == Vote::TYPE_COMMENT && $value == -1) {
+  $priv = User::PRIV_DOWNVOTE_COMMENT;
 } else {
   $error = _('Bad vote format.');
 }

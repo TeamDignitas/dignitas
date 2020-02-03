@@ -1,5 +1,11 @@
 {$statusInfo=$statement->getStatusInfo()}
 
+{include "bits/image.tpl"
+  obj=$entity
+  geometry=Config::THUMB_ENTITY_MEDIUM
+  spanClass="float-right"
+  imgClass="pic"}
+
 <h3>
   {$statement->summary|escape}
   {if $statusInfo}
@@ -64,7 +70,7 @@
   {/foreach}
 </div>
 
-<div class="mt-3 clearfix">
+<div class="my-3 clearfix">
   {if $editLink}
     {include "bits/editButton.tpl" obj=$statement}
   {/if}

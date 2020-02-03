@@ -3,7 +3,7 @@
   border-bottom: 1px solid #ddd;
 }
 
-.answer.highlighted {
+.voteContainer.highlighted {
   animation-name: answer-highlight-animation;
   animation-duration: 2s;
 }
@@ -15,4 +15,18 @@
 
 .answerFooter {
   text-align: right;
+}
+
+
+/******************************* comments *******************************/
+
+.comment {
+  border-top: 1px solid #eee;
+  color: #777;
+  font-size: 80%;
+  padding: 5px 0px;
+}
+
+.comment p {
+  display: inline;
 }
