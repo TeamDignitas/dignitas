@@ -1,1 +1,9 @@
-<a href="{$l->url}">{$l->getDisplayUrl()}</a>
+{strip}
+<a
+  href="{$l->url}"
+  {if $l->isNofollow()}rel="nofollow"{/if}>
+
+  {$l->getDisplayUrl()}
+
+</a>
+{/strip}

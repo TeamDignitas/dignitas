@@ -20,6 +20,16 @@ class Link extends BaseObject {
   }
 
   /**
+   * @return bool True iff the link should be nofollow, i.e. no pagerank
+   * should flow on it. This is currently true of all statement sources, since
+   * we do not wish to promote potentially false statements.
+   */
+  function isNofollow() {
+    $obj = $this->getObject();
+    return $obj->getObjectType() == BaseObject::TYPE_STATEMENT;
+  }
+
+  /**
    * Builds an array of Link objects from their IDs and urls.
    */
   static function build($ids, $urls) {
