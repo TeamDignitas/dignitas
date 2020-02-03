@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-31 17:08+0200\n"
-"PO-Revision-Date: 2020-01-31 17:08+0200\n"
+"POT-Creation-Date: 2020-02-03 12:34+0200\n"
+"PO-Revision-Date: 2020-02-03 12:35+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -35,7 +35,7 @@ msgstr ""
 "ați tastat adresa corectă sau vizitați <a href=\"%1\">pagina principală</a>."
 
 #: templates/aggregate/dashboard.tpl:3 templates/aggregate/dashboard.tpl:6
-#: templates/bits/navmenu.tpl:81
+#: templates/bits/navmenu.tpl:79
 msgid "dashboard"
 msgstr "panou de control"
 
@@ -117,7 +117,7 @@ msgid "save"
 msgstr "salvează"
 
 #: templates/auth/login.tpl:3 templates/auth/login.tpl:16
-#: templates/auth/login.tpl:67 templates/bits/navmenu.tpl:111
+#: templates/auth/login.tpl:67 templates/bits/navmenu.tpl:109
 msgid "log in"
 msgstr "autentificare"
 
@@ -274,7 +274,7 @@ msgstr "membri"
 msgid "test user login"
 msgstr "autentificare ca utilizator de test"
 
-#: templates/bits/fakeLogin.tpl:33 templates/bits/navmenu.tpl:92
+#: templates/bits/fakeLogin.tpl:33 templates/bits/navmenu.tpl:90
 #: templates/user/view.tpl:22
 msgid "reputation"
 msgstr "reputație"
@@ -415,15 +415,15 @@ msgstr "arată/ascunde meniul"
 msgid "home page"
 msgstr "pagina principală"
 
-#: templates/bits/navmenu.tpl:77
+#: templates/bits/navmenu.tpl:75
 msgid "my profile"
 msgstr "profilul meu"
 
-#: templates/bits/navmenu.tpl:95
-msgid "change reputation manually"
-msgstr "schimbă reputația manual"
+#: templates/bits/navmenu.tpl:93
+msgid "change reputation manually (will refresh the page)"
+msgstr "schimbă reputația manual (va reîncărca pagina)"
 
-#: templates/bits/navmenu.tpl:103
+#: templates/bits/navmenu.tpl:101
 msgid "log out"
 msgstr "închide sesiunea"
 
@@ -781,32 +781,22 @@ msgstr "membru de pe"
 msgid "last seen"
 msgstr "ultima vizită"
 
-# Date format in your locale, where %e is the day (1 to 31), %b is the abbreviated month name (Jan to Dec) and %Y is the four-digit year.
-#: lib/Time.php:24 lib/Time.php:49
-msgid "%b %e, %Y"
-msgstr "%e %b %Y"
-
 # Date format in your locale, where %e is the day (1 to 31), %B is the full month name (January to December) and %Y is the four-digit year.
-#: lib/Time.php:24 lib/Time.php:49
+#: lib/Time.php:21 lib/Time.php:44
 msgid "%B %e, %Y"
 msgstr "%e %B %Y"
 
-# Date format in your locale, where %e is the day (1 to 31), %b is the abbreviated month name (Jan to Dec) and %Y is the four-digit year.
-#: lib/Time.php:46
-msgid "%b %Y"
-msgstr "%b %Y"
-
 # Date format in your locale, where %e is the day (1 to 31), %B is the full month name (January to December) and %Y is the four-digit year.
-#: lib/Time.php:46
+#: lib/Time.php:42
 msgid "%B %Y"
 msgstr "%B %Y"
 
-#: lib/Time.php:59
+#: lib/Time.php:53
 #, php-format
 msgid "on %s"
 msgstr "pe %s"
 
-#: lib/Time.php:61
+#: lib/Time.php:55
 #, php-format
 msgid "one day ago"
 msgid_plural "%d days ago"
@@ -814,11 +804,11 @@ msgstr[0] "acum o zi"
 msgstr[1] "acum %d zile"
 msgstr[2] "acum %d de zile"
 
-#: lib/Time.php:63
+#: lib/Time.php:57
 msgid "yesterday"
 msgstr "ieri"
 
-#: lib/Time.php:68
+#: lib/Time.php:62
 #, php-format
 msgid "one hour ago"
 msgid_plural "%d hours ago"
@@ -826,7 +816,7 @@ msgstr[0] "acum o oră"
 msgstr[1] "acum %d ore"
 msgstr[2] "acum %d de ore"
 
-#: lib/Time.php:73
+#: lib/Time.php:67
 #, php-format
 msgid "one minute ago"
 msgid_plural "%d minutes ago"
@@ -834,7 +824,7 @@ msgstr[0] "acum un minut"
 msgstr[1] "acum %d minute"
 msgstr[2] "acum %d de minute"
 
-#: lib/Time.php:76
+#: lib/Time.php:70
 #, php-format
 msgid "one second ago"
 msgid_plural "%d seconds ago"
@@ -1582,6 +1572,14 @@ msgstr "Nu puteți vota: obiectul nu există."
 #: routes/vote/save.php:42
 msgid "You cannot vote for your own messages."
 msgstr "Nu puteți vota propriile mesaje."
+
+# Date format in your locale, where %e is the day (1 to 31), %b is the abbreviated month name (Jan to Dec) and %Y is the four-digit year.
+#~ msgid "%b %e, %Y"
+#~ msgstr "%e %b %Y"
+
+# Date format in your locale, where %e is the day (1 to 31), %b is the abbreviated month name (Jan to Dec) and %Y is the four-digit year.
+#~ msgid "%b %Y"
+#~ msgstr "%b %Y"
 
 #~ msgid "score"
 #~ msgstr "scor"

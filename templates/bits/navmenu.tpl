@@ -65,9 +65,7 @@
               <i class="icon icon-user"></i>
             {/if}
             {$u}
-            <span
-              id="repBadge"
-              class="badge badge-secondary align-text-top">
+            <span class="badge badge-secondary align-text-top">
               {$u->reputation|nf}
             </span>
           </a>
@@ -92,7 +90,7 @@
                       placeholder="{t}reputation{/t}">
                   </div>
                   <small class="form-text text-muted">
-                    {t}change reputation manually{/t}
+                    {t}change reputation manually (will refresh the page){/t}
                   </small>
                 </form>
               </div>

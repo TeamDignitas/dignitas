@@ -144,11 +144,7 @@ $(function() {
       value: rep,
     }).done(function(newRep) {
 
-      // update the reputation badge
-      $('#repBadge').text(newRep);
-
-      // close the user dropdown
-      $('#navbarUserDropdown').dropdown('toggle');
+      window.location.reload();
 
     }).fail(function(errorMsg) {
       if (errorMsg.responseJSON) {
