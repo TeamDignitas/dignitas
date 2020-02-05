@@ -16,8 +16,7 @@ try {
     throw new Exception('You have insufficient privileges to delete this comment.');
   }
 
-  $comment->status = Ct::STATUS_DELETED;
-  $comment->save();
+  $comment->markDeleted(Ct::REASON_BY_USER);
 
   print json_encode(_('Comment deleted.'));
 
