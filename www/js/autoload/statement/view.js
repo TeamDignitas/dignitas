@@ -4,9 +4,10 @@ $(function() {
 
   function init() {
     initSimpleMde('fieldContents');
-    commentForm = $('#commentForm').detach();
+    commentForm = $('#commentForm').detach().removeAttr('id');
     $('.addCommentLink').click(addCommentForm);
     $('body').on('click', '.commentSaveButton', saveComment);
+    $('body').on('keyup paste', 'textarea[name="contents"]', showRemainingChars);
   }
 
   function addCommentForm() {
@@ -42,6 +43,15 @@ $(function() {
     });
 
     return false;
+  }
+
+  function showRemainingChars() {
+    // We trust the browser to obey maxlength. This is safe because we also
+    // have a backend check.
+    var l = $(this).val().length;
+    var max = $(this).attr('maxlength');
+
+    $(this).closest('form').find('.charsRemaining').text(max - l);
   }
 
   init();

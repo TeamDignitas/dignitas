@@ -19,6 +19,10 @@ try {
   $c = Comment::create($obj, $contents);
   $c->sanitize();
 
+  if ($msg = $c->validate()) {
+    throw new Exception($msg);
+  }
+
   $c->save();
 
   print json_encode(_('Your comment was saved.'));

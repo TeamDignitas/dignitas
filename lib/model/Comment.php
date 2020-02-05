@@ -5,6 +5,8 @@ class Comment extends BaseObject {
   // Therefore, using MarkdownTrait is not necessary.
   use FlaggableTrait, ObjectTypeIdTrait, VotableTrait;
 
+  const MAX_LENGTH = 500;
+
   function getObjectType() {
     return self::TYPE_COMMENT;
   }
@@ -43,6 +45,17 @@ class Comment extends BaseObject {
 
   function sanitize() {
     $this->contents = trim($this->contents);
+  }
+
+  /**
+   * @return string An error message or null on success.
+   */
+  function validate() {
+    if (mb_strlen($this->contents) > self::MAX_LENGTH) {
+      return sprintf(_('Comments can be at most %d characters long.'), self::MAX_LENGTH);
+    }
+
+    return null;
   }
 
   /**

@@ -3,7 +3,16 @@
   <input type="hidden" name="objectId">
 
   <div class="col-md-9">
-    <textarea name="contents" class="form-control" rows="2"></textarea>
+    <textarea
+      name="contents"
+      class="form-control"
+      rows="2"
+      maxlength="{Comment::MAX_LENGTH}"
+    ></textarea>
+    <small class="form-text text-muted float-left">
+      <span class="charsRemaining">{Comment::MAX_LENGTH}</span>
+      {t}characters remaining{/t}
+    </small>
     {include "bits/markdownHelp.tpl"}
   </div>
 
