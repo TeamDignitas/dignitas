@@ -70,6 +70,9 @@ class Router {
     ],
 
     // comments
+    'comment/delete' => [
+      'en_US.utf8' => 'ajax/delete-comment',
+    ],
     'comment/save' => [
       'en_US.utf8' => 'ajax/save-comment',
     ],
@@ -99,11 +102,11 @@ class Router {
     ],
 
     // flags
-    'flag/save' => [
-      'en_US.utf8' => 'ajax/save-flag',
-    ],
     'flag/delete' => [
       'en_US.utf8' => 'ajax/delete-flag',
+    ],
+    'flag/save' => [
+      'en_US.utf8' => 'ajax/save-flag',
     ],
 
     // helpers
@@ -188,6 +191,7 @@ class Router {
     'answer/edit' => [ 'id' ],
     'answer/history' => [ 'id' ],
     'attachment/view' => [ 'id', 'fileName' ],
+    'comment/delete' => [ 'id' ],
     'entity/edit' => [ 'id' ],
     'entity/history' => [ 'id' ],
     'entity/image' => [ 'id', 'fileName' ],

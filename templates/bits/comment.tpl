@@ -17,6 +17,15 @@
     &mdash;
     {include 'bits/userLink.tpl' u=$comment->getUser()}
     {include 'bits/moment.tpl' t=$comment->createDate}
+    {if $comment->isDeletable()}
+      <a
+        href="#"
+        class="deleteCommentLink"
+        data-comment-id="{$comment->id}"
+        data-confirm="{t}Are you sure you want to delete this comment?{/t}">
+        {t}delete{/t}
+      </a>
+    {/if}
   </div>
 
 </div>
