@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-02-05 11:48+0200\n"
-"PO-Revision-Date: 2020-02-05 11:48+0200\n"
+"POT-Creation-Date: 2020-02-05 16:45+0200\n"
+"PO-Revision-Date: 2020-02-05 16:45+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -230,6 +230,10 @@ msgstr "Confirmați ștergerea acestui răspuns?"
 msgid "delete"
 msgstr "șterge"
 
+#: templates/bits/comment.tpl:27
+msgid "Are you sure you want to delete this comment?"
+msgstr "Confirmați ștergerea acestui comentariu?"
+
 #: templates/bits/commentForm.tpl:14
 msgid "characters remaining"
 msgstr "caractere rămase"
@@ -287,11 +291,11 @@ msgstr "autentificare ca utilizator de test"
 msgid "reputation"
 msgstr "reputație"
 
-#: templates/bits/flagLinks.tpl:18
+#: templates/bits/flagLinks.tpl:21
 msgid "flag"
 msgstr "raportează"
 
-#: templates/bits/flagLinks.tpl:29
+#: templates/bits/flagLinks.tpl:35
 msgid "unflag"
 msgstr "șterge raportarea"
 
@@ -307,49 +311,53 @@ msgstr "Raportați această afirmație pentru motivul:"
 msgid "Flag this author for the following reason:"
 msgstr "Raportați acest autor pentru motivul:"
 
-#: templates/bits/flagModal.tpl:31 lib/model/Review.php:102
+#: templates/bits/flagModal.tpl:17
+msgid "Flag this comment for the following reason:"
+msgstr "Raportați acest comentariu pentru motivul:"
+
+#: templates/bits/flagModal.tpl:34 lib/model/Review.php:109
 msgid "spam"
 msgstr "spam"
 
-#: templates/bits/flagModal.tpl:34
+#: templates/bits/flagModal.tpl:37
 msgid "This post appears to promote a product or service."
 msgstr "Acest mesaj pare să promoveze un produs sau un serviciu."
 
-#: templates/bits/flagModal.tpl:45
+#: templates/bits/flagModal.tpl:48
 msgid "insults or rudeness"
 msgstr "insulte sau impolitețe"
 
-#: templates/bits/flagModal.tpl:48
+#: templates/bits/flagModal.tpl:51
 msgid "This post is insulting or rude toward other users of Dignitas."
 msgstr ""
 "Acest mesaj este insultător sau nepoliticos față de alți utilizatori ai "
 "Dignitas."
 
-#: templates/bits/flagModal.tpl:63
+#: templates/bits/flagModal.tpl:66
 msgid "duplicate of..."
 msgstr "duplicat al lui..."
 
-#: templates/bits/flagModal.tpl:66
+#: templates/bits/flagModal.tpl:69
 msgid "This statement already appears in Dignitas."
 msgstr "Această afirmație apare deja în Dignitas."
 
-#: templates/bits/flagModal.tpl:69
+#: templates/bits/flagModal.tpl:72
 msgid "This entity already appears in Dignitas."
 msgstr "Acest autor apare deja în Dignitas."
 
-#: templates/bits/flagModal.tpl:76
+#: templates/bits/flagModal.tpl:79
 msgid "type in some keywords..."
 msgstr "tastați niște cuvinte..."
 
-#: templates/bits/flagModal.tpl:88 lib/model/Review.php:105
+#: templates/bits/flagModal.tpl:93 lib/model/Review.php:112
 msgid "off-topic"
 msgstr "pe lîngă subiect"
 
-#: templates/bits/flagModal.tpl:92
+#: templates/bits/flagModal.tpl:97
 msgid "This answer does not address the topic of the original statement."
 msgstr "Acest răspuns nu tratează subiectul afirmației originale."
 
-#: templates/bits/flagModal.tpl:95
+#: templates/bits/flagModal.tpl:100
 msgid ""
 "This statement is outside the intended scope of Dignitas or is too broad to "
 "prove or disprove."
@@ -357,23 +365,23 @@ msgstr ""
 "Această afirmație este în afara scopului Dignitas sau este prea generală "
 "pentru a fi demonstrată sau infirmată."
 
-#: templates/bits/flagModal.tpl:99
+#: templates/bits/flagModal.tpl:104
 msgid "Dignitas does not concern itself with this author's statements."
 msgstr "Dignitas nu se preocupă de afirmațiile acestui autor."
 
-#: templates/bits/flagModal.tpl:111 lib/model/Review.php:106
+#: templates/bits/flagModal.tpl:116 lib/model/Review.php:113
 msgid "unverifiable"
 msgstr "neverificabil(ă)"
 
-#: templates/bits/flagModal.tpl:114
+#: templates/bits/flagModal.tpl:119
 msgid "It is not obvious that the author really made the statement."
 msgstr "Nu este evident că autorul chiar a făcut afirmația."
 
-#: templates/bits/flagModal.tpl:127
+#: templates/bits/flagModal.tpl:132
 msgid "low quality"
 msgstr "de slabă calitate"
 
-#: templates/bits/flagModal.tpl:130
+#: templates/bits/flagModal.tpl:135
 msgid ""
 "This post has severe formatting or content problems that cannot be salvaged "
 "through editing."
@@ -381,25 +389,41 @@ msgstr ""
 "Acest mesaj are probleme grave de formatare sau de conținut care nu pot fi "
 "remediate prin editări."
 
-#: templates/bits/flagModal.tpl:144
+#: templates/bits/flagModal.tpl:149
+msgid "no longer needed"
+msgstr "nu mai este necesar"
+
+#: templates/bits/flagModal.tpl:152
+msgid ""
+"This comment has been incorporated in the post, is outdated or not relevant "
+"to this post."
+msgstr ""
+"Acest comentariu a fost încorporat în mesaj, este învechit sau nerelevant "
+"pentru acest mesaj."
+
+#: templates/bits/flagModal.tpl:166
 msgid "other reason"
 msgstr "alt motiv"
 
-#: templates/bits/flagModal.tpl:152
+#: templates/bits/flagModal.tpl:174
 msgid "please provide details..."
 msgstr "vă rugăm să dați detalii..."
 
-#: templates/bits/flagModal.tpl:165
+#: templates/bits/flagModal.tpl:187
 msgid "flag answer"
 msgstr "raportează răspunsul"
 
-#: templates/bits/flagModal.tpl:168
+#: templates/bits/flagModal.tpl:190
 msgid "flag statement"
 msgstr "raportează afirmația"
 
-#: templates/bits/flagModal.tpl:171
+#: templates/bits/flagModal.tpl:193
 msgid "flag author"
 msgstr "raportează autorul"
+
+#: templates/bits/flagModal.tpl:196
+msgid "flag comment"
+msgstr "raportează comentariul"
 
 #: templates/bits/inlineAttachment.tpl:1
 msgid "Please read TODO for ways of customizing the thumbnail and link."
@@ -625,7 +649,8 @@ msgstr "Această evaluare este completă. Nu mai sînt permise alte acțiuni."
 msgid "This statement was flagged as a duplicate of"
 msgstr "Această afirmație a fost raportată ca duplicat al lui"
 
-#: templates/review/view.tpl:40
+#: templates/review/view.tpl:40 templates/review/view.tpl:82
+#: templates/review/view.tpl:93
 msgid "pertaining to statement:"
 msgstr "referitor la afirmația:"
 
@@ -643,7 +668,11 @@ msgstr ""
 "duplicat la autorul canonic. Aliasurile, relațiile și alte atribute nu vor "
 "fi transferate."
 
-#: templates/review/view.tpl:71
+#: templates/review/view.tpl:72
+msgid "pertaining to answer:"
+msgstr "referitor la răspunsul:"
+
+#: templates/review/view.tpl:111
 msgid "This review queue is empty."
 msgstr "Această coadă de evaluare este goală."
 
@@ -915,7 +944,7 @@ msgstr "site web"
 msgid "company"
 msgstr "companie"
 
-#: lib/model/Entity.php:86 lib/model/Review.php:104 lib/model/Statement.php:70
+#: lib/model/Entity.php:86 lib/model/Review.php:111 lib/model/Statement.php:70
 #: lib/trait/FlaggableTrait.php:69
 msgid "duplicate"
 msgstr "duplicate"
@@ -1007,77 +1036,85 @@ msgstr "Tip de relație incorect."
 msgid "The start date cannot be past the end date."
 msgstr "Data de start nu poate depăși data de sfîrșit."
 
-#: lib/model/Review.php:80
+#: lib/model/Review.php:86
 msgid "items flagged as spam"
 msgstr "articole raportate ca spam"
 
-#: lib/model/Review.php:81
+#: lib/model/Review.php:87
 msgid "items flagged as abuse"
 msgstr "articole raportate ca insulte"
 
-#: lib/model/Review.php:82
+#: lib/model/Review.php:88
 msgid "items flagged as duplicate"
 msgstr "articole raportate ca duplicate"
 
-#: lib/model/Review.php:83
+#: lib/model/Review.php:89
 msgid "items flagged as off-topic"
 msgstr "articole raportate ca pe lîngă subiect"
 
-#: lib/model/Review.php:84
+#: lib/model/Review.php:90
 msgid "items flagged as unverifiable"
 msgstr "articole raportate ca neverificabile"
 
-#: lib/model/Review.php:85
+#: lib/model/Review.php:91
 msgid "items flagged as low quality"
 msgstr "articole raportate ca de slabă calitate"
 
-#: lib/model/Review.php:86
+#: lib/model/Review.php:92
 msgid "posts from new users"
 msgstr "mesaje de la utilizatori noi"
 
-#: lib/model/Review.php:87
+#: lib/model/Review.php:93
 msgid "late answers"
 msgstr "răspunsuri tîrzii"
 
-#: lib/model/Review.php:88
+#: lib/model/Review.php:94
 msgid "items flagged for reopening"
 msgstr "articole marcate pentru redeschidere"
 
-#: lib/model/Review.php:89
+#: lib/model/Review.php:95
 msgid "suggested changes"
 msgstr "modificări sugerate"
 
-#: lib/model/Review.php:90
+#: lib/model/Review.php:96
 msgid "items flagged for other reasons"
 msgstr "articole raportate pentru alte motive"
 
-#: lib/model/Review.php:103
+#: lib/model/Review.php:97
+msgid "no longer needed comments"
+msgstr "comentarii nenecesare"
+
+#: lib/model/Review.php:110
 msgid "abuse"
 msgstr "insulta"
 
-#: lib/model/Review.php:107
+#: lib/model/Review.php:114
 msgid "low-quality"
 msgstr "slaba-calitate"
 
-#: lib/model/Review.php:108
+#: lib/model/Review.php:115
 msgid "new-user"
 msgstr "utilizator-nou"
 
-#: lib/model/Review.php:109
+#: lib/model/Review.php:116
 msgid "late-answer"
 msgstr "raspuns-tirziu"
 
-#: lib/model/Review.php:110
+#: lib/model/Review.php:117
 msgid "reopen"
 msgstr "redeschidere"
 
-#: lib/model/Review.php:111
+#: lib/model/Review.php:118
 msgid "suggested-changes"
 msgstr "modificari-sugerate"
 
-#: lib/model/Review.php:112
+#: lib/model/Review.php:119
 msgid "other"
 msgstr "altele"
+
+#: lib/model/Review.php:120
+msgid "not-needed"
+msgstr "nenecesare"
 
 #: lib/model/RevisionAnswer.php:13
 msgid "changes to contents"
@@ -1364,6 +1401,10 @@ msgstr "Parola a fost schimbată cu succes."
 #: routes/auth/register.php:6
 msgid "Registration is disabled."
 msgstr "Înregistrarea este dezactivată."
+
+#: routes/comment/delete.php:21
+msgid "Comment deleted."
+msgstr "Am șters comentariul."
 
 #: routes/comment/save.php:28
 msgid "Your comment was saved."

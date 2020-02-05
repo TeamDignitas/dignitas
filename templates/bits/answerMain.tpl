@@ -54,9 +54,11 @@
   </ul>
 </div>
 
-{foreach Comment::getFor($answer) as $comment}
-  {include 'bits/comment.tpl'}
-{/foreach}
+{if $showComments}
+  {foreach Comment::getFor($answer) as $comment}
+    {include 'bits/comment.tpl'}
+  {/foreach}
+{/if}
 
 {if $addComment}
   {include "bits/addCommentLink.tpl" object=$answer}

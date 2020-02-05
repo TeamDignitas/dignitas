@@ -39,7 +39,7 @@
 
       <h3>{cap}{t}pertaining to statement:{/t}{/cap}</h3>
 
-      <div id="parentStatement">
+      <div id="parentObject">
         {include "bits/statement.tpl"
           statement=$object->getStatement()
           flagBox=false
@@ -60,6 +60,46 @@
       {/if}
 
       {include "bits/entity.tpl" entity=$object flagBox=false}
+
+    {elseif $type == BaseObject::TYPE_COMMENT}
+
+      {include "bits/comment.tpl" comment=$object flagBox=false}
+
+      {$parent=$object->getObject()} {* What a nice sentence *}
+
+      {if $parent instanceof Answer}
+
+        <h3>{cap}{t}pertaining to answer:{/t}{/cap}</h3>
+
+        <div id="parentObject">
+          {include "bits/answer.tpl"
+            answer=$parent
+            flagBox=false
+            voteBox=false
+            showComments=false}
+        </div>
+
+        <h3>{cap}{t}pertaining to statement:{/t}{/cap}</h3>
+
+        <div id="parentObject">
+          {include "bits/statement.tpl"
+            statement=$parent->getStatement()
+            flagBox=false
+            voteBox=false}
+        </div>
+
+        {else}  {* Comment on a statement *}
+
+          <h3>{cap}{t}pertaining to statement:{/t}{/cap}</h3>
+
+          <div id="parentObject">
+            {include "bits/statement.tpl"
+              statement=$parent
+              flagBox=false
+              voteBox=false}
+          </div>
+
+        {/if}
 
     {/if}
 

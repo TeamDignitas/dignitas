@@ -2,6 +2,7 @@
 {$highlighted=$highlighted|default:false}
 {$flagBox=$flagBox|default:true}
 {$voteBox=$voteBox|default:true}
+{$showComments=$showComments|default:true}
 {$addComment=$addComment|default:false}
 
 <div class="voteContainer answer {if $highlighted}highlighted{/if}">

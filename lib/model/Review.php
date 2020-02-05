@@ -61,6 +61,12 @@ class Review extends BaseObject {
       Ct::REASON_PENDING_EDIT => self::ACTION_DELETE_PENDING_EDIT,
       Ct::REASON_OTHER => self::ACTION_CLOSE,
     ],
+    BaseObject::TYPE_COMMENT => [
+      Ct::REASON_SPAM => self::ACTION_DELETE,
+      Ct::REASON_ABUSE => self::ACTION_DELETE,
+      Ct::REASON_OTHER => self::ACTION_DELETE,
+      Ct::REASON_NOT_NEEDED => self::ACTION_DELETE,
+    ],
   ];
 
   // Reviews of this type may not be deleted even when they have no remaining
@@ -88,6 +94,7 @@ class Review extends BaseObject {
       case Ct::REASON_REOPEN:       return _('items flagged for reopening');
       case Ct::REASON_PENDING_EDIT: return _('suggested changes');
       case Ct::REASON_OTHER:        return _('items flagged for other reasons');
+      case Ct::REASON_NOT_NEEDED:   return _('no longer needed comments');
     }
   }
 
@@ -110,6 +117,7 @@ class Review extends BaseObject {
       case Ct::REASON_REOPEN:       return _('reopen');
       case Ct::REASON_PENDING_EDIT: return _('suggested-changes');
       case Ct::REASON_OTHER:        return _('other');
+      case Ct::REASON_NOT_NEEDED:   return _('not-needed');
     }
   }
 

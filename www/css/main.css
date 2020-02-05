@@ -65,6 +65,16 @@ blockquote {
   display: flex;
 }
 
+.voteContainer.highlighted {
+  animation-name: answer-highlight-animation;
+  animation-duration: 2s;
+}
+
+@keyframes answer-highlight-animation {
+  from { background-color: #777; }
+  to { background-color: white; }
+}
+
 .voteLeft {
   flex-grow: 0;
   flex-shrink: 0;
@@ -103,6 +113,39 @@ blockquote {
 
 .btn-vote.voted {
   color: green;
+}
+
+/******************************** answers ********************************/
+
+.answer {
+  padding-top: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.answerFooter {
+  text-align: right;
+}
+
+/******************************* comments *******************************/
+
+.comment {
+  border-top: 1px solid #eee;
+  color: #777;
+  font-size: 80%;
+  padding: 5px 0px;
+}
+
+.comment p {
+  display: inline;
+}
+
+.commentActions a {
+  color: #bbb;
+}
+
+.commentActions a:hover {
+  color: #777;
+  text-decoration: none;
 }
 
 /******************************** footer ********************************/

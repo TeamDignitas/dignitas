@@ -56,6 +56,11 @@ $(function() {
   }
 
   function deleteComment() {
+    var msg = $(this).data('confirmMsg');
+    if (!confirm(msg)) {
+      return false;
+    }
+
     $('body').addClass('waiting');
 
     var comment = $(this).closest('.comment');

@@ -1,9 +1,11 @@
 {* Mandatory argument: $obj *}
 {* Optional argument: $class *}
 {$class=$class|default:''}
+{$tiny=$tiny|default:false}
 
 {$flagId="flag_{$obj->getObjectType()}_{$obj->id}"}
 {$unflagId="unflag_{$obj->getObjectType()}_{$obj->id}"}
+
 <a
   id="{$flagId}"
   href="#"
@@ -15,16 +17,21 @@
   data-unflag-link="#{$unflagId}"
   {if $obj->isFlagged()}hidden{/if}>
   <i class="icon icon-flag"></i>
-  {t}flag{/t}
+  {if !$tiny}
+    {t}flag{/t}
+  {/if}
 </a>
+
 <a
   id="{$unflagId}"
   href="#"
-  class="unflag btn btn-sm btn-link"
+  class="unflag {$class}"
   data-object-type="{$obj->getObjectType()}"
   data-object-id="{$obj->id}"
   data-flag-link="#{$flagId}"
   {if !$obj->isFlagged()}hidden{/if}>
   <i class="icon icon-flag-empty"></i>
-  {t}unflag{/t}
+  {if !$tiny}
+    {t}unflag{/t}
+  {/if}
 </a>

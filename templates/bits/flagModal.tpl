@@ -13,6 +13,9 @@
           <span data-flag-visibility="{Flag::TYPE_ENTITY}">
             {t}Flag this author for the following reason:{/t}
           </span>
+          <span data-flag-visibility="{Flag::TYPE_COMMENT}">
+            {t}Flag this comment for the following reason:{/t}
+          </span>
         </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -78,7 +81,9 @@
             </div>
           </div>
 
-          <div class="form-check">
+          <div
+            class="form-check"
+            data-flag-visibility="{Flag::TYPE_ANSWER} {Flag::TYPE_STATEMENT} {Flag::TYPE_ENTITY}">
             <label class="form-check-label">
               <input
                 class="form-check-input"
@@ -132,6 +137,23 @@
             </p>
           </div>
 
+          <div
+            class="form-check"
+            data-flag-visibility="{Flag::TYPE_COMMENT}">
+            <label class="form-check-label">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flagReason"
+                value="{Ct::REASON_NOT_NEEDED}">
+              {t}no longer needed{/t}
+            </label>
+            <p class="text-muted">
+              {t}This comment has been incorporated in the post, is outdated
+              or not relevant to this post.{/t}
+            </p>
+          </div>
+
           <div class="form-check">
             <label class="form-check-label">
               <input
@@ -169,6 +191,9 @@
             </span>
             <span data-flag-visibility="{Flag::TYPE_ENTITY}">
               {t}flag author{/t}
+            </span>
+            <span data-flag-visibility="{Flag::TYPE_COMMENT}">
+              {t}flag comment{/t}
             </span>
           </button>
         </div>
