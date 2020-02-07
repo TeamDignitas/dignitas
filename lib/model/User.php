@@ -98,7 +98,7 @@ class User extends Proto {
 
   private function changeNumPendingEdits(int $delta) {
     $value = $this->getNumPendingEdits() + $delta;
-    UserExt::setField($userId, 'numPendingEdits', $value);
+    UserExt::setField($this->id, 'numPendingEdits', $value);
   }
 
   static function getFlagsPerDay() {

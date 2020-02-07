@@ -8,7 +8,7 @@
   <div
     id="score-{$type}-{$object->id}"
     class="voteLeft">
-    {$object->score}
+    {$object->getScore()}
   </div>
 {/if}
 
@@ -31,7 +31,7 @@
   </button>
 
   {if $position == 'center'}
-    <div id="score-{$type}-{$object->id}">{$object->score}</div>
+    <div id="score-{$type}-{$object->id}">{$object->getScore()}</div>
   {/if}
 
   <button

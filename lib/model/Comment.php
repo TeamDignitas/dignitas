@@ -15,16 +15,27 @@ class Comment extends Proto {
     return User::get_by_id($this->userId);
   }
 
+  function getScore() {
+    return CommentExt::getField($this->id, 'score');
+  }
+
+  function setScore($score) {
+    return CommentExt::setField($this->id, 'score', $score);
+  }
+
   /**
    * Returns the object's comments.
    */
   static function getFor($object) {
     return Model::factory('Comment')
-      ->where('objectType', $object->getObjectType())
-      ->where('objectId', $object->id)
-      ->where('status', Ct::STATUS_ACTIVE)
-      ->order_by_desc('score')
-      ->order_by_asc('createDate')
+      ->table_alias('c')
+      ->select('c.*')
+      ->join('comment_ext', [ 'c.id', '=', 'ce.commentId' ], 'ce')
+      ->where('c.objectType', $object->getObjectType())
+      ->where('c.objectId', $object->id)
+      ->where('c.status', Ct::STATUS_ACTIVE)
+      ->order_by_desc('ce.score')
+      ->order_by_asc('c.createDate')
       ->find_many();
   }
 

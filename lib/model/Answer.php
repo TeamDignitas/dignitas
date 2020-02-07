@@ -19,6 +19,14 @@ class Answer extends Proto {
     return Statement::get_by_id($this->statementId);
   }
 
+  function getScore() {
+    return AnswerExt::getField($this->id, 'score');
+  }
+
+  function setScore($score) {
+    return AnswerExt::setField($this->id, 'score', $score);
+  }
+
   /**
    * Returns a human-readable message if this Answer is deleted or null
    * otherwise.
@@ -107,7 +115,7 @@ class Answer extends Proto {
   }
 
   protected function deepMerge($other) {
-    $this->copyFrom($other, ['score']);
+    $this->copyFrom($other);
     $this->save($other->modUserId);
   }
 
@@ -115,8 +123,12 @@ class Answer extends Proto {
     if ($this->status != Ct::STATUS_PENDING_EDIT) {
       throw new Exception('Answers should never be deleted at the DB level.');
     }
+
     AttachmentReference::deleteObject($this);
     // a pending edit answer should not have reviews, tags or votes
+
+    AnswerExt::delete_all_by_answerId($this->id);
+
     parent::delete();
   }
 }

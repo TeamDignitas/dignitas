@@ -23,7 +23,7 @@ class Vote extends Proto {
 
   function getObjectScore() {
     $obj = $this->getObject();
-    return $obj->score;
+    return $obj->getScore();
   }
 
   function saveValue($value) {
@@ -36,7 +36,7 @@ class Vote extends Proto {
       $this->value = $value;
       $this->save();
 
-      $obj->score += $this->value;
+      $obj->changeScore($this->value);
       $obj->save();
 
     } else if ($this->value != $value) {
@@ -44,12 +44,12 @@ class Vote extends Proto {
       $this->value = -$this->value;
       $this->save();
 
-      $obj->score += 2 * $this->value;
+      $obj->changeScore(2 * $this->value);
       $obj->save();
 
     } else {
       // delete this vote (since button was clicked again)
-      $obj->score -= $this->value;
+      $obj->changeScore(-$this->value);
       $obj->save();
 
       $this->delete();
