@@ -1,6 +1,6 @@
 <?php
 
-class Answer extends BaseObject {
+class Answer extends Proto {
   use FlaggableTrait, MarkdownTrait, PendingEditTrait, VotableTrait;
 
   function getObjectType() {

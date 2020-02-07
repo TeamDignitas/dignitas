@@ -3,7 +3,7 @@
 /**
  * Class that remembers users who clicked the "done" button on reviews.
  */
-class ReviewLog extends BaseObject {
+class ReviewLog extends Proto {
 
   /**
    * Creates a record for the (user, review) pair unless one exists.

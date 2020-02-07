@@ -1,6 +1,6 @@
 <?php
 
-class Vote extends BaseObject {
+class Vote extends Proto {
   use ObjectTypeIdTrait;
 
   static function loadOrCreate($userId, $objectType, $objectId) {

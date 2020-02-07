@@ -1,6 +1,6 @@
 <?php
 
-class User extends BaseObject {
+class User extends Proto {
   use MarkdownTrait, UploadTrait;
 
   // privileges and their required reputation

@@ -3,7 +3,7 @@
 /**
  * Class that handles an object review from start to resolution.
  */
-class Review extends BaseObject {
+class Review extends Proto {
   use ObjectTypeIdTrait;
 
   const STATUS_PENDING = 0;
@@ -19,19 +19,19 @@ class Review extends BaseObject {
   // Maps object x reason to methods to run when a review is resolved.
   // It should be impossible to encounter cases not covered here.
   const KEEP_ACTION_MAP = [
-    BaseObject::TYPE_ANSWER => [
+    Proto::TYPE_ANSWER => [
       Ct::REASON_PENDING_EDIT => self::ACTION_INCORPORATE_PENDING_EDIT,
     ],
-    BaseObject::TYPE_ENTITY => [
+    Proto::TYPE_ENTITY => [
       Ct::REASON_PENDING_EDIT => self::ACTION_INCORPORATE_PENDING_EDIT,
     ],
-    BaseObject::TYPE_STATEMENT => [
+    Proto::TYPE_STATEMENT => [
       Ct::REASON_PENDING_EDIT => self::ACTION_INCORPORATE_PENDING_EDIT,
     ],
   ];
 
   const REMOVE_ACTION_MAP = [
-    BaseObject::TYPE_ANSWER => [
+    Proto::TYPE_ANSWER => [
       Ct::REASON_SPAM => self::ACTION_DELETE,
       Ct::REASON_ABUSE => self::ACTION_DELETE,
       Ct::REASON_OFF_TOPIC => self::ACTION_DELETE,
@@ -41,7 +41,7 @@ class Review extends BaseObject {
       Ct::REASON_PENDING_EDIT => self::ACTION_DELETE_PENDING_EDIT,
       Ct::REASON_OTHER => self::ACTION_DELETE,
     ],
-    BaseObject::TYPE_ENTITY => [
+    Proto::TYPE_ENTITY => [
       Ct::REASON_SPAM => self::ACTION_DELETE,
       Ct::REASON_ABUSE => self::ACTION_DELETE,
       Ct::REASON_DUPLICATE => self::ACTION_CLOSE,
@@ -50,7 +50,7 @@ class Review extends BaseObject {
       Ct::REASON_PENDING_EDIT => self::ACTION_DELETE_PENDING_EDIT,
       Ct::REASON_OTHER => self::ACTION_DELETE,
     ],
-    BaseObject::TYPE_STATEMENT => [
+    Proto::TYPE_STATEMENT => [
       Ct::REASON_SPAM => self::ACTION_DELETE,
       Ct::REASON_ABUSE => self::ACTION_DELETE,
       Ct::REASON_DUPLICATE => self::ACTION_CLOSE,
@@ -61,7 +61,7 @@ class Review extends BaseObject {
       Ct::REASON_PENDING_EDIT => self::ACTION_DELETE_PENDING_EDIT,
       Ct::REASON_OTHER => self::ACTION_CLOSE,
     ],
-    BaseObject::TYPE_COMMENT => [
+    Proto::TYPE_COMMENT => [
       Ct::REASON_SPAM => self::ACTION_DELETE,
       Ct::REASON_ABUSE => self::ACTION_DELETE,
       Ct::REASON_OTHER => self::ACTION_DELETE,
@@ -187,8 +187,8 @@ class Review extends BaseObject {
     }
 
     switch ($this->objectType) {
-      case BaseObject::TYPE_ENTITY: return Entity::get_by_id($this->duplicateId);
-      case BaseObject::TYPE_STATEMENT: return Statement::get_by_id($this->duplicateId);
+      case Proto::TYPE_ENTITY: return Entity::get_by_id($this->duplicateId);
+      case Proto::TYPE_STATEMENT: return Statement::get_by_id($this->duplicateId);
       default: return null;
     }
   }

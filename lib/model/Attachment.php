@@ -1,6 +1,6 @@
 <?php
 
-class Attachment extends BaseObject {
+class Attachment extends Proto {
   use UploadTrait;
 
   private function getFileSubdirectory() {

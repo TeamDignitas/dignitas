@@ -1,6 +1,6 @@
 <?php
 
-class Relation extends BaseObject {
+class Relation extends Proto {
 
   const TYPE_MEMBER = 1;
   const TYPE_ASSOCIATE = 2;
@@ -43,7 +43,7 @@ class Relation extends BaseObject {
   }
 
   function getObjectType() {
-    return BaseObject::TYPE_RELATION;
+    return Proto::TYPE_RELATION;
   }
 
   function getFromEntity() {

@@ -1,6 +1,6 @@
 <?php
 
-class Cookie extends BaseObject {
+class Cookie extends Proto {
 
   static function create($userId) {
     $c = Model::factory('Cookie')->create();

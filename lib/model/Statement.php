@@ -1,6 +1,6 @@
 <?php
 
-class Statement extends BaseObject {
+class Statement extends Proto {
   use DuplicateTrait,
     FlaggableTrait,
     RevisionTrait,

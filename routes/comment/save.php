@@ -13,7 +13,7 @@ header('Content-Type: application/json');
 
 try {
 
-  $obj = BaseObject::getObjectByTypeId($objectType, $objectId);
+  $obj = Proto::getObjectByTypeId($objectType, $objectId);
   User::canComment($obj, true);
 
   $c = Comment::create($obj, $contents);

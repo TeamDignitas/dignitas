@@ -1,6 +1,6 @@
 <?php
 
-class Comment extends BaseObject {
+class Comment extends Proto {
   // Comments support Markdown, but do not support attachments explicitly.
   // Therefore, using MarkdownTrait is not necessary.
   use FlaggableTrait, ObjectTypeIdTrait, VotableTrait;
@@ -31,7 +31,7 @@ class Comment extends BaseObject {
   /**
    * Create a comment for the given object.
    *
-   * @param BaseObject $object A statement or answer.
+   * @param Proto $object A statement or answer.
    * @return Comment
    */
   static function create($object, $contents) {

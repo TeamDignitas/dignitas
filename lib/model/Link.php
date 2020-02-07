@@ -1,6 +1,6 @@
 <?php
 
-class Link extends BaseObject {
+class Link extends Proto {
   use ObjectTypeIdTrait;
 
   static function getFor($object) {
@@ -26,7 +26,7 @@ class Link extends BaseObject {
    */
   function isNofollow() {
     $obj = $this->getObject();
-    return $obj->getObjectType() == BaseObject::TYPE_STATEMENT;
+    return $obj->getObjectType() == Proto::TYPE_STATEMENT;
   }
 
   /**
@@ -53,7 +53,7 @@ class Link extends BaseObject {
    * in the tag list, inserts new Links where needed and updates the rank
    * field.
    *
-   * Similar, but not identical, to BaseObject::updateDependants().
+   * Similar, but not identical, to Proto::updateDependants().
    */
   static function update($object, $links) {
     $type = $object->getObjectType();

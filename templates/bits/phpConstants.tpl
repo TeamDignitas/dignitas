@@ -5,5 +5,5 @@
   const UPLOAD_MIME_TYPES = JSON.parse('{Util::getUploadMimeTypes()|json_encode}');
 
   // used in the flagging modal
-  const TYPE_ENTITY = {BaseObject::TYPE_ENTITY};
+  const TYPE_ENTITY = {Proto::TYPE_ENTITY};
 </script>

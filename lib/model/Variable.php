@@ -1,6 +1,6 @@
 <?php
 
-class Variable extends BaseObject {
+class Variable extends Proto {
 
   static function peek($name, $default = null) {
     $v = Variable::get_by_name($name);

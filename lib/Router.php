@@ -329,11 +329,11 @@ class Router {
    */
   static function getEditLink($object) {
     switch ($object->getObjectType()) {
-      case BaseObject::TYPE_ANSWER:
+      case Proto::TYPE_ANSWER:
         return Router::link('answer/edit') . '/' . $object->id;
-      case BaseObject::TYPE_ENTITY:
+      case Proto::TYPE_ENTITY:
         return Router::link('entity/edit') . '/' . $object->id;
-      case BaseObject::TYPE_STATEMENT:
+      case Proto::TYPE_STATEMENT:
         return Router::link('statement/edit') . '/' . $object->id;
       default:
         return null;
@@ -349,9 +349,9 @@ class Router {
    */
   static function getViewLink($object) {
     switch ($object->getObjectType()) {
-      case BaseObject::TYPE_ENTITY:
+      case Proto::TYPE_ENTITY:
         return Router::link('entity/view') . '/' . $object->id;
-      case BaseObject::TYPE_STATEMENT:
+      case Proto::TYPE_STATEMENT:
         return Router::link('statement/view') . '/' . $object->id;
       default:
         return null;

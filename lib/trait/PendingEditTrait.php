@@ -177,8 +177,8 @@ trait PendingEditTrait {
    * pending edit.
    *
    * @param PendingEditTrait $other Pending edit of $this
-   * @param BaseObject[] $origDeps Array of original dependants
-   * @param BaseObject[] $clonedDeps Array of cloned dependants
+   * @param Proto[] $origDeps Array of original dependants
+   * @param Proto[] $clonedDeps Array of cloned dependants
    * @param string $fkField Field whose value should change from $other->id to
    * $this->id
    */

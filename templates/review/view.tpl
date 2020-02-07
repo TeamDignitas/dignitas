@@ -22,7 +22,7 @@
     {if isset($objectDiff)}
       {include "bits/diff/objectDiff.tpl" od=$objectDiff}
 
-    {elseif $type == BaseObject::TYPE_STATEMENT}
+    {elseif $type == Proto::TYPE_STATEMENT}
 
       {if $review->reason == Ct::REASON_DUPLICATE}
         <div class="alert alert-warning">
@@ -33,7 +33,7 @@
 
       {include "bits/statement.tpl" statement=$object flagBox=false}
 
-    {elseif $type == BaseObject::TYPE_ANSWER}
+    {elseif $type == Proto::TYPE_ANSWER}
 
       {include "bits/answer.tpl" answer=$object flagBox=false}
 
@@ -46,7 +46,7 @@
           voteBox=false}
       </div>
 
-    {elseif $type == BaseObject::TYPE_ENTITY}
+    {elseif $type == Proto::TYPE_ENTITY}
 
       {if $review->reason == Ct::REASON_DUPLICATE}
         <div class="alert alert-warning">
@@ -61,7 +61,7 @@
 
       {include "bits/entity.tpl" entity=$object flagBox=false}
 
-    {elseif $type == BaseObject::TYPE_COMMENT}
+    {elseif $type == Proto::TYPE_COMMENT}
 
       {include "bits/comment.tpl" comment=$object flagBox=false}
 

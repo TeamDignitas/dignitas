@@ -1,6 +1,6 @@
 <?php
 
-class ObjectTag extends BaseObject {
+class ObjectTag extends Proto {
   use ObjectTypeIdTrait;
 
   static function create($objectType, $objectId, $tagId) {
@@ -40,7 +40,7 @@ class ObjectTag extends BaseObject {
   // Updates the list of tags for the given object. Deletes ObjectTags not
   // present in the tag list, inserts new ObjectTags where needed and updates
   // the rank field.
-  // Similar, but not identical, to BaseObject::updateDependants().
+  // Similar, but not identical, to Proto::updateDependants().
   static function update($object, $tagIds) {
     $type = $object->getObjectType();
 
