@@ -22,8 +22,8 @@ if ($fakeEmail) {
   }
   $user->nickname = $fakeEmail;
   $user->email = $fakeEmail;
-  $user->reputation = $fakeReputation;
   $user->save();
+  $user->setReputation($fakeReputation);
   Session::login($user, true, $referrer);
 }
 

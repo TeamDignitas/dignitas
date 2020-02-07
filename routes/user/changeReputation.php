@@ -19,8 +19,7 @@ if (!$user) {
   $error = sprintf(_('Reputation must be an integer between 1 and %d.'), MAX_REPUTATION);
 } else {
   $error = null;
-  $user->reputation = $value;
-  $user->save();
+  $user->setReputation($value);
 }
 
 header('Content-Type: application/json');

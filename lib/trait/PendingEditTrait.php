@@ -57,7 +57,7 @@ trait PendingEditTrait {
       }
 
       $u = User::getActive();
-      if ($u && $u->numPendingEdits >= Config::MAX_PENDING_EDITS) {
+      if ($u && $u->getNumPendingEdits() >= Config::MAX_PENDING_EDITS) {
         throw new Exception(
           sprintf(_('You have reached your limit of %d pending edits.' .
                     'Please wait for some of them to be reviewed.'),
@@ -95,7 +95,7 @@ trait PendingEditTrait {
       !$this->pendingEditId &&
 
        // must not exceed pending edit limit
-      ($u->numPendingEdits < Config::MAX_PENDING_EDITS);
+      ($u->getNumPendingEdits() < Config::MAX_PENDING_EDITS);
 
   }
 

@@ -25,8 +25,8 @@ if ($submitButton) {
     $user->nickname = $nickname;
     $user->email = $email;
     $user->password = md5($password);
-    $user->reputation = 1;
     $user->save();
+    $user->setReputation(1);
     Session::login($user, $remember);
   }
 }

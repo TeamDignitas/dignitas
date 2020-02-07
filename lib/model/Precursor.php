@@ -2,8 +2,8 @@
 
 /**
  * An extension of Paris's Model class which defines some convenience getters.
- * Proto further extends Precursor. Some classes will still want to extend
- * Precursor directly.
+ * Proto and ProtoExt further extend Precursor, for regular tables and
+ * extended tables respectively.
  */
 
 class Precursor extends Model {

@@ -68,11 +68,24 @@ class User extends Proto {
   }
 
   static function setActive($userId) {
-    // update lastSeen before loading the user
-    $query = sprintf('update user set lastSeen = %d where id = %d', time(), $userId);
-    DB::execute($query);
-
+    UserExt::setField($userId, 'lastSeen', time());
     self::$active = self::get_by_id($userId);
+  }
+
+  function getLastSeen() {
+    return UserExt::getField($this->id, 'lastSeen');
+  }
+
+  function getReputation() {
+    return UserExt::getField($this->id, 'reputation', 1);
+  }
+
+  function setReputation($rep) {
+    return UserExt::setField($this->id, 'reputation', $rep);
+  }
+
+  function getNumPendingEdits() {
+    return UserExt::getField($this->id, 'numPendingEdits');
   }
 
   function incrementPendingEdits() {
@@ -84,8 +97,8 @@ class User extends Proto {
   }
 
   private function changeNumPendingEdits(int $delta) {
-    $this->numPendingEdits += $delta;
-    $this->save();
+    $value = $this->getNumPendingEdits() + $delta;
+    UserExt::setField($userId, 'numPendingEdits', $value);
   }
 
   static function getFlagsPerDay() {
@@ -93,7 +106,8 @@ class User extends Proto {
       return 0;
     }
 
-    $earned = (int)(self::$active->reputation / self::REPUTATION_FOR_NEW_FLAG);
+    $r = self::$active->getReputation();
+    $earned = (int)($r / self::REPUTATION_FOR_NEW_FLAG);
     return min(self::BASE_FLAGS_PER_DAY + $earned,
                self::MAX_FLAGS_PER_DAY);
   }
@@ -157,7 +171,7 @@ class User extends Proto {
   // checks whether the active user has the privilege
   static function may($privilege) {
     $u = self::$active;
-    return $u && (($u->reputation >= $privilege) || $u->moderator);
+    return $u && (($u->getReputation() >= $privilege) || $u->moderator);
   }
 
   static function isModerator() {
@@ -170,7 +184,7 @@ class User extends Proto {
     // redirect to log in page if there is no active user
     if (!self::$active) {
       Util::redirectToLogin();
-    } else if (self::$active->reputation < $privilege) {
+    } else if (self::$active->getReputation() < $privilege) {
       FlashMessage::add(sprintf(
         _('You need at least %s reputation to perform this action.'),
         Str::formatNumber($privilege)));

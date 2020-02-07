@@ -66,7 +66,7 @@
             {/if}
             {$u}
             <span class="badge badge-secondary align-text-top">
-              {$u->reputation|nf}
+              {$u->getReputation()|nf}
             </span>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarUserDropdown">
