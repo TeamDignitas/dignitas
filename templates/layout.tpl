@@ -44,6 +44,8 @@
 
       </footer>
     </div>
+
+    {include "bits/debugInfo.tpl"}
   </body>
 
 </html>
