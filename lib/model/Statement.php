@@ -40,7 +40,7 @@ class Statement extends Proto {
     $answers = Model::factory('Answer')
       ->table_alias('a')
       ->select('a.*')
-      ->join('answer_ext', [ 'a.id', '=', 'ae.answerId' ], 'ae')
+      ->left_outer_join('answer_ext', [ 'a.id', '=', 'ae.answerId' ], 'ae')
       ->where('a.statementId', $this->id)
       ->where_not_equal('a.status', Ct::STATUS_PENDING_EDIT);
 

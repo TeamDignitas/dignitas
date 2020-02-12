@@ -30,7 +30,7 @@ class Comment extends Proto {
     return Model::factory('Comment')
       ->table_alias('c')
       ->select('c.*')
-      ->join('comment_ext', [ 'c.id', '=', 'ce.commentId' ], 'ce')
+      ->left_outer_join('comment_ext', [ 'c.id', '=', 'ce.commentId' ], 'ce')
       ->where('c.objectType', $object->getObjectType())
       ->where('c.objectId', $object->id)
       ->where('c.status', Ct::STATUS_ACTIVE)

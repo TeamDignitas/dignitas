@@ -142,6 +142,7 @@ class Config {
   const REP_COMMENT_DOWNVOTED = 0;
   const REP_DOWNVOTE_COMMENT = 0;
   const REP_SUGGESTED_EDIT = 2;
+  const REP_SPAM_ABUSE = -100;
 
   // Loyalty settings. Define a set of adjacent intervals going back in time
   // and give points for every day in each interval. Then loyalty is the sum

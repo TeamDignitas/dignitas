@@ -354,6 +354,18 @@ class Review extends Proto {
   }
 
   /**
+   * If a message was deleted as spam or abuse, penalize its author. Called
+   * when the review is resolved by deleting the object.
+   */
+  private function checkRepPenalty() {
+    $obj = $this->getObject();
+    if (in_array($this->reason, [ Ct::REASON_SPAM, Ct::REASON_ABUSE ]) &&
+        $obj->status != Ct::STATUS_DELETED) { // in case it gets flagged twice
+      $obj->getUser()->grantReputation(Config::REP_SPAM_ABUSE);
+    }
+  }
+
+  /**
    * Closes or deletes the reviewed object.
    *
    * @param int $action One of the Review::ACTION_* values.
@@ -370,6 +382,7 @@ class Review extends Proto {
         $obj->close($this->reason);
       }
     } else if ($action == self::ACTION_DELETE) {
+      $this->checkRepPenalty();
       $obj->markDeleted($this->reason);
     } else if ($action == self::ACTION_INCORPORATE_PENDING_EDIT) {
       $obj->processPendingEdit(true);
