@@ -81,7 +81,11 @@ class User extends Proto {
   }
 
   function setReputation($rep) {
-    return UserExt::setField($this->id, 'reputation', $rep);
+    UserExt::setField($this->id, 'reputation', $rep);
+  }
+
+  function grantReputation($delta) {
+    $this->setReputation($this->getReputation() + $delta);
   }
 
   function getNumPendingEdits() {

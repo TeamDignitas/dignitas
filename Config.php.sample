@@ -131,6 +131,18 @@ class Config {
   // review with REASON_LATE_ANSWER.
   const LATE_ANSWER_DAYS = 3;
 
+  // Reputation gains / losses for various events.
+  const REP_STATEMENT_UPVOTED = 10;
+  const REP_STATEMENT_DOWNVOTED = -2; // when someone downvotes YOUR statement
+  const REP_DOWNVOTE_STATEMENT = -1;  // when YOU downvote someone's statement
+  const REP_ANSWER_UPVOTED = 10;
+  const REP_ANSWER_DOWNVOTED = -2;
+  const REP_DOWNVOTE_ANSWER = -1;
+  const REP_COMMENT_UPVOTED = 0;
+  const REP_COMMENT_DOWNVOTED = 0;
+  const REP_DOWNVOTE_COMMENT = 0;
+  const REP_SUGGESTED_EDIT = 2;
+
   // Loyalty settings. Define a set of adjacent intervals going back in time
   // and give points for every day in each interval. Then loyalty is the sum
   // of scores computed for each party that the person belonged to, normalized
