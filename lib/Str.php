@@ -37,19 +37,6 @@ class Str {
     return $result;
   }
 
-  static function markdown($s) {
-    $s = trim($s);
-
-    $fileName = tempnam(Config::TMP_DIR, 'dignitas_');
-    file_put_contents($fileName, $s);
-
-    OS::execute("marked < {$fileName}", $output);
-
-    @unlink($fileName);
-
-    return $output;
-  }
-
   static function formatNumber($n, int $decimals = 0) {
     $l = localeconv();
     return number_format($n, $decimals, $l['decimal_point'], $l['thousands_sep']);
