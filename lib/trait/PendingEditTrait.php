@@ -213,16 +213,17 @@ trait PendingEditTrait {
   function processPendingEdit(bool $accept) {
     $pending = static::get_by_id($this->pendingEditId);
     if ($pending) {
+      $u = User::get_by_id($pending->modUserId);
+      $u->decrementPendingEdits();
       if ($accept) {
         // this will also clear the $this->pendingEditId field and save $this
         $this->deepMerge($pending);
+        $u->grantReputation(Config::REP_SUGGESTED_EDIT);
       } else {
         $this->pendingEditId = 0;
         $this->save();
       }
       CloneMap::deleteRoot($pending);
-      $u = User::get_by_id($pending->modUserId);
-      $u->decrementPendingEdits();
       $pending->delete();
     }
   }
