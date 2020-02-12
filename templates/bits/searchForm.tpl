@@ -6,7 +6,7 @@
 <form
   id="searchForm"
   action="{Router::link('aggregate/search')}"
-  class="d-inline w-100 mx-3">
+  class="d-inline w-50 mx-3">
 
   <div id="searchFieldContainer" class="input-group">
     {* the <select> element for Select2 is created in main.js *}
