@@ -214,3 +214,11 @@ footer {
   display: inline-block;
   height: 20px;
 }
+
+/****************************** file inputs ******************************/
+
+.custom-file-label::after {
+  font-family: 'icons';
+  /* hack: this hardcodes the glyph for icon-folder-open */
+  content: '\e809';
+}

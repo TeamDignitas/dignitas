@@ -114,7 +114,7 @@
         <button
           name="deleteButton"
           type="submit"
-          class="btn btn-danger float-right deleteButton"
+          class="btn btn-danger float-right"
           data-confirm="{t}Are you sure you want to delete this statement?{/t}">
           <i class="icon icon-trash"></i>
           {t}delete{/t}

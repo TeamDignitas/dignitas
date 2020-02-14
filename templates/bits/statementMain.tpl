@@ -3,8 +3,7 @@
 {include "bits/image.tpl"
   obj=$entity
   geometry=Config::THUMB_ENTITY_MEDIUM
-  spanClass="float-right"
-  imgClass="pic"}
+  spanClass="float-right"}
 
 <h3>
   {$statement->summary|escape}

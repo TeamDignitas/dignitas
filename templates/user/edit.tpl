@@ -48,7 +48,7 @@
           <input
             name="image"
             type="file"
-            class="form-control-file {if isset($errors.image)}is-invalid{/if}"
+            class="custom-file-input {if isset($errors.image)}is-invalid{/if}"
             id="fieldImage">
           <label class="custom-file-label" for="fieldImage">
             {t}choose an image to upload or leave empty to keep existing image{/t}

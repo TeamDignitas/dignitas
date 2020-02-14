@@ -164,7 +164,7 @@
           <input
             name="image"
             type="file"
-            class="form-control-file {if isset($errors.image)}is-invalid{/if}"
+            class="custom-file-input {if isset($errors.image)}is-invalid{/if}"
             id="fieldImage">
           <label class="custom-file-label" for="fieldImage">
             {t}choose an image to upload or leave empty to keep existing image{/t}
@@ -204,7 +204,7 @@
         <button
           name="deleteButton"
           type="submit"
-          class="btn btn-danger float-right deleteButton"
+          class="btn btn-danger float-right"
           data-confirm="{t}Are you sure you want to delete this entity?{/t}">
           <i class="icon icon-trash"></i>
           {t}delete{/t}

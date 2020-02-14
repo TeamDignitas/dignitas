@@ -77,6 +77,20 @@ class Router {
       'en_US.utf8' => 'ajax/save-comment',
     ],
 
+    // domains
+    'domain/edit' => [
+      'en_US.utf8' => 'edit-domain',
+      'ro_RO.utf8' => 'editeaza-domeniu',
+    ],
+    'domain/image' => [
+      'en_US.utf8' => 'domain-image',
+      'ro_RO.utf8' => 'imagine-domeniu',
+    ],
+    'domain/list' => [
+      'en_US.utf8' => 'domains',
+      'ro_RO.utf8' => 'domenii',
+    ],
+
     // entities
     'entity/edit' => [
       'en_US.utf8' => 'edit-author',
@@ -192,6 +206,8 @@ class Router {
     'answer/history' => [ 'id' ],
     'attachment/view' => [ 'id', 'fileName' ],
     'comment/delete' => [ 'id' ],
+    'domain/image' => [ 'id', 'fileName' ],
+    'domain/edit' => [ 'id' ],
     'entity/edit' => [ 'id' ],
     'entity/history' => [ 'id' ],
     'entity/image' => [ 'id', 'fileName' ],
@@ -331,6 +347,8 @@ class Router {
     switch ($object->getObjectType()) {
       case Proto::TYPE_ANSWER:
         return Router::link('answer/edit') . '/' . $object->id;
+      case Proto::TYPE_DOMAIN:
+        return Router::link('domain/edit') . '/' . $object->id;
       case Proto::TYPE_ENTITY:
         return Router::link('entity/edit') . '/' . $object->id;
       case Proto::TYPE_STATEMENT:

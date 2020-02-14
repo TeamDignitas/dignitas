@@ -158,7 +158,6 @@ $(function() {
 });
 
 /*************************** loyalty popovers ***************************/
-
 $(function() {
   $('[data-toggle="popover"]').popover({
     content: getPopoverContent,
@@ -170,4 +169,14 @@ $(function() {
   function getPopoverContent() {
     return $(this).parent().find('.loyaltyPopover').html();
   }
+});
+
+/****************************** file inputs ******************************/
+
+$(function() {
+  $('.custom-file-input').on('change', function() {
+    // change the label value
+    let fileName = $(this).val().split('\\').pop();
+    $(this).next('.custom-file-label').addClass('selected').html(fileName);
+  });
 });

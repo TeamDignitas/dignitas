@@ -21,6 +21,14 @@
     </div>
   {/if}
 
+  {if User::isModerator()}
+    <div>
+      <a href="{Router::link('domain/list')}">
+        {t}domains{/t}
+      </a>
+    </div>
+  {/if}
+
   <div>
     <a href="{Router::link('tag/list')}">
       {t}tags{/t}

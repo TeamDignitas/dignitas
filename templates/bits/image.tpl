@@ -1,4 +1,5 @@
 {$condition=$condition|default:$obj->fileExtension}
+{$imgClass=$imgClass|default:'pic'}
 {$spanClass=$spanClass|default:''}
 {if $obj->fileExtension && $condition}
   <span class="{$spanClass}">

@@ -197,6 +197,19 @@ class User extends Proto {
   }
 
   /**
+   * Checks if the active user is a moderator and bounces them if not.
+   */
+  static function enforceModerator() {
+    // redirect to log in page if there is no active user
+    if (!self::$active) {
+      Util::redirectToLogin();
+    } else if (!self::isModerator()) {
+      FlashMessage::add(_('Only moderators may perform this action.'));
+      Util::redirectToHome();
+    }
+  }
+
+  /**
    * Checks if the active user may flag the given object.
    *
    * @param Flaggable $obj A flaggable object

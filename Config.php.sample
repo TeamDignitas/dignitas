@@ -51,6 +51,7 @@ class Config {
   const THUMB_ENTITY_MEDIUM = '75';
   const THUMB_ENTITY_LARGE = '200';
   const THUMB_INLINE_ATTACHMENT = '200'; // default geometry for inline attachments
+  const THUMB_DOMAIN = '16x16';
 
   // Upload specifications.
   // Values in 'extensions' refer to the MIME types above.
@@ -82,6 +83,14 @@ class Config {
       'extensions' => [ 'gif', 'jpg', 'pdf', 'png', 'svg' ],
       'limit' => 64 << 20, // 16 MB,
       'geometries' => [ '100', '200', '300', '400', 'x100', 'x200', 'x300', 'x400', 'full' ],
+    ],
+    // domain images
+    'Domain' => [
+      'extensions' => [ 'gif', 'jpg', 'png', 'svg' ],
+      'limit' => 1 << 20, // 1 MB,
+      'geometries' => [
+        self::THUMB_DOMAIN,
+      ],
     ],
   ];
 
