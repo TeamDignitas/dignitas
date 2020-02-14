@@ -3,7 +3,7 @@
   <button
     class="navbar-toggler"
     type="button"
-    data-toggle="collapse"
+    data-toggle="slide-collapse"
     data-target="#navbarLeft"
     aria-controls="navbarLeft"
     aria-expanded="false"
@@ -11,10 +11,10 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse bg-dark to-left" id="navbarLeft">
+  <div class="navbar-collapse bg-dark to-left" id="navbarLeft">
     {include "bits/searchForm.tpl"}
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="#">About us</a>
       </li>
       <li class="nav-item">
@@ -26,14 +26,18 @@
   <!-- logo -->
   <div class="mx-auto">
     <a class="navbar-brand" href="{Config::URL_PREFIX}">
-      <img src="{Config::URL_PREFIX}img/dignitas-white-logo-svg.svg" width="163" height="26" alt="DIGNITAS logo">
+      <img
+        src="{Config::URL_PREFIX}img/dignitas-white-logo-svg.svg"
+        width="163"
+        height="26"
+        alt="DIGNITAS logo">
     </a>
   </div>
 
   <button
     class="navbar-toggler"
     type="button"
-    data-toggle="collapse"
+    data-toggle="slide-collapse"
     data-target="#navbarRight"
     aria-controls="navbarRight"
     aria-expanded="false"
@@ -41,7 +45,7 @@
     <span class="icon icon-user"></span>
   </button>
 
-  <div class="collapse navbar-collapse bg-dark to-right" id="navbarRight">
+  <div class="navbar-collapse bg-dark to-right" id="navbarRight">
 
     <ul class="navbar-nav ml-auto">
       <li class="nav-item dropdown">

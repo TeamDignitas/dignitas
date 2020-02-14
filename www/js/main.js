@@ -8,6 +8,16 @@ $(function() {
 });
 
 
+/*************************** nav sidebar slide ***************************/
+$(function() {
+  $('.navbar-toggler').click(function() {
+    // toggle .shown on our menu and remove .shown on other menu
+    var menu = $($(this).data('target'));
+    menu.toggleClass('shown');
+    menu.siblings().removeClass('shown');
+  });
+});
+
 /****************************** search form ******************************/
 $(function() {
 

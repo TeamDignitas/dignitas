@@ -10,14 +10,6 @@ img.pic {
   outline: 1px solid #ddd;
 }
 
-.navbar-nav a:hover {
-  background: #ccc; /* slightly more visible */
-}
-
-.navbar-nav {
-  white-space: nowrap;
-}
-
 .dateFieldContainer {
   display: inline-block;
   white-space: nowrap;
@@ -46,35 +38,35 @@ blockquote {
 
 /******************************** navbar *********************************/
 
-@media (max-width: 992px) {
+.navbar-nav {
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
   .navbar-collapse {
+    padding: 0 15px 15px;
     position: absolute;
-    top: 56px;
-    right: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 15px;
+    top: 54px;
+    transition: left 0.3s linear;
     width: 50%;
-    transition: all 0.8s linear;
-    display: block;
-    z-index: 6;
-  }
-
-  .navbar-collapse.collapsing {
-    height: auto !important;
-    margin-right: 50%;
-    transition: all 0.8s linear;
-    display: block;
-  }
-
-  .navbar-collapse.to-right {
-    right: 0;
-    outline: 1px solid red;
   }
 
   .navbar-collapse.to-left {
+    left: -50%;
+  }
+
+  .navbar-collapse.to-right {
+    left: 100%;
+  }
+
+  .navbar-collapse.to-left.shown {
     left: 0;
-    outline: 1px solid green;
+    transition: left 0.3s linear;
+  }
+
+  .navbar-collapse.to-right.shown {
+    left: 50%;
+    transition: left 0.3s linear;
   }
 }
 
