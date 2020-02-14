@@ -1,31 +1,49 @@
-<nav class="navbar navbar-expand-md navbar-light bg-light">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
   <button
     class="navbar-toggler"
     type="button"
     data-toggle="collapse"
-    data-target="#navbarContent"
-    aria-controls="navbarContent"
+    data-target="#navbarLeft"
+    aria-controls="navbarLeft"
     aria-expanded="false"
     aria-label="{t}toggle menu{/t}">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarContent">
-    <ul class="navbar-nav">
-
-      {if $pageType != 'home'}
-        <li class="nav-item">
-          <a class="nav-link" href="{Config::URL_PREFIX}">
-            {t}home page{/t}
-          </a>
-        </li>
-      {/if}
-
-    </ul>
-
+  <div class="collapse navbar-collapse bg-dark to-left" id="navbarLeft">
     {include "bits/searchForm.tpl"}
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">About us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Team</a>
+      </li>
+    </ul>
+  </div>
 
-    <ul class="navbar-nav">
+  <!-- logo -->
+  <div class="mx-auto">
+    <a class="navbar-brand" href="{Config::URL_PREFIX}">
+      <img src="{Config::URL_PREFIX}img/dignitas-white-logo-svg.svg" width="163" height="26" alt="DIGNITAS logo">
+    </a>
+  </div>
+
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarRight"
+    aria-controls="navbarRight"
+    aria-expanded="false"
+    aria-label="{t}toggle menu{/t}">
+    <span class="icon icon-user"></span>
+  </button>
+
+  <div class="collapse navbar-collapse bg-dark to-right" id="navbarRight">
+
+    <ul class="navbar-nav ml-auto">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle"
           href="#"
@@ -112,5 +130,6 @@
       {/if}
 
     </ul>
+
   </div>
 </nav>
