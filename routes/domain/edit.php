@@ -4,6 +4,7 @@ User::enforceModerator();
 
 $id = Request::get('id');
 $saveButton = Request::has('saveButton');
+$cloneButton = Request::has('cloneButton');
 $deleteButton = Request::has('deleteButton');
 
 if ($id) {
@@ -14,7 +15,7 @@ if ($id) {
 
 // domains can be deleted if no links use them
 $numLinks = Link::count_by_domainId($domain->id);
-$canDelete = !$numLinks;
+$canDelete = $id && !$numLinks;
 
 if ($deleteButton) {
   if ($canDelete) {
@@ -29,7 +30,22 @@ if ($deleteButton) {
   }
 }
 
+if ($cloneButton) {
+  if ($id) {
+    FlashMessage::add(_('Domain cloned. This is the clone\'s page.'), 'success');
+    $clone = $domain->parisClone();
+    $clone->name .= ' CLONE';
+    $clone->save();
+    $clone->copyUploadedFileFrom($domain);
+    Util::redirect(Router::getEditLink($clone));
+  } else {
+    FlashMessage::add(_('Please save the domain before cloning it.'), 'danger');
+    Util::redirect(Router::getEditLink($domain));
+  }
+}
+
 if ($saveButton) {
+  $originalName = $domain->name;
   $domain->name = Request::get('name');
   $domain->displayValue = Request::get('displayValue');
   $deleteImage = Request::has('deleteImage');
@@ -37,7 +53,11 @@ if ($saveButton) {
 
   $errors = validate($domain, $fileData);
   if (empty($errors)) {
+    if ($domain->id && ($originalName != $domain->name)) {
+      $domain->dissociateLinks();
+    }
     $domain->saveWithFile($fileData, $deleteImage);
+    $domain->associateLinks();
 
     FlashMessage::add(_('Domain saved.'), 'success');
     Util::redirect(Router::link('domain/list'));

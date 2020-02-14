@@ -72,6 +72,13 @@
         {t}save{/t}
       </button>
 
+      {if $domain->id}
+        <button name="cloneButton" type="submit" class="btn btn-light">
+          <i class="icon icon-clone"></i>
+          {t}clone{/t}
+        </button>
+      {/if}
+
       <a href="{Router::link('domain/list')}" class="btn btn-light">
         <i class="icon icon-cancel"></i>
         {t}cancel{/t}
