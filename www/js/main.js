@@ -15,6 +15,10 @@ $(function() {
     var menu = $($(this).data('target'));
     menu.toggleClass('shown');
     menu.siblings().removeClass('shown');
+
+    // set height to entire page
+    var h = Math.max($(window).height(), $(document).height()) - $('nav').height();
+    menu.height(h);
   });
 });
 

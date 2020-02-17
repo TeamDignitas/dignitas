@@ -46,9 +46,10 @@ blockquote {
   .navbar-collapse {
     padding: 0 15px 15px;
     position: absolute;
-    top: 54px;
+    top: 100%;
     transition: left 0.3s linear;
     width: 50%;
+    z-index: 10;
   }
 
   .navbar-collapse.to-left {
