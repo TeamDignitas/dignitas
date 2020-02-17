@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-02-05 16:45+0200\n"
-"PO-Revision-Date: 2020-02-07 15:45+0200\n"
+"POT-Creation-Date: 2020-02-17 12:28+0200\n"
+"PO-Revision-Date: 2020-02-17 12:31+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3\n"
 "X-Poedit-Basepath: ../../..\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n==0 || (n!=1 && n%100>=1 && n"
 "%100<=19) ? 1 : 2);\n"
@@ -35,7 +35,7 @@ msgstr ""
 "ați tastat adresa corectă sau vizitați <a href=\"%1\">pagina principală</a>."
 
 #: templates/aggregate/dashboard.tpl:3 templates/aggregate/dashboard.tpl:6
-#: templates/bits/navmenu.tpl:79
+#: templates/bits/navmenu.tpl:103
 msgid "dashboard"
 msgstr "panou de control"
 
@@ -49,13 +49,18 @@ msgstr "adaugă o afirmație"
 msgid "add an author"
 msgstr "adaugă un autor"
 
-#: templates/aggregate/dashboard.tpl:26 templates/entity/edit.tpl:150
+#: templates/aggregate/dashboard.tpl:27 templates/domain/list.tpl:3
+#: templates/domain/list.tpl:7
+msgid "domains"
+msgstr "domenii"
+
+#: templates/aggregate/dashboard.tpl:34 templates/entity/edit.tpl:150
 #: templates/statement/edit.tpl:93 templates/tag/list.tpl:3
 #: templates/tag/list.tpl:7
 msgid "tags"
 msgstr "etichete"
 
-#: templates/aggregate/dashboard.tpl:31
+#: templates/aggregate/dashboard.tpl:39
 msgid "review queues"
 msgstr "cozi de evaluare"
 
@@ -110,14 +115,15 @@ msgstr ""
 "sugera modificări care vor fi puse în coada de evaluare."
 
 #: templates/answer/edit.tpl:16 templates/auth/resetPassword.tpl:45
-#: templates/bits/commentForm.tpl:22 templates/entity/edit.tpl:195
-#: templates/relation/edit.tpl:25 templates/statement/edit.tpl:105
-#: templates/tag/edit.tpl:153 templates/user/edit.tpl:117
+#: templates/bits/commentForm.tpl:22 templates/domain/edit.tpl:72
+#: templates/entity/edit.tpl:195 templates/relation/edit.tpl:25
+#: templates/statement/edit.tpl:105 templates/tag/edit.tpl:153
+#: templates/user/edit.tpl:117
 msgid "save"
 msgstr "salvează"
 
 #: templates/auth/login.tpl:3 templates/auth/login.tpl:16
-#: templates/auth/login.tpl:67 templates/bits/navmenu.tpl:109
+#: templates/auth/login.tpl:67 templates/bits/navmenu.tpl:131
 msgid "log in"
 msgstr "autentificare"
 
@@ -206,9 +212,10 @@ msgstr "adaugă un comentariu"
 msgid "tag"
 msgstr "etichetă"
 
-#: templates/bits/answerEdit.tpl:24 templates/entity/edit.tpl:200
-#: templates/relation/edit.tpl:30 templates/statement/edit.tpl:110
-#: templates/tag/edit.tpl:158 templates/user/edit.tpl:122
+#: templates/bits/answerEdit.tpl:24 templates/domain/edit.tpl:84
+#: templates/entity/edit.tpl:200 templates/relation/edit.tpl:30
+#: templates/statement/edit.tpl:110 templates/tag/edit.tpl:158
+#: templates/user/edit.tpl:122
 msgid "cancel"
 msgstr "renunță"
 
@@ -225,8 +232,9 @@ msgstr "arată versiunile"
 msgid "Are you sure you want to delete this answer?"
 msgstr "Confirmați ștergerea acestui răspuns?"
 
-#: templates/bits/answerMain.tpl:40 templates/entity/edit.tpl:210
-#: templates/statement/edit.tpl:120 templates/tag/edit.tpl:180
+#: templates/bits/answerMain.tpl:40 templates/domain/edit.tpl:94
+#: templates/entity/edit.tpl:210 templates/statement/edit.tpl:120
+#: templates/tag/edit.tpl:180
 msgid "delete"
 msgstr "șterge"
 
@@ -254,7 +262,8 @@ msgstr[1] "%1 linii identice omise"
 msgstr[2] "%1 de linii identice omise"
 
 #: templates/bits/editButton.tpl:20 templates/bits/reviewActions.tpl:25
-#: templates/tag/view.tpl:14 templates/user/view.tpl:49
+#: templates/domain/list.tpl:34 templates/tag/view.tpl:14
+#: templates/user/view.tpl:49
 msgid "edit"
 msgstr "editează"
 
@@ -286,7 +295,7 @@ msgstr "membri"
 msgid "test user login"
 msgstr "autentificare ca utilizator de test"
 
-#: templates/bits/fakeLogin.tpl:33 templates/bits/navmenu.tpl:90
+#: templates/bits/fakeLogin.tpl:33 templates/bits/navmenu.tpl:113
 #: templates/user/view.tpl:22
 msgid "reputation"
 msgstr "reputație"
@@ -439,23 +448,19 @@ msgstr "fișier încărcat"
 msgid "Markdown help"
 msgstr "ajutor pentru Markdown"
 
-#: templates/bits/navmenu.tpl:9
+#: templates/bits/navmenu.tpl:10 templates/bits/navmenu.tpl:44
 msgid "toggle menu"
 msgstr "arată/ascunde meniul"
 
-#: templates/bits/navmenu.tpl:19
-msgid "home page"
-msgstr "pagina principală"
-
-#: templates/bits/navmenu.tpl:75
+#: templates/bits/navmenu.tpl:99
 msgid "my profile"
 msgstr "profilul meu"
 
-#: templates/bits/navmenu.tpl:93
+#: templates/bits/navmenu.tpl:115
 msgid "change reputation manually (will refresh the page)"
 msgstr "schimbă reputația manual (va reîncărca pagina)"
 
-#: templates/bits/navmenu.tpl:101
+#: templates/bits/navmenu.tpl:123
 msgid "log out"
 msgstr "închide sesiunea"
 
@@ -541,14 +546,69 @@ msgstr "context"
 msgid "goal"
 msgstr "scop"
 
-#: templates/entity/edit.tpl:5
-msgid "edit author"
-msgstr "editează autor"
+#: templates/domain/edit.tpl:3 templates/domain/edit.tpl:6
+msgid "edit domain"
+msgstr "editează domeniul"
 
+#: templates/domain/edit.tpl:12 templates/domain/list.tpl:19
 #: templates/entity/edit.tpl:27 templates/tag/edit.tpl:23
 #: lib/model/RevisionEntity.php:16
 msgid "name"
 msgstr "nume"
+
+#: templates/domain/edit.tpl:20
+msgid "a domain name like google.com"
+msgstr "un nume de domeniu ca google.com"
+
+#: templates/domain/edit.tpl:27 templates/domain/list.tpl:20
+msgid "display value"
+msgstr "valoare vizibilă"
+
+#: templates/domain/edit.tpl:35
+msgid "a value more suitable for humans"
+msgstr "o valoare folositoare pentru oameni"
+
+#: templates/domain/edit.tpl:41 templates/entity/edit.tpl:161
+#: templates/user/edit.tpl:45
+msgid "image"
+msgstr "imagine"
+
+#: templates/domain/edit.tpl:56 templates/entity/edit.tpl:170
+#: templates/user/edit.tpl:54
+msgid "choose an image to upload or leave empty to keep existing image"
+msgstr ""
+"alegeți o imagine pentru încărcare sau lăsați gol pentru a păstra imaginea "
+"existentă"
+
+#: templates/domain/edit.tpl:64 templates/entity/edit.tpl:178
+#: templates/user/edit.tpl:62
+msgid "delete image"
+msgstr "șterge imaginea"
+
+#: templates/domain/edit.tpl:78
+msgid "clone"
+msgstr "clonează"
+
+#: templates/domain/edit.tpl:92
+msgid "Are you sure you want to delete this domain?"
+msgstr "Confirmați ștergerea acestui domeniu?"
+
+#: templates/domain/list.tpl:11
+msgid "add a domain"
+msgstr "adaugă un domeniu"
+
+#: templates/domain/list.tpl:18 templates/tag/edit.tpl:111
+msgid "icon"
+msgstr "iconiță"
+
+#: templates/domain/list.tpl:21 templates/entity/edit.tpl:46
+#: templates/entity/edit.tpl:112
+msgid "actions"
+msgstr "acțiuni"
+
+#: templates/entity/edit.tpl:5
+msgid "edit author"
+msgstr "editează autor"
 
 #: templates/entity/edit.tpl:44 templates/entity/edit.tpl:107
 msgid "order"
@@ -557,10 +617,6 @@ msgstr "ordine"
 #: templates/entity/edit.tpl:45
 msgid "alias"
 msgstr "alias"
-
-#: templates/entity/edit.tpl:46 templates/entity/edit.tpl:112
-msgid "actions"
-msgstr "acțiuni"
 
 #: templates/entity/edit.tpl:60
 msgid "add an alias"
@@ -598,20 +654,6 @@ msgstr "adaugă o relație"
 #: templates/entity/edit.tpl:144
 msgid "add a link"
 msgstr "adaugă o legătură"
-
-#: templates/entity/edit.tpl:161 templates/user/edit.tpl:45
-msgid "image"
-msgstr "imagine"
-
-#: templates/entity/edit.tpl:170 templates/user/edit.tpl:54
-msgid "choose an image to upload or leave empty to keep existing image"
-msgstr ""
-"alegeți o imagine pentru încărcare sau lăsați gol pentru a păstra imaginea "
-"existentă"
-
-#: templates/entity/edit.tpl:178 templates/user/edit.tpl:62
-msgid "delete image"
-msgstr "șterge imaginea"
 
 #: templates/entity/edit.tpl:208
 msgid "Are you sure you want to delete this entity?"
@@ -734,10 +776,6 @@ msgstr "culoarea textului"
 #: templates/tag/edit.tpl:93
 msgid "background color"
 msgstr "culoarea fundalului"
-
-#: templates/tag/edit.tpl:111
-msgid "icon"
-msgstr "iconiță"
 
 #: templates/tag/edit.tpl:133
 msgid "show only the icon, no text"
@@ -877,49 +915,49 @@ msgstr "Sînteți deja autentificat."
 msgid "Please log in to perform this action."
 msgstr "Vă rugăm să vă autentificați pentru a continua."
 
-#: lib/model/Answer.php:33
+#: lib/model/Answer.php:41
 msgid "This answer was deleted"
 msgstr "Acest răspuns a fost șters"
 
-#: lib/model/Answer.php:36 lib/model/Statement.php:86
+#: lib/model/Answer.php:44 lib/model/Statement.php:97
 msgid "because it is spam."
 msgstr "deoarece este spam."
 
-#: lib/model/Answer.php:37 lib/model/Statement.php:87
+#: lib/model/Answer.php:45 lib/model/Statement.php:98
 msgid "because it is rude or abusive."
 msgstr "deoarece conține insulte sau abuzuri."
 
-#: lib/model/Answer.php:38 lib/model/Entity.php:102 lib/model/Statement.php:89
+#: lib/model/Answer.php:46 lib/model/Entity.php:102 lib/model/Statement.php:100
 msgid "because it is off-topic."
 msgstr "deoarece este pe lîngă subiect."
 
-#: lib/model/Answer.php:39 lib/model/Statement.php:91
+#: lib/model/Answer.php:47 lib/model/Statement.php:102
 msgid "because it is low-quality."
 msgstr "deoarece este de slabă calitate."
 
-#: lib/model/Answer.php:40
+#: lib/model/Answer.php:48
 msgid "by its author."
 msgstr "de către autor."
 
-#: lib/model/Answer.php:41 lib/model/Entity.php:104 lib/model/Statement.php:93
+#: lib/model/Answer.php:49 lib/model/Entity.php:104 lib/model/Statement.php:104
 msgid "by"
 msgstr "de către"
 
-#: lib/model/Answer.php:42 lib/model/Entity.php:105 lib/model/Statement.php:94
+#: lib/model/Answer.php:50 lib/model/Entity.php:105 lib/model/Statement.php:105
 msgid "for other reasons."
 msgstr "pentru alte motive."
 
-#: lib/model/Answer.php:75
+#: lib/model/Answer.php:83
 #, php-format
 msgid "You need at least %s reputation to add answers."
 msgstr "Vă trebuie o reputație de cel puțin %s pentru a adăuga răspunsuri."
 
-#: lib/model/Answer.php:83
+#: lib/model/Answer.php:91
 #, php-format
 msgid "You need at least %s reputation to edit answers."
 msgstr "Vă trebuie o reputație de cel puțin %s pentru a edita răspunsuri."
 
-#: lib/model/Comment.php:55
+#: lib/model/Comment.php:66
 #, php-format
 msgid "Comments can be at most %d characters long."
 msgstr "Comentariile pot avea cel mult %d caractere."
@@ -944,12 +982,12 @@ msgstr "site web"
 msgid "company"
 msgstr "companie"
 
-#: lib/model/Entity.php:86 lib/model/Review.php:111 lib/model/Statement.php:70
+#: lib/model/Entity.php:86 lib/model/Review.php:111 lib/model/Statement.php:81
 #: lib/trait/FlaggableTrait.php:69
 msgid "duplicate"
 msgstr "duplicate"
 
-#: lib/model/Entity.php:86 lib/model/Statement.php:72
+#: lib/model/Entity.php:86 lib/model/Statement.php:83
 #: lib/trait/FlaggableTrait.php:69
 msgid "closed"
 msgstr "închisă"
@@ -974,7 +1012,7 @@ msgstr "deoarece profilul său conține insulte sau abuzuri."
 msgid "as a duplicate of the entity"
 msgstr "ca duplicat al autorului"
 
-#: lib/model/Entity.php:103 lib/model/Statement.php:92
+#: lib/model/Entity.php:103 lib/model/Statement.php:103
 msgid "by the user who added it."
 msgstr "de către utilizatorul care a adăugat-o."
 
@@ -1201,50 +1239,50 @@ msgstr "surse șterse"
 msgid "changed source"
 msgstr "sursă modificată"
 
-#: lib/model/Statement.php:73 lib/trait/FlaggableTrait.php:70
+#: lib/model/Statement.php:84 lib/trait/FlaggableTrait.php:70
 msgid "deleted"
 msgstr "ștearsă"
 
-#: lib/model/Statement.php:82
+#: lib/model/Statement.php:93
 msgid "This statement was closed"
 msgstr "Această afirmație a fost închisă"
 
-#: lib/model/Statement.php:83
+#: lib/model/Statement.php:94
 msgid "This statement was deleted"
 msgstr "Această afirmație a fost ștearsă"
 
-#: lib/model/Statement.php:88
+#: lib/model/Statement.php:99
 msgid "as a duplicate of the statement"
 msgstr "ca duplicat al afirmației"
 
-#: lib/model/Statement.php:90
+#: lib/model/Statement.php:101
 msgid "because it is unverifiable."
 msgstr "deoarece este neverificabilă."
 
-#: lib/model/Statement.php:112
+#: lib/model/Statement.php:123
 #, php-format
 msgid "You need at least %s reputation to add statements."
 msgstr "Vă trebuie o reputație de cel puțin %s pentru a adăuga afirmații."
 
-#: lib/model/Statement.php:120
+#: lib/model/Statement.php:131
 #, php-format
 msgid "You need at least %s reputation to edit statements."
 msgstr "Vă trebuie o reputație de cel puțin %s pentru a edita afirmații."
 
-#: lib/model/User.php:117 routes/auth/login.php:58
+#: lib/model/User.php:135 routes/auth/login.php:58
 #: routes/auth/lostPassword.php:50
 msgid "Please enter an email address."
 msgstr "Vă rugăm să introduceți o adresă de e-mail."
 
-#: lib/model/User.php:122
+#: lib/model/User.php:140
 msgid "This email address is already taken."
 msgstr "Această adresă de e-mail este deja folosită."
 
-#: lib/model/User.php:126 routes/auth/lostPassword.php:52
+#: lib/model/User.php:144 routes/auth/lostPassword.php:52
 msgid "This email address looks incorrect."
 msgstr "Adresa de e-mail pare incorectă."
 
-#: lib/model/User.php:136
+#: lib/model/User.php:154
 msgid ""
 "Your nickname must begin with a letter or digit and consist of 3 to 30 "
 "letters, digits and punctuation from among -_."
@@ -1252,33 +1290,37 @@ msgstr ""
 "Porecla dumneavoastră trebuie să înceapă cu o literă sau cifră și să conțină "
 "între 3 și 30 de litere, cifre și punctuație din setul -_."
 
-#: lib/model/User.php:145 routes/auth/login.php:62
+#: lib/model/User.php:163 routes/auth/login.php:62
 msgid "Please enter a password."
 msgstr "Vă rugăm să introduceți o parolă."
 
-#: lib/model/User.php:147
+#: lib/model/User.php:165
 msgid "Please enter your password twice to prevent typos."
 msgstr "Vă rugăm să introduceți parola de două ori pentru verificare."
 
-#: lib/model/User.php:149
+#: lib/model/User.php:167
 msgid "Passwords don't match."
 msgstr "Parolele nu coincid."
 
-#: lib/model/User.php:151
+#: lib/model/User.php:169
 msgid "Your password must be at least 8 characters long."
 msgstr "Parola trebuie să aibă cel puțin 8 caractere."
 
-#: lib/model/User.php:175
+#: lib/model/User.php:193
 #, php-format
 msgid "You need at least %s reputation to perform this action."
 msgstr "Vă trebuie o reputație de cel puțin %s pentru această acțiune."
 
-#: lib/model/User.php:194
+#: lib/model/User.php:207
+msgid "Only moderators may perform this action."
+msgstr "Numai moderatorii pot face această acțiune."
+
+#: lib/model/User.php:225
 #, php-format
 msgid "You need at least %s reputation to flag."
 msgstr "Vă trebuie o reputație de cel puțin %s pentru a raporta."
 
-#: lib/model/User.php:202
+#: lib/model/User.php:233
 #, php-format
 msgid "You can use at most one flag every 24 hours."
 msgid_plural "You can use at most %d flags every 24 hours."
@@ -1286,15 +1328,15 @@ msgstr[0] "Puteți face cel mult o raportare la fiecare 24 de ore."
 msgstr[1] "Puteți face cel mult %d raportări la fiecare 24 de ore."
 msgstr[2] "Puteți face cel mult %d de raportări la fiecare 24 de ore."
 
-#: lib/model/User.php:209
+#: lib/model/User.php:240
 msgid "Cannot flag: object does not exist."
 msgstr "Nu puteți raporta: obiectul nu există."
 
-#: lib/model/User.php:214
+#: lib/model/User.php:245
 msgid "You already have a pending flag for this object."
 msgstr "Aveți deja o raportare în așteptare pentru acest obiect."
 
-#: lib/model/User.php:258
+#: lib/model/User.php:289
 #, php-format
 msgid "You need at least %s reputation to comment."
 msgstr "Vă trebuie o reputație de cel puțin %s pentru a comenta."
@@ -1409,6 +1451,39 @@ msgstr "Am șters comentariul."
 #: routes/comment/save.php:28
 msgid "Your comment was saved."
 msgstr "Am salvat comentariul."
+
+#: routes/domain/edit.php:22
+#, php-format
+msgid "Domain «%s» deleted."
+msgstr "Am șters domeniul «%s»."
+
+#: routes/domain/edit.php:27
+msgid "Cannot delete this domain because some links use it."
+msgstr "Nu pot șterge domeniul deoarece unele legături îl folosesc."
+
+#: routes/domain/edit.php:35
+msgid "Domain cloned. This is the clone's page."
+msgstr "Am clonat domeniul. Aceasta este pagina clonei."
+
+#: routes/domain/edit.php:42
+msgid "Please save the domain before cloning it."
+msgstr "Vă rugăm să salvați domeniul înainte să-l clonați."
+
+#: routes/domain/edit.php:62
+msgid "Domain saved."
+msgstr "Am salvat domeniul."
+
+#: routes/domain/edit.php:81
+msgid "Please enter a domain name."
+msgstr "Vă rugăm să introduceți un nume de domeniu."
+
+#: routes/domain/edit.php:86
+msgid "A domain by this name already exists."
+msgstr "Există deja un domeniu cu acest nume."
+
+#: routes/domain/edit.php:90
+msgid "Please enter a display value."
+msgstr "Vă rugăm să introduceți o valoare de afișat."
 
 #: routes/entity/edit.php:17
 msgid "You cannot delete this entity."
@@ -1635,6 +1710,9 @@ msgstr "Nu puteți vota: obiectul nu există."
 #: routes/vote/save.php:46
 msgid "You cannot vote for your own messages."
 msgstr "Nu puteți vota propriile mesaje."
+
+#~ msgid "home page"
+#~ msgstr "pagina principală"
 
 # Date format in your locale, where %e is the day (1 to 31), %b is the abbreviated month name (Jan to Dec) and %Y is the four-digit year.
 #~ msgid "%b %e, %Y"
