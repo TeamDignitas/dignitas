@@ -79,6 +79,12 @@ blockquote {
 
 .navbar .select2 {
   background-color: #fff;
+  border-bottom-left-radius: 0.25rem;
+  border-top-left-radius: 0.25rem;
+}
+
+.select2-container--bootstrap4 .select2-selection {
+  border-width: 0;
 }
 
 /* Firefox and Chrome insert a <div> in place of the <noscript> element, which
