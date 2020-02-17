@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden; /* hide the sliding menus */
+}
+
 body.waiting * {
   cursor: progress;
 }
