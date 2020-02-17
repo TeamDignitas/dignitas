@@ -7,7 +7,7 @@
   {include "bits/statement.tpl" editLink=true}
 
   {if count($answers)}
-    <h4 class="mt-4">
+    <h4 class="row mt-4 answer-label">
       {t count=count($answers) 1=count($answers) plural="%1 answers"}one answer{/t}
     </h4>
 
@@ -17,7 +17,7 @@
   {/if}
 
   {if User::may(User::PRIV_ADD_ANSWER)}
-    <h4 class="mt-3">{t}your answer{/t}</h4>
+    <h4 class="row mt-3 answer-label">{t}your answer{/t}</h4>
 
     {capture "buttonText"}{t}post your answer{/t}{/capture}
     {include "bits/answerEdit.tpl"

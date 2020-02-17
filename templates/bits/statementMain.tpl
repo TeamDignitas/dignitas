@@ -1,35 +1,11 @@
 {$statusInfo=$statement->getStatusInfo()}
 
+
 {include "bits/image.tpl"
   obj=$entity
   geometry=Config::THUMB_ENTITY_MEDIUM
   spanClass="float-right"
   imgClass="pic"}
-
-<h3>
-  {$statement->summary|escape}
-  {if $statusInfo}
-    [{$statusInfo['status']}]
-  {/if}
-</h3>
-
-<h5>
-  {include "bits/entityLink.tpl" e=$statement->getEntity()},
-  {$statement->dateMade|ld}
-</h5>
-
-{if count($statement->getLinks())}
-  <div class="text-muted mb-3">
-    {t}sources{/t}:
-    <ul class="list-inline list-inline-bullet d-inline">
-      {foreach $statement->getLinks() as $l}
-        <li class="list-inline-item">
-          {include "bits/link.tpl"}
-        </li>
-      {/foreach}
-    </ul>
-  </div>
-{/if}
 
 {if isset($pendingEditReview)}
   <div class="alert alert-warning mx-5">

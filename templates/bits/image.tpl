@@ -1,7 +1,9 @@
 {$condition=$condition|default:$obj->fileExtension}
 {$spanClass=$spanClass|default:''}
+
+
 {if $obj->fileExtension && $condition}
-  <span class="{$spanClass}">
+  <span class="{$spanClass} politician-photo">
     {$sz=$obj->getFileSize($geometry)}
     <img
       src="{$obj->getFileUrl($geometry)}"
