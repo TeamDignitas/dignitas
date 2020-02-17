@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-02-17 12:28+0200\n"
-"PO-Revision-Date: 2020-02-17 12:31+0200\n"
+"POT-Creation-Date: 2020-02-17 13:05+0200\n"
+"PO-Revision-Date: 2020-02-17 13:06+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -197,7 +197,7 @@ msgstr "Vă redirecționăm înapoi"
 
 #: templates/auth/repost.tpl:18
 msgid "click here if you are not redirected automatically"
-msgstr "clic aici dacă nu sînteți redirecționat automat"
+msgstr "clic aici dacă nu sînteți redirecționat(ă) automat"
 
 #: templates/auth/resetPassword.tpl:3 templates/auth/resetPassword.tpl:9
 msgid "password change"
@@ -277,7 +277,7 @@ msgstr "loialitate"
 
 #: templates/bits/entity.tpl:52 templates/entity/edit.tpl:37
 msgid "also known as"
-msgstr "cunoscut și ca"
+msgstr "alias"
 
 #: templates/bits/entity.tpl:62 templates/entity/edit.tpl:134
 msgid "profile"
@@ -577,7 +577,7 @@ msgstr "imagine"
 #: templates/user/edit.tpl:54
 msgid "choose an image to upload or leave empty to keep existing image"
 msgstr ""
-"alegeți o imagine pentru încărcare sau lăsați gol pentru a păstra imaginea "
+"alegeți o imagine de încărcat sau lăsați gol pentru a păstra imaginea "
 "existentă"
 
 #: templates/domain/edit.tpl:64 templates/entity/edit.tpl:178
@@ -767,7 +767,7 @@ msgstr "opțional; vizibile la survol"
 
 #: templates/tag/edit.tpl:55
 msgid "parent tag"
-msgstr "eticheta părinte"
+msgstr "eticheta-părinte"
 
 #: templates/tag/edit.tpl:75
 msgid "text color"
@@ -850,7 +850,7 @@ msgstr "răspunsuri"
 
 #: templates/user/view.tpl:28
 msgid "member since"
-msgstr "membru de pe"
+msgstr "membr(u/ă) de pe"
 
 #: templates/user/view.tpl:31
 msgid "last seen"
@@ -909,7 +909,7 @@ msgstr[2] "acum %d de secunde"
 
 #: lib/Util.php:7
 msgid "You are already logged in."
-msgstr "Sînteți deja autentificat."
+msgstr "Sînteți deja autentificat(ă)."
 
 #: lib/Util.php:39 routes/user/changeReputation.php:15
 msgid "Please log in to perform this action."
@@ -982,10 +982,10 @@ msgstr "site web"
 msgid "company"
 msgstr "companie"
 
-#: lib/model/Entity.php:86 lib/model/Review.php:111 lib/model/Statement.php:81
+#: lib/model/Entity.php:86 lib/model/Statement.php:81
 #: lib/trait/FlaggableTrait.php:69
 msgid "duplicate"
-msgstr "duplicate"
+msgstr "duplicat"
 
 #: lib/model/Entity.php:86 lib/model/Statement.php:83
 #: lib/trait/FlaggableTrait.php:69
@@ -1125,6 +1125,12 @@ msgstr "comentarii nenecesare"
 #: lib/model/Review.php:110
 msgid "abuse"
 msgstr "insulta"
+
+#: lib/model/Review.php:111
+#, fuzzy
+#| msgid "duplicate"
+msgid "duplicates"
+msgstr "duplicate"
 
 #: lib/model/Review.php:114
 msgid "low-quality"
