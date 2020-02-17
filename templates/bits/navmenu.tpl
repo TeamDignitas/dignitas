@@ -58,9 +58,11 @@
           aria-expanded="false">
           <i class="icon icon-globe"></i>
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarLangDropdown">
+        <div class="dropdown-menu bg-dark" aria-labelledby="navbarLangDropdown">
           {foreach LocaleUtil::getAll() as $id => $name}
-            <a class="dropdown-item" href="{Router::link('helpers/changeLocale')}?id={$id}">
+            <a
+              class="dropdown-item text-light"
+              href="{Router::link('helpers/changeLocale')}?id={$id}">
               <i class="icon icon-ok {if $id != LocaleUtil::getCurrent()}invisible{/if}"></i>
               {$name}
             </a>
@@ -91,34 +93,32 @@
               {$u->getReputation()|nf}
             </span>
           </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarUserDropdown">
-            <a class="dropdown-item" href="{Router::userLink($u)}">
+          <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarUserDropdown">
+            <a class="dropdown-item text-light" href="{Router::userLink($u)}">
               <i class="icon icon-user"></i>
               {t}my profile{/t}
             </a>
-            <a class="dropdown-item" href="{Router::link('aggregate/dashboard')}">
+            <a class="dropdown-item text-light" href="{Router::link('aggregate/dashboard')}">
               <i class="icon icon-gauge"></i>
               {t}dashboard{/t}
             </a>
             {if Config::DEVELOPMENT_MODE}
               <div class="dropdown-divider"></div>
-              <div class="dropdown-item">
+              <div class="dropdown-item text-light">
                 <form id="repChange" class="form-inline">
-                  <div class="input-group">
-                    <label class="icon icon-award"></label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="{t}reputation{/t}">
-                  </div>
-                  <small class="form-text text-muted">
+                  <i class="icon icon-award"></i>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="{t}reputation{/t}">
+                  <small class="form-text text-light">
                     {t}change reputation manually (will refresh the page){/t}
                   </small>
                 </form>
               </div>
             {/if}
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{Router::link('auth/logout')}">
+            <a class="dropdown-item text-light" href="{Router::link('auth/logout')}">
               <i class="icon icon-logout"></i>
               {t}log out{/t}
             </a>
