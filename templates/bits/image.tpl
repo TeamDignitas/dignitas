@@ -3,7 +3,7 @@
 
 
 {if $obj->fileExtension && $condition}
-  <span class="{$spanClass} politician-photo">
+  <span class="{$spanClass} person-photo">
     {$sz=$obj->getFileSize($geometry)}
     <img
       src="{$obj->getFileUrl($geometry)}"

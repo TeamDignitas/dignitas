@@ -36,6 +36,7 @@
 
     </h5>
   </div>
+  <hr class="w-100"/>
 
   <article class="row">
     {if $voteBox}
@@ -76,11 +77,11 @@
         </div>
       {/if}
 
-      <h4>{t}context{/t}</h4>
+      <h5 class="text-uppercase">{t}context{/t}</h4>
 
       {$statement->context|md}
 
-      <h4>{t}goal{/t}</h4>
+      <h5 class="text-uppercase">{t}goal{/t}</h4>
 
       {$statement->goal|escape}
 
@@ -123,15 +124,19 @@
     </div>
 
     <div class="statement-box-area col-md-3 offset-md-1">
-      <aside class="statement-box card">
-        {include "bits/image.tpl"
-          obj=$entity
-          geometry=Config::THUMB_ENTITY_LARGE
-          spanClass="float-right"
-          imgClass="pic"}
-          <div class="card-body">
-            <h5 class="">Afirmație FALSĂ</h5>
-          </div>
+      <aside class="statement-box card false-statement bg-danger text-white">
+        <h5 class="card-title mt-3 mx-auto">
+              {$statement->getEntity()},
+              {$statement->dateMade|ld}
+        </h5>
+        <span class="mx-auto">
+          {include "bits/image.tpl"
+            obj=$entity
+            geometry=Config::THUMB_ENTITY_LARGE
+            spanClass=""
+            imgClass="pic rounded-circle"}
+        </span>
+        <h4 class="card-body mx-auto">Afirmație FALSĂ</h4>
       </aside>
     </div>
 
