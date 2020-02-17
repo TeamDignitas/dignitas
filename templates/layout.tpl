@@ -23,7 +23,7 @@
       {include "bits/navmenu.tpl"}
     </header>
 
-    <div class="mt-3">
+    <div class="mt-5">
       <main class="container">
         {include "bits/flashMessages.tpl"}
         {block "content"}{/block}
