@@ -88,18 +88,18 @@
             voteBox=false}
         </div>
 
-        {else}  {* Comment on a statement *}
+      {else}  {* Comment on a statement *}
 
-          <h3>{cap}{t}pertaining to statement:{/t}{/cap}</h3>
+        <h3>{cap}{t}pertaining to statement:{/t}{/cap}</h3>
 
-          <div id="parentObject">
-            {include "bits/statement.tpl"
-              statement=$parent
-              flagBox=false
-              voteBox=false}
-          </div>
+        <div id="parentObject">
+          {include "bits/statement.tpl"
+            statement=$parent
+            flagBox=false
+            voteBox=false}
+        </div>
 
-        {/if}
+      {/if}
 
     {/if}
 

@@ -108,7 +108,7 @@ class Review extends Proto {
     switch ($reason) {
       case Ct::REASON_SPAM:         return _('spam');
       case Ct::REASON_ABUSE:        return _('abuse');
-      case Ct::REASON_DUPLICATE:    return _('duplicate');
+      case Ct::REASON_DUPLICATE:    return _('duplicates');
       case Ct::REASON_OFF_TOPIC:    return _('off-topic');
       case Ct::REASON_UNVERIFIABLE: return _('unverifiable');
       case Ct::REASON_LOW_QUALITY:  return _('low-quality');
