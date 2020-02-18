@@ -1,11 +1,11 @@
 {extends "layout.tpl"}
 
-{block "title"}{cap}{t}sign up{/t}{/cap}{/block}
+{block "title"}{cap}{t}title-sign-up{/t}{/cap}{/block}
 
 {block "content"}
   <div class="card w-50 m-auto">
     <div class="card-header">
-      {cap}{t}sign up{/t}{/cap}
+      {cap}{t}title-sign-up{/t}{/cap}
     </div>
 
     <div class="card-body">
@@ -22,7 +22,7 @@
               name="nickname"
               value="{$nickname|escape}"
               autofocus
-              placeholder="{t}nickname{/t}">
+              placeholder="{t}label-nickname{/t}">
           </div>
           {include "bits/fieldErrors.tpl" errors=$errors.nickname|default:null}
         </div>
@@ -37,7 +37,7 @@
               type="email"
               name="email"
               value="{$email|escape}"
-              placeholder="{t}email{/t}">
+              placeholder="{t}label-email{/t}">
           </div>
           {include "bits/fieldErrors.tpl" errors=$errors.email|default:null}
         </div>
@@ -52,7 +52,7 @@
               type="password"
               name="password"
               value="{$password|escape}"
-              placeholder="{t}password{/t}">
+              placeholder="{t}label-password{/t}">
           </div>
           {include "bits/fieldErrors.tpl" errors=$errors.password|default:null}
         </div>
@@ -67,7 +67,7 @@
               type="password"
               name="password2"
               value="{$password2|escape}"
-              placeholder="{t}password (again){/t}">
+              placeholder="{t}label-password-again{/t}">
           </div>
         </div>
 
@@ -79,17 +79,17 @@
               name="remember"
               value="1"
               {if $remember}checked{/if}>
-            {t}remember me for one year{/t}
+            {t}label-remember-me{/t}
           </label>
         </div>
 
         <div>
           <button class="btn btn-primary" type="submit" name="submitButton">
-            {t}sign up{/t}
+            {t}link-sign-up{/t}
           </button>
 
           <a class="btn btn-link float-right" href="{Router::link('auth/login')}">
-            {t}I already have an account{/t}
+            {t}link-has-account-already{/t}
           </a>
         </div>
       </form>

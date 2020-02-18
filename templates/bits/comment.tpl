@@ -24,7 +24,7 @@
           href="#"
           class="deleteCommentLink"
           data-comment-id="{$comment->id}"
-          data-confirm-msg="{t}Are you sure you want to delete this comment?{/t}">
+          data-confirm-msg="{t}info-confirm-delete-comment{/t}">
           <i class="icon icon-trash"></i>
         </a>
       {/if}

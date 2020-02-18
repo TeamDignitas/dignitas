@@ -17,14 +17,14 @@
       class="small text-muted ml-2"
       href="{Router::link('relation/edit')}/{$r->id}">
       <i class="icon icon-edit"></i>
-      {t}sources{/t}
+      {t}relation-links{/t}
     </a>
   {/if}
 
   {$links=$r->getLinks()}
   {if count($links)}
     <div class="small text-muted">
-      {t}sources{/t}:
+      {t}label-relation-links{/t}:
       <ul class="list-inline list-inline-bullet d-inline">
         {foreach $links as $l}
           <li class="list-inline-item">

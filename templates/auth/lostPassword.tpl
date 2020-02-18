@@ -1,18 +1,18 @@
 {extends "layout.tpl"}
 
-{block "title"}{cap}{t}lost password{/t}{/cap}{/block}
+{block "title"}{cap}{t}title-lost-password{/t}{/cap}{/block}
 
 {block "content"}
   <div class="w-50 mx-auto">
 
     <div class="card">
       <div class="card-header">
-        {cap}{t}lost password{/t}{/cap}
+        {cap}{t}title-lost-password{/t}{/cap}
       </div>
 
       <div class="card-body">
         <p>
-          {t}Enter your email address and we will send you a link to reset your password.{/t}
+          {t}info-password-recovery-process{/t}
         </p>
 
         <form method="post">
@@ -28,13 +28,13 @@
                 name="email"
                 value="{$email|escape}"
                 autofocus
-                placeholder="{t}email{/t}">
+                placeholder="{t}label-email{/t}">
             </div>
             {include "bits/fieldErrors.tpl" errors=$errors.email|default:null}
           </div>
 
           <button class="btn btn-primary" type="submit" name="submitButton">
-            {t}send{/t}
+            {t}link-send{/t}
           </button>
 
         </form>

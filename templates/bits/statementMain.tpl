@@ -20,7 +20,7 @@
 
 {if count($statement->getLinks())}
   <div class="text-muted mb-3">
-    {t}sources{/t}:
+    {t}statement-links{/t}:
     <ul class="list-inline list-inline-bullet d-inline">
       {foreach $statement->getLinks() as $l}
         <li class="list-inline-item">
@@ -33,9 +33,7 @@
 
 {if isset($pendingEditReview)}
   <div class="alert alert-warning mx-5">
-    {t 1=$pendingEditReview->getUrl()}
-    This statement has a pending edit. You can
-    <a href="%1" class="alert-link">review it</a>.{/t}
+    {t 1=$pendingEditReview->getUrl()}link-statement-review-pending-edit{/t}
   </div>
 {/if}
 
@@ -56,11 +54,11 @@
   </div>
 {/if}
 
-<h4>{t}context{/t}</h4>
+<h4>{t}title-context{/t}</h4>
 
 {$statement->context|md}
 
-<h4>{t}goal{/t}</h4>
+<h4>{t}title-goal{/t}</h4>
 
 {$statement->goal|escape}
 
@@ -80,14 +78,14 @@
   {/if}
 
   <small class="btn text-muted float-right">
-    {t}added by{/t}
+    {t}title-added-by{/t}
     {include 'bits/userLink.tpl' u=$statement->getUser()}
     {include 'bits/moment.tpl' t=$statement->createDate}
 
     {if $statement->hasRevisions()}
       •
       <a href="{Router::link('statement/history')}/{$statement->id}">
-        {t}show revisions{/t}
+        {t}link-show-revisions{/t}
       </a>
     {/if}
   </small>

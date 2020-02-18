@@ -1,14 +1,14 @@
 {extends "layout.tpl"}
 
-{block "title"}{t}edit your profile{/t}{/block}
+{block "title"}{t}label-edit-user{/t}{/block}
 
 {block "content"}
-  <h3>{t}edit your profile{/t}</h3>
+  <h3>{t}label-edit-user{/t}</h3>
 
   <form method="post" enctype="multipart/form-data">
 
     <div class="form-group">
-      <label>{t}nickname{/t}</label>
+      <label>{t}label-nickname{/t}</label>
 
       <div class="input-group">
         <span class="input-group-prepend">
@@ -25,7 +25,7 @@
     </div>
 
     <div class="form-group">
-      <label>{t}email{/t}</label>
+      <label>{t}label-email{/t}</label>
 
       <div class="input-group">
         <span class="input-group-prepend">
@@ -42,7 +42,7 @@
 
     <div class="form-group row">
       <div class="col">
-        <label for="fieldImage">{t}image{/t}</label>
+        <label for="fieldImage">{t}label-image{/t}</label>
 
         <div class="custom-file">
           <input
@@ -51,7 +51,7 @@
             class="custom-file-input {if isset($errors.image)}is-invalid{/if}"
             id="fieldImage">
           <label class="custom-file-label" for="fieldImage">
-            {t}choose an image to upload or leave empty to keep existing image{/t}
+            {t}info-upload-image{/t}
           </label>
         </div>
         {include "bits/fieldErrors.tpl" errors=$errors.image|default:null}
@@ -59,7 +59,7 @@
         <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" name="deleteImage" class="form-check-input">
-            {t}delete image{/t}
+            {t}label-delete-image{/t}
           </label>
         </div>
       </div>
@@ -72,7 +72,7 @@
     </div>
 
     <div class="form-group">
-      <label>{t}about me{/t}</label>
+      <label>{t}label-about-me{/t}</label>
       <textarea
         id="fieldAboutMe"
         name="aboutMe"
@@ -82,7 +82,7 @@
     </div>
 
     <div class="form-group">
-      <label>{t}password (only if you wish to change it){/t}</label>
+      <label>{t}label-change-password{/t}</label>
 
       <div class="input-group">
         <span class="input-group-prepend">
@@ -98,7 +98,7 @@
     </div>
 
     <div class="form-group">
-      <label>{t}password (again){/t}</label>
+      <label>{t}label-password-again{/t}</label>
       <div class="input-group">
         <span class="input-group-prepend">
           <i class="input-group-text icon icon-lock"></i>
@@ -114,19 +114,19 @@
     <div>
       <button name="saveButton" type="submit" class="btn btn-primary">
         <i class="icon icon-floppy"></i>
-        {t}save{/t}
+        {t}link-save{/t}
       </button>
 
       <a href="" class="btn btn-light">
         <i class="icon icon-cancel"></i>
-        {t}cancel{/t}
+        {t}link-cancel{/t}
       </a>
 
       <a
         href="{Router::userLink($user)}"
         class="btn btn-light">
         <i class="icon icon-left"></i>
-        {t}back to my profile{/t}
+        {t}link-back-to-user{/t}
       </a>
 
     </div>

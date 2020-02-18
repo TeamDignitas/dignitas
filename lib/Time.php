@@ -52,22 +52,26 @@ class Time {
     if ($days >= 4) {
       return sprintf(_('on %s'), self::localTimestamp($timestamp, false));
     } else if ($days >= 2) {
-      return sprintf(ngettext('one day ago', '%d days ago', $days), $days);
+      return sprintf(ngettext('time-day-ago-singular', 'time-day-ago-plural-%d', $days),
+                     $days);
     } else if ($days == 1) {
       return _('yesterday');
     }
 
     $hours = (int)($delta / (60 * 60));
     if ($hours) {
-      return sprintf(ngettext('one hour ago', '%d hours ago', $hours), $hours);
+      return sprintf(ngettext('time-hour-ago-singular', 'time-hour-ago-plural-%d', $hours),
+                     $hours);
     }
 
     $minutes = (int)($delta / 60);
     if ($minutes) {
-      return sprintf(ngettext('one minute ago', '%d minutes ago', $minutes), $minutes);
+      return sprintf(ngettext('time-minute-ago-singular', 'time-minute-ago-plural-%d', $minutes),
+                     $minutes);
     }
 
-    return sprintf(ngettext('one second ago', '%d seconds ago', $delta), $delta);
+    return sprintf(ngettext('time-second-ago-singular', 'time-second-ago-plural-%d', $delta),
+                   $delta);
   }
 
   // $date: formatted as YYYY-MM-DD, e.g. '2019-04-24'

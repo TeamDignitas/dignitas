@@ -2,9 +2,9 @@
 
 {capture "title"}
 {if $entity->id}
-  {t}edit author{/t}
+  {t}title-edit-entity{/t}
 {else}
-  {t}add an author{/t}
+  {t}title-add-entity{/t}
 {/if}
 {/capture}
 
@@ -15,8 +15,7 @@
 
   {if !$entity->isEditable()}
     <div class="alert alert-warning">
-      {t}You do not have enough reputation to make changes directly. You can
-      suggest changes which will be placed in the review queue.{/t}
+      {t}info-not-enough-reputation-change-directly{/t}
     </div>
   {/if}
 
@@ -24,7 +23,7 @@
     <input type="hidden" name="id" value="{$entity->id}">
     <input type="hidden" name="referrer" value="{$referrer}">
     <div class="form-group">
-      <label for="fieldName">{t}name{/t}</label>
+      <label for="fieldName">{t}label-name{/t}</label>
       <input
         name="name"
         value="{$entity->name|escape}"
@@ -34,15 +33,15 @@
     </div>
 
     <div class="form-group">
-      <label>{t}also known as{/t}</label>
+      <label>{t}label-alias{/t}</label>
 
       <table class="table table-sm">
         <thead
           id="aliasHeader"
           {if empty($aliases)}hidden{/if}>
           <tr>
-            <th>{t}order{/t}</th>
-            <th>{t}alias{/t}</th>
+            <th>{t}label-order{/t}</th>
+            <th>{t}label-alias{/t}</th>
             <th>{t}actions{/t}</th>
           </tr>
         </thead>
@@ -57,13 +56,13 @@
       <div>
         <button id="addAliasButton" class="btn btn-light btn-sm" type="button">
           <i class="icon icon-plus"></i>
-          {t}add an alias{/t}
+          {t}link-add-alias{/t}
         </button>
       </div>
     </div>
 
     <div class="form-group">
-      <label for="fieldType">{t}type{/t}</label>
+      <label for="fieldType">{t}label-type{/t}</label>
       <select
         name="type"
         id="fieldType"
@@ -83,7 +82,7 @@
     <div id="colorFieldWrapper"
       class="form-group""
       {if !$entity->hasColor()}hidden{/if}>
-      <label for="color">{t}color{/t}</label>
+      <label for="color">{t}label-color{/t}</label>
       <div class="input-group colorpicker-component">
         <span class="input-group-prepend input-group-text colorpicker-input-addon">
           <i></i>
@@ -97,18 +96,18 @@
     </div>
 
     <div class="form-group">
-      <label>{t}relationships{/t}</label>
+      <label>{t}label-relations{/t}</label>
 
       <table class="table table-sm relTable">
         <thead
           id="relationHeader"
           {if empty($relations)}hidden{/if}>
           <tr>
-            <th>{t}order{/t}</th>
-            <th>{t}type{/t}</th>
-            <th>{t}target{/t}</th>
-            <th>{t}start date{/t}</th>
-            <th>{t}end date{/t}</th>
+            <th>{t}label-order{/t}</th>
+            <th>{t}label-type{/t}</th>
+            <th>{t}label-target{/t}</th>
+            <th>{t}label-start-date{/t}</th>
+            <th>{t}label-end-date{/t}</th>
             <th>{t}actions{/t}</th>
           </tr>
         </thead>
@@ -125,13 +124,13 @@
       <div>
         <button id="addRelationButton" class="btn btn-light btn-sm" type="button">
           <i class="icon icon-plus"></i>
-          {t}add a relationship{/t}
+          {t}label-add-relation{/t}
         </button>
       </div>
     </div>
 
     <div class="form-group">
-      <label>{t}profile{/t}</label>
+      <label>{t}label-profile{/t}</label>
       <textarea
         id="fieldProfile"
         name="profile"
@@ -140,14 +139,14 @@
       {include "bits/markdownHelp.tpl"}
     </div>
 
-    {capture "labelText" assign=labelText}{t}external links{/t}{/capture}
-    {capture "addButtonText" assign=addButtonText}{t}add a link{/t}{/capture}
+    {capture "labelText" assign=labelText}{t}label-entity-links{/t}{/capture}
+    {capture "addButtonText" assign=addButtonText}{t}link-add-entity-link{/t}{/capture}
     {include "bits/linkEditor.tpl"
       errors=$errors.links|default:null
     }
 
     <div class="form-group">
-      <label>{t}tags{/t}</label>
+      <label>{t}label-tags{/t}</label>
 
       <select name="tagIds[]" class="form-control select2Tags" multiple>
         {foreach $tagIds as $tagId}
@@ -158,7 +157,7 @@
 
     <div class="row">
       <div class="col">
-        <label for="fieldImage">{t}image{/t}</label>
+        <label for="fieldImage">{t}label-image{/t}</label>
 
         <div class="custom-file">
           <input
@@ -167,7 +166,7 @@
             class="custom-file-input {if isset($errors.image)}is-invalid{/if}"
             id="fieldImage">
           <label class="custom-file-label" for="fieldImage">
-            {t}choose an image to upload or leave empty to keep existing image{/t}
+            {t}info-upload-image{/t}
           </label>
         </div>
         {include "bits/fieldErrors.tpl" errors=$errors.image|default:null}
@@ -175,7 +174,7 @@
         <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" name="deleteImage" class="form-check-input">
-            {t}delete image{/t}
+            {t}label-delete-image{/t}
           </label>
         </div>
       </div>
@@ -192,12 +191,12 @@
     <div>
       <button name="saveButton" type="submit" class="btn btn-primary">
         <i class="icon icon-floppy"></i>
-        {t}save{/t}
+        {t}link-save{/t}
       </button>
 
       <a href="{$referrer}" class="btn btn-link">
         <i class="icon icon-cancel"></i>
-        {t}cancel{/t}
+        {t}link-cancel{/t}
       </a>
 
       {if $entity->isDeletable()}
@@ -205,9 +204,9 @@
           name="deleteButton"
           type="submit"
           class="btn btn-danger float-right"
-          data-confirm="{t}Are you sure you want to delete this entity?{/t}">
+          data-confirm="{t}info-confirm-delete-entity{/t}">
           <i class="icon icon-trash"></i>
-          {t}delete{/t}
+          {t}link-delete{/t}
         </button>
       {/if}
     </div>

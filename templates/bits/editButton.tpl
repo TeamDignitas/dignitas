@@ -5,8 +5,7 @@
 {$suggestable=$obj->acceptsSuggestions()}
 
 {capture "suggestMsg"}
-{t}You do not have enough reputation to make changes directly. You can suggest
-changes which will be placed in the review queue.{/t}
+{t}info-not-enough-reputation-change-directly{/t}
 {/capture}
 
 {if $editable || $suggestable}
@@ -17,9 +16,9 @@ changes which will be placed in the review queue.{/t}
   >
     <i class="icon icon-edit"></i>
     {if $editable}
-      {t}edit{/t}
+      {t}link-edit{/t}
     {else}
-      {t}suggest an edit{/t}
+      {t}link-suggest-edit{/t}
     {/if}
   </a>
 {/if}

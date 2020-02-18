@@ -1,4 +1,4 @@
-<!-- {t}Please read TODO for ways of customizing the thumbnail and link.{/t} -->
+<!-- {t}info-read-guide-inline-attachment{/t} -->
 <a href="{$fullUrl}" class="expand">
-  <img src="{$thumbUrl}" alt="{t}uploaded file{/t}">
+  <img src="{$thumbUrl}" alt="{t}label-uploaded-file{/t}">
 </a>

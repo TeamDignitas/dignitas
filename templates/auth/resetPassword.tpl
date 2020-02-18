@@ -1,12 +1,12 @@
 {extends "layout.tpl"}
 
-{block "title"}{cap}{t}password change{/t}{/cap}{/block}
+{block "title"}{cap}{t}title-change-password{/t}{/cap}{/block}
 
 {block "content"}
   {if $user}
     <div class="card w-50 m-auto">
       <div class="card-header">
-        {cap}{t}password change{/t}{/cap}
+        {cap}{t}title-change-password{/t}{/cap}
       </div>
 
       <div class="card-body">
@@ -22,7 +22,7 @@
                 type="password"
                 name="password"
                 value="{$password|escape}"
-                placeholder="{t}password{/t}">
+                placeholder="{t}label-password{/t}">
             </div>
           </div>
 
@@ -36,13 +36,13 @@
                 type="password"
                 name="password2"
                 value="{$password2|escape}"
-                placeholder="{t}password (again){/t}">
+                placeholder="{t}label-password-again{/t}">
             </div>
             {include "bits/fieldErrors.tpl" errors=$errors.password|default:null}
           </div>
 
           <button class="btn btn-primary" type="submit" name="submitButton">
-            {t}save{/t}
+            {t}link-save{/t}
           </button>
         </form>
       </div>

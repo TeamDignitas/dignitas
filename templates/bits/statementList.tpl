@@ -22,7 +22,7 @@
 
       {if $addedBy}
         <div class="text-right text-muted small">
-          {t}added by{/t}
+          {t}statement-added-by{/t}
           {include 'bits/userLink.tpl' u=$s->getUser()}
           {include 'bits/moment.tpl' t=$s->createDate}
         </div>

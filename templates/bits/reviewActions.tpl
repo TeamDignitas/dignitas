@@ -9,7 +9,7 @@
           class="btn btn-info"
           type="submit">
           <i class="icon icon-cancel"></i>
-          {t}remove{/t}
+          {t}link-remove{/t}
         </button>
 
         <button
@@ -17,12 +17,12 @@
           class="btn btn-info"
           type="submit">
           <i class="icon icon-ok"></i>
-          {t}keep{/t}
+          {t}link-keep{/t}
         </button>
 
         <a href="{Router::getEditLink($object)}" class="btn btn-info">
           <i class="icon icon-edit"></i>
-          {t}edit{/t}
+          {t}link-edit{/t}
         </a>
 
         <button
@@ -31,7 +31,7 @@
           type="submit"
           class="btn btn-info">
           <i class="icon icon-right-open"></i>
-          {t}next{/t}
+          {t}link-next{/t}
         </button>
       </div>
 
@@ -41,7 +41,7 @@
           name="details"
           value="{$details|default:''|escape}"
           class="form-control"
-            placeholder="{t}details (optional){/t}">
+          placeholder="{t}label-details-optional{/t}">
       </div>
 
     </form>

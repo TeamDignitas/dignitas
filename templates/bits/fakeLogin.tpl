@@ -1,6 +1,6 @@
 <div class="card">
   <div class="card-header">
-    {cap}{t}test user login{/t}{/cap}
+    {cap}{t}title-test-login{/t}{/cap}
   </div>
 
   <div class="card-body">
@@ -30,7 +30,7 @@
             class="form-control"
             type="text"
             name="fakeReputation"
-            placeholder="{t}reputation{/t}"
+            placeholder="{t}label-reputation{/t}"
             list="preset">
           <datalist id="preset">
             <option>10000</option>
@@ -46,7 +46,7 @@
       <input
         class="btn btn-warning"
         type=submit
-        value="{t}test user login{/t}">
+        value="{t}link-test-login{/t}">
 
     </form>
   </div>

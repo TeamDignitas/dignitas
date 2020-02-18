@@ -1,12 +1,14 @@
 {extends "layout.tpl"}
 
-{block "title"}{t}search results{/t}{/block}
+{block "title"}{t}title-search-results{/t}{/block}
 
 {block "content"}
 
   {if count($entities)}
     <h3>
-      {t count=count($entities) 1=count($entities) plural="%1 entities"}one entity{/t}
+      {t count=count($entities) 1=count($entities) plural="title-entities-plural"}
+      title-entities-singular
+      {/t}
     </h3>
 
     {foreach $entities as $e}
@@ -25,7 +27,9 @@
 
   {if count($statements)}
     <h3>
-      {t count=count($statements) 1=count($statements) plural="%1 statements"}one statement{/t}
+      {t count=count($statements) 1=count($statements) plural="title-statements-plural"}
+      title-statements-singular
+      {/t}
     </h3>
 
     {include "bits/statementList.tpl" entityImages=false addedBy=false}
@@ -33,7 +37,9 @@
 
   {if count($tags)}
     <h3>
-      {t count=count($tags) 1=count($tags) plural="%1 tags"}one tag{/t}
+      {t count=count($tags) 1=count($tags) plural="title-tags-plural"}
+      title-tags-singular
+      {/t}
     </h3>
 
     {foreach $tags as $t}
@@ -42,7 +48,7 @@
   {/if}
 
   {if empty($entities) && empty($statements) && empty($tags)}
-    <h3>{t 1=$query|escape}your search «%1» produced no results{/t}
+    <h3>{t 1=$query|escape}info-no-search-results{/t}
   {/if}
 
 {/block}

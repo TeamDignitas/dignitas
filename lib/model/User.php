@@ -230,8 +230,8 @@ class User extends Proto {
       if (self::getRemainingFlags() <= 0) {
         $fpd = self::getFlagsPerDay();
         throw new Exception(
-          sprintf(ngettext('You can use at most one flag every 24 hours.',
-                           'You can use at most %d flags every 24 hours.',
+          sprintf(ngettext('info-flag-limit-singular',
+                           'info-flag-limit-plural-%d',
                            $fpd), $fpd));
       }
 
