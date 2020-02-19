@@ -15,7 +15,7 @@ header('Content-Type: application/json');
 
 try {
 
-  $obj = BaseObject::getObjectByTypeId($objectType, $objectId);
+  $obj = Proto::getObjectByTypeId($objectType, $objectId);
   User::canFlag($obj, true);
 
   if ($duplicateId == $objectId) {

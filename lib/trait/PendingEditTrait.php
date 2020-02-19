@@ -57,7 +57,7 @@ trait PendingEditTrait {
       }
 
       $u = User::getActive();
-      if ($u && $u->numPendingEdits >= Config::MAX_PENDING_EDITS) {
+      if ($u && $u->getNumPendingEdits() >= Config::MAX_PENDING_EDITS) {
         throw new Exception(
           sprintf(_('You have reached your limit of %d pending edits.' .
                     'Please wait for some of them to be reviewed.'),
@@ -95,7 +95,7 @@ trait PendingEditTrait {
       !$this->pendingEditId &&
 
        // must not exceed pending edit limit
-      ($u->numPendingEdits < Config::MAX_PENDING_EDITS);
+      ($u->getNumPendingEdits() < Config::MAX_PENDING_EDITS);
 
   }
 
@@ -177,8 +177,8 @@ trait PendingEditTrait {
    * pending edit.
    *
    * @param PendingEditTrait $other Pending edit of $this
-   * @param BaseObject[] $origDeps Array of original dependants
-   * @param BaseObject[] $clonedDeps Array of cloned dependants
+   * @param Proto[] $origDeps Array of original dependants
+   * @param Proto[] $clonedDeps Array of cloned dependants
    * @param string $fkField Field whose value should change from $other->id to
    * $this->id
    */
@@ -213,16 +213,17 @@ trait PendingEditTrait {
   function processPendingEdit(bool $accept) {
     $pending = static::get_by_id($this->pendingEditId);
     if ($pending) {
+      $u = User::get_by_id($pending->modUserId);
+      $u->decrementPendingEdits();
       if ($accept) {
         // this will also clear the $this->pendingEditId field and save $this
         $this->deepMerge($pending);
+        $u->grantReputation(Config::REP_SUGGESTED_EDIT);
       } else {
         $this->pendingEditId = 0;
         $this->save();
       }
       CloneMap::deleteRoot($pending);
-      $u = User::get_by_id($pending->modUserId);
-      $u->decrementPendingEdits();
       $pending->delete();
     }
   }

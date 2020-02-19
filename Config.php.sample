@@ -51,6 +51,7 @@ class Config {
   const THUMB_ENTITY_MEDIUM = '75';
   const THUMB_ENTITY_LARGE = '200';
   const THUMB_INLINE_ATTACHMENT = '200'; // default geometry for inline attachments
+  const THUMB_DOMAIN = '16x16';
 
   // Upload specifications.
   // Values in 'extensions' refer to the MIME types above.
@@ -83,11 +84,20 @@ class Config {
       'limit' => 64 << 20, // 16 MB,
       'geometries' => [ '100', '200', '300', '400', 'x100', 'x200', 'x300', 'x400', 'full' ],
     ],
+    // domain images
+    'Domain' => [
+      'extensions' => [ 'gif', 'jpg', 'png', 'svg' ],
+      'limit' => 1 << 20, // 1 MB,
+      'geometries' => [
+        self::THUMB_DOMAIN,
+      ],
+    ],
   ];
 
   // logging
   const LOG_FILE = '/var/log/dignitas.log';
   const LOG_LEVEL = LOG_DEBUG;
+  const LOG_SQL_QUERIES = false; // at the bottom of the HTML page
 
   // email info
   const CONTACT_EMAIL = 'test@test.com';
@@ -130,6 +140,19 @@ class Config {
   // Answers added at least this many days after their Statement trigger a
   // review with REASON_LATE_ANSWER.
   const LATE_ANSWER_DAYS = 3;
+
+  // Reputation gains / losses for various events.
+  const REP_STATEMENT_UPVOTED = 10;
+  const REP_STATEMENT_DOWNVOTED = -2; // when someone downvotes YOUR statement
+  const REP_DOWNVOTE_STATEMENT = -1;  // when YOU downvote someone's statement
+  const REP_ANSWER_UPVOTED = 10;
+  const REP_ANSWER_DOWNVOTED = -2;
+  const REP_DOWNVOTE_ANSWER = -1;
+  const REP_COMMENT_UPVOTED = 0;
+  const REP_COMMENT_DOWNVOTED = 0;
+  const REP_DOWNVOTE_COMMENT = 0;
+  const REP_SUGGESTED_EDIT = 2;
+  const REP_SPAM_ABUSE = -100;
 
   // Loyalty settings. Define a set of adjacent intervals going back in time
   // and give points for every day in each interval. Then loyalty is the sum

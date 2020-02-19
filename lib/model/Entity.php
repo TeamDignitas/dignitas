@@ -1,6 +1,6 @@
 <?php
 
-class Entity extends BaseObject {
+class Entity extends Proto {
   use DuplicateTrait {
     closeAsDuplicate as protected traitCloseAsDuplicate;
   }
@@ -34,7 +34,7 @@ class Entity extends BaseObject {
   }
 
   function getObjectType() {
-    return BaseObject::TYPE_ENTITY;
+    return Proto::TYPE_ENTITY;
   }
 
   function getTypeName() {

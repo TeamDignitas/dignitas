@@ -72,6 +72,23 @@ trait FlaggableTrait {
     }
   }
 
+  /**
+   * Give back reputation to people who downvoted this object. Applicable when
+   * the object is deleted.
+   */
+  function undoDownvoteRep() {
+    $type = $this->getObjectType();
+    $change = -Vote::VOTER_REP_COST[$type]; // could be 0, e.g. for comments
+
+    if ($change) {
+      $votes = Vote::get_all_by_objectType_objectId_value($type, $this->id, -1);
+      foreach ($votes as $v) {
+        $u = User::get_by_id($v->userId);
+        $u->grantReputation($change);
+      }
+    }
+  }
+
   private function changeStatus($status, $reason) {
     $this->status = $status;
     $this->reason = $reason;
@@ -89,6 +106,7 @@ trait FlaggableTrait {
       $reason = Ct::REASON_BY_OWNER;
     }
     $this->changeStatus(Ct::STATUS_DELETED, $reason);
+    $this->undoDownvoteRep();
   }
 
   /**

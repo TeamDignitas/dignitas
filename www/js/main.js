@@ -8,6 +8,21 @@ $(function() {
 });
 
 
+/*************************** nav sidebar slide ***************************/
+$(function() {
+  $('.navbar-toggler').click(function() {
+    // toggle .shown on our menu and remove .shown on other menu
+    var menu = $($(this).data('target'));
+    menu.toggleClass('shown');
+    menu.siblings().removeClass('shown');
+
+    // occupy entire page height
+    var pageHeight = Math.max($(window).height(), $(document).height());
+    var h = pageHeight - menu.position().top;
+    menu.outerHeight(h);
+  });
+});
+
 /****************************** search form ******************************/
 $(function() {
 
@@ -158,7 +173,6 @@ $(function() {
 });
 
 /*************************** loyalty popovers ***************************/
-
 $(function() {
   $('[data-toggle="popover"]').popover({
     content: getPopoverContent,
@@ -170,4 +184,14 @@ $(function() {
   function getPopoverContent() {
     return $(this).parent().find('.loyaltyPopover').html();
   }
+});
+
+/****************************** file inputs ******************************/
+
+$(function() {
+  $('.custom-file-input').on('change', function() {
+    // change the label value
+    let fileName = $(this).val().split('\\').pop();
+    $(this).next('.custom-file-label').addClass('selected').html(fileName);
+  });
 });

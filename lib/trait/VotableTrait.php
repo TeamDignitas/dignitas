@@ -12,4 +12,11 @@ trait VotableTrait {
     return Vote::get_by_userId_objectType_objectId(
       User::getActiveId(), $this->getObjectType(), $this->id);
   }
+
+  abstract function getScore();
+  abstract function setScore($score);
+
+  function changeScore($delta) {
+    $this->setScore($this->getScore() + $delta);
+  }
 }

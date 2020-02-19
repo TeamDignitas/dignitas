@@ -1,7 +1,9 @@
 <?php
 
-class Link extends BaseObject {
+class Link extends Proto {
   use ObjectTypeIdTrait;
+
+  private $domain = null;
 
   static function getFor($object) {
     return Model::factory('Link')
@@ -11,8 +13,19 @@ class Link extends BaseObject {
       ->find_many();
   }
 
-  function getDisplayUrl() {
+  function getHostName() {
     return parse_url($this->url, PHP_URL_HOST);
+  }
+
+  function getDomain() {
+    if (!$this->domain && $this->domainId) {
+      $this->domain = Domain::get_by_id($this->domainId);
+    }
+    return $this->domain;
+  }
+
+  function getDisplayValue() {
+    return $this->getDomain()->displayValue ?? $this->getHostName();
   }
 
   function validUrl() {
@@ -26,7 +39,32 @@ class Link extends BaseObject {
    */
   function isNofollow() {
     $obj = $this->getObject();
-    return $obj->getObjectType() == BaseObject::TYPE_STATEMENT;
+    return $obj->getObjectType() == Proto::TYPE_STATEMENT;
+  }
+
+  /**
+   * If the link has an associated domain, make sure it is correct and
+   * dissociate it if not. If the link does not have an associated domain, try
+   * to associate one.
+   */
+  function checkDomain() {
+    $hostName = $this->getHostName();
+
+    // dissociate existing domain if it is incorrect
+    if ($this->domainId) {
+      $this->getDomain();
+      if ($hostName != $this->domain->name) {
+        $this->domainId = 0;
+      }
+    }
+
+    // associate a new domain if necessary
+    if (!$this->domainId) {
+      $d = Domain::get_by_name($hostName);
+      if ($d) {
+        $this->domainId = $d->id;
+      }
+    }
   }
 
   /**
@@ -53,7 +91,7 @@ class Link extends BaseObject {
    * in the tag list, inserts new Links where needed and updates the rank
    * field.
    *
-   * Similar, but not identical, to BaseObject::updateDependants().
+   * Similar, but not identical, to Proto::updateDependants().
    */
   static function update($object, $links) {
     $type = $object->getObjectType();
@@ -82,6 +120,11 @@ class Link extends BaseObject {
       $l->rank = ++$rank;
       $l->save();
     }
+  }
+
+  function save($modUserId = null) {
+    $this->checkDomain();
+    parent::save();
   }
 
   function __toString() {

@@ -22,7 +22,7 @@
     {if isset($objectDiff)}
       {include "bits/diff/objectDiff.tpl" od=$objectDiff}
 
-    {elseif $type == BaseObject::TYPE_STATEMENT}
+    {elseif $type == Proto::TYPE_STATEMENT}
 
       {if $review->reason == Ct::REASON_DUPLICATE}
         <div class="alert alert-warning">
@@ -33,20 +33,20 @@
 
       {include "bits/statement.tpl" statement=$object flagBox=false}
 
-    {elseif $type == BaseObject::TYPE_ANSWER}
+    {elseif $type == Proto::TYPE_ANSWER}
 
       {include "bits/answer.tpl" answer=$object flagBox=false}
 
       <h3>{cap}{t}pertaining to statement:{/t}{/cap}</h3>
 
-      <div id="parentStatement">
+      <div id="parentObject">
         {include "bits/statement.tpl"
           statement=$object->getStatement()
           flagBox=false
           voteBox=false}
       </div>
 
-    {elseif $type == BaseObject::TYPE_ENTITY}
+    {elseif $type == Proto::TYPE_ENTITY}
 
       {if $review->reason == Ct::REASON_DUPLICATE}
         <div class="alert alert-warning">
@@ -60,6 +60,46 @@
       {/if}
 
       {include "bits/entity.tpl" entity=$object flagBox=false}
+
+    {elseif $type == Proto::TYPE_COMMENT}
+
+      {include "bits/comment.tpl" comment=$object flagBox=false}
+
+      {$parent=$object->getObject()} {* What a nice sentence *}
+
+      {if $parent instanceof Answer}
+
+        <h3>{cap}{t}pertaining to answer:{/t}{/cap}</h3>
+
+        <div id="parentObject">
+          {include "bits/answer.tpl"
+            answer=$parent
+            flagBox=false
+            voteBox=false
+            showComments=false}
+        </div>
+
+        <h3>{cap}{t}pertaining to statement:{/t}{/cap}</h3>
+
+        <div id="parentObject">
+          {include "bits/statement.tpl"
+            statement=$parent->getStatement()
+            flagBox=false
+            voteBox=false}
+        </div>
+
+        {else}  {* Comment on a statement *}
+
+          <h3>{cap}{t}pertaining to statement:{/t}{/cap}</h3>
+
+          <div id="parentObject">
+            {include "bits/statement.tpl"
+              statement=$parent
+              flagBox=false
+              voteBox=false}
+          </div>
+
+        {/if}
 
     {/if}
 

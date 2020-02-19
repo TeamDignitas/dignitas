@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden; /* hide the sliding menus */
+}
+
 body.waiting * {
   cursor: progress;
 }
@@ -12,6 +16,10 @@ h3::first-letter {
 
 .navbar-nav {
   white-space: nowrap;
+}
+
+img.pic {
+  outline: 1px solid #ddd;
 }
 
 .dateFieldContainer {
@@ -42,35 +50,36 @@ blockquote {
 
 /******************************** navbar *********************************/
 
-@media (max-width: 992px) {
+.navbar-nav {
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
   .navbar-collapse {
+    padding: 0 15px 15px;
     position: absolute;
-    top: 56px;
-    right: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 15px;
+    top: 100%;
+    transition: left 0.3s linear;
     width: 50%;
-    transition: all 0.8s linear;
-    display: block;
-    z-index: 6;
-  }
-
-  .navbar-collapse.collapsing {
-    height: auto !important;
-    margin-right: 50%;
-    transition: all 0.8s linear;
-    display: block;
-  }
-
-  .navbar-collapse.to-right {
-    right: 0;
-    outline: 1px solid red;
+    z-index: 10;
   }
 
   .navbar-collapse.to-left {
+    left: -50%;
+  }
+
+  .navbar-collapse.to-right {
+    left: 100%;
+  }
+
+  .navbar-collapse.to-left.shown {
     left: 0;
-    outline: 1px solid green;
+    transition: left 0.3s linear;
+  }
+
+  .navbar-collapse.to-right.shown {
+    left: 50%;
+    transition: left 0.3s linear;
   }
 }
 
@@ -78,6 +87,12 @@ blockquote {
 
 .navbar .select2 {
   background-color: #fff;
+  border-bottom-left-radius: 0.25rem;
+  border-top-left-radius: 0.25rem;
+}
+
+.select2-container--bootstrap4 .select2-selection {
+  border-width: 0;
 }
 
 /* Firefox and Chrome insert a <div> in place of the <noscript> element, which
@@ -94,6 +109,16 @@ blockquote {
   align-items: flex-start;
   display: flex;
 outline: 1px solid blue;
+}
+
+.voteContainer.highlighted {
+  animation-name: answer-highlight-animation;
+  animation-duration: 2s;
+}
+
+@keyframes answer-highlight-animation {
+  from { background-color: #777; }
+  to { background-color: white; }
 }
 
 .voteLeft {
@@ -144,9 +169,42 @@ outline: 1px solid green;
   color: green;
 }
 
+
 /******************************** statement ********************************/
 .statement-title-divider {
   border-color: #999;
+
+/******************************** answers ********************************/
+
+.answer {
+  padding-top: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.answerFooter {
+  text-align: right;
+}
+
+/******************************* comments *******************************/
+
+.comment {
+  border-top: 1px solid #eee;
+  color: #777;
+  font-size: 80%;
+  padding: 5px 0px;
+}
+
+.comment p {
+  display: inline;
+}
+
+.commentActions a {
+  color: #bbb;
+}
+
+.commentActions a:hover {
+  color: #777;
+  text-decoration: none;
 }
 
 /******************************** footer ********************************/
@@ -180,4 +238,12 @@ footer {
 .loyaltyWidget div {
   display: inline-block;
   height: 20px;
+}
+
+/****************************** file inputs ******************************/
+
+.custom-file-label::after {
+  font-family: 'icons';
+  /* hack: this hardcodes the glyph for icon-folder-open */
+  content: '\e809';
 }

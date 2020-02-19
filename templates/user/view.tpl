@@ -20,16 +20,16 @@
 
     <dl class="row">
       <dd class="col-2">{t}reputation{/t}</dd>
-      <dt class="col-10">{$user->reputation|nf}</dt>
+      <dt class="col-10">{$user->getReputation()|nf}</dt>
       <dd class="col-2">{t}statements{/t}</dd>
       <dt class="col-10">{$statements}</dt>
       <dd class="col-2">{t}answers{/t}</dd>
       <dt class="col-10">{$answers}</dt>
       <dd class="col-2">{t}member since{/t}</dd>
       <dt class="col-10">{$user->createDate|lt:false}</dt>
-      {if $user->lastSeen}
+      {if $user->getLastSeen()}
         <dd class="col-2">{t}last seen{/t}</dd>
-        <dt class="col-10">{include 'bits/moment.tpl' t=$user->lastSeen}</dt>
+        <dt class="col-10">{include 'bits/moment.tpl' t=$user->getLastSeen()}</dt>
       {/if}
     </dl>
   </div>

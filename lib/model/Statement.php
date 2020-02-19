@@ -1,6 +1,6 @@
 <?php
 
-class Statement extends BaseObject {
+class Statement extends Proto {
   use DuplicateTrait,
     FlaggableTrait,
     RevisionTrait,
@@ -24,23 +24,34 @@ class Statement extends BaseObject {
     return User::get_by_id($this->userId);
   }
 
+  function getScore() {
+    return StatementExt::getField($this->id, 'score');
+  }
+
+  function setScore($score) {
+    return StatementExt::setField($this->id, 'score', $score);
+  }
+
   /**
    * Returns this Statement's answers, filtered by visibility to the current
    * user.
    */
   function getAnswers() {
     $answers = Model::factory('Answer')
-      ->where('statementId', $this->id)
-      ->where_not_equal('status', Ct::STATUS_PENDING_EDIT);
+      ->table_alias('a')
+      ->select('a.*')
+      ->left_outer_join('answer_ext', [ 'a.id', '=', 'ae.answerId' ], 'ae')
+      ->where('a.statementId', $this->id)
+      ->where_not_equal('a.status', Ct::STATUS_PENDING_EDIT);
 
     if (!User::may(User::PRIV_DELETE_ANSWER)) {
       $answers = $answers
-        ->where('status', Ct::STATUS_ACTIVE);
+        ->where('a.status', Ct::STATUS_ACTIVE);
     }
 
     return $answers
-      ->order_by_desc('score')
-      ->order_by_desc('createDate')
+      ->order_by_desc('ae.score')
+      ->order_by_desc('a.createDate')
       ->find_many();
   }
 
@@ -135,7 +146,7 @@ class Statement extends BaseObject {
 
     switch (count($answers)) {
       case 0: return true;
-      case 1: return ($answers[0]->score <= 0);
+      case 1: return ($answers[0]->getScore() <= 0);
       default: return false;
     }
   }
@@ -166,7 +177,7 @@ class Statement extends BaseObject {
   }
 
   protected function deepMerge($other) {
-    $this->copyFrom($other, ['score']);
+    $this->copyFrom($other);
     $this->save($other->modUserId);
 
     $this->mergeDependants(
@@ -186,6 +197,8 @@ class Statement extends BaseObject {
     ObjectTag::deleteObject($this);
     AttachmentReference::deleteObject($this);
     // a pending edit statement should not have answers, reviews or votes
+
+    StatementExt::delete_all_by_statementId($this->id);
 
     parent::delete();
   }

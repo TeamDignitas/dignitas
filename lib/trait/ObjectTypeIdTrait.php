@@ -10,7 +10,7 @@ trait ObjectTypeIdTrait {
 
   function getObject() {
     if ($this->objectReference === false) {
-      $this->objectReference = BaseObject::getObjectByTypeId(
+      $this->objectReference = Proto::getObjectByTypeId(
         $this->objectType, $this->objectId);
       // if null, this prevents future attempts to look it up again
     }

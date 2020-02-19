@@ -17,6 +17,23 @@
     &mdash;
     {include 'bits/userLink.tpl' u=$comment->getUser()}
     {include 'bits/moment.tpl' t=$comment->createDate}
+
+    <span class="commentActions">
+      {if $comment->isDeletable()}
+        <a
+          href="#"
+          class="deleteCommentLink"
+          data-comment-id="{$comment->id}"
+          data-confirm-msg="{t}Are you sure you want to delete this comment?{/t}">
+          <i class="icon icon-trash"></i>
+        </a>
+      {/if}
+
+      {if $flagBox && ($comment->isFlaggable() || $comment->isFlagged())}
+        {include "bits/flagLinks.tpl" obj=$comment tiny=true}
+      {/if}
+    </span>
+
   </div>
 
 </div>

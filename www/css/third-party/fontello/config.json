@@ -227,6 +227,12 @@
       "css": "flag-empty",
       "code": 61725,
       "src": "fontawesome"
+    },
+    {
+      "uid": "6846d155ad5bda456569df81f3057faa",
+      "css": "clone",
+      "code": 62029,
+      "src": "fontawesome"
     }
   ]
 }

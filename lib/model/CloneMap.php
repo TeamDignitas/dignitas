@@ -1,13 +1,13 @@
 <?php
 
-class CloneMap extends BaseObject {
+class CloneMap extends Proto {
 
   /**
    * Creates and saves a CloneMap record keeping track of a clone operation.
    *
    * @param PendingEditTrait $root Top-level clone
-   * @param BaseObject $orig Dependant being cloned
-   * @param BaseObject $clone Newly created clone of $orig
+   * @param Proto $orig Dependant being cloned
+   * @param Proto $clone Newly created clone of $orig
    */
   static function create($root, $orig, $clone) {
     $cm = Model::factory('CloneMap')->create();
@@ -26,7 +26,7 @@ class CloneMap extends BaseObject {
    * returns $orig's ID.
    *
    * @param PendingEditTrait $root Top-level clone
-   * @param BaseObject $orig Dependant being cloned
+   * @param Proto $orig Dependant being cloned
    */
   static function getNewId($root, $orig) {
     $result = $orig->id;
@@ -50,7 +50,7 @@ class CloneMap extends BaseObject {
    * record of cloning the dependant, returns null.
    *
    * @param PendingEditTrait $root Top-level clone
-   * @param BaseObject $clone Cloned dependant
+   * @param Proto $clone Cloned dependant
    */
   static function getOriginal($root, $clone) {
     $cm = CloneMap::get_by_rootClass_rootId_objectClass_newId(

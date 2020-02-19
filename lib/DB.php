@@ -16,14 +16,20 @@ class DB {
     ORM::configure('username', Config::DB_USER);
     ORM::configure('password', Config::DB_PASSWORD);
 
-    // This allows var_dump(ORM::get_query_log()) or var_dump(ORM::get_last_query())
-    // ORM::configure('logging', true);
+    if (Config::LOG_SQL_QUERIES) {
+      // This allows var_dump(ORM::get_query_log()) or var_dump(ORM::get_last_query())
+      ORM::configure('logging', true);
+    }
 
     // choose a random 63-bit request_id; should be reasonably distinct
     ORM::configure('driver_options', [
       PDO::MYSQL_ATTR_INIT_COMMAND => 'set names utf8mb4',
     ]);
     self::pickRequestId();
+  }
+
+  static function getQueryLog() {
+    return ORM::get_query_log();
   }
 
   /**

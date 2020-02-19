@@ -1,6 +1,6 @@
 <?php
 
-class AttachmentReference extends BaseObject {
+class AttachmentReference extends Proto {
   use ObjectTypeIdTrait;
 
   static function insert($object, $attachmentId) {

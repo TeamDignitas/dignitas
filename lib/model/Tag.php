@@ -1,6 +1,6 @@
 <?php
 
-class Tag extends BaseObject {
+class Tag extends Proto {
 
   const DEFAULT_COLOR = '#ffffff';
   const DEFAULT_BACKGROUND = '#1e83c2';

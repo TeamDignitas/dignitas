@@ -1,6 +1,6 @@
 <?php
 
-class PasswordToken extends BaseObject {
+class PasswordToken extends Proto {
 
   static function create($userId) {
     $pt = Model::factory('PasswordToken')->create();

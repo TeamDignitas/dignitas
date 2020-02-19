@@ -1,6 +1,6 @@
 <?php
 
-class Flag extends BaseObject {
+class Flag extends Proto {
 
   // Boolean constants, but hopefully clearer.
   const VOTE_KEEP = 0;

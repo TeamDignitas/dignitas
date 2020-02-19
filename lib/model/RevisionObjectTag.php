@@ -1,6 +1,6 @@
 <?php
 
-class RevisionObjectTag extends BaseObject {
+class RevisionObjectTag extends Proto {
 
  /**
    * Returns tags that were modified in this revision.

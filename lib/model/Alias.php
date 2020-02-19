@@ -1,6 +1,6 @@
 <?php
 
-class Alias extends BaseObject {
+class Alias extends Proto {
 
   function __toString() {
     return $this->name;

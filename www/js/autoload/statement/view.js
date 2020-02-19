@@ -4,9 +4,11 @@ $(function() {
 
   function init() {
     initSimpleMde('fieldContents');
-    commentForm = $('#commentForm').detach();
+    commentForm = $('#commentForm').detach().removeAttr('id');
     $('.addCommentLink').click(addCommentForm);
+    $('.deleteCommentLink').click(deleteComment);
     $('body').on('click', '.commentSaveButton', saveComment);
+    $('body').on('keyup paste', 'textarea[name="contents"]', showRemainingChars);
   }
 
   function addCommentForm() {
@@ -40,6 +42,45 @@ $(function() {
       $('body').removeClass('waiting');
 
     });
+
+    return false;
+  }
+
+  function showRemainingChars() {
+    // We trust the browser to obey maxlength. This is safe because we also
+    // have a backend check.
+    var l = $(this).val().length;
+    var max = $(this).attr('maxlength');
+
+    $(this).closest('form').find('.charsRemaining').text(max - l);
+  }
+
+  function deleteComment() {
+    var msg = $(this).data('confirmMsg');
+    if (!confirm(msg)) {
+      return false;
+    }
+
+    $('body').addClass('waiting');
+
+    var comment = $(this).closest('.comment');
+    var commentId = $(this).data('commentId');
+    $.get(URL_PREFIX + 'ajax/delete-comment/' + commentId)
+      .done(function(successMsg) {
+
+        comment.slideToggle();
+
+      }).fail(function(errorMsg) {
+
+        if (errorMsg.responseJSON) {
+          alert(errorMsg.responseJSON);
+        }
+
+      }).always(function() {
+
+        $('body').removeClass('waiting');
+
+      });
 
     return false;
   }

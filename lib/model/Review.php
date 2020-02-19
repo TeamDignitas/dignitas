@@ -3,7 +3,7 @@
 /**
  * Class that handles an object review from start to resolution.
  */
-class Review extends BaseObject {
+class Review extends Proto {
   use ObjectTypeIdTrait;
 
   const STATUS_PENDING = 0;
@@ -19,19 +19,19 @@ class Review extends BaseObject {
   // Maps object x reason to methods to run when a review is resolved.
   // It should be impossible to encounter cases not covered here.
   const KEEP_ACTION_MAP = [
-    BaseObject::TYPE_ANSWER => [
+    Proto::TYPE_ANSWER => [
       Ct::REASON_PENDING_EDIT => self::ACTION_INCORPORATE_PENDING_EDIT,
     ],
-    BaseObject::TYPE_ENTITY => [
+    Proto::TYPE_ENTITY => [
       Ct::REASON_PENDING_EDIT => self::ACTION_INCORPORATE_PENDING_EDIT,
     ],
-    BaseObject::TYPE_STATEMENT => [
+    Proto::TYPE_STATEMENT => [
       Ct::REASON_PENDING_EDIT => self::ACTION_INCORPORATE_PENDING_EDIT,
     ],
   ];
 
   const REMOVE_ACTION_MAP = [
-    BaseObject::TYPE_ANSWER => [
+    Proto::TYPE_ANSWER => [
       Ct::REASON_SPAM => self::ACTION_DELETE,
       Ct::REASON_ABUSE => self::ACTION_DELETE,
       Ct::REASON_OFF_TOPIC => self::ACTION_DELETE,
@@ -41,7 +41,7 @@ class Review extends BaseObject {
       Ct::REASON_PENDING_EDIT => self::ACTION_DELETE_PENDING_EDIT,
       Ct::REASON_OTHER => self::ACTION_DELETE,
     ],
-    BaseObject::TYPE_ENTITY => [
+    Proto::TYPE_ENTITY => [
       Ct::REASON_SPAM => self::ACTION_DELETE,
       Ct::REASON_ABUSE => self::ACTION_DELETE,
       Ct::REASON_DUPLICATE => self::ACTION_CLOSE,
@@ -50,7 +50,7 @@ class Review extends BaseObject {
       Ct::REASON_PENDING_EDIT => self::ACTION_DELETE_PENDING_EDIT,
       Ct::REASON_OTHER => self::ACTION_DELETE,
     ],
-    BaseObject::TYPE_STATEMENT => [
+    Proto::TYPE_STATEMENT => [
       Ct::REASON_SPAM => self::ACTION_DELETE,
       Ct::REASON_ABUSE => self::ACTION_DELETE,
       Ct::REASON_DUPLICATE => self::ACTION_CLOSE,
@@ -60,6 +60,12 @@ class Review extends BaseObject {
       Ct::REASON_NEW_USER => self::ACTION_CLOSE,
       Ct::REASON_PENDING_EDIT => self::ACTION_DELETE_PENDING_EDIT,
       Ct::REASON_OTHER => self::ACTION_CLOSE,
+    ],
+    Proto::TYPE_COMMENT => [
+      Ct::REASON_SPAM => self::ACTION_DELETE,
+      Ct::REASON_ABUSE => self::ACTION_DELETE,
+      Ct::REASON_OTHER => self::ACTION_DELETE,
+      Ct::REASON_NOT_NEEDED => self::ACTION_DELETE,
     ],
   ];
 
@@ -88,6 +94,7 @@ class Review extends BaseObject {
       case Ct::REASON_REOPEN:       return _('items flagged for reopening');
       case Ct::REASON_PENDING_EDIT: return _('suggested changes');
       case Ct::REASON_OTHER:        return _('items flagged for other reasons');
+      case Ct::REASON_NOT_NEEDED:   return _('no longer needed comments');
     }
   }
 
@@ -110,6 +117,7 @@ class Review extends BaseObject {
       case Ct::REASON_REOPEN:       return _('reopen');
       case Ct::REASON_PENDING_EDIT: return _('suggested-changes');
       case Ct::REASON_OTHER:        return _('other');
+      case Ct::REASON_NOT_NEEDED:   return _('not-needed');
     }
   }
 
@@ -179,8 +187,8 @@ class Review extends BaseObject {
     }
 
     switch ($this->objectType) {
-      case BaseObject::TYPE_ENTITY: return Entity::get_by_id($this->duplicateId);
-      case BaseObject::TYPE_STATEMENT: return Statement::get_by_id($this->duplicateId);
+      case Proto::TYPE_ENTITY: return Entity::get_by_id($this->duplicateId);
+      case Proto::TYPE_STATEMENT: return Statement::get_by_id($this->duplicateId);
       default: return null;
     }
   }
@@ -346,6 +354,18 @@ class Review extends BaseObject {
   }
 
   /**
+   * If a message was deleted as spam or abuse, penalize its author. Called
+   * when the review is resolved by deleting the object.
+   */
+  private function checkRepPenalty() {
+    $obj = $this->getObject();
+    if (in_array($this->reason, [ Ct::REASON_SPAM, Ct::REASON_ABUSE ]) &&
+        $obj->status != Ct::STATUS_DELETED) { // in case it gets flagged twice
+      $obj->getUser()->grantReputation(Config::REP_SPAM_ABUSE);
+    }
+  }
+
+  /**
    * Closes or deletes the reviewed object.
    *
    * @param int $action One of the Review::ACTION_* values.
@@ -362,6 +382,7 @@ class Review extends BaseObject {
         $obj->close($this->reason);
       }
     } else if ($action == self::ACTION_DELETE) {
+      $this->checkRepPenalty();
       $obj->markDeleted($this->reason);
     } else if ($action == self::ACTION_INCORPORATE_PENDING_EDIT) {
       $obj->processPendingEdit(true);

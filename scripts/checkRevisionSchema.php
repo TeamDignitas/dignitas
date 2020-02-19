@@ -37,7 +37,9 @@ $tables = DB::execute('show tables');
 foreach ($tables as $rec) {
   $table = $rec[0];
 
-  if (preg_match('/^revision_/', $table)) {
+  if (preg_match('/_ext$/', $table)) {
+    // nothing: extension tables have no history
+  } else if (preg_match('/^revision_/', $table)) {
     // verify that a corresponding data table exists
     $dataTable = substr($table, strlen('revision_'));
     if (!DB::tableExists($dataTable)) {

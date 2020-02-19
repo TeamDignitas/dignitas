@@ -70,8 +70,25 @@ class Router {
     ],
 
     // comments
+    'comment/delete' => [
+      'en_US.utf8' => 'ajax/delete-comment',
+    ],
     'comment/save' => [
       'en_US.utf8' => 'ajax/save-comment',
+    ],
+
+    // domains
+    'domain/edit' => [
+      'en_US.utf8' => 'edit-domain',
+      'ro_RO.utf8' => 'editeaza-domeniu',
+    ],
+    'domain/image' => [
+      'en_US.utf8' => 'domain-image',
+      'ro_RO.utf8' => 'imagine-domeniu',
+    ],
+    'domain/list' => [
+      'en_US.utf8' => 'domains',
+      'ro_RO.utf8' => 'domenii',
     ],
 
     // entities
@@ -99,11 +116,11 @@ class Router {
     ],
 
     // flags
-    'flag/save' => [
-      'en_US.utf8' => 'ajax/save-flag',
-    ],
     'flag/delete' => [
       'en_US.utf8' => 'ajax/delete-flag',
+    ],
+    'flag/save' => [
+      'en_US.utf8' => 'ajax/save-flag',
     ],
 
     // helpers
@@ -188,6 +205,9 @@ class Router {
     'answer/edit' => [ 'id' ],
     'answer/history' => [ 'id' ],
     'attachment/view' => [ 'id', 'fileName' ],
+    'comment/delete' => [ 'id' ],
+    'domain/image' => [ 'id', 'fileName' ],
+    'domain/edit' => [ 'id' ],
     'entity/edit' => [ 'id' ],
     'entity/history' => [ 'id' ],
     'entity/image' => [ 'id', 'fileName' ],
@@ -325,11 +345,13 @@ class Router {
    */
   static function getEditLink($object) {
     switch ($object->getObjectType()) {
-      case BaseObject::TYPE_ANSWER:
+      case Proto::TYPE_ANSWER:
         return Router::link('answer/edit') . '/' . $object->id;
-      case BaseObject::TYPE_ENTITY:
+      case Proto::TYPE_DOMAIN:
+        return Router::link('domain/edit') . '/' . $object->id;
+      case Proto::TYPE_ENTITY:
         return Router::link('entity/edit') . '/' . $object->id;
-      case BaseObject::TYPE_STATEMENT:
+      case Proto::TYPE_STATEMENT:
         return Router::link('statement/edit') . '/' . $object->id;
       default:
         return null;
@@ -345,9 +367,9 @@ class Router {
    */
   static function getViewLink($object) {
     switch ($object->getObjectType()) {
-      case BaseObject::TYPE_ENTITY:
+      case Proto::TYPE_ENTITY:
         return Router::link('entity/view') . '/' . $object->id;
-      case BaseObject::TYPE_STATEMENT:
+      case Proto::TYPE_STATEMENT:
         return Router::link('statement/view') . '/' . $object->id;
       default:
         return null;

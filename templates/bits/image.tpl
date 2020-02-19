@@ -1,4 +1,5 @@
 {$condition=$condition|default:$obj->fileExtension}
+{$imgClass=$imgClass|default:''}
 {$spanClass=$spanClass|default:''}
 
 
