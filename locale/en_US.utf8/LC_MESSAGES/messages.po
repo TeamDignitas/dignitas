@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-02-19 13:21+0200\n"
-"PO-Revision-Date: 2020-02-19 13:26+0200\n"
+"POT-Creation-Date: 2020-02-19 17:37+0200\n"
+"PO-Revision-Date: 2020-02-19 17:37+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -594,6 +594,28 @@ msgstr "icon"
 #: templates/entity/edit.tpl:111
 msgid "actions"
 msgstr "acțiuni"
+
+#: templates/email/lostPassword.tpl:5
+msgid "email-hello"
+msgstr "Hi,"
+
+#: templates/email/lostPassword.tpl:8
+msgid "email-you-requested-password-change"
+msgstr ""
+"Someone, possibly you, has requested a password change for your Dignitas "
+"account. To change your password, please visit:"
+
+#: templates/email/lostPassword.tpl:13
+msgid "email-discard-password-change"
+msgstr "If you did not ask for a password change, please ignore this message."
+
+#: templates/email/lostPassword.tpl:16
+msgid "email-thank-you"
+msgstr "Thank you,"
+
+#: templates/email/lostPassword.tpl:18
+msgid "email-signature"
+msgstr "the Dignitas team"
 
 #: templates/entity/edit.tpl:5
 msgid "title-edit-entity"
@@ -1538,6 +1560,10 @@ msgstr "Fake logins are only allowed in development mode."
 #: routes/auth/login.php:69
 msgid "info-incorrect-login"
 msgstr "Incorrect email address or password."
+
+#: routes/auth/lostPassword.php:29
+msgid "email-subject-password-change"
+msgstr "Password change for your Dignitas account"
 
 #: routes/auth/passwordRecovery.php:15 routes/auth/passwordRecovery.php:21
 msgid "info-password-incorrect-token"

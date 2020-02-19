@@ -26,7 +26,7 @@ if ($submitButton) {
         'token' => $pt->token,
       ]);
       $from = Config::CONTACT_EMAIL;
-      $subject = 'Schimbarea parolei pentru Dignitas';
+      $subject = _('email-subject-password-change');
       $body = Smart::fetch('email/lostPassword.tpl');
 
       Mailer::setRealMode();

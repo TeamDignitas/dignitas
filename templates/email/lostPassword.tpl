@@ -1,10 +1,18 @@
-Bună ziua,
+{**
+  * Weird spacing necessary for plain text email.
+  * See https://blog.rodneyrehm.de/archives/16-Smarty-Whitespace-Control.html
+  **}
+{t}email-hello{/t}
 
-Primiți acest mesaj deoarece ați solicitat recuperarea parolei pentru contul dumneavoastră la Dignitas. Pentru a vă schimba parola, vizitați adresa:
+
+{t}email-you-requested-password-change{/t}
+
 
 {Router::link('auth/passwordRecovery', true)}?token={$token}
 
-Dacă dumneavoastră nu ați cerut recuperarea parolei, vă rugăm să ignorați acest mesaj.
+{t}email-discard-password-change{/t}
 
-Vă mulțumim,
-Echipa Dignitas
+
+{t}email-thank-you{/t}
+
+{t}email-signature{/t}
