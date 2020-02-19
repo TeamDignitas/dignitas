@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2020-02-19 13:12+0200\n"
-"PO-Revision-Date: 2020-02-19 13:13+0200\n"
+"PO-Revision-Date: 2020-02-19 13:15+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -675,7 +675,7 @@ msgstr "afirmații"
 
 #: templates/relation/edit.tpl:3 templates/relation/edit.tpl:6
 msgid "title-edit-relation"
-msgstr "edit relation"
+msgstr "edit relationship"
 
 #: templates/relation/edit.tpl:15
 msgid "link-add-relation-link"
@@ -1117,7 +1117,7 @@ msgstr "An entity cannot be related to itself."
 
 #: lib/model/Relation.php:106
 msgid "info-incorrect-relation-type"
-msgstr "Incorrect relation type."
+msgstr "Incorrect relationship type."
 
 #: lib/model/Relation.php:112
 msgid "info-dates-out-of-order"
