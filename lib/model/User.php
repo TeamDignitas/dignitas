@@ -132,16 +132,16 @@ class User extends Proto {
   // Returns null on success or an error message on failure. Assumes $email is not empty.
   static function canChooseEmail($email) {
     if (!$email) {
-      return _('Please enter an email address.');
+      return _('info-must-enter-email');
     }
 
     $u = self::get_by_email($email);
     if ($u && $u->id != self::getActiveId()) {
-      return _('This email address is already taken.');
+      return _('info-email-taken');
     }
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      return _('This email address looks incorrect.');
+      return _('info-incorrect-email');
     }
 
     return null;
@@ -150,9 +150,7 @@ class User extends Proto {
   // returns null on success or an error message on failure
   static function validateNickname($nickname) {
     if (!preg_match('/^(\p{L}|\d)(\p{L}|\d|[-_.]){2,29}$/u', $nickname)) {
-      return _(
-        'Your nickname must begin with a letter or digit and consist of ' .
-        '3 to 30 letters, digits and punctuation from among -_.');
+      return _('info-email-syntax');
     }
     return null;
   }
@@ -160,13 +158,13 @@ class User extends Proto {
   // returns null on success or an error message on failure
   static function validateNewPassword($password, $password2) {
     if (!$password) {
-      return _('Please enter a password.');
+      return _('info-must-enter-password');
     } else if (!$password2) {
-      return _('Please enter your password twice to prevent typos.');
+      return _('info-must-enter-password-2');
     } else if ($password != $password2) {
-      return _("Passwords don't match.");
+      return _('info-password-mismatch');
     } else if (strlen($password) < 8) {
-      return _('Your password must be at least 8 characters long.');
+      return _('info-password-length');
     } else {
       return null;
     }
@@ -190,7 +188,7 @@ class User extends Proto {
       Util::redirectToLogin();
     } else if (self::$active->getReputation() < $privilege) {
       FlashMessage::add(sprintf(
-        _('You need at least %s reputation to perform this action.'),
+        _('info-minimum-reputation-%s'),
         Str::formatNumber($privilege)));
       Util::redirectToHome();
     }
@@ -204,7 +202,7 @@ class User extends Proto {
     if (!self::$active) {
       Util::redirectToLogin();
     } else if (!self::isModerator()) {
-      FlashMessage::add(_('Only moderators may perform this action.'));
+      FlashMessage::add(_('info-moderator-only'));
       Util::redirectToHome();
     }
   }
@@ -222,7 +220,7 @@ class User extends Proto {
       // check the user's reputation
       if (!self::may(self::PRIV_FLAG)) {
         throw new Exception(
-          sprintf(_('You need at least %s reputation to flag.'),
+          sprintf(_('info-minimum-reputation-flag-%s'),
                   Str::formatNumber(self::PRIV_FLAG)));
       }
 
@@ -237,12 +235,12 @@ class User extends Proto {
 
       // check that the object exists
       if (!$obj) {
-        throw new Exception(_('Cannot flag: object does not exist.'));
+        throw new Exception(_('info-flag-no-object'));
       }
 
       // check that the user does not already have a pending flag
       if ($obj->isFlagged()) {
-        throw new Exception(_('You already have a pending flag for this object.'));
+        throw new Exception(_('info-already-flagged'));
       }
 
       return true;
@@ -286,7 +284,7 @@ class User extends Proto {
         return true;
       } else {
         throw new Exception(
-          sprintf(_('You need at least %s reputation to comment.'),
+          sprintf(_('info-minimum-reputation-comment-%s'),
                   Str::formatNumber(self::PRIV_COMMENT)));
       }
     } catch (Exception $e) {

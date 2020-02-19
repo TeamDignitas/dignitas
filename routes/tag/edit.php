@@ -25,13 +25,11 @@ $canDelete = empty($children) && !$used;
 if ($deleteButton) {
   User::enforce(User::PRIV_DELETE_TAG);
   if ($canDelete) {
-    FlashMessage::add(sprintf(_('Tag «%s» deleted.'), $tag->value), 'success');
+    FlashMessage::add(sprintf(_('tag-deleted-%s'), $tag->value), 'success');
     $tag->delete();
     Util::redirectToRoute('tag/list');
   } else {
-    FlashMessage::add(
-      'Cannot delete this tag because (1) it has descendants or (2) it is being used.',
-      'danger');
+    FlashMessage::add(_('info-cannot-delete-tag'), 'danger');
     Util::redirect("/{$tag->id}");
   }
 }
@@ -51,7 +49,7 @@ if ($saveButton) {
   if (empty($errors)) {
     $tag->save();
 
-    FlashMessage::add(_('Tag saved.'), 'success');
+    FlashMessage::add(_('info-tag-saved'), 'success');
     Util::redirect(Router::link('tag/edit') . '/' . $tag->id);
   } else {
     Smart::assign('errors', $errors);
@@ -84,7 +82,7 @@ function validate($tag) {
   $errors = [];
 
   if (!$tag->value) {
-    $errors['value'][] = _('Please enter a tag name.');
+    $errors['value'][] = _('info-must-enter-tag-name');
   }
 
   // make sure the chosen parent is not also a descendant - no cycles allowed
@@ -93,7 +91,7 @@ function validate($tag) {
     $p = Tag::get_by_id($p->parentId);
   } while ($p && ($p->id != ($tag->id)));
   if ($p) {
-    $errors['parentId'][] = _('You cannot select a descendant as the parent.');
+    $errors['parentId'][] = _('info-tag-loop');
   }
 
   return $errors;

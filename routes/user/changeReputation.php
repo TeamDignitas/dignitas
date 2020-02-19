@@ -12,11 +12,11 @@ $value = Request::get('value');
 $user = User::getActive();
 
 if (!$user) {
-  $error = _('Please log in to perform this action.');
+  $error = _('info-must-log-in');
 } else if (!Config::DEVELOPMENT_MODE) {
-  $error = _('Changing your reputation is only allowed in development mode.');
+  $error = _('info-change-reputation-devel');
 } else if ($value < 1 || $value > MAX_REPUTATION) {
-  $error = sprintf(_('Reputation must be an integer between 1 and %d.'), MAX_REPUTATION);
+  $error = sprintf(_('info-reputation-range-%d'), MAX_REPUTATION);
 } else {
   $error = null;
   $user->setReputation($value);

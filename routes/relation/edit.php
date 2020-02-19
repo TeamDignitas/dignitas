@@ -5,13 +5,13 @@ $saveButton = Request::has('saveButton');
 
 $relation = Relation::get_by_id($id);
 if (!$relation) {
-  FlashMessage::add(_('Relation does not exist.'));
+  FlashMessage::add(_('info-no-such-relation'));
   Util::redirectToHome();
 }
 
 $fromEntity = Entity::get_by_id($relation->fromEntityId);
 if (!$fromEntity || !$fromEntity->isEditable()) {
-  FlashMessage::add(_("You may not edit this author's relations."));
+  FlashMessage::add(_('info-cannot-edit-relations'));
   Util::redirect(Router::link('entity/view') . '/' . $fromEntity->id);
 }
 
@@ -23,7 +23,7 @@ if ($saveButton) {
   $errors = validate($links);
   if (empty($errors)) {
     Link::update($relation, $links);
-    FlashMessage::add(_('Relation sources updated.'), 'success');
+    FlashMessage::add(_('info-relation-updated'), 'success');
     Util::redirect(Router::link('entity/view') . '/' . $fromEntity->id);
   } else {
     Smart::assign([
@@ -57,7 +57,7 @@ function validate($links) {
     }
   }
   if ($countBadUrls) {
-    $errors['links'][] = _('Some source URLS are invalid.');
+    $errors['links'][] = _('info-invalid-relation-links');
   }
 
   return $errors;

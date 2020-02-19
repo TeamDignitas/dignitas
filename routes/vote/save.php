@@ -26,11 +26,11 @@ if ($type == Vote::TYPE_STATEMENT && $value == 1) {
 } else if ($type == Vote::TYPE_COMMENT && $value == -1) {
   $priv = User::PRIV_DOWNVOTE_COMMENT;
 } else {
-  $error = _('Bad vote format.');
+  $error = _('info-bad-vote');
 }
 
 if ($priv && !User::may($priv)) {
-  $error = sprintf(_('You need at least %s reputation to vote.'),
+  $error = sprintf(_('info-minimum-reputation-vote-%s'),
                    Str::formatNumber($priv));
 }
 
@@ -38,12 +38,12 @@ $vote = Vote::loadOrCreate($userId, $type, $objectId);
 
 // ensure the object exists
 if (!$error && !$vote->getObject()) {
-  $error = _('Cannot vote: object does not exist.');
+  $error = _('info-vote-no-object');
 }
 
 // prevent self votes
 if (!$error && ($vote->getObjectUserId() == $userId)) {
-  $error = _('You cannot vote for your own messages.');
+  $error = _('info-cannot-self-vote');
 }
 
 if (!$error) {

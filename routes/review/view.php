@@ -14,7 +14,7 @@ $userId = User::getActiveId();
 
 $reason = Review::getReasonFromUrlName($urlName);
 if ($reason === null) {
-  FlashMessage::add(_('No review queue exists by that name.'));
+  FlashMessage::add(_('info-no-such-queue'));
   Util::redirectToHome();
 }
 
@@ -23,7 +23,7 @@ if ($reviewId) {
 
   $r = Review::get_by_id_reason($reviewId, $reason);
   if (!$r) {
-    FlashMessage::add(_('No review exists with the given ID.'));
+    FlashMessage::add(_('info-no-such-review'));
     Util::redirectToHome();
   }
 
@@ -35,7 +35,7 @@ if ($reviewId) {
     Flag::delete_all_by_userId_reviewId($userId, $r->id);
     $flag = Flag::create($r->id, $details, $vote);
     $flag->save();
-    FlashMessage::add(_('Your vote was recorded.'), 'success');
+    FlashMessage::add(_('info-vote-saved'), 'success');
 
     $r->evaluate();
     redirectIfComplete($r, $urlName);
@@ -79,10 +79,7 @@ Smart::display('review/view.tpl');
  */
 function redirectIfComplete($review, $urlName) {
   if ($review->status != Review::STATUS_PENDING) {
-    FlashMessage::add(
-      _('This review is now complete. We have redirected you to the next ' .
-        'review in this queue.'),
-      'success');
+    FlashMessage::add(_('info-vote-completes-review'), 'success');
     Util::redirect(Router::link('review/view') . '/' . $urlName);
   }
 }

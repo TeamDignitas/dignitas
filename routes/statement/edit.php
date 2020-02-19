@@ -15,11 +15,11 @@ if ($id) {
 
 if ($deleteButton) {
   if (!$statement->isDeletable()) {
-    FlashMessage::add(_('You have insufficient privileges to delete this statement.'));
+    FlashMessage::add(_('info-cannot-delete-statement'));
     Util::redirectToSelf();
   }
   $statement->markDeleted(Ct::REASON_BY_USER);
-  FlashMessage::add(_('Statement deleted.'), 'success');
+  FlashMessage::add(_('info-confirm-statement-deleted'), 'success');
   Util::redirectToHome();
 }
 
@@ -51,18 +51,18 @@ if ($saveButton) {
     ObjectTag::update($statement, $tagIds);
 
     if ($new) {
-      FlashMessage::add(_('Statement added.'), 'success');
+      FlashMessage::add(_('info-statement-added'), 'success');
       Util::redirect(Router::link('statement/view') . '/' . $statement->id);
     } else {
       if ($statement->status == Ct::STATUS_PENDING_EDIT) {
-        FlashMessage::add(_('Your changes were placed in the review queue.'), 'success');
+        FlashMessage::add(_('info-changes-queued'), 'success');
       } else {
-        FlashMessage::add(_('Statement updated.'), 'success');
+        FlashMessage::add(_('info-statement-updated'), 'success');
       }
       Util::redirect($referrer ?: Router::getViewLink($statement));
     }
   } else {
-    FlashMessage::add(_('There are some errors in the data. Please fix them below.'));
+    FlashMessage::add(_('info-validation-error'));
     Smart::assign([
       'errors' => $errors,
       'referrer' => $referrer,
@@ -89,25 +89,25 @@ function validate($statement, $links) {
   $errors = [];
 
   if (!$statement->entityId) {
-    $errors['entityId'][] = _('Please enter an author.');
+    $errors['entityId'][] = _('info-must-enter-statement-entity');
   }
 
   if (!$statement->summary) {
-    $errors['summary'][] = _('Please enter the statement summary.');
+    $errors['summary'][] = _('info-must-enter-statement-summary');
   }
 
   if (!$statement->context) {
-    $errors['context'][] = _('Please enter the statement context.');
+    $errors['context'][] = _('info-must-enter-statement-context');
   }
 
   if (!$statement->goal) {
-    $errors['goal'][] = _('Please enter the statement goal.');
+    $errors['goal'][] = _('info-must-enter-statement-goal');
   }
 
   if (!$statement->dateMade) {
-    $errors['dateMade'][] = _('Please enter a date.');
+    $errors['dateMade'][] = _('info-must-enter-statement-date');
   } else if ($statement->dateMade > Time::today()) {
-    $errors['dateMade'][] = _('This date may not be in the future.');
+    $errors['dateMade'][] = _('info-date-not-future');
   }
 
   $countBadUrls = 0;
@@ -117,7 +117,7 @@ function validate($statement, $links) {
     }
   }
   if ($countBadUrls) {
-    $errors['links'][] = _('Some source URLS are invalid.');
+    $errors['links'][] = _('info-invalid-statement-links');
   }
 
   return $errors;

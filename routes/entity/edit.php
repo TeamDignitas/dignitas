@@ -14,10 +14,10 @@ if ($id) {
 
 if ($deleteButton) {
   if (!$entity->isDeletable()) {
-    FlashMessage::add(_('You cannot delete this entity.'));
+    FlashMessage::add(_('info-cannot-delete-entity'));
   } else {
     $entity->markDeleted(Ct::REASON_BY_USER);
-    FlashMessage::add(_('Author deleted.'), 'success');
+    FlashMessage::add(_('info-confirm-entity-deleted.'), 'success');
   }
   Util::redirectToHome();
 }
@@ -67,18 +67,18 @@ if ($saveButton) {
 
     if ($new) {
       Review::checkNewUser($entity);
-      FlashMessage::add(_('Author added.'), 'success');
+      FlashMessage::add(_('info-entity-added'), 'success');
       Util::redirect(Router::link('entity/view') . '/' . $entity->id);
     } else {
       if ($entity->status == Ct::STATUS_PENDING_EDIT) {
-        FlashMessage::add(_('Your changes were placed in the review queue.'), 'success');
+        FlashMessage::add(_('info-changes-queued'), 'success');
       } else {
-        FlashMessage::add(_('Author updated.'), 'success');
+        FlashMessage::add(_('info-entity-updated'), 'success');
       }
       Util::redirect($referrer ?: Router::getViewLink($entity));
     }
   } else {
-    FlashMessage::add(_('There are some errors in the data. Please fix them below.'));
+    FlashMessage::add(_('info-validation-error'));
     Smart::assign([
       'errors' => $errors,
       'referrer' => $referrer,
@@ -110,11 +110,11 @@ function validate($entity, $relations, $links, $fileData) {
 
   // misc fields
   if (!$entity->name) {
-    $errors['name'][] = _('Please enter a name.');
+    $errors['name'][] = _('info-must-enter-entity-name');
   }
 
   if (!$entity->type) {
-    $errors['type'][] = _('Please choose a type.');
+    $errors['type'][] = _('info-must-enter-entity-type');
   }
 
   // relations
@@ -134,7 +134,7 @@ function validate($entity, $relations, $links, $fileData) {
     }
   }
   if ($countBadUrls) {
-    $errors['links'][] = _('Some link URLS are invalid.');
+    $errors['links'][] = _('info-invalid-entity-links');
   }
 
   // image field

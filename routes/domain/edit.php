@@ -19,12 +19,12 @@ $canDelete = $id && !$numLinks;
 
 if ($deleteButton) {
   if ($canDelete) {
-    FlashMessage::add(sprintf(_('Domain «%s» deleted.'), $domain->name), 'success');
+    FlashMessage::add(sprintf(_('info-domain-deleted'), $domain->name), 'success');
     $domain->delete();
     Util::redirectToRoute('domain/list');
   } else {
     FlashMessage::add(
-      _('Cannot delete this domain because some links use it.'),
+      _('info-cannot-delete-domain'),
       'danger');
     Util::redirect(Router::getEditLink($domain));
   }
@@ -32,14 +32,14 @@ if ($deleteButton) {
 
 if ($cloneButton) {
   if ($id) {
-    FlashMessage::add(_('Domain cloned. This is the clone\'s page.'), 'success');
+    FlashMessage::add(_('info-domain-cloned'), 'success');
     $clone = $domain->parisClone();
     $clone->name .= ' CLONE';
     $clone->save();
     $clone->copyUploadedFileFrom($domain);
     Util::redirect(Router::getEditLink($clone));
   } else {
-    FlashMessage::add(_('Please save the domain before cloning it.'), 'danger');
+    FlashMessage::add(_('info-save-domain-before-clone'), 'danger');
     Util::redirect(Router::getEditLink($domain));
   }
 }
@@ -59,7 +59,7 @@ if ($saveButton) {
     $domain->saveWithFile($fileData, $deleteImage);
     $domain->associateLinks();
 
-    FlashMessage::add(_('Domain saved.'), 'success');
+    FlashMessage::add(_('info-domain-saved'), 'success');
     Util::redirect(Router::link('domain/list'));
   } else {
     Smart::assign('errors', $errors);
@@ -78,16 +78,16 @@ function validate($domain, $fileData) {
   $errors = [];
 
   if (!$domain->name) {
-    $errors['name'][] = _('Please enter a domain name.');
+    $errors['name'][] = _('info-must-enter-domain-name');
   }
 
   $existing = Domain::get_by_name($domain->name);
   if ($existing && $existing->id != $domain->id) {
-    $errors['name'][] = _('A domain by this name already exists.');
+    $errors['name'][] = _('info-domain-name-taken');
   }
 
   if (!$domain->displayValue) {
-    $errors['displayValue'][] = _('Please enter a display value.');
+    $errors['displayValue'][] = _('info-must-enter-domain-display-value');
   }
 
   // image field

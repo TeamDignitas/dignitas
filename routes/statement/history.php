@@ -4,16 +4,16 @@ $id = Request::get('id');
 
 $statement = Statement::get_by_id($id);
 if (!$statement) {
-  FlashMessage::add(_('The statement you are looking for does not exist.'));
+  FlashMessage::add(_('info-no-such-statement'));
   Util::redirectToHome();
 }
 
 if (!$statement->isViewable()) {
-  FlashMessage::add(_('This statement was deleted and is only visible to privileged users.'));
+  FlashMessage::add(_('info-restricted-statement'));
   Util::redirectToHome();
 }
 
-$title = _('Statement history for') . ': ' . $statement->summary;
+$title = _('title-statement-history') . ': ' . $statement->summary;
 
 Smart::assign([
   'history' => ObjectDiff::loadFor($statement),

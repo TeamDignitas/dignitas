@@ -13,7 +13,7 @@ $referrer = Util::getReferrer();
 
 if ($fakeEmail) {
   if (!Config::DEVELOPMENT_MODE) {
-    FlashMessage::add(_('Fake logins are only allowed in development mode.'));
+    FlashMessage::add(_('info-fake-login-devel'));
     Util::redirect('login');
   }
   $user = User::get_by_email($fakeEmail);
@@ -55,18 +55,18 @@ function validate($email, $password, &$errors) {
   $errors = [];
 
   if (!$email) {
-    $errors['email'][] = _('Please enter an email address.');
+    $errors['email'][] = _('info-must-enter-email');
   }
 
   if (!$password) {
-    $errors['password'][] = _('Please enter a password.');
+    $errors['password'][] = _('info-must-enter-password');
   }
 
   $user = null;
   if ($email && $password) {
     $user = User::get_by_email_password($email, md5($password));
     if (!$user) {
-      $errors['password'][] = _('Incorrect email address or password.');
+      $errors['password'][] = _('info-incorrect-login');
     }
   }
 

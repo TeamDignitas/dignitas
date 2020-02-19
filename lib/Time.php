@@ -18,7 +18,7 @@ class Time {
    * @return string The localized date with long month names.
    **/
   static function localTimestamp($timestamp, $withTime = true) {
-    $format = _('%B %e, %Y');
+    $format = _('date-format-ymd');
     if ($withTime) {
       $format .= ' %H:%M:%S';
     }
@@ -39,9 +39,9 @@ class Time {
     } else if ($month == '00') {
       return $year;
     } else if ($day == '00') {
-      return trim(strftime(_('%B %Y'), $timestamp));
+      return trim(strftime(_('date-format-ym'), $timestamp));
     } else {
-      return trim(strftime(_('%B %e, %Y'), $timestamp));
+      return trim(strftime(_('date-format-ymd'), $timestamp));
     }
   }
 
@@ -50,12 +50,12 @@ class Time {
 
     $days = (int)($delta / (60 * 60 * 24));
     if ($days >= 4) {
-      return sprintf(_('on %s'), self::localTimestamp($timestamp, false));
+      return sprintf(_('time-full-%s'), self::localTimestamp($timestamp, false));
     } else if ($days >= 2) {
       return sprintf(ngettext('time-day-ago-singular', 'time-day-ago-plural-%d', $days),
                      $days);
     } else if ($days == 1) {
-      return _('yesterday');
+      return _('time-yesterday');
     }
 
     $hours = (int)($delta / (60 * 60));

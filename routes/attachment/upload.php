@@ -8,7 +8,7 @@ $fileError = UploadTrait::validateFileData($fileData);
 if (!User::may(User::PRIV_UPLOAD_ATTACHMENT)) {
 
   $output['error'] = sprintf(
-    _('You need at least %s reputation to upload documents.'),
+    _('info-minimum-reputation-upload-%s'),
     Str::formatNumber(User::PRIV_UPLOAD_ATTACHMENT));
 
 } else if ($fileError) {

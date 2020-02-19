@@ -83,18 +83,18 @@ class Review extends Proto {
    */
   static function getDescription($reason) {
     switch ($reason) {
-      case Ct::REASON_SPAM:         return _('items flagged as spam');
-      case Ct::REASON_ABUSE:        return _('items flagged as abuse');
-      case Ct::REASON_DUPLICATE:    return _('items flagged as duplicate');
-      case Ct::REASON_OFF_TOPIC:    return _('items flagged as off-topic');
-      case Ct::REASON_UNVERIFIABLE: return _('items flagged as unverifiable');
-      case Ct::REASON_LOW_QUALITY:  return _('items flagged as low quality');
-      case Ct::REASON_NEW_USER:     return _('posts from new users');
-      case Ct::REASON_LATE_ANSWER:  return _('late answers');
-      case Ct::REASON_REOPEN:       return _('items flagged for reopening');
-      case Ct::REASON_PENDING_EDIT: return _('suggested changes');
-      case Ct::REASON_OTHER:        return _('items flagged for other reasons');
-      case Ct::REASON_NOT_NEEDED:   return _('no longer needed comments');
+      case Ct::REASON_SPAM:         return _('queue-name-spam');
+      case Ct::REASON_ABUSE:        return _('queue-name-abuse');
+      case Ct::REASON_DUPLICATE:    return _('queue-name-duplicate');
+      case Ct::REASON_OFF_TOPIC:    return _('queue-name-off-topic');
+      case Ct::REASON_UNVERIFIABLE: return _('queue-name-unverifiable');
+      case Ct::REASON_LOW_QUALITY:  return _('queue-name-low-quality');
+      case Ct::REASON_NEW_USER:     return _('queue-name-new-user');
+      case Ct::REASON_LATE_ANSWER:  return _('queue-name-late-answer');
+      case Ct::REASON_REOPEN:       return _('queue-name-reopen');
+      case Ct::REASON_PENDING_EDIT: return _('queue-name-pending-edit');
+      case Ct::REASON_OTHER:        return _('queue-name-other-reason');
+      case Ct::REASON_NOT_NEEDED:   return _('queue-name-not-needed');
     }
   }
 
@@ -106,18 +106,18 @@ class Review extends Proto {
    */
   static function getUrlName($reason) {
     switch ($reason) {
-      case Ct::REASON_SPAM:         return _('spam');
-      case Ct::REASON_ABUSE:        return _('abuse');
-      case Ct::REASON_DUPLICATE:    return _('duplicates');
-      case Ct::REASON_OFF_TOPIC:    return _('off-topic');
-      case Ct::REASON_UNVERIFIABLE: return _('unverifiable');
-      case Ct::REASON_LOW_QUALITY:  return _('low-quality');
-      case Ct::REASON_NEW_USER:     return _('new-user');
-      case Ct::REASON_LATE_ANSWER:  return _('late-answer');
-      case Ct::REASON_REOPEN:       return _('reopen');
-      case Ct::REASON_PENDING_EDIT: return _('suggested-changes');
-      case Ct::REASON_OTHER:        return _('other');
-      case Ct::REASON_NOT_NEEDED:   return _('not-needed');
+      case Ct::REASON_SPAM:         return _('queue-url-spam');
+      case Ct::REASON_ABUSE:        return _('queue-url-abuse');
+      case Ct::REASON_DUPLICATE:    return _('queue-url-duplicate');
+      case Ct::REASON_OFF_TOPIC:    return _('queue-url-off-topic');
+      case Ct::REASON_UNVERIFIABLE: return _('queue-url-unverifiable');
+      case Ct::REASON_LOW_QUALITY:  return _('queue-url-low-quality');
+      case Ct::REASON_NEW_USER:     return _('queue-url-new-user');
+      case Ct::REASON_LATE_ANSWER:  return _('queue-url-late-answer');
+      case Ct::REASON_REOPEN:       return _('queue-url-reopen');
+      case Ct::REASON_PENDING_EDIT: return _('queue-url-pending-edit');
+      case Ct::REASON_OTHER:        return _('queue-url-other-reason');
+      case Ct::REASON_NOT_NEEDED:   return _('queue-url-not-needed');
     }
   }
 

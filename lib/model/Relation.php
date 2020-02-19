@@ -31,10 +31,10 @@ class Relation extends Proto {
 
   static function typeName($type) {
     switch ($type) {
-      case self::TYPE_MEMBER:           return _('member of');
-      case self::TYPE_ASSOCIATE:        return _('associate in');
-      case self::TYPE_CLOSE_RELATIVE:   return _('close relative of');
-      case self::TYPE_DISTANT_RELATIVE: return _('distant relative of');
+      case self::TYPE_MEMBER:           return _('relation-type-member');
+      case self::TYPE_ASSOCIATE:        return _('relation-type-associate');
+      case self::TYPE_CLOSE_RELATIVE:   return _('relation-type-close-relative');
+      case self::TYPE_DISTANT_RELATIVE: return _('relation-type-distant-relative');
     }
   }
 
@@ -96,20 +96,20 @@ class Relation extends Proto {
     $toEntity = $this->getToEntity();
 
     if (!$toEntity) {
-      $errors[] = _('Please choose a target entity.');
+      $errors[] = _('info-target-entity');
     } else if ($fromEntity->id == $this->toEntityId) {
-      $errors[] = _('An entity cannot be related to itself.');
+      $errors[] = _('info-related-itself');
     } else {
       // there exists a distinct $toEntity
       $list = self::VALID_TYPES[$fromEntity->type][$this->type] ?? [];
       if (!in_array($toEntity->type, $list)) {
-        $errors[] = _('Incorrect relation type.');
+        $errors[] = _('info-incorrect-relation-type');
       }
 
       if (($this->startDate != '0000-00-00') &&
           ($this->endDate != '0000-00-00') &&
           ($this->startDate > $this->endDate)) {
-        $errors[] = _('The start date cannot be past the end date.');
+        $errors[] = _('info-dates-out-of-order');
       }
     }
 

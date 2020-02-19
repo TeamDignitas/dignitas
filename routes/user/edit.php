@@ -23,7 +23,7 @@ if ($saveButton) {
     }
     $user->saveWithFile($fileData, $deleteImage);
 
-    FlashMessage::add(_('Changes saved.'), 'success');
+    FlashMessage::add(_('info-changes-saved'), 'success');
     Util::redirectToSelf();
   } else {
     Smart::assign([

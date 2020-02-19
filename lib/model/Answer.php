@@ -38,16 +38,16 @@ class Answer extends Proto {
       return null;
     }
 
-    $msg = _('This answer was deleted');
+    $msg = _('info-answer-deleted');
 
     switch ($this->reason) {
-      case Ct::REASON_SPAM: $r = _('because it is spam.'); break;
-      case Ct::REASON_ABUSE: $r = _('because it is rude or abusive.'); break;
-      case Ct::REASON_OFF_TOPIC: $r = _('because it is off-topic.'); break;
-      case Ct::REASON_LOW_QUALITY: $r = _('because it is low-quality.'); break;
-      case Ct::REASON_BY_OWNER: $r = _('by its author.'); break;
-      case Ct::REASON_BY_USER: $r = _('by'); break;
-      case Ct::REASON_OTHER: $r = _('for other reasons.'); break;
+      case Ct::REASON_SPAM: $r = _('info-answer-spam'); break;
+      case Ct::REASON_ABUSE: $r = _('info-answer-abuse'); break;
+      case Ct::REASON_OFF_TOPIC: $r = _('info-answer-off-topic'); break;
+      case Ct::REASON_LOW_QUALITY: $r = _('info-answer-low-quality'); break;
+      case Ct::REASON_BY_OWNER: $r = _('info-answer-by-owner'); break;
+      case Ct::REASON_BY_USER: $r = _('info-by'); break;
+      case Ct::REASON_OTHER: $r = _('info-other-reason'); break;
       default: $r = '';
     }
 
@@ -80,7 +80,7 @@ class Answer extends Proto {
   protected function isEditableCore() {
     if (!$this->id && !User::may(User::PRIV_ADD_ANSWER)) {
       throw new Exception(sprintf(
-        _('You need at least %s reputation to add answers.'),
+        _('info-minimum-reputation-add-answer-%s'),
         Str::formatNumber(User::PRIV_ADD_ANSWER)));
     }
 
@@ -88,7 +88,7 @@ class Answer extends Proto {
         !User::may(User::PRIV_EDIT_ANSWER) &&     // can edit any answers
         $this->userId != User::getActiveId()) {   // can always edit user's own answers
       throw new Exception(sprintf(
-        _('You need at least %s reputation to edit answers.'),
+        _('info-minimum-reputation-edit-answer-%s'),
         Str::formatNumber(User::PRIV_EDIT_ANSWER)));
     }
   }

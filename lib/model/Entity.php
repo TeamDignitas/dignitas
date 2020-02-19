@@ -25,11 +25,11 @@ class Entity extends Proto {
 
   static function typeName($type) {
     switch ($type) {
-      case self::TYPE_PERSON:   return _('person');
-      case self::TYPE_PARTY:    return _('party');
-      case self::TYPE_UNION:    return _('union');
-      case self::TYPE_WEBSITE:  return _('website');
-      case self::TYPE_COMPANY:  return _('company');
+      case self::TYPE_PERSON:   return _('entity-type-person');
+      case self::TYPE_PARTY:    return _('entity-type-party');
+      case self::TYPE_UNION:    return _('entity-type-union');
+      case self::TYPE_WEBSITE:  return _('entity-type-website');
+      case self::TYPE_COMPANY:  return _('entity-type-company');
     }
   }
 
@@ -83,7 +83,7 @@ class Entity extends Proto {
     $rec = [];
     $dup = $this->getDuplicate();
 
-    $rec['status'] = $dup ? _('duplicate') : _('closed');
+    $rec['status'] = $dup ? _('status-entity-duplicate') : _('status-entity-closed');
 
     $rec['dup'] = $dup;
 
@@ -92,17 +92,17 @@ class Entity extends Proto {
       : 'alert-warning';
 
     $rec['details'] = ($this->status == Ct::STATUS_CLOSED)
-      ? _('This entity was closed')
-      : _('This entity was deleted');
+      ? _('info-entity-closed')
+      : _('info-entity-deleted');
 
     switch ($this->reason) {
-      case Ct::REASON_SPAM: $r = _('because its profile contains spam.'); break;
-      case Ct::REASON_ABUSE: $r = _('because its profile contains insults or abuse.'); break;
-      case Ct::REASON_DUPLICATE: $r = _('as a duplicate of the entity'); break;
-      case Ct::REASON_OFF_TOPIC: $r = _('because it is off-topic.'); break;
-      case Ct::REASON_BY_OWNER: $r = _('by the user who added it.'); break;
-      case Ct::REASON_BY_USER: $r = _('by'); break;
-      case Ct::REASON_OTHER: $r = _('for other reasons.'); break;
+      case Ct::REASON_SPAM: $r = _('info-entity-spam'); break;
+      case Ct::REASON_ABUSE: $r = _('info-entity-abuse'); break;
+      case Ct::REASON_DUPLICATE: $r = _('info-entity-duplicate-of'); break;
+      case Ct::REASON_OFF_TOPIC: $r = _('info-entity-off-topic'); break;
+      case Ct::REASON_BY_OWNER: $r = _('info-entity-by-owner'); break;
+      case Ct::REASON_BY_USER: $r = _('info-by'); break;
+      case Ct::REASON_OTHER: $r = _('info-other-reason'); break;
       default: $r = '';
     }
     $rec['details'] .= ' ' . $r;
@@ -222,7 +222,7 @@ class Entity extends Proto {
   protected function isEditableCore() {
     if (!$this->id && !User::may(User::PRIV_ADD_ENTITY)) {
       throw new Exception(sprintf(
-        _('You need at least %s reputation to add entities.'),
+        _('info-minimum-reputation-add-entity-%s'),
         Str::formatNumber(User::PRIV_ADD_ENTITY)));
     }
 
@@ -230,7 +230,7 @@ class Entity extends Proto {
         !User::may(User::PRIV_EDIT_ENTITY) &&     // can edit any entities
         $this->userId != User::getActiveId()) {   // can always edit user's own entities
       throw new Exception(sprintf(
-        _('You need at least %s reputation to edit entities.'),
+        _('info-minimum-reputation-edit-entity-%s'),
         Str::formatNumber(User::PRIV_EDIT_ENTITY)));
     }
   }

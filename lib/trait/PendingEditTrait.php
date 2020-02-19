@@ -48,20 +48,17 @@ trait PendingEditTrait {
   function isEditable($throw = false) {
     try {
       if ($this->status == Ct::STATUS_PENDING_EDIT) {
-        throw new Exception(_('This item is itself a pending edit.'));
+        throw new Exception(_('info-item-is-pending-edit'));
       }
 
       if ($this->pendingEditId) {
         throw new Exception(
-          _('This item already has a pending edit; please wait for it to be reviewed.'));
+          _('info-item-has-pending-edit'));
       }
 
       $u = User::getActive();
       if ($u && $u->getNumPendingEdits() >= Config::MAX_PENDING_EDITS) {
-        throw new Exception(
-          sprintf(_('You have reached your limit of %d pending edits.' .
-                    'Please wait for some of them to be reviewed.'),
-                  Config::MAX_PENDING_EDITS));
+        throw new Exception(sprintf(_('info-pending-edit-limit-%d'), Config::MAX_PENDING_EDITS));
       }
 
       $this->isEditableCore();

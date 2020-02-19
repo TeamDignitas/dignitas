@@ -168,15 +168,15 @@ trait UploadTrait {
     switch ($fileData['status']) {
       case Request::UPLOAD_TOO_LARGE:
         $mb = $fileData['limit'] >> 20;
-        return sprintf(_('Maximum file size is %s MB.'), $mb);
+        return sprintf(_('info-upload-size-%d'), $mb);
 
       case Request::UPLOAD_BAD_MIME_TYPE:
         $extString = implode(', ', $fileData['allowedExtensions']);
         $extString = strtoupper($extString);
-        return sprintf(_('Supported file types are: %s.'), $extString);
+        return sprintf(_('info-upload-type-%s'), $extString);
 
       case Request::UPLOAD_OTHER_ERROR:
-        return _('An error occurred while uploading the file.');
+        return _('info-upload-error');
 
       default:
         return null;

@@ -23,8 +23,8 @@ class Flag extends Proto {
    */
   function getVoteName() {
     return ($this->vote == self::VOTE_KEEP)
-      ? _('keep')
-      : _('remove');
+      ? _('vote-keep')
+      : _('vote-remove');
   }
 
   /**
@@ -34,9 +34,9 @@ class Flag extends Proto {
    */
   function getWeightName() {
     switch ($this->weight) {
-      case self::WEIGHT_ADVISORY: return _('advisory');
-      case self::WEIGHT_EXECUTIVE: return _('executive');
-      case self::WEIGHT_MODERATOR: return _('moderator');
+      case self::WEIGHT_ADVISORY: return _('flag-advisory');
+      case self::WEIGHT_EXECUTIVE: return _('flag-executive');
+      case self::WEIGHT_MODERATOR: return _('flag-moderator');
       default: return '';
     }
   }
