@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2020-02-19 17:37+0200\n"
-"PO-Revision-Date: 2020-02-19 17:37+0200\n"
+"PO-Revision-Date: 2020-02-19 18:06+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -87,7 +87,7 @@ msgstr[1] "%1 tags"
 
 #: templates/aggregate/search.tpl:51
 msgid "info-no-search-results"
-msgstr "your search «%1» produced no results."
+msgstr "Your search «%1» produced no results."
 
 #: templates/answer/edit.tpl:4 templates/answer/edit.tpl:7
 msgid "title-edit-answer"
@@ -873,7 +873,7 @@ msgstr "statements (%1)"
 
 #: templates/user/edit.tpl:3 templates/user/edit.tpl:6
 msgid "label-edit-user"
-msgstr "edit your profile"
+msgstr "edit my profile"
 
 #: templates/user/edit.tpl:75
 msgid "label-about-me"
@@ -1851,4 +1851,4 @@ msgstr "Cannot vote: object does not exist."
 
 #: routes/vote/save.php:46
 msgid "info-cannot-self-vote"
-msgstr "You cannot vote for your own messages."
+msgstr "You cannot vote on your own messages."
