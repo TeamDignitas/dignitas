@@ -15,7 +15,7 @@ class RevisionStatement extends Statement {
     $this->diffField(_('title-changes-context'), $prev->context, $this->context, $od);
     $this->diffField(_('title-changes-goal'), $prev->goal, $this->goal, $od);
 
-    $this->compareField(_('label-statement-author'),
+    $this->compareField(_('label-statement-entity'),
                         (string)$prev->getEntity(),
                         (string)$this->getEntity(),
                         $od, Ct::FIELD_CHANGE_STRING);

@@ -16,7 +16,7 @@
   {if User::may(User::PRIV_ADD_ENTITY)}
     <div>
       <a href="{Router::link('entity/edit')}">
-        {t}link-add-author{/t}
+        {t}link-add-entity{/t}
       </a>
     </div>
   {/if}

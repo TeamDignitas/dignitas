@@ -187,7 +187,7 @@
               {t}link-flag-statement{/t}
             </span>
             <span data-flag-visibility="{Flag::TYPE_ENTITY}">
-              {t}link-flag-author{/t}
+              {t}link-flag-entity{/t}
             </span>
             <span data-flag-visibility="{Flag::TYPE_COMMENT}">
               {t}link-flag-comment{/t}

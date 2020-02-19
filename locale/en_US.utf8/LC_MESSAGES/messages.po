@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-02-19 13:12+0200\n"
-"PO-Revision-Date: 2020-02-19 13:15+0200\n"
+"POT-Creation-Date: 2020-02-19 13:21+0200\n"
+"PO-Revision-Date: 2020-02-19 13:26+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -40,7 +40,7 @@ msgid "link-add-statement"
 msgstr "add a statement"
 
 #: templates/aggregate/dashboard.tpl:19 templates/aggregate/index.tpl:35
-msgid "link-add-author"
+msgid "link-add-entity"
 msgstr "add an author"
 
 #: templates/aggregate/dashboard.tpl:27
@@ -336,7 +336,7 @@ msgstr "This statement already appears in Dignitas."
 
 #: templates/bits/flagModal.tpl:72
 msgid "info-reason-entity-duplicate"
-msgstr "This entity already appears in Dignitas."
+msgstr "This author already appears in Dignitas."
 
 #: templates/bits/flagModal.tpl:79
 msgid "label-type-something"
@@ -405,7 +405,7 @@ msgid "link-flag-statement"
 msgstr "flag statement"
 
 #: templates/bits/flagModal.tpl:190
-msgid "link-flag-author"
+msgid "link-flag-entity"
 msgstr "flag author"
 
 #: templates/bits/flagModal.tpl:193
@@ -661,12 +661,12 @@ msgstr "tags"
 
 #: templates/entity/edit.tpl:207
 msgid "info-confirm-delete-entity"
-msgstr "Are you sure you want to delete this entity?"
+msgstr "Are you sure you want to delete this author?"
 
 #: templates/entity/view.tpl:8
 msgid "link-entity-review-pending-edit"
 msgstr ""
-"This entity has a pending edit. You can <a href=\"%1\" class=\"alert-link"
+"This author has a pending edit. You can <a href=\"%1\" class=\"alert-link"
 "\">review it</a>."
 
 #: templates/entity/view.tpl:15
@@ -696,13 +696,13 @@ msgstr "pertaining to statement:"
 
 #: templates/review/view.tpl:53
 msgid "info-entity-duplicate"
-msgstr "This entity was flagged as a duplicate of"
+msgstr "This author was flagged as a duplicate of"
 
 #: templates/review/view.tpl:56
 msgid "info-entity-duplicate-process"
 msgstr ""
 "Accepting this flag will transfer all statements from this duplicate to its "
-"canonical entity. The aliases, relationships and other attributes will not "
+"canonical author. The aliases, relationships and other attributes will not "
 "be transferred."
 
 #: templates/review/view.tpl:70
@@ -722,7 +722,7 @@ msgid "title-add-statement"
 msgstr "add a statement"
 
 #: templates/statement/edit.tpl:26
-msgid "label-author"
+msgid "label-entity"
 msgstr "author"
 
 #: templates/statement/edit.tpl:39 lib/model/RevisionStatement.php:22
@@ -1027,11 +1027,11 @@ msgstr "closed"
 
 #: lib/model/Entity.php:95
 msgid "info-entity-closed"
-msgstr "This entity was closed"
+msgstr "This author was closed"
 
 #: lib/model/Entity.php:96
 msgid "info-entity-deleted"
-msgstr "This entity was deleted"
+msgstr "This author was deleted"
 
 #: lib/model/Entity.php:99
 msgid "info-entity-spam"
@@ -1043,7 +1043,7 @@ msgstr "because its profile contains insults or abuse."
 
 #: lib/model/Entity.php:101
 msgid "info-entity-duplicate-of"
-msgstr "as a duplicate of the entity"
+msgstr "as a duplicate of the author"
 
 #: lib/model/Entity.php:102
 msgid "info-entity-off-topic"
@@ -1056,12 +1056,12 @@ msgstr "by the user who added it."
 #: lib/model/Entity.php:225
 #, php-format
 msgid "info-minimum-reputation-add-entity-%s"
-msgstr "You need at least %s reputation to add entities."
+msgstr "You need at least %s reputation to add authors."
 
 #: lib/model/Entity.php:233
 #, php-format
 msgid "info-minimum-reputation-edit-entity-%s"
-msgstr "You need at least %s reputation to edit entities."
+msgstr "You need at least %s reputation to edit authors."
 
 #: lib/model/Flag.php:26
 msgid "vote-keep"
@@ -1109,11 +1109,11 @@ msgstr "pînă la"
 
 #: lib/model/Relation.php:99
 msgid "info-target-entity"
-msgstr "Please choose a target entity."
+msgstr "Please choose a target author."
 
 #: lib/model/Relation.php:101
 msgid "info-related-itself"
-msgstr "An entity cannot be related to itself."
+msgstr "An author cannot be related to itself."
 
 #: lib/model/Relation.php:106
 msgid "info-incorrect-relation-type"
@@ -1305,7 +1305,7 @@ msgid "title-changes-goal"
 msgstr "changes to goal"
 
 #: lib/model/RevisionStatement.php:18
-msgid "label-statement-author"
+msgid "label-statement-entity"
 msgstr "author"
 
 #: lib/model/RevisionStatement.php:46

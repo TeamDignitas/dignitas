@@ -23,7 +23,7 @@
     <input type="hidden" name="id" value="{$statement->id}">
     <input type="hidden" name="referrer" value="{$referrer}">
     <div class="form-group">
-      <label for="fieldEntityId">{t}label-author{/t}</label>
+      <label for="fieldEntityId">{t}label-entity{/t}</label>
       <select
         name="entityId"
         id="fieldEntityId"
