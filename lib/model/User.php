@@ -150,7 +150,7 @@ class User extends Proto {
   // returns null on success or an error message on failure
   static function validateNickname($nickname) {
     if (!preg_match('/^(\p{L}|\d)(\p{L}|\d|[-_.]){2,29}$/u', $nickname)) {
-      return _('info-email-syntax');
+      return _('info-nickname-syntax');
     }
     return null;
   }

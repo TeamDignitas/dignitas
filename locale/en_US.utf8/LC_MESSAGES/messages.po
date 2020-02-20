@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-02-19 17:37+0200\n"
-"PO-Revision-Date: 2020-02-19 18:06+0200\n"
+"POT-Creation-Date: 2020-02-20 17:50+0200\n"
+"PO-Revision-Date: 2020-02-20 17:50+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -348,7 +348,7 @@ msgstr "off-topic"
 
 #: templates/bits/flagModal.tpl:97
 msgid "info-reason-asnwer-off-topic"
-msgstr "This answer does not address the topic of the original statement."
+msgstr "This answer does not address the topic of the statement."
 
 #: templates/bits/flagModal.tpl:100
 msgid "info-reason-statement-off-topic"
@@ -1414,7 +1414,7 @@ msgid "info-incorrect-email"
 msgstr "This email address looks incorrect."
 
 #: lib/model/User.php:153
-msgid "info-email-syntax"
+msgid "info-nickname-syntax"
 msgstr ""
 "Your nickname must begin with a letter or digit and consist of 3 to 30 "
 "letters, digits and punctuation from among -_."
