@@ -108,7 +108,6 @@ blockquote {
 .voteContainer {
   align-items: flex-start;
   display: flex;
-outline: 1px solid blue;
 }
 
 .voteContainer.highlighted {
@@ -130,14 +129,6 @@ outline: 1px solid blue;
 .statement > .voteLeft,
 .answer > .voteLeft {
   flex-basis: 75px;
-}
-
-form {
-outline: 1px solid orange;
-}
-
-.answer-label {
-outline: 1px solid green;
 }
 
 .comment > .voteLeft {
