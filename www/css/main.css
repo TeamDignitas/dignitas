@@ -173,6 +173,12 @@ outline: 1px solid green;
 /******************************** statement ********************************/
 .statement-title-divider {
   border-color: #999;
+}
+
+img.pic.person-photo {
+  outline: 0;
+}
+
 
 /******************************** answers ********************************/
 

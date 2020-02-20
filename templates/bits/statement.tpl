@@ -135,7 +135,7 @@
           obj=$entity
           geometry=Config::THUMB_ENTITY_LARGE
           spanClass=""
-          imgClass="pic rounded-circle"}
+          imgClass="pic person-photo rounded-circle"}
       </span>
       <h4 class="card-body mx-auto">Afirmație FALSĂ</h4>
     </aside>
