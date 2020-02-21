@@ -25,7 +25,7 @@
 
     {if $answer->hasRevisions()}
       <li class="list-inline-item">
-        <a href="{Router::link('answer/history')}/{$answer->id}" class="btn btn-sm btn-link">
+        <a href="{Router::link('answer/history')}/{$answer->id}" class="btn btn-sm btn-outline-secondary">
           {t}link-show-revisions{/t}
         </a>
       </li>
@@ -43,12 +43,12 @@
     {/if}
 
     <li class="list-inline-item">
-      {include "bits/editButton.tpl" obj=$answer class="btn btn-sm btn-link"}
+      {include "bits/editButton.tpl" obj=$answer class="btn btn-sm btn-outline-secondary"}
     </li>
 
     {if $flagBox && ($answer->isFlaggable() || $answer->isFlagged())}
       <li class="list-inline-item">
-        {include "bits/flagLinks.tpl" obj=$answer class="btn btn-sm btn-link"}
+        {include "bits/flagLinks.tpl" obj=$answer class="btn btn-sm btn-outline-secondary"}
       </li>
     {/if}
   </ul>

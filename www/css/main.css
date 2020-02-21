@@ -170,6 +170,11 @@ img.pic.person-photo {
   outline: 0;
 }
 
+.statement-actions .text-muted,
+.statement-actions .btn {
+  font-size: 0.75rem;
+}
+
 
 /******************************** answers ********************************/
 
