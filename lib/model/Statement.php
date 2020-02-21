@@ -78,10 +78,10 @@ class Statement extends Proto {
     $dup = $this->getDuplicate();
 
     $rec['status'] = $dup
-      ? _('duplicate')
+      ? _('status-statement-duplicate')
       : ($this->status == Ct::STATUS_CLOSED
-         ? _('closed')
-         : _('deleted'));
+         ? _('status-statement-closed')
+         : _('status-statement-deleted'));
 
     $rec['dup'] = $dup;
 
@@ -90,19 +90,19 @@ class Statement extends Proto {
       : 'alert-warning';
 
     $rec['details'] = ($this->status == Ct::STATUS_CLOSED)
-      ? _('This statement was closed')
-      : _('This statement was deleted');
+      ? _('info-statement-closed')
+      : _('info-statement-deleted');
 
     switch ($this->reason) {
-      case Ct::REASON_SPAM: $r = _('because it is spam.'); break;
-      case Ct::REASON_ABUSE: $r = _('because it is rude or abusive.'); break;
-      case Ct::REASON_DUPLICATE: $r = _('as a duplicate of the statement'); break;
-      case Ct::REASON_OFF_TOPIC: $r = _('because it is off-topic.'); break;
-      case Ct::REASON_UNVERIFIABLE: $r = _('because it is unverifiable.'); break;
-      case Ct::REASON_LOW_QUALITY: $r = _('because it is low-quality.'); break;
-      case Ct::REASON_BY_OWNER: $r = _('by the user who added it.'); break;
-      case Ct::REASON_BY_USER: $r = _('by'); break;
-      case Ct::REASON_OTHER: $r = _('for other reasons.'); break;
+      case Ct::REASON_SPAM: $r = _('info-statement-spam'); break;
+      case Ct::REASON_ABUSE: $r = _('info-statement-abuse'); break;
+      case Ct::REASON_DUPLICATE: $r = _('info-statement-duplicate-of'); break;
+      case Ct::REASON_OFF_TOPIC: $r = _('info-statement-off-topic'); break;
+      case Ct::REASON_UNVERIFIABLE: $r = _('info-statement-unverifiable'); break;
+      case Ct::REASON_LOW_QUALITY: $r = _('info-statement-low-quality'); break;
+      case Ct::REASON_BY_OWNER: $r = _('info-statement-by-owner'); break;
+      case Ct::REASON_BY_USER: $r = _('info-by'); break;
+      case Ct::REASON_OTHER: $r = _('info-other-reason'); break;
       default: $r = '';
     }
     $rec['details'] .= ' ' . $r;
@@ -120,7 +120,7 @@ class Statement extends Proto {
   protected function isEditableCore() {
     if (!$this->id && !User::may(User::PRIV_ADD_STATEMENT)) {
       throw new Exception(sprintf(
-        _('You need at least %s reputation to add statements.'),
+        _('info-minimum-reputation-add-statement-%s'),
         Str::formatNumber(User::PRIV_ADD_STATEMENT)));
     }
 
@@ -128,7 +128,7 @@ class Statement extends Proto {
         !User::may(User::PRIV_EDIT_STATEMENT) &&  // can edit any statements
         $this->userId != User::getActiveId()) {   // can always edit user's own statements
       throw new Exception(sprintf(
-        _('You need at least %s reputation to edit statements.'),
+        _('info-minimum-reputation-edit-statement-%s'),
         Str::formatNumber(User::PRIV_EDIT_STATEMENT)));
     }
   }

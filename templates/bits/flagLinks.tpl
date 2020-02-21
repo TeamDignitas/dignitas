@@ -18,7 +18,7 @@
   {if $obj->isFlagged()}hidden{/if}>
   <i class="icon icon-flag"></i>
   {if !$tiny}
-    {t}flag{/t}
+    {t}link-flag{/t}
   {/if}
 </a>
 
@@ -32,6 +32,6 @@
   {if !$obj->isFlagged()}hidden{/if}>
   <i class="icon icon-flag-empty"></i>
   {if !$tiny}
-    {t}unflag{/t}
+    {t}link-unflag{/t}
   {/if}
 </a>

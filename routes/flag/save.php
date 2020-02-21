@@ -19,7 +19,7 @@ try {
   User::canFlag($obj, true);
 
   if ($duplicateId == $objectId) {
-    throw new Exception(_('Cannot flag item as a duplicate of itself.'));
+    throw new Exception(_('info-cannot-flag-duplicate-itself'));
   }
 
   $review = Review::ensure($obj, $reason, $duplicateId);
@@ -32,7 +32,7 @@ try {
     http_response_code(202);
   }
 
-  print json_encode(_('Your flag was saved.'));
+  print json_encode(_('info-flag-saved'));
 
 } catch (Exception $e) {
 

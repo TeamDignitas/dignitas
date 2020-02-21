@@ -9,16 +9,16 @@ try {
   $comment = Comment::get_by_id($id);
 
   if (!$comment) {
-    throw new Exception('That comment does not exist.');
+    throw new Exception(_('info-no-such-comment'));
   }
 
   if (!$comment->isDeletable()) {
-    throw new Exception('You have insufficient privileges to delete this comment.');
+    throw new Exception(_('info-cannot-delete-comment'));
   }
 
   $comment->markDeleted(Ct::REASON_BY_USER);
 
-  print json_encode(_('Comment deleted.'));
+  print json_encode(_('info-comment-deleted'));
 
 } catch (Exception $e) {
 

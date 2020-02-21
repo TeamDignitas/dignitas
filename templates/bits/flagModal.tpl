@@ -5,16 +5,16 @@
       <div class="modal-header">
         <h5 class="modal-title">
           <span data-flag-visibility="{Flag::TYPE_ANSWER}">
-            {t}Flag this answer for the following reason:{/t}
+            {t}title-flag-answer{/t}
           </span>
           <span data-flag-visibility="{Flag::TYPE_STATEMENT}">
-            {t}Flag this statement for the following reason:{/t}
+            {t}title-flag-statement{/t}
           </span>
           <span data-flag-visibility="{Flag::TYPE_ENTITY}">
-            {t}Flag this author for the following reason:{/t}
+            {t}title-flag-entity{/t}
           </span>
           <span data-flag-visibility="{Flag::TYPE_COMMENT}">
-            {t}Flag this comment for the following reason:{/t}
+            {t}title-flag-comment{/t}
           </span>
         </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -31,10 +31,10 @@
                 type="radio"
                 name="flagReason"
                 value="{Ct::REASON_SPAM}">
-              {t}spam{/t}
+              {t}label-spam{/t}
             </label>
             <p class="text-muted">
-              {t}This post appears to promote a product or service.{/t}
+              {t}info-reason-spam{/t}
             </p>
           </div>
 
@@ -45,10 +45,10 @@
                 type="radio"
                 name="flagReason"
                 value="{Ct::REASON_ABUSE}">
-              {t}insults or rudeness{/t}
+              {t}label-abuse{/t}
             </label>
             <p class="text-muted">
-              {t}This post is insulting or rude toward other users of Dignitas.{/t}
+              {t}info-reason-abuse{/t}
             </p>
           </div>
 
@@ -63,20 +63,20 @@
                 value="{Ct::REASON_DUPLICATE}"
                 data-related="#duplicateSearch"
               >
-              {t}duplicate of...{/t}
+              {t}label-duplicate{/t}
             </label>
             <p class="text-muted" data-flag-visibility="{Flag::TYPE_STATEMENT}">
-              {t}This statement already appears in Dignitas.{/t}
+              {t}info-reason-statement-duplicate{/t}
             </p>
             <p class="text-muted" data-flag-visibility="{Flag::TYPE_ENTITY}">
-              {t}This entity already appears in Dignitas.{/t}
+              {t}info-reason-entity-duplicate{/t}
             </p>
             <div class="form-group flagRelated" id="duplicateSearch">
               <select
                 id="flagDuplicateId"
                 class="form-control"
                 name="flagDuplicateId"
-                data-placeholder="{t}type in some keywords...{/t}">
+                data-placeholder="{t}label-type-something{/t}">
               </select>
             </div>
           </div>
@@ -90,18 +90,17 @@
                 type="radio"
                 name="flagReason"
                 value="{Ct::REASON_OFF_TOPIC}">
-              {t}off-topic{/t}
+              {t}label-off-topic{/t}
             </label>
             <p class="text-muted">
               <span data-flag-visibility="{Flag::TYPE_ANSWER}">
-                {t}This answer does not address the topic of the original statement.{/t}
+                {t}info-reason-asnwer-off-topic{/t}
               </span>
               <span data-flag-visibility="{Flag::TYPE_STATEMENT}">
-                {t}This statement is outside the intended scope of Dignitas or
-                is too broad to prove or disprove.{/t}
+                {t}info-reason-statement-off-topic{/t}
               </span>
               <span data-flag-visibility="{Flag::TYPE_ENTITY}">
-                {t}Dignitas does not concern itself with this author's statements.{/t}
+                {t}info-reason-entity-off-topic{/t}
               </span>
             </p>
           </div>
@@ -113,10 +112,10 @@
                 type="radio"
                 name="flagReason"
                 value="{Ct::REASON_UNVERIFIABLE}">
-              {t}unverifiable{/t}
+              {t}label-unverifiable{/t}
             </label>
             <p class="text-muted">
-              {t}It is not obvious that the author really made the statement.{/t}
+              {t}info-reason-unverifiable{/t}
             </p>
           </div>
 
@@ -129,11 +128,10 @@
                 type="radio"
                 name="flagReason"
                 value="{Ct::REASON_LOW_QUALITY}">
-              {t}low quality{/t}
+              {t}label-low-quality{/t}
             </label>
             <p class="text-muted">
-              {t}This post has severe formatting or content problems that
-              cannot be salvaged through editing.{/t}
+              {t}info-reason-low-quality{/t}
             </p>
           </div>
 
@@ -146,11 +144,10 @@
                 type="radio"
                 name="flagReason"
                 value="{Ct::REASON_NOT_NEEDED}">
-              {t}no longer needed{/t}
+              {t}label-not-needed{/t}
             </label>
             <p class="text-muted">
-              {t}This comment has been incorporated in the post, is outdated
-              or not relevant to this post.{/t}
+              {t}info-reason-not-needed{/t}
             </p>
           </div>
 
@@ -163,7 +160,7 @@
                 value="{Ct::REASON_OTHER}"
                 data-related="#detailsWrapper"
               >
-              {t}other reason{/t}
+              {t}label-other-reason{/t}
             </label>
             <p class="text-muted flagRelated" id="detailsWrapper">
               <input
@@ -171,7 +168,7 @@
                 class="form-control"
                 type="text"
                 name="flagDetails"
-                placeholder="{t}please provide details...{/t}">
+                placeholder="{t}label-provide-details{/t}">
             </p>
           </div>
 
@@ -184,16 +181,16 @@
           <button id="flagButton" type="button" class="btn btn-primary">
             <i class="icon icon-flag"></i>
             <span data-flag-visibility="{Flag::TYPE_ANSWER}">
-              {t}flag answer{/t}
+              {t}link-flag-answer{/t}
             </span>
             <span data-flag-visibility="{Flag::TYPE_STATEMENT}">
-              {t}flag statement{/t}
+              {t}link-flag-statement{/t}
             </span>
             <span data-flag-visibility="{Flag::TYPE_ENTITY}">
-              {t}flag author{/t}
+              {t}link-flag-entity{/t}
             </span>
             <span data-flag-visibility="{Flag::TYPE_COMMENT}">
-              {t}flag comment{/t}
+              {t}link-flag-comment{/t}
             </span>
           </button>
         </div>

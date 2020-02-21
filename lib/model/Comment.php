@@ -63,7 +63,7 @@ class Comment extends Proto {
    */
   function validate() {
     if (mb_strlen($this->contents) > self::MAX_LENGTH) {
-      return sprintf(_('Comments can be at most %d characters long.'), self::MAX_LENGTH);
+      return sprintf(_('info-comment-length-limit-%d'), self::MAX_LENGTH);
     }
 
     return null;

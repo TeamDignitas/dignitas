@@ -1,9 +1,9 @@
 {extends "layout.tpl"}
 
-{block "title"}{cap}{t}{Review::getDescription($reason)}{/t}{/cap}{/block}
+{block "title"}{cap}{Review::getDescription($reason)}{/cap}{/block}
 
 {block "content"}
-  <h3>{t}{Review::getDescription($reason)}{/t}</h3>
+  <h3>{Review::getDescription($reason)}</h3>
 
   {if isset($review)}
     {$object=$review->getObject()}
@@ -14,7 +14,7 @@
       {include "bits/reviewActions.tpl"}
     {else}
       <p>
-        {t}This review is now complete. No further actions can be taken.{/t}
+        {t}info-review-complete{/t}
       </p>
     {/if}
 
@@ -26,7 +26,7 @@
 
       {if $review->reason == Ct::REASON_DUPLICATE}
         <div class="alert alert-warning">
-          {t}This statement was flagged as a duplicate of{/t}
+          {t}info-statement-duplicate{/t}
           {include "bits/statementLink.tpl" statement=$review->getDuplicate()}
         </div>
       {/if}
@@ -37,7 +37,7 @@
 
       {include "bits/answer.tpl" answer=$object flagBox=false}
 
-      <h3>{cap}{t}pertaining to statement:{/t}{/cap}</h3>
+      <h3>{cap}{t}title-pertaining-to-statement{/t}{/cap}</h3>
 
       <div id="parentObject">
         {include "bits/statement.tpl"
@@ -50,12 +50,10 @@
 
       {if $review->reason == Ct::REASON_DUPLICATE}
         <div class="alert alert-warning">
-          {t}This entity was flagged as a duplicate of{/t}
+          {t}info-entity-duplicate{/t}
           {include "bits/entityLink.tpl" e=$review->getDuplicate()}.
 
-          {t}Accepting this flag will transfer all statements from this
-          duplicate to its canonical entity. The aliases, relationships and
-          other attributes will not be transferred.{/t}
+          {t}info-entity-duplicate-process{/t}
         </div>
       {/if}
 
@@ -69,7 +67,7 @@
 
       {if $parent instanceof Answer}
 
-        <h3>{cap}{t}pertaining to answer:{/t}{/cap}</h3>
+        <h3>{cap}{t}title-pertaining-to-answer{/t}{/cap}</h3>
 
         <div id="parentObject">
           {include "bits/answer.tpl"
@@ -79,7 +77,7 @@
             showComments=false}
         </div>
 
-        <h3>{cap}{t}pertaining to statement:{/t}{/cap}</h3>
+        <h3>{cap}{t}title-pertaining-to-statement{/t}{/cap}</h3>
 
         <div id="parentObject">
           {include "bits/statement.tpl"
@@ -90,7 +88,7 @@
 
       {else}  {* Comment on a statement *}
 
-        <h3>{cap}{t}pertaining to statement:{/t}{/cap}</h3>
+        <h3>{cap}{t}title-pertaining-to-statement{/t}{/cap}</h3>
 
         <div id="parentObject">
           {include "bits/statement.tpl"
@@ -108,7 +106,7 @@
     {include "bits/reviewFlags.tpl"}
 
   {else}
-    {t}This review queue is empty.{/t}
+    {t}info-review-queue-empty{/t}
   {/if}
 
   {include "bits/flagModal.tpl"}

@@ -41,7 +41,7 @@
   </ul>
 
   {if $entity->type == Entity::TYPE_PERSON}
-    <h4>{t}loyalty{/t}</h4>
+    <h4>{t}title-loyalty{/t}</h4>
 
     {include "bits/loyalty.tpl" data=$entity->getLoyalty()}
   {/if}
@@ -49,7 +49,7 @@
 
 {$aliases=$entity->getAliases()}
 {if count($aliases)}
-  <h4>{t}also known as{/t}</h4>
+  <h4>{t}title-alias{/t}</h4>
 
   <ul class="list-unstyled">
     {foreach $aliases as $a}
@@ -59,7 +59,7 @@
 {/if}
 
 {if $entity->profile}
-  <h4>{t}profile{/t}</h4>
+  <h4>{t}title-profile{/t}</h4>
 
   <div>
     {$entity->profile|md}
@@ -68,7 +68,7 @@
 
 {$links=$entity->getLinks()}
 {if count($links)}
-  <h4>{t}external links{/t}</h4>
+  <h4>{t}title-entity-links{/t}</h4>
 
   <ul id="links" class="list-inline list-inline-bullet">
     {foreach $links as $l}
@@ -87,7 +87,7 @@
 
 {$members=$entity->getMembers()}
 {if count($members)}
-  <h4>{t}members{/t}</h4>
+  <h4>{t}title-members{/t}</h4>
 
   <ul>
     {foreach $members as $m}
@@ -107,7 +107,7 @@
 
   {if $entity->hasRevisions()}
     <a href="{Router::link('entity/history')}/{$entity->id}" class="btn btn-sm btn-link">
-      {t}show revisions{/t}
+      {t}link-show-revisions{/t}
     </a>
   {/if}
 

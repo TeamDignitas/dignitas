@@ -4,9 +4,9 @@
       {include "bits/userLink.tpl" u=$f->getUser()}
 
       {if $f->vote == Flag::VOTE_KEEP}
-        {t}voted to keep{/t}
+        {t}review-voted-keep{/t}
       {else}
-        {t}voted to remove{/t}
+        {t}review-voted-remove{/t}
       {/if}
 
       ({$f->getWeightName()})

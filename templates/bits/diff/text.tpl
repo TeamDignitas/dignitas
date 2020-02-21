@@ -7,8 +7,8 @@
         {t
           count=$cmd.copyLineCount
           1=$cmd.copyLineCount
-          plural="%1 identical lines skipped"}
-        one identical line skipped
+          plural="identical-lines-skipped-plural"}
+        identical-lines-skipped-singular
         {/t}
       </button>
 

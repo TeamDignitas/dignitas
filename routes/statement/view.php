@@ -6,26 +6,26 @@ $deleteAnswerId = Request::get('deleteAnswerId');
 
 $statement = Statement::get_by_id($id);
 if (!$statement) {
-  FlashMessage::add(_('The statement you are looking for does not exist.'));
+  FlashMessage::add(_('info-no-such-statement'));
   Util::redirectToHome();
 }
 
 if (!$statement->isViewable()) {
-  FlashMessage::add(_('This statement was deleted and is only visible to privileged users.'));
+  FlashMessage::add(_('info-restricted-statement'));
   Util::redirectToHome();
 }
 
 if ($deleteAnswerId) {
   $answer = Answer::get_by_id($deleteAnswerId);
   if (!$answer) {
-    FlashMessage::add(_('No such answer exists.'));
+    FlashMessage::add(_('info-no-such-answer'));
   } else if ($answer->statementId != $statement->id) {
-    FlashMessage::add(_('The answer does not belong to this statement.'));
+    FlashMessage::add(_('info-answer-belong-statement'));
   } else if (!$answer->isDeletable()) {
-    FlashMessage::add(_('You cannot delete this answer.'));
+    FlashMessage::add(_('info-cannot-delete-answer'));
   } else {
     $answer->markDeleted(Ct::REASON_BY_USER);
-    FlashMessage::add(_('Answer deleted.'), 'success');
+    FlashMessage::add(_('info-confirm-answer-deleted'), 'success');
   }
 
   Util::redirect(Router::link('statement/view') . '/' . $answer->statementId);

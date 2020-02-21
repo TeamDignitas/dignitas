@@ -1,4 +1,4 @@
-<h3>{t}Votes in this review{/t}</h3>
+<h3>{t}title-review-votes{/t}</h3>
 
 <table class="table">
   <thead>

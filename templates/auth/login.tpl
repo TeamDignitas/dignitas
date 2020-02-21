@@ -1,6 +1,6 @@
 {extends "layout.tpl"}
 
-{block "title"}{cap}{t}log in{/t}{/cap}{/block}
+{block "title"}{cap}{t}title-log-in{/t}{/cap}{/block}
 
 {block "content"}
   {$allowFakeLogins=$allowFakeLogins|default:false}
@@ -13,7 +13,7 @@
 
     <div class="card my-3">
       <div class="card-header">
-        {cap}{t}log in{/t}{/cap}
+        {cap}{t}title-log-in{/t}{/cap}
       </div>
 
       <div class="card-body">
@@ -31,7 +31,7 @@
                 name="email"
                 value="{$email|escape}"
                 autofocus
-                placeholder="{t}email{/t}">
+                placeholder="{t}label-email{/t}">
             </div>
             {include "bits/fieldErrors.tpl" errors=$errors.email|default:null}
           </div>
@@ -45,7 +45,7 @@
                 class="form-control {if isset($errors.password)}is-invalid{/if}"
                 type="password"
                 name="password"
-                placeholder="{t}password{/t}">
+                placeholder="{t}label-password{/t}">
             </div>
             {include "bits/fieldErrors.tpl" errors=$errors.password|default:null}
           </div>
@@ -58,25 +58,25 @@
                 name="remember"
                 value="1"
                 {if $remember}checked{/if}>
-              {t}remember me for one year{/t}
+              {t}label-remember-me{/t}
             </label>
           </div>
 
           <div>
             <button class="btn btn-primary" type="submit" name="submitButton">
-              {t}log in{/t}
+              {t}link-log-in{/t}
             </button>
 
             <div class="float-right">
               <a class="btn btn-outline-secondary" href="{Router::link('auth/lostPassword')}">
                 <i class="icon icon-help"></i>
-                {t}I forgot my password{/t}
+                {t}link-forgot-password{/t}
               </a>
 
               {if Config::ALLOW_REGISTRATION}
                 <a class="btn btn-outline-secondary" href="{Router::link('auth/register')}">
                   <i class="icon icon-user-plus"></i>
-                  {t}sign up{/t}
+                  {t}link-sign-up{/t}
                 </a>
               {/if}
             </div>

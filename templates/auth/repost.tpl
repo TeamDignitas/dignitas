@@ -1,9 +1,9 @@
 {extends "layout.tpl"}
 
-{block "title"}{cap}{t}redirecting{/t}{/cap}{/block}
+{block "title"}{cap}{t}title-redirecting{/t}{/cap}{/block}
 
 {block "content"}
-  <h3>{t}Redirecting you back{/t}</h3>
+  <h3>{t}title-redirecting{/t}</h3>
   <form id="repostForm" action="{$referrer|escape}" method="post">
     {foreach $postData as $key => $value}
       {if is_array($value)}
@@ -15,7 +15,7 @@
       {/if}
     {/foreach}
     <button type="submit" class="btn btn-link">
-      {t}click here if you are not redirected automatically{/t}
+      {t}link-repost-manual{/t}
     </button>
   </form>
   <script type="text/javascript">

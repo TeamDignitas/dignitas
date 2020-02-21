@@ -4,16 +4,16 @@ $id = Request::get('id');
 
 $answer = Answer::get_by_id($id);
 if (!$answer) {
-  FlashMessage::add(_('The answer you are looking for does not exist.'));
+  FlashMessage::add(_('info-answer-does-not-exist'));
   Util::redirectToHome();
 }
 
 if (!$answer->isViewable()) {
-  FlashMessage::add(_('This answer was deleted and is only visible to privileged users.'));
+  FlashMessage::add(_('info-answer-restricted'));
   Util::redirectToHome();
 }
 
-$title = _('Answer history for') . ' #' . $answer->id;
+$title = _('title-answer-history') . ' #' . $answer->id;
 
 Smart::assign([
   'history' => ObjectDiff::loadFor($answer),

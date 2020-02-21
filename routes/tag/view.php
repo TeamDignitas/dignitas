@@ -7,7 +7,7 @@ $id = Request::get('id');
 $tag = Tag::get_by_id($id);
 
 if (!$tag) {
-  FlashMessage::add(_('The tag you are looking for does not exist.'));
+  FlashMessage::add(_('info-no-such-tag'));
   Util::redirectToHome();
 }
 

@@ -2,9 +2,9 @@
 
 {capture "title"}
 {if $t->id}
-  {t}edit tag{/t}
+  {t}title-edit-tag{/t}
 {else}
-  {t}add a tag{/t}
+  {t}title-add-tag{/t}
 {/if}
 {/capture}
 
@@ -20,7 +20,7 @@
 
     <div class="form-group">
       <label for="value" class="col-2 control-label">
-        {t}name{/t}
+        {t}label-name{/t}
       </label>
       <div class="col-10">
         <div>
@@ -36,7 +36,7 @@
 
     <div class="form-group">
       <label for="tooltip" class="col-2 control-label">
-        {t}details{/t}
+        {t}label-details{/t}
       </label>
       <div class="col-10">
         <div>
@@ -45,14 +45,14 @@
             id="tooltip"
             name="tooltip"
             value="{$t->tooltip}"
-            placeholder="{t}optional; visible in a tooltip while hovering{/t}">
+            placeholder="{t}label-optional-tooltip{/t}">
         </div>
       </div>
     </div>
 
     <div class="form-group">
       <label for="parentId" class="col-2 control-label">
-        {t}parent tag{/t}
+        {t}label-parent-tag{/t}
       </label>
       <div class="col-10">
         <div>
@@ -72,7 +72,7 @@
 
     <div class="form-group"">
       <label for="color" class="col-2 control-label">
-        {t}text color{/t}
+        {t}label-text-color{/t}
       </label>
       <div class="col-10">
         <div class="input-group colorpicker-component">
@@ -90,7 +90,7 @@
 
     <div class="form-group"">
       <label for="background" class="col-2 control-label">
-        {t}background color{/t}
+        {t}label-background-color{/t}
       </label>
       <div class="col-10">
         <div class="input-group colorpicker-component">
@@ -108,7 +108,7 @@
 
     <div class="form-group">
       <label for="icon" class="col-2 control-label">
-        {t}icon{/t}
+        {t}label-icon{/t}
       </label>
       <div class="col-10">
         <div class="input-group">
@@ -130,7 +130,7 @@
               name="iconOnly"
               value="1"
               {if $t->iconOnly}checked{/if}>
-            {t}show only the icon, no text{/t}
+            {t}label-icon-only{/t}
           </label>
         </div>
 
@@ -138,10 +138,7 @@
           {t
             1="https://github.com/CatalinFrancu/dignitas/blob/master/www/css/third-party/fontello/css/icons.css"
             2="http://fontello.com/"}
-          Optionally, an <a href="%1">icon name</a>. Copy the portion after <i>icon-</i>,
-          for example <i>globe</i> or <i>user</i>. If we don't have the icon,
-          you can contact us and ask that we add it to our set. You can
-          preview the set of available icons on <a href="%2">Fontello</a>.
+          info-tag-icon-name
           {/t}
         </small>
 
@@ -150,18 +147,18 @@
 
     <button name="saveButton" type="submit" class="btn btn-primary">
       <i class="icon icon-floppy"></i>
-      {t}save{/t}
+      {t}link-save{/t}
     </button>
 
     <a href="" class="btn btn-light">
       <i class="icon icon-cancel"></i>
-      {t}cancel{/t}
+      {t}link-cancel{/t}
     </a>
 
     {if $t->id}
       <a class="btn btn-light" href="{Router::link('tag/view')}/{$t->id}">
         <i class="icon icon-left"></i>
-        {t}back to tag{/t}
+        {t}link-back-to-tag{/t}
       </a>
     {/if}
 
@@ -170,20 +167,20 @@
         name="deleteButton"
         type="submit"
         class="btn btn-danger float-right"
-        data-confirm="{t}Are you sure you want to delete this tag?{/t}"
+        data-confirm="{t}info-confirm-delete-tag{/t}"
         {if !$canDelete}
         disabled
-        title="{t}Cannot delete this tag because (1) it has descendants or (2) it is being used.{/t}"
+        title="{t}info-cannot-delete-tag{/t}"
         {/if}
       >
         <i class="icon icon-trash"></i>
-        {t}delete{/t}
+        {t}link-delete{/t}
       </button>
     {/if}
   </form>
 
   {if count($children)}
-    <h3>{t}direct descendants{/t}</h3>
+    <h3>{t}title-direct-descendants{/t}</h3>
 
     {foreach $children as $c}
       {include "bits/tag.tpl" t=$c link=true}
@@ -191,7 +188,7 @@
   {/if}
 
   {if count($homonyms)}
-    <h3>{t}duplicate tags{/t}</h3>
+    <h3>{t}title-duplicate-tags{/t}</h3>
 
     {foreach $homonyms as $h}
       <div>

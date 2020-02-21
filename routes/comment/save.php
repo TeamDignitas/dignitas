@@ -25,7 +25,7 @@ try {
 
   $c->save();
 
-  print json_encode(_('Your comment was saved.'));
+  print json_encode(_('info-comment-saved'));
 
 } catch (Exception $e) {
 

@@ -18,10 +18,10 @@
     class="btn btn-vote {if $voteValue == 1}voted{/if}"
     {if !User::getActive()}
     disabled
-    title="{t}Please log in to vote.{/t}"
+    title="{t}label-log-in-vote{/t}"
     {elseif !User::may($upvotePriv)}
     disabled
-    title="{t 1=$upvotePriv|nf}You need at least %1 reputation to upvote.{/t}"
+    title="{t 1=$upvotePriv|nf}label-minimum-reputation-upvote{/t}"
     {/if}
     data-type="{$type}"
     data-object-id="{$object->id}"
@@ -38,10 +38,10 @@
     class="btn btn-vote {if $voteValue == -1}voted{/if}"
     {if !User::getActive()}
     disabled
-    title="{t}Please log in to vote.{/t}"
+    title="{t}label-log-in-vote{/t}"
     {elseif !User::may($downvotePriv)}
     disabled
-    title="{t 1=$downvotePriv|nf}You need at least %1 reputation to downvote.{/t}"
+    title="{t 1=$downvotePriv|nf}label-minimum-reputation-downvote{/t}"
     {/if}
     data-type="{$type}"
     data-object-id="{$object->id}"

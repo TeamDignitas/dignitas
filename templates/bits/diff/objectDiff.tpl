@@ -1,8 +1,8 @@
 <h4 class="revisionHeader">
   {if $od->review}
-    {t}changes suggested by{/t}
+    {t}title-changes-suggested-by{/t}
   {else}
-    {t}changes by{/t}
+    {t}title-changes-by{/t}
   {/if}
   {include "bits/userLink.tpl" u=$od->modUser}
   {include 'bits/moment.tpl' t=$od->modDate}

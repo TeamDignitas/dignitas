@@ -6,7 +6,7 @@ $nickname = Request::get('nickname');
 $user = User::get_by_id_nickname($id, $nickname);
 
 if (!$user) {
-  FlashMessage::add(_('The user you are looking for does not exist.'));
+  FlashMessage::add(_('info-no-such-user'));
   Util::redirectToHome();
 }
 

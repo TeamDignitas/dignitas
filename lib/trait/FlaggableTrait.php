@@ -65,10 +65,12 @@ trait FlaggableTrait {
 
   function getStatusName() {
     switch ($this->status) {
-      case Ct::STATUS_ACTIVE: return _('active');
-      case Ct::STATUS_CLOSED: return $this->duplicateId ? _('duplicate') : _('closed');
-      case Ct::STATUS_DELETED: return _('deleted');
-      case Ct::STATUS_PENDING_EDIT: return _('pending edit');
+      case Ct::STATUS_ACTIVE: return _('status-diff-active');
+      case Ct::STATUS_CLOSED: return $this->duplicateId
+        ? _('status-diff-duplicate')
+        : _('status-diff-closed');
+      case Ct::STATUS_DELETED: return _('status-diff-deleted');
+      case Ct::STATUS_PENDING_EDIT: return _('status-diff-pending-edit');
     }
   }
 

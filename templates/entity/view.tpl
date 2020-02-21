@@ -5,9 +5,7 @@
 {block "content"}
   {if isset($pendingEditReview)}
     <div class="alert alert-warning">
-      {t 1=$pendingEditReview->getUrl()}
-      This author has a pending edit. You can
-      <a href="%1" class="alert-link">review it</a>.{/t}
+      {t 1=$pendingEditReview->getUrl()}link-entity-review-pending-edit{/t}
     </div>
   {/if}
 

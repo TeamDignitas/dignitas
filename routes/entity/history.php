@@ -4,16 +4,16 @@ $id = Request::get('id');
 
 $entity = Entity::get_by_id($id);
 if (!$entity) {
-  FlashMessage::add(_('The author you are looking for does not exist.'));
+  FlashMessage::add(_('info-no-such-entity'));
   Util::redirectToHome();
 }
 
 if (!$entity->isViewable()) {
-  FlashMessage::add(_('This author was deleted and is only visible to privileged users.'));
+  FlashMessage::add(_('info-restricted-entity'));
   Util::redirectToHome();
 }
 
-$title = _('Entity history for') . ': ' . $entity;
+$title = _('info-entity-history') . ': ' . $entity;
 
 Smart::assign([
   'history' => ObjectDiff::loadFor($entity),

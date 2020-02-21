@@ -18,7 +18,7 @@
 <div class="answerFooter">
   <ul class="list-inline text-muted">
     <li class="list-inline-item">
-      {t}posted by{/t}
+      {t}answer-posted-by{/t}
       {include 'bits/userLink.tpl' u=$answer->getUser()}
       {include 'bits/moment.tpl' t=$answer->createDate}
     </li>
@@ -26,7 +26,7 @@
     {if $answer->hasRevisions()}
       <li class="list-inline-item">
         <a href="{Router::link('answer/history')}/{$answer->id}" class="btn btn-sm btn-link">
-          {t}show revisions{/t}
+          {t}link-show-revisions{/t}
         </a>
       </li>
     {/if}
@@ -36,8 +36,8 @@
         <a
           href="?deleteAnswerId={$answer->id}"
           class="btn btn-sm btn-link"
-          data-confirm="{t}Are you sure you want to delete this answer?{/t}">
-          {t}delete{/t}
+          data-confirm="{t}info-confirm-delete-answer{/t}">
+          {t}link-delete{/t}
         </a>
       </li>
     {/if}

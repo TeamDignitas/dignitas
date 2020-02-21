@@ -7,12 +7,13 @@
     data-target="#navbarLeft"
     aria-controls="navbarLeft"
     aria-expanded="false"
-    aria-label="{t}toggle menu{/t}">
+    aria-label="{t}label-toggle-menu{/t}">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="navbar-collapse bg-dark to-left" id="navbarLeft">
     {include "bits/searchForm.tpl"}
+    {***
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <a class="nav-link" href="#">About us</a>
@@ -21,6 +22,7 @@
         <a class="nav-link" href="#">Team</a>
       </li>
     </ul>
+    ***}
   </div>
 
   <!-- logo -->
@@ -41,7 +43,7 @@
     data-target="#navbarRight"
     aria-controls="navbarRight"
     aria-expanded="false"
-    aria-label="{t}toggle menu{/t}">
+    aria-label="{t}label-toggle-menu{/t}">
     <span class="icon icon-user"></span>
   </button>
 
@@ -96,11 +98,11 @@
           <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarUserDropdown">
             <a class="dropdown-item text-light" href="{Router::userLink($u)}">
               <i class="icon icon-user"></i>
-              {t}my profile{/t}
+              {t}link-my-profile{/t}
             </a>
             <a class="dropdown-item text-light" href="{Router::link('aggregate/dashboard')}">
               <i class="icon icon-gauge"></i>
-              {t}dashboard{/t}
+              {t}link-dashboard{/t}
             </a>
             {if Config::DEVELOPMENT_MODE}
               <div class="dropdown-divider"></div>
@@ -110,9 +112,9 @@
                   <input
                     type="text"
                     class="form-control"
-                    placeholder="{t}reputation{/t}">
+                    placeholder="{t}label-reputation{/t}">
                   <small class="form-text text-light">
-                    {t}change reputation manually (will refresh the page){/t}
+                    {t}info-reputation-manual{/t}
                   </small>
                 </form>
               </div>
@@ -120,7 +122,7 @@
             <div class="dropdown-divider"></div>
             <a class="dropdown-item text-light" href="{Router::link('auth/logout')}">
               <i class="icon icon-logout"></i>
-              {t}log out{/t}
+              {t}link-log-out{/t}
             </a>
           </div>
         </li>
@@ -128,7 +130,7 @@
         <li class="nav-item">
           <a class="nav-link" href="{Router::link('auth/login')}">
             <i class="icon icon-login"></i>
-            {t}log in{/t}
+            {t}link-log-in{/t}
           </a>
         </li>
       {/if}

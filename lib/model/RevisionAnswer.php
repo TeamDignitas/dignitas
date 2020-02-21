@@ -10,9 +10,9 @@ class RevisionAnswer extends Answer {
   function compare($prev) {
     $od = new ObjectDiff($this);
 
-    $this->diffField(_('changes to contents'), $prev->contents, $this->contents, $od);
+    $this->diffField(_('title-changes-contents'), $prev->contents, $this->contents, $od);
 
-    $this->compareField(_('status'),
+    $this->compareField(_('label-status'),
                         $prev->getStatusName(),
                         $this->getStatusName(),
                         $od, Ct::FIELD_CHANGE_STRING);

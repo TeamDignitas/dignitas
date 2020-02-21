@@ -32,10 +32,10 @@ if ($saveButton) {
     Review::checkLateAnswer($answer);
 
     if ($answer->status == Ct::STATUS_PENDING_EDIT) {
-      FlashMessage::add(_('Your changes were placed in the review queue.'), 'success');
+      FlashMessage::add(_('info-changes-queued'), 'success');
     } else {
       FlashMessage::add(
-        $new ? _('Answer posted.') : _('Answer updated.'),
+        $new ? _('info-answer-posted') : _('info-answer-updated'),
         'success');
     }
     // pass the original answer ID, not the pending edit one
@@ -68,7 +68,7 @@ function validate($answer) {
   $errors = [];
 
   if (!$answer->contents) {
-    $errors['contents'][] = _('Cannot post an empty answer.');
+    $errors['contents'][] = _('info-empty-answer');
   }
 
   return $errors;

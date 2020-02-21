@@ -21,7 +21,7 @@
     </button>
     <a href="{$referrer}" class="btn btn-link">
       <i class="icon icon-cancel"></i>
-      {t}cancel{/t}
+      {t}link-cancel{/t}
     </a>
   </div>
 </form>

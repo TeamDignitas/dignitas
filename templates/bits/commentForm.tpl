@@ -11,7 +11,7 @@
     ></textarea>
     <small class="form-text text-muted float-left">
       <span class="charsRemaining">{Comment::MAX_LENGTH}</span>
-      {t}characters remaining{/t}
+      {t}label-characters-remaining{/t}
     </small>
     {include "bits/markdownHelp.tpl"}
   </div>
@@ -19,7 +19,7 @@
   <div class="col-md-3">
     <button type="submit" class="btn btn-primary commentSaveButton">
       <i class="icon icon-floppy"></i>
-      {t}save{/t}
+      {t}link-save{/t}
     </button>
   </div>
 </form>

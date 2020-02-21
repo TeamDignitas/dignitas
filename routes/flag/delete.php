@@ -19,7 +19,7 @@ try {
     }
   }
 
-  print json_encode(_('Your flag was deleted.'));
+  print json_encode(_('info-flag-deleted'));
 
 } catch (Exception $e) {
 

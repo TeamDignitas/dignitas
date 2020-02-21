@@ -3,7 +3,7 @@
 Util::assertNotLoggedIn();
 
 if (!Config::ALLOW_REGISTRATION) {
-  FlashMessage::add(_('Registration is disabled.'));
+  FlashMessage::add(_('info-registration-disabled'));
   Util::redirectToHome();
 }
 

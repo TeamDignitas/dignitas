@@ -26,7 +26,7 @@ if ($submitButton) {
         'token' => $pt->token,
       ]);
       $from = Config::CONTACT_EMAIL;
-      $subject = 'Schimbarea parolei pentru Dignitas';
+      $subject = _('email-subject-password-change');
       $body = Smart::fetch('email/lostPassword.tpl');
 
       Mailer::setRealMode();
@@ -47,9 +47,9 @@ function validate($email) {
   $errors = [];
 
   if (!$email) {
-    $errors['email'] = _('Please enter an email address.');
+    $errors['email'] = _('info-must-enter-email');
   } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $errors['email'] = _('This email address looks incorrect.');
+    $errors['email'] = _('info-incorrect-email');
   }
 
   return $errors;
