@@ -1,4 +1,4 @@
-<div>
+<div class="answer-body col-md-12 px-0">
   {$answer->contents|md}
   {if $answer->verdict != Ct::VERDICT_NONE}
     <span class="btn btn-sm badge-secondary">
@@ -21,8 +21,8 @@
   </div>
 {/if}
 
-<div class="answerFooter">
-  <ul class="list-inline text-muted">
+<div class="answerFooter col-md-12 px-0">
+  <ul class="list-inline text-muted mb-1">
     <li class="list-inline-item">
       {t}answer-posted-by{/t}
       {include 'bits/userLink.tpl' u=$answer->getUser()}
@@ -60,12 +60,14 @@
   </ul>
 </div>
 
-{if $showComments}
-  {foreach Comment::getFor($answer) as $comment}
-    {include 'bits/comment.tpl'}
-  {/foreach}
-{/if}
+<div class="answer-comment col-md-12 px-0 text-right">
+  {if $showComments}
+    {foreach Comment::getFor($answer) as $comment}
+      {include 'bits/comment.tpl'}
+    {/foreach}
+  {/if}
 
-{if $addComment}
-  {include "bits/addCommentLink.tpl" object=$answer}
-{/if}
+  {if $addComment}
+    {include "bits/addCommentLink.tpl" object=$answer}
+  {/if}
+</div>
