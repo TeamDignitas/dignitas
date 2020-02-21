@@ -36,7 +36,7 @@
     </h6>
 
   </div>
-  <hr class="w-100 title-divider mt-0"/>
+  <hr class="w-100 title-divider"/>
 </div>
 
 <article class="row mt-3 statement-body">
