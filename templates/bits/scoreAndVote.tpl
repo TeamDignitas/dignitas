@@ -3,7 +3,7 @@
 
 {$voteValue=$object->getVote()->value|default:0}
 
-<div class="voteLeft col-md-1 pl-0">
+<div class="voteLeft col-md-1">
 
   <button
     class="btn btn-vote {if $voteValue == 1}voted{/if}"
