@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-02-21 11:22+0200\n"
-"PO-Revision-Date: 2020-02-21 11:23+0200\n"
+"POT-Creation-Date: 2020-02-21 11:51+0200\n"
+"PO-Revision-Date: 2020-02-21 11:51+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -202,7 +202,7 @@ msgstr "etichetă"
 
 #: templates/bits/answerEdit.tpl:24 templates/domain/edit.tpl:84
 #: templates/entity/edit.tpl:199 templates/relation/edit.tpl:30
-#: templates/statement/edit.tpl:109 templates/tag/edit.tpl:155
+#: templates/statement/edit.tpl:109 templates/tag/edit.tpl:156
 #: templates/user/edit.tpl:122
 msgid "link-cancel"
 msgstr "renunță"
@@ -222,7 +222,7 @@ msgstr "Confirmați ștergerea acestui răspuns?"
 
 #: templates/bits/answerMain.tpl:40 templates/domain/edit.tpl:94
 #: templates/entity/edit.tpl:209 templates/statement/edit.tpl:119
-#: templates/tag/edit.tpl:177
+#: templates/tag/edit.tpl:172
 msgid "link-delete"
 msgstr "șterge"
 
@@ -843,24 +843,20 @@ msgstr ""
 "ne puteți contacta ca să cereți să o adăugăm la set. Puteți vedea setul de "
 "iconițe disponibile la <a href=\"%2\">Fontello</a>."
 
-#: templates/tag/edit.tpl:161
-msgid "link-back-to-tag"
-msgstr "înapoi la etichetă"
-
-#: templates/tag/edit.tpl:170
+#: templates/tag/edit.tpl:165
 msgid "info-confirm-delete-tag"
 msgstr "Confirmați ștergerea acestei etichete?"
 
-#: templates/tag/edit.tpl:173 routes/tag/edit.php:32
+#: templates/tag/edit.tpl:168 routes/tag/edit.php:32
 msgid "info-cannot-delete-tag"
 msgstr ""
 "Nu pot șterge eticheta deoarece (1) are descendenți sau (2) este folosită."
 
-#: templates/tag/edit.tpl:183
+#: templates/tag/edit.tpl:178
 msgid "title-direct-descendants"
 msgstr "descendenți direcți"
 
-#: templates/tag/edit.tpl:191
+#: templates/tag/edit.tpl:186
 msgid "title-duplicate-tags"
 msgstr "etichete duplicate"
 
@@ -895,10 +891,6 @@ msgstr "despre mine"
 #: templates/user/edit.tpl:85
 msgid "label-change-password"
 msgstr "parola (doar dacă doriți să o schimbați)"
-
-#: templates/user/edit.tpl:129
-msgid "link-back-to-user"
-msgstr "înapoi la pagina mea"
 
 #: templates/user/view.tpl:3
 msgid "title-user"

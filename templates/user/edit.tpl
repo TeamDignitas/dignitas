@@ -117,18 +117,10 @@
         {t}link-save{/t}
       </button>
 
-      <a href="" class="btn btn-light">
+      <a href="{Router::userLink($user)}" class="btn btn-link">
         <i class="icon icon-cancel"></i>
         {t}link-cancel{/t}
       </a>
-
-      <a
-        href="{Router::userLink($user)}"
-        class="btn btn-light">
-        <i class="icon icon-left"></i>
-        {t}link-back-to-user{/t}
-      </a>
-
     </div>
   </form>
 {/block}

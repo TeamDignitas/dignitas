@@ -50,7 +50,7 @@ if ($saveButton) {
     $tag->save();
 
     FlashMessage::add(_('info-tag-saved'), 'success');
-    Util::redirect(Router::link('tag/edit') . '/' . $tag->id);
+    Util::redirect(Router::link('tag/list'));
   } else {
     Smart::assign('errors', $errors);
   }

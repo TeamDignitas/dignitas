@@ -150,15 +150,10 @@
       {t}link-save{/t}
     </button>
 
-    <a href="" class="btn btn-light">
-      <i class="icon icon-cancel"></i>
-      {t}link-cancel{/t}
-    </a>
-
     {if $t->id}
-      <a class="btn btn-light" href="{Router::link('tag/view')}/{$t->id}">
-        <i class="icon icon-left"></i>
-        {t}link-back-to-tag{/t}
+      <a class="btn btn-link" href="{Router::link('tag/view')}/{$t->id}">
+        <i class="icon icon-cancel"></i>
+        {t}link-cancel{/t}
       </a>
     {/if}
 

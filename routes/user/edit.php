@@ -24,7 +24,7 @@ if ($saveButton) {
     $user->saveWithFile($fileData, $deleteImage);
 
     FlashMessage::add(_('info-changes-saved'), 'success');
-    Util::redirectToSelf();
+    Util::redirect(Router::userLink($user));
   } else {
     Smart::assign([
       'errors' => $errors,
