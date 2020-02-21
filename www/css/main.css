@@ -91,7 +91,7 @@ blockquote {
   border-top-left-radius: 0.25rem;
 }
 
-.select2-container--bootstrap4 .select2-selection {
+.navbar .select2-container--bootstrap4 .select2-selection {
   border-width: 0;
 }
 
