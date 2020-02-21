@@ -96,12 +96,11 @@
         {include 'bits/moment.tpl' t=$statement->createDate}
 
         {if $statement->hasRevisions()}
-          <a href="{Router::link('statement/history')}/{$statement->id}" class="btn btn-link">
+          <a href="{Router::link('statement/history')}/{$statement->id}" class="btn btn-sm btn-outline-secondary">
             {t}link-show-revisions{/t}
           </a>
         {/if}
-      </div>
-      <div class="col-md-12 mt-1 text-right">
+
         {if $editLink}
           {include "bits/editButton.tpl" obj=$statement}
         {/if}
@@ -109,7 +108,8 @@
         {if $flagBox && ($statement->isFlaggable() || $statement->isFlagged())}
           {include "bits/flagLinks.tpl" obj=$statement class="btn btn-sm btn-outline-secondary text-muted"}
         {/if}
-
+      </div>
+      <div class="col-md-12 mt-1 text-right mt-3">
         {foreach Comment::getFor($statement) as $comment}
           {include 'bits/comment.tpl'}
         {/foreach}
