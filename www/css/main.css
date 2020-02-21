@@ -144,7 +144,7 @@ blockquote {
   flex-grow: 100; /* occupy all available width */
 }
 
-.btn-vote {
+.voteLeft button {
   color: #777;
   display: block;
   font-size: 30px;
@@ -152,7 +152,7 @@ blockquote {
   padding: 0;
 }
 
-.btn-vote:focus {
+.voteLeft button:focus {
   box-shadow: none;
 }
 
@@ -160,6 +160,9 @@ blockquote {
   color: green;
 }
 
+.btn-proof.accepted {
+  color: green;
+}
 
 /******************************** statement ********************************/
 .statement-title-divider {

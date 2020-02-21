@@ -51,6 +51,7 @@ class Statement extends Proto {
     }
 
     return $answers
+      ->order_by_desc('proof')
       ->order_by_desc('ae.score')
       ->order_by_desc('a.createDate')
       ->find_many();

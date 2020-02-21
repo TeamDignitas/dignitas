@@ -38,6 +38,9 @@ class Router {
       'en_US.utf8' => 'answer-history',
       'ro_RO.utf8' => 'istoric-raspuns',
     ],
+    'answer/saveProof' => [
+      'en_US.utf8' => 'ajax/save-proof',
+    ],
 
     // attachments
     'attachment/upload' => [

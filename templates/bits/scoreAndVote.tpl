@@ -50,4 +50,25 @@
     <i class="icon icon-down-open"></i>
   </button>
 
+  {**
+    * Show the "proof" icon for answers in two situations:
+    * 1. Answer is accepted as proof (read-only).
+    * 2. User is moderator and can accept/unaccept answers as proof (clickable).
+    **}
+  {$isAnswer=($object->getObjectType() == Proto::TYPE_ANSWER)}
+  {if $isAnswer && (User::isModerator() || $object->proof)}
+    <button
+      class="btn btn-proof {if $object->proof}accepted{/if}"
+      data-answer-id="{$object->id}"
+      {if User::isModerator()}
+      title="{t}label-toggle-answer-proof{/t}"
+      {else}
+      disabled
+      title="{t}label-answer-is-proof{/t}"
+      {/if}
+    >
+      <i class="icon icon-ok"></i>
+    </button>
+  {/if}
+
 </div>
