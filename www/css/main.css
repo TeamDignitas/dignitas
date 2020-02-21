@@ -169,7 +169,9 @@ img.pic.person-photo {
 }
 
 .statement-actions .text-muted,
-.statement-actions .btn {
+.statement-actions .btn,
+.answerFooter *,
+.answer-comment a {
   font-size: 0.75rem;
 }
 

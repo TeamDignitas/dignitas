@@ -13,7 +13,7 @@
       title-answers-singular
       {/t}
       </h6>
-      <hr class="w-100 mt-0 mb-0 title-divider"/>
+      <hr class="w-100 mt-0 title-divider"/>
     </div>
 
     {foreach $answers as $answer}
