@@ -51,8 +51,6 @@
   <div class="voteMain col-md-7">
     {$statusInfo=$statement->getStatusInfo()}
 
-
-
     {if isset($pendingEditReview)}
       <div class="alert alert-warning mx-5">
         {t 1=$pendingEditReview->getUrl()}
