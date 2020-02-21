@@ -12,6 +12,10 @@ class RevisionAnswer extends Answer {
 
     $this->diffField(_('title-changes-contents'), $prev->contents, $this->contents, $od);
 
+    $this->compareField(_('label-verdict'),
+                        $prev->getVerdictName(),
+                        $this->getVerdictName(),
+                        $od, Ct::FIELD_CHANGE_STRING);
     $this->compareField(_('label-status'),
                         $prev->getStatusName(),
                         $this->getStatusName(),
