@@ -122,9 +122,9 @@
 
   </div>
 
-  <div class="statement-box-area col-md-3 offset-md-1">
+  <div class="statement-box-area col-md-3 offset-md-1 pr-0">
     <aside class="statement-box card false-statement verdict-{$statement->verdict}">
-      <h5 class="card-title mt-3 text-center">
+      <h6 class="card-title mt-3 text-center">
         {$statement->getEntity()},
         {$statement->dateMade|ld}
       </h6>
@@ -133,7 +133,7 @@
           obj=$entity
           geometry=Config::THUMB_ENTITY_LARGE
           spanClass=""
-          imgClass="pic person-photo rounded-circle"}
+          imgClass="pic person-photo rounded-circle img-fluid"}
       </span>
       <h4 class="card-body mx-auto">
         {t}label-verdict{/t}:
