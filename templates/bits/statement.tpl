@@ -106,7 +106,7 @@
         {/if}
 
         {if $flagBox && ($statement->isFlaggable() || $statement->isFlagged())}
-          {include "bits/flagLinks.tpl" obj=$statement class="btn btn-sm btn-outline-secondary text-muted"}
+          {include "bits/flagLinks.tpl" obj=$statement class="btn btn-sm btn-outline-secondary"}
         {/if}
       </div>
       <div class="col-md-12 mt-1 text-right mt-3">
