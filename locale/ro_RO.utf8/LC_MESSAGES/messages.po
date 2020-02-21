@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-02-20 17:50+0200\n"
-"PO-Revision-Date: 2020-02-20 17:55+0200\n"
+"POT-Creation-Date: 2020-02-21 11:22+0200\n"
+"PO-Revision-Date: 2020-02-21 11:23+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -212,7 +212,7 @@ msgid "answer-posted-by"
 msgstr "publicat de"
 
 #: templates/bits/answerMain.tpl:29 templates/bits/entity.tpl:110
-#: templates/bits/statementMain.tpl:88
+#: templates/bits/statement.tpl:108
 msgid "link-show-revisions"
 msgstr "arată versiunile"
 
@@ -517,30 +517,30 @@ msgstr "Vă trebuie o reputație de minimum %1 pentru a vota pozitiv."
 msgid "label-minimum-reputation-downvote"
 msgstr "Vă trebuie o reputație de minimum %1 pentru a vota negativ."
 
-#: templates/bits/statementList.tpl:25
-msgid "statement-added-by"
-msgstr "adăugată de"
-
-#: templates/bits/statementMain.tpl:23
+#: templates/bits/statement.tpl:26
 msgid "statement-links"
 msgstr "surse"
 
-#: templates/bits/statementMain.tpl:36
+#: templates/bits/statement.tpl:56
 msgid "link-statement-review-pending-edit"
 msgstr ""
 "Această afirmație are o modificare sugerată. O puteți <a href=\"%1\" class="
 "\"alert-link\">evalua</a>."
 
-#: templates/bits/statementMain.tpl:57
+#: templates/bits/statement.tpl:77
 msgid "title-context"
 msgstr "context"
 
-#: templates/bits/statementMain.tpl:61
+#: templates/bits/statement.tpl:81
 msgid "title-goal"
 msgstr "scop"
 
-#: templates/bits/statementMain.tpl:81
+#: templates/bits/statement.tpl:101
 msgid "title-added-by"
+msgstr "adăugată de"
+
+#: templates/bits/statementList.tpl:25
+msgid "statement-added-by"
 msgstr "adăugată de"
 
 #: templates/domain/edit.tpl:3 templates/domain/edit.tpl:6
@@ -1229,12 +1229,6 @@ msgstr "pe-linga-subiect"
 #: lib/model/Review.php:113
 msgid "queue-url-unverifiable"
 msgstr "neverificabil"
-
-#: lib/model/Review.php:111
-#, fuzzy
-#| msgid "duplicate"
-msgid "duplicates"
-msgstr "duplicate"
 
 #: lib/model/Review.php:114
 msgid "queue-url-low-quality"
