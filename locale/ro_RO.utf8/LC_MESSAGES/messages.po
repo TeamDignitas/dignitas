@@ -1230,6 +1230,12 @@ msgstr "pe-linga-subiect"
 msgid "queue-url-unverifiable"
 msgstr "neverificabil"
 
+#: lib/model/Review.php:111
+#, fuzzy
+#| msgid "duplicate"
+msgid "duplicates"
+msgstr "duplicate"
+
 #: lib/model/Review.php:114
 msgid "queue-url-low-quality"
 msgstr "slaba-calitate"

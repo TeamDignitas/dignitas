@@ -23,29 +23,28 @@
       {include "bits/navmenu.tpl"}
     </header>
 
-    <div class="container mt-3">
-      <main>
+    <div class="mt-5">
+      <main class="container">
         {include "bits/flashMessages.tpl"}
         {block "content"}{/block}
       </main>
-
-      <footer>
-
-        <div class="text-right">
-          <ul class="list-inline list-inline-bullet">
-            <li class="list-inline-item">
-              © 2019 <a href="https://catalin.francu.com/">Cătălin Frâncu</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://github.com/CatalinFrancu/dignitas">GitHub</a>
-            </li>
-          </ul>
-        </div>
-
-      </footer>
     </div>
+    
+    <footer>
+      <div class="text-center container mt-3">
+        <ul class="list-inline list-inline-bullet">
+          <li class="list-inline-item">
+            © 2019 <a href="https://catalin.francu.com/">Cătălin Frâncu</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/CatalinFrancu/dignitas">GitHub</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
 
     {include "bits/debugInfo.tpl"}
+
   </body>
 
 </html>

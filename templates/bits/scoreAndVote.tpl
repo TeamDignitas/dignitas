@@ -12,7 +12,7 @@
   </div>
 {/if}
 
-<div class="voteLeft">
+<div class="voteLeft col-md-1">
 
   <button
     class="btn btn-vote {if $voteValue == 1}voted{/if}"

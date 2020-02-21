@@ -10,6 +10,14 @@ h3::first-letter {
   text-transform: capitalize;
 }
 
+.navbar-nav a:hover {
+  background: #ccc; /* slightly more visible */
+}
+
+.navbar-nav {
+  white-space: nowrap;
+}
+
 img.pic {
   outline: 1px solid #ddd;
 }
@@ -151,6 +159,17 @@ blockquote {
 .btn-vote.voted {
   color: green;
 }
+
+
+/******************************** statement ********************************/
+.statement-title-divider {
+  border-color: #999;
+}
+
+img.pic.person-photo {
+  outline: 0;
+}
+
 
 /******************************** answers ********************************/
 
