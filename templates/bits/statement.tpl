@@ -76,11 +76,11 @@
       </div>
     {/if}
 
-    <h5 class="text-uppercase">{t}context{/t}</h4>
+    <h5 class="text-uppercase">{t}context{/t}</h5>
 
     {$statement->context|md}
 
-    <h5 class="text-uppercase">{t}goal{/t}</h4>
+    <h5 class="text-uppercase">{t}goal{/t}</h5>
 
     {$statement->goal|escape}
 
