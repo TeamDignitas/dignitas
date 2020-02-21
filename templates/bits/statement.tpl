@@ -88,37 +88,37 @@
       {/foreach}
     </div>
 
+    <hr class="w-100 statement-title-divider"/>
     <div class="my-3 clearfix statement-actions row">
-      <div class="text-muted col-md-12 text-right mb-2">
+      <div class="text-muted col-md-12 text-right">
         {t}title-added-by{/t}
         {include 'bits/userLink.tpl' u=$statement->getUser()}
         {include 'bits/moment.tpl' t=$statement->createDate}
       </div>
       <div class="col-md-12 mt-1 text-right">
         {if $statement->hasRevisions()}
-          <a href="{Router::link('statement/history')}/{$statement->id}" class="btn btn-sm btn-outline-secondary">
+          <a href="{Router::link('statement/history')}/{$statement->id}" class="btn btn-link">
             {t}link-show-revisions{/t}
           </a>
         {/if}
-
+      </div>
+      <div class="col-md-12 mt-1 text-right">
         {if $editLink}
           {include "bits/editButton.tpl" obj=$statement}
         {/if}
 
         {if $flagBox && ($statement->isFlaggable() || $statement->isFlagged())}
-          {include "bits/flagLinks.tpl" obj=$statement class="btn btn-sm btn-outline-secondary"}
+          {include "bits/flagLinks.tpl" obj=$statement class="btn btn-sm btn-outline-secondary text-muted"}
         {/if}
 
-        {foreach Comment::getFor($statement) as $comment}
-          {include 'bits/comment.tpl'}
-        {/foreach}
+    {foreach Comment::getFor($statement) as $comment}
+      {include 'bits/comment.tpl'}
+    {/foreach}
 
         {if $addComment}
           {include "bits/addCommentLink.tpl" object=$statement}
         {/if}
       </div>
-    </div>
-
   </div>
 
   <div class="statement-box-area col-md-3 offset-md-1 pr-0">

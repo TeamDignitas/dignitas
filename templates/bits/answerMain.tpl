@@ -61,12 +61,6 @@
         {include "bits/flagLinks.tpl" obj=$answer class="btn btn-sm btn-outline-secondary"}
       </li>
     {/if}
-
-    {if $addComment}
-      <li class="list-inline-item">
-        {include "bits/addCommentLink.tpl" object=$answer}
-      </li>
-    {/if}
   </ul>
 </div>
 
