@@ -7,11 +7,14 @@
   {include "bits/statement.tpl" editLink=true}
 
   {if count($answers)}
-    <h4 class="row mt-4 answer-label">
-      {t count=count($answers) 1=count($answers) plural="title-answers-plural"}
-      title-answers-singular
-      {/t}
-    </h4>
+    <div class="row">
+      <h6 class="mt-4 answer-label text-uppercase font-weight-bold">
+        {t count=count($answers) 1=count($answers) plural="title-answers-plural"}
+        title-answers-singular
+        {/t}
+      </h6>
+      <hr class="w-100 mt-0 mb-0 title-divider"/>
+    </div>
 
     {foreach $answers as $answer}
       {include "bits/answer.tpl" highlighted=($answer->id == $answerId)}

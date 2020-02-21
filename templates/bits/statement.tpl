@@ -36,7 +36,7 @@
     </h6>
 
   </div>
-  <hr class="w-100 statement-title-divider"/>
+  <hr class="w-100 title-divider"/>
 </div>
 
 <article class="row mt-3 statement-body">
@@ -74,11 +74,11 @@
       </div>
     {/if}
 
-    <h5 class="text-uppercase">{t}title-context{/t}</h5>
+    <h6 class="text-uppercase font-weight-bold">{t}title-context{/t}</h6>
 
     {$statement->context|md}
 
-    <h5 class="text-uppercase">{t}title-goal{/t}</h5>
+    <h6 class="text-uppercase font-weight-bold">{t}title-goal{/t}</h6>
 
     {$statement->goal|escape}
 
