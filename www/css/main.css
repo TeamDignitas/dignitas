@@ -126,11 +126,6 @@ blockquote {
   text-align: center;
 }
 
-.statement > .voteLeft,
-.answer > .voteLeft {
-  flex-basis: 75px;
-}
-
 .comment > .voteLeft {
   flex-basis: 10px;
   margin-right: 5px;
@@ -174,7 +169,9 @@ img.pic.person-photo {
 }
 
 .statement-actions .text-muted,
-.statement-actions .btn {
+.statement-actions .btn,
+.answerFooter *,
+.answer-comment a {
   font-size: 0.75rem;
 }
 
@@ -211,7 +208,6 @@ img.pic.person-photo {
 
 .answer {
   padding-top: 10px;
-  border-bottom: 1px solid #ddd;
 }
 
 .answerFooter {
