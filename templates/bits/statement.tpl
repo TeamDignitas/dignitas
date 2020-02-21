@@ -22,7 +22,7 @@
       {$statement->dateMade|ld}
 
       {if count($statement->getLinks())}
-        <span class="text-muted mb-3 pl-3 sources text-capitalize">
+        <span class="text-muted mb-3 pl-3 sources">
           {t}statement-links{/t}:
           <ul class="list-inline list-inline-bullet d-inline">
             {foreach $statement->getLinks() as $l}
@@ -133,7 +133,7 @@
           spanClass=""
           imgClass="pic person-photo rounded-circle"}
       </span>
-      <h4 class="card-body mx-auto">Afirmație FALSĂ</h4>
+      <h4 class="card-body mx-auto">{** TODO: verdict **}</h4>
     </aside>
   </div>
 
