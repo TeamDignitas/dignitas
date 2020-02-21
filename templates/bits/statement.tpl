@@ -36,7 +36,7 @@
     </h6>
 
   </div>
-  <hr class="w-100 title-divider"/>
+  <hr class="w-100 title-divider mt-0"/>
 </div>
 
 <article class="row mt-3 statement-body">
@@ -88,7 +88,6 @@
       {/foreach}
     </div>
 
-    <hr class="w-100 statement-title-divider"/>
     <div class="my-3 clearfix statement-actions row">
       <div class="text-muted col-md-12 text-right">
         {t}title-added-by{/t}
