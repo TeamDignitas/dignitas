@@ -1,7 +1,7 @@
 <?php
 
 class Answer extends Proto {
-  use FlaggableTrait, MarkdownTrait, PendingEditTrait, VotableTrait;
+  use FlaggableTrait, MarkdownTrait, PendingEditTrait, VerdictTrait, VotableTrait;
 
   function getObjectType() {
     return self::TYPE_ANSWER;

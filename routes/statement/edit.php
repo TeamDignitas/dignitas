@@ -31,6 +31,9 @@ if ($saveButton) {
   $statement->context = Request::get('context');
   $statement->goal = Request::get('goal');
   $statement->dateMade = Request::get('dateMade');
+  if (User::isModerator()) {
+    $statement->verdict = Request::get('verdict');
+  }
 
   $links = Link::build(
     Request::getArray('linkIds'),

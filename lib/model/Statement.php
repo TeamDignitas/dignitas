@@ -6,6 +6,7 @@ class Statement extends Proto {
     RevisionTrait,
     MarkdownTrait,
     PendingEditTrait,
+    VerdictTrait,
     VotableTrait;
 
   function getObjectType() {
