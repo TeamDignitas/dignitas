@@ -8,8 +8,7 @@
       type=Vote::TYPE_COMMENT
       object=$comment
       upvotePriv=User::PRIV_UPVOTE_COMMENT
-      downvotePriv=User::PRIV_DOWNVOTE_COMMENT
-      position="before"}
+      downvotePriv=User::PRIV_DOWNVOTE_COMMENT}
   {/if}
 
   <div class="voteMain">
