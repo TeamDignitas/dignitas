@@ -173,6 +173,11 @@ img.pic.person-photo {
   outline: 0;
 }
 
+.statement-actions .text-muted,
+.statement-actions .btn {
+  font-size: 0.75rem;
+}
+
 /* keep these values in sync with lib/Ct.php::VERDICT_* constants */
 .statement-box.verdict-0 { /* none */
   background: #eee;
