@@ -5,7 +5,7 @@
 {$showComments=$showComments|default:true}
 {$addComment=$addComment|default:false}
 
-<div class="voteContainer answer {if $highlighted}highlighted{/if}">
+<div class="row voteContainer answer {if $highlighted}highlighted{/if}">
   {if $voteBox}
     {include "bits/scoreAndVote.tpl"
       type=Vote::TYPE_ANSWER
