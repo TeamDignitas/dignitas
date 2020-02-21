@@ -14,6 +14,27 @@
     {include "bits/markdownHelp.tpl"}
   </div>
 
+  <div class="form-group row">
+    <label for="fieldVerdict" class="col-md-2 col-form-label">
+      {t}label-verdict{/t}
+    </label>
+
+    <div class="col-md-10">
+      <select
+        id="fieldVerdict"
+        name="verdict"
+        class="form-control hasUnloadWarning">
+        {for $v = 0 to Ct::NUM_VERDICTS - 1}
+          <option
+            value="{$v}"
+            {if $v == $answer->verdict}selected{/if}>
+            {Statement::verdictName($v)}
+          </option>
+        {/for}
+      </select>
+    </div>
+  </div>
+
   <div>
     <button name="saveButton" type="submit" class="btn btn-primary">
       <i class="icon icon-floppy"></i>

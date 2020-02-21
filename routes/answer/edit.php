@@ -18,6 +18,7 @@ $answer->enforceEditPrivileges();
 
 if ($saveButton) {
   $answer->contents = Request::get('contents');
+  $answer->verdict = Request::get('verdict');
   $answer->sanitize();
 
   $errors = validate($answer);

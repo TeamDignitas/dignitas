@@ -233,6 +233,12 @@
       "css": "clone",
       "code": 62029,
       "src": "fontawesome"
+    },
+    {
+      "uid": "dec0ce0476433f7e49e096526cf89465",
+      "css": "hammer",
+      "code": 59416,
+      "src": "fontawesome"
     }
   ]
 }

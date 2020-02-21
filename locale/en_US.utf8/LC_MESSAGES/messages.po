@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-02-21 15:07+0200\n"
-"PO-Revision-Date: 2020-02-21 15:07+0200\n"
+"POT-Creation-Date: 2020-02-21 16:41+0200\n"
+"PO-Revision-Date: 2020-02-21 16:41+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -195,27 +195,32 @@ msgstr "add a comment"
 msgid "tag"
 msgstr "tag"
 
-#: templates/bits/answerEdit.tpl:24 templates/domain/edit.tpl:84
+#: templates/bits/answerEdit.tpl:19 templates/bits/statement.tpl:137
+#: templates/statement/edit.tpl:103
+msgid "label-verdict"
+msgstr "verdict"
+
+#: templates/bits/answerEdit.tpl:45 templates/domain/edit.tpl:84
 #: templates/entity/edit.tpl:199 templates/relation/edit.tpl:30
 #: templates/statement/edit.tpl:127 templates/tag/edit.tpl:156
 #: templates/user/edit.tpl:122
 msgid "link-cancel"
 msgstr "cancel"
 
-#: templates/bits/answerMain.tpl:21
+#: templates/bits/answerMain.tpl:27
 msgid "answer-posted-by"
 msgstr "posted by"
 
-#: templates/bits/answerMain.tpl:29 templates/bits/entity.tpl:110
+#: templates/bits/answerMain.tpl:35 templates/bits/entity.tpl:110
 #: templates/bits/statement.tpl:108
 msgid "link-show-revisions"
 msgstr "show revisions"
 
-#: templates/bits/answerMain.tpl:39
+#: templates/bits/answerMain.tpl:45
 msgid "info-confirm-delete-answer"
 msgstr "Are you sure you want to delete this answer?"
 
-#: templates/bits/answerMain.tpl:40 templates/domain/edit.tpl:94
+#: templates/bits/answerMain.tpl:46 templates/domain/edit.tpl:94
 #: templates/entity/edit.tpl:209 templates/statement/edit.tpl:137
 #: templates/tag/edit.tpl:172
 msgid "link-delete"
@@ -770,10 +775,6 @@ msgstr "sources"
 #: templates/statement/edit.tpl:86
 msgid "link-add-statement-link"
 msgstr "add a source"
-
-#: templates/statement/edit.tpl:103
-msgid "label-verdict"
-msgstr "verdict"
 
 #: templates/statement/edit.tpl:135
 msgid "info-confirm-delete-statement"
@@ -1543,20 +1544,20 @@ msgstr "mostly true"
 msgid "verdict-true"
 msgstr "true"
 
-#: routes/answer/edit.php:35 routes/entity/edit.php:74
+#: routes/answer/edit.php:36 routes/entity/edit.php:74
 #: routes/statement/edit.php:61
 msgid "info-changes-queued"
 msgstr "Your changes were placed in the review queue."
 
-#: routes/answer/edit.php:38
+#: routes/answer/edit.php:39
 msgid "info-answer-posted"
 msgstr "Answer posted."
 
-#: routes/answer/edit.php:38
+#: routes/answer/edit.php:39
 msgid "info-answer-updated"
 msgstr "Answer updated."
 
-#: routes/answer/edit.php:71
+#: routes/answer/edit.php:72
 msgid "info-empty-answer"
 msgstr "Cannot post an empty answer."
 
