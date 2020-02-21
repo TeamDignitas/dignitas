@@ -35,7 +35,7 @@
       <li class="list-inline-item">
         <a
           href="?deleteAnswerId={$answer->id}"
-          class="btn btn-sm btn-link"
+          class="btn btn-sm btn-outline-secondary"
           data-confirm="{t}info-confirm-delete-answer{/t}">
           {t}link-delete{/t}
         </a>
