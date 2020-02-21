@@ -214,6 +214,10 @@ img.pic.person-photo {
   text-align: right;
 }
 
+.answer-label {
+  border-bottom: 1px solid #999;
+}
+
 /******************************* comments *******************************/
 
 .comment {

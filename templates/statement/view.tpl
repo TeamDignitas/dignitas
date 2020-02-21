@@ -8,12 +8,11 @@
 
   {if count($answers)}
     <div class="row">
-      <h6 class="mt-4 answer-label text-uppercase font-weight-bold">
+      <h6 class="col-md-8 mt-4 pb-2 pl-0 answer-label text-uppercase font-weight-bold">
         {t count=count($answers) 1=count($answers) plural="title-answers-plural"}
         title-answers-singular
         {/t}
       </h6>
-      <hr class="w-100 mt-0 title-divider"/>
     </div>
 
     {foreach $answers as $answer}
