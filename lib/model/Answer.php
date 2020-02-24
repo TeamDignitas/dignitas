@@ -91,6 +91,11 @@ class Answer extends Proto {
         _('info-minimum-reputation-edit-answer-%s'),
         Str::formatNumber(User::PRIV_EDIT_ANSWER)));
     }
+
+    if ($this->proof &&
+        !User::isModerator()) {
+      throw new Exception(_('info-only-moderator-edit-proof-answer'));
+    }
   }
 
   /**

@@ -116,6 +116,24 @@ trait PendingEditTrait {
   }
 
   /**
+   * Return a message informing the user if and why their editing rights are
+   * restricted.
+   */
+  function getEditMessage() {
+    try {
+      $this->isEditable(true);
+      return '';
+    } catch (Exception $e) {
+      $msg = $e->getMessage();
+      if ($this->acceptsSuggestions()) {
+        return $msg . ' ' . _('can-suggest-changes');
+      } else {
+        return $msg;
+      }
+    }
+  }
+
+  /**
    * If the object is new (no ID) or is directly editable, simply return it.
    *
    * If an edit is being suggested, then:

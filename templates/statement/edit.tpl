@@ -15,7 +15,7 @@
 
   {if !$statement->isEditable()}
     <div class="alert alert-warning">
-      {t}info-not-enough-reputation-change-directly{/t}
+      {$statement->getEditMessage()}
     </div>
   {/if}
 

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-02-24 11:40+0200\n"
-"PO-Revision-Date: 2020-02-24 11:42+0200\n"
+"POT-Creation-Date: 2020-02-24 12:41+0200\n"
+"PO-Revision-Date: 2020-02-24 12:42+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -55,11 +55,11 @@ msgstr "tags"
 msgid "title-review-queues"
 msgstr "review queues"
 
-#: templates/aggregate/dashboard.tpl:55
+#: templates/aggregate/dashboard.tpl:54
 msgid "title-reports"
 msgstr "reports in need of attention"
 
-#: templates/aggregate/dashboard.tpl:60
+#: templates/aggregate/dashboard.tpl:59
 msgid "link-verdict-report"
 msgstr "statements with unclear verdicts"
 
@@ -100,13 +100,6 @@ msgstr "Your search «%1» produced no results."
 #: templates/answer/edit.tpl:4 templates/answer/edit.tpl:7
 msgid "title-edit-answer"
 msgstr "edit answer"
-
-#: templates/answer/edit.tpl:11 templates/bits/editButton.tpl:8
-#: templates/entity/edit.tpl:18 templates/statement/edit.tpl:18
-msgid "info-not-enough-reputation-change-directly"
-msgstr ""
-"You do not have enough reputation to make changes directly. You can suggest "
-"changes which will be placed in the review queue."
 
 #: templates/answer/edit.tpl:15 templates/auth/resetPassword.tpl:45
 #: templates/bits/commentForm.tpl:22 templates/domain/edit.tpl:72
@@ -257,13 +250,13 @@ msgid_plural "identical-lines-skipped-plural"
 msgstr[0] "one identical line skipped"
 msgstr[1] "%1 identical lines skipped"
 
-#: templates/bits/editButton.tpl:19 templates/bits/reviewActions.tpl:25
+#: templates/bits/editButton.tpl:15 templates/bits/reviewActions.tpl:25
 #: templates/domain/list.tpl:34 templates/tag/view.tpl:14
 #: templates/user/view.tpl:49
 msgid "link-edit"
 msgstr "edit"
 
-#: templates/bits/editButton.tpl:21
+#: templates/bits/editButton.tpl:17
 msgid "link-suggest-edit"
 msgstr "suggest an edit"
 
@@ -1045,6 +1038,11 @@ msgstr "You need at least %s reputation to add answers."
 msgid "info-minimum-reputation-edit-answer-%s"
 msgstr "You need at least %s reputation to edit answers."
 
+#: lib/model/Answer.php:97
+msgid "info-only-moderator-edit-proof-answer"
+msgstr ""
+"This answer was accepted as proof. Only moderators can edit it directly."
+
 #: lib/model/Comment.php:66
 #, php-format
 msgid "info-comment-length-limit-%d"
@@ -1431,6 +1429,10 @@ msgstr "You need at least %s reputation to add statements."
 msgid "info-minimum-reputation-edit-statement-%s"
 msgstr "You need at least %s reputation to edit statements."
 
+#: lib/model/Statement.php:139
+msgid "info-only-moderator-edit-statement-verdict"
+msgstr "This statement has a verdict. Only moderators can edit it directly."
+
 #: lib/model/User.php:135 routes/auth/login.php:58
 #: routes/auth/lostPassword.php:50
 msgid "info-must-enter-email"
@@ -1535,6 +1537,10 @@ msgid "info-pending-edit-limit-%d"
 msgstr ""
 "You have reached your limit of %d pending edits. Please wait for some of "
 "them to be reviewed."
+
+#: lib/trait/PendingEditTrait.php:129
+msgid "can-suggest-changes"
+msgstr "You can suggest changes which will be placed in the review queue."
 
 #: lib/trait/UploadTrait.php:171
 #, php-format

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-02-24 11:29+0200\n"
-"PO-Revision-Date: 2020-02-24 11:32+0200\n"
+"POT-Creation-Date: 2020-02-24 12:40+0200\n"
+"PO-Revision-Date: 2020-02-24 12:41+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -56,11 +56,11 @@ msgstr "etichete"
 msgid "title-review-queues"
 msgstr "cozi de evaluare"
 
-#: templates/aggregate/dashboard.tpl:55
+#: templates/aggregate/dashboard.tpl:54
 msgid "title-reports"
 msgstr "rapoarte care necesită atenție"
 
-#: templates/aggregate/dashboard.tpl:60
+#: templates/aggregate/dashboard.tpl:59
 msgid "link-verdict-report"
 msgstr "afirmații cu verdicte neclare"
 
@@ -104,13 +104,6 @@ msgstr "Căutarea «%1» nu a dat rezultate."
 #: templates/answer/edit.tpl:4 templates/answer/edit.tpl:7
 msgid "title-edit-answer"
 msgstr "editează răspunsul"
-
-#: templates/answer/edit.tpl:11 templates/bits/editButton.tpl:8
-#: templates/entity/edit.tpl:18 templates/statement/edit.tpl:18
-msgid "info-not-enough-reputation-change-directly"
-msgstr ""
-"Nu aveți destulă reputație ca să faceți modificări directe. Puteți sugera "
-"modificări care vor fi puse în coada de evaluare."
 
 #: templates/answer/edit.tpl:15 templates/auth/resetPassword.tpl:45
 #: templates/bits/commentForm.tpl:22 templates/domain/edit.tpl:72
@@ -263,13 +256,13 @@ msgstr[0] "o linie identică omisă"
 msgstr[1] "%1 linii identice omise"
 msgstr[2] "%1 de linii identice omise"
 
-#: templates/bits/editButton.tpl:19 templates/bits/reviewActions.tpl:25
+#: templates/bits/editButton.tpl:15 templates/bits/reviewActions.tpl:25
 #: templates/domain/list.tpl:34 templates/tag/view.tpl:14
 #: templates/user/view.tpl:49
 msgid "link-edit"
 msgstr "editează"
 
-#: templates/bits/editButton.tpl:21
+#: templates/bits/editButton.tpl:17
 msgid "link-suggest-edit"
 msgstr "sugerează o modificare"
 
@@ -1062,6 +1055,12 @@ msgstr "Vă trebuie o reputație de minimum %s pentru a adăuga răspunsuri."
 msgid "info-minimum-reputation-edit-answer-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a edita răspunsuri."
 
+#: lib/model/Answer.php:97
+msgid "info-only-moderator-edit-proof-answer"
+msgstr ""
+"Acest răspuns a fost acceptat ca demonstrație. Doar moderatorii îl mai pot "
+"modifica direct."
+
 #: lib/model/Comment.php:66
 #, php-format
 msgid "info-comment-length-limit-%d"
@@ -1448,6 +1447,12 @@ msgstr "Vă trebuie o reputație de minimum %s pentru a adăuga afirmații."
 msgid "info-minimum-reputation-edit-statement-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a edita afirmații."
 
+#: lib/model/Statement.php:139
+msgid "info-only-moderator-edit-statement-verdict"
+msgstr ""
+"Această afirmație a primit un verdict. Doar moderatorii o mai pot modifica "
+"direct."
+
 #: lib/model/User.php:135 routes/auth/login.php:58
 #: routes/auth/lostPassword.php:50
 msgid "info-must-enter-email"
@@ -1556,6 +1561,10 @@ msgid "info-pending-edit-limit-%d"
 msgstr ""
 "Ați atins limita zilnică de %d modificări sugerate. Vă rugăm să așteptați "
 "evaluarea unora din ele."
+
+#: lib/trait/PendingEditTrait.php:129
+msgid "can-suggest-changes"
+msgstr "Puteți sugera modificări care vor fi puse în coada de evaluare."
 
 #: lib/trait/UploadTrait.php:171
 #, php-format

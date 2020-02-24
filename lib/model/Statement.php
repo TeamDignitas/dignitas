@@ -133,6 +133,11 @@ class Statement extends Proto {
         _('info-minimum-reputation-edit-statement-%s'),
         Str::formatNumber(User::PRIV_EDIT_STATEMENT)));
     }
+
+    if ($this->verdict != Ct::VERDICT_NONE &&
+        !User::isModerator()) {
+      throw new Exception(_('info-only-moderator-edit-statement-verdict'));
+    }
   }
 
   /**
