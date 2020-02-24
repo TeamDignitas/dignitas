@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-02-21 17:28+0200\n"
-"PO-Revision-Date: 2020-02-21 17:31+0200\n"
+"POT-Creation-Date: 2020-02-24 11:29+0200\n"
+"PO-Revision-Date: 2020-02-24 11:32+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -55,6 +55,14 @@ msgstr "etichete"
 #: templates/aggregate/dashboard.tpl:39
 msgid "title-review-queues"
 msgstr "cozi de evaluare"
+
+#: templates/aggregate/dashboard.tpl:55
+msgid "title-reports"
+msgstr "rapoarte care necesită atenție"
+
+#: templates/aggregate/dashboard.tpl:60
+msgid "link-verdict-report"
+msgstr "afirmații cu verdicte neclare"
 
 #: templates/aggregate/index.tpl:7
 msgid "title-recent-statements"
@@ -801,6 +809,23 @@ msgstr "adaugă o sursă"
 #: templates/statement/edit.tpl:135
 msgid "info-confirm-delete-statement"
 msgstr "Confirmați ștergerea acestui răspuns?"
+
+#: templates/statement/verdictReport.tpl:3
+#: templates/statement/verdictReport.tpl:7
+msgid "title-verdict-report"
+msgstr "afirmații cu verdicte neclare"
+
+#: templates/statement/verdictReport.tpl:11
+msgid "title-statements-proof-no-verdict"
+msgstr "afirmații cu demonstrație, dar fără verdict"
+
+#: templates/statement/verdictReport.tpl:23
+msgid "title-statements-verdict-no-proof"
+msgstr "afirmații cu verdict, dar fără demonstrație"
+
+#: templates/statement/verdictReport.tpl:35
+msgid "title-statements-verdict-mismatch"
+msgstr "afirmații cu un verdict opus față de cel al demonstrației"
 
 #: templates/statement/view.tpl:11
 msgid "title-answers-singular"

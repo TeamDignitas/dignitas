@@ -159,6 +159,10 @@ class Router {
       'en_US.utf8' => 'statement',
       'ro_RO.utf8' => 'afirmatie',
     ],
+    'statement/verdictReport' => [
+      'en_US.utf8' => 'verdict-report',
+      'ro_RO.utf8' => 'raport-verdicte',
+    ],
 
     // tags
     'tag/edit' => [

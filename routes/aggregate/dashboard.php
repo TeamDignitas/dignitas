@@ -23,4 +23,10 @@ if (User::may(User::PRIV_REVIEW)) {
   Smart::assign('activeReviewReasons', $reasons);
 }
 
+$statementsBadVerdicts = Statement::getStatementsWithBadVerdicts();
+
+Smart::assign([
+  'numBadVerdicts' => $statementsBadVerdicts['count'],
+]);
+
 Smart::display('aggregate/dashboard.tpl');

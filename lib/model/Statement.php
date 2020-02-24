@@ -204,4 +204,74 @@ class Statement extends Proto {
 
     parent::delete();
   }
+
+  /**
+   * Returns a list of statements having bad/suspicious verdicts.
+   * Groups the IDs in three categories:
+   *
+   *   - statement has a verdict, but no proof answers;
+   *   - statement has no verdict, but has proof answers;
+   *   - statement has a verdict and proof answers with a different verdict.
+   *
+   * Includes a 'count' key in the final array so the caller can know if there
+   * are any results without having to perform the addition.
+   **/
+  static function getStatementsWithBadVerdicts() {
+    // statements with verdicts
+    $haveVerdict = Model::factory('Statement')
+      ->select('id')
+      ->where('status', Ct::STATUS_ACTIVE)
+      ->where_not_equal('verdict', Ct::VERDICT_NONE)
+      ->find_array();
+    $haveVerdict = array_column($haveVerdict, 'id');
+
+    // statements with answers with proofs
+    $haveProof = Model::factory('Statement')
+      ->table_alias('s')
+      ->select('s.id')
+      ->distinct()
+      ->join('answer', ['s.id', '=', 'a.statementId'], 'a')
+      ->where('s.status', Ct::STATUS_ACTIVE)
+      ->where('a.status', Ct::STATUS_ACTIVE)
+      ->where('a.proof', true)
+      ->where_not_equal('a.verdict', Ct::VERDICT_NONE)
+      ->find_array();
+    $haveProof = array_column($haveProof, 'id');
+
+    // statement-answer pairs with mismatched verdicts
+    $verdictMismatch = Model::factory('Statement')
+      ->table_alias('s')
+      ->select('s.id')
+      ->distinct()
+      ->join('answer', ['s.id', '=', 'a.statementId'], 'a')
+      ->where('s.status', Ct::STATUS_ACTIVE)
+      ->where('a.status', Ct::STATUS_ACTIVE)
+      ->where('a.proof', true)
+      ->where_any_is([
+        ['s.verdict' => Ct::VERDICT_TRUE, 'a.verdict' => Ct::VERDICT_FALSE],
+        ['s.verdict' => Ct::VERDICT_FALSE, 'a.verdict' => Ct::VERDICT_TRUE],
+      ])
+      ->find_array();
+    $verdictMismatch = array_column($verdictMismatch, 'id');
+
+    $results = [
+      'proofNoVerdict' => array_diff($haveProof, $haveVerdict),
+      'verdictNoProof' => array_diff($haveVerdict, $haveProof),
+      'verdictMismatch' => $verdictMismatch,
+    ];
+
+    // now replace IDs with statements
+    foreach ($results as $category => $ids) {
+      foreach ($ids as $i => &$id) {
+        $results[$category][$i] = Statement::get_by_id($id);
+      }
+    }
+
+    $results['count'] =
+      count($results['proofNoVerdict']) +
+      count($results['verdictNoProof']) +
+      count($results['verdictMismatch']);
+
+    return $results;
+  }
 }
