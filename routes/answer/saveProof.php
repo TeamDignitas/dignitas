@@ -31,6 +31,10 @@ try {
   $answer->proof = !$answer->proof;
   $answer->save();
 
+  $u = User::get_by_id($answer->userId);
+  $sign = $answer->proof ? +1 : -1;
+  $u->grantReputation($sign * Config::REP_ANSWER_PROOF);
+
   // must output something or the frontend won't see it as success
   print json_encode('');
 
