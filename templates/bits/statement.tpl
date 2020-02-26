@@ -89,7 +89,7 @@
     </div>
 
     <div class="my-3 clearfix statement-actions row">
-      <div class="text-muted col-md-12 text-left pb-3">
+      <div class="text-muted col-md-12 text-right mb-2">
         {t}title-added-by{/t}
         {include 'bits/userLink.tpl' u=$statement->getUser()}
         {include 'bits/moment.tpl' t=$statement->createDate}
@@ -108,8 +108,7 @@
         {if $flagBox && ($statement->isFlaggable() || $statement->isFlagged())}
           {include "bits/flagLinks.tpl" obj=$statement class="btn btn-sm btn-outline-secondary"}
         {/if}
-      </div>
-      <div class="col-md-12 mt-1 text-right">
+
         {foreach Comment::getFor($statement) as $comment}
           {include 'bits/comment.tpl'}
         {/foreach}
