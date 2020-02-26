@@ -61,17 +61,19 @@
         {include "bits/flagLinks.tpl" obj=$answer class="btn btn-sm btn-outline-secondary"}
       </li>
     {/if}
+
+    {if $addComment}
+      <li class="list-inline-item">
+        {include "bits/addCommentLink.tpl" object=$answer}
+      </li>
+    {/if}
   </ul>
 </div>
 
 <div class="answer-comment col-md-12 px-0 text-right">
-{if $showComments}
-  {foreach Comment::getFor($answer) as $comment}
-    {include 'bits/comment.tpl'}
-  {/foreach}
-{/if}
-
-  {if $addComment}
-    {include "bits/addCommentLink.tpl" object=$answer}
+  {if $showComments}
+    {foreach Comment::getFor($answer) as $comment}
+      {include 'bits/comment.tpl'}
+    {/foreach}
   {/if}
 </div>
