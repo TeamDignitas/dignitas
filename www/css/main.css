@@ -175,6 +175,35 @@ img.pic.person-photo {
   font-size: 0.75rem;
 }
 
+/* keep these values in sync with lib/Ct.php::VERDICT_* constants */
+.statement-box.verdict-0 { /* none */
+  background: #eee;
+}
+
+.statement-box.verdict-1 { /* undecidable */
+  background: #aaa;
+}
+
+.statement-box.verdict-2 { /* false */
+  background: #f5b3b3;
+}
+
+.statement-box.verdict-3 { /* mostly false */
+  background: #f5d3b3;
+}
+
+.statement-box.verdict-4 { /* mixed */
+  background: #f5f0b3;
+}
+
+.statement-box.verdict-5 { /* mostly true */
+  background: #def5b3;
+}
+
+.statement-box.verdict-6 { /* true */
+  background: #b3f5b7;
+}
+
 /******************************** answers ********************************/
 
 .answer {
