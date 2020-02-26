@@ -2,7 +2,7 @@
   <input type="hidden" name="objectType">
   <input type="hidden" name="objectId">
 
-  <div class="col-md-9">
+  <div class="col-md-12">
     <textarea
       name="contents"
       class="form-control"
@@ -16,7 +16,7 @@
     {include "bits/markdownHelp.tpl"}
   </div>
 
-  <div class="col-md-3 pl-0">
+  <div class="col-md-12 pl-0">
     <button type="submit" class="btn btn-primary commentSaveButton btn-sm">
       <i class="icon icon-floppy"></i>
       {t}link-save{/t}

@@ -1,11 +1,5 @@
 <div class="answer-body col-md-12 px-0">
   {$answer->contents|md}
-  {if $answer->verdict != Ct::VERDICT_NONE}
-    <span class="btn btn-sm badge-secondary">
-      <i class="icon icon-hammer"></i>
-      {$answer->getVerdictName()}
-    </span>
-  {/if}
 </div>
 
 {if $answer->status == Ct::STATUS_DELETED}
@@ -22,13 +16,23 @@
 {/if}
 
 <div class="answerFooter col-md-12 px-0">
-  <ul class="list-inline text-muted mb-1 pb-3">
-    <li class="list-inline-item">
+  <div class="answer-read-only text-muted mb-2 row">
+    {if $answer->verdict != Ct::VERDICT_NONE}
+      <div class="col-md-6">
+        <span class="btn btn-sm badge-secondary">
+          <i class="icon icon-hammer"></i>
+          {$answer->getVerdictName()}
+        </span>
+      </div>
+    {/if}
+    <div class="col-md-6 text-right">
       {t}answer-posted-by{/t}
       {include 'bits/userLink.tpl' u=$answer->getUser()}
       {include 'bits/moment.tpl' t=$answer->createDate}
-    </li>
+    </div>
+  </div>
 
+  <ul class="answer-actions text-right text-muted mb-2 ml-0 pl-0">
     {if $answer->hasRevisions()}
       <li class="list-inline-item">
         <a href="{Router::link('answer/history')}/{$answer->id}" class="btn btn-sm btn-outline-secondary">
@@ -57,6 +61,12 @@
         {include "bits/flagLinks.tpl" obj=$answer class="btn btn-sm btn-outline-secondary"}
       </li>
     {/if}
+
+    {if $addComment}
+      <li class="list-inline-item">
+        {include "bits/addCommentLink.tpl" object=$answer}
+      </li>
+    {/if}
   </ul>
 </div>
 
@@ -65,9 +75,5 @@
     {foreach Comment::getFor($answer) as $comment}
       {include 'bits/comment.tpl'}
     {/foreach}
-  {/if}
-
-  {if $addComment}
-    {include "bits/addCommentLink.tpl" object=$answer}
   {/if}
 </div>
