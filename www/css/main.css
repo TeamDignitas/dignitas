@@ -210,10 +210,6 @@ img.pic.person-photo {
   padding-top: 10px;
 }
 
-.answerFooter {
-  text-align: right;
-}
-
 .answer-label {
   border-bottom: 1px solid #999;
 }
@@ -221,10 +217,14 @@ img.pic.person-photo {
 /******************************* comments *******************************/
 
 .comment {
-  border-top: 1px solid #eee;
+  border-bottom: 1px solid #ccc;
   color: #777;
   font-size: 80%;
   padding: 5px 0px;
+}
+
+.comment:first-child {
+  border-top: 1px solid #ccc;
 }
 
 .comment p {

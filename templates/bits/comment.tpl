@@ -11,7 +11,7 @@
       downvotePriv=User::PRIV_DOWNVOTE_COMMENT}
   {/if}
 
-  <div class="voteMain">
+  <div class="voteMain text-left">
     {$comment->contents|md}
     &mdash;
     {include 'bits/userLink.tpl' u=$comment->getUser()}
