@@ -1,7 +1,7 @@
 {$flagBox=$flagBox|default:true}
 {$voteBox=$voteBox|default:true}
 
-<div class="voteContainer comment">
+<div class="voteContainer comment mb-1">
 
   {if $voteBox}
     {include "bits/scoreAndVote.tpl"
