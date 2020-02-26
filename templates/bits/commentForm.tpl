@@ -1,4 +1,4 @@
-<form id="commentForm" class="row">
+<form id="commentForm" class="row mt-1">
   <input type="hidden" name="objectType">
   <input type="hidden" name="objectId">
 
@@ -16,8 +16,8 @@
     {include "bits/markdownHelp.tpl"}
   </div>
 
-  <div class="col-md-3">
-    <button type="submit" class="btn btn-primary commentSaveButton">
+  <div class="col-md-3 pl-0">
+    <button type="submit" class="btn btn-primary commentSaveButton btn-sm">
       <i class="icon icon-floppy"></i>
       {t}link-save{/t}
     </button>
