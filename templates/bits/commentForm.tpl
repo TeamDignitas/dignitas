@@ -21,5 +21,10 @@
       <i class="icon icon-floppy"></i>
       {t}link-save{/t}
     </button>
+
+    <button type="button" class="btn btn-link commentCancelButton">
+      <i class="icon icon-cancel"></i>
+      {t}link-cancel{/t}
+    </button>
   </div>
 </form>

@@ -8,6 +8,7 @@ $(function() {
     $('.addCommentLink').click(addCommentForm);
     $('.deleteCommentLink').click(deleteComment);
     $('body').on('click', '.commentSaveButton', saveComment);
+    $('body').on('click', '.commentCancelButton', hideCommentForm);
     $('body').on('keyup paste', 'textarea[name="contents"]', showRemainingChars);
   }
 
@@ -16,7 +17,14 @@ $(function() {
     c.find('input[name="objectType"]').val($(this).data('objectType'));
     c.find('input[name="objectId"]').val($(this).data('objectId'));
     c.insertAfter($(this));
-    $(this).remove();
+    $(this).hide();
+    return false;
+  }
+
+  function hideCommentForm() {
+    var f = $(this).closest('form');
+    f.prev('.addCommentLink').show();
+    f.remove();
     return false;
   }
 
