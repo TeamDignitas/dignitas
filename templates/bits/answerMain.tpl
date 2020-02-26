@@ -16,7 +16,7 @@
 {/if}
 
 <div class="answerFooter col-md-12 px-0">
-  <ul class="list-inline text-muted mb-1">
+  <ul class="list-inline text-muted mb-1 pb-3">
     <li class="list-inline-item">
       {t}answer-posted-by{/t}
       {include 'bits/userLink.tpl' u=$answer->getUser()}
