@@ -35,6 +35,14 @@
     </a>
   </div>
 
+  {if User::isModerator()}
+    <div>
+      <a href="{Router::link('help/categoryList')}">
+        {t}link-help-categories{/t}
+      </a>
+    </div>
+  {/if}
+
   {if User::may(User::PRIV_REVIEW) && !empty($activeReviewReasons)}
     <h4>{cap}{t}title-review-queues{/t}{/cap}</h4>
 
@@ -53,9 +61,9 @@
     {if $numBadVerdicts}
       <h4>{cap}{t}title-reports{/t}{/cap}</h4>
 
-       <ul>
-         <li>
-           <a href="{Router::link('statement/verdictReport')}">
+      <ul>
+        <li>
+          <a href="{Router::link('statement/verdictReport')}">
              {t}link-verdict-report{/t}
            </a>
            ({$numBadVerdicts})

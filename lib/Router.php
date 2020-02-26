@@ -126,6 +126,16 @@ class Router {
       'en_US.utf8' => 'ajax/save-flag',
     ],
 
+    // help pages and categories
+    'help/categoryList' => [
+      'en_US.utf8' => 'help-categories',
+      'ro_RO.utf8' => 'categorii-ajutor',
+    ],
+    'help/categoryEdit' => [
+      'en_US.utf8' => 'edit-help-category',
+      'ro_RO.utf8' => 'editeaza-categorie-ajutor',
+    ],
+
     // helpers
     'helpers/changeLocale' => [
       'en_US.utf8' => 'changeLocale',
@@ -221,6 +231,7 @@ class Router {
     'entity/load' => [ 'ids' ],
     'entity/search' => [ 'term' ],
     'entity/view' => [ 'id' ],
+    'help/categoryEdit' => [ 'id' ],
     'relation/edit' => [ 'id', ],
     'review/view' => [ 'reason', 'reviewId', ],
     'statement/edit' => [ 'id' ],

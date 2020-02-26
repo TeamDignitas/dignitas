@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-02-24 12:40+0200\n"
-"PO-Revision-Date: 2020-02-24 12:41+0200\n"
+"POT-Creation-Date: 2020-02-26 17:28+0200\n"
+"PO-Revision-Date: 2020-02-26 17:31+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -52,15 +52,19 @@ msgstr "domenii"
 msgid "link-tags"
 msgstr "etichete"
 
-#: templates/aggregate/dashboard.tpl:39
+#: templates/aggregate/dashboard.tpl:41
+msgid "link-help-categories"
+msgstr "categorii de ajutor"
+
+#: templates/aggregate/dashboard.tpl:47
 msgid "title-review-queues"
 msgstr "cozi de evaluare"
 
-#: templates/aggregate/dashboard.tpl:54
+#: templates/aggregate/dashboard.tpl:62
 msgid "title-reports"
 msgstr "rapoarte care necesită atenție"
 
-#: templates/aggregate/dashboard.tpl:59
+#: templates/aggregate/dashboard.tpl:67
 msgid "link-verdict-report"
 msgstr "afirmații cu verdicte neclare"
 
@@ -107,9 +111,9 @@ msgstr "editează răspunsul"
 
 #: templates/answer/edit.tpl:15 templates/auth/resetPassword.tpl:45
 #: templates/bits/commentForm.tpl:22 templates/domain/edit.tpl:72
-#: templates/entity/edit.tpl:194 templates/relation/edit.tpl:25
-#: templates/statement/edit.tpl:122 templates/tag/edit.tpl:150
-#: templates/user/edit.tpl:117
+#: templates/entity/edit.tpl:194 templates/help/categoryEdit.tpl:42
+#: templates/relation/edit.tpl:25 templates/statement/edit.tpl:122
+#: templates/tag/edit.tpl:150 templates/user/edit.tpl:117
 msgid "link-save"
 msgstr "salvează"
 
@@ -207,8 +211,9 @@ msgstr "etichetă"
 msgid "label-verdict"
 msgstr "verdict"
 
-#: templates/bits/answerEdit.tpl:45 templates/domain/edit.tpl:84
-#: templates/entity/edit.tpl:199 templates/relation/edit.tpl:30
+#: templates/bits/answerEdit.tpl:45 templates/bits/commentForm.tpl:27
+#: templates/domain/edit.tpl:84 templates/entity/edit.tpl:199
+#: templates/help/categoryEdit.tpl:47 templates/relation/edit.tpl:30
 #: templates/statement/edit.tpl:127 templates/tag/edit.tpl:156
 #: templates/user/edit.tpl:122
 msgid "link-cancel"
@@ -228,8 +233,8 @@ msgid "info-confirm-delete-answer"
 msgstr "Confirmați ștergerea acestui răspuns?"
 
 #: templates/bits/answerMain.tpl:46 templates/domain/edit.tpl:94
-#: templates/entity/edit.tpl:209 templates/statement/edit.tpl:137
-#: templates/tag/edit.tpl:172
+#: templates/entity/edit.tpl:209 templates/help/categoryEdit.tpl:57
+#: templates/statement/edit.tpl:137 templates/tag/edit.tpl:172
 msgid "link-delete"
 msgstr "șterge"
 
@@ -295,7 +300,11 @@ msgstr "autentificare ca utilizator de test"
 msgid "label-reputation"
 msgstr "reputație"
 
-#: templates/bits/fakeLogin.tpl:49
+#: templates/bits/fakeLogin.tpl:55 templates/user/view.tpl:16
+msgid "label-moderator"
+msgstr "moderator"
+
+#: templates/bits/fakeLogin.tpl:61
 msgid "link-test-login"
 msgstr "autentificare ca utilizator de test"
 
@@ -563,7 +572,8 @@ msgid "title-edit-domain"
 msgstr "editează domeniul"
 
 #: templates/domain/edit.tpl:12 templates/domain/list.tpl:19
-#: templates/entity/edit.tpl:26 templates/tag/edit.tpl:23
+#: templates/entity/edit.tpl:26 templates/help/categoryEdit.tpl:12
+#: templates/tag/edit.tpl:23
 msgid "label-name"
 msgstr "nume"
 
@@ -722,6 +732,34 @@ msgstr ""
 #: templates/entity/view.tpl:15
 msgid "statements"
 msgstr "afirmații"
+
+#: templates/help/categoryEdit.tpl:3 templates/help/categoryEdit.tpl:6
+msgid "title-edit-help-category"
+msgstr "editează categoria de ajutor"
+
+#: templates/help/categoryEdit.tpl:26
+msgid "label-help-category-path"
+msgstr "cale"
+
+#: templates/help/categoryEdit.tpl:34
+msgid "info-help-category-path"
+msgstr "o cale care va apărea în URL-ul acestei categorii"
+
+#: templates/help/categoryEdit.tpl:55
+msgid "info-confirm-delete-help-category"
+msgstr "Confirmați ștergerea categoriei?"
+
+#: templates/help/categoryList.tpl:3 templates/help/categoryList.tpl:7
+msgid "title-help-categories"
+msgstr "categorii de ajutor"
+
+#: templates/help/categoryList.tpl:33
+msgid "link-save-help-category-order"
+msgstr "salvează ordinea"
+
+#: templates/help/categoryList.tpl:37
+msgid "link-add-category"
+msgstr "adaugă o categorie"
 
 #: templates/relation/edit.tpl:3 templates/relation/edit.tpl:6
 msgid "title-edit-relation"
@@ -931,10 +969,6 @@ msgstr "utilizator"
 #: templates/user/view.tpl:13
 msgid "label-user"
 msgstr "utilizator"
-
-#: templates/user/view.tpl:16
-msgid "label-moderator"
-msgstr "moderator"
 
 #: templates/user/view.tpl:24
 msgid "label-statements"
@@ -1453,7 +1487,7 @@ msgstr ""
 "Această afirmație a primit un verdict. Doar moderatorii o mai pot modifica "
 "direct."
 
-#: lib/model/User.php:135 routes/auth/login.php:58
+#: lib/model/User.php:135 routes/auth/login.php:60
 #: routes/auth/lostPassword.php:50
 msgid "info-must-enter-email"
 msgstr "Vă rugăm să introduceți o adresă de e-mail."
@@ -1472,7 +1506,7 @@ msgstr ""
 "Porecla trebuie să înceapă cu o literă sau cifră și să conțină 3-30 de "
 "litere, cifre și semne de punctuație dintre -_."
 
-#: lib/model/User.php:161 routes/auth/login.php:62
+#: lib/model/User.php:161 routes/auth/login.php:64
 msgid "info-must-enter-password"
 msgstr "Vă rugăm să introduceți o parolă."
 
@@ -1662,11 +1696,11 @@ msgstr "Doar răspunsurile active pot fi acceptate ca demonstrație."
 msgid "info-minimum-reputation-upload-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a încărca fișiere."
 
-#: routes/auth/login.php:16
+#: routes/auth/login.php:17
 msgid "info-fake-login-devel"
 msgstr "Utilizatorii de test sînt permiși doar în modul development."
 
-#: routes/auth/login.php:69
+#: routes/auth/login.php:71
 msgid "info-incorrect-login"
 msgstr "Adresa de e-mail sau parola sînt incorecte."
 
@@ -1711,31 +1745,31 @@ msgstr "Am salvat comentariul."
 msgid "info-domain-deleted"
 msgstr "Am șters domeniul."
 
-#: routes/domain/edit.php:27
+#: routes/domain/edit.php:26
 msgid "info-cannot-delete-domain"
 msgstr "Nu pot șterge domeniul deoarece unele legături îl folosesc."
 
-#: routes/domain/edit.php:35
+#: routes/domain/edit.php:33
 msgid "info-domain-cloned"
 msgstr "Am clonat domeniul. Aceasta este pagina clonei."
 
-#: routes/domain/edit.php:42
+#: routes/domain/edit.php:40
 msgid "info-save-domain-before-clone"
 msgstr "Vă rugăm să salvați domeniul înainte de a-l clona."
 
-#: routes/domain/edit.php:62
+#: routes/domain/edit.php:60
 msgid "info-domain-saved"
 msgstr "Am salvat domeniul."
 
-#: routes/domain/edit.php:81
+#: routes/domain/edit.php:79
 msgid "info-must-enter-domain-name"
 msgstr "Vă rugăm să introduceți un nume de domeniu."
 
-#: routes/domain/edit.php:86
+#: routes/domain/edit.php:84
 msgid "info-domain-name-taken"
 msgstr "Există deja un domeniu cu acest nume."
 
-#: routes/domain/edit.php:90
+#: routes/domain/edit.php:88
 msgid "info-must-enter-domain-display-value"
 msgstr "Vă rugăm să introduceți o valoare vizibilă."
 
@@ -1796,6 +1830,35 @@ msgstr "Nu puteți raporta obiectul ca duplicat al său însuși."
 #: routes/flag/save.php:35
 msgid "info-flag-saved"
 msgstr "Am salvat raportarea."
+
+#: routes/help/categoryEdit.php:22
+#, php-format
+msgid "info-help-category-deleted"
+msgstr "Am șters categoria."
+
+#: routes/help/categoryEdit.php:26
+msgid "info-cannot-delete-help-category"
+msgstr "Nu pot șterge categoria deoarece conține pagini de ajutor."
+
+#: routes/help/categoryEdit.php:39
+msgid "info-help-category-saved"
+msgstr "Am salvat categoria."
+
+#: routes/help/categoryEdit.php:58
+msgid "info-must-enter-help-category-name"
+msgstr "Vă rugăm să introduceți un nume de categorie."
+
+#: routes/help/categoryEdit.php:62
+msgid "info-must-enter-help-category-path"
+msgstr "Vă rugăm să introduceți o cale."
+
+#: routes/help/categoryEdit.php:67
+msgid "info-help-category-path-taken"
+msgstr "Această cale este deja folosită."
+
+#: routes/help/categoryList.php:16
+msgid "info-help-category-order-updated"
+msgstr "Am salvat ordinea categoriilor."
 
 #: routes/helpers/changeLocale.php:7
 msgid "info-language-changed"
