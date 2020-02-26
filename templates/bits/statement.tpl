@@ -121,7 +121,7 @@
   </div>
 
   <div class="statement-box-area col-md-3 offset-md-1">
-    <aside class="statement-box card false-statement bg-danger text-white">
+    <aside class="statement-box card false-statement verdict-{$statement->verdict}">
       <h5 class="card-title mt-3 mx-auto">
         {$statement->getEntity()},
         {$statement->dateMade|ld}
