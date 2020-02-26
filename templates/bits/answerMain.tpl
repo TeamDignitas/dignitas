@@ -1,5 +1,11 @@
 <div class="answer-body col-md-12 px-0">
   {$answer->contents|md}
+  {if $answer->verdict != Ct::VERDICT_NONE}
+    <span class="btn btn-sm badge-secondary">
+      <i class="icon icon-hammer"></i>
+      {$answer->getVerdictName()}
+    </span>
+  {/if}
 </div>
 
 {if $answer->status == Ct::STATUS_DELETED}

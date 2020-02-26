@@ -134,7 +134,10 @@
           spanClass=""
           imgClass="pic person-photo rounded-circle img-fluid"}
       </span>
-      <h4 class="card-body mx-auto">{** TODO: verdict **}</h4>
+      <h4 class="card-body mx-auto">
+        {t}label-verdict{/t}:
+        {$statement->getVerdictName()}
+      </h4>
     </aside>
   </div>
 

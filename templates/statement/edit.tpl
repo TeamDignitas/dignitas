@@ -15,7 +15,7 @@
 
   {if !$statement->isEditable()}
     <div class="alert alert-warning">
-      {t}info-not-enough-reputation-change-directly{/t}
+      {$statement->getEditMessage()}
     </div>
   {/if}
 
@@ -97,6 +97,24 @@
         {/foreach}
       </select>
     </div>
+
+    {if User::isModerator()}
+      <div class="form-group">
+        <label for="fieldVerdict">{t}label-verdict{/t}</label>
+        <select
+          id="fieldVerdict"
+          name="verdict"
+          class="form-control hasUnloadWarning">
+          {for $v = 0 to Ct::NUM_VERDICTS - 1}
+            <option
+              value="{$v}"
+              {if $v == $statement->verdict}selected{/if}>
+              {Statement::verdictName($v)}
+            </option>
+          {/for}
+        </select>
+      </div>
+    {/if}
 
     <div>
       <button name="saveButton" type="submit" class="btn btn-primary">

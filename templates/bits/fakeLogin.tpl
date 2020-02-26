@@ -43,6 +43,18 @@
           </datalist>
         </div>
       </div>
+
+      <div class="form-group form-check">
+        <input
+          id="fakeModerator"
+          type="checkbox"
+          class="form-check-input"
+          name="fakeModerator"
+          value="1"
+        >
+        <label class="form-check-label" for="fakeModerator">{t}label-moderator{/t}</label>
+      </div>
+
       <input
         class="btn btn-warning"
         type=submit

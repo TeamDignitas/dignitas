@@ -15,7 +15,7 @@
 
   {if !$entity->isEditable()}
     <div class="alert alert-warning">
-      {t}info-not-enough-reputation-change-directly{/t}
+      {$entity->getEditMessage()}
     </div>
   {/if}
 

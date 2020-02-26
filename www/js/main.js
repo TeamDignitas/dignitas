@@ -146,6 +146,30 @@ $(function() {
 
 });
 
+/*************** toggling the "answer serves as proof" bit ***************/
+$(function() {
+  $('.btn-proof').click(toggleProof);
+
+  function toggleProof() {
+    var btn = $(this);
+    $('body').addClass('waiting');
+    $.post(URL_PREFIX + 'ajax/save-proof', {
+      answerId: btn.data('answerId'),
+    }).done(function() {
+
+      btn.toggleClass('accepted');
+
+    }).fail(function(errorMsg) {
+      if (errorMsg.responseJSON) {
+        alert(errorMsg.responseJSON);
+      }
+    }).always(function() {
+      $('body').removeClass('waiting');
+    });
+  }
+
+});
+
 /******************* changing the reputation manually *******************/
 $(function() {
 

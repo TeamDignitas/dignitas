@@ -9,6 +9,7 @@ $submitButton = Request::has('submitButton');
 
 $fakeEmail = Request::get('fakeEmail');
 $fakeReputation = Request::get('fakeReputation') ?: 1;
+$fakeModerator = Request::has('fakeModerator');
 $referrer = Util::getReferrer();
 
 if ($fakeEmail) {
@@ -22,6 +23,7 @@ if ($fakeEmail) {
   }
   $user->nickname = $fakeEmail;
   $user->email = $fakeEmail;
+  $user->moderator = $fakeModerator;
   $user->save();
   $user->setReputation($fakeReputation);
   Session::login($user, true, $referrer);

@@ -48,4 +48,19 @@
       {/foreach}
     </ul>
   {/if}
+
+  {if User::isModerator()}
+    {if $numBadVerdicts}
+      <h4>{cap}{t}title-reports{/t}{/cap}</h4>
+
+       <ul>
+         <li>
+           <a href="{Router::link('statement/verdictReport')}">
+             {t}link-verdict-report{/t}
+           </a>
+           ({$numBadVerdicts})
+         </li>
+       </ul>
+    {/if}
+  {/if}
 {/block}

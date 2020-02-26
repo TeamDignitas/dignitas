@@ -1,7 +1,7 @@
 <?php
 
 class Answer extends Proto {
-  use FlaggableTrait, MarkdownTrait, PendingEditTrait, VotableTrait;
+  use FlaggableTrait, MarkdownTrait, PendingEditTrait, VerdictTrait, VotableTrait;
 
   function getObjectType() {
     return self::TYPE_ANSWER;
@@ -90,6 +90,11 @@ class Answer extends Proto {
       throw new Exception(sprintf(
         _('info-minimum-reputation-edit-answer-%s'),
         Str::formatNumber(User::PRIV_EDIT_ANSWER)));
+    }
+
+    if ($this->proof &&
+        !User::isModerator()) {
+      throw new Exception(_('info-only-moderator-edit-proof-answer'));
     }
   }
 
