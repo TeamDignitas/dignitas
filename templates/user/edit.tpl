@@ -76,7 +76,7 @@
       <textarea
         id="fieldAboutMe"
         name="aboutMe"
-        class="form-control hasUnloadWarning"
+        class="form-control hasUnloadWarning simple-mde"
         rows="5">{$user->aboutMe|escape}</textarea>
       {include "bits/markdownHelp.tpl"}
     </div>

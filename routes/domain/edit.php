@@ -23,9 +23,7 @@ if ($deleteButton) {
     $domain->delete();
     Util::redirectToRoute('domain/list');
   } else {
-    FlashMessage::add(
-      _('info-cannot-delete-domain'),
-      'danger');
+    FlashMessage::add(_('info-cannot-delete-domain'), 'danger');
     Util::redirect(Router::getEditLink($domain));
   }
 }

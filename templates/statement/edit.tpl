@@ -64,7 +64,7 @@
       <textarea
         name="context"
         id="fieldContext"
-        class="form-control hasUnloadWarning {if isset($errors.context)}is-invalid{/if}"
+        class="form-control hasUnloadWarning simple-mde {if isset($errors.context)}is-invalid{/if}"
         rows="10">{$statement->context|escape}</textarea>
       {include "bits/fieldErrors.tpl" errors=$errors.context|default:null}
       {include "bits/markdownHelp.tpl"}

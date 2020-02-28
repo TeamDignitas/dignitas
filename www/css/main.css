@@ -276,7 +276,34 @@ footer {
 /****************************** file inputs ******************************/
 
 .custom-file-label::after {
-  font-family: 'icons';
   /* hack: this hardcodes the glyph for icon-folder-open */
   content: '\e809';
+  font-family: 'icons';
+}
+
+/****************************** SortableJS ******************************/
+
+.icon-move {
+  cursor: pointer;
+}
+
+/************************ help pages and sidebar ************************/
+
+.help-sidebar {
+  border: 1px solid #ccc;
+  border-radius: .25rem;
+  font-size: 0.8rem;
+  padding: 0.5rem 0;
+}
+
+.help-sidebar-category {
+  padding: 0.3rem 0.75rem;
+}
+
+.help-sidebar-page {
+  padding: 0.3rem 1.5rem;
+}
+
+.help-sidebar .active {
+  font-weight: bold;
 }

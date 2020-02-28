@@ -50,6 +50,15 @@
   <div class="navbar-collapse bg-dark to-right" id="navbarRight">
 
     <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          href="{Router::link('help/index')}"
+          title="{t}help-center{/t}"
+        >
+          <i class="icon icon-help"></i>
+        </a>
+      </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle"
           href="#"

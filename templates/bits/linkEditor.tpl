@@ -2,7 +2,7 @@
 <div class="form-group">
   <label>{$labelText}</label>
 
-  <table class="table table-sm">
+  <table class="table table-sm sortable">
     <tbody id="linkContainer">
       {include "bits/linkEditorRow.tpl" rowId="linkStem"}
       {foreach $links as $link}

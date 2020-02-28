@@ -4,7 +4,7 @@ class RevisionEntity extends Entity {
   use RevisionTrait;
 
   /**
-   * @param $prev The previous revision of the same statement.
+   * @param $prev The previous revision of the same entity.
    * @return ObjectDiff
    */
   function compare($prev) {

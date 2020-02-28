@@ -6,11 +6,6 @@ $(function() {
 
     $('.addLinkButton').click(addLink);
     $('#linkContainer').on('click', '.deleteLinkButton', deleteLink);
-
-    Sortable.create(linkContainer, {
-      handle: '.icon-move',
-	    animation: 150,
-    });
   }
 
   function addLink() {

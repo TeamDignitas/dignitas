@@ -35,7 +35,7 @@
     <div class="form-group">
       <label>{t}label-alias{/t}</label>
 
-      <table class="table table-sm">
+      <table class="table table-sm sortable">
         <thead
           id="aliasHeader"
           {if empty($aliases)}hidden{/if}>
@@ -98,7 +98,7 @@
     <div class="form-group">
       <label>{t}label-relations{/t}</label>
 
-      <table class="table table-sm relTable">
+      <table class="table table-sm relTable sortable">
         <thead
           id="relationHeader"
           {if empty($relations)}hidden{/if}>
@@ -134,7 +134,7 @@
       <textarea
         id="fieldProfile"
         name="profile"
-        class="form-control hasUnloadWarning"
+        class="form-control hasUnloadWarning simple-mde"
         rows="5">{$entity->profile|escape}</textarea>
       {include "bits/markdownHelp.tpl"}
     </div>

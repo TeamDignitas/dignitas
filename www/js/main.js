@@ -219,3 +219,16 @@ $(function() {
     $(this).next('.custom-file-label').addClass('selected').html(fileName);
   });
 });
+
+/****************************** SortableJS ******************************/
+
+$(function() {
+
+  $('table.sortable tbody').each(function() {
+    Sortable.create(this, {
+      handle: '.icon-move',
+	    animation: 150,
+    });
+  });
+
+});

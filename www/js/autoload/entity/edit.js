@@ -23,20 +23,10 @@ $(function() {
     $('#aliasContainer, #relationContainer')
       .on('click', '.deleteDependantButton', deleteDependant);
 
-    var sortableOpts = {
-      handle: '.icon-move',
-	    animation: 150,
-    };
-
-    Sortable.create(aliasContainer, sortableOpts);
-    Sortable.create(relationContainer, sortableOpts);
-
     $('.colorpicker-component').colorpicker({
       fallbackColor: '#ffffff',
     });
     $('#fieldType').change(updateColorVisibility);
-
-    initSimpleMde('fieldProfile');
   }
 
   function addAlias() {
