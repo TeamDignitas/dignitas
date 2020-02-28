@@ -3,7 +3,6 @@ $(function() {
   var commentForm = null;
 
   function init() {
-    initSimpleMde('fieldContents');
     commentForm = $('#commentForm').detach().removeAttr('id');
     $('.addCommentLink').click(addCommentForm);
     $('.deleteCommentLink').click(deleteComment);

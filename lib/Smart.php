@@ -12,6 +12,10 @@ class Smart {
     'jquery' => [
       'js' => [ 'third-party/jquery-3.3.1.min.js' ],
     ],
+    'main' => [
+      'css' => [ 'main.css' ],
+      'js' => [ 'main.js' ],
+    ],
     'bootstrap' => [
       'css' => [ 'third-party/bootstrap-4.3.1.min.css' ],
       'js' => [ 'third-party/bootstrap-4.3.1.bundle.min.js' ],
@@ -61,10 +65,6 @@ class Smart {
     'linkEditor' => [
       'js' => [ 'linkEditor.js' ],
       'deps' => [ 'sortable'],
-    ],
-    'main' => [
-      'css' => [ 'main.css' ],
-      'js' => [ 'main.js' ],
     ],
   ];
 

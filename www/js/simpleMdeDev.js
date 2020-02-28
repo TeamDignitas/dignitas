@@ -67,15 +67,11 @@ $(function() {
     },
   ];
 
-  window.initSimpleMde = function(elementId) {
-    var element = document.getElementById(elementId);
-    if (!element) {
-      return null;
-    }
-
+  // initialize SimpleMDE editors
+  $('.simple-mde').each(function() {
     var simpleMde = new SimpleMDE({
       autoDownloadFontAwesome: false,
-      element: element,
+      element: this, // the textarea
       spellChecker: false,
       status: false,
       toolbar: SIMPLE_MDE_TOOLBAR,
@@ -93,7 +89,7 @@ $(function() {
     simpleMde.codemirror.on('change', unsavedChangesHandler);
 
     return simpleMde;
-  }
+  });
 
   function handleAjaxError(xhr) {
     var jsonResponse;
@@ -129,4 +125,5 @@ $(function() {
     }
     return false;
   }
+
 });

@@ -58,7 +58,7 @@
       <textarea
         id="fieldContents"
         name="contents"
-        class="form-control hasUnloadWarning"
+        class="form-control hasUnloadWarning simple-mde"
         rows="10">{$page->contents|escape}</textarea>
       {include "bits/markdownHelp.tpl"}
       {include "bits/fieldErrors.tpl" errors=$errors.contents|default:null}

@@ -134,7 +134,7 @@
       <textarea
         id="fieldProfile"
         name="profile"
-        class="form-control hasUnloadWarning"
+        class="form-control hasUnloadWarning simple-mde"
         rows="5">{$entity->profile|escape}</textarea>
       {include "bits/markdownHelp.tpl"}
     </div>

@@ -225,7 +225,7 @@ $(function() {
 $(function() {
 
   $('table.sortable tbody').each(function() {
-    Sortable.create($(this)[0], {
+    Sortable.create(this, {
       handle: '.icon-move',
 	    animation: 150,
     });

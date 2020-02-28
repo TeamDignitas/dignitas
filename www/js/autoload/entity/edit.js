@@ -27,8 +27,6 @@ $(function() {
       fallbackColor: '#ffffff',
     });
     $('#fieldType').change(updateColorVisibility);
-
-    initSimpleMde('fieldProfile');
   }
 
   function addAlias() {
