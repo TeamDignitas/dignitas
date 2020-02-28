@@ -135,6 +135,10 @@ class Router {
       'en_US.utf8' => 'edit-help-category',
       'ro_RO.utf8' => 'editeaza-categorie-ajutor',
     ],
+    'help/index' => [
+      'en_US.utf8' => 'help',
+      'ro_RO.utf8' => 'ajutor',
+    ],
     'help/pageEdit' => [
       'en_US.utf8' => 'edit-help-page',
       'ro_RO.utf8' => 'editeaza-pagina-ajutor',
@@ -236,6 +240,7 @@ class Router {
     'entity/search' => [ 'term' ],
     'entity/view' => [ 'id' ],
     'help/categoryEdit' => [ 'id' ],
+    'help/index' => [ 'path' ],
     'help/pageEdit' => [ 'id' ],
     'relation/edit' => [ 'id', ],
     'review/view' => [ 'reason', 'reviewId', ],
@@ -397,6 +402,15 @@ class Router {
       default:
         return null;
     }
+  }
+
+  /**
+   * Returns a link to a help category or page.
+   *
+   * @param object $object A HelpCategory or HelpPage object.
+   */
+  static function helpLink($object) {
+    return self::link('help/index') . '/' . $object->path;
   }
 
 }

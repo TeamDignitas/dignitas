@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-02-28 11:24+0200\n"
-"PO-Revision-Date: 2020-02-28 11:25+0200\n"
+"POT-Creation-Date: 2020-02-28 13:17+0200\n"
+"PO-Revision-Date: 2020-02-28 13:18+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -132,7 +132,7 @@ msgstr "password"
 msgid "label-remember-me"
 msgstr "remember me for one year"
 
-#: templates/auth/login.tpl:67 templates/bits/navmenu.tpl:133
+#: templates/auth/login.tpl:67 templates/bits/navmenu.tpl:142
 msgid "link-log-in"
 msgstr "log in"
 
@@ -193,7 +193,7 @@ msgstr "click here if you are not redirected automatically"
 msgid "title-change-password"
 msgstr "change password"
 
-#: templates/bits/addCommentLink.tpl:7
+#: templates/bits/addCommentLink.tpl:6
 msgid "link-add-comment"
 msgstr "add a comment"
 
@@ -201,7 +201,7 @@ msgstr "add a comment"
 msgid "tag"
 msgstr "tag"
 
-#: templates/bits/answerEdit.tpl:19 templates/bits/statement.tpl:137
+#: templates/bits/answerEdit.tpl:19 templates/bits/statement.tpl:138
 #: templates/statement/edit.tpl:103 lib/model/RevisionAnswer.php:15
 #: lib/model/RevisionStatement.php:18
 msgid "label-verdict"
@@ -215,27 +215,27 @@ msgstr "verdict"
 msgid "link-cancel"
 msgstr "cancel"
 
-#: templates/bits/answerMain.tpl:27
+#: templates/bits/answerMain.tpl:29
 msgid "answer-posted-by"
 msgstr "posted by"
 
-#: templates/bits/answerMain.tpl:35 templates/bits/entity.tpl:110
-#: templates/bits/statement.tpl:108
+#: templates/bits/answerMain.tpl:39 templates/bits/entity.tpl:110
+#: templates/bits/statement.tpl:100
 msgid "link-show-revisions"
 msgstr "show revisions"
 
-#: templates/bits/answerMain.tpl:45
+#: templates/bits/answerMain.tpl:49
 msgid "info-confirm-delete-answer"
 msgstr "Are you sure you want to delete this answer?"
 
-#: templates/bits/answerMain.tpl:46 templates/domain/edit.tpl:94
+#: templates/bits/answerMain.tpl:50 templates/domain/edit.tpl:94
 #: templates/entity/edit.tpl:209 templates/help/categoryEdit.tpl:81
 #: templates/help/pageEdit.tpl:85 templates/statement/edit.tpl:137
 #: templates/tag/edit.tpl:172
 msgid "link-delete"
 msgstr "delete"
 
-#: templates/bits/comment.tpl:27
+#: templates/bits/comment.tpl:26
 msgid "info-confirm-delete-comment"
 msgstr "Are you sure you want to delete this comment?"
 
@@ -291,7 +291,7 @@ msgstr "members"
 msgid "title-test-login"
 msgstr "test user login"
 
-#: templates/bits/fakeLogin.tpl:33 templates/bits/navmenu.tpl:115
+#: templates/bits/fakeLogin.tpl:33 templates/bits/navmenu.tpl:124
 #: templates/user/view.tpl:22
 msgid "label-reputation"
 msgstr "reputation"
@@ -446,19 +446,26 @@ msgstr "Markdown help"
 msgid "label-toggle-menu"
 msgstr "toggle sidebar"
 
-#: templates/bits/navmenu.tpl:101
+#: templates/bits/navmenu.tpl:57 templates/help/categoryView.tpl:3
+#: templates/help/categoryView.tpl:7 templates/help/index.tpl:3
+#: templates/help/index.tpl:6 templates/help/pageView.tpl:3
+#: templates/help/pageView.tpl:7
+msgid "help-center"
+msgstr "help center"
+
+#: templates/bits/navmenu.tpl:110
 msgid "link-my-profile"
 msgstr "my profile"
 
-#: templates/bits/navmenu.tpl:105
+#: templates/bits/navmenu.tpl:114
 msgid "link-dashboard"
 msgstr "dashboard"
 
-#: templates/bits/navmenu.tpl:117
+#: templates/bits/navmenu.tpl:126
 msgid "info-reputation-manual"
 msgstr "change reputation manually (will refresh the page)"
 
-#: templates/bits/navmenu.tpl:125
+#: templates/bits/navmenu.tpl:134
 msgid "link-log-out"
 msgstr "log out"
 
@@ -514,23 +521,23 @@ msgstr "details"
 msgid "date"
 msgstr "date"
 
-#: templates/bits/scoreAndVote.tpl:21 templates/bits/scoreAndVote.tpl:41
+#: templates/bits/scoreAndVote.tpl:12 templates/bits/scoreAndVote.tpl:30
 msgid "label-log-in-vote"
 msgstr "Please log in to vote."
 
-#: templates/bits/scoreAndVote.tpl:24
+#: templates/bits/scoreAndVote.tpl:15
 msgid "label-minimum-reputation-upvote"
 msgstr "You need at least %1 reputation to upvote."
 
-#: templates/bits/scoreAndVote.tpl:44
+#: templates/bits/scoreAndVote.tpl:33
 msgid "label-minimum-reputation-downvote"
 msgstr "You need at least %1 reputation to downvote."
 
-#: templates/bits/scoreAndVote.tpl:64
+#: templates/bits/scoreAndVote.tpl:53
 msgid "label-toggle-answer-proof"
 msgstr "accept/unaccept the answer as proof"
 
-#: templates/bits/scoreAndVote.tpl:67
+#: templates/bits/scoreAndVote.tpl:56
 msgid "label-answer-is-proof"
 msgstr "this answer serves as proof for the statement's verdict"
 
@@ -552,7 +559,7 @@ msgstr "context"
 msgid "title-goal"
 msgstr "goal"
 
-#: templates/bits/statement.tpl:101
+#: templates/bits/statement.tpl:93
 msgid "title-added-by"
 msgstr "added by"
 
@@ -883,17 +890,17 @@ msgstr "statements with a verdict, but no proof"
 msgid "title-statements-verdict-mismatch"
 msgstr "statements with a verdict opposite to the proof's verdict"
 
-#: templates/statement/view.tpl:11
+#: templates/statement/view.tpl:12
 msgid "title-answers-singular"
 msgid_plural "title-answers-plural"
 msgstr[0] "one answer"
 msgstr[1] "%1 answers"
 
-#: templates/statement/view.tpl:22
+#: templates/statement/view.tpl:25
 msgid "title-your-answer"
 msgstr "your answer"
 
-#: templates/statement/view.tpl:24
+#: templates/statement/view.tpl:27
 msgid "link-post-answer"
 msgstr "post answer"
 
@@ -1864,7 +1871,7 @@ msgstr "Please enter a path."
 
 #: routes/help/categoryEdit.php:75 routes/help/pageEdit.php:62
 msgid "info-help-path-syntax"
-msgstr "Paths can only contain lowercase Latin letters and dashes."
+msgstr "Paths can only contain lowercase Latin letters, digits and dashes."
 
 #: routes/help/categoryEdit.php:80
 msgid "info-help-category-path-taken"
@@ -1873,6 +1880,10 @@ msgstr "This path is already used."
 #: routes/help/categoryList.php:16
 msgid "info-help-category-order-updated"
 msgstr "Category order saved."
+
+#: routes/help/index.php:19
+msgid "info-no-such-help-item"
+msgstr "The help page you are looking for does not exist."
 
 #: routes/help/pageEdit.php:17
 msgid "info-help-page-deleted"
