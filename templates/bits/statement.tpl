@@ -93,6 +93,14 @@
       </div>
     </div>
 
+    <div class="clearfix statement-actions row mb-2">
+      <div class="col-md-12 mt-1 text-right">
+        {if $statement->hasRevisions()}
+          <a href="{Router::link('statement/history')}/{$statement->id}" class="btn btn-sm btn-outline-secondary">
+            {t}link-show-revisions{/t}
+          </a>
+        {/if}
+
     {$comments=Comment::getFor($statement)}
     <div class="clearfix statement-actions mb-2 mt-1 text-right">
       {if $statement->hasRevisions()}
