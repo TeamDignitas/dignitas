@@ -32,7 +32,7 @@
     </div>
   </div>
 
-  <ul class="answer-actions text-right text-muted mb-2 ml-0 pl-0">
+  <ul class="list-inline text-right text-muted mb-2 ml-0 pl-0">
     {if $answer->hasRevisions()}
       <li class="list-inline-item">
         <a href="{Router::link('answer/history')}/{$answer->id}" class="btn btn-sm btn-outline-secondary">
@@ -63,9 +63,7 @@
     {/if}
 
     {if $addComment}
-      <li class="list-inline-item">
-        {include "bits/addCommentLink.tpl" object=$answer}
-      </li>
+      {include "bits/addCommentLink.tpl" object=$answer}
     {/if}
   </ul>
 </div>

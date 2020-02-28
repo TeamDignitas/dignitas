@@ -1,8 +1,8 @@
-<form id="commentForm" class="row mt-1">
+<form id="commentForm" class="mt-1">
   <input type="hidden" name="objectType">
   <input type="hidden" name="objectId">
 
-  <div class="col-md-12">
+  <div class="form-group">
     <textarea
       name="contents"
       class="form-control"
@@ -16,15 +16,13 @@
     {include "bits/markdownHelp.tpl"}
   </div>
 
-  <div class="col-md-12 pl-0">
-    <button type="submit" class="btn btn-primary commentSaveButton btn-sm">
-      <i class="icon icon-floppy"></i>
-      {t}link-save{/t}
-    </button>
+  <button type="submit" class="btn btn-primary commentSaveButton btn-sm">
+    <i class="icon icon-floppy"></i>
+    {t}link-save{/t}
+  </button>
 
-    <button type="button" class="btn btn-link commentCancelButton">
-      <i class="icon icon-cancel"></i>
-      {t}link-cancel{/t}
-    </button>
-  </div>
+  <button type="button" class="btn btn-link commentCancelButton">
+    <i class="icon icon-cancel"></i>
+    {t}link-cancel{/t}
+  </button>
 </form>

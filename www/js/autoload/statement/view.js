@@ -12,18 +12,31 @@ $(function() {
   }
 
   function addCommentForm() {
+    // clone the form and populate some fields
     var c = commentForm.clone(true);
     c.find('input[name="objectType"]').val($(this).data('objectType'));
     c.find('input[name="objectId"]').val($(this).data('objectId'));
-    c.insertAfter($(this));
-    $(this).hide();
+
+    // show it beneath the answer actions
+    var anchor = $(this).closest('.list-inline');
+    c.insertAfter(anchor);
+
+    // hide the link and save it in the form itself
+    $(this).closest('li').hide().appendTo(c);
+
     return false;
   }
 
   function hideCommentForm() {
     var f = $(this).closest('form');
-    f.prev('.addCommentLink').show();
+
+    // put the "add comment" link back in the <ul>
+    var link = f.find('li');
+    link.show().appendTo(f.prev('.list-inline'));
+
+    // remove the form
     f.remove();
+
     return false;
   }
 

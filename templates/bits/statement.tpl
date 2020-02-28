@@ -114,7 +114,9 @@
         {/foreach}
 
         {if $addComment}
-          {include "bits/addCommentLink.tpl" object=$statement}
+          <ul class="list-inline text-right text-muted mb-2 ml-0 pl-0">
+            {include "bits/addCommentLink.tpl" object=$statement}
+          </ul>
         {/if}
       </div>
     </div>
