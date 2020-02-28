@@ -7,8 +7,8 @@
   <h3>{cap}{t}title-help-categories{/t}{/cap}</h3>
 
   <form method="post">
-    <table class="table table-hover mt-3">
-      <tbody id="categoryContainer">
+    <table class="table table-hover mt-3 sortable">
+      <tbody>
         {foreach $categories as $c}
           <tr class="d-flex">
             <td class="col-1">

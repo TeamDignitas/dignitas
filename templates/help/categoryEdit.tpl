@@ -39,8 +39,8 @@
     <fieldset>
       <legend>{cap}{t}title-help-pages-in-category{/t}{/cap}</legend>
 
-      <table class="table table-hover mt-3">
-        <tbody id="pageContainer">
+      <table class="table table-hover mt-3 sortable">
+        <tbody>
           {foreach $cat->getPages() as $p}
             <tr class="d-flex">
               <td class="col-1">
