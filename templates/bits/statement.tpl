@@ -9,7 +9,7 @@
 
 <div class="row statement-title-sources">
 
-  <div class="col-md-12">
+  <div class="col-md-12 pl-0">
     <h1 class="statement-title">
       {$statement->summary|escape}
       {if $statusInfo}
@@ -36,7 +36,7 @@
     </h6>
 
   </div>
-  <hr class="w-100 statement-title-divider"/>
+  <hr class="w-100 title-divider mt-0"/>
 </div>
 
 <article class="row mt-3 statement-body">
@@ -48,7 +48,7 @@
       downvotePriv=User::PRIV_DOWNVOTE_STATEMENT}
   {/if}
 
-  <div class="voteMain col-md-7">
+  <div class="voteMain col-md-7 pl-0">
     {$statusInfo=$statement->getStatusInfo()}
 
     {if isset($pendingEditReview)}
@@ -74,11 +74,11 @@
       </div>
     {/if}
 
-    <h5 class="text-uppercase">{t}title-context{/t}</h5>
+    <h6 class="text-uppercase font-weight-bold">{t}title-context{/t}</h6>
 
     {$statement->context|md}
 
-    <h5 class="text-uppercase">{t}title-goal{/t}</h5>
+    <h6 class="text-uppercase font-weight-bold">{t}title-goal{/t}</h6>
 
     {$statement->goal|escape}
 
@@ -88,50 +88,51 @@
       {/foreach}
     </div>
 
-    <div class="my-3 clearfix">
-      {if $editLink}
-        {include "bits/editButton.tpl" obj=$statement}
-      {/if}
-
-      {if $flagBox && ($statement->isFlaggable() || $statement->isFlagged())}
-        {include "bits/flagLinks.tpl" obj=$statement class="btn btn-link text-muted"}
-      {/if}
-
-      <small class="btn text-muted float-right">
+    <div class="my-3 clearfix statement-actions row">
+      <div class="text-muted col-md-12 text-right mb-2">
         {t}title-added-by{/t}
         {include 'bits/userLink.tpl' u=$statement->getUser()}
         {include 'bits/moment.tpl' t=$statement->createDate}
-
+      </div>
+      <div class="col-md-12 mt-1 text-right">
         {if $statement->hasRevisions()}
-          •
-          <a href="{Router::link('statement/history')}/{$statement->id}">
+          <a href="{Router::link('statement/history')}/{$statement->id}" class="btn btn-sm btn-outline-secondary">
             {t}link-show-revisions{/t}
           </a>
         {/if}
-      </small>
+
+        {if $editLink}
+          {include "bits/editButton.tpl" obj=$statement}
+        {/if}
+
+        {if $flagBox && ($statement->isFlaggable() || $statement->isFlagged())}
+          {include "bits/flagLinks.tpl" obj=$statement class="btn btn-sm btn-outline-secondary"}
+        {/if}
+
+        {foreach Comment::getFor($statement) as $comment}
+          {include 'bits/comment.tpl'}
+        {/foreach}
+
+        {if $addComment}
+          {include "bits/addCommentLink.tpl" object=$statement}
+        {/if}
+      </div>
     </div>
 
-    {foreach Comment::getFor($statement) as $comment}
-      {include 'bits/comment.tpl'}
-    {/foreach}
-
-    {if $addComment}
-      {include "bits/addCommentLink.tpl" object=$statement}
-    {/if}
   </div>
 
-  <div class="statement-box-area col-md-3 offset-md-1">
+  <div class="statement-box-area col-md-3 offset-md-1 pr-0">
     <aside class="statement-box card false-statement verdict-{$statement->verdict}">
-      <h5 class="card-title mt-3 mx-auto">
+      <h6 class="card-title mt-3 text-center">
         {$statement->getEntity()},
         {$statement->dateMade|ld}
-      </h5>
+      </h6>
       <span class="mx-auto">
         {include "bits/image.tpl"
           obj=$entity
           geometry=Config::THUMB_ENTITY_LARGE
           spanClass=""
-          imgClass="pic person-photo rounded-circle"}
+          imgClass="pic person-photo rounded-circle img-fluid"}
       </span>
       <h4 class="card-body mx-auto">
         {t}label-verdict{/t}:

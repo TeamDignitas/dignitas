@@ -1,18 +1,9 @@
 {* $type: type of object being voted *}
 {* $object: object being voted (should have id and score fields) *}
 
-{$position=$position|default:'center'}
 {$voteValue=$object->getVote()->value|default:0}
 
-{if $position == 'before'}
-  <div
-    id="score-{$type}-{$object->id}"
-    class="voteLeft">
-    {$object->getScore()|nf}
-  </div>
-{/if}
-
-<div class="voteLeft col-md-1">
+<div class="voteLeft col-md-1 pl-0">
 
   <button
     class="btn btn-vote {if $voteValue == 1}voted{/if}"
@@ -30,9 +21,7 @@
     <i class="icon icon-up-open"></i>
   </button>
 
-  {if $position == 'center'}
-    <div id="score-{$type}-{$object->id}">{$object->getScore()|nf}</div>
-  {/if}
+  <div id="score-{$type}-{$object->id}">{$object->getScore()|nf}</div>
 
   <button
     class="btn btn-vote {if $voteValue == -1}voted{/if}"

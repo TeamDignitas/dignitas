@@ -14,7 +14,8 @@
       downvotePriv=User::PRIV_DOWNVOTE_ANSWER}
   {/if}
 
-  <div class="voteMain">
+  <div class="voteMain col-md-7 mb-1 pl-0">
     {include "bits/answerMain.tpl"}
+    <hr class="w-100 title-divider mt-3 mb-0"/>
   </div>
 </div>

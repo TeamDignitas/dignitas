@@ -126,11 +126,6 @@ blockquote {
   text-align: center;
 }
 
-.statement > .voteLeft,
-.answer > .voteLeft {
-  flex-basis: 75px;
-}
-
 .comment > .voteLeft {
   flex-basis: 10px;
   margin-right: 5px;
@@ -165,12 +160,19 @@ blockquote {
 }
 
 /******************************** statement ********************************/
-.statement-title-divider {
+.title-divider {
   border-color: #999;
 }
 
 img.pic.person-photo {
   outline: 0;
+}
+
+.statement-actions .text-muted,
+.statement-actions .btn,
+.answerFooter *,
+.answer-comment a {
+  font-size: 0.75rem;
 }
 
 /* keep these values in sync with lib/Ct.php::VERDICT_* constants */
@@ -206,20 +208,23 @@ img.pic.person-photo {
 
 .answer {
   padding-top: 10px;
-  border-bottom: 1px solid #ddd;
 }
 
-.answerFooter {
-  text-align: right;
+.answer-label {
+  border-bottom: 1px solid #999;
 }
 
 /******************************* comments *******************************/
 
 .comment {
-  border-top: 1px solid #eee;
+  border-bottom: 1px solid #ccc;
   color: #777;
   font-size: 80%;
   padding: 5px 0px;
+}
+
+.comment:first-child {
+  border-top: 1px solid #ccc;
 }
 
 .comment p {
