@@ -32,39 +32,46 @@
     </div>
   </div>
 
-  <div class="row text-muted">
-    <div class="col-md-12 text-right mb-2 ml-0 pl-0">
-      {if $answer->hasRevisions()}
-        <a href="{Router::link('answer/history')}/{$answer->id}" class="btn btn-sm btn-outline-secondary">
-          {t}link-show-revisions{/t}
-        </a>
-      {/if}
+  {$comments=Comment::getFor($answer)}
+  <div class="text-muted text-right mb-2 ml-0 pl-0">
+    {if $answer->hasRevisions()}
+      <a href="{Router::link('answer/history')}/{$answer->id}" class="btn btn-sm btn-outline-secondary">
+        {t}link-show-revisions{/t}
+      </a>
+    {/if}
 
-      {if $answer->isDeletable()}
-        <a
-          href="?deleteAnswerId={$answer->id}"
-          class="btn btn-sm btn-outline-secondary"
-          data-confirm="{t}info-confirm-delete-answer{/t}">
-          {t}link-delete{/t}
-        </a>
-      {/if}
+    {if $answer->isDeletable()}
+      <a
+        href="?deleteAnswerId={$answer->id}"
+        class="btn btn-sm btn-outline-secondary"
+        data-confirm="{t}info-confirm-delete-answer{/t}">
+        {t}link-delete{/t}
+      </a>
+    {/if}
 
-      {include "bits/editButton.tpl" obj=$answer class="btn btn-sm btn-outline-secondary"}
+    {include "bits/editButton.tpl" obj=$answer class="btn btn-sm btn-outline-secondary"}
 
-      {if $flagBox && ($answer->isFlaggable() || $answer->isFlagged())}
-        {include "bits/flagLinks.tpl" obj=$answer class="btn btn-sm btn-outline-secondary"}
-      {/if}
+    {if $flagBox && ($answer->isFlaggable() || $answer->isFlagged())}
+      {include "bits/flagLinks.tpl" obj=$answer class="btn btn-sm btn-outline-secondary"}
+    {/if}
 
-      {if $showComments}
-        {foreach Comment::getFor($answer) as $comment}
-          {include 'bits/comment.tpl'}
-        {/foreach}
-      {/if}
-
-      {if $addComment}
-        {include "bits/addCommentLink.tpl" object=$answer}
-      {/if}
-    </div>
+    {if $addComment && empty($comments)}
+      {include "bits/addCommentLink.tpl" object=$answer}
+    {/if}
   </div>
+
+  {if !empty($comments)}
+    {if $showComments}
+      {foreach $comments as $comment}
+        {include 'bits/comment.tpl'}
+      {/foreach}
+    {/if}
+
+    {if $addComment}
+      <div class="text-muted text-right mb-2 ml-0 pl-0">
+        {include "bits/addCommentLink.tpl" object=$answer}
+      </div>
+    {/if}
+  {/if}
 
 </div>
