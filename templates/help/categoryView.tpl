@@ -3,15 +3,33 @@
 {block "title"}{cap}{$category->name}{/cap} - {cap}{t}help-center{/t}{/cap}{/block}
 
 {block "content"}
-  <h4>
-    <a href="{Router::link('help/index')}">{cap}{t}help-center{/t}{/cap}</a>
-    <i class="icon icon-right-open small text-muted"></i>
-    <a href="{Router::helpLink($category)}">{cap}{$category->name}{/cap}</a>
-  </h4>
+  <div class="row">
+    <div class="col-8">
 
-  {foreach $category->getPages() as $p}
-    <div>
-      <a href="{Router::helpLink($p)}">{$p->title}</a>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="{Router::link('help/index')}">
+              {cap}{t}help-center{/t}{/cap}
+            </a>
+          </li>
+          <li class="breadcrumb-item active">
+            {cap}{$category->name}{/cap}
+          </li>
+        </ol>
+      </nav>
+
+      <h3>{$category->name}</h3>
+
+      {foreach $category->getPages() as $p}
+        <div>
+          <a href="{Router::helpLink($p)}">{$p->title}</a>
+        </div>
+      {/foreach}
     </div>
-  {/foreach}
+
+    <div class="col-4">
+      {include "bits/helpSidebar.tpl" activeCategoryId=$category->id}
+    </div>
+  </div>
 {/block}

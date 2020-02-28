@@ -3,13 +3,31 @@
 {block "title"}{cap}{$page->title}{/cap} - {cap}{t}help-center{/t}{/cap}{/block}
 
 {block "content"}
-  <h4>
-    <a href="{Router::link('help/index')}">{cap}{t}help-center{/t}{/cap}</a>
-    <i class="icon icon-right-open small text-muted"></i>
-    <a href="{Router::helpLink($category)}">{cap}{$category->name}{/cap}</a>
-  </h4>
+  <div class="row">
+    <div class="col-8">
 
-  <h3>{$page->title}</h3>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="{Router::link('help/index')}">
+              {cap}{t}help-center{/t}{/cap}
+            </a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="{Router::helpLink($category)}">
+              {cap}{$category->name}{/cap}
+            </a>
+          </li>
+        </ol>
+      </nav>
 
-  {$page->contents|md}
+      <h3>{$page->title}</h3>
+
+      {$page->contents|md}
+    </div>
+
+    <div class="col-4">
+      {include "bits/helpSidebar.tpl" activePageId=$page->id}
+    </div>
+  </div>
 {/block}
