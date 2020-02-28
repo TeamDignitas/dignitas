@@ -18,11 +18,11 @@ $(function() {
     c.find('input[name="objectId"]').val($(this).data('objectId'));
 
     // show it beneath the answer actions
-    var anchor = $(this).closest('.list-inline');
+    var anchor = $(this).closest('div');
     c.insertAfter(anchor);
 
-    // hide the link and save it in the form itself
-    $(this).closest('li').hide().appendTo(c);
+    // hide the link
+    $(this).hide();
 
     return false;
   }
@@ -30,9 +30,8 @@ $(function() {
   function hideCommentForm() {
     var f = $(this).closest('form');
 
-    // put the "add comment" link back in the <ul>
-    var link = f.find('li');
-    link.show().appendTo(f.prev('.list-inline'));
+    // put the "add comment" link back in the previous div
+    f.prev('div').find('.addCommentLink').show();
 
     // remove the form
     f.remove();
