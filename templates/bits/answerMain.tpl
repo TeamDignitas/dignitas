@@ -18,14 +18,14 @@
 <div class="answerFooter col-md-12 px-0">
   <div class="answer-read-only text-muted mb-2 row">
     {if $answer->verdict != Ct::VERDICT_NONE}
-      <div class="col-md-6">
-        <span class="btn btn-sm badge-secondary">
+      <div class="col-md-5 mb-1">
+        <span class="badge badge-pill badge-secondary">
           <i class="icon icon-hammer"></i>
           {$answer->getVerdictName()}
         </span>
       </div>
     {/if}
-    <div class="col-md-6 text-right">
+    <div class="col-md-7 text-right">
       {t}answer-posted-by{/t}
       {include 'bits/userLink.tpl' u=$answer->getUser()}
       {include 'bits/moment.tpl' t=$answer->createDate}

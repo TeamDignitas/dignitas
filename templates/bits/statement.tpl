@@ -82,7 +82,7 @@
 
     {$statement->goal|escape}
 
-    <div>
+    <div class="badge-list row">
       {foreach $statement->getTags() as $t}
         {include "bits/tag.tpl"}
       {/foreach}
