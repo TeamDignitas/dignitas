@@ -15,11 +15,11 @@
   </div>
 
   <div class="form-group row">
-    <label for="fieldVerdict" class="col-md-2 offset-md-4 col-form-label text-right">
+    <label for="fieldVerdict" class="col-md-6 col-sm-4 col-form-label text-right">
       {t}label-verdict{/t}
     </label>
 
-    <div class="col-md-6">
+    <div class="col-md-6 col-sm-8">
       <select
         id="fieldVerdict"
         name="verdict"

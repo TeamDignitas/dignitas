@@ -48,7 +48,7 @@
       downvotePriv=User::PRIV_DOWNVOTE_STATEMENT}
   {/if}
 
-  <div class="voteMain col-md-7 pl-0">
+  <div class="voteMain col-md-7 col-sm-10 pl-0">
     {$statusInfo=$statement->getStatusInfo()}
 
     {if isset($pendingEditReview)}
