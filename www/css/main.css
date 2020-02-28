@@ -168,7 +168,7 @@ img.pic.person-photo {
   outline: 0;
 }
 
-.statement-actions .text-muted,
+.statement-read-only .text-muted,
 .statement-actions .btn,
 .answerFooter *,
 .answer-comment a {
@@ -223,7 +223,7 @@ img.pic.person-photo {
   padding: 5px 0px;
 }
 
-.comment:first-child {
+.comment:first-of-type {
   border-top: 1px solid #ccc;
 }
 
@@ -249,10 +249,6 @@ footer {
 }
 
 /********************************* tags *********************************/
-
-.tag {
-  font-size: 120%;
-}
 
 .tagTooltip {
   cursor: help;

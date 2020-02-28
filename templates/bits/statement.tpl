@@ -48,7 +48,7 @@
       downvotePriv=User::PRIV_DOWNVOTE_STATEMENT}
   {/if}
 
-  <div class="voteMain col-md-7 pl-0">
+  <div class="voteMain col-md-7 col-sm-10 px-0">
     {$statusInfo=$statement->getStatusInfo()}
 
     {if isset($pendingEditReview)}
@@ -82,18 +82,18 @@
 
     {$statement->goal|escape}
 
-    <div>
+    <div class="statement-read-only row ml-0">
       {foreach $statement->getTags() as $t}
         {include "bits/tag.tpl"}
       {/foreach}
-    </div>
-
-    <div class="my-3 clearfix statement-actions row">
       <div class="text-muted col-md-12 text-right mb-2">
         {t}title-added-by{/t}
         {include 'bits/userLink.tpl' u=$statement->getUser()}
         {include 'bits/moment.tpl' t=$statement->createDate}
       </div>
+    </div>
+
+    <div class="clearfix statement-actions row mb-2">
       <div class="col-md-12 mt-1 text-right">
         {if $statement->hasRevisions()}
           <a href="{Router::link('statement/history')}/{$statement->id}" class="btn btn-sm btn-outline-secondary">

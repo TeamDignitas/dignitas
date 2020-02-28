@@ -4,10 +4,10 @@
 {$style="color: {$t->getColor()}; background: {$t->getBackground()};"}
 
 {strip}
-<span class="tag {if $t->tooltip}tagTooltip{/if}" title="{$t->tooltip}">
+<span class="tag mr-1 {if $t->tooltip}tagTooltip{/if}" title="{$t->tooltip}">
   <a
     href="{Router::link('tag/view')}/{$t->id}"
-    class="badge badge-default {if !$link}disabled{/if}"
+    class="badge badge-pill badge-default {if !$link}disabled{/if}"
     {if !$link} disabled tabindex="-1"{/if}
     {if $colors} style="{$style}"{/if}>
     {if $t->icon}
