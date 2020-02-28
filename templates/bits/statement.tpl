@@ -101,25 +101,37 @@
           </a>
         {/if}
 
-        {if $editLink}
-          {include "bits/editButton.tpl" obj=$statement}
-        {/if}
+    {$comments=Comment::getFor($statement)}
+    <div class="clearfix statement-actions mb-2 mt-1 text-right">
+      {if $statement->hasRevisions()}
+        <a href="{Router::link('statement/history')}/{$statement->id}" class="btn btn-sm btn-outline-secondary">
+          {t}link-show-revisions{/t}
+        </a>
+      {/if}
 
-        {if $flagBox && ($statement->isFlaggable() || $statement->isFlagged())}
-          {include "bits/flagLinks.tpl" obj=$statement class="btn btn-sm btn-outline-secondary"}
-        {/if}
+      {if $editLink}
+        {include "bits/editButton.tpl" obj=$statement}
+      {/if}
 
-        {foreach Comment::getFor($statement) as $comment}
-          {include 'bits/comment.tpl'}
-        {/foreach}
+      {if $flagBox && ($statement->isFlaggable() || $statement->isFlagged())}
+        {include "bits/flagLinks.tpl" obj=$statement class="btn btn-sm btn-outline-secondary"}
+      {/if}
 
-        {if $addComment}
-          <ul class="list-inline text-right text-muted mb-2 ml-0 pl-0">
-            {include "bits/addCommentLink.tpl" object=$statement}
-          </ul>
-        {/if}
-      </div>
+      {if empty($comments) && $addComment}
+        {include "bits/addCommentLink.tpl" object=$statement}
+      {/if}
     </div>
+
+    {if !empty($comments)}
+      {foreach $comments as $comment}
+        {include 'bits/comment.tpl'}
+      {/foreach}
+
+      <div class="clearfix statement-actions mb-2 mt-1 text-right">
+        {include "bits/addCommentLink.tpl" object=$statement}
+      </div>
+    {/if}
+
 
   </div>
 
