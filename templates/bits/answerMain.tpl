@@ -32,46 +32,38 @@
     </div>
   </div>
 
-  <ul class="list-inline text-right text-muted mb-2 ml-0 pl-0">
-    {if $answer->hasRevisions()}
-      <li class="list-inline-item pb-1 ml-1 mr-0">
+  <div class="row text-muted">
+    <div class="col-md-12 text-right mb-2 ml-0 pl-0">
+      {if $answer->hasRevisions()}
         <a href="{Router::link('answer/history')}/{$answer->id}" class="btn btn-sm btn-outline-secondary">
           {t}link-show-revisions{/t}
         </a>
-      </li>
-    {/if}
+      {/if}
 
-    {if $answer->isDeletable()}
-      <li class="list-inline-item pb-1 ml-1 mr-0">
+      {if $answer->isDeletable()}
         <a
           href="?deleteAnswerId={$answer->id}"
           class="btn btn-sm btn-outline-secondary"
           data-confirm="{t}info-confirm-delete-answer{/t}">
           {t}link-delete{/t}
         </a>
-      </li>
-    {/if}
+      {/if}
 
-    <li class="list-inline-item pb-1 ml-1 mr-0">
       {include "bits/editButton.tpl" obj=$answer class="btn btn-sm btn-outline-secondary"}
-    </li>
 
-    {if $flagBox && ($answer->isFlaggable() || $answer->isFlagged())}
-      <li class="list-inline-item pb-1 ml-1 mr-0">
+      {if $flagBox && ($answer->isFlaggable() || $answer->isFlagged())}
         {include "bits/flagLinks.tpl" obj=$answer class="btn btn-sm btn-outline-secondary"}
-      </li>
-    {/if}
+      {/if}
 
-    {if $addComment}
-      {include "bits/addCommentLink.tpl" object=$answer}
-    {/if}
-  </ul>
-</div>
+      {if $showComments}
+        {foreach Comment::getFor($answer) as $comment}
+          {include 'bits/comment.tpl'}
+        {/foreach}
+      {/if}
 
-<div class="answer-comment col-md-12 px-0 text-right">
-  {if $showComments}
-    {foreach Comment::getFor($answer) as $comment}
-      {include 'bits/comment.tpl'}
-    {/foreach}
-  {/if}
+      {if $addComment}
+        {include "bits/addCommentLink.tpl" object=$answer}
+      {/if}
+    </div>
+  </div>
 </div>
