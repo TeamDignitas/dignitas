@@ -109,15 +109,15 @@
           {include "bits/flagLinks.tpl" obj=$statement class="btn btn-sm btn-outline-secondary"}
         {/if}
 
-        {foreach Comment::getFor($statement) as $comment}
-          {include 'bits/comment.tpl'}
-        {/foreach}
+    {foreach Comment::getFor($statement) as $comment}
+      {include 'bits/comment.tpl'}
+    {/foreach}
 
         {if $addComment}
           {include "bits/addCommentLink.tpl" object=$statement}
         {/if}
       </div>
-  </div>
+    </div>
 
   </div>
 
