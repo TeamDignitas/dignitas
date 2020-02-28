@@ -34,7 +34,7 @@
 
   <ul class="list-inline text-right text-muted mb-2 ml-0 pl-0">
     {if $answer->hasRevisions()}
-      <li class="list-inline-item">
+      <li class="list-inline-item pb-1 ml-1 mr-0">
         <a href="{Router::link('answer/history')}/{$answer->id}" class="btn btn-sm btn-outline-secondary">
           {t}link-show-revisions{/t}
         </a>
@@ -42,7 +42,7 @@
     {/if}
 
     {if $answer->isDeletable()}
-      <li class="list-inline-item">
+      <li class="list-inline-item pb-1 ml-1 mr-0">
         <a
           href="?deleteAnswerId={$answer->id}"
           class="btn btn-sm btn-outline-secondary"
@@ -52,12 +52,12 @@
       </li>
     {/if}
 
-    <li class="list-inline-item">
+    <li class="list-inline-item pb-1 ml-1 mr-0">
       {include "bits/editButton.tpl" obj=$answer class="btn btn-sm btn-outline-secondary"}
     </li>
 
     {if $flagBox && ($answer->isFlaggable() || $answer->isFlagged())}
-      <li class="list-inline-item">
+      <li class="list-inline-item pb-1 ml-1 mr-0">
         {include "bits/flagLinks.tpl" obj=$answer class="btn btn-sm btn-outline-secondary"}
       </li>
     {/if}
