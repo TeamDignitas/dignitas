@@ -168,7 +168,7 @@ img.pic.person-photo {
   outline: 0;
 }
 
-.statement-actions .text-muted,
+.statement-read-only .text-muted,
 .statement-actions .btn,
 .answerFooter *,
 .answer-comment a {
