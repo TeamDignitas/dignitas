@@ -36,6 +36,30 @@
       </div>
     </div>
 
+    <fieldset>
+      <legend>{cap}{t}title-help-pages-in-category{/t}{/cap}</legend>
+
+      <table class="table table-hover mt-3">
+        <tbody id="pageContainer">
+          {foreach $cat->getPages() as $p}
+            <tr class="d-flex">
+              <td class="col-1">
+                <input type="hidden" name="pageIds[]" value="{$p->id}">
+                <label class="icon icon-move"></label>
+              </td>
+
+              <td class="col-11">
+                <a
+                  href="{Router::link('help/pageEdit')}/{$p->id}">
+                  {$p->title}
+                </a>
+              </td>
+            </tr>
+          {/foreach}
+        </tbody>
+      </table>
+    </fieldset>
+
     <div>
       <button name="saveButton" type="submit" class="btn btn-primary">
         <i class="icon icon-floppy"></i>

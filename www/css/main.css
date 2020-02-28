@@ -275,3 +275,9 @@ footer {
   /* hack: this hardcodes the glyph for icon-folder-open */
   content: '\e809';
 }
+
+/****************************** sortable JS ******************************/
+
+.icon-move {
+  cursor: pointer;
+}

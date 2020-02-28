@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-02-26 17:28+0200\n"
-"PO-Revision-Date: 2020-02-26 17:31+0200\n"
+"POT-Creation-Date: 2020-02-28 11:30+0200\n"
+"PO-Revision-Date: 2020-02-28 11:35+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -111,9 +111,10 @@ msgstr "editează răspunsul"
 
 #: templates/answer/edit.tpl:15 templates/auth/resetPassword.tpl:45
 #: templates/bits/commentForm.tpl:22 templates/domain/edit.tpl:72
-#: templates/entity/edit.tpl:194 templates/help/categoryEdit.tpl:42
-#: templates/relation/edit.tpl:25 templates/statement/edit.tpl:122
-#: templates/tag/edit.tpl:150 templates/user/edit.tpl:117
+#: templates/entity/edit.tpl:194 templates/help/categoryEdit.tpl:66
+#: templates/help/pageEdit.tpl:70 templates/relation/edit.tpl:25
+#: templates/statement/edit.tpl:122 templates/tag/edit.tpl:150
+#: templates/user/edit.tpl:117
 msgid "link-save"
 msgstr "salvează"
 
@@ -213,9 +214,9 @@ msgstr "verdict"
 
 #: templates/bits/answerEdit.tpl:45 templates/bits/commentForm.tpl:27
 #: templates/domain/edit.tpl:84 templates/entity/edit.tpl:199
-#: templates/help/categoryEdit.tpl:47 templates/relation/edit.tpl:30
-#: templates/statement/edit.tpl:127 templates/tag/edit.tpl:156
-#: templates/user/edit.tpl:122
+#: templates/help/categoryEdit.tpl:71 templates/help/pageEdit.tpl:75
+#: templates/relation/edit.tpl:30 templates/statement/edit.tpl:127
+#: templates/tag/edit.tpl:156 templates/user/edit.tpl:122
 msgid "link-cancel"
 msgstr "renunță"
 
@@ -233,8 +234,9 @@ msgid "info-confirm-delete-answer"
 msgstr "Confirmați ștergerea acestui răspuns?"
 
 #: templates/bits/answerMain.tpl:46 templates/domain/edit.tpl:94
-#: templates/entity/edit.tpl:209 templates/help/categoryEdit.tpl:57
-#: templates/statement/edit.tpl:137 templates/tag/edit.tpl:172
+#: templates/entity/edit.tpl:209 templates/help/categoryEdit.tpl:81
+#: templates/help/pageEdit.tpl:85 templates/statement/edit.tpl:137
+#: templates/tag/edit.tpl:172
 msgid "link-delete"
 msgstr "șterge"
 
@@ -745,7 +747,11 @@ msgstr "cale"
 msgid "info-help-category-path"
 msgstr "o cale care va apărea în URL-ul acestei categorii"
 
-#: templates/help/categoryEdit.tpl:55
+#: templates/help/categoryEdit.tpl:40
+msgid "title-help-pages-in-category"
+msgstr "pagini în această categorie"
+
+#: templates/help/categoryEdit.tpl:79
 msgid "info-confirm-delete-help-category"
 msgstr "Confirmați ștergerea categoriei?"
 
@@ -757,9 +763,41 @@ msgstr "categorii de ajutor"
 msgid "link-save-help-category-order"
 msgstr "salvează ordinea"
 
-#: templates/help/categoryList.tpl:37
+#: templates/help/categoryList.tpl:38
 msgid "link-add-category"
 msgstr "adaugă o categorie"
+
+#: templates/help/categoryList.tpl:44
+msgid "link-add-help-page"
+msgstr "adaugă o pagină"
+
+#: templates/help/pageEdit.tpl:3 templates/help/pageEdit.tpl:6
+msgid "title-edit-help-page"
+msgstr "editează pagina"
+
+#: templates/help/pageEdit.tpl:12
+msgid "label-title"
+msgstr "titlu"
+
+#: templates/help/pageEdit.tpl:26
+msgid "label-help-page-path"
+msgstr "cale"
+
+#: templates/help/pageEdit.tpl:34
+msgid "info-help-page-path"
+msgstr "o cale care va apărea în URL-ul acestei pagini"
+
+#: templates/help/pageEdit.tpl:40
+msgid "label-category"
+msgstr "categorie"
+
+#: templates/help/pageEdit.tpl:57
+msgid "label-contents"
+msgstr "conținut"
+
+#: templates/help/pageEdit.tpl:83
+msgid "info-confirm-delete-help-page"
+msgstr "Confirmați ștergerea paginii?"
 
 #: templates/relation/edit.tpl:3 templates/relation/edit.tpl:6
 msgid "title-edit-relation"
@@ -1840,25 +1878,57 @@ msgstr "Am șters categoria."
 msgid "info-cannot-delete-help-category"
 msgstr "Nu pot șterge categoria deoarece conține pagini de ajutor."
 
-#: routes/help/categoryEdit.php:39
+#: routes/help/categoryEdit.php:47
 msgid "info-help-category-saved"
 msgstr "Am salvat categoria."
 
-#: routes/help/categoryEdit.php:58
+#: routes/help/categoryEdit.php:67
 msgid "info-must-enter-help-category-name"
 msgstr "Vă rugăm să introduceți un nume de categorie."
 
-#: routes/help/categoryEdit.php:62
+#: routes/help/categoryEdit.php:71
 msgid "info-must-enter-help-category-path"
 msgstr "Vă rugăm să introduceți o cale."
 
-#: routes/help/categoryEdit.php:67
+#: routes/help/categoryEdit.php:75 routes/help/pageEdit.php:62
+msgid "info-help-path-syntax"
+msgstr "Calea poate conține doar litere mici ale alfabetului latin și cratime."
+
+#: routes/help/categoryEdit.php:80
 msgid "info-help-category-path-taken"
 msgstr "Această cale este deja folosită."
 
 #: routes/help/categoryList.php:16
 msgid "info-help-category-order-updated"
 msgstr "Am salvat ordinea categoriilor."
+
+#: routes/help/pageEdit.php:17
+msgid "info-help-page-deleted"
+msgstr "Am șters pagina."
+
+#: routes/help/pageEdit.php:33
+msgid "info-help-page-saved"
+msgstr "Am salvat pagina."
+
+#: routes/help/pageEdit.php:50
+msgid "info-must-select-help-page-category"
+msgstr "Vă rugăm să selectați o categorie."
+
+#: routes/help/pageEdit.php:54
+msgid "info-must-enter-help-page-title"
+msgstr "Vă rugăm să introduceți un titlu."
+
+#: routes/help/pageEdit.php:58
+msgid "info-must-enter-help-page-path"
+msgstr "Vă rugăm să introduceți o cale."
+
+#: routes/help/pageEdit.php:67
+msgid "info-help-page-path-taken"
+msgstr "Această cale este deja folosită."
+
+#: routes/help/pageEdit.php:71
+msgid "info-must-enter-help-page-contents"
+msgstr "Vă rugăm să introduceți conținutul."
 
 #: routes/helpers/changeLocale.php:7
 msgid "info-language-changed"

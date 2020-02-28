@@ -14,7 +14,7 @@ if ($id) {
 }
 
 // categories can be deleted if no links use them
-$numPages = 0; // TODO
+$numPages = HelpPage::count_by_categoryId($cat->id);
 $canDelete = $id && !$numPages;
 
 if ($deleteButton) {
@@ -36,6 +36,14 @@ if ($saveButton) {
   if (empty($errors)) {
     $cat->save();
 
+    $ids = Request::getArray('pageIds');
+    $rank = 0;
+    foreach ($ids as $id) {
+      $p = HelpPage::get_by_id($id);
+      $p->rank = ++$rank;
+      $p->save();
+    }
+
     FlashMessage::add(_('info-help-category-saved'), 'success');
     Util::redirect(Router::link('help/categoryList'));
   } else {
@@ -47,6 +55,7 @@ Smart::assign([
   'cat' => $cat,
   'canDelete' => $canDelete,
 ]);
+Smart::addResources('sortable');
 Smart::display('help/categoryEdit.tpl');
 
 /*************************************************************************/
@@ -60,6 +69,10 @@ function validate($cat) {
 
   if (!$cat->path) {
     $errors['path'][] = _('info-must-enter-help-category-path');
+  }
+
+  if (!preg_match('/^[-a-z0-9]*$/', $cat->path)) {
+    $errors['path'][] = _('info-help-path-syntax');
   }
 
   $existing = HelpCategory::get_by_path($cat->path);

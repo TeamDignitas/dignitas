@@ -135,6 +135,10 @@ class Router {
       'en_US.utf8' => 'edit-help-category',
       'ro_RO.utf8' => 'editeaza-categorie-ajutor',
     ],
+    'help/pageEdit' => [
+      'en_US.utf8' => 'edit-help-page',
+      'ro_RO.utf8' => 'editeaza-pagina-ajutor',
+    ],
 
     // helpers
     'helpers/changeLocale' => [
@@ -232,6 +236,7 @@ class Router {
     'entity/search' => [ 'term' ],
     'entity/view' => [ 'id' ],
     'help/categoryEdit' => [ 'id' ],
+    'help/pageEdit' => [ 'id' ],
     'relation/edit' => [ 'id', ],
     'review/view' => [ 'reason', 'reviewId', ],
     'statement/edit' => [ 'id' ],

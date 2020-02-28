@@ -8,4 +8,11 @@ class HelpCategory extends Proto {
       ->find_many();
   }
 
+  function getPages() {
+    return Model::factory('HelpPage')
+      ->where('categoryId', $this->id)
+      ->order_by_asc('rank')
+      ->find_many();
+  }
+
 }
