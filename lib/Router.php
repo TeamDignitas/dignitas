@@ -127,13 +127,13 @@ class Router {
     ],
 
     // help pages and categories
-    'help/categoryList' => [
-      'en_US.utf8' => 'help-categories',
-      'ro_RO.utf8' => 'categorii-ajutor',
-    ],
     'help/categoryEdit' => [
       'en_US.utf8' => 'edit-help-category',
       'ro_RO.utf8' => 'editeaza-categorie-ajutor',
+    ],
+    'help/categoryList' => [
+      'en_US.utf8' => 'help-categories',
+      'ro_RO.utf8' => 'categorii-ajutor',
     ],
     'help/index' => [
       'en_US.utf8' => 'help',
@@ -142,6 +142,10 @@ class Router {
     'help/pageEdit' => [
       'en_US.utf8' => 'edit-help-page',
       'ro_RO.utf8' => 'editeaza-pagina-ajutor',
+    ],
+    'help/pageHistory' => [
+      'en_US.utf8' => 'help-history',
+      'ro_RO.utf8' => 'istoric-ajutor',
     ],
 
     // helpers
@@ -242,6 +246,7 @@ class Router {
     'help/categoryEdit' => [ 'id' ],
     'help/index' => [ 'path' ],
     'help/pageEdit' => [ 'id' ],
+    'help/pageHistory' => [ 'id' ],
     'relation/edit' => [ 'id', ],
     'review/view' => [ 'reason', 'reviewId', ],
     'statement/edit' => [ 'id' ],

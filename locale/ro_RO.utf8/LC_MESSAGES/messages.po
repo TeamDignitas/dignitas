@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-02-28 13:12+0200\n"
-"PO-Revision-Date: 2020-02-28 13:16+0200\n"
+"POT-Creation-Date: 2020-02-28 16:06+0200\n"
+"PO-Revision-Date: 2020-02-28 16:08+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -225,7 +225,7 @@ msgid "answer-posted-by"
 msgstr "publicat de"
 
 #: templates/bits/answerMain.tpl:39 templates/bits/entity.tpl:110
-#: templates/bits/statement.tpl:100
+#: templates/bits/statement.tpl:100 templates/help/pageView.tpl:34
 msgid "link-show-revisions"
 msgstr "arată versiunile"
 
@@ -264,7 +264,8 @@ msgstr[1] "%1 linii identice omise"
 msgstr[2] "%1 de linii identice omise"
 
 #: templates/bits/editButton.tpl:15 templates/bits/reviewActions.tpl:25
-#: templates/domain/list.tpl:34 templates/tag/view.tpl:14
+#: templates/domain/list.tpl:34 templates/help/categoryView.tpl:36
+#: templates/help/pageView.tpl:40 templates/tag/view.tpl:14
 #: templates/user/view.tpl:49
 msgid "link-edit"
 msgstr "editează"
@@ -438,6 +439,10 @@ msgstr "raportează autorul"
 msgid "link-flag-comment"
 msgstr "raportează comentariul"
 
+#: templates/bits/history.tpl:17
+msgid "link-go-back"
+msgstr "înapoi"
+
 #: templates/bits/inlineAttachment.tpl:1
 msgid "info-read-guide-inline-attachment"
 msgstr ""
@@ -456,9 +461,9 @@ msgid "label-toggle-menu"
 msgstr "arată/ascunde meniul"
 
 #: templates/bits/navmenu.tpl:57 templates/help/categoryView.tpl:3
-#: templates/help/categoryView.tpl:7 templates/help/index.tpl:3
+#: templates/help/categoryView.tpl:13 templates/help/index.tpl:3
 #: templates/help/index.tpl:6 templates/help/pageView.tpl:3
-#: templates/help/pageView.tpl:7
+#: templates/help/pageView.tpl:13
 msgid "help-center"
 msgstr "ajutor"
 
@@ -782,11 +787,11 @@ msgstr "adaugă o pagină"
 msgid "title-edit-help-page"
 msgstr "editează pagina"
 
-#: templates/help/pageEdit.tpl:12
+#: templates/help/pageEdit.tpl:12 lib/model/RevisionHelpPage.php:16
 msgid "label-title"
 msgstr "titlu"
 
-#: templates/help/pageEdit.tpl:26
+#: templates/help/pageEdit.tpl:26 lib/model/RevisionHelpPage.php:20
 msgid "label-help-page-path"
 msgstr "cale"
 
@@ -794,7 +799,7 @@ msgstr "cale"
 msgid "info-help-page-path"
 msgstr "o cale care va apărea în URL-ul acestei pagini"
 
-#: templates/help/pageEdit.tpl:40
+#: templates/help/pageEdit.tpl:40 lib/model/RevisionHelpPage.php:24
 msgid "label-category"
 msgstr "categorie"
 
@@ -1367,7 +1372,7 @@ msgstr "alt-motiv"
 msgid "queue-url-not-needed"
 msgstr "nenecesare"
 
-#: lib/model/RevisionAnswer.php:13
+#: lib/model/RevisionAnswer.php:13 lib/model/RevisionHelpPage.php:14
 msgid "title-changes-contents"
 msgstr "modificări la conținut"
 
@@ -1941,6 +1946,14 @@ msgstr "Această cale este deja folosită."
 #: routes/help/pageEdit.php:71
 msgid "info-must-enter-help-page-contents"
 msgstr "Vă rugăm să introduceți conținutul."
+
+#: routes/help/pageHistory.php:9
+msgid "info-no-such-help-page"
+msgstr "Pagina de ajutor cerută nu există."
+
+#: routes/help/pageHistory.php:13
+msgid "info-help-page-history"
+msgstr "Istoricul paginii de ajutor"
 
 #: routes/helpers/changeLocale.php:7
 msgid "info-language-changed"

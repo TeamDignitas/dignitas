@@ -24,6 +24,23 @@
       <h3>{$page->title}</h3>
 
       {$page->contents|md}
+
+
+      {if User::isModerator()}
+        <div class="mt-2">
+          <a
+            class="btn btn-sm btn-outline-secondary"
+            href="{Router::link('help/pageHistory')}/{$page->id}">
+            {t}link-show-revisions{/t}
+          </a>
+          <a
+            class="btn btn-sm btn-outline-secondary"
+            href="{Router::link('help/pageEdit')}/{$page->id}">
+            <i class="icon icon-edit"></i>
+            {t}link-edit{/t}
+          </a>
+        </div>
+      {/if}
     </div>
 
     <div class="col-4">

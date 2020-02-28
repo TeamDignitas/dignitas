@@ -26,6 +26,17 @@
           <a href="{Router::helpLink($p)}">{$p->title}</a>
         </div>
       {/foreach}
+
+      {if User::isModerator()}
+        <div class="mt-2">
+          <a
+            class="btn btn-sm btn-outline-secondary"
+            href="{Router::link('help/categoryEdit')}/{$page->id}">
+            <i class="icon icon-edit"></i>
+            {t}link-edit{/t}
+          </a>
+        </div>
+      {/if}
     </div>
 
     <div class="col-4">
