@@ -17,12 +17,12 @@
   </div>
 
   <div class="col-md-12 pl-0">
-    <button type="submit" class="btn btn-primary commentSaveButton btn-sm">
+    <button type="submit" class="btn btn-outline-primary commentSaveButton btn-sm">
       <i class="icon icon-floppy"></i>
       {t}link-save{/t}
     </button>
 
-    <button type="button" class="btn btn-link commentCancelButton">
+    <button type="button" class="btn btn-outline-secondary commentCancelButton btn-sm">
       <i class="icon icon-cancel"></i>
       {t}link-cancel{/t}
     </button>
