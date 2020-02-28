@@ -223,7 +223,7 @@ img.pic.person-photo {
   padding: 5px 0px;
 }
 
-.comment:first-child {
+.comment:first-of-type {
   border-top: 1px solid #ccc;
 }
 
