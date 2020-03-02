@@ -96,7 +96,7 @@
     {$comments=Comment::getFor($statement)}
     <div class="clearfix statement-actions mb-2 mt-1 text-right">
       {if $statement->hasRevisions()}
-        <a href="{Router::link('statement/history')}/{$statement->id}" class="btn btn-sm btn-outline-secondary">
+        <a href="{Router::link('statement/history')}/{$statement->id}" class="btn btn-sm btn-outline-secondary mt-1">
           {t}link-show-revisions{/t}
         </a>
       {/if}
@@ -106,7 +106,7 @@
       {/if}
 
       {if $flagBox && ($statement->isFlaggable() || $statement->isFlagged())}
-        {include "bits/flagLinks.tpl" obj=$statement class="btn btn-sm btn-outline-secondary"}
+        {include "bits/flagLinks.tpl" obj=$statement class="btn btn-sm btn-outline-secondary mt-1"}
       {/if}
 
       {if empty($comments) && $addComment}
@@ -115,9 +115,11 @@
     </div>
 
     {if !empty($comments)}
-      {foreach $comments as $comment}
-        {include 'bits/comment.tpl'}
-      {/foreach}
+      <div class="comment-list">
+        {foreach $comments as $comment}
+          {include 'bits/comment.tpl'}
+        {/foreach}
+      </div>
 
       <div class="clearfix statement-actions mb-2 mt-1 text-right">
         {include "bits/addCommentLink.tpl" object=$statement}
@@ -140,10 +142,10 @@
           spanClass=""
           imgClass="pic person-photo rounded-circle img-fluid"}
       </span>
-      <h4 class="card-body mx-auto">
-        {t}label-verdict{/t}:
-        {$statement->getVerdictName()}
-      </h4>
+      <h5 class="card-body mx-auto text-center">
+        <span class="text-capitalize">{t}label-verdict{/t}:</span>
+        <span class="text-uppercase">{$statement->getVerdictName()}</span>
+      </h5>
     </aside>
   </div>
 

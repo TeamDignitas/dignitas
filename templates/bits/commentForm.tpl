@@ -2,7 +2,7 @@
   <input type="hidden" name="objectType">
   <input type="hidden" name="objectId">
 
-  <div class="form-group">
+  <div class="form-group mb-2">
     <textarea
       name="contents"
       class="form-control"
@@ -16,13 +16,15 @@
     {include "bits/markdownHelp.tpl"}
   </div>
 
-  <button type="submit" class="btn btn-primary commentSaveButton btn-sm">
-    <i class="icon icon-floppy"></i>
-    {t}link-save{/t}
-  </button>
+  <div class="text-right answer-buttons mb-2">
+    <button type="submit" class="btn btn-sm btn-outline-primary commentSaveButton">
+      <i class="icon icon-floppy"></i>
+      {t}link-save{/t}
+    </button>
 
-  <button type="button" class="btn btn-link commentCancelButton">
-    <i class="icon icon-cancel"></i>
-    {t}link-cancel{/t}
-  </button>
+    <button type="button" class="btn btn-sm btn-outline-secondary commentCancelButton">
+      <i class="icon icon-cancel"></i>
+      {t}link-cancel{/t}
+    </button>
+  </div>
 </form>

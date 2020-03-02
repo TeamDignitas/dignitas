@@ -168,10 +168,13 @@ img.pic.person-photo {
   outline: 0;
 }
 
-.statement-read-only .text-muted,
 .statement-actions .btn,
+.statement-read-only .text-muted,
 .answerFooter *,
-.answer-comment a {
+.answerFooter .btn,
+.commentSaveButton.btn-sm,
+.commentCancelButton.btn-sm,
+.answer-buttons .btn-sm {
   font-size: 0.75rem;
 }
 
@@ -223,7 +226,7 @@ img.pic.person-photo {
   padding: 5px 0px;
 }
 
-.comment:first-of-type {
+.comment-list .comment:first-child {
   border-top: 1px solid #ccc;
 }
 

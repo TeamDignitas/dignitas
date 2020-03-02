@@ -35,12 +35,12 @@
     </div>
   </div>
 
-  <div class="text-right">
-    <button name="saveButton" type="submit" class="btn btn-outline-primary">
+  <div class="text-right answer-buttons">
+    <button name="saveButton" type="submit" class="btn btn-sm btn-outline-primary">
       <i class="icon icon-floppy"></i>
       {$buttonText}
     </button>
-    <a href="{$referrer}" class="btn btn-outline-secondary">
+    <a href="{$referrer}" class="btn btn-sm btn-outline-secondary">
       <i class="icon icon-cancel"></i>
       {t}link-cancel{/t}
     </a>
