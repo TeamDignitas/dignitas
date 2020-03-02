@@ -168,10 +168,12 @@ img.pic.person-photo {
   outline: 0;
 }
 
-.statement-read-only .text-muted,
 .statement-actions .btn,
 .answerFooter *,
-.answer-comment a {
+.answerFooter .btn,
+.commentSaveButton.btn-sm,
+.commentCancelButton.btn-sm,
+.answer-buttons .btn-sm {
   font-size: 0.75rem;
 }
 

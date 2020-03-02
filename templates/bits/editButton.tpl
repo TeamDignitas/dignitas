@@ -1,5 +1,5 @@
 {* edit / suggest edit button for objects that admit pending edits *}
-{$class=$class|default:"btn btn-light"}
+{$class=$class|default:"btn"}
 
 {$editable=$obj->isEditable()}
 {$suggestable=$obj->acceptsSuggestions()}
