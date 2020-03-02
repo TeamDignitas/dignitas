@@ -35,7 +35,7 @@
   {$comments=Comment::getFor($answer)}
   <div class="text-muted text-right mb-2 ml-0 pl-0">
     {if $answer->hasRevisions()}
-      <a href="{Router::link('answer/history')}/{$answer->id}" class="btn btn-sm btn-outline-secondary">
+      <a href="{Router::link('answer/history')}/{$answer->id}" class="btn btn-sm btn-outline-secondary mt-1">
         {t}link-show-revisions{/t}
       </a>
     {/if}
@@ -43,16 +43,16 @@
     {if $answer->isDeletable()}
       <a
         href="?deleteAnswerId={$answer->id}"
-        class="btn btn-sm btn-outline-secondary"
+        class="btn btn-sm btn-outline-secondary mt-1"
         data-confirm="{t}info-confirm-delete-answer{/t}">
         {t}link-delete{/t}
       </a>
     {/if}
 
-    {include "bits/editButton.tpl" obj=$answer class="btn btn-sm btn-outline-secondary"}
+    {include "bits/editButton.tpl" obj=$answer class="btn btn-sm btn-outline-secondary mt-1"}
 
     {if $flagBox && ($answer->isFlaggable() || $answer->isFlagged())}
-      {include "bits/flagLinks.tpl" obj=$answer class="btn btn-sm btn-outline-secondary"}
+      {include "bits/flagLinks.tpl" obj=$answer class="btn btn-sm btn-outline-secondary mt-1"}
     {/if}
 
     {if $addComment && empty($comments)}

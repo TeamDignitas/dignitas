@@ -96,7 +96,7 @@
     {$comments=Comment::getFor($statement)}
     <div class="clearfix statement-actions mb-2 mt-1 text-right">
       {if $statement->hasRevisions()}
-        <a href="{Router::link('statement/history')}/{$statement->id}" class="btn btn-sm btn-outline-secondary">
+        <a href="{Router::link('statement/history')}/{$statement->id}" class="btn btn-sm btn-outline-secondary mt-1">
           {t}link-show-revisions{/t}
         </a>
       {/if}
@@ -106,7 +106,7 @@
       {/if}
 
       {if $flagBox && ($statement->isFlaggable() || $statement->isFlagged())}
-        {include "bits/flagLinks.tpl" obj=$statement class="btn btn-sm btn-outline-secondary"}
+        {include "bits/flagLinks.tpl" obj=$statement class="btn btn-sm btn-outline-secondary mt-1"}
       {/if}
 
       {if empty($comments) && $addComment}

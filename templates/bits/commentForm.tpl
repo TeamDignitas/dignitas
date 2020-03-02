@@ -16,7 +16,7 @@
     {include "bits/markdownHelp.tpl"}
   </div>
 
-  <div class="text-right answer-buttons">
+  <div class="text-right answer-buttons mb-2">
     <button type="submit" class="btn btn-sm btn-outline-primary commentSaveButton">
       <i class="icon icon-floppy"></i>
       {t}link-save{/t}
