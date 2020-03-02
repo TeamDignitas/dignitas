@@ -142,10 +142,10 @@
           spanClass=""
           imgClass="pic person-photo rounded-circle img-fluid"}
       </span>
-      <h4 class="card-body mx-auto">
-        {t}label-verdict{/t}:
-        {$statement->getVerdictName()}
-      </h4>
+      <h5 class="card-body mx-auto text-center">
+        <span class="text-capitalize">{t}label-verdict{/t}:</span>
+        <span class="text-uppercase">{$statement->getVerdictName()}</span>
+      </h5>
     </aside>
   </div>
 
