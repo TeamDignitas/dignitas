@@ -169,6 +169,7 @@ img.pic.person-photo {
 }
 
 .statement-actions .btn,
+.statement-read-only .text-muted,
 .answerFooter *,
 .answerFooter .btn,
 .commentSaveButton.btn-sm,
