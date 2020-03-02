@@ -115,9 +115,11 @@
     </div>
 
     {if !empty($comments)}
-      {foreach $comments as $comment}
-        {include 'bits/comment.tpl'}
-      {/foreach}
+      <div class="comment-list">
+        {foreach $comments as $comment}
+          {include 'bits/comment.tpl'}
+        {/foreach}
+      </div>
 
       <div class="clearfix statement-actions mb-2 mt-1 text-right">
         {include "bits/addCommentLink.tpl" object=$statement}

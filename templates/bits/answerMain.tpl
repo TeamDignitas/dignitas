@@ -62,9 +62,11 @@
 
   {if !empty($comments)}
     {if $showComments}
-      {foreach $comments as $comment}
-        {include 'bits/comment.tpl'}
-      {/foreach}
+      <div class="comment-list">
+        {foreach $comments as $comment}
+          {include 'bits/comment.tpl'}
+        {/foreach}
+      </div>
     {/if}
 
     {if $addComment}

@@ -225,7 +225,7 @@ img.pic.person-photo {
   padding: 5px 0px;
 }
 
-.comment:first-of-type {
+.comment-list .comment:first-child {
   border-top: 1px solid #ccc;
 }
 
