@@ -109,6 +109,8 @@
         {include "bits/flagLinks.tpl" obj=$statement class="btn btn-sm btn-outline-secondary mt-1"}
       {/if}
 
+      {* when there are no comments, the add comment button sits on the same
+         row as the other buttons *}
       {if empty($comments) && $addComment}
         {include "bits/addCommentLink.tpl" object=$statement}
       {/if}
@@ -121,9 +123,12 @@
         {/foreach}
       </div>
 
-      <div class="clearfix statement-actions mb-2 mt-1 text-right">
-        {include "bits/addCommentLink.tpl" object=$statement}
-      </div>
+      {* when there are comments, the add comment button sits on a separate row *}
+      {if $addComment}
+        <div class="clearfix statement-actions mb-2 mt-1 text-right">
+          {include "bits/addCommentLink.tpl" object=$statement}
+        </div>
+      {/if}
     {/if}
 
 

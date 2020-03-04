@@ -61,13 +61,11 @@
   </div>
 
   {if !empty($comments)}
-    {if $showComments}
-      <div class="comment-list">
-        {foreach $comments as $comment}
-          {include 'bits/comment.tpl'}
-        {/foreach}
-      </div>
-    {/if}
+    <div class="comment-list">
+      {foreach $comments as $comment}
+        {include 'bits/comment.tpl'}
+      {/foreach}
+    </div>
 
     {if $addComment}
       <div class="text-muted text-right mb-2 ml-0 pl-0">

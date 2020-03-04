@@ -73,8 +73,7 @@
           {include "bits/answer.tpl"
             answer=$parent
             flagBox=false
-            voteBox=false
-            showComments=false}
+            voteBox=false}
         </div>
 
         <h3>{cap}{t}title-pertaining-to-statement{/t}{/cap}</h3>

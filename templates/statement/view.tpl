@@ -3,8 +3,9 @@
 {block "title"}{cap}{$statement->summary|escape}{/cap}{/block}
 
 {block "content"}
-  {$addComment=User::canComment($statement)}
-  {include "bits/statement.tpl" editLink=true}
+  {include "bits/statement.tpl"
+    editLink=true
+    addComment=User::canComment($statement)}
 
   {if count($answers)}
     <div class="row">
@@ -16,7 +17,9 @@
     </div>
 
     {foreach $answers as $answer}
-      {include "bits/answer.tpl" highlighted=($answer->id == $answerId)}
+      {include "bits/answer.tpl"
+        highlighted=($answer->id == $answerId)
+        addComment=User::canComment($answer)}
     {/foreach}
   {/if}
 
