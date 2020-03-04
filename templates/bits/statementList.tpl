@@ -2,7 +2,7 @@
 {$addedBy=$addedBy|default:true}
 
 {foreach $statements as $s}
-  <div class="statement clearfix">
+  <div class="statement col-md-12">
     {$entity=$s->getEntity()}
     {include "bits/image.tpl"
       obj=$entity

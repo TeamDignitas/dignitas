@@ -1,5 +1,6 @@
 body {
   overflow-x: hidden; /* hide the sliding menus */
+  font-family: 'Open Sans', Arial !important;
 }
 
 body.waiting * {
@@ -160,11 +161,17 @@ blockquote {
 }
 
 /******************************** statement ********************************/
+.statement-title {
+  font-size: 2.3rem;
+  font-weight: 700;
+}
+
 .title-divider {
   border-color: #999;
 }
 
-img.pic.person-photo {
+img.pic.person-photo,
+.entity-profile img {
   outline: 0;
 }
 
@@ -174,7 +181,8 @@ img.pic.person-photo {
 .answerFooter .btn,
 .commentSaveButton.btn-sm,
 .commentCancelButton.btn-sm,
-.answer-buttons .btn-sm {
+.answer-buttons .btn-sm,
+.entity-actions a {
   font-size: 0.75rem;
 }
 
@@ -207,13 +215,14 @@ img.pic.person-photo {
   background: #b3f5b7;
 }
 
-/******************************** answers ********************************/
+/******************************** answers, entity statements ********************************/
 
 .answer {
   padding-top: 10px;
 }
 
-.answer-label {
+.answer-label,
+.statement-list h6 {
   border-bottom: 1px solid #999;
 }
 
