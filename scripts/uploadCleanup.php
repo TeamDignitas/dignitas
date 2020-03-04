@@ -26,6 +26,7 @@ const FULL_SIZE_PATTERN =
 // What class to load for a given subdirectory. Inverse of UploadTrait::getFileSubdirectory().
 const OBJECT_MAP = [
   'attachment' => 'Attachment',
+  'domain' => 'Domain',
   'entity' => 'Entity',
   'user' => 'User',
 ];
