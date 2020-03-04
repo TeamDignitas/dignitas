@@ -16,7 +16,7 @@
         [{$statusInfo['status']}]
       {/if}
     </h3>
-    <div class="font-italic text-muted pl-4">
+    <div class="font-italic text-muted pl-2">
       {$aliases=$entity->getAliases()}
       {if count($aliases)}
         <span class="text-capitalize">{t}title-alias{/t}:
@@ -47,7 +47,7 @@
     {/if}
 
     <h6 class="font-weight-bold text-uppercase mt-5">Relatii</h6>
-    <ul class="relations">
+    <ul class="relations small">
       {foreach $entity->getRelations() as $r}
         <li>
           {include "bits/relation.tpl" fromEntity=$entity}
@@ -62,12 +62,12 @@
 
     {if $entity->profile}
       <h6 class="font-weight-bold text-uppercase mt-4">{t}title-profile{/t}</h6>
-      <div class="pl-4">
+      <div class="pl-4 small">
         {$entity->profile|md}
       </div>
     {/if}
 
-    <div class="entity-links">
+    <div class="entity-links small">
       {$links=$entity->getLinks()}
       {if count($links)}
         <h6 class="font-weight-bold text-uppercase">{t}title-entity-links{/t}</h6>
