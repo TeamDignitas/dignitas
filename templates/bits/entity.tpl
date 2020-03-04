@@ -35,7 +35,18 @@
       </div>
     {/if}
 
-    <h6 class="mt-4 font-weight-bold text-uppercase">Relatii</h6>
+    {$aliases=$entity->getAliases()}
+    {if count($aliases)}
+      <h6 class="font-weight-bold text-uppercase mt-4">{t}title-alias{/t}</h6>
+
+      <ul class="list-unstyled">
+        {foreach $aliases as $a}
+          <li>{$a->name|escape}
+        {/foreach}
+      </ul>
+    {/if}
+
+    <h6 class="font-weight-bold text-uppercase">Relatii</h6>
     <ul class="relations">
       {foreach $entity->getRelations() as $r}
         <li>
@@ -47,17 +58,6 @@
     {if $entity->type == Entity::TYPE_PERSON}
       <h6 class="font-weight-bold text-uppercase">{t}title-loyalty{/t}</h6>
       {include "bits/loyalty.tpl" data=$entity->getLoyalty()}
-    {/if}
-
-    {$aliases=$entity->getAliases()}
-    {if count($aliases)}
-      <h6 class="font-weight-bold text-uppercase">{t}title-alias{/t}</h6>
-
-      <ul class="list-unstyled">
-        {foreach $aliases as $a}
-          <li>{$a->name|escape}
-        {/foreach}
-      </ul>
     {/if}
 
     {if $entity->profile}
