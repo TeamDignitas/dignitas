@@ -107,6 +107,7 @@ class Answer extends Proto {
     // TODO: not deletable if accepted
     return
       $this->status == Ct::STATUS_ACTIVE &&
+      !$this->proof &&                           // not yet accepted as proof
       (User::may(User::PRIV_DELETE_ANSWER) ||    // can delete any answer
        $this->userId == User::getActiveId());    // can always delete user's own answers
   }
