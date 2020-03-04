@@ -103,6 +103,10 @@ trait PendingEditTrait {
    * and redirects back to the referrer.
    */
   function enforceEditPrivileges() {
+    if (!User::getActive()) {
+      Util::redirectToLogin();
+    }
+
     if ($this->acceptsSuggestions()) {
       return;
     }
