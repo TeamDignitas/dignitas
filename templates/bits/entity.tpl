@@ -16,7 +16,18 @@
         [{$statusInfo['status']}]
       {/if}
     </h3>
-    <span class="font-italic text-muted">{$entity->getTypeName()}</span>
+    <div class="font-italic text-muted pl-4">
+      {$aliases=$entity->getAliases()}
+      {if count($aliases)}
+        <span class="text-capitalize">{t}title-alias{/t}:
+          <ul class="d-inline list-inline">
+            {foreach $aliases as $a}
+              <li class="list-inline-item">{$a->name|escape}
+            {/foreach}
+          </ul>
+        </span>
+      {/if}
+    </div>
 
     {if $statusInfo}
       <div class="alert {$statusInfo['cssClass']} overflow-hidden">
@@ -35,18 +46,7 @@
       </div>
     {/if}
 
-    {$aliases=$entity->getAliases()}
-    {if count($aliases)}
-      <h6 class="font-weight-bold text-uppercase mt-4">{t}title-alias{/t}</h6>
-
-      <ul class="list-unstyled">
-        {foreach $aliases as $a}
-          <li>{$a->name|escape}
-        {/foreach}
-      </ul>
-    {/if}
-
-    <h6 class="font-weight-bold text-uppercase">Relatii</h6>
+    <h6 class="font-weight-bold text-uppercase mt-5">Relatii</h6>
     <ul class="relations">
       {foreach $entity->getRelations() as $r}
         <li>
