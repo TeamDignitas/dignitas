@@ -1,5 +1,5 @@
 {strip}
-<div class="pl-4">
+<div>
 
   <div class="loyaltyWidget" data-toggle="popover">
     {foreach $data as $rec}

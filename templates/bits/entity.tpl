@@ -10,12 +10,12 @@
   </div>
 
   <div class="col-md-9 mt-2">
-    <h3 class="font-weight-bold">
+    <h2 class="font-weight-bold mb-0">
       {$entity->name|escape}
       {if $statusInfo}
         [{$statusInfo['status']}]
       {/if}
-    </h3>
+    </h2>
     <div class="font-italic text-muted pl-2">
       {$aliases=$entity->getAliases()}
       {if count($aliases)}
@@ -46,7 +46,7 @@
       </div>
     {/if}
 
-    <h6 class="font-weight-bold text-uppercase mt-5">Relatii</h6>
+    <h6 class="font-weight-bold text-capitalize mt-5">Relatii</h6>
     <ul class="relations small">
       {foreach $entity->getRelations() as $r}
         <li>
@@ -56,13 +56,13 @@
     </ul>
 
     {if $entity->type == Entity::TYPE_PERSON}
-      <h6 class="font-weight-bold text-uppercase">{t}title-loyalty{/t}</h6>
+      <h6 class="font-weight-bold text-capitalize">{t}title-loyalty{/t}</h6>
       {include "bits/loyalty.tpl" data=$entity->getLoyalty()}
     {/if}
 
     {if $entity->profile}
-      <h6 class="font-weight-bold text-uppercase mt-4">{t}title-profile{/t}</h6>
-      <div class="pl-4 small">
+      <h6 class="font-weight-bold text-capitalize mt-4">{t}title-profile{/t}</h6>
+      <div class=" small">
         {$entity->profile|md}
       </div>
     {/if}
@@ -70,9 +70,9 @@
     <div class="entity-links small">
       {$links=$entity->getLinks()}
       {if count($links)}
-        <h6 class="font-weight-bold text-uppercase">{t}title-entity-links{/t}</h6>
+        <h6 class="font-weight-bold text-capitalize">{t}title-entity-links{/t}</h6>
 
-        <ul id="links" class="list-inline list-inline-bullet pl-4">
+        <ul id="links" class="list-inline list-inline-bullet">
           {foreach $links as $l}
             <li class="list-inline-item">
               {include "bits/link.tpl"}
