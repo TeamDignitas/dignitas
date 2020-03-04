@@ -103,7 +103,7 @@
       {/if}
     </div>
 
-    <div class="entity-actions">
+    <div class="entity-actions mb-3">
       {include "bits/editButton.tpl" obj=$entity}
 
       {if $flagBox && ($entity->isFlaggable() || $entity->isFlagged())}
