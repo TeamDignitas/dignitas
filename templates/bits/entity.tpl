@@ -107,11 +107,11 @@
       {include "bits/editButton.tpl" obj=$entity}
 
       {if $flagBox && ($entity->isFlaggable() || $entity->isFlagged())}
-        {include "bits/flagLinks.tpl" obj=$entity class="btn btn-link text-muted"}
+        {include "bits/flagLinks.tpl" obj=$entity class="btn btn-sm btn-outline-secondary mt-1"}
       {/if}
 
       {if $entity->hasRevisions()}
-        <a href="{Router::link('entity/history')}/{$entity->id}" class="btn btn-sm btn-link">
+        <a href="{Router::link('entity/history')}/{$entity->id}" class="btn btn-sm btn-outline-secondary mt-1">
           {t}link-show-revisions{/t}
         </a>
       {/if}

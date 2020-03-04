@@ -181,7 +181,8 @@ img.pic.person-photo,
 .answerFooter .btn,
 .commentSaveButton.btn-sm,
 .commentCancelButton.btn-sm,
-.answer-buttons .btn-sm {
+.answer-buttons .btn-sm,
+.entity-actions a {
   font-size: 0.75rem;
 }
 
