@@ -61,7 +61,7 @@
     {/if}
 
     {if $entity->profile}
-      <h6 class="font-weight-bold text-uppercase">{t}title-profile{/t}</h6>
+      <h6 class="font-weight-bold text-uppercase mt-4">{t}title-profile{/t}</h6>
       <div>
         {$entity->profile|md}
       </div>
@@ -82,7 +82,7 @@
       {/if}
     </div>
 
-    <div class="tags">
+    <div class="tags mb-3">
       {foreach $entity->getTags() as $t}
         {include "bits/tag.tpl"}
       {/foreach}
