@@ -30,5 +30,5 @@ foreach ($reviews as $r) {
     printf("  for unknown object type %d, #%d\n", $r->objectType, $r->objectId);
   }
 
-  $r->resolveStale();
+  $r->resolveUncommon(Review::STATUS_STALE);
 }

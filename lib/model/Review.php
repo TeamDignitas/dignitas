@@ -10,6 +10,7 @@ class Review extends Proto {
   const STATUS_KEEP = 1;
   const STATUS_REMOVE = 2;
   const STATUS_STALE = 3; // closed due to lack of activity
+  const STATUS_OBJECT_GONE = 4; // closed because a user deleted the underlying object
 
   const ACTION_CLOSE = 1;
   const ACTION_DELETE = 2;
@@ -277,6 +278,11 @@ class Review extends Proto {
   function evaluate() {
     $type = $this->getObject()->getObjectType();
 
+    // It is important to resolve the review (i.e. change its status from
+    // pending to something else) before resolving its object. Resolving the
+    // object could result in marking it as deleted, which as a side effect
+    // resolves all pending reviews for the object. This loop should be
+    // avoided.
     if ($this->hasEnoughVotes(Flag::VOTE_KEEP, Config::KEEP_VOTES_NECESSARY)) {
       $this->resolve(self::STATUS_KEEP, Flag::VOTE_KEEP);
       $action = self::KEEP_ACTION_MAP[$type][$this->reason] ?? null;
@@ -336,14 +342,24 @@ class Review extends Proto {
   }
 
   /**
-   * Marks the review and its flags as STATUS_STALE. Rejects any pending edits.
+   * Marks the review and its flags as STATUS_STALE or STATUS_OBJECT_GONE.
+   * Rejects any pending edits. Throws an exception if called with the wrong
+   * status.
+   *
+   * @param int $status One of Review::STATUS_STALE or Review::STATUS_OBJECT_GONE.
    */
-  public function resolveStale() {
-    $this->status = self::STATUS_STALE;
+  public function resolveUncommon($status) {
+    switch ($status) {
+      case self::STATUS_STALE: $flagStatus = Flag::STATUS_STALE; break;
+      case self::STATUS_OBJECT_GONE: $flagStatus = Flag::STATUS_OBJECT_GONE; break;
+      default: throw new Exception('Invalid uncommon status');
+    }
+
+    $this->status = $status;
     $this->save();
 
     foreach ($this->getFlags() as $f) {
-      $f->status = Flag::STATUS_STALE;
+      $f->status = $flagStatus;
       $f->save();
     }
 

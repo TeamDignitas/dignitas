@@ -99,7 +99,8 @@ trait FlaggableTrait {
   }
 
   /**
-   * Marks the object as deleted.
+   * Marks the object as deleted. Resolves all pending reviews for the object
+   * as STATUS_OBJECT_GONE.
    */
   function markDeleted($reason) {
     // switch from REASON_BY_USER to REASON_BY_OWNER if applicable
@@ -109,6 +110,12 @@ trait FlaggableTrait {
     }
     $this->changeStatus(Ct::STATUS_DELETED, $reason);
     $this->undoDownvoteRep();
+
+    $reviews = Review::get_all_by_objectType_objectId_status(
+      $this->getObjectType(), $this->id, Review::STATUS_PENDING);
+    foreach ($reviews as $r) {
+      $r->resolveUncommon(Review::STATUS_OBJECT_GONE);
+    }
   }
 
   /**

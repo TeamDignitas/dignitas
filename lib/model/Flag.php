@@ -15,6 +15,7 @@ class Flag extends Proto {
   const STATUS_ACCEPTED = 1;
   const STATUS_DECLINED = 2;
   const STATUS_STALE = 3; // closed due to lack of activity
+  const STATUS_OBJECT_GONE = 4; // closed because a user deleted the review's object
 
   /**
    * Returns a localized name for a keep/remove vote.
