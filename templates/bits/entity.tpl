@@ -2,11 +2,17 @@
 {$flagBox=$flagBox|default:true}
 
 <div class="row entity-profile">
-  <div class="col-md-3 mt-2">
+  <div class="col-md-3 mt-2 text-center">
     {include "bits/image.tpl"
         obj=$entity
         geometry=Config::THUMB_ENTITY_LARGE
-        imgClass="pic float-right rounded-circle"}
+        imgClass="pic rounded-circle"}
+
+    <div class="tags mt-2 text-center">
+      {foreach $entity->getTags() as $t}
+        {include "bits/tag.tpl"}
+      {/foreach}
+    </div>
   </div>
 
   <div class="col-md-9 mt-2">
@@ -83,11 +89,6 @@
     </div>
 
     <hr class="w-100 title-divider mt-0 mb-2">
-    <div class="tags mb-2">
-      {foreach $entity->getTags() as $t}
-        {include "bits/tag.tpl"}
-      {/foreach}
-    </div>
 
     <div class="title-members">
       {$members=$entity->getMembers()}
@@ -117,7 +118,6 @@
         </a>
       {/if}
     </div>
-    <hr class="w-100 title-divider mt-0">
 
   </div>
 </div>
