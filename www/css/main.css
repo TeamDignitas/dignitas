@@ -167,7 +167,7 @@ blockquote {
 }
 
 .title-divider {
-  border-color: #999;
+  border-color: #ccc;
 }
 
 img.pic.person-photo,
@@ -274,6 +274,7 @@ footer {
   margin: 5px 0;
   overflow: hidden;
   width: 300px;
+  border: 1px solid #ccc;
 }
 
 .loyaltyWidget div {

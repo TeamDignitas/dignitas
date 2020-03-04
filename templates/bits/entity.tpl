@@ -62,7 +62,7 @@
 
     {if $entity->profile}
       <h6 class="font-weight-bold text-uppercase mt-4">{t}title-profile{/t}</h6>
-      <div>
+      <div class="pl-4">
         {$entity->profile|md}
       </div>
     {/if}
@@ -72,7 +72,7 @@
       {if count($links)}
         <h6 class="font-weight-bold text-uppercase">{t}title-entity-links{/t}</h6>
 
-        <ul id="links" class="list-inline list-inline-bullet">
+        <ul id="links" class="list-inline list-inline-bullet pl-4">
           {foreach $links as $l}
             <li class="list-inline-item">
               {include "bits/link.tpl"}
@@ -82,7 +82,8 @@
       {/if}
     </div>
 
-    <div class="tags mb-3">
+    <hr class="w-100 title-divider mt-0 mb-2">
+    <div class="tags mb-2">
       {foreach $entity->getTags() as $t}
         {include "bits/tag.tpl"}
       {/foreach}
@@ -103,7 +104,7 @@
       {/if}
     </div>
 
-    <div class="entity-actions mb-3">
+    <div class="entity-actions mb-2 text-right">
       {include "bits/editButton.tpl" obj=$entity}
 
       {if $flagBox && ($entity->isFlaggable() || $entity->isFlagged())}
@@ -116,6 +117,7 @@
         </a>
       {/if}
     </div>
+    <hr class="w-100 title-divider mt-0">
 
   </div>
 </div>
