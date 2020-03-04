@@ -170,7 +170,8 @@ blockquote {
   border-color: #999;
 }
 
-img.pic.person-photo {
+img.pic.person-photo,
+.entity-profile img {
   outline: 0;
 }
 
