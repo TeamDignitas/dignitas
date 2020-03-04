@@ -214,13 +214,14 @@ img.pic.person-photo,
   background: #b3f5b7;
 }
 
-/******************************** answers ********************************/
+/******************************** answers, entity statements ********************************/
 
 .answer {
   padding-top: 10px;
 }
 
-.answer-label {
+.answer-label,
+.statement-list h6 {
   border-bottom: 1px solid #999;
 }
 
