@@ -134,9 +134,15 @@
       <textarea
         id="fieldProfile"
         name="profile"
-        class="form-control hasUnloadWarning simple-mde"
+        class="form-control hasUnloadWarning size-limit simple-mde"
+        maxlength="{Entity::PROFILE_MAX_LENGTH}"
         rows="5">{$entity->profile|escape}</textarea>
+      <small class="form-text text-muted float-left">
+        <span class="charsRemaining">{$profileCharsRemaining}</span>
+        {t}label-characters-remaining{/t}
+      </small>
       {include "bits/markdownHelp.tpl"}
+      {include "bits/fieldErrors.tpl" errors=$errors.profile|default:null}
     </div>
 
     {capture "labelText" assign=labelText}{t}label-entity-links{/t}{/capture}

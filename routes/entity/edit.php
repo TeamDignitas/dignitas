@@ -100,7 +100,10 @@ if ($saveButton) {
 }
 
 Smart::addResources('colorpicker', 'simplemde', 'linkEditor');
-Smart::assign('entity', $entity);
+Smart::assign([
+  'entity' => $entity,
+  'profileCharsRemaining' => Entity::PROFILE_MAX_LENGTH - mb_strlen($entity->profile),
+]);
 Smart::display('entity/edit.tpl');
 
 /*************************************************************************/
@@ -115,6 +118,11 @@ function validate($entity, $relations, $links, $fileData) {
 
   if (!$entity->type) {
     $errors['type'][] = _('info-must-enter-entity-type');
+  }
+
+  if (mb_strlen($entity->profile) > Entity::PROFILE_MAX_LENGTH) {
+    $errors['profile'][] =
+      sprintf(_('info-entity-profile-length-limit-%d'), Entity::PROFILE_MAX_LENGTH);
   }
 
   // relations
