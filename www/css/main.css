@@ -226,6 +226,10 @@ img.pic.person-photo,
   border-bottom: 1px solid #999;
 }
 
+.entity-links h6::first-letter {
+  text-transform: capitalize;
+}
+
 /******************************* comments *******************************/
 
 .comment {
