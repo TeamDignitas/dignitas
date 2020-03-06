@@ -1,6 +1,8 @@
 <?php
 
 $id = Request::get('id');
+// prepopulated so we can quickly add statements from the entity page
+$entityId = Request::get('entityId');
 $saveButton = Request::has('saveButton');
 $deleteButton = Request::has('deleteButton');
 $referrer = Request::get('referrer');
@@ -11,6 +13,7 @@ if ($id) {
   $statement = Model::factory('Statement')->create();
   $statement->dateMade = Time::today();
   $statement->userId = User::getActiveId();
+  $statement->entityId = $entityId;
 }
 
 if ($deleteButton) {
@@ -26,7 +29,7 @@ if ($deleteButton) {
 $statement->enforceEditPrivileges();
 
 if ($saveButton) {
-  $statement->entityId = Request::get('entityId');
+  $statement->entityId = $entityId;
   $statement->summary = Request::get('summary');
   $statement->context = Request::get('context');
   $statement->goal = Request::get('goal');
