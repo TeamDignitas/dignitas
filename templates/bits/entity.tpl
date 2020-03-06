@@ -53,7 +53,7 @@
     {/if}
 
     <h6 class="font-weight-bold text-capitalize mt-5">Relatii</h6>
-    <ul class="relations small">
+    <ul class="relations">
       {foreach $entity->getRelations() as $r}
         <li>
           {include "bits/relation.tpl" fromEntity=$entity}
@@ -68,12 +68,12 @@
 
     {if $entity->profile}
       <h6 class="font-weight-bold text-capitalize mt-4">{t}title-profile{/t}</h6>
-      <div class=" small">
+      <div>
         {$entity->profile|md}
       </div>
     {/if}
 
-    <div class="entity-links small">
+    <div class="entity-links">
       {$links=$entity->getLinks()}
       {if count($links)}
         <h6 class="font-weight-bold text-capitalize">{t}title-entity-links{/t}</h6>
