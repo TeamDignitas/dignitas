@@ -35,14 +35,6 @@
     </a>
   </div>
 
-  {if User::isModerator()}
-    <div>
-      <a href="{Router::link('help/categoryList')}">
-        {t}link-help-categories{/t}
-      </a>
-    </div>
-  {/if}
-
   {if User::may(User::PRIV_REVIEW) && !empty($activeReviewReasons)}
     <h4>{cap}{t}title-review-queues{/t}{/cap}</h4>
 

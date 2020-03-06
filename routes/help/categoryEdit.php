@@ -21,10 +21,10 @@ if ($deleteButton) {
   if ($canDelete) {
     FlashMessage::add(sprintf(_('info-help-category-deleted'), $cat->name), 'success');
     $cat->delete();
-    Util::redirectToRoute('help/categoryList');
+    Util::redirectToRoute('help/index');
   } else {
     FlashMessage::add(_('info-cannot-delete-help-category'), 'danger');
-    Util::redirect(Router::link('help/categoryEdit') . '/' . $id);
+    Util::redirectToSelf();
   }
 }
 
@@ -45,7 +45,7 @@ if ($saveButton) {
     }
 
     FlashMessage::add(_('info-help-category-saved'), 'success');
-    Util::redirect(Router::link('help/categoryList'));
+    Util::redirect(Router::helpLink($cat));
   } else {
     Smart::assign('errors', $errors);
   }

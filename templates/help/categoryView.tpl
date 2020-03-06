@@ -31,7 +31,7 @@
         <div class="mt-2">
           <a
             class="btn btn-sm btn-outline-secondary"
-            href="{Router::link('help/categoryEdit')}/{$page->id}">
+            href="{Router::link('help/categoryEdit')}/{$category->id}">
             <i class="icon icon-edit"></i>
             {t}link-edit{/t}
           </a>

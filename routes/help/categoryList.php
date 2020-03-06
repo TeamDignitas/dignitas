@@ -12,9 +12,9 @@ if ($saveButton) {
     $cat->rank = ++$rank;
     $cat->save();
   }
-  
+
   FlashMessage::add(_('info-help-category-order-updated'), 'success');
-  Util::redirectToRoute('help/categoryList');
+  Util::redirectToRoute('help/index');
 }
 
 Smart::assign('categories', HelpCategory::loadAll());

@@ -70,7 +70,7 @@
         {t}link-save{/t}
       </button>
 
-      <a href="{Router::link('help/categoryList')}" class="btn btn-light">
+      <a href="{Router::helpLink($page)}" class="btn btn-light">
         <i class="icon icon-cancel"></i>
         {t}link-cancel{/t}
       </a>

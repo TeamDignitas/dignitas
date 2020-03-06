@@ -49,10 +49,7 @@
               </td>
 
               <td class="col-11">
-                <a
-                  href="{Router::link('help/pageEdit')}/{$p->id}">
-                  {$p->title}
-                </a>
+                {$p->title}
               </td>
             </tr>
           {/foreach}
@@ -66,7 +63,7 @@
         {t}link-save{/t}
       </button>
 
-      <a href="{Router::link('help/categoryList')}" class="btn btn-light">
+      <a href="{Router::helpLink($cat)}" class="btn btn-light">
         <i class="icon icon-cancel"></i>
         {t}link-cancel{/t}
       </a>

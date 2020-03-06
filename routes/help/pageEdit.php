@@ -16,7 +16,7 @@ if ($deleteButton) {
   Log::notice('deleted help page %d [%s]', $page->id, $page->title);
   FlashMessage::add(_('info-help-page-deleted'), 'success');
   $page->delete();
-  Util::redirectToRoute('help/categoryList');
+  Util::redirectToRoute('help/index');
 }
 
 if ($saveButton) {
@@ -31,7 +31,7 @@ if ($saveButton) {
     $page->save();
 
     FlashMessage::add(_('info-help-page-saved'), 'success');
-    Util::redirect(Router::link('help/categoryEdit') . '/' . $page->categoryId);
+    Util::redirect(Router::helpLink($page));
   } else {
     Smart::assign('errors', $errors);
   }

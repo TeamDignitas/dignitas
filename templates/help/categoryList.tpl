@@ -17,10 +17,7 @@
             </td>
 
             <td class="col-11">
-              <a
-                href="{Router::link('help/categoryEdit')}/{$c->id}">
-                {$c->name}
-              </a>
+              {$c->name}
             </td>
           </tr>
         {/foreach}
@@ -32,18 +29,10 @@
         <i class="icon icon-floppy"></i>
         {t}link-save-help-category-order{/t}
       </button>
-
-      <a class="btn btn-secondary" href="{Router::link('help/categoryEdit')}">
-        <i class="icon icon-plus"></i>
-        {t}link-add-category{/t}
+      <a href="{Router::link('help/index')}" class="btn btn-light">
+        <i class="icon icon-cancel"></i>
+        {t}link-cancel{/t}
       </a>
-
-      {if count($categories)}
-        <a class="btn btn-secondary" href="{Router::link('help/pageEdit')}">
-          <i class="icon icon-plus"></i>
-          {t}link-add-help-page{/t}
-        </a>
-      {/if}
     </div>
   </form>
 
