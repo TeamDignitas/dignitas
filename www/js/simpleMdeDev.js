@@ -69,15 +69,23 @@ $(function() {
 
   // initialize SimpleMDE editors
   $('.simple-mde').each(function() {
+    var textarea = this;
+
     var simpleMde = new SimpleMDE({
       autoDownloadFontAwesome: false,
-      element: this, // the textarea
+      element: textarea,
+      forceSync: true, // so that the remaining chars value gets updated
       insertTexts: {
         link: ["[", "]()"], // insert []() for links, not [](http://)
       },
       spellChecker: false,
       status: false,
       toolbar: SIMPLE_MDE_TOOLBAR,
+    });
+
+    simpleMde.codemirror.on('change', function() {
+      // fire the change event which in turn updates the chars remaining info
+      $(textarea).change();
     });
 
     // allow drag-and-drop file uploads, see

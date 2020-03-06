@@ -5,7 +5,7 @@
   <div class="form-group mb-2">
     <textarea
       name="contents"
-      class="form-control"
+      class="form-control size-limit"
       rows="2"
       maxlength="{Comment::MAX_LENGTH}"
     ></textarea>

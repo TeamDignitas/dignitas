@@ -232,3 +232,17 @@ $(function() {
   });
 
 });
+
+/************************* show remaining chars *************************/
+
+$(function() {
+  $('body').on('keyup paste change', '.size-limit', function() {
+
+    // We trust the browser to obey maxlength. This is safe because we also
+    // have a backend check.
+    var l = $(this).val().length;
+    var max = $(this).attr('maxlength');
+
+    $(this).parent().find('.charsRemaining').text(max - l);
+  });
+});

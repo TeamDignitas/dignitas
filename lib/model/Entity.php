@@ -14,6 +14,8 @@ class Entity extends Proto {
 
   const DEFAULT_COLOR = '#ffffff';
 
+  const PROFILE_MAX_LENGTH = 4000;
+
   // parties and unions have colors
   const TYPES = [
     self::TYPE_PERSON => [ 'hasColor' => false ],

@@ -8,7 +8,6 @@ $(function() {
     $('.deleteCommentLink').click(deleteComment);
     $('body').on('click', '.commentSaveButton', saveComment);
     $('body').on('click', '.commentCancelButton', hideCommentForm);
-    $('body').on('keyup paste', 'textarea[name="contents"]', showRemainingChars);
   }
 
   function addCommentForm() {
@@ -20,6 +19,7 @@ $(function() {
     // show it beneath the answer actions
     var anchor = $(this).closest('div');
     c.insertAfter(anchor);
+    c.find('textarea').focus();
 
     // hide the link
     $(this).hide();
@@ -63,15 +63,6 @@ $(function() {
     });
 
     return false;
-  }
-
-  function showRemainingChars() {
-    // We trust the browser to obey maxlength. This is safe because we also
-    // have a backend check.
-    var l = $(this).val().length;
-    var max = $(this).attr('maxlength');
-
-    $(this).closest('form').find('.charsRemaining').text(max - l);
   }
 
   function deleteComment() {
