@@ -18,6 +18,7 @@
   {if User::isModerator()}
     <div class="mt-2">
       <a class="btn btn-secondary" href="{Router::link('help/categoryList')}">
+        <i class="icon icon-sort"></i>
         {t}link-reorder-help-categories{/t}
       </a>
 
