@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-02-28 16:06+0200\n"
-"PO-Revision-Date: 2020-02-28 16:08+0200\n"
+"POT-Creation-Date: 2020-03-06 16:25+0200\n"
+"PO-Revision-Date: 2020-03-06 16:25+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -52,19 +52,15 @@ msgstr "domenii"
 msgid "link-tags"
 msgstr "etichete"
 
-#: templates/aggregate/dashboard.tpl:41
-msgid "link-help-categories"
-msgstr "categorii de ajutor"
-
-#: templates/aggregate/dashboard.tpl:47
+#: templates/aggregate/dashboard.tpl:39
 msgid "title-review-queues"
 msgstr "cozi de evaluare"
 
-#: templates/aggregate/dashboard.tpl:62
+#: templates/aggregate/dashboard.tpl:54
 msgid "title-reports"
 msgstr "rapoarte care necesită atenție"
 
-#: templates/aggregate/dashboard.tpl:67
+#: templates/aggregate/dashboard.tpl:59
 msgid "link-verdict-report"
 msgstr "afirmații cu verdicte neclare"
 
@@ -111,7 +107,7 @@ msgstr "editează răspunsul"
 
 #: templates/answer/edit.tpl:15 templates/auth/resetPassword.tpl:45
 #: templates/bits/commentForm.tpl:22 templates/domain/edit.tpl:72
-#: templates/entity/edit.tpl:194 templates/help/categoryEdit.tpl:66
+#: templates/entity/edit.tpl:194 templates/help/categoryEdit.tpl:63
 #: templates/help/pageEdit.tpl:70 templates/relation/edit.tpl:25
 #: templates/statement/edit.tpl:122 templates/tag/edit.tpl:150
 #: templates/user/edit.tpl:117
@@ -206,7 +202,7 @@ msgstr "adaugă un comentariu"
 msgid "tag"
 msgstr "etichetă"
 
-#: templates/bits/answerEdit.tpl:19 templates/bits/statement.tpl:138
+#: templates/bits/answerEdit.tpl:19 templates/bits/statement.tpl:151
 #: templates/statement/edit.tpl:103 lib/model/RevisionAnswer.php:15
 #: lib/model/RevisionStatement.php:18
 msgid "label-verdict"
@@ -214,9 +210,10 @@ msgstr "verdict"
 
 #: templates/bits/answerEdit.tpl:45 templates/bits/commentForm.tpl:27
 #: templates/domain/edit.tpl:84 templates/entity/edit.tpl:199
-#: templates/help/categoryEdit.tpl:71 templates/help/pageEdit.tpl:75
-#: templates/relation/edit.tpl:30 templates/statement/edit.tpl:127
-#: templates/tag/edit.tpl:156 templates/user/edit.tpl:122
+#: templates/help/categoryEdit.tpl:68 templates/help/categoryList.tpl:34
+#: templates/help/pageEdit.tpl:75 templates/relation/edit.tpl:30
+#: templates/statement/edit.tpl:127 templates/tag/edit.tpl:156
+#: templates/user/edit.tpl:122
 msgid "link-cancel"
 msgstr "renunță"
 
@@ -224,17 +221,17 @@ msgstr "renunță"
 msgid "answer-posted-by"
 msgstr "publicat de"
 
-#: templates/bits/answerMain.tpl:39 templates/bits/entity.tpl:110
+#: templates/bits/answerMain.tpl:39 templates/bits/entity.tpl:117
 #: templates/bits/statement.tpl:100 templates/help/pageView.tpl:34
 msgid "link-show-revisions"
 msgstr "arată versiunile"
 
-#: templates/bits/answerMain.tpl:49
+#: templates/bits/answerMain.tpl:47
 msgid "info-confirm-delete-answer"
 msgstr "Confirmați ștergerea acestui răspuns?"
 
-#: templates/bits/answerMain.tpl:50 templates/domain/edit.tpl:94
-#: templates/entity/edit.tpl:209 templates/help/categoryEdit.tpl:81
+#: templates/bits/answerMain.tpl:48 templates/domain/edit.tpl:94
+#: templates/entity/edit.tpl:209 templates/help/categoryEdit.tpl:78
 #: templates/help/pageEdit.tpl:85 templates/statement/edit.tpl:137
 #: templates/tag/edit.tpl:172
 msgid "link-delete"
@@ -274,23 +271,27 @@ msgstr "editează"
 msgid "link-suggest-edit"
 msgstr "sugerează o modificare"
 
-#: templates/bits/entity.tpl:44
-msgid "title-loyalty"
-msgstr "loialitate"
-
-#: templates/bits/entity.tpl:52
+#: templates/bits/entity.tpl:28
 msgid "title-alias"
 msgstr "alias"
 
-#: templates/bits/entity.tpl:62
+#: templates/bits/entity.tpl:55
+msgid "title-relations"
+msgstr "relații"
+
+#: templates/bits/entity.tpl:65
+msgid "title-loyalty"
+msgstr "loialitate"
+
+#: templates/bits/entity.tpl:70
 msgid "title-profile"
 msgstr "profil"
 
-#: templates/bits/entity.tpl:71
+#: templates/bits/entity.tpl:79
 msgid "title-entity-links"
 msgstr "legături externe"
 
-#: templates/bits/entity.tpl:90
+#: templates/bits/entity.tpl:96
 msgid "title-members"
 msgstr "membri"
 
@@ -439,10 +440,6 @@ msgstr "raportează autorul"
 msgid "link-flag-comment"
 msgstr "raportează comentariul"
 
-#: templates/bits/history.tpl:17
-msgid "link-go-back"
-msgstr "înapoi"
-
 #: templates/bits/inlineAttachment.tpl:1
 msgid "info-read-guide-inline-attachment"
 msgstr ""
@@ -573,12 +570,8 @@ msgstr "context"
 msgid "title-goal"
 msgstr "scop"
 
-#: templates/bits/statement.tpl:93
+#: templates/bits/statement.tpl:90
 msgid "title-added-by"
-msgstr "adăugată de"
-
-#: templates/bits/statementList.tpl:25
-msgid "statement-added-by"
 msgstr "adăugată de"
 
 #: templates/domain/edit.tpl:3 templates/domain/edit.tpl:6
@@ -743,7 +736,7 @@ msgstr ""
 "Acest autor are o modificare sugerată. O puteți <a href=\"%1\" class=\"alert-"
 "link\">evalua</a>."
 
-#: templates/entity/view.tpl:15
+#: templates/entity/view.tpl:16
 msgid "statements"
 msgstr "afirmații"
 
@@ -763,7 +756,7 @@ msgstr "o cale care va apărea în URL-ul acestei categorii"
 msgid "title-help-pages-in-category"
 msgstr "pagini în această categorie"
 
-#: templates/help/categoryEdit.tpl:79
+#: templates/help/categoryEdit.tpl:76
 msgid "info-confirm-delete-help-category"
 msgstr "Confirmați ștergerea categoriei?"
 
@@ -771,15 +764,19 @@ msgstr "Confirmați ștergerea categoriei?"
 msgid "title-help-categories"
 msgstr "categorii de ajutor"
 
-#: templates/help/categoryList.tpl:33
+#: templates/help/categoryList.tpl:30
 msgid "link-save-help-category-order"
 msgstr "salvează ordinea"
 
-#: templates/help/categoryList.tpl:38
+#: templates/help/index.tpl:22
+msgid "link-reorder-help-categories"
+msgstr "reordonează categoriile"
+
+#: templates/help/index.tpl:27
 msgid "link-add-category"
 msgstr "adaugă o categorie"
 
-#: templates/help/categoryList.tpl:44
+#: templates/help/index.tpl:33
 msgid "link-add-help-page"
 msgstr "adaugă o pagină"
 
@@ -827,8 +824,8 @@ msgstr "Această evaluare este completă. Nu mai puteți face alte acțiuni."
 msgid "info-statement-duplicate"
 msgstr "Această afirmație a fost marcată ca duplicat al afirmației"
 
-#: templates/review/view.tpl:40 templates/review/view.tpl:80
-#: templates/review/view.tpl:91
+#: templates/review/view.tpl:40 templates/review/view.tpl:79
+#: templates/review/view.tpl:90
 msgid "title-pertaining-to-statement"
 msgstr "referitor la afirmația:"
 
@@ -847,7 +844,7 @@ msgstr ""
 msgid "title-pertaining-to-answer"
 msgstr "referitor la răspunsul:"
 
-#: templates/review/view.tpl:109
+#: templates/review/view.tpl:108
 msgid "info-review-queue-empty"
 msgstr "Această coadă de evaluare este goală."
 
@@ -908,18 +905,18 @@ msgstr "afirmații cu verdict, dar fără demonstrație"
 msgid "title-statements-verdict-mismatch"
 msgstr "afirmații cu un verdict opus față de cel al demonstrației"
 
-#: templates/statement/view.tpl:12
+#: templates/statement/view.tpl:13
 msgid "title-answers-singular"
 msgid_plural "title-answers-plural"
 msgstr[0] "un răspuns"
 msgstr[1] "%1 răspunsuri"
 msgstr[2] "%1 de răspunsuri"
 
-#: templates/statement/view.tpl:25
+#: templates/statement/view.tpl:28
 msgid "title-your-answer"
 msgstr "răspunsul dumneavoastră"
 
-#: templates/statement/view.tpl:27
+#: templates/statement/view.tpl:30
 msgid "link-post-answer"
 msgstr "trimite răspunsul"
 
@@ -1216,23 +1213,23 @@ msgstr "Vă trebuie o reputație de minimum %s pentru a adăuga afirmații."
 msgid "info-minimum-reputation-edit-entity-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
-#: lib/model/Flag.php:26
+#: lib/model/Flag.php:27
 msgid "vote-keep"
 msgstr "păstrează"
 
-#: lib/model/Flag.php:27
+#: lib/model/Flag.php:28
 msgid "vote-remove"
 msgstr "elimină"
 
-#: lib/model/Flag.php:37
+#: lib/model/Flag.php:38
 msgid "flag-advisory"
 msgstr "consultativ"
 
-#: lib/model/Flag.php:38
+#: lib/model/Flag.php:39
 msgid "flag-executive"
 msgstr "executoriu"
 
-#: lib/model/Flag.php:39
+#: lib/model/Flag.php:40
 msgid "flag-moderator"
 msgstr "moderator"
 
@@ -1276,99 +1273,99 @@ msgstr "Tip de relație incorect."
 msgid "info-dates-out-of-order"
 msgstr "Data de început nu poate fi mai mare ca data de sfîrșit."
 
-#: lib/model/Review.php:86
+#: lib/model/Review.php:87
 msgid "queue-name-spam"
 msgstr "articole raportate ca spam"
 
-#: lib/model/Review.php:87
+#: lib/model/Review.php:88
 msgid "queue-name-abuse"
 msgstr "articole raportate ca abuzuri"
 
-#: lib/model/Review.php:88
+#: lib/model/Review.php:89
 msgid "queue-name-duplicate"
 msgstr "articole raportate ca duplicate"
 
-#: lib/model/Review.php:89
+#: lib/model/Review.php:90
 msgid "queue-name-off-topic"
 msgstr "articole raportate ca pe lîngă subiect"
 
-#: lib/model/Review.php:90
+#: lib/model/Review.php:91
 msgid "queue-name-unverifiable"
 msgstr "articole raportate ca neverificabile"
 
-#: lib/model/Review.php:91
+#: lib/model/Review.php:92
 msgid "queue-name-low-quality"
 msgstr "articole raportate ca fiind de slabă calitate"
 
-#: lib/model/Review.php:92
+#: lib/model/Review.php:93
 msgid "queue-name-new-user"
 msgstr "mesaje de la utilizatori noi"
 
-#: lib/model/Review.php:93
+#: lib/model/Review.php:94
 msgid "queue-name-late-answer"
 msgstr "late answers"
 
-#: lib/model/Review.php:94
+#: lib/model/Review.php:95
 msgid "queue-name-reopen"
 msgstr "articole propuse pentru redeschidere"
 
-#: lib/model/Review.php:95
+#: lib/model/Review.php:96
 msgid "queue-name-pending-edit"
 msgstr "modificări sugerate"
 
-#: lib/model/Review.php:96
+#: lib/model/Review.php:97
 msgid "queue-name-other-reason"
 msgstr "articole raportate pentru alte motive"
 
-#: lib/model/Review.php:97
+#: lib/model/Review.php:98
 msgid "queue-name-not-needed"
 msgstr "comentarii raportate ca nenecesare"
 
-#: lib/model/Review.php:109
+#: lib/model/Review.php:110
 msgid "queue-url-spam"
 msgstr "spam"
 
-#: lib/model/Review.php:110
+#: lib/model/Review.php:111
 msgid "queue-url-abuse"
 msgstr "abuz"
 
-#: lib/model/Review.php:111
+#: lib/model/Review.php:112
 msgid "queue-url-duplicate"
 msgstr "duplicat"
 
-#: lib/model/Review.php:112
+#: lib/model/Review.php:113
 msgid "queue-url-off-topic"
 msgstr "pe-linga-subiect"
 
-#: lib/model/Review.php:113
+#: lib/model/Review.php:114
 msgid "queue-url-unverifiable"
 msgstr "neverificabil"
 
-#: lib/model/Review.php:114
+#: lib/model/Review.php:115
 msgid "queue-url-low-quality"
 msgstr "slaba-calitate"
 
-#: lib/model/Review.php:115
+#: lib/model/Review.php:116
 msgid "queue-url-new-user"
 msgstr "utilizator-nou"
 
-#: lib/model/Review.php:116
+#: lib/model/Review.php:117
 msgid "queue-url-late-answer"
 msgstr "raspuns-tirziu"
 
-#: lib/model/Review.php:117
+#: lib/model/Review.php:118
 msgid "queue-url-reopen"
 msgstr "redeschidere"
 
-#: lib/model/Review.php:118
+#: lib/model/Review.php:119
 msgid "queue-url-pending-edit"
 msgstr "modificari-sugerate"
 
-#: lib/model/Review.php:119
+#: lib/model/Review.php:120
 msgid "queue-url-other-reason"
 msgstr "alt-motiv"
 
-#: lib/model/Review.php:120
+#: lib/model/Review.php:121
 msgid "queue-url-not-needed"
 msgstr "nenecesare"
 
@@ -1646,7 +1643,7 @@ msgstr ""
 "Ați atins limita zilnică de %d modificări sugerate. Vă rugăm să așteptați "
 "evaluarea unora din ele."
 
-#: lib/trait/PendingEditTrait.php:129
+#: lib/trait/PendingEditTrait.php:133
 msgid "can-suggest-changes"
 msgstr "Puteți sugera modificări care vor fi puse în coada de evaluare."
 

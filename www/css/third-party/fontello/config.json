@@ -239,6 +239,12 @@
       "css": "hammer",
       "code": 59416,
       "src": "fontawesome"
+    },
+    {
+      "uid": "56a21935a5d4d79b2e91ec00f760b369",
+      "css": "sort",
+      "code": 61660,
+      "src": "fontawesome"
     }
   ]
 }
