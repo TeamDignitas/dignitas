@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-03-06 16:26+0200\n"
-"PO-Revision-Date: 2020-03-06 16:26+0200\n"
+"POT-Creation-Date: 2020-03-06 16:29+0200\n"
+"PO-Revision-Date: 2020-03-06 16:29+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -564,6 +564,10 @@ msgstr "goal"
 #: templates/bits/statement.tpl:90
 msgid "title-added-by"
 msgstr "added by"
+
+#: templates/bits/statementLink.tpl:7
+msgid "quoted-string-%1"
+msgstr "\"%1\""
 
 #: templates/domain/edit.tpl:3 templates/domain/edit.tpl:6
 msgid "title-edit-domain"
