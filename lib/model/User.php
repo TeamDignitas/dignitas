@@ -33,6 +33,9 @@ class User extends Proto {
 
   const PRIV_UPLOAD_ATTACHMENT = 100;
 
+  // PRIV_REVIEW is assumed to be greater than or equal to PRIV_EDIT_*.
+  // If that ever changes, then review/view.php should disable the edit button
+  // accordingly.
   const PRIV_REVIEW = 2000;
   const PRIV_CLOSE_REOPEN_VOTE = 3000;
 
