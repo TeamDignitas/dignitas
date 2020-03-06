@@ -2,7 +2,7 @@
 {$addedBy=$addedBy|default:true}
 
 {foreach $statements as $s}
-  <div class="statement col-md-12">
+  <div class="statement col-md-3 card border-secondary mr-1 py-4 px-4">
     {$entity=$s->getEntity()}
     {include "bits/image.tpl"
       obj=$entity
@@ -10,23 +10,16 @@
       geometry=Config::THUMB_ENTITY_LARGE
       imgClass="pic float-right ml-5"}
 
-    <div>
-      <div>
+    <div class="">
+      <div class="card-title font-italic">
         {include "bits/statementLink.tpl" statement=$s}
       </div>
 
-      <div class="text-right">
+      <div class="text-right card-text small">
         — {include "bits/entityLink.tpl" e=$entity},
         {$s->dateMade|ld}
       </div>
 
-      {if $addedBy}
-        <div class="text-right text-muted small">
-          {t}statement-added-by{/t}
-          {include 'bits/userLink.tpl' u=$s->getUser()}
-          {include 'bits/moment.tpl' t=$s->createDate}
-        </div>
-      {/if}
     </div>
   </div>
 {/foreach}

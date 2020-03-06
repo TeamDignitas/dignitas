@@ -3,9 +3,9 @@
 {strip}
 
 {if $statement}
-  <a href="{Router::link('statement/view')}/{$statement->id}" class="{$class}">
+  &quot;<a href="{Router::link('statement/view')}/{$statement->id}" class="{$class}">
     {$statement->summary|escape}
-  </a>
+  </a>&quot;
   {$statusInfo=$statement->getStatusInfo()}
   {if $statusInfo}
     &nbsp;
