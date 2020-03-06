@@ -139,7 +139,7 @@ class Config {
 
   // Answers added at least this many days after their Statement trigger a
   // review with REASON_LATE_ANSWER.
-  const LATE_ANSWER_DAYS = 3;
+  const LATE_ANSWER_DAYS = 30;
 
   // Reputation gains / losses for various events.
   const REP_STATEMENT_UPVOTED = 10;
