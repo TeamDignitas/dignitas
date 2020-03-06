@@ -52,7 +52,7 @@
       </div>
     {/if}
 
-    <h6 class="font-weight-bold text-capitalize mt-5">Relatii</h6>
+    <h6 class="font-weight-bold text-capitalize mt-5">{t}title-relations{/t}</h6>
     <ul class="relations">
       {foreach $entity->getRelations() as $r}
         <li>
