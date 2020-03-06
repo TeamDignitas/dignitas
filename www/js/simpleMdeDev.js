@@ -72,6 +72,9 @@ $(function() {
     var simpleMde = new SimpleMDE({
       autoDownloadFontAwesome: false,
       element: this, // the textarea
+      insertTexts: {
+        link: ["[", "]()"], // insert []() for links, not [](http://)
+      },
       spellChecker: false,
       status: false,
       toolbar: SIMPLE_MDE_TOOLBAR,
