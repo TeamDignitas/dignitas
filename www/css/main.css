@@ -216,6 +216,11 @@ img.pic.person-photo,
   background: #b3f5b7;
 }
 
+.statement.card {
+  font-family: 'Spartan', sans-serif;
+  font-weight: 400;
+}
+
 /******************************** answers, entity statements ********************************/
 
 .answer {
