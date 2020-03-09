@@ -1,33 +1,29 @@
-<h4 class="revisionHeader">
-  {if $od->review}
-    {t}title-changes-suggested-by{/t}
-  {else}
-    {t}title-changes-by{/t}
-  {/if}
-  {include "bits/userLink.tpl" u=$od->modUser}
-  {include 'bits/moment.tpl' t=$od->modDate}
-</h4>
+<tr>
+  <td class="small">{include "bits/userLink.tpl" u=$od->modUser}</td>
+  <td class="small">{include 'bits/moment.tpl' t=$od->modDate}</td>
 
-{foreach $od->getTextChanges() as $diff}
-  {include "bits/diff/card.tpl"
-    title=$diff.title
-    ses=$diff.ses}
-{/foreach}
+    {foreach $od->getTextChanges() as $diff}
+      <td class="small">
+        {$diff.title}
+      </td>
+      <td class="small">
+        {include "bits/diff/text.tpl" ses=$diff.ses}
+      </td>
+    {/foreach}
+</tr>
 
-<dl class="row">
-  {foreach $od->getFieldChanges() as $change}
+{foreach $od->getFieldChanges() as $change}
+  <tr>
     {include "bits/diff/field.tpl"
-      type=$change.type
-      title=$change.title
-      old=$change.old
-      new=$change.new}
-  {/foreach}
-</dl>
+    type=$change.type
+    title=$change.title
+    old=$change.old
+    new=$change.new}
+  </tr>
+{/foreach}
 
 {if $od->review}
   <div class="alert alert-light">
     {include "bits/reviewFlagList.tpl" flags=$od->review->getFlags()}
   </div>
 {/if}
-
-<hr>
