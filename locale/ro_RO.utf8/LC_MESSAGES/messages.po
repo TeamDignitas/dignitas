@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-03-06 18:02+0200\n"
-"PO-Revision-Date: 2020-03-06 18:03+0200\n"
+"POT-Creation-Date: 2020-03-09 17:02+0200\n"
+"PO-Revision-Date: 2020-03-09 17:02+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -111,7 +111,7 @@ msgstr "editează răspunsul"
 #: templates/entity/edit.tpl:200 templates/help/categoryEdit.tpl:63
 #: templates/help/pageEdit.tpl:70 templates/relation/edit.tpl:25
 #: templates/statement/edit.tpl:122 templates/tag/edit.tpl:150
-#: templates/user/edit.tpl:117
+#: templates/user/edit.tpl:116
 msgid "link-save"
 msgstr "salvează"
 
@@ -175,7 +175,7 @@ msgid "label-nickname"
 msgstr "poreclă"
 
 #: templates/auth/register.tpl:70 templates/auth/resetPassword.tpl:39
-#: templates/user/edit.tpl:101
+#: templates/user/edit.tpl:100
 msgid "label-password-again"
 msgstr "parola (din nou)"
 
@@ -203,18 +203,18 @@ msgstr "adaugă un comentariu"
 msgid "tag"
 msgstr "etichetă"
 
-#: templates/bits/answerEdit.tpl:19 templates/bits/statement.tpl:151
+#: templates/bits/answerEdit.tpl:18 templates/bits/statement.tpl:151
 #: templates/statement/edit.tpl:103 lib/model/RevisionAnswer.php:15
 #: lib/model/RevisionStatement.php:18
 msgid "label-verdict"
 msgstr "verdict"
 
-#: templates/bits/answerEdit.tpl:45 templates/bits/commentForm.tpl:27
+#: templates/bits/answerEdit.tpl:44 templates/bits/commentForm.tpl:27
 #: templates/domain/edit.tpl:84 templates/entity/edit.tpl:205
 #: templates/help/categoryEdit.tpl:68 templates/help/categoryList.tpl:34
 #: templates/help/pageEdit.tpl:75 templates/relation/edit.tpl:30
 #: templates/statement/edit.tpl:127 templates/tag/edit.tpl:156
-#: templates/user/edit.tpl:122
+#: templates/user/edit.tpl:121
 msgid "link-cancel"
 msgstr "renunță"
 
@@ -305,7 +305,7 @@ msgstr "autentificare ca utilizator de test"
 msgid "label-reputation"
 msgstr "reputație"
 
-#: templates/bits/fakeLogin.tpl:55 templates/user/view.tpl:16
+#: templates/bits/fakeLogin.tpl:54 templates/user/view.tpl:16
 msgid "label-moderator"
 msgstr "moderator"
 
@@ -343,7 +343,7 @@ msgstr "spam"
 
 #: templates/bits/flagModal.tpl:37
 msgid "info-reason-spam"
-msgstr "Acest mesaj pare să promoveze un produs sau un serviciu."
+msgstr "Acest articol pare să promoveze un produs sau un serviciu."
 
 #: templates/bits/flagModal.tpl:48
 msgid "label-abuse"
@@ -352,7 +352,7 @@ msgstr "insulte"
 #: templates/bits/flagModal.tpl:51
 msgid "info-reason-abuse"
 msgstr ""
-"Acest mesaj este insultător sau necivilizat față de alți utilizatori "
+"Acest articol este insultător sau necivilizat față de alți utilizatori "
 "Dignitas."
 
 #: templates/bits/flagModal.tpl:66
@@ -389,55 +389,63 @@ msgstr ""
 msgid "info-reason-entity-off-topic"
 msgstr "Dignitas nu se preocupă de afirmațiile acestui autor."
 
-#: templates/bits/flagModal.tpl:115
-msgid "label-unverifiable"
+#: templates/bits/flagModal.tpl:116
+msgid "label-statement-unverifiable"
 msgstr "neverificabilă"
 
-#: templates/bits/flagModal.tpl:118
-msgid "info-reason-unverifiable"
+#: templates/bits/flagModal.tpl:119
+msgid "label-entity-unverifiable"
+msgstr "neverificabil"
+
+#: templates/bits/flagModal.tpl:124
+msgid "info-reason-statement-unverifiable"
 msgstr "Nu este evident că autorul a făcut această afirmație."
 
-#: templates/bits/flagModal.tpl:131
+#: templates/bits/flagModal.tpl:127
+msgid "info-reason-entity-unverifiable"
+msgstr "Nu este evident că autorul există și datele despre el sînt corecte."
+
+#: templates/bits/flagModal.tpl:141
 msgid "label-low-quality"
 msgstr "de slabă calitate"
 
-#: templates/bits/flagModal.tpl:134
+#: templates/bits/flagModal.tpl:144
 msgid "info-reason-low-quality"
 msgstr ""
 "Acest mesaj are probleme severe de formatare sau de conținut, care nu pot fi "
 "reparate prin editări."
 
-#: templates/bits/flagModal.tpl:147
+#: templates/bits/flagModal.tpl:157
 msgid "label-not-needed"
 msgstr "nu mai este necesar"
 
-#: templates/bits/flagModal.tpl:150
+#: templates/bits/flagModal.tpl:160
 msgid "info-reason-not-needed"
 msgstr ""
 "Acest comentariu a fost înglobat în mesaj, este învechit sau nerelevant "
 "pentru acest mesaj."
 
-#: templates/bits/flagModal.tpl:163
+#: templates/bits/flagModal.tpl:173
 msgid "label-other-reason"
 msgstr "alt motiv"
 
-#: templates/bits/flagModal.tpl:171
+#: templates/bits/flagModal.tpl:181
 msgid "label-provide-details"
 msgstr "vă rugăm să dați detalii..."
 
-#: templates/bits/flagModal.tpl:184
+#: templates/bits/flagModal.tpl:194
 msgid "link-flag-answer"
 msgstr "raportează răspunsul"
 
-#: templates/bits/flagModal.tpl:187
+#: templates/bits/flagModal.tpl:197
 msgid "link-flag-statement"
 msgstr "raportează afirmația"
 
-#: templates/bits/flagModal.tpl:190
+#: templates/bits/flagModal.tpl:200
 msgid "link-flag-entity"
 msgstr "raportează autorul"
 
-#: templates/bits/flagModal.tpl:193
+#: templates/bits/flagModal.tpl:203
 msgid "link-flag-comment"
 msgstr "raportează comentariul"
 
@@ -497,11 +505,11 @@ msgstr "elimină"
 msgid "link-keep"
 msgstr "păstrează"
 
-#: templates/bits/reviewActions.tpl:34
+#: templates/bits/reviewActions.tpl:33
 msgid "link-next"
 msgstr "următoarea"
 
-#: templates/bits/reviewActions.tpl:44
+#: templates/bits/reviewActions.tpl:43
 msgid "label-details-optional"
 msgstr "detalii (opționale)"
 
@@ -1010,7 +1018,7 @@ msgstr "editează profilul"
 msgid "label-about-me"
 msgstr "despre mine"
 
-#: templates/user/edit.tpl:85
+#: templates/user/edit.tpl:84
 msgid "label-change-password"
 msgstr "parola (doar dacă doriți să o schimbați)"
 
@@ -1123,11 +1131,11 @@ msgstr "deoarece este de slabă calitate."
 msgid "info-answer-by-owner"
 msgstr "de către autorul său."
 
-#: lib/model/Answer.php:49 lib/model/Entity.php:106 lib/model/Statement.php:106
+#: lib/model/Answer.php:49 lib/model/Entity.php:107 lib/model/Statement.php:106
 msgid "info-by"
 msgstr "de către"
 
-#: lib/model/Answer.php:50 lib/model/Entity.php:107 lib/model/Statement.php:107
+#: lib/model/Answer.php:50 lib/model/Entity.php:108 lib/model/Statement.php:107
 msgid "info-other-reason"
 msgstr "pentru alt motiv."
 
@@ -1205,15 +1213,19 @@ msgid "info-entity-off-topic"
 msgstr "deoarece este pe lîngă subiect."
 
 #: lib/model/Entity.php:105
+msgid "info-entity-unverifiable"
+msgstr "deoarece este neverificabil."
+
+#: lib/model/Entity.php:106
 msgid "info-entity-by-owner"
 msgstr "de către autorul său."
 
-#: lib/model/Entity.php:227
+#: lib/model/Entity.php:228
 #, php-format
 msgid "info-minimum-reputation-add-entity-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
-#: lib/model/Entity.php:235
+#: lib/model/Entity.php:236
 #, php-format
 msgid "info-minimum-reputation-edit-entity-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a adăuga afirmații."
@@ -1278,99 +1290,99 @@ msgstr "Tip de relație incorect."
 msgid "info-dates-out-of-order"
 msgstr "Data de început nu poate fi mai mare ca data de sfîrșit."
 
-#: lib/model/Review.php:87
+#: lib/model/Review.php:88
 msgid "queue-name-spam"
 msgstr "articole raportate ca spam"
 
-#: lib/model/Review.php:88
+#: lib/model/Review.php:89
 msgid "queue-name-abuse"
 msgstr "articole raportate ca abuzuri"
 
-#: lib/model/Review.php:89
+#: lib/model/Review.php:90
 msgid "queue-name-duplicate"
 msgstr "articole raportate ca duplicate"
 
-#: lib/model/Review.php:90
+#: lib/model/Review.php:91
 msgid "queue-name-off-topic"
 msgstr "articole raportate ca pe lîngă subiect"
 
-#: lib/model/Review.php:91
+#: lib/model/Review.php:92
 msgid "queue-name-unverifiable"
 msgstr "articole raportate ca neverificabile"
 
-#: lib/model/Review.php:92
+#: lib/model/Review.php:93
 msgid "queue-name-low-quality"
 msgstr "articole raportate ca fiind de slabă calitate"
 
-#: lib/model/Review.php:93
+#: lib/model/Review.php:94
 msgid "queue-name-new-user"
 msgstr "mesaje de la utilizatori noi"
 
-#: lib/model/Review.php:94
+#: lib/model/Review.php:95
 msgid "queue-name-late-answer"
 msgstr "late answers"
 
-#: lib/model/Review.php:95
+#: lib/model/Review.php:96
 msgid "queue-name-reopen"
 msgstr "articole propuse pentru redeschidere"
 
-#: lib/model/Review.php:96
+#: lib/model/Review.php:97
 msgid "queue-name-pending-edit"
 msgstr "modificări sugerate"
 
-#: lib/model/Review.php:97
+#: lib/model/Review.php:98
 msgid "queue-name-other-reason"
 msgstr "articole raportate pentru alte motive"
 
-#: lib/model/Review.php:98
+#: lib/model/Review.php:99
 msgid "queue-name-not-needed"
 msgstr "comentarii raportate ca nenecesare"
 
-#: lib/model/Review.php:110
+#: lib/model/Review.php:111
 msgid "queue-url-spam"
 msgstr "spam"
 
-#: lib/model/Review.php:111
+#: lib/model/Review.php:112
 msgid "queue-url-abuse"
 msgstr "abuz"
 
-#: lib/model/Review.php:112
+#: lib/model/Review.php:113
 msgid "queue-url-duplicate"
 msgstr "duplicat"
 
-#: lib/model/Review.php:113
+#: lib/model/Review.php:114
 msgid "queue-url-off-topic"
 msgstr "pe-linga-subiect"
 
-#: lib/model/Review.php:114
+#: lib/model/Review.php:115
 msgid "queue-url-unverifiable"
 msgstr "neverificabil"
 
-#: lib/model/Review.php:115
+#: lib/model/Review.php:116
 msgid "queue-url-low-quality"
 msgstr "slaba-calitate"
 
-#: lib/model/Review.php:116
+#: lib/model/Review.php:117
 msgid "queue-url-new-user"
 msgstr "utilizator-nou"
 
-#: lib/model/Review.php:117
+#: lib/model/Review.php:118
 msgid "queue-url-late-answer"
 msgstr "raspuns-tirziu"
 
-#: lib/model/Review.php:118
+#: lib/model/Review.php:119
 msgid "queue-url-reopen"
 msgstr "redeschidere"
 
-#: lib/model/Review.php:119
+#: lib/model/Review.php:120
 msgid "queue-url-pending-edit"
 msgstr "modificari-sugerate"
 
-#: lib/model/Review.php:120
+#: lib/model/Review.php:121
 msgid "queue-url-other-reason"
 msgstr "alt-motiv"
 
-#: lib/model/Review.php:121
+#: lib/model/Review.php:122
 msgid "queue-url-not-needed"
 msgstr "nenecesare"
 

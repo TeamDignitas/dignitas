@@ -105,17 +105,27 @@
             </p>
           </div>
 
-          <div class="form-check" data-flag-visibility="{Flag::TYPE_STATEMENT}">
+          <div class="form-check" data-flag-visibility="{Flag::TYPE_STATEMENT} {Flag::TYPE_ENTITY}">
             <label class="form-check-label">
               <input
                 class="form-check-input"
                 type="radio"
                 name="flagReason"
                 value="{Ct::REASON_UNVERIFIABLE}">
-              {t}label-unverifiable{/t}
+              <span data-flag-visibility="{Flag::TYPE_STATEMENT}">
+                {t}label-statement-unverifiable{/t}
+              </span>
+              <span data-flag-visibility="{Flag::TYPE_ENTITY}">
+                {t}label-entity-unverifiable{/t}
+              </span>
             </label>
             <p class="text-muted">
-              {t}info-reason-unverifiable{/t}
+              <span data-flag-visibility="{Flag::TYPE_STATEMENT}">
+                {t}info-reason-statement-unverifiable{/t}
+              </span>
+              <span data-flag-visibility="{Flag::TYPE_ENTITY}">
+                {t}info-reason-entity-unverifiable{/t}
+              </span>
             </p>
           </div>
 

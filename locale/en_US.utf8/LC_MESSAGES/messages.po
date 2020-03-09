@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-03-06 18:02+0200\n"
-"PO-Revision-Date: 2020-03-06 18:02+0200\n"
+"POT-Creation-Date: 2020-03-09 17:10+0200\n"
+"PO-Revision-Date: 2020-03-09 17:11+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -107,7 +107,7 @@ msgstr "edit answer"
 #: templates/entity/edit.tpl:200 templates/help/categoryEdit.tpl:63
 #: templates/help/pageEdit.tpl:70 templates/relation/edit.tpl:25
 #: templates/statement/edit.tpl:122 templates/tag/edit.tpl:150
-#: templates/user/edit.tpl:117
+#: templates/user/edit.tpl:116
 msgid "link-save"
 msgstr "save"
 
@@ -170,7 +170,7 @@ msgid "label-nickname"
 msgstr "nickname"
 
 #: templates/auth/register.tpl:70 templates/auth/resetPassword.tpl:39
-#: templates/user/edit.tpl:101
+#: templates/user/edit.tpl:100
 msgid "label-password-again"
 msgstr "password (again)"
 
@@ -198,18 +198,18 @@ msgstr "add a comment"
 msgid "tag"
 msgstr "tag"
 
-#: templates/bits/answerEdit.tpl:19 templates/bits/statement.tpl:151
+#: templates/bits/answerEdit.tpl:18 templates/bits/statement.tpl:151
 #: templates/statement/edit.tpl:103 lib/model/RevisionAnswer.php:15
 #: lib/model/RevisionStatement.php:18
 msgid "label-verdict"
 msgstr "verdict"
 
-#: templates/bits/answerEdit.tpl:45 templates/bits/commentForm.tpl:27
+#: templates/bits/answerEdit.tpl:44 templates/bits/commentForm.tpl:27
 #: templates/domain/edit.tpl:84 templates/entity/edit.tpl:205
 #: templates/help/categoryEdit.tpl:68 templates/help/categoryList.tpl:34
 #: templates/help/pageEdit.tpl:75 templates/relation/edit.tpl:30
 #: templates/statement/edit.tpl:127 templates/tag/edit.tpl:156
-#: templates/user/edit.tpl:122
+#: templates/user/edit.tpl:121
 msgid "link-cancel"
 msgstr "cancel"
 
@@ -299,7 +299,7 @@ msgstr "test user login"
 msgid "label-reputation"
 msgstr "reputation"
 
-#: templates/bits/fakeLogin.tpl:55 templates/user/view.tpl:16
+#: templates/bits/fakeLogin.tpl:54 templates/user/view.tpl:16
 msgid "label-moderator"
 msgstr "moderator"
 
@@ -381,55 +381,64 @@ msgstr ""
 msgid "info-reason-entity-off-topic"
 msgstr "Dignitas does not concern itself with this author's statements."
 
-#: templates/bits/flagModal.tpl:115
-msgid "label-unverifiable"
+#: templates/bits/flagModal.tpl:116
+msgid "label-statement-unverifiable"
 msgstr "unverifiable"
 
-#: templates/bits/flagModal.tpl:118
-msgid "info-reason-unverifiable"
+#: templates/bits/flagModal.tpl:119
+msgid "label-entity-unverifiable"
+msgstr "unverifiable"
+
+#: templates/bits/flagModal.tpl:124
+msgid "info-reason-statement-unverifiable"
 msgstr "It is not obvious that the author really made the statement."
 
-#: templates/bits/flagModal.tpl:131
+#: templates/bits/flagModal.tpl:127
+msgid "info-reason-entity-unverifiable"
+msgstr ""
+"It is not obvious that the author exists and the profile data is correct."
+
+#: templates/bits/flagModal.tpl:141
 msgid "label-low-quality"
 msgstr "low quality"
 
-#: templates/bits/flagModal.tpl:134
+#: templates/bits/flagModal.tpl:144
 msgid "info-reason-low-quality"
 msgstr ""
 "This post has severe formatting or content problems that cannot be salvaged "
 "through editing."
 
-#: templates/bits/flagModal.tpl:147
+#: templates/bits/flagModal.tpl:157
 msgid "label-not-needed"
 msgstr "no longer needed"
 
-#: templates/bits/flagModal.tpl:150
+#: templates/bits/flagModal.tpl:160
 msgid "info-reason-not-needed"
 msgstr ""
 "This comment has been incorporated in the post, is outdated or not relevant "
 "to this post."
 
-#: templates/bits/flagModal.tpl:163
+#: templates/bits/flagModal.tpl:173
 msgid "label-other-reason"
 msgstr "other reason"
 
-#: templates/bits/flagModal.tpl:171
+#: templates/bits/flagModal.tpl:181
 msgid "label-provide-details"
 msgstr "please provide details..."
 
-#: templates/bits/flagModal.tpl:184
+#: templates/bits/flagModal.tpl:194
 msgid "link-flag-answer"
 msgstr "flag answer"
 
-#: templates/bits/flagModal.tpl:187
+#: templates/bits/flagModal.tpl:197
 msgid "link-flag-statement"
 msgstr "flag statement"
 
-#: templates/bits/flagModal.tpl:190
+#: templates/bits/flagModal.tpl:200
 msgid "link-flag-entity"
 msgstr "flag author"
 
-#: templates/bits/flagModal.tpl:193
+#: templates/bits/flagModal.tpl:203
 msgid "link-flag-comment"
 msgstr "flag comment"
 
@@ -488,11 +497,11 @@ msgstr "remove"
 msgid "link-keep"
 msgstr "keep"
 
-#: templates/bits/reviewActions.tpl:34
+#: templates/bits/reviewActions.tpl:33
 msgid "link-next"
 msgstr "next"
 
-#: templates/bits/reviewActions.tpl:44
+#: templates/bits/reviewActions.tpl:43
 msgid "label-details-optional"
 msgstr "details (optional)"
 
@@ -997,7 +1006,7 @@ msgstr "edit my profile"
 msgid "label-about-me"
 msgstr "about me"
 
-#: templates/user/edit.tpl:85
+#: templates/user/edit.tpl:84
 msgid "label-change-password"
 msgstr "password (only if you wish to change it)"
 
@@ -1106,11 +1115,11 @@ msgstr "because it is low-quality."
 msgid "info-answer-by-owner"
 msgstr "by its author."
 
-#: lib/model/Answer.php:49 lib/model/Entity.php:106 lib/model/Statement.php:106
+#: lib/model/Answer.php:49 lib/model/Entity.php:107 lib/model/Statement.php:106
 msgid "info-by"
 msgstr "by"
 
-#: lib/model/Answer.php:50 lib/model/Entity.php:107 lib/model/Statement.php:107
+#: lib/model/Answer.php:50 lib/model/Entity.php:108 lib/model/Statement.php:107
 msgid "info-other-reason"
 msgstr "for other reasons."
 
@@ -1187,15 +1196,19 @@ msgid "info-entity-off-topic"
 msgstr "because it is off-topic."
 
 #: lib/model/Entity.php:105
+msgid "info-entity-unverifiable"
+msgstr "because it is unverifiable."
+
+#: lib/model/Entity.php:106
 msgid "info-entity-by-owner"
 msgstr "by the user who added it."
 
-#: lib/model/Entity.php:227
+#: lib/model/Entity.php:228
 #, php-format
 msgid "info-minimum-reputation-add-entity-%s"
 msgstr "You need at least %s reputation to add authors."
 
-#: lib/model/Entity.php:235
+#: lib/model/Entity.php:236
 #, php-format
 msgid "info-minimum-reputation-edit-entity-%s"
 msgstr "You need at least %s reputation to edit authors."
@@ -1260,99 +1273,99 @@ msgstr "Incorrect relationship type."
 msgid "info-dates-out-of-order"
 msgstr "The start date cannot be past the end date."
 
-#: lib/model/Review.php:87
+#: lib/model/Review.php:88
 msgid "queue-name-spam"
 msgstr "items flagged as spam"
 
-#: lib/model/Review.php:88
+#: lib/model/Review.php:89
 msgid "queue-name-abuse"
 msgstr "items flagged as abuse"
 
-#: lib/model/Review.php:89
+#: lib/model/Review.php:90
 msgid "queue-name-duplicate"
 msgstr "items flagged as duplicate"
 
-#: lib/model/Review.php:90
+#: lib/model/Review.php:91
 msgid "queue-name-off-topic"
 msgstr "items flagged as off-topic"
 
-#: lib/model/Review.php:91
+#: lib/model/Review.php:92
 msgid "queue-name-unverifiable"
 msgstr "items flagged as unverifiable"
 
-#: lib/model/Review.php:92
+#: lib/model/Review.php:93
 msgid "queue-name-low-quality"
 msgstr "items flagged as low quality"
 
-#: lib/model/Review.php:93
+#: lib/model/Review.php:94
 msgid "queue-name-new-user"
 msgstr "posts from new users"
 
-#: lib/model/Review.php:94
+#: lib/model/Review.php:95
 msgid "queue-name-late-answer"
 msgstr "late answers"
 
-#: lib/model/Review.php:95
+#: lib/model/Review.php:96
 msgid "queue-name-reopen"
 msgstr "items flagged for reopening"
 
-#: lib/model/Review.php:96
+#: lib/model/Review.php:97
 msgid "queue-name-pending-edit"
 msgstr "suggested changes"
 
-#: lib/model/Review.php:97
+#: lib/model/Review.php:98
 msgid "queue-name-other-reason"
 msgstr "items flagged for other reasons"
 
-#: lib/model/Review.php:98
+#: lib/model/Review.php:99
 msgid "queue-name-not-needed"
 msgstr "no longer needed comments"
 
-#: lib/model/Review.php:110
+#: lib/model/Review.php:111
 msgid "queue-url-spam"
 msgstr "spam"
 
-#: lib/model/Review.php:111
+#: lib/model/Review.php:112
 msgid "queue-url-abuse"
 msgstr "abuse"
 
-#: lib/model/Review.php:112
+#: lib/model/Review.php:113
 msgid "queue-url-duplicate"
 msgstr "duplicates"
 
-#: lib/model/Review.php:113
+#: lib/model/Review.php:114
 msgid "queue-url-off-topic"
 msgstr "off-topic"
 
-#: lib/model/Review.php:114
+#: lib/model/Review.php:115
 msgid "queue-url-unverifiable"
 msgstr "unverifiable"
 
-#: lib/model/Review.php:115
+#: lib/model/Review.php:116
 msgid "queue-url-low-quality"
 msgstr "low quality"
 
-#: lib/model/Review.php:116
+#: lib/model/Review.php:117
 msgid "queue-url-new-user"
 msgstr "new-user"
 
-#: lib/model/Review.php:117
+#: lib/model/Review.php:118
 msgid "queue-url-late-answer"
 msgstr "late-answers"
 
-#: lib/model/Review.php:118
+#: lib/model/Review.php:119
 msgid "queue-url-reopen"
 msgstr "reopen"
 
-#: lib/model/Review.php:119
+#: lib/model/Review.php:120
 msgid "queue-url-pending-edit"
 msgstr "suggested-changes"
 
-#: lib/model/Review.php:120
+#: lib/model/Review.php:121
 msgid "queue-url-other-reason"
 msgstr "other"
 
-#: lib/model/Review.php:121
+#: lib/model/Review.php:122
 msgid "queue-url-not-needed"
 msgstr "not-needed"
 

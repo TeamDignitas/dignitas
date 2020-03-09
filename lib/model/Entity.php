@@ -102,6 +102,7 @@ class Entity extends Proto {
       case Ct::REASON_ABUSE: $r = _('info-entity-abuse'); break;
       case Ct::REASON_DUPLICATE: $r = _('info-entity-duplicate-of'); break;
       case Ct::REASON_OFF_TOPIC: $r = _('info-entity-off-topic'); break;
+      case Ct::REASON_UNVERIFIABLE: $r = _('info-entity-unverifiable'); break;
       case Ct::REASON_BY_OWNER: $r = _('info-entity-by-owner'); break;
       case Ct::REASON_BY_USER: $r = _('info-by'); break;
       case Ct::REASON_OTHER: $r = _('info-other-reason'); break;

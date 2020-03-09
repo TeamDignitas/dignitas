@@ -47,6 +47,7 @@ class Review extends Proto {
       Ct::REASON_ABUSE => self::ACTION_DELETE,
       Ct::REASON_DUPLICATE => self::ACTION_CLOSE,
       Ct::REASON_OFF_TOPIC => self::ACTION_DELETE,
+      Ct::REASON_UNVERIFIABLE => self::ACTION_DELETE,
       Ct::REASON_NEW_USER => self::ACTION_DELETE,
       Ct::REASON_PENDING_EDIT => self::ACTION_DELETE_PENDING_EDIT,
       Ct::REASON_OTHER => self::ACTION_DELETE,
