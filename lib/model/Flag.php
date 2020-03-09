@@ -66,7 +66,7 @@ class Flag extends Proto {
     $user = User::getActive();
     if ($user && $user->moderator) {
       return self::WEIGHT_MODERATOR;
-    } else if (User::may(User::PRIV_CLOSE_REOPEN_VOTE)) {
+    } else if (User::may(User::PRIV_REVIEW)) {
       return self::WEIGHT_EXECUTIVE;
     } else {
       return self::WEIGHT_ADVISORY;
