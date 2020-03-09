@@ -71,7 +71,7 @@
             <p class="text-muted" data-flag-visibility="{Flag::TYPE_ENTITY}">
               {t}info-reason-entity-duplicate{/t}
             </p>
-            <div class="form-group flagRelated" id="duplicateSearch">
+            <div class="form-group flag-related" id="duplicateSearch">
               <select
                 id="flagDuplicateId"
                 class="form-control"
@@ -162,7 +162,7 @@
               >
               {t}label-other-reason{/t}
             </label>
-            <p class="text-muted flagRelated" id="detailsWrapper">
+            <p class="text-muted flag-related" id="detailsWrapper">
               <input
                 id="flagDetails"
                 class="form-control"

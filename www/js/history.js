@@ -1,7 +1,7 @@
 $(function() {
 
   function init() {
-    $('.identicalToggle').click(toggleIdenticalLines);
+    $('.identical-toggle').click(toggleIdenticalLines);
   }
 
   function toggleIdenticalLines() {
@@ -10,5 +10,5 @@ $(function() {
   }
 
   init();
-  
+
 });

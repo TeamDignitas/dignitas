@@ -8,7 +8,7 @@
     <textarea
       id="fieldContents"
       name="contents"
-      class="form-control hasUnloadWarning simple-mde {if isset($errors.contents)}is-invalid{/if}"
+      class="form-control has-unload-warning simple-mde {if isset($errors.contents)}is-invalid{/if}"
       rows="10">{$answer->contents|escape}</textarea>
     {include "bits/fieldErrors.tpl" errors=$errors.contents|default:null}
     {include "bits/markdownHelp.tpl"}
@@ -23,7 +23,7 @@
       <select
         id="fieldVerdict"
         name="verdict"
-        class="form-control hasUnloadWarning">
+        class="form-control has-unload-warning">
         {for $v = 0 to Ct::NUM_VERDICTS - 1}
           <option
             value="{$v}"

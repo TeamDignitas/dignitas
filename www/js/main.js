@@ -91,7 +91,7 @@ $(function() {
   });
 
   // Expose this as a function so that other objects can also attach the
-  // handler. For example, SimpleMDE fields don't obey the .hasUnloadWarning
+  // handler. For example, SimpleMDE fields don't obey the .has-unload-warning
   // class.
   window.unsavedChangesHandler = function() {
     if (!beforeUnloadHandlerAttached) {
@@ -104,10 +104,10 @@ $(function() {
   }
 
   // ask for confirmation before navigating away from a modified field...
-  $('.hasUnloadWarning').on('change input', unsavedChangesHandler);
+  $('.has-unload-warning').on('change input', unsavedChangesHandler);
 
   // ...except when actually submitting the form
-  $('.hasUnloadWarning').closest('form').submit(function() {
+  $('.has-unload-warning').closest('form').submit(function() {
     $(window).unbind('beforeunload');
   });
 
@@ -206,7 +206,7 @@ $(function() {
   });
 
   function getPopoverContent() {
-    return $(this).parent().find('.loyaltyPopover').html();
+    return $(this).parent().find('.loyalty-popover').html();
   }
 });
 
@@ -243,6 +243,6 @@ $(function() {
     var l = $(this).val().length;
     var max = $(this).attr('maxlength');
 
-    $(this).parent().find('.charsRemaining').text(max - l);
+    $(this).parent().find('.chars-remaining').text(max - l);
   });
 });

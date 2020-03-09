@@ -19,8 +19,8 @@
     </select>
   </td>
 
-  <td class="colEntityId">
-    <select name="relEntityIds[]" class="form-control toEntityId">
+  <td class="col-entity-id">
+    <select name="relEntityIds[]" class="form-control to-entity-id">
       <option value="{$relation->toEntityId|default:''}"></option>
     </select>
   </td>
@@ -40,7 +40,7 @@
   </td>
 
   <td>
-    <button type="button" class="btn btn-danger deleteDependantButton">
+    <button type="button" class="btn btn-danger delete-dependant">
       <i class="icon icon-trash"></i>
     </button>
   </td>

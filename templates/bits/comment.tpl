@@ -1,7 +1,7 @@
 {$flagBox=$flagBox|default:true}
 {$voteBox=$voteBox|default:true}
 
-<div class="voteContainer comment mb-2 mt-2">
+<div class="vote-container comment mb-2 mt-2">
 
   {if $voteBox}
     {include "bits/scoreAndVote.tpl"
@@ -11,17 +11,17 @@
       downvotePriv=User::PRIV_DOWNVOTE_COMMENT}
   {/if}
 
-  <div class="voteMain text-left">
+  <div class="text-left">
     {$comment->contents|md}
     &mdash;
     {include 'bits/userLink.tpl' u=$comment->getUser()}
     {include 'bits/moment.tpl' t=$comment->createDate}
 
-    <span class="commentActions">
+    <span class="comment-actions">
       {if $comment->isDeletable()}
         <a
           href="#"
-          class="deleteCommentLink"
+          class="delete-comment"
           data-comment-id="{$comment->id}"
           data-confirm-msg="{t}info-confirm-delete-comment{/t}">
           <i class="icon icon-trash"></i>

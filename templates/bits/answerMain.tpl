@@ -15,7 +15,7 @@
   </div>
 {/if}
 
-<div class="answerFooter col-md-12 px-0">
+<div class="answer-footer col-md-12 px-0">
   <div class="answer-read-only text-muted mb-2 row">
     {if $answer->verdict != Ct::VERDICT_NONE}
       <div class="col-md-5 mb-1">

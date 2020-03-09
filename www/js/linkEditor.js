@@ -4,8 +4,8 @@ $(function() {
   function init() {
     stem = $('#linkStem').detach().removeAttr('hidden id');
 
-    $('.addLinkButton').click(addLink);
-    $('#linkContainer').on('click', '.deleteLinkButton', deleteLink);
+    $('button.add-link').click(addLink);
+    $('#linkContainer').on('click', 'button.delete-link', deleteLink);
   }
 
   function addLink() {
