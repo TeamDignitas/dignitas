@@ -38,23 +38,26 @@ class Statement extends Proto {
    * user.
    */
   function getAnswers() {
+    // first load all the answers
     $answers = Model::factory('Answer')
       ->table_alias('a')
       ->select('a.*')
       ->left_outer_join('answer_ext', [ 'a.id', '=', 'ae.answerId' ], 'ae')
       ->where('a.statementId', $this->id)
-      ->where_not_equal('a.status', Ct::STATUS_PENDING_EDIT);
-
-    if (!User::may(User::PRIV_DELETE_ANSWER)) {
-      $answers = $answers
-        ->where('a.status', Ct::STATUS_ACTIVE);
-    }
-
-    return $answers
+      ->where_not_equal('a.status', Ct::STATUS_PENDING_EDIT)
       ->order_by_desc('proof')
       ->order_by_desc('ae.score')
       ->order_by_desc('a.createDate')
       ->find_many();
+
+    // then filter by visibility, as the logic is complex enough
+    $results = [];
+    foreach ($answers as $a) {
+      if ($a->isViewable()) {
+        $results[] = $a;
+      }
+    }
+    return $results;
   }
 
   function getLinks() {
