@@ -24,6 +24,7 @@ class Vote extends Proto {
     Proto::TYPE_STATEMENT => Config::REP_DOWNVOTE_STATEMENT,
     Proto::TYPE_ANSWER => Config::REP_DOWNVOTE_ANSWER,
     Proto::TYPE_COMMENT => Config::REP_DOWNVOTE_COMMENT,
+    Proto::TYPE_ENTITY => 0, // to "give back" rep when deleting entities
   ];
 
   static function loadOrCreate($userId, $objectType, $objectId) {
