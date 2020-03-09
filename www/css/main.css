@@ -99,7 +99,7 @@ blockquote {
 
 /* Firefox and Chrome insert a <div> in place of the <noscript> element, which
    breaks Bootstrap's CSS because it uses the > selector. */
-#searchFieldContainer div {
+#search-field-container div {
   position: relative;
   flex: 1 1 auto;
   width: 1%;

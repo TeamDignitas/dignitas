@@ -1,6 +1,6 @@
 $(function() {
   function init() {
-    initSelect2('#fieldEntityId', URL_PREFIX + 'ajax/load-entities', {
+    initSelect2('#field-entity-id', URL_PREFIX + 'ajax/load-entities', {
       ajax: {
         url: URL_PREFIX + 'ajax/search-entities',
       },

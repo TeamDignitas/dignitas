@@ -4,7 +4,7 @@
 
 {block "content"}
   <h3>{t}title-redirecting{/t}</h3>
-  <form id="repostForm" action="{$referrer|escape}" method="post">
+  <form id="form-repost" action="{$referrer|escape}" method="post">
     {foreach $postData as $key => $value}
       {if is_array($value)}
         {foreach $value as $v}
@@ -19,6 +19,6 @@
     </button>
   </form>
   <script type="text/javascript">
-    document.getElementById('repostForm').submit();
+    document.getElementById('form-repost').submit();
   </script>
 {/block}

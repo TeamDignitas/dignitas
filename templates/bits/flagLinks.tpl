@@ -11,7 +11,7 @@
   href="#"
   class="{$class}"
   data-toggle="modal"
-  data-target="#flagModal"
+  data-target="#modal-flag"
   data-object-type="{$obj->getObjectType()}"
   data-object-id="{$obj->id}"
   data-unflag-link="#{$unflagId}"

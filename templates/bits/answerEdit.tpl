@@ -6,7 +6,6 @@
 
   <div class="form-group">
     <textarea
-      id="fieldContents"
       name="contents"
       class="form-control has-unload-warning simple-mde {if isset($errors.contents)}is-invalid{/if}"
       rows="10">{$answer->contents|escape}</textarea>
@@ -15,13 +14,13 @@
   </div>
 
   <div class="form-group row">
-    <label for="fieldVerdict" class="col-md-6 col-sm-4 col-form-label text-right">
+    <label for="field-verdict" class="col-md-6 col-sm-4 col-form-label text-right">
       {t}label-verdict{/t}
     </label>
 
     <div class="col-md-6 col-sm-8">
       <select
-        id="fieldVerdict"
+        id="field-verdict"
         name="verdict"
         class="form-control has-unload-warning">
         {for $v = 0 to Ct::NUM_VERDICTS - 1}

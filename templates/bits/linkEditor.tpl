@@ -3,7 +3,7 @@
   <label>{$labelText}</label>
 
   <table class="table table-sm sortable">
-    <tbody id="linkContainer">
+    <tbody id="link-container">
       {include "bits/linkEditorRow.tpl" rowId="linkStem"}
       {foreach $links as $link}
         {include "bits/linkEditorRow.tpl"}

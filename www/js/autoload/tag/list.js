@@ -7,7 +7,7 @@ $(function() {
     $('.expand').click(toggleSubtree);
 
     // collapse all subtrees
-    $('#tagTree ul ul').hide();
+    $('#tag-tree ul ul').hide();
   }
 
   function toggleSubtree() {

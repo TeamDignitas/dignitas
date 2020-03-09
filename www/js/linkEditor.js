@@ -5,11 +5,11 @@ $(function() {
     stem = $('#linkStem').detach().removeAttr('hidden id');
 
     $('button.add-link').click(addLink);
-    $('#linkContainer').on('click', 'button.delete-link', deleteLink);
+    $('#link-container').on('click', 'button.delete-link', deleteLink);
   }
 
   function addLink() {
-    var t = stem.clone(true).appendTo('#linkContainer');
+    var t = stem.clone(true).appendTo('#link-container');
   }
 
   function deleteLink() {

@@ -8,13 +8,13 @@
   <form method="post">
 
     <div class="form-group">
-      <label for="fieldTitle" class="control-label">
+      <label for="field-title" class="control-label">
         {t}label-title{/t}
       </label>
       <div>
         <input type="text"
           class="form-control {if isset($errors.title)}is-invalid{/if}"
-          id="fieldTitle"
+          id="field-title"
           name="title"
           value="{$page->title|escape}">
         {include "bits/fieldErrors.tpl" errors=$errors.title|default:null}
@@ -22,13 +22,13 @@
     </div>
 
     <div class="form-group">
-      <label for="fieldPath" class="control-label">
+      <label for="field-path" class="control-label">
         {t}label-help-page-path{/t}
       </label>
       <div>
         <input type="text"
           class="form-control {if isset($errors.path)}is-invalid{/if}"
-          id="fieldPath"
+          id="field-path"
           name="path"
           value="{$page->path|escape}"
           placeholder="{t}info-help-page-path{/t}">
@@ -37,10 +37,10 @@
     </div>
 
     <div class="form-group">
-      <label for="fieldCategoryId">{t}label-category{/t}</label>
+      <label for="field-category-id">{t}label-category{/t}</label>
       <select
         name="categoryId"
-        id="fieldCategoryId"
+        id="field-category-id"
         class="form-control {if isset($errors.categoryId)}is-invalid{/if}">
         {foreach HelpCategory::loadAll() as $cat}
           <option
@@ -54,9 +54,9 @@
     </div>
 
     <div class="form-group">
-      <label for="fieldContents">{t}label-contents{/t}</label>
+      <label for="field-contents">{t}label-contents{/t}</label>
       <textarea
-        id="fieldContents"
+        id="field-contents"
         name="contents"
         class="form-control has-unload-warning simple-mde"
         rows="10">{$page->contents|escape}</textarea>

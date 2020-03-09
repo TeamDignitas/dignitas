@@ -3,7 +3,7 @@ $(function() {
   var commentForm = null;
 
   function init() {
-    commentForm = $('#commentForm').detach().removeAttr('id');
+    commentForm = $('#form-comment').detach().removeAttr('id');
     $('a.add-comment').click(addCommentForm);
     $('a.delete-comment').click(deleteComment);
     $('body').on('click', 'button.comment-save', saveComment);

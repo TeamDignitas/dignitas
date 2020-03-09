@@ -23,10 +23,10 @@
     <input type="hidden" name="id" value="{$statement->id}">
     <input type="hidden" name="referrer" value="{$referrer}">
     <div class="form-group">
-      <label for="fieldEntityId">{t}label-entity{/t}</label>
+      <label for="field-entity-id">{t}label-entity{/t}</label>
       <select
         name="entityId"
-        id="fieldEntityId"
+        id="field-entity-id"
         class="form-control {if isset($errors.entityId)}is-invalid{/if}">
         {if $statement->entityId}
           <option value="{$statement->entityId}"></option>
@@ -36,11 +36,11 @@
     </div>
 
     <div class="form-group">
-      <label for="fieldDateMade">{t}label-statement-date{/t}</label>
+      <label for="field-date-made">{t}label-statement-date{/t}</label>
       <input
         type="date"
         name="dateMade"
-        id="fieldDateMade"
+        id="field-date-made"
         value="{$statement->dateMade}"
         class="form-control {if isset($errors.dateMade)}is-invalid{/if}"
         required>
@@ -48,11 +48,11 @@
     </div>
 
     <div class="form-group">
-      <label for="fieldSummary">{t}label-summary{/t}</label>
+      <label for="field-summary">{t}label-summary{/t}</label>
       <input
         type="text"
         name="summary"
-        id="fieldSummary"
+        id="field-summary"
         value="{$statement->summary|escape}"
         class="form-control has-unload-warning {if isset($errors.summary)}is-invalid{/if}"
         required>
@@ -60,10 +60,10 @@
     </div>
 
     <div class="form-group">
-      <label for="fieldContext">{t}label-context{/t}</label>
+      <label for="field-context">{t}label-context{/t}</label>
       <textarea
         name="context"
-        id="fieldContext"
+        id="field-context"
         class="form-control has-unload-warning simple-mde {if isset($errors.context)}is-invalid{/if}"
         rows="10">{$statement->context|escape}</textarea>
       {include "bits/fieldErrors.tpl" errors=$errors.context|default:null}
@@ -71,11 +71,11 @@
     </div>
 
     <div class="form-group">
-      <label for="fieldGoal">{t}label-goal{/t}</label>
+      <label for="field-goal">{t}label-goal{/t}</label>
       <input
         type="text"
         name="goal"
-        id="fieldGoal"
+        id="field-goal"
         value="{$statement->goal|escape}"
         class="form-control has-unload-warning {if isset($errors.goal)}is-invalid{/if}"
         required>
@@ -100,9 +100,9 @@
 
     {if User::isModerator()}
       <div class="form-group">
-        <label for="fieldVerdict">{t}label-verdict{/t}</label>
+        <label for="field-verdict">{t}label-verdict{/t}</label>
         <select
-          id="fieldVerdict"
+          id="field-verdict"
           name="verdict"
           class="form-control has-unload-warning">
           {for $v = 0 to Ct::NUM_VERDICTS - 1}

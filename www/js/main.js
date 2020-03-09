@@ -1,7 +1,7 @@
 /*************************** vanishing alerts ***************************/
 $(function() {
   setTimeout(function() {
-    $('#flashMessageWrapper > .alert').fadeTo(1000, 0, function() {
+    $('#flash-messages > .alert').fadeTo(1000, 0, function() {
       $(this).hide();
     });
   }, 5000);
@@ -31,7 +31,7 @@ $(function() {
     class: 'formControl',
     name: 'q',
     multiple: true,
-  }).prependTo('#searchFieldContainer');
+  }).prependTo('#search-field-container');
 
   $('#searchField').select2({
     ajax: {
@@ -73,7 +73,7 @@ $(function() {
 
   // intercept the submit button because Select2 doesn't populate the <select>
   // element properly and the search term is not submitted.
-  $('#searchForm').submit(function() {
+  $('#form-search').submit(function() {
     var value = $('#searchField').find('option').val();
     window.location.href = SEARCH_URL + '/' + value;
     return false;
@@ -173,7 +173,7 @@ $(function() {
 /******************* changing the reputation manually *******************/
 $(function() {
 
-  $('#repChange').submit(changeReputation);
+  $('#rep-change').submit(changeReputation);
 
   function changeReputation(evt) {
     evt.preventDefault();

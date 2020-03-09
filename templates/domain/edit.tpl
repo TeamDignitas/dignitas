@@ -8,13 +8,13 @@
   <form method="post" enctype="multipart/form-data">
 
     <div class="form-group">
-      <label for="fieldName" class="control-label">
+      <label for="field-name" class="control-label">
         {t}label-name{/t}
       </label>
       <div>
         <input type="text"
           class="form-control {if isset($errors.name)}is-invalid{/if}"
-          id="fieldName"
+          id="field-name"
           name="name"
           value="{$domain->name|escape}"
           placeholder="{t}info-domain-name{/t}">
@@ -23,13 +23,13 @@
     </div>
 
     <div class="form-group">
-      <label for="fieldDisplayValue" class="control-label">
+      <label for="field-display-value" class="control-label">
         {t}label-display-value{/t}
       </label>
       <div>
         <input type="text"
           class="form-control {if isset($errors.displayValue)}is-invalid{/if}"
-          id="fieldDisplayValue"
+          id="field-display-value"
           name="displayValue"
           value="{$domain->displayValue|escape}"
           placeholder="{t}info-domain-display-value{/t}">
@@ -38,7 +38,7 @@
     </div>
 
     <div class="form-group">
-      <label for="fieldImage">{t}label-image{/t}</label>
+      <label for="field-image">{t}label-image{/t}</label>
 
       <div>
         {include "bits/image.tpl"
@@ -51,8 +51,8 @@
           name="image"
           type="file"
           class="custom-file-input {if isset($errors.image)}is-invalid{/if}"
-          id="fieldImage">
-        <label class="custom-file-label" for="fieldImage">
+          id="field-image">
+        <label class="custom-file-label" for="field-image">
           {t}info-upload-image{/t}
         </label>
       </div>

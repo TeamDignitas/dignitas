@@ -1,5 +1,5 @@
 {* Mandatory argument: $object, the object being reviewed. *}
-<div id="reviewActions" class="card">
+<div class="card mb-2">
   <div class="card-body pb-1">
     <form method="post">
 
@@ -26,7 +26,6 @@
         </a>
 
         <button
-          id="nextButton"
           name="nextButton"
           type="submit"
           class="btn btn-info">

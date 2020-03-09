@@ -23,11 +23,11 @@
     <input type="hidden" name="id" value="{$entity->id}">
     <input type="hidden" name="referrer" value="{$referrer}">
     <div class="form-group">
-      <label for="fieldName">{t}label-name{/t}</label>
+      <label for="field-name">{t}label-name{/t}</label>
       <input
         name="name"
         value="{$entity->name|escape}"
-        id="fieldName"
+        id="field-name"
         class="form-control {if isset($errors.name)}is-invalid{/if}">
       {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
     </div>
@@ -37,7 +37,7 @@
 
       <table class="table table-sm sortable">
         <thead
-          id="aliasHeader"
+          id="alias-header"
           {if empty($aliases)}hidden{/if}>
           <tr>
             <th>{t}label-order{/t}</th>
@@ -45,8 +45,8 @@
             <th>{t}actions{/t}</th>
           </tr>
         </thead>
-        <tbody id="aliasContainer">
-          {include "bits/aliasEdit.tpl" id="stemAlias"}
+        <tbody id="alias-container">
+          {include "bits/aliasEdit.tpl" id="stem-alias"}
           {foreach $aliases as $a}
             {include "bits/aliasEdit.tpl" alias=$a}
           {/foreach}
@@ -54,7 +54,7 @@
       </table>
 
       <div>
-        <button id="addAliasButton" class="btn btn-light btn-sm" type="button">
+        <button id="add-alias" class="btn btn-light btn-sm" type="button">
           <i class="icon icon-plus"></i>
           {t}link-add-alias{/t}
         </button>
@@ -62,10 +62,10 @@
     </div>
 
     <div class="form-group">
-      <label for="fieldType">{t}label-type{/t}</label>
+      <label for="field-type">{t}label-type{/t}</label>
       <select
         name="type"
-        id="fieldType"
+        id="field-type"
         class="form-control {if isset($errors.type)}is-invalid{/if}">
         {foreach Entity::TYPES as $t => $data}
           <option
@@ -79,17 +79,17 @@
       {include "bits/fieldErrors.tpl" errors=$errors.type|default:null}
     </div>
 
-    <div id="colorFieldWrapper"
+    <div id="color-wrapper"
       class="form-group""
       {if !$entity->hasColor()}hidden{/if}>
-      <label for="color">{t}label-color{/t}</label>
+      <label for="field-color">{t}label-color{/t}</label>
       <div class="input-group colorpicker-component">
         <span class="input-group-prepend input-group-text colorpicker-input-addon">
           <i></i>
         </span>
         <input type="text"
           class="form-control"
-          id="fieldColor"
+          id="field-color"
           name="color"
           value="{$entity->getColor()}">
       </div>
@@ -100,7 +100,7 @@
 
       <table class="table table-sm table-rel sortable">
         <thead
-          id="relationHeader"
+          id="relation-header"
           {if empty($relations)}hidden{/if}>
           <tr>
             <th>{t}label-order{/t}</th>
@@ -111,8 +111,8 @@
             <th>{t}actions{/t}</th>
           </tr>
         </thead>
-        <tbody id="relationContainer">
-          {include "bits/relationEdit.tpl" id="stemRelation"}
+        <tbody id="relation-container">
+          {include "bits/relationEdit.tpl" id="stem-relation"}
           {foreach $relations as $r}
             {include "bits/relationEdit.tpl" relation=$r}
           {/foreach}
@@ -122,7 +122,7 @@
       {include "bits/fieldErrors.tpl" errors=$errors.relations|default:null}
 
       <div>
-        <button id="addRelationButton" class="btn btn-light btn-sm" type="button">
+        <button id="add-relation" class="btn btn-light btn-sm" type="button">
           <i class="icon icon-plus"></i>
           {t}label-add-relation{/t}
         </button>
@@ -130,9 +130,9 @@
     </div>
 
     <div class="form-group">
-      <label>{t}label-profile{/t}</label>
+      <label for="field-profile">{t}label-profile{/t}</label>
       <textarea
-        id="fieldProfile"
+        id="field-profile"
         name="profile"
         class="form-control has-unload-warning size-limit simple-mde"
         maxlength="{Entity::PROFILE_MAX_LENGTH}"
@@ -163,15 +163,15 @@
 
     <div class="row">
       <div class="col">
-        <label for="fieldImage">{t}label-image{/t}</label>
+        <label for="field-image">{t}label-image{/t}</label>
 
         <div class="custom-file">
           <input
             name="image"
             type="file"
             class="custom-file-input {if isset($errors.image)}is-invalid{/if}"
-            id="fieldImage">
-          <label class="custom-file-label" for="fieldImage">
+            id="field-image">
+          <label class="custom-file-label" for="field-image">
             {t}info-upload-image{/t}
           </label>
         </div>

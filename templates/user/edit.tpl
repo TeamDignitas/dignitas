@@ -42,15 +42,15 @@
 
     <div class="form-group row">
       <div class="col">
-        <label for="fieldImage">{t}label-image{/t}</label>
+        <label for="field-image">{t}label-image{/t}</label>
 
         <div class="custom-file">
           <input
             name="image"
             type="file"
             class="custom-file-input {if isset($errors.image)}is-invalid{/if}"
-            id="fieldImage">
-          <label class="custom-file-label" for="fieldImage">
+            id="field-image">
+          <label class="custom-file-label" for="field-image">
             {t}info-upload-image{/t}
           </label>
         </div>
@@ -74,7 +74,6 @@
     <div class="form-group">
       <label>{t}label-about-me{/t}</label>
       <textarea
-        id="fieldAboutMe"
         name="aboutMe"
         class="form-control has-unload-warning simple-mde"
         rows="5">{$user->aboutMe|escape}</textarea>

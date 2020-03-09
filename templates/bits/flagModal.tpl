@@ -1,4 +1,4 @@
-<div id="flagModal" class="modal fade" role="dialog" tabindex="-1">
+<div id="modal-flag" class="modal fade" role="dialog" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
 
@@ -61,7 +61,7 @@
                 type="radio"
                 name="flagReason"
                 value="{Ct::REASON_DUPLICATE}"
-                data-related="#duplicateSearch"
+                data-related="#duplicate-search"
               >
               {t}label-duplicate{/t}
             </label>
@@ -71,9 +71,9 @@
             <p class="text-muted" data-flag-visibility="{Flag::TYPE_ENTITY}">
               {t}info-reason-entity-duplicate{/t}
             </p>
-            <div class="form-group flag-related" id="duplicateSearch">
+            <div class="form-group flag-related" id="duplicate-search">
               <select
-                id="flagDuplicateId"
+                id="flag-duplicate-id"
                 class="form-control"
                 name="flagDuplicateId"
                 data-placeholder="{t}label-type-something{/t}">
@@ -158,13 +158,13 @@
                 type="radio"
                 name="flagReason"
                 value="{Ct::REASON_OTHER}"
-                data-related="#detailsWrapper"
+                data-related="#details-wrapper"
               >
               {t}label-other-reason{/t}
             </label>
-            <p class="text-muted flag-related" id="detailsWrapper">
+            <p class="text-muted flag-related" id="details-wrapper">
               <input
-                id="flagDetails"
+                id="flag-details"
                 class="form-control"
                 type="text"
                 name="flagDetails"
@@ -178,7 +178,7 @@
 
       <div class="modal-footer">
         <div class="text-center">
-          <button id="flagButton" type="button" class="btn btn-primary">
+          <button id="button-flag" type="button" class="btn btn-primary">
             <i class="icon icon-flag"></i>
             <span data-flag-visibility="{Flag::TYPE_ANSWER}">
               {t}link-flag-answer{/t}
@@ -200,7 +200,7 @@
   </div>
 </div>
 
-<div id="confirmModal" class="modal fade" tabindex="-1" role="dialog">
+<div id="modal-confirm" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
