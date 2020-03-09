@@ -1,4 +1,4 @@
-<div class="card diffCard">
+<div class="card card-diff">
   <div class="card-header">
     {$title}
   </div>

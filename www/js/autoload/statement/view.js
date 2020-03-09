@@ -4,10 +4,10 @@ $(function() {
 
   function init() {
     commentForm = $('#commentForm').detach().removeAttr('id');
-    $('.addCommentLink').click(addCommentForm);
-    $('.deleteCommentLink').click(deleteComment);
-    $('body').on('click', '.commentSaveButton', saveComment);
-    $('body').on('click', '.commentCancelButton', hideCommentForm);
+    $('a.add-comment').click(addCommentForm);
+    $('a.delete-comment').click(deleteComment);
+    $('body').on('click', 'button.comment-save', saveComment);
+    $('body').on('click', 'button.comment-cancel', hideCommentForm);
   }
 
   function addCommentForm() {
@@ -31,7 +31,7 @@ $(function() {
     var f = $(this).closest('form');
 
     // put the "add comment" link back in the previous div
-    f.prev('div').find('.addCommentLink').show();
+    f.prev('div').find('a.add-comment').show();
 
     // remove the form
     f.remove();

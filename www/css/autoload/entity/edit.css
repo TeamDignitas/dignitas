@@ -1,11 +1,11 @@
-.relTable .dateFieldContainer input {
+.table-rel .date-field-container input {
   width: 100px !important;
 }
 
-.relTable input, .relTable select {
+.table-rel input, .table-rel select {
   width: auto !important;
 }
 
-.colEntityId {
+.col-entity-id {
   min-width: 200px;
 }

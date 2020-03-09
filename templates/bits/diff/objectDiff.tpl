@@ -1,4 +1,4 @@
-<h4 class="revisionHeader">
+<h4 class="revision-header">
   {if $od->review}
     {t}title-changes-suggested-by{/t}
   {else}

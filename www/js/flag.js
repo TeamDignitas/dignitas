@@ -12,7 +12,7 @@ $(function() {
 
   // hide and clear extra fields (other -> details, duplicate -> select2)
   function clearRelatedFields() {
-    $('.flagRelated').attr('hidden', true);
+    $('.flag-related').attr('hidden', true);
     $('#flagDuplicateId').val(null).trigger('change');
     $('#flagDetails').val('');
   }

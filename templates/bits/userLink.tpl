@@ -9,7 +9,7 @@
   <i class="icon icon-user"></i>
 {/if}
 
-<a href="{Router::userLink($u)}" class="userLink text-muted">
+<a href="{Router::userLink($u)}" class="user-link text-muted">
   {$u|escape}
 </a>
 

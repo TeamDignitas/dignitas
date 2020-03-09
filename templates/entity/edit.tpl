@@ -98,7 +98,7 @@
     <div class="form-group">
       <label>{t}label-relations{/t}</label>
 
-      <table class="table table-sm relTable sortable">
+      <table class="table table-sm table-rel sortable">
         <thead
           id="relationHeader"
           {if empty($relations)}hidden{/if}>
@@ -134,11 +134,11 @@
       <textarea
         id="fieldProfile"
         name="profile"
-        class="form-control hasUnloadWarning size-limit simple-mde"
+        class="form-control has-unload-warning size-limit simple-mde"
         maxlength="{Entity::PROFILE_MAX_LENGTH}"
         rows="5">{$entity->profile|escape}</textarea>
       <small class="form-text text-muted float-left">
-        <span class="charsRemaining">{$profileCharsRemaining}</span>
+        <span class="chars-remaining">{$profileCharsRemaining}</span>
         {t}label-characters-remaining{/t}
       </small>
       {include "bits/markdownHelp.tpl"}

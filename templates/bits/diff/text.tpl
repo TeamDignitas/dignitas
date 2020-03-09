@@ -3,7 +3,7 @@
 
   {if $cmd.copyLineCount}
     <div>
-      <button class="identicalToggle btn btn-light">
+      <button class="identical-toggle btn btn-light">
         {t
           count=$cmd.copyLineCount
           1=$cmd.copyLineCount
@@ -13,7 +13,7 @@
       </button>
 
       {strip}
-      <pre class="diff identicalBlock">
+      <pre class="diff identical-block">
         {$cmd.copy}
       </pre>
       {/strip}

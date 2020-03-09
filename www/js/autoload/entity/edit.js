@@ -15,13 +15,13 @@ $(function() {
     stemAlias = $('#stemAlias').detach().removeAttr('hidden');
     stemRelation = $('#stemRelation').detach().removeAttr('hidden');
 
-    initSelect2('.toEntityId', URL_PREFIX + 'ajax/load-entities', TO_ENTITY_ID_OPTIONS);
+    initSelect2('.to-entity-id', URL_PREFIX + 'ajax/load-entities', TO_ENTITY_ID_OPTIONS);
 
     $('#addAliasButton').click(addAlias);
     $('#addRelationButton').click(addRelation);
 
     $('#aliasContainer, #relationContainer')
-      .on('click', '.deleteDependantButton', deleteDependant);
+      .on('click', 'button.delete-dependant', deleteDependant);
 
     $('.colorpicker-component').colorpicker({
       fallbackColor: '#ffffff',
@@ -36,7 +36,7 @@ $(function() {
 
   function addRelation() {
     var t = stemRelation.clone(true).appendTo('#relationContainer');
-    t.find('.toEntityId').select2(TO_ENTITY_ID_OPTIONS);
+    t.find('.to-entity-id').select2(TO_ENTITY_ID_OPTIONS);
     $('#relationHeader').removeAttr('hidden');
   }
 

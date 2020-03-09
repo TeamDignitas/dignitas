@@ -24,16 +24,16 @@ img.pic {
   outline: 1px solid #ddd;
 }
 
-.dateFieldContainer {
+.date-field-container {
   display: inline-block;
   white-space: nowrap;
 }
 
-.dateFieldContainer .form-control {
+.date-field-container .form-control {
   display: inline;
 }
 
-.userLink {
+.user-link {
   font-weight: bold;
 }
 
@@ -107,12 +107,11 @@ blockquote {
 
 /***************************** vote sidebar *****************************/
 
-.voteContainer {
-  align-items: flex-start;
+.vote-container {
   display: flex;
 }
 
-.voteContainer.highlighted {
+.vote-container.highlighted {
   animation-name: answer-highlight-animation;
   animation-duration: 2s;
 }
@@ -122,26 +121,20 @@ blockquote {
   to { background-color: white; }
 }
 
-.voteLeft {
-  flex-grow: 0;
-  flex-shrink: 0;
+.vote-box {
   text-align: center;
 }
 
-.comment > .voteLeft {
+.comment > .vote-box {
   flex-basis: 10px;
   margin-right: 5px;
 }
 
-.comment > .voteLeft .btn-vote {
+.comment > .vote-box .btn-vote {
   font-size: 10px;
 }
 
-.voteMain {
-  flex-grow: 100; /* occupy all available width */
-}
-
-.voteLeft button {
+.vote-box button {
   color: #777;
   display: block;
   font-size: 30px;
@@ -149,7 +142,7 @@ blockquote {
   padding: 0;
 }
 
-.voteLeft button:focus {
+.vote-box button:focus {
   box-shadow: none;
 }
 
@@ -178,10 +171,10 @@ img.pic.person-photo,
 
 .statement-actions .btn,
 .statement-read-only .text-muted,
-.answerFooter *,
-.answerFooter .btn,
-.commentSaveButton.btn-sm,
-.commentCancelButton.btn-sm,
+.answer-footer *,
+.answer-footer .btn,
+.comment-save.btn-sm,
+.comment-cancel.btn-sm,
 .answer-buttons .btn-sm,
 .entity-actions a {
   font-size: 0.75rem;
@@ -247,11 +240,11 @@ img.pic.person-photo,
   display: inline;
 }
 
-.commentActions a {
+.comment-actions a {
   color: #bbb;
 }
 
-.commentActions a:hover {
+.comment-actions a:hover {
   color: #777;
   text-decoration: none;
 }
@@ -266,13 +259,13 @@ footer {
 
 /********************************* tags *********************************/
 
-.tagTooltip {
+.tag-tooltip {
   cursor: help;
 }
 
 /**************************** loyalty widget ****************************/
 
-.loyaltyWidget {
+.loyalty-widget {
   border-radius: 5px;
   height: 20px;
   margin: 5px 0;
@@ -281,7 +274,7 @@ footer {
   border: 1px solid #ccc;
 }
 
-.loyaltyWidget div {
+.loyalty-widget div {
   display: inline-block;
   height: 20px;
 }

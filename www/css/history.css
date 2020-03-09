@@ -1,16 +1,16 @@
-.revisionHeader {
+.revision-header {
   margin-top: 1em;
 }
 
-div.diffCard {
+div.card-diff {
   margin-top: 0.5em;
 }
 
-button.identicalToggle {
+button.identical-toggle {
   width: 100%;
 }
 
-pre.identicalBlock {
+pre.identical-block {
   display: none;
 }
 
@@ -20,12 +20,12 @@ pre.diff {
   white-space: pre-wrap;
 }
 
-.diffOp1 {
+.diff-op1 {
   background: #c8ffc8;
   color: black;
 }
 
-.diffOp2 {
+.diff-op2 {
   background: #ffc8c8;
   color: black;
 }

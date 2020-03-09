@@ -54,7 +54,7 @@
         name="summary"
         id="fieldSummary"
         value="{$statement->summary|escape}"
-        class="form-control hasUnloadWarning {if isset($errors.summary)}is-invalid{/if}"
+        class="form-control has-unload-warning {if isset($errors.summary)}is-invalid{/if}"
         required>
       {include "bits/fieldErrors.tpl" errors=$errors.summary|default:null}
     </div>
@@ -64,7 +64,7 @@
       <textarea
         name="context"
         id="fieldContext"
-        class="form-control hasUnloadWarning simple-mde {if isset($errors.context)}is-invalid{/if}"
+        class="form-control has-unload-warning simple-mde {if isset($errors.context)}is-invalid{/if}"
         rows="10">{$statement->context|escape}</textarea>
       {include "bits/fieldErrors.tpl" errors=$errors.context|default:null}
       {include "bits/markdownHelp.tpl"}
@@ -77,7 +77,7 @@
         name="goal"
         id="fieldGoal"
         value="{$statement->goal|escape}"
-        class="form-control hasUnloadWarning {if isset($errors.goal)}is-invalid{/if}"
+        class="form-control has-unload-warning {if isset($errors.goal)}is-invalid{/if}"
         required>
       {include "bits/fieldErrors.tpl" errors=$errors.goal|default:null}
     </div>
@@ -104,7 +104,7 @@
         <select
           id="fieldVerdict"
           name="verdict"
-          class="form-control hasUnloadWarning">
+          class="form-control has-unload-warning">
           {for $v = 0 to Ct::NUM_VERDICTS - 1}
             <option
               value="{$v}"

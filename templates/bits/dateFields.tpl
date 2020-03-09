@@ -2,7 +2,7 @@
 {$date=$date|default:'0000-00-00'}
 {assign var="dateParts" value="-"|explode:$date}
 
-<div class="input-group dateFieldContainer">
+<div class="input-group date-field-container">
   {strip}
 
   {$year = ($dateParts[0] == '0000') ? '' : $dateParts[0]}

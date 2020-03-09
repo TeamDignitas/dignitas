@@ -1,7 +1,7 @@
 {strip}
 <div>
 
-  <div class="loyaltyWidget" data-toggle="popover">
+  <div class="loyalty-widget" data-toggle="popover">
     {foreach $data as $rec}
       {$percent=($rec.value*100)|nf:0}
       {$color=$rec.entity->getColor()}
@@ -9,7 +9,7 @@
     {/foreach}
   </div>
 
-  <div class="loyaltyPopover" hidden>
+  <div class="loyalty-popover" hidden>
     {foreach $data as $rec}
       <div>
         {$percent=($rec.value*100)|nf:0}
