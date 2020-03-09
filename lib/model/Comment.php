@@ -24,19 +24,28 @@ class Comment extends Proto {
   }
 
   /**
-   * Returns the object's comments.
+   * Returns the object's comments, filtered by visibility to the current user.
+   *
+   * @param object $object A Statement or Answer.
    */
   static function getFor($object) {
-    return Model::factory('Comment')
+    $comments = Model::factory('Comment')
       ->table_alias('c')
       ->select('c.*')
       ->left_outer_join('comment_ext', [ 'c.id', '=', 'ce.commentId' ], 'ce')
       ->where('c.objectType', $object->getObjectType())
       ->where('c.objectId', $object->id)
-      ->where('c.status', Ct::STATUS_ACTIVE)
       ->order_by_desc('ce.score')
       ->order_by_asc('c.createDate')
       ->find_many();
+
+    $results = [];
+    foreach ($comments as $c) {
+      if ($c->isViewable()) {
+        $results[] = $c;
+      }
+    }
+    return $results;
   }
 
   /**
@@ -70,14 +79,27 @@ class Comment extends Proto {
   }
 
   /**
+   * Checks whether the active user may view this comment.
+   *
+   * @return boolean
+   */
+  function isViewable() {
+    return
+      ($this->status == Ct::STATUS_ACTIVE) ||
+      User::isModerator() ||
+      ($this->userId == User::getActiveId());
+  }
+
+  /**
    * Checks whether the active user may delete this comment.
    *
    * @return boolean
    */
   function isDeletable() {
     return
-      User::isModerator() ||
-      $this->userId == User::getActiveId();
+      ($this->status == Ct::STATUS_ACTIVE) &&
+      (User::isModerator() ||
+       $this->userId == User::getActiveId());
   }
 
   function close($reason) {
