@@ -1,5 +1,4 @@
-<td class="small text-right" colspan="3">{$title}</td>
-<td class="small">
+<div>
 
     {if $change.type == Ct::FIELD_CHANGE_TAG_LIST}
 
@@ -42,4 +41,4 @@
       <span class="diffOp1">{$new}</span>
 
     {/if}
-</td>
+</div>

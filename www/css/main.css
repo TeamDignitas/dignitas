@@ -336,7 +336,6 @@ footer {
   padding-top: 1rem;
 }
 
-.revisions-table th,
-.revisions-table td {
-  border-top: 0 !important;
+.row-border {
+  border-top: 1px solid #dee2e6;
 }
