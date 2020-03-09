@@ -13,8 +13,8 @@ $(function() {
   // hide and clear extra fields (other -> details, duplicate -> select2)
   function clearRelatedFields() {
     $('.flag-related').attr('hidden', true);
-    $('#flagDuplicateId').val(null).trigger('change');
-    $('#flagDetails').val('');
+    $('#flag-duplicate-id').val(null).trigger('change');
+    $('#flag-details').val('');
   }
 
   function submitFlag() {
@@ -23,8 +23,8 @@ $(function() {
       objectType: objectType,
       objectId: objectId,
       reason: $('input[name="flagReason"]:checked').val(),
-      duplicateId: $('#flagDuplicateId').val(),
-      details: $('#flagDetails').val(),
+      duplicateId: $('#flag-duplicate-id').val(),
+      details: $('#flag-details').val(),
 
     }).done(function(successMsg, textStatus, xhr) {
       if (xhr.status == 202) {
@@ -33,7 +33,7 @@ $(function() {
       }
       flagLink.prop('hidden', true);
       unflagLink.prop('hidden', false);
-      $('#flagModal').modal('hide');
+      $('#modal-flag').modal('hide');
       showConfirmModal(successMsg);
 
     }).fail(function(errorMsg) {
@@ -87,16 +87,16 @@ $(function() {
   }
 
   function showConfirmModal(msg) {
-    $('#confirmModal .modal-body').html(msg);
-    $('#confirmModal').modal('show');
+    $('#modal-confirm .modal-body').html(msg);
+    $('#modal-confirm').modal('show');
 
     setTimeout(function() {
-      $('#confirmModal').modal('hide');
+      $('#modal-confirm').modal('hide');
     }, 1500);
   }
 
   // reset the form before displaying the modal (user could open it multiple times)
-  $('#flagModal').on('show.bs.modal', function(evt) {
+  $('#modal-flag').on('show.bs.modal', function(evt) {
     flagLink = $(evt.relatedTarget);
     unflagLink = $(flagLink.data('unflagLink'));
     objectType = flagLink.data('objectType');
@@ -105,7 +105,7 @@ $(function() {
     $('*[data-flag-visibility]').hide();
     $('*[data-flag-visibility~="' + objectType + '"]').show();
     $('input[type=radio][name=flagReason]').prop('checked', false);
-    $('#flagButton').attr('disabled', true);
+    $('#button-flag').attr('disabled', true);
 
     // clear the details fields
     clearRelatedFields();
@@ -121,15 +121,15 @@ $(function() {
     }
 
     // only enable the button if the radio button has no related field
-    $('#flagButton').prop('disabled', Boolean(relatedId));
+    $('#button-flag').prop('disabled', Boolean(relatedId));
   });
 
   // in contrast to keyup, the input event also detects cut/paste/undo/redo etc.
-  $('#flagDetails').on('input', function() {
-    $('#flagButton').prop('disabled', !$(this).val());
+  $('#flag-details').on('input', function() {
+    $('#button-flag').prop('disabled', !$(this).val());
   });
 
-  $('#flagDuplicateId').select2({
+  $('#flag-duplicate-id').select2({
     ajax: {
       url: function(params) {
         return (objectType == TYPE_ENTITY)
@@ -147,20 +147,20 @@ $(function() {
     // Without dropdownParent, the select2 won't receive focus because the
     // modal has tabIndex="-1" (and it needs to have that so that we can close
     // it by pressing Escape).
-    dropdownParent: $('#flagModal'),
+    dropdownParent: $('#modal-flag'),
     minimumInputLength: 1,
     width: 'resolve',
   });
 
-  $('#flagDuplicateId').on('select2:select', function() {
-    $('#flagButton').prop('disabled', false);
+  $('#flag-duplicate-id').on('select2:select', function() {
+    $('#button-flag').prop('disabled', false);
   });
 
-  $('#flagButton').click(submitFlag);
+  $('#button-flag').click(submitFlag);
   $('a.unflag').click(submitUnflag);
 
   // Prevent form submission, e.g. by pressing Enter while in the "other
   // reason" field. Instead, submit the flag via an Ajax call.
-  $('#flagModal').submit(submitFlag);
+  $('#modal-flag').submit(submitFlag);
 
 });

@@ -51,13 +51,13 @@
     </div>
 
     <div class="form-group">
-      <label for="parentId" class="col-2 control-label">
+      <label for="parent-id" class="col-2 control-label">
         {t}label-parent-tag{/t}
       </label>
       <div class="col-10">
         <div>
           <select
-            id="parentId"
+            id="parent-id"
             name="parentId"
             class="form-control {if isset($errors.parentId)}is-invalid{/if}">
             {if $t->parentId}

@@ -4,11 +4,11 @@
 </script>
 
 <form
-  id="searchForm"
+  id="form-search"
   action="{Router::link('aggregate/search')}"
   class="d-inline w-50">
 
-  <div id="searchFieldContainer" class="input-group">
+  <div id="search-field-container" class="input-group">
     {* the <select> element for Select2 is created in main.js *}
 
     <noscript>

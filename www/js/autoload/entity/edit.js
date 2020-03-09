@@ -12,15 +12,15 @@ $(function() {
   var stemRelation = null;
 
   function init() {
-    stemAlias = $('#stemAlias').detach().removeAttr('hidden');
-    stemRelation = $('#stemRelation').detach().removeAttr('hidden');
+    stemAlias = $('#stem-alias').detach().removeAttr('hidden');
+    stemRelation = $('#stem-relation').detach().removeAttr('hidden');
 
     initSelect2('.to-entity-id', URL_PREFIX + 'ajax/load-entities', TO_ENTITY_ID_OPTIONS);
 
-    $('#addAliasButton').click(addAlias);
-    $('#addRelationButton').click(addRelation);
+    $('button#add-alias').click(addAlias);
+    $('button#add-relation').click(addRelation);
 
-    $('#aliasContainer, #relationContainer')
+    $('#alias-container, #relation-container')
       .on('click', 'button.delete-dependant', deleteDependant);
 
     $('.colorpicker-component').colorpicker({
@@ -30,14 +30,14 @@ $(function() {
   }
 
   function addAlias() {
-    var t = stemAlias.clone(true).appendTo('#aliasContainer');
-    $('#aliasHeader').removeAttr('hidden');
+    var t = stemAlias.clone(true).appendTo('#alias-container');
+    $('#alias-header').removeAttr('hidden');
   }
 
   function addRelation() {
-    var t = stemRelation.clone(true).appendTo('#relationContainer');
+    var t = stemRelation.clone(true).appendTo('#relation-container');
     t.find('.to-entity-id').select2(TO_ENTITY_ID_OPTIONS);
-    $('#relationHeader').removeAttr('hidden');
+    $('#relation-header').removeAttr('hidden');
   }
 
   function deleteDependant() {
@@ -46,7 +46,7 @@ $(function() {
 
   function updateColorVisibility() {
     var sel = $('option:selected', this);
-    $('#colorFieldWrapper').prop('hidden', !sel.data('has-color'));
+    $('#color-wrapper').prop('hidden', !sel.data('has-color'));
   }
 
   init();

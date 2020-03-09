@@ -39,7 +39,7 @@
 
       <h3>{cap}{t}title-pertaining-to-statement{/t}{/cap}</h3>
 
-      <div id="parentObject">
+      <div id="parent-object">
         {include "bits/statement.tpl"
           statement=$object->getStatement()
           flagBox=false
@@ -69,7 +69,7 @@
 
         <h3>{cap}{t}title-pertaining-to-answer{/t}{/cap}</h3>
 
-        <div id="parentObject">
+        <div id="parent-object">
           {include "bits/answer.tpl"
             answer=$parent
             flagBox=false
@@ -78,7 +78,7 @@
 
         <h3>{cap}{t}title-pertaining-to-statement{/t}{/cap}</h3>
 
-        <div id="parentObject">
+        <div id="parent-object">
           {include "bits/statement.tpl"
             statement=$parent->getStatement()
             flagBox=false
@@ -89,7 +89,7 @@
 
         <h3>{cap}{t}title-pertaining-to-statement{/t}{/cap}</h3>
 
-        <div id="parentObject">
+        <div id="parent-object">
           {include "bits/statement.tpl"
             statement=$parent
             flagBox=false

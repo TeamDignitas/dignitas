@@ -4,14 +4,14 @@
     class="navbar-toggler"
     type="button"
     data-toggle="slide-collapse"
-    data-target="#navbarLeft"
-    aria-controls="navbarLeft"
+    data-target="#navbar-left"
+    aria-controls="navbar-left"
     aria-expanded="false"
     aria-label="{t}label-toggle-menu{/t}">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="navbar-collapse bg-dark to-left" id="navbarLeft">
+  <div class="navbar-collapse bg-dark to-left" id="navbar-left">
     {include "bits/searchForm.tpl"}
     {***
     <ul class="navbar-nav mr-auto">
@@ -40,14 +40,14 @@
     class="navbar-toggler"
     type="button"
     data-toggle="slide-collapse"
-    data-target="#navbarRight"
-    aria-controls="navbarRight"
+    data-target="#navbar-right"
+    aria-controls="navbar-right"
     aria-expanded="false"
     aria-label="{t}label-toggle-menu{/t}">
     <span class="icon icon-user"></span>
   </button>
 
-  <div class="navbar-collapse bg-dark to-right" id="navbarRight">
+  <div class="navbar-collapse bg-dark to-right" id="navbar-right">
 
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
@@ -62,14 +62,14 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle"
           href="#"
-          id="navbarLangDropdown"
+          id="nav-dropdown-lang"
           role="button"
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false">
           <i class="icon icon-globe"></i>
         </a>
-        <div class="dropdown-menu bg-dark" aria-labelledby="navbarLangDropdown">
+        <div class="dropdown-menu bg-dark" aria-labelledby="nav-dropdown-lang">
           {foreach LocaleUtil::getAll() as $id => $name}
             <a
               class="dropdown-item text-light"
@@ -86,7 +86,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle"
             href="#"
-            id="navbarUserDropdown"
+            id="nav-dropdown-user"
             role="button"
             data-toggle="dropdown"
             aria-haspopup="true"
@@ -104,7 +104,7 @@
               {$u->getReputation()|nf}
             </span>
           </a>
-          <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarUserDropdown">
+          <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="nav-dropdown-user">
             <a class="dropdown-item text-light" href="{Router::userLink($u)}">
               <i class="icon icon-user"></i>
               {t}link-my-profile{/t}
@@ -116,7 +116,7 @@
             {if Config::DEVELOPMENT_MODE}
               <div class="dropdown-divider"></div>
               <div class="dropdown-item text-light">
-                <form id="repChange" class="form-inline">
+                <form id="rep-change" class="form-inline">
                   <i class="icon icon-award"></i>
                   <input
                     type="text"

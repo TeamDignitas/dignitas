@@ -8,13 +8,13 @@
   <form method="post">
 
     <div class="form-group">
-      <label for="fieldName" class="control-label">
+      <label for="field-name" class="control-label">
         {t}label-name{/t}
       </label>
       <div>
         <input type="text"
           class="form-control {if isset($errors.name)}is-invalid{/if}"
-          id="fieldName"
+          id="field-name"
           name="name"
           value="{$cat->name|escape}">
         {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
@@ -22,13 +22,13 @@
     </div>
 
     <div class="form-group">
-      <label for="fieldPath" class="control-label">
+      <label for="field-path" class="control-label">
         {t}label-help-category-path{/t}
       </label>
       <div>
         <input type="text"
           class="form-control {if isset($errors.path)}is-invalid{/if}"
-          id="fieldPath"
+          id="field-path"
           name="path"
           value="{$cat->path|escape}"
           placeholder="{t}info-help-category-path{/t}">

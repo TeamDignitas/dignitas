@@ -13,7 +13,7 @@
     </a>
   {/if}
 
-  <div id="tagTree" class="voffset3">
+  <div id="tag-tree" class="voffset3">
     {include "bits/tagTree.tpl" link=User::may(User::PRIV_EDIT_TAG)}
   </div>
 
