@@ -24,15 +24,6 @@ img.pic {
   outline: 1px solid #ddd;
 }
 
-.date-field-container {
-  display: inline-block;
-  white-space: nowrap;
-}
-
-.date-field-container .form-control {
-  display: inline;
-}
-
 .user-link {
   font-weight: bold;
 }
