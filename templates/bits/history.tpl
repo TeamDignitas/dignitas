@@ -5,7 +5,7 @@
 {block "content"}
   <h1 class="statement-history mb-4">{$title|escape}</h1>
 
-  <table class="table table-hover">
+  <table class="table table-hover revisions-table">
     <thead>
       <tr>
         <th scope="col">Author</th>

@@ -3,7 +3,7 @@
 
   {if $cmd.copyLineCount}
     <div>
-      <button class="identicalToggle btn btn-light">
+      <button class="identicalToggle btn btn-sm btn-outline-secondary">
         {t
           count=$cmd.copyLineCount
           1=$cmd.copyLineCount

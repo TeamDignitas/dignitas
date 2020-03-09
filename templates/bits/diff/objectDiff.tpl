@@ -3,7 +3,7 @@
   <td class="small">{include 'bits/moment.tpl' t=$od->modDate}</td>
 
     {foreach $od->getTextChanges() as $diff}
-      <td class="small">
+      <td class="small text-right">
         {$diff.title}
       </td>
       <td class="small">
