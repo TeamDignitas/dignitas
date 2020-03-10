@@ -1,33 +1,29 @@
-<h4 class="revision-header">
-  {if $od->review}
-    {t}title-changes-suggested-by{/t}
-  {else}
-    {t}title-changes-by{/t}
-  {/if}
-  {include "bits/userLink.tpl" u=$od->modUser}
-  {include 'bits/moment.tpl' t=$od->modDate}
-</h4>
+<div class="col-sm-6 col-md-1 pl-0 highlight-sm">{include "bits/userLink.tpl" u=$od->modUser}</div>
+<div class="col-sm-6 col-md-2 pl-0 highlight-sm">{include 'bits/moment.tpl' t=$od->modDate}</div>
 
-{foreach $od->getTextChanges() as $diff}
-  {include "bits/diff/card.tpl"
-    title=$diff.title
-    ses=$diff.ses}
-{/foreach}
+<div class="col-sm-11 offset-sm-1 col-md-9 offset-md-0">
+  <div class="row">
+    {foreach $od->getTextChanges() as $diff}
+      <div class="col-md-2 pl-0">- {$diff.title}</div>
+      <div class="col-md-10">
+        {include "bits/diff/text.tpl" ses=$diff.ses}
+      </div>
+    {/foreach}
 
-<dl class="row">
-  {foreach $od->getFieldChanges() as $change}
-    {include "bits/diff/field.tpl"
-      type=$change.type
-      title=$change.title
-      old=$change.old
-      new=$change.new}
-  {/foreach}
-</dl>
+    {foreach $od->getFieldChanges() as $change}
+      <div class="col-md-2 pl-0">- {$change.title}</div>
+      <div class="col-md-10">
+        {include "bits/diff/field.tpl"
+        type=$change.type
+        old=$change.old
+        new=$change.new}
+      </div>
+    {/foreach}
+  </div>
+</div>
 
 {if $od->review}
   <div class="alert alert-light">
     {include "bits/reviewFlagList.tpl" flags=$od->review->getFlags()}
   </div>
 {/if}
-
-<hr>
