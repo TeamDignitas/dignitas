@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-03-09 17:02+0200\n"
-"PO-Revision-Date: 2020-03-09 17:02+0200\n"
+"POT-Creation-Date: 2020-03-10 12:10+0200\n"
+"PO-Revision-Date: 2020-03-10 12:11+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -37,7 +37,7 @@ msgid "title-dashboard"
 msgstr "panou de control"
 
 #: templates/aggregate/dashboard.tpl:11 templates/aggregate/index.tpl:29
-#: templates/bits/statementList.tpl:36
+#: templates/bits/statementList.tpl:31
 msgid "link-add-statement"
 msgstr "adaugă o afirmație"
 
@@ -246,14 +246,6 @@ msgstr "Confirmați ștergerea acestui comentariu?"
 msgid "label-characters-remaining"
 msgstr "caractere rămase"
 
-#: templates/bits/diff/objectDiff.tpl:3
-msgid "title-changes-suggested-by"
-msgstr "modificări sugerate de"
-
-#: templates/bits/diff/objectDiff.tpl:5
-msgid "title-changes-by"
-msgstr "modificări făcute de"
-
 #: templates/bits/diff/text.tpl:8
 msgid "identical-lines-skipped-singular"
 msgid_plural "identical-lines-skipped-plural"
@@ -448,6 +440,18 @@ msgstr "raportează autorul"
 #: templates/bits/flagModal.tpl:203
 msgid "link-flag-comment"
 msgstr "raportează comentariul"
+
+#: templates/bits/history.tpl:11
+msgid "label-author"
+msgstr "autor"
+
+#: templates/bits/history.tpl:14
+msgid "label-date"
+msgstr "dată"
+
+#: templates/bits/history.tpl:17
+msgid "label-changes"
+msgstr "modificări"
 
 #: templates/bits/inlineAttachment.tpl:1
 msgid "info-read-guide-inline-attachment"
@@ -1131,31 +1135,31 @@ msgstr "deoarece este de slabă calitate."
 msgid "info-answer-by-owner"
 msgstr "de către autorul său."
 
-#: lib/model/Answer.php:49 lib/model/Entity.php:107 lib/model/Statement.php:106
+#: lib/model/Answer.php:49 lib/model/Entity.php:107 lib/model/Statement.php:109
 msgid "info-by"
 msgstr "de către"
 
-#: lib/model/Answer.php:50 lib/model/Entity.php:108 lib/model/Statement.php:107
+#: lib/model/Answer.php:50 lib/model/Entity.php:108 lib/model/Statement.php:110
 msgid "info-other-reason"
 msgstr "pentru alt motiv."
 
-#: lib/model/Answer.php:83
+#: lib/model/Answer.php:84
 #, php-format
 msgid "info-minimum-reputation-add-answer-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a adăuga răspunsuri."
 
-#: lib/model/Answer.php:91
+#: lib/model/Answer.php:92
 #, php-format
 msgid "info-minimum-reputation-edit-answer-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a edita răspunsuri."
 
-#: lib/model/Answer.php:97
+#: lib/model/Answer.php:98
 msgid "info-only-moderator-edit-proof-answer"
 msgstr ""
 "Acest răspuns a fost acceptat ca demonstrație. Doar moderatorii îl mai pot "
 "modifica direct."
 
-#: lib/model/Comment.php:66
+#: lib/model/Comment.php:75
 #, php-format
 msgid "info-comment-length-limit-%d"
 msgstr "Comentariile pot avea maximum %d de caractere."
@@ -1487,65 +1491,65 @@ msgstr "surse șterse"
 msgid "label-changed-statement-link"
 msgstr "sursă modificată"
 
-#: lib/model/Statement.php:83
+#: lib/model/Statement.php:86
 msgid "status-statement-duplicate"
 msgstr "duplicat"
 
-#: lib/model/Statement.php:85
+#: lib/model/Statement.php:88
 msgid "status-statement-closed"
 msgstr "închisă"
 
-#: lib/model/Statement.php:86
+#: lib/model/Statement.php:89
 msgid "status-statement-deleted"
 msgstr "ștearsă"
 
-#: lib/model/Statement.php:95
+#: lib/model/Statement.php:98
 msgid "info-statement-closed"
 msgstr "Această afirmație a fost închisă"
 
-#: lib/model/Statement.php:96
+#: lib/model/Statement.php:99
 msgid "info-statement-deleted"
 msgstr "Această afirmație a fost ștearsă"
 
-#: lib/model/Statement.php:99
+#: lib/model/Statement.php:102
 msgid "info-statement-spam"
 msgstr "deoarece este spam."
 
-#: lib/model/Statement.php:100
+#: lib/model/Statement.php:103
 msgid "info-statement-abuse"
 msgstr "deoarece conține insulte sau abuzuri."
 
-#: lib/model/Statement.php:101
+#: lib/model/Statement.php:104
 msgid "info-statement-duplicate-of"
 msgstr "ca duplicat al afirmației"
 
-#: lib/model/Statement.php:102
+#: lib/model/Statement.php:105
 msgid "info-statement-off-topic"
 msgstr "deoarece este pe lîngă subiect."
 
-#: lib/model/Statement.php:103
+#: lib/model/Statement.php:106
 msgid "info-statement-unverifiable"
 msgstr "deoarece este neverificabilă."
 
-#: lib/model/Statement.php:104
+#: lib/model/Statement.php:107
 msgid "info-statement-low-quality"
 msgstr "deoarece este de slabă calitate."
 
-#: lib/model/Statement.php:105
+#: lib/model/Statement.php:108
 msgid "info-statement-by-owner"
 msgstr "de către autorul său."
 
-#: lib/model/Statement.php:125
+#: lib/model/Statement.php:128
 #, php-format
 msgid "info-minimum-reputation-add-statement-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
-#: lib/model/Statement.php:133
+#: lib/model/Statement.php:136
 #, php-format
 msgid "info-minimum-reputation-edit-statement-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a edita afirmații."
 
-#: lib/model/Statement.php:139
+#: lib/model/Statement.php:142
 msgid "info-only-moderator-edit-statement-verdict"
 msgstr ""
 "Această afirmație a primit un verdict. Doar moderatorii o mai pot modifica "

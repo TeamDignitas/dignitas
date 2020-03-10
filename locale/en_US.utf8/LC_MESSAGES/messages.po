@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-03-09 17:10+0200\n"
-"PO-Revision-Date: 2020-03-09 17:11+0200\n"
+"POT-Creation-Date: 2020-03-10 12:11+0200\n"
+"PO-Revision-Date: 2020-03-10 12:11+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -36,7 +36,7 @@ msgid "title-dashboard"
 msgstr "dashboard"
 
 #: templates/aggregate/dashboard.tpl:11 templates/aggregate/index.tpl:29
-#: templates/bits/statementList.tpl:36
+#: templates/bits/statementList.tpl:31
 msgid "link-add-statement"
 msgstr "add a statement"
 
@@ -241,14 +241,6 @@ msgstr "Are you sure you want to delete this comment?"
 msgid "label-characters-remaining"
 msgstr "characters remaining"
 
-#: templates/bits/diff/objectDiff.tpl:3
-msgid "title-changes-suggested-by"
-msgstr "changes suggested by"
-
-#: templates/bits/diff/objectDiff.tpl:5
-msgid "title-changes-by"
-msgstr "changes by"
-
 #: templates/bits/diff/text.tpl:8
 msgid "identical-lines-skipped-singular"
 msgid_plural "identical-lines-skipped-plural"
@@ -441,6 +433,18 @@ msgstr "flag author"
 #: templates/bits/flagModal.tpl:203
 msgid "link-flag-comment"
 msgstr "flag comment"
+
+#: templates/bits/history.tpl:11
+msgid "label-author"
+msgstr "author"
+
+#: templates/bits/history.tpl:14
+msgid "label-date"
+msgstr "date"
+
+#: templates/bits/history.tpl:17
+msgid "label-changes"
+msgstr "changes"
 
 #: templates/bits/inlineAttachment.tpl:1
 msgid "info-read-guide-inline-attachment"
@@ -1115,30 +1119,30 @@ msgstr "because it is low-quality."
 msgid "info-answer-by-owner"
 msgstr "by its author."
 
-#: lib/model/Answer.php:49 lib/model/Entity.php:107 lib/model/Statement.php:106
+#: lib/model/Answer.php:49 lib/model/Entity.php:107 lib/model/Statement.php:109
 msgid "info-by"
 msgstr "by"
 
-#: lib/model/Answer.php:50 lib/model/Entity.php:108 lib/model/Statement.php:107
+#: lib/model/Answer.php:50 lib/model/Entity.php:108 lib/model/Statement.php:110
 msgid "info-other-reason"
 msgstr "for other reasons."
 
-#: lib/model/Answer.php:83
+#: lib/model/Answer.php:84
 #, php-format
 msgid "info-minimum-reputation-add-answer-%s"
 msgstr "You need at least %s reputation to add answers."
 
-#: lib/model/Answer.php:91
+#: lib/model/Answer.php:92
 #, php-format
 msgid "info-minimum-reputation-edit-answer-%s"
 msgstr "You need at least %s reputation to edit answers."
 
-#: lib/model/Answer.php:97
+#: lib/model/Answer.php:98
 msgid "info-only-moderator-edit-proof-answer"
 msgstr ""
 "This answer was accepted as proof. Only moderators can edit it directly."
 
-#: lib/model/Comment.php:66
+#: lib/model/Comment.php:75
 #, php-format
 msgid "info-comment-length-limit-%d"
 msgstr "Comments can be at most %d characters long."
@@ -1470,65 +1474,65 @@ msgstr "deleted sources"
 msgid "label-changed-statement-link"
 msgstr "changed source"
 
-#: lib/model/Statement.php:83
+#: lib/model/Statement.php:86
 msgid "status-statement-duplicate"
 msgstr "duplicate"
 
-#: lib/model/Statement.php:85
+#: lib/model/Statement.php:88
 msgid "status-statement-closed"
 msgstr "closed"
 
-#: lib/model/Statement.php:86
+#: lib/model/Statement.php:89
 msgid "status-statement-deleted"
 msgstr "deleted"
 
-#: lib/model/Statement.php:95
+#: lib/model/Statement.php:98
 msgid "info-statement-closed"
 msgstr "This statement was closed"
 
-#: lib/model/Statement.php:96
+#: lib/model/Statement.php:99
 msgid "info-statement-deleted"
 msgstr "This statement was deleted"
 
-#: lib/model/Statement.php:99
+#: lib/model/Statement.php:102
 msgid "info-statement-spam"
 msgstr "because it is spam."
 
-#: lib/model/Statement.php:100
+#: lib/model/Statement.php:103
 msgid "info-statement-abuse"
 msgstr "because it is rude or abusive."
 
-#: lib/model/Statement.php:101
+#: lib/model/Statement.php:104
 msgid "info-statement-duplicate-of"
 msgstr "as a duplicate of the statement"
 
-#: lib/model/Statement.php:102
+#: lib/model/Statement.php:105
 msgid "info-statement-off-topic"
 msgstr "because it is off-topic."
 
-#: lib/model/Statement.php:103
+#: lib/model/Statement.php:106
 msgid "info-statement-unverifiable"
 msgstr "because it is unverifiable."
 
-#: lib/model/Statement.php:104
+#: lib/model/Statement.php:107
 msgid "info-statement-low-quality"
 msgstr "because it is low-quality."
 
-#: lib/model/Statement.php:105
+#: lib/model/Statement.php:108
 msgid "info-statement-by-owner"
 msgstr "by the user who added it."
 
-#: lib/model/Statement.php:125
+#: lib/model/Statement.php:128
 #, php-format
 msgid "info-minimum-reputation-add-statement-%s"
 msgstr "You need at least %s reputation to add statements."
 
-#: lib/model/Statement.php:133
+#: lib/model/Statement.php:136
 #, php-format
 msgid "info-minimum-reputation-edit-statement-%s"
 msgstr "You need at least %s reputation to edit statements."
 
-#: lib/model/Statement.php:139
+#: lib/model/Statement.php:142
 msgid "info-only-moderator-edit-statement-verdict"
 msgstr "This statement has a verdict. Only moderators can edit it directly."
 

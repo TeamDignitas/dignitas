@@ -205,10 +205,6 @@ img.pic.person-photo,
   font-weight: 400;
 }
 
-.statement-history {
-  font-size: 1.75rem;
-}
-
 /******************************** answers, entity statements ********************************/
 
 .answer {
@@ -312,26 +308,4 @@ footer {
 
 .help-sidebar .active {
   font-weight: bold;
-}
-
-/************************ statement revisions ************************/
-.revisionHeader:first-of-type {
-  border-top: 1px solid rgba(0,0,0,.1);
-  padding-top: 1rem;
-}
-
-.row-border {
-  border-top: 1px solid #dee2e6;
-}
-
-@media (max-width: 768px){
-  .highlight-sm {
-    background: #ccc;
-    margin-top: 0.75rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .row-border {
-    border-top: 0;
-  }
 }

@@ -1,5 +1,21 @@
-.revision-header {
-  margin-top: 1em;
+.row-border {
+  border-top: 1px solid #dee2e6;
+}
+
+@media (max-width: 768px){
+  .highlight-sm {
+    background: #ccc;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .row-border {
+    border-top: 0;
+  }
+}
+
+.history {
+  font-size: 1.75rem;
 }
 
 div.card-diff {
