@@ -16,7 +16,7 @@ class Markdown {
   static function parse($s) {
     $s = trim($s);
     $pd = new Parsedown();
-    return $pd->text($s);
+    return sprintf('<div class="markdown">%s</div>', $pd->text($s));
   }
 
 }

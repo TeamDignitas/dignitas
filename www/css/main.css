@@ -309,3 +309,14 @@ footer {
 .help-sidebar .active {
   font-weight: bold;
 }
+
+/******************************* markdown *******************************/
+
+.markdown table {
+  width: 100%;
+}
+
+.markdown table td, .markdown table th {
+  border-top: 1px solid #ccc;
+  padding: 0.75rem;
+}
