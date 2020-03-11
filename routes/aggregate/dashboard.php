@@ -1,6 +1,8 @@
 <?php
 
-User::enforce(1); /* just ensure user is logged in */
+if (!User::getActive()) {
+  Util::redirectToLogin(); // just ensure user is logged in
+}
 
 if (User::may(User::PRIV_REVIEW)) {
   // get reasons of reviews that are (a) pending and (b) not signed off by the

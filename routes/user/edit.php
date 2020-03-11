@@ -1,6 +1,8 @@
 <?php
 
-User::enforce(1); /* just ensure user is logged in */
+if (!User::getActive()) {
+  Util::redirectToLogin(); // just ensure user is logged in
+}
 
 $saveButton = Request::has('saveButton');
 
