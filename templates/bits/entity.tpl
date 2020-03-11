@@ -1,12 +1,12 @@
 {$statusInfo=$entity->getStatusInfo()}
 {$flagBox=$flagBox|default:true}
 
-<div class="row entity-profile">
+<div class="row">
   <div class="col-md-3 col-sm-12 mt-2 text-center">
     {include "bits/image.tpl"
         obj=$entity
         geometry=Config::THUMB_ENTITY_LARGE
-        imgClass="pic rounded-circle img-fluid"}
+        imgClass="pic rounded-circle img-fluid no-outline"}
 
     <div class="tags mt-2 text-center">
       {foreach $entity->getTags() as $t}
@@ -16,13 +16,13 @@
   </div>
 
   <div class="col-md-9 col-sm-12 mt-2">
-    <h2 class="font-weight-bold mb-0">
+    <h2 class="font-weight-bold mb-0 center-mobile">
       {$entity->name|escape}
       {if $statusInfo}
         [{$statusInfo['status']}]
       {/if}
     </h2>
-    <div class="font-italic text-muted pl-2">
+    <div class="font-italic text-muted pl-2 center-mobile">
       {$aliases=$entity->getAliases()}
       {if count($aliases)}
         <span class="text-capitalize">{t}title-alias{/t}:
@@ -73,10 +73,10 @@
       </div>
     {/if}
 
-    <div class="entity-links">
+    <div>
       {$links=$entity->getLinks()}
       {if count($links)}
-        <h6 class="font-weight-bold">{t}title-entity-links{/t}</h6>
+        <h6 class="font-weight-bold capitalize-first-word">{t}title-entity-links{/t}</h6>
 
         <ul id="links" class="list-inline list-inline-bullet">
           {foreach $links as $l}

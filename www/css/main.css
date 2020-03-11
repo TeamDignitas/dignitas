@@ -155,8 +155,8 @@ blockquote {
   border-color: #ccc;
 }
 
-img.pic.person-photo,
-.entity-profile img {
+img.pic.no-outline,
+.no-outline {
   outline: 0;
 }
 
@@ -167,7 +167,8 @@ img.pic.person-photo,
 .comment-save.btn-sm,
 .comment-cancel.btn-sm,
 .answer-buttons .btn-sm,
-.entity-actions a {
+.entity-actions a,
+.user-actions a {
   font-size: 0.75rem;
 }
 
@@ -205,7 +206,7 @@ img.pic.person-photo,
   font-weight: 400;
 }
 
-/******************************** answers, entity statements ********************************/
+/******************************** answers, entity statements, user profile ********************************/
 
 .answer {
   padding-top: 10px;
@@ -215,8 +216,14 @@ img.pic.person-photo,
   border-bottom: 1px solid #999;
 }
 
-.entity-links h6::first-letter {
+.capitalize-first-word::first-letter {
   text-transform: capitalize;
+}
+
+@media (max-width: 768px) {
+  .center-mobile {
+    text-align: center;
+  }
 }
 
 /******************************* comments *******************************/
