@@ -144,6 +144,14 @@ class Statement extends Proto {
   }
 
   /**
+   * Checks whether the current user can add an answer.
+   **/
+  function isAnswerable() {
+    return User::may(User::PRIV_ADD_ANSWER) &&
+      $this->status == Ct::STATUS_ACTIVE;
+  }
+
+  /**
    * Checks whether the statement's owner can delete it.
    * Current policy: deletable if
    *   - it has no answers; or

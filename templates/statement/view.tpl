@@ -23,9 +23,11 @@
     {/foreach}
   {/if}
 
-  {if User::may(User::PRIV_ADD_ANSWER)}
+  {if $statement->isAnswerable()}
     <div class="row mt-5">
-      <h6 class="col-md-12 answer-label text-uppercase font-weight-bold pl-0 pb-2">{t}title-your-answer{/t}</h6>
+      <h6 class="col-md-12 answer-label text-uppercase font-weight-bold pl-0 pb-2">
+        {t}title-your-answer{/t}
+      </h6>
 
       {capture "buttonText"}{t}link-post-answer{/t}{/capture}
       {include "bits/answerEdit.tpl"

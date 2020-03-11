@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-03-10 12:10+0200\n"
-"PO-Revision-Date: 2020-03-10 12:11+0200\n"
+"POT-Creation-Date: 2020-03-11 10:39+0200\n"
+"PO-Revision-Date: 2020-03-11 10:40+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -517,11 +517,11 @@ msgstr "următoarea"
 msgid "label-details-optional"
 msgstr "detalii (opționale)"
 
-#: templates/bits/reviewFlagList.tpl:7
+#: templates/bits/reviewFlagList.tpl:6
 msgid "review-voted-keep"
 msgstr "a votat pentru păstrare"
 
-#: templates/bits/reviewFlagList.tpl:9
+#: templates/bits/reviewFlagList.tpl:8
 msgid "review-voted-remove"
 msgstr "a votat pentru eliminare"
 
@@ -903,7 +903,7 @@ msgstr "adaugă o sursă"
 
 #: templates/statement/edit.tpl:135
 msgid "info-confirm-delete-statement"
-msgstr "Confirmați ștergerea acestui răspuns?"
+msgstr "Confirmați ștergerea acestei afirmații?"
 
 #: templates/statement/verdictReport.tpl:3
 #: templates/statement/verdictReport.tpl:7
@@ -929,11 +929,11 @@ msgstr[0] "un răspuns"
 msgstr[1] "%1 răspunsuri"
 msgstr[2] "%1 de răspunsuri"
 
-#: templates/statement/view.tpl:28
+#: templates/statement/view.tpl:29
 msgid "title-your-answer"
 msgstr "răspunsul dumneavoastră"
 
-#: templates/statement/view.tpl:30
+#: templates/statement/view.tpl:32
 msgid "link-post-answer"
 msgstr "trimite răspunsul"
 
