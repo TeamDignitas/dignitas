@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-03-11 16:01+0200\n"
-"PO-Revision-Date: 2020-03-11 16:01+0200\n"
+"POT-Creation-Date: 2020-03-11 16:33+0200\n"
+"PO-Revision-Date: 2020-03-11 16:33+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -198,7 +198,7 @@ msgstr "add a comment"
 msgid "tag"
 msgstr "tag"
 
-#: templates/bits/answerEdit.tpl:18 templates/bits/statement.tpl:151
+#: templates/bits/answerEdit.tpl:18 templates/bits/statement.tpl:153
 #: templates/statement/edit.tpl:103 lib/model/RevisionAnswer.php:15
 #: lib/model/RevisionStatement.php:18
 msgid "label-verdict"
@@ -218,7 +218,7 @@ msgid "answer-posted-by"
 msgstr "posted by"
 
 #: templates/bits/answerMain.tpl:39 templates/bits/entity.tpl:117
-#: templates/bits/statement.tpl:100 templates/help/pageView.tpl:34
+#: templates/bits/statement.tpl:102 templates/help/pageView.tpl:41
 msgid "link-show-revisions"
 msgstr "show revisions"
 
@@ -249,7 +249,7 @@ msgstr[1] "%1 identical lines skipped"
 
 #: templates/bits/editButton.tpl:15 templates/bits/reviewActions.tpl:25
 #: templates/domain/list.tpl:34 templates/help/categoryView.tpl:36
-#: templates/help/pageView.tpl:40 templates/tag/view.tpl:14
+#: templates/help/pageView.tpl:35 templates/tag/view.tpl:14
 #: templates/user/view.tpl:49
 msgid "link-edit"
 msgstr "edit"
@@ -1119,11 +1119,13 @@ msgstr "because it is low-quality."
 msgid "info-answer-by-owner"
 msgstr "by its author."
 
-#: lib/model/Answer.php:49 lib/model/Entity.php:107 lib/model/Statement.php:109
+#: lib/model/Answer.php:49 lib/model/Comment.php:43 lib/model/Entity.php:107
+#: lib/model/Statement.php:109
 msgid "info-by"
 msgstr "by"
 
-#: lib/model/Answer.php:50 lib/model/Entity.php:108 lib/model/Statement.php:110
+#: lib/model/Answer.php:50 lib/model/Comment.php:44 lib/model/Entity.php:108
+#: lib/model/Statement.php:110
 msgid "info-other-reason"
 msgstr "for other reasons."
 
@@ -1142,7 +1144,27 @@ msgid "info-only-moderator-edit-proof-answer"
 msgstr ""
 "This answer was accepted as proof. Only moderators can edit it directly."
 
-#: lib/model/Comment.php:75
+#: lib/model/Comment.php:37
+msgid "info-this-comment-was-deleted"
+msgstr "This comment was deleted"
+
+#: lib/model/Comment.php:40
+msgid "info-comment-spam"
+msgstr "because it is spam."
+
+#: lib/model/Comment.php:41
+msgid "info-comment-abuse"
+msgstr "because it is rude or abusive."
+
+#: lib/model/Comment.php:42
+msgid "info-comment-by-owner"
+msgstr "by its author."
+
+#: lib/model/Comment.php:45
+msgid "info-comment-not-needed"
+msgstr "because it is no longer needed."
+
+#: lib/model/Comment.php:101
 #, php-format
 msgid "info-comment-length-limit-%d"
 msgstr "Comments can be at most %d characters long."

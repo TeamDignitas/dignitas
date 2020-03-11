@@ -24,6 +24,32 @@ class Comment extends Proto {
   }
 
   /**
+   * Returns a human-readable message if this Comment is deleted or null
+   * otherwise.
+   *
+   * @return string
+   */
+  function getDeletedMessage() {
+    if ($this->status != Ct::STATUS_DELETED) {
+      return null;
+    }
+
+    $msg = _('info-this-comment-was-deleted');
+
+    switch ($this->reason) {
+      case Ct::REASON_SPAM: $r = _('info-comment-spam'); break;
+      case Ct::REASON_ABUSE: $r = _('info-comment-abuse'); break;
+      case Ct::REASON_BY_OWNER: $r = _('info-comment-by-owner'); break;
+      case Ct::REASON_BY_USER: $r = _('info-by'); break;
+      case Ct::REASON_OTHER: $r = _('info-other-reason'); break;
+      case Ct::REASON_NOT_NEEDED: $r = _('info-comment-not-needed'); break;
+      default: $r = '';
+    }
+
+    return $msg . ' ' . $r;
+  }
+
+  /**
    * Returns the object's comments, filtered by visibility to the current user.
    *
    * @param object $object A Statement or Answer.

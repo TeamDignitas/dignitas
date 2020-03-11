@@ -33,6 +33,18 @@
       {/if}
     </span>
 
+    {if $comment->status == Ct::STATUS_DELETED}
+      <div class="alert alert-light">
+        {$comment->getDeletedMessage()}
+
+        {if $comment->reason == Ct::REASON_BY_USER}
+          {include "bits/userLink.tpl" u=$comment->getStatusUser()}
+        {elseif $comment->reason != Ct::REASON_BY_OWNER}
+          <hr>
+          {include "bits/reviewFlagList.tpl" flags=$comment->getReviewFlags()}
+        {/if}
+      </div>
+    {/if}
   </div>
 
 </div>
