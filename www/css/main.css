@@ -220,6 +220,12 @@ img.pic.no-outline,
   text-transform: capitalize;
 }
 
+@media (max-width: 768px) {
+  .center-mobile {
+    text-align: center;
+  }
+}
+
 /******************************* comments *******************************/
 
 .comment {

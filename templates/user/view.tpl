@@ -21,7 +21,7 @@
     </div>
 
     <div class="col-md-9 col-sm-12 mt-2">
-      <h2 class="font-weight-bold mb-5">
+      <h2 class="font-weight-bold mb-5 center-mobile">
         {t}label-user{/t} {$user}
       </h2>
 
