@@ -41,7 +41,7 @@
       </dl>
 
       {if $user->aboutMe}
-        <h4 class="text-capitalize">{t}title-about-me{/t}</h4>
+        <h5 class="capitalize-first-word font-weight-bold mt-5">{t}title-about-me{/t}</h5>
         <div>
           {$user->aboutMe|md}
         </div>
