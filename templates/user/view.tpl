@@ -32,10 +32,10 @@
         <dt class="col-9">{$statements}</dt>
         <dd class="col-3 text-capitalize">{t}label-answers{/t}</dd>
         <dt class="col-9">{$answers}</dt>
-        <dd class="col-3 text-capitalize">{t}label-member-since{/t}</dd>
+        <dd class="col-3 capitalize-first-word">{t}label-member-since{/t}</dd>
         <dt class="col-9">{$user->createDate|lt:false}</dt>
         {if $user->getLastSeen()}
-          <dd class="col-3 text-capitalize">{t}label-last-seen{/t}</dd>
+          <dd class="col-3 capitalize-first-word">{t}label-last-seen{/t}</dd>
           <dt class="col-9">{include 'bits/moment.tpl' t=$user->getLastSeen()}</dt>
         {/if}
       </dl>

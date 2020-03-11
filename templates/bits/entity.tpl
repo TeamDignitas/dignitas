@@ -73,10 +73,10 @@
       </div>
     {/if}
 
-    <div class="entity-links">
+    <div>
       {$links=$entity->getLinks()}
       {if count($links)}
-        <h6 class="font-weight-bold">{t}title-entity-links{/t}</h6>
+        <h6 class="font-weight-bold capitalize-first-word">{t}title-entity-links{/t}</h6>
 
         <ul id="links" class="list-inline list-inline-bullet">
           {foreach $links as $l}
