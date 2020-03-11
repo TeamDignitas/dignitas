@@ -167,7 +167,8 @@ img.pic.no-outline,
 .comment-save.btn-sm,
 .comment-cancel.btn-sm,
 .answer-buttons .btn-sm,
-.entity-actions a {
+.entity-actions a,
+.user-actions a {
   font-size: 0.75rem;
 }
 

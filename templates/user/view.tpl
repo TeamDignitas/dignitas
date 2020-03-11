@@ -48,11 +48,13 @@
       {/if}
 
       {if $user->id == User::getActiveId()}
-        <hr>
-        <a href="{Router::link('user/edit')}" class="btn btn-light">
-          <i class="icon icon-edit"></i>
-          {t}link-edit{/t}
-        </a>
+        <hr class="mb-2">
+        <div class="user-actions text-right">
+          <a href="{Router::link('user/edit')}" class="btn btn-sm btn-outline-secondary">
+            <i class="icon icon-edit"></i>
+            {t}link-edit{/t}
+          </a>
+        </div>
       {/if}
 
     </div>
