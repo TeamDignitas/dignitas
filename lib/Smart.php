@@ -13,7 +13,7 @@ class Smart {
       'js' => [ 'third-party/jquery-3.3.1.min.js' ],
     ],
     'main' => [
-      'css' => [ 'main.css' ],
+      'css' => [ 'main.css', 'fonts.css' ],
       'js' => [ 'main.js' ],
     ],
     'bootstrap' => [
