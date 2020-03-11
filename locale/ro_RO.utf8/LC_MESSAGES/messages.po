@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-03-11 10:39+0200\n"
-"PO-Revision-Date: 2020-03-11 10:40+0200\n"
+"POT-Creation-Date: 2020-03-11 16:00+0200\n"
+"PO-Revision-Date: 2020-03-11 16:00+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -1224,12 +1224,12 @@ msgstr "deoarece este neverificabil."
 msgid "info-entity-by-owner"
 msgstr "de către autorul său."
 
-#: lib/model/Entity.php:228
+#: lib/model/Entity.php:231
 #, php-format
 msgid "info-minimum-reputation-add-entity-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
-#: lib/model/Entity.php:236
+#: lib/model/Entity.php:239
 #, php-format
 msgid "info-minimum-reputation-edit-entity-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a adăuga afirmații."
@@ -1539,17 +1539,17 @@ msgstr "deoarece este de slabă calitate."
 msgid "info-statement-by-owner"
 msgstr "de către autorul său."
 
-#: lib/model/Statement.php:128
+#: lib/model/Statement.php:129
 #, php-format
 msgid "info-minimum-reputation-add-statement-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
-#: lib/model/Statement.php:136
+#: lib/model/Statement.php:137
 #, php-format
 msgid "info-minimum-reputation-edit-statement-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a edita afirmații."
 
-#: lib/model/Statement.php:142
+#: lib/model/Statement.php:143
 msgid "info-only-moderator-edit-statement-verdict"
 msgstr ""
 "Această afirmație a primit un verdict. Doar moderatorii o mai pot modifica "
@@ -1627,23 +1627,23 @@ msgstr "Ați raportat deja acest articol."
 msgid "info-minimum-reputation-comment-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a comenta."
 
-#: lib/trait/FlaggableTrait.php:68
+#: lib/trait/FlaggableTrait.php:69
 msgid "status-diff-active"
 msgstr "activă"
 
-#: lib/trait/FlaggableTrait.php:70
+#: lib/trait/FlaggableTrait.php:71
 msgid "status-diff-duplicate"
 msgstr "duplicat"
 
-#: lib/trait/FlaggableTrait.php:71
+#: lib/trait/FlaggableTrait.php:72
 msgid "status-diff-closed"
 msgstr "închisă"
 
-#: lib/trait/FlaggableTrait.php:72
+#: lib/trait/FlaggableTrait.php:73
 msgid "status-diff-deleted"
 msgstr "ștearsă"
 
-#: lib/trait/FlaggableTrait.php:73
+#: lib/trait/FlaggableTrait.php:74
 msgid "status-diff-pending-edit"
 msgstr "modificare în așteptare"
 
@@ -2115,8 +2115,8 @@ msgstr "Vă puteți schimba reputația numai în modul development."
 
 #: routes/user/changeReputation.php:19
 #, php-format
-msgid "info-reputation-range-%d"
-msgstr "Reputația trebuie să fie un întreg între 1 și %d."
+msgid "info-reputation-range-%d-%d"
+msgstr "Reputația trebuie să fie un întreg între %d și %d."
 
 #: routes/user/edit.php:26
 msgid "info-changes-saved"

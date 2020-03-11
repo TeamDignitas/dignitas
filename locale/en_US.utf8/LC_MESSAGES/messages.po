@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-03-10 12:11+0200\n"
-"PO-Revision-Date: 2020-03-10 12:11+0200\n"
+"POT-Creation-Date: 2020-03-11 16:01+0200\n"
+"PO-Revision-Date: 2020-03-11 16:01+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -509,11 +509,11 @@ msgstr "next"
 msgid "label-details-optional"
 msgstr "details (optional)"
 
-#: templates/bits/reviewFlagList.tpl:7
+#: templates/bits/reviewFlagList.tpl:6
 msgid "review-voted-keep"
 msgstr "voted to keep"
 
-#: templates/bits/reviewFlagList.tpl:9
+#: templates/bits/reviewFlagList.tpl:8
 msgid "review-voted-remove"
 msgstr "voted to remove"
 
@@ -916,11 +916,11 @@ msgid_plural "title-answers-plural"
 msgstr[0] "one answer"
 msgstr[1] "%1 answers"
 
-#: templates/statement/view.tpl:28
+#: templates/statement/view.tpl:29
 msgid "title-your-answer"
 msgstr "your answer"
 
-#: templates/statement/view.tpl:30
+#: templates/statement/view.tpl:32
 msgid "link-post-answer"
 msgstr "post answer"
 
@@ -1207,12 +1207,12 @@ msgstr "because it is unverifiable."
 msgid "info-entity-by-owner"
 msgstr "by the user who added it."
 
-#: lib/model/Entity.php:228
+#: lib/model/Entity.php:231
 #, php-format
 msgid "info-minimum-reputation-add-entity-%s"
 msgstr "You need at least %s reputation to add authors."
 
-#: lib/model/Entity.php:236
+#: lib/model/Entity.php:239
 #, php-format
 msgid "info-minimum-reputation-edit-entity-%s"
 msgstr "You need at least %s reputation to edit authors."
@@ -1522,17 +1522,17 @@ msgstr "because it is low-quality."
 msgid "info-statement-by-owner"
 msgstr "by the user who added it."
 
-#: lib/model/Statement.php:128
+#: lib/model/Statement.php:129
 #, php-format
 msgid "info-minimum-reputation-add-statement-%s"
 msgstr "You need at least %s reputation to add statements."
 
-#: lib/model/Statement.php:136
+#: lib/model/Statement.php:137
 #, php-format
 msgid "info-minimum-reputation-edit-statement-%s"
 msgstr "You need at least %s reputation to edit statements."
 
-#: lib/model/Statement.php:142
+#: lib/model/Statement.php:143
 msgid "info-only-moderator-edit-statement-verdict"
 msgstr "This statement has a verdict. Only moderators can edit it directly."
 
@@ -1605,23 +1605,23 @@ msgstr "You already have a pending flag for this object."
 msgid "info-minimum-reputation-comment-%s"
 msgstr "You need at least %s reputation to comment."
 
-#: lib/trait/FlaggableTrait.php:68
+#: lib/trait/FlaggableTrait.php:69
 msgid "status-diff-active"
 msgstr "active"
 
-#: lib/trait/FlaggableTrait.php:70
+#: lib/trait/FlaggableTrait.php:71
 msgid "status-diff-duplicate"
 msgstr "duplicate"
 
-#: lib/trait/FlaggableTrait.php:71
+#: lib/trait/FlaggableTrait.php:72
 msgid "status-diff-closed"
 msgstr "closed"
 
-#: lib/trait/FlaggableTrait.php:72
+#: lib/trait/FlaggableTrait.php:73
 msgid "status-diff-deleted"
 msgstr "deleted"
 
-#: lib/trait/FlaggableTrait.php:73
+#: lib/trait/FlaggableTrait.php:74
 msgid "status-diff-pending-edit"
 msgstr "pending edit"
 
@@ -2085,8 +2085,8 @@ msgstr "Changing your reputation is only allowed in development mode."
 
 #: routes/user/changeReputation.php:19
 #, php-format
-msgid "info-reputation-range-%d"
-msgstr "Reputation must be an integer between 1 and %d."
+msgid "info-reputation-range-%d-%d"
+msgstr "Reputation must be an integer between %d and %d."
 
 #: routes/user/edit.php:26
 msgid "info-changes-saved"

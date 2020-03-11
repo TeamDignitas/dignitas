@@ -4,15 +4,15 @@ class User extends Proto {
   use MarkdownTrait, UploadTrait;
 
   // privileges and their required reputation
-  const PRIV_ADD_ENTITY = 1;
+  const PRIV_ADD_ENTITY = -100;
   const PRIV_EDIT_ENTITY = 2000;
   const PRIV_DELETE_ENTITY = 10000;
 
-  const PRIV_ADD_STATEMENT = 1;
+  const PRIV_ADD_STATEMENT = -100;
   const PRIV_EDIT_STATEMENT = 2000;
   const PRIV_DELETE_STATEMENT = 10000;
 
-  const PRIV_ADD_ANSWER = 1;
+  const PRIV_ADD_ANSWER = -100;
   const PRIV_EDIT_ANSWER = 2000;
   const PRIV_DELETE_ANSWER = 10000;
 

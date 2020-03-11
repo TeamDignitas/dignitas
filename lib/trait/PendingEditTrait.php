@@ -107,7 +107,7 @@ trait PendingEditTrait {
       Util::redirectToLogin();
     }
 
-    if ($this->acceptsSuggestions()) {
+    if ($this->id && $this->acceptsSuggestions()) {
       return;
     }
 

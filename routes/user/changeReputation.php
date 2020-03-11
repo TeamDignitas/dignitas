@@ -5,7 +5,7 @@
  * JSON-encoded error message.
  **/
 
-const MAX_REPUTATION = 1000000;
+const MAX_REPUTATION = 1000000000;
 
 $value = Request::get('value');
 
@@ -15,8 +15,8 @@ if (!$user) {
   $error = _('info-must-log-in');
 } else if (!Config::DEVELOPMENT_MODE) {
   $error = _('info-change-reputation-devel');
-} else if ($value < 1 || $value > MAX_REPUTATION) {
-  $error = sprintf(_('info-reputation-range-%d'), MAX_REPUTATION);
+} else if ($value < -MAX_REPUTATION || $value > MAX_REPUTATION) {
+  $error = sprintf(_('info-reputation-range-%d-%d'), -MAX_REPUTATION, MAX_REPUTATION);
 } else {
   $error = null;
   $user->setReputation($value);
