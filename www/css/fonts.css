@@ -6,8 +6,8 @@
   font-style: normal;
   font-weight: 400;
   src: local('Open Sans Regular'), local('OpenSans-Regular'),
-       url('../../fonts/open-sans-v17-latin-regular.woff2') format('woff2'),
-       url('../../fonts/open-sans-v17-latin-regular.woff') format('woff');
+       url('../../fonts/open-sans-v17-latin-ext_latin-regular.woff2') format('woff2'),
+       url('../../fonts/open-sans-v17-latin-ext_latin-regular.woff') format('woff');
 }
 
 /* open-sans-italic - latin */
@@ -16,8 +16,8 @@
   font-style: italic;
   font-weight: 400;
   src: local('Open Sans Italic'), local('OpenSans-Italic'),
-       url('../../fonts/open-sans-v17-latin-italic.woff2') format('woff2'),
-       url('../../fonts/open-sans-v17-latin-italic.woff') format('woff');
+       url('../../fonts/open-sans-v17-latin-ext_latin-italic.woff2') format('woff2'),
+       url('../../fonts/open-sans-v17-latin-ext_latin-italic.woff') format('woff');
 }
 
 /* open-sans-700 - latin */
@@ -26,8 +26,8 @@
   font-style: normal;
   font-weight: 700;
   src: local('Open Sans Bold'), local('OpenSans-Bold'),
-       url('../../fonts/open-sans-v17-latin-700.woff2') format('woff2'),
-       url('../../fonts/open-sans-v17-latin-700.woff') format('woff');
+       url('../../fonts/open-sans-v17-latin-ext_latin-700.woff2') format('woff2'),
+       url('../../fonts/open-sans-v17-latin-ext_latin-700.woff') format('woff');
 }
 
 /* spartan-regular - latin */
@@ -36,8 +36,8 @@
   font-style: normal;
   font-weight: 400;
   src: local(''),
-       url('../../fonts/spartan-v1-latin-regular.woff2') format('woff2'),
-       url('../../fonts/spartan-v1-latin-regular.woff') format('woff');
+       url('../../fonts/spartan-v1-latin-ext_latin-regular.woff2') format('woff2'),
+       url('../../fonts/spartan-v1-latin-ext_latin-regular.woff') format('woff');
 }
 
 /* spartan-500 - latin */
@@ -46,6 +46,6 @@
   font-style: normal;
   font-weight: 500;
   src: local(''),
-       url('../../fonts/spartan-v1-latin-500.woff2') format('woff2'),
-       url('../../fonts/spartan-v1-latin-500.woff') format('woff');
+       url('../../fonts/spartan-v1-latin-ext_latin-500.woff2') format('woff2'),
+       url('../../fonts/spartan-v1-latin-ext_latin-500.woff') format('woff');
 }
