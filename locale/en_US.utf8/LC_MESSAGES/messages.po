@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-03-11 16:33+0200\n"
-"PO-Revision-Date: 2020-03-11 16:33+0200\n"
+"POT-Creation-Date: 2020-03-11 17:26+0200\n"
+"PO-Revision-Date: 2020-03-11 17:27+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -1871,7 +1871,13 @@ msgstr "Please enter a type."
 msgid "info-entity-profile-length-limit-%d"
 msgstr "Author profiles can be at most %d characters long."
 
-#: routes/entity/edit.php:145
+#: routes/entity/edit.php:149
+msgid "info-entity-type-change-invalidates-incoming-relations"
+msgstr ""
+"Cannot change this author's type because other authors' relationships to "
+"this one would become invalid."
+
+#: routes/entity/edit.php:161
 msgid "info-invalid-entity-links"
 msgstr "Some links are invalid."
 
@@ -2110,7 +2116,7 @@ msgstr "Changing your reputation is only allowed in development mode."
 msgid "info-reputation-range-%d-%d"
 msgstr "Reputation must be an integer between %d and %d."
 
-#: routes/user/edit.php:26
+#: routes/user/edit.php:28
 msgid "info-changes-saved"
 msgstr "Changes saved."
 

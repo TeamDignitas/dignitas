@@ -125,13 +125,29 @@ function validate($entity, $relations, $links, $fileData) {
       sprintf(_('info-entity-profile-length-limit-%d'), Entity::PROFILE_MAX_LENGTH);
   }
 
-  // relations
+  // outgoing relations (passed in the form)
   $relErrors = [];
   foreach ($relations as $r) {
     $relErrors = array_merge($relErrors, $r->validate($entity));
   }
   if (!empty($relErrors)) {
     $errors['relations'] = array_unique($relErrors);
+  }
+
+  // incoming relations (loaded from DB)
+  if ($entity->id) {
+    $incoming = Relation::get_all_by_toEntityId($entity->id);
+    $incomingErrors = false;
+    foreach ($incoming as $i) {
+      $fromEntity = $i->getFromEntity();
+      $list = Relation::VALID_TYPES[$fromEntity->type][$i->type] ?? [];
+      if (!in_array($entity->type, $list)) {
+        $incomingErrors = true;
+      }
+    }
+    if ($incomingErrors) {
+      $errors['type'] = _('info-entity-type-change-invalidates-incoming-relations');
+    }
   }
 
   // links

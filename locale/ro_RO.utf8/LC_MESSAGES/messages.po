@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-03-11 16:32+0200\n"
-"PO-Revision-Date: 2020-03-11 16:32+0200\n"
+"POT-Creation-Date: 2020-03-11 17:27+0200\n"
+"PO-Revision-Date: 2020-03-11 17:28+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -1896,7 +1896,13 @@ msgstr "Vă rugăm să alegeți un tip."
 msgid "info-entity-profile-length-limit-%d"
 msgstr "Profilul autorului poate avea maximum %d de caractere."
 
-#: routes/entity/edit.php:145
+#: routes/entity/edit.php:149
+msgid "info-entity-type-change-invalidates-incoming-relations"
+msgstr ""
+"Nu pot schimba tipul acestui autor deoarece relațiile altor autori cu acesta "
+"ar deveni incorecte."
+
+#: routes/entity/edit.php:161
 msgid "info-invalid-entity-links"
 msgstr "Unele dintre legături sînt incorecte."
 
@@ -2140,7 +2146,7 @@ msgstr "Vă puteți schimba reputația numai în modul development."
 msgid "info-reputation-range-%d-%d"
 msgstr "Reputația trebuie să fie un întreg între %d și %d."
 
-#: routes/user/edit.php:26
+#: routes/user/edit.php:28
 msgid "info-changes-saved"
 msgstr "Am salvat modificările."
 
