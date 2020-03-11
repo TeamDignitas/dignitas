@@ -118,8 +118,9 @@ class Statement extends Proto {
   function isViewable() {
     return
       ($this->status != Ct::STATUS_PENDING_EDIT) &&
-      (($this->status != Ct::STATUS_DELETED) ||
-       User::may(User::PRIV_DELETE_STATEMENT));
+      (($this->status != Ct::STATUS_DELETED) ||  // active statement
+       User::may(User::PRIV_DELETE_STATEMENT) || // privileged user
+       (User::getActiveId() == $this->userId));  // owner
   }
 
   protected function isEditableCore() {

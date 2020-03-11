@@ -137,20 +137,23 @@ class Entity extends Proto {
    * @return Statement[]
    */
   function getStatements($limit = 10) {
-    $st = Model::factory('Statement')
+    // First load all the statements. Load up to twice the limit so we can
+    // filter it later.
+    $statements = Model::factory('Statement')
       ->where('entityId', $this->id)
-      ->where_not_equal('status', Ct::STATUS_PENDING_EDIT);
-
-    if (!User::may(User::PRIV_DELETE_STATEMENT)) {
-      // keep in sync with Statement::isDeletable();
-      $st = $st->where_raw('(status != ? or userId = ?)',
-                           [ Ct::STATUS_DELETED, User::getActiveId() ]);
-    }
-
-    return $st
+      ->where_not_equal('status', Ct::STATUS_PENDING_EDIT)
       ->order_by_desc('createDate')
-      ->limit($limit)
+      ->limit(2 * $limit)
       ->find_many();
+
+    // Now filter them by visibility.
+    $results = [];
+    foreach ($statements as $s) {
+      if ($s->isViewable() && (count($results) < $limit)) {
+        $results[] = $s;
+      }
+    }
+    return $results;
   }
 
   function getMembers() {
@@ -238,6 +241,18 @@ class Entity extends Proto {
     }
   }
 
+
+  /**
+   * Checks whether the active user may add statements to this entity.
+   *
+   * @return boolean
+   */
+  function acceptsNewStatements() {
+    return
+      User::may(User::PRIV_ADD_STATEMENT) &&
+      ($this->status == Ct::STATUS_ACTIVE);
+  }
+
   /**
    * Checks whether the active user may delete this entity.
    *
@@ -252,7 +267,7 @@ class Entity extends Proto {
     return
       !$numStatements &&                       // no publicly visible statements
       $this->id &&                             // not on the add entity page
-      $this->status == Ct::STATUS_ACTIVE &&
+      in_array($this->status, [ Ct::STATUS_ACTIVE, Ct::STATUS_CLOSED ]) &&
       (User::may(User::PRIV_DELETE_ENTITY) ||  // can delete any entity
        $this->userId == User::getActiveId());  // can always delete user's own entities
   }
