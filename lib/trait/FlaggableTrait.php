@@ -35,7 +35,8 @@ trait FlaggableTrait {
    * @return bool
    */
   function isFlaggable() {
-    return User::canFlag($this);
+    return User::canFlag($this) &&
+      ($this->status != Ct::STATUS_DELETED);
   }
 
   /**
