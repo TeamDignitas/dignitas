@@ -26,17 +26,17 @@
       </h2>
 
       <dl class="row">
-        <dd class="col-sm-5 col-md-3 text-capitalize">{t}label-reputation{/t}</dd>
-        <dt class="col-sm-7 col-md-9">{$user->getReputation()|nf}</dt>
-        <dd class="col-sm-5 col-md-3 text-capitalize">{t}label-statements{/t}</dd>
-        <dt class="col-sm-7 col-md-9">{$statements}</dt>
-        <dd class="col-sm-5 col-md-3 text-capitalize">{t}label-answers{/t}</dd>
-        <dt class="col-sm-7 col-md-9">{$answers}</dt>
-        <dd class="col-sm-5 col-md-3 capitalize-first-word">{t}label-member-since{/t}</dd>
-        <dt class="col-sm-7 col-md-9">{$user->createDate|lt:false}</dt>
+        <dd class="col-sm-5 col-md-4 text-capitalize">{t}label-reputation{/t}</dd>
+        <dt class="col-sm-7 col-md-8">{$user->getReputation()|nf}</dt>
+        <dd class="col-sm-5 col-md-4 text-capitalize">{t}label-statements{/t}</dd>
+        <dt class="col-sm-7 col-md-8">{$statements}</dt>
+        <dd class="col-sm-5 col-md-4 text-capitalize">{t}label-answers{/t}</dd>
+        <dt class="col-sm-7 col-md-8">{$answers}</dt>
+        <dd class="col-sm-5 col-md-4 capitalize-first-word">{t}label-member-since{/t}</dd>
+        <dt class="col-sm-7 col-md-8">{$user->createDate|lt:false}</dt>
         {if $user->getLastSeen()}
-          <dd class="col-sm-5 col-md-3 capitalize-first-word">{t}label-last-seen{/t}</dd>
-          <dt class="col-sm-7 col-md-9">{include 'bits/moment.tpl' t=$user->getLastSeen()}</dt>
+          <dd class="col-sm-5 col-md-4 capitalize-first-word">{t}label-last-seen{/t}</dd>
+          <dt class="col-sm-7 col-md-8">{include 'bits/moment.tpl' t=$user->getLastSeen()}</dt>
         {/if}
       </dl>
 
