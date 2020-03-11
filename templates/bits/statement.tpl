@@ -145,7 +145,7 @@
           obj=$entity
           geometry=Config::THUMB_ENTITY_LARGE
           spanClass=""
-          imgClass="pic person-photo rounded-circle img-fluid"}
+          imgClass="pic rounded-circle img-fluid no-outline"}
       </span>
       <h5 class="card-body mx-auto text-center">
         <span class="text-capitalize">{t}label-verdict{/t}:</span>

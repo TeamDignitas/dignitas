@@ -9,7 +9,7 @@
         {include "bits/image.tpl"
           obj=$user
           geometry=Config::THUMB_USER_PROFILE
-          imgClass="pic rounded-circle img-fluid"}
+          imgClass="pic rounded-circle img-fluid no-outline"}
       </div>
       <h4 class="user-badge mt-3">
         {if $user->moderator}
