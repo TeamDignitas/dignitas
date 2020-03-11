@@ -30,15 +30,17 @@
         <div class="mt-2">
           <a
             class="btn btn-sm btn-outline-secondary"
-            href="{Router::link('help/pageHistory')}/{$page->id}">
-            {t}link-show-revisions{/t}
-          </a>
-          <a
-            class="btn btn-sm btn-outline-secondary"
             href="{Router::link('help/pageEdit')}/{$page->id}">
             <i class="icon icon-edit"></i>
             {t}link-edit{/t}
           </a>
+          {if $page->hasRevisions()}
+            <a
+              class="btn btn-sm btn-outline-secondary"
+              href="{Router::link('help/pageHistory')}/{$page->id}">
+              {t}link-show-revisions{/t}
+            </a>
+          {/if}
         </div>
       {/if}
     </div>
