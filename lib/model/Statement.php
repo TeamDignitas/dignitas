@@ -175,6 +175,8 @@ class Statement extends Proto {
       return false; // not on the add statement page
     } else if (in_array($this->status, [Ct::STATUS_DELETED, Ct::STATUS_PENDING_EDIT])) {
       return false; // already deleted or pending edit
+    } else if (($this->verdict != Ct::VERDICT_NONE) && !User::isModerator()) {
+      return false; // only moderators can delete statements with verdicts
     } else if (User::may(User::PRIV_DELETE_STATEMENT)) {
       return true;  // can delete any statement
     } else if (($this->userId == User::getActiveId()) && $this->isDeletableByOwner()) {
