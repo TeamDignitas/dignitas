@@ -115,18 +115,39 @@
             </a>
             {if Config::DEVELOPMENT_MODE}
               <div class="dropdown-divider"></div>
-              <div class="dropdown-item text-light">
-                <form id="rep-change" class="form-inline">
-                  <i class="icon icon-award"></i>
+              <form id="rep-change" class="px-4 text-light">
+                <small class="form-text mb-2">
+                  {t}info-reputation-manual{/t}
+                </small>
+                <div class="form-group">
                   <input
                     type="text"
                     class="form-control"
+                    id="fakeReputation"
                     placeholder="{t}label-reputation{/t}">
-                  <small class="form-text text-light">
-                    {t}info-reputation-manual{/t}
-                  </small>
-                </form>
-              </div>
+                </div>
+
+                <div class="form-row align-items-center">
+                  <div class="col-6">
+                    <div class="custom-control custom-checkbox mr-sm-2">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="fakeModerator"
+                        {if User::isModerator()}checked{/if}>
+                      <label class="custom-control-label" for="fakeModerator">
+                        {t}label-moderator{/t}
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-6 text-right">
+                    <button type="submit" class="btn btn-sm btn-secondary">
+                      {t}link-change{/t}
+                    </button>
+                  </div>
+                </div>
+
+              </form>
             {/if}
             <div class="dropdown-divider"></div>
             <a class="dropdown-item text-light" href="{Router::link('auth/logout')}">

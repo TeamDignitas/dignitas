@@ -178,10 +178,10 @@ $(function() {
   function changeReputation(evt) {
     evt.preventDefault();
 
-    var rep = $(this).find('input').val();
     $.post(URL_PREFIX + 'ajax/change-reputation', {
-      value: rep,
-    }).done(function(newRep) {
+      reputation: $('#fakeReputation').val(),
+      moderator: +$("#fakeModerator").is(':checked'), // the + converts it to integer
+    }).done(function() {
 
       window.location.reload();
 

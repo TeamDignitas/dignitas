@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-03-11 17:26+0200\n"
-"PO-Revision-Date: 2020-03-11 17:27+0200\n"
+"POT-Creation-Date: 2020-03-14 08:36+0200\n"
+"PO-Revision-Date: 2020-03-14 08:36+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -129,7 +129,7 @@ msgstr "password"
 msgid "label-remember-me"
 msgstr "remember me for one year"
 
-#: templates/auth/login.tpl:67 templates/bits/navmenu.tpl:142
+#: templates/auth/login.tpl:67 templates/bits/navmenu.tpl:163
 msgid "link-log-in"
 msgstr "log in"
 
@@ -250,7 +250,7 @@ msgstr[1] "%1 identical lines skipped"
 #: templates/bits/editButton.tpl:15 templates/bits/reviewActions.tpl:25
 #: templates/domain/list.tpl:34 templates/help/categoryView.tpl:36
 #: templates/help/pageView.tpl:35 templates/tag/view.tpl:14
-#: templates/user/view.tpl:49
+#: templates/user/view.tpl:55
 msgid "link-edit"
 msgstr "edit"
 
@@ -286,12 +286,13 @@ msgstr "members"
 msgid "title-test-login"
 msgstr "test user login"
 
-#: templates/bits/fakeLogin.tpl:33 templates/bits/navmenu.tpl:124
-#: templates/user/view.tpl:22
+#: templates/bits/fakeLogin.tpl:33 templates/bits/navmenu.tpl:127
+#: templates/user/view.tpl:29
 msgid "label-reputation"
 msgstr "reputation"
 
-#: templates/bits/fakeLogin.tpl:54 templates/user/view.tpl:16
+#: templates/bits/fakeLogin.tpl:54 templates/bits/navmenu.tpl:139
+#: templates/user/view.tpl:17
 msgid "label-moderator"
 msgstr "moderator"
 
@@ -477,11 +478,15 @@ msgstr "my profile"
 msgid "link-dashboard"
 msgstr "dashboard"
 
-#: templates/bits/navmenu.tpl:126
+#: templates/bits/navmenu.tpl:120
 msgid "info-reputation-manual"
 msgstr "change reputation manually (will refresh the page)"
 
-#: templates/bits/navmenu.tpl:134
+#: templates/bits/navmenu.tpl:145
+msgid "link-change"
+msgstr "schimbă"
+
+#: templates/bits/navmenu.tpl:155
 msgid "link-log-out"
 msgstr "log out"
 
@@ -1018,27 +1023,27 @@ msgstr "password (only if you wish to change it)"
 msgid "title-user"
 msgstr "user"
 
-#: templates/user/view.tpl:13
+#: templates/user/view.tpl:25
 msgid "label-user"
 msgstr "user"
 
-#: templates/user/view.tpl:24
+#: templates/user/view.tpl:31
 msgid "label-statements"
 msgstr "statements"
 
-#: templates/user/view.tpl:26
+#: templates/user/view.tpl:33
 msgid "label-answers"
 msgstr "answers"
 
-#: templates/user/view.tpl:28
+#: templates/user/view.tpl:35
 msgid "label-member-since"
 msgstr "member since"
 
-#: templates/user/view.tpl:31
+#: templates/user/view.tpl:38
 msgid "label-last-seen"
 msgstr "last seen"
 
-#: templates/user/view.tpl:38
+#: templates/user/view.tpl:44
 msgid "title-about-me"
 msgstr "about me"
 
@@ -1091,7 +1096,7 @@ msgstr[1] "%d seconds ago"
 msgid "info-already-logged-in"
 msgstr "You are already logged in."
 
-#: lib/Util.php:39 routes/user/changeReputation.php:15
+#: lib/Util.php:39 routes/user/changeReputation.php:19
 msgid "info-must-log-in"
 msgstr "Please log in to perform this action."
 
@@ -2107,11 +2112,11 @@ msgstr "You cannot select a descendant as the parent."
 msgid "info-no-such-tag"
 msgstr "The tag you are looking for does not exist."
 
-#: routes/user/changeReputation.php:17
+#: routes/user/changeReputation.php:21
 msgid "info-change-reputation-devel"
 msgstr "Changing your reputation is only allowed in development mode."
 
-#: routes/user/changeReputation.php:19
+#: routes/user/changeReputation.php:23
 #, php-format
 msgid "info-reputation-range-%d-%d"
 msgstr "Reputation must be an integer between %d and %d."
