@@ -63,8 +63,7 @@ class Flag extends Proto {
    * @return int One of the Flag::WEIGHT_* values.
    */
   static function getWeight() {
-    $user = User::getActive();
-    if ($user && $user->moderator) {
+    if (User::isModerator()) {
       return self::WEIGHT_MODERATOR;
     } else if (User::may(User::PRIV_REVIEW)) {
       return self::WEIGHT_EXECUTIVE;
