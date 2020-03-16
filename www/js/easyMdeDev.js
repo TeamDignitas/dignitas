@@ -59,11 +59,6 @@ $(function() {
       action: EasyMDE.toggleFullScreen,
       className: 'icon icon-resize-full-alt no-disable no-mobile',
       title: 'Toggle Fullscreen',
-    }, '|', {
-      name: 'guide',
-      action: 'https://simplemde.com/markdown-guide',
-      className: 'icon icon-help-circled',
-      title: 'Markdown Guide',
     },
   ];
 
