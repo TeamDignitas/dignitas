@@ -75,7 +75,7 @@
       <label>{t}label-about-me{/t}</label>
       <textarea
         name="aboutMe"
-        class="form-control has-unload-warning simple-mde"
+        class="form-control has-unload-warning easy-mde"
         rows="5">{$user->aboutMe|escape}</textarea>
       {include "bits/markdownHelp.tpl"}
     </div>

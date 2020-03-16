@@ -99,7 +99,7 @@ if ($saveButton) {
   ]);
 }
 
-Smart::addResources('colorpicker', 'simplemde', 'linkEditor');
+Smart::addResources('colorpicker', 'easymde', 'linkEditor');
 Smart::assign([
   'entity' => $entity,
   'profileCharsRemaining' => Entity::PROFILE_MAX_LENGTH - mb_strlen($entity->profile),

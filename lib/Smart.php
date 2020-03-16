@@ -50,13 +50,13 @@ class Smart {
         'select2Dev.js',
       ],
     ],
-    'simplemde' => [
-      'css' => [ 'third-party/simplemde.min.css' ],
+    'easymde' => [
+      'css' => [ 'third-party/easymde.min.css' ],
       'js' => [
-        'third-party/simplemde.min.js',
+        'third-party/easymde.min.js',
         'third-party/inline-attachment.min.js',
         'third-party/codemirror-4.inline-attachment.min.js',
-        'simpleMdeDev.js',
+        'easyMdeDev.js',
       ],
     ],
     'sortable' => [

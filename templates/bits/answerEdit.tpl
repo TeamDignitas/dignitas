@@ -7,7 +7,7 @@
   <div class="form-group">
     <textarea
       name="contents"
-      class="form-control has-unload-warning simple-mde {if isset($errors.contents)}is-invalid{/if}"
+      class="form-control has-unload-warning easy-mde {if isset($errors.contents)}is-invalid{/if}"
       rows="10">{$answer->contents|escape}</textarea>
     {include "bits/fieldErrors.tpl" errors=$errors.contents|default:null}
     {include "bits/markdownHelp.tpl"}
