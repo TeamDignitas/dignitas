@@ -1,62 +1,62 @@
 $(function() {
   /**
-   * Customize SimpleMDE's toolbar in order to replace icon CSS classes and get
+   * Customize EasyMDE's toolbar in order to replace icon CSS classes and get
    * rid of the external dependency on Font Awesome.
    **/
-  const SIMPLE_MDE_TOOLBAR = [
+  const EASY_MDE_TOOLBAR = [
     {
       name: 'bold',
-      action: SimpleMDE.toggleBold,
+      action: EasyMDE.toggleBold,
       className: 'icon icon-bold',
       title: 'Bold',
     }, {
       name: 'italic',
-      action: SimpleMDE.toggleItalic,
+      action: EasyMDE.toggleItalic,
       className: 'icon icon-italic',
       title: 'Italic',
     }, {
       name: 'heading',
-      action: SimpleMDE.toggleHeadingSmaller,
+      action: EasyMDE.toggleHeadingSmaller,
       className: 'icon icon-header',
       title: 'Heading',
     }, '|', {
       name: 'quote',
-      action: SimpleMDE.toggleBlockquote,
+      action: EasyMDE.toggleBlockquote,
       className: 'icon icon-quote-left',
       title: 'Quote',
     }, {
       name: 'unordered-list',
-      action: SimpleMDE.toggleUnorderedList,
+      action: EasyMDE.toggleUnorderedList,
       className: 'icon icon-list-bullet',
       title: 'Generic List',
     }, {
       name: 'ordered-list',
-      action: SimpleMDE.toggleOrderedList,
+      action: EasyMDE.toggleOrderedList,
       className: 'icon icon-list-numbered',
       title: 'Numbered List',
     }, '|', {
       name: 'link',
-      action: SimpleMDE.drawLink,
+      action: EasyMDE.drawLink,
       className: 'icon icon-link',
       title: 'Create Link',
     }, {
       name: 'image',
-      action: SimpleMDE.drawImage,
+      action: EasyMDE.drawImage,
       className: 'icon icon-picture',
       title: 'Insert Image',
     }, '|', {
       name: 'preview',
-      action: SimpleMDE.togglePreview,
+      action: EasyMDE.togglePreview,
       className: 'icon icon-eye no-disable',
       title: 'Toggle Preview',
     }, {
       name: 'side-by-side',
-      action: SimpleMDE.toggleSideBySide,
+      action: EasyMDE.toggleSideBySide,
       className: 'icon icon-columns no-disable no-mobile',
       title: 'Toggle Side by Side',
     }, {
       name: 'fullscreen',
-      action: SimpleMDE.toggleFullScreen,
+      action: EasyMDE.toggleFullScreen,
       className: 'icon icon-resize-full-alt no-disable no-mobile',
       title: 'Toggle Fullscreen',
     }, '|', {
@@ -67,20 +67,22 @@ $(function() {
     },
   ];
 
-  // initialize SimpleMDE editors
+  // initialize EasyMDE editors
   $('.simple-mde').each(function() {
     var textarea = this;
 
-    var simpleMde = new SimpleMDE({
+    var simpleMde = new EasyMDE({
       autoDownloadFontAwesome: false,
       element: textarea,
       forceSync: true, // so that the remaining chars value gets updated
+      inputStyle: 'contenteditable',
       insertTexts: {
         link: ["[", "]()"], // insert []() for links, not [](http://)
       },
+      nativeSpellcheck: true,
       spellChecker: false,
       status: false,
-      toolbar: SIMPLE_MDE_TOOLBAR,
+      toolbar: EASY_MDE_TOOLBAR,
     });
 
     simpleMde.codemirror.on('change', function() {

@@ -38,7 +38,7 @@ if ($saveButton) {
 }
 
 Smart::assign('page', $page);
-Smart::addResources('simplemde');
+Smart::addResources('easymde');
 Smart::display('help/pageEdit.tpl');
 
 /*************************************************************************/
