@@ -38,7 +38,7 @@ if ($saveButton) {
   // first time loading the page
 }
 
-Smart::addResources('simplemde');
+Smart::addResources('easymde');
 Smart::assign([
   'user' => $user,
 ]);

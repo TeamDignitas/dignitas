@@ -134,7 +134,7 @@
       <textarea
         id="field-profile"
         name="profile"
-        class="form-control has-unload-warning size-limit simple-mde"
+        class="form-control has-unload-warning size-limit easy-mde"
         maxlength="{Entity::PROFILE_MAX_LENGTH}"
         rows="5">{$entity->profile|escape}</textarea>
       <small class="form-text text-muted float-left">

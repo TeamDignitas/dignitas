@@ -37,7 +37,7 @@ if ($statement->hasPendingEdit() && User::may(User::PRIV_REVIEW)) {
   ]);
 }
 
-Smart::addResources('flag', 'imageModal', 'simplemde');
+Smart::addResources('flag', 'imageModal', 'easymde');
 Smart::assign([
   'answerId' => $answerId,
   'answers' => $statement->getAnswers(),

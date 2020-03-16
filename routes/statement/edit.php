@@ -85,7 +85,7 @@ if ($saveButton) {
   ]);
 }
 
-Smart::addResources('imageModal', 'simplemde', 'linkEditor');
+Smart::addResources('imageModal', 'easymde', 'linkEditor');
 Smart::assign('statement', $statement);
 Smart::display('statement/edit.tpl');
 

@@ -68,40 +68,39 @@ $(function() {
   ];
 
   // initialize EasyMDE editors
-  $('.simple-mde').each(function() {
+  $('.easy-mde').each(function() {
     var textarea = this;
 
-    var simpleMde = new EasyMDE({
+    var easyMde = new EasyMDE({
       autoDownloadFontAwesome: false,
       element: textarea,
       forceSync: true, // so that the remaining chars value gets updated
-      inputStyle: 'contenteditable',
+      inputStyle: 'contenteditable', // needed for nativeSpellchecker to work
       insertTexts: {
         link: ["[", "]()"], // insert []() for links, not [](http://)
       },
-      nativeSpellcheck: true,
-      spellChecker: false,
+      spellChecker: false, // disable in favor of nativeSpellchecker
       status: false,
       toolbar: EASY_MDE_TOOLBAR,
     });
 
-    simpleMde.codemirror.on('change', function() {
+    easyMde.codemirror.on('change', function() {
       // fire the change event which in turn updates the chars remaining info
       $(textarea).change();
     });
 
     // allow drag-and-drop file uploads, see
     // https://github.com/sparksuite/simplemde-markdown-editor/issues/328
-    inlineAttachment.editors.codemirror4.attach(simpleMde.codemirror, {
+    inlineAttachment.editors.codemirror4.attach(easyMde.codemirror, {
       allowedTypes: UPLOAD_MIME_TYPES,
       onFileUploadError: handleAjaxError,
       onFileUploadResponse: handleAjaxSuccess,
       uploadUrl: URL_PREFIX + 'ajax/upload-attachment',
     });
 
-    simpleMde.codemirror.on('change', unsavedChangesHandler);
+    easyMde.codemirror.on('change', unsavedChangesHandler);
 
-    return simpleMde;
+    return easyMde;
   });
 
   function handleAjaxError(xhr) {

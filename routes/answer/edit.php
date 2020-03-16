@@ -53,7 +53,7 @@ if ($saveButton) {
   Smart::assign('referrer', Util::getReferrer());
 }
 
-Smart::addResources('imageModal', 'simplemde');
+Smart::addResources('imageModal', 'easymde');
 Smart::assign([
   'answer' => $answer,
 ]);

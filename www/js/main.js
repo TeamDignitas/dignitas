@@ -91,7 +91,7 @@ $(function() {
   });
 
   // Expose this as a function so that other objects can also attach the
-  // handler. For example, SimpleMDE fields don't obey the .has-unload-warning
+  // handler. For example, EasyMDE fields don't obey the .has-unload-warning
   // class.
   window.unsavedChangesHandler = function() {
     if (!beforeUnloadHandlerAttached) {
