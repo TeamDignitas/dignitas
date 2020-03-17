@@ -72,6 +72,20 @@ class Router {
       'ro_RO.utf8' => 'inregistrare',
     ],
 
+    // canned responses
+    'cannedResponse/edit' => [
+      'en_US.utf8' => 'edit-canned-response',
+      'ro_RO.utf8' => 'editeaza-raspuns-predefinit',
+    ],
+    'cannedResponse/history' => [
+      'en_US.utf8' => 'canned-response-history',
+      'ro_RO.utf8' => 'istoric-raspuns-predefinit',
+    ],
+    'cannedResponse/list' => [
+      'en_US.utf8' => 'canned-responses',
+      'ro_RO.utf8' => 'raspunsuri-predefinite',
+    ],
+
     // comments
     'comment/delete' => [
       'en_US.utf8' => 'ajax/delete-comment',
@@ -234,6 +248,8 @@ class Router {
     'answer/edit' => [ 'id' ],
     'answer/history' => [ 'id' ],
     'attachment/view' => [ 'id', 'fileName' ],
+    'cannedResponse/edit' => [ 'id' ],
+    'cannedResponse/history' => [ 'id' ],
     'comment/delete' => [ 'id' ],
     'domain/image' => [ 'id', 'fileName' ],
     'domain/edit' => [ 'id' ],

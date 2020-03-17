@@ -27,6 +27,11 @@
         {t}link-domains{/t}
       </a>
     </div>
+    <div>
+      <a href="{Router::link('cannedResponse/list')}">
+        {t}link-canned-responses{/t}
+      </a>
+    </div>
   {/if}
 
   <div>
@@ -56,7 +61,7 @@
       <ul>
         <li>
           <a href="{Router::link('statement/verdictReport')}">
-             {t}link-verdict-report{/t}
+            {t}link-verdict-report{/t}
            </a>
            ({$numBadVerdicts})
          </li>

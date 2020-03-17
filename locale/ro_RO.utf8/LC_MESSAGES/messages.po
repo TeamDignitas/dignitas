@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-03-14 08:36+0200\n"
-"PO-Revision-Date: 2020-03-14 08:36+0200\n"
+"POT-Creation-Date: 2020-03-17 15:49+0200\n"
+"PO-Revision-Date: 2020-03-17 15:51+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -49,19 +49,23 @@ msgstr "adaugă un autor"
 msgid "link-domains"
 msgstr "domenii"
 
-#: templates/aggregate/dashboard.tpl:34
+#: templates/aggregate/dashboard.tpl:32
+msgid "link-canned-responses"
+msgstr "răspunsuri predefinite"
+
+#: templates/aggregate/dashboard.tpl:39
 msgid "link-tags"
 msgstr "etichete"
 
-#: templates/aggregate/dashboard.tpl:39
+#: templates/aggregate/dashboard.tpl:44
 msgid "title-review-queues"
 msgstr "cozi de evaluare"
 
-#: templates/aggregate/dashboard.tpl:54
+#: templates/aggregate/dashboard.tpl:59
 msgid "title-reports"
 msgstr "rapoarte care necesită atenție"
 
-#: templates/aggregate/dashboard.tpl:59
+#: templates/aggregate/dashboard.tpl:64
 msgid "link-verdict-report"
 msgstr "afirmații cu verdicte neclare"
 
@@ -107,11 +111,11 @@ msgid "title-edit-answer"
 msgstr "editează răspunsul"
 
 #: templates/answer/edit.tpl:15 templates/auth/resetPassword.tpl:45
-#: templates/bits/commentForm.tpl:22 templates/domain/edit.tpl:72
-#: templates/entity/edit.tpl:200 templates/help/categoryEdit.tpl:63
-#: templates/help/pageEdit.tpl:70 templates/relation/edit.tpl:25
-#: templates/statement/edit.tpl:122 templates/tag/edit.tpl:150
-#: templates/user/edit.tpl:116
+#: templates/bits/commentForm.tpl:22 templates/cannedResponse/edit.tpl:29
+#: templates/domain/edit.tpl:72 templates/entity/edit.tpl:200
+#: templates/help/categoryEdit.tpl:63 templates/help/pageEdit.tpl:70
+#: templates/relation/edit.tpl:25 templates/statement/edit.tpl:122
+#: templates/tag/edit.tpl:150 templates/user/edit.tpl:116
 msgid "link-save"
 msgstr "salvează"
 
@@ -210,6 +214,7 @@ msgid "label-verdict"
 msgstr "verdict"
 
 #: templates/bits/answerEdit.tpl:44 templates/bits/commentForm.tpl:27
+#: templates/cannedResponse/edit.tpl:34 templates/cannedResponse/list.tpl:50
 #: templates/domain/edit.tpl:84 templates/entity/edit.tpl:205
 #: templates/help/categoryEdit.tpl:68 templates/help/categoryList.tpl:34
 #: templates/help/pageEdit.tpl:75 templates/relation/edit.tpl:30
@@ -223,7 +228,8 @@ msgid "answer-posted-by"
 msgstr "publicat de"
 
 #: templates/bits/answerMain.tpl:39 templates/bits/entity.tpl:117
-#: templates/bits/statement.tpl:102 templates/help/pageView.tpl:41
+#: templates/bits/statement.tpl:102 templates/cannedResponse/list.tpl:34
+#: templates/help/pageView.tpl:41
 msgid "link-show-revisions"
 msgstr "arată versiunile"
 
@@ -231,10 +237,10 @@ msgstr "arată versiunile"
 msgid "info-confirm-delete-answer"
 msgstr "Confirmați ștergerea acestui răspuns?"
 
-#: templates/bits/answerMain.tpl:48 templates/domain/edit.tpl:94
-#: templates/entity/edit.tpl:215 templates/help/categoryEdit.tpl:78
-#: templates/help/pageEdit.tpl:85 templates/statement/edit.tpl:137
-#: templates/tag/edit.tpl:172
+#: templates/bits/answerMain.tpl:48 templates/cannedResponse/edit.tpl:44
+#: templates/domain/edit.tpl:94 templates/entity/edit.tpl:215
+#: templates/help/categoryEdit.tpl:78 templates/help/pageEdit.tpl:85
+#: templates/statement/edit.tpl:137 templates/tag/edit.tpl:172
 msgid "link-delete"
 msgstr "șterge"
 
@@ -242,7 +248,8 @@ msgstr "șterge"
 msgid "info-confirm-delete-comment"
 msgstr "Confirmați ștergerea acestui comentariu?"
 
-#: templates/bits/commentForm.tpl:14 templates/entity/edit.tpl:142
+#: templates/bits/commentForm.tpl:14 templates/cannedResponse/edit.tpl:20
+#: templates/entity/edit.tpl:142
 msgid "label-characters-remaining"
 msgstr "caractere rămase"
 
@@ -254,9 +261,9 @@ msgstr[1] "%1 linii identice omise"
 msgstr[2] "%1 de linii identice omise"
 
 #: templates/bits/editButton.tpl:15 templates/bits/reviewActions.tpl:25
-#: templates/domain/list.tpl:34 templates/help/categoryView.tpl:36
-#: templates/help/pageView.tpl:35 templates/tag/view.tpl:14
-#: templates/user/view.tpl:55
+#: templates/cannedResponse/list.tpl:28 templates/domain/list.tpl:34
+#: templates/help/categoryView.tpl:36 templates/help/pageView.tpl:35
+#: templates/tag/view.tpl:14 templates/user/view.tpl:55
 msgid "link-edit"
 msgstr "editează"
 
@@ -596,6 +603,30 @@ msgstr "adăugată de"
 msgid "quoted-string-%1"
 msgstr "„%1”"
 
+#: templates/cannedResponse/edit.tpl:3 templates/cannedResponse/edit.tpl:6
+msgid "title-edit-canned-response"
+msgstr "editează răspunsul predefinit"
+
+#: templates/cannedResponse/edit.tpl:11 templates/help/pageEdit.tpl:57
+msgid "label-contents"
+msgstr "conținut"
+
+#: templates/cannedResponse/edit.tpl:42
+msgid "info-confirm-delete-canned-response"
+msgstr "Confirmați ștergerea acestui răspuns predefinit?"
+
+#: templates/cannedResponse/list.tpl:3 templates/cannedResponse/list.tpl:7
+msgid "title-canned-responses"
+msgstr "răspunsuri predefinite"
+
+#: templates/cannedResponse/list.tpl:46
+msgid "link-save-canned-response-order"
+msgstr "salvează ordinea"
+
+#: templates/cannedResponse/list.tpl:54
+msgid "link-add-canned-response"
+msgstr "adaugă un răspuns predefinit"
+
 #: templates/domain/edit.tpl:3 templates/domain/edit.tpl:6
 msgid "title-edit-domain"
 msgstr "editează domeniul"
@@ -821,10 +852,6 @@ msgstr "o cale care va apărea în URL-ul acestei pagini"
 #: templates/help/pageEdit.tpl:40 lib/model/RevisionHelpPage.php:24
 msgid "label-category"
 msgstr "categorie"
-
-#: templates/help/pageEdit.tpl:57
-msgid "label-contents"
-msgstr "conținut"
 
 #: templates/help/pageEdit.tpl:83
 msgid "info-confirm-delete-help-page"
@@ -1112,7 +1139,7 @@ msgstr[2] "acum %d de secunde"
 msgid "info-already-logged-in"
 msgstr "Sînteți deja autentificat(ă)."
 
-#: lib/Util.php:39 routes/user/changeReputation.php:19
+#: lib/Util.php:39 routes/user/changeReputation.php:16
 msgid "info-must-log-in"
 msgstr "Vă rugăm să vă autentificați."
 
@@ -1417,7 +1444,8 @@ msgstr "alt-motiv"
 msgid "queue-url-not-needed"
 msgstr "nenecesare"
 
-#: lib/model/RevisionAnswer.php:13 lib/model/RevisionHelpPage.php:14
+#: lib/model/RevisionAnswer.php:13 lib/model/RevisionCannedResponse.php:14
+#: lib/model/RevisionHelpPage.php:14
 msgid "title-changes-contents"
 msgstr "modificări la conținut"
 
@@ -1819,6 +1847,37 @@ msgstr "Am schimbat cu succes parola."
 msgid "info-registration-disabled"
 msgstr "Înregistrarea este dezactivată."
 
+#: routes/cannedResponse/edit.php:17
+msgid "info-canned-response-deleted"
+msgstr "Am șters răspunsul predefinit."
+
+#: routes/cannedResponse/edit.php:28
+msgid "info-canned-response-saved"
+msgstr "Am salvat modificările."
+
+#: routes/cannedResponse/edit.php:48
+msgid "info-must-enter-canned-response-contents"
+msgstr "Vă rugăm să introduceți conținutul."
+
+#: routes/cannedResponse/edit.php:53
+#, php-format
+msgid "info-canned-response-length-limit-%d"
+msgstr ""
+"Răspunsurile predefinite, ca și comentariile, pot avea maximum %d de "
+"caractere."
+
+#: routes/cannedResponse/history.php:9
+msgid "info-no-such-canned-response"
+msgstr "Răspunsul predefinit căutat nu există."
+
+#: routes/cannedResponse/history.php:15
+msgid "info-canned-response-history"
+msgstr "Istoricul răspunsului predefinit"
+
+#: routes/cannedResponse/list.php:16
+msgid "info-canned-response-order-updated"
+msgstr "Am salvat ordinea răspunsurilor predefinite."
+
 #: routes/comment/delete.php:12
 msgid "info-no-such-comment"
 msgstr "Comentariul căutat nu există."
@@ -2142,11 +2201,11 @@ msgstr "Nu puteți alege un descendent ca părinte."
 msgid "info-no-such-tag"
 msgstr "Eticheta căutată nu există."
 
-#: routes/user/changeReputation.php:21
+#: routes/user/changeReputation.php:18
 msgid "info-change-reputation-devel"
 msgstr "Vă puteți schimba reputația numai în modul development."
 
-#: routes/user/changeReputation.php:23
+#: routes/user/changeReputation.php:20
 #, php-format
 msgid "info-reputation-range-%d-%d"
 msgstr "Reputația trebuie să fie un întreg între %d și %d."

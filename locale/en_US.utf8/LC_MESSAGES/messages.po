@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-03-14 08:36+0200\n"
-"PO-Revision-Date: 2020-03-14 08:36+0200\n"
+"POT-Creation-Date: 2020-03-17 15:47+0200\n"
+"PO-Revision-Date: 2020-03-17 15:49+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -48,19 +48,23 @@ msgstr "add an author"
 msgid "link-domains"
 msgstr "domains"
 
-#: templates/aggregate/dashboard.tpl:34
+#: templates/aggregate/dashboard.tpl:32
+msgid "link-canned-responses"
+msgstr "canned responses"
+
+#: templates/aggregate/dashboard.tpl:39
 msgid "link-tags"
 msgstr "tags"
 
-#: templates/aggregate/dashboard.tpl:39
+#: templates/aggregate/dashboard.tpl:44
 msgid "title-review-queues"
 msgstr "review queues"
 
-#: templates/aggregate/dashboard.tpl:54
+#: templates/aggregate/dashboard.tpl:59
 msgid "title-reports"
 msgstr "reports in need of attention"
 
-#: templates/aggregate/dashboard.tpl:59
+#: templates/aggregate/dashboard.tpl:64
 msgid "link-verdict-report"
 msgstr "statements with unclear verdicts"
 
@@ -103,11 +107,11 @@ msgid "title-edit-answer"
 msgstr "edit answer"
 
 #: templates/answer/edit.tpl:15 templates/auth/resetPassword.tpl:45
-#: templates/bits/commentForm.tpl:22 templates/domain/edit.tpl:72
-#: templates/entity/edit.tpl:200 templates/help/categoryEdit.tpl:63
-#: templates/help/pageEdit.tpl:70 templates/relation/edit.tpl:25
-#: templates/statement/edit.tpl:122 templates/tag/edit.tpl:150
-#: templates/user/edit.tpl:116
+#: templates/bits/commentForm.tpl:22 templates/cannedResponse/edit.tpl:29
+#: templates/domain/edit.tpl:72 templates/entity/edit.tpl:200
+#: templates/help/categoryEdit.tpl:63 templates/help/pageEdit.tpl:70
+#: templates/relation/edit.tpl:25 templates/statement/edit.tpl:122
+#: templates/tag/edit.tpl:150 templates/user/edit.tpl:116
 msgid "link-save"
 msgstr "save"
 
@@ -205,6 +209,7 @@ msgid "label-verdict"
 msgstr "verdict"
 
 #: templates/bits/answerEdit.tpl:44 templates/bits/commentForm.tpl:27
+#: templates/cannedResponse/edit.tpl:34 templates/cannedResponse/list.tpl:50
 #: templates/domain/edit.tpl:84 templates/entity/edit.tpl:205
 #: templates/help/categoryEdit.tpl:68 templates/help/categoryList.tpl:34
 #: templates/help/pageEdit.tpl:75 templates/relation/edit.tpl:30
@@ -218,7 +223,8 @@ msgid "answer-posted-by"
 msgstr "posted by"
 
 #: templates/bits/answerMain.tpl:39 templates/bits/entity.tpl:117
-#: templates/bits/statement.tpl:102 templates/help/pageView.tpl:41
+#: templates/bits/statement.tpl:102 templates/cannedResponse/list.tpl:34
+#: templates/help/pageView.tpl:41
 msgid "link-show-revisions"
 msgstr "show revisions"
 
@@ -226,10 +232,10 @@ msgstr "show revisions"
 msgid "info-confirm-delete-answer"
 msgstr "Are you sure you want to delete this answer?"
 
-#: templates/bits/answerMain.tpl:48 templates/domain/edit.tpl:94
-#: templates/entity/edit.tpl:215 templates/help/categoryEdit.tpl:78
-#: templates/help/pageEdit.tpl:85 templates/statement/edit.tpl:137
-#: templates/tag/edit.tpl:172
+#: templates/bits/answerMain.tpl:48 templates/cannedResponse/edit.tpl:44
+#: templates/domain/edit.tpl:94 templates/entity/edit.tpl:215
+#: templates/help/categoryEdit.tpl:78 templates/help/pageEdit.tpl:85
+#: templates/statement/edit.tpl:137 templates/tag/edit.tpl:172
 msgid "link-delete"
 msgstr "delete"
 
@@ -237,7 +243,8 @@ msgstr "delete"
 msgid "info-confirm-delete-comment"
 msgstr "Are you sure you want to delete this comment?"
 
-#: templates/bits/commentForm.tpl:14 templates/entity/edit.tpl:142
+#: templates/bits/commentForm.tpl:14 templates/cannedResponse/edit.tpl:20
+#: templates/entity/edit.tpl:142
 msgid "label-characters-remaining"
 msgstr "characters remaining"
 
@@ -248,9 +255,9 @@ msgstr[0] "one identical line skipped"
 msgstr[1] "%1 identical lines skipped"
 
 #: templates/bits/editButton.tpl:15 templates/bits/reviewActions.tpl:25
-#: templates/domain/list.tpl:34 templates/help/categoryView.tpl:36
-#: templates/help/pageView.tpl:35 templates/tag/view.tpl:14
-#: templates/user/view.tpl:55
+#: templates/cannedResponse/list.tpl:28 templates/domain/list.tpl:34
+#: templates/help/categoryView.tpl:36 templates/help/pageView.tpl:35
+#: templates/tag/view.tpl:14 templates/user/view.tpl:55
 msgid "link-edit"
 msgstr "edit"
 
@@ -588,6 +595,30 @@ msgstr "added by"
 msgid "quoted-string-%1"
 msgstr "\"%1\""
 
+#: templates/cannedResponse/edit.tpl:3 templates/cannedResponse/edit.tpl:6
+msgid "title-edit-canned-response"
+msgstr "edit canned response"
+
+#: templates/cannedResponse/edit.tpl:11 templates/help/pageEdit.tpl:57
+msgid "label-contents"
+msgstr "contents"
+
+#: templates/cannedResponse/edit.tpl:42
+msgid "info-confirm-delete-canned-response"
+msgstr "Are you sure you want to delete this canned response?"
+
+#: templates/cannedResponse/list.tpl:3 templates/cannedResponse/list.tpl:7
+msgid "title-canned-responses"
+msgstr "canned responses"
+
+#: templates/cannedResponse/list.tpl:46
+msgid "link-save-canned-response-order"
+msgstr "save order"
+
+#: templates/cannedResponse/list.tpl:54
+msgid "link-add-canned-response"
+msgstr "add a canned response"
+
 #: templates/domain/edit.tpl:3 templates/domain/edit.tpl:6
 msgid "title-edit-domain"
 msgstr "edit domain"
@@ -809,10 +840,6 @@ msgstr "visible in the page's URL"
 #: templates/help/pageEdit.tpl:40 lib/model/RevisionHelpPage.php:24
 msgid "label-category"
 msgstr "category"
-
-#: templates/help/pageEdit.tpl:57
-msgid "label-contents"
-msgstr "contents"
 
 #: templates/help/pageEdit.tpl:83
 msgid "info-confirm-delete-help-page"
@@ -1096,7 +1123,7 @@ msgstr[1] "%d seconds ago"
 msgid "info-already-logged-in"
 msgstr "You are already logged in."
 
-#: lib/Util.php:39 routes/user/changeReputation.php:19
+#: lib/Util.php:39 routes/user/changeReputation.php:16
 msgid "info-must-log-in"
 msgstr "Please log in to perform this action."
 
@@ -1400,7 +1427,8 @@ msgstr "other"
 msgid "queue-url-not-needed"
 msgstr "not-needed"
 
-#: lib/model/RevisionAnswer.php:13 lib/model/RevisionHelpPage.php:14
+#: lib/model/RevisionAnswer.php:13 lib/model/RevisionCannedResponse.php:14
+#: lib/model/RevisionHelpPage.php:14
 msgid "title-changes-contents"
 msgstr "changes to contents"
 
@@ -1794,6 +1822,35 @@ msgstr "Password changed successfully."
 msgid "info-registration-disabled"
 msgstr "Registration is disabled."
 
+#: routes/cannedResponse/edit.php:17
+msgid "info-canned-response-deleted"
+msgstr "Canned response deleted."
+
+#: routes/cannedResponse/edit.php:28
+msgid "info-canned-response-saved"
+msgstr "Changes saved."
+
+#: routes/cannedResponse/edit.php:48
+msgid "info-must-enter-canned-response-contents"
+msgstr "Please enter the canned response contents."
+
+#: routes/cannedResponse/edit.php:53
+#, php-format
+msgid "info-canned-response-length-limit-%d"
+msgstr "Canned responses, like comments, can be at most %d characters long."
+
+#: routes/cannedResponse/history.php:9
+msgid "info-no-such-canned-response"
+msgstr "The canned response you are looking for does not exist."
+
+#: routes/cannedResponse/history.php:15
+msgid "info-canned-response-history"
+msgstr "History of canned response"
+
+#: routes/cannedResponse/list.php:16
+msgid "info-canned-response-order-updated"
+msgstr "Canned response order saved."
+
 #: routes/comment/delete.php:12
 msgid "info-no-such-comment"
 msgstr "The comment you are looking for does not exist."
@@ -2112,11 +2169,11 @@ msgstr "You cannot select a descendant as the parent."
 msgid "info-no-such-tag"
 msgstr "The tag you are looking for does not exist."
 
-#: routes/user/changeReputation.php:21
+#: routes/user/changeReputation.php:18
 msgid "info-change-reputation-devel"
 msgstr "Changing your reputation is only allowed in development mode."
 
-#: routes/user/changeReputation.php:23
+#: routes/user/changeReputation.php:20
 #, php-format
 msgid "info-reputation-range-%d-%d"
 msgstr "Reputation must be an integer between %d and %d."
