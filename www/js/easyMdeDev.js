@@ -79,6 +79,26 @@ $(function() {
       toolbar: EASY_MDE_TOOLBAR,
     });
 
+    easyMde.codemirror.on('beforeChange', function(cm, change) {
+      var max = $(textarea).prop('maxlength');
+      if (max) {
+        var len = cm.getValue().length;
+
+        if (change.origin == '+input') {
+          len++;
+        } else if (change.origin == 'paste') {
+          // This omits the case where we paste over a selection and we should
+          // subtract the cost of the said selection. This is hard to track,
+          // though, and seems like a corner case.
+          len += change.text.join('\n').length;
+        }
+
+        if (len > max) {
+          change.cancel();
+        }
+      }
+    });
+
     easyMde.codemirror.on('change', function() {
       // fire the change event which in turn updates the chars remaining info
       $(textarea).change();
