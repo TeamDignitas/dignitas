@@ -37,7 +37,6 @@
   {/if}
 
   {include "bits/commentForm.tpl"}
-
   {include "bits/flagModal.tpl"}
 
 {/block}

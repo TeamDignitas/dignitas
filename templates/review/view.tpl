@@ -31,11 +31,17 @@
         </div>
       {/if}
 
-      {include "bits/statement.tpl" statement=$object flagBox=false}
+      {include "bits/statement.tpl"
+        statement=$object
+        flagBox=false
+        addComment=true}
 
     {elseif $type == Proto::TYPE_ANSWER}
 
-      {include "bits/answer.tpl" answer=$object flagBox=false}
+      {include "bits/answer.tpl"
+        answer=$object
+        flagBox=false
+        addComment=true}
 
       <h3>{cap}{t}title-pertaining-to-statement{/t}{/cap}</h3>
 
@@ -108,6 +114,7 @@
     {t}info-review-queue-empty{/t}
   {/if}
 
+  {include "bits/commentForm.tpl"}
   {include "bits/flagModal.tpl"}
 
 {/block}
