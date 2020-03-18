@@ -164,9 +164,8 @@ img.pic.no-outline,
 .statement-read-only .text-muted,
 .answer-footer *,
 .answer-footer .btn,
-.comment-save.btn-sm,
-.comment-cancel.btn-sm,
 .answer-buttons .btn-sm,
+.answer-buttons .dropdown-menu,
 .entity-actions a,
 .user-actions a {
   font-size: 0.75rem;
@@ -250,6 +249,23 @@ img.pic.no-outline,
 .comment-actions a:hover {
   color: #777;
   text-decoration: none;
+}
+
+.dropdown-canned-responses a {
+  color: black;
+  cursor: default;
+  pointer-events: none;
+  text-decoration: none;
+}
+
+.dropdown-canned-responses .markdown p {
+  margin-bottom: 0;
+}
+
+.dropdown-canned-responses .dropdown-menu {
+  max-height: 500px;
+  min-width: 400px;
+  overflow-y: auto;
 }
 
 /******************************** footer ********************************/

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-03-17 15:47+0200\n"
-"PO-Revision-Date: 2020-03-17 15:49+0200\n"
+"POT-Creation-Date: 2020-03-18 16:25+0200\n"
+"PO-Revision-Date: 2020-03-18 16:25+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -107,7 +107,7 @@ msgid "title-edit-answer"
 msgstr "edit answer"
 
 #: templates/answer/edit.tpl:15 templates/auth/resetPassword.tpl:45
-#: templates/bits/commentForm.tpl:22 templates/cannedResponse/edit.tpl:29
+#: templates/bits/commentForm.tpl:44 templates/cannedResponse/edit.tpl:29
 #: templates/domain/edit.tpl:72 templates/entity/edit.tpl:200
 #: templates/help/categoryEdit.tpl:63 templates/help/pageEdit.tpl:70
 #: templates/relation/edit.tpl:25 templates/statement/edit.tpl:122
@@ -208,7 +208,7 @@ msgstr "tag"
 msgid "label-verdict"
 msgstr "verdict"
 
-#: templates/bits/answerEdit.tpl:44 templates/bits/commentForm.tpl:27
+#: templates/bits/answerEdit.tpl:44 templates/bits/commentForm.tpl:49
 #: templates/cannedResponse/edit.tpl:34 templates/cannedResponse/list.tpl:50
 #: templates/domain/edit.tpl:84 templates/entity/edit.tpl:205
 #: templates/help/categoryEdit.tpl:68 templates/help/categoryList.tpl:34
@@ -247,6 +247,10 @@ msgstr "Are you sure you want to delete this comment?"
 #: templates/entity/edit.tpl:142
 msgid "label-characters-remaining"
 msgstr "characters remaining"
+
+#: templates/bits/commentForm.tpl:25
+msgid "link-pick-canned-response"
+msgstr "canned response"
 
 #: templates/bits/diff/text.tpl:8
 msgid "identical-lines-skipped-singular"

@@ -246,3 +246,13 @@ $(function() {
     $(this).parent().find('.chars-remaining').text(max - l);
   });
 });
+
+/******************************* comments *******************************/
+
+$(function() {
+  $('.dropdown-canned-responses').on('hide.bs.dropdown', function (e) {
+    var wrap = $(e.clickEvent.target).closest('.canned-response-wrapper');
+    var textarea =  wrap.closest('form').find('textarea');
+    textarea.val(wrap.data('raw'));
+  })
+});

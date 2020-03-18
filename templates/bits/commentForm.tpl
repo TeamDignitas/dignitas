@@ -16,15 +16,38 @@
     {include "bits/markdownHelp.tpl"}
   </div>
 
-  <div class="text-right answer-buttons mb-2">
-    <button type="submit" class="btn btn-sm btn-outline-primary comment-save">
-      <i class="icon icon-floppy"></i>
-      {t}link-save{/t}
-    </button>
+  <div class="row answer-buttons mb-2">
+    <div class="col-auto dropdown-canned-responses">
+      <button
+        type="button"
+        class="btn btn-sm btn-outline-secondary dropdown-toggle"
+        data-toggle="dropdown">
+        {t}link-pick-canned-response{/t}
+      </button>
+      <div class="dropdown-menu p-2 text-muted">
+        {foreach CannedResponse::loadAll() as $i => $cr}
+          {if $i}
+            <div class="dropdown-divider"></div>
+          {/if}
+          <div class="canned-response-wrapper" data-raw="{$cr->contents|escape:html}">
+            {$cr->contents|md}
+          </div>
+        {/foreach}
+      </div>
+    </div>
 
-    <button type="button" class="btn btn-sm btn-outline-secondary comment-cancel">
-      <i class="icon icon-cancel"></i>
-      {t}link-cancel{/t}
-    </button>
+    <div class="col"></div>
+
+    <div class="col-auto">
+      <button type="submit" class="btn btn-sm btn-outline-primary comment-save">
+        <i class="icon icon-floppy"></i>
+        {t}link-save{/t}
+      </button>
+
+      <button type="button" class="btn btn-sm btn-outline-secondary comment-cancel">
+        <i class="icon icon-cancel"></i>
+        {t}link-cancel{/t}
+      </button>
+    </div>
   </div>
 </form>
