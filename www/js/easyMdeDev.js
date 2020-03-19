@@ -81,7 +81,7 @@ $(function() {
 
     easyMde.codemirror.on('beforeChange', function(cm, change) {
       var max = $(textarea).prop('maxlength');
-      if (max) {
+      if (max > 0) {
         var len = cm.getValue().length;
 
         if (change.origin == '+input') {

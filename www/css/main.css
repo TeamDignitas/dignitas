@@ -253,12 +253,12 @@ img.pic.no-outline,
 
 .dropdown-canned-responses a {
   color: black;
-  cursor: default;
   pointer-events: none;
   text-decoration: none;
 }
 
 .dropdown-canned-responses .markdown p {
+  cursor: pointer;
   margin-bottom: 0;
 }
 

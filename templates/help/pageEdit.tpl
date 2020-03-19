@@ -57,9 +57,8 @@
       <label for="field-contents">{t}label-contents{/t}</label>
       <textarea
         id="field-contents"
-        name="contents"
         class="form-control has-unload-warning easy-mde"
-        rows="10">{$page->contents|escape}</textarea>
+        name="contents">{$page->contents|escape}</textarea>
       {include "bits/markdownHelp.tpl"}
       {include "bits/fieldErrors.tpl" errors=$errors.contents|default:null}
     </div>
