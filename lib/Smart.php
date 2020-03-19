@@ -75,7 +75,7 @@ class Smart {
     $s->addPluginsDir(__DIR__ . '/smarty-plugins');
     $s->registerPlugin('modifier', 'ld', 'Time::localDate');
     $s->registerPlugin('modifier', 'lt', 'Time::localTimestamp');
-    $s->registerPlugin('modifier', 'md', 'Markdown::parse');
+    $s->registerPlugin('modifier', 'md', 'Markdown::convert');
     $s->registerPlugin('modifier', 'moment', 'Time::moment');
     $s->registerPlugin('modifier', 'monthName', 'Time::getMonthName');
     $s->registerPlugin('modifier', 'nf', 'Str::formatNumber');

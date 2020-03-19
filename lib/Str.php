@@ -50,4 +50,10 @@ class Str {
     return $s;
   }
 
+  /**
+   * Transliterates Unicode to ASCII.
+   **/
+  static function flatten($s) {
+    return iconv('UTF-8', 'ASCII//TRANSLIT', $s);
+  }
 }

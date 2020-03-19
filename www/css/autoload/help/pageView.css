@@ -1,0 +1,8 @@
+.markdown-heading a {
+  color: #444;
+  visibility: hidden;
+}
+
+.markdown-heading:hover a {
+  visibility: visible;
+}
