@@ -34,6 +34,7 @@
           </div>
 
           <button class="btn btn-primary" type="submit" name="submitButton">
+            <i class="icon icon-paper-plane"></i>
             {t}link-send{/t}
           </button>
 

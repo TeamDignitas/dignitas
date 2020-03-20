@@ -2,9 +2,28 @@
 
 Util::assertNotLoggedIn();
 
-if (!Config::ALLOW_REGISTRATION) {
+// there may or may not be an invite code
+$code = Request::get('code');
+
+if (!$code && !Config::ALLOW_REGISTRATION) {
   FlashMessage::add(_('info-registration-disabled'));
   Util::redirectToHome();
+} else if ($code && !Config::ALLOW_INVITES) {
+  FlashMessage::add(_('info-invites-disabled'));
+  Util::redirectToHome();
+}
+
+if ($code) {
+  $invite = Invite::get_by_code($code);
+  if (!$invite) {
+    FlashMessage::add(_('info-incorrect-invite-code'));
+    Util::redirectToHome();
+  } else if ($invite->receiverId) {
+    FlashMessage::add(_('info-invite-already-accepted'));
+    Util::redirectToHome();
+  }
+} else {
+  $invite = null;
 }
 
 $nickname = Request::get('nickname');
@@ -26,7 +45,16 @@ if ($submitButton) {
     $user->email = $email;
     $user->password = md5($password);
     $user->save();
-    $user->setReputation(1);
+    $user->setReputation(0);
+
+    // invalidate this invite
+    if ($invite) {
+      $invite->acceptedBy($user);
+    }
+
+    // invalidate any other outstanding invite for this email
+    Invite::acceptByEmail($user);
+
     Session::login($user, $remember);
   }
 }

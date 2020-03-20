@@ -239,6 +239,12 @@
       "css": "sort",
       "code": 61660,
       "src": "fontawesome"
+    },
+    {
+      "uid": "38575a803c4da31ce20d77e1e1236bcb",
+      "css": "paper-plane",
+      "code": 61912,
+      "src": "fontawesome"
     }
   ]
 }

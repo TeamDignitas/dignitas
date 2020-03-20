@@ -25,6 +25,9 @@ class Config {
   // allow account creation
   const ALLOW_REGISTRATION = true;
 
+  // allow account creation via invites from moderators
+  const ALLOW_INVITES = true;
+
   // Shared drive (common to all backends). Include a trailing slash.
   const SHARED_DRIVE = '/tmp/dignitas-shared/';
 

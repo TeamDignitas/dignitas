@@ -22,7 +22,6 @@ if ($submitButton) {
 
       // Send email
       Smart::assign([
-        'homePage' => Config::URL_HOST . Config::URL_PREFIX,
         'token' => $pt->token,
       ]);
       $from = Config::CONTACT_EMAIL;

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-03-18 16:24+0200\n"
-"PO-Revision-Date: 2020-03-18 16:24+0200\n"
+"POT-Creation-Date: 2020-03-20 18:48+0200\n"
+"PO-Revision-Date: 2020-03-20 18:48+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -53,19 +53,23 @@ msgstr "domenii"
 msgid "link-canned-responses"
 msgstr "răspunsuri predefinite"
 
-#: templates/aggregate/dashboard.tpl:39
+#: templates/aggregate/dashboard.tpl:37
+msgid "link-invites"
+msgstr "invitații"
+
+#: templates/aggregate/dashboard.tpl:44
 msgid "link-tags"
 msgstr "etichete"
 
-#: templates/aggregate/dashboard.tpl:44
+#: templates/aggregate/dashboard.tpl:49
 msgid "title-review-queues"
 msgstr "cozi de evaluare"
 
-#: templates/aggregate/dashboard.tpl:59
+#: templates/aggregate/dashboard.tpl:64
 msgid "title-reports"
 msgstr "rapoarte care necesită atenție"
 
-#: templates/aggregate/dashboard.tpl:64
+#: templates/aggregate/dashboard.tpl:69
 msgid "link-verdict-report"
 msgstr "afirmații cu verdicte neclare"
 
@@ -113,7 +117,7 @@ msgstr "editează răspunsul"
 #: templates/answer/edit.tpl:15 templates/auth/resetPassword.tpl:45
 #: templates/bits/commentForm.tpl:44 templates/cannedResponse/edit.tpl:29
 #: templates/domain/edit.tpl:72 templates/entity/edit.tpl:200
-#: templates/help/categoryEdit.tpl:63 templates/help/pageEdit.tpl:70
+#: templates/help/categoryEdit.tpl:63 templates/help/pageEdit.tpl:69
 #: templates/relation/edit.tpl:25 templates/statement/edit.tpl:122
 #: templates/tag/edit.tpl:150 templates/user/edit.tpl:116
 msgid "link-save"
@@ -124,16 +128,17 @@ msgid "title-log-in"
 msgstr "autentificare"
 
 #: templates/auth/login.tpl:34 templates/auth/lostPassword.tpl:31
-#: templates/auth/register.tpl:40 templates/user/edit.tpl:28
+#: templates/auth/register.tpl:39 templates/invite/add.tpl:11
+#: templates/invite/add.tpl:22 templates/user/edit.tpl:28
 msgid "label-email"
 msgstr "adresa de e-mail"
 
-#: templates/auth/login.tpl:48 templates/auth/register.tpl:55
+#: templates/auth/login.tpl:48 templates/auth/register.tpl:54
 #: templates/auth/resetPassword.tpl:25
 msgid "label-password"
 msgstr "parola"
 
-#: templates/auth/login.tpl:61 templates/auth/register.tpl:82
+#: templates/auth/login.tpl:61 templates/auth/register.tpl:81
 msgid "label-remember-me"
 msgstr "ține-mă minte un an"
 
@@ -145,7 +150,7 @@ msgstr "autentificare"
 msgid "link-forgot-password"
 msgstr "mi-am uitat parola"
 
-#: templates/auth/login.tpl:79 templates/auth/register.tpl:88
+#: templates/auth/login.tpl:79 templates/auth/register.tpl:87
 msgid "link-sign-up"
 msgstr "înregistrare"
 
@@ -160,7 +165,7 @@ msgstr ""
 "Introduceți adresa de e-mail și vă vom trimite o adresă pentru schimbarea "
 "parolei."
 
-#: templates/auth/lostPassword.tpl:37
+#: templates/auth/lostPassword.tpl:38 templates/invite/add.tpl:30
 msgid "link-send"
 msgstr "trimite"
 
@@ -174,16 +179,16 @@ msgstr ""
 msgid "title-sign-up"
 msgstr "înregistrare"
 
-#: templates/auth/register.tpl:25 templates/user/edit.tpl:11
+#: templates/auth/register.tpl:24 templates/user/edit.tpl:11
 msgid "label-nickname"
 msgstr "poreclă"
 
-#: templates/auth/register.tpl:70 templates/auth/resetPassword.tpl:39
+#: templates/auth/register.tpl:69 templates/auth/resetPassword.tpl:39
 #: templates/user/edit.tpl:100
 msgid "label-password-again"
 msgstr "parola (din nou)"
 
-#: templates/auth/register.tpl:92
+#: templates/auth/register.tpl:91
 msgid "link-has-account-already"
 msgstr "am deja un cont"
 
@@ -217,9 +222,9 @@ msgstr "verdict"
 #: templates/cannedResponse/edit.tpl:34 templates/cannedResponse/list.tpl:50
 #: templates/domain/edit.tpl:84 templates/entity/edit.tpl:205
 #: templates/help/categoryEdit.tpl:68 templates/help/categoryList.tpl:34
-#: templates/help/pageEdit.tpl:75 templates/relation/edit.tpl:30
-#: templates/statement/edit.tpl:127 templates/tag/edit.tpl:156
-#: templates/user/edit.tpl:121
+#: templates/help/pageEdit.tpl:74 templates/invite/add.tpl:35
+#: templates/relation/edit.tpl:30 templates/statement/edit.tpl:127
+#: templates/tag/edit.tpl:156 templates/user/edit.tpl:121
 msgid "link-cancel"
 msgstr "renunță"
 
@@ -239,7 +244,7 @@ msgstr "Confirmați ștergerea acestui răspuns?"
 
 #: templates/bits/answerMain.tpl:48 templates/cannedResponse/edit.tpl:44
 #: templates/domain/edit.tpl:94 templates/entity/edit.tpl:215
-#: templates/help/categoryEdit.tpl:78 templates/help/pageEdit.tpl:85
+#: templates/help/categoryEdit.tpl:78 templates/help/pageEdit.tpl:84
 #: templates/statement/edit.tpl:137 templates/tag/edit.tpl:172
 msgid "link-delete"
 msgstr "șterge"
@@ -695,9 +700,29 @@ msgstr "iconiță"
 msgid "actions"
 msgstr "acțiuni"
 
-#: templates/email/lostPassword.tpl:5
+#: templates/email/invite.tpl:5 templates/email/lostPassword.tpl:5
 msgid "email-hello"
 msgstr "Bună ziua,"
+
+#: templates/email/invite.tpl:9
+msgid "email-user-invited-you-to-dignitas-%1-%2"
+msgstr ""
+"Utilizatorul %1 (%2) v-a invitat să vă creați un cont pe Dignitas. Pentru a "
+"accepta invitația, vizitați pagina:"
+
+#: templates/email/invite.tpl:17
+msgid "email-discard-invite"
+msgstr ""
+"Dacă nu doriți să vă înregistrați pe Dignitas, vă rugăm să ignorați acest "
+"mesaj."
+
+#: templates/email/invite.tpl:20 templates/email/lostPassword.tpl:16
+msgid "email-thank-you"
+msgstr "Vă mulțumim,"
+
+#: templates/email/invite.tpl:22 templates/email/lostPassword.tpl:18
+msgid "email-signature"
+msgstr "echipa Dignitas"
 
 #: templates/email/lostPassword.tpl:8
 msgid "email-you-requested-password-change"
@@ -710,14 +735,6 @@ msgid "email-discard-password-change"
 msgstr ""
 "Dacă nu dumneavoastră ați cerut schimbarea parolei, vă rugăm să ignorați "
 "acest mesaj."
-
-#: templates/email/lostPassword.tpl:16
-msgid "email-thank-you"
-msgstr "Vă mulțumim,"
-
-#: templates/email/lostPassword.tpl:18
-msgid "email-signature"
-msgstr "echipa Dignitas"
 
 #: templates/entity/edit.tpl:5
 msgid "title-edit-entity"
@@ -857,9 +874,33 @@ msgstr "o cale care va apărea în URL-ul acestei pagini"
 msgid "label-category"
 msgstr "categorie"
 
-#: templates/help/pageEdit.tpl:83
+#: templates/help/pageEdit.tpl:82
 msgid "info-confirm-delete-help-page"
 msgstr "Confirmați ștergerea paginii?"
+
+#: templates/invite/add.tpl:3 templates/invite/add.tpl:6
+msgid "title-send-invite"
+msgstr "trimite o invitație"
+
+#: templates/invite/list.tpl:3 templates/invite/list.tpl:7
+msgid "title-invites"
+msgstr "invitații"
+
+#: templates/invite/list.tpl:12
+msgid "label-invite-from"
+msgstr "de la"
+
+#: templates/invite/list.tpl:13
+msgid "label-invite-to"
+msgstr "pentru"
+
+#: templates/invite/list.tpl:14
+msgid "label-invite-accepted-by"
+msgstr "acceptată de"
+
+#: templates/invite/list.tpl:32
+msgid "link-add-invite"
+msgstr "trimite o invitație"
 
 #: templates/relation/edit.tpl:3 templates/relation/edit.tpl:6
 msgid "title-edit-relation"
@@ -877,27 +918,27 @@ msgstr "Această evaluare este completă. Nu mai puteți face alte acțiuni."
 msgid "info-statement-duplicate"
 msgstr "Această afirmație a fost marcată ca duplicat al afirmației"
 
-#: templates/review/view.tpl:40 templates/review/view.tpl:79
-#: templates/review/view.tpl:90
+#: templates/review/view.tpl:46 templates/review/view.tpl:85
+#: templates/review/view.tpl:96
 msgid "title-pertaining-to-statement"
 msgstr "referitor la afirmația:"
 
-#: templates/review/view.tpl:53
+#: templates/review/view.tpl:59
 msgid "info-entity-duplicate"
 msgstr "Acest autor a fost marcat ca duplicat al autorului"
 
-#: templates/review/view.tpl:56
+#: templates/review/view.tpl:62
 msgid "info-entity-duplicate-process"
 msgstr ""
 "Acceptarea acestei raportări va transfera toate afirmațiile de la acest "
 "duplicat la autorul canonic. Aliasurile, relațiile și alte atribute nu vor "
 "fi transferate."
 
-#: templates/review/view.tpl:70
+#: templates/review/view.tpl:76
 msgid "title-pertaining-to-answer"
 msgstr "referitor la răspunsul:"
 
-#: templates/review/view.tpl:108
+#: templates/review/view.tpl:114
 msgid "info-review-queue-empty"
 msgstr "Această coadă de evaluare este goală."
 
@@ -1615,7 +1656,7 @@ msgstr ""
 "direct."
 
 #: lib/model/User.php:138 routes/auth/login.php:60
-#: routes/auth/lostPassword.php:50
+#: routes/auth/lostPassword.php:49 routes/invite/add.php:42
 msgid "info-must-enter-email"
 msgstr "Vă rugăm să introduceți o adresă de e-mail."
 
@@ -1623,7 +1664,8 @@ msgstr "Vă rugăm să introduceți o adresă de e-mail."
 msgid "info-email-taken"
 msgstr "Această adresă de e-mail este deja folosită."
 
-#: lib/model/User.php:147 routes/auth/lostPassword.php:52
+#: lib/model/User.php:147 routes/auth/lostPassword.php:51
+#: routes/invite/add.php:44
 msgid "info-incorrect-email"
 msgstr "Adresa de e-mail pare incorectă."
 
@@ -1831,7 +1873,7 @@ msgstr "Utilizatorii de test sînt permiși doar în modul development."
 msgid "info-incorrect-login"
 msgstr "Adresa de e-mail sau parola sînt incorecte."
 
-#: routes/auth/lostPassword.php:29
+#: routes/auth/lostPassword.php:28
 msgid "email-subject-password-change"
 msgstr "Schimbarea parolei pentru contul Dignitas"
 
@@ -1847,9 +1889,21 @@ msgstr "Codul de schimbare a parolei a expirat."
 msgid "info-password-changed"
 msgstr "Am schimbat cu succes parola."
 
-#: routes/auth/register.php:6
+#: routes/auth/register.php:9
 msgid "info-registration-disabled"
 msgstr "Înregistrarea este dezactivată."
+
+#: routes/auth/register.php:12 routes/invite/add.php:6 routes/invite/list.php:6
+msgid "info-invites-disabled"
+msgstr "Sistemul de invitații este dezactivat."
+
+#: routes/auth/register.php:19
+msgid "info-incorrect-invite-code"
+msgstr "Codul invitației este incorect."
+
+#: routes/auth/register.php:22
+msgid "info-invite-already-accepted"
+msgstr "Această invitație a fost deja acceptată."
 
 #: routes/cannedResponse/edit.php:17
 msgid "info-canned-response-deleted"
@@ -2079,6 +2133,22 @@ msgid "info-language-changed"
 msgstr ""
 "Am schimbat limba interfeței. Conținutul paginilor (afirmații, răspunsuri "
 "etc.) și-a păstrat limba în care a fost scris."
+
+#: routes/invite/add.php:24
+msgid "info-invite-sent"
+msgstr "Am trimis invitația."
+
+#: routes/invite/add.php:46
+msgid "info-invite-user-exists"
+msgstr "Există deja un utilizator cu această adresă."
+
+#: routes/invite/add.php:50
+msgid "info-invite-email-exists"
+msgstr "Există deja o invitație către această adresă."
+
+#: routes/invite/add.php:64
+msgid "email-subject-invite"
+msgstr "Invitație la Dignitas"
 
 #: routes/relation/edit.php:8
 msgid "info-no-such-relation"

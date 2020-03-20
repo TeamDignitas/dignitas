@@ -32,6 +32,11 @@
         {t}link-canned-responses{/t}
       </a>
     </div>
+    <div>
+      <a href="{Router::link('invite/list')}">
+        {t}link-invites{/t}
+      </a>
+    </div>
   {/if}
 
   <div>

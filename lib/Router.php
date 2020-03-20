@@ -167,6 +167,16 @@ class Router {
       'en_US.utf8' => 'changeLocale',
     ],
 
+    // invites
+    'invite/add' => [
+      'en_US.utf8' => 'send-invite',
+      'ro_RO.utf8' => 'trimite-invitatie',
+    ],
+    'invite/list' => [
+      'en_US.utf8' => 'invites',
+      'ro_RO.utf8' => 'invitatii',
+    ],
+
     // relations
     'relation/edit' => [
       'en_US.utf8' => 'edit-relation',
