@@ -57,20 +57,20 @@ blockquote {
     z-index: 10;
   }
 
-  .navbar-collapse.to-left {
+  #navbar-left {
     left: -50%;
   }
 
-  .navbar-collapse.to-right {
+  #navbar-right {
     left: 100%;
   }
 
-  .navbar-collapse.to-left.shown {
+  #navbar-left.shown {
     left: 0;
     transition: left 0.3s linear;
   }
 
-  .navbar-collapse.to-right.shown {
+  #navbar-right.shown {
     left: 50%;
     transition: left 0.3s linear;
   }
