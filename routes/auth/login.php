@@ -20,9 +20,9 @@ if ($fakeEmail) {
   $user = User::get_by_email($fakeEmail);
   if (!$user) {
     $user = Model::factory('User')->create();
+    $user->email = $fakeEmail;
+    $user->nickname = explode('@', $fakeEmail)[0];
   }
-  $user->nickname = $fakeEmail;
-  $user->email = $fakeEmail;
   $user->moderator = $fakeModerator;
   $user->save();
   $user->setReputation($fakeReputation);
