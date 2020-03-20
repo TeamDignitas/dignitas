@@ -15,11 +15,6 @@ $(function() {
     var menu = $($(this).data('target'));
     menu.toggleClass('shown');
     menu.siblings().removeClass('shown');
-
-    // occupy entire page height
-    var pageHeight = Math.max($(window).height(), $(document).height());
-    var h = pageHeight - menu.position().top;
-    menu.outerHeight(h);
   });
 });
 

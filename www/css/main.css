@@ -1,5 +1,4 @@
 body {
-  overflow-x: hidden; /* hide the sliding menus */
   font-family: 'Open Sans', Arial !important;
   color: #495057 !important;
 }
@@ -49,9 +48,10 @@ blockquote {
 
 @media (max-width: 768px) {
   .navbar-collapse {
+    height: 100%;
     padding: 0 15px 15px;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 54px;
     transition: left 0.3s linear;
     width: 50%;
     z-index: 10;
