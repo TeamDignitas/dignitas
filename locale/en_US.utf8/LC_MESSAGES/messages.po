@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-03-20 18:48+0200\n"
-"PO-Revision-Date: 2020-03-20 18:49+0200\n"
+"POT-Creation-Date: 2020-03-23 12:34+0200\n"
+"PO-Revision-Date: 2020-03-23 12:34+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -124,17 +124,17 @@ msgid "title-log-in"
 msgstr "log in"
 
 #: templates/auth/login.tpl:34 templates/auth/lostPassword.tpl:31
-#: templates/auth/register.tpl:39 templates/invite/add.tpl:11
+#: templates/auth/register.tpl:40 templates/invite/add.tpl:11
 #: templates/invite/add.tpl:22 templates/user/edit.tpl:28
 msgid "label-email"
 msgstr "email"
 
-#: templates/auth/login.tpl:48 templates/auth/register.tpl:54
+#: templates/auth/login.tpl:48 templates/auth/register.tpl:55
 #: templates/auth/resetPassword.tpl:25
 msgid "label-password"
 msgstr "password"
 
-#: templates/auth/login.tpl:61 templates/auth/register.tpl:81
+#: templates/auth/login.tpl:61 templates/auth/register.tpl:82
 msgid "label-remember-me"
 msgstr "remember me for one year"
 
@@ -146,7 +146,7 @@ msgstr "log in"
 msgid "link-forgot-password"
 msgstr "I forgot my password"
 
-#: templates/auth/login.tpl:79 templates/auth/register.tpl:87
+#: templates/auth/login.tpl:79 templates/auth/register.tpl:88
 msgid "link-sign-up"
 msgstr "sign up"
 
@@ -174,16 +174,16 @@ msgstr ""
 msgid "title-sign-up"
 msgstr "sign up"
 
-#: templates/auth/register.tpl:24 templates/user/edit.tpl:11
+#: templates/auth/register.tpl:25 templates/user/edit.tpl:11
 msgid "label-nickname"
 msgstr "nickname"
 
-#: templates/auth/register.tpl:69 templates/auth/resetPassword.tpl:39
+#: templates/auth/register.tpl:70 templates/auth/resetPassword.tpl:39
 #: templates/user/edit.tpl:100
 msgid "label-password-again"
 msgstr "password (again)"
 
-#: templates/auth/register.tpl:91
+#: templates/auth/register.tpl:92
 msgid "link-has-account-already"
 msgstr "I already have an account"
 
@@ -1171,51 +1171,51 @@ msgstr "You are already logged in."
 msgid "info-must-log-in"
 msgstr "Please log in to perform this action."
 
-#: lib/model/Answer.php:41
+#: lib/model/Answer.php:45
 msgid "info-answer-deleted"
 msgstr "This answer was deleted"
 
-#: lib/model/Answer.php:44
+#: lib/model/Answer.php:48
 msgid "info-answer-spam"
 msgstr "because it is spam."
 
-#: lib/model/Answer.php:45
+#: lib/model/Answer.php:49
 msgid "info-answer-abuse"
 msgstr "because it is rude or abusive."
 
-#: lib/model/Answer.php:46
+#: lib/model/Answer.php:50
 msgid "info-answer-off-topic"
 msgstr "because it is off-topic."
 
-#: lib/model/Answer.php:47
+#: lib/model/Answer.php:51
 msgid "info-answer-low-quality"
 msgstr "because it is low-quality."
 
-#: lib/model/Answer.php:48
+#: lib/model/Answer.php:52
 msgid "info-answer-by-owner"
 msgstr "by its author."
 
-#: lib/model/Answer.php:49 lib/model/Comment.php:43 lib/model/Entity.php:107
-#: lib/model/Statement.php:109
+#: lib/model/Answer.php:53 lib/model/Comment.php:43 lib/model/Entity.php:107
+#: lib/model/Statement.php:113
 msgid "info-by"
 msgstr "by"
 
-#: lib/model/Answer.php:50 lib/model/Comment.php:44 lib/model/Entity.php:108
-#: lib/model/Statement.php:110
+#: lib/model/Answer.php:54 lib/model/Comment.php:44 lib/model/Entity.php:108
+#: lib/model/Statement.php:114
 msgid "info-other-reason"
 msgstr "for other reasons."
 
-#: lib/model/Answer.php:84
+#: lib/model/Answer.php:88
 #, php-format
 msgid "info-minimum-reputation-add-answer-%s"
 msgstr "You need at least %s reputation to add answers."
 
-#: lib/model/Answer.php:92
+#: lib/model/Answer.php:96
 #, php-format
 msgid "info-minimum-reputation-edit-answer-%s"
 msgstr "You need at least %s reputation to edit answers."
 
-#: lib/model/Answer.php:98
+#: lib/model/Answer.php:102
 msgid "info-only-moderator-edit-proof-answer"
 msgstr ""
 "This answer was accepted as proof. Only moderators can edit it directly."
@@ -1573,65 +1573,65 @@ msgstr "deleted sources"
 msgid "label-changed-statement-link"
 msgstr "changed source"
 
-#: lib/model/Statement.php:86
+#: lib/model/Statement.php:90
 msgid "status-statement-duplicate"
 msgstr "duplicate"
 
-#: lib/model/Statement.php:88
+#: lib/model/Statement.php:92
 msgid "status-statement-closed"
 msgstr "closed"
 
-#: lib/model/Statement.php:89
+#: lib/model/Statement.php:93
 msgid "status-statement-deleted"
 msgstr "deleted"
 
-#: lib/model/Statement.php:98
+#: lib/model/Statement.php:102
 msgid "info-statement-closed"
 msgstr "This statement was closed"
 
-#: lib/model/Statement.php:99
+#: lib/model/Statement.php:103
 msgid "info-statement-deleted"
 msgstr "This statement was deleted"
 
-#: lib/model/Statement.php:102
+#: lib/model/Statement.php:106
 msgid "info-statement-spam"
 msgstr "because it is spam."
 
-#: lib/model/Statement.php:103
+#: lib/model/Statement.php:107
 msgid "info-statement-abuse"
 msgstr "because it is rude or abusive."
 
-#: lib/model/Statement.php:104
+#: lib/model/Statement.php:108
 msgid "info-statement-duplicate-of"
 msgstr "as a duplicate of the statement"
 
-#: lib/model/Statement.php:105
+#: lib/model/Statement.php:109
 msgid "info-statement-off-topic"
 msgstr "because it is off-topic."
 
-#: lib/model/Statement.php:106
+#: lib/model/Statement.php:110
 msgid "info-statement-unverifiable"
 msgstr "because it is unverifiable."
 
-#: lib/model/Statement.php:107
+#: lib/model/Statement.php:111
 msgid "info-statement-low-quality"
 msgstr "because it is low-quality."
 
-#: lib/model/Statement.php:108
+#: lib/model/Statement.php:112
 msgid "info-statement-by-owner"
 msgstr "by the user who added it."
 
-#: lib/model/Statement.php:129
+#: lib/model/Statement.php:133
 #, php-format
 msgid "info-minimum-reputation-add-statement-%s"
 msgstr "You need at least %s reputation to add statements."
 
-#: lib/model/Statement.php:137
+#: lib/model/Statement.php:141
 #, php-format
 msgid "info-minimum-reputation-edit-statement-%s"
 msgstr "You need at least %s reputation to edit statements."
 
-#: lib/model/Statement.php:143
+#: lib/model/Statement.php:147
 msgid "info-only-moderator-edit-statement-verdict"
 msgstr "This statement has a verdict. Only moderators can edit it directly."
 
@@ -1705,23 +1705,23 @@ msgstr "You already have a pending flag for this object."
 msgid "info-minimum-reputation-comment-%s"
 msgstr "You need at least %s reputation to comment."
 
-#: lib/trait/FlaggableTrait.php:69
+#: lib/trait/FlaggableTrait.php:77
 msgid "status-diff-active"
 msgstr "active"
 
-#: lib/trait/FlaggableTrait.php:71
+#: lib/trait/FlaggableTrait.php:79
 msgid "status-diff-duplicate"
 msgstr "duplicate"
 
-#: lib/trait/FlaggableTrait.php:72
+#: lib/trait/FlaggableTrait.php:80
 msgid "status-diff-closed"
 msgstr "closed"
 
-#: lib/trait/FlaggableTrait.php:73
+#: lib/trait/FlaggableTrait.php:81
 msgid "status-diff-deleted"
 msgstr "deleted"
 
-#: lib/trait/FlaggableTrait.php:74
+#: lib/trait/FlaggableTrait.php:82
 msgid "status-diff-pending-edit"
 msgstr "pending edit"
 
@@ -2143,11 +2143,15 @@ msgstr "No review queue exists by that name."
 msgid "info-no-such-review"
 msgstr "No review exists with the given ID."
 
-#: routes/review/view.php:38
+#: routes/review/view.php:30
+msgid "info-moderator-review-only"
+msgstr "Only moderators may perform that review."
+
+#: routes/review/view.php:42
 msgid "info-vote-saved"
 msgstr "Your vote was recorded."
 
-#: routes/review/view.php:82
+#: routes/review/view.php:86
 msgid "info-vote-completes-review"
 msgstr ""
 "This review is now complete. We have redirected you to the next review in "

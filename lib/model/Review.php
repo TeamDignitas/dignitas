@@ -161,7 +161,7 @@ class Review extends Proto {
     if ($r->reason == Ct::REASON_DUPLICATE) {
       $r->duplicateId = $duplicateId;
     }
-    $r->moderator = $obj->requiresModeratorReview();
+    $r->moderator = (int)$obj->requiresModeratorReview();
     $r->status = self::STATUS_PENDING;
     return $r;
   }

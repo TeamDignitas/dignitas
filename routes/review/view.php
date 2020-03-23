@@ -26,6 +26,10 @@ if ($reviewId) {
     FlashMessage::add(_('info-no-such-review'));
     Util::redirectToHome();
   }
+  if ($r->moderator && !User::isModerator()) {
+    FlashMessage::add(_('info-moderator-review-only'));
+    Util::redirectToHome();
+  }
 
   if ($keepButton || $removeButton) {
     redirectIfComplete($r, $urlName);

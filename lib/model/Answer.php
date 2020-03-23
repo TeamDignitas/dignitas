@@ -130,6 +130,10 @@ class Answer extends Proto {
     $this->save($other->modUserId);
   }
 
+  function markDeletedEffects() {
+    $this->proof = 0;
+  }
+
   function delete() {
     if ($this->status != Ct::STATUS_PENDING_EDIT) {
       throw new Exception('Answers should never be deleted at the DB level.');

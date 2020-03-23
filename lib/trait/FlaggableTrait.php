@@ -108,6 +108,13 @@ trait FlaggableTrait {
   }
 
   /**
+   * Applies consequences of marking an object as deleted. Users will override
+   * this. Called before saving the deleted object.
+   */
+  function markDeletedEffects() {
+  }
+
+  /**
    * Marks the object as deleted. Resolves all pending reviews for the object
    * as STATUS_OBJECT_GONE.
    */
@@ -117,6 +124,7 @@ trait FlaggableTrait {
         ($this->userId == User::getActiveId())) {
       $reason = Ct::REASON_BY_OWNER;
     }
+    $this->markDeletedEffects();
     $this->changeStatus(Ct::STATUS_DELETED, $reason);
     $this->undoDownvoteRep();
 
