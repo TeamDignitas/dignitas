@@ -3,7 +3,7 @@
 {block "title"}{t}label-edit-user{/t}{/block}
 
 {block "content"}
-  <h3>{t}label-edit-user{/t}</h3>
+  <h2 class="mb-4">{t}label-edit-user{/t}</h2>
 
   <form method="post" enctype="multipart/form-data">
 
@@ -110,13 +110,13 @@
       </div>
     </div>
 
-    <div>
-      <button name="saveButton" type="submit" class="btn btn-primary">
+    <div class="mt-4">
+      <button name="saveButton" type="submit" class="btn btn-sm btn-outline-primary">
         <i class="icon icon-floppy"></i>
         {t}link-save{/t}
       </button>
 
-      <a href="{Router::userLink($user)}" class="btn btn-link">
+      <a href="{Router::userLink($user)}" class="btn btn-sm btn-outline-secondary">
         <i class="icon icon-cancel"></i>
         {t}link-cancel{/t}
       </a>
