@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-03-23 12:34+0200\n"
-"PO-Revision-Date: 2020-03-23 12:34+0200\n"
+"POT-Creation-Date: 2020-03-23 16:26+0200\n"
+"PO-Revision-Date: 2020-03-23 16:26+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -207,7 +207,28 @@ msgstr "add a comment"
 msgid "tag"
 msgstr "tag"
 
-#: templates/bits/answerEdit.tpl:18 templates/bits/statement.tpl:153
+#: templates/bits/answer.tpl:44
+msgid "answer-posted-by"
+msgstr "posted by"
+
+#: templates/bits/answer.tpl:54 templates/bits/entity.tpl:113
+#: templates/bits/statement.tpl:101 templates/cannedResponse/list.tpl:34
+#: templates/help/pageView.tpl:41
+msgid "link-show-revisions"
+msgstr "show revisions"
+
+#: templates/bits/answer.tpl:62
+msgid "info-confirm-delete-answer"
+msgstr "Are you sure you want to delete this answer?"
+
+#: templates/bits/answer.tpl:63 templates/cannedResponse/edit.tpl:44
+#: templates/domain/edit.tpl:94 templates/entity/edit.tpl:215
+#: templates/help/categoryEdit.tpl:78 templates/help/pageEdit.tpl:84
+#: templates/statement/edit.tpl:137 templates/tag/edit.tpl:172
+msgid "link-delete"
+msgstr "delete"
+
+#: templates/bits/answerEdit.tpl:18 templates/bits/statement.tpl:150
 #: templates/statement/edit.tpl:103 lib/model/RevisionAnswer.php:15
 #: lib/model/RevisionStatement.php:18
 msgid "label-verdict"
@@ -223,28 +244,7 @@ msgstr "verdict"
 msgid "link-cancel"
 msgstr "cancel"
 
-#: templates/bits/answerMain.tpl:29
-msgid "answer-posted-by"
-msgstr "posted by"
-
-#: templates/bits/answerMain.tpl:39 templates/bits/entity.tpl:117
-#: templates/bits/statement.tpl:102 templates/cannedResponse/list.tpl:34
-#: templates/help/pageView.tpl:41
-msgid "link-show-revisions"
-msgstr "show revisions"
-
-#: templates/bits/answerMain.tpl:47
-msgid "info-confirm-delete-answer"
-msgstr "Are you sure you want to delete this answer?"
-
-#: templates/bits/answerMain.tpl:48 templates/cannedResponse/edit.tpl:44
-#: templates/domain/edit.tpl:94 templates/entity/edit.tpl:215
-#: templates/help/categoryEdit.tpl:78 templates/help/pageEdit.tpl:84
-#: templates/statement/edit.tpl:137 templates/tag/edit.tpl:172
-msgid "link-delete"
-msgstr "delete"
-
-#: templates/bits/comment.tpl:26
+#: templates/bits/comment.tpl:25
 msgid "info-confirm-delete-comment"
 msgstr "Are you sure you want to delete this comment?"
 
@@ -274,27 +274,27 @@ msgstr "edit"
 msgid "link-suggest-edit"
 msgstr "suggest an edit"
 
-#: templates/bits/entity.tpl:28
+#: templates/bits/entity.tpl:27
 msgid "title-alias"
 msgstr "also known as"
 
-#: templates/bits/entity.tpl:55
+#: templates/bits/entity.tpl:54
 msgid "title-relations"
 msgstr "relationships"
 
-#: templates/bits/entity.tpl:65
+#: templates/bits/entity.tpl:64
 msgid "title-loyalty"
 msgstr "loyalty"
 
-#: templates/bits/entity.tpl:70
+#: templates/bits/entity.tpl:69
 msgid "title-profile"
 msgstr "profile"
 
-#: templates/bits/entity.tpl:79
+#: templates/bits/entity.tpl:78
 msgid "title-entity-links"
 msgstr "external links"
 
-#: templates/bits/entity.tpl:96
+#: templates/bits/entity.tpl:95
 msgid "title-members"
 msgstr "members"
 
@@ -316,11 +316,11 @@ msgstr "moderator"
 msgid "link-test-login"
 msgstr "test user login"
 
-#: templates/bits/flagLinks.tpl:21
+#: templates/bits/flagLinks.tpl:22
 msgid "link-flag"
 msgstr "flag"
 
-#: templates/bits/flagLinks.tpl:35
+#: templates/bits/flagLinks.tpl:36
 msgid "link-unflag"
 msgstr "unflag"
 
@@ -578,25 +578,25 @@ msgstr "accept/unaccept the answer as proof"
 msgid "label-answer-is-proof"
 msgstr "this answer serves as proof for the statement's verdict"
 
-#: templates/bits/statement.tpl:26
+#: templates/bits/statement.tpl:25
 msgid "statement-links"
 msgstr "sources"
 
-#: templates/bits/statement.tpl:56
+#: templates/bits/statement.tpl:55
 msgid "link-statement-review-pending-edit"
 msgstr ""
 "This statement has a pending edit. You can <a href=\"%1\" class=\"alert-link"
 "\">review it</a>."
 
-#: templates/bits/statement.tpl:77
+#: templates/bits/statement.tpl:76
 msgid "title-context"
 msgstr "context"
 
-#: templates/bits/statement.tpl:81
+#: templates/bits/statement.tpl:80
 msgid "title-goal"
 msgstr "goal"
 
-#: templates/bits/statement.tpl:90
+#: templates/bits/statement.tpl:89
 msgid "title-added-by"
 msgstr "added by"
 
@@ -905,27 +905,27 @@ msgstr "This review is now complete. No further actions can be taken."
 msgid "info-statement-duplicate"
 msgstr "This statement was flagged as a duplicate of"
 
-#: templates/review/view.tpl:46 templates/review/view.tpl:85
-#: templates/review/view.tpl:96
+#: templates/review/view.tpl:40 templates/review/view.tpl:79
+#: templates/review/view.tpl:90
 msgid "title-pertaining-to-statement"
 msgstr "pertaining to statement:"
 
-#: templates/review/view.tpl:59
+#: templates/review/view.tpl:53
 msgid "info-entity-duplicate"
 msgstr "This author was flagged as a duplicate of"
 
-#: templates/review/view.tpl:62
+#: templates/review/view.tpl:56
 msgid "info-entity-duplicate-process"
 msgstr ""
 "Accepting this flag will transfer all statements from this duplicate to its "
 "canonical author. The aliases, relationships and other attributes will not "
 "be transferred."
 
-#: templates/review/view.tpl:76
+#: templates/review/view.tpl:70
 msgid "title-pertaining-to-answer"
 msgstr "pertaining to answer:"
 
-#: templates/review/view.tpl:114
+#: templates/review/view.tpl:108
 msgid "info-review-queue-empty"
 msgstr "This review queue is empty."
 
@@ -2012,7 +2012,7 @@ msgstr "This author was deleted and is only visible to privileged users."
 msgid "info-entity-history"
 msgstr "Author history for"
 
-#: routes/flag/delete.php:22
+#: routes/flag/delete.php:25
 msgid "info-flag-deleted"
 msgstr "Your flag was deleted."
 
@@ -2151,7 +2151,7 @@ msgstr "Only moderators may perform that review."
 msgid "info-vote-saved"
 msgstr "Your vote was recorded."
 
-#: routes/review/view.php:86
+#: routes/review/view.php:87
 msgid "info-vote-completes-review"
 msgstr ""
 "This review is now complete. We have redirected you to the next review in "
