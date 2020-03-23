@@ -3,6 +3,7 @@
 {$voteBox=$voteBox|default:true}
 {$addComment=$addComment|default:false}
 {$statusInfo=$statement->getStatusInfo()}
+{$permalink=$permalink|default:false}
 
 {$entity=$statement->getEntity()}
 
@@ -13,6 +14,13 @@
       {$statement->summary|escape}
       {if $statusInfo}
         [{$statusInfo['status']}]
+      {/if}
+      {if $permalink}
+        <a
+          href="{Router::getViewLink($statement)}"
+          title="{t}link-visit-statement-page{/t}">
+          <i class="icon icon-link"></i>
+        </a>
       {/if}
     </h1>
 

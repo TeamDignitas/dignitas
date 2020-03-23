@@ -31,7 +31,7 @@
         </div>
       {/if}
 
-      {include "bits/statement.tpl" statement=$object addComment=true}
+      {include "bits/statement.tpl" statement=$object addComment=true permalink=true}
 
     {elseif $type == Proto::TYPE_ANSWER}
 
@@ -43,7 +43,8 @@
         {include "bits/statement.tpl"
           statement=$object->getStatement()
           flagLinks=false
-          voteBox=false}
+          voteBox=false
+          permalink=true}
       </div>
 
     {elseif $type == Proto::TYPE_ENTITY}
@@ -82,7 +83,8 @@
           {include "bits/statement.tpl"
             statement=$parent->getStatement()
             flagLinks=false
-            voteBox=false}
+            voteBox=false
+            permalink=true}
         </div>
 
       {else}  {* Comment on a statement *}
@@ -93,7 +95,8 @@
           {include "bits/statement.tpl"
             statement=$parent
             flagLinks=false
-            voteBox=false}
+            voteBox=false
+            permalink=true}
         </div>
 
       {/if}
