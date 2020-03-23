@@ -1,6 +1,5 @@
 {* mandatory argument: $answer *}
 {$highlighted=$highlighted|default:false}
-{$flagBox=$flagBox|default:true}
 {$voteBox=$voteBox|default:true}
 {$addComment=$addComment|default:false}
 

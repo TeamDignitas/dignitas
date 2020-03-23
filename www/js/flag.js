@@ -63,7 +63,11 @@ $(function() {
       objectType: objectType,
       objectId: objectId,
 
-    }).done(function(successMsg) {
+    }).done(function(successMsg, textStatus, xhr) {
+      if (xhr.status == 202) {
+        // backend signalled us that we should refresh
+        location.reload(true);
+      }
 
       // swap link visibility
       flagLink.prop('hidden', false);

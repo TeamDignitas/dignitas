@@ -1,4 +1,3 @@
-{$flagBox=$flagBox|default:true}
 {$voteBox=$voteBox|default:true}
 
 <div class="vote-container comment mb-2 mt-2">
@@ -28,9 +27,7 @@
         </a>
       {/if}
 
-      {if $flagBox && ($comment->isFlaggable() || $comment->isFlagged())}
-        {include "bits/flagLinks.tpl" obj=$comment tiny=true}
-      {/if}
+      {include "bits/flagLinks.tpl" obj=$comment tiny=true}
     </span>
 
     {if $comment->status == Ct::STATUS_DELETED}

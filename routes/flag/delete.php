@@ -15,7 +15,10 @@ try {
 
     if ($flag) {
       $flag->delete();
-      $review->checkDelete();
+      if ($review->checkDelete()) {
+        // tell the frontend to refresh the page
+        http_response_code(202);
+      }
     }
   }
 

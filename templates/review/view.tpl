@@ -13,7 +13,7 @@
     {if $review->status == Review::STATUS_PENDING}
       {include "bits/reviewActions.tpl"}
     {else}
-      <p>
+      <p class="text-warning">
         {t}info-review-complete{/t}
       </p>
     {/if}
@@ -31,24 +31,18 @@
         </div>
       {/if}
 
-      {include "bits/statement.tpl"
-        statement=$object
-        flagBox=false
-        addComment=true}
+      {include "bits/statement.tpl" statement=$object addComment=true}
 
     {elseif $type == Proto::TYPE_ANSWER}
 
-      {include "bits/answer.tpl"
-        answer=$object
-        flagBox=false
-        addComment=true}
+      {include "bits/answer.tpl" answer=$object addComment=true}
 
       <h3>{cap}{t}title-pertaining-to-statement{/t}{/cap}</h3>
 
       <div id="parent-object">
         {include "bits/statement.tpl"
           statement=$object->getStatement()
-          flagBox=false
+          flagLinks=false
           voteBox=false}
       </div>
 
@@ -63,11 +57,11 @@
         </div>
       {/if}
 
-      {include "bits/entity.tpl" entity=$object flagBox=false}
+      {include "bits/entity.tpl" entity=$object}
 
     {elseif $type == Proto::TYPE_COMMENT}
 
-      {include "bits/comment.tpl" comment=$object flagBox=false}
+      {include "bits/comment.tpl" comment=$object}
 
       {$parent=$object->getObject()} {* What a nice sentence *}
 
@@ -78,7 +72,7 @@
         <div id="parent-object">
           {include "bits/answer.tpl"
             answer=$parent
-            flagBox=false
+            flagLinks=false
             voteBox=false}
         </div>
 
@@ -87,7 +81,7 @@
         <div id="parent-object">
           {include "bits/statement.tpl"
             statement=$parent->getStatement()
-            flagBox=false
+            flagLinks=false
             voteBox=false}
         </div>
 
@@ -98,7 +92,7 @@
         <div id="parent-object">
           {include "bits/statement.tpl"
             statement=$parent
-            flagBox=false
+            flagLinks=false
             voteBox=false}
         </div>
 

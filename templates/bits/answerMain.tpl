@@ -50,10 +50,7 @@
     {/if}
 
     {include "bits/editButton.tpl" obj=$answer class="btn btn-sm btn-outline-secondary mt-1"}
-
-    {if $flagBox && ($answer->isFlaggable() || $answer->isFlagged())}
-      {include "bits/flagLinks.tpl" obj=$answer class="btn btn-sm btn-outline-secondary mt-1"}
-    {/if}
+    {include "bits/flagLinks.tpl" obj=$answer class="btn btn-sm btn-outline-secondary mt-1"}
 
     {if $addComment && empty($comments)}
       {include "bits/addCommentLink.tpl" object=$answer}

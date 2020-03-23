@@ -414,11 +414,15 @@ class Review extends Proto {
 
   /**
    * Checks if the review can be deleted (if it has no remaining flags).
+   * @return boolean true if the review was deleted, false otherwise
    */
   function checkDelete() {
     if (!in_array($this->reason, self::STICKY) &&
         !Flag::count_by_reviewId($this->id)) {
       $this->delete();
+      return true;
+    } else {
+      return false;
     }
   }
 

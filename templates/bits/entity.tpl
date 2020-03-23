@@ -1,5 +1,4 @@
 {$statusInfo=$entity->getStatusInfo()}
-{$flagBox=$flagBox|default:true}
 
 <div class="row">
   <div class="col-md-3 col-sm-12 mt-2 text-center">
@@ -107,10 +106,7 @@
 
     <div class="entity-actions mb-2 text-right">
       {include "bits/editButton.tpl" obj=$entity}
-
-      {if $flagBox && ($entity->isFlaggable() || $entity->isFlagged())}
-        {include "bits/flagLinks.tpl" obj=$entity class="btn btn-sm btn-outline-secondary mt-1"}
-      {/if}
+      {include "bits/flagLinks.tpl" obj=$entity class="btn btn-sm btn-outline-secondary mt-1"}
 
       {if $entity->hasRevisions()}
         <a href="{Router::link('entity/history')}/{$entity->id}" class="btn btn-sm btn-outline-secondary mt-1">

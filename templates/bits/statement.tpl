@@ -1,6 +1,5 @@
 {* mandatory argument: $statement *}
 {$editLink=$editLink|default:false}
-{$flagBox=$flagBox|default:true}
 {$voteBox=$voteBox|default:true}
 {$addComment=$addComment|default:false}
 {$statusInfo=$statement->getStatusInfo()}
@@ -107,9 +106,7 @@
         {include "bits/editButton.tpl" obj=$statement}
       {/if}
 
-      {if $flagBox && ($statement->isFlaggable() || $statement->isFlagged())}
-        {include "bits/flagLinks.tpl" obj=$statement class="btn btn-sm btn-outline-secondary mt-1"}
-      {/if}
+      {include "bits/flagLinks.tpl" obj=$statement class="btn btn-sm btn-outline-secondary mt-1"}
 
       {* when there are no comments, the add comment button sits on the same
          row as the other buttons *}
