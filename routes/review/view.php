@@ -63,7 +63,7 @@ if ($reviewId) {
 Smart::assign('reason', $reason);
 if ($r) {
   Smart::assign('review', $r);
-  Smart::addResources('flag');
+  Smart::addResources('flag', 'imageModal');
 
   if ($r->reason == Ct::REASON_PENDING_EDIT) {
     Smart::assign('objectDiff', $r->getObject()->getObjectDiff());
