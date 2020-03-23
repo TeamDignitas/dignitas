@@ -11,7 +11,7 @@
 {block "title"}{cap}{$smarty.capture.title}{/cap}{/block}
 
 {block "content"}
-  <h3>{$smarty.capture.title}</h3>
+  <h2 class="mb-4">{$smarty.capture.title}</h2>
 
   {if !$entity->isEditable()}
     <div class="alert alert-warning">
@@ -54,7 +54,7 @@
       </table>
 
       <div>
-        <button id="add-alias" class="btn btn-light btn-sm" type="button">
+        <button id="add-alias" class="btn btn-outline-secondary btn-sm" type="button">
           <i class="icon icon-plus"></i>
           {t}link-add-alias{/t}
         </button>
@@ -122,7 +122,7 @@
       {include "bits/fieldErrors.tpl" errors=$errors.relations|default:null}
 
       <div>
-        <button id="add-relation" class="btn btn-light btn-sm" type="button">
+        <button id="add-relation" class="btn btn-outline-secondary btn-sm" type="button">
           <i class="icon icon-plus"></i>
           {t}label-add-relation{/t}
         </button>
@@ -192,15 +192,13 @@
         imgClass="pic float-right"}
     </div>
 
-    <hr>
-
-    <div>
-      <button name="saveButton" type="submit" class="btn btn-primary">
+    <div class="mt-4">
+      <button name="saveButton" type="submit" class="btn btn-sm btn-outline-primary">
         <i class="icon icon-floppy"></i>
         {t}link-save{/t}
       </button>
 
-      <a href="{$referrer}" class="btn btn-link">
+      <a href="{$referrer}" class="btn btn-sm btn-outline-secondary">
         <i class="icon icon-cancel"></i>
         {t}link-cancel{/t}
       </a>
@@ -209,7 +207,7 @@
         <button
           name="deleteButton"
           type="submit"
-          class="btn btn-danger float-right"
+          class="btn btn-sm btn-outline-danger float-right"
           data-confirm="{t}info-confirm-delete-entity{/t}">
           <i class="icon icon-trash"></i>
           {t}link-delete{/t}
