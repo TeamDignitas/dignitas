@@ -11,7 +11,7 @@
 {block "title"}{cap}{$smarty.capture.title}{/cap}{/block}
 
 {block "content"}
-  <h3>{$smarty.capture.title}</h3>
+  <h2 class="mb-4">{$smarty.capture.title}</h2>
 
   {if !$statement->isEditable()}
     <div class="alert alert-warning">
@@ -117,12 +117,12 @@
     {/if}
 
     <div>
-      <button name="saveButton" type="submit" class="btn btn-primary">
+      <button name="saveButton" type="submit" class="btn btn-sm btn-outline-primary">
         <i class="icon icon-floppy"></i>
         {t}link-save{/t}
       </button>
 
-      <a href="{$referrer}" class="btn btn-link">
+      <a href="{$referrer}" class="btn btn-sm btn-outline-secondary">
         <i class="icon icon-cancel"></i>
         {t}link-cancel{/t}
       </a>
@@ -131,7 +131,7 @@
         <button
           name="deleteButton"
           type="submit"
-          class="btn btn-danger float-right"
+          class="btn btn-sm btn-outline-danger float-right"
           data-confirm="{t}info-confirm-delete-statement{/t}">
           <i class="icon icon-trash"></i>
           {t}link-delete{/t}
