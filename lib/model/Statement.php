@@ -17,6 +17,10 @@ class Statement extends Proto {
     return [ 'context' ];
   }
 
+  function requiresModeratorReview() {
+    return ($this->verdict != Ct::VERDICT_NONE);
+  }
+
   function getEntity() {
     return Entity::get_by_id($this->entityId);
   }

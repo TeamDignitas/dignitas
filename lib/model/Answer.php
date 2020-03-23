@@ -11,6 +11,10 @@ class Answer extends Proto {
     return [ 'contents' ];
   }
 
+  function requiresModeratorReview() {
+    return $this->proof;
+  }
+
   function getUser() {
     return User::get_by_id($this->userId);
   }

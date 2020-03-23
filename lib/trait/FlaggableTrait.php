@@ -40,6 +40,14 @@ trait FlaggableTrait {
   }
 
   /**
+   * Checks if the object requires a moderator-level review. Users will
+   * override this.
+   **/
+  function requiresModeratorReview()  {
+    return false;
+  }
+
+  /**
    * Returns the flags of the review that decided the object's current status.
    */
   function getReviewFlags() {

@@ -161,6 +161,7 @@ class Review extends Proto {
     if ($r->reason == Ct::REASON_DUPLICATE) {
       $r->duplicateId = $duplicateId;
     }
+    $r->moderator = $obj->requiresModeratorReview();
     $r->status = self::STATUS_PENDING;
     return $r;
   }
@@ -229,7 +230,8 @@ class Review extends Proto {
 
   /**
    * Returns the review for this object and reason. If no review exists,
-   * starts one.
+   * starts one. Does not take the moderator bit into account when looking for
+   * an existing review.
    *
    * @param Flaggable $obj a flaggable object
    * @param int $reason value from Ct::REASON_*

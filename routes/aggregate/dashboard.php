@@ -5,8 +5,10 @@ if (!User::getActive()) {
 }
 
 if (User::may(User::PRIV_REVIEW)) {
-  // get reasons of reviews that are (a) pending and (b) not signed off by the
-  // current user
+  // get reasons of reviews that are
+  // (a) pending,
+  // (b) not signed off by the current user and
+  // (c) visible to the current user
   $reasons = Model::factory('Review')
     ->table_alias('r')
     ->select('r.reason')
@@ -17,7 +19,11 @@ if (User::may(User::PRIV_REVIEW)) {
       'rl',
       [User::getActiveId()])
     ->where('r.status', Review::STATUS_PENDING)
-    ->where_null('rl.id')
+    ->where_null('rl.id');
+  if (!User::isModerator()) {
+    $reasons = $reasons->where('moderator', false);
+  }
+  $reasons = $reasons
     ->order_by_asc('reason')
     ->find_many();
 

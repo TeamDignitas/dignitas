@@ -189,7 +189,7 @@ class User extends Proto {
     // redirect to log in page if there is no active user
     if (!self::$active) {
       Util::redirectToLogin();
-    } else if (self::$active->getReputation() < $privilege) {
+    } else if (!self::may($privilege)) {
       FlashMessage::add(sprintf(
         _('info-minimum-reputation-%s'),
         Str::formatNumber($privilege)));
