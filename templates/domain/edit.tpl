@@ -3,7 +3,7 @@
 {block "title"}{t}title-edit-domain{/t}{/block}
 
 {block "content"}
-  <h3>{t}title-edit-domain{/t}</h3>
+  <h2 class="mb-4">{t}title-edit-domain{/t}</h2>
 
   <form method="post" enctype="multipart/form-data">
 
@@ -66,20 +66,20 @@
       </div>
     </div>
 
-    <div>
-      <button name="saveButton" type="submit" class="btn btn-primary">
+    <div class="mt-4">
+      <button name="saveButton" type="submit" class="btn btn-sm btn-outline-primary">
         <i class="icon icon-floppy"></i>
         {t}link-save{/t}
       </button>
 
       {if $domain->id}
-        <button name="cloneButton" type="submit" class="btn btn-light">
+        <button name="cloneButton" type="submit" class="btn btn-sm btn-outline-secondary">
           <i class="icon icon-clone"></i>
           {t}link-clone{/t}
         </button>
       {/if}
 
-      <a href="{Router::link('domain/list')}" class="btn btn-light">
+      <a href="{Router::link('domain/list')}" class="btn btn-sm btn-outline-secondary">
         <i class="icon icon-cancel"></i>
         {t}link-cancel{/t}
       </a>
@@ -88,7 +88,7 @@
         <button
           name="deleteButton"
           type="submit"
-          class="btn btn-danger float-right"
+          class="btn btn-sm btn-outline-danger float-right"
           data-confirm="{t}info-confirm-delete-domain{/t}">
           <i class="icon icon-trash"></i>
           {t}link-delete{/t}

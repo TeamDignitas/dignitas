@@ -11,18 +11,18 @@
 {block "title"}{cap}{$smarty.capture.title}{/cap}{/block}
 
 {block "content"}
-  <h3>{$smarty.capture.title}</h3>
-
-  {include "bits/tagAncestors.tpl" tag=$t}
+  <h2 class="mb-4">{$smarty.capture.title}
+    {include "bits/tagAncestors.tpl" tag=$t}
+  </h2>
 
   <form class="form-horizontal" method="post">
     <input type="hidden" name="id" value="{$t->id}">
 
     <div class="form-group">
-      <label for="value" class="col-2 control-label">
+      <label for="value" class="col-12 control-label">
         {t}label-name{/t}
       </label>
-      <div class="col-10">
+      <div class="col-12">
         <div>
           <input type="text"
             class="form-control {if isset($errors.value)}is-invalid{/if}"
@@ -35,10 +35,10 @@
     </div>
 
     <div class="form-group">
-      <label for="tooltip" class="col-2 control-label">
+      <label for="tooltip" class="col-12 control-label">
         {t}label-details{/t}
       </label>
-      <div class="col-10">
+      <div class="col-12">
         <div>
           <input type="text"
             class="form-control"
@@ -51,10 +51,10 @@
     </div>
 
     <div class="form-group">
-      <label for="parent-id" class="col-2 control-label">
+      <label for="parent-id" class="col-12 control-label">
         {t}label-parent-tag{/t}
       </label>
-      <div class="col-10">
+      <div class="col-12">
         <div>
           <select
             id="parent-id"
@@ -71,10 +71,10 @@
     </div>
 
     <div class="form-group"">
-      <label for="color" class="col-2 control-label">
+      <label for="color" class="col-12 control-label">
         {t}label-text-color{/t}
       </label>
-      <div class="col-10">
+      <div class="col-12">
         <div class="input-group colorpicker-component">
           <span class="input-group-prepend input-group-text colorpicker-input-addon">
             <i></i>
@@ -89,10 +89,10 @@
     </div>
 
     <div class="form-group"">
-      <label for="background" class="col-2 control-label">
+      <label for="background" class="col-12 control-label">
         {t}label-background-color{/t}
       </label>
-      <div class="col-10">
+      <div class="col-12">
         <div class="input-group colorpicker-component">
           <span class="input-group-prepend input-group-text colorpicker-input-addon">
             <i></i>
@@ -106,11 +106,11 @@
       </div>
     </div>
 
-    <div class="form-group">
-      <label for="icon" class="col-2 control-label">
+    <div class="form-group mb-5">
+      <label for="icon" class="col-12 control-label">
         {t}label-icon{/t}
       </label>
-      <div class="col-10">
+      <div class="col-12">
         <div class="input-group">
           {if $t->icon}
             <span class="input-group-prepend input-group-text">
@@ -145,13 +145,13 @@
       </div>
     </div>
 
-    <button name="saveButton" type="submit" class="btn btn-primary">
+    <button name="saveButton" type="submit" class="btn btn-sm btn-outline-primary">
       <i class="icon icon-floppy"></i>
       {t}link-save{/t}
     </button>
 
     {if $t->id}
-      <a class="btn btn-link" href="{Router::link('tag/view')}/{$t->id}">
+      <a class="btn btn-sm btn-outline-secondary" href="{Router::link('tag/view')}/{$t->id}">
         <i class="icon icon-cancel"></i>
         {t}link-cancel{/t}
       </a>
@@ -161,7 +161,7 @@
       <button
         name="deleteButton"
         type="submit"
-        class="btn btn-danger float-right"
+        class="btn btn-sm btn-outline-danger float-right"
         data-confirm="{t}info-confirm-delete-tag{/t}"
         {if !$canDelete}
         disabled

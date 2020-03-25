@@ -14,7 +14,7 @@
   {include "bits/fieldErrors.tpl" errors=$errors|default:null}
 
   <div>
-    <button class="add-link btn btn-light btn-sm" type="button">
+    <button class="add-link btn btn-outline-secondary btn-sm" type="button">
       <i class="icon icon-plus"></i>
       {$addButtonText}
     </button>

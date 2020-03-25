@@ -7,7 +7,7 @@ body.waiting * {
   cursor: progress;
 }
 
-h3::first-letter {
+h2::first-letter {
   text-transform: capitalize;
 }
 
