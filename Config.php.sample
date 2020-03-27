@@ -159,18 +159,17 @@ class Config {
   const REP_SPAM_ABUSE = -100;
 
   // Loyalty settings. Define a set of adjacent intervals going back in time
-  // and give points for every day in each interval. Then loyalty is the sum
-  // of scores computed for each party that the person belonged to, normalized
-  // to 1.0.
+  // and give points for every day in each interval. In the sample definition,
   //
-  // In the sample definition,
+  // * today's membership is worth 365 points
+  // * the previous year is worth 1 point per day
+  // * the two years before that are worth 0.5 points per day
   //
-  // * the most recent three months are worth 1 point per day
-  // * the previous three months are worth 0.5 points per day
-  // * the previous six months are worth 0.25 points per day
-  // * the previous year is worth 0.1 points per day
-  // * the previous year is worth 0.05 points per day
+  // Thus, if a member moves from party A to party B today, their loyalty to A
+  // will be 33% initially and slowly grow to 100% over three years.
   const LOYALTY_INTERVALS = [
-    [ 91, 1.0 ], [ 182, 0.5 ], [ 365, 0.25 ], [ 730, 0.1 ], [ 1095, 0.05 ],
+    [ 0, 0, 365.0 ],
+    [ 1, 365, 1.0 ],
+    [ 366, 1095, 0.5 ],
   ];
 }

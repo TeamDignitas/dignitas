@@ -6,6 +6,11 @@
 
 require_once __DIR__ . '/../lib/Core.php';
 
+// these tables, and all those ending in _ext, are not expected to have revisions
+const SKIPPED_TABLES = [
+  'loyalty',
+];
+
 const EXPECTED_PROPS = [
   'revisionId' => [
     'type' => 'int(11)',
@@ -37,7 +42,7 @@ $tables = DB::execute('show tables');
 foreach ($tables as $rec) {
   $table = $rec[0];
 
-  if (preg_match('/_ext$/', $table)) {
+  if (in_array($table, SKIPPED_TABLES) || preg_match('/_ext$/', $table)) {
     // nothing: extension tables have no history
   } else if (preg_match('/^revision_/', $table)) {
     // verify that a corresponding data table exists

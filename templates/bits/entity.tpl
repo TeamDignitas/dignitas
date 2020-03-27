@@ -60,10 +60,7 @@
       {/foreach}
     </ul>
 
-    {if $entity->type == Entity::TYPE_PERSON}
-      <h6 class="font-weight-bold text-capitalize">{t}title-loyalty{/t}</h6>
-      {include "bits/loyalty.tpl" data=$entity->getLoyalty()}
-    {/if}
+    {include "bits/loyalty.tpl" data=$entity->getLoyalties()}
 
     {if $entity->profile}
       <h6 class="font-weight-bold text-capitalize mt-4">{t}title-profile{/t}</h6>

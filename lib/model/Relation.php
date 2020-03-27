@@ -75,6 +75,30 @@ class Relation extends Proto {
   }
 
   /**
+   * Get this Relation's weight in the Markov graph.
+   */
+  function getWeight() {
+    // Conceptually reverse the axis so the past is to the right. Do this
+    // because everything is expressed in days ago, so "further ago" means
+    // larger numbers.
+    $leftRel = Time::daysAgo($this->endDate) ?? 0;
+    $rightRel = Time::daysAgo($this->startDate) ?? 10000;
+    $result = 0.0;
+
+    // now intersect this interval with each predefined loyalty interval
+    foreach (Config::LOYALTY_INTERVALS as list($from, $to, $points)) {
+      $left = max($from, $leftRel);
+      $right = min($to, $rightRel);
+
+      if ($left <= $right) {
+        $result += ($right - $left + 1) * $points;
+      }
+    }
+
+    return $result;
+  }
+
+  /**
    * Checks if this Relation's end date is in the past.
    *
    * @return bool
