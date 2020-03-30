@@ -172,4 +172,8 @@ class Config {
     [ 1, 365, 1.0 ],
     [ 366, 1095, 0.5 ],
   ];
+
+// Web page detailing how loyalty is determined. If defined, there will be a
+  // link to it next to the loyalty widget on the entity page.
+  const LOYALTY_URL = '';
 }

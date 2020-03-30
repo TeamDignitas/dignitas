@@ -2,9 +2,9 @@
   {$data=$entity->getLoyalties()}
   <h6 class="font-weight-bold text-capitalize">{t}title-loyalty{/t}</h6>
 
-  {* use floor, not round, to ensure the sum doesn't exceed 100% *}
-  {strip}
-  <div>
+  <div class="d-flex">
+    {* use floor, not round, to ensure the sum doesn't exceed 100% *}
+    {strip}
     <div class="loyalty-widget" data-toggle="popover">
       {foreach $data as $e}
         {$percent=(floor($e->value*10000)/100)|number_format:2}
@@ -12,6 +12,15 @@
         <div style="width: {$percent}%; background-color: {$color};"></div>
       {/foreach}
     </div>
+    {/strip}
+
+    {if Config::LOYALTY_URL}
+      <div class="ml-2">
+        <a href="{Config::LOYALTY_URL}" title="{t}link-loyalty-details{/t}">
+          <i class="icon icon-help"></i>
+        </a>
+      </div>
+    {/if}
 
     <div class="loyalty-popover" hidden>
       {foreach $data as $e}
@@ -22,6 +31,5 @@
       {/foreach}
     </div>
   </div>
-  {/strip}
 
 {/if}
