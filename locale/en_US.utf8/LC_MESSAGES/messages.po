@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-03-30 15:13+0300\n"
-"PO-Revision-Date: 2020-03-30 15:13+0300\n"
+"POT-Creation-Date: 2020-04-01 18:07+0300\n"
+"PO-Revision-Date: 2020-04-01 18:08+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -227,6 +227,14 @@ msgstr "Are you sure you want to delete this answer?"
 #: templates/statement/edit.tpl:137 templates/tag/edit.tpl:172
 msgid "link-delete"
 msgstr "delete"
+
+#: templates/bits/answer.tpl:71
+msgid "info-confirm-reopen-answer"
+msgstr "Are you sure you want to reopen this answer?"
+
+#: templates/bits/answer.tpl:72
+msgid "link-reopen"
+msgstr "reopen"
 
 #: templates/bits/answerEdit.tpl:18 templates/bits/statement.tpl:158
 #: templates/statement/edit.tpl:103 lib/model/RevisionAnswer.php:15
@@ -1643,72 +1651,72 @@ msgstr "You need at least %s reputation to edit statements."
 msgid "info-only-moderator-edit-statement-verdict"
 msgstr "This statement has a verdict. Only moderators can edit it directly."
 
-#: lib/model/User.php:138 routes/auth/login.php:60
+#: lib/model/User.php:137 routes/auth/login.php:60
 #: routes/auth/lostPassword.php:49 routes/invite/add.php:42
 msgid "info-must-enter-email"
 msgstr "Please enter an email address."
 
-#: lib/model/User.php:143
+#: lib/model/User.php:142
 msgid "info-email-taken"
 msgstr "This email address is already taken."
 
-#: lib/model/User.php:147 routes/auth/lostPassword.php:51
+#: lib/model/User.php:146 routes/auth/lostPassword.php:51
 #: routes/invite/add.php:44
 msgid "info-incorrect-email"
 msgstr "This email address looks incorrect."
 
-#: lib/model/User.php:156
+#: lib/model/User.php:155
 msgid "info-nickname-syntax"
 msgstr ""
 "Your nickname must begin with a letter or digit and consist of 3 to 30 "
 "letters, digits and punctuation from among -_."
 
-#: lib/model/User.php:164 routes/auth/login.php:64
+#: lib/model/User.php:163 routes/auth/login.php:64
 msgid "info-must-enter-password"
 msgstr "Please enter a password."
 
-#: lib/model/User.php:166
+#: lib/model/User.php:165
 msgid "info-must-enter-password-2"
 msgstr "Please enter your password twice to prevent typos."
 
-#: lib/model/User.php:168
+#: lib/model/User.php:167
 msgid "info-password-mismatch"
 msgstr "Passwords don't match."
 
-#: lib/model/User.php:170
+#: lib/model/User.php:169
 msgid "info-password-length"
 msgstr "Your password must be at least 8 characters long."
 
-#: lib/model/User.php:194
+#: lib/model/User.php:193
 #, php-format
 msgid "info-minimum-reputation-%s"
 msgstr "You need at least %s reputation to perform this action."
 
-#: lib/model/User.php:208
+#: lib/model/User.php:207
 msgid "info-moderator-only"
 msgstr "Only moderators may perform this action."
 
-#: lib/model/User.php:226
+#: lib/model/User.php:225
 #, php-format
 msgid "info-minimum-reputation-flag-%s"
 msgstr "You need at least %s reputation to flag."
 
-#: lib/model/User.php:234
+#: lib/model/User.php:233
 #, php-format
 msgid "info-flag-limit-singular"
 msgid_plural "info-flag-limit-plural-%d"
 msgstr[0] "You can use at most one flag every 24 hours."
 msgstr[1] "You can use at most %d flags every 24 hours."
 
-#: lib/model/User.php:241
+#: lib/model/User.php:240
 msgid "info-flag-no-object"
 msgstr "Cannot flag: object does not exist."
 
-#: lib/model/User.php:246
+#: lib/model/User.php:245
 msgid "info-already-flagged"
 msgstr "You already have a pending flag for this object."
 
-#: lib/model/User.php:290
+#: lib/model/User.php:289
 #, php-format
 msgid "info-minimum-reputation-comment-%s"
 msgstr "You need at least %s reputation to comment."
@@ -1828,7 +1836,8 @@ msgstr "Answer history for"
 msgid "info-proof-requires-moderator"
 msgstr "only moderators can accept answers as proof"
 
-#: routes/answer/saveProof.php:20 routes/statement/view.php:21
+#: routes/answer/saveProof.php:20 routes/statement/view.php:22
+#: routes/statement/view.php:38
 msgid "info-no-such-answer"
 msgstr "The answer you are looking for does not exist."
 
@@ -2209,11 +2218,11 @@ msgstr "This date may not be in the future."
 msgid "info-invalid-statement-links"
 msgstr "Some source URLs are invalid."
 
-#: routes/statement/history.php:7 routes/statement/view.php:9
+#: routes/statement/history.php:7 routes/statement/view.php:10
 msgid "info-no-such-statement"
 msgstr "The statement you are looking for does not exist."
 
-#: routes/statement/history.php:12 routes/statement/view.php:14
+#: routes/statement/history.php:12 routes/statement/view.php:15
 msgid "info-restricted-statement"
 msgstr "This statement was deleted and is only visible to privileged users."
 
@@ -2221,17 +2230,25 @@ msgstr "This statement was deleted and is only visible to privileged users."
 msgid "title-statement-history"
 msgstr "Statement history for"
 
-#: routes/statement/view.php:23
+#: routes/statement/view.php:24 routes/statement/view.php:40
 msgid "info-answer-belong-statement"
 msgstr "The answer does not belong to this statement."
 
-#: routes/statement/view.php:25
+#: routes/statement/view.php:26
 msgid "info-cannot-delete-answer"
 msgstr "You cannot delete this answer."
 
-#: routes/statement/view.php:28
+#: routes/statement/view.php:29
 msgid "info-confirm-answer-deleted"
 msgstr "Answer deleted."
+
+#: routes/statement/view.php:42
+msgid "info-cannot-reopen-answer"
+msgstr "You cannot reopen this answer."
+
+#: routes/statement/view.php:45
+msgid "info-confirm-answer-reopened"
+msgstr "Answer reopened."
 
 #: routes/tag/edit.php:28
 #, php-format

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-03-30 15:12+0300\n"
-"PO-Revision-Date: 2020-03-30 15:13+0300\n"
+"POT-Creation-Date: 2020-04-01 18:07+0300\n"
+"PO-Revision-Date: 2020-04-01 18:07+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -232,6 +232,14 @@ msgstr "Confirmați ștergerea acestui răspuns?"
 #: templates/statement/edit.tpl:137 templates/tag/edit.tpl:172
 msgid "link-delete"
 msgstr "șterge"
+
+#: templates/bits/answer.tpl:71
+msgid "info-confirm-reopen-answer"
+msgstr "Confirmați redeschiderea acestui răspuns?"
+
+#: templates/bits/answer.tpl:72
+msgid "link-reopen"
+msgstr "redeschide"
 
 #: templates/bits/answerEdit.tpl:18 templates/bits/statement.tpl:158
 #: templates/statement/edit.tpl:103 lib/model/RevisionAnswer.php:15
@@ -1663,59 +1671,59 @@ msgstr ""
 "Această afirmație a primit un verdict. Doar moderatorii o mai pot modifica "
 "direct."
 
-#: lib/model/User.php:138 routes/auth/login.php:60
+#: lib/model/User.php:137 routes/auth/login.php:60
 #: routes/auth/lostPassword.php:49 routes/invite/add.php:42
 msgid "info-must-enter-email"
 msgstr "Vă rugăm să introduceți o adresă de e-mail."
 
-#: lib/model/User.php:143
+#: lib/model/User.php:142
 msgid "info-email-taken"
 msgstr "Această adresă de e-mail este deja folosită."
 
-#: lib/model/User.php:147 routes/auth/lostPassword.php:51
+#: lib/model/User.php:146 routes/auth/lostPassword.php:51
 #: routes/invite/add.php:44
 msgid "info-incorrect-email"
 msgstr "Adresa de e-mail pare incorectă."
 
-#: lib/model/User.php:156
+#: lib/model/User.php:155
 msgid "info-nickname-syntax"
 msgstr ""
 "Porecla trebuie să înceapă cu o literă sau cifră și să conțină 3-30 de "
 "litere, cifre și semne de punctuație dintre -_."
 
-#: lib/model/User.php:164 routes/auth/login.php:64
+#: lib/model/User.php:163 routes/auth/login.php:64
 msgid "info-must-enter-password"
 msgstr "Vă rugăm să introduceți o parolă."
 
-#: lib/model/User.php:166
+#: lib/model/User.php:165
 msgid "info-must-enter-password-2"
 msgstr ""
 "Vă rugăm să introduceți parola de două ori pentru a preveni greșelile de "
 "tastare."
 
-#: lib/model/User.php:168
+#: lib/model/User.php:167
 msgid "info-password-mismatch"
 msgstr "Parolele nu coincid."
 
-#: lib/model/User.php:170
+#: lib/model/User.php:169
 msgid "info-password-length"
 msgstr "Parola trebuie să aibă cel puțin 8 caractere."
 
-#: lib/model/User.php:194
+#: lib/model/User.php:193
 #, php-format
 msgid "info-minimum-reputation-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru această acțiune."
 
-#: lib/model/User.php:208
+#: lib/model/User.php:207
 msgid "info-moderator-only"
 msgstr "Doar moderatorii pot face această acțiune."
 
-#: lib/model/User.php:226
+#: lib/model/User.php:225
 #, php-format
 msgid "info-minimum-reputation-flag-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a face raportări."
 
-#: lib/model/User.php:234
+#: lib/model/User.php:233
 #, php-format
 msgid "info-flag-limit-singular"
 msgid_plural "info-flag-limit-plural-%d"
@@ -1723,15 +1731,15 @@ msgstr[0] "Puteți face cel mult o raportare la 24 de ore."
 msgstr[1] "Puteți face cel mult %d raportări la 24 de ore."
 msgstr[2] "Puteți face cel mult %d de raportări la 24 de ore."
 
-#: lib/model/User.php:241
+#: lib/model/User.php:240
 msgid "info-flag-no-object"
 msgstr "Nu pot face raportarea: articolul nu există."
 
-#: lib/model/User.php:246
+#: lib/model/User.php:245
 msgid "info-already-flagged"
 msgstr "Ați raportat deja acest articol."
 
-#: lib/model/User.php:290
+#: lib/model/User.php:289
 #, php-format
 msgid "info-minimum-reputation-comment-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a comenta."
@@ -1854,7 +1862,8 @@ msgstr "Istoricul răspunsului"
 msgid "info-proof-requires-moderator"
 msgstr "Doar moderatorii pot accepta răspunsuri ca demonstrații."
 
-#: routes/answer/saveProof.php:20 routes/statement/view.php:21
+#: routes/answer/saveProof.php:20 routes/statement/view.php:22
+#: routes/statement/view.php:38
 msgid "info-no-such-answer"
 msgstr "Răspunsul căutat nu există."
 
@@ -2240,11 +2249,11 @@ msgstr "Data nu poate fi în viitor."
 msgid "info-invalid-statement-links"
 msgstr "Unele dintre surse sînt incorecte."
 
-#: routes/statement/history.php:7 routes/statement/view.php:9
+#: routes/statement/history.php:7 routes/statement/view.php:10
 msgid "info-no-such-statement"
 msgstr "Afirmația căutată nu există."
 
-#: routes/statement/history.php:12 routes/statement/view.php:14
+#: routes/statement/history.php:12 routes/statement/view.php:15
 msgid "info-restricted-statement"
 msgstr ""
 "Această afirmație a fost ștearsă și este vizibilă doar de către utilizatorii "
@@ -2254,17 +2263,25 @@ msgstr ""
 msgid "title-statement-history"
 msgstr "Istoricul afirmației"
 
-#: routes/statement/view.php:23
+#: routes/statement/view.php:24 routes/statement/view.php:40
 msgid "info-answer-belong-statement"
 msgstr "Răspunsul nu aparține de această afirmație."
 
-#: routes/statement/view.php:25
+#: routes/statement/view.php:26
 msgid "info-cannot-delete-answer"
 msgstr "Nu puteți șterge acest răspuns."
 
-#: routes/statement/view.php:28
+#: routes/statement/view.php:29
 msgid "info-confirm-answer-deleted"
 msgstr "Am șters răspunsul."
+
+#: routes/statement/view.php:42
+msgid "info-cannot-reopen-answer"
+msgstr "Nu puteți redeschide acest răspuns."
+
+#: routes/statement/view.php:45
+msgid "info-confirm-answer-reopened"
+msgstr "Am redeschis răspunsul."
 
 #: routes/tag/edit.php:28
 #, php-format

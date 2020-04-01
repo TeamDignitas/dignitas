@@ -109,12 +109,22 @@ class Answer extends Proto {
    * @return boolean
    */
   function isDeletable() {
-    // TODO: not deletable if accepted
     return
       $this->status == Ct::STATUS_ACTIVE &&
       !$this->proof &&                           // not yet accepted as proof
       (User::may(User::PRIV_DELETE_ANSWER) ||    // can delete any answer
        $this->userId == User::getActiveId());    // can always delete user's own answers
+  }
+
+  /**
+   * Checks whether the active user may reopen this answer.
+   *
+   * @return boolean
+   */
+  function isReopenable() {
+    return
+      $this->status == Ct::STATUS_DELETED &&
+      User::isModerator();
   }
 
   function close($reason) {

@@ -64,6 +64,15 @@
           </a>
         {/if}
 
+        {if $answer->isReopenable()}
+          <a
+            href="?reopenAnswerId={$answer->id}"
+            class="btn btn-sm btn-outline-secondary mt-1"
+            data-confirm="{t}info-confirm-reopen-answer{/t}">
+            {t}link-reopen{/t}
+          </a>
+        {/if}
+
         {include "bits/editButton.tpl" obj=$answer class="btn btn-sm btn-outline-secondary mt-1"}
         {include "bits/flagLinks.tpl" obj=$answer class="btn btn-sm btn-outline-secondary mt-1"}
 

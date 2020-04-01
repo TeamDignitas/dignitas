@@ -3,6 +3,7 @@
 $id = Request::get('id');
 $answerId = Request::get('answerId'); // answer to be highlighted
 $deleteAnswerId = Request::get('deleteAnswerId');
+$reopenAnswerId = Request::get('reopenAnswerId');
 
 $statement = Statement::get_by_id($id);
 if (!$statement) {
@@ -29,6 +30,25 @@ if ($deleteAnswerId) {
   }
 
   Util::redirect(Router::link('statement/view') . '/' . $answer->statementId);
+}
+
+if ($reopenAnswerId) {
+  $answer = Answer::get_by_id($reopenAnswerId);
+  if (!$answer) {
+    FlashMessage::add(_('info-no-such-answer'));
+  } else if ($answer->statementId != $statement->id) {
+    FlashMessage::add(_('info-answer-belong-statement'));
+  } else if (!$answer->isReopenable()) {
+    FlashMessage::add(_('info-cannot-reopen-answer'));
+  } else {
+    $answer->reopen();
+    FlashMessage::add(_('info-confirm-answer-reopened'), 'success');
+  }
+
+  Util::redirect(sprintf('%s/%s/%s',
+                         Router::link('statement/view'),
+                         $answer->statementId,
+                         $answer->id));
 }
 
 if ($statement->hasPendingEdit() && User::may(User::PRIV_REVIEW)) {
