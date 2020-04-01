@@ -113,8 +113,7 @@ class RevisionEntity extends Entity {
                           $od, Ct::FIELD_CHANGE_STRING);
     }
 
-    // review (if any)
-    $od->checkReview($prev, $this);
+    $od->checkReview($this);
 
     return $od;
   }

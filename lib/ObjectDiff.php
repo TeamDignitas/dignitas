@@ -57,37 +57,26 @@ class ObjectDiff {
   }
 
   /**
-   * Adds the review that approved this pending edit, if applicable.
+   * Adds the review that caused this change, if any. This should cover
+   *   - pending edits (which can change many fields);
+   *   - flagging for closure or deletion (which changes the status)
    *
    * TODO: this can bug out if the object is flagged while edits are pending.
    * This inserts additional revisions.
    *
-   * @param PendingEditTrait $old revision that created the pending edit
-   * @param PendingEditTrait $new revision that approved the pending edit
+   * @param PendingEditTrait $new An object revision.
    */
-  function checkReview($old, $new) {
-    if ($old->pendingEditId) {
-      // rev1 should exist, but rev2 may not exist if the pending edit was rejected
-      $rev1 = RevisionReview::get_by_revisionAction_requestId_objectType_objectId_reason_status(
-        'insert',
-        $old->requestId,
-        $old->getObjectType(),
-        $old->id,
-        Ct::REASON_PENDING_EDIT,
-        Review::STATUS_PENDING);
-      $rev2 = RevisionReview::get_by_revisionAction_requestId_id_objectType_objectId_reason_status(
-        'update',
-        $new->requestId,
-        $rev1->id ?? null,
-        $new->getObjectType(),
-        $new->id,
-        Ct::REASON_PENDING_EDIT,
-        Review::STATUS_KEEP);
-      if ($rev1 && $rev2) {
-        $this->review = Review::get_by_id($rev2->id);
-        Log::info('Adding review #%d for revisions #%d and #%d.',
-                  $rev2->id, $new->revisionId, $old->revisionId);
-      }
+  function checkReview($new) {
+    $rev = Model::factory('RevisionReview')
+      ->where('revisionAction', 'update')
+      ->where('requestId', $new->requestId)
+      ->where('objectType', $new->getObjectType())
+      ->where('objectId', $new->id)
+      ->where_in('status', [ Review::STATUS_KEEP, Review::STATUS_REMOVE])
+      ->find_one();
+    if ($rev) {
+      $this->review = Review::get_by_id($rev->id);
+      Log::info('Adding review #%d for revision #%d.', $rev->id, $new->revisionId);
     }
   }
 

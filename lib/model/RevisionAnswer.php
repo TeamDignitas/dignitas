@@ -21,6 +21,8 @@ class RevisionAnswer extends Answer {
                         $this->getStatusName(),
                         $od, Ct::FIELD_CHANGE_STRING);
 
+    $od->checkReview($this);
+
     return $od;
   }
 }

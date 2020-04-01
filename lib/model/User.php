@@ -37,7 +37,6 @@ class User extends Proto {
   // If that ever changes, then review/view.php should disable the edit button
   // accordingly.
   const PRIV_REVIEW = 2000;
-  const PRIV_CLOSE_REOPEN_VOTE = 3000;
 
   // flag earning
   const BASE_FLAGS_PER_DAY = 10;

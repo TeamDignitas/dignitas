@@ -66,6 +66,9 @@ class RevisionStatement extends Statement {
                           (string)$l,
                           $od, Ct::FIELD_CHANGE_LINK);
     }
+
+    $od->checkReview($this);
+
     return $od;
   }
 }
