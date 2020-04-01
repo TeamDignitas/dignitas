@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-04-01 18:07+0300\n"
-"PO-Revision-Date: 2020-04-01 18:08+0300\n"
+"POT-Creation-Date: 2020-04-01 18:21+0300\n"
+"PO-Revision-Date: 2020-04-01 18:22+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -264,6 +264,10 @@ msgstr "characters remaining"
 #: templates/bits/commentForm.tpl:25
 msgid "link-pick-canned-response"
 msgstr "canned response"
+
+#: templates/bits/diff/objectDiff.tpl:30
+msgid "info-reviewed-because"
+msgstr "review reason"
 
 #: templates/bits/diff/text.tpl:8
 msgid "identical-lines-skipped-singular"
@@ -1391,99 +1395,147 @@ msgstr "Incorrect relationship type."
 msgid "info-dates-out-of-order"
 msgstr "The start date cannot be past the end date."
 
-#: lib/model/Review.php:88
+#: lib/model/Review.php:89
+msgid "reason-name-spam"
+msgstr "spam"
+
+#: lib/model/Review.php:90
+msgid "reason-name-abuse"
+msgstr "abuse"
+
+#: lib/model/Review.php:91
+msgid "reason-name-duplicate"
+msgstr "duplicate"
+
+#: lib/model/Review.php:92
+msgid "reason-name-off-topic"
+msgstr "off-topic"
+
+#: lib/model/Review.php:93
+msgid "reason-name-unverifiable"
+msgstr "unverifiable"
+
+#: lib/model/Review.php:94
+msgid "reason-name-low-quality"
+msgstr "low quality"
+
+#: lib/model/Review.php:95
+msgid "reason-name-new-user"
+msgstr "post from new user"
+
+#: lib/model/Review.php:96
+msgid "reason-name-late-answer"
+msgstr "late answer"
+
+#: lib/model/Review.php:97
+msgid "reason-name-reopen"
+msgstr "reopened"
+
+#: lib/model/Review.php:98
+msgid "reason-name-pending-edit"
+msgstr "suggested changes"
+
+#: lib/model/Review.php:99
+msgid "reason-name-other-reason"
+msgstr "other reasons"
+
+#: lib/model/Review.php:100
+msgid "reason-name-not-needed"
+msgstr "no longer needed"
+
+#: lib/model/Review.php:112
 msgid "queue-name-spam"
 msgstr "items flagged as spam"
 
-#: lib/model/Review.php:89
+#: lib/model/Review.php:113
 msgid "queue-name-abuse"
 msgstr "items flagged as abuse"
 
-#: lib/model/Review.php:90
+#: lib/model/Review.php:114
 msgid "queue-name-duplicate"
 msgstr "items flagged as duplicate"
 
-#: lib/model/Review.php:91
+#: lib/model/Review.php:115
 msgid "queue-name-off-topic"
 msgstr "items flagged as off-topic"
 
-#: lib/model/Review.php:92
+#: lib/model/Review.php:116
 msgid "queue-name-unverifiable"
 msgstr "items flagged as unverifiable"
 
-#: lib/model/Review.php:93
+#: lib/model/Review.php:117
 msgid "queue-name-low-quality"
 msgstr "items flagged as low quality"
 
-#: lib/model/Review.php:94
+#: lib/model/Review.php:118
 msgid "queue-name-new-user"
 msgstr "posts from new users"
 
-#: lib/model/Review.php:95
+#: lib/model/Review.php:119
 msgid "queue-name-late-answer"
 msgstr "late answers"
 
-#: lib/model/Review.php:96
+#: lib/model/Review.php:120
 msgid "queue-name-reopen"
 msgstr "items flagged for reopening"
 
-#: lib/model/Review.php:97
+#: lib/model/Review.php:121
 msgid "queue-name-pending-edit"
 msgstr "suggested changes"
 
-#: lib/model/Review.php:98
+#: lib/model/Review.php:122
 msgid "queue-name-other-reason"
 msgstr "items flagged for other reasons"
 
-#: lib/model/Review.php:99
+#: lib/model/Review.php:123
 msgid "queue-name-not-needed"
 msgstr "no longer needed comments"
 
-#: lib/model/Review.php:111
+#: lib/model/Review.php:135
 msgid "queue-url-spam"
 msgstr "spam"
 
-#: lib/model/Review.php:112
+#: lib/model/Review.php:136
 msgid "queue-url-abuse"
 msgstr "abuse"
 
-#: lib/model/Review.php:113
+#: lib/model/Review.php:137
 msgid "queue-url-duplicate"
 msgstr "duplicates"
 
-#: lib/model/Review.php:114
+#: lib/model/Review.php:138
 msgid "queue-url-off-topic"
 msgstr "off-topic"
 
-#: lib/model/Review.php:115
+#: lib/model/Review.php:139
 msgid "queue-url-unverifiable"
 msgstr "unverifiable"
 
-#: lib/model/Review.php:116
+#: lib/model/Review.php:140
 msgid "queue-url-low-quality"
 msgstr "low quality"
 
-#: lib/model/Review.php:117
+#: lib/model/Review.php:141
 msgid "queue-url-new-user"
 msgstr "new-user"
 
-#: lib/model/Review.php:118
+#: lib/model/Review.php:142
 msgid "queue-url-late-answer"
 msgstr "late-answers"
 
-#: lib/model/Review.php:119
+#: lib/model/Review.php:143
 msgid "queue-url-reopen"
 msgstr "reopen"
 
-#: lib/model/Review.php:120
+#: lib/model/Review.php:144
 msgid "queue-url-pending-edit"
 msgstr "suggested-changes"
 
-#: lib/model/Review.php:121
+#: lib/model/Review.php:145
 msgid "queue-url-other-reason"
 msgstr "other"
 
-#: lib/model/Review.php:122
+#: lib/model/Review.php:146
 msgid "queue-url-not-needed"
 msgstr "not-needed"
 

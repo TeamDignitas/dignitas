@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-04-01 18:07+0300\n"
-"PO-Revision-Date: 2020-04-01 18:07+0300\n"
+"POT-Creation-Date: 2020-04-01 18:19+0300\n"
+"PO-Revision-Date: 2020-04-01 18:20+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -269,6 +269,10 @@ msgstr "caractere rămase"
 #: templates/bits/commentForm.tpl:25
 msgid "link-pick-canned-response"
 msgstr "predefinite"
+
+#: templates/bits/diff/objectDiff.tpl:30
+msgid "info-reviewed-because"
+msgstr "evaluare pentru motivul"
 
 #: templates/bits/diff/text.tpl:8
 msgid "identical-lines-skipped-singular"
@@ -1409,99 +1413,147 @@ msgstr "Tip de relație incorect."
 msgid "info-dates-out-of-order"
 msgstr "Data de început nu poate fi mai mare ca data de sfîrșit."
 
-#: lib/model/Review.php:88
+#: lib/model/Review.php:89
+msgid "reason-name-spam"
+msgstr "spam"
+
+#: lib/model/Review.php:90
+msgid "reason-name-abuse"
+msgstr "abuzuri"
+
+#: lib/model/Review.php:91
+msgid "reason-name-duplicate"
+msgstr "duplicat"
+
+#: lib/model/Review.php:92
+msgid "reason-name-off-topic"
+msgstr "pe lîngă subiect"
+
+#: lib/model/Review.php:93
+msgid "reason-name-unverifiable"
+msgstr "neverificabil"
+
+#: lib/model/Review.php:94
+msgid "reason-name-low-quality"
+msgstr "de slabă calitate"
+
+#: lib/model/Review.php:95
+msgid "reason-name-new-user"
+msgstr "provine de la un utilizator noi"
+
+#: lib/model/Review.php:96
+msgid "reason-name-late-answer"
+msgstr "răspuns tîrziu"
+
+#: lib/model/Review.php:97
+msgid "reason-name-reopen"
+msgstr "propus pentru redeschidere"
+
+#: lib/model/Review.php:98
+msgid "reason-name-pending-edit"
+msgstr "modificări sugerate"
+
+#: lib/model/Review.php:99
+msgid "reason-name-other-reason"
+msgstr "alte motive"
+
+#: lib/model/Review.php:100
+msgid "reason-name-not-needed"
+msgstr "nenecesar"
+
+#: lib/model/Review.php:112
 msgid "queue-name-spam"
 msgstr "articole raportate ca spam"
 
-#: lib/model/Review.php:89
+#: lib/model/Review.php:113
 msgid "queue-name-abuse"
 msgstr "articole raportate ca abuzuri"
 
-#: lib/model/Review.php:90
+#: lib/model/Review.php:114
 msgid "queue-name-duplicate"
 msgstr "articole raportate ca duplicate"
 
-#: lib/model/Review.php:91
+#: lib/model/Review.php:115
 msgid "queue-name-off-topic"
 msgstr "articole raportate ca pe lîngă subiect"
 
-#: lib/model/Review.php:92
+#: lib/model/Review.php:116
 msgid "queue-name-unverifiable"
 msgstr "articole raportate ca neverificabile"
 
-#: lib/model/Review.php:93
+#: lib/model/Review.php:117
 msgid "queue-name-low-quality"
 msgstr "articole raportate ca fiind de slabă calitate"
 
-#: lib/model/Review.php:94
+#: lib/model/Review.php:118
 msgid "queue-name-new-user"
 msgstr "mesaje de la utilizatori noi"
 
-#: lib/model/Review.php:95
+#: lib/model/Review.php:119
 msgid "queue-name-late-answer"
 msgstr "late answers"
 
-#: lib/model/Review.php:96
+#: lib/model/Review.php:120
 msgid "queue-name-reopen"
 msgstr "articole propuse pentru redeschidere"
 
-#: lib/model/Review.php:97
+#: lib/model/Review.php:121
 msgid "queue-name-pending-edit"
 msgstr "modificări sugerate"
 
-#: lib/model/Review.php:98
+#: lib/model/Review.php:122
 msgid "queue-name-other-reason"
 msgstr "articole raportate pentru alte motive"
 
-#: lib/model/Review.php:99
+#: lib/model/Review.php:123
 msgid "queue-name-not-needed"
 msgstr "comentarii raportate ca nenecesare"
 
-#: lib/model/Review.php:111
+#: lib/model/Review.php:135
 msgid "queue-url-spam"
 msgstr "spam"
 
-#: lib/model/Review.php:112
+#: lib/model/Review.php:136
 msgid "queue-url-abuse"
 msgstr "abuz"
 
-#: lib/model/Review.php:113
+#: lib/model/Review.php:137
 msgid "queue-url-duplicate"
 msgstr "duplicat"
 
-#: lib/model/Review.php:114
+#: lib/model/Review.php:138
 msgid "queue-url-off-topic"
 msgstr "pe-linga-subiect"
 
-#: lib/model/Review.php:115
+#: lib/model/Review.php:139
 msgid "queue-url-unverifiable"
 msgstr "neverificabil"
 
-#: lib/model/Review.php:116
+#: lib/model/Review.php:140
 msgid "queue-url-low-quality"
 msgstr "slaba-calitate"
 
-#: lib/model/Review.php:117
+#: lib/model/Review.php:141
 msgid "queue-url-new-user"
 msgstr "utilizator-nou"
 
-#: lib/model/Review.php:118
+#: lib/model/Review.php:142
 msgid "queue-url-late-answer"
 msgstr "raspuns-tirziu"
 
-#: lib/model/Review.php:119
+#: lib/model/Review.php:143
 msgid "queue-url-reopen"
 msgstr "redeschidere"
 
-#: lib/model/Review.php:120
+#: lib/model/Review.php:144
 msgid "queue-url-pending-edit"
 msgstr "modificari-sugerate"
 
-#: lib/model/Review.php:121
+#: lib/model/Review.php:145
 msgid "queue-url-other-reason"
 msgstr "alt-motiv"
 
-#: lib/model/Review.php:122
+#: lib/model/Review.php:146
 msgid "queue-url-not-needed"
 msgstr "nenecesare"
 

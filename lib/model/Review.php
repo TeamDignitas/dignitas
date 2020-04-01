@@ -78,6 +78,30 @@ class Review extends Proto {
   ];
 
   /**
+   * Returns a localized description of a review reason, to be displayed in
+   * the underlying object's revision history.
+   *
+   * @param int $reason One of the Ct::REASON_* values
+   * @return string A localized description
+   */
+  function getReasonName() {
+    switch ($this->reason) {
+      case Ct::REASON_SPAM:         return _('reason-name-spam');
+      case Ct::REASON_ABUSE:        return _('reason-name-abuse');
+      case Ct::REASON_DUPLICATE:    return _('reason-name-duplicate');
+      case Ct::REASON_OFF_TOPIC:    return _('reason-name-off-topic');
+      case Ct::REASON_UNVERIFIABLE: return _('reason-name-unverifiable');
+      case Ct::REASON_LOW_QUALITY:  return _('reason-name-low-quality');
+      case Ct::REASON_NEW_USER:     return _('reason-name-new-user');
+      case Ct::REASON_LATE_ANSWER:  return _('reason-name-late-answer');
+      case Ct::REASON_REOPEN:       return _('reason-name-reopen');
+      case Ct::REASON_PENDING_EDIT: return _('reason-name-pending-edit');
+      case Ct::REASON_OTHER:        return _('reason-name-other-reason');
+      case Ct::REASON_NOT_NEEDED:   return _('reason-name-not-needed');
+    }
+  }
+
+  /**
    * Returns a localized description for a review queue.
    *
    * @param int $reason One of the Ct::REASON_* values
