@@ -9,7 +9,7 @@
     {if User::may(User::PRIV_ADD_STATEMENT)}
       <div class="card py-4 px-2 m-2 border-secondary text-center fix-min-height">
         <h5 class="card-title">
-          <i class="icon icon-plus"></i>
+          <i class="icon icon-pencil"></i>
         </h5>
         <a href="{Router::link('statement/edit')}">
           {t}link-add-statement{/t}
@@ -20,7 +20,7 @@
     {if User::may(User::PRIV_ADD_ENTITY)}
       <div class="card py-4 px-2 m-2 border-secondary text-center fix-min-height">
         <h5 class="card-title">
-          <i class="icon icon-user"></i>
+          <i class="icon icon-user-plus"></i>
         </h5>
         <a href="{Router::link('entity/edit')}">
           {t}link-add-entity{/t}
@@ -39,7 +39,7 @@
       </div>
       <div class="card py-4 px-2 m-2 border-secondary text-center fix-min-height">
         <h5 class="card-title">
-          <i class="icon icon-plus"></i>
+          <i class="icon icon-doc-text-inv"></i>
         </h5>
         <a href="{Router::link('cannedResponse/list')}">
           {t}link-canned-responses{/t}
@@ -47,7 +47,7 @@
       </div>
       <div class="card py-4 px-2 m-2 border-secondary text-center fix-min-height">
         <h5 class="card-title">
-          <i class="icon icon-plus"></i>
+          <i class="icon id-card-o"></i>
         </h5>
         <a href="{Router::link('invite/list')}">
           {t}link-invites{/t}
@@ -57,7 +57,7 @@
 
     <div class="card py-4 px-2 m-2 border-secondary text-center fix-min-height">
       <h5 class="card-title">
-        <i class="icon icon-plus"></i>
+        <i class="icon icon-tags"></i>
       </h5>
       <a href="{Router::link('tag/list')}">
         {t}link-tags{/t}
