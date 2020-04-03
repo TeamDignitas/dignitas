@@ -3,54 +3,74 @@
 {block "title"}{cap}{t}title-dashboard{/t}{/cap}{/block}
 
 {block "content"}
-  <h3>{cap}{t}title-dashboard{/t}{/cap}</h3>
+  <h2 class="mb-4">{cap}{t}title-dashboard{/t}{/cap}</h2>
 
-  {if User::may(User::PRIV_ADD_STATEMENT)}
-    <div>
-      <a href="{Router::link('statement/edit')}">
-        {t}link-add-statement{/t}
-      </a>
-    </div>
-  {/if}
+  <div class="card-columns">
+    {if User::may(User::PRIV_ADD_STATEMENT)}
+      <div class="card py-4 px-2 m-2 border-secondary text-center">
+        <h5 class="card-title">
+          <i class="icon icon-plus"></i>
+        </h5>
+        <a href="{Router::link('statement/edit')}">
+          {t}link-add-statement{/t}
+        </a>
+      </div>
+    {/if}
 
-  {if User::may(User::PRIV_ADD_ENTITY)}
-    <div>
-      <a href="{Router::link('entity/edit')}">
-        {t}link-add-entity{/t}
-      </a>
-    </div>
-  {/if}
+    {if User::may(User::PRIV_ADD_ENTITY)}
+      <div class="card py-4 px-2 m-2 border-secondary text-center">
+        <h5 class="card-title">
+          <i class="icon icon-user"></i>
+        </h5>
+        <a href="{Router::link('entity/edit')}">
+          {t}link-add-entity{/t}
+        </a>
+      </div>
+    {/if}
 
-  {if User::isModerator()}
-    <div>
-      <a href="{Router::link('domain/list')}">
-        {t}link-domains{/t}
-      </a>
-    </div>
-    <div>
-      <a href="{Router::link('cannedResponse/list')}">
-        {t}link-canned-responses{/t}
-      </a>
-    </div>
-    <div>
-      <a href="{Router::link('invite/list')}">
-        {t}link-invites{/t}
-      </a>
-    </div>
-  {/if}
+    {if User::isModerator()}
+      <div class="card py-4 px-2 m-2 border-secondary text-center">
+        <h5 class="card-title">
+          <i class="icon icon-link"></i>
+        </h5>
+        <a href="{Router::link('domain/list')}">
+          {t}link-domains{/t}
+        </a>
+      </div>
+      <div class="card py-4 px-2 m-2 border-secondary text-center">
+        <h5 class="card-title">
+          <i class="icon icon-plus"></i>
+        </h5>
+        <a href="{Router::link('cannedResponse/list')}">
+          {t}link-canned-responses{/t}
+        </a>
+      </div>
+      <div class="card py-4 px-2 m-2 border-secondary text-center">
+        <h5 class="card-title">
+          <i class="icon icon-plus"></i>
+        </h5>
+        <a href="{Router::link('invite/list')}">
+          {t}link-invites{/t}
+        </a>
+      </div>
+    {/if}
 
-  <div>
-    <a href="{Router::link('tag/list')}">
-      {t}link-tags{/t}
-    </a>
+    <div class="card py-4 px-2 m-2 border-secondary text-center">
+      <h5 class="card-title">
+        <i class="icon icon-plus"></i>
+      </h5>
+      <a href="{Router::link('tag/list')}">
+        {t}link-tags{/t}
+      </a>
+    </div>
   </div>
 
   {if User::may(User::PRIV_REVIEW) && !empty($activeReviewReasons)}
-    <h4>{cap}{t}title-review-queues{/t}{/cap}</h4>
+    <h4 class="mt-5">{cap}{t}title-review-queues{/t}{/cap}</h4>
 
     <ul>
       {foreach $activeReviewReasons as $r}
-        <li>
+        <li class="card py-4 px-2 m-2 border-secondary text-center">
           <a href="{Router::link('review/view')}/{Review::getUrlName($r)}">
             {Review::getDescription($r)}
           </a>
@@ -61,10 +81,10 @@
 
   {if User::isModerator()}
     {if $numBadVerdicts}
-      <h4>{cap}{t}title-reports{/t}{/cap}</h4>
+      <h4 class="mt-5">{cap}{t}title-reports{/t}{/cap}</h4>
 
       <ul>
-        <li>
+        <li class="card py-4 px-2 m-2 border-secondary text-center">
           <a href="{Router::link('statement/verdictReport')}">
             {t}link-verdict-report{/t}
            </a>
