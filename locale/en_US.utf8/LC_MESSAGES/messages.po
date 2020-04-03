@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-04-01 18:21+0300\n"
-"PO-Revision-Date: 2020-04-01 18:22+0300\n"
+"POT-Creation-Date: 2020-04-03 17:57+0300\n"
+"PO-Revision-Date: 2020-04-03 17:57+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -222,7 +222,7 @@ msgid "info-confirm-delete-answer"
 msgstr "Are you sure you want to delete this answer?"
 
 #: templates/bits/answer.tpl:63 templates/cannedResponse/edit.tpl:44
-#: templates/domain/edit.tpl:94 templates/entity/edit.tpl:213
+#: templates/domain/edit.tpl:94 templates/entity/edit.tpl:214
 #: templates/help/categoryEdit.tpl:78 templates/help/pageEdit.tpl:84
 #: templates/statement/edit.tpl:137 templates/tag/edit.tpl:172
 msgid "link-delete"
@@ -232,7 +232,7 @@ msgstr "delete"
 msgid "info-confirm-reopen-answer"
 msgstr "Are you sure you want to reopen this answer?"
 
-#: templates/bits/answer.tpl:72
+#: templates/bits/answer.tpl:72 templates/entity/edit.tpl:224
 msgid "link-reopen"
 msgstr "reopen"
 
@@ -807,9 +807,13 @@ msgstr "add a link"
 msgid "label-tags"
 msgstr "tags"
 
-#: templates/entity/edit.tpl:211
+#: templates/entity/edit.tpl:212
 msgid "info-confirm-delete-entity"
 msgstr "Are you sure you want to delete this author?"
+
+#: templates/entity/edit.tpl:223
+msgid "info-confirm-reopen-entity"
+msgstr "Are you sure you want to reopen this author?"
 
 #: templates/entity/view.tpl:8
 msgid "link-entity-review-pending-edit"
@@ -1215,12 +1219,12 @@ msgstr "because it is low-quality."
 msgid "info-answer-by-owner"
 msgstr "by its author."
 
-#: lib/model/Answer.php:53 lib/model/Comment.php:43 lib/model/Entity.php:107
+#: lib/model/Answer.php:53 lib/model/Comment.php:43 lib/model/Entity.php:111
 #: lib/model/Statement.php:113
 msgid "info-by"
 msgstr "by"
 
-#: lib/model/Answer.php:54 lib/model/Comment.php:44 lib/model/Entity.php:108
+#: lib/model/Answer.php:54 lib/model/Comment.php:44 lib/model/Entity.php:112
 #: lib/model/Statement.php:114
 msgid "info-other-reason"
 msgstr "for other reasons."
@@ -1285,52 +1289,56 @@ msgstr "website"
 msgid "entity-type-company"
 msgstr "company"
 
-#: lib/model/Entity.php:88
+#: lib/model/Entity.php:89
 msgid "status-entity-duplicate"
 msgstr "duplicate"
 
-#: lib/model/Entity.php:88
+#: lib/model/Entity.php:91
 msgid "status-entity-closed"
 msgstr "closed"
 
-#: lib/model/Entity.php:97
+#: lib/model/Entity.php:92
+msgid "status-entity-deleted"
+msgstr "deleted"
+
+#: lib/model/Entity.php:101
 msgid "info-entity-closed"
 msgstr "This author was closed"
 
-#: lib/model/Entity.php:98
+#: lib/model/Entity.php:102
 msgid "info-entity-deleted"
 msgstr "This author was deleted"
 
-#: lib/model/Entity.php:101
+#: lib/model/Entity.php:105
 msgid "info-entity-spam"
 msgstr "because its profile contains spam."
 
-#: lib/model/Entity.php:102
+#: lib/model/Entity.php:106
 msgid "info-entity-abuse"
 msgstr "because its profile contains insults or abuse."
 
-#: lib/model/Entity.php:103
+#: lib/model/Entity.php:107
 msgid "info-entity-duplicate-of"
 msgstr "as a duplicate of the author"
 
-#: lib/model/Entity.php:104
+#: lib/model/Entity.php:108
 msgid "info-entity-off-topic"
 msgstr "because it is off-topic."
 
-#: lib/model/Entity.php:105
+#: lib/model/Entity.php:109
 msgid "info-entity-unverifiable"
 msgstr "because it is unverifiable."
 
-#: lib/model/Entity.php:106
+#: lib/model/Entity.php:110
 msgid "info-entity-by-owner"
 msgstr "by the user who added it."
 
-#: lib/model/Entity.php:201
+#: lib/model/Entity.php:205
 #, php-format
 msgid "info-minimum-reputation-add-entity-%s"
 msgstr "You need at least %s reputation to add authors."
 
-#: lib/model/Entity.php:209
+#: lib/model/Entity.php:213
 #, php-format
 msgid "info-minimum-reputation-edit-entity-%s"
 msgstr "You need at least %s reputation to edit authors."
@@ -1855,7 +1863,7 @@ msgstr "mostly true"
 msgid "verdict-true"
 msgstr "true"
 
-#: routes/answer/edit.php:36 routes/entity/edit.php:74
+#: routes/answer/edit.php:36 routes/entity/edit.php:88
 #: routes/statement/edit.php:64
 msgid "info-changes-queued"
 msgstr "Your changes were placed in the review queue."
@@ -2026,46 +2034,54 @@ msgstr "A domain by this name already exists."
 msgid "info-must-enter-domain-display-value"
 msgstr "Please enter a display value."
 
-#: routes/entity/edit.php:17
+#: routes/entity/edit.php:18
 msgid "info-cannot-delete-entity"
 msgstr "You have insufficient privileges to delete this author."
 
-#: routes/entity/edit.php:20
+#: routes/entity/edit.php:21
 msgid "info-confirm-entity-deleted."
 msgstr "Author deleted."
 
-#: routes/entity/edit.php:70
+#: routes/entity/edit.php:28
+msgid "info-cannot-reopen-entity"
+msgstr "You cannot reopen this author."
+
+#: routes/entity/edit.php:34
+msgid "info-confirm-entity-reopened."
+msgstr "Author reopened."
+
+#: routes/entity/edit.php:84
 msgid "info-entity-added"
 msgstr "Author added."
 
-#: routes/entity/edit.php:76
+#: routes/entity/edit.php:90
 msgid "info-entity-updated"
 msgstr "Author updated."
 
-#: routes/entity/edit.php:81 routes/statement/edit.php:71
+#: routes/entity/edit.php:95 routes/statement/edit.php:71
 msgid "info-validation-error"
 msgstr "There are some errors in the data. Please fix them below."
 
-#: routes/entity/edit.php:116
+#: routes/entity/edit.php:130
 msgid "info-must-enter-entity-name"
 msgstr "Please enter a name."
 
-#: routes/entity/edit.php:120
+#: routes/entity/edit.php:134
 msgid "info-must-enter-entity-type"
 msgstr "Please enter a type."
 
-#: routes/entity/edit.php:125
+#: routes/entity/edit.php:139
 #, php-format
 msgid "info-entity-profile-length-limit-%d"
 msgstr "Author profiles can be at most %d characters long."
 
-#: routes/entity/edit.php:149
+#: routes/entity/edit.php:163
 msgid "info-entity-type-change-invalidates-incoming-relations"
 msgstr ""
 "Cannot change this author's type because other authors' relationships to "
 "this one would become invalid."
 
-#: routes/entity/edit.php:161
+#: routes/entity/edit.php:175
 msgid "info-invalid-entity-links"
 msgstr "Some links are invalid."
 

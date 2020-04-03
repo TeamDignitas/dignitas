@@ -85,7 +85,11 @@ class Entity extends Proto {
     $rec = [];
     $dup = $this->getDuplicate();
 
-    $rec['status'] = $dup ? _('status-entity-duplicate') : _('status-entity-closed');
+    $rec['status'] = $dup
+      ? _('status-entity-duplicate')
+      : ($this->status == Ct::STATUS_CLOSED
+         ? _('status-entity-closed')
+         : _('status-entity-deleted'));
 
     $rec['dup'] = $dup;
 
@@ -240,6 +244,17 @@ class Entity extends Proto {
       in_array($this->status, [ Ct::STATUS_ACTIVE, Ct::STATUS_CLOSED ]) &&
       (User::may(User::PRIV_DELETE_ENTITY) ||  // can delete any entity
        $this->userId == User::getActiveId());  // can always delete user's own entities
+  }
+
+  /**
+   * Checks whether the active user may reopen this answer.
+   *
+   * @return boolean
+   */
+  function isReopenable() {
+    return
+      in_array($this->status, [ Ct::STATUS_CLOSED, Ct::STATUS_DELETED ]) &&
+      User::isModerator();
   }
 
   /**

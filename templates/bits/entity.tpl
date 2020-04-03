@@ -3,9 +3,9 @@
 <div class="row">
   <div class="col-md-3 col-sm-12 mt-2 text-center">
     {include "bits/image.tpl"
-        obj=$entity
-        geometry=Config::THUMB_ENTITY_LARGE
-        imgClass="pic rounded-circle img-fluid no-outline"}
+      obj=$entity
+      geometry=Config::THUMB_ENTITY_LARGE
+      imgClass="pic rounded-circle img-fluid no-outline"}
 
     <div class="tags mt-2 text-center">
       {foreach $entity->getTags() as $t}
