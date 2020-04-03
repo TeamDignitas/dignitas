@@ -7,7 +7,7 @@
 
   <div class="card-columns">
     {if User::may(User::PRIV_ADD_STATEMENT)}
-      <div class="card py-4 px-2 m-2 border-secondary text-center">
+      <div class="card py-4 px-2 m-2 border-secondary text-center fix-min-height">
         <h5 class="card-title">
           <i class="icon icon-plus"></i>
         </h5>
@@ -18,7 +18,7 @@
     {/if}
 
     {if User::may(User::PRIV_ADD_ENTITY)}
-      <div class="card py-4 px-2 m-2 border-secondary text-center">
+      <div class="card py-4 px-2 m-2 border-secondary text-center fix-min-height">
         <h5 class="card-title">
           <i class="icon icon-user"></i>
         </h5>
@@ -29,7 +29,7 @@
     {/if}
 
     {if User::isModerator()}
-      <div class="card py-4 px-2 m-2 border-secondary text-center">
+      <div class="card py-4 px-2 m-2 border-secondary text-center fix-min-height">
         <h5 class="card-title">
           <i class="icon icon-link"></i>
         </h5>
@@ -37,7 +37,7 @@
           {t}link-domains{/t}
         </a>
       </div>
-      <div class="card py-4 px-2 m-2 border-secondary text-center">
+      <div class="card py-4 px-2 m-2 border-secondary text-center fix-min-height">
         <h5 class="card-title">
           <i class="icon icon-plus"></i>
         </h5>
@@ -45,7 +45,7 @@
           {t}link-canned-responses{/t}
         </a>
       </div>
-      <div class="card py-4 px-2 m-2 border-secondary text-center">
+      <div class="card py-4 px-2 m-2 border-secondary text-center fix-min-height">
         <h5 class="card-title">
           <i class="icon icon-plus"></i>
         </h5>
@@ -55,7 +55,7 @@
       </div>
     {/if}
 
-    <div class="card py-4 px-2 m-2 border-secondary text-center">
+    <div class="card py-4 px-2 m-2 border-secondary text-center fix-min-height">
       <h5 class="card-title">
         <i class="icon icon-plus"></i>
       </h5>
