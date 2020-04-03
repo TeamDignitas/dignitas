@@ -47,7 +47,7 @@
       </div>
       <div class="card py-4 px-2 m-2 border-secondary text-center fix-min-height">
         <h5 class="card-title">
-          <i class="icon id-card-o"></i>
+          <i class="icon icon-id-card-o"></i>
         </h5>
         <a href="{Router::link('invite/list')}">
           {t}link-invites{/t}

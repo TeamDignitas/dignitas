@@ -245,6 +245,30 @@
       "css": "paper-plane",
       "code": 61912,
       "src": "fontawesome"
+    },
+    {
+      "uid": "d35a1d35efeb784d1dc9ac18b9b6c2b6",
+      "css": "pencil",
+      "code": 59414,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "c08a1cde48d96cba21d8c05fa7d7feb1",
+      "css": "doc-text-inv",
+      "code": 61788,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "2e6301ac94d0d51566727b9199259451",
+      "css": "id-card-o",
+      "code": 62147,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "a3f89e106175a5c5c4e9738870b12e55",
+      "css": "tags",
+      "code": 59417,
+      "src": "fontawesome"
     }
   ]
 }
