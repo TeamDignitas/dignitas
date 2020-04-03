@@ -5,6 +5,7 @@ $id = Request::get('id');
 $entityId = Request::get('entityId');
 $saveButton = Request::has('saveButton');
 $deleteButton = Request::has('deleteButton');
+$reopenButton = Request::has('reopenButton');
 $referrer = Request::get('referrer');
 
 if ($id) {
@@ -24,6 +25,19 @@ if ($deleteButton) {
   $statement->markDeleted(Ct::REASON_BY_USER);
   FlashMessage::add(_('info-confirm-statement-deleted'), 'success');
   Util::redirectToHome();
+}
+
+if ($reopenButton) {
+  if (!$statement->isReopenable()) {
+    FlashMessage::add(_('info-cannot-reopen-statement'));
+  } else {
+    // TODO this should be factored out in reopenEffects(), similar to markDeletedEffects().
+    $statement->duplicateId = 0;
+
+    $statement->reopen();
+    FlashMessage::add(_('info-confirm-statement-reopened.'), 'success');
+  }
+  Util::redirect(Router::getViewLink($statement));
 }
 
 $statement->enforceEditPrivileges();

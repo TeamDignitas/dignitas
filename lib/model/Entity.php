@@ -247,7 +247,7 @@ class Entity extends Proto {
   }
 
   /**
-   * Checks whether the active user may reopen this answer.
+   * Checks whether the active user may reopen this entity.
    *
    * @return boolean
    */

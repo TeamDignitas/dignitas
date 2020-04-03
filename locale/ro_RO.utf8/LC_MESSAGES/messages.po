@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-04-03 17:56+0300\n"
-"PO-Revision-Date: 2020-04-03 17:57+0300\n"
+"POT-Creation-Date: 2020-04-03 18:05+0300\n"
+"PO-Revision-Date: 2020-04-03 18:06+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -229,7 +229,7 @@ msgstr "Confirmați ștergerea acestui răspuns?"
 #: templates/bits/answer.tpl:63 templates/cannedResponse/edit.tpl:44
 #: templates/domain/edit.tpl:94 templates/entity/edit.tpl:214
 #: templates/help/categoryEdit.tpl:78 templates/help/pageEdit.tpl:84
-#: templates/statement/edit.tpl:137 templates/tag/edit.tpl:172
+#: templates/statement/edit.tpl:138 templates/tag/edit.tpl:172
 msgid "link-delete"
 msgstr "șterge"
 
@@ -238,6 +238,7 @@ msgid "info-confirm-reopen-answer"
 msgstr "Confirmați redeschiderea acestui răspuns?"
 
 #: templates/bits/answer.tpl:72 templates/entity/edit.tpl:224
+#: templates/statement/edit.tpl:148
 msgid "link-reopen"
 msgstr "redeschide"
 
@@ -1002,9 +1003,13 @@ msgstr "surse"
 msgid "link-add-statement-link"
 msgstr "adaugă o sursă"
 
-#: templates/statement/edit.tpl:135
+#: templates/statement/edit.tpl:136
 msgid "info-confirm-delete-statement"
 msgstr "Confirmați ștergerea acestei afirmații?"
+
+#: templates/statement/edit.tpl:147
+msgid "info-confirm-reopen-statement"
+msgstr "Confirmați redeschiderea acestei afirmații?"
 
 #: templates/statement/verdictReport.tpl:3
 #: templates/statement/verdictReport.tpl:7
@@ -1888,7 +1893,7 @@ msgid "verdict-true"
 msgstr "adevărat"
 
 #: routes/answer/edit.php:36 routes/entity/edit.php:88
-#: routes/statement/edit.php:64
+#: routes/statement/edit.php:78
 msgid "info-changes-queued"
 msgstr "Modificările dumneavoastră au fost adăugate la coada de evaluare."
 
@@ -2086,7 +2091,7 @@ msgstr "Am adăugat autorul."
 msgid "info-entity-updated"
 msgstr "Am salvat autorul."
 
-#: routes/entity/edit.php:95 routes/statement/edit.php:71
+#: routes/entity/edit.php:95 routes/statement/edit.php:85
 msgid "info-validation-error"
 msgstr "Formularul conține erori. Vă rugăm să le reparați mai jos."
 
@@ -2273,47 +2278,55 @@ msgstr ""
 "Această evaluare este acum completă. V-am redirecționat către următoarea "
 "evaluare din această coadă."
 
-#: routes/statement/edit.php:21
+#: routes/statement/edit.php:22
 msgid "info-cannot-delete-statement"
 msgstr "Nu puteți șterge acest răspuns."
 
-#: routes/statement/edit.php:25
+#: routes/statement/edit.php:26
 msgid "info-confirm-statement-deleted"
 msgstr "Am șters afirmația."
 
-#: routes/statement/edit.php:60
+#: routes/statement/edit.php:32
+msgid "info-cannot-reopen-statement"
+msgstr "Nu puteți redeschide această afirmație."
+
+#: routes/statement/edit.php:38
+msgid "info-confirm-statement-reopened."
+msgstr "Am redeschis afirmația."
+
+#: routes/statement/edit.php:74
 msgid "info-statement-added"
 msgstr "Am adăugat afirmația."
 
-#: routes/statement/edit.php:66
+#: routes/statement/edit.php:80
 msgid "info-statement-updated"
 msgstr "Am actualizat afirmația."
 
-#: routes/statement/edit.php:98
+#: routes/statement/edit.php:112
 msgid "info-must-enter-statement-entity"
 msgstr "Vă rugăm să introduceți un autor."
 
-#: routes/statement/edit.php:102
+#: routes/statement/edit.php:116
 msgid "info-must-enter-statement-summary"
 msgstr "Vă rugăm să introduceți sumarul afirmației."
 
-#: routes/statement/edit.php:106
+#: routes/statement/edit.php:120
 msgid "info-must-enter-statement-context"
 msgstr "Vă rugăm să introduceți contextul afirmației."
 
-#: routes/statement/edit.php:110
+#: routes/statement/edit.php:124
 msgid "info-must-enter-statement-goal"
 msgstr "Vă rugăm să introduceți scopul afirmației."
 
-#: routes/statement/edit.php:114
+#: routes/statement/edit.php:128
 msgid "info-must-enter-statement-date"
 msgstr "Vă rugăm să introduceți data afirmației."
 
-#: routes/statement/edit.php:116
+#: routes/statement/edit.php:130
 msgid "info-date-not-future"
 msgstr "Data nu poate fi în viitor."
 
-#: routes/statement/edit.php:126
+#: routes/statement/edit.php:140
 msgid "info-invalid-statement-links"
 msgstr "Unele dintre surse sînt incorecte."
 
