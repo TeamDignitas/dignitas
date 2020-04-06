@@ -6,8 +6,13 @@
 
   <h2 class="mb-4">{cap}{t}title-canned-responses{/t}{/cap}</h2>
 
+  <a href="{Router::link('cannedResponse/edit')}" class="btn btn-sm btn-outline-primary">
+    <i class="icon icon-plus"></i>
+    {t}link-add-canned-response{/t}
+  </a>
+
   <form method="post">
-    <table class="table table-hover mt-3 sortable">
+    <table class="table table-hover mt-5 sortable">
       <thead>
         <tr class="d-flex">
           <th class="col-1 border-0">order</th>
@@ -48,17 +53,13 @@
     </table>
 
     <div>
-      <button type="submit" class="btn btn-sm btn-outline-primary" name="saveButton">
+      <button type="submit" class="btn btn-sm btn-outline-secondary" name="saveButton">
         <i class="icon icon-floppy"></i>
         {t}link-save-canned-response-order{/t}
       </button>
       <a href="{Router::link('cannedResponse/list')}" class="btn btn-sm btn-outline-secondary">
         <i class="icon icon-cancel"></i>
         {t}link-cancel{/t}
-      </a>
-      <a href="{Router::link('cannedResponse/edit')}" class="btn btn-sm btn-outline-secondary">
-        <i class="icon icon-plus"></i>
-        {t}link-add-canned-response{/t}
       </a>
     </div>
   </form>
