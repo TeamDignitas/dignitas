@@ -40,7 +40,7 @@
 
         <h3 class="mt-3 mb-3">{cap}{t}title-pertaining-to-statement{/t}{/cap}</h3>
 
-        <div id="parent-object" class="ml-5 pl-3 callout">
+        <div id="parent-object" class="ml-5 callout">
           {include "bits/statement.tpl"
             statement=$object->getStatement()
             flagLinks=false
