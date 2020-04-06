@@ -3,7 +3,7 @@
 {block "title"}{t}title-edit-canned-response{/t}{/block}
 
 {block "content"}
-  <h3>{t}title-edit-canned-response{/t}</h3>
+  <h2 class="mb-4">{t}title-edit-canned-response{/t}</h2>
 
   <form method="post">
 
@@ -24,12 +24,12 @@
     </div>
 
     <div>
-      <button name="saveButton" type="submit" class="btn btn-primary">
+      <button name="saveButton" type="submit" class="btn btn-sm btn-outline-primary">
         <i class="icon icon-floppy"></i>
         {t}link-save{/t}
       </button>
 
-      <a href="{Router::link('cannedResponse/list')}" class="btn btn-light">
+      <a href="{Router::link('cannedResponse/list')}" class="btn btn-sm btn-outline-secondary">
         <i class="icon icon-cancel"></i>
         {t}link-cancel{/t}
       </a>
@@ -38,7 +38,7 @@
         <button
           name="deleteButton"
           type="submit"
-          class="btn btn-danger float-right"
+          class="btn btn-sm btn-outline-danger float-right"
           data-confirm="{t}info-confirm-delete-canned-response{/t}">
           <i class="icon icon-trash"></i>
           {t}link-delete{/t}
