@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-04-03 18:05+0300\n"
-"PO-Revision-Date: 2020-04-03 18:06+0300\n"
+"POT-Creation-Date: 2020-04-06 15:07+0300\n"
+"PO-Revision-Date: 2020-04-06 15:07+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -36,40 +36,40 @@ msgstr ""
 msgid "title-dashboard"
 msgstr "panou de control"
 
-#: templates/aggregate/dashboard.tpl:11 templates/aggregate/index.tpl:29
+#: templates/aggregate/dashboard.tpl:15 templates/aggregate/index.tpl:29
 #: templates/bits/statementList.tpl:31
 msgid "link-add-statement"
 msgstr "adaugă o afirmație"
 
-#: templates/aggregate/dashboard.tpl:19 templates/aggregate/index.tpl:35
+#: templates/aggregate/dashboard.tpl:26 templates/aggregate/index.tpl:35
 msgid "link-add-entity"
 msgstr "adaugă un autor"
 
-#: templates/aggregate/dashboard.tpl:27
+#: templates/aggregate/dashboard.tpl:37
 msgid "link-domains"
 msgstr "domenii"
 
-#: templates/aggregate/dashboard.tpl:32
+#: templates/aggregate/dashboard.tpl:45
 msgid "link-canned-responses"
 msgstr "răspunsuri predefinite"
 
-#: templates/aggregate/dashboard.tpl:37
+#: templates/aggregate/dashboard.tpl:53
 msgid "link-invites"
 msgstr "invitații"
 
-#: templates/aggregate/dashboard.tpl:44
+#: templates/aggregate/dashboard.tpl:63
 msgid "link-tags"
 msgstr "etichete"
 
-#: templates/aggregate/dashboard.tpl:49
+#: templates/aggregate/dashboard.tpl:69
 msgid "title-review-queues"
 msgstr "cozi de evaluare"
 
-#: templates/aggregate/dashboard.tpl:64
+#: templates/aggregate/dashboard.tpl:84
 msgid "title-reports"
 msgstr "rapoarte care necesită atenție"
 
-#: templates/aggregate/dashboard.tpl:69
+#: templates/aggregate/dashboard.tpl:89
 msgid "link-verdict-report"
 msgstr "afirmații cu verdicte neclare"
 
@@ -271,7 +271,11 @@ msgstr "caractere rămase"
 msgid "link-pick-canned-response"
 msgstr "predefinite"
 
-#: templates/bits/diff/objectDiff.tpl:30
+#: templates/bits/diff/objectDiff.tpl:31
+msgid "info-rejected-suggested-changes"
+msgstr "Modificări sugerate respinse"
+
+#: templates/bits/diff/objectDiff.tpl:35
 msgid "info-reviewed-because"
 msgstr "evaluare pentru motivul"
 

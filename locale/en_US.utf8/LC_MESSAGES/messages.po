@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-04-03 18:05+0300\n"
-"PO-Revision-Date: 2020-04-03 18:05+0300\n"
+"POT-Creation-Date: 2020-04-06 15:07+0300\n"
+"PO-Revision-Date: 2020-04-06 15:07+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -35,40 +35,40 @@ msgstr ""
 msgid "title-dashboard"
 msgstr "dashboard"
 
-#: templates/aggregate/dashboard.tpl:11 templates/aggregate/index.tpl:29
+#: templates/aggregate/dashboard.tpl:15 templates/aggregate/index.tpl:29
 #: templates/bits/statementList.tpl:31
 msgid "link-add-statement"
 msgstr "add a statement"
 
-#: templates/aggregate/dashboard.tpl:19 templates/aggregate/index.tpl:35
+#: templates/aggregate/dashboard.tpl:26 templates/aggregate/index.tpl:35
 msgid "link-add-entity"
 msgstr "add an author"
 
-#: templates/aggregate/dashboard.tpl:27
+#: templates/aggregate/dashboard.tpl:37
 msgid "link-domains"
 msgstr "domains"
 
-#: templates/aggregate/dashboard.tpl:32
+#: templates/aggregate/dashboard.tpl:45
 msgid "link-canned-responses"
 msgstr "canned responses"
 
-#: templates/aggregate/dashboard.tpl:37
+#: templates/aggregate/dashboard.tpl:53
 msgid "link-invites"
 msgstr "invites"
 
-#: templates/aggregate/dashboard.tpl:44
+#: templates/aggregate/dashboard.tpl:63
 msgid "link-tags"
 msgstr "tags"
 
-#: templates/aggregate/dashboard.tpl:49
+#: templates/aggregate/dashboard.tpl:69
 msgid "title-review-queues"
 msgstr "review queues"
 
-#: templates/aggregate/dashboard.tpl:64
+#: templates/aggregate/dashboard.tpl:84
 msgid "title-reports"
 msgstr "reports in need of attention"
 
-#: templates/aggregate/dashboard.tpl:69
+#: templates/aggregate/dashboard.tpl:89
 msgid "link-verdict-report"
 msgstr "statements with unclear verdicts"
 
@@ -266,7 +266,11 @@ msgstr "characters remaining"
 msgid "link-pick-canned-response"
 msgstr "canned response"
 
-#: templates/bits/diff/objectDiff.tpl:30
+#: templates/bits/diff/objectDiff.tpl:31
+msgid "info-rejected-suggested-changes"
+msgstr "Rejected suggested changes"
+
+#: templates/bits/diff/objectDiff.tpl:35
 msgid "info-reviewed-because"
 msgstr "review reason"
 
