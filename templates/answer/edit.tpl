@@ -4,7 +4,7 @@
 {block "title"}{cap}{t}title-edit-answer{/t}{/cap}{/block}
 
 {block "content"}
-  <h3>{cap}{t}title-edit-answer{/t}{/cap}</h3>
+  <h2 class="mb-4">{cap}{t}title-edit-answer{/t}{/cap}</h2>
 
   {if !$answer->isEditable()}
     <div class="alert alert-warning">
