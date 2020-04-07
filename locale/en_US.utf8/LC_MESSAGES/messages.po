@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-04-06 15:07+0300\n"
-"PO-Revision-Date: 2020-04-06 15:07+0300\n"
+"POT-Creation-Date: 2020-04-07 08:47+0300\n"
+"PO-Revision-Date: 2020-04-07 08:47+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -212,7 +212,7 @@ msgid "answer-posted-by"
 msgstr "posted by"
 
 #: templates/bits/answer.tpl:54 templates/bits/entity.tpl:110
-#: templates/bits/statement.tpl:109 templates/cannedResponse/list.tpl:34
+#: templates/bits/statement.tpl:109 templates/cannedResponse/list.tpl:46
 #: templates/help/pageView.tpl:41
 msgid "link-show-revisions"
 msgstr "show revisions"
@@ -244,7 +244,7 @@ msgid "label-verdict"
 msgstr "verdict"
 
 #: templates/bits/answerEdit.tpl:44 templates/bits/commentForm.tpl:49
-#: templates/cannedResponse/edit.tpl:34 templates/cannedResponse/list.tpl:50
+#: templates/cannedResponse/edit.tpl:34 templates/cannedResponse/list.tpl:62
 #: templates/domain/edit.tpl:84 templates/entity/edit.tpl:203
 #: templates/help/categoryEdit.tpl:68 templates/help/categoryList.tpl:34
 #: templates/help/pageEdit.tpl:74 templates/invite/add.tpl:35
@@ -281,7 +281,7 @@ msgstr[0] "one identical line skipped"
 msgstr[1] "%1 identical lines skipped"
 
 #: templates/bits/editButton.tpl:15 templates/bits/reviewActions.tpl:25
-#: templates/cannedResponse/list.tpl:28 templates/domain/list.tpl:34
+#: templates/cannedResponse/list.tpl:40 templates/domain/list.tpl:34
 #: templates/help/categoryView.tpl:36 templates/help/pageView.tpl:35
 #: templates/tag/view.tpl:14 templates/user/view.tpl:55
 msgid "link-edit"
@@ -645,13 +645,25 @@ msgstr "Are you sure you want to delete this canned response?"
 msgid "title-canned-responses"
 msgstr "canned responses"
 
-#: templates/cannedResponse/list.tpl:46
-msgid "link-save-canned-response-order"
-msgstr "save order"
-
-#: templates/cannedResponse/list.tpl:54
+#: templates/cannedResponse/list.tpl:11
 msgid "link-add-canned-response"
 msgstr "add a canned response"
+
+#: templates/cannedResponse/list.tpl:18
+msgid "title-order"
+msgstr "order"
+
+#: templates/cannedResponse/list.tpl:19
+msgid "title-comment-text"
+msgstr "comment text"
+
+#: templates/cannedResponse/list.tpl:20
+msgid "title-actions"
+msgstr "actions"
+
+#: templates/cannedResponse/list.tpl:58
+msgid "link-save-canned-response-order"
+msgstr "save order"
 
 #: templates/domain/edit.tpl:3 templates/domain/edit.tpl:6
 msgid "title-edit-domain"
@@ -926,35 +938,35 @@ msgstr "edit relationship"
 msgid "link-add-relation-link"
 msgstr "add a source"
 
-#: templates/review/view.tpl:17
+#: templates/review/view.tpl:18
 msgid "info-review-complete"
 msgstr "This review is now complete. No further actions can be taken."
 
-#: templates/review/view.tpl:29
+#: templates/review/view.tpl:30
 msgid "info-statement-duplicate"
 msgstr "This statement was flagged as a duplicate of"
 
-#: templates/review/view.tpl:40 templates/review/view.tpl:80
-#: templates/review/view.tpl:92
+#: templates/review/view.tpl:41 templates/review/view.tpl:81
+#: templates/review/view.tpl:93
 msgid "title-pertaining-to-statement"
 msgstr "pertaining to statement:"
 
-#: templates/review/view.tpl:54
+#: templates/review/view.tpl:55
 msgid "info-entity-duplicate"
 msgstr "This author was flagged as a duplicate of"
 
-#: templates/review/view.tpl:57
+#: templates/review/view.tpl:58
 msgid "info-entity-duplicate-process"
 msgstr ""
 "Accepting this flag will transfer all statements from this duplicate to its "
 "canonical author. The aliases, relationships and other attributes will not "
 "be transferred."
 
-#: templates/review/view.tpl:71
+#: templates/review/view.tpl:72
 msgid "title-pertaining-to-answer"
 msgstr "pertaining to answer:"
 
-#: templates/review/view.tpl:111
+#: templates/review/view.tpl:110
 msgid "info-review-queue-empty"
 msgstr "This review queue is empty."
 

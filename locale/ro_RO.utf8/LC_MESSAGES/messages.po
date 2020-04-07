@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-04-06 15:07+0300\n"
-"PO-Revision-Date: 2020-04-06 15:07+0300\n"
+"POT-Creation-Date: 2020-04-07 08:47+0300\n"
+"PO-Revision-Date: 2020-04-07 08:48+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -217,7 +217,7 @@ msgid "answer-posted-by"
 msgstr "publicat de"
 
 #: templates/bits/answer.tpl:54 templates/bits/entity.tpl:110
-#: templates/bits/statement.tpl:109 templates/cannedResponse/list.tpl:34
+#: templates/bits/statement.tpl:109 templates/cannedResponse/list.tpl:46
 #: templates/help/pageView.tpl:41
 msgid "link-show-revisions"
 msgstr "arată versiunile"
@@ -249,7 +249,7 @@ msgid "label-verdict"
 msgstr "verdict"
 
 #: templates/bits/answerEdit.tpl:44 templates/bits/commentForm.tpl:49
-#: templates/cannedResponse/edit.tpl:34 templates/cannedResponse/list.tpl:50
+#: templates/cannedResponse/edit.tpl:34 templates/cannedResponse/list.tpl:62
 #: templates/domain/edit.tpl:84 templates/entity/edit.tpl:203
 #: templates/help/categoryEdit.tpl:68 templates/help/categoryList.tpl:34
 #: templates/help/pageEdit.tpl:74 templates/invite/add.tpl:35
@@ -287,7 +287,7 @@ msgstr[1] "%1 linii identice omise"
 msgstr[2] "%1 de linii identice omise"
 
 #: templates/bits/editButton.tpl:15 templates/bits/reviewActions.tpl:25
-#: templates/cannedResponse/list.tpl:28 templates/domain/list.tpl:34
+#: templates/cannedResponse/list.tpl:40 templates/domain/list.tpl:34
 #: templates/help/categoryView.tpl:36 templates/help/pageView.tpl:35
 #: templates/tag/view.tpl:14 templates/user/view.tpl:55
 msgid "link-edit"
@@ -653,13 +653,25 @@ msgstr "Confirmați ștergerea acestui răspuns predefinit?"
 msgid "title-canned-responses"
 msgstr "răspunsuri predefinite"
 
-#: templates/cannedResponse/list.tpl:46
-msgid "link-save-canned-response-order"
-msgstr "salvează ordinea"
-
-#: templates/cannedResponse/list.tpl:54
+#: templates/cannedResponse/list.tpl:11
 msgid "link-add-canned-response"
 msgstr "adaugă un răspuns predefinit"
+
+#: templates/cannedResponse/list.tpl:18
+msgid "title-order"
+msgstr "ordine"
+
+#: templates/cannedResponse/list.tpl:19
+msgid "title-comment-text"
+msgstr "textul comentariului"
+
+#: templates/cannedResponse/list.tpl:20
+msgid "title-actions"
+msgstr "acțiuni"
+
+#: templates/cannedResponse/list.tpl:58
+msgid "link-save-canned-response-order"
+msgstr "salvează ordinea"
 
 #: templates/domain/edit.tpl:3 templates/domain/edit.tpl:6
 msgid "title-edit-domain"
@@ -939,35 +951,35 @@ msgstr "editează relația"
 msgid "link-add-relation-link"
 msgstr "adaugă o sursă"
 
-#: templates/review/view.tpl:17
+#: templates/review/view.tpl:18
 msgid "info-review-complete"
 msgstr "Această evaluare este completă. Nu mai puteți face alte acțiuni."
 
-#: templates/review/view.tpl:29
+#: templates/review/view.tpl:30
 msgid "info-statement-duplicate"
 msgstr "Această afirmație a fost marcată ca duplicat al afirmației"
 
-#: templates/review/view.tpl:40 templates/review/view.tpl:80
-#: templates/review/view.tpl:92
+#: templates/review/view.tpl:41 templates/review/view.tpl:81
+#: templates/review/view.tpl:93
 msgid "title-pertaining-to-statement"
 msgstr "referitor la afirmația:"
 
-#: templates/review/view.tpl:54
+#: templates/review/view.tpl:55
 msgid "info-entity-duplicate"
 msgstr "Acest autor a fost marcat ca duplicat al autorului"
 
-#: templates/review/view.tpl:57
+#: templates/review/view.tpl:58
 msgid "info-entity-duplicate-process"
 msgstr ""
 "Acceptarea acestei raportări va transfera toate afirmațiile de la acest "
 "duplicat la autorul canonic. Aliasurile, relațiile și alte atribute nu vor "
 "fi transferate."
 
-#: templates/review/view.tpl:71
+#: templates/review/view.tpl:72
 msgid "title-pertaining-to-answer"
 msgstr "referitor la răspunsul:"
 
-#: templates/review/view.tpl:111
+#: templates/review/view.tpl:110
 msgid "info-review-queue-empty"
 msgstr "Această coadă de evaluare este goală."
 
