@@ -205,10 +205,6 @@ img.pic.no-outline,
   font-weight: 400;
 }
 
-.review-message .statement-title {
-  font-size: 1.5rem;
-}
-
 /******************************** answers, entity statements, user profile ********************************/
 
 .answer {
@@ -337,7 +333,6 @@ footer {
 }
 
 /******************************* markdown *******************************/
-        var_dump($window);
 
 .markdown table {
   width: 100%;
@@ -353,12 +348,4 @@ footer {
   .fix-min-height {
     min-height: 134px;
   }
-}
-
-.callout {
-  padding: 20px 40px;
-  margin: 20px 0;
-  border: 1px solid #eee;
-  border-left-width: 5px;
-  border-radius: 3px;
 }

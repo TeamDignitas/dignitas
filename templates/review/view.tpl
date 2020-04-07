@@ -32,7 +32,9 @@
           </div>
         {/if}
 
-        <div class="ml-5 mr-1 callout">{include "bits/statement.tpl" statement=$object addComment=true permalink=true}</div>
+        <div class="ml-5 mr-1 callout">
+          {include "bits/statement.tpl" statement=$object addComment=true permalink=true}
+        </div>
 
       {elseif $type == Proto::TYPE_ANSWER}
 
