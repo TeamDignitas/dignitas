@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2020-04-07 08:47+0300\n"
-"PO-Revision-Date: 2020-04-07 08:48+0300\n"
+"PO-Revision-Date: 2020-04-07 12:00+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -1520,7 +1520,7 @@ msgstr "mesaje de la utilizatori noi"
 
 #: lib/model/Review.php:119
 msgid "queue-name-late-answer"
-msgstr "late answers"
+msgstr "răspunsuri tîrzii"
 
 #: lib/model/Review.php:120
 msgid "queue-name-reopen"
