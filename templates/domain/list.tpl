@@ -4,21 +4,21 @@
 
 {block "content"}
 
-  <h3>{cap}{t}title-domains{/t}{/cap}</h3>
+  <h2 class="mb-4">{cap}{t}title-domains{/t}{/cap}</h2>
 
-  <a class="btn btn-light" href="{Router::link('domain/edit')}">
+  <a class="btn btn-sm btn-outline-primary" href="{Router::link('domain/edit')}">
     <i class="icon icon-plus"></i>
     {t}link-add-domain{/t}
   </a>
 
   {if count($domains)}
-    <table class="table table-sm table-hover mt-2">
+    <table class="table table-sm table-hover mt-5 mb-4">
       <thead>
         <tr>
-          <th>{t}label-icon{/t}</th>
-          <th>{t}label-name{/t}</th>
-          <th>{t}label-display-value{/t}</th>
-          <th>{t}actions{/t}</th>
+          <th class="border-0">{t}label-icon{/t}</th>
+          <th class="border-0">{t}label-name{/t}</th>
+          <th class="border-0">{t}label-display-value{/t}</th>
+          <th class="border-0">{t}actions{/t}</th>
         </tr>
       </thead>
       <tbody>
@@ -29,9 +29,9 @@
                 obj=$d
                 geometry=Config::THUMB_DOMAIN}
             </td>
-            <td>{$d->name|escape}</td>
-            <td>{$d->displayValue|escape}</td>
-            <td><a href="{Router::getEditLink($d)}">{t}link-edit{/t}</a></td>
+            <td class="align-middle">{$d->name|escape}</td>
+            <td class="align-middle">{$d->displayValue|escape}</td>
+            <td><a href="{Router::getEditLink($d)}" class="btn btn-sm btn-outline-secondary">{t}link-edit{/t}</a></td>
           </tr>
         {/foreach}
       </tbody>

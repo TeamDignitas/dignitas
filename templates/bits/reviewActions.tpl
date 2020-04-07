@@ -1,12 +1,12 @@
 {* Mandatory argument: $object, the object being reviewed. *}
-<div class="card mb-2">
+<div class="card bg-light mb-4">
   <div class="card-body pb-1">
     <form method="post">
 
       <div class="form-group">
         <button
           name="removeButton"
-          class="btn btn-info"
+          class="btn btn-sm btn-outline-secondary"
           type="submit">
           <i class="icon icon-cancel"></i>
           {t}link-remove{/t}
@@ -14,13 +14,13 @@
 
         <button
           name="keepButton"
-          class="btn btn-info"
+          class="btn btn-sm btn-outline-primary"
           type="submit">
           <i class="icon icon-ok"></i>
           {t}link-keep{/t}
         </button>
 
-        <a href="{Router::getEditLink($object)}" class="btn btn-info">
+        <a href="{Router::getEditLink($object)}" class="btn btn-sm btn-outline-secondary">
           <i class="icon icon-edit"></i>
           {t}link-edit{/t}
         </a>
@@ -28,7 +28,7 @@
         <button
           name="nextButton"
           type="submit"
-          class="btn btn-info">
+          class="btn btn-sm btn-outline-secondary">
           <i class="icon icon-right-open"></i>
           {t}link-next{/t}
         </button>

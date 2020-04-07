@@ -1,6 +1,6 @@
-<h3>{t}title-review-votes{/t}</h3>
+<h4 class="mt-5 capitalize-first-word">{t}title-review-votes{/t}</h4>
 
-<table class="table">
+<table class="table table-sm mb-5">
   <thead>
     <tr>
       <th>{t}user{/t}</th>
