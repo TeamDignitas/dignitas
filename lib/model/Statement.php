@@ -190,6 +190,17 @@ class Statement extends Proto {
     }
   }
 
+  /**
+   * Checks whether the active user may reopen this statement.
+   *
+   * @return boolean
+   */
+  function isReopenable() {
+    return
+      in_array($this->status, [ Ct::STATUS_CLOSED, Ct::STATUS_DELETED ]) &&
+      User::isModerator();
+  }
+
   function deepClone($root = null, $changes = []) {
     $clone = parent::deepClone($root, $changes);
     foreach ($this->getLinks() as $l) {

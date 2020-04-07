@@ -14,12 +14,12 @@ class RevisionObjectTag extends Proto {
     return Model::factory('Tag')
       ->select('t.*')
       ->table_alias('t')
-      ->join('revision_object_tag', [ 'hot.tagId', '=', 't.id' ], 'hot')
-      ->where('hot.objectType', $rev->getObjectType())
-      ->where('hot.objectId', $rev->id)
-      ->where('hot.revisionAction', $revisionAction)
-      ->where('hot.requestId', $rev->requestId)
-      ->order_by_asc('hot.rank')
+      ->join('revision_object_tag', [ 'rot.tagId', '=', 't.id' ], 'rot')
+      ->where('rot.objectType', $rev->getObjectType())
+      ->where('rot.objectId', $rev->id)
+      ->where('rot.revisionAction', $revisionAction)
+      ->where('rot.requestId', $rev->requestId)
+      ->order_by_asc('rot.rank')
       ->find_many();
   }
 

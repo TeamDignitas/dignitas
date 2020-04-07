@@ -26,9 +26,15 @@
 
     {if $od->review}
       <div class="card mt-2">
-        <div class="card-header">
-          {t}info-reviewed-because{/t}: {$od->review->getReasonName()}
-        </div>
+        {if $od->isRejectedEdit()}
+          <div class="card-header text-danger">
+            {t}info-rejected-suggested-changes{/t}
+          </div>
+        {else}
+          <div class="card-header">
+            {t}info-reviewed-because{/t}: {$od->review->getReasonName()}
+          </div>
+        {/if}
         <div class="card-body">
           {include "bits/reviewFlagList.tpl" flags=$od->review->getFlags()}
         </div>

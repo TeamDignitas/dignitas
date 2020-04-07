@@ -127,16 +127,28 @@
         {t}link-cancel{/t}
       </a>
 
-      {if $statement->isDeletable()}
-        <button
-          name="deleteButton"
-          type="submit"
-          class="btn btn-sm btn-outline-danger float-right"
-          data-confirm="{t}info-confirm-delete-statement{/t}">
-          <i class="icon icon-trash"></i>
-          {t}link-delete{/t}
-        </button>
-      {/if}
+      <div class="float-right">
+        {if $statement->isDeletable()}
+          <button
+            name="deleteButton"
+            type="submit"
+            class="btn btn-sm btn-outline-danger"
+            data-confirm="{t}info-confirm-delete-statement{/t}">
+            <i class="icon icon-trash"></i>
+            {t}link-delete{/t}
+          </button>
+        {/if}
+
+        {if $statement->isReopenable()}
+          <button
+            name="reopenButton"
+            type="submit"
+            class="btn btn-sm btn-outline-secondary"
+            data-confirm="{t}info-confirm-reopen-statement{/t}">
+            {t}link-reopen{/t}
+          </button>
+        {/if}
+      </div>
     </div>
   </form>
 {/block}
