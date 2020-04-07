@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-04-07 15:32+0300\n"
-"PO-Revision-Date: 2020-04-07 15:33+0300\n"
+"POT-Creation-Date: 2020-04-07 15:55+0300\n"
+"PO-Revision-Date: 2020-04-07 15:57+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -1567,6 +1567,10 @@ msgstr "keep"
 #: lib/model/Review.php:223
 msgid "vote-remove"
 msgstr "remove"
+
+#: lib/model/Review.php:335
+msgid "info-added-reopen-queue"
+msgstr "The post was added to the reopen queue and will be evaluated soon."
 
 #: lib/model/RevisionAnswer.php:13 lib/model/RevisionCannedResponse.php:14
 #: lib/model/RevisionHelpPage.php:14

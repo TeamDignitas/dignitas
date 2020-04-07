@@ -332,6 +332,7 @@ class Review extends Proto {
 
     if ($ts && ((time() - $ts) / 86400 < Config::EDIT_REOPEN_DAYS)) {
       self::ensure($obj, Ct::REASON_REOPEN);
+      FlashMessage::add(_('info-added-reopen-queue'), 'success');
     }
   }
 

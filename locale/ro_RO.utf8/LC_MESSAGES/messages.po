@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-04-07 15:32+0300\n"
-"PO-Revision-Date: 2020-04-07 15:32+0300\n"
+"POT-Creation-Date: 2020-04-07 15:56+0300\n"
+"PO-Revision-Date: 2020-04-07 15:57+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -1585,6 +1585,12 @@ msgstr "păstrează"
 #: lib/model/Review.php:223
 msgid "vote-remove"
 msgstr "elimină"
+
+#: lib/model/Review.php:335
+msgid "info-added-reopen-queue"
+msgstr ""
+"Articolul a fost adăugat la coada pentru redeschidere și va fi evaluat "
+"curînd."
 
 #: lib/model/RevisionAnswer.php:13 lib/model/RevisionCannedResponse.php:14
 #: lib/model/RevisionHelpPage.php:14
