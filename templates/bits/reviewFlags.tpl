@@ -18,7 +18,7 @@
         </td>
 
         <td>
-          {$f->getVoteName()} ({$f->getWeightName()})
+          {$review->getVoteName($f->vote)} ({$f->getWeightName()})
         </td>
 
         <td>

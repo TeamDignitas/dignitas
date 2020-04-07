@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-04-07 08:47+0300\n"
-"PO-Revision-Date: 2020-04-07 12:00+0300\n"
+"POT-Creation-Date: 2020-04-07 15:32+0300\n"
+"PO-Revision-Date: 2020-04-07 15:32+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -286,7 +286,7 @@ msgstr[0] "o linie identică omisă"
 msgstr[1] "%1 linii identice omise"
 msgstr[2] "%1 de linii identice omise"
 
-#: templates/bits/editButton.tpl:15 templates/bits/reviewActions.tpl:25
+#: templates/bits/editButton.tpl:15 templates/bits/reviewActions.tpl:29
 #: templates/cannedResponse/list.tpl:40 templates/domain/list.tpl:34
 #: templates/help/categoryView.tpl:36 templates/help/pageView.tpl:35
 #: templates/tag/view.tpl:14 templates/user/view.tpl:55
@@ -543,19 +543,11 @@ msgstr "surse"
 msgid "label-relation-links"
 msgstr "surse"
 
-#: templates/bits/reviewActions.tpl:12
-msgid "link-remove"
-msgstr "elimină"
-
-#: templates/bits/reviewActions.tpl:20
-msgid "link-keep"
-msgstr "păstrează"
-
-#: templates/bits/reviewActions.tpl:33
+#: templates/bits/reviewActions.tpl:37
 msgid "link-next"
 msgstr "următoarea"
 
-#: templates/bits/reviewActions.tpl:43
+#: templates/bits/reviewActions.tpl:47
 msgid "label-details-optional"
 msgstr "detalii (opționale)"
 
@@ -959,27 +951,27 @@ msgstr "Această evaluare este completă. Nu mai puteți face alte acțiuni."
 msgid "info-statement-duplicate"
 msgstr "Această afirmație a fost marcată ca duplicat al afirmației"
 
-#: templates/review/view.tpl:41 templates/review/view.tpl:81
-#: templates/review/view.tpl:93
+#: templates/review/view.tpl:43 templates/review/view.tpl:83
+#: templates/review/view.tpl:95
 msgid "title-pertaining-to-statement"
 msgstr "referitor la afirmația:"
 
-#: templates/review/view.tpl:55
+#: templates/review/view.tpl:57
 msgid "info-entity-duplicate"
 msgstr "Acest autor a fost marcat ca duplicat al autorului"
 
-#: templates/review/view.tpl:58
+#: templates/review/view.tpl:60
 msgid "info-entity-duplicate-process"
 msgstr ""
 "Acceptarea acestei raportări va transfera toate afirmațiile de la acest "
 "duplicat la autorul canonic. Aliasurile, relațiile și alte atribute nu vor "
 "fi transferate."
 
-#: templates/review/view.tpl:72
+#: templates/review/view.tpl:74
 msgid "title-pertaining-to-answer"
 msgstr "referitor la răspunsul:"
 
-#: templates/review/view.tpl:110
+#: templates/review/view.tpl:112
 msgid "info-review-queue-empty"
 msgstr "Această coadă de evaluare este goală."
 
@@ -1383,22 +1375,14 @@ msgid "info-minimum-reputation-edit-entity-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
 #: lib/model/Flag.php:27
-msgid "vote-keep"
-msgstr "păstrează"
-
-#: lib/model/Flag.php:28
-msgid "vote-remove"
-msgstr "elimină"
-
-#: lib/model/Flag.php:38
 msgid "flag-advisory"
 msgstr "consultativ"
 
-#: lib/model/Flag.php:39
+#: lib/model/Flag.php:28
 msgid "flag-executive"
 msgstr "executoriu"
 
-#: lib/model/Flag.php:40
+#: lib/model/Flag.php:29
 msgid "flag-moderator"
 msgstr "moderator"
 
@@ -1442,149 +1426,165 @@ msgstr "Tip de relație incorect."
 msgid "info-dates-out-of-order"
 msgstr "Data de început nu poate fi mai mare ca data de sfîrșit."
 
-#: lib/model/Review.php:89
+#: lib/model/Review.php:93
 msgid "reason-name-spam"
 msgstr "spam"
 
-#: lib/model/Review.php:90
+#: lib/model/Review.php:94
 msgid "reason-name-abuse"
 msgstr "abuzuri"
 
-#: lib/model/Review.php:91
+#: lib/model/Review.php:95
 msgid "reason-name-duplicate"
 msgstr "duplicat"
 
-#: lib/model/Review.php:92
+#: lib/model/Review.php:96
 msgid "reason-name-off-topic"
 msgstr "pe lîngă subiect"
 
-#: lib/model/Review.php:93
+#: lib/model/Review.php:97
 msgid "reason-name-unverifiable"
 msgstr "neverificabil"
 
-#: lib/model/Review.php:94
+#: lib/model/Review.php:98
 msgid "reason-name-low-quality"
 msgstr "de slabă calitate"
 
-#: lib/model/Review.php:95
+#: lib/model/Review.php:99
 msgid "reason-name-new-user"
 msgstr "provine de la un utilizator noi"
 
-#: lib/model/Review.php:96
+#: lib/model/Review.php:100
 msgid "reason-name-late-answer"
 msgstr "răspuns tîrziu"
 
-#: lib/model/Review.php:97
+#: lib/model/Review.php:101
 msgid "reason-name-reopen"
 msgstr "propus pentru redeschidere"
 
-#: lib/model/Review.php:98
+#: lib/model/Review.php:102
 msgid "reason-name-pending-edit"
 msgstr "modificări sugerate"
 
-#: lib/model/Review.php:99
+#: lib/model/Review.php:103
 msgid "reason-name-other-reason"
 msgstr "alte motive"
 
-#: lib/model/Review.php:100
+#: lib/model/Review.php:104
 msgid "reason-name-not-needed"
 msgstr "nenecesar"
 
-#: lib/model/Review.php:112
+#: lib/model/Review.php:116
 msgid "queue-name-spam"
 msgstr "articole raportate ca spam"
 
-#: lib/model/Review.php:113
+#: lib/model/Review.php:117
 msgid "queue-name-abuse"
 msgstr "articole raportate ca abuzuri"
 
-#: lib/model/Review.php:114
+#: lib/model/Review.php:118
 msgid "queue-name-duplicate"
 msgstr "articole raportate ca duplicate"
 
-#: lib/model/Review.php:115
+#: lib/model/Review.php:119
 msgid "queue-name-off-topic"
 msgstr "articole raportate ca pe lîngă subiect"
 
-#: lib/model/Review.php:116
+#: lib/model/Review.php:120
 msgid "queue-name-unverifiable"
 msgstr "articole raportate ca neverificabile"
 
-#: lib/model/Review.php:117
+#: lib/model/Review.php:121
 msgid "queue-name-low-quality"
 msgstr "articole raportate ca fiind de slabă calitate"
 
-#: lib/model/Review.php:118
+#: lib/model/Review.php:122
 msgid "queue-name-new-user"
 msgstr "mesaje de la utilizatori noi"
 
-#: lib/model/Review.php:119
+#: lib/model/Review.php:123
 msgid "queue-name-late-answer"
 msgstr "răspunsuri tîrzii"
 
-#: lib/model/Review.php:120
+#: lib/model/Review.php:124
 msgid "queue-name-reopen"
 msgstr "articole propuse pentru redeschidere"
 
-#: lib/model/Review.php:121
+#: lib/model/Review.php:125
 msgid "queue-name-pending-edit"
 msgstr "modificări sugerate"
 
-#: lib/model/Review.php:122
+#: lib/model/Review.php:126
 msgid "queue-name-other-reason"
 msgstr "articole raportate pentru alte motive"
 
-#: lib/model/Review.php:123
+#: lib/model/Review.php:127
 msgid "queue-name-not-needed"
 msgstr "comentarii raportate ca nenecesare"
 
-#: lib/model/Review.php:135
+#: lib/model/Review.php:139
 msgid "queue-url-spam"
 msgstr "spam"
 
-#: lib/model/Review.php:136
+#: lib/model/Review.php:140
 msgid "queue-url-abuse"
 msgstr "abuz"
 
-#: lib/model/Review.php:137
+#: lib/model/Review.php:141
 msgid "queue-url-duplicate"
 msgstr "duplicat"
 
-#: lib/model/Review.php:138
+#: lib/model/Review.php:142
 msgid "queue-url-off-topic"
 msgstr "pe-linga-subiect"
 
-#: lib/model/Review.php:139
+#: lib/model/Review.php:143
 msgid "queue-url-unverifiable"
 msgstr "neverificabil"
 
-#: lib/model/Review.php:140
+#: lib/model/Review.php:144
 msgid "queue-url-low-quality"
 msgstr "slaba-calitate"
 
-#: lib/model/Review.php:141
+#: lib/model/Review.php:145
 msgid "queue-url-new-user"
 msgstr "utilizator-nou"
 
-#: lib/model/Review.php:142
+#: lib/model/Review.php:146
 msgid "queue-url-late-answer"
 msgstr "raspuns-tirziu"
 
-#: lib/model/Review.php:143
+#: lib/model/Review.php:147
 msgid "queue-url-reopen"
 msgstr "redeschidere"
 
-#: lib/model/Review.php:144
+#: lib/model/Review.php:148
 msgid "queue-url-pending-edit"
 msgstr "modificari-sugerate"
 
-#: lib/model/Review.php:145
+#: lib/model/Review.php:149
 msgid "queue-url-other-reason"
 msgstr "alt-motiv"
 
-#: lib/model/Review.php:146
+#: lib/model/Review.php:150
 msgid "queue-url-not-needed"
 msgstr "nenecesare"
+
+#: lib/model/Review.php:218
+msgid "vote-reopen"
+msgstr "redeschide"
+
+#: lib/model/Review.php:219
+msgid "vote-ignore"
+msgstr "ignoră"
+
+#: lib/model/Review.php:222
+msgid "vote-keep"
+msgstr "păstrează"
+
+#: lib/model/Review.php:223
+msgid "vote-remove"
+msgstr "elimină"
 
 #: lib/model/RevisionAnswer.php:13 lib/model/RevisionCannedResponse.php:14
 #: lib/model/RevisionHelpPage.php:14
@@ -1908,20 +1908,20 @@ msgstr "în general adevărat"
 msgid "verdict-true"
 msgstr "adevărat"
 
-#: routes/answer/edit.php:36 routes/entity/edit.php:88
-#: routes/statement/edit.php:78
+#: routes/answer/edit.php:37 routes/entity/edit.php:88
+#: routes/statement/edit.php:79
 msgid "info-changes-queued"
 msgstr "Modificările dumneavoastră au fost adăugate la coada de evaluare."
 
-#: routes/answer/edit.php:39
+#: routes/answer/edit.php:40
 msgid "info-answer-posted"
 msgstr "Am publicat răspunsul."
 
-#: routes/answer/edit.php:39
+#: routes/answer/edit.php:40
 msgid "info-answer-updated"
 msgstr "Am actualizat răspunsul."
 
-#: routes/answer/edit.php:72
+#: routes/answer/edit.php:73
 msgid "info-empty-answer"
 msgstr "Nu puteți publica un răspuns gol."
 
@@ -2103,34 +2103,34 @@ msgstr "Am redeschis autorul."
 msgid "info-entity-added"
 msgstr "Am adăugat autorul."
 
-#: routes/entity/edit.php:90
+#: routes/entity/edit.php:91
 msgid "info-entity-updated"
 msgstr "Am salvat autorul."
 
-#: routes/entity/edit.php:95 routes/statement/edit.php:85
+#: routes/entity/edit.php:96 routes/statement/edit.php:86
 msgid "info-validation-error"
 msgstr "Formularul conține erori. Vă rugăm să le reparați mai jos."
 
-#: routes/entity/edit.php:130
+#: routes/entity/edit.php:131
 msgid "info-must-enter-entity-name"
 msgstr "Vă rugăm să introduceți un nume."
 
-#: routes/entity/edit.php:134
+#: routes/entity/edit.php:135
 msgid "info-must-enter-entity-type"
 msgstr "Vă rugăm să alegeți un tip."
 
-#: routes/entity/edit.php:139
+#: routes/entity/edit.php:140
 #, php-format
 msgid "info-entity-profile-length-limit-%d"
 msgstr "Profilul autorului poate avea maximum %d de caractere."
 
-#: routes/entity/edit.php:163
+#: routes/entity/edit.php:164
 msgid "info-entity-type-change-invalidates-incoming-relations"
 msgstr ""
 "Nu pot schimba tipul acestui autor deoarece relațiile altor autori cu acesta "
 "ar deveni incorecte."
 
-#: routes/entity/edit.php:175
+#: routes/entity/edit.php:176
 msgid "info-invalid-entity-links"
 msgstr "Unele dintre legături sînt incorecte."
 
@@ -2310,39 +2310,39 @@ msgstr "Nu puteți redeschide această afirmație."
 msgid "info-confirm-statement-reopened."
 msgstr "Am redeschis afirmația."
 
-#: routes/statement/edit.php:74
+#: routes/statement/edit.php:75
 msgid "info-statement-added"
 msgstr "Am adăugat afirmația."
 
-#: routes/statement/edit.php:80
+#: routes/statement/edit.php:81
 msgid "info-statement-updated"
 msgstr "Am actualizat afirmația."
 
-#: routes/statement/edit.php:112
+#: routes/statement/edit.php:113
 msgid "info-must-enter-statement-entity"
 msgstr "Vă rugăm să introduceți un autor."
 
-#: routes/statement/edit.php:116
+#: routes/statement/edit.php:117
 msgid "info-must-enter-statement-summary"
 msgstr "Vă rugăm să introduceți sumarul afirmației."
 
-#: routes/statement/edit.php:120
+#: routes/statement/edit.php:121
 msgid "info-must-enter-statement-context"
 msgstr "Vă rugăm să introduceți contextul afirmației."
 
-#: routes/statement/edit.php:124
+#: routes/statement/edit.php:125
 msgid "info-must-enter-statement-goal"
 msgstr "Vă rugăm să introduceți scopul afirmației."
 
-#: routes/statement/edit.php:128
+#: routes/statement/edit.php:129
 msgid "info-must-enter-statement-date"
 msgstr "Vă rugăm să introduceți data afirmației."
 
-#: routes/statement/edit.php:130
+#: routes/statement/edit.php:131
 msgid "info-date-not-future"
 msgstr "Data nu poate fi în viitor."
 
-#: routes/statement/edit.php:140
+#: routes/statement/edit.php:141
 msgid "info-invalid-statement-links"
 msgstr "Unele dintre surse sînt incorecte."
 

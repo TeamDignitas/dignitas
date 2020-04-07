@@ -87,6 +87,7 @@ if ($saveButton) {
       if ($entity->status == Ct::STATUS_PENDING_EDIT) {
         FlashMessage::add(_('info-changes-queued'), 'success');
       } else {
+        Review::checkRecentlyClosedDeleted($entity);
         FlashMessage::add(_('info-entity-updated'), 'success');
       }
       Util::redirect($referrer ?: Router::getViewLink($entity));

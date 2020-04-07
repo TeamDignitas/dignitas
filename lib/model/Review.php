@@ -16,18 +16,22 @@ class Review extends Proto {
   const ACTION_DELETE = 2;
   const ACTION_INCORPORATE_PENDING_EDIT = 3;
   const ACTION_DELETE_PENDING_EDIT = 4;
+  const ACTION_REOPEN = 5;
 
   // Maps object x reason to methods to run when a review is resolved.
   // It should be impossible to encounter cases not covered here.
   const KEEP_ACTION_MAP = [
     Proto::TYPE_ANSWER => [
       Ct::REASON_PENDING_EDIT => self::ACTION_INCORPORATE_PENDING_EDIT,
+      Ct::REASON_REOPEN => self::ACTION_REOPEN,
     ],
     Proto::TYPE_ENTITY => [
       Ct::REASON_PENDING_EDIT => self::ACTION_INCORPORATE_PENDING_EDIT,
+      Ct::REASON_REOPEN => self::ACTION_REOPEN,
     ],
     Proto::TYPE_STATEMENT => [
       Ct::REASON_PENDING_EDIT => self::ACTION_INCORPORATE_PENDING_EDIT,
+      Ct::REASON_REOPEN => self::ACTION_REOPEN,
     ],
   ];
 
@@ -203,6 +207,24 @@ class Review extends Proto {
   }
 
   /**
+   * Returns the localized vote name of this flag. This is usually 'keep' or
+   * 'remove', but for reopen reviews it changes to 'reopen' or 'ignore'.
+   *
+   * @return string A localized name.
+   */
+  function getVoteName($vote) {
+    if ($this->reason == Ct::REASON_REOPEN) {
+      return ($vote == Flag::VOTE_KEEP)
+        ? _('vote-reopen')
+        : _('vote-ignore');
+    } else {
+      return ($vote == Flag::VOTE_KEEP)
+        ? _('vote-keep')
+        : _('vote-remove');
+    }
+  }
+
+  /**
    * If this Review has type "duplicate of", return the duplicate object;
    * otherwise return null.
    *
@@ -296,6 +318,20 @@ class Review extends Proto {
     $st = $answer->getStatement();
     if ($answer->createDate - $st->createDate > $maxAge) {
       self::ensure($answer, Ct::REASON_LATE_ANSWER);
+    }
+  }
+
+  /**
+   * Checks if $obj has been recently closed or deleted. If so, places $obj in
+   * the reopen queue. To be called whenever $obj is edited.
+   *
+   * @param Flaggable $obj a flaggable object
+   */
+  static function checkRecentlyClosedDeleted($obj) {
+    $ts = $obj->getDeletionClosureTimestamp();
+
+    if ($ts && ((time() - $ts) / 86400 < Config::EDIT_REOPEN_DAYS)) {
+      self::ensure($obj, Ct::REASON_REOPEN);
     }
   }
 
@@ -431,6 +467,8 @@ class Review extends Proto {
       $obj->processPendingEdit(true);
     } else if ($action == self::ACTION_DELETE_PENDING_EDIT) {
       $obj->processPendingEdit(false);
+    } else if ($action == self::ACTION_REOPEN) {
+      $obj->reopen();
     } else {
       Log::alert('Invalid action %s encountered in review #%s.', $action, $this->id);
     }

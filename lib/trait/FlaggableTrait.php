@@ -84,6 +84,35 @@ trait FlaggableTrait {
   }
 
   /**
+   * Return the most recent timestamp when $this stopped being active.
+   *
+   * @return int A timestamp or null if $this is still active or if $this is a
+   * pending edit.
+   */
+  function getDeletionClosureTimestamp() {
+    if (!in_array($this->status, [ Ct::STATUS_CLOSED, Ct::STATUS_DELETED ])) {
+      return null;
+    }
+
+    // load the last active revision
+    $class = $this->getRevisionClass();
+    $lastActive = Model::factory($class)
+      ->where('id', $this->id)
+      ->where('status', Ct::STATUS_ACTIVE)
+      ->order_by_desc('revisionId')
+      ->find_one();
+
+    // load the next revision
+    $firstInactive = Model::factory($class)
+      ->where('id', $this->id)
+      ->where_gt('revisionId', $lastActive->revisionId)
+      ->order_by_asc('revisionId')
+      ->find_one();
+
+    return $firstInactive->modDate;
+  }
+
+  /**
    * When $dir is true (the object is being deleted), give back reputation to
    * people who downvoted this object. When $dir is false (the object is being
    * reopened), take away reputation from people who downvoted this object.

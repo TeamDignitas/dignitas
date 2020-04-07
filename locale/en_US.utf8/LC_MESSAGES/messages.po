@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-04-07 08:47+0300\n"
-"PO-Revision-Date: 2020-04-07 08:47+0300\n"
+"POT-Creation-Date: 2020-04-07 15:32+0300\n"
+"PO-Revision-Date: 2020-04-07 15:33+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -280,7 +280,7 @@ msgid_plural "identical-lines-skipped-plural"
 msgstr[0] "one identical line skipped"
 msgstr[1] "%1 identical lines skipped"
 
-#: templates/bits/editButton.tpl:15 templates/bits/reviewActions.tpl:25
+#: templates/bits/editButton.tpl:15 templates/bits/reviewActions.tpl:29
 #: templates/cannedResponse/list.tpl:40 templates/domain/list.tpl:34
 #: templates/help/categoryView.tpl:36 templates/help/pageView.tpl:35
 #: templates/tag/view.tpl:14 templates/user/view.tpl:55
@@ -535,19 +535,11 @@ msgstr "sources"
 msgid "label-relation-links"
 msgstr "sources"
 
-#: templates/bits/reviewActions.tpl:12
-msgid "link-remove"
-msgstr "remove"
-
-#: templates/bits/reviewActions.tpl:20
-msgid "link-keep"
-msgstr "keep"
-
-#: templates/bits/reviewActions.tpl:33
+#: templates/bits/reviewActions.tpl:37
 msgid "link-next"
 msgstr "next"
 
-#: templates/bits/reviewActions.tpl:43
+#: templates/bits/reviewActions.tpl:47
 msgid "label-details-optional"
 msgstr "details (optional)"
 
@@ -946,27 +938,27 @@ msgstr "This review is now complete. No further actions can be taken."
 msgid "info-statement-duplicate"
 msgstr "This statement was flagged as a duplicate of"
 
-#: templates/review/view.tpl:41 templates/review/view.tpl:81
-#: templates/review/view.tpl:93
+#: templates/review/view.tpl:43 templates/review/view.tpl:83
+#: templates/review/view.tpl:95
 msgid "title-pertaining-to-statement"
 msgstr "pertaining to statement:"
 
-#: templates/review/view.tpl:55
+#: templates/review/view.tpl:57
 msgid "info-entity-duplicate"
 msgstr "This author was flagged as a duplicate of"
 
-#: templates/review/view.tpl:58
+#: templates/review/view.tpl:60
 msgid "info-entity-duplicate-process"
 msgstr ""
 "Accepting this flag will transfer all statements from this duplicate to its "
 "canonical author. The aliases, relationships and other attributes will not "
 "be transferred."
 
-#: templates/review/view.tpl:72
+#: templates/review/view.tpl:74
 msgid "title-pertaining-to-answer"
 msgstr "pertaining to answer:"
 
-#: templates/review/view.tpl:110
+#: templates/review/view.tpl:112
 msgid "info-review-queue-empty"
 msgstr "This review queue is empty."
 
@@ -1365,22 +1357,14 @@ msgid "info-minimum-reputation-edit-entity-%s"
 msgstr "You need at least %s reputation to edit authors."
 
 #: lib/model/Flag.php:27
-msgid "vote-keep"
-msgstr "keep"
-
-#: lib/model/Flag.php:28
-msgid "vote-remove"
-msgstr "remove"
-
-#: lib/model/Flag.php:38
 msgid "flag-advisory"
 msgstr "advisory"
 
-#: lib/model/Flag.php:39
+#: lib/model/Flag.php:28
 msgid "flag-executive"
 msgstr "executive"
 
-#: lib/model/Flag.php:40
+#: lib/model/Flag.php:29
 msgid "flag-moderator"
 msgstr "moderator"
 
@@ -1424,149 +1408,165 @@ msgstr "Incorrect relationship type."
 msgid "info-dates-out-of-order"
 msgstr "The start date cannot be past the end date."
 
-#: lib/model/Review.php:89
+#: lib/model/Review.php:93
 msgid "reason-name-spam"
 msgstr "spam"
 
-#: lib/model/Review.php:90
+#: lib/model/Review.php:94
 msgid "reason-name-abuse"
 msgstr "abuse"
 
-#: lib/model/Review.php:91
+#: lib/model/Review.php:95
 msgid "reason-name-duplicate"
 msgstr "duplicate"
 
-#: lib/model/Review.php:92
+#: lib/model/Review.php:96
 msgid "reason-name-off-topic"
 msgstr "off-topic"
 
-#: lib/model/Review.php:93
+#: lib/model/Review.php:97
 msgid "reason-name-unverifiable"
 msgstr "unverifiable"
 
-#: lib/model/Review.php:94
+#: lib/model/Review.php:98
 msgid "reason-name-low-quality"
 msgstr "low quality"
 
-#: lib/model/Review.php:95
+#: lib/model/Review.php:99
 msgid "reason-name-new-user"
 msgstr "post from new user"
 
-#: lib/model/Review.php:96
+#: lib/model/Review.php:100
 msgid "reason-name-late-answer"
 msgstr "late answer"
 
-#: lib/model/Review.php:97
+#: lib/model/Review.php:101
 msgid "reason-name-reopen"
 msgstr "reopened"
 
-#: lib/model/Review.php:98
+#: lib/model/Review.php:102
 msgid "reason-name-pending-edit"
 msgstr "suggested changes"
 
-#: lib/model/Review.php:99
+#: lib/model/Review.php:103
 msgid "reason-name-other-reason"
 msgstr "other reasons"
 
-#: lib/model/Review.php:100
+#: lib/model/Review.php:104
 msgid "reason-name-not-needed"
 msgstr "no longer needed"
 
-#: lib/model/Review.php:112
+#: lib/model/Review.php:116
 msgid "queue-name-spam"
 msgstr "items flagged as spam"
 
-#: lib/model/Review.php:113
+#: lib/model/Review.php:117
 msgid "queue-name-abuse"
 msgstr "items flagged as abuse"
 
-#: lib/model/Review.php:114
+#: lib/model/Review.php:118
 msgid "queue-name-duplicate"
 msgstr "items flagged as duplicate"
 
-#: lib/model/Review.php:115
+#: lib/model/Review.php:119
 msgid "queue-name-off-topic"
 msgstr "items flagged as off-topic"
 
-#: lib/model/Review.php:116
+#: lib/model/Review.php:120
 msgid "queue-name-unverifiable"
 msgstr "items flagged as unverifiable"
 
-#: lib/model/Review.php:117
+#: lib/model/Review.php:121
 msgid "queue-name-low-quality"
 msgstr "items flagged as low quality"
 
-#: lib/model/Review.php:118
+#: lib/model/Review.php:122
 msgid "queue-name-new-user"
 msgstr "posts from new users"
 
-#: lib/model/Review.php:119
+#: lib/model/Review.php:123
 msgid "queue-name-late-answer"
 msgstr "late answers"
 
-#: lib/model/Review.php:120
+#: lib/model/Review.php:124
 msgid "queue-name-reopen"
 msgstr "items flagged for reopening"
 
-#: lib/model/Review.php:121
+#: lib/model/Review.php:125
 msgid "queue-name-pending-edit"
 msgstr "suggested changes"
 
-#: lib/model/Review.php:122
+#: lib/model/Review.php:126
 msgid "queue-name-other-reason"
 msgstr "items flagged for other reasons"
 
-#: lib/model/Review.php:123
+#: lib/model/Review.php:127
 msgid "queue-name-not-needed"
 msgstr "no longer needed comments"
 
-#: lib/model/Review.php:135
+#: lib/model/Review.php:139
 msgid "queue-url-spam"
 msgstr "spam"
 
-#: lib/model/Review.php:136
+#: lib/model/Review.php:140
 msgid "queue-url-abuse"
 msgstr "abuse"
 
-#: lib/model/Review.php:137
+#: lib/model/Review.php:141
 msgid "queue-url-duplicate"
 msgstr "duplicates"
 
-#: lib/model/Review.php:138
+#: lib/model/Review.php:142
 msgid "queue-url-off-topic"
 msgstr "off-topic"
 
-#: lib/model/Review.php:139
+#: lib/model/Review.php:143
 msgid "queue-url-unverifiable"
 msgstr "unverifiable"
 
-#: lib/model/Review.php:140
+#: lib/model/Review.php:144
 msgid "queue-url-low-quality"
 msgstr "low quality"
 
-#: lib/model/Review.php:141
+#: lib/model/Review.php:145
 msgid "queue-url-new-user"
 msgstr "new-user"
 
-#: lib/model/Review.php:142
+#: lib/model/Review.php:146
 msgid "queue-url-late-answer"
 msgstr "late-answers"
 
-#: lib/model/Review.php:143
+#: lib/model/Review.php:147
 msgid "queue-url-reopen"
 msgstr "reopen"
 
-#: lib/model/Review.php:144
+#: lib/model/Review.php:148
 msgid "queue-url-pending-edit"
 msgstr "suggested-changes"
 
-#: lib/model/Review.php:145
+#: lib/model/Review.php:149
 msgid "queue-url-other-reason"
 msgstr "other"
 
-#: lib/model/Review.php:146
+#: lib/model/Review.php:150
 msgid "queue-url-not-needed"
 msgstr "not-needed"
+
+#: lib/model/Review.php:218
+msgid "vote-reopen"
+msgstr "reopen"
+
+#: lib/model/Review.php:219
+msgid "vote-ignore"
+msgstr "ignore"
+
+#: lib/model/Review.php:222
+msgid "vote-keep"
+msgstr "keep"
+
+#: lib/model/Review.php:223
+msgid "vote-remove"
+msgstr "remove"
 
 #: lib/model/RevisionAnswer.php:13 lib/model/RevisionCannedResponse.php:14
 #: lib/model/RevisionHelpPage.php:14
@@ -1884,20 +1884,20 @@ msgstr "mostly true"
 msgid "verdict-true"
 msgstr "true"
 
-#: routes/answer/edit.php:36 routes/entity/edit.php:88
-#: routes/statement/edit.php:78
+#: routes/answer/edit.php:37 routes/entity/edit.php:88
+#: routes/statement/edit.php:79
 msgid "info-changes-queued"
 msgstr "Your changes were placed in the review queue."
 
-#: routes/answer/edit.php:39
+#: routes/answer/edit.php:40
 msgid "info-answer-posted"
 msgstr "Answer posted."
 
-#: routes/answer/edit.php:39
+#: routes/answer/edit.php:40
 msgid "info-answer-updated"
 msgstr "Answer updated."
 
-#: routes/answer/edit.php:72
+#: routes/answer/edit.php:73
 msgid "info-empty-answer"
 msgstr "Cannot post an empty answer."
 
@@ -2075,34 +2075,34 @@ msgstr "Author reopened."
 msgid "info-entity-added"
 msgstr "Author added."
 
-#: routes/entity/edit.php:90
+#: routes/entity/edit.php:91
 msgid "info-entity-updated"
 msgstr "Author updated."
 
-#: routes/entity/edit.php:95 routes/statement/edit.php:85
+#: routes/entity/edit.php:96 routes/statement/edit.php:86
 msgid "info-validation-error"
 msgstr "There are some errors in the data. Please fix them below."
 
-#: routes/entity/edit.php:130
+#: routes/entity/edit.php:131
 msgid "info-must-enter-entity-name"
 msgstr "Please enter a name."
 
-#: routes/entity/edit.php:134
+#: routes/entity/edit.php:135
 msgid "info-must-enter-entity-type"
 msgstr "Please enter a type."
 
-#: routes/entity/edit.php:139
+#: routes/entity/edit.php:140
 #, php-format
 msgid "info-entity-profile-length-limit-%d"
 msgstr "Author profiles can be at most %d characters long."
 
-#: routes/entity/edit.php:163
+#: routes/entity/edit.php:164
 msgid "info-entity-type-change-invalidates-incoming-relations"
 msgstr ""
 "Cannot change this author's type because other authors' relationships to "
 "this one would become invalid."
 
-#: routes/entity/edit.php:175
+#: routes/entity/edit.php:176
 msgid "info-invalid-entity-links"
 msgstr "Some links are invalid."
 
@@ -2279,39 +2279,39 @@ msgstr "You cannot reopen this statement."
 msgid "info-confirm-statement-reopened."
 msgstr "Statement reopened."
 
-#: routes/statement/edit.php:74
+#: routes/statement/edit.php:75
 msgid "info-statement-added"
 msgstr "Statement added."
 
-#: routes/statement/edit.php:80
+#: routes/statement/edit.php:81
 msgid "info-statement-updated"
 msgstr "Statement updated."
 
-#: routes/statement/edit.php:112
+#: routes/statement/edit.php:113
 msgid "info-must-enter-statement-entity"
 msgstr "Please enter an author."
 
-#: routes/statement/edit.php:116
+#: routes/statement/edit.php:117
 msgid "info-must-enter-statement-summary"
 msgstr "Please enter the statement summary."
 
-#: routes/statement/edit.php:120
+#: routes/statement/edit.php:121
 msgid "info-must-enter-statement-context"
 msgstr "Please enter the statement context."
 
-#: routes/statement/edit.php:124
+#: routes/statement/edit.php:125
 msgid "info-must-enter-statement-goal"
 msgstr "Please enter the statement goal."
 
-#: routes/statement/edit.php:128
+#: routes/statement/edit.php:129
 msgid "info-must-enter-statement-date"
 msgstr "Please enter a date."
 
-#: routes/statement/edit.php:130
+#: routes/statement/edit.php:131
 msgid "info-date-not-future"
 msgstr "This date may not be in the future."
 
-#: routes/statement/edit.php:140
+#: routes/statement/edit.php:141
 msgid "info-invalid-statement-links"
 msgstr "Some source URLs are invalid."
 

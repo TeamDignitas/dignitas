@@ -18,17 +18,6 @@ class Flag extends Proto {
   const STATUS_OBJECT_GONE = 4; // closed because a user deleted the review's object
 
   /**
-   * Returns a localized name for a keep/remove vote.
-   *
-   * @return string A localized name.
-   */
-  function getVoteName() {
-    return ($this->vote == self::VOTE_KEEP)
-      ? _('vote-keep')
-      : _('vote-remove');
-  }
-
-  /**
    * Returns a localized name for a vote's weight.
    *
    * @return string A localized name.
