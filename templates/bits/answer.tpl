@@ -18,14 +18,14 @@
     </div>
 
     {if $answer->status == Ct::STATUS_DELETED}
-      <div class="alert alert-secondary">
+      <div class="alert alert-secondary small">
         {$answer->getDeletedMessage()}
 
         {if $answer->reason == Ct::REASON_BY_USER}
           {include "bits/userLink.tpl" u=$answer->getStatusUser()}
         {elseif $answer->reason != Ct::REASON_BY_OWNER}
           <hr>
-          {include "bits/reviewFlagList.tpl" flags=$answer->getReviewFlags()}
+          {include "bits/reviewFlagList.tpl" review=$answer->getRemovalReview()}
         {/if}
       </div>
     {/if}

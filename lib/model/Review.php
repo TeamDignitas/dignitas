@@ -210,17 +210,51 @@ class Review extends Proto {
    * Returns the localized vote name of this flag. This is usually 'keep' or
    * 'remove', but for reopen reviews it changes to 'reopen' or 'ignore'.
    *
+   * @param int $vote One of the Flag::VOTE_* constants
    * @return string A localized name.
    */
   function getVoteName($vote) {
-    if ($this->reason == Ct::REASON_REOPEN) {
-      return ($vote == Flag::VOTE_KEEP)
-        ? _('vote-reopen')
-        : _('vote-ignore');
+    if ($vote == Flag::VOTE_KEEP) {
+      switch ($this->reason) {
+        case Ct::REASON_REOPEN: return _('vote-reopen');
+        case Ct::REASON_PENDING_EDIT: return _('vote-accept');
+        default: return _('vote-keep');
+      }
     } else {
-      return ($vote == Flag::VOTE_KEEP)
-        ? _('vote-keep')
-        : _('vote-remove');
+      switch ($this->reason) {
+        case Ct::REASON_REOPEN: return _('vote-ignore');
+        case Ct::REASON_PENDING_EDIT: return _('vote-refuse');
+        default: return _('vote-remove');
+      }
+    }
+  }
+
+  /**
+   * Returns the localized resolution name. This depends on the status, but
+   * also on the reason.
+   *
+   * @return string A localized name.
+   */
+  function getResolutionName() {
+    switch ($this->status) {
+      case self::STATUS_PENDING:
+        return _('review-resolution-pending');
+      case self::STATUS_STALE:
+        return _('review-resolution-stale');
+      case self::STATUS_OBJECT_GONE:
+        return _('review-resolution-object-gone');
+      case self::STATUS_KEEP:
+        switch ($this->reason) {
+          case Ct::REASON_REOPEN: return _('review-resolution-reopen');
+          case Ct::REASON_PENDING_EDIT: return _('review-resolution-accept');
+          default: return _('review-resolution-keep');
+        }
+      case self::STATUS_REMOVE:
+        switch ($this->reason) {
+          case Ct::REASON_REOPEN: return _('review-resolution-ignore');
+          case Ct::REASON_PENDING_EDIT: return _('review-resolution-refuse');
+          default: return _('review-resolution-remove');
+        }
     }
   }
 

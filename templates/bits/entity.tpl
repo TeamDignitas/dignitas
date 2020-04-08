@@ -35,7 +35,7 @@
     </div>
 
     {if $statusInfo}
-      <div class="alert {$statusInfo['cssClass']} overflow-hidden">
+      <div class="alert {$statusInfo['cssClass']} small overflow-hidden">
         {$statusInfo['details']}
         {if $statusInfo['dup']}
           {include "bits/entityLink.tpl"
@@ -46,7 +46,7 @@
           {include "bits/userLink.tpl" u=$entity->getStatusUser()}
         {elseif $entity->reason != Ct::REASON_BY_OWNER}
           <hr>
-          {include "bits/reviewFlagList.tpl" flags=$entity->getReviewFlags()}
+          {include "bits/reviewFlagList.tpl" review=$entity->getRemovalReview()}
         {/if}
       </div>
     {/if}

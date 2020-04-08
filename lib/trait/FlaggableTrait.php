@@ -48,24 +48,20 @@ trait FlaggableTrait {
   }
 
   /**
-   * Returns the flags of the review that decided the object's current status.
+   * Returns the review that caused the object's removal.
    */
-  function getReviewFlags() {
-    $flags = Model::factory('Flag')
-      ->table_alias('f')
-      ->select('f.*')
-      ->join('review', ['f.reviewId', '=', 'r.id'], 'r')
-      ->where('r.objectType', $this->getObjectType())
-      ->where('r.objectId', $this->id)
-      ->where('r.reason', $this->reason)
-      ->where('r.status', Review::STATUS_REMOVE);
+  function getRemovalReview() {
+    $r = Model::factory('Review')
+      ->where('objectType', $this->getObjectType())
+      ->where('objectId', $this->id)
+      ->where('reason', $this->reason)
+      ->where('status', Review::STATUS_REMOVE);
     if ($this->reason == Ct::REASON_DUPLICATE) {
-      $flags = $flags
-        ->where('r.duplicateId', $this->duplicateId);
+      $r = $r->where('duplicateId', $this->duplicateId);
     }
-    return $flags
-      ->order_by_desc('f.createDate')
-      ->find_many();
+    return $r
+      ->order_by_desc('createDate')
+      ->find_one();
   }
 
   function getStatusUser() {

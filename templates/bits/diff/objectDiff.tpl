@@ -23,22 +23,35 @@
           new=$change.new}
       </div>
     {/foreach}
-
-    {if $od->review}
-      <div class="card mt-2">
-        {if $od->isRejectedEdit()}
-          <div class="card-header text-danger">
-            {t}info-rejected-suggested-changes{/t}
-          </div>
-        {else}
-          <div class="card-header">
-            {t}info-reviewed-because{/t}: {$od->review->getReasonName()}
-          </div>
-        {/if}
-        <div class="card-body">
-          {include "bits/reviewFlagList.tpl" flags=$od->review->getFlags()}
-        </div>
-      </div>
-    {/if}
   </div>
 </div>
+
+{if $od->review}
+  {$id=$od->review->id}
+  <div class="col-sm-12">
+    <button
+      class="btn btn-sm btn-light"
+      type="button"
+      data-toggle="collapse"
+      data-target="#collapse-{$id}">
+      <i class="icon icon-right-open"></i>
+      {t}info-reviewed-because{/t}: {$od->review->getReasonName()}
+    </button>
+    <span class="btn btn-sm">
+      {t}label-resolution{/t}:
+      <span {if $od->review->status != Review::STATUS_KEEP}class="text-danger"{/if}>
+        {$od->review->getResolutionName()}
+      </span>
+    </span>
+  </div>
+
+  <div class="col-sm-12">
+    <div id="collapse-{$id}" class="card collapse mt-2">
+      <div class="card-body">
+        <h6 class="card-title">{t}title-votes{/t}</h6>
+        <hr>
+        {include "bits/reviewFlagList.tpl" review=$od->review}
+      </div>
+    </div>
+  </div>
+{/if}

@@ -36,7 +36,7 @@ class ObjectDiff {
       ->join('revision_review', [ 'rs.requestId', '=', 'rr.requestId' ], 'rr')
       ->where('rr.objectType', $obj->getObjectType())
       ->where('rr.objectId', $obj->id)
-      ->where('rr.reason', Ct::REASON_PENDING_EDIT)
+      ->where_in('rr.reason', [ Ct::REASON_PENDING_EDIT, Ct::REASON_REOPEN ])
       ->where_in('rr.status', [ Review::STATUS_REMOVE, Review::STATUS_STALE])
       ->where('rs.revisionAction', 'delete')
       ->order_by_desc('rs.revisionId')

@@ -65,7 +65,7 @@
     {/if}
 
     {if $statusInfo}
-      <div class="alert {$statusInfo['cssClass']} overflow-hidden">
+      <div class="alert {$statusInfo['cssClass']} small overflow-hidden">
         {$statusInfo['details']}
         {if $statusInfo['dup']}
           {include "bits/statementLink.tpl"
@@ -76,7 +76,7 @@
           {include "bits/userLink.tpl" u=$statement->getStatusUser()}
         {elseif $statement->reason != Ct::REASON_BY_OWNER}
           <hr>
-          {include "bits/reviewFlagList.tpl" flags=$statement->getReviewFlags()}
+          {include "bits/reviewFlagList.tpl" review=$statement->getRemovalReview()}
         {/if}
       </div>
     {/if}

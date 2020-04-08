@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-04-07 15:55+0300\n"
-"PO-Revision-Date: 2020-04-07 15:57+0300\n"
+"POT-Creation-Date: 2020-04-08 18:23+0300\n"
+"PO-Revision-Date: 2020-04-08 18:24+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -266,13 +266,17 @@ msgstr "characters remaining"
 msgid "link-pick-canned-response"
 msgstr "canned response"
 
-#: templates/bits/diff/objectDiff.tpl:31
-msgid "info-rejected-suggested-changes"
-msgstr "Rejected suggested changes"
-
-#: templates/bits/diff/objectDiff.tpl:35
+#: templates/bits/diff/objectDiff.tpl:38
 msgid "info-reviewed-because"
 msgstr "review reason"
+
+#: templates/bits/diff/objectDiff.tpl:41
+msgid "label-resolution"
+msgstr "resolution"
+
+#: templates/bits/diff/objectDiff.tpl:51
+msgid "title-votes"
+msgstr "votes"
 
 #: templates/bits/diff/text.tpl:8
 msgid "identical-lines-skipped-singular"
@@ -542,14 +546,6 @@ msgstr "next"
 #: templates/bits/reviewActions.tpl:47
 msgid "label-details-optional"
 msgstr "details (optional)"
-
-#: templates/bits/reviewFlagList.tpl:6
-msgid "review-voted-keep"
-msgstr "voted to keep"
-
-#: templates/bits/reviewFlagList.tpl:8
-msgid "review-voted-remove"
-msgstr "voted to remove"
 
 #: templates/bits/reviewFlags.tpl:1
 msgid "title-review-votes"
@@ -1552,23 +1548,67 @@ msgstr "other"
 msgid "queue-url-not-needed"
 msgstr "not-needed"
 
-#: lib/model/Review.php:218
+#: lib/model/Review.php:219
 msgid "vote-reopen"
 msgstr "reopen"
 
-#: lib/model/Review.php:219
-msgid "vote-ignore"
-msgstr "ignore"
+#: lib/model/Review.php:220
+msgid "vote-accept"
+msgstr "accept"
 
-#: lib/model/Review.php:222
+#: lib/model/Review.php:221
 msgid "vote-keep"
 msgstr "keep"
 
-#: lib/model/Review.php:223
+#: lib/model/Review.php:225
+msgid "vote-ignore"
+msgstr "ignore"
+
+#: lib/model/Review.php:226
+msgid "vote-refuse"
+msgstr "refuse"
+
+#: lib/model/Review.php:227
 msgid "vote-remove"
 msgstr "remove"
 
-#: lib/model/Review.php:335
+#: lib/model/Review.php:241
+msgid "review-resolution-pending"
+msgstr "pending"
+
+#: lib/model/Review.php:243
+msgid "review-resolution-stale"
+msgstr "stale"
+
+#: lib/model/Review.php:245
+msgid "review-resolution-object-gone"
+msgstr "post no longer exists"
+
+#: lib/model/Review.php:248
+msgid "review-resolution-reopen"
+msgstr "reopen"
+
+#: lib/model/Review.php:249
+msgid "review-resolution-accept"
+msgstr "accept"
+
+#: lib/model/Review.php:250
+msgid "review-resolution-keep"
+msgstr "keep"
+
+#: lib/model/Review.php:254
+msgid "review-resolution-ignore"
+msgstr "ignore"
+
+#: lib/model/Review.php:255
+msgid "review-resolution-refuse"
+msgstr "refuse"
+
+#: lib/model/Review.php:256
+msgid "review-resolution-remove"
+msgstr "remove"
+
+#: lib/model/Review.php:369
 msgid "info-added-reopen-queue"
 msgstr "The post was added to the reopen queue and will be evaluated soon."
 
@@ -1806,23 +1846,23 @@ msgstr "You already have a pending flag for this object."
 msgid "info-minimum-reputation-comment-%s"
 msgstr "You need at least %s reputation to comment."
 
-#: lib/trait/FlaggableTrait.php:77
+#: lib/trait/FlaggableTrait.php:73
 msgid "status-diff-active"
 msgstr "active"
 
-#: lib/trait/FlaggableTrait.php:79
+#: lib/trait/FlaggableTrait.php:75
 msgid "status-diff-duplicate"
 msgstr "duplicate"
 
-#: lib/trait/FlaggableTrait.php:80
+#: lib/trait/FlaggableTrait.php:76
 msgid "status-diff-closed"
 msgstr "closed"
 
-#: lib/trait/FlaggableTrait.php:81
+#: lib/trait/FlaggableTrait.php:77
 msgid "status-diff-deleted"
 msgstr "deleted"
 
-#: lib/trait/FlaggableTrait.php:82
+#: lib/trait/FlaggableTrait.php:78
 msgid "status-diff-pending-edit"
 msgstr "pending edit"
 
