@@ -183,11 +183,18 @@ trait FlaggableTrait {
   }
 
   /**
-   * Marks the object as active (reopened).
+   * Marks the object as active (reopened). Resolves all pending reopen
+   * reviews as stale.
    */
   function reopen() {
     $this->changeStatus(Ct::STATUS_ACTIVE, CT::REASON_REOPEN);
     $this->undoDownvoteRep(false);
+
+    $reviews = Review::get_all_by_objectType_objectId_reason_status(
+      $this->getObjectType(), $this->id, Ct::REASON_REOPEN, Review::STATUS_PENDING);
+    foreach ($reviews as $r) {
+      $r->resolveUncommon(Review::STATUS_STALE);
+    }
   }
 
 }

@@ -378,9 +378,9 @@ class Review extends Proto {
 
     // It is important to resolve the review (i.e. change its status from
     // pending to something else) before resolving its object. Resolving the
-    // object could result in marking it as deleted, which as a side effect
-    // resolves all pending reviews for the object. This loop should be
-    // avoided.
+    // object could result in reopening it or marking it as deleted, which as
+    // a side effect resolves all pending reviews for the object. This loop
+    // should be avoided.
     if ($this->hasEnoughVotes(Flag::VOTE_KEEP, Config::KEEP_VOTES_NECESSARY)) {
       $this->resolve(self::STATUS_KEEP, Flag::VOTE_KEEP);
       $action = self::KEEP_ACTION_MAP[$type][$this->reason] ?? null;
@@ -480,7 +480,7 @@ class Review extends Proto {
   }
 
   /**
-   * Closes or deletes the reviewed object.
+   * Takes action on the underlying object when the review is resolved.
    *
    * @param int $action One of the Review::ACTION_* values.
    */
