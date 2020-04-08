@@ -4,41 +4,47 @@
 
 {block "content"}
 
-  <h3>{cap}{t}title-verdict-report{/t}{/cap}</h3>
+  <h2 class="mb-4">{cap}{t}title-verdict-report{/t}{/cap}</h2>
 
   {if count($map['proofNoVerdict'])}
 
-    <h4>{t}title-statements-proof-no-verdict{/t}</h4>
+    <h5 class="alert alert-secondary capitalize-first-word">{t}title-statements-proof-no-verdict{/t}</h5>
 
-    {foreach $map['proofNoVerdict'] as $statement}
-      <div>
-        {include 'bits/statementLink.tpl'}
-      </div>
-    {/foreach}
+    <ol>
+      {foreach $map['proofNoVerdict'] as $statement}
+        <li>
+          {include 'bits/statementLink.tpl'}
+        </li>
+      {/foreach}
+    </ol>
 
   {/if}
 
   {if count($map['verdictNoProof'])}
 
-    <h4>{t}title-statements-verdict-no-proof{/t}</h4>
+    <h5 class="alert alert-secondary capitalize-first-word">{t}title-statements-verdict-no-proof{/t}</h5>
 
-    {foreach $map['verdictNoProof'] as $statement}
-      <div>
-        {include 'bits/statementLink.tpl'}
-      </div>
-    {/foreach}
+    <ol>
+      {foreach $map['verdictNoProof'] as $statement}
+        <li>
+          {include 'bits/statementLink.tpl'}
+        </li>
+      {/foreach}
+    </ol>
 
   {/if}
 
   {if count($map['verdictMismatch'])}
 
-    <h4>{t}title-statements-verdict-mismatch{/t}</h4>
+    <h5 class="alert alert-secondary capitalize-first-word">{t}title-statements-verdict-mismatch{/t}</h5>
 
-    {foreach $map['verdictMismatch'] as $statement}
-      <div>
-        {include 'bits/statementLink.tpl'}
-      </div>
-    {/foreach}
+    <ol>
+      {foreach $map['verdictMismatch'] as $statement}
+        <li>
+          {include 'bits/statementLink.tpl'}
+        </li>
+      {/foreach}
+    </ol>
 
   {/if}
 
