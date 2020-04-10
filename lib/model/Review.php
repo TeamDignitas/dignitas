@@ -500,6 +500,10 @@ class Review extends Proto {
       $obj->markDeleted($this->reason);
     } else if ($action == self::ACTION_INCORPORATE_PENDING_EDIT) {
       $obj->processPendingEdit(true);
+      // This works for now because PendingEditTrait is used by statements,
+      // answers and entities, the same object types that may need reopening.
+      // If they diverge, then a type check for $obj will become necessary.
+      Review::checkRecentlyClosedDeleted($obj);
     } else if ($action == self::ACTION_DELETE_PENDING_EDIT) {
       $obj->processPendingEdit(false);
     } else if ($action == self::ACTION_REOPEN) {

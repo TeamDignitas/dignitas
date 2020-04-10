@@ -29,7 +29,7 @@ class ObjectDiff {
       }
     }
 
-    // also load rejected suggested changes
+    // also load rejected suggested changes and reopen reviews
     $pendingEditIds = Model::factory('RevisionStatement')
       ->table_alias('rs')
       ->select('rs.id')
