@@ -11,29 +11,25 @@
       <label for="field-title" class="control-label">
         {t}label-title{/t}
       </label>
-      <div>
-        <input type="text"
-          class="form-control {if isset($errors.title)}is-invalid{/if}"
-          id="field-title"
-          name="title"
-          value="{$page->title|escape}">
-        {include "bits/fieldErrors.tpl" errors=$errors.title|default:null}
-      </div>
+      <input type="text"
+        class="form-control {if isset($errors.title)}is-invalid{/if}"
+        id="field-title"
+        name="title"
+        value="{$page->title|escape}">
+      {include "bits/fieldErrors.tpl" errors=$errors.title|default:null}
     </div>
 
     <div class="form-group">
       <label for="field-path" class="control-label">
         {t}label-help-page-path{/t}
       </label>
-      <div>
-        <input type="text"
-          class="form-control {if isset($errors.path)}is-invalid{/if}"
-          id="field-path"
-          name="path"
-          value="{$page->path|escape}"
-          placeholder="{t}info-help-page-path{/t}">
-        {include "bits/fieldErrors.tpl" errors=$errors.path|default:null}
-      </div>
+      <input type="text"
+        class="form-control {if isset($errors.path)}is-invalid{/if}"
+        id="field-path"
+        name="path"
+        value="{$page->path|escape}"
+        placeholder="{t}info-help-page-path{/t}">
+      {include "bits/fieldErrors.tpl" errors=$errors.path|default:null}
     </div>
 
     <div class="form-group">

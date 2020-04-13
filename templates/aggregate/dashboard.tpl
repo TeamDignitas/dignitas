@@ -65,7 +65,7 @@
         <h5 class="card-title">
           <i class="icon icon-exchange"></i>
         </h5>
-        <a href="{Router::link('relation-type/list')}">
+        <a href="{Router::link('relationType/list')}">
           {t}link-relation-types{/t}
         </a>
       </div>

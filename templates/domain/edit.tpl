@@ -11,30 +11,26 @@
       <label for="field-name" class="control-label">
         {t}label-name{/t}
       </label>
-      <div>
-        <input type="text"
-          class="form-control {if isset($errors.name)}is-invalid{/if}"
-          id="field-name"
-          name="name"
-          value="{$domain->name|escape}"
-          placeholder="{t}info-domain-name{/t}">
-        {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
-      </div>
+      <input type="text"
+        class="form-control {if isset($errors.name)}is-invalid{/if}"
+        id="field-name"
+        name="name"
+        value="{$domain->name|escape}"
+        placeholder="{t}info-domain-name{/t}">
+      {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
     </div>
 
     <div class="form-group">
       <label for="field-display-value" class="control-label">
         {t}label-display-value{/t}
       </label>
-      <div>
-        <input type="text"
-          class="form-control {if isset($errors.displayValue)}is-invalid{/if}"
-          id="field-display-value"
-          name="displayValue"
-          value="{$domain->displayValue|escape}"
-          placeholder="{t}info-domain-display-value{/t}">
-        {include "bits/fieldErrors.tpl" errors=$errors.displayValue|default:null}
-      </div>
+      <input type="text"
+        class="form-control {if isset($errors.displayValue)}is-invalid{/if}"
+        id="field-display-value"
+        name="displayValue"
+        value="{$domain->displayValue|escape}"
+        placeholder="{t}info-domain-display-value{/t}">
+      {include "bits/fieldErrors.tpl" errors=$errors.displayValue|default:null}
     </div>
 
     <div class="form-group">

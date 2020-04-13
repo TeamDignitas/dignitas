@@ -14,7 +14,7 @@ if ($id) {
 
 if ($deleteButton) {
   if ($et->canDelete()) {
-    FlashMessage::add(sprintf(_('info-entity-type-deleted'), $et->name), 'success');
+    FlashMessage::add(sprintf(_('info-entity-type-deleted-%s'), $et->name), 'success');
     $et->delete();
     Util::redirectToRoute('entityType/list');
   } else {

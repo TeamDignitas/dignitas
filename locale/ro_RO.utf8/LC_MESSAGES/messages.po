@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-04-13 14:35+0300\n"
-"PO-Revision-Date: 2020-04-13 14:40+0300\n"
+"POT-Creation-Date: 2020-04-13 16:29+0300\n"
+"PO-Revision-Date: 2020-04-13 16:39+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -63,7 +63,7 @@ msgstr "tipuri de autori"
 
 #: templates/aggregate/dashboard.tpl:69
 msgid "link-relation-types"
-msgstr "tipurii de relații"
+msgstr "tipuri de relații"
 
 #: templates/aggregate/dashboard.tpl:79
 msgid "link-tags"
@@ -124,11 +124,11 @@ msgstr "editează răspunsul"
 
 #: templates/answer/edit.tpl:15 templates/auth/resetPassword.tpl:45
 #: templates/bits/commentForm.tpl:44 templates/cannedResponse/edit.tpl:29
-#: templates/domain/edit.tpl:72 templates/entity/edit.tpl:198
-#: templates/entityType/edit.tpl:74 templates/help/categoryEdit.tpl:63
-#: templates/help/pageEdit.tpl:69 templates/relation/edit.tpl:25
-#: templates/statement/edit.tpl:122 templates/tag/edit.tpl:150
-#: templates/user/edit.tpl:116
+#: templates/domain/edit.tpl:68 templates/entity/edit.tpl:198
+#: templates/entityType/edit.tpl:72 templates/help/categoryEdit.tpl:59
+#: templates/help/pageEdit.tpl:65 templates/relation/edit.tpl:25
+#: templates/relationType/edit.tpl:109 templates/statement/edit.tpl:122
+#: templates/tag/edit.tpl:150 templates/user/edit.tpl:116
 msgid "link-save"
 msgstr "salvează"
 
@@ -236,10 +236,10 @@ msgid "info-confirm-delete-answer"
 msgstr "Confirmați ștergerea acestui răspuns?"
 
 #: templates/bits/answer.tpl:63 templates/cannedResponse/edit.tpl:44
-#: templates/domain/edit.tpl:94 templates/entity/edit.tpl:214
-#: templates/entityType/edit.tpl:89 templates/help/categoryEdit.tpl:78
-#: templates/help/pageEdit.tpl:84 templates/statement/edit.tpl:138
-#: templates/tag/edit.tpl:172
+#: templates/domain/edit.tpl:90 templates/entity/edit.tpl:214
+#: templates/entityType/edit.tpl:87 templates/help/categoryEdit.tpl:74
+#: templates/help/pageEdit.tpl:80 templates/relationType/edit.tpl:124
+#: templates/statement/edit.tpl:138 templates/tag/edit.tpl:172
 msgid "link-delete"
 msgstr "șterge"
 
@@ -260,10 +260,11 @@ msgstr "verdict"
 
 #: templates/bits/answerEdit.tpl:44 templates/bits/commentForm.tpl:49
 #: templates/cannedResponse/edit.tpl:34 templates/cannedResponse/list.tpl:62
-#: templates/domain/edit.tpl:84 templates/entity/edit.tpl:203
-#: templates/entityType/edit.tpl:79 templates/help/categoryEdit.tpl:68
-#: templates/help/categoryList.tpl:34 templates/help/pageEdit.tpl:74
+#: templates/domain/edit.tpl:80 templates/entity/edit.tpl:203
+#: templates/entityType/edit.tpl:77 templates/help/categoryEdit.tpl:64
+#: templates/help/categoryList.tpl:34 templates/help/pageEdit.tpl:70
 #: templates/invite/add.tpl:35 templates/relation/edit.tpl:30
+#: templates/relationType/edit.tpl:114 templates/relationType/list.tpl:66
 #: templates/statement/edit.tpl:127 templates/tag/edit.tpl:156
 #: templates/user/edit.tpl:121
 msgid "link-cancel"
@@ -303,9 +304,9 @@ msgstr[2] "%1 de linii identice omise"
 
 #: templates/bits/editButton.tpl:15 templates/bits/reviewActions.tpl:29
 #: templates/cannedResponse/list.tpl:40 templates/domain/list.tpl:34
-#: templates/entityType/list.tpl:47 templates/help/categoryView.tpl:36
-#: templates/help/pageView.tpl:35 templates/tag/view.tpl:14
-#: templates/user/view.tpl:55
+#: templates/entityType/list.tpl:46 templates/help/categoryView.tpl:36
+#: templates/help/pageView.tpl:35 templates/relationType/list.tpl:46
+#: templates/tag/view.tpl:14 templates/user/view.tpl:55
 msgid "link-edit"
 msgstr "editează"
 
@@ -641,7 +642,7 @@ msgstr "„%1”"
 msgid "title-edit-canned-response"
 msgstr "editează răspunsul predefinit"
 
-#: templates/cannedResponse/edit.tpl:11 templates/help/pageEdit.tpl:57
+#: templates/cannedResponse/edit.tpl:11 templates/help/pageEdit.tpl:53
 msgid "label-contents"
 msgstr "conținut"
 
@@ -679,45 +680,46 @@ msgstr "editează domeniul"
 
 #: templates/domain/edit.tpl:12 templates/domain/list.tpl:19
 #: templates/entity/edit.tpl:26 templates/entityType/edit.tpl:12
-#: templates/entityType/list.tpl:19 templates/help/categoryEdit.tpl:12
+#: templates/entityType/list.tpl:18 templates/help/categoryEdit.tpl:12
+#: templates/relationType/edit.tpl:12 templates/relationType/list.tpl:26
 #: templates/tag/edit.tpl:23
 msgid "label-name"
 msgstr "nume"
 
-#: templates/domain/edit.tpl:20
+#: templates/domain/edit.tpl:19
 msgid "info-domain-name"
 msgstr "un nume de domeniu ca google.com"
 
-#: templates/domain/edit.tpl:27 templates/domain/list.tpl:20
+#: templates/domain/edit.tpl:25 templates/domain/list.tpl:20
 msgid "label-display-value"
 msgstr "valoare vizibilă"
 
-#: templates/domain/edit.tpl:35
+#: templates/domain/edit.tpl:32
 msgid "info-domain-display-value"
 msgstr "o valoare mai potrivită pentru oameni"
 
-#: templates/domain/edit.tpl:41 templates/entity/edit.tpl:166
+#: templates/domain/edit.tpl:37 templates/entity/edit.tpl:166
 #: templates/user/edit.tpl:45
 msgid "label-image"
 msgstr "imagine"
 
-#: templates/domain/edit.tpl:56 templates/entity/edit.tpl:175
+#: templates/domain/edit.tpl:52 templates/entity/edit.tpl:175
 #: templates/user/edit.tpl:54
 msgid "info-upload-image"
 msgstr ""
 "alegeți o imagine pentru încărcare sau lăsați gol pentru a păstra imaginea "
 "existentă"
 
-#: templates/domain/edit.tpl:64 templates/entity/edit.tpl:183
+#: templates/domain/edit.tpl:60 templates/entity/edit.tpl:183
 #: templates/user/edit.tpl:62
 msgid "label-delete-image"
 msgstr "șterge imaginea"
 
-#: templates/domain/edit.tpl:78
+#: templates/domain/edit.tpl:74
 msgid "link-clone"
 msgstr "clonează"
 
-#: templates/domain/edit.tpl:92
+#: templates/domain/edit.tpl:88
 msgid "info-confirm-delete-domain"
 msgstr "Confirmați ștergerea acestui domeniu?"
 
@@ -734,7 +736,8 @@ msgid "label-icon"
 msgstr "iconiță"
 
 #: templates/domain/list.tpl:21 templates/entity/edit.tpl:45
-#: templates/entity/edit.tpl:111 templates/entityType/list.tpl:23
+#: templates/entity/edit.tpl:111 templates/entityType/list.tpl:22
+#: templates/relationType/list.tpl:30
 msgid "actions"
 msgstr "acțiuni"
 
@@ -787,6 +790,7 @@ msgid "label-alias"
 msgstr "alias"
 
 #: templates/entity/edit.tpl:43 templates/entity/edit.tpl:106
+#: templates/relationType/list.tpl:25
 msgid "label-order"
 msgstr "ordine"
 
@@ -858,38 +862,38 @@ msgstr "afirmații"
 
 #: templates/entityType/edit.tpl:3 templates/entityType/edit.tpl:6
 msgid "title-edit-entity-type"
-msgstr "editează tipul de relație"
+msgstr "editează tipul de autor"
 
-#: templates/entityType/edit.tpl:20
+#: templates/entityType/edit.tpl:19
 msgid "info-entity-type-name"
 msgstr "nume"
 
-#: templates/entityType/edit.tpl:33 templates/entityType/list.tpl:20
+#: templates/entityType/edit.tpl:31 templates/entityType/list.tpl:19
 msgid "label-loyalty-source"
 msgstr "are loialitate"
 
-#: templates/entityType/edit.tpl:36
+#: templates/entityType/edit.tpl:34
 msgid "info-loyalty-source"
 msgstr "Autorii de acest tip au o loialitate."
 
-#: templates/entityType/edit.tpl:48 templates/entityType/list.tpl:21
+#: templates/entityType/edit.tpl:46 templates/entityType/list.tpl:20
 msgid "label-loyalty-sink"
 msgstr "obiect al loialității"
 
-#: templates/entityType/edit.tpl:51
+#: templates/entityType/edit.tpl:49
 msgid "info-loyalty-sink"
 msgstr "Autorii de acest tip sînt obiect al loialității."
 
-#: templates/entityType/edit.tpl:64 templates/entityType/list.tpl:22
+#: templates/entityType/edit.tpl:62 templates/entityType/list.tpl:21
 msgid "label-has-color"
 msgstr "are culoare"
 
-#: templates/entityType/edit.tpl:67
+#: templates/entityType/edit.tpl:65
 msgid "info-has-color"
 msgstr "Autorii de acest tip au o culoare."
 
-#: templates/entityType/edit.tpl:87
-msgid "info-confirm-delete-entityType"
+#: templates/entityType/edit.tpl:85
+msgid "info-confirm-delete-entity-type"
 msgstr "Confirmați ștergerea acestui tip de autor?"
 
 #: templates/entityType/list.tpl:3 templates/entityType/list.tpl:7
@@ -904,19 +908,19 @@ msgstr "adaugă un tip de autor"
 msgid "title-edit-help-category"
 msgstr "editează categoria de ajutor"
 
-#: templates/help/categoryEdit.tpl:26
+#: templates/help/categoryEdit.tpl:24
 msgid "label-help-category-path"
 msgstr "cale"
 
-#: templates/help/categoryEdit.tpl:34
+#: templates/help/categoryEdit.tpl:31
 msgid "info-help-category-path"
 msgstr "o cale care va apărea în URL-ul acestei categorii"
 
-#: templates/help/categoryEdit.tpl:40
+#: templates/help/categoryEdit.tpl:36
 msgid "title-help-pages-in-category"
 msgstr "pagini în această categorie"
 
-#: templates/help/categoryEdit.tpl:76
+#: templates/help/categoryEdit.tpl:72
 msgid "info-confirm-delete-help-category"
 msgstr "Confirmați ștergerea categoriei?"
 
@@ -948,19 +952,19 @@ msgstr "editează pagina"
 msgid "label-title"
 msgstr "titlu"
 
-#: templates/help/pageEdit.tpl:26 lib/model/RevisionHelpPage.php:20
+#: templates/help/pageEdit.tpl:24 lib/model/RevisionHelpPage.php:20
 msgid "label-help-page-path"
 msgstr "cale"
 
-#: templates/help/pageEdit.tpl:34
+#: templates/help/pageEdit.tpl:31
 msgid "info-help-page-path"
 msgstr "o cale care va apărea în URL-ul acestei pagini"
 
-#: templates/help/pageEdit.tpl:40 lib/model/RevisionHelpPage.php:24
+#: templates/help/pageEdit.tpl:36 lib/model/RevisionHelpPage.php:24
 msgid "label-category"
 msgstr "categorie"
 
-#: templates/help/pageEdit.tpl:82
+#: templates/help/pageEdit.tpl:78
 msgid "info-confirm-delete-help-page"
 msgstr "Confirmați ștergerea paginii?"
 
@@ -995,6 +999,69 @@ msgstr "editează relația"
 #: templates/relation/edit.tpl:15
 msgid "link-add-relation-link"
 msgstr "adaugă o sursă"
+
+#: templates/relationType/edit.tpl:3 templates/relationType/edit.tpl:6
+msgid "title-edit-relation-type"
+msgstr "editează tipul de relație"
+
+#: templates/relationType/edit.tpl:19
+msgid "info-relation-type-name"
+msgstr "nume"
+
+#: templates/relationType/edit.tpl:25 templates/relationType/list.tpl:27
+msgid "label-from-entity-type"
+msgstr "de la tipul de autor"
+
+#: templates/relationType/edit.tpl:43 templates/relationType/list.tpl:28
+msgid "label-to-entity-type"
+msgstr "la tipul de autor"
+
+#: templates/relationType/edit.tpl:61 templates/relationType/list.tpl:29
+msgid "label-weight"
+msgstr "greutate"
+
+#: templates/relationType/edit.tpl:71
+msgid "info-relation-type-weight"
+msgstr "greutate"
+
+#: templates/relationType/edit.tpl:83
+msgid "label-symmetric"
+msgstr "simetric"
+
+#: templates/relationType/edit.tpl:86
+msgid "info-symmetric"
+msgstr ""
+"De exemplu, dacă A este rudă cu B, sistemul va cere ca și B să fie rudă cu A."
+
+#: templates/relationType/edit.tpl:99
+msgid "label-relation-type-membership"
+msgstr "relație de apartenență"
+
+#: templates/relationType/edit.tpl:102
+msgid "info-relation-type-membership"
+msgstr "Relațiile de apartenență sînt listate pe pagina destinatarului."
+
+#: templates/relationType/edit.tpl:122
+msgid "info-confirm-delete-relation-type"
+msgstr "Confirmați ștergerea acestui tip de relație?"
+
+#: templates/relationType/list.tpl:3 templates/relationType/list.tpl:7
+msgid "title-relation-types"
+msgstr "tipuri de relații"
+
+#: templates/relationType/list.tpl:12
+msgid "link-add-relation-type"
+msgstr "adaugă un tip de relație"
+
+#: templates/relationType/list.tpl:15
+msgid "info-add-entity-types-before-relation-types-%1"
+msgstr ""
+"Trebuie să <a href=\"%1\">adăugați un tip de entitate</a> înainte să puteți "
+"adăuga tipuri de relații."
+
+#: templates/relationType/list.tpl:60
+msgid "link-save-order"
+msgstr "salvează ordinea"
 
 #: templates/review/view.tpl:18
 msgid "info-review-complete"
@@ -2155,8 +2222,8 @@ msgstr "Am salvat comentariul."
 
 #: routes/domain/edit.php:22
 #, php-format
-msgid "info-domain-deleted"
-msgstr "Am șters domeniul."
+msgid "info-domain-deleted-%s"
+msgstr "Am șters domeniul %s."
 
 #: routes/domain/edit.php:26
 msgid "info-cannot-delete-domain"
@@ -2253,8 +2320,8 @@ msgstr "Istoricul autorului"
 
 #: routes/entityType/edit.php:17
 #, php-format
-msgid "info-entity-type-deleted"
-msgstr "Am șters tipul de autor."
+msgid "info-entity-type-deleted-%s"
+msgstr "Am șters tipul de autor %s."
 
 #: routes/entityType/edit.php:21
 msgid "info-cannot-delete-entity-type"
@@ -2290,8 +2357,8 @@ msgstr "Am salvat raportarea."
 
 #: routes/help/categoryEdit.php:22
 #, php-format
-msgid "info-help-category-deleted"
-msgstr "Am șters categoria."
+msgid "info-help-category-deleted-%s"
+msgstr "Am șters categoria %s."
 
 #: routes/help/categoryEdit.php:26
 msgid "info-cannot-delete-help-category"
@@ -2399,6 +2466,36 @@ msgstr "Am actualizat sursele relației."
 #: routes/relation/edit.php:60
 msgid "info-invalid-relation-links"
 msgstr "Unele dintre surse sînt incorecte."
+
+#: routes/relationType/edit.php:17
+#, php-format
+msgid "info-relation-type-deleted-%s"
+msgstr "Am șters tipul de relație %s."
+
+#: routes/relationType/edit.php:21
+msgid "info-cannot-delete-relation-type"
+msgstr "Nu puteți șterge acest tip de relație deoarece este folosit."
+
+#: routes/relationType/edit.php:38
+msgid "info-relation-type-saved"
+msgstr "Am salvat tipul de relație."
+
+#: routes/relationType/edit.php:57
+msgid "info-must-enter-relation-type-name"
+msgstr "Vă rugăm să introduceți un nume."
+
+#: routes/relationType/edit.php:61
+msgid "info-relation-type-weight-range"
+msgstr "Greutatea trebuie să fie un număr între 0.0 și 1.0."
+
+#: routes/relationType/edit.php:65
+msgid "info-relation-type-symmetric-same-entity-types"
+msgstr ""
+"Un tip de relație simetric poate exista doar între entități de același tip."
+
+#: routes/relationType/list.php:16
+msgid "info-order-updated"
+msgstr "Am salvat ordinea."
 
 #: routes/review/view.php:17
 msgid "info-no-such-queue"
@@ -2562,3 +2659,12 @@ msgstr "Nu pot salva votul: obiectul nu există."
 #: routes/vote/save.php:46
 msgid "info-cannot-self-vote"
 msgstr "Nu puteți vota propriile mesaje."
+
+#~ msgid "label-long-name"
+#~ msgstr "nume lung"
+
+#~ msgid "info-relation-type-long-name"
+#~ msgstr "nume lung"
+
+#~ msgid "info-must-enter-relation-type-long-name"
+#~ msgstr "Vă rugăm să introduceți un nume lung."
