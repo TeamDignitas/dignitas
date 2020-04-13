@@ -360,3 +360,14 @@ footer {
   border-left-width: 5px;
   border-radius: 3px;
 }
+
+/***************************** help pages ****************************/
+.breadcrumb {
+  background-color: white !important;
+  padding-left: 0 !important;
+}
+
+.help-sidebar-category a,
+.help-sidebar-page a {
+  color: #777;
+}

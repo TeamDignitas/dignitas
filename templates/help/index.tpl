@@ -7,11 +7,13 @@
 
   {foreach $categories as $cat}
     <h4 class="mt-3">{cap}{$cat->name}{/cap}</h4>
-    {foreach $cat->getPages() as $p}
-      <div class="pl-3">
-        <a href="{Router::helpLink($p)}">{$p->title}</a>
-      </div>
-    {/foreach}
+    <ul>
+      {foreach $cat->getPages() as $p}
+        <li>
+          <a href="{Router::helpLink($p)}">{$p->title}</a>
+        </li>
+      {/foreach}
+    </ul>
   {/foreach}
 
 
