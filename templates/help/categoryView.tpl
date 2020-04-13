@@ -19,18 +19,20 @@
         </ol>
       </nav>
 
-      <h3>{$category->name}</h3>
+      <h1 class="my-4">{$category->name}</h1>
 
+      <ul>
       {foreach $category->getPages() as $p}
-        <div>
+        <li class="pl-2">
           <a href="{Router::helpLink($p)}">{$p->title}</a>
-        </div>
+        </li>
       {/foreach}
+    </ul>
 
       {if User::isModerator()}
-        <div class="mt-2">
+        <div class="mt-4">
           <a
-            class="btn btn-sm btn-outline-secondary"
+            class="btn btn-sm btn-outline-primary"
             href="{Router::link('help/categoryEdit')}/{$category->id}">
             <i class="icon icon-edit"></i>
             {t}link-edit{/t}
