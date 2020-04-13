@@ -337,8 +337,6 @@ footer {
 }
 
 /******************************* markdown *******************************/
-        var_dump($window);
-
 .markdown table {
   width: 100%;
 }
