@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-04-13 16:29+0300\n"
-"PO-Revision-Date: 2020-04-13 16:39+0300\n"
+"POT-Creation-Date: 2020-04-13 16:45+0300\n"
+"PO-Revision-Date: 2020-04-13 16:46+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -670,8 +670,9 @@ msgstr "textul comentariului"
 msgid "title-actions"
 msgstr "acțiuni"
 
-#: templates/cannedResponse/list.tpl:58
-msgid "link-save-canned-response-order"
+#: templates/cannedResponse/list.tpl:58 templates/help/categoryList.tpl:30
+#: templates/relationType/list.tpl:60
+msgid "link-save-order"
 msgstr "salvează ordinea"
 
 #: templates/domain/edit.tpl:3 templates/domain/edit.tpl:6
@@ -928,10 +929,6 @@ msgstr "Confirmați ștergerea categoriei?"
 msgid "title-help-categories"
 msgstr "categorii de ajutor"
 
-#: templates/help/categoryList.tpl:30
-msgid "link-save-help-category-order"
-msgstr "salvează ordinea"
-
 #: templates/help/index.tpl:22
 msgid "link-reorder-help-categories"
 msgstr "reordonează categoriile"
@@ -1058,10 +1055,6 @@ msgid "info-add-entity-types-before-relation-types-%1"
 msgstr ""
 "Trebuie să <a href=\"%1\">adăugați un tip de entitate</a> înainte să puteți "
 "adăuga tipuri de relații."
-
-#: templates/relationType/list.tpl:60
-msgid "link-save-order"
-msgstr "salvează ordinea"
 
 #: templates/review/view.tpl:18
 msgid "info-review-complete"
@@ -2200,9 +2193,10 @@ msgstr "Răspunsul predefinit căutat nu există."
 msgid "info-canned-response-history"
 msgstr "Istoricul răspunsului predefinit"
 
-#: routes/cannedResponse/list.php:16
-msgid "info-canned-response-order-updated"
-msgstr "Am salvat ordinea răspunsurilor predefinite."
+#: routes/cannedResponse/list.php:16 routes/help/categoryList.php:16
+#: routes/relationType/list.php:16
+msgid "info-order-saved"
+msgstr "Am salvat ordinea."
 
 #: routes/comment/delete.php:12
 msgid "info-no-such-comment"
@@ -2241,9 +2235,11 @@ msgstr "Vă rugăm să salvați domeniul înainte de a-l clona."
 msgid "info-domain-saved"
 msgstr "Am salvat domeniul."
 
-#: routes/domain/edit.php:79
-msgid "info-must-enter-domain-name"
-msgstr "Vă rugăm să introduceți un nume de domeniu."
+#: routes/domain/edit.php:79 routes/entity/edit.php:131
+#: routes/entityType/edit.php:53 routes/help/categoryEdit.php:67
+#: routes/relationType/edit.php:57 routes/tag/edit.php:85
+msgid "info-must-enter-name"
+msgstr "Vă rugăm să introduceți un nume."
 
 #: routes/domain/edit.php:84
 msgid "info-domain-name-taken"
@@ -2280,10 +2276,6 @@ msgstr "Am salvat autorul."
 #: routes/entity/edit.php:96 routes/statement/edit.php:86
 msgid "info-validation-error"
 msgstr "Formularul conține erori. Vă rugăm să le reparați mai jos."
-
-#: routes/entity/edit.php:131
-msgid "info-must-enter-entity-name"
-msgstr "Vă rugăm să introduceți un nume."
 
 #: routes/entity/edit.php:135
 msgid "info-must-enter-entity-type"
@@ -2331,10 +2323,6 @@ msgstr "Nu puteți șterge acest tip de autor deoarece este folosit."
 msgid "info-entity-type-saved"
 msgstr "Am salvat tipul de autor."
 
-#: routes/entityType/edit.php:53
-msgid "info-must-enter-entity-type-name"
-msgstr "Vă rugăm să introduceți un nume."
-
 #: routes/entityType/edit.php:58
 msgid "info-entity-type-name-taken"
 msgstr "Există deja un tip de autor cu acest nume."
@@ -2368,10 +2356,6 @@ msgstr "Nu pot șterge categoria deoarece conține pagini de ajutor."
 msgid "info-help-category-saved"
 msgstr "Am salvat categoria."
 
-#: routes/help/categoryEdit.php:67
-msgid "info-must-enter-help-category-name"
-msgstr "Vă rugăm să introduceți un nume de categorie."
-
 #: routes/help/categoryEdit.php:71
 msgid "info-must-enter-help-category-path"
 msgstr "Vă rugăm să introduceți o cale."
@@ -2384,10 +2368,6 @@ msgstr ""
 #: routes/help/categoryEdit.php:80
 msgid "info-help-category-path-taken"
 msgstr "Această cale este deja folosită."
-
-#: routes/help/categoryList.php:16
-msgid "info-help-category-order-updated"
-msgstr "Am salvat ordinea categoriilor."
 
 #: routes/help/index.php:19
 msgid "info-no-such-help-item"
@@ -2480,10 +2460,6 @@ msgstr "Nu puteți șterge acest tip de relație deoarece este folosit."
 msgid "info-relation-type-saved"
 msgstr "Am salvat tipul de relație."
 
-#: routes/relationType/edit.php:57
-msgid "info-must-enter-relation-type-name"
-msgstr "Vă rugăm să introduceți un nume."
-
 #: routes/relationType/edit.php:61
 msgid "info-relation-type-weight-range"
 msgstr "Greutatea trebuie să fie un număr între 0.0 și 1.0."
@@ -2492,10 +2468,6 @@ msgstr "Greutatea trebuie să fie un număr între 0.0 și 1.0."
 msgid "info-relation-type-symmetric-same-entity-types"
 msgstr ""
 "Un tip de relație simetric poate exista doar între entități de același tip."
-
-#: routes/relationType/list.php:16
-msgid "info-order-updated"
-msgstr "Am salvat ordinea."
 
 #: routes/review/view.php:17
 msgid "info-no-such-queue"
@@ -2614,10 +2586,6 @@ msgstr "Am șters eticheta [%s]."
 msgid "info-tag-saved"
 msgstr "Am salvat eticheta."
 
-#: routes/tag/edit.php:85
-msgid "info-must-enter-tag-name"
-msgstr "Vă rugăm să introduceți un nume de etichetă."
-
 #: routes/tag/edit.php:94
 msgid "info-tag-loop"
 msgstr "Nu puteți alege un descendent ca părinte."
@@ -2659,12 +2627,3 @@ msgstr "Nu pot salva votul: obiectul nu există."
 #: routes/vote/save.php:46
 msgid "info-cannot-self-vote"
 msgstr "Nu puteți vota propriile mesaje."
-
-#~ msgid "label-long-name"
-#~ msgstr "nume lung"
-
-#~ msgid "info-relation-type-long-name"
-#~ msgstr "nume lung"
-
-#~ msgid "info-must-enter-relation-type-long-name"
-#~ msgstr "Vă rugăm să introduceți un nume lung."

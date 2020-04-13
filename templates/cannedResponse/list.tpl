@@ -55,7 +55,7 @@
     <div>
       <button type="submit" class="btn btn-sm btn-outline-secondary" name="saveButton">
         <i class="icon icon-floppy"></i>
-        {t}link-save-canned-response-order{/t}
+        {t}link-save-order{/t}
       </button>
       <a href="{Router::link('cannedResponse/list')}" class="btn btn-sm btn-outline-secondary">
         <i class="icon icon-cancel"></i>

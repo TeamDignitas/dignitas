@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-04-13 16:33+0300\n"
-"PO-Revision-Date: 2020-04-13 16:37+0300\n"
+"POT-Creation-Date: 2020-04-13 16:46+0300\n"
+"PO-Revision-Date: 2020-04-13 16:46+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -662,8 +662,9 @@ msgstr "comment text"
 msgid "title-actions"
 msgstr "actions"
 
-#: templates/cannedResponse/list.tpl:58
-msgid "link-save-canned-response-order"
+#: templates/cannedResponse/list.tpl:58 templates/help/categoryList.tpl:30
+#: templates/relationType/list.tpl:60
+msgid "link-save-order"
 msgstr "save order"
 
 #: templates/domain/edit.tpl:3 templates/domain/edit.tpl:6
@@ -915,10 +916,6 @@ msgstr "Are you sure you want to delete this category?"
 msgid "title-help-categories"
 msgstr "help categories"
 
-#: templates/help/categoryList.tpl:30
-msgid "link-save-help-category-order"
-msgstr "save category order"
-
 #: templates/help/index.tpl:22
 msgid "link-reorder-help-categories"
 msgstr "reorder categories"
@@ -1046,10 +1043,6 @@ msgid "info-add-entity-types-before-relation-types-%1"
 msgstr ""
 "You must <a href=\"%1\">add an entity type</a> before adding relationship "
 "types."
-
-#: templates/relationType/list.tpl:60
-msgid "link-save-order"
-msgstr "save order"
 
 #: templates/review/view.tpl:18
 msgid "info-review-complete"
@@ -2171,9 +2164,10 @@ msgstr "The canned response you are looking for does not exist."
 msgid "info-canned-response-history"
 msgstr "History of canned response"
 
-#: routes/cannedResponse/list.php:16
-msgid "info-canned-response-order-updated"
-msgstr "Canned response order saved."
+#: routes/cannedResponse/list.php:16 routes/help/categoryList.php:16
+#: routes/relationType/list.php:16
+msgid "info-order-saved"
+msgstr "Order saved."
 
 #: routes/comment/delete.php:12
 msgid "info-no-such-comment"
@@ -2212,9 +2206,11 @@ msgstr "Please save the domain before cloning it."
 msgid "info-domain-saved"
 msgstr "Domain saved."
 
-#: routes/domain/edit.php:79
-msgid "info-must-enter-domain-name"
-msgstr "Please enter a domain name."
+#: routes/domain/edit.php:79 routes/entity/edit.php:131
+#: routes/entityType/edit.php:53 routes/help/categoryEdit.php:67
+#: routes/relationType/edit.php:57 routes/tag/edit.php:85
+msgid "info-must-enter-name"
+msgstr "Please enter a name."
 
 #: routes/domain/edit.php:84
 msgid "info-domain-name-taken"
@@ -2251,10 +2247,6 @@ msgstr "Author updated."
 #: routes/entity/edit.php:96 routes/statement/edit.php:86
 msgid "info-validation-error"
 msgstr "There are some errors in the data. Please fix them below."
-
-#: routes/entity/edit.php:131
-msgid "info-must-enter-entity-name"
-msgstr "Please enter a name."
 
 #: routes/entity/edit.php:135
 msgid "info-must-enter-entity-type"
@@ -2300,10 +2292,6 @@ msgstr "You cannot delete this author type because it is being used."
 msgid "info-entity-type-saved"
 msgstr "Author type saved."
 
-#: routes/entityType/edit.php:53
-msgid "info-must-enter-entity-type-name"
-msgstr "Please enter a name."
-
 #: routes/entityType/edit.php:58
 msgid "info-entity-type-name-taken"
 msgstr "An author type by this name already exists."
@@ -2337,10 +2325,6 @@ msgstr "Cannot delete this category because it contains pages."
 msgid "info-help-category-saved"
 msgstr "Category saved."
 
-#: routes/help/categoryEdit.php:67
-msgid "info-must-enter-help-category-name"
-msgstr "Please enter a category name."
-
 #: routes/help/categoryEdit.php:71
 msgid "info-must-enter-help-category-path"
 msgstr "Please enter a path."
@@ -2352,10 +2336,6 @@ msgstr "Paths can only contain lowercase Latin letters, digits and dashes."
 #: routes/help/categoryEdit.php:80
 msgid "info-help-category-path-taken"
 msgstr "This path is already used."
-
-#: routes/help/categoryList.php:16
-msgid "info-help-category-order-updated"
-msgstr "Category order saved."
 
 #: routes/help/index.php:19
 msgid "info-no-such-help-item"
@@ -2448,10 +2428,6 @@ msgstr "You cannot delete this relationship type because it is being used."
 msgid "info-relation-type-saved"
 msgstr "Relationship type saved."
 
-#: routes/relationType/edit.php:57
-msgid "info-must-enter-relation-type-name"
-msgstr "Please enter a name."
-
 #: routes/relationType/edit.php:61
 msgid "info-relation-type-weight-range"
 msgstr "Relationship weights must be between 0.0 and 1.0."
@@ -2460,10 +2436,6 @@ msgstr "Relationship weights must be between 0.0 and 1.0."
 msgid "info-relation-type-symmetric-same-entity-types"
 msgstr ""
 "Symmetric relationships can only occur between authors of the same type."
-
-#: routes/relationType/list.php:16
-msgid "info-order-updated"
-msgstr "Order saved."
 
 #: routes/review/view.php:17
 msgid "info-no-such-queue"
@@ -2579,10 +2551,6 @@ msgstr "Tag [%s] deleted."
 #: routes/tag/edit.php:52
 msgid "info-tag-saved"
 msgstr "Tag saved."
-
-#: routes/tag/edit.php:85
-msgid "info-must-enter-tag-name"
-msgstr "Please enter a tag name."
 
 #: routes/tag/edit.php:94
 msgid "info-tag-loop"

@@ -128,7 +128,7 @@ function validate($entity, $relations, $links, $fileData) {
 
   // misc fields
   if (!$entity->name) {
-    $errors['name'][] = _('info-must-enter-entity-name');
+    $errors['name'][] = _('info-must-enter-name');
   }
 
   if (!$entity->type) {

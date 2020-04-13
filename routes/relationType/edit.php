@@ -54,7 +54,7 @@ function validate($rt) {
   $errors = [];
 
   if (!$rt->name) {
-    $errors['name'][] = _('info-must-enter-relation-type-name');
+    $errors['name'][] = _('info-must-enter-name');
   }
 
   if ($rt->weight < 0.0 || $rt->weight > 1.0) {

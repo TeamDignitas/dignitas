@@ -82,7 +82,7 @@ function validate($tag) {
   $errors = [];
 
   if (!$tag->value) {
-    $errors['value'][] = _('info-must-enter-tag-name');
+    $errors['value'][] = _('info-must-enter-name');
   }
 
   // make sure the chosen parent is not also a descendant - no cycles allowed

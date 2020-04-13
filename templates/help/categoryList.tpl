@@ -27,7 +27,7 @@
     <div class="mt-4">
       <button type="submit" class="btn btn-sm btn-outline-primary" name="saveButton">
         <i class="icon icon-floppy"></i>
-        {t}link-save-help-category-order{/t}
+        {t}link-save-order{/t}
       </button>
       <a href="{Router::link('help/index')}" class="btn btn-sm btn-outline-secondary">
         <i class="icon icon-cancel"></i>
