@@ -6,3 +6,8 @@
 .markdown-heading:hover a {
   visibility: visible;
 }
+
+.help-sidebar-category a,
+.help-sidebar-page a {
+  color: #777;
+}
