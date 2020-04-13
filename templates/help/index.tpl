@@ -3,12 +3,12 @@
 {block "title"}{cap}{t}help-center{/t}{/cap}{/block}
 
 {block "content"}
-  <h3>{cap}{t}help-center{/t}{/cap}</h3>
+  <h1 class="mb-4">{cap}{t}help-center{/t}{/cap}</h1>
 
   {foreach $categories as $cat}
-    <h4>{cap}{$cat->name}{/cap}</h4>
+    <h4 class="mt-3">{cap}{$cat->name}{/cap}</h4>
     {foreach $cat->getPages() as $p}
-      <div>
+      <div class="pl-3">
         <a href="{Router::helpLink($p)}">{$p->title}</a>
       </div>
     {/foreach}
@@ -16,19 +16,19 @@
 
 
   {if User::isModerator()}
-    <div class="mt-2">
-      <a class="btn btn-secondary" href="{Router::link('help/categoryList')}">
+    <div class="my-4">
+      <a class="btn btn-sm btn-outline-secondary" href="{Router::link('help/categoryList')}">
         <i class="icon icon-sort"></i>
         {t}link-reorder-help-categories{/t}
       </a>
 
-      <a class="btn btn-secondary" href="{Router::link('help/categoryEdit')}">
+      <a class="btn btn-sm btn-outline-primary" href="{Router::link('help/categoryEdit')}">
         <i class="icon icon-plus"></i>
         {t}link-add-category{/t}
       </a>
 
       {if count($categories)}
-        <a class="btn btn-secondary" href="{Router::link('help/pageEdit')}">
+        <a class="btn btn-sm btn-outline-secondary" href="{Router::link('help/pageEdit')}">
           <i class="icon icon-plus"></i>
           {t}link-add-help-page{/t}
         </a>
