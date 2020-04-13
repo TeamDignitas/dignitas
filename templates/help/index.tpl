@@ -19,18 +19,18 @@
 
   {if User::isModerator()}
     <div class="my-4">
-      <a class="btn btn-sm btn-outline-secondary" href="{Router::link('help/categoryList')}">
+      <a class="btn btn-sm btn-outline-secondary mb-2" href="{Router::link('help/categoryList')}">
         <i class="icon icon-sort"></i>
         {t}link-reorder-help-categories{/t}
       </a>
 
-      <a class="btn btn-sm btn-outline-primary" href="{Router::link('help/categoryEdit')}">
+      <a class="btn btn-sm btn-outline-primary mb-2" href="{Router::link('help/categoryEdit')}">
         <i class="icon icon-plus"></i>
         {t}link-add-category{/t}
       </a>
 
       {if count($categories)}
-        <a class="btn btn-sm btn-outline-secondary" href="{Router::link('help/pageEdit')}">
+        <a class="btn btn-sm btn-outline-secondary mb-2" href="{Router::link('help/pageEdit')}">
           <i class="icon icon-plus"></i>
           {t}link-add-help-page{/t}
         </a>
