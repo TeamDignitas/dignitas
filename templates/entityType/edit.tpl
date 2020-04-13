@@ -11,15 +11,13 @@
       <label for="field-name" class="control-label">
         {t}label-name{/t}
       </label>
-      <div>
-        <input type="text"
-          class="form-control {if isset($errors.name)}is-invalid{/if}"
-          id="field-name"
-          name="name"
-          value="{$et->name|escape}"
-          placeholder="{t}info-entity-type-name{/t}">
-        {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
-      </div>
+      <input type="text"
+        class="form-control {if isset($errors.name)}is-invalid{/if}"
+        id="field-name"
+        name="name"
+        value="{$et->name|escape}"
+        placeholder="{t}info-entity-type-name{/t}">
+      {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
     </div>
 
     <div class="form-group form-check">
@@ -84,7 +82,7 @@
           name="deleteButton"
           type="submit"
           class="btn btn-sm btn-outline-danger float-right"
-          data-confirm="{t}info-confirm-delete-entityType{/t}">
+          data-confirm="{t}info-confirm-delete-entity-type{/t}">
           <i class="icon icon-trash"></i>
           {t}link-delete{/t}
         </button>

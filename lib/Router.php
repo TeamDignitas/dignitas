@@ -193,6 +193,16 @@ class Router {
       'ro_RO.utf8' => 'editare-relatie',
     ],
 
+    // relation types
+    'relationType/edit' => [
+      'en_US.utf8' => 'edit-relation-type',
+      'ro_RO.utf8' => 'editeaza-tip-relatie',
+    ],
+    'relationType/list' => [
+      'en_US.utf8' => 'relation-types',
+      'ro_RO.utf8' => 'tipuri-relatii',
+    ],
+
     // reviews
     'review/view' => [
       'en_US.utf8' => 'review',
@@ -285,6 +295,7 @@ class Router {
     'help/pageEdit' => [ 'id' ],
     'help/pageHistory' => [ 'id' ],
     'relation/edit' => [ 'id', ],
+    'relationType/edit' => [ 'id' ],
     'review/view' => [ 'reason', 'reviewId', ],
     'statement/edit' => [ 'id' ],
     'statement/history' => [ 'id' ],
@@ -423,6 +434,8 @@ class Router {
         return Router::link('entity/edit') . '/' . $object->id;
       case Proto::TYPE_ENTITY_TYPE:
         return Router::link('entityType/edit') . '/' . $object->id;
+      case Proto::TYPE_RELATION_TYPE:
+        return Router::link('relationType/edit') . '/' . $object->id;
       case Proto::TYPE_STATEMENT:
         return Router::link('statement/edit') . '/' . $object->id;
       default:

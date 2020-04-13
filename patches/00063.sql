@@ -64,7 +64,6 @@ create table relation_type (
   id int not null auto_increment,
 
   name varchar(255) not null default '',
-  longName varchar(255) not null default '',
   fromEntityTypeId int not null default 0,
   toEntityTypeId int not null default 0,
   weight double not null default 0,
@@ -90,7 +89,6 @@ create table revision_relation_type (
   id int not null,
 
   name varchar(255) not null default '',
-  longName varchar(255) not null default '',
   fromEntityTypeId int not null default 0,
   toEntityTypeId int not null default 0,
   weight double not null default 0,
@@ -138,6 +136,11 @@ alter table entity
 alter table revision_entity
   change type entityTypeId int not null default 0;
 
+alter table relation
+  change type relationTypeId int not null default 0;
+alter table revision_relation
+  change type relationTypeId int not null default 0;
+
 set @request_id = 0;
 insert into entity_type values
   (null, 'persoană', 1, 0, 0, unix_timestamp(), unix_timestamp(), 1),
@@ -145,3 +148,18 @@ insert into entity_type values
   (null, 'uniune',   0, 0, 1, unix_timestamp(), unix_timestamp(), 1),
   (null, 'site web', 0, 0, 0, unix_timestamp(), unix_timestamp(), 1),
   (null, 'companie', 0, 0, 0, unix_timestamp(), unix_timestamp(), 1);
+
+insert into relation_type values
+  (null, 'membru în',           1, 2,  1.0, 0, 1, 1, unix_timestamp(), unix_timestamp(), 1),
+  (null, 'asociat la',          1, 5,  0.0, 0, 0, 2, unix_timestamp(), unix_timestamp(), 1),
+  (null, 'rudă apropiată cu',   1, 1,  0.5, 1, 0, 3, unix_timestamp(), unix_timestamp(), 1),
+  (null, 'rudă îndepărtată cu', 1, 1, 0.25, 1, 0, 4, unix_timestamp(), unix_timestamp(), 1),
+  (null, 'membru în',           2, 3,  0.0, 0, 1, 5, unix_timestamp(), unix_timestamp(), 1);
+
+-- there are now two different relation types for person-member-of-party and
+-- party-member-of-union
+update relation r
+  join entity e on r.fromEntityId = e.id
+  set r.relationTypeId = 5
+  where r.relationTypeId = 1
+    and e.entityTypeId = 2;

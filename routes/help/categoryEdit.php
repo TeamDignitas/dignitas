@@ -19,7 +19,7 @@ $canDelete = $id && !$numPages;
 
 if ($deleteButton) {
   if ($canDelete) {
-    FlashMessage::add(sprintf(_('info-help-category-deleted'), $cat->name), 'success');
+    FlashMessage::add(sprintf(_('info-help-category-deleted-%s'), $cat->name), 'success');
     $cat->delete();
     Util::redirectToRoute('help/index');
   } else {

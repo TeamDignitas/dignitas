@@ -19,7 +19,7 @@ $canDelete = $id && !$numLinks;
 
 if ($deleteButton) {
   if ($canDelete) {
-    FlashMessage::add(sprintf(_('info-domain-deleted'), $domain->name), 'success');
+    FlashMessage::add(sprintf(_('info-domain-deleted-%s'), $domain->name), 'success');
     $domain->delete();
     Util::redirectToRoute('domain/list');
   } else {
