@@ -53,6 +53,22 @@
           {t}link-invites{/t}
         </a>
       </div>
+      <div class="card py-4 px-2 m-2 border-secondary text-center fix-min-height">
+        <h5 class="card-title">
+          <i class="icon icon-cubes"></i>
+        </h5>
+        <a href="{Router::link('entityType/list')}">
+          {t}link-entity-types{/t}
+        </a>
+      </div>
+      <div class="card py-4 px-2 m-2 border-secondary text-center fix-min-height">
+        <h5 class="card-title">
+          <i class="icon icon-exchange"></i>
+        </h5>
+        <a href="{Router::link('relation-type/list')}">
+          {t}link-relation-types{/t}
+        </a>
+      </div>
     {/if}
 
     <div class="card py-4 px-2 m-2 border-secondary text-center fix-min-height">

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-04-08 18:22+0300\n"
-"PO-Revision-Date: 2020-04-08 18:22+0300\n"
+"POT-Creation-Date: 2020-04-13 14:35+0300\n"
+"PO-Revision-Date: 2020-04-13 14:40+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -57,19 +57,27 @@ msgstr "răspunsuri predefinite"
 msgid "link-invites"
 msgstr "invitații"
 
-#: templates/aggregate/dashboard.tpl:63
+#: templates/aggregate/dashboard.tpl:61
+msgid "link-entity-types"
+msgstr "tipuri de autori"
+
+#: templates/aggregate/dashboard.tpl:69
+msgid "link-relation-types"
+msgstr "tipurii de relații"
+
+#: templates/aggregate/dashboard.tpl:79
 msgid "link-tags"
 msgstr "etichete"
 
-#: templates/aggregate/dashboard.tpl:69
+#: templates/aggregate/dashboard.tpl:85
 msgid "title-review-queues"
 msgstr "cozi de evaluare"
 
-#: templates/aggregate/dashboard.tpl:84
+#: templates/aggregate/dashboard.tpl:100
 msgid "title-reports"
 msgstr "rapoarte care necesită atenție"
 
-#: templates/aggregate/dashboard.tpl:89
+#: templates/aggregate/dashboard.tpl:105
 msgid "link-verdict-report"
 msgstr "afirmații cu verdicte neclare"
 
@@ -117,9 +125,10 @@ msgstr "editează răspunsul"
 #: templates/answer/edit.tpl:15 templates/auth/resetPassword.tpl:45
 #: templates/bits/commentForm.tpl:44 templates/cannedResponse/edit.tpl:29
 #: templates/domain/edit.tpl:72 templates/entity/edit.tpl:198
-#: templates/help/categoryEdit.tpl:63 templates/help/pageEdit.tpl:69
-#: templates/relation/edit.tpl:25 templates/statement/edit.tpl:122
-#: templates/tag/edit.tpl:150 templates/user/edit.tpl:116
+#: templates/entityType/edit.tpl:74 templates/help/categoryEdit.tpl:63
+#: templates/help/pageEdit.tpl:69 templates/relation/edit.tpl:25
+#: templates/statement/edit.tpl:122 templates/tag/edit.tpl:150
+#: templates/user/edit.tpl:116
 msgid "link-save"
 msgstr "salvează"
 
@@ -228,8 +237,9 @@ msgstr "Confirmați ștergerea acestui răspuns?"
 
 #: templates/bits/answer.tpl:63 templates/cannedResponse/edit.tpl:44
 #: templates/domain/edit.tpl:94 templates/entity/edit.tpl:214
-#: templates/help/categoryEdit.tpl:78 templates/help/pageEdit.tpl:84
-#: templates/statement/edit.tpl:138 templates/tag/edit.tpl:172
+#: templates/entityType/edit.tpl:89 templates/help/categoryEdit.tpl:78
+#: templates/help/pageEdit.tpl:84 templates/statement/edit.tpl:138
+#: templates/tag/edit.tpl:172
 msgid "link-delete"
 msgstr "șterge"
 
@@ -251,10 +261,11 @@ msgstr "verdict"
 #: templates/bits/answerEdit.tpl:44 templates/bits/commentForm.tpl:49
 #: templates/cannedResponse/edit.tpl:34 templates/cannedResponse/list.tpl:62
 #: templates/domain/edit.tpl:84 templates/entity/edit.tpl:203
-#: templates/help/categoryEdit.tpl:68 templates/help/categoryList.tpl:34
-#: templates/help/pageEdit.tpl:74 templates/invite/add.tpl:35
-#: templates/relation/edit.tpl:30 templates/statement/edit.tpl:127
-#: templates/tag/edit.tpl:156 templates/user/edit.tpl:121
+#: templates/entityType/edit.tpl:79 templates/help/categoryEdit.tpl:68
+#: templates/help/categoryList.tpl:34 templates/help/pageEdit.tpl:74
+#: templates/invite/add.tpl:35 templates/relation/edit.tpl:30
+#: templates/statement/edit.tpl:127 templates/tag/edit.tpl:156
+#: templates/user/edit.tpl:121
 msgid "link-cancel"
 msgstr "renunță"
 
@@ -292,8 +303,9 @@ msgstr[2] "%1 de linii identice omise"
 
 #: templates/bits/editButton.tpl:15 templates/bits/reviewActions.tpl:29
 #: templates/cannedResponse/list.tpl:40 templates/domain/list.tpl:34
-#: templates/help/categoryView.tpl:36 templates/help/pageView.tpl:35
-#: templates/tag/view.tpl:14 templates/user/view.tpl:55
+#: templates/entityType/list.tpl:47 templates/help/categoryView.tpl:36
+#: templates/help/pageView.tpl:35 templates/tag/view.tpl:14
+#: templates/user/view.tpl:55
 msgid "link-edit"
 msgstr "editează"
 
@@ -666,7 +678,8 @@ msgid "title-edit-domain"
 msgstr "editează domeniul"
 
 #: templates/domain/edit.tpl:12 templates/domain/list.tpl:19
-#: templates/entity/edit.tpl:26 templates/help/categoryEdit.tpl:12
+#: templates/entity/edit.tpl:26 templates/entityType/edit.tpl:12
+#: templates/entityType/list.tpl:19 templates/help/categoryEdit.tpl:12
 #: templates/tag/edit.tpl:23
 msgid "label-name"
 msgstr "nume"
@@ -721,7 +734,7 @@ msgid "label-icon"
 msgstr "iconiță"
 
 #: templates/domain/list.tpl:21 templates/entity/edit.tpl:45
-#: templates/entity/edit.tpl:111
+#: templates/entity/edit.tpl:111 templates/entityType/list.tpl:23
 msgid "actions"
 msgstr "acțiuni"
 
@@ -842,6 +855,50 @@ msgstr ""
 #: templates/entity/view.tpl:15
 msgid "statements"
 msgstr "afirmații"
+
+#: templates/entityType/edit.tpl:3 templates/entityType/edit.tpl:6
+msgid "title-edit-entity-type"
+msgstr "editează tipul de relație"
+
+#: templates/entityType/edit.tpl:20
+msgid "info-entity-type-name"
+msgstr "nume"
+
+#: templates/entityType/edit.tpl:33 templates/entityType/list.tpl:20
+msgid "label-loyalty-source"
+msgstr "are loialitate"
+
+#: templates/entityType/edit.tpl:36
+msgid "info-loyalty-source"
+msgstr "Autorii de acest tip au o loialitate."
+
+#: templates/entityType/edit.tpl:48 templates/entityType/list.tpl:21
+msgid "label-loyalty-sink"
+msgstr "obiect al loialității"
+
+#: templates/entityType/edit.tpl:51
+msgid "info-loyalty-sink"
+msgstr "Autorii de acest tip sînt obiect al loialității."
+
+#: templates/entityType/edit.tpl:64 templates/entityType/list.tpl:22
+msgid "label-has-color"
+msgstr "are culoare"
+
+#: templates/entityType/edit.tpl:67
+msgid "info-has-color"
+msgstr "Autorii de acest tip au o culoare."
+
+#: templates/entityType/edit.tpl:87
+msgid "info-confirm-delete-entityType"
+msgstr "Confirmați ștergerea acestui tip de autor?"
+
+#: templates/entityType/list.tpl:3 templates/entityType/list.tpl:7
+msgid "title-entity-types"
+msgstr "tipuri de autori"
+
+#: templates/entityType/list.tpl:11
+msgid "link-add-entity-type"
+msgstr "adaugă un tip de autor"
 
 #: templates/help/categoryEdit.tpl:3 templates/help/categoryEdit.tpl:6
 msgid "title-edit-help-category"
@@ -2193,6 +2250,31 @@ msgstr ""
 #: routes/entity/history.php:16
 msgid "info-entity-history"
 msgstr "Istoricul autorului"
+
+#: routes/entityType/edit.php:17
+#, php-format
+msgid "info-entity-type-deleted"
+msgstr "Am șters tipul de autor."
+
+#: routes/entityType/edit.php:21
+msgid "info-cannot-delete-entity-type"
+msgstr "Nu puteți șterge acest tip de autor deoarece este folosit."
+
+#: routes/entityType/edit.php:35
+msgid "info-entity-type-saved"
+msgstr "Am salvat tipul de autor."
+
+#: routes/entityType/edit.php:53
+msgid "info-must-enter-entity-type-name"
+msgstr "Vă rugăm să introduceți un nume."
+
+#: routes/entityType/edit.php:58
+msgid "info-entity-type-name-taken"
+msgstr "Există deja un tip de autor cu acest nume."
+
+#: routes/entityType/edit.php:62
+msgid "info-entity-type-cannot-be-source-and-sink"
+msgstr "Autorii nu pot să aibă loialitate și să fie și obiect al loialității."
 
 #: routes/flag/delete.php:25
 msgid "info-flag-deleted"

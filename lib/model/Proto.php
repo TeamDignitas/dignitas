@@ -20,6 +20,8 @@ class Proto extends Precursor {
   const TYPE_COMMENT = 6;
   const TYPE_DOMAIN = 7;
   const TYPE_HELP_PAGE = 8;
+  const TYPE_ENTITY_TYPE = 9;
+  const TYPE_RELATION_TYPE = 10;
 
   function getModUser() {
     return User::get_by_id($this->modUserId);
