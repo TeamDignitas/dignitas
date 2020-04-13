@@ -13,7 +13,7 @@ if ($saveButton) {
     $cr->save();
   }
 
-  FlashMessage::add(_('info-canned-response-order-updated'), 'success');
+  FlashMessage::add(_('info-order-saved'), 'success');
   Util::redirectToRoute('cannedResponse/list');
 }
 

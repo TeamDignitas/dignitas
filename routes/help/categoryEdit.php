@@ -64,7 +64,7 @@ function validate($cat) {
   $errors = [];
 
   if (!$cat->name) {
-    $errors['name'][] = _('info-must-enter-help-category-name');
+    $errors['name'][] = _('info-must-enter-name');
   }
 
   if (!$cat->path) {

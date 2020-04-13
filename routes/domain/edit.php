@@ -76,7 +76,7 @@ function validate($domain, $fileData) {
   $errors = [];
 
   if (!$domain->name) {
-    $errors['name'][] = _('info-must-enter-domain-name');
+    $errors['name'][] = _('info-must-enter-name');
   }
 
   $existing = Domain::get_by_name($domain->name);

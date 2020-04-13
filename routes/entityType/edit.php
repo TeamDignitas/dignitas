@@ -50,7 +50,7 @@ function validate($et) {
   $errors = [];
 
   if (!$et->name) {
-    $errors['name'][] = _('info-must-enter-entity-type-name');
+    $errors['name'][] = _('info-must-enter-name');
   }
 
   $existing = EntityType::get_by_name($et->name);
