@@ -3,7 +3,7 @@
 {block "title"}{t}title-edit-help-category{/t}{/block}
 
 {block "content"}
-  <h3>{t}title-edit-help-category{/t}</h3>
+  <h1 class="mb-4 capitalize-first-word">{t}title-edit-help-category{/t}</h1>
 
   <form method="post">
 
@@ -36,7 +36,7 @@
       </div>
     </div>
 
-    <fieldset>
+    <fieldset class="mt-5">
       <legend>{cap}{t}title-help-pages-in-category{/t}{/cap}</legend>
 
       <table class="table table-hover mt-3 sortable">
@@ -57,13 +57,13 @@
       </table>
     </fieldset>
 
-    <div>
-      <button name="saveButton" type="submit" class="btn btn-primary">
+    <div class="mb-4">
+      <button name="saveButton" type="submit" class="btn btn-sm btn-outline-primary">
         <i class="icon icon-floppy"></i>
         {t}link-save{/t}
       </button>
 
-      <a href="{Router::helpLink($cat)}" class="btn btn-light">
+      <a href="{Router::helpLink($cat)}" class="btn btn-sm btn-outline-secondary">
         <i class="icon icon-cancel"></i>
         {t}link-cancel{/t}
       </a>
@@ -72,7 +72,7 @@
         <button
           name="deleteButton"
           type="submit"
-          class="btn btn-danger float-right"
+          class="btn btn-sm btn-outline-danger float-right"
           data-confirm="{t}info-confirm-delete-help-category{/t}">
           <i class="icon icon-trash"></i>
           {t}link-delete{/t}
