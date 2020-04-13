@@ -132,6 +132,16 @@ class Router {
       'ro_RO.utf8' => 'autor',
     ],
 
+    // entity types
+    'entityType/edit' => [
+      'en_US.utf8' => 'edit-author-type',
+      'ro_RO.utf8' => 'editeaza-tip-autor',
+    ],
+    'entityType/list' => [
+      'en_US.utf8' => 'author-types',
+      'ro_RO.utf8' => 'tipuri-autori',
+    ],
+
     // flags
     'flag/delete' => [
       'en_US.utf8' => 'ajax/delete-flag',
@@ -269,6 +279,7 @@ class Router {
     'entity/load' => [ 'ids' ],
     'entity/search' => [ 'term' ],
     'entity/view' => [ 'id' ],
+    'entityType/edit' => [ 'id' ],
     'help/categoryEdit' => [ 'id' ],
     'help/index' => [ 'path' ],
     'help/pageEdit' => [ 'id' ],
@@ -410,6 +421,8 @@ class Router {
         return Router::link('domain/edit') . '/' . $object->id;
       case Proto::TYPE_ENTITY:
         return Router::link('entity/edit') . '/' . $object->id;
+      case Proto::TYPE_ENTITY_TYPE:
+        return Router::link('entityType/edit') . '/' . $object->id;
       case Proto::TYPE_STATEMENT:
         return Router::link('statement/edit') . '/' . $object->id;
       default:

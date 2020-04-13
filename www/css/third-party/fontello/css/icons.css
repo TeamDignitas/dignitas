@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'icons';
-  src: url('../font/icons.eot?68919132');
-  src: url('../font/icons.eot?68919132#iefix') format('embedded-opentype'),
-       url('../font/icons.woff2?68919132') format('woff2'),
-       url('../font/icons.woff?68919132') format('woff'),
-       url('../font/icons.ttf?68919132') format('truetype'),
-       url('../font/icons.svg?68919132#icons') format('svg');
+  src: url('../font/icons.eot?39092200');
+  src: url('../font/icons.eot?39092200#iefix') format('embedded-opentype'),
+       url('../font/icons.woff2?39092200') format('woff2'),
+       url('../font/icons.woff?39092200') format('woff'),
+       url('../font/icons.ttf?39092200') format('truetype'),
+       url('../font/icons.svg?39092200#icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'icons';
-    src: url('../font/icons.svg?68919132#icons') format('svg');
+    src: url('../font/icons.svg?39092200#icons') format('svg');
   }
 }
 */
@@ -88,11 +88,13 @@
 .icon-columns:before { content: '\f0db'; } /* '' */
 .icon-sort:before { content: '\f0dc'; } /* '' */
 .icon-gauge:before { content: '\f0e4'; } /* '' */
+.icon-exchange:before { content: '\f0ec'; } /* '' */
 .icon-quote-left:before { content: '\f10d'; } /* '' */
 .icon-flag-empty:before { content: '\f11d'; } /* '' */
 .icon-help:before { content: '\f128'; } /* '' */
 .icon-doc-text-inv:before { content: '\f15c'; } /* '' */
 .icon-left:before { content: '\f177'; } /* '' */
+.icon-cubes:before { content: '\f1b3'; } /* '' */
 .icon-paper-plane:before { content: '\f1d8'; } /* '' */
 .icon-header:before { content: '\f1dc'; } /* '' */
 .icon-trash:before { content: '\f1f8'; } /* '' */
