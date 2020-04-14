@@ -5,7 +5,7 @@
 {assign var="ed" value=$r->endDate|ld}
 
 <div class="{$class} {if $r->ended()}text-muted{/if}">
-  {$r->getTypeName()}
+  {$r->getRelationType()->name|escape}
 
   {$to=$r->getToEntity()}
   {include "bits/entityLink.tpl" e=$to}

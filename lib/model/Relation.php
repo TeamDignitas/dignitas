@@ -3,43 +3,11 @@
 class Relation extends Proto {
 
   const TYPE_MEMBER = 1;
-  const TYPE_ASSOCIATE = 2;
   const TYPE_CLOSE_RELATIVE = 3;
   const TYPE_DISTANT_RELATIVE = 4;
 
-  const TYPES = [
-    self::TYPE_MEMBER,
-    self::TYPE_ASSOCIATE,
-    self::TYPE_CLOSE_RELATIVE,
-    self::TYPE_DISTANT_RELATIVE,
-  ];
-
-  /**
-   * Complete list of valid (Entity, Relation, Entity) scenarios.
-   */
-  const VALID_TYPES = [
-    Entity::TYPE_PERSON => [
-      self::TYPE_MEMBER => [ Entity::TYPE_PARTY ],
-      self::TYPE_ASSOCIATE => [ Entity::TYPE_COMPANY ],
-      self::TYPE_CLOSE_RELATIVE => [ Entity::TYPE_PERSON ],
-      self::TYPE_DISTANT_RELATIVE => [ Entity::TYPE_PERSON ],
-    ],
-    Entity::TYPE_PARTY => [
-      self::TYPE_MEMBER => [ Entity::TYPE_UNION ],
-    ],
-  ];
-
-  static function typeName($type) {
-    switch ($type) {
-      case self::TYPE_MEMBER:           return _('relation-type-member');
-      case self::TYPE_ASSOCIATE:        return _('relation-type-associate');
-      case self::TYPE_CLOSE_RELATIVE:   return _('relation-type-close-relative');
-      case self::TYPE_DISTANT_RELATIVE: return _('relation-type-distant-relative');
-    }
-  }
-
-  function getTypeName() {
-    return self::typeName($this->type);
+  function getRelationType() {
+    return RelationType::get_by_id($this->relationTypeId);
   }
 
   function getObjectType() {
@@ -125,9 +93,11 @@ class Relation extends Proto {
       $errors[] = _('info-related-itself');
     } else {
       // there exists a distinct $toEntity
-      $list = self::VALID_TYPES[$fromEntity->type][$this->type] ?? [];
-      if (!in_array($toEntity->type, $list)) {
-        $errors[] = _('info-incorrect-relation-type');
+      if ($this->getRelationType()->fromEntityTypeId != $fromEntity->entityTypeId) {
+        $errors[] = _('info-from-entity-does-not-match-relation-type');
+      }
+      if ($this->getRelationType()->toEntityTypeId != $toEntity->entityTypeId) {
+        $errors[] = _('info-to-entity-does-not-match-relation-type');
       }
 
       if (($this->startDate != '0000-00-00') &&
@@ -147,7 +117,7 @@ class Relation extends Proto {
 
   function __toString() {
     return sprintf('%s %s %s',
-                   $this->getTypeName(),
+                   $this->getRelationType()->name,
                    $this->getToEntity(),
                    $this->getDateRangeString());
   }

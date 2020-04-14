@@ -13,9 +13,7 @@
 
     {capture "labelText" assign=labelText}{t}label-relation-links{/t}{/capture}
     {capture "addButtonText" assign=addButtonText}{t}link-add-relation-link{/t}{/capture}
-    {include "bits/linkEditor.tpl"
-      errors=$errors.links|default:null
-    }
+    {include "bits/linkEditor.tpl" errors=$errors.links|default:null}
 
     <hr>
 

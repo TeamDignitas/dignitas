@@ -26,7 +26,13 @@ $(function() {
     $('.colorpicker-component').colorpicker({
       fallbackColor: '#ffffff',
     });
-    $('#field-entity-type-id').change(updateColorVisibility);
+
+    var sel = $('#field-entity-type-id');
+    sel.data('lastSelected', sel.val());
+    sel.click(function() {
+      sel.data('lastSelected', sel.val());
+    });
+    sel.change(entityTypeChange);
   }
 
   function addAlias() {
@@ -44,7 +50,20 @@ $(function() {
     $(this).closest('tr').remove();
   }
 
-  function updateColorVisibility() {
+  function entityTypeChange() {
+    // warn about effects of changing the entity type
+    if (!confirm($(this).data('changeMsg'))) {
+      $(this).val($(this).data('lastSelected'));
+      return false;
+    }
+
+    // remove relations
+    $('#relation-container tr').remove();
+
+    // disable the add relation button
+    $('#add-relation').prop('disabled', true);
+
+    // update color visibility
     var sel = $('option:selected', this);
     $('#color-wrapper').prop('hidden', !sel.data('has-color'));
   }

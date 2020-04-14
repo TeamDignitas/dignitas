@@ -27,7 +27,7 @@ foreach ($relations as $r) {
   if (count($reciprocals) != 1) {
     printf("[%s] should be a [%s] [%s] from [%s] to [%s] (there are %d such relations)\n",
            $r->getToEntity(),
-           $r->getTypeName(),
+           $r->getRelationType()->name,
            $r->getFromEntity(),
            Time::localDate($r->startDate),
            Time::localDate($r->endDate),

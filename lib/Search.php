@@ -15,10 +15,17 @@ class Search {
     return $results;
   }
 
-  // Load entities by substring match at word boundary. MariaDB has a problem
-  // with regexp and collations, so this one-liner won't work:
-  //
-  //   name regexp "[[:<:]]%s" collate utf8mb4_general_ci
+  /**
+   * Load entities by substring match at word boundary. MariaDB has a problem
+   * with regexp and collations, so this one-liner won't work:
+   *
+   *   name regexp "[[:<:]]%s" collate utf8mb4_general_ci
+   *
+   * @param string $escapedQuery String to match.
+   * @param int $exceptId Skip this entity even if it matches $escapedQuery.
+   * @param int $limit Return at most this many results.
+   * @return Entity[]
+   */
   static function searchEntities($escapedQuery, $exceptId = 0, $limit = self::LIMIT) {
     // Suppress warning due to bad argument order in Idiorm's where_any_is()
     return @Model::factory('Entity')

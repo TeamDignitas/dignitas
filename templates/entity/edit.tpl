@@ -66,8 +66,9 @@
       <select
         name="entityTypeId"
         id="field-entity-type-id"
-        class="form-control {if isset($errors.entityTypeId)}is-invalid{/if}">
-        {foreach EntityType::loadAll() as $et}
+        class="form-control {if isset($errors.entityTypeId)}is-invalid{/if}"
+        data-change-msg="{t}info-change-entity-type-while-relations-exist{/t}">
+        {foreach $entityTypes as $et}
           <option
             value="{$et->id}"
             data-has-color="{$et->hasColor}"
@@ -112,6 +113,7 @@
           </tr>
         </thead>
         <tbody id="relation-container">
+          {$entityTypeId=$entity->getEntityType()->id|default:$entityTypes[0]->id}
           {include "bits/relationEdit.tpl" id="stem-relation"}
           {foreach $relations as $r}
             {include "bits/relationEdit.tpl" relation=$r}
