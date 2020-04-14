@@ -3,7 +3,7 @@
 {$voteBox=$voteBox|default:true}
 {$addComment=$addComment|default:false}
 
-<div class="row vote-container answer {if $highlighted}highlighted{/if}">
+<div class="row row-cols-2 vote-container answer {if $highlighted}highlighted{/if}">
   {if $voteBox}
     {include "bits/scoreAndVote.tpl"
       type=Vote::TYPE_ANSWER
@@ -96,6 +96,6 @@
       {/if}
 
     </div>
-    <hr class="w-100 title-divider mt-3 mb-0"/>
   </div>
+  <div class="border-bottom col-md-8"></div>
 </div>
