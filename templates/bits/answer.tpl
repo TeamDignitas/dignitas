@@ -3,7 +3,7 @@
 {$voteBox=$voteBox|default:true}
 {$addComment=$addComment|default:false}
 
-<div class="row vote-container answer {if $highlighted}highlighted{/if}">
+<div class="row row-cols-2 vote-container answer {if $highlighted}highlighted{/if}">
   {if $voteBox}
     {include "bits/scoreAndVote.tpl"
       type=Vote::TYPE_ANSWER
@@ -32,23 +32,23 @@
 
     <div class="answer-footer col-md-12 px-0">
       <div class="answer-read-only text-muted mb-2 row">
+        <div class="col-md-7">
+          {t}answer-posted-by{/t}
+          {include 'bits/userLink.tpl' u=$answer->getUser()}
+          {include 'bits/moment.tpl' t=$answer->createDate}
+        </div>
         {if $answer->verdict != Ct::VERDICT_NONE}
-          <div class="col-md-5 mb-1">
+          <div class="col-md-5 mb-1 text-right">
             <span class="badge badge-pill badge-secondary">
               <i class="icon icon-hammer"></i>
               {$answer->getVerdictName()}
             </span>
           </div>
         {/if}
-        <div class="col-md-7 text-right">
-          {t}answer-posted-by{/t}
-          {include 'bits/userLink.tpl' u=$answer->getUser()}
-          {include 'bits/moment.tpl' t=$answer->createDate}
-        </div>
       </div>
 
       {$comments=Comment::getFor($answer)}
-      <div class="text-muted text-right mb-2 ml-0 pl-0">
+      <div class="text-muted text-left mb-2 ml-0 pl-0">
         {if $answer->hasRevisions()}
           <a href="{Router::link('answer/history')}/{$answer->id}" class="btn btn-sm btn-outline-secondary mt-1">
             {t}link-show-revisions{/t}
@@ -96,6 +96,6 @@
       {/if}
 
     </div>
-    <hr class="w-100 title-divider mt-3 mb-0"/>
   </div>
+  <div class="border-bottom col-md-8"></div>
 </div>

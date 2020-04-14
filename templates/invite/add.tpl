@@ -3,7 +3,7 @@
 {block "title"}{t}title-send-invite{/t}{/block}
 
 {block "content"}
-  <h3>{t}title-send-invite{/t}</h3>
+  <h1 class="mb-4 capitalize-first-word">{t}title-send-invite{/t}</h1>
 
   <form method="post">
 
@@ -24,13 +24,13 @@
         {include "bits/fieldErrors.tpl" errors=$errors.email|default:null}
     </div>
 
-    <div>
-      <button name="saveButton" type="submit" class="btn btn-primary">
+    <div class="mt-5">
+      <button name="saveButton" type="submit" class="btn btn-sm btn-outline-primary">
         <i class="icon icon-paper-plane"></i>
         {t}link-send{/t}
       </button>
 
-      <a href="{Router::link('invite/list')}" class="btn btn-light">
+      <a href="{Router::link('invite/list')}" class="btn btn-sm btn-outline-secondary">
         <i class="icon icon-cancel"></i>
         {t}link-cancel{/t}
       </a>

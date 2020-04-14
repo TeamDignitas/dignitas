@@ -6,12 +6,16 @@
   font-size: 1.5rem;
 }
 
-.review-message .title-divider {
+.review-message .title-divider,
+.review-message .border-bottom {
   display: none;
 }
 
 .review-message .answer {
-  margin-left: 2rem;
+  margin-left: 0;
+  margin-right: 0;
+  border: 1px solid #007bff;
+  border-radius: .25rem;
 }
 
 .callout {

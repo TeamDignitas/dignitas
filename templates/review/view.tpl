@@ -3,7 +3,7 @@
 {block "title"}{cap}{Review::getDescription($reason)}{/cap}{/block}
 
 {block "content"}
-  <h2 class="mb-4">{Review::getDescription($reason)}</h2>
+  <h1 class="mb-4">{Review::getDescription($reason)}</h1>
 
   <div class="review-message">
     {if isset($review)}
@@ -18,7 +18,7 @@
           {t}info-review-complete{/t}
         </p>
       {/if}
-      
+
       {* Display the object being reviewed. *}
       {if isset($objectDiff)}
         {include "bits/diff/objectDiff.tpl" od=$objectDiff}
@@ -40,7 +40,7 @@
 
         {include "bits/answer.tpl" answer=$object addComment=true}
 
-        <h3 class="mt-3 mb-3">{cap}{t}title-pertaining-to-statement{/t}{/cap}</h3>
+        <h3 class="mt-5 mb-3">{cap}{t}title-pertaining-to-statement{/t}{/cap}</h3>
 
         <div id="parent-object" class="ml-5 callout">
           {include "bits/statement.tpl"
