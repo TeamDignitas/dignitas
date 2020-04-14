@@ -31,6 +31,7 @@ if ($saveButton) {
       Review::checkNewUser($answer);
     }
     Review::checkLateAnswer($answer);
+    Review::checkRecentlyClosedDeleted($answer);
 
     if ($answer->status == Ct::STATUS_PENDING_EDIT) {
       FlashMessage::add(_('info-changes-queued'), 'success');

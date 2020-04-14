@@ -67,6 +67,7 @@ if ($saveButton) {
     if ($new) {
       Review::checkNewUser($statement);
     }
+    Review::checkRecentlyClosedDeleted($statement);
     Link::update($statement, $links);
     ObjectTag::update($statement, $tagIds);
 

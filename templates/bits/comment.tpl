@@ -31,14 +31,14 @@
     </span>
 
     {if $comment->status == Ct::STATUS_DELETED}
-      <div class="alert alert-light">
+      <div class="alert alert-secondary">
         {$comment->getDeletedMessage()}
 
         {if $comment->reason == Ct::REASON_BY_USER}
           {include "bits/userLink.tpl" u=$comment->getStatusUser()}
         {elseif $comment->reason != Ct::REASON_BY_OWNER}
           <hr>
-          {include "bits/reviewFlagList.tpl" flags=$comment->getReviewFlags()}
+          {include "bits/reviewFlagList.tpl" review=$comment->getRemovalReview()}
         {/if}
       </div>
     {/if}

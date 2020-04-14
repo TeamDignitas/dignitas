@@ -16,18 +16,22 @@ class Review extends Proto {
   const ACTION_DELETE = 2;
   const ACTION_INCORPORATE_PENDING_EDIT = 3;
   const ACTION_DELETE_PENDING_EDIT = 4;
+  const ACTION_REOPEN = 5;
 
   // Maps object x reason to methods to run when a review is resolved.
   // It should be impossible to encounter cases not covered here.
   const KEEP_ACTION_MAP = [
     Proto::TYPE_ANSWER => [
       Ct::REASON_PENDING_EDIT => self::ACTION_INCORPORATE_PENDING_EDIT,
+      Ct::REASON_REOPEN => self::ACTION_REOPEN,
     ],
     Proto::TYPE_ENTITY => [
       Ct::REASON_PENDING_EDIT => self::ACTION_INCORPORATE_PENDING_EDIT,
+      Ct::REASON_REOPEN => self::ACTION_REOPEN,
     ],
     Proto::TYPE_STATEMENT => [
       Ct::REASON_PENDING_EDIT => self::ACTION_INCORPORATE_PENDING_EDIT,
+      Ct::REASON_REOPEN => self::ACTION_REOPEN,
     ],
   ];
 
@@ -203,6 +207,58 @@ class Review extends Proto {
   }
 
   /**
+   * Returns the localized vote name of this flag. This is usually 'keep' or
+   * 'remove', but for reopen reviews it changes to 'reopen' or 'ignore'.
+   *
+   * @param int $vote One of the Flag::VOTE_* constants
+   * @return string A localized name.
+   */
+  function getVoteName($vote) {
+    if ($vote == Flag::VOTE_KEEP) {
+      switch ($this->reason) {
+        case Ct::REASON_REOPEN: return _('vote-reopen');
+        case Ct::REASON_PENDING_EDIT: return _('vote-accept');
+        default: return _('vote-keep');
+      }
+    } else {
+      switch ($this->reason) {
+        case Ct::REASON_REOPEN: return _('vote-ignore');
+        case Ct::REASON_PENDING_EDIT: return _('vote-refuse');
+        default: return _('vote-remove');
+      }
+    }
+  }
+
+  /**
+   * Returns the localized resolution name. This depends on the status, but
+   * also on the reason.
+   *
+   * @return string A localized name.
+   */
+  function getResolutionName() {
+    switch ($this->status) {
+      case self::STATUS_PENDING:
+        return _('review-resolution-pending');
+      case self::STATUS_STALE:
+        return _('review-resolution-stale');
+      case self::STATUS_OBJECT_GONE:
+        return _('review-resolution-object-gone');
+      case self::STATUS_KEEP:
+        switch ($this->reason) {
+          case Ct::REASON_REOPEN: return _('review-resolution-reopen');
+          case Ct::REASON_PENDING_EDIT: return _('review-resolution-accept');
+          default: return _('review-resolution-keep');
+        }
+      case self::STATUS_REMOVE:
+        switch ($this->reason) {
+          case Ct::REASON_REOPEN: return _('review-resolution-ignore');
+          case Ct::REASON_PENDING_EDIT: return _('review-resolution-refuse');
+          default: return _('review-resolution-remove');
+        }
+    }
+  }
+
+  /**
    * If this Review has type "duplicate of", return the duplicate object;
    * otherwise return null.
    *
@@ -300,6 +356,21 @@ class Review extends Proto {
   }
 
   /**
+   * Checks if $obj has been recently closed or deleted. If so, places $obj in
+   * the reopen queue. To be called whenever $obj is edited.
+   *
+   * @param Flaggable $obj a flaggable object
+   */
+  static function checkRecentlyClosedDeleted($obj) {
+    $ts = $obj->getDeletionClosureTimestamp();
+
+    if ($ts && ((time() - $ts) / 86400 < Config::EDIT_REOPEN_DAYS)) {
+      self::ensure($obj, Ct::REASON_REOPEN);
+      FlashMessage::add(_('info-added-reopen-queue'), 'success');
+    }
+  }
+
+  /**
    * Resolves the review if possible.
    */
   function evaluate() {
@@ -307,9 +378,9 @@ class Review extends Proto {
 
     // It is important to resolve the review (i.e. change its status from
     // pending to something else) before resolving its object. Resolving the
-    // object could result in marking it as deleted, which as a side effect
-    // resolves all pending reviews for the object. This loop should be
-    // avoided.
+    // object could result in reopening it or marking it as deleted, which as
+    // a side effect resolves all pending reviews for the object. This loop
+    // should be avoided.
     if ($this->hasEnoughVotes(Flag::VOTE_KEEP, Config::KEEP_VOTES_NECESSARY)) {
       $this->resolve(self::STATUS_KEEP, Flag::VOTE_KEEP);
       $action = self::KEEP_ACTION_MAP[$type][$this->reason] ?? null;
@@ -409,7 +480,7 @@ class Review extends Proto {
   }
 
   /**
-   * Closes or deletes the reviewed object.
+   * Takes action on the underlying object when the review is resolved.
    *
    * @param int $action One of the Review::ACTION_* values.
    */
@@ -429,8 +500,14 @@ class Review extends Proto {
       $obj->markDeleted($this->reason);
     } else if ($action == self::ACTION_INCORPORATE_PENDING_EDIT) {
       $obj->processPendingEdit(true);
+      // This works for now because PendingEditTrait is used by statements,
+      // answers and entities, the same object types that may need reopening.
+      // If they diverge, then a type check for $obj will become necessary.
+      Review::checkRecentlyClosedDeleted($obj);
     } else if ($action == self::ACTION_DELETE_PENDING_EDIT) {
       $obj->processPendingEdit(false);
+    } else if ($action == self::ACTION_REOPEN) {
+      $obj->reopen();
     } else {
       Log::alert('Invalid action %s encountered in review #%s.', $action, $this->id);
     }

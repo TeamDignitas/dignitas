@@ -15,9 +15,9 @@
     <table class="table table-hover mt-5 sortable">
       <thead>
         <tr class="d-flex">
-          <th class="col-1 border-0">order</th>
-          <th class="col-9 border-0">response text</th>
-          <th class="col-2 border-0">actions</th>
+          <th class="col-1 border-0">{t}title-order{/t}</th>
+          <th class="col-9 border-0">{t}title-comment-text{/t}</th>
+          <th class="col-2 border-0">{t}title-actions{/t}</th>
         </tr>
       </thead>
       <tbody>

@@ -48,24 +48,20 @@ trait FlaggableTrait {
   }
 
   /**
-   * Returns the flags of the review that decided the object's current status.
+   * Returns the review that caused the object's removal.
    */
-  function getReviewFlags() {
-    $flags = Model::factory('Flag')
-      ->table_alias('f')
-      ->select('f.*')
-      ->join('review', ['f.reviewId', '=', 'r.id'], 'r')
-      ->where('r.objectType', $this->getObjectType())
-      ->where('r.objectId', $this->id)
-      ->where('r.reason', $this->reason)
-      ->where('r.status', Review::STATUS_REMOVE);
+  function getRemovalReview() {
+    $r = Model::factory('Review')
+      ->where('objectType', $this->getObjectType())
+      ->where('objectId', $this->id)
+      ->where('reason', $this->reason)
+      ->where('status', Review::STATUS_REMOVE);
     if ($this->reason == Ct::REASON_DUPLICATE) {
-      $flags = $flags
-        ->where('r.duplicateId', $this->duplicateId);
+      $r = $r->where('duplicateId', $this->duplicateId);
     }
-    return $flags
-      ->order_by_desc('f.createDate')
-      ->find_many();
+    return $r
+      ->order_by_desc('createDate')
+      ->find_one();
   }
 
   function getStatusUser() {
@@ -81,6 +77,35 @@ trait FlaggableTrait {
       case Ct::STATUS_DELETED: return _('status-diff-deleted');
       case Ct::STATUS_PENDING_EDIT: return _('status-diff-pending-edit');
     }
+  }
+
+  /**
+   * Return the most recent timestamp when $this stopped being active.
+   *
+   * @return int A timestamp or null if $this is still active or if $this is a
+   * pending edit.
+   */
+  function getDeletionClosureTimestamp() {
+    if (!in_array($this->status, [ Ct::STATUS_CLOSED, Ct::STATUS_DELETED ])) {
+      return null;
+    }
+
+    // load the last active revision
+    $class = $this->getRevisionClass();
+    $lastActive = Model::factory($class)
+      ->where('id', $this->id)
+      ->where('status', Ct::STATUS_ACTIVE)
+      ->order_by_desc('revisionId')
+      ->find_one();
+
+    // load the next revision
+    $firstInactive = Model::factory($class)
+      ->where('id', $this->id)
+      ->where_gt('revisionId', $lastActive->revisionId)
+      ->order_by_asc('revisionId')
+      ->find_one();
+
+    return $firstInactive->modDate;
   }
 
   /**
@@ -158,11 +183,18 @@ trait FlaggableTrait {
   }
 
   /**
-   * Marks the object as active (reopened).
+   * Marks the object as active (reopened). Resolves all pending reopen
+   * reviews as stale.
    */
   function reopen() {
     $this->changeStatus(Ct::STATUS_ACTIVE, CT::REASON_REOPEN);
     $this->undoDownvoteRep(false);
+
+    $reviews = Review::get_all_by_objectType_objectId_reason_status(
+      $this->getObjectType(), $this->id, Ct::REASON_REOPEN, Review::STATUS_PENDING);
+    foreach ($reviews as $r) {
+      $r->resolveUncommon(Review::STATUS_STALE);
+    }
   }
 
 }

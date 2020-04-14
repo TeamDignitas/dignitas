@@ -144,6 +144,10 @@ class Config {
   // review with REASON_LATE_ANSWER.
   const LATE_ANSWER_DAYS = 30;
 
+  // Posts edited within this many days of their closure/deletion are placed
+  // in a reopen queue.
+  const EDIT_REOPEN_DAYS = 3;
+
   // Reputation gains / losses for various events.
   const REP_STATEMENT_UPVOTED = 10;
   const REP_STATEMENT_DOWNVOTED = -2; // when someone downvotes YOUR statement

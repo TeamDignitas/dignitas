@@ -1,21 +1,28 @@
-{foreach $flags as $f}
-  <div class="mb-1">
-    {include "bits/userLink.tpl" u=$f->getUser()}
+{if $review}
+  {$flags=$review->getFlags()}
+  {foreach $flags as $f}
+    <ul class="list-inline list-inline-bullet mb-0">
+      <li class="list-inline-item">
+        <b>{$review->getVoteName($f->vote)}</b>
+      </li>
 
-    {if $f->vote == Flag::VOTE_KEEP}
-      {t}review-voted-keep{/t}
-    {else}
-      {t}review-voted-remove{/t}
-    {/if}
+      <li class="list-inline-item">
+        {include "bits/userLink.tpl" u=$f->getUser()}
+      </li>
 
-    ({$f->getWeightName()})
+      <li class="list-inline-item">
+        {include 'bits/moment.tpl' t=$f->createDate}
+      </li>
 
-    {include 'bits/moment.tpl' t=$f->createDate}
+      <li class="list-inline-item">
+        {$f->getWeightName()}
+      </li>
+    </ul>
 
     {if $f->details}
       <div class="pl-3">
         {$f->details|escape}
       </div>
     {/if}
-  </div>
-{/foreach}
+  {/foreach}
+{/if}

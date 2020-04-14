@@ -1,4 +1,8 @@
-{* Mandatory argument: $object, the object being reviewed. *}
+{**
+   Mandatory arguments:
+   $review, the review being performed;
+   $object, the object being reviewed.
+  **}
 <div class="card bg-light mb-4">
   <div class="card-body pb-1">
     <form method="post">
@@ -9,7 +13,7 @@
           class="btn btn-sm btn-outline-secondary"
           type="submit">
           <i class="icon icon-cancel"></i>
-          {t}link-remove{/t}
+          {$review->getVoteName(Flag::VOTE_REMOVE)}
         </button>
 
         <button
@@ -17,7 +21,7 @@
           class="btn btn-sm btn-outline-primary"
           type="submit">
           <i class="icon icon-ok"></i>
-          {t}link-keep{/t}
+          {$review->getVoteName(Flag::VOTE_KEEP)}
         </button>
 
         <a href="{Router::getEditLink($object)}" class="btn btn-sm btn-outline-secondary">
