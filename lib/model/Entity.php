@@ -9,38 +9,18 @@ class Entity extends Proto {
   const TYPE_PERSON = 1;
   const TYPE_PARTY = 2;
   const TYPE_UNION = 3; // of parties
-  const TYPE_WEBSITE = 4;
   const TYPE_COMPANY = 5;
 
   const DEFAULT_COLOR = '#ffffff';
 
   const PROFILE_MAX_LENGTH = 4000;
 
-  // parties and unions have colors
-  const TYPES = [
-    self::TYPE_PERSON => [ 'hasColor' => false ],
-    self::TYPE_PARTY => [ 'hasColor' => true ],
-    self::TYPE_UNION => [ 'hasColor' => true ],
-    self::TYPE_WEBSITE => [ 'hasColor' => false ],
-    self::TYPE_COMPANY => [ 'hasColor' => false ],
-  ];
-
-  static function typeName($type) {
-    switch ($type) {
-      case self::TYPE_PERSON:   return _('entity-type-person');
-      case self::TYPE_PARTY:    return _('entity-type-party');
-      case self::TYPE_UNION:    return _('entity-type-union');
-      case self::TYPE_WEBSITE:  return _('entity-type-website');
-      case self::TYPE_COMPANY:  return _('entity-type-company');
-    }
-  }
-
   function getObjectType() {
     return Proto::TYPE_ENTITY;
   }
 
-  function getTypeName() {
-    return self::typeName($this->type);
+  function getEntityType() {
+    return EntityType::get_by_id($this->entityTypeId);
   }
 
   private function getFileSubdirectory() {
@@ -64,7 +44,7 @@ class Entity extends Proto {
   }
 
   function hasColor() {
-    return self::TYPES[$this->type]['hasColor'] ?? false;
+    return $this->getEntityType()->hasColor ?? false;
   }
 
   function getTags() {
@@ -166,8 +146,9 @@ class Entity extends Proto {
       ->select('m.*')
       ->distinct()
       ->join('relation', ['m.id', '=', 'r.fromEntityId'], 'r')
+      ->join('relation_type', ['r.relationTypeId', '=', 'rt.id'], 'rt')
       ->where('r.toEntityId', $this->id)
-      ->where('r.type', Relation::TYPE_MEMBER)
+      ->where('rt.membership', true)
       // where_any_is does not work with null values
       ->where_raw('((r.startDate is null) or (r.startDate <= ?))', [ Time::today() ])
       ->where_raw('((r.endDate is null) or (r.endDate >= ?))', [ Time::today() ])

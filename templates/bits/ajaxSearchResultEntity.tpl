@@ -22,7 +22,7 @@
 
   <div class="float-right">
     <small class="text-muted">
-      {$entity->getTypeName()}
+      {$entity->getEntityType()->name|escape}
     </small>
   </div>
 </div>

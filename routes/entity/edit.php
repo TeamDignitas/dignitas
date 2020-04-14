@@ -40,7 +40,7 @@ $entity->enforceEditPrivileges();
 
 if ($saveButton) {
   $entity->name = Request::get('name');
-  $entity->type = Request::get('type');
+  $entity->entityTypeId = Request::get('entityTypeId');
   $entity->profile = Request::get('profile');
   $color = $entity->hasColor() ? Request::get('color') : Entity::DEFAULT_COLOR;
   $entity->setColor($color);
@@ -131,7 +131,7 @@ function validate($entity, $relations, $links, $fileData) {
     $errors['name'][] = _('info-must-enter-name');
   }
 
-  if (!$entity->type) {
+  if (!$entity->entityTypeId) {
     $errors['type'][] = _('info-must-enter-entity-type');
   }
 
@@ -161,7 +161,7 @@ function validate($entity, $relations, $links, $fileData) {
       }
     }
     if ($incomingErrors) {
-      $errors['type'] = _('info-entity-type-change-invalidates-incoming-relations');
+      $errors['entityTypeId'] = _('info-entity-type-change-invalidates-incoming-relations');
     }
   }
 

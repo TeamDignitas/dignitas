@@ -62,17 +62,17 @@
     </div>
 
     <div class="form-group">
-      <label for="field-type">{t}label-type{/t}</label>
+      <label for="field-entity-type-id">{t}label-type{/t}</label>
       <select
-        name="type"
-        id="field-type"
-        class="form-control {if isset($errors.type)}is-invalid{/if}">
-        {foreach Entity::TYPES as $t => $data}
+        name="entityTypeId"
+        id="field-entity-type-id"
+        class="form-control {if isset($errors.entityTypeId)}is-invalid{/if}">
+        {foreach EntityType::loadAll() as $et}
           <option
-            value="{$t}"
-            data-has-color="{$data.hasColor}"
-            {if $entity->type == $t}selected{/if}>
-            {Entity::typeName($t)}
+            value="{$et->id}"
+            data-has-color="{$et->hasColor}"
+            {if $entity->entityTypeId == $et->id}selected{/if}>
+            {$et->name|escape}
           </option>
         {/foreach}
       </select>
