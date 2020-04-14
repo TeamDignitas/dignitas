@@ -21,7 +21,7 @@
         </ol>
       </nav>
 
-      <h3>{$page->title}</h3>
+      <h1 class="mb-4">{$page->title}</h1>
 
       {$page->contents|md}
 
@@ -29,7 +29,7 @@
       {if User::isModerator()}
         <div class="mt-2">
           <a
-            class="btn btn-sm btn-outline-secondary"
+            class="btn btn-sm btn-outline-primary"
             href="{Router::link('help/pageEdit')}/{$page->id}">
             <i class="icon icon-edit"></i>
             {t}link-edit{/t}

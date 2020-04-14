@@ -205,6 +205,10 @@ img.pic.no-outline,
   font-weight: 400;
 }
 
+.review-message .statement-title {
+  font-size: 1.5rem;
+}
+
 /******************************** answers, entity statements, user profile ********************************/
 
 .answer {
@@ -333,7 +337,6 @@ footer {
 }
 
 /******************************* markdown *******************************/
-
 .markdown table {
   width: 100%;
 }
@@ -348,4 +351,23 @@ footer {
   .fix-min-height {
     min-height: 134px;
   }
+}
+
+.callout {
+  padding: 20px 40px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+}
+
+/***************************** help pages ****************************/
+.breadcrumb {
+  background-color: white !important;
+  padding-left: 0 !important;
+}
+
+.help-sidebar-category a,
+.help-sidebar-page a {
+  color: #777;
 }

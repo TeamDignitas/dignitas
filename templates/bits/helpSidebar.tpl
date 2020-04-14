@@ -1,12 +1,12 @@
 {$activeCategoryId=$activeCategoryId|default:null}
 {$activePageId=$activePageId|default:null}
-<div class="help-sidebar">
+<div class="help-sidebar pl-2 py-3">
   {foreach HelpCategory::loadAll() as $c}
 
     {$active=($c->id == $activeCategoryId)}
-    <div class="help-sidebar-category {if $active}active{/if}">
+    <h6 class="help-sidebar-category {if $active}active{/if} mb-0 mt-2 font-weight-bold">
       <a {if !$active}href="{Router::helpLink($c)}"{/if}>{$c->name}</a>
-    </div>
+    </h6>
 
     {foreach $c->getPages() as $p}
       {$active=($p->id == $activePageId)}

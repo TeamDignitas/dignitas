@@ -18,7 +18,7 @@
           {t}info-review-complete{/t}
         </p>
       {/if}
-
+      
       {* Display the object being reviewed. *}
       {if isset($objectDiff)}
         {include "bits/diff/objectDiff.tpl" od=$objectDiff}
