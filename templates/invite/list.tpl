@@ -4,7 +4,16 @@
 
 {block "content"}
 
-  <h1 class="mb-5">{cap}{t}title-invites{/t}{/cap} ({$invites|count})</h1>
+  <h1 class="mb-4">{cap}{t}title-invites{/t}{/cap} ({$invites|count})</h1>
+
+  {if Config::ALLOW_INVITES}
+    <div class="mb-5">
+      <a href="{Router::link('invite/add')}" class="btn btn-sm btn-outline-primary">
+        <i class="icon icon-plus"></i>
+        {t}link-add-invite{/t}
+      </a>
+    </div>
+  {/if}
 
   <table class="table table-hover">
     <thead>
@@ -24,14 +33,5 @@
       {/foreach}
     </tbody>
   </table>
-
-  {if Config::ALLOW_INVITES}
-    <div class="mt-5">
-      <a href="{Router::link('invite/add')}" class="btn btn-sm btn-outline-primary">
-        <i class="icon icon-plus"></i>
-        {t}link-add-invite{/t}
-      </a>
-    </div>
-  {/if}
 
 {/block}
