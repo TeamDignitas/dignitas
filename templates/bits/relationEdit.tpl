@@ -1,4 +1,5 @@
 {* a set of relation-specific fields, to be used on the entity edit page *}
+{* mandatory argument: $entityTypeId *}
 {$id=$id|default:''}
 {$relation=$relation|default:null}
 
@@ -11,9 +12,11 @@
 
   <td>
     <select class="form-control" name="relTypes[]">
-      {foreach Relation::TYPES as $t}
-        <option value="{$t}" {if $relation && $relation->type == $t}selected{/if}>
-          {Relation::typeName($t)}
+      {foreach RelationType::loadForEntityType($entityTypeId) as $rt}
+        <option
+          value="{$rt->id}"
+          {if $relation && $relation->relationTypeId == $rt->id}selected{/if}>
+          {$rt->name|escape}
         </option>
       {/foreach}
     </select>

@@ -117,6 +117,7 @@ if ($saveButton) {
 Smart::addResources('colorpicker', 'easymde', 'linkEditor');
 Smart::assign([
   'entity' => $entity,
+  'entityTypes' => EntityType::loadAll(),
   'profileCharsRemaining' => Entity::PROFILE_MAX_LENGTH - mb_strlen($entity->profile),
 ]);
 Smart::display('entity/edit.tpl');
@@ -131,8 +132,8 @@ function validate($entity, $relations, $links, $fileData) {
     $errors['name'][] = _('info-must-enter-name');
   }
 
-  if (!$entity->entityTypeId) {
-    $errors['type'][] = _('info-must-enter-entity-type');
+  if (!$entity->getEntityType()) {
+    $errors['type'][] = _('info-incorrect-entity-type');
   }
 
   if (mb_strlen($entity->profile) > Entity::PROFILE_MAX_LENGTH) {
@@ -154,9 +155,7 @@ function validate($entity, $relations, $links, $fileData) {
     $incoming = Relation::get_all_by_toEntityId($entity->id);
     $incomingErrors = false;
     foreach ($incoming as $i) {
-      $fromEntity = $i->getFromEntity();
-      $list = Relation::VALID_TYPES[$fromEntity->type][$i->type] ?? [];
-      if (!in_array($entity->type, $list)) {
+      if ($i->getRelationType()->toEntityTypeId != $entity->entityTypeId) {
         $incomingErrors = true;
       }
     }
@@ -194,7 +193,7 @@ function buildRelations($ids, $types, $toEntityIds,
     $r = $id
       ? Relation::get_by_id($id)
       : Model::factory('Relation')->create();
-    $r->type = $types[$i];
+    $r->relationTypeId = $types[$i];
     $r->toEntityId = $toEntityIds[$i];
     $r->startDate = Time::partialDate($startYears[$i], $startMonths[$i], $startDays[$i]);
     $r->endDate = Time::partialDate($endYears[$i], $endMonths[$i], $endDays[$i]);
