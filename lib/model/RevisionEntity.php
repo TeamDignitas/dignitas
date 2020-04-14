@@ -18,8 +18,8 @@ class RevisionEntity extends Entity {
                         $this->name,
                         $od, Ct::FIELD_CHANGE_STRING);
     $this->compareField(_('label-entity-type'),
-                        $prev->getTypeName(),
-                        $this->getTypeName(),
+                        $prev->getEntityType()->name,
+                        $this->getEntityType()->name,
                         $od, Ct::FIELD_CHANGE_STRING);
     $this->compareField(_('label-entity-color'),
                         $prev->getColor(),

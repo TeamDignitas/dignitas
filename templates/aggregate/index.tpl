@@ -18,7 +18,7 @@
         imgClass="pic float-right"}
 
       {include "bits/entityLink.tpl" e=$e showStatus=true}
-      <div>{$e->getTypeName()}</div>
+      <div>{$e->getEntityType()->name|escape}</div>
     </div>
     <hr>
   {/foreach}

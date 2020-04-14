@@ -26,7 +26,7 @@ $(function() {
     $('.colorpicker-component').colorpicker({
       fallbackColor: '#ffffff',
     });
-    $('#field-type').change(updateColorVisibility);
+    $('#field-entity-type-id').change(updateColorVisibility);
   }
 
   function addAlias() {
