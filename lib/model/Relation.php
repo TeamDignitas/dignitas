@@ -2,16 +2,12 @@
 
 class Relation extends Proto {
 
-  const TYPE_MEMBER = 1;
-  const TYPE_CLOSE_RELATIVE = 3;
-  const TYPE_DISTANT_RELATIVE = 4;
+  function getObjectType() {
+    return Proto::TYPE_RELATION;
+  }
 
   function getRelationType() {
     return RelationType::get_by_id($this->relationTypeId);
-  }
-
-  function getObjectType() {
-    return Proto::TYPE_RELATION;
   }
 
   function getFromEntity() {
@@ -39,13 +35,13 @@ class Relation extends Proto {
     } else {
       return '';
     }
-
   }
 
   /**
-   * Get this Relation's weight in the Markov graph.
+   * Get this Relation's temporal weight in the Markov graph, based on how
+   * this duration spans the loyalty intervals.
    */
-  function getWeight() {
+  function getTemporalWeight() {
     // Conceptually reverse the axis so the past is to the right. Do this
     // because everything is expressed in days ago, so "further ago" means
     // larger numbers.
