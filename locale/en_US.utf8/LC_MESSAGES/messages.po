@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-04-13 16:46+0300\n"
-"PO-Revision-Date: 2020-04-13 16:46+0300\n"
+"POT-Creation-Date: 2020-04-15 10:14+0300\n"
+"PO-Revision-Date: 2020-04-15 10:15+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -120,9 +120,9 @@ msgstr "edit answer"
 
 #: templates/answer/edit.tpl:15 templates/auth/resetPassword.tpl:45
 #: templates/bits/commentForm.tpl:44 templates/cannedResponse/edit.tpl:29
-#: templates/domain/edit.tpl:68 templates/entity/edit.tpl:198
+#: templates/domain/edit.tpl:68 templates/entity/edit.tpl:200
 #: templates/entityType/edit.tpl:72 templates/help/categoryEdit.tpl:59
-#: templates/help/pageEdit.tpl:65 templates/relation/edit.tpl:25
+#: templates/help/pageEdit.tpl:65 templates/relation/edit.tpl:23
 #: templates/relationType/edit.tpl:109 templates/statement/edit.tpl:122
 #: templates/tag/edit.tpl:150 templates/user/edit.tpl:116
 msgid "link-save"
@@ -216,7 +216,7 @@ msgstr "add a comment"
 msgid "tag"
 msgstr "tag"
 
-#: templates/bits/answer.tpl:44
+#: templates/bits/answer.tpl:36
 msgid "answer-posted-by"
 msgstr "posted by"
 
@@ -231,7 +231,7 @@ msgid "info-confirm-delete-answer"
 msgstr "Are you sure you want to delete this answer?"
 
 #: templates/bits/answer.tpl:63 templates/cannedResponse/edit.tpl:44
-#: templates/domain/edit.tpl:90 templates/entity/edit.tpl:214
+#: templates/domain/edit.tpl:90 templates/entity/edit.tpl:216
 #: templates/entityType/edit.tpl:87 templates/help/categoryEdit.tpl:74
 #: templates/help/pageEdit.tpl:80 templates/relationType/edit.tpl:124
 #: templates/statement/edit.tpl:138 templates/tag/edit.tpl:172
@@ -242,7 +242,7 @@ msgstr "delete"
 msgid "info-confirm-reopen-answer"
 msgstr "Are you sure you want to reopen this answer?"
 
-#: templates/bits/answer.tpl:72 templates/entity/edit.tpl:224
+#: templates/bits/answer.tpl:72 templates/entity/edit.tpl:226
 #: templates/statement/edit.tpl:148
 msgid "link-reopen"
 msgstr "reopen"
@@ -255,10 +255,10 @@ msgstr "verdict"
 
 #: templates/bits/answerEdit.tpl:44 templates/bits/commentForm.tpl:49
 #: templates/cannedResponse/edit.tpl:34 templates/cannedResponse/list.tpl:62
-#: templates/domain/edit.tpl:80 templates/entity/edit.tpl:203
+#: templates/domain/edit.tpl:80 templates/entity/edit.tpl:205
 #: templates/entityType/edit.tpl:77 templates/help/categoryEdit.tpl:64
 #: templates/help/categoryList.tpl:34 templates/help/pageEdit.tpl:70
-#: templates/invite/add.tpl:35 templates/relation/edit.tpl:30
+#: templates/invite/add.tpl:35 templates/relation/edit.tpl:28
 #: templates/relationType/edit.tpl:114 templates/relationType/list.tpl:66
 #: templates/statement/edit.tpl:127 templates/tag/edit.tpl:156
 #: templates/user/edit.tpl:121
@@ -270,7 +270,7 @@ msgid "info-confirm-delete-comment"
 msgstr "Are you sure you want to delete this comment?"
 
 #: templates/bits/commentForm.tpl:14 templates/cannedResponse/edit.tpl:20
-#: templates/entity/edit.tpl:142
+#: templates/entity/edit.tpl:144
 msgid "label-characters-remaining"
 msgstr "characters remaining"
 
@@ -298,7 +298,7 @@ msgstr[1] "%1 identical lines skipped"
 
 #: templates/bits/editButton.tpl:15 templates/bits/reviewActions.tpl:29
 #: templates/cannedResponse/list.tpl:40 templates/domain/list.tpl:34
-#: templates/entityType/list.tpl:46 templates/help/categoryView.tpl:36
+#: templates/entityType/list.tpl:46 templates/help/categoryView.tpl:38
 #: templates/help/pageView.tpl:35 templates/relationType/list.tpl:46
 #: templates/tag/view.tpl:14 templates/user/view.tpl:55
 msgid "link-edit"
@@ -691,17 +691,17 @@ msgstr "display value"
 msgid "info-domain-display-value"
 msgstr "a value more suitable for humans"
 
-#: templates/domain/edit.tpl:37 templates/entity/edit.tpl:166
+#: templates/domain/edit.tpl:37 templates/entity/edit.tpl:168
 #: templates/user/edit.tpl:45
 msgid "label-image"
 msgstr "image"
 
-#: templates/domain/edit.tpl:52 templates/entity/edit.tpl:175
+#: templates/domain/edit.tpl:52 templates/entity/edit.tpl:177
 #: templates/user/edit.tpl:54
 msgid "info-upload-image"
 msgstr "choose an image to upload or leave empty to keep existing image"
 
-#: templates/domain/edit.tpl:60 templates/entity/edit.tpl:183
+#: templates/domain/edit.tpl:60 templates/entity/edit.tpl:185
 #: templates/user/edit.tpl:62
 msgid "label-delete-image"
 msgstr "delete image"
@@ -727,7 +727,7 @@ msgid "label-icon"
 msgstr "icon"
 
 #: templates/domain/list.tpl:21 templates/entity/edit.tpl:45
-#: templates/entity/edit.tpl:111 templates/entityType/list.tpl:22
+#: templates/entity/edit.tpl:112 templates/entityType/list.tpl:22
 #: templates/relationType/list.tpl:30
 msgid "actions"
 msgstr "acțiuni"
@@ -777,7 +777,7 @@ msgstr "add an author"
 msgid "label-alias"
 msgstr "also known as"
 
-#: templates/entity/edit.tpl:43 templates/entity/edit.tpl:106
+#: templates/entity/edit.tpl:43 templates/entity/edit.tpl:107
 #: templates/relationType/list.tpl:25
 msgid "label-order"
 msgstr "order"
@@ -786,55 +786,61 @@ msgstr "order"
 msgid "link-add-alias"
 msgstr "add an alias"
 
-#: templates/entity/edit.tpl:65 templates/entity/edit.tpl:107
+#: templates/entity/edit.tpl:65 templates/entity/edit.tpl:108
 msgid "label-type"
 msgstr "type"
 
-#: templates/entity/edit.tpl:85
+#: templates/entity/edit.tpl:70
+msgid "info-change-entity-type-while-relations-exist"
+msgstr ""
+"If you change the author type, all existing relations will be deleted. You "
+"can add new relations after you save the page."
+
+#: templates/entity/edit.tpl:86
 msgid "label-color"
 msgstr "color"
 
-#: templates/entity/edit.tpl:99
+#: templates/entity/edit.tpl:100
 msgid "label-relations"
 msgstr "relationships"
 
-#: templates/entity/edit.tpl:108
+#: templates/entity/edit.tpl:109
 msgid "label-target"
 msgstr "target"
 
-#: templates/entity/edit.tpl:109
+#: templates/entity/edit.tpl:110
 msgid "label-start-date"
 msgstr "start date"
 
-#: templates/entity/edit.tpl:110
+#: templates/entity/edit.tpl:111
 msgid "label-end-date"
 msgstr "end date"
 
-#: templates/entity/edit.tpl:127
+#: templates/entity/edit.tpl:129
 msgid "label-add-relation"
 msgstr "add a relationship"
 
-#: templates/entity/edit.tpl:133
+#: templates/entity/edit.tpl:135
 msgid "label-profile"
 msgstr "profile"
 
-#: templates/entity/edit.tpl:148
+#: templates/entity/edit.tpl:150
 msgid "label-entity-links"
 msgstr "external links"
 
-#: templates/entity/edit.tpl:149
+#: templates/entity/edit.tpl:151
 msgid "link-add-entity-link"
 msgstr "add a link"
 
-#: templates/entity/edit.tpl:155 templates/statement/edit.tpl:92
+#: templates/entity/edit.tpl:157 templates/statement/edit.tpl:92
 msgid "label-tags"
 msgstr "tags"
 
-#: templates/entity/edit.tpl:212
+#: templates/entity/edit.tpl:214
 msgid "info-confirm-delete-entity"
 msgstr "Are you sure you want to delete this author?"
 
-#: templates/entity/edit.tpl:223
+#: templates/entity/edit.tpl:225
 msgid "info-confirm-reopen-entity"
 msgstr "Are you sure you want to reopen this author?"
 
@@ -916,15 +922,15 @@ msgstr "Are you sure you want to delete this category?"
 msgid "title-help-categories"
 msgstr "help categories"
 
-#: templates/help/index.tpl:22
+#: templates/help/index.tpl:24
 msgid "link-reorder-help-categories"
 msgstr "reorder categories"
 
-#: templates/help/index.tpl:27
+#: templates/help/index.tpl:29
 msgid "link-add-category"
 msgstr "add a category"
 
-#: templates/help/index.tpl:33
+#: templates/help/index.tpl:35
 msgid "link-add-help-page"
 msgstr "add a page"
 
@@ -960,21 +966,21 @@ msgstr "send an invite"
 msgid "title-invites"
 msgstr "invites"
 
-#: templates/invite/list.tpl:12
+#: templates/invite/list.tpl:13
+msgid "link-add-invite"
+msgstr "send an invite"
+
+#: templates/invite/list.tpl:21
 msgid "label-invite-from"
 msgstr "from"
 
-#: templates/invite/list.tpl:13
+#: templates/invite/list.tpl:22
 msgid "label-invite-to"
 msgstr "to"
 
-#: templates/invite/list.tpl:14
+#: templates/invite/list.tpl:23
 msgid "label-invite-accepted-by"
 msgstr "accepted by"
-
-#: templates/invite/list.tpl:32
-msgid "link-add-invite"
-msgstr "send an invite"
 
 #: templates/relation/edit.tpl:3 templates/relation/edit.tpl:6
 msgid "title-edit-relation"
@@ -1129,11 +1135,11 @@ msgstr "statements with unclear verdicts"
 msgid "title-statements-proof-no-verdict"
 msgstr "statements with a proof, but no verdict"
 
-#: templates/statement/verdictReport.tpl:23
+#: templates/statement/verdictReport.tpl:25
 msgid "title-statements-verdict-no-proof"
 msgstr "statements with a verdict, but no proof"
 
-#: templates/statement/verdictReport.tpl:35
+#: templates/statement/verdictReport.tpl:39
 msgid "title-statements-verdict-mismatch"
 msgstr "statements with a verdict opposite to the proof's verdict"
 
@@ -1346,12 +1352,12 @@ msgstr "because it is low-quality."
 msgid "info-answer-by-owner"
 msgstr "by its author."
 
-#: lib/model/Answer.php:53 lib/model/Comment.php:43 lib/model/Entity.php:111
+#: lib/model/Answer.php:53 lib/model/Comment.php:43 lib/model/Entity.php:86
 #: lib/model/Statement.php:113
 msgid "info-by"
 msgstr "by"
 
-#: lib/model/Answer.php:54 lib/model/Comment.php:44 lib/model/Entity.php:112
+#: lib/model/Answer.php:54 lib/model/Comment.php:44 lib/model/Entity.php:87
 #: lib/model/Statement.php:114
 msgid "info-other-reason"
 msgstr "for other reasons."
@@ -1396,76 +1402,56 @@ msgstr "because it is no longer needed."
 msgid "info-comment-length-limit-%d"
 msgstr "Comments can be at most %d characters long."
 
-#: lib/model/Entity.php:30
-msgid "entity-type-person"
-msgstr "person"
-
-#: lib/model/Entity.php:31
-msgid "entity-type-party"
-msgstr "party"
-
-#: lib/model/Entity.php:32
-msgid "entity-type-union"
-msgstr "union"
-
-#: lib/model/Entity.php:33
-msgid "entity-type-website"
-msgstr "website"
-
-#: lib/model/Entity.php:34
-msgid "entity-type-company"
-msgstr "company"
-
-#: lib/model/Entity.php:89
+#: lib/model/Entity.php:64
 msgid "status-entity-duplicate"
 msgstr "duplicate"
 
-#: lib/model/Entity.php:91
+#: lib/model/Entity.php:66
 msgid "status-entity-closed"
 msgstr "closed"
 
-#: lib/model/Entity.php:92
+#: lib/model/Entity.php:67
 msgid "status-entity-deleted"
 msgstr "deleted"
 
-#: lib/model/Entity.php:101
+#: lib/model/Entity.php:76
 msgid "info-entity-closed"
 msgstr "This author was closed"
 
-#: lib/model/Entity.php:102
+#: lib/model/Entity.php:77
 msgid "info-entity-deleted"
 msgstr "This author was deleted"
 
-#: lib/model/Entity.php:105
+#: lib/model/Entity.php:80
 msgid "info-entity-spam"
 msgstr "because its profile contains spam."
 
-#: lib/model/Entity.php:106
+#: lib/model/Entity.php:81
 msgid "info-entity-abuse"
 msgstr "because its profile contains insults or abuse."
 
-#: lib/model/Entity.php:107
+#: lib/model/Entity.php:82
 msgid "info-entity-duplicate-of"
 msgstr "as a duplicate of the author"
 
-#: lib/model/Entity.php:108
+#: lib/model/Entity.php:83
 msgid "info-entity-off-topic"
 msgstr "because it is off-topic."
 
-#: lib/model/Entity.php:109
+#: lib/model/Entity.php:84
 msgid "info-entity-unverifiable"
 msgstr "because it is unverifiable."
 
-#: lib/model/Entity.php:110
+#: lib/model/Entity.php:85
 msgid "info-entity-by-owner"
 msgstr "by the user who added it."
 
-#: lib/model/Entity.php:205
+#: lib/model/Entity.php:181
 #, php-format
 msgid "info-minimum-reputation-add-entity-%s"
 msgstr "You need at least %s reputation to add authors."
 
-#: lib/model/Entity.php:213
+#: lib/model/Entity.php:189
 #, php-format
 msgid "info-minimum-reputation-edit-entity-%s"
 msgstr "You need at least %s reputation to edit authors."
@@ -1482,43 +1468,28 @@ msgstr "executive"
 msgid "flag-moderator"
 msgstr "moderator"
 
-#: lib/model/Relation.php:34
-msgid "relation-type-member"
-msgstr "member of"
-
-#: lib/model/Relation.php:35
-msgid "relation-type-associate"
-msgstr "associate in"
-
-#: lib/model/Relation.php:36
-msgid "relation-type-close-relative"
-msgstr "close relative of"
-
-#: lib/model/Relation.php:37
-msgid "relation-type-distant-relative"
-msgstr "distant relative of"
-
-#: lib/model/Relation.php:68
+#: lib/model/Relation.php:32
 msgid "since"
 msgstr "începînd cu"
 
-#: lib/model/Relation.php:70
+#: lib/model/Relation.php:34
 msgid "until"
 msgstr "pînă la"
 
-#: lib/model/Relation.php:123
+#: lib/model/Relation.php:87
 msgid "info-target-entity"
 msgstr "Please choose a target author."
 
-#: lib/model/Relation.php:125
+#: lib/model/Relation.php:89
 msgid "info-related-itself"
 msgstr "An author cannot be related to itself."
 
-#: lib/model/Relation.php:130
-msgid "info-incorrect-relation-type"
-msgstr "Incorrect relationship type."
+#: lib/model/Relation.php:94
+#, php-format
+msgid "info-incorrect-relation-%s-%s-%s"
+msgstr "%s cannot be %s %s."
 
-#: lib/model/Relation.php:136
+#: lib/model/Relation.php:101
 msgid "info-dates-out-of-order"
 msgstr "The start date cannot be past the end date."
 
@@ -2206,7 +2177,7 @@ msgstr "Please save the domain before cloning it."
 msgid "info-domain-saved"
 msgstr "Domain saved."
 
-#: routes/domain/edit.php:79 routes/entity/edit.php:131
+#: routes/domain/edit.php:79 routes/entity/edit.php:132
 #: routes/entityType/edit.php:53 routes/help/categoryEdit.php:67
 #: routes/relationType/edit.php:57 routes/tag/edit.php:85
 msgid "info-must-enter-name"
@@ -2248,22 +2219,22 @@ msgstr "Author updated."
 msgid "info-validation-error"
 msgstr "There are some errors in the data. Please fix them below."
 
-#: routes/entity/edit.php:135
-msgid "info-must-enter-entity-type"
-msgstr "Please enter a type."
+#: routes/entity/edit.php:136
+msgid "info-incorrect-entity-type"
+msgstr "Incorrect entity type."
 
-#: routes/entity/edit.php:140
+#: routes/entity/edit.php:141
 #, php-format
 msgid "info-entity-profile-length-limit-%d"
 msgstr "Author profiles can be at most %d characters long."
 
-#: routes/entity/edit.php:164
+#: routes/entity/edit.php:163
 msgid "info-entity-type-change-invalidates-incoming-relations"
 msgstr ""
 "Cannot change this author's type because other authors' relationships to "
 "this one would become invalid."
 
-#: routes/entity/edit.php:176
+#: routes/entity/edit.php:175
 msgid "info-invalid-entity-links"
 msgstr "Some links are invalid."
 

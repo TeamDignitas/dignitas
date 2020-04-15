@@ -89,11 +89,10 @@ class Relation extends Proto {
       $errors[] = _('info-related-itself');
     } else {
       // there exists a distinct $toEntity
-      if ($this->getRelationType()->fromEntityTypeId != $fromEntity->entityTypeId) {
-        $errors[] = _('info-from-entity-does-not-match-relation-type');
-      }
-      if ($this->getRelationType()->toEntityTypeId != $toEntity->entityTypeId) {
-        $errors[] = _('info-to-entity-does-not-match-relation-type');
+      if (($this->getRelationType()->fromEntityTypeId != $fromEntity->entityTypeId) ||
+          ($this->getRelationType()->toEntityTypeId != $toEntity->entityTypeId)) {
+        $errors[] = sprintf(_('info-incorrect-relation-%s-%s-%s'),
+                            $fromEntity->name, $this->getRelationType()->name, $toEntity->name);
       }
 
       if (($this->startDate != '0000-00-00') &&
