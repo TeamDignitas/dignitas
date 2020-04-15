@@ -1,0 +1,5 @@
+@media (max-width: 768px) {
+  .fix-min-height {
+    min-height: 134px;
+  }
+}

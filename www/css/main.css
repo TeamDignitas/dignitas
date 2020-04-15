@@ -346,21 +346,6 @@ footer {
   padding: 0.75rem;
 }
 
-/***************************** control panel ****************************/
-@media (max-width: 768px) {
-  .fix-min-height {
-    min-height: 134px;
-  }
-}
-
-.callout {
-  padding: 20px 40px;
-  margin: 20px 0;
-  border: 1px solid #eee;
-  border-left-width: 5px;
-  border-radius: 3px;
-}
-
 /***************************** help pages ****************************/
 .breadcrumb {
   background-color: white !important;
