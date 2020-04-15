@@ -1,4 +1,4 @@
-{if $entity->type == Entity::TYPE_PERSON && $entity->hasLoyalties()}
+{if $entity->getEntityType()->loyaltySource && $entity->hasLoyalties()}
   {$data=$entity->getLoyalties()}
   <h6 class="font-weight-bold text-capitalize">{t}title-loyalty{/t}</h6>
 

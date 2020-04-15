@@ -52,7 +52,8 @@ $relations = Model::factory('Relation')
 // first store relations as [ $from => [ $to => $weight ]];
 $forwardMap = [];
 foreach ($relations as $r) {
-  addEdge($forwardMap, $r->fromEntityId, $r->toEntityId, $r->getWeight() * $r->weight);
+  $w = $r->getTemporalWeight() * $r->weight;
+  addEdge($forwardMap, $r->fromEntityId, $r->toEntityId, $w);
 }
 
 // normalize weights so the sum of outgoing weights is 1

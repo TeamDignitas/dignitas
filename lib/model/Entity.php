@@ -6,11 +6,6 @@ class Entity extends Proto {
   }
   use FlaggableTrait, MarkdownTrait, PendingEditTrait, UploadTrait;
 
-  const TYPE_PERSON = 1;
-  const TYPE_PARTY = 2;
-  const TYPE_UNION = 3; // of parties
-  const TYPE_COMPANY = 5;
-
   const DEFAULT_COLOR = '#ffffff';
 
   const PROFILE_MAX_LENGTH = 4000;
