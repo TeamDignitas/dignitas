@@ -10,7 +10,10 @@ require_once __DIR__ . '/../lib/Core.php';
 LocaleUtil::change('en_US.utf8');
 
 $relations = Model::factory('Relation')
-  ->where_in('type', [ Relation::TYPE_CLOSE_RELATIVE, Relation::TYPE_DISTANT_RELATIVE])
+  ->table_alias('r')
+  ->select('r.*')
+  ->join('relation_type', [ 'r.relationTypeId', '=', 'rt.id' ],  'rt')
+  ->where('rt.symmetric', true)
   ->find_many();
 
 $numMismatches = 0;
@@ -20,7 +23,7 @@ foreach ($relations as $r) {
   $reciprocals = Model::factory('Relation')
     ->where('fromEntityId', $r->toEntityId)
     ->where('toEntityId', $r->fromEntityId)
-    ->where('type', $r->type)
+    ->where('relationTypeId', $r->relationTypeId)
     ->where('startDate', $r->startDate)
     ->where('endDate', $r->endDate)
     ->find_many();
