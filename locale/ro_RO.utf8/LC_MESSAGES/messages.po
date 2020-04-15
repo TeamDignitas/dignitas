@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-04-15 10:15+0300\n"
-"PO-Revision-Date: 2020-04-15 10:15+0300\n"
+"POT-Creation-Date: 2020-04-15 14:26+0300\n"
+"PO-Revision-Date: 2020-04-15 14:26+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -283,15 +283,19 @@ msgstr "caractere rămase"
 msgid "link-pick-canned-response"
 msgstr "predefinite"
 
-#: templates/bits/diff/objectDiff.tpl:38
+#: templates/bits/diff/objectDiff.tpl:28
+msgid "label-duplicate-of"
+msgstr "duplicat al lui"
+
+#: templates/bits/diff/objectDiff.tpl:49
 msgid "info-reviewed-because"
 msgstr "evaluare pentru motivul"
 
-#: templates/bits/diff/objectDiff.tpl:41
+#: templates/bits/diff/objectDiff.tpl:52
 msgid "label-resolution"
 msgstr "rezoluție"
 
-#: templates/bits/diff/objectDiff.tpl:51
+#: templates/bits/diff/objectDiff.tpl:62
 msgid "title-votes"
 msgstr "voturi"
 
@@ -1750,47 +1754,47 @@ msgstr "culoare"
 msgid "label-image-file"
 msgstr "fișier imagine"
 
-#: lib/model/RevisionEntity.php:39 lib/model/RevisionStatement.php:37
+#: lib/model/RevisionEntity.php:42 lib/model/RevisionStatement.php:40
 msgid "label-added-tags"
 msgstr "etichete adăugate"
 
-#: lib/model/RevisionEntity.php:45 lib/model/RevisionStatement.php:43
+#: lib/model/RevisionEntity.php:48 lib/model/RevisionStatement.php:46
 msgid "label-deleted-tags"
 msgstr "etichete șterse"
 
-#: lib/model/RevisionEntity.php:52
+#: lib/model/RevisionEntity.php:55
 msgid "label-added-aliases"
 msgstr "aliasuri adăugate"
 
-#: lib/model/RevisionEntity.php:58
+#: lib/model/RevisionEntity.php:61
 msgid "label-deleted-aliases"
 msgstr "aliasuri șterse"
 
-#: lib/model/RevisionEntity.php:66
+#: lib/model/RevisionEntity.php:69
 msgid "label-changed-alias"
 msgstr "alias modificat"
 
-#: lib/model/RevisionEntity.php:74
+#: lib/model/RevisionEntity.php:77
 msgid "label-added-entity-links"
 msgstr "legături adăugate"
 
-#: lib/model/RevisionEntity.php:80
+#: lib/model/RevisionEntity.php:83
 msgid "label-deleted-entity-links"
 msgstr "legături șterse"
 
-#: lib/model/RevisionEntity.php:88
+#: lib/model/RevisionEntity.php:91
 msgid "label-changed-entity-link"
 msgstr "legătură modificată"
 
-#: lib/model/RevisionEntity.php:96
+#: lib/model/RevisionEntity.php:99
 msgid "label-added-relations"
 msgstr "relații adăugate"
 
-#: lib/model/RevisionEntity.php:102
+#: lib/model/RevisionEntity.php:105
 msgid "label-deleted-relations"
 msgstr "relații șterse"
 
-#: lib/model/RevisionEntity.php:110
+#: lib/model/RevisionEntity.php:113
 msgid "label-changed-relation"
 msgstr "relație modificată"
 
@@ -1810,15 +1814,15 @@ msgstr "modificări la scop"
 msgid "label-statement-entity"
 msgstr "autor"
 
-#: lib/model/RevisionStatement.php:50
+#: lib/model/RevisionStatement.php:53
 msgid "label-added-statement-links"
 msgstr "surse adăugate"
 
-#: lib/model/RevisionStatement.php:56
+#: lib/model/RevisionStatement.php:59
 msgid "label-deleted-statement-links"
 msgstr "surse șterse"
 
-#: lib/model/RevisionStatement.php:64
+#: lib/model/RevisionStatement.php:67
 msgid "label-changed-statement-link"
 msgstr "sursă modificată"
 

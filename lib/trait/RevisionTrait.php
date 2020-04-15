@@ -52,4 +52,10 @@ trait RevisionTrait {
     }
   }
 
+  function addDuplicateInfo($oldDuplicateId, $newDuplicateId, &$od, $duplicate) {
+    if ($newDuplicateId && ($oldDuplicateId != $newDuplicateId)) {
+      $od->addDuplicate($duplicate);
+    }
+  }
+
 }

@@ -23,6 +23,17 @@
           new=$change.new}
       </div>
     {/foreach}
+
+    {if $od->duplicate}
+      <div class="col-md-3 pl-0">- {t}label-duplicate-of{/t}</div>
+      <div class="col-md-9">
+        {if $od->duplicate instanceof Entity}
+          {include "bits/entityLink.tpl" e=$od->duplicate}
+        {elseif $od->duplicate instanceof Statement}
+          {include "bits/statementLink.tpl" statement=$od->duplicate}
+        {/if}
+      </div>
+    {/if}
   </div>
 </div>
 

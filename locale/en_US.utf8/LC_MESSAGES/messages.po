@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-04-15 10:14+0300\n"
-"PO-Revision-Date: 2020-04-15 10:15+0300\n"
+"POT-Creation-Date: 2020-04-15 14:27+0300\n"
+"PO-Revision-Date: 2020-04-15 14:27+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -278,15 +278,19 @@ msgstr "characters remaining"
 msgid "link-pick-canned-response"
 msgstr "canned response"
 
-#: templates/bits/diff/objectDiff.tpl:38
+#: templates/bits/diff/objectDiff.tpl:28
+msgid "label-duplicate-of"
+msgstr "duplicate of"
+
+#: templates/bits/diff/objectDiff.tpl:49
 msgid "info-reviewed-because"
 msgstr "review reason"
 
-#: templates/bits/diff/objectDiff.tpl:41
+#: templates/bits/diff/objectDiff.tpl:52
 msgid "label-resolution"
 msgstr "resolution"
 
-#: templates/bits/diff/objectDiff.tpl:51
+#: templates/bits/diff/objectDiff.tpl:62
 msgid "title-votes"
 msgstr "votes"
 
@@ -1731,47 +1735,47 @@ msgstr "color"
 msgid "label-image-file"
 msgstr "image file"
 
-#: lib/model/RevisionEntity.php:39 lib/model/RevisionStatement.php:37
+#: lib/model/RevisionEntity.php:42 lib/model/RevisionStatement.php:40
 msgid "label-added-tags"
 msgstr "added tags"
 
-#: lib/model/RevisionEntity.php:45 lib/model/RevisionStatement.php:43
+#: lib/model/RevisionEntity.php:48 lib/model/RevisionStatement.php:46
 msgid "label-deleted-tags"
 msgstr "deleted tags"
 
-#: lib/model/RevisionEntity.php:52
+#: lib/model/RevisionEntity.php:55
 msgid "label-added-aliases"
 msgstr "added aliases"
 
-#: lib/model/RevisionEntity.php:58
+#: lib/model/RevisionEntity.php:61
 msgid "label-deleted-aliases"
 msgstr "deleted aliases"
 
-#: lib/model/RevisionEntity.php:66
+#: lib/model/RevisionEntity.php:69
 msgid "label-changed-alias"
 msgstr "changed alias"
 
-#: lib/model/RevisionEntity.php:74
+#: lib/model/RevisionEntity.php:77
 msgid "label-added-entity-links"
 msgstr "added links"
 
-#: lib/model/RevisionEntity.php:80
+#: lib/model/RevisionEntity.php:83
 msgid "label-deleted-entity-links"
 msgstr "deleted links"
 
-#: lib/model/RevisionEntity.php:88
+#: lib/model/RevisionEntity.php:91
 msgid "label-changed-entity-link"
 msgstr "changed link"
 
-#: lib/model/RevisionEntity.php:96
+#: lib/model/RevisionEntity.php:99
 msgid "label-added-relations"
 msgstr "added relationships"
 
-#: lib/model/RevisionEntity.php:102
+#: lib/model/RevisionEntity.php:105
 msgid "label-deleted-relations"
 msgstr "deleted relationships"
 
-#: lib/model/RevisionEntity.php:110
+#: lib/model/RevisionEntity.php:113
 msgid "label-changed-relation"
 msgstr "changed relationship"
 
@@ -1791,15 +1795,15 @@ msgstr "changes to goal"
 msgid "label-statement-entity"
 msgstr "author"
 
-#: lib/model/RevisionStatement.php:50
+#: lib/model/RevisionStatement.php:53
 msgid "label-added-statement-links"
 msgstr "added sources"
 
-#: lib/model/RevisionStatement.php:56
+#: lib/model/RevisionStatement.php:59
 msgid "label-deleted-statement-links"
 msgstr "deleted sources"
 
-#: lib/model/RevisionStatement.php:64
+#: lib/model/RevisionStatement.php:67
 msgid "label-changed-statement-link"
 msgstr "changed source"
 

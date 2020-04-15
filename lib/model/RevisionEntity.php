@@ -33,6 +33,9 @@ class RevisionEntity extends Entity {
                         $prev->fileExtension,
                         $this->fileExtension,
                         $od, Ct::FIELD_CHANGE_STRING);
+    $this->addDuplicateInfo($prev->duplicateId,
+                            $this->duplicateId,
+                            $od, $this->getDuplicate());
 
     // added / removed tags
     $tags = RevisionObjectTag::getChangesFor($this, 'insert');

@@ -10,6 +10,7 @@ class ObjectDiff {
   public $modDate;
   private $textChanges;
   private $fieldChanges;
+  public $duplicate;
   public $review;
 
   /**
@@ -92,6 +93,10 @@ class ObjectDiff {
     ];
   }
 
+  function addDuplicate($duplicate) {
+    $this->duplicate = $duplicate;
+  }
+
   /**
    * Adds the review that caused this change, if any. This should cover
    *   - pending edits (which can change many fields);
@@ -120,7 +125,9 @@ class ObjectDiff {
   }
 
   function isEmpty() {
-    return empty($this->textChanges) && empty($this->fieldChanges);
+    return empty($this->textChanges) &&
+      empty($this->fieldChanges) &&
+      !$this->duplicate;
   }
 
   function isRejectedEdit() {
