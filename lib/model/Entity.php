@@ -31,7 +31,7 @@ class Entity extends Proto {
   }
 
   function getColor() {
-    return $this->color ? $this->color : self::DEFAULT_COLOR;
+    return $this->color ?: self::DEFAULT_COLOR;
   }
 
   function setColor($color) {
