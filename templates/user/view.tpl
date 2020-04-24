@@ -49,7 +49,7 @@
 
       {if $user->id == User::getActiveId()}
         <hr class="mb-2">
-        <div class="user-actions text-right">
+        <div class="user-actions text-left">
           <a href="{Router::link('user/edit')}" class="btn btn-sm btn-outline-primary">
             <i class="icon icon-edit"></i>
             {t}link-edit{/t}
