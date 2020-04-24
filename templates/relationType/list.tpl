@@ -4,7 +4,7 @@
 
 {block "content"}
 
-  <h2 class="mb-4">{cap}{t}title-relation-types{/t}{/cap}</h2>
+  <h1 class="mb-4">{cap}{t}title-relation-types{/t}{/cap}</h1>
 
   {if $numEntityTypes}
     <a class="btn btn-sm btn-outline-primary" href="{Router::link('relationType/edit')}">
@@ -54,7 +54,7 @@
       <div>
         <button
           type="submit"
-          class="btn btn-sm btn-outline-primary"
+          class="btn btn-sm btn-outline-secondary"
           name="saveButton">
           <i class="icon icon-floppy"></i>
           {t}link-save-order{/t}
