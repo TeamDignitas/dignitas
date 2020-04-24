@@ -11,7 +11,7 @@
 {block "title"}{cap}{$smarty.capture.title}{/cap}{/block}
 
 {block "content"}
-  <h2 class="mb-4">{$smarty.capture.title}</h2>
+  <h1 class="mb-4">{$smarty.capture.title}</h1>
 
   {if !$entity->isEditable()}
     <div class="alert alert-warning">
