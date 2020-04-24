@@ -356,3 +356,9 @@ footer {
 .help-sidebar-page a {
   color: #777;
 }
+
+/***************************** Edit author pages ****************************/
+.common-region {
+  border-left: 2px solid #aaa;
+  padding-left: 16px;
+}
