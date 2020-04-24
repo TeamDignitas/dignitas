@@ -4,7 +4,7 @@
 
 {block "content"}
 
-  <h2 class="mb-4">{cap}{t}title-verdict-report{/t}{/cap}</h2>
+  <h1 class="mb-4">{cap}{t}title-verdict-report{/t}{/cap}</h1>
 
   {if count($map['proofNoVerdict'])}
 
