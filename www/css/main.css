@@ -367,6 +367,6 @@ footer {
   background-color: #ddd;
 }
 
-.highlight-field .select2:hover {
+.select2-container--bootstrap4 .select2-selection {
   background-color: white !important;
 }

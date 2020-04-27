@@ -101,7 +101,7 @@
       </div>
 
       <div class="form-group row highlight-field py-1 pr-1">
-        <label class="col-2">{t}label-relations{/t}</label>
+        <label class="col-2 mt-2">{t}label-relations{/t}</label>
         <div class="col-10 pl-0 mb-2">
           <button id="add-relation" class="btn btn-outline-secondary btn-sm" type="button">
             <i class="icon icon-plus"></i>
@@ -138,7 +138,7 @@
 
     <div class="common-region mb-5">
       <div class="form-group row highlight-field py-1">
-        <label for="field-profile" class="col-2 mt-3">{t}label-profile{/t}</label>
+        <label for="field-profile" class="col-2 mt-2">{t}label-profile{/t}</label>
         <div class="col-10 pl-0">
           <textarea
             id="field-profile"
@@ -165,7 +165,7 @@
     </div>
 
     <div class="common-region mb-5">
-      <div class="form-group row highlight-field">
+      <div class="form-group row highlight-field py-1">
         <label class="col-2 mt-2">{t}label-tags{/t}</label>
         <div class="col-10 pl-0">
           <select name="tagIds[]" class="form-control select2Tags" multiple>
@@ -177,7 +177,7 @@
       </div>
 
       <div class="form-group row highlight-field py-1">
-        <label class="col-2" for="field-image">{t}label-image{/t}</label>
+        <label class="col-2 mt-2" for="field-image">{t}label-image{/t}</label>
 
         <div class="col-10 pl-0">
           <div class="custom-file">
