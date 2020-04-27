@@ -36,7 +36,7 @@
 
       <div class="form-group row highlight-field py-1">
         <label class="col-2 ml-0 mt-2">{t}label-alias{/t}</label>
-        <div class="col-10 pl-0 mt-1">
+        <div class="col-10 pl-0 mt-1 mb-2">
           <button id="add-alias" class="btn btn-outline-secondary btn-sm" type="button">
             <i class="icon icon-plus"></i>
             {t}link-add-alias{/t}
@@ -65,12 +65,12 @@
     </div>
 
     <div class="common-region mb-5">
-      <div class="form-group">
-        <label for="field-entity-type-id">{t}label-type{/t}</label>
+      <div class="form-group row highlight-field py-1 pr-1">
+        <label for="field-entity-type-id" class="col-2 ml-0 mt-2">{t}label-type{/t}</label>
         <select
           name="entityTypeId"
           id="field-entity-type-id"
-          class="form-control {if isset($errors.entityTypeId)}is-invalid{/if}"
+          class="form-control col-10 {if isset($errors.entityTypeId)}is-invalid{/if}"
           data-change-msg="{t}info-change-entity-type-while-relations-exist{/t}">
           {foreach $entityTypes as $et}
             <option
@@ -100,10 +100,16 @@
         </div>
       </div>
 
-      <div class="form-group">
-        <label>{t}label-relations{/t}</label>
+      <div class="form-group row highlight-field py-1 pr-1">
+        <label class="col-2">{t}label-relations{/t}</label>
+        <div class="col-10 pl-0 mb-2">
+          <button id="add-relation" class="btn btn-outline-secondary btn-sm" type="button">
+            <i class="icon icon-plus"></i>
+            {t}label-add-relation{/t}
+          </button>
+        </div>
 
-        <table class="table table-sm table-rel sortable">
+        <table class="table table-sm table-rel sortable col-md-10 offset-md-2">
           <thead
             id="relation-header"
             {if empty($relations)}hidden{/if}>
@@ -127,30 +133,27 @@
 
         {include "bits/fieldErrors.tpl" errors=$errors.relations|default:null}
 
-        <div>
-          <button id="add-relation" class="btn btn-outline-secondary btn-sm" type="button">
-            <i class="icon icon-plus"></i>
-            {t}label-add-relation{/t}
-          </button>
-        </div>
       </div>
     </div>
 
     <div class="common-region mb-5">
-      <div class="form-group">
-        <label for="field-profile">{t}label-profile{/t}</label>
-        <textarea
-          id="field-profile"
-          name="profile"
-          class="form-control has-unload-warning size-limit easy-mde"
-          maxlength="{Entity::PROFILE_MAX_LENGTH}"
-          rows="5">{$entity->profile|escape}</textarea>
-        <small class="form-text text-muted float-left">
-          <span class="chars-remaining">{$profileCharsRemaining}</span>
-          {t}label-characters-remaining{/t}
-        </small>
-        {include "bits/markdownHelp.tpl"}
-        {include "bits/fieldErrors.tpl" errors=$errors.profile|default:null}
+      <div class="form-group row highlight-field py-1">
+        <label for="field-profile" class="col-2 mt-3">{t}label-profile{/t}</label>
+        <div class="col-10 pl-0">
+          <textarea
+            id="field-profile"
+            name="profile"
+            class="form-control has-unload-warning size-limit easy-mde"
+            maxlength="{Entity::PROFILE_MAX_LENGTH}"
+            rows="5">{$entity->profile|escape}</textarea>
+
+          <small class="form-text text-muted float-left">
+            <span class="chars-remaining">{$profileCharsRemaining}</span>
+            {t}label-characters-remaining{/t}
+          </small>
+          {include "bits/markdownHelp.tpl"}
+          {include "bits/fieldErrors.tpl" errors=$errors.profile|default:null}
+        </div>
       </div>
 
       {capture "labelText" assign=labelText}{t}label-entity-links{/t}{/capture}
@@ -162,20 +165,21 @@
     </div>
 
     <div class="common-region mb-5">
-      <div class="form-group">
-        <label>{t}label-tags{/t}</label>
-
-        <select name="tagIds[]" class="form-control select2Tags" multiple>
-          {foreach $tagIds as $tagId}
-            <option value="{$tagId}" selected></option>
-          {/foreach}
-        </select>
+      <div class="form-group row highlight-field">
+        <label class="col-2 mt-2">{t}label-tags{/t}</label>
+        <div class="col-10 pl-0">
+          <select name="tagIds[]" class="form-control select2Tags" multiple>
+            {foreach $tagIds as $tagId}
+              <option value="{$tagId}" selected></option>
+            {/foreach}
+          </select>
+        </div>
       </div>
 
-      <div class="row">
-        <div class="col">
-          <label for="field-image">{t}label-image{/t}</label>
+      <div class="form-group row highlight-field py-1">
+        <label class="col-2" for="field-image">{t}label-image{/t}</label>
 
+        <div class="col-10 pl-0">
           <div class="custom-file">
             <input
               name="image"
@@ -194,13 +198,13 @@
               {t}label-delete-image{/t}
             </label>
           </div>
-        </div>
 
-        {include "bits/image.tpl"
-          obj=$entity
-          geometry=Config::THUMB_ENTITY_LARGE
-          spanClass="col-3"
-          imgClass="pic float-right"}
+          {include "bits/image.tpl"
+            obj=$entity
+            geometry=Config::THUMB_ENTITY_LARGE
+            spanClass="col-3"
+            imgClass="pic float-right"}
+        </div>
       </div>
     </div>
 

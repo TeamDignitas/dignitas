@@ -366,3 +366,7 @@ footer {
 .highlight-field:hover {
   background-color: #ddd;
 }
+
+.highlight-field .select2:hover {
+  background-color: white !important;
+}
