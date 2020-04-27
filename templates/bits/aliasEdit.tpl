@@ -18,7 +18,7 @@
   </td>
 
   <td>
-    <button type="button" class="btn btn-danger delete-dependant">
+    <button type="button" class="btn btn-outline-danger delete-dependant">
       <i class="icon icon-trash"></i>
     </button>
   </td>

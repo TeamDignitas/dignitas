@@ -85,10 +85,10 @@
       </div>
 
       <div id="color-wrapper"
-        class="form-group""
+        class="form-group row highlight-field py-1""
         {if !$entity->hasColor()}hidden{/if}>
-        <label for="field-color">{t}label-color{/t}</label>
-        <div class="input-group colorpicker-component">
+        <label for="field-color" class="col-2 mt-2">{t}label-color{/t}</label>
+        <div class="input-group colorpicker-component col-10 pl-0 pr-1">
           <span class="input-group-prepend input-group-text colorpicker-input-addon">
             <i></i>
           </span>

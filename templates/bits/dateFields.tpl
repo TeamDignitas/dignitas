@@ -8,13 +8,13 @@
   {$year = ($dateParts[0] == '0000') ? '' : $dateParts[0]}
   <input
     type="number"
-    class="form-control"
+    class="form-control form-control-sm"
     size="4"
     name="{$namePrefix}Y{$nameSuffix}"
     value="{$year}">
 
   <select
-    class="form-control"
+    class="form-control form-control-sm"
     name="{$namePrefix}M{$nameSuffix}">
     <option value=""></option>
     {for $m = 1 to 12}
@@ -28,7 +28,7 @@
   </select>
 
   <select
-    class="form-control"
+    class="form-control form-control-sm"
     name="{$namePrefix}D{$nameSuffix}">
     <option value=""></option>
     {for $d = 1 to 31}
