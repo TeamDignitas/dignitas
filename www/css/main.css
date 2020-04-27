@@ -356,3 +356,33 @@ footer {
 .help-sidebar-page a {
   color: #777;
 }
+
+/***************************** Edit author pages ****************************/
+.common-region {
+  border-left: 2px solid #aaa;
+  padding-left: 16px;
+}
+
+.highlight-field:hover {
+  background-color: #ddd;
+}
+
+.select2-container--bootstrap4 .select2-selection {
+  background-color: white !important;
+}
+
+.select2-container--bootstrap4 .select2-selection--single {
+  height: calc(1.5em + .5rem) !important;
+}
+
+.select2-container--bootstrap4 .select2-selection--single {
+  padding: 0rem .5rem !important;
+  font-size: .875rem;
+  line-height: 1.5 !important;
+  border-radius: .2rem;
+}
+
+.special-column {
+  max-width: 100px;
+  display: block;
+}

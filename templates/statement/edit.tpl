@@ -11,7 +11,7 @@
 {block "title"}{cap}{$smarty.capture.title}{/cap}{/block}
 
 {block "content"}
-  <h2 class="mb-4">{$smarty.capture.title}</h2>
+  <h1 class="mb-4">{$smarty.capture.title}</h1>
 
   {if !$statement->isEditable()}
     <div class="alert alert-warning">
@@ -116,7 +116,7 @@
       </div>
     {/if}
 
-    <div>
+    <div class="mt-4">
       <button name="saveButton" type="submit" class="btn btn-sm btn-outline-primary">
         <i class="icon icon-floppy"></i>
         {t}link-save{/t}

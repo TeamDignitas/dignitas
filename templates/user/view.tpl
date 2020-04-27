@@ -21,9 +21,9 @@
     </div>
 
     <div class="col-md-9 col-sm-12 mt-2">
-      <h2 class="font-weight-bold mb-5 center-mobile">
+      <h1 class="font-weight-bold mb-5 center-mobile">
         {t}label-user{/t} {$user}
-      </h2>
+      </h1>
 
       <dl class="row">
         <dd class="col-sm-5 col-md-4 text-capitalize">{t}label-reputation{/t}</dd>
@@ -49,8 +49,8 @@
 
       {if $user->id == User::getActiveId()}
         <hr class="mb-2">
-        <div class="user-actions text-right">
-          <a href="{Router::link('user/edit')}" class="btn btn-sm btn-outline-secondary">
+        <div class="user-actions text-left">
+          <a href="{Router::link('user/edit')}" class="btn btn-sm btn-outline-primary">
             <i class="icon icon-edit"></i>
             {t}link-edit{/t}
           </a>

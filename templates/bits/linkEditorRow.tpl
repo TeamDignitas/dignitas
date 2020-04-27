@@ -16,8 +16,8 @@
       class="form-control">
   </td>
 
-  <td>
-    <button type="button" class="btn btn-danger delete-link">
+  <td class="special-column">
+    <button type="button" class="btn btn-outline-danger delete-link">
       <i class="icon icon-trash"></i>
     </button>
   </td>

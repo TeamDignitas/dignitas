@@ -6,12 +6,12 @@
 <tr {if $id}id="{$id}" hidden{/if}>
   <td>
     <input type="hidden" name="relIds[]" value="{$relation->id|default:''}">
-    <label class="col-form-label icon icon-move">
+    <label class="col-form-label form-control-sm icon icon-move">
     </label>
   </td>
 
   <td>
-    <select class="form-control" name="relTypes[]">
+    <select class="form-control form-control-sm" name="relTypes[]">
       {foreach RelationType::loadForEntityType($entityTypeId) as $rt}
         <option
           value="{$rt->id}"
@@ -43,7 +43,7 @@
   </td>
 
   <td>
-    <button type="button" class="btn btn-danger delete-dependant">
+    <button type="button" class="btn btn-sm btn-outline-danger delete-dependant">
       <i class="icon icon-trash"></i>
     </button>
   </td>

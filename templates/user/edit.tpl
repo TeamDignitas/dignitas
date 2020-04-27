@@ -3,7 +3,7 @@
 {block "title"}{t}label-edit-user{/t}{/block}
 
 {block "content"}
-  <h2 class="mb-4">{t}label-edit-user{/t}</h2>
+  <h1 class="mb-4">{t}label-edit-user{/t}</h1>
 
   <form method="post" enctype="multipart/form-data">
 
