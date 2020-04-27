@@ -362,3 +362,7 @@ footer {
   border-left: 2px solid #aaa;
   padding-left: 16px;
 }
+
+.highlight-field:hover {
+  background-color: #ddd;
+}

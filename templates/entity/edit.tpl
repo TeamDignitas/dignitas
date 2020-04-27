@@ -11,7 +11,7 @@
 {block "title"}{cap}{$smarty.capture.title}{/cap}{/block}
 
 {block "content"}
-  <h1 class="mb-4">{$smarty.capture.title}</h1>
+  <h1 class="mb-5">{$smarty.capture.title}</h1>
 
   {if !$entity->isEditable()}
     <div class="alert alert-warning">
@@ -24,20 +24,26 @@
     <input type="hidden" name="referrer" value="{$referrer}">
 
     <div class="common-region mb-5">
-      <div class="form-group">
-        <label for="field-name">{t}label-name{/t}</label>
+      <div class="form-group row highlight-field py-1 pr-1">
+        <label for="field-name" class="col-2 ml-0 mt-2">{t}label-name{/t}</label>
         <input
           name="name"
           value="{$entity->name|escape}"
           id="field-name"
-          class="form-control {if isset($errors.name)}is-invalid{/if}">
+          class="form-control {if isset($errors.name)}is-invalid{/if} col-10">
         {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
       </div>
 
-      <div class="form-group">
-        <label>{t}label-alias{/t}</label>
+      <div class="form-group row highlight-field py-1">
+        <label class="col-2 ml-0 mt-2">{t}label-alias{/t}</label>
+        <div class="col-10 pl-0 mt-1">
+          <button id="add-alias" class="btn btn-outline-secondary btn-sm" type="button">
+            <i class="icon icon-plus"></i>
+            {t}link-add-alias{/t}
+          </button>
+        </div>
 
-        <table class="table table-sm sortable">
+        <table class="table table-sm sortable col-md-10 offset-md-2">
           <thead
             id="alias-header"
             {if empty($aliases)}hidden{/if}>
@@ -54,14 +60,8 @@
             {/foreach}
           </tbody>
         </table>
-
-        <div>
-          <button id="add-alias" class="btn btn-outline-secondary btn-sm" type="button">
-            <i class="icon icon-plus"></i>
-            {t}link-add-alias{/t}
-          </button>
-        </div>
       </div>
+
     </div>
 
     <div class="common-region mb-5">
