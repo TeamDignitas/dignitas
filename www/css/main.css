@@ -382,7 +382,7 @@ footer {
   border-radius: .2rem;
 }
 
-.special-column {
+.narrow-column {
   max-width: 100px;
   display: block;
 }
