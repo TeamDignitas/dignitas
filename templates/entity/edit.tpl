@@ -23,7 +23,7 @@
     <input type="hidden" name="id" value="{$entity->id}">
     <input type="hidden" name="referrer" value="{$referrer}">
 
-    <div class="common-region mb-5">
+    <fieldset class="common-region mb-5">
       <div class="form-group row highlight-field py-1 pr-1">
         <label for="field-name" class="col-2 ml-0 mt-2">{t}label-name{/t}</label>
         <input
@@ -62,9 +62,9 @@
         </table>
       </div>
 
-    </div>
+    </fieldset>
 
-    <div class="common-region mb-5">
+    <fieldset class="common-region mb-5">
       <div class="form-group row highlight-field py-1 pr-1">
         <label for="field-entity-type-id" class="col-2 ml-0 mt-2">{t}label-type{/t}</label>
         <select
@@ -134,9 +134,9 @@
         {include "bits/fieldErrors.tpl" errors=$errors.relations|default:null}
 
       </div>
-    </div>
+    </fieldset>
 
-    <div class="common-region mb-5">
+    <fieldset class="common-region mb-5">
       <div class="form-group row highlight-field py-1">
         <label for="field-profile" class="col-2 mt-2">{t}label-profile{/t}</label>
         <div class="col-10 pl-0">
@@ -162,9 +162,9 @@
         errors=$errors.links|default:null
       }
 
-    </div>
+    </fieldset>
 
-    <div class="common-region mb-5">
+    <fieldset class="common-region mb-5">
       <div class="form-group row highlight-field py-1">
         <label class="col-2 mt-2">{t}label-tags{/t}</label>
         <div class="col-10 pl-0">
@@ -206,7 +206,7 @@
             imgClass="pic float-right"}
         </div>
       </div>
-    </div>
+    </fieldset>
 
     <div class="mt-4">
       <button name="saveButton" type="submit" class="btn btn-sm btn-outline-primary">
