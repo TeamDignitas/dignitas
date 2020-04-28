@@ -23,7 +23,7 @@
     <input type="hidden" name="id" value="{$entity->id}">
     <input type="hidden" name="referrer" value="{$referrer}">
 
-    <fieldset class="common-region mb-5">
+    <fieldset class="related-fields mb-5">
       <div class="form-group row highlight-field py-1 pr-1">
         <label for="field-name" class="col-2 ml-0 mt-2">{t}label-name{/t}</label>
         <input
@@ -64,7 +64,7 @@
 
     </fieldset>
 
-    <fieldset class="common-region mb-5">
+    <fieldset class="related-fields mb-5">
       <div class="form-group row highlight-field py-1 pr-1">
         <label for="field-entity-type-id" class="col-2 ml-0 mt-2">{t}label-type{/t}</label>
         <select
@@ -136,7 +136,7 @@
       </div>
     </fieldset>
 
-    <fieldset class="common-region mb-5">
+    <fieldset class="related-fields mb-5">
       <div class="form-group row highlight-field py-1">
         <label for="field-profile" class="col-2 mt-2">{t}label-profile{/t}</label>
         <div class="col-10 pl-0">
@@ -164,7 +164,7 @@
 
     </fieldset>
 
-    <fieldset class="common-region mb-5">
+    <fieldset class="related-fields mb-5">
       <div class="form-group row highlight-field py-1">
         <label class="col-2 mt-2">{t}label-tags{/t}</label>
         <div class="col-10 pl-0">
