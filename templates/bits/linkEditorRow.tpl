@@ -16,7 +16,7 @@
       class="form-control">
   </td>
 
-  <td class="special-column">
+  <td class="narrow-column">
     <button type="button" class="btn btn-outline-danger delete-link">
       <i class="icon icon-trash"></i>
     </button>

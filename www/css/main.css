@@ -358,12 +358,12 @@ footer {
 }
 
 /***************************** Edit author pages ****************************/
-.common-region {
+.related-fields {
   border-left: 2px solid #aaa;
   padding-left: 16px;
 }
 
-.highlight-field:hover {
+.related-fields .form-group:hover {
   background-color: #ddd;
 }
 
@@ -382,7 +382,7 @@ footer {
   border-radius: .2rem;
 }
 
-.special-column {
+.narrow-column {
   max-width: 100px;
   display: block;
 }

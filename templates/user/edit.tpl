@@ -3,14 +3,14 @@
 {block "title"}{t}label-edit-user{/t}{/block}
 
 {block "content"}
-  <h1 class="mb-4">{t}label-edit-user{/t}</h1>
+  <h1 class="mb-5">{t}label-edit-user{/t}</h1>
 
   <form method="post" enctype="multipart/form-data">
 
-    <div class="form-group">
-      <label>{t}label-nickname{/t}</label>
+    <div class="form-group row">
+      <label class="col-2 mt-1">{t}label-nickname{/t}</label>
 
-      <div class="input-group">
+      <div class="input-group col-10">
         <span class="input-group-prepend">
           <i class="input-group-text icon icon-user"></i>
         </span>
@@ -24,10 +24,10 @@
       {include "bits/fieldErrors.tpl" errors=$errors.nickname|default:null}
     </div>
 
-    <div class="form-group">
-      <label>{t}label-email{/t}</label>
+    <div class="form-group row">
+      <label class="col-2 mt-1">{t}label-email{/t}</label>
 
-      <div class="input-group">
+      <div class="input-group col-10">
         <span class="input-group-prepend">
           <i class="input-group-text icon icon-mail"></i>
         </span>
@@ -36,14 +36,14 @@
           type="email"
           name="email"
           value="{$user->email|escape}">
+        {include "bits/fieldErrors.tpl" errors=$errors.email|default:null}
       </div>
-      {include "bits/fieldErrors.tpl" errors=$errors.email|default:null}
     </div>
 
     <div class="form-group row">
-      <div class="col">
-        <label for="field-image">{t}label-image{/t}</label>
+      <label for="field-image" class="col-2 mt-1">{t}label-image{/t}</label>
 
+      <div class="col-10">
         <div class="custom-file">
           <input
             name="image"
@@ -62,28 +62,30 @@
             {t}label-delete-image{/t}
           </label>
         </div>
+
+        {include "bits/image.tpl"
+          obj=$user
+          geometry=Config::THUMB_USER_PROFILE
+          spanClass="col-3"
+          imgClass="pic float-right"}
       </div>
-
-      {include "bits/image.tpl"
-        obj=$user
-        geometry=Config::THUMB_USER_PROFILE
-        spanClass="col-3"
-        imgClass="pic float-right"}
     </div>
 
-    <div class="form-group">
-      <label>{t}label-about-me{/t}</label>
-      <textarea
-        name="aboutMe"
-        class="form-control has-unload-warning easy-mde"
-        rows="5">{$user->aboutMe|escape}</textarea>
-      {include "bits/markdownHelp.tpl"}
+    <div class="form-group row">
+      <label class="col-2 mt-1">{t}label-about-me{/t}</label>
+      <div class="col-10">
+        <textarea
+          name="aboutMe"
+          class="form-control has-unload-warning easy-mde"
+          rows="5">{$user->aboutMe|escape}</textarea>
+        {include "bits/markdownHelp.tpl"}
+      </div>
     </div>
 
-    <div class="form-group">
-      <label>{t}label-change-password{/t}</label>
+    <div class="form-group row">
+      <label class="col-2 mt-1">{t}label-change-password{/t}</label>
 
-      <div class="input-group">
+      <div class="input-group col-10">
         <span class="input-group-prepend">
           <i class="input-group-text icon icon-lock"></i>
         </span>
@@ -92,13 +94,13 @@
           type="password"
           name="password"
           value="{$password|default:''}">
+        {include "bits/fieldErrors.tpl" errors=$errors.password|default:null}
       </div>
-      {include "bits/fieldErrors.tpl" errors=$errors.password|default:null}
     </div>
 
-    <div class="form-group">
-      <label>{t}label-password-again{/t}</label>
-      <div class="input-group">
+    <div class="form-group row">
+      <label class="col-2 mt-1">{t}label-password-again{/t}</label>
+      <div class="input-group col-10">
         <span class="input-group-prepend">
           <i class="input-group-text icon icon-lock"></i>
         </span>
