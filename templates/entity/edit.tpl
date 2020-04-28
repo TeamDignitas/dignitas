@@ -34,7 +34,7 @@
         {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
       </div>
 
-      <div class="form-group row highlight-field py-1">
+      <div class="form-group row highlight-field py-1 mb-0">
         <label class="col-2 ml-0 mt-2">{t}label-alias{/t}</label>
         <div class="col-10 pl-0 mt-1 mb-2">
           <button id="add-alias" class="btn btn-outline-secondary btn-sm" type="button">
@@ -100,7 +100,7 @@
         </div>
       </div>
 
-      <div class="form-group row highlight-field py-1 pr-1">
+      <div class="form-group row highlight-field py-1 pr-1 mb-0">
         <label class="col-2 mt-2">{t}label-relations{/t}</label>
         <div class="col-10 pl-0 mb-2">
           <button id="add-relation" class="btn btn-outline-secondary btn-sm" type="button">
@@ -176,7 +176,7 @@
         </div>
       </div>
 
-      <div class="form-group row highlight-field py-1">
+      <div class="form-group row highlight-field py-1 mb-0">
         <label class="col-2 mt-2" for="field-image">{t}label-image{/t}</label>
 
         <div class="col-10 pl-0">
