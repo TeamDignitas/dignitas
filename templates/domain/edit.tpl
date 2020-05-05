@@ -3,64 +3,68 @@
 {block "title"}{t}title-edit-domain{/t}{/block}
 
 {block "content"}
-  <h2 class="mb-4">{t}title-edit-domain{/t}</h2>
+  <h1 class="mb-5">{t}title-edit-domain{/t}</h1>
 
   <form method="post" enctype="multipart/form-data">
 
-    <div class="form-group">
-      <label for="field-name" class="control-label">
-        {t}label-name{/t}
-      </label>
-      <input type="text"
-        class="form-control {if isset($errors.name)}is-invalid{/if}"
-        id="field-name"
-        name="name"
-        value="{$domain->name|escape}"
-        placeholder="{t}info-domain-name{/t}">
-      {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
-    </div>
-
-    <div class="form-group">
-      <label for="field-display-value" class="control-label">
-        {t}label-display-value{/t}
-      </label>
-      <input type="text"
-        class="form-control {if isset($errors.displayValue)}is-invalid{/if}"
-        id="field-display-value"
-        name="displayValue"
-        value="{$domain->displayValue|escape}"
-        placeholder="{t}info-domain-display-value{/t}">
-      {include "bits/fieldErrors.tpl" errors=$errors.displayValue|default:null}
-    </div>
-
-    <div class="form-group">
-      <label for="field-image">{t}label-image{/t}</label>
-
-      <div>
-        {include "bits/image.tpl"
-          obj=$domain
-          geometry=Config::THUMB_DOMAIN}
-      </div>
-
-      <div class="custom-file">
-        <input
-          name="image"
-          type="file"
-          class="custom-file-input {if isset($errors.image)}is-invalid{/if}"
-          id="field-image">
-        <label class="custom-file-label" for="field-image">
-          {t}info-upload-image{/t}
+    <fieldset class="related-fields mb-5">
+      <div class="form-group row py-1 pr-1">
+        <label for="field-name" class="control-label col-2 ml-0 mt-2">
+          {t}label-name{/t}
         </label>
+        <input type="text"
+          class="form-control {if isset($errors.name)}is-invalid{/if} col-10"
+          id="field-name"
+          name="name"
+          value="{$domain->name|escape}"
+          placeholder="{t}info-domain-name{/t}">
+        {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
       </div>
-      {include "bits/fieldErrors.tpl" errors=$errors.image|default:null}
 
-      <div class="form-check">
-        <label class="form-check-label">
-          <input type="checkbox" name="deleteImage" class="form-check-input">
-          {t}label-delete-image{/t}
+      <div class="form-group row py-1 pr-1">
+        <label for="field-display-value" class="control-label col-2 ml-0 mt-2">
+          {t}label-display-value{/t}
         </label>
+        <input type="text"
+          class="form-control {if isset($errors.displayValue)}is-invalid{/if} col-10"
+          id="field-display-value"
+          name="displayValue"
+          value="{$domain->displayValue|escape}"
+          placeholder="{t}info-domain-display-value{/t}">
+        {include "bits/fieldErrors.tpl" errors=$errors.displayValue|default:null}
       </div>
-    </div>
+
+      <div class="form-group row py-1 pr-1 mb-0">
+        <label for="field-image" class="col-2 ml-0 mt-2">{t}label-image{/t}</label>
+
+        <div class="col-10 px-0">
+          <div>
+            {include "bits/image.tpl"
+              obj=$domain
+              geometry=Config::THUMB_DOMAIN}
+          </div>
+
+          <div class="custom-file">
+            <input
+              name="image"
+              type="file"
+              class="custom-file-input {if isset($errors.image)}is-invalid{/if}"
+              id="field-image">
+            <label class="custom-file-label" for="field-image">
+              {t}info-upload-image{/t}
+            </label>
+          </div>
+          {include "bits/fieldErrors.tpl" errors=$errors.image|default:null}
+
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" name="deleteImage" class="form-check-input">
+              {t}label-delete-image{/t}
+            </label>
+          </div>
+        </div>
+      </div>
+    </fieldset>
 
     <div class="mt-4">
       <button name="saveButton" type="submit" class="btn btn-sm btn-outline-primary">
