@@ -3,34 +3,38 @@
 {block "title"}{t}title-edit-help-category{/t}{/block}
 
 {block "content"}
-  <h1 class="mb-4 capitalize-first-word">{t}title-edit-help-category{/t}</h1>
+  <h1 class="mb-5 capitalize-first-word">{t}title-edit-help-category{/t}</h1>
 
   <form method="post">
 
-    <div class="form-group">
-      <label for="field-name" class="control-label">
-        {t}label-name{/t}
-      </label>
-      <input type="text"
-        class="form-control {if isset($errors.name)}is-invalid{/if}"
-        id="field-name"
-        name="name"
-        value="{$cat->name|escape}">
-      {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
-    </div>
+    <fieldset class="related-fields mb-5">
+      <div class="form-group row py-1 pr-1">
+        <label for="field-name" class="control-label col-2 mt-2">
+          {t}label-name{/t}
+        </label>
+        <input type="text"
+          class="form-control {if isset($errors.name)}is-invalid{/if} col-10"
+          id="field-name"
+          name="name"
+          value="{$cat->name|escape}">
+        {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
+      </div>
 
-    <div class="form-group">
-      <label for="field-path" class="control-label">
-        {t}label-help-category-path{/t}
-      </label>
-      <input type="text"
-        class="form-control {if isset($errors.path)}is-invalid{/if}"
-        id="field-path"
-        name="path"
-        value="{$cat->path|escape}"
-        placeholder="{t}info-help-category-path{/t}">
-      {include "bits/fieldErrors.tpl" errors=$errors.path|default:null}
-    </div>
+      <div class="form-group row py-1 pr-1 mb-0">
+        <label for="field-path" class="control-label col-2 mt-2">
+          {t}label-help-category-path{/t}
+        </label>
+        <div class="col-10 px-0">
+          <input type="text"
+            class="form-control {if isset($errors.path)}is-invalid{/if}"
+            id="field-path"
+            name="path"
+            value="{$cat->path|escape}"
+            placeholder="{t}info-help-category-path{/t}">
+          {include "bits/fieldErrors.tpl" errors=$errors.path|default:null}
+        </div>
+      </div>
+    </fieldset>
 
     <fieldset class="mt-5">
       <legend>{cap}{t}title-help-pages-in-category{/t}{/cap}</legend>

@@ -4,7 +4,7 @@
 
 {block "content"}
 
-  <h2 class="mb-4">{cap}{t}title-domains{/t}{/cap}</h2>
+  <h1 class="mb-5">{cap}{t}title-domains{/t}{/cap}</h1>
 
   <a class="btn btn-sm btn-outline-primary" href="{Router::link('domain/edit')}">
     <i class="icon icon-plus"></i>

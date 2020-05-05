@@ -3,10 +3,10 @@
 <table class="table table-sm mb-5">
   <thead>
     <tr>
-      <th>{t}user{/t}</th>
-      <th>{t}vote{/t}</th>
-      <th>{t}details{/t}</th>
-      <th>{t}date{/t}</th>
+      <th class="border-0">{t}user{/t}</th>
+      <th class="border-0">{t}vote{/t}</th>
+      <th class="border-0">{t}details{/t}</th>
+      <th class="border-0">{t}date{/t}</th>
     </tr>
   </thead>
 

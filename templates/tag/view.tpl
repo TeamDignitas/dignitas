@@ -3,9 +3,9 @@
 {block "title"}{t}title-tag{/t}: {$tag->value}{/block}
 
 {block "content"}
-  <h2 class="mb-4">{t}title-tag{/t}
+  <h1 class="mb-4">{t}title-tag{/t}
   {include "bits/tagAncestors.tpl"}
-  </h2>
+  </h1>
 
   {if User::may(User::PRIV_EDIT_TAG)}
     <p>
