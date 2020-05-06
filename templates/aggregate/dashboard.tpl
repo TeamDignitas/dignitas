@@ -3,7 +3,7 @@
 {block "title"}{cap}{t}title-dashboard{/t}{/cap}{/block}
 
 {block "content"}
-  <h2 class="mb-4">{cap}{t}title-dashboard{/t}{/cap}</h2>
+  <h1 class="mb-5">{cap}{t}title-dashboard{/t}{/cap}</h1>
 
   <div class="card-columns">
     {if User::may(User::PRIV_ADD_STATEMENT)}

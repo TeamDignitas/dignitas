@@ -29,7 +29,7 @@
         {block "content"}{/block}
       </main>
     </div>
-    
+
     <footer>
       <div class="text-center container mt-3">
         <ul class="list-inline list-inline-bullet">

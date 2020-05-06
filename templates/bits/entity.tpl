@@ -15,12 +15,12 @@
   </div>
 
   <div class="col-md-9 col-sm-12 mt-2">
-    <h2 class="font-weight-bold mb-0 center-mobile">
+    <h1 class="font-weight-bold mb-0 center-mobile">
       {$entity->name|escape}
       {if $statusInfo}
         [{$statusInfo['status']}]
       {/if}
-    </h2>
+    </h1>
     <div class="font-italic text-muted pl-2 center-mobile">
       {$aliases=$entity->getAliases()}
       {if count($aliases)}
