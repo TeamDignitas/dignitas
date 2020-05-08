@@ -4,10 +4,10 @@
 
 {block "content"}
 
-  <div id="what-is" class="bg-warning">
-    <div class="container">
-      <h1 class="display-4">Dignitas - prima platformă de <i>fact checking</i> colaborativ din România</h1>
-      <p class="lead">Oricine poate contribui la demontarea știrilor false (<b>#fakeNews</b>) din România. Ne bazăm pe un sistem de voturi și reputație cumulativă pentru analizarea afirmațiilor. Nu este nevoie să fii jurnalist pentru asta.</p>
+  <div id="what-is" class="text-center">
+    <div class="container bg-white">
+      <h1 class="display-4 mb-4">DIGNITAS - prima platformă de <br><span class="font-weight-bold">fact checking</span> colaborativ din România</h1>
+      <p class="lead px-5 mb-5">Oricine poate contribui acum la demontarea știrilor false (<b>#fakeNews</b>) din România. Ne bazăm pe un sistem de voturi și reputație cumulativă pentru analizarea afirmațiilor politice.</p>
       <a class="btn btn-primary btn-lg" href="#how-it-works" role="button">Cum funcționează</a>
       <a class="btn btn-link btn-lg" href="#" role="button">Contribuie și tu</a>
     </div>
