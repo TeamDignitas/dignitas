@@ -390,3 +390,16 @@ body, main {
   max-width: 100px;
   display: block;
 }
+
+/***************************** home page ****************************/
+#what-is {
+  min-height: 95vh;
+}
+
+#how-it-works section {
+  margin-bottom: 120px;
+}
+
+.step-image img {
+  max-height: 256px;
+}
