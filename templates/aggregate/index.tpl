@@ -4,6 +4,85 @@
 
 {block "content"}
 
+  <div id="what-is" class="bg-warning">
+    <div class="container">
+      <h1 class="display-4">Dignitas - prima platformă de <i>fact checking</i> colaborativ din România</h1>
+      <p class="lead">Oricine poate contribui la demontarea știrilor false (<b>#fakeNews</b>) din România. Ne bazăm pe un sistem de voturi și reputație cumulativă pentru analizarea afirmațiilor. Nu este nevoie să fii jurnalist pentru asta.</p>
+      <a class="btn btn-primary btn-lg" href="#how-it-works" role="button">Cum funcționează</a>
+      <a class="btn btn-link btn-lg" href="#" role="button">Contribuie și tu</a>
+    </div>
+  </div>
+
+  <div id="how-it-works" class="mt-5">
+    <h2 class="mt-3 font-weight-bold">Cum funcționează Dignitas</h2>
+
+    <section class="row py-4">
+      <div class="col-6 step-description">
+        <div class="wrapper mt-5">
+          <h3 class="">1. Adaugi afirmații noi pe platformă</h3>
+          <p>Ai nevoie doar de un cont pentru asta. Scopul nostru este să strângem și să analizăm cât mai multe afirmații politice, în special de la politicienii aflați actualmente în funcții publice cu rol de conducere. Odată strânse și analizate, aceste afirmații ne vor arăta nivelul de încredere pe care îl putem avea într-un politician la următoarele alegeri.</p>
+          <a href="" class="btn btn-outline-info btn-lg">vezi cele mai recente afirmații</a>
+        </div>
+      </div>
+      <div class="col-6 step-image text-left">
+        <img src="" class="img-fluid" alt="Responsive image">
+      </div>
+    </section>
+
+    <section class="row py-4">
+      <div class="col-6 step-image text-right">
+        <img src="" class="img-fluid" alt="Responsive image">
+      </div>
+      <div class="col-6 step-description">
+        <div class="wrapper mt-5">
+          <h3 class="">2. Votezi răspunsurile altor contribuitori</h3>
+          <p>Pentru început, drepturile tale ca contribuitor sunt limitate până acumulezi mai multă reputație. Colaborarea cu alți utilizatori ai platformei este esențială pentru creșterea puterii tale de analiză pe această platformă.</p>
+          <a href="" class="btn btn-outline-info btn-lg">vezi cele mai recente răspunsuri</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="row py-4">
+      <div class="col-6 step-description">
+        <div class="wrapper mt-5">
+          <h3 class="">3. Acumulezi reputație (puncte)</h3>
+          <p>Pe măsură ce voturile tale ajută la definirea valorilor de adevăr ale afirmațiilor în curs de analizare, vei acumula reputație sub formă de puncte și vei dobândi drepturi noi pe platformă.</p>
+          <a href="" class="btn btn-outline-info btn-lg">cum acumulezi reputație</a>
+        </div>
+      </div>
+      <div class="col-6 step-image text-left">
+        <img src="" class="img-fluid" alt="Responsive image">
+      </div>
+    </section>
+
+    <section class="row py-4">
+      <div class="col-6 step-image text-right">
+        <img src="" class="img-fluid" alt="Responsive image">
+      </div>
+      <div class="col-6 step-description">
+        <div class="wrapper mt-5">
+          <h3 class="">4. Primești drepturi noi pe platformă</h3>
+          <p>Mai multe drepturi, mai multă responsabilitate pentru contribuitori. Pe măsură ce reputația ta crește, vei putea raporta afirmațiile duplicate, vei puea comenta un răspuns, vei putea adăuga etichete noi pentru definirea campaniilor etc.</p>
+          <a href="" class="btn btn-outline-info btn-lg">vezi lista de privilegii</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="row py-4">
+      <div class="col-6 step-description">
+        <div class="wrapper mt-5">
+          <h3 class="">5. Votezi valoarea de adevăr a unei afirmații politice</h3>
+          <p>Unele afirmații politice, prin natura lor, nu se încadrează în valorile standard de adevărat/fals. De aceea Dignitas folosește o scară de adevăr cu 5 trepte.</p>
+          <a href="" class="btn btn-outline-info btn-lg">vezi scara de adevăr</a>
+        </div>
+      </div>
+      <div class="col-6 step-image text-left">
+        <img src="" class="img-fluid" alt="Responsive image">
+      </div>
+    </section>
+
+  </div>
+
   <h3>{t}title-recent-statements{/t}</h3>
 
   {include "bits/statementList.tpl"}
