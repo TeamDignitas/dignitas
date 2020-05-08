@@ -394,6 +394,12 @@ body, main {
 /***************************** home page ****************************/
 #what-is {
   min-height: 95vh;
+  padding-top: 21vh;
+}
+
+#what-is .container {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
 }
 
 #how-it-works section {
