@@ -19,7 +19,7 @@
 
       <div class="row homepage-actions">
         <a class="btn btn-primary btn-lg col-md-5 col-sm-12 mr-3" href="#how-it-works" role="button">Cum funcționează</a>
-        <a class="btn btn-outline-primary btn-lg col-md-5 col-sm-12" href="#" role="button">Contribuie și tu</a>
+        <a class="btn btn-outline-primary btn-lg col-md-5 col-sm-12" href="{Router::link('auth/register')}" role="button">Contribuie și tu</a>
       </div>
     </div>
 
