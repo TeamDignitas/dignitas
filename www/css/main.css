@@ -402,10 +402,12 @@ body, main {
   line-height: 1.4;
 }
 
-.background-quotes {
-  background: url("/dignitas/www/img/right_grouped_quotes.png") no-repeat;
-  background-size: 768px 530px;
-  min-height: 20vh;
+.name {
+  font-family: 'Open Sans', Arial !important;
+}
+
+.lead {
+  color: #888;
 }
 
 #what-is .container {
