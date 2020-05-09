@@ -394,12 +394,29 @@ body, main {
 /***************************** home page ****************************/
 #what-is {
   min-height: 95vh;
-  padding-top: 21vh;
+  padding-top: 16vh;
+}
+
+#what-is h1 {
+  font-family: 'Spartan', sans-serif;
+  line-height: 1.4;
+}
+
+.homepage-actions {
+  margin-top: 1vh;
+}
+
+.name {
+  font-family: 'Open Sans', Arial !important;
+}
+
+.lead {
+  color: #888;
 }
 
 #what-is .container {
-  padding-top: 10vh;
-  padding-bottom: 10vh;
+  padding-top: 8vh;
+  padding-bottom: 12vh;
 }
 
 #how-it-works section {
@@ -408,4 +425,10 @@ body, main {
 
 .step-image img {
   max-height: 256px;
+}
+
+@media (max-width: 768px) {
+  .homepage-actions a {
+    margin-bottom: 10px;
+  }
 }
