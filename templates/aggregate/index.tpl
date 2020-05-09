@@ -5,13 +5,18 @@
 {block "content"}
 
   <div id="what-is" class="row">
-    <div class="col-6">
-      <h1 class="display-4 mb-4">DIGNITAS - prima platformă de <br><span class="font-weight-bold">fact checking</span> colaborativ din România</h1>
+    <div class="col-7">
+      <h1 class="mb-5">
+        <span class="display-4 font-weight-bold">DIGNITAS - </span><br>
+        <span class="display-5">prima platformă de</span><br>
+        <span class="display-5 font-weight-bold">fact checking colaborativ</span><br>
+        <span class="display-5">din lume</span>
+      </h1>
       <p class="lead mb-5">Oricine poate contribui acum la demontarea știrilor false (<b>#fakeNews</b>) din România.</p>
       <a class="btn btn-primary btn-lg mr-3" href="#how-it-works" role="button">Cum funcționează</a>
       <a class="btn btn-outline-primary btn-lg" href="#" role="button">Contribuie și tu</a>
     </div>
-    <div class="col-6 px-0 background-quotes"></div>
+    <div class="col-5 px-0 background-quotes"></div>
   </div>
 
   <div id="how-it-works" class="mt-5">
