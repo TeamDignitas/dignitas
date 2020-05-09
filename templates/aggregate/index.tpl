@@ -4,13 +4,14 @@
 
 {block "content"}
 
-  <div id="what-is" class="text-center">
-    <div class="container bg-white">
+  <div id="what-is" class="row">
+    <div class="col-6">
       <h1 class="display-4 mb-4">DIGNITAS - prima platformă de <br><span class="font-weight-bold">fact checking</span> colaborativ din România</h1>
-      <p class="lead px-5 mb-5">Oricine poate contribui acum la demontarea știrilor false (<b>#fakeNews</b>) din România. Ne bazăm pe un sistem de voturi și reputație cumulativă pentru analizarea afirmațiilor politice.</p>
-      <a class="btn btn-primary btn-lg" href="#how-it-works" role="button">Cum funcționează</a>
-      <a class="btn btn-link btn-lg" href="#" role="button">Contribuie și tu</a>
+      <p class="lead mb-5">Oricine poate contribui acum la demontarea știrilor false (<b>#fakeNews</b>) din România.</p>
+      <a class="btn btn-primary btn-lg mr-3" href="#how-it-works" role="button">Cum funcționează</a>
+      <a class="btn btn-outline-primary btn-lg" href="#" role="button">Contribuie și tu</a>
     </div>
+    <div class="col-6 px-0 background-quotes"></div>
   </div>
 
   <div id="how-it-works" class="mt-5">

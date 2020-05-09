@@ -394,12 +394,18 @@ body, main {
 /***************************** home page ****************************/
 #what-is {
   min-height: 95vh;
-  padding-top: 21vh;
+  padding-top: 19vh;
+}
+
+.background-quotes {
+  background: url("/dignitas/www/img/right_grouped_quotes.png") no-repeat;
+  background-size: 768px 530px;
+  min-height: 20vh;
 }
 
 #what-is .container {
-  padding-top: 10vh;
-  padding-bottom: 10vh;
+  padding-top: 8vh;
+  padding-bottom: 12vh;
 }
 
 #how-it-works section {
