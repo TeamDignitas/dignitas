@@ -419,12 +419,9 @@ body, main {
   padding-bottom: 12vh;
 }
 
-#how-it-works section {
-  margin-bottom: 120px;
-}
-
-.step-image img {
-  max-height: 256px;
+#how-it-works .col-6 {
+  padding: 60px 15px;
+  max-height: 370px;
 }
 
 @media (max-width: 768px) {
