@@ -419,9 +419,13 @@ body, main {
   padding-bottom: 12vh;
 }
 
+#how-it-works {
+  margin-bottom: 150px;
+}
+
 #how-it-works .col-6 {
   padding: 60px 15px;
-  max-height: 370px;
+  margin-bottom: 5vh;
 }
 
 @media (max-width: 768px) {
