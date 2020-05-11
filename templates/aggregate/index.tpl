@@ -38,7 +38,7 @@
             Adaugi afirmații noi pe platformă
           </h3>
           <p>Strângem și analizăm cât mai multe afirmații politice, pe baza cărora putem calcula nivelul de încredere al unui politician.</p>
-          <a href="" class="btn btn-outline-secondary btn-lg col-10">vezi cele mai recente afirmații</a>
+          <a href="#recent-statements" class="btn btn-outline-secondary btn-lg col-10">vezi cele mai recente afirmații</a>
         </div>
       </div>
       <div class="col-6 step-image text-left">
@@ -68,7 +68,7 @@
             Acumulezi reputație (puncte)
           </h3>
           <p>Pe măsură ce voturile tale ajută la definirea valorilor de adevăr ale afirmațiilor în curs de analizare, reputație ta va crește.</p>
-          <a href="" class="btn btn-outline-secondary btn-lg col-10">cum acumulezi reputație</a>
+          <a href="https://dignitas.ro/ajutor/reputatie" class="btn btn-outline-secondary btn-lg col-10">cum acumulezi reputație</a>
         </div>
       </div>
       <div class="col-6 step-image text-left">
@@ -86,7 +86,7 @@
             Primești drepturi noi pe platformă
           </h3>
           <p>Mai multe drepturi, mai multă responsabilitate pentru contribuitori.</p>
-          <a href="" class="btn btn-outline-secondary btn-lg col-10">vezi lista de privilegii</a>
+          <a href="https://dignitas.ro/ajutor/privilegii" class="btn btn-outline-secondary btn-lg col-10">vezi lista de privilegii</a>
         </div>
       </div>
     </section>
@@ -98,7 +98,7 @@
             Alegi valoarea de adevăr a afirmațiilor
           </h3>
           <p>Dignitas folosește o scară de adevăr cu 6 trepte, similar altor platforme de fact checking din lume.</p>
-          <a href="" class="btn btn-outline-secondary btn-lg col-10">vezi scara de adevăr</a>
+          <a href="https://dignitas.ro/ajutor/verdicte" class="btn btn-outline-secondary btn-lg col-10">vezi scara de adevăr</a>
         </div>
       </div>
       <div class="col-6 step-image text-left">
@@ -108,7 +108,7 @@
 
   </div>
 
-  <h3 class="mt-5 mb-3 capitalize-first-word font-weight-bold display-4">{t}title-recent-statements{/t}</h3>
+  <h3 id="recent-statements" class="mt-5 mb-3 capitalize-first-word font-weight-bold display-4">{t}title-recent-statements{/t}</h3>
 
   {include "bits/statementList.tpl"}
 
