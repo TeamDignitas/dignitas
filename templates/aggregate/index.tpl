@@ -108,11 +108,11 @@
 
   </div>
 
-  <h3 class="mt-5">{t}title-recent-statements{/t}</h3>
+  <h3 class="mt-5 mb-3 capitalize-first-word font-weight-bold display-4">{t}title-recent-statements{/t}</h3>
 
   {include "bits/statementList.tpl"}
 
-  <h3>{t}title-entities{/t}</h3>
+  <h3 class="mt-5 mb-3 capitalize-first-word font-weight-bold display-4">{t}title-entities{/t}</h3>
 
   {foreach $entities as $e}
     <div class="clearfix">
