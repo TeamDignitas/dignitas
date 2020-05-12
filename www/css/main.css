@@ -52,6 +52,10 @@ blockquote {
   white-space: nowrap;
 }
 
+.navbar-nav a:hover {
+  background-color: #212529;
+}
+
 @media (max-width: 768px) {
   .navbar-collapse {
     height: 100%;

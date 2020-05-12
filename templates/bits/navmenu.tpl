@@ -52,11 +52,11 @@
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
         <a
-          class="nav-link"
+          class="nav-link capitalize-first-word"
           href="{Router::link('help/index')}"
           title="{t}help-center{/t}"
         >
-          <i class="icon icon-help"></i>
+          {t}help-center{/t}
         </a>
       </li>
       <li class="nav-item dropdown">
@@ -158,8 +158,7 @@
         </li>
       {else}
         <li class="nav-item">
-          <a class="nav-link" href="{Router::link('auth/login')}">
-            <i class="icon icon-login"></i>
+          <a class="nav-link capitalize-first-word" href="{Router::link('auth/login')}">
             {t}link-log-in{/t}
           </a>
         </li>
