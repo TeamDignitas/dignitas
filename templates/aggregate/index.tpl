@@ -47,7 +47,7 @@
     </section>
 
     <section class="row">
-      <div class="col-6 step-image text-right">
+      <div class="col-6 step-image text-right pr-5">
         <img src="/dignitas/www/img/step2.png" class="img-fluid" alt="Responsive image">
       </div>
       <div class="col-6 step-description">
@@ -77,7 +77,7 @@
     </section>
 
     <section class="row">
-      <div class="col-6 step-image text-right">
+      <div class="col-6 step-image text-right pr-5">
         <img src="/dignitas/www/img/step4.png" class="img-fluid" alt="Responsive image">
       </div>
       <div class="col-6 step-description">
