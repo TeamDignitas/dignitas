@@ -393,7 +393,7 @@ body, main {
 
 /***************************** home page ****************************/
 #what-is {
-  min-height: 95vh;
+  height: calc(55vh);
   padding-top: 16vh;
 }
 

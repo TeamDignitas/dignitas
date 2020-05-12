@@ -5,27 +5,25 @@
 {block "content"}
 
   <div id="what-is" class="row">
-
-    <div class="col-7">
+    <div class="col-12">
       <div class="row">
-        <h1 class="mb-4">
-          <span class="display-4 font-weight-bold name">DIGNITAS - </span><br>
-          <span class="display-5">prima platformă de</span><br>
-          <span class="display-5 font-weight-bold">fact checking colaborativ</span><br>
-          <span class="display-5">din lume</span>
+
+        <h1 class="font-weight-bold">
+          <span class="display-4 name">DIGNITAS - </span>
+          <span class="display-5">fact checking colaborativ</span>
         </h1>
-        <p class="lead mb-5 pr-4">Oricine poate contribui acum la demontarea știrilor false (<b>#fakeNews</b>) din România.</p>
+        <p class="lead mb-5 pr-4">Prima platformă de acest fel din România și din lume.
+          <a class="" href="#how-it-works" role="button">Cum funcționează</a>
+        </p>
       </div>
 
-      <div class="row homepage-actions">
-        <a class="btn btn-primary btn-lg col-md-5 col-sm-12 mr-3" href="#how-it-works" role="button">Cum funcționează</a>
-        <a class="btn btn-outline-primary btn-lg col-md-5 col-sm-12" href="{Router::link('auth/register')}" role="button">Contribuie și tu</a>
-      </div>
     </div>
+  </div>
 
-    <div class="col-5 px-0">
-      <img src="/dignitas/www/img/quotes_background.png" class="img-fluid" alt="Responsive quotes image">
-    </div>
+  <div class="statements-carousel">
+    <h3 id="recent-statements" class="mt-5 mb-3 capitalize-first-word font-weight-bold">{t}title-recent-statements{/t}</h3>
+
+    {include "bits/statementList.tpl"}
   </div>
 
   <div id="how-it-works" class="mt-5">
@@ -107,10 +105,6 @@
     </section>
 
   </div>
-
-  <h3 id="recent-statements" class="mt-5 mb-3 capitalize-first-word font-weight-bold display-4">{t}title-recent-statements{/t}</h3>
-
-  {include "bits/statementList.tpl"}
 
   <h3 class="mt-5 mb-3 capitalize-first-word font-weight-bold display-4">{t}title-entities{/t}</h3>
 
