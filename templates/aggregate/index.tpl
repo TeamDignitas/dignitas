@@ -29,52 +29,45 @@
 
   <div class="container">
     <div class="statements-carousel">
-      <h3 class="mt-5 mb-3 capitalize-first-word font-weight-bold text-center serif-text">{t}title-recent-statements{/t}</h3>
+      <h3 class="mt-5 mb-5 capitalize-first-word font-weight-bold text-center serif-text">{t}title-recent-statements{/t}</h3>
 
-      <div class="carousel slide" data-ride="carousel">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+
         <div class="carousel-inner">
 
+          <!-- ####################### item 1 ################-->
           <div class="carousel-item active">
-            <div class="statement card border-secondary mr-3 mb-3 py-4 px-4">
-              <div class="">
-                <div class="card-title">
-                  <a href="/dignitas/www/afirmatie/1" class="">„Finlanda vrea să ia din experții români pentru președinția UE”</a>
+            <div class="container">
+              <div class="row">
+
+                <div class="col-2">
+                  <img src="/dignitas/www/imagine-entitate/6/200.jpg" class="pic rounded-circle img-fluid no-outline" width="128" height="128">
                 </div>
-                <div class="text-right card-text small">
-                  — <a href="/dignitas/www/autor/6">Viorica Dăncilă</a>,
-                  23 iunie 2019
+
+                <div class="col-10">
+                  <div class="bubble mr-3 mb-3 p-4">
+                    <div class="card-title">
+                      Finlanda vrea să ia din experții români pentru președinția UE
+                    </div>
+                    <a href="/dignitas/www/afirmatie/1" class="stretched-link"></a>
+                  </div>
+
+                  <div class="card-text small"> —
+                    <a href="/dignitas/www/autor/6">Viorica Dăncilă</a>, 23 iunie 2019
+                  </div>
                 </div>
+
               </div>
             </div>
           </div>
 
-          <div class="carousel-item">
-            <div class="statement card border-secondary mr-3 mb-3 py-4 px-4">
-              <div class="">
-                <div class="card-title">
-                  <a href="/dignitas/www/afirmatie/1" class="">„But I must explain to you how all this mistaken idea of denouncing pleasure and praising ”</a>
-                </div>
-                <div class="text-right card-text small">
-                  — <a href="/dignitas/www/autor/6">Gabriela Firea</a>,
-                  23 iunie 2019
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="carousel-item">
-            <div class="statement card border-secondary mr-3 mb-3 py-4 px-4">
-              <div class="">
-                <div class="card-title">
-                  <a href="/dignitas/www/afirmatie/1" class="">„On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment”</a>
-                </div>
-                <div class="text-right card-text small">
-                  — <a href="/dignitas/www/autor/6">Viorica Dăncilă</a>,
-                  23 iunie 2019
-                </div>
-              </div>
-            </div>
-          </div>
+
 
         </div>
       </div>
