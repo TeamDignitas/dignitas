@@ -1,13 +1,13 @@
 #what-is {
-  height: calc(50vh);
+  height: calc(55vh);
   padding-top: calc(10vh);
-  background-color: #4bcdaf;
+  background-color: #212529;
 }
 
 #what-is h1 {
   font-size: 3.76rem;
   line-height: 1.4;
-  color: #222;
+  color: #fff;
 }
 
 #what-is a {
@@ -19,7 +19,7 @@
 }
 
 .lead {
-  color: #222;
+  color: #7bc941;
 }
 
 #what-is .container {

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark">
 
   <button
     class="navbar-toggler"
@@ -11,7 +11,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="navbar-collapse bg-dark py-2" id="navbar-left">
+  <div class="navbar-collapse py-2" id="navbar-left">
     {include "bits/searchForm.tpl"}
     {***
     <ul class="navbar-nav mr-auto">
@@ -47,7 +47,7 @@
     <span class="icon icon-user"></span>
   </button>
 
-  <div class="navbar-collapse bg-dark" id="navbar-right">
+  <div class="navbar-collapse" id="navbar-right">
 
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
