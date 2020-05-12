@@ -393,24 +393,23 @@ body, main {
 
 /***************************** home page ****************************/
 #what-is {
-  height: calc(68vh);
-  padding-top: calc(20vh);
+  height: calc(50vh);
+  padding-top: calc(10vh);
   background-color: #4bcdaf;
 }
 
 #what-is h1 {
-  font-family: Georgia, 'Times New Roman', serif;
   font-size: 3.76rem;
   line-height: 1.4;
   color: #222;
 }
 
-.homepage-actions {
-  margin-top: calc(1vh);
+#what-is a {
+  color: #fff;
 }
 
-.name {
-  font-family: 'Open Sans', Arial !important;
+.serif-text {
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .lead {
@@ -420,6 +419,10 @@ body, main {
 #what-is .container {
   padding-top: calc(8vh);
   padding-bottom: calc(12vh);
+}
+
+.statements-carousel {
+  margin-bottom: calc(20vh);
 }
 
 #how-it-works {

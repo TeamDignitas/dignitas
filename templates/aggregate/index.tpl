@@ -15,8 +15,8 @@
         <div class="col-12">
 
           <h1 class="font-weight-bold">
-            <span class="name">DIGNITAS - </span>
-            <span class="">fact checking colaborativ</span>
+            <span class="serif-text">DIGNITAS - </span>
+            <span class="serif-text">fact checking colaborativ</span>
           </h1>
           <p class="lead mb-5 pr-4">Prima platformă de acest fel din România și din lume.
             <a class="" href="#how-it-works" role="button">Cum funcționează</a>
@@ -29,7 +29,7 @@
 
   <div class="container">
     <div class="statements-carousel">
-      <h3 id="recent-statements" class="mt-5 mb-3 capitalize-first-word font-weight-bold">{t}title-recent-statements{/t}</h3>
+      <h3 class="mt-5 mb-3 capitalize-first-word font-weight-bold text-center serif-text">{t}title-recent-statements{/t}</h3>
 
       <div class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -82,16 +82,16 @@
     </div>
 
     <div id="how-it-works" class="mt-5">
-      <h2 class="pt-5 font-weight-bold display-4">Cum funcționează Dignitas</h2>
+      <h2 class="pt-5 font-weight-bold text-center serif-text display-5">Cum funcționează Dignitas</h2>
 
       <section class="row">
         <div class="col-6 step-description">
           <div class="wrapper">
-            <h3><span class="font-weight-bold display-2">1</span><br>
+            <h3><span class="font-weight-bold display-3">1</span><br>
               Adaugi afirmații noi pe platformă
             </h3>
             <p>Strângem și analizăm cât mai multe afirmații politice, pe baza cărora putem calcula nivelul de încredere al unui politician.</p>
-            <a href="#recent-statements" class="btn btn-outline-secondary btn-lg col-10">vezi cele mai recente afirmații</a>
+            <a href="" class="btn btn-outline-secondary btn-lg col-10">vezi cele mai recente afirmații</a>
           </div>
         </div>
         <div class="col-6 step-image text-left">
@@ -105,7 +105,7 @@
         </div>
         <div class="col-6 step-description">
           <div class="wrapper">
-            <h3><span class="font-weight-bold display-2">2</span><br>
+            <h3><span class="font-weight-bold display-3">2</span><br>
               Votezi răspunsurile altor contribuitori
             </h3>
             <p>Colaborarea cu alți utilizatori ai platformei este esențială pentru creșterea reputației și drepturilor tale pe platformă.</p>
@@ -117,7 +117,7 @@
       <section class="row">
         <div class="col-6 step-description">
           <div class="wrapper">
-            <h3><span class="font-weight-bold display-2">3</span><br>
+            <h3><span class="font-weight-bold display-3">3</span><br>
               Acumulezi reputație (puncte)
             </h3>
             <p>Pe măsură ce voturile tale ajută la definirea valorilor de adevăr ale afirmațiilor în curs de analizare, reputație ta va crește.</p>
@@ -135,7 +135,7 @@
         </div>
         <div class="col-6 step-description">
           <div class="wrapper">
-            <h3><span class="font-weight-bold display-2">4</span><br>
+            <h3><span class="font-weight-bold display-3">4</span><br>
               Primești drepturi noi pe platformă
             </h3>
             <p>Mai multe drepturi, mai multă responsabilitate pentru contribuitori.</p>
@@ -147,7 +147,7 @@
       <section class="row">
         <div class="col-6 step-description">
           <div class="wrapper">
-            <h3><span class="font-weight-bold display-2">5</span><br>
+            <h3><span class="font-weight-bold display-3">5</span><br>
               Alegi valoarea de adevăr a afirmațiilor
             </h3>
             <p>Dignitas folosește o scară de adevăr cu 6 trepte, similar altor platforme de fact checking din lume.</p>
