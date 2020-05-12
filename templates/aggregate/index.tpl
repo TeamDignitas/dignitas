@@ -8,10 +8,11 @@
 {block "title"}Dignitas{/block}
 
 {block "content"}
-  <div class="container mt-4">
-    <div id="what-is" class="row">
-      <div class="col-12">
-        <div class="row">
+
+  <div id="what-is">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
 
           <h1 class="font-weight-bold">
             <span class="name">DIGNITAS - </span>
@@ -20,11 +21,13 @@
           <p class="lead mb-5 pr-4">Prima platformă de acest fel din România și din lume.
             <a class="" href="#how-it-works" role="button">Cum funcționează</a>
           </p>
-        </div>
 
+        </div>
       </div>
     </div>
+  </div>
 
+  <div class="container">
     <div class="statements-carousel">
       <h3 id="recent-statements" class="mt-5 mb-3 capitalize-first-word font-weight-bold">{t}title-recent-statements{/t}</h3>
 
@@ -157,34 +160,35 @@
       </section>
 
     </div>
-
-    <h3 class="mt-5 mb-3 capitalize-first-word font-weight-bold display-4">{t}title-entities{/t}</h3>
-
-    {foreach $entities as $e}
-      <div class="clearfix">
-        {include "bits/image.tpl"
-          obj=$e
-          geometry=Config::THUMB_ENTITY_SMALL
-          imgClass="pic float-right"}
-
-        {include "bits/entityLink.tpl" e=$e showStatus=true}
-        <div>{$e->getEntityType()->name|escape}</div>
-      </div>
-      <hr>
-    {/foreach}
-
-    <div>
-      {if User::may(User::PRIV_ADD_STATEMENT)}
-        <a href="{Router::link('statement/edit')}" class="btn btn-link">
-          {t}link-add-statement{/t}
-        </a>
-      {/if}
-
-      {if User::may(User::PRIV_ADD_ENTITY)}
-        <a href="{Router::link('entity/edit')}" class="btn btn-link">
-          {t}link-add-entity{/t}
-        </a>
-      {/if}
-    </div>
   </div>
+
+  <h3 class="mt-5 mb-3 capitalize-first-word font-weight-bold display-4">{t}title-entities{/t}</h3>
+
+  {foreach $entities as $e}
+    <div class="clearfix">
+      {include "bits/image.tpl"
+        obj=$e
+        geometry=Config::THUMB_ENTITY_SMALL
+        imgClass="pic float-right"}
+
+      {include "bits/entityLink.tpl" e=$e showStatus=true}
+      <div>{$e->getEntityType()->name|escape}</div>
+    </div>
+    <hr>
+  {/foreach}
+
+  <div>
+    {if User::may(User::PRIV_ADD_STATEMENT)}
+      <a href="{Router::link('statement/edit')}" class="btn btn-link">
+        {t}link-add-statement{/t}
+      </a>
+    {/if}
+
+    {if User::may(User::PRIV_ADD_ENTITY)}
+      <a href="{Router::link('entity/edit')}" class="btn btn-link">
+        {t}link-add-entity{/t}
+      </a>
+    {/if}
+  </div>
+
 {/block}

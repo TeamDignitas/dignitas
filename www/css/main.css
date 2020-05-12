@@ -394,19 +394,19 @@ body, main {
 /***************************** home page ****************************/
 #what-is {
   height: calc(68vh);
-  padding-top: 25vh;
+  padding-top: calc(20vh);
   background-color: #4bcdaf;
 }
 
 #what-is h1 {
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: 3rem;
+  font-size: 3.76rem;
   line-height: 1.4;
   color: #222;
 }
 
 .homepage-actions {
-  margin-top: 1vh;
+  margin-top: calc(1vh);
 }
 
 .name {
@@ -418,8 +418,8 @@ body, main {
 }
 
 #what-is .container {
-  padding-top: 8vh;
-  padding-bottom: 12vh;
+  padding-top: calc(8vh);
+  padding-bottom: calc(12vh);
 }
 
 #how-it-works {
@@ -428,7 +428,7 @@ body, main {
 
 #how-it-works .col-6 {
   padding: 60px 15px;
-  margin-bottom: 5vh;
+  margin-bottom: calc(5vh);
 }
 
 @media (max-width: 768px) {

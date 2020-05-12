@@ -23,7 +23,7 @@
       {include "bits/navmenu.tpl"}
     </header>
 
-    <main class="container-fluid">
+    <main class="container-fluid px-0">
       {include "bits/flashMessages.tpl"}
       {block "content"}{/block}
     </main>
