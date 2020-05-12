@@ -23,12 +23,10 @@
       {include "bits/navmenu.tpl"}
     </header>
 
-    <div class="">
-      <main class="container">
-        {include "bits/flashMessages.tpl"}
-        {block "content"}{/block}
-      </main>
-    </div>
+    <main class="container-fluid">
+      {include "bits/flashMessages.tpl"}
+      {block "content"}{/block}
+    </main>
 
     <footer>
       <div class="text-center container mt-3">
