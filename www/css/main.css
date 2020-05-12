@@ -393,13 +393,16 @@ body, main {
 
 /***************************** home page ****************************/
 #what-is {
-  height: calc(55vh);
-  padding-top: 16vh;
+  height: calc(68vh);
+  padding-top: 25vh;
+  background-color: #4bcdaf;
 }
 
 #what-is h1 {
-  font-family: 'Spartan', sans-serif;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 3rem;
   line-height: 1.4;
+  color: #222;
 }
 
 .homepage-actions {
@@ -411,7 +414,7 @@ body, main {
 }
 
 .lead {
-  color: #888;
+  color: #222;
 }
 
 #what-is .container {

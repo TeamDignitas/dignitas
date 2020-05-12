@@ -14,8 +14,8 @@
       <div class="row">
 
         <h1 class="font-weight-bold">
-          <span class="display-4 name">DIGNITAS - </span>
-          <span class="display-5">fact checking colaborativ</span>
+          <span class="name">DIGNITAS - </span>
+          <span class="">fact checking colaborativ</span>
         </h1>
         <p class="lead mb-5 pr-4">Prima platformă de acest fel din România și din lume.
           <a class="" href="#how-it-works" role="button">Cum funcționează</a>
