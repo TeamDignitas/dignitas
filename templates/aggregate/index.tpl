@@ -29,7 +29,7 @@
 
   <div class="container">
     <div class="statements-carousel pb-4">
-      <h3 class="mt-5 mb-5 capitalize-first-word font-weight-bold text-center serif-text">{t}title-recent-statements{/t}</h3>
+      <h3 class="mt-5 mb-5 capitalize-first-word text-center serif-text">{t}title-recent-statements{/t}</h3>
 
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner pb-5">
