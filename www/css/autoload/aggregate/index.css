@@ -1,9 +1,3 @@
-div.statement {
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 15px;
-  padding-bottom: 15px;
-}
-
 #what-is {
   height: calc(50vh);
   padding-top: calc(10vh);
@@ -44,6 +38,8 @@ div.statement {
   background: #FFFFFF;
   border-radius: 10px;
   border: #888 solid 2px;
+  display: flex;
+  align-items: center;
 }
 
 .bubble:after {
@@ -70,6 +66,19 @@ div.statement {
   z-index: 0;
   left: -18px;
   top: 44px;
+}
+
+.bubble-title {
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+.carousel-indicators li {
+  background-color: #aaa;
+}
+
+.carousel-item {
+  min-height: 14rem;
 }
 
 #how-it-works {
