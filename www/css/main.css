@@ -1,5 +1,5 @@
 body {
-  font-family: 'Open Sans', Arial !important;
+  font-family: Spartan, Helvetica, Calibri, Arial, sans-serif !important;
   color: #495057 !important;
 }
 
@@ -41,9 +41,52 @@ blockquote {
 }
 
 /******************************** navbar *********************************/
+.navbar,
+#navbar-left,
+#navbar-right,
+.navbar-nav a:hover {
+  background-color: #ffdd40;
+}
+
+.navbar-dark .navbar-nav .nav-link,
+.nav-item a {
+  color: #343a40 !important;
+}
+
+.nav-item a:hover,
+.navbar a.text-light:focus,
+.navbar a.text-light:hover {
+  color: #222 !important;
+}
+
+.navbar-collapse.shown {
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+
+#navbar-left.shown {
+  background-color: #888 !important;
+}
+
+#navbar-right.shown {
+  background-color: #fff !important;
+  border-left: 1px solid #343a40;
+}
 
 .navbar-nav {
   white-space: nowrap;
+}
+
+.navbar-brand,
+.navbar-brand:hover {
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 2rem !important;
+  color: #222;
+}
+
+.icon-menu:before {
+  content: '\f0c9';
 }
 
 @media (max-width: 768px) {
@@ -389,47 +432,4 @@ body, main {
 .narrow-column {
   max-width: 100px;
   display: block;
-}
-
-/***************************** home page ****************************/
-#what-is {
-  min-height: 95vh;
-  padding-top: 16vh;
-}
-
-#what-is h1 {
-  font-family: 'Spartan', sans-serif;
-  line-height: 1.4;
-}
-
-.homepage-actions {
-  margin-top: 1vh;
-}
-
-.name {
-  font-family: 'Open Sans', Arial !important;
-}
-
-.lead {
-  color: #888;
-}
-
-#what-is .container {
-  padding-top: 8vh;
-  padding-bottom: 12vh;
-}
-
-#how-it-works {
-  margin-bottom: 150px;
-}
-
-#how-it-works .col-6 {
-  padding: 60px 15px;
-  margin-bottom: 5vh;
-}
-
-@media (max-width: 768px) {
-  .homepage-actions a {
-    margin-bottom: 10px;
-  }
 }

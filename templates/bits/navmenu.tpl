@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+<nav class="navbar navbar-expand-md">
 
   <button
     class="navbar-toggler"
@@ -8,10 +8,10 @@
     aria-controls="navbar-left"
     aria-expanded="false"
     aria-label="{t}label-toggle-menu{/t}">
-    <span class="navbar-toggler-icon"></span>
+    <i class="navbar-toggler-icon icon-menu"></i>
   </button>
 
-  <div class="navbar-collapse bg-dark py-2" id="navbar-left">
+  <div class="navbar-collapse py-2" id="navbar-left">
     {include "bits/searchForm.tpl"}
     {***
     <ul class="navbar-nav mr-auto">
@@ -27,13 +27,7 @@
 
   <!-- logo -->
   <div class="mx-auto">
-    <a class="navbar-brand" href="{Config::URL_PREFIX}">
-      <img
-        src="{Config::URL_PREFIX}img/dignitas-white-logo-svg.svg"
-        width="163"
-        height="26"
-        alt="DIGNITAS logo">
-    </a>
+    <a class="navbar-brand" href="{Config::URL_PREFIX}">DIGNITAS</a>
   </div>
 
   <button
@@ -47,20 +41,20 @@
     <span class="icon icon-user"></span>
   </button>
 
-  <div class="navbar-collapse bg-dark" id="navbar-right">
+  <div class="navbar-collapse" id="navbar-right">
 
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
         <a
-          class="nav-link"
+          class="nav-link capitalize-first-word pl-2 py-2"
           href="{Router::link('help/index')}"
           title="{t}help-center{/t}"
         >
-          <i class="icon icon-help"></i>
+          {t}help-center{/t}
         </a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle"
+        <a class="nav-link dropdown-toggle pl-2 py-2"
           href="#"
           id="nav-dropdown-lang"
           role="button"
@@ -69,10 +63,10 @@
           aria-expanded="false">
           <i class="icon icon-globe"></i>
         </a>
-        <div class="dropdown-menu bg-dark" aria-labelledby="nav-dropdown-lang">
+        <div class="dropdown-menu py-0" aria-labelledby="nav-dropdown-lang">
           {foreach LocaleUtil::getAll() as $id => $name}
             <a
-              class="dropdown-item text-light"
+              class="dropdown-item text-light pl-2 py-2"
               href="{Router::link('helpers/changeLocale')}?id={$id}">
               <i class="icon icon-ok {if $id != LocaleUtil::getCurrent()}invisible{/if}"></i>
               {$name}
@@ -84,7 +78,7 @@
       {$u=User::getActive()}
       {if $u}
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle"
+          <a class="nav-link dropdown-toggle pl-2 py-2"
             href="#"
             id="nav-dropdown-user"
             role="button"
@@ -104,12 +98,12 @@
               {$u->getReputation()|nf}
             </span>
           </a>
-          <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="nav-dropdown-user">
-            <a class="dropdown-item text-light" href="{Router::userLink($u)}">
+          <div class="dropdown-menu dropdown-menu-right py-0" aria-labelledby="nav-dropdown-user">
+            <a class="dropdown-item text-light py-2" href="{Router::userLink($u)}">
               <i class="icon icon-user"></i>
               {t}link-my-profile{/t}
             </a>
-            <a class="dropdown-item text-light" href="{Router::link('aggregate/dashboard')}">
+            <a class="dropdown-item text-light py-2" href="{Router::link('aggregate/dashboard')}">
               <i class="icon icon-gauge"></i>
               {t}link-dashboard{/t}
             </a>
@@ -135,7 +129,7 @@
                         class="custom-control-input"
                         id="fakeModerator"
                         {if User::isModerator()}checked{/if}>
-                      <label class="custom-control-label" for="fakeModerator">
+                      <label class="custom-control-label text-dark" for="fakeModerator">
                         {t}label-moderator{/t}
                       </label>
                     </div>
@@ -150,7 +144,7 @@
               </form>
             {/if}
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-light" href="{Router::link('auth/logout')}">
+            <a class="dropdown-item text-light py-2" href="{Router::link('auth/logout')}">
               <i class="icon icon-logout"></i>
               {t}link-log-out{/t}
             </a>
@@ -158,8 +152,7 @@
         </li>
       {else}
         <li class="nav-item">
-          <a class="nav-link" href="{Router::link('auth/login')}">
-            <i class="icon icon-login"></i>
+          <a class="nav-link capitalize-first-word" href="{Router::link('auth/login')}">
             {t}link-log-in{/t}
           </a>
         </li>
