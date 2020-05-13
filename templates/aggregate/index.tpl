@@ -39,20 +39,41 @@
             <div class="container">
               <div class="row">
 
-                <div class="col-2">
-                  <img src="/dignitas/www/imagine-entitate/6/200.jpg" class="pic rounded-circle img-fluid no-outline" width="128" height="128">
+                <div class="col-6">
+                  <div class="row">
+                    <div class="col-3">
+                      <img src="/dignitas/www/imagine-entitate/6/200.jpg" class="pic rounded-circle img-fluid no-outline" width="128" height="128">
+                    </div>
+                    <div class="col-9">
+                      <div class="bubble mr-3 mb-3 p-3">
+                        <div class="bubble-title ml-1">
+                          Finlanda vrea să ia din experții români pentru președinția UE.
+                        </div>
+                        <a href="/dignitas/www/afirmatie/1" class="stretched-link"></a>
+                      </div>
+                      <div class="bubble-author"> —
+                        <a href="/dignitas/www/autor/6">Viorica Dăncilă</a>, 23 iunie 2019
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                <div class="col-10">
-                  <div class="bubble mr-3 mb-3 p-4">
-                    <div class="bubble-title ml-1">
-                      Finlanda vrea să ia din experții români pentru președinția UE
+                <div class="col-6">
+                  <div class="row">
+                    <div class="col-3">
+                      <img src="/dignitas/www/imagine-entitate/8/200.jpg" class="pic rounded-circle img-fluid no-outline" width="128" height="128">
                     </div>
-                    <a href="/dignitas/www/afirmatie/1" class="stretched-link"></a>
-                  </div>
-
-                  <div class="bubble-author"> —
-                    <a href="/dignitas/www/autor/6">Viorica Dăncilă</a>, 23 iunie 2019
+                    <div class="col-9">
+                      <div class="bubble mr-3 mb-3 p-3">
+                        <div class="bubble-title ml-1">
+                          But I must explain to you how all this mistaken idea of denouncing pleasure and praising. You how all this mistaken idea of denouncing pleasure and praising.
+                        </div>
+                        <a href="/dignitas/www/afirmatie/1" class="stretched-link"></a>
+                      </div>
+                      <div class="bubble-author"> —
+                        <a href="/dignitas/www/autor/6">Gabriela Firea</a>, 23 iunie 2019
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -65,20 +86,41 @@
             <div class="container">
               <div class="row">
 
-                <div class="col-2">
-                  <img src="/dignitas/www/imagine-entitate/8/200.jpg" class="pic rounded-circle img-fluid no-outline" width="128" height="128">
+                <div class="col-6">
+                  <div class="row">
+                    <div class="col-3">
+                      <img src="/dignitas/www/imagine-entitate/5/200.svg" class="pic rounded-circle img-fluid no-outline" width="128" height="128">
+                    </div>
+                    <div class="col-9">
+                      <div class="bubble mr-3 mb-3 p-3">
+                        <div class="bubble-title ml-1">
+                          [Protestele de pe 10 august 2018] au fost susținute de Antifa, cea mai periculoasă grupare anarhică din lume.
+                        </div>
+                        <a href="/dignitas/www/afirmatie/1" class="stretched-link"></a>
+                      </div>
+                      <div class="bubble-author"> —
+                        <a href="/dignitas/www/autor/6">Lumea Justiției</a>, 23 iunie 2019
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                <div class="col-10">
-                  <div class="bubble mr-3 mb-3 p-4">
-                    <div class="bubble-title ml-1">
-                      [Protestele de pe 10 august 2018] au fost susținute de Antifa, cea mai periculoasă grupare anarhică din lume
+                <div class="col-6">
+                  <div class="row">
+                    <div class="col-3">
+                      <img src="/dignitas/www/imagine-entitate/8/200.jpg" class="pic rounded-circle img-fluid no-outline" width="128" height="128">
                     </div>
-                    <a href="/dignitas/www/afirmatie/3" class="stretched-link"></a>
-                  </div>
-
-                  <div class="bubble-author"> —
-                    <a href="/dignitas/www/autor/6">Lumea Justiției</a>, 23 iunie 2019
+                    <div class="col-9">
+                      <div class="bubble mr-3 mb-3 p-3">
+                        <div class="bubble-title ml-1">
+                          But I must explain to you how all this mistaken idea of denouncing pleasure and praising. You how all this mistaken idea of denouncing pleasure and praising.
+                        </div>
+                        <a href="/dignitas/www/afirmatie/1" class="stretched-link"></a>
+                      </div>
+                      <div class="bubble-author"> —
+                        <a href="/dignitas/www/autor/6">Gabriela Firea</a>, 23 iunie 2019
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -91,20 +133,42 @@
             <div class="container">
               <div class="row">
 
-                <div class="col-2">
-                  <img src="/dignitas/www/imagine-entitate/7/200.jpg" class="pic rounded-circle img-fluid no-outline" width="128" height="128">
+                <div class="col-6">
+                  <div class="row">
+                    <div class="col-3">
+                      <img src="/dignitas/www/imagine-entitate/4/200.svg" class="pic rounded-circle img-fluid no-outline" width="128" height="128">
+                    </div>
+                    <div class="col-9">
+                      <div class="bubble mr-3 mb-3 p-3">
+                        <div class="bubble-title ml-1">
+                          Încadrarea în mod obligatoriu a elevilor în programe de educație sexuală reprezintă un atentat asupra inocenței copiilor,
+                          împiedicînd dezvoltarea lor firească și marcîndu-i pe aceștia pentru întreaga viață.
+                        </div>
+                        <a href="/dignitas/www/afirmatie/1" class="stretched-link"></a>
+                      </div>
+                      <div class="bubble-author"> —
+                        <a href="/dignitas/www/autor/6">Lumea Justiției</a>, 23 iunie 2019
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                <div class="col-10">
-                  <div class="bubble mr-3 mb-3 p-4">
-                    <div class="bubble-title ml-1">
-                      „Încadrarea în mod obligatoriu a elevilor în programe de educație sexuală reprezintă un atentat asupra inocenței copiilor, împiedicînd dezvoltarea lor firească și marcîndu-i pe aceștia pentru întreaga viață.
+                <div class="col-6">
+                  <div class="row">
+                    <div class="col-3">
+                      <img src="/dignitas/www/imagine-entitate/8/200.jpg" class="pic rounded-circle img-fluid no-outline" width="128" height="128">
                     </div>
-                    <a href="/dignitas/www/afirmatie/3" class="stretched-link"></a>
-                  </div>
-
-                  <div class="bubble-author"> —
-                    <a href="/dignitas/www/autor/6">Biserica Ortodoxă Română</a>, 23 iunie 2019
+                    <div class="col-9">
+                      <div class="bubble mr-3 mb-3 p-3">
+                        <div class="bubble-title ml-1">
+                          But I must explain to you how all this mistaken idea of denouncing pleasure and praising. You how all this mistaken idea of denouncing pleasure and praising.
+                        </div>
+                        <a href="/dignitas/www/afirmatie/1" class="stretched-link"></a>
+                      </div>
+                      <div class="bubble-author"> —
+                        <a href="/dignitas/www/autor/6">Gabriela Firea</a>, 23 iunie 2019
+                      </div>
+                    </div>
                   </div>
                 </div>
 
