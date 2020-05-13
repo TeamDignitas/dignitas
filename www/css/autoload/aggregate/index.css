@@ -1,6 +1,5 @@
 #what-is {
-  height: calc(46vh);
-  padding-top: calc(10vh);
+  /*height: calc(46vh);*/
   background-color: #ffdd40;
 }
 
@@ -23,8 +22,8 @@
 }
 
 #what-is .container {
-  padding-top: calc(8vh);
-  padding-bottom: calc(12vh);
+  padding-top: calc(10vh);
+  padding-bottom: calc(10vh);
 }
 
 .statements-carousel {
@@ -37,7 +36,7 @@
   padding: 0px;
   background: #FFFFFF;
   border-radius: 10px;
-  border: #888 solid 2px;
+  border: #ccc solid 2px;
   display: flex;
   align-items: center;
 }
@@ -60,7 +59,7 @@
   position: absolute;
   border-style: solid;
   border-width: 16px 16px 16px 0;
-  border-color: transparent #888;
+  border-color: transparent #ccc;
   display: block;
   width: 0;
   z-index: 0;
