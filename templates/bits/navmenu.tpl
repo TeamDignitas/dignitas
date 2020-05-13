@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark">
+<nav class="navbar navbar-expand-md">
 
   <button
     class="navbar-toggler"
@@ -27,13 +27,7 @@
 
   <!-- logo -->
   <div class="mx-auto">
-    <a class="navbar-brand" href="{Config::URL_PREFIX}">
-      <img
-        src="{Config::URL_PREFIX}img/dignitas-white-logo-svg.svg"
-        width="163"
-        height="26"
-        alt="DIGNITAS logo">
-    </a>
+    <a class="navbar-brand" href="{Config::URL_PREFIX}">DIGNITAS</a>
   </div>
 
   <button
@@ -52,7 +46,7 @@
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
         <a
-          class="nav-link capitalize-first-word"
+          class="nav-link capitalize-first-word pl-2"
           href="{Router::link('help/index')}"
           title="{t}help-center{/t}"
         >
@@ -60,7 +54,7 @@
         </a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle"
+        <a class="nav-link dropdown-toggle pl-2"
           href="#"
           id="nav-dropdown-lang"
           role="button"
@@ -69,10 +63,10 @@
           aria-expanded="false">
           <i class="icon icon-globe"></i>
         </a>
-        <div class="dropdown-menu bg-dark" aria-labelledby="nav-dropdown-lang">
+        <div class="dropdown-menu bg-light py-0" aria-labelledby="nav-dropdown-lang">
           {foreach LocaleUtil::getAll() as $id => $name}
             <a
-              class="dropdown-item text-light"
+              class="dropdown-item text-light pl-2"
               href="{Router::link('helpers/changeLocale')}?id={$id}">
               <i class="icon icon-ok {if $id != LocaleUtil::getCurrent()}invisible{/if}"></i>
               {$name}

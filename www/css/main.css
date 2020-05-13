@@ -44,16 +44,39 @@ blockquote {
 /******************************** navbar *********************************/
 .navbar,
 #navbar-left,
-#navbar-right {
-  background-color: #212529;
+#navbar-right,
+.navbar-nav a:hover {
+  background-color: #ffdd40;
+}
+
+.navbar-dark .navbar-nav .nav-link,
+.nav-item a {
+  color: #444 !important;
+}
+
+.nav-item a:hover,
+.navbar a.text-light:focus,
+.navbar a.text-light:hover {
+  color: #222 !important;
+}
+
+.navbar-collapse.shown {
+  background-color: #f8f9fa!important;
+  border-left: 1px solid #444;
+  margin-top: 1rem;
+  padding-top: 1rem;
 }
 
 .navbar-nav {
   white-space: nowrap;
 }
 
-.navbar-nav a:hover {
-  background-color: #212529;
+.navbar-brand,
+.navbar-brand:hover {
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 2rem !important;
+  color: #222;
 }
 
 @media (max-width: 768px) {

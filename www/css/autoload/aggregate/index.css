@@ -1,17 +1,17 @@
 #what-is {
-  height: calc(55vh);
+  height: calc(46vh);
   padding-top: calc(10vh);
-  background-color: #212529;
+  background-color: #ffdd40;
 }
 
 #what-is h1 {
   font-size: 3.76rem;
   line-height: 1.4;
-  color: #fff;
+  color: #222;
 }
 
 #what-is a {
-  color: #fff;
+  color: green;
 }
 
 .serif-text {
@@ -19,7 +19,7 @@
 }
 
 .lead {
-  color: #7bc941;
+  color: #222;
 }
 
 #what-is .container {
