@@ -51,7 +51,7 @@ blockquote {
 
 .navbar-dark .navbar-nav .nav-link,
 .nav-item a {
-  color: #444 !important;
+  color: #343a40 !important;
 }
 
 .nav-item a:hover,
@@ -61,10 +61,17 @@ blockquote {
 }
 
 .navbar-collapse.shown {
-  background-color: #f8f9fa!important;
-  border-left: 1px solid #444;
   margin-top: 1rem;
   padding-top: 1rem;
+}
+
+#navbar-left.shown {
+  background-color: #888 !important;
+}
+
+#navbar-right.shown {
+  background-color: #fff !important;
+  border-left: 1px solid #343a40;
 }
 
 .navbar-nav {
@@ -77,6 +84,10 @@ blockquote {
   font-weight: bold;
   font-size: 2rem !important;
   color: #222;
+}
+
+.icon-menu:before {
+  content: '\f0c9';
 }
 
 @media (max-width: 768px) {
