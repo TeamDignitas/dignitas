@@ -1,10 +1,9 @@
 #what-is {
-  /*height: calc(46vh);*/
   background-color: #ffdd40;
 }
 
 #what-is h1 {
-  font-size: 3.76rem;
+  font-size: 3vw;
   line-height: 1.4;
   color: #222;
 }
@@ -22,12 +21,12 @@
 }
 
 #what-is .container {
-  padding-top: calc(10vh);
-  padding-bottom: calc(10vh);
+  padding-top: 10vh;
+  padding-bottom: 10vh;
 }
 
 .statements-carousel {
-  margin-bottom: calc(20vh);
+  margin-bottom: 20vh;
 }
 
 .bubble {
@@ -68,8 +67,11 @@
 }
 
 .bubble-title {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-style: italic;
+}
+
+.bubble-author {
 }
 
 .carousel-indicators li {
@@ -89,8 +91,9 @@
   margin-bottom: calc(5vh);
 }
 
-@media (max-width: 768px) {
-  .homepage-actions a {
-    margin-bottom: 10px;
+@media (max-width: 992px) and (min-width:769px) {
+  #what-is a {
+    clear: both;
+    display: block;
   }
 }
