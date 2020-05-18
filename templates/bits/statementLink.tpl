@@ -1,12 +1,17 @@
 {$class=$class|default:''}
+{$quotes=$quotes|default:true}
 
 {strip}
 
 {if $statement}
-  <a href="{Router::link('statement/view')}/{$statement->id}" class="{$class}">
-    {t 1=$statement->summary}
-    quoted-string-%1
-    {/t}
+  <a href="{Router::getViewLink($statement)}" class="{$class}">
+    {if $quotes}
+      {t 1=$statement->summary}
+      quoted-string-%1
+      {/t}
+    {else}
+      {$statement->summary|escape}
+    {/if}
   </a>
   {$statusInfo=$statement->getStatusInfo()}
   {if $statusInfo}

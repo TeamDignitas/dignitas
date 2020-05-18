@@ -74,6 +74,11 @@
 .bubble-author {
 }
 
+.bubble a {
+  color: black;
+  text-decoration: none;
+}
+
 .carousel-indicators li {
   background-color: #aaa;
 }

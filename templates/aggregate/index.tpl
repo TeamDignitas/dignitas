@@ -29,199 +29,47 @@
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner pb-5">
 
-          <!-- ####################### item 1 ################-->
-          <div class="carousel-item active mb-3">
-            <div class="container px-0">
-              <div class="row mb-5">
+          {foreach $statements as $i => $page}
+            <div class="carousel-item mb-3 {if !$i}active{/if}">
+              <div class="container px-0">
 
-                <div class="col-6">
-                  <div class="row">
-                    <div class="col-3">
-                      <img src="/dignitas/www/imagine-entitate/6/200.jpg" class="pic rounded-circle img-fluid no-outline" width="128" height="128">
-                    </div>
-                    <div class="col-9">
-                      <div class="bubble mr-3 mb-2 p-3">
-                        <div class="bubble-title ml-1">
-                          Finlanda vrea să ia din experții români pentru președinția UE.
-                        </div>
-                        <a href="/dignitas/www/afirmatie/1" class="stretched-link"></a>
-                      </div>
-                      <div class="bubble-author"> —
-                        <a href="/dignitas/www/autor/6">Viorica Dăncilă</a>, 23 iunie 2019
-                      </div>
-                    </div>
+                <div class="row mb-5">
+                  <div class="col-6">
+                    {include "bits/carouselStatement.tpl" statement=$page[0]}
+                  </div>
+
+                  <div class="col-6">
+                    {if count($page) >= 2}
+                      {include "bits/carouselStatement.tpl" statement=$page[1]}
+                    {/if}
                   </div>
                 </div>
 
-                <div class="col-6">
-                  <div class="row">
-                    <div class="col-3">
-                      <img src="/dignitas/www/imagine-entitate/8/200.jpg" class="pic rounded-circle img-fluid no-outline" width="128" height="128">
+                {if count($page) >= 3}
+                  <div class="row mb-5">
+                    <div class="col-6">
+                      {include "bits/carouselStatement.tpl" statement=$page[2]}
                     </div>
-                    <div class="col-9">
-                      <div class="bubble mr-3 mb-2 p-3">
-                        <div class="bubble-title ml-1">
-                          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-                          magni dolores eos qui ratione voluptatem sequi nesciunt.
-                        </div>
-                        <a href="/dignitas/www/afirmatie/1" class="stretched-link"></a>
-                      </div>
-                      <div class="bubble-author"> —
-                        <a href="/dignitas/www/autor/6">Gabriela Firea</a>, 23 iunie 2019
-                      </div>
+
+                    <div class="col-6">
+                      {if count($page) == 4}
+                        {include "bits/carouselStatement.tpl" statement=$page[3]}
+                      {/if}
                     </div>
                   </div>
-                </div>
-
-              </div>
-              <div class="row">
-
-                <div class="col-6">
-                  <div class="row">
-                    <div class="col-3">
-                      <img src="/dignitas/www/imagine-entitate/9/200.jpg" class="pic rounded-circle img-fluid no-outline" width="128" height="128">
-                    </div>
-                    <div class="col-9">
-                      <div class="bubble mr-3 mb-2 p-3">
-                        <div class="bubble-title ml-1">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                          laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                          voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        </div>
-                        <a href="/dignitas/www/afirmatie/1" class="stretched-link"></a>
-                      </div>
-                      <div class="bubble-author"> —
-                        <a href="/dignitas/www/autor/6">Klaus Iohannis</a>, 23 iunie 2020
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-6">
-                  <div class="row">
-                    <div class="col-3">
-                      <img src="/dignitas/www/imagine-entitate/10/200.jpg" class="pic rounded-circle img-fluid no-outline" width="128" height="128">
-                    </div>
-                    <div class="col-9">
-                      <div class="bubble mr-3 mb-2 p-3">
-                        <div class="bubble-title ml-1">
-                          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                          totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-                          dicta sunt explicabo.
-                        </div>
-                        <a href="/dignitas/www/afirmatie/1" class="stretched-link"></a>
-                      </div>
-                      <div class="bubble-author"> —
-                        <a href="/dignitas/www/autor/6">Victor Ponta</a>, 23 iunie 2019
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
+                {/if}
               </div>
             </div>
-          </div>
-
-          <!-- ####################### item 2 ################-->
-          <div class="carousel-item mb-4">
-            <div class="container">
-              <div class="row">
-
-                <div class="col-6">
-                  <div class="row">
-                    <div class="col-3">
-                      <img src="/dignitas/www/imagine-entitate/5/200.svg" class="pic rounded-circle img-fluid no-outline" width="128" height="128">
-                    </div>
-                    <div class="col-9">
-                      <div class="bubble mr-3 mb-2 p-3">
-                        <div class="bubble-title ml-1">
-                          [Protestele de pe 10 august 2018] au fost susținute de Antifa, cea mai periculoasă grupare anarhică din lume.
-                        </div>
-                        <a href="/dignitas/www/afirmatie/1" class="stretched-link"></a>
-                      </div>
-                      <div class="bubble-author"> —
-                        <a href="/dignitas/www/autor/6">Lumea Justiției</a>, 23 iunie 2019
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-6">
-                  <div class="row">
-                    <div class="col-3">
-                      <img src="/dignitas/www/imagine-entitate/8/200.jpg" class="pic rounded-circle img-fluid no-outline" width="128" height="128">
-                    </div>
-                    <div class="col-9">
-                      <div class="bubble mr-3 mb-2 p-3">
-                        <div class="bubble-title ml-1">
-                          But I must explain to you how all this mistaken idea of denouncing pleasure and praising. You how all this mistaken idea of denouncing pleasure and praising.
-                        </div>
-                        <a href="/dignitas/www/afirmatie/6" class="stretched-link"></a>
-                      </div>
-                      <div class="bubble-author"> —
-                        <a href="/dignitas/www/autor/6">Gabriela Firea</a>, 23 iunie 2019
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-           <!--####################### item 3 ################-->
-          <div class="carousel-item mb-4">
-            <div class="container">
-              <div class="row">
-
-                <div class="col-6">
-                  <div class="row">
-                    <div class="col-3">
-                      <img src="/dignitas/www/imagine-entitate/4/200.svg" class="pic rounded-circle img-fluid no-outline" width="128" height="128">
-                    </div>
-                    <div class="col-9">
-                      <div class="bubble mr-3 mb-2 p-3">
-                        <div class="bubble-title ml-1">
-                          Încadrarea în mod obligatoriu a elevilor în programe de educație sexuală reprezintă un atentat asupra inocenței copiilor,
-                          împiedicînd dezvoltarea lor firească și marcîndu-i pe aceștia pentru întreaga viață.
-                        </div>
-                        <a href="/dignitas/www/afirmatie/1" class="stretched-link"></a>
-                      </div>
-                      <div class="bubble-author"> —
-                        <a href="/dignitas/www/autor/6">Lumea Justiției</a>, 23 iunie 2019
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-6">
-                  <div class="row">
-                    <div class="col-3">
-                      <img src="/dignitas/www/imagine-entitate/8/200.jpg" class="pic rounded-circle img-fluid no-outline" width="128" height="128">
-                    </div>
-                    <div class="col-9">
-                      <div class="bubble mr-3 mb-2 p-3">
-                        <div class="bubble-title ml-1">
-                          But I must explain to you how all this mistaken idea of denouncing pleasure and praising. You how all this mistaken idea of denouncing pleasure and praising.
-                        </div>
-                        <a href="/dignitas/www/afirmatie/1" class="stretched-link"></a>
-                      </div>
-                      <div class="bubble-author"> —
-                        <a href="/dignitas/www/autor/6">Gabriela Firea</a>, 23 iunie 2019
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
+          {/foreach}
 
           <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            {foreach $statements as $i => $ignored}
+              <li
+                data-target="#carouselExampleIndicators"
+                data-slide-to="{$i}"
+                {if !$i}class="active"{/if}>
+              </li>
+            {/foreach}
           </ol>
         </div>
       </div>
