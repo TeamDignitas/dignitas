@@ -14,10 +14,7 @@
 
     <div class="mr-0 mt-5 pl-3">
       <h6 class="font-weight-bold text-uppercase pl-0">{cap}{t}statements{/t}{/cap}</h6>
-      {include "bits/statementList.tpl"
-        entityImages=false
-        addStatement=$entity->acceptsNewStatements()
-        addStatementEntityId=$entity->id}
+      {include "bits/statementList.tpl"}
     </div>
 
     {include "bits/flagModal.tpl"}

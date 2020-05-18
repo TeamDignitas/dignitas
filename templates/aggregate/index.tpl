@@ -1,8 +1,3 @@
-{$entityImages=$entityImages|default:true}
-{$addedBy=$addedBy|default:true}
-{$addStatement=$addStatement|default:false}
-{$addStatementEntityId=$addStatementEntityId|default:null}
-
 {extends "layout.tpl"}
 
 {block "title"}Dignitas{/block}

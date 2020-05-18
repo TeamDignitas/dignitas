@@ -102,11 +102,20 @@
     </div>
 
     <div class="entity-actions mb-2 text-right">
+      {if $entity->acceptsNewStatements()}
+        <a
+          href="{Router::link('statement/edit')}?entityId={$entity->id}"
+          class="btn btn-sm btn-outline-primary mt-1">
+          {t}link-add-statement{/t}
+        </a>
+      {/if}
       {include "bits/editButton.tpl" obj=$entity}
       {include "bits/flagLinks.tpl" obj=$entity class="btn btn-sm btn-outline-secondary mt-1"}
 
       {if $entity->hasRevisions()}
-        <a href="{Router::link('entity/history')}/{$entity->id}" class="btn btn-sm btn-outline-secondary mt-1">
+        <a
+          href="{Router::link('entity/history')}/{$entity->id}"
+          class="btn btn-sm btn-outline-secondary mt-1">
           {t}link-show-revisions{/t}
         </a>
       {/if}

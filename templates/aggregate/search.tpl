@@ -32,7 +32,7 @@
         {/t}
       </h3>
 
-      {include "bits/statementList.tpl" entityImages=false addedBy=false}
+      {include "bits/statementList.tpl"}
     {/if}
 
     {if count($tags)}
