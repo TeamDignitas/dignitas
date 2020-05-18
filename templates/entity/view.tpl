@@ -14,7 +14,7 @@
 
     <div class="mr-0 mt-5 pl-3">
       <h6 class="font-weight-bold text-uppercase pl-0">{cap}{t}statements{/t}{/cap}</h6>
-      {include "bits/statementList.tpl"}
+      {include "bits/statementList.tpl" showEntity=false}
     </div>
 
     {include "bits/flagModal.tpl"}
