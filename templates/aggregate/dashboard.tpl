@@ -70,6 +70,14 @@
             {t}link-relation-types{/t}
           </a>
         </div>
+        <div class="card py-4 px-2 m-2 border-secondary text-center fix-min-height">
+          <h5 class="card-title">
+            <i class="icon icon-industry"></i>
+          </h5>
+          <a href="{Router::link('staticResource/list')}">
+            {t}link-static-resources{/t}
+          </a>
+        </div>
       {/if}
 
       <div class="card py-4 px-2 m-2 border-secondary text-center fix-min-height">

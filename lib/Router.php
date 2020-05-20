@@ -230,6 +230,16 @@ class Router {
       'ro_RO.utf8' => 'raport-verdicte',
     ],
 
+    // static resources
+    'staticResource/edit' => [
+      'en_US.utf8' => 'edit-static-resources',
+      'ro_RO.utf8' => 'editeaza-resursa-statica',
+    ],
+    'staticResource/list' => [
+      'en_US.utf8' => 'static-resources',
+      'ro_RO.utf8' => 'resurse-statice',
+    ],
+
     // tags
     'tag/edit' => [
       'en_US.utf8' => 'edit-tag',
@@ -300,6 +310,7 @@ class Router {
     'statement/edit' => [ 'id' ],
     'statement/history' => [ 'id' ],
     'statement/view' => [ 'id', 'answerId' ],
+    'staticResource/edit' => [ 'id' ],
     'tag/edit' => [ 'id' ],
     'tag/load' => [ 'ids' ],
     'tag/view' => [ 'id' ],
@@ -438,6 +449,8 @@ class Router {
         return Router::link('relationType/edit') . '/' . $object->id;
       case Proto::TYPE_STATEMENT:
         return Router::link('statement/edit') . '/' . $object->id;
+      case Proto::TYPE_STATIC_RESOURCE:
+        return Router::link('staticResource/edit') . '/' . $object->id;
       default:
         return null;
     }

@@ -25,6 +25,10 @@ class LocaleUtil {
     return $locale;
   }
 
+  static function getDisplayName($locale) {
+    return Config::LOCALES[$locale] ?? '';
+  }
+
   private static function set($locale) {
     mb_internal_encoding('UTF-8');
 

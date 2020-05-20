@@ -159,9 +159,7 @@
 
         {capture "labelText" assign=labelText}{t}label-entity-links{/t}{/capture}
         {capture "addButtonText" assign=addButtonText}{t}link-add-entity-link{/t}{/capture}
-        {include "bits/linkEditor.tpl"
-          errors=$errors.links|default:null
-        }
+        {include "bits/linkEditor.tpl" errors=$errors.links|default:null}
 
       </fieldset>
 

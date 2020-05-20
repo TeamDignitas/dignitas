@@ -281,6 +281,12 @@
       "css": "exchange",
       "code": 61676,
       "src": "fontawesome"
+    },
+    {
+      "uid": "31efa81b26fa5a380119c95d6b831d6d",
+      "css": "industry",
+      "code": 62069,
+      "src": "fontawesome"
     }
   ]
 }
