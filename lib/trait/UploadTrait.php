@@ -206,7 +206,10 @@ trait UploadTrait {
   // Parses the basic cases of ImageMagick-style geometries. Returns an array
   // [ 'width' => $width, 'height' => $height ] where unspecified values are missing.
   private function parseGeometry($geometry) {
-    $result = [];
+    $result = [
+      'width' => '',
+      'height' => '',
+    ];
 
     if ($geometry && preg_match('/^(\d*)(x(\d+))?$/', $geometry, $matches)) {
       if (isset($matches[1])) {
@@ -246,8 +249,8 @@ trait UploadTrait {
 
     // fit it
     $g = $this->parseGeometry($geometry);
-    if (isset($g['height']) &&
-        (!isset($g['width']) || ($g['height'] * $ratio < $g['width']))) {
+    if ($g['height'] &&
+        (!$g['width'] || ($g['height'] * $ratio < $g['width']))) {
       return [
         'width' => (int)($g['height'] * $ratio),
         'height' => $g['height'],

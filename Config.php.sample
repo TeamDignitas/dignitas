@@ -51,7 +51,7 @@ class Config {
   const THUMB_USER_PROFILE = '200';
   const THUMB_ENTITY_AUTOCOMPLETE = '20x20';
   const THUMB_ENTITY_SMALL = '40';
-  const THUMB_ENTITY_MEDIUM = '75';
+  const THUMB_ENTITY_CAROUSEL = 'x128';
   const THUMB_ENTITY_LARGE = '200';
   const THUMB_INLINE_ATTACHMENT = '200'; // default geometry for inline attachments
   const THUMB_DOMAIN = '16x16';
@@ -77,7 +77,7 @@ class Config {
       'geometries' => [
         self::THUMB_ENTITY_AUTOCOMPLETE,
         self::THUMB_ENTITY_SMALL,
-        self::THUMB_ENTITY_MEDIUM,
+        self::THUMB_ENTITY_CAROUSEL,
         self::THUMB_ENTITY_LARGE,
       ],
     ],

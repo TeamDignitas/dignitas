@@ -3,7 +3,7 @@
   <div class="col-3">
     {include "bits/image.tpl"
       obj=$e
-      geometry=Config::THUMB_ENTITY_LARGE
+      geometry=Config::THUMB_ENTITY_CAROUSEL
       imgClass="pic rounded-circle img-fluid no-outline"}
   </div>
   <div class="col-9">
