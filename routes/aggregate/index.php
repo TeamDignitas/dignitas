@@ -19,8 +19,19 @@ $statements = $statements
 
 $statements = array_chunk($statements, CAROUSEL_PAGE_SIZE);
 
+// load the static resources for the top/bottom of the page
+$srTop = User::getActive()
+  ? null
+  : StaticResource::get_by_locale_name('ro_RO.utf8', 'index-top.html');
+
+$srBottom = User::getActive()
+  ? null
+  : StaticResource::get_by_locale_name('ro_RO.utf8', 'index-bottom.html');
+
 Smart::assign([
   'pageType' => 'home',
   'statements' => $statements,
+  'srTop' => $srTop,
+  'srBottom' => $srBottom,
 ]);
 Smart::display('aggregate/index.tpl');

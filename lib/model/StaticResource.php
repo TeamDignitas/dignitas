@@ -19,6 +19,10 @@ class StaticResource extends Proto {
       ->find_many();
   }
 
+  function getContents() {
+    return @file_get_contents($this->getFilePath());
+  }
+
   /**
    * In this order, returns
    * - contents previously set with setContents() (while editing);
