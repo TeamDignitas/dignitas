@@ -145,9 +145,12 @@ class Smart {
     $full = [];
     $maxTimestamp = 0;
     foreach ($files as $file) {
-      $name = sprintf('%swww/%s/%s', Config::ROOT, $type, $file);
-      $full[] = $name;
-      $timestamp = filemtime($name);
+      if (!Str::startsWith($file, '/')) {
+        // don't touch paths which are already absolute
+        $file = sprintf('%swww/%s/%s', Config::ROOT, $type, $file);
+      }
+      $full[] = $file;
+      $timestamp = filemtime($file);
       $maxTimestamp = max($maxTimestamp, $timestamp);
     }
 
@@ -235,6 +238,24 @@ class Smart {
         Util::redirectToHome();
       }
       self::$includedResources[] = $key;
+    }
+  }
+
+  /**
+   * Registers the underlying file of a static resource for inclusion on the
+   * current page.
+   *
+   * @param StaticResource $sr A static resource with a .css or .js extension.
+   */
+  static function addStaticResource($sr) {
+    if (!$sr) {
+      return;
+    }
+    $path = $sr->getFilePath();
+    if (Str::endsWith($path, '.css')) {
+      self::$cssFiles[] = $path;
+    } else {
+      self::$jsFiles[] = $path;
     }
   }
 

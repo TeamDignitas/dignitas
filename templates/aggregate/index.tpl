@@ -4,9 +4,9 @@
 
 {block "content"}
 
-  {if $srTop}
-    {$srTop->getContents()}
-  {/if}
+  {foreach $staticResourcesTop as $sr}
+    {$sr->getContents()}
+  {/foreach}
 
   <div class="container">
     <div class="statements-carousel pb-4">
@@ -62,8 +62,8 @@
     </div>
   </div>
 
-  {if $srBottom}
-    {$srBottom->getContents()}
-  {/if}
+  {foreach $staticResourcesBottom as $sr}
+    {$sr->getContents()}
+  {/foreach}
 
 {/block}

@@ -1,28 +1,5 @@
-#what-is {
-  background-color: #ffdd40;
-}
-
-#what-is h1 {
-  font-size: 3vw;
-  line-height: 1.4;
-  color: #222;
-}
-
-#what-is a {
-  color: green;
-}
-
 .serif-text {
   font-family: Georgia, 'Times New Roman', serif;
-}
-
-.lead {
-  color: #222;
-}
-
-#what-is .container {
-  padding-top: 10vh;
-  padding-bottom: 10vh;
 }
 
 .statements-carousel {
@@ -85,20 +62,4 @@
 
 .carousel-item {
   min-height: 14rem;
-}
-
-#how-it-works {
-  margin-bottom: 150px;
-}
-
-#how-it-works .col-6 {
-  padding: 60px 15px;
-  margin-bottom: calc(5vh);
-}
-
-@media (max-width: 992px) and (min-width:769px) {
-  #what-is a {
-    clear: both;
-    display: block;
-  }
 }
