@@ -28,8 +28,16 @@ class StaticResource extends Proto {
   function getEditableContents() {
     if ($this->contents !== null) {
       return $this->contents;
+    } else if (!$this->id) {
+      return ''; // object is being added
     } else {
-      return @file_get_contents($this->getFilePath());
+      $path = $this->getFilePath();
+      $mime = @mime_content_type($path);
+      if (Str::startsWith($mime, 'text/')) {
+        return file_get_contents($this->getFilePath());
+      } else {
+        return '';
+      }
     }
   }
 
