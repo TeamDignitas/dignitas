@@ -90,7 +90,7 @@
             name="deleteButton"
             type="submit"
             class="btn btn-sm btn-outline-danger float-right"
-            data-confirm="{t}info-confirm-delete-entity-type{/t}">
+            data-confirm="{t}info-confirm-delete-static-resource{/t}">
             <i class="icon icon-trash"></i>
             {t}link-delete{/t}
           </button>

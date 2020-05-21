@@ -63,4 +63,9 @@ class StaticResource extends Proto {
     file_put_contents($dest, $contents);
   }
 
+  function delete() {
+    @unlink($this->getFilePath());
+    parent::delete();
+  }
+
 }
