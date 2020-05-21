@@ -39,6 +39,9 @@ class Config {
     'image/jpeg' => 'jpg',
     'image/png' => 'png',
     'image/svg+xml' => 'svg',
+    'text/css' => 'css',
+    'text/html' => 'html',
+    'text/javascript' => 'js',
   ];
 
   // Extensions for generated thumbnails, when different from the original file.
@@ -94,6 +97,12 @@ class Config {
       'geometries' => [
         self::THUMB_DOMAIN,
       ],
+    ],
+    // static resources
+    'StaticResource' => [
+      'extensions' => [ 'css', 'gif', 'html', 'javascript', 'jpg', 'png', 'svg', ],
+      'limit' => 10 << 20, // 10 MB,
+      // no geometries here -- we won't do any thumbnailing
     ],
   ];
 
