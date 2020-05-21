@@ -239,6 +239,9 @@ class Router {
       'en_US.utf8' => 'static-resources',
       'ro_RO.utf8' => 'resurse-statice',
     ],
+    'staticResource/view' => [
+      'en_US.utf8' => 'static',
+    ],
 
     // tags
     'tag/edit' => [
@@ -311,6 +314,7 @@ class Router {
     'statement/history' => [ 'id' ],
     'statement/view' => [ 'id', 'answerId' ],
     'staticResource/edit' => [ 'id' ],
+    'staticResource/view' => [ 'locale', 'name' ],
     'tag/edit' => [ 'id' ],
     'tag/load' => [ 'ids' ],
     'tag/view' => [ 'id' ],

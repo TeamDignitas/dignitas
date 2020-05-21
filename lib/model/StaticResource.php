@@ -52,6 +52,19 @@ class StaticResource extends Proto {
       : '';
   }
 
+  function getUrl() {
+    $locale = $this->locale ?: self::ALL_LOCALE;
+    return sprintf('%s/%s/%s', Router::link('staticResource/view', true),
+                   $locale, $this->name);
+  }
+
+  function render() {
+    $path = $this->getFilePath();
+    header('Content-Type: ' . @mime_content_type($path));
+    header('Content-Length: ' . filesize($path));
+    readfile($path);
+  }
+
   // Saves a static resource that may contain a new uploaded file. If the name
   // or locale change, orphan files will be left behind. A cleanup script will
   // delete them.

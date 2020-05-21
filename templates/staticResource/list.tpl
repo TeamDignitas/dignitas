@@ -17,6 +17,7 @@
           <tr>
             <th class="border-0">{t}label-name{/t}</th>
             <th class="border-0">{t}label-locale{/t}</th>
+            <th class="border-0">{t}label-url{/t}</th>
             <th class="border-0">{t}actions{/t}</th>
           </tr>
         </thead>
@@ -30,6 +31,11 @@
                 {else}
                   {t}label-all-locales{/t}
                 {/if}
+              </td>
+              <td>
+                <a href="{$sr->getUrl()}" class="btn btn-sm btn-link">
+                  {t}label-url{/t}
+                </a>
               </td>
               <td>
                 <a href="{Router::getEditLink($sr)}" class="btn btn-sm btn-outline-secondary">

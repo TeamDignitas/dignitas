@@ -153,7 +153,7 @@ trait UploadTrait {
     if (file_exists($thumbLocation)) {
 
       $mimeType = array_search($extension, Config::MIME_TYPES);
-      header('Content-Type:' . $mimeType);
+      header('Content-Type: ' . $mimeType);
       header('Content-Length: ' . filesize($thumbLocation));
       readfile($thumbLocation);
 
