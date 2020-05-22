@@ -66,12 +66,12 @@
               </label>
             </div>
 
-            <div class="mt-2">
-              <button class="btn btn-primary w-50" type="submit" name="submitButton">
+            <div class="mt-2 mx-2 row">
+              <button class="btn btn-primary col-sm-12 col-md-6" type="submit" name="submitButton">
                 {t}link-log-in{/t}
               </button>
 
-              <div class="float-right">
+              <div class="col-sm-12 col-md-6 text-center">
                 {if Config::ALLOW_REGISTRATION}
                   <a class="btn btn-link" href="{Router::link('auth/register')}">
                     {t}link-sign-up{/t}
