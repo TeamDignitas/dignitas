@@ -3,7 +3,8 @@
 class StaticResource extends Proto {
 
   // <shared_drive>/staticResource/<locale>/<file>
-  const FILE_PATTERN = '%sstaticResource/%s/%s';
+  const DIR_PATTERN = '%sstaticResource';
+  const FILE_PATTERN = self::DIR_PATTERN .'/%s/%s';
   const ALL_LOCALE = 'all';
 
   private $contents = null;
