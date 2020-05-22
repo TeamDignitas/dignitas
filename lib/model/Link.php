@@ -88,8 +88,7 @@ class Link extends Proto {
 
   /**
    * Updates the list of links for the given object. Deletes Links not present
-   * in the tag list, inserts new Links where needed and updates the rank
-   * field.
+   * in the list, inserts new Links where needed and updates the rank field.
    *
    * Similar, but not identical, to Proto::updateDependants().
    */
