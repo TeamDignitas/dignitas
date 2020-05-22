@@ -54,7 +54,7 @@ $data['AnswerExt'] = Model::factory('AnswerExt')
 
 // Load comments for the selected statements and answers.
 $comments = getComments($statementIds, $answerIds);
-$commentIds = array_column($comments, 'id');
+$commentIds = array_column($comments, 'id') ?: [ 0 ];
 $data['Comment'] = $comments;
 $data['CommentExt'] = Model::factory('CommentExt')
   ->where_in('commentId', $commentIds)
@@ -111,7 +111,7 @@ $data['UserExt'] = Model::factory('UserExt')
 $refs = getAttachmentReferences($statementIds, $answerIds, $entityIds, $userIds);
 $data['AttachmentReference'] = $refs;
 
-$attachmentIds = array_column($refs, 'attachmentId');
+$attachmentIds = array_column($refs, 'attachmentId') ?: [ 0 ];
 $attachments = Model::factory('Attachment')
   ->where_in('id', $attachmentIds)
   ->find_array();
