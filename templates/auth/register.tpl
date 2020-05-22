@@ -3,11 +3,11 @@
 {block "title"}{cap}{t}title-sign-up{/t}{/cap}{/block}
 
 {block "content"}
-  <div class="container mt-4">
+  <div class="container mt-5">
     <div class="card w-50 m-auto">
-      <div class="card-header">
+      <h3 class="card-title m-4">
         {cap}{t}title-sign-up{/t}{/cap}
-      </div>
+      </h3>
 
       <div class="card-body">
         <form method="post">
@@ -84,12 +84,12 @@
             </label>
           </div>
 
-          <div>
-            <button class="btn btn-primary" type="submit" name="submitButton">
+          <div class="mt-2 mx-2 row">
+            <button class="btn btn-primary col-sm-12 col-md-6" type="submit" name="submitButton">
               {t}link-sign-up{/t}
             </button>
 
-            <a class="btn btn-link float-right" href="{Router::link('auth/login')}">
+            <a class="btn btn-link col-sm-12 col-md-6 text-center" href="{Router::link('auth/login')}">
               {t}link-has-account-already{/t}
             </a>
           </div>

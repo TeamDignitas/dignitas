@@ -3,13 +3,13 @@
 {block "title"}{cap}{$statement->summary|escape}{/cap}{/block}
 
 {block "content"}
-  <div class="container mt-4">
+  <div class="container mt-5">
     {include "bits/statement.tpl"
       editLink=true
       addComment=User::canComment($statement)}
 
     {if count($answers)}
-      <div class="row">
+      <div class="row mt-5">
         <h6 class="col-md-8 mt-4 pb-2 pl-0 answer-label text-uppercase font-weight-bold">
           {t count=count($answers) 1=count($answers) plural="title-answers-plural"}
           title-answers-singular

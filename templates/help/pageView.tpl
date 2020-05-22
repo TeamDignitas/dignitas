@@ -3,7 +3,7 @@
 {block "title"}{cap}{$page->title}{/cap} - {cap}{t}help-center{/t}{/cap}{/block}
 
 {block "content"}
-  <div class="container mt-4">
+  <div class="container mt-5">
     <div class="row">
       <div class="col-md-8 mb-3">
 

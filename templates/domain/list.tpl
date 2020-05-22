@@ -3,7 +3,7 @@
 {block "title"}{cap}{t}title-domains{/t}{/cap}{/block}
 
 {block "content"}
-  <div class="container mt-4">
+  <div class="container mt-5">
     <h1 class="mb-5">{cap}{t}title-domains{/t}{/cap}</h1>
 
     <a class="btn btn-sm btn-outline-primary" href="{Router::link('domain/edit')}">

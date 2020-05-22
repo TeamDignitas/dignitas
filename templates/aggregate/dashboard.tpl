@@ -3,7 +3,7 @@
 {block "title"}{cap}{t}title-dashboard{/t}{/cap}{/block}
 
 {block "content"}
-  <div class="container mt-4">
+  <div class="container mt-5">
     <h1 class="mb-5">{cap}{t}title-dashboard{/t}{/cap}</h1>
 
     <div class="card-columns">

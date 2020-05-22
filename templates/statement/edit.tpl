@@ -11,7 +11,7 @@
 {block "title"}{cap}{$smarty.capture.title}{/cap}{/block}
 
 {block "content"}
-  <div class="container mt-4">
+  <div class="container mt-5">
     <h1 class="mb-5">{$smarty.capture.title}</h1>
 
     {if !$statement->isEditable()}

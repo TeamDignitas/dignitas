@@ -3,7 +3,7 @@
 {block "title"}{cap}{t}title-log-in{/t}{/cap}{/block}
 
 {block "content"}
-  <div class="container mt-4">
+  <div class="container mt-5">
     {$allowFakeLogins=$allowFakeLogins|default:false}
 
     <div class="w-50 mx-auto">
@@ -12,10 +12,10 @@
         {include "bits/fakeLogin.tpl"}
       {/if}
 
-      <div class="card my-3">
-        <div class="card-header">
+      <div class="card my-5">
+        <h3 class="card-title m-4">
           {cap}{t}title-log-in{/t}{/cap}
-        </div>
+        </h3>
 
         <div class="card-body">
           <form method="post">
@@ -48,6 +48,9 @@
                   name="password"
                   placeholder="{t}label-password{/t}">
               </div>
+              <a class="btn btn-sm btn-link ml-5 mt-1" href="{Router::link('auth/lostPassword')}">
+                {t}link-forgot-password{/t}
+              </a>
               {include "bits/fieldErrors.tpl" errors=$errors.password|default:null}
             </div>
 
@@ -63,20 +66,14 @@
               </label>
             </div>
 
-            <div>
-              <button class="btn btn-primary" type="submit" name="submitButton">
+            <div class="mt-2 mx-2 row">
+              <button class="btn btn-primary col-sm-12 col-md-6" type="submit" name="submitButton">
                 {t}link-log-in{/t}
               </button>
 
-              <div class="float-right">
-                <a class="btn btn-outline-secondary" href="{Router::link('auth/lostPassword')}">
-                  <i class="icon icon-help"></i>
-                  {t}link-forgot-password{/t}
-                </a>
-
+              <div class="col-sm-12 col-md-6 text-center">
                 {if Config::ALLOW_REGISTRATION}
-                  <a class="btn btn-outline-secondary" href="{Router::link('auth/register')}">
-                    <i class="icon icon-user-plus"></i>
+                  <a class="btn btn-link" href="{Router::link('auth/register')}">
                     {t}link-sign-up{/t}
                   </a>
                 {/if}
