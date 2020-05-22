@@ -10,7 +10,7 @@
 <div class="row statement-title-sources">
 
   <div class="col-md-12 pl-0">
-    <h1 class="statement-title">
+    <h1 class="statement-title py-4">
       {$statement->summary|escape}
       {if $statusInfo}
         [{$statusInfo['status']}]
@@ -142,7 +142,7 @@
   </div>
 
   <div class="statement-box-area col-md-3 offset-md-1 pr-0">
-    <aside class="statement-box card false-statement verdict-{$statement->verdict}">
+    <aside class="statement-box card px-2 false-statement verdict-{$statement->verdict}">
       <h6 class="card-title mt-3 text-center">
         {$statement->getEntity()},
         {$statement->dateMade|ld}

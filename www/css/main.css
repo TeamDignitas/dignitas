@@ -190,7 +190,8 @@ blockquote {
 
 /******************************** statement ********************************/
 .statement-title {
-  font-size: 2.3rem;
+  font-size: 2rem;
+  line-height: 2.6rem;
   font-weight: 700;
 }
 
