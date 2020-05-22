@@ -3,7 +3,7 @@
 {block "title"}{$title|escape}{/block}
 
 {block "content"}
-  <div class="container mt-4">
+  <div class="container mt-5">
     <h1 class="history mb-4">{$title|escape}</h1>
 
     <div class="container">

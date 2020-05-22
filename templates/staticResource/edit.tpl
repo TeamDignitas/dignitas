@@ -3,7 +3,7 @@
 {block "title"}{t}title-edit-static-resource{/t}{/block}
 
 {block "content"}
-  <div class="container mt-4">
+  <div class="container mt-5">
     <h1 class="mb-5">{t}title-edit-static-resource{/t}</h1>
 
     <form method="post" enctype="multipart/form-data">

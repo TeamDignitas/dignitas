@@ -3,7 +3,7 @@
 {block "title"}{cap}{t}title-invites{/t}{/cap}{/block}
 
 {block "content"}
-  <div class="container mt-4">
+  <div class="container mt-5">
     <h1 class="mb-4">{cap}{t}title-invites{/t}{/cap} ({$invites|count})</h1>
 
     {if Config::ALLOW_INVITES}

@@ -3,7 +3,7 @@
 {block "title"}{cap}{t}title-change-password{/t}{/cap}{/block}
 
 {block "content"}
-  <div class="container mt-4">
+  <div class="container mt-5">
     {if $user}
       <div class="card w-50 m-auto">
         <div class="card-header">

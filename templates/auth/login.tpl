@@ -3,7 +3,7 @@
 {block "title"}{cap}{t}title-log-in{/t}{/cap}{/block}
 
 {block "content"}
-  <div class="container mt-4">
+  <div class="container mt-5">
     {$allowFakeLogins=$allowFakeLogins|default:false}
 
     <div class="w-50 mx-auto">

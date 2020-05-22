@@ -3,7 +3,7 @@
 {block "title"}{cap}{t}title-canned-responses{/t}{/cap}{/block}
 
 {block "content"}
-  <div class="container mt-4">
+  <div class="container mt-5">
     <h1 class="mb-4">{cap}{t}title-canned-responses{/t}{/cap}</h1>
 
     <a href="{Router::link('cannedResponse/edit')}" class="btn btn-sm btn-outline-primary">
