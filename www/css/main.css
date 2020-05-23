@@ -85,10 +85,6 @@ blockquote {
   color: #222;
 }
 
-.icon-menu:before {
-  content: '\f0c9';
-}
-
 @media (max-width: 768px) {
   .navbar-collapse {
     height: 100%;

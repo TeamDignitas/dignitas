@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md">
+<nav class="navbar navbar-light navbar-expand-md">
 
   <button
     class="navbar-toggler"
@@ -8,7 +8,7 @@
     aria-controls="navbar-left"
     aria-expanded="false"
     aria-label="{t}label-toggle-menu{/t}">
-    <i class="navbar-toggler-icon icon-menu"></i>
+    <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="navbar-collapse py-2" id="navbar-left">
