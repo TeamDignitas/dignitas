@@ -51,7 +51,7 @@ class DB {
     return ORM::get_db()->query($query, $fetchStyle);
   }
 
-  static function executeSqlFile($filename, $database = null) {
+  static function executeSqlFile($filename) {
     $filename = realpath(Core::portable($filename));
     $command = sprintf('mysql -h %s -u %s %s %s < %s',
                        Config::DB_HOST,

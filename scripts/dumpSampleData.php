@@ -125,7 +125,7 @@ getUploads($users, 'User', $files);
 getStaticResources($staticResources, $files);
 
 $result = [
-  'data' => $data,
+  'objects' => $data,
   'files' => $files,
 ];
 

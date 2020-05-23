@@ -29,7 +29,11 @@ class Config {
   const ALLOW_INVITES = true;
 
   // Shared drive (common to all backends). Include a trailing slash.
-  const SHARED_DRIVE = '/tmp/dignitas-shared/';
+  const SHARED_DRIVE = '/srv/http/dignitas-shared/';
+
+  // URLs of the database schema and sample data for bootstrapping a new installation
+  const DATABASE_SCHEMA_URL = 'https://dignitas.ro/static/database-schema.sql';
+  const SAMPLE_DATA_URL = 'https://dignitas.ro/static/sample-data.json';
 
   // Allowed MIME type => canonical file extension
   // In particular, we accept .jpg and .jpeg uploads, but canonicalize both to .jpg.
