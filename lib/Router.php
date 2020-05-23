@@ -240,7 +240,7 @@ class Router {
       'ro_RO.utf8' => 'resurse-statice',
     ],
     'staticResource/view' => [
-      'en_US.utf8' => 'static',
+      'en_US.utf8' => 'static-resource',
     ],
 
     // tags
