@@ -23,6 +23,7 @@ class Proto extends Precursor {
   const TYPE_ENTITY_TYPE = 9;
   const TYPE_RELATION_TYPE = 10;
   const TYPE_STATIC_RESOURCE = 11;
+  const TYPE_TAG = 12;
 
   function getModUser() {
     return User::get_by_id($this->modUserId);

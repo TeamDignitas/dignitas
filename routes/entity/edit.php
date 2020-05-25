@@ -18,6 +18,7 @@ if ($deleteButton) {
     FlashMessage::add(_('info-cannot-delete-entity'));
   } else {
     $entity->markDeleted(Ct::REASON_BY_USER);
+    Action::create(Action::TYPE_DELETE, $entity);
     FlashMessage::add(_('info-confirm-entity-deleted.'), 'success');
   }
   Util::redirectToHome();
@@ -31,6 +32,7 @@ if ($reopenButton) {
     $entity->duplicateId = 0;
 
     $entity->reopen();
+    Action::create(Action::TYPE_REOPEN, $entity);
     FlashMessage::add(_('info-confirm-entity-reopened.'), 'success');
   }
   Util::redirect(Router::getViewLink($entity));
@@ -73,6 +75,8 @@ if ($saveButton) {
 
     $entity = $entity->maybeClone();
     $entity->saveWithFile($fileData, $deleteImage);
+    $action = $new ? Action::TYPE_CREATE : Action::TYPE_UPDATE;
+    Action::create($action, $entity);
 
     Relation::updateDependants($relations, $entity, 'fromEntityId', 'rank');
     Alias::updateDependants($aliases, $entity, 'entityId', 'rank');

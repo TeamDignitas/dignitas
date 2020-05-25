@@ -8,6 +8,10 @@ class Tag extends Proto {
   // populated during loadTree()
   public $children = [];
 
+  function getObjectType() {
+    return Proto::TYPE_TAG;
+  }
+
   function getColor() {
     return $this->color ? $this->color : self::DEFAULT_COLOR;
   }
