@@ -17,6 +17,7 @@ Smart::assign([
   'user' => $user,
   'answers' => $answers,
   'statements' => $statements,
+  'actions' => $user->getActions(),
 ]);
 Smart::addResources('imageModal');
 Smart::display('user/view.tpl');

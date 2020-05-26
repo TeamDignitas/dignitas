@@ -24,6 +24,7 @@ if ($saveButton) {
       $user->password = md5($password);
     }
     $user->saveWithFile($fileData, $deleteImage);
+    Action::create(Action::TYPE_UPDATE, $user);
 
     FlashMessage::add(_('info-changes-saved'), 'success');
     Util::redirect(Router::userLink($user));

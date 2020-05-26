@@ -82,6 +82,8 @@ class Proto extends Precursor {
         return Relation::get_by_id($objectId);
       case self::TYPE_COMMENT:
         return Comment::get_by_id($objectId);
+      case self::TYPE_TAG:
+        return TAG::get_by_id($objectId);
       default:
         return null;
     }

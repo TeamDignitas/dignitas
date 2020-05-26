@@ -23,6 +23,7 @@ if ($deleteButton) {
     Util::redirectToSelf();
   }
   $statement->markDeleted(Ct::REASON_BY_USER);
+  Action::create(Action::TYPE_DELETE, $statement);
   FlashMessage::add(_('info-confirm-statement-deleted'), 'success');
   Util::redirectToHome();
 }
@@ -35,6 +36,7 @@ if ($reopenButton) {
     $statement->duplicateId = 0;
 
     $statement->reopen();
+    Action::create(Action::TYPE_REOPEN, $statement);
     FlashMessage::add(_('info-confirm-statement-reopened.'), 'success');
   }
   Util::redirect(Router::getViewLink($statement));
@@ -60,18 +62,19 @@ if ($saveButton) {
 
   $errors = validate($statement, $links);
   if (empty($errors)) {
-    $new = !$statement->id;
+    $originalId = $statement->id;
     $statement = $statement->maybeClone();
     $statement->save();
+    Action::createUpdateAction($statement, $originalId);
 
-    if ($new) {
+    if (!$originalId) {
       Review::checkNewUser($statement);
     }
     Review::checkRecentlyClosedDeleted($statement);
     Link::update($statement, $links);
     ObjectTag::update($statement, $tagIds);
 
-    if ($new) {
+    if (!$originalId) {
       FlashMessage::add(_('info-statement-added'), 'success');
       Util::redirect(Router::link('statement/view') . '/' . $statement->id);
     } else {

@@ -71,19 +71,18 @@ if ($saveButton) {
 
   $errors = validate($entity, $relations, $links, $fileData);
   if (empty($errors)) {
-    $new = !$entity->id;
+    $originalId = $entity->id;
 
     $entity = $entity->maybeClone();
     $entity->saveWithFile($fileData, $deleteImage);
-    $action = $new ? Action::TYPE_CREATE : Action::TYPE_UPDATE;
-    Action::create($action, $entity);
+    Action::createUpdateAction($entity, $originalId);
 
     Relation::updateDependants($relations, $entity, 'fromEntityId', 'rank');
     Alias::updateDependants($aliases, $entity, 'entityId', 'rank');
     Link::update($entity, $links);
     ObjectTag::update($entity, $tagIds);
 
-    if ($new) {
+    if (!$originalId) {
       Review::checkNewUser($entity);
       FlashMessage::add(_('info-entity-added'), 'success');
       Util::redirect(Router::link('entity/view') . '/' . $entity->id);

@@ -40,6 +40,10 @@ blockquote {
   padding-right: 8px;
 }
 
+.row-border {
+  border-top: 1px solid #dee2e6;
+}
+
 /******************************** navbar *********************************/
 .navbar,
 #navbar-left,

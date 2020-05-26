@@ -130,6 +130,13 @@ class User extends Proto {
     return self::getFlagsPerDay() - $pending;
   }
 
+  function getActions() {
+    return Model::factory('Action')
+      ->where('userId', $this->id)
+      ->order_by_desc('createDate')
+      ->find_many();
+  }
+
   // Checks if the user can claim this email when registering or editing their profile.
   // Returns null on success or an error message on failure. Assumes $email is not empty.
   static function canChooseEmail($email) {
