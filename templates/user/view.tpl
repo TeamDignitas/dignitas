@@ -83,6 +83,7 @@
           <div class="col-md-10">
             {$obj=$a->getObject()}
             {if !$obj}   {* Underlying object has been deleted *}
+              {$a->getTypeName()}
               {$a->description|escape}
             {elseif $a->objectType == Proto::TYPE_ENTITY}
               {$a->getTypeName()}
@@ -90,6 +91,9 @@
             {elseif $a->objectType == Proto::TYPE_STATEMENT}
               {$a->getTypeName()}
               {include "bits/statementLink.tpl" statement=$obj quotes=false}
+            {elseif $a->objectType == Proto::TYPE_TAG}
+              {$a->getTypeName()}
+              {include "bits/tag.tpl" t=$obj link=true}
             {elseif $a->objectType == Proto::TYPE_USER}
               {t}action-updated-user-profile{/t}
             {/if}

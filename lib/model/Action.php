@@ -71,7 +71,7 @@ class Action extends Precursor {
         $d = Str::shorten($object->summary, 200);
         break;
       case Proto::TYPE_TAG:
-        $d = $object->value;
+        $d = "[{$object->value}]";
         break;
       case Proto::TYPE_USER:
         $d = $object->nickname;

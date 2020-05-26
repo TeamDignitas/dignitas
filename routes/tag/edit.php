@@ -26,6 +26,7 @@ if ($deleteButton) {
   User::enforce(User::PRIV_DELETE_TAG);
   if ($canDelete) {
     FlashMessage::add(sprintf(_('tag-deleted-%s'), $tag->value), 'success');
+    Action::create(Action::TYPE_DELETE, $tag);
     $tag->delete();
     Util::redirectToRoute('tag/list');
   } else {
@@ -47,7 +48,11 @@ if ($saveButton) {
 
   $errors = validate($tag);
   if (empty($errors)) {
+    $new = !$tag->id;
     $tag->save();
+    Action::create(
+      $new ? Action::TYPE_CREATE : Action::TYPE_UPDATE,
+      $tag);
 
     FlashMessage::add(_('info-tag-saved'), 'success');
     Util::redirect(Router::link('tag/list'));
