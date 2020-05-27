@@ -25,6 +25,7 @@ if ($deleteButton) {
     FlashMessage::add(_('info-cannot-delete-answer'));
   } else {
     $answer->markDeleted(Ct::REASON_BY_USER);
+    Action::create(Action::TYPE_DELETE, $answer);
     FlashMessage::add(_('info-confirm-answer-deleted'), 'success');
   }
   Util::redirect(Router::link('statement/view') . '/' . $answer->statementId);
@@ -35,6 +36,7 @@ if ($reopenButton) {
     FlashMessage::add(_('info-cannot-reopen-answer'));
   } else {
     $answer->reopen();
+    Action::create(Action::TYPE_REOPEN, $answer);
     FlashMessage::add(_('info-confirm-answer-reopened'), 'success');
   }
 
@@ -53,11 +55,12 @@ if ($saveButton) {
 
   $errors = validate($answer);
   if (empty($errors)) {
-    $new = !$answer->id;
+    $originalId = $answer->id;
     $answer = $answer->maybeClone();
     $answer->save();
+    Action::createUpdateAction($answer, $originalId);
 
-    if ($new) {
+    if (!$originalId) {
       Review::checkNewUser($answer);
     }
     Review::checkLateAnswer($answer);
@@ -67,7 +70,7 @@ if ($saveButton) {
       FlashMessage::add(_('info-changes-queued'), 'success');
     } else {
       FlashMessage::add(
-        $new ? _('info-answer-posted') : _('info-answer-updated'),
+        $originalId ? _('info-answer-updated') : _('info-answer-posted'),
         'success');
     }
     // pass the original answer ID, not the pending edit one

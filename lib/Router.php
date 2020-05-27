@@ -469,6 +469,9 @@ class Router {
    */
   static function getViewLink($object) {
     switch ($object->getObjectType()) {
+      case Proto::TYPE_ANSWER:
+        return sprintf('%s/%s#a%s', Router::link('statement/view'),
+                       $object->statementId, $object->id);
       case Proto::TYPE_ENTITY:
         return Router::link('entity/view') . '/' . $object->id;
       case Proto::TYPE_STATEMENT:
