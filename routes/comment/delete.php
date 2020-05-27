@@ -17,6 +17,7 @@ try {
   }
 
   $comment->markDeleted(Ct::REASON_BY_USER);
+  Action::create(Action::TYPE_DELETE, $comment);
 
   print json_encode(_('info-comment-deleted'));
 

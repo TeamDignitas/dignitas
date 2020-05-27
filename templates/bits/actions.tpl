@@ -25,7 +25,15 @@
         {elseif $a->objectType == Proto::TYPE_ANSWER}
           {$a->getTypeName()}
           <a href="{Router::getViewLink($obj)}">
-            {t}action-type-answer{/t}
+            {t}action-target-answer{/t}
+          </a>
+          <div class="text-muted">
+            {$obj->contents|shorten:120}
+          </div>
+        {elseif $a->objectType == Proto::TYPE_COMMENT}
+          {$a->getTypeName()}
+          <a href="{Router::getViewLink($obj)}">
+            {t}action-target-comment{/t}
           </a>
           <div class="text-muted">
             {$obj->contents|shorten:120}

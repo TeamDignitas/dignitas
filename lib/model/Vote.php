@@ -112,15 +112,19 @@ class Vote extends Proto {
       $value = 0;
     }
 
-    $this->getObject()->changeScore($value - $this->value);
+    $obj = $this->getObject();
+    $obj->changeScore($value - $this->value);
     $this->grantAuthorRep($this->value, $value);
     $this->grantVoterRep($this->value, $value);
 
     if ($value == 0) {
       $this->delete();
+      Action::create(Action::TYPE_RETRACT_VOTE, $obj);
     } else {
       $this->value = $value;
       $this->save();
+      $action = ($value == +1) ? Action::TYPE_VOTE_UP : Action::TYPE_VOTE_DOWN;
+      Action::create($action, $obj);
     }
   }
 

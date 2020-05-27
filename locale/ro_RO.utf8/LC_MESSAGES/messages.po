@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-05-27 13:01+0300\n"
-"PO-Revision-Date: 2020-05-27 13:04+0300\n"
+"POT-Creation-Date: 2020-05-27 16:52+0300\n"
+"PO-Revision-Date: 2020-05-27 17:00+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -212,6 +212,33 @@ msgstr "click aici dacă nu sînteți redirectat(ă) automat"
 #: templates/auth/resetPassword.tpl:3 templates/auth/resetPassword.tpl:10
 msgid "title-change-password"
 msgstr "schimbarea parolei"
+
+#: templates/bits/actions.tpl:3 templates/domain/list.tpl:21
+#: templates/entity/edit.tpl:54 templates/entity/edit.tpl:123
+#: templates/entityType/list.tpl:22 templates/relationType/list.tpl:30
+#: templates/staticResource/list.tpl:21
+msgid "actions"
+msgstr "acțiuni"
+
+#: templates/bits/actions.tpl:8 templates/bits/history.tpl:15
+msgid "label-date"
+msgstr "dată"
+
+#: templates/bits/actions.tpl:11
+msgid "label-action"
+msgstr "acțiune"
+
+#: templates/bits/actions.tpl:28
+msgid "action-target-answer"
+msgstr "un răspuns"
+
+#: templates/bits/actions.tpl:36
+msgid "action-target-comment"
+msgstr "un comentariu"
+
+#: templates/bits/actions.tpl:51
+msgid "action-updated-user-profile"
+msgstr "și-a actualizat profilul"
 
 #: templates/bits/addCommentLink.tpl:6
 msgid "link-add-comment"
@@ -510,10 +537,6 @@ msgstr "raportează comentariul"
 msgid "label-author"
 msgstr "autor"
 
-#: templates/bits/history.tpl:15 templates/user/view.tpl:71
-msgid "label-date"
-msgstr "dată"
-
 #: templates/bits/history.tpl:18
 msgid "label-changes"
 msgstr "modificări"
@@ -755,13 +778,6 @@ msgstr "adaugă un domeniu"
 #: templates/domain/list.tpl:18 templates/tag/edit.tpl:114
 msgid "label-icon"
 msgstr "iconiță"
-
-#: templates/domain/list.tpl:21 templates/entity/edit.tpl:54
-#: templates/entity/edit.tpl:123 templates/entityType/list.tpl:22
-#: templates/relationType/list.tpl:30 templates/staticResource/list.tpl:21
-#: templates/user/view.tpl:66
-msgid "actions"
-msgstr "acțiuni"
 
 #: templates/email/invite.tpl:5 templates/email/lostPassword.tpl:5
 msgid "email-hello"
@@ -1346,14 +1362,6 @@ msgstr "ultima vizită"
 msgid "title-about-me"
 msgstr "despre mine"
 
-#: templates/user/view.tpl:74
-msgid "label-action"
-msgstr "acțiune"
-
-#: templates/user/view.tpl:98
-msgid "action-updated-user-profile"
-msgstr "și-a actualizat profilul"
-
 #: lib/Time.php:21 lib/Time.php:44
 msgid "date-format-ymd"
 msgstr "%e %B %Y"
@@ -1445,7 +1453,7 @@ msgstr "a votat negativ"
 
 #: lib/model/Action.php:109
 msgid "action-retracted-vote"
-msgstr "și-a retras votul"
+msgstr "și-a retras votul pentru"
 
 #: lib/model/Action.php:111
 msgid "action-voted-keep"
@@ -2181,32 +2189,32 @@ msgstr "Răspunsul căutat nu există."
 msgid "info-cannot-delete-answer"
 msgstr "Nu puteți șterge acest răspuns."
 
-#: routes/answer/edit.php:28
+#: routes/answer/edit.php:29
 msgid "info-confirm-answer-deleted"
 msgstr "Am șters răspunsul."
 
-#: routes/answer/edit.php:35
+#: routes/answer/edit.php:36
 msgid "info-cannot-reopen-answer"
 msgstr "Nu puteți redeschide acest răspuns."
 
-#: routes/answer/edit.php:38
+#: routes/answer/edit.php:40
 msgid "info-confirm-answer-reopened"
 msgstr "Am redeschis răspunsul."
 
-#: routes/answer/edit.php:67 routes/entity/edit.php:91
+#: routes/answer/edit.php:70 routes/entity/edit.php:91
 #: routes/statement/edit.php:82
 msgid "info-changes-queued"
 msgstr "Modificările dumneavoastră au fost adăugate la coada de evaluare."
 
-#: routes/answer/edit.php:70
-msgid "info-answer-posted"
-msgstr "Am publicat răspunsul."
-
-#: routes/answer/edit.php:70
+#: routes/answer/edit.php:73
 msgid "info-answer-updated"
 msgstr "Am actualizat răspunsul."
 
-#: routes/answer/edit.php:103
+#: routes/answer/edit.php:73
+msgid "info-answer-posted"
+msgstr "Am publicat răspunsul."
+
+#: routes/answer/edit.php:106
 msgid "info-empty-answer"
 msgstr "Nu puteți publica un răspuns gol."
 
@@ -2323,7 +2331,7 @@ msgstr "Comentariul căutat nu există."
 msgid "info-cannot-delete-comment"
 msgstr "Aveți o reputație insuficientă pentru a șterge comentariul."
 
-#: routes/comment/delete.php:21
+#: routes/comment/delete.php:22
 msgid "info-comment-deleted"
 msgstr "Am șters comentariul."
 

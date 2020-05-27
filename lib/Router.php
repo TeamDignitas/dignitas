@@ -472,6 +472,13 @@ class Router {
       case Proto::TYPE_ANSWER:
         return sprintf('%s/%s#a%s', Router::link('statement/view'),
                        $object->statementId, $object->id);
+      case Proto::TYPE_COMMENT:
+        $target = $object->getObject(); // a statement or an answer
+        $statementId = $target->getObjectType() == Proto::TYPE_STATEMENT
+          ? $target->id
+          : $target->statementId;
+        return sprintf('%s/%s#c%s', Router::link('statement/view'),
+                       $statementId, $object->id);
       case Proto::TYPE_ENTITY:
         return Router::link('entity/view') . '/' . $object->id;
       case Proto::TYPE_STATEMENT:

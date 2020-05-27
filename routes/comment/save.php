@@ -24,6 +24,7 @@ try {
   }
 
   $c->save();
+  Action::create(Action::TYPE_CREATE, $c);
 
   print $c->id;
 
