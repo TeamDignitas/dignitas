@@ -291,6 +291,7 @@ $(function() {
       form.serialize()
     ).done(function(successMsg, textStatus, xhr) {
 
+      window.location.hash = 'c' + successMsg;
       window.location.reload();
 
     }).fail(function(errorMsg) {

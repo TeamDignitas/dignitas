@@ -19,7 +19,6 @@
 
       {foreach $answers as $answer}
         {include "bits/answer.tpl"
-          highlighted=($answer->id == $answerId)
           addComment=User::canComment($answer)}
       {/foreach}
     {/if}

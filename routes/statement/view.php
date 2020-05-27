@@ -1,7 +1,6 @@
 <?php
 
 $id = Request::get('id');
-$answerId = Request::get('answerId'); // answer to be highlighted
 $deleteAnswerId = Request::get('deleteAnswerId');
 $reopenAnswerId = Request::get('reopenAnswerId');
 
@@ -59,7 +58,6 @@ if ($statement->hasPendingEdit() && User::may(User::PRIV_REVIEW)) {
 
 Smart::addResources('flag', 'imageModal', 'easymde');
 Smart::assign([
-  'answerId' => $answerId,
   'answers' => $statement->getAnswers(),
   'newAnswer' => Answer::create($statement->id),
   'referrer' => Router::link('statement/view', true) . '/' . $statement->id,

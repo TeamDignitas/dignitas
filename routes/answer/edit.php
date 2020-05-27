@@ -41,7 +41,7 @@ if ($saveButton) {
         'success');
     }
     // pass the original answer ID, not the pending edit one
-    $returnTo = getReturnTo($id, $answer->statementId, $referrer);
+    $returnTo = getReturnTo($id ?: $answer->id, $answer->statementId, $referrer);
     Util::redirect($returnTo);
   } else {
     Smart::assign([
@@ -85,7 +85,7 @@ function getReturnTo($answerId, $statementId, $referrer) {
   } else {
 
     // origin is a statement view page
-    return sprintf('%s/%d/%d',
+    return sprintf('%s/%d#a%d',
                    Router::link('statement/view'),
                    $statementId,
                    $answerId);

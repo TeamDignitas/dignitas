@@ -1,9 +1,8 @@
 {* mandatory argument: $answer *}
-{$highlighted=$highlighted|default:false}
 {$voteBox=$voteBox|default:true}
 {$addComment=$addComment|default:false}
 
-<div class="row row-cols-2 vote-container answer {if $highlighted}highlighted{/if}">
+<div class="row row-cols-2 vote-container answer" id="a{$answer->id}">
   {if $voteBox}
     {include "bits/scoreAndVote.tpl"
       type=Vote::TYPE_ANSWER
@@ -49,6 +48,14 @@
 
       {$comments=Comment::getFor($answer)}
       <div class="text-muted text-left mb-2 ml-0 pl-0">
+        <a
+          href="#a{$answer->id}"
+          class="btn btn-sm btn-outline-secondary mt-1"
+          title="{t}info-answer-permalink{/t}">
+          <i class="icon icon-link"></i>
+          {t}permalink{/t}
+        </a>
+
         {if $answer->hasRevisions()}
           <a href="{Router::link('answer/history')}/{$answer->id}" class="btn btn-sm btn-outline-secondary mt-1">
             {t}link-show-revisions{/t}

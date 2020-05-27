@@ -1,6 +1,6 @@
 {$voteBox=$voteBox|default:true}
 
-<div class="vote-container comment mb-2 mt-2">
+<div class="vote-container comment mb-2 mt-2" id="c{$comment->id}">
 
   {if $voteBox}
     {include "bits/scoreAndVote.tpl"
@@ -17,6 +17,12 @@
     {include 'bits/moment.tpl' t=$comment->createDate}
 
     <span class="comment-actions">
+      <a
+        href="#c{$comment->id}"
+        title="{t}info-comment-permalink{/t}">
+        <i class="icon icon-link"></i>
+      </a>
+
       {if $comment->isDeletable()}
         <a
           href="#"

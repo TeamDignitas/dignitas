@@ -312,7 +312,7 @@ class Router {
     'review/view' => [ 'reason', 'reviewId', ],
     'statement/edit' => [ 'id' ],
     'statement/history' => [ 'id' ],
-    'statement/view' => [ 'id', 'answerId' ],
+    'statement/view' => [ 'id' ],
     'staticResource/edit' => [ 'id' ],
     'staticResource/view' => [ 'locale', 'name' ],
     'tag/edit' => [ 'id' ],
