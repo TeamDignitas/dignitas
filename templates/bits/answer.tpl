@@ -53,7 +53,7 @@
           class="btn btn-sm btn-outline-secondary mt-1"
           title="{t}info-answer-permalink{/t}">
           <i class="icon icon-link"></i>
-          {t}permalink{/t}
+          {t}link-permalink{/t}
         </a>
 
         {if $answer->hasRevisions()}
