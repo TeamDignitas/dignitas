@@ -39,9 +39,31 @@
       <i class="icon icon-floppy"></i>
       {$buttonText}
     </button>
+
     <a href="{$referrer}" class="btn btn-sm btn-outline-secondary">
       <i class="icon icon-cancel"></i>
       {t}link-cancel{/t}
     </a>
+
+    {if $answer->isDeletable()}
+      <button
+        name="deleteButton"
+        type="submit"
+        class="btn btn-sm btn-outline-danger"
+        data-confirm="{t}info-confirm-delete-answer{/t}">
+        <i class="icon icon-trash"></i>
+        {t}link-delete{/t}
+      </button>
+    {/if}
+
+    {if $answer->isReopenable()}
+      <button
+        name="reopenButton"
+        type="submit"
+        class="btn btn-sm btn-outline-secondary"
+        data-confirm="{t}info-confirm-reopen-answer{/t}">
+        {t}link-reopen{/t}
+      </button>
+    {/if}
   </div>
 </form>

@@ -111,6 +111,7 @@ class Answer extends Proto {
   function isDeletable() {
     return
       $this->status == Ct::STATUS_ACTIVE &&
+      $this->id &&                               // not on the add answer page
       !$this->proof &&                           // not yet accepted as proof
       (User::may(User::PRIV_DELETE_ANSWER) ||    // can delete any answer
        $this->userId == User::getActiveId());    // can always delete user's own answers

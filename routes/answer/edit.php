@@ -4,14 +4,44 @@ $id = Request::get('id');
 $statementId = Request::get('statementId');
 $contents = Request::get('contents');
 $saveButton = Request::has('saveButton');
+$deleteButton = Request::has('deleteButton');
+$reopenButton = Request::has('reopenButton');
 $referrer = Request::get('referrer');
 
 if ($id) {
   $answer = Answer::get_by_id($id);
+  if (!$answer) {
+    FlashMessage::add(_('info-no-such-answer'));
+    Util::redirectToHome();
+  }
 } else {
   $answer = Model::factory('Answer')->create();
   $answer->statementId = $statementId;
   $answer->userId = User::getActiveId();
+}
+
+if ($deleteButton) {
+  if (!$answer->isDeletable()) {
+    FlashMessage::add(_('info-cannot-delete-answer'));
+  } else {
+    $answer->markDeleted(Ct::REASON_BY_USER);
+    FlashMessage::add(_('info-confirm-answer-deleted'), 'success');
+  }
+  Util::redirect(Router::link('statement/view') . '/' . $answer->statementId);
+}
+
+if ($reopenButton) {
+  if (!$answer->isReopenable()) {
+    FlashMessage::add(_('info-cannot-reopen-answer'));
+  } else {
+    $answer->reopen();
+    FlashMessage::add(_('info-confirm-answer-reopened'), 'success');
+  }
+
+  Util::redirect(sprintf('%s/%s#a%s',
+                         Router::link('statement/view'),
+                         $answer->statementId,
+                         $answer->id));
 }
 
 $answer->enforceEditPrivileges();
