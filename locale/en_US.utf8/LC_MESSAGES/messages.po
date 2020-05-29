@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-05-27 17:02+0300\n"
-"PO-Revision-Date: 2020-05-27 17:02+0300\n"
+"POT-Creation-Date: 2020-05-29 12:49+0300\n"
+"PO-Revision-Date: 2020-05-29 12:49+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -1091,31 +1091,35 @@ msgstr ""
 msgid "info-review-complete"
 msgstr "This review is now complete. No further actions can be taken."
 
-#: templates/review/view.tpl:31
+#: templates/review/view.tpl:28
+msgid "info-review-target-item"
+msgstr "Complete item:"
+
+#: templates/review/view.tpl:36
 msgid "info-statement-duplicate"
 msgstr "This statement was flagged as a duplicate of"
 
-#: templates/review/view.tpl:44 templates/review/view.tpl:84
-#: templates/review/view.tpl:96
+#: templates/review/view.tpl:49 templates/review/view.tpl:89
+#: templates/review/view.tpl:101
 msgid "title-pertaining-to-statement"
 msgstr "pertaining to statement:"
 
-#: templates/review/view.tpl:58
+#: templates/review/view.tpl:63
 msgid "info-entity-duplicate"
 msgstr "This author was flagged as a duplicate of"
 
-#: templates/review/view.tpl:61
+#: templates/review/view.tpl:66
 msgid "info-entity-duplicate-process"
 msgstr ""
 "Accepting this flag will transfer all statements from this duplicate to its "
 "canonical author. The aliases, relationships and other attributes will not "
 "be transferred."
 
-#: templates/review/view.tpl:75
+#: templates/review/view.tpl:80
 msgid "title-pertaining-to-answer"
 msgstr "pertaining to answer:"
 
-#: templates/review/view.tpl:113
+#: templates/review/view.tpl:118
 msgid "info-review-queue-empty"
 msgstr "This review queue is empty."
 
@@ -1403,67 +1407,67 @@ msgstr "You are already logged in."
 msgid "info-must-log-in"
 msgstr "Please log in to perform this action."
 
-#: lib/model/Action.php:93
+#: lib/model/Action.php:128
 msgid "action-created"
 msgstr "created"
 
-#: lib/model/Action.php:95
+#: lib/model/Action.php:130
 msgid "action-updated"
 msgstr "modified"
 
-#: lib/model/Action.php:97
+#: lib/model/Action.php:132
 msgid "action-closed"
 msgstr "closed"
 
-#: lib/model/Action.php:99
+#: lib/model/Action.php:134
 msgid "action-deleted"
 msgstr "deleted"
 
-#: lib/model/Action.php:101
+#: lib/model/Action.php:136
 msgid "action-reopened"
 msgstr "reopened"
 
-#: lib/model/Action.php:103
+#: lib/model/Action.php:138
 msgid "action-created-pending-edit"
 msgstr "suggested changes for"
 
-#: lib/model/Action.php:105
+#: lib/model/Action.php:140
 msgid "action-voted-up"
 msgstr "voted up"
 
-#: lib/model/Action.php:107
+#: lib/model/Action.php:142
 msgid "action-voted-down"
 msgstr "voted down"
 
-#: lib/model/Action.php:109
+#: lib/model/Action.php:144
 msgid "action-retracted-vote"
 msgstr "retracted vote for"
 
-#: lib/model/Action.php:111
+#: lib/model/Action.php:146
 msgid "action-voted-keep"
 msgstr "voted to keep"
 
-#: lib/model/Action.php:113
+#: lib/model/Action.php:148
 msgid "action-voted-accept-pending-edit"
 msgstr "voted to accept suggested changes to"
 
-#: lib/model/Action.php:115
+#: lib/model/Action.php:150
 msgid "action-voted-reopen"
 msgstr "voted to reopen"
 
-#: lib/model/Action.php:117
+#: lib/model/Action.php:152
 msgid "action-voted-remove"
 msgstr "voted to remove"
 
-#: lib/model/Action.php:119
+#: lib/model/Action.php:154
 msgid "action-voted-refuse-pending-edit"
 msgstr "voted to refuse suggested changes to"
 
-#: lib/model/Action.php:121
+#: lib/model/Action.php:156
 msgid "action-voted-ignore-reopen"
 msgstr "voted to ignore reopen request for"
 
-#: lib/model/Action.php:123
+#: lib/model/Action.php:158
 msgid "action-retracted-flag"
 msgstr "retracted flag for"
 
@@ -2422,7 +2426,7 @@ msgstr "An author type by this name already exists."
 msgid "info-entity-type-cannot-be-source-and-sink"
 msgstr "Authors cannot both have loyalty and be the object of loyalty."
 
-#: routes/flag/delete.php:25
+#: routes/flag/delete.php:26
 msgid "info-flag-deleted"
 msgstr "Your flag was deleted."
 
@@ -2430,7 +2434,7 @@ msgstr "Your flag was deleted."
 msgid "info-cannot-flag-duplicate-itself"
 msgstr "Cannot flag item as a duplicate of itself."
 
-#: routes/flag/save.php:35
+#: routes/flag/save.php:36
 msgid "info-flag-saved"
 msgstr "Your flag was saved."
 
@@ -2571,11 +2575,11 @@ msgstr "No review exists with the given ID."
 msgid "info-moderator-review-only"
 msgstr "Only moderators may perform that review."
 
-#: routes/review/view.php:42
+#: routes/review/view.php:43
 msgid "info-vote-saved"
 msgstr "Your vote was recorded."
 
-#: routes/review/view.php:87
+#: routes/review/view.php:88
 msgid "info-vote-completes-review"
 msgstr ""
 "This review is now complete. We have redirected you to the next review in "

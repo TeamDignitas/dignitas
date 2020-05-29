@@ -24,7 +24,12 @@
         {if isset($objectDiff)}
           {include "bits/diff/objectDiff.tpl" od=$objectDiff}
 
-        {elseif $type == Proto::TYPE_STATEMENT}
+          <h3 class="mt-5 mb-3">
+            {t}info-review-target-item{/t}
+          </h3>
+        {/if}
+
+        {if $type == Proto::TYPE_STATEMENT}
 
           {if $review->reason == Ct::REASON_DUPLICATE}
             <div class="alert alert-warning">

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-05-29 12:04+0300\n"
-"PO-Revision-Date: 2020-05-29 12:05+0300\n"
+"POT-Creation-Date: 2020-05-29 12:48+0300\n"
+"PO-Revision-Date: 2020-05-29 12:49+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -1103,31 +1103,35 @@ msgstr ""
 msgid "info-review-complete"
 msgstr "Această evaluare este completă. Nu mai puteți face alte acțiuni."
 
-#: templates/review/view.tpl:31
+#: templates/review/view.tpl:28
+msgid "info-review-target-item"
+msgstr "Articolul complet:"
+
+#: templates/review/view.tpl:36
 msgid "info-statement-duplicate"
 msgstr "Această afirmație a fost marcată ca duplicat al afirmației"
 
-#: templates/review/view.tpl:44 templates/review/view.tpl:84
-#: templates/review/view.tpl:96
+#: templates/review/view.tpl:49 templates/review/view.tpl:89
+#: templates/review/view.tpl:101
 msgid "title-pertaining-to-statement"
 msgstr "referitor la afirmația:"
 
-#: templates/review/view.tpl:58
+#: templates/review/view.tpl:63
 msgid "info-entity-duplicate"
 msgstr "Acest autor a fost marcat ca duplicat al autorului"
 
-#: templates/review/view.tpl:61
+#: templates/review/view.tpl:66
 msgid "info-entity-duplicate-process"
 msgstr ""
 "Acceptarea acestei raportări va transfera toate afirmațiile de la acest "
 "duplicat la autorul canonic. Aliasurile, relațiile și alte atribute nu vor "
 "fi transferate."
 
-#: templates/review/view.tpl:75
+#: templates/review/view.tpl:80
 msgid "title-pertaining-to-answer"
 msgstr "referitor la răspunsul:"
 
-#: templates/review/view.tpl:113
+#: templates/review/view.tpl:118
 msgid "info-review-queue-empty"
 msgstr "Această coadă de evaluare este goală."
 
@@ -1419,67 +1423,67 @@ msgstr "Sînteți deja autentificat(ă)."
 msgid "info-must-log-in"
 msgstr "Vă rugăm să vă autentificați."
 
-#: lib/model/Action.php:125
+#: lib/model/Action.php:128
 msgid "action-created"
 msgstr "a creat"
 
-#: lib/model/Action.php:127
+#: lib/model/Action.php:130
 msgid "action-updated"
 msgstr "a modificat"
 
-#: lib/model/Action.php:129
+#: lib/model/Action.php:132
 msgid "action-closed"
 msgstr "a închis"
 
-#: lib/model/Action.php:131
+#: lib/model/Action.php:134
 msgid "action-deleted"
 msgstr "a șters"
 
-#: lib/model/Action.php:133
+#: lib/model/Action.php:136
 msgid "action-reopened"
 msgstr "a redeschis"
 
-#: lib/model/Action.php:135
+#: lib/model/Action.php:138
 msgid "action-created-pending-edit"
 msgstr "a sugerat o modificare pentru"
 
-#: lib/model/Action.php:137
+#: lib/model/Action.php:140
 msgid "action-voted-up"
 msgstr "a votat pozitiv"
 
-#: lib/model/Action.php:139
+#: lib/model/Action.php:142
 msgid "action-voted-down"
 msgstr "a votat negativ"
 
-#: lib/model/Action.php:141
+#: lib/model/Action.php:144
 msgid "action-retracted-vote"
 msgstr "și-a retras votul pentru"
 
-#: lib/model/Action.php:143
+#: lib/model/Action.php:146
 msgid "action-voted-keep"
 msgstr "a votat pentru a păstra"
 
-#: lib/model/Action.php:145
+#: lib/model/Action.php:148
 msgid "action-voted-accept-pending-edit"
 msgstr "a votat pentru a accepta modificările pentru"
 
-#: lib/model/Action.php:147
+#: lib/model/Action.php:150
 msgid "action-voted-reopen"
 msgstr "a votat pentru a redeschide"
 
-#: lib/model/Action.php:149
+#: lib/model/Action.php:152
 msgid "action-voted-remove"
 msgstr "a votat pentru a elimina"
 
-#: lib/model/Action.php:151
+#: lib/model/Action.php:154
 msgid "action-voted-refuse-pending-edit"
 msgstr "a votat pentru a refuza modificările la"
 
-#: lib/model/Action.php:153
+#: lib/model/Action.php:156
 msgid "action-voted-ignore-reopen"
 msgstr "a votat pentru a nu redeschide"
 
-#: lib/model/Action.php:155
+#: lib/model/Action.php:158
 msgid "action-retracted-flag"
 msgstr "și-a retras raportarea pentru"
 
@@ -2453,7 +2457,7 @@ msgstr "Există deja un tip de autor cu acest nume."
 msgid "info-entity-type-cannot-be-source-and-sink"
 msgstr "Autorii nu pot să aibă loialitate și să fie și obiect al loialității."
 
-#: routes/flag/delete.php:25
+#: routes/flag/delete.php:26
 msgid "info-flag-deleted"
 msgstr "Raportarea a fost ștearsă."
 
