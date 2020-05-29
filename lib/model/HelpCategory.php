@@ -2,6 +2,10 @@
 
 class HelpCategory extends Proto {
 
+  function getViewUrl() {
+    return Router::link('help/index') . '/' . $this->path;
+  }
+
   static function loadAll() {
     return Model::factory('HelpCategory')
       ->order_by_asc('rank')

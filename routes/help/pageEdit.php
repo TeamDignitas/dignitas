@@ -31,7 +31,7 @@ if ($saveButton) {
     $page->save();
 
     FlashMessage::add(_('info-help-page-saved'), 'success');
-    Util::redirect(Router::helpLink($page));
+    Util::redirect($page->getViewUrl());
   } else {
     Smart::assign('errors', $errors);
   }

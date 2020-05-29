@@ -45,7 +45,7 @@ if ($saveButton) {
     }
 
     FlashMessage::add(_('info-help-category-saved'), 'success');
-    Util::redirect(Router::helpLink($cat));
+    Util::redirect($cat->getViewUrl());
   } else {
     Smart::assign('errors', $errors);
   }

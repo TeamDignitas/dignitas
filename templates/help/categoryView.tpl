@@ -25,7 +25,7 @@
         <ul>
         {foreach $category->getPages() as $p}
           <li class="pl-2">
-            <a href="{Router::helpLink($p)}">{$p->title}</a>
+            <a href="{$p->getViewUrl()}">{$p->title}</a>
           </li>
         {/foreach}
       </ul>

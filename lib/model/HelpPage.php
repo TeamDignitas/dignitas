@@ -7,6 +7,10 @@ class HelpPage extends Proto {
     return Proto::TYPE_HELP_PAGE;
   }
 
+  function getViewUrl() {
+    return Router::link('help/index') . '/' . $this->path;
+  }
+
   function getMarkdownFields() {
     return [ 'contents' ];
   }

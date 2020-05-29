@@ -15,7 +15,7 @@
               </a>
             </li>
             <li class="breadcrumb-item">
-              <a href="{Router::helpLink($category)}">
+              <a href="{$category->getViewUrl()}">
                 {cap}{$category->name}{/cap}
               </a>
             </li>

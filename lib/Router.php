@@ -460,13 +460,4 @@ class Router {
     }
   }
 
-  /**
-   * Returns a link to a help category or page.
-   *
-   * @param object $object A HelpCategory or HelpPage object.
-   */
-  static function helpLink($object) {
-    return self::link('help/index') . '/' . $object->path;
-  }
-
 }

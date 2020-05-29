@@ -74,7 +74,7 @@
           {t}link-save{/t}
         </button>
 
-        <a href="{Router::helpLink($page)}" class="btn btn-sm btn-outline-secondary">
+        <a href="{$page->getViewUrl()}" class="btn btn-sm btn-outline-secondary">
           <i class="icon icon-cancel"></i>
           {t}link-cancel{/t}
         </a>

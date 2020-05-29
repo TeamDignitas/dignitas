@@ -11,7 +11,7 @@
       <ul>
         {foreach $cat->getPages() as $p}
           <li>
-            <a href="{Router::helpLink($p)}">{$p->title}</a>
+            <a href="{$p->getViewUrl()}">{$p->title}</a>
           </li>
         {/foreach}
       </ul>
