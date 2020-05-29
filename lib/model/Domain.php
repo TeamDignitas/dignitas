@@ -2,9 +2,13 @@
 
 class Domain extends Proto {
   use UploadTrait;
-  
+
   function getObjectType() {
     return Proto::TYPE_DOMAIN;
+  }
+
+  function getEditUrl() {
+    return Router::link('domain/edit') . '/' . $this->id;
   }
 
   private function getFileSubdirectory() {

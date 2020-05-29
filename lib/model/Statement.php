@@ -17,6 +17,10 @@ class Statement extends Proto {
     return Router::link('statement/view') . '/' . $this->id;
   }
 
+  function getEditUrl() {
+    return Router::link('statement/edit') . '/' . $this->id;
+  }
+
   function getMarkdownFields() {
     return [ 'context' ];
   }

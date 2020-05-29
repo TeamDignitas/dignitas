@@ -19,7 +19,7 @@ if ($deleteButton) {
     Util::redirectToRoute('relationType/list');
   } else {
     FlashMessage::add(_('info-cannot-delete-relation-type'), 'danger');
-    Util::redirect(Router::getEditLink($rt));
+    Util::redirect($rt->getEditUrl());
   }
 }
 

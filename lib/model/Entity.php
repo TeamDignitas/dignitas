@@ -18,6 +18,10 @@ class Entity extends Proto {
     return Router::link('entity/view') . '/' . $this->id;
   }
 
+  function getEditUrl() {
+    return Router::link('entity/edit') . '/' . $this->id;
+  }
+
   function getEntityType() {
     return EntityType::get_by_id($this->entityTypeId);
   }

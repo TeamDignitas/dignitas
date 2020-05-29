@@ -24,7 +24,7 @@ if ($deleteButton) {
     Util::redirectToRoute('domain/list');
   } else {
     FlashMessage::add(_('info-cannot-delete-domain'), 'danger');
-    Util::redirect(Router::getEditLink($domain));
+    Util::redirect($domain->getEditUrl());
   }
 }
 
@@ -35,10 +35,10 @@ if ($cloneButton) {
     $clone->name .= ' CLONE';
     $clone->save();
     $clone->copyUploadedFileFrom($domain);
-    Util::redirect(Router::getEditLink($clone));
+    Util::redirect($clone->getEditUrl());
   } else {
     FlashMessage::add(_('info-save-domain-before-clone'), 'danger');
-    Util::redirect(Router::getEditLink($domain));
+    Util::redirect($domain->getEditUrl());
   }
 }
 

@@ -42,7 +42,7 @@
                 {/if}
               </td>
               <td>
-                <a href="{Router::getEditLink($et)}" class="btn btn-sm btn-outline-secondary">
+                <a href="{$et->getEditUrl()}" class="btn btn-sm btn-outline-secondary">
                   {t}link-edit{/t}
                 </a>
               </td>

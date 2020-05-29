@@ -12,6 +12,10 @@ class Answer extends Proto {
                    $this->statementId, $this->id);
   }
 
+  function getEditUrl() {
+    return Router::link('answer/edit') . '/' . $this->id;
+  }
+
   function getMarkdownFields() {
     return [ 'contents' ];
   }

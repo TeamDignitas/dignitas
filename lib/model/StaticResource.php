@@ -13,6 +13,10 @@ class StaticResource extends Proto {
     return Proto::TYPE_STATIC_RESOURCE;
   }
 
+  function getEditUrl() {
+    return Router::link('staticResource/edit') . '/' . $this->id;
+  }
+
   static function loadAll() {
     return Model::factory('StaticResource')
       ->order_by_asc('name')

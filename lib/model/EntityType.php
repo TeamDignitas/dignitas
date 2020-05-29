@@ -6,6 +6,10 @@ class EntityType extends Proto {
     return Proto::TYPE_ENTITY_TYPE;
   }
 
+  function getEditUrl() {
+    return Router::link('entityType/edit') . '/' . $this->id;
+  }
+
   static function loadAll() {
     return Model::factory('EntityType')
       ->order_by_asc('name')

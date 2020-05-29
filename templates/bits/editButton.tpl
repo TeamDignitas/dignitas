@@ -6,7 +6,7 @@
 
 {if $editable || $suggestable}
   <a
-    href="{Router::getEditLink($obj)}"
+    href="{$obj->getEditUrl()}"
     class="{$class} btn-sm btn-outline-secondary mt-1"
     {if !$editable}title="{$obj->getEditMessage()}"{/if}
   >

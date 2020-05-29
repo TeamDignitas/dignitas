@@ -42,7 +42,7 @@
                 <td class="align-middle">{$rt->getToEntityType()->name|escape}</td>
                 <td class="align-middle">{$rt->weight}</td>
                 <td>
-                  <a href="{Router::getEditLink($rt)}" class="btn btn-sm btn-outline-secondary">
+                  <a href="{$rt->getEditUrl()}" class="btn btn-sm btn-outline-secondary">
                     {t}link-edit{/t}
                   </a>
                 </td>

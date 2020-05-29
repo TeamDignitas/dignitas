@@ -19,7 +19,7 @@ if ($deleteButton) {
     Util::redirectToRoute('entityType/list');
   } else {
     FlashMessage::add(_('info-cannot-delete-entity-type'), 'danger');
-    Util::redirect(Router::getEditLink($et));
+    Util::redirect($et->getEditUrl());
   }
 }
 

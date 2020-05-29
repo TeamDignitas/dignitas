@@ -38,7 +38,7 @@
                 </a>
               </td>
               <td>
-                <a href="{Router::getEditLink($sr)}" class="btn btn-sm btn-outline-secondary">
+                <a href="{$sr->getEditUrl()}" class="btn btn-sm btn-outline-secondary">
                   {t}link-edit{/t}
                 </a>
               </td>

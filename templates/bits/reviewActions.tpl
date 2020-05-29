@@ -24,7 +24,7 @@
           {$review->getVoteName(Flag::VOTE_KEEP)}
         </button>
 
-        <a href="{Router::getEditLink($object)}" class="btn btn-sm btn-outline-secondary">
+        <a href="{$obj->getEditUrl()}" class="btn btn-sm btn-outline-secondary">
           <i class="icon icon-edit"></i>
           {t}link-edit{/t}
         </a>

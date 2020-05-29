@@ -432,32 +432,4 @@ class Router {
     return self::$relAlternate;
   }
 
-  /**
-   * Returns the edit link for this object.
-   *
-   * @param object $object
-   * @return string The edit link for this object or null if the object
-   * doesn't have an edit page.
-   */
-  static function getEditLink($object) {
-    switch ($object->getObjectType()) {
-      case Proto::TYPE_ANSWER:
-        return Router::link('answer/edit') . '/' . $object->id;
-      case Proto::TYPE_DOMAIN:
-        return Router::link('domain/edit') . '/' . $object->id;
-      case Proto::TYPE_ENTITY:
-        return Router::link('entity/edit') . '/' . $object->id;
-      case Proto::TYPE_ENTITY_TYPE:
-        return Router::link('entityType/edit') . '/' . $object->id;
-      case Proto::TYPE_RELATION_TYPE:
-        return Router::link('relationType/edit') . '/' . $object->id;
-      case Proto::TYPE_STATEMENT:
-        return Router::link('statement/edit') . '/' . $object->id;
-      case Proto::TYPE_STATIC_RESOURCE:
-        return Router::link('staticResource/edit') . '/' . $object->id;
-      default:
-        return null;
-    }
-  }
-
 }

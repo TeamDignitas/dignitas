@@ -31,7 +31,7 @@
               </td>
               <td class="align-middle">{$d->name|escape}</td>
               <td class="align-middle">{$d->displayValue|escape}</td>
-              <td><a href="{Router::getEditLink($d)}" class="btn btn-sm btn-outline-secondary">{t}link-edit{/t}</a></td>
+              <td><a href="{$d->getEditUrl()}" class="btn btn-sm btn-outline-secondary">{t}link-edit{/t}</a></td>
             </tr>
           {/foreach}
         </tbody>

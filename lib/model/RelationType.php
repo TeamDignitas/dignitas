@@ -6,6 +6,10 @@ class RelationType extends Proto {
     return Proto::TYPE_RELATION_TYPE;
   }
 
+  function getEditUrl() {
+    return Router::link('relationType/edit') . '/' . $this->id;
+  }
+
   function getFromEntityType() {
     return EntityType::get_by_id($this->fromEntityTypeId);
   }

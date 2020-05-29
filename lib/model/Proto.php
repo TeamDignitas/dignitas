@@ -75,6 +75,13 @@ class Proto extends Precursor {
     return null;
   }
 
+  /**
+   * Returns a URL where this object can be edited.
+   */
+  function getEditUrl() {
+    return null;
+  }
+
   static function getObjectByTypeId($objectType, $objectId) {
     switch ($objectType) {
       case self::TYPE_STATEMENT:
