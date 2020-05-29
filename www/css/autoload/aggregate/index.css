@@ -8,8 +8,8 @@
   width: 94%;
   max-width: 1440px;
   margin: 2rem auto;
-  outline: 1px solid green;
 }
+
 .meta-heading {
   font-size: 1rem;
 }
@@ -20,6 +20,10 @@
   height: 2px;
   margin-bottom: 4px;
   border: 1px solid #0d0e0e;
+}
+
+.white {
+  border-color: #fff;
 }
 
 .bubble {
