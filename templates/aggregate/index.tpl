@@ -9,14 +9,14 @@
   {/foreach}
 
   <div class="f-container">
-    <div class="col-3">
-      <div class="">
-        <span class="col-6 text-uppercase meta-heading">{t}title-recent-statements{/t}</span>
+    <div class="col-lg-3 col-sm-12 mt-3 mb-5">
+      <div>
+        <span class="col-6 text-uppercase meta-heading pl-0">{t}title-recent-statements{/t}</span>
         <span class="col-2 meta-line"></span>
       </div>
     </div>
 
-    <div class="col-9">
+    <div class="col-lg-9 col-sm-12 mt-3">
       <div class="statements-carousel pb-4">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner pb-5">
