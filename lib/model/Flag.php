@@ -61,4 +61,8 @@ class Flag extends Proto {
     }
   }
 
+  function getReview() {
+    return Review::get_by_id($this->reviewId);
+  }
+
 }

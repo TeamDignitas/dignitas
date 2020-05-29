@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-05-27 16:52+0300\n"
-"PO-Revision-Date: 2020-05-27 17:00+0300\n"
+"POT-Creation-Date: 2020-05-29 12:04+0300\n"
+"PO-Revision-Date: 2020-05-29 12:05+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -1419,69 +1419,69 @@ msgstr "Sînteți deja autentificat(ă)."
 msgid "info-must-log-in"
 msgstr "Vă rugăm să vă autentificați."
 
-#: lib/model/Action.php:93
+#: lib/model/Action.php:125
 msgid "action-created"
 msgstr "a creat"
 
-#: lib/model/Action.php:95
+#: lib/model/Action.php:127
 msgid "action-updated"
 msgstr "a modificat"
 
-#: lib/model/Action.php:97
+#: lib/model/Action.php:129
 msgid "action-closed"
 msgstr "a închis"
 
-#: lib/model/Action.php:99
+#: lib/model/Action.php:131
 msgid "action-deleted"
 msgstr "a șters"
 
-#: lib/model/Action.php:101
+#: lib/model/Action.php:133
 msgid "action-reopened"
 msgstr "a redeschis"
 
-#: lib/model/Action.php:103
+#: lib/model/Action.php:135
 msgid "action-created-pending-edit"
 msgstr "a sugerat o modificare pentru"
 
-#: lib/model/Action.php:105
+#: lib/model/Action.php:137
 msgid "action-voted-up"
 msgstr "a votat pozitiv"
 
-#: lib/model/Action.php:107
+#: lib/model/Action.php:139
 msgid "action-voted-down"
 msgstr "a votat negativ"
 
-#: lib/model/Action.php:109
+#: lib/model/Action.php:141
 msgid "action-retracted-vote"
 msgstr "și-a retras votul pentru"
 
-#: lib/model/Action.php:111
+#: lib/model/Action.php:143
 msgid "action-voted-keep"
-msgstr "a votat pentru păstrarea"
+msgstr "a votat pentru a păstra"
 
-#: lib/model/Action.php:113
+#: lib/model/Action.php:145
 msgid "action-voted-accept-pending-edit"
-msgstr "a votat pentru acceptarea modificărilor pentru"
+msgstr "a votat pentru a accepta modificările pentru"
 
-#: lib/model/Action.php:115
+#: lib/model/Action.php:147
 msgid "action-voted-reopen"
-msgstr "a votat pentru redeschiderea"
+msgstr "a votat pentru a redeschide"
 
-#: lib/model/Action.php:117
+#: lib/model/Action.php:149
 msgid "action-voted-remove"
-msgstr "a votat pentru eliminarea"
+msgstr "a votat pentru a elimina"
 
-#: lib/model/Action.php:119
+#: lib/model/Action.php:151
 msgid "action-voted-refuse-pending-edit"
-msgstr "a votat pentru refuzarea modificărilor pentru"
+msgstr "a votat pentru a refuza modificările la"
 
-#: lib/model/Action.php:121
+#: lib/model/Action.php:153
 msgid "action-voted-ignore-reopen"
-msgstr "a votat pentru ignorarea redeschiderii"
+msgstr "a votat pentru a nu redeschide"
 
-#: lib/model/Action.php:123
+#: lib/model/Action.php:155
 msgid "action-retracted-flag"
-msgstr "și-a retras raportarea"
+msgstr "și-a retras raportarea pentru"
 
 #: lib/model/Answer.php:45
 msgid "info-answer-deleted"
@@ -2461,7 +2461,7 @@ msgstr "Raportarea a fost ștearsă."
 msgid "info-cannot-flag-duplicate-itself"
 msgstr "Nu puteți raporta obiectul ca duplicat al său însuși."
 
-#: routes/flag/save.php:35
+#: routes/flag/save.php:36
 msgid "info-flag-saved"
 msgstr "Am salvat raportarea."
 
@@ -2603,11 +2603,11 @@ msgstr "Evaluarea căutată nu există."
 msgid "info-moderator-review-only"
 msgstr "Doar moderatorii pot face această evaluare."
 
-#: routes/review/view.php:42
+#: routes/review/view.php:43
 msgid "info-vote-saved"
 msgstr "Am salvat votul."
 
-#: routes/review/view.php:87
+#: routes/review/view.php:88
 msgid "info-vote-completes-review"
 msgstr ""
 "Această evaluare este acum completă. V-am redirecționat către următoarea "

@@ -14,6 +14,7 @@ try {
       User::getActiveId(), $review->id, Flag::STATUS_PENDING);
 
     if ($flag) {
+      Action::create(Action::TYPE_RETRACT_FLAG, $flag->getReview()->getObject());
       $flag->delete();
       if ($review->checkDelete()) {
         // tell the frontend to refresh the page

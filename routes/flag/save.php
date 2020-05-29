@@ -25,6 +25,7 @@ try {
   $review = Review::ensure($obj, $reason, $duplicateId);
   $flag = Flag::create($review->id, $details, Flag::VOTE_REMOVE);
   $flag->save();
+  Action::createFlagReviewAction($flag);
   $review->evaluate();
 
   if ($review->status != Review::STATUS_PENDING) {

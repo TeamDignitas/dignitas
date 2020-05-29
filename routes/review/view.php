@@ -39,6 +39,7 @@ if ($reviewId) {
     Flag::delete_all_by_userId_reviewId($userId, $r->id);
     $flag = Flag::create($r->id, $details, $vote);
     $flag->save();
+    Action::createFlagReviewAction($flag);
     FlashMessage::add(_('info-vote-saved'), 'success');
 
     $r->evaluate();

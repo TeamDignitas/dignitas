@@ -84,6 +84,41 @@ class Action extends Precursor {
   }
 
   /**
+   * Logs a flagging/unflagging/review action.
+   */
+  static function createFlagReviewAction($flag) {
+    $review = $flag->getReview();
+    $obj = $review->getObject();
+    $weight = $flag->getWeight();
+    $moderator = $weight == Flag::WEIGHT_MODERATOR;
+
+    if ($flag->vote == Flag::VOTE_KEEP) {
+      if ($review->reason == Ct::REASON_PENDING_EDIT) {
+        $type = Action::TYPE_VOTE_ACCEPT_PENDING_EDIT;
+      } else if ($review->reason == Ct::REASON_REOPEN) {
+        $type = $moderator ? Action::TYPE_REOPEN : Action::TYPE_VOTE_REOPEN;
+      } else {
+        $type = Action::TYPE_VOTE_KEEP;
+      }
+    } else {
+      if ($review->reason == Ct::REASON_PENDING_EDIT) {
+        $type = Action::TYPE_VOTE_REFUSE_PENDING_EDIT;
+      } else if ($review->reason == Ct::REASON_REOPEN) {
+        $type = Action::TYPE_VOTE_IGNORE_REOPEN;
+      } else if (!$moderator) {
+        $type = Action::TYPE_VOTE_REMOVE;
+      } else {
+        $action = Review::REMOVE_ACTION_MAP[$review->objectType][$review->reason] ?? null;
+        $type = ($action == Review::ACTION_CLOSE)
+          ? Action::TYPE_CLOSE
+          : Action::TYPE_DELETE;
+      }
+    }
+
+    self::create($type, $obj);
+  }
+
+  /**
    * Returns a localized name of the action's type, to be displayed in the
    * action log.
    */
