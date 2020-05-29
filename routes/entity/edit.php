@@ -35,7 +35,7 @@ if ($reopenButton) {
     Action::create(Action::TYPE_REOPEN, $entity);
     FlashMessage::add(_('info-confirm-entity-reopened.'), 'success');
   }
-  Util::redirect(Router::getViewLink($entity));
+  Util::redirect($entity->getViewUrl());
 }
 
 $entity->enforceEditPrivileges();
@@ -93,7 +93,7 @@ if ($saveButton) {
         Review::checkRecentlyClosedDeleted($entity);
         FlashMessage::add(_('info-entity-updated'), 'success');
       }
-      Util::redirect($referrer ?: Router::getViewLink($entity));
+      Util::redirect($referrer ?: $entity->getViewUrl());
     }
   } else {
     FlashMessage::add(_('info-validation-error'));

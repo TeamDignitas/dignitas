@@ -39,7 +39,7 @@ if ($reopenButton) {
     Action::create(Action::TYPE_REOPEN, $statement);
     FlashMessage::add(_('info-confirm-statement-reopened.'), 'success');
   }
-  Util::redirect(Router::getViewLink($statement));
+  Util::redirect($statement->getViewUrl());
 }
 
 $statement->enforceEditPrivileges();
@@ -83,7 +83,7 @@ if ($saveButton) {
       } else {
         FlashMessage::add(_('info-statement-updated'), 'success');
       }
-      Util::redirect($referrer ?: Router::getViewLink($statement));
+      Util::redirect($referrer ?: $statement->getViewUrl());
     }
   } else {
     FlashMessage::add(_('info-validation-error'));

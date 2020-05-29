@@ -17,7 +17,7 @@
       {/if}
       {if $permalink}
         <a
-          href="{Router::getViewLink($statement)}"
+          href="{$statement->getViewUrl()}"
           title="{t}link-visit-statement-page{/t}">
           <i class="icon icon-link"></i>
         </a>

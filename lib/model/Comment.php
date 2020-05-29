@@ -11,6 +11,17 @@ class Comment extends Proto {
     return self::TYPE_COMMENT;
   }
 
+  function getViewUrl() {
+    if ($this->objectType == Proto::TYPE_STATEMENT) {
+      $statementId = $this->objectId;
+    } else {
+      $answer = $this->getObject();
+      $statementId = $answer->statementId;
+    }
+    return sprintf('%s/%s#c%s', Router::link('statement/view'),
+                   $statementId, $this->id);
+  }
+
   function getUser() {
     return User::get_by_id($this->userId);
   }

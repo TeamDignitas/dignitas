@@ -461,34 +461,6 @@ class Router {
   }
 
   /**
-   * Returns the view link for this object.
-   *
-   * @param object $object
-   * @return string The view link for this object or null if the object
-   * doesn't have a view page.
-   */
-  static function getViewLink($object) {
-    switch ($object->getObjectType()) {
-      case Proto::TYPE_ANSWER:
-        return sprintf('%s/%s#a%s', Router::link('statement/view'),
-                       $object->statementId, $object->id);
-      case Proto::TYPE_COMMENT:
-        $target = $object->getObject(); // a statement or an answer
-        $statementId = $target->getObjectType() == Proto::TYPE_STATEMENT
-          ? $target->id
-          : $target->statementId;
-        return sprintf('%s/%s#c%s', Router::link('statement/view'),
-                       $statementId, $object->id);
-      case Proto::TYPE_ENTITY:
-        return Router::link('entity/view') . '/' . $object->id;
-      case Proto::TYPE_STATEMENT:
-        return Router::link('statement/view') . '/' . $object->id;
-      default:
-        return null;
-    }
-  }
-
-  /**
    * Returns a link to a help category or page.
    *
    * @param object $object A HelpCategory or HelpPage object.

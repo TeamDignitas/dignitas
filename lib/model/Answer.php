@@ -7,6 +7,11 @@ class Answer extends Proto {
     return self::TYPE_ANSWER;
   }
 
+  function getViewUrl() {
+    return sprintf('%s/%s#a%s', Router::link('statement/view'),
+                   $this->statementId, $this->id);
+  }
+
   function getMarkdownFields() {
     return [ 'contents' ];
   }

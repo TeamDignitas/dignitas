@@ -14,6 +14,10 @@ class Entity extends Proto {
     return Proto::TYPE_ENTITY;
   }
 
+  function getViewUrl() {
+    return Router::link('entity/view') . '/' . $this->id;
+  }
+
   function getEntityType() {
     return EntityType::get_by_id($this->entityTypeId);
   }

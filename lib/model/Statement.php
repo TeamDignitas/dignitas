@@ -13,6 +13,10 @@ class Statement extends Proto {
     return self::TYPE_STATEMENT;
   }
 
+  function getViewUrl() {
+    return Router::link('statement/view') . '/' . $this->id;
+  }
+
   function getMarkdownFields() {
     return [ 'context' ];
   }

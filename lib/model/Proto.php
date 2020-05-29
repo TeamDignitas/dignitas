@@ -68,6 +68,13 @@ class Proto extends Precursor {
     return self::TYPE_UNKNOWN;
   }
 
+  /**
+   * Returns a URL where this object can be viewed.
+   */
+  function getViewUrl() {
+    return null;
+  }
+
   static function getObjectByTypeId($objectType, $objectId) {
     switch ($objectType) {
       case self::TYPE_STATEMENT:

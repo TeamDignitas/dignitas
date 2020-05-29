@@ -4,7 +4,7 @@
 {strip}
 
 {if $statement}
-  <a href="{Router::getViewLink($statement)}" class="{$class}">
+  <a href="{$statement->getViewUrl()}" class="{$class}">
     {if $quotes}
       {t 1=$statement->summary}
       quoted-string-%1
