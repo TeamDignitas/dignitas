@@ -1,5 +1,5 @@
 {if count($actions)}
-  <h6 class="mt-4 pb-2 pl-0 answer-label text-uppercase font-weight-bold">
+  <h6 class="mt-4 pb-2 pl-0 subsection text-uppercase font-weight-bold">
     {t}actions{/t}
   </h6>
 

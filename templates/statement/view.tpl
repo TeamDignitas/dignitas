@@ -10,7 +10,7 @@
 
     {if count($answers)}
       <div class="row mt-5">
-        <h6 class="col-md-8 mt-4 pb-2 pl-0 answer-label text-uppercase font-weight-bold">
+        <h6 class="col-md-8 mt-4 pb-2 pl-0 subsection text-uppercase font-weight-bold">
           {t count=count($answers) 1=count($answers) plural="title-answers-plural"}
           title-answers-singular
           {/t}
