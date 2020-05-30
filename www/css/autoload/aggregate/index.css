@@ -27,52 +27,25 @@
 }
 
 .bubble {
-  position: relative;
-  min-height: 120px;
-  padding: 0px;
-  background: #FFFFFF;
-  border-radius: 10px;
-  border: #ccc solid 2px;
-  display: flex;
-  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 16px;
 }
 
-.bubble:after {
-  content: '';
-  position: absolute;
-  border-style: solid;
-  border-width: 15px 15px 15px 0;
-  border-color: transparent #FFFFFF;
-  display: block;
-  width: 0;
-  z-index: 1;
-  left: -15px;
-  top: 45px;
-}
-
-.bubble:before {
-  content: '';
-  position: absolute;
-  border-style: solid;
-  border-width: 16px 16px 16px 0;
-  border-color: transparent #ccc;
-  display: block;
-  width: 0;
-  z-index: 0;
-  left: -18px;
-  top: 44px;
-}
-
-.bubble-title {
+.bubble-title a {
+  color: #555;
   font-size: 0.9rem;
   font-style: italic;
 }
 
 .bubble-author {
+  font-size: 0.8rem;
+}
+
+.bubble-author a {
+  color: #007bff;
 }
 
 .bubble a {
-  color: black;
   text-decoration: none;
 }
 
