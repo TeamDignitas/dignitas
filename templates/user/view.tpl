@@ -61,7 +61,30 @@
       </div>
     </div>
 
-    {include "bits/actions.tpl"}
+    {if count($actions)}
+      <h6 class="mt-4 pb-2 pl-0 subsection text-uppercase font-weight-bold">
+        {t}actions{/t}
+      </h6>
+
+      <div class="row py-1">
+        <div class="col font-weight-bold">
+          {t}label-date{/t}
+        </div>
+        <div class="col font-weight-bold">
+          {t}label-action{/t}
+        </div>
+      </div>
+
+      <div id="action-wrapper">
+        {include "bits/actions.tpl"}
+      </div>
+
+      {include "bits/paginationWrapper.tpl"
+        n=$actionPages
+        k=1
+        url="{Config::URL_PREFIX}ajax/action-log/{$user->id}"
+        target="#action-wrapper"}
+    {/if}
   </div>
 
 {/block}

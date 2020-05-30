@@ -17,7 +17,8 @@ Smart::assign([
   'user' => $user,
   'answers' => $answers,
   'statements' => $statements,
-  'actions' => $user->getActions(),
+  'actions' => $user->getActionPage(1),
+  'actionPages' => $user->getNumActionPages(),
 ]);
-Smart::addResources('imageModal');
+Smart::addResources('imageModal', 'pagination');
 Smart::display('user/view.tpl');

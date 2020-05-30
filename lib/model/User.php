@@ -43,6 +43,9 @@ class User extends Proto {
   const REPUTATION_FOR_NEW_FLAG = 2000;
   const MAX_FLAGS_PER_DAY = 100;
 
+  // action log
+  const ACTION_LOG_PAGE_SIZE = 20;
+
   private static $active = null; // user currently logged in
 
   function getMarkdownFields() {
@@ -130,10 +133,22 @@ class User extends Proto {
     return self::getFlagsPerDay() - $pending;
   }
 
-  function getActions() {
+  function getNumActionPages() {
+    $numActions = Model::factory('Action')
+      ->where('userId', $this->id)
+      ->count();
+    return ceil($numActions / self::ACTION_LOG_PAGE_SIZE);
+  }
+
+  /**
+   * @param int $page 1-based page to load
+   */
+  function getActionPage(int $page) {
     return Model::factory('Action')
       ->where('userId', $this->id)
       ->order_by_desc('createDate')
+      ->offset(($page - 1) * self::ACTION_LOG_PAGE_SIZE)
+      ->limit(self::ACTION_LOG_PAGE_SIZE)
       ->find_many();
   }
 

@@ -75,4 +75,39 @@ class Util {
     return $results;
   }
 
+  /**
+   * Determines the range of sequential pages to display.
+   *
+   * @param int $n Total number of pages
+   * @param int $k Current page
+   * @return int[] An array of two elements, the left and right end of the range.
+   *
+   * Example: $n = 100, $k = 20 => returns [18, 22]
+   */
+  static function getPaginationRange($n, $k) {
+    // By default display two pages left and two pages right of $k
+    $l = max($k - 2, 1);
+    $r = min($k + 2, $n);
+
+    // Extend while needed and while there is room to extend on either side.
+    while (($r - $l < 4) && ($r - $l < $n - 1)) {
+      if ($l == 1) {
+        $r++;
+      } else {
+        $l--;
+      }
+    }
+
+    // Avoid situations like 1 ... 3 4 5 6 7. Specifically, if the ellipsis
+    // would replace just one number, expand the range all the way to the end.
+    if ($l <= 3)  {
+      $l = 1;
+    }
+    if ($r >= $n - 2) {
+      $r = $n;
+    }
+
+    return [$l, $r];
+  }
+
 }

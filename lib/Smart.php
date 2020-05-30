@@ -66,6 +66,9 @@ class Smart {
       'js' => [ 'linkEditor.js' ],
       'deps' => [ 'sortable'],
     ],
+    'pagination' => [
+      'js' => [ 'pagination.js' ],
+    ],
   ];
 
   static function init() {

@@ -13,6 +13,11 @@ class Router {
   // compute the forward routes upon initialization. Files have an implicit
   // .php extension.
   const ROUTES = [
+    // actions
+    'action/list' => [
+      'en_US.utf8' => 'ajax/action-log',
+    ],
+
     // aggregate
     'aggregate/dashboard' => [
       'en_US.utf8' => 'dashboard',
@@ -70,6 +75,11 @@ class Router {
     'auth/register' => [
       'en_US.utf8' => 'register',
       'ro_RO.utf8' => 'inregistrare',
+    ],
+
+    // bits that don't fit anywhere else
+    'bits/pagination' => [
+      'en_US.utf8' => 'ajax/pagination',
     ],
 
     // canned responses
@@ -287,6 +297,7 @@ class Router {
 
   // file => list of parameters expected in the URL (none by default)
   const PARAMS = [
+    'action/list' => [ 'userId' ],
     'aggregate/search' => [ 'q' ],
     'answer/edit' => [ 'id' ],
     'answer/history' => [ 'id' ],
