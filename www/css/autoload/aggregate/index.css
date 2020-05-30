@@ -26,9 +26,13 @@
   border-color: #fff;
 }
 
-.bubble {
+.bubble-body {
   border: 1px solid #ccc;
-  border-radius: 16px;
+  border-bottom: 0;
+  border-radius: 1rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  position: relative;
 }
 
 .bubble-title a {
@@ -39,6 +43,10 @@
 
 .bubble-author {
   font-size: 0.8rem;
+  border: 1px solid #ccc;
+  border-top: 1px dashed #ccc;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
 .bubble-author a {
