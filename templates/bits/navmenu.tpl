@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light navbar-expand-md">
+<nav class="navbar navbar-dark navbar-expand-md">
 
   <button
     class="navbar-toggler"
@@ -41,7 +41,7 @@
     <span class="icon icon-user"></span>
   </button>
 
-  <div class="navbar-collapse" id="navbar-right">
+  <div class="navbar-collapse bg-dark" id="navbar-right">
 
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
@@ -63,7 +63,7 @@
           aria-expanded="false">
           <i class="icon icon-globe"></i>
         </a>
-        <div class="dropdown-menu py-0" aria-labelledby="nav-dropdown-lang">
+        <div class="dropdown-menu bg-dark py-0" aria-labelledby="nav-dropdown-lang">
           {foreach LocaleUtil::getAll() as $id => $name}
             <a
               class="dropdown-item text-light pl-2 py-2"
@@ -98,7 +98,7 @@
               {$u->getReputation()|nf}
             </span>
           </a>
-          <div class="dropdown-menu dropdown-menu-right py-0" aria-labelledby="nav-dropdown-user">
+          <div class="dropdown-menu dropdown-menu-right bg-dark py-0" aria-labelledby="nav-dropdown-user">
             <a class="dropdown-item text-light py-2" href="{Router::userLink($u)}">
               <i class="icon icon-user"></i>
               {t}link-my-profile{/t}
@@ -129,7 +129,7 @@
                         class="custom-control-input"
                         id="fakeModerator"
                         {if User::isModerator()}checked{/if}>
-                      <label class="custom-control-label text-dark" for="fakeModerator">
+                      <label class="custom-control-label" for="fakeModerator">
                         {t}label-moderator{/t}
                       </label>
                     </div>
