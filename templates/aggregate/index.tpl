@@ -26,11 +26,11 @@
                 <div class="container px-0">
 
                   <div class="row mb-5">
-                    <div class="col-6">
+                    <div class="col-4">
                       {include "bits/carouselStatement.tpl" statement=$page[0]}
                     </div>
 
-                    <div class="col-6">
+                    <div class="col-4">
                       {if count($page) >= 2}
                         {include "bits/carouselStatement.tpl" statement=$page[1]}
                       {/if}
@@ -39,11 +39,11 @@
 
                   {if count($page) >= 3}
                     <div class="row mb-5">
-                      <div class="col-6">
+                      <div class="col-4">
                         {include "bits/carouselStatement.tpl" statement=$page[2]}
                       </div>
 
-                      <div class="col-6">
+                      <div class="col-4">
                         {if count($page) == 4}
                           {include "bits/carouselStatement.tpl" statement=$page[3]}
                         {/if}
