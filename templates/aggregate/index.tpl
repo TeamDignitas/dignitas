@@ -29,7 +29,7 @@
                   {foreach $rows as $row}
                     <div class="row mb-5">
                       {foreach $row as $stmt}
-                        <div class="col-{$numCols}">
+                        <div class="col-md-{$numCols} col-sm-12">
                           {include "bits/carouselStatement.tpl" statement=$stmt}
                         </div>
                       {/foreach}
