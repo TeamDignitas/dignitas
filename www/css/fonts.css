@@ -1,6 +1,6 @@
 /* Kudos https://google-webfonts-helper.herokuapp.com/fonts */
 
-/* open-sans-regular - latin */
+/* open-sans-regular - latin-ext_latin */
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
@@ -10,7 +10,7 @@
        url('../../fonts/open-sans-v17-latin-ext_latin-regular.woff') format('woff');
 }
 
-/* open-sans-italic - latin */
+/* open-sans-italic - latin-ext_latin */
 @font-face {
   font-family: 'Open Sans';
   font-style: italic;
@@ -20,7 +20,7 @@
        url('../../fonts/open-sans-v17-latin-ext_latin-italic.woff') format('woff');
 }
 
-/* open-sans-700 - latin */
+/* open-sans-700 - latin-ext_latin */
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
@@ -30,7 +30,37 @@
        url('../../fonts/open-sans-v17-latin-ext_latin-700.woff') format('woff');
 }
 
-/* spartan-regular - latin */
+/* playfair-display-regular - latin-ext_latin */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('../../fonts/playfair-display-v20-latin-ext_latin-regular.woff2') format('woff2'),
+       url('../../fonts/playfair-display-v20-latin-ext_latin-regular.woff') format('woff');
+}
+
+/* playfair-display-500 - latin-ext_latin */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 500;
+  src: local(''),
+       url('../../fonts/playfair-display-v20-latin-ext_latin-500.woff2') format('woff2'),
+       url('../../fonts/playfair-display-v20-latin-ext_latin-500.woff') format('woff');
+}
+
+/* playfair-display-700 - latin-ext_latin */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  src: local(''),
+       url('../../fonts/playfair-display-v20-latin-ext_latin-700.woff2') format('woff2'),
+       url('../../fonts/playfair-display-v20-latin-ext_latin-700.woff') format('woff');
+}
+
+/* spartan-regular - latin-ext_latin */
 @font-face {
   font-family: 'Spartan';
   font-style: normal;
@@ -40,7 +70,7 @@
        url('../../fonts/spartan-v1-latin-ext_latin-regular.woff') format('woff');
 }
 
-/* spartan-500 - latin */
+/* spartan-500 - latin-ext_latin */
 @font-face {
   font-family: 'Spartan';
   font-style: normal;
