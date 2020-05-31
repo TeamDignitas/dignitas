@@ -18,48 +18,34 @@
 
     <div class="col-lg-9 col-sm-12 mt-3">
       <div class="statements-carousel pb-4">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div id="statementCarousel" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner pb-5">
 
-            {foreach $statements as $i => $page}
-              <div class="carousel-item mb-3 {if !$i}active{/if}">
+            {$numCols=12/Config::CAROUSEL_COLUMNS}
+            {foreach $carousel as $page => $rows}
+              <div class="carousel-item mb-3 {if !$page}active{/if}">
                 <div class="container px-0">
 
-                  <div class="row mb-5">
-                    <div class="col-4">
-                      {include "bits/carouselStatement.tpl" statement=$page[0]}
-                    </div>
-
-                    <div class="col-4">
-                      {if count($page) >= 2}
-                        {include "bits/carouselStatement.tpl" statement=$page[1]}
-                      {/if}
-                    </div>
-                  </div>
-
-                  {if count($page) >= 3}
+                  {foreach $rows as $row}
                     <div class="row mb-5">
-                      <div class="col-4">
-                        {include "bits/carouselStatement.tpl" statement=$page[2]}
-                      </div>
-
-                      <div class="col-4">
-                        {if count($page) == 4}
-                          {include "bits/carouselStatement.tpl" statement=$page[3]}
-                        {/if}
-                      </div>
+                      {foreach $row as $stmt}
+                        <div class="col-{$numCols}">
+                          {include "bits/carouselStatement.tpl" statement=$stmt}
+                        </div>
+                      {/foreach}
                     </div>
-                  {/if}
+                  {/foreach}
+
                 </div>
               </div>
             {/foreach}
 
             <ol class="carousel-indicators">
-              {foreach $statements as $i => $ignored}
+              {foreach $carousel as $page => $ignored}
                 <li
-                  data-target="#carouselExampleIndicators"
-                  data-slide-to="{$i}"
-                  {if !$i}class="active"{/if}>
+                  data-target="#statementCarousel"
+                  data-slide-to="{$page}"
+                  {if !$page}class="active"{/if}>
                 </li>
               {/foreach}
             </ol>

@@ -1,9 +1,5 @@
 <?php
 
-// not customizable at the moment; move to Config.php if desired
-const CAROUSEL_PAGES = 3;
-const CAROUSEL_PAGE_SIZE = 4;
-
 // load recent viewable statements
 $statements = Model::factory('Statement')
   ->where_not_equal('status', Ct::STATUS_PENDING_EDIT);
@@ -14,10 +10,20 @@ if (!User::may(User::PRIV_DELETE_STATEMENT)) {
 
 $statements = $statements
   ->order_by_desc('createDate')
-  ->limit(CAROUSEL_PAGES * CAROUSEL_PAGE_SIZE)
+  ->limit(Config::CAROUSEL_PAGES * Config::CAROUSEL_ROWS * Config::CAROUSEL_COLUMNS)
   ->find_many();
 
-$statements = array_chunk($statements, CAROUSEL_PAGE_SIZE);
+$carousel = [];
+$offset = 0;
+for ($p = 0; $p < Config::CAROUSEL_PAGES; $p++) {
+  for ($r = 0; $r < Config::CAROUSEL_ROWS; $r++) {
+    $slice = array_slice($statements, $offset, Config::CAROUSEL_COLUMNS);
+    if (!empty($slice)) {
+      $carousel[$p][$r] = $slice;
+    }
+    $offset += Config::CAROUSEL_COLUMNS;
+  }
+}
 
 // load the static resources for the top/bottom of the page
 $key = User::getActive() ? 'user' : 'guest';
@@ -26,7 +32,7 @@ $staticResourcesBottom = StaticResource::addCustomSections("homepage-bottom-{$ke
 
 Smart::assign([
   'pageType' => 'home',
-  'statements' => $statements,
+  'carousel' => $carousel,
   'staticResourcesTop' => $staticResourcesTop,
   'staticResourcesBottom' => $staticResourcesBottom,
 ]);
