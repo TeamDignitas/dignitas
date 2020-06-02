@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-05-29 12:49+0300\n"
-"PO-Revision-Date: 2020-05-29 12:49+0300\n"
+"POT-Creation-Date: 2020-06-02 14:19+0300\n"
+"PO-Revision-Date: 2020-06-02 14:20+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -83,7 +83,7 @@ msgstr "reports in need of attention"
 msgid "link-verdict-report"
 msgstr "statements with unclear verdicts"
 
-#: templates/aggregate/index.tpl:13
+#: templates/aggregate/index.tpl:14
 msgid "title-recent-statements"
 msgstr "recent statements"
 
@@ -208,30 +208,15 @@ msgstr "click here if you are not redirected automatically"
 msgid "title-change-password"
 msgstr "change password"
 
-#: templates/bits/actions.tpl:3 templates/domain/list.tpl:21
-#: templates/entity/edit.tpl:54 templates/entity/edit.tpl:123
-#: templates/entityType/list.tpl:22 templates/relationType/list.tpl:30
-#: templates/staticResource/list.tpl:21
-msgid "actions"
-msgstr "acțiuni"
-
-#: templates/bits/actions.tpl:8 templates/bits/history.tpl:15
-msgid "label-date"
-msgstr "date"
-
-#: templates/bits/actions.tpl:11
-msgid "label-action"
-msgstr "action"
-
-#: templates/bits/actions.tpl:28
+#: templates/bits/actions.tpl:14
 msgid "action-target-answer"
 msgstr "an answer"
 
-#: templates/bits/actions.tpl:36
+#: templates/bits/actions.tpl:22
 msgid "action-target-comment"
 msgstr "a comment"
 
-#: templates/bits/actions.tpl:51
+#: templates/bits/actions.tpl:37
 msgid "action-updated-user-profile"
 msgstr "updated user profile"
 
@@ -530,6 +515,10 @@ msgstr "flag comment"
 msgid "label-author"
 msgstr "author"
 
+#: templates/bits/history.tpl:15 templates/user/view.tpl:71
+msgid "label-date"
+msgstr "date"
+
 #: templates/bits/history.tpl:18
 msgid "label-changes"
 msgstr "changes"
@@ -768,6 +757,13 @@ msgstr "add a domain"
 #: templates/domain/list.tpl:18 templates/tag/edit.tpl:114
 msgid "label-icon"
 msgstr "icon"
+
+#: templates/domain/list.tpl:21 templates/entity/edit.tpl:54
+#: templates/entity/edit.tpl:123 templates/entityType/list.tpl:22
+#: templates/relationType/list.tpl:30 templates/staticResource/list.tpl:21
+#: templates/user/view.tpl:66
+msgid "actions"
+msgstr "acțiuni"
 
 #: templates/email/invite.tpl:5 templates/email/lostPassword.tpl:5
 msgid "email-hello"
@@ -1218,7 +1214,7 @@ msgstr "all"
 
 #: templates/staticResource/edit.tpl:69
 msgid "info-choose-static-resource-file"
-msgstr "choose a file to upload"
+msgstr "... or choose a file to upload"
 
 #: templates/staticResource/edit.tpl:93
 msgid "info-confirm-delete-static-resource"
@@ -1354,6 +1350,10 @@ msgstr "last seen"
 msgid "title-about-me"
 msgstr "about me"
 
+#: templates/user/view.tpl:74
+msgid "label-action"
+msgstr "action"
+
 #: lib/Time.php:21 lib/Time.php:44
 msgid "date-format-ymd"
 msgstr "%B %e, %Y"
@@ -1471,130 +1471,130 @@ msgstr "voted to ignore reopen request for"
 msgid "action-retracted-flag"
 msgstr "retracted flag for"
 
-#: lib/model/Answer.php:45
+#: lib/model/Answer.php:54
 msgid "info-answer-deleted"
 msgstr "This answer was deleted"
 
-#: lib/model/Answer.php:48
+#: lib/model/Answer.php:57
 msgid "info-answer-spam"
 msgstr "because it is spam."
 
-#: lib/model/Answer.php:49
+#: lib/model/Answer.php:58
 msgid "info-answer-abuse"
 msgstr "because it is rude or abusive."
 
-#: lib/model/Answer.php:50
+#: lib/model/Answer.php:59
 msgid "info-answer-off-topic"
 msgstr "because it is off-topic."
 
-#: lib/model/Answer.php:51
+#: lib/model/Answer.php:60
 msgid "info-answer-low-quality"
 msgstr "because it is low-quality."
 
-#: lib/model/Answer.php:52
+#: lib/model/Answer.php:61
 msgid "info-answer-by-owner"
 msgstr "by its author."
 
-#: lib/model/Answer.php:53 lib/model/Comment.php:43 lib/model/Entity.php:86
-#: lib/model/Statement.php:113
+#: lib/model/Answer.php:62 lib/model/Comment.php:54 lib/model/Entity.php:94
+#: lib/model/Statement.php:121
 msgid "info-by"
 msgstr "by"
 
-#: lib/model/Answer.php:54 lib/model/Comment.php:44 lib/model/Entity.php:87
-#: lib/model/Statement.php:114
+#: lib/model/Answer.php:63 lib/model/Comment.php:55 lib/model/Entity.php:95
+#: lib/model/Statement.php:122
 msgid "info-other-reason"
 msgstr "for other reasons."
 
-#: lib/model/Answer.php:88
+#: lib/model/Answer.php:97
 #, php-format
 msgid "info-minimum-reputation-add-answer-%s"
 msgstr "You need at least %s reputation to add answers."
 
-#: lib/model/Answer.php:96
+#: lib/model/Answer.php:105
 #, php-format
 msgid "info-minimum-reputation-edit-answer-%s"
 msgstr "You need at least %s reputation to edit answers."
 
-#: lib/model/Answer.php:102
+#: lib/model/Answer.php:111
 msgid "info-only-moderator-edit-proof-answer"
 msgstr ""
 "This answer was accepted as proof. Only moderators can edit it directly."
 
-#: lib/model/Comment.php:37
+#: lib/model/Comment.php:48
 msgid "info-this-comment-was-deleted"
 msgstr "This comment was deleted"
 
-#: lib/model/Comment.php:40
+#: lib/model/Comment.php:51
 msgid "info-comment-spam"
 msgstr "because it is spam."
 
-#: lib/model/Comment.php:41
+#: lib/model/Comment.php:52
 msgid "info-comment-abuse"
 msgstr "because it is rude or abusive."
 
-#: lib/model/Comment.php:42
+#: lib/model/Comment.php:53
 msgid "info-comment-by-owner"
 msgstr "by its author."
 
-#: lib/model/Comment.php:45
+#: lib/model/Comment.php:56
 msgid "info-comment-not-needed"
 msgstr "because it is no longer needed."
 
-#: lib/model/Comment.php:101
+#: lib/model/Comment.php:112
 #, php-format
 msgid "info-comment-length-limit-%d"
 msgstr "Comments can be at most %d characters long."
 
-#: lib/model/Entity.php:64
+#: lib/model/Entity.php:72
 msgid "status-entity-duplicate"
 msgstr "duplicate"
 
-#: lib/model/Entity.php:66
+#: lib/model/Entity.php:74
 msgid "status-entity-closed"
 msgstr "closed"
 
-#: lib/model/Entity.php:67
+#: lib/model/Entity.php:75
 msgid "status-entity-deleted"
 msgstr "deleted"
 
-#: lib/model/Entity.php:76
+#: lib/model/Entity.php:84
 msgid "info-entity-closed"
 msgstr "This author was closed"
 
-#: lib/model/Entity.php:77
+#: lib/model/Entity.php:85
 msgid "info-entity-deleted"
 msgstr "This author was deleted"
 
-#: lib/model/Entity.php:80
+#: lib/model/Entity.php:88
 msgid "info-entity-spam"
 msgstr "because its profile contains spam."
 
-#: lib/model/Entity.php:81
+#: lib/model/Entity.php:89
 msgid "info-entity-abuse"
 msgstr "because its profile contains insults or abuse."
 
-#: lib/model/Entity.php:82
+#: lib/model/Entity.php:90
 msgid "info-entity-duplicate-of"
 msgstr "as a duplicate of the author"
 
-#: lib/model/Entity.php:83
+#: lib/model/Entity.php:91
 msgid "info-entity-off-topic"
 msgstr "because it is off-topic."
 
-#: lib/model/Entity.php:84
+#: lib/model/Entity.php:92
 msgid "info-entity-unverifiable"
 msgstr "because it is unverifiable."
 
-#: lib/model/Entity.php:85
+#: lib/model/Entity.php:93
 msgid "info-entity-by-owner"
 msgstr "by the user who added it."
 
-#: lib/model/Entity.php:181
+#: lib/model/Entity.php:189
 #, php-format
 msgid "info-minimum-reputation-add-entity-%s"
 msgstr "You need at least %s reputation to add authors."
 
-#: lib/model/Entity.php:189
+#: lib/model/Entity.php:197
 #, php-format
 msgid "info-minimum-reputation-edit-entity-%s"
 msgstr "You need at least %s reputation to edit authors."
@@ -1946,134 +1946,134 @@ msgstr "deleted sources"
 msgid "label-changed-statement-link"
 msgstr "changed source"
 
-#: lib/model/Statement.php:90
+#: lib/model/Statement.php:98
 msgid "status-statement-duplicate"
 msgstr "duplicate"
 
-#: lib/model/Statement.php:92
+#: lib/model/Statement.php:100
 msgid "status-statement-closed"
 msgstr "closed"
 
-#: lib/model/Statement.php:93
+#: lib/model/Statement.php:101
 msgid "status-statement-deleted"
 msgstr "deleted"
 
-#: lib/model/Statement.php:102
+#: lib/model/Statement.php:110
 msgid "info-statement-closed"
 msgstr "This statement was closed"
 
-#: lib/model/Statement.php:103
+#: lib/model/Statement.php:111
 msgid "info-statement-deleted"
 msgstr "This statement was deleted"
 
-#: lib/model/Statement.php:106
+#: lib/model/Statement.php:114
 msgid "info-statement-spam"
 msgstr "because it is spam."
 
-#: lib/model/Statement.php:107
+#: lib/model/Statement.php:115
 msgid "info-statement-abuse"
 msgstr "because it is rude or abusive."
 
-#: lib/model/Statement.php:108
+#: lib/model/Statement.php:116
 msgid "info-statement-duplicate-of"
 msgstr "as a duplicate of the statement"
 
-#: lib/model/Statement.php:109
+#: lib/model/Statement.php:117
 msgid "info-statement-off-topic"
 msgstr "because it is off-topic."
 
-#: lib/model/Statement.php:110
+#: lib/model/Statement.php:118
 msgid "info-statement-unverifiable"
 msgstr "because it is unverifiable."
 
-#: lib/model/Statement.php:111
+#: lib/model/Statement.php:119
 msgid "info-statement-low-quality"
 msgstr "because it is low-quality."
 
-#: lib/model/Statement.php:112
+#: lib/model/Statement.php:120
 msgid "info-statement-by-owner"
 msgstr "by the user who added it."
 
-#: lib/model/Statement.php:133
+#: lib/model/Statement.php:141
 #, php-format
 msgid "info-minimum-reputation-add-statement-%s"
 msgstr "You need at least %s reputation to add statements."
 
-#: lib/model/Statement.php:141
+#: lib/model/Statement.php:149
 #, php-format
 msgid "info-minimum-reputation-edit-statement-%s"
 msgstr "You need at least %s reputation to edit statements."
 
-#: lib/model/Statement.php:147
+#: lib/model/Statement.php:155
 msgid "info-only-moderator-edit-statement-verdict"
 msgstr "This statement has a verdict. Only moderators can edit it directly."
 
-#: lib/model/User.php:144 routes/auth/login.php:60
+#: lib/model/User.php:159 routes/auth/login.php:60
 #: routes/auth/lostPassword.php:49 routes/invite/add.php:42
 msgid "info-must-enter-email"
 msgstr "Please enter an email address."
 
-#: lib/model/User.php:149
+#: lib/model/User.php:164
 msgid "info-email-taken"
 msgstr "This email address is already taken."
 
-#: lib/model/User.php:153 routes/auth/lostPassword.php:51
+#: lib/model/User.php:168 routes/auth/lostPassword.php:51
 #: routes/invite/add.php:44
 msgid "info-incorrect-email"
 msgstr "This email address looks incorrect."
 
-#: lib/model/User.php:162
+#: lib/model/User.php:177
 msgid "info-nickname-syntax"
 msgstr ""
 "Your nickname must begin with a letter or digit and consist of 3 to 30 "
 "letters, digits and punctuation from among -_."
 
-#: lib/model/User.php:170 routes/auth/login.php:64
+#: lib/model/User.php:185 routes/auth/login.php:64
 msgid "info-must-enter-password"
 msgstr "Please enter a password."
 
-#: lib/model/User.php:172
+#: lib/model/User.php:187
 msgid "info-must-enter-password-2"
 msgstr "Please enter your password twice to prevent typos."
 
-#: lib/model/User.php:174
+#: lib/model/User.php:189
 msgid "info-password-mismatch"
 msgstr "Passwords don't match."
 
-#: lib/model/User.php:176
+#: lib/model/User.php:191
 msgid "info-password-length"
 msgstr "Your password must be at least 8 characters long."
 
-#: lib/model/User.php:200
+#: lib/model/User.php:215
 #, php-format
 msgid "info-minimum-reputation-%s"
 msgstr "You need at least %s reputation to perform this action."
 
-#: lib/model/User.php:214
+#: lib/model/User.php:229
 msgid "info-moderator-only"
 msgstr "Only moderators may perform this action."
 
-#: lib/model/User.php:232
+#: lib/model/User.php:247
 #, php-format
 msgid "info-minimum-reputation-flag-%s"
 msgstr "You need at least %s reputation to flag."
 
-#: lib/model/User.php:240
+#: lib/model/User.php:255
 #, php-format
 msgid "info-flag-limit-singular"
 msgid_plural "info-flag-limit-plural-%d"
 msgstr[0] "You can use at most one flag every 24 hours."
 msgstr[1] "You can use at most %d flags every 24 hours."
 
-#: lib/model/User.php:247
+#: lib/model/User.php:262
 msgid "info-flag-no-object"
 msgstr "Cannot flag: object does not exist."
 
-#: lib/model/User.php:252
+#: lib/model/User.php:267
 msgid "info-already-flagged"
 msgstr "You already have a pending flag for this object."
 
-#: lib/model/User.php:296
+#: lib/model/User.php:311
 #, php-format
 msgid "info-minimum-reputation-comment-%s"
 msgstr "You need at least %s reputation to comment."
@@ -2159,6 +2159,10 @@ msgstr "mostly true"
 #: lib/trait/VerdictTrait.php:17
 msgid "verdict-true"
 msgstr "true"
+
+#: routes/action/list.php:19 routes/user/view.php:9
+msgid "info-no-such-user"
+msgstr "The user you are looking for does not exist."
 
 #: routes/answer/edit.php:14 routes/answer/saveProof.php:20
 msgid "info-no-such-answer"
@@ -2333,7 +2337,7 @@ msgstr "Domain saved."
 
 #: routes/domain/edit.php:79 routes/entity/edit.php:135
 #: routes/entityType/edit.php:53 routes/help/categoryEdit.php:67
-#: routes/relationType/edit.php:57 routes/staticResource/edit.php:48
+#: routes/relationType/edit.php:57 routes/staticResource/edit.php:49
 #: routes/tag/edit.php:90
 msgid "info-must-enter-name"
 msgstr "Please enter a name."
@@ -2658,11 +2662,11 @@ msgstr "Resource %s deleted."
 msgid "info-static-resource-saved"
 msgstr "Changes saved."
 
-#: routes/staticResource/edit.php:53
+#: routes/staticResource/edit.php:54
 msgid "info-static-resource-exists"
 msgstr "A resource by this name and for this language already exists."
 
-#: routes/staticResource/edit.php:66
+#: routes/staticResource/edit.php:67
 msgid "info-no-content-or-uploaded-file"
 msgstr "Please type in the contents or choose a file to upload."
 
@@ -2695,10 +2699,6 @@ msgstr "Reputation must be an integer between %d and %d."
 #: routes/user/edit.php:29
 msgid "info-changes-saved"
 msgstr "Changes saved."
-
-#: routes/user/view.php:9
-msgid "info-no-such-user"
-msgstr "The user you are looking for does not exist."
 
 #: routes/vote/save.php:29
 msgid "info-bad-vote"

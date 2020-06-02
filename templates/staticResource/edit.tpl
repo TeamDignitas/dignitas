@@ -55,7 +55,8 @@
               id="field-contents"
               name="contents"
               class="form-control has-unload-warning size-limit easy-mde"
-              rows="5">{$sr->getEditableContents()|escape}</textarea>
+              data-mime="{$sr->getMimeType()}"
+              rows="10">{$sr->getEditableContents()|escape}</textarea>
             {/strip}
 
             <div class="custom-file mb-2">

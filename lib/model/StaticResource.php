@@ -46,6 +46,21 @@ class StaticResource extends Proto {
     return $sr;
   }
 
+  /**
+   * Try to guess a file's MIME type. mime_content_type() is too enthusiastic
+   * about text/plain sometimes, e.g. for HTML files.
+   */
+  function getMimeType() {
+    $path = $this->getFilePath();
+    $ext = pathinfo($path, PATHINFO_EXTENSION);
+    switch ($ext) {
+      case 'html': return 'text/html';
+      case 'js':   return 'text/javascript';
+      case 'css':  return 'text/css';
+      default:     return @mime_content_type($path) ?? '';
+    }
+  }
+
   function getContents() {
     return @file_get_contents($this->getFilePath());
   }
@@ -62,8 +77,7 @@ class StaticResource extends Proto {
     } else if (!$this->id) {
       return ''; // object is being added
     } else {
-      $path = $this->getFilePath();
-      $mime = @mime_content_type($path);
+      $mime = $this->getMimeType();
       if (Str::startsWith($mime, 'text/')) {
         return file_get_contents($this->getFilePath());
       } else {
@@ -91,7 +105,7 @@ class StaticResource extends Proto {
 
   function render() {
     $path = $this->getFilePath();
-    header('Content-Type: ' . @mime_content_type($path));
+    header('Content-Type: ' . $this->getMimeType());
     header('Content-Length: ' . filesize($path));
     readfile($path);
   }

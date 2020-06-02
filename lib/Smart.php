@@ -20,6 +20,16 @@ class Smart {
       'css' => [ 'third-party/bootstrap-4.3.1.min.css' ],
       'js' => [ 'third-party/bootstrap-4.3.1.bundle.min.js' ],
     ],
+    'codemirror' => [
+      'css' => [ 'third-party/codemirror-5.54.0/codemirror.css' ],
+      'js' => [
+        'third-party/codemirror-5.54.0/codemirror.js',
+        'third-party/codemirror-5.54.0/mode/css/css.js',
+        'third-party/codemirror-5.54.0/mode/htmlmixed/htmlmixed.js',
+        'third-party/codemirror-5.54.0/mode/javascript/javascript.js',
+        'third-party/codemirror-5.54.0/mode/xml/xml.js',
+      ],
+    ],
     'colorpicker' => [
       'css' => [ 'third-party/bootstrap-colorpicker.min.css' ],
       'js' => [ 'third-party/bootstrap-colorpicker.min.js' ],

@@ -37,6 +37,7 @@ if ($saveButton) {
 Smart::assign([
   'sr' => $sr,
 ]);
+Smart::addResources('codemirror');
 Smart::display('staticResource/edit.tpl');
 
 /*************************************************************************/
