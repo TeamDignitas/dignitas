@@ -24,13 +24,12 @@
     <div class="font-italic text-muted pl-2 center-mobile">
       {$aliases=$entity->getAliases()}
       {if count($aliases)}
-        <span class="text-capitalize">{t}title-alias{/t}:
-          <ul class="d-inline list-inline">
-            {foreach $aliases as $a}
-              <li class="list-inline-item">{$a->name|escape}
-            {/foreach}
-          </ul>
-        </span>
+        <span class="capitalize-first-word d-inline-block">{t}title-alias{/t}:</span>
+        <ul class="d-inline list-inline">
+          {foreach $aliases as $a}
+            <li class="list-inline-item">{$a->name|escape}
+          {/foreach}
+        </ul>
       {/if}
     </div>
 
