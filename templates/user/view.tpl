@@ -27,11 +27,11 @@
         </h1>
 
         <dl class="row">
-          <dd class="col-sm-5 col-md-4 text-capitalize">{t}label-reputation{/t}</dd>
+          <dd class="col-sm-5 col-md-4 capitalize-first-word">{t}label-reputation{/t}</dd>
           <dt class="col-sm-7 col-md-8">{$user->getReputation()|nf}</dt>
-          <dd class="col-sm-5 col-md-4 text-capitalize">{t}label-statements{/t}</dd>
+          <dd class="col-sm-5 col-md-4 capitalize-first-word">{t}label-statements{/t}</dd>
           <dt class="col-sm-7 col-md-8">{$statements}</dt>
-          <dd class="col-sm-5 col-md-4 text-capitalize">{t}label-answers{/t}</dd>
+          <dd class="col-sm-5 col-md-4 capitalize-first-word">{t}label-answers{/t}</dd>
           <dt class="col-sm-7 col-md-8">{$answers}</dt>
           <dd class="col-sm-5 col-md-4 capitalize-first-word">{t}label-member-since{/t}</dd>
           <dt class="col-sm-7 col-md-8">{$user->createDate|lt:false}</dt>

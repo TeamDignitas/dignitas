@@ -50,7 +50,7 @@
       </div>
     {/if}
 
-    <h6 class="font-weight-bold text-capitalize mt-5">{t}title-relations{/t}</h6>
+    <h6 class="font-weight-bold capitalize-first-word mt-5">{t}title-relations{/t}</h6>
     <ul class="relations">
       {foreach $entity->getRelations() as $r}
         <li>
@@ -62,7 +62,7 @@
     {include "bits/loyalty.tpl" data=$entity->getLoyalties()}
 
     {if $entity->profile}
-      <h6 class="font-weight-bold text-capitalize mt-4">{t}title-profile{/t}</h6>
+      <h6 class="font-weight-bold capitalize-first-word mt-4">{t}title-profile{/t}</h6>
       <div>
         {$entity->profile|md}
       </div>
@@ -88,7 +88,7 @@
     <div class="title-members">
       {$members=$entity->getMembers()}
       {if count($members)}
-        <h6 class="font-weight-bold text-uppercase">{t}title-members{/t}</h6>
+        <h6 class="font-weight-bold capitalize-first-word">{t}title-members{/t}</h6>
 
         <ul>
           {foreach $members as $m}
