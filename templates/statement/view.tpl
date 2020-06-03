@@ -3,7 +3,7 @@
 {block "title"}{cap}{$statement->summary|escape}{/cap}{/block}
 
 {block "content"}
-  <div class="container mt-5">
+  <div class="container my-5">
     {include "bits/statement.tpl"
       editLink=true
       addComment=User::canComment($statement)}

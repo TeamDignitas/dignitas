@@ -11,12 +11,12 @@
 {block "title"}{cap}{$smarty.capture.title}{/cap}{/block}
 
 {block "content"}
-  <div class="container mt-5">
+  <div class="container my-5">
     <h1 class="mb-5">{$smarty.capture.title}
       {include "bits/tagAncestors.tpl" tag=$t}
     </h1>
 
-    <form class="form-horizontal" method="post">
+    <form class="form-horizontal mb-5" method="post">
       <input type="hidden" name="id" value="{$t->id}">
 
       <fieldset class="related-fields mb-5">
@@ -181,7 +181,7 @@
     </form>
 
     {if count($children)}
-      <h3>{t}title-direct-descendants{/t}</h3>
+      <h3 class="capitalize-first-word mt-5">{t}title-direct-descendants{/t}</h3>
 
       {foreach $children as $c}
         {include "bits/tag.tpl" t=$c link=true}

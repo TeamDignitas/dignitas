@@ -3,7 +3,7 @@
 {block "title"}{t}title-send-invite{/t}{/block}
 
 {block "content"}
-  <div class="container mt-5">
+  <div class="container my-5">
     <h1 class="mb-4 capitalize-first-word">{t}title-send-invite{/t}</h1>
 
     <form method="post">

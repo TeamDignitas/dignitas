@@ -3,7 +3,7 @@
 {block "title"}{t}title-edit-canned-response{/t}{/block}
 
 {block "content"}
-  <div class="container mt-5">
+  <div class="container my-5">
     <h1 class="mb-4">{t}title-edit-canned-response{/t}</h1>
 
     <form method="post">

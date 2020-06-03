@@ -27,9 +27,9 @@
                 <div class="container px-0">
 
                   {foreach $rows as $row}
-                    <div class="row mb-5">
+                    <div class="row">
                       {foreach $row as $stmt}
-                        <div class="col-md-{$numCols} col-sm-12">
+                        <div class="col-md-{$numCols} col-sm-12 mb-3">
                           {include "bits/carouselStatement.tpl" statement=$stmt}
                         </div>
                       {/foreach}

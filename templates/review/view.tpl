@@ -3,7 +3,7 @@
 {block "title"}{cap}{Review::getDescription($reason)}{/cap}{/block}
 
 {block "content"}
-  <div class="container mt-5">
+  <div class="container my-5">
     <h1 class="mb-4">{Review::getDescription($reason)}</h1>
 
     <div class="review-message">

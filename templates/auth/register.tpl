@@ -3,7 +3,7 @@
 {block "title"}{cap}{t}title-sign-up{/t}{/cap}{/block}
 
 {block "content"}
-  <div class="container mt-5">
+  <div class="container my-5">
     <div class="card w-50 m-auto">
       <h3 class="card-title m-4">
         {cap}{t}title-sign-up{/t}{/cap}
