@@ -18,7 +18,7 @@
     {/if}
 
     {if count($statements)}
-      <h4 class="mt-5 text-capitalize">
+      <h4 class="mt-5 capitalize-first-word">
         {if $statementCount > count($statements)}
           {t 1=count($statements) 2=$statementCount}title-statement-count-with-limit{/t}
         {else}
