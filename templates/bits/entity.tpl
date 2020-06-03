@@ -83,8 +83,6 @@
       {/if}
     </div>
 
-    <hr class="w-100 title-divider mt-0 mb-2">
-
     <div class="title-members">
       {$members=$entity->getMembers()}
       {if count($members)}
@@ -99,6 +97,8 @@
         </ul>
       {/if}
     </div>
+
+    <hr class="w-100 title-divider mt-0 mb-2">
 
     <div class="entity-actions mb-2 text-right">
       {if $entity->acceptsNewStatements()}
