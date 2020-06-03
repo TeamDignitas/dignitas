@@ -70,9 +70,11 @@ blockquote {
   border-color: #F3E6D7 !important;
 }
 
-.navbar-collapse.shown {
-  margin-top: 1rem;
+#navbar-left.shown,
+#navbar-right.shown {
+  margin-top: 1.2rem;
   padding-top: 1rem;
+  background-color: #343a40 !important;
 }
 
 .navbar-nav {
