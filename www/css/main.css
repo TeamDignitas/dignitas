@@ -119,6 +119,14 @@ blockquote {
   }
 }
 
+#flash-messages {
+  position: absolute;
+  bottom: 5vh;
+  left: 10vw;
+  background-color: white;
+  z-index: 1000;
+}
+
 /*************************** navbar search box ***************************/
 
 .navbar .select2 {
