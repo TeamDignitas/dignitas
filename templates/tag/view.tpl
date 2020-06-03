@@ -3,7 +3,7 @@
 {block "title"}{t}title-tag{/t}: {$tag->value}{/block}
 
 {block "content"}
-  <div class="container mt-5">
+  <div class="container my-5">
     <h1 class="mb-4">{t}title-tag{/t}
     {include "bits/tagAncestors.tpl"}
     </h1>

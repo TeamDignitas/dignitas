@@ -3,7 +3,7 @@
 {block "title"}{t}title-edit-domain{/t}{/block}
 
 {block "content"}
-  <div class="container mt-5">
+  <div class="container my-5">
     <h1 class="mb-5">{t}title-edit-domain{/t}</h1>
 
     <form method="post" enctype="multipart/form-data">

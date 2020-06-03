@@ -3,7 +3,7 @@
 {block "title"}{t}title-search-results{/t}{/block}
 
 {block "content"}
-  <div class="container mt-5">
+  <div class="container my-5">
     {if count($entities)}
       <h3>
         {t count=count($entities) 1=count($entities) plural="title-entities-plural"}

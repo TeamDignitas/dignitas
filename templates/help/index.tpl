@@ -3,7 +3,7 @@
 {block "title"}{cap}{t}help-center{/t}{/cap}{/block}
 
 {block "content"}
-  <div class="container mt-5">
+  <div class="container my-5">
     <h1 class="mb-4">{cap}{t}help-center{/t}{/cap}</h1>
 
     {foreach $categories as $cat}

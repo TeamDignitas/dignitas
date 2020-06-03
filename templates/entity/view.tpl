@@ -3,7 +3,7 @@
 {block "title"}{$entity->name|escape}{/block}
 
 {block "content"}
-  <div class="container mt-5">
+  <div class="container my-5">
     {if isset($pendingEditReview)}
       <div class="alert alert-warning">
         {t 1=$pendingEditReview->getUrl()}link-entity-review-pending-edit{/t}

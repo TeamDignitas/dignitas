@@ -3,7 +3,7 @@
 {block "title"}{cap}{t}title-lost-password{/t}{/cap}{/block}
 
 {block "content"}
-  <div class="container mt-5">
+  <div class="container my-5">
     <div class="w-50 mx-auto">
 
       <div class="card">

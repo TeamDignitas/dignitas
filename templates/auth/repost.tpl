@@ -3,7 +3,7 @@
 {block "title"}{cap}{t}title-redirecting{/t}{/cap}{/block}
 
 {block "content"}
-  <div class="container mt-5">
+  <div class="container my-5">
     <h3>{t}title-redirecting{/t}</h3>
     <form id="form-repost" action="{$referrer|escape}" method="post">
       {foreach $postData as $key => $value}

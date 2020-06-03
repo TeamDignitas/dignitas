@@ -3,7 +3,7 @@
 {block "title"}{cap}{t}title-page-not-found{/t}{/cap}{/block}
 
 {block "content"}
-  <div class="container mt-5">
+  <div class="container my-5">
     <h3>{cap}{t}title-page-not-found{/t}{/cap}</h3>
 
     {t 1=Config::URL_PREFIX}info-page-not-found{/t}
