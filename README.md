@@ -4,8 +4,8 @@ Dignitas is server-side software for collaborative fact checking. Many features 
 
 ## Installation instructions
 
-Please see [the wiki page](https://github.com/CatalinFrancu/dignitas/wiki/Installation-instructions).
+Please see [the wiki page](https://github.com/TeamDignitas/dignitas/wiki/Installation-instructions).
 
 ## Localization instructions
 
-See [Localization](https://github.com/CatalinFrancu/dignitas/wiki/Localization).
+See [Localization](https://github.com/TeamDignitas/dignitas/wiki/Localization).
