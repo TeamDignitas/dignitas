@@ -233,4 +233,8 @@ class Config {
   // Web page detailing how loyalty is determined. If defined, there will be a
   // link to it next to the loyalty widget on the entity page.
   const LOYALTY_URL = '';
+
+  // Web page detailing how verdicts work. If defined, there will be a link to
+  // it next to the verdict field on the answer form.
+  const VERDICT_URL = '';
 }

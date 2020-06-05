@@ -16,6 +16,16 @@
   <div class="form-group row">
     <label for="field-verdict" class="col-md-6 col-sm-4 col-form-label text-right">
       {t}label-verdict{/t}
+
+      {if Config::VERDICT_URL}
+        <span class="ml-2">
+          <a href="{Config::VERDICT_URL}"
+            title="{t}link-verdict-details{/t}"
+            target="_blank">
+            <i class="icon icon-help"></i>
+          </a>
+        </span>
+      {/if}
     </label>
 
     <div class="col-md-6 col-sm-8">

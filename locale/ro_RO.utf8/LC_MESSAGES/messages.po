@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-06-02 14:20+0300\n"
-"PO-Revision-Date: 2020-06-02 14:20+0300\n"
+"POT-Creation-Date: 2020-06-05 10:52+0300\n"
+"PO-Revision-Date: 2020-06-05 10:53+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -19,8 +19,8 @@ msgstr ""
 "X-Poedit-SearchPath-2: templates\n"
 "X-Poedit-SearchPath-3: www\n"
 "X-Poedit-SearchPathExcluded-0: lib/third-party\n"
-"X-Poedit-SearchPathExcluded-1: wwwbase/js/merged\n"
-"X-Poedit-SearchPathExcluded-2: wwwbase/js/third-party\n"
+"X-Poedit-SearchPathExcluded-1: www/js/merged\n"
+"X-Poedit-SearchPathExcluded-2: www/js/third-party\n"
 
 #: templates/404.tpl:3 templates/404.tpl:7
 msgid "title-page-not-found"
@@ -36,7 +36,7 @@ msgstr ""
 msgid "title-dashboard"
 msgstr "panou de control"
 
-#: templates/aggregate/dashboard.tpl:16 templates/bits/entity.tpl:109
+#: templates/aggregate/dashboard.tpl:16 templates/bits/entity.tpl:108
 msgid "link-add-statement"
 msgstr "adaugă o afirmație"
 
@@ -127,7 +127,7 @@ msgstr "editează răspunsul"
 #: templates/entityType/edit.tpl:77 templates/help/categoryEdit.tpl:64
 #: templates/help/pageEdit.tpl:74 templates/relation/edit.tpl:23
 #: templates/relationType/edit.tpl:110 templates/statement/edit.tpl:133
-#: templates/staticResource/edit.tpl:80 templates/tag/edit.tpl:155
+#: templates/staticResource/edit.tpl:81 templates/tag/edit.tpl:155
 #: templates/user/edit.tpl:125
 msgid "link-save"
 msgstr "salvează"
@@ -245,7 +245,7 @@ msgstr "legătură permanentă către acest răspuns"
 msgid "link-permalink"
 msgstr "legătură"
 
-#: templates/bits/answer.tpl:61 templates/bits/entity.tpl:119
+#: templates/bits/answer.tpl:61 templates/bits/entity.tpl:118
 #: templates/bits/statement.tpl:109 templates/cannedResponse/list.tpl:46
 #: templates/help/pageView.tpl:42
 msgid "link-show-revisions"
@@ -257,36 +257,40 @@ msgstr "arată versiunile"
 msgid "label-verdict"
 msgstr "verdict"
 
-#: templates/bits/answerEdit.tpl:45 templates/bits/commentForm.tpl:49
+#: templates/bits/answerEdit.tpl:23
+msgid "link-verdict-details"
+msgstr "detalii despre verdicte și efectele lor"
+
+#: templates/bits/answerEdit.tpl:55 templates/bits/commentForm.tpl:49
 #: templates/cannedResponse/edit.tpl:35 templates/cannedResponse/list.tpl:62
 #: templates/domain/edit.tpl:85 templates/entity/edit.tpl:218
 #: templates/entityType/edit.tpl:82 templates/help/categoryEdit.tpl:69
 #: templates/help/categoryList.tpl:34 templates/help/pageEdit.tpl:79
 #: templates/invite/add.tpl:36 templates/relation/edit.tpl:28
 #: templates/relationType/edit.tpl:115 templates/relationType/list.tpl:66
-#: templates/statement/edit.tpl:138 templates/staticResource/edit.tpl:85
+#: templates/statement/edit.tpl:138 templates/staticResource/edit.tpl:86
 #: templates/tag/edit.tpl:161 templates/user/edit.tpl:130
 msgid "link-cancel"
 msgstr "renunță"
 
-#: templates/bits/answerEdit.tpl:53
+#: templates/bits/answerEdit.tpl:63
 msgid "info-confirm-delete-answer"
 msgstr "Confirmați ștergerea acestui răspuns?"
 
-#: templates/bits/answerEdit.tpl:55 templates/cannedResponse/edit.tpl:45
+#: templates/bits/answerEdit.tpl:65 templates/cannedResponse/edit.tpl:45
 #: templates/domain/edit.tpl:95 templates/entity/edit.tpl:229
 #: templates/entityType/edit.tpl:92 templates/help/categoryEdit.tpl:79
 #: templates/help/pageEdit.tpl:89 templates/relationType/edit.tpl:125
-#: templates/statement/edit.tpl:149 templates/staticResource/edit.tpl:95
+#: templates/statement/edit.tpl:149 templates/staticResource/edit.tpl:96
 #: templates/tag/edit.tpl:177
 msgid "link-delete"
 msgstr "șterge"
 
-#: templates/bits/answerEdit.tpl:64
+#: templates/bits/answerEdit.tpl:74
 msgid "info-confirm-reopen-answer"
 msgstr "Confirmați redeschiderea acestui răspuns?"
 
-#: templates/bits/answerEdit.tpl:65 templates/entity/edit.tpl:239
+#: templates/bits/answerEdit.tpl:75 templates/entity/edit.tpl:239
 #: templates/statement/edit.tpl:159
 msgid "link-reopen"
 msgstr "redeschide"
@@ -348,19 +352,19 @@ msgstr "sugerează o modificare"
 msgid "title-alias"
 msgstr "alias"
 
-#: templates/bits/entity.tpl:54
+#: templates/bits/entity.tpl:53
 msgid "title-relations"
 msgstr "relații"
 
-#: templates/bits/entity.tpl:66
+#: templates/bits/entity.tpl:65
 msgid "title-profile"
 msgstr "profil"
 
-#: templates/bits/entity.tpl:75
+#: templates/bits/entity.tpl:74
 msgid "title-entity-links"
 msgstr "legături externe"
 
-#: templates/bits/entity.tpl:92
+#: templates/bits/entity.tpl:89
 msgid "title-members"
 msgstr "membri"
 
@@ -1225,11 +1229,11 @@ msgstr "limbă"
 msgid "label-all-locales"
 msgstr "toate"
 
-#: templates/staticResource/edit.tpl:69
+#: templates/staticResource/edit.tpl:70
 msgid "info-choose-static-resource-file"
 msgstr "... sau alegeți un fișier pentru încărcare"
 
-#: templates/staticResource/edit.tpl:93
+#: templates/staticResource/edit.tpl:94
 msgid "info-confirm-delete-static-resource"
 msgstr "Confirmați ștergerea acestei resurse?"
 
