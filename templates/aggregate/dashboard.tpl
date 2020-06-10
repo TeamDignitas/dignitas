@@ -109,7 +109,7 @@
         <h4 class="mt-5">{cap}{t}title-reports{/t}{/cap}</h4>
 
         <ul class="pl-0">
-          <li class="card py-4 px-2 m-2 border-secondary text-center">
+          <li class="card py-4 px-2 m-2 border-secondary text-center w-100">
             <a href="{Router::link('statement/verdictReport')}" class="capitalize-first-word">
               {t}link-verdict-report{/t}
              </a>
