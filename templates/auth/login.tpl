@@ -6,7 +6,7 @@
   <div class="container my-5">
     {$allowFakeLogins=$allowFakeLogins|default:false}
 
-    <div class="w-50 mx-auto">
+    <div class="col-sm-12 col-md-8 col-lg-6 mx-auto">
 
       {if $allowFakeLogins}
         {include "bits/fakeLogin.tpl"}
