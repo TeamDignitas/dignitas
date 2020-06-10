@@ -1,7 +1,7 @@
 {* optional argument: $links: array of Link objects *}
-<div class="form-group row highlight-field py-1 mb-0">
-  <label class="col-2 mt-1">{$labelText}</label>
-  <div class="col-10 mb-2 pl-0">
+<div class="form-group row">
+  <label class="col-sm-4 col-lg-2 mt-1 pl-0">{$labelText}</label>
+  <div class="col-sm-8 col-lg-10 mb-2 pl-0">
     <button class="add-link btn btn-outline-secondary btn-sm" type="button">
       <i class="icon icon-plus"></i>
       {$addButtonText}
