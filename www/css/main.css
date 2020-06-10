@@ -96,12 +96,12 @@ blockquote {
     position: fixed;
     top: 54px;
     transition: left 0.3s linear;
-    width: 50%;
+    width: 75%;
     z-index: 10;
   }
 
   #navbar-left {
-    left: -50%;
+    left: -75%;
   }
 
   #navbar-right {
@@ -114,7 +114,7 @@ blockquote {
   }
 
   #navbar-right.shown {
-    left: 50%;
+    left: 25%;
     transition: left 0.3s linear;
   }
 }
@@ -413,15 +413,6 @@ body, main {
 }
 
 /***************************** Edit author pages ****************************/
-.related-fields {
-  border-left: 2px solid #aaa;
-  padding-left: 16px;
-}
-
-.related-fields .form-group:hover {
-  background-color: #ddd;
-}
-
 .select2-container--bootstrap4 .select2-selection {
   background-color: white !important;
 }

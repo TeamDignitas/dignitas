@@ -8,12 +8,12 @@
 
     <form method="post" enctype="multipart/form-data">
 
-      <fieldset class="related-fields mb-5">
-        <div class="form-group row py-1 pr-1 mb-0">
-          <label for="field-name" class="control-label col-2 ml-0 mt-2">
+      <fieldset class="related-fields mb-5 ml-3">
+        <div class="form-group row">
+          <label for="field-name" class="control-label col-sm-12 col-lg-2 mt-2 pl-0">
             {t}label-name{/t}
           </label>
-          <div class="col-10 pl-0">
+          <div class="col-sm-12 col-lg-10 px-0">
             <input type="text"
               class="form-control {if isset($errors.name)}is-invalid{/if}"
               id="field-name"
@@ -26,12 +26,12 @@
           </div>
         </div>
 
-        <div class="form-group row py-1 pr-1">
-          <label for="field-locale" class="col-2 ml-0 mt-2">{t}label-locale{/t}</label>
+        <div class="form-group row">
+          <label for="field-locale" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-locale{/t}</label>
           <select
             name="locale"
             id="field-locale"
-            class="form-control col-10">
+            class="form-control col-sm-12 col-lg-10">
             <option value="">
               {t}label-all-locales{/t}
             </option>
@@ -46,10 +46,10 @@
         </div>
       </fieldset>
 
-      <fieldset class="related-fields mb-5">
-        <div class="form-group row pt-1 pb-3">
-          <label for="field-contents" class="col-2 mt-2">{t}label-contents{/t}</label>
-          <div class="col-10 pl-0">
+      <fieldset class="related-fields mb-5 ml-3">
+        <div class="form-group row">
+          <label for="field-contents" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-contents{/t}</label>
+          <div class="col-sm-12 col-lg-10 px-0">
             {strip}
             <textarea
               id="field-contents"

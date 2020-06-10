@@ -12,23 +12,23 @@
     </a>
 
     <form method="post">
-      <table class="table table-hover mt-5 sortable">
+      <table class="table table-sm table-hover mt-5 sortable">
         <thead>
           <tr class="d-flex">
-            <th class="col-1 border-0">{t}title-order{/t}</th>
-            <th class="col-9 border-0">{t}title-comment-text{/t}</th>
+            <th class="col-2 border-0">{t}title-order{/t}</th>
+            <th class="col-8 border-0">{t}title-comment-text{/t}</th>
             <th class="col-2 border-0">{t}title-actions{/t}</th>
           </tr>
         </thead>
         <tbody>
           {foreach $cannedResponses as $cr}
             <tr class="d-flex">
-              <td class="col-1">
+              <td class="col-2">
                 <input type="hidden" name="cannedResponseIds[]" value="{$cr->id}">
                 <label class="icon icon-move"></label>
               </td>
 
-              <td class="col-9">
+              <td class="col-8">
                 {$cr->contents|md}
               </td>
 

@@ -24,20 +24,20 @@
       <input type="hidden" name="id" value="{$entity->id}">
       <input type="hidden" name="referrer" value="{$referrer}">
 
-      <fieldset class="related-fields mb-5">
-        <div class="form-group row py-1 pr-1">
-          <label for="field-name" class="col-2 ml-0 mt-2">{t}label-name{/t}</label>
+      <fieldset class="related-fields mb-5 ml-3">
+        <div class="form-group row">
+          <label for="field-name" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-name{/t}</label>
           <input
             name="name"
             value="{$entity->name|escape}"
             id="field-name"
-            class="form-control {if isset($errors.name)}is-invalid{/if} col-10">
+            class="form-control {if isset($errors.name)}is-invalid{/if} col-sm-12 col-lg-10">
           {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
         </div>
 
-        <div class="form-group row py-1 mb-0">
-          <label class="col-2 ml-0 mt-2">{t}label-alias{/t}</label>
-          <div class="col-10 pl-0 mt-1 mb-2">
+        <div class="form-group row">
+          <label class="col-sm-4 col-lg-2 ml-0 mt-2 pl-0">{t}label-alias{/t}</label>
+          <div class="col-sm-8 col-lg-10 pl-0 mt-1 mb-2">
             <button id="add-alias" class="btn btn-outline-secondary btn-sm" type="button">
               <i class="icon icon-plus"></i>
               {t}link-add-alias{/t}
@@ -65,13 +65,13 @@
 
       </fieldset>
 
-      <fieldset class="related-fields mb-5">
-        <div class="form-group row py-1 pr-1">
-          <label for="field-entity-type-id" class="col-2 ml-0 mt-2">{t}label-type{/t}</label>
+      <fieldset class="related-fields mb-5 ml-3">
+        <div class="form-group row">
+          <label for="field-entity-type-id" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-type{/t}</label>
           <select
             name="entityTypeId"
             id="field-entity-type-id"
-            class="form-control col-10 {if isset($errors.entityTypeId)}is-invalid{/if}"
+            class="form-control col-sm-12 col-lg-10 {if isset($errors.entityTypeId)}is-invalid{/if}"
             data-change-msg="{t}info-change-entity-type-while-relations-exist{/t}">
             {foreach $entityTypes as $et}
               <option
@@ -86,10 +86,10 @@
         </div>
 
         <div id="color-wrapper"
-          class="form-group row py-1""
+          class="form-group row""
           {if !$entity->hasColor()}hidden{/if}>
-          <label for="field-color" class="col-2 mt-2">{t}label-color{/t}</label>
-          <div class="input-group colorpicker-component col-10 pl-0 pr-1">
+          <label for="field-color" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-color{/t}</label>
+          <div class="input-group colorpicker-component col-sm-12 col-lg-10 pl-0 pr-1">
             <span class="input-group-prepend input-group-text colorpicker-input-addon">
               <i></i>
             </span>
@@ -101,9 +101,9 @@
           </div>
         </div>
 
-        <div class="form-group row py-1 pr-1 mb-0">
-          <label class="col-2 mt-2">{t}label-relations{/t}</label>
-          <div class="col-10 pl-0 mb-2">
+        <div class="form-group row">
+          <label class="col-sm-4 col-lg-2 mt-2 pl-0">{t}label-relations{/t}</label>
+          <div class="col-sm-8 col-lg-10 pl-0 mb-2">
             <button id="add-relation" class="btn btn-outline-secondary btn-sm" type="button">
               <i class="icon icon-plus"></i>
               {t}label-add-relation{/t}
@@ -137,10 +137,10 @@
         </div>
       </fieldset>
 
-      <fieldset class="related-fields mb-5">
-        <div class="form-group row py-1">
-          <label for="field-profile" class="col-2 mt-2">{t}label-profile{/t}</label>
-          <div class="col-10 pl-0">
+      <fieldset class="related-fields mb-5 ml-3">
+        <div class="form-group row">
+          <label for="field-profile" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-profile{/t}</label>
+          <div class="col-sm-12 col-lg-10 px-0">
             <textarea
               id="field-profile"
               name="profile"
@@ -163,10 +163,10 @@
 
       </fieldset>
 
-      <fieldset class="related-fields mb-5">
-        <div class="form-group row py-1">
-          <label class="col-2 mt-2">{t}label-tags{/t}</label>
-          <div class="col-10 pl-0">
+      <fieldset class="related-fields mb-5 ml-3">
+        <div class="form-group row">
+          <label class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-tags{/t}</label>
+          <div class="col-sm-12 col-lg-10 px-0">
             <select name="tagIds[]" class="form-control select2Tags" multiple>
               {foreach $tagIds as $tagId}
                 <option value="{$tagId}" selected></option>
@@ -175,10 +175,10 @@
           </div>
         </div>
 
-        <div class="form-group row py-1 mb-0">
-          <label class="col-2 mt-2" for="field-image">{t}label-image{/t}</label>
+        <div class="form-group row">
+          <label class="col-sm-12 col-lg-2 mt-2 pl-0" for="field-image">{t}label-image{/t}</label>
 
-          <div class="col-10 pl-0">
+          <div class="col-sm-12 col-lg-10 px-0">
             <div class="custom-file">
               <input
                 name="image"
@@ -191,7 +191,7 @@
             </div>
             {include "bits/fieldErrors.tpl" errors=$errors.image|default:null}
 
-            <div class="form-check">
+            <div class="form-check mt-1">
               <label class="form-check-label">
                 <input type="checkbox" name="deleteImage" class="form-check-input">
                 {t}label-delete-image{/t}

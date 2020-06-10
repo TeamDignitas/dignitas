@@ -8,11 +8,11 @@
 
     <form method="post" enctype="multipart/form-data">
 
-      <fieldset class="related-fields mb-5">
-        <div class="form-group row py-1 pr-1">
-          <label class="col-2 mt-2">{t}label-nickname{/t}</label>
+      <fieldset class="related-fields mb-5 ml-3">
+        <div class="form-group row">
+          <label class="col-sm-12 col-lg-2 mt-2 px-0">{t}label-nickname{/t}</label>
 
-          <div class="input-group col-10">
+          <div class="input-group col-sm-12 col-lg-10 px-0">
             <span class="input-group-prepend">
               <i class="input-group-text icon icon-user"></i>
             </span>
@@ -26,10 +26,10 @@
           {include "bits/fieldErrors.tpl" errors=$errors.nickname|default:null}
         </div>
 
-        <div class="form-group row py-1 pr-1 mb-0">
-          <label class="col-2 mt-2">{t}label-email{/t}</label>
+        <div class="form-group row">
+          <label class="col-sm-12 col-lg-2 mt-2 px-0">{t}label-email{/t}</label>
 
-          <div class="input-group col-10">
+          <div class="input-group col-sm-12 col-lg-10 px-0">
             <span class="input-group-prepend">
               <i class="input-group-text icon icon-mail"></i>
             </span>
@@ -43,10 +43,10 @@
         </div>
       </fieldset>
 
-      <fieldset class="related-fields mb-5">
-        <div class="form-group row py-1 pr-1">
-          <label class="col-2 mt-2">{t}label-about-me{/t}</label>
-          <div class="col-10">
+      <fieldset class="related-fields mb-5 ml-3">
+        <div class="form-group row">
+          <label class="col-sm-12 col-lg-2 mt-2 px-0">{t}label-about-me{/t}</label>
+          <div class="col-sm-12 col-lg-10 px-0">
             <textarea
               name="aboutMe"
               class="form-control has-unload-warning easy-mde"
@@ -55,10 +55,10 @@
           </div>
         </div>
 
-        <div class="form-group row py-1 pr-1 mb-0">
-          <label for="field-image" class="col-2 mt-2">{t}label-image{/t}</label>
+        <div class="form-group row">
+          <label for="field-image" class="col-sm-12 col-lg-2 mt-2 px-0">{t}label-image{/t}</label>
 
-          <div class="col-10">
+          <div class="col-sm-12 col-lg-10 px-0">
             <div class="custom-file">
               <input
                 name="image"
@@ -71,7 +71,7 @@
             </div>
             {include "bits/fieldErrors.tpl" errors=$errors.image|default:null}
 
-            <div class="form-check">
+            <div class="form-check mt-1">
               <label class="form-check-label">
                 <input type="checkbox" name="deleteImage" class="form-check-input">
                 {t}label-delete-image{/t}
@@ -87,11 +87,11 @@
         </div>
       </fieldset>
 
-      <fieldset class="related-fields mb-5">
-        <div class="form-group row py-1 pr-1">
-          <label class="col-2 mt-2">{t}label-change-password{/t}</label>
+      <fieldset class="related-fields mb-5 ml-3">
+        <div class="form-group row">
+          <label class="col-sm-12 col-lg-2 mt-2 px-0">{t}label-change-password{/t}</label>
 
-          <div class="input-group col-10">
+          <div class="input-group col-sm-12 col-lg-10 px-0">
             <span class="input-group-prepend">
               <i class="input-group-text icon icon-lock"></i>
             </span>
@@ -104,9 +104,9 @@
           </div>
         </div>
 
-        <div class="form-group row py-1 pr-1 mb-0">
-          <label class="col-2 mt-2">{t}label-password-again{/t}</label>
-          <div class="input-group col-10">
+        <div class="form-group row">
+          <label class="col-sm-12 col-lg-2 mt-2 px-0">{t}label-password-again{/t}</label>
+          <div class="input-group col-sm-12 col-lg-10 px-0">
             <span class="input-group-prepend">
               <i class="input-group-text icon icon-lock"></i>
             </span>

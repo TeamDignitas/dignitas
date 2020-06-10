@@ -4,7 +4,7 @@
 
 {block "content"}
   <div class="container my-5">
-    <div class="w-50 mx-auto">
+    <div class="col-sm-12 col-md-8 col-lg-6 mx-auto">
 
       <div class="card">
         <div class="card-header">
@@ -34,7 +34,7 @@
               {include "bits/fieldErrors.tpl" errors=$errors.email|default:null}
             </div>
 
-            <button class="btn btn-primary" type="submit" name="submitButton">
+            <button class="btn btn-primary col-sm-12 col-md-6" type="submit" name="submitButton">
               <i class="icon icon-paper-plane"></i>
               {t}link-send{/t}
             </button>

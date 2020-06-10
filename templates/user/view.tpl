@@ -58,33 +58,34 @@
           </div>
         {/if}
 
+        {if count($actions)}
+          <h5 class="capitalize-first-word font-weight-bold mt-5">
+            {t}actions{/t}
+          </h5>
+
+          <div class="row ml-1">
+            <div class="col-sm-6 col-lg-4 font-weight-bold text-muted">
+              {t}label-date{/t}
+            </div>
+            <div class="col-sm-6 col-lg-8 font-weight-bold text-muted">
+              {t}label-action{/t}
+            </div>
+          </div>
+
+          <div id="action-wrapper">
+            {include "bits/actions.tpl"}
+          </div>
+
+          {include "bits/paginationWrapper.tpl"
+            n=$actionPages
+            k=1
+            url="{Config::URL_PREFIX}ajax/action-log/{$user->id}"
+            target="#action-wrapper"}
+        {/if}
+
       </div>
     </div>
 
-    {if count($actions)}
-      <h6 class="mt-4 pb-2 pl-0 subsection text-uppercase font-weight-bold">
-        {t}actions{/t}
-      </h6>
-
-      <div class="row py-1">
-        <div class="col font-weight-bold">
-          {t}label-date{/t}
-        </div>
-        <div class="col font-weight-bold">
-          {t}label-action{/t}
-        </div>
-      </div>
-
-      <div id="action-wrapper">
-        {include "bits/actions.tpl"}
-      </div>
-
-      {include "bits/paginationWrapper.tpl"
-        n=$actionPages
-        k=1
-        url="{Config::URL_PREFIX}ajax/action-log/{$user->id}"
-        target="#action-wrapper"}
-    {/if}
   </div>
 
 {/block}

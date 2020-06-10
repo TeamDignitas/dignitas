@@ -8,13 +8,13 @@
 
     <form method="post" enctype="multipart/form-data">
 
-      <fieldset class="related-fields mb-5">
-        <div class="form-group row py-1 pr-1">
-          <label for="field-name" class="control-label col-2 ml-0 mt-2">
+      <fieldset class="related-fields mb-5 ml-3">
+        <div class="form-group row">
+          <label for="field-name" class="control-label col-sm-12 col-lg-2 mt-2 pl-0">
             {t}label-name{/t}
           </label>
           <input type="text"
-            class="form-control {if isset($errors.name)}is-invalid{/if} col-10"
+            class="form-control {if isset($errors.name)}is-invalid{/if} col-sm-12 col-lg-10"
             id="field-name"
             name="name"
             value="{$domain->name|escape}"
@@ -22,12 +22,12 @@
           {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
         </div>
 
-        <div class="form-group row py-1 pr-1">
-          <label for="field-display-value" class="control-label col-2 ml-0 mt-2">
+        <div class="form-group row">
+          <label for="field-display-value" class="control-label col-sm-12 col-lg-2 mt-2 pl-0">
             {t}label-display-value{/t}
           </label>
           <input type="text"
-            class="form-control {if isset($errors.displayValue)}is-invalid{/if} col-10"
+            class="form-control {if isset($errors.displayValue)}is-invalid{/if} col-sm-12 col-lg-10"
             id="field-display-value"
             name="displayValue"
             value="{$domain->displayValue|escape}"
@@ -35,10 +35,10 @@
           {include "bits/fieldErrors.tpl" errors=$errors.displayValue|default:null}
         </div>
 
-        <div class="form-group row py-1 pr-1 mb-0">
-          <label for="field-image" class="col-2 ml-0 mt-2">{t}label-image{/t}</label>
+        <div class="form-group row">
+          <label for="field-image" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-image{/t}</label>
 
-          <div class="col-10 px-0">
+          <div class="col-sm-12 col-lg-10 px-0">
             <div>
               {include "bits/image.tpl"
                 obj=$domain
@@ -57,7 +57,7 @@
             </div>
             {include "bits/fieldErrors.tpl" errors=$errors.image|default:null}
 
-            <div class="form-check">
+            <div class="form-check mt-1">
               <label class="form-check-label">
                 <input type="checkbox" name="deleteImage" class="form-check-input">
                 {t}label-delete-image{/t}

@@ -5,7 +5,7 @@
 {block "content"}
   <div class="container my-5">
     {if $user}
-      <div class="card w-50 m-auto">
+      <div class="card col-sm-12 col-md-8 col-lg-6 m-auto">
         <div class="card-header">
           {cap}{t}title-change-password{/t}{/cap}
         </div>

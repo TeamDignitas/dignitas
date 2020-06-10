@@ -1,9 +1,9 @@
 {foreach $actions as $a}
-  <div class="row row-border small py-1">
-    <div class="col-md-2">
+  <div class="row row-border small py-1 ml-1">
+    <div class="col-sm-6 col-lg-4 text-muted">
       {include "bits/moment.tpl" t=$a->createDate}
     </div>
-    <div class="col-md-10">
+    <div class="col-sm-6 col-lg-8">
       {$obj=$a->getObject()}
       {if !$obj}   {* Underlying object has been deleted *}
         {$a->getTypeName()}

@@ -4,7 +4,7 @@
 
 {block "content"}
   <div class="container my-5">
-    <div class="card w-50 m-auto">
+    <div class="card col-sm-12 col-md-8 col-lg-6 m-auto">
       <h3 class="card-title m-4">
         {cap}{t}title-sign-up{/t}{/cap}
       </h3>
