@@ -8,13 +8,13 @@
 
     <form method="post">
 
-      <fieldset class="related-fields mb-5">
-        <div class="form-group row py-1 pr-1 mb-0">
-          <label for="field-name" class="control-label col-2 ml-0 mt-2">
+      <fieldset class="related-fields mb-5 ml-3">
+        <div class="form-group row">
+          <label for="field-name" class="control-label col-sm-12 col-lg-2 mt-2 pl-0">
             {t}label-name{/t}
           </label>
           <input type="text"
-            class="form-control {if isset($errors.name)}is-invalid{/if} col-10"
+            class="form-control {if isset($errors.name)}is-invalid{/if} col-sm-12 col-lg-10"
             id="field-name"
             name="name"
             value="{$et->name|escape}"
@@ -24,7 +24,7 @@
       </fieldset>
 
       <fieldset class="related-fields mb-5">
-        <div class="form-group form-check row py-1 pr-1">
+        <div class="form-group form-check row">
           <label class="form-check-label col-12">
             <input
               type="checkbox"
@@ -39,7 +39,7 @@
           </small>
         </div>
 
-        <div class="form-group form-check row py-1 pr-1">
+        <div class="form-group form-check row">
           <label class="form-check-label col-12">
             <input
               type="checkbox"
