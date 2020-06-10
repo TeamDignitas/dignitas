@@ -24,13 +24,13 @@
       <input type="hidden" name="id" value="{$statement->id}">
       <input type="hidden" name="referrer" value="{$referrer}">
 
-      <fieldset class="related-fields mb-5">
-        <div class="form-group row py-1 pr-1">
-          <label for="field-entity-id" class="col-2 ml-0 mt-2">{t}label-entity{/t}</label>
+      <fieldset class="related-fields mb-5 ml-3">
+        <div class="form-group row">
+          <label for="field-entity-id" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-entity{/t}</label>
           <select
             name="entityId"
             id="field-entity-id"
-            class="form-control {if isset($errors.entityId)}is-invalid{/if} col-10">
+            class="form-control {if isset($errors.entityId)}is-invalid{/if} col-sm-12 col-lg-10">
             {if $statement->entityId}
               <option value="{$statement->entityId}"></option>
             {/if}
@@ -38,35 +38,35 @@
           {include "bits/fieldErrors.tpl" errors=$errors.entityId|default:null}
         </div>
 
-        <div class="form-group row py-1 pr-1 mb-0">
-          <label for="field-date-made" class="col-2 ml-0 mt-2">{t}label-statement-date{/t}</label>
+        <div class="form-group row">
+          <label for="field-date-made" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-statement-date{/t}</label>
           <input
             type="date"
             name="dateMade"
             id="field-date-made"
             value="{$statement->dateMade}"
-            class="form-control {if isset($errors.dateMade)}is-invalid{/if} col-10"
+            class="form-control {if isset($errors.dateMade)}is-invalid{/if} col-sm-12 col-lg-10"
             required>
           {include "bits/fieldErrors.tpl" errors=$errors.dateMade|default:null}
         </div>
       </fieldset>
 
-      <fieldset class="related-fields mb-5">
-        <div class="form-group row py-1 pr-1">
-          <label for="field-summary" class="col-2 ml-0 mt-2">{t}label-summary{/t}</label>
+      <fieldset class="related-fields mb-5 ml-3">
+        <div class="form-group row">
+          <label for="field-summary" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-summary{/t}</label>
           <input
             type="text"
             name="summary"
             id="field-summary"
             value="{$statement->summary|escape}"
-            class="form-control has-unload-warning {if isset($errors.summary)}is-invalid{/if} col-10"
+            class="form-control has-unload-warning {if isset($errors.summary)}is-invalid{/if} col-sm-12 col-lg-10"
             required>
           {include "bits/fieldErrors.tpl" errors=$errors.summary|default:null}
         </div>
 
-        <div class="form-group row py-1 pr-1">
-          <label for="field-context" class="col-2 ml-0 mt-2">{t}label-context{/t}</label>
-          <div class="col-10 px-0">
+        <div class="form-group row">
+          <label for="field-context" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-context{/t}</label>
+          <div class="col-sm-12 col-lg-10 px-0">
             <textarea
               name="context"
               id="field-context"
@@ -77,14 +77,14 @@
           </div>
         </div>
 
-        <div class="form-group row py-1 pr-1">
-          <label for="field-goal" class="col-2 ml-0 mt-2">{t}label-goal{/t}</label>
+        <div class="form-group row">
+          <label for="field-goal" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-goal{/t}</label>
           <input
             type="text"
             name="goal"
             id="field-goal"
             value="{$statement->goal|escape}"
-            class="form-control has-unload-warning {if isset($errors.goal)}is-invalid{/if} col-10"
+            class="form-control has-unload-warning {if isset($errors.goal)}is-invalid{/if} col-sm-12 col-lg-10"
             required>
           {include "bits/fieldErrors.tpl" errors=$errors.goal|default:null}
         </div>
@@ -96,10 +96,10 @@
         }
       </fieldset>
 
-      <fieldset class="related-fields mb-5">
-        <div class="form-group row py-1 pr-1">
-          <label class="col-2 ml-0 mt-2">{t}label-tags{/t}</label>
-          <div class="col-10 px-0">
+      <fieldset class="related-fields mb-5 ml-3">
+        <div class="form-group row">
+          <label class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-tags{/t}</label>
+          <div class="col-sm-12 col-lg-10 px-0">
             <select name="tagIds[]" class="form-control select2Tags col-10" multiple>
               {foreach $tagIds as $tagId}
                 <option value="{$tagId}" selected></option>
@@ -109,12 +109,12 @@
         </div>
 
         {if User::isModerator()}
-          <div class="form-group row py-1 pr-1 mb-0">
-            <label for="field-verdict" class="col-2 ml-0 mt-2">{t}label-verdict{/t}</label>
+          <div class="form-group row">
+            <label for="field-verdict" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-verdict{/t}</label>
             <select
               id="field-verdict"
               name="verdict"
-              class="form-control has-unload-warning col-10">
+              class="form-control has-unload-warning col-sm-12 col-lg-10">
               {for $v = 0 to Ct::NUM_VERDICTS - 1}
                 <option
                   value="{$v}"
