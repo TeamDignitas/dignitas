@@ -88,8 +88,11 @@
       </fieldset>
 
       <fieldset class="related-fields mb-5 ml-3">
+        <legend class="row">
+          {t}title-change-password{/t}
+        </legend>
         <div class="form-group row">
-          <label class="col-sm-12 col-lg-2 mt-2 px-0">{t}label-change-password{/t}</label>
+          <label class="col-sm-12 col-lg-2 mt-2 px-0">{t}label-password{/t}</label>
 
           <div class="input-group col-sm-12 col-lg-10 px-0">
             <span class="input-group-prepend">

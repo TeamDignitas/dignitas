@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-06-05 10:52+0300\n"
-"PO-Revision-Date: 2020-06-05 10:53+0300\n"
+"POT-Creation-Date: 2020-06-15 10:42+0300\n"
+"PO-Revision-Date: 2020-06-15 10:43+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -128,7 +128,7 @@ msgstr "editează răspunsul"
 #: templates/help/pageEdit.tpl:74 templates/relation/edit.tpl:23
 #: templates/relationType/edit.tpl:110 templates/statement/edit.tpl:133
 #: templates/staticResource/edit.tpl:81 templates/tag/edit.tpl:155
-#: templates/user/edit.tpl:125
+#: templates/user/edit.tpl:128
 msgid "link-save"
 msgstr "salvează"
 
@@ -143,7 +143,7 @@ msgid "label-email"
 msgstr "adresa de e-mail"
 
 #: templates/auth/login.tpl:49 templates/auth/register.tpl:56
-#: templates/auth/resetPassword.tpl:26
+#: templates/auth/resetPassword.tpl:26 templates/user/edit.tpl:95
 msgid "label-password"
 msgstr "parola"
 
@@ -193,7 +193,7 @@ msgid "label-nickname"
 msgstr "poreclă"
 
 #: templates/auth/register.tpl:71 templates/auth/resetPassword.tpl:40
-#: templates/user/edit.tpl:108
+#: templates/user/edit.tpl:111
 msgid "label-password-again"
 msgstr "parola (din nou)"
 
@@ -210,8 +210,8 @@ msgid "link-repost-manual"
 msgstr "click aici dacă nu sînteți redirectat(ă) automat"
 
 #: templates/auth/resetPassword.tpl:3 templates/auth/resetPassword.tpl:10
-msgid "title-change-password"
-msgstr "schimbarea parolei"
+msgid "title-reset-password"
+msgstr "recuperarea parolei"
 
 #: templates/bits/actions.tpl:14
 msgid "action-target-answer"
@@ -269,7 +269,7 @@ msgstr "detalii despre verdicte și efectele lor"
 #: templates/invite/add.tpl:36 templates/relation/edit.tpl:28
 #: templates/relationType/edit.tpl:115 templates/relationType/list.tpl:66
 #: templates/statement/edit.tpl:138 templates/staticResource/edit.tpl:86
-#: templates/tag/edit.tpl:161 templates/user/edit.tpl:130
+#: templates/tag/edit.tpl:161 templates/user/edit.tpl:133
 msgid "link-cancel"
 msgstr "renunță"
 
@@ -526,7 +526,7 @@ msgstr "raportează comentariul"
 msgid "label-author"
 msgstr "autor"
 
-#: templates/bits/history.tpl:15 templates/user/view.tpl:71
+#: templates/bits/history.tpl:15 templates/user/view.tpl:68
 msgid "label-date"
 msgstr "dată"
 
@@ -775,7 +775,7 @@ msgstr "iconiță"
 #: templates/domain/list.tpl:21 templates/entity/edit.tpl:54
 #: templates/entity/edit.tpl:123 templates/entityType/list.tpl:22
 #: templates/relationType/list.tpl:30 templates/staticResource/list.tpl:21
-#: templates/user/view.tpl:66
+#: templates/user/view.tpl:63
 msgid "actions"
 msgstr "acțiuni"
 
@@ -1335,8 +1335,8 @@ msgid "label-about-me"
 msgstr "despre mine"
 
 #: templates/user/edit.tpl:92
-msgid "label-change-password"
-msgstr "parola (doar dacă doriți să o schimbați)"
+msgid "title-change-password"
+msgstr "Schimbă parola (opțional)"
 
 #: templates/user/view.tpl:3
 msgid "title-user"
@@ -1366,7 +1366,7 @@ msgstr "ultima vizită"
 msgid "title-about-me"
 msgstr "despre mine"
 
-#: templates/user/view.tpl:74
+#: templates/user/view.tpl:71
 msgid "label-action"
 msgstr "acțiune"
 

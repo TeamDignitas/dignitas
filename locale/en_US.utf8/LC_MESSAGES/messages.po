@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-06-05 10:54+0300\n"
-"PO-Revision-Date: 2020-06-05 10:54+0300\n"
+"POT-Creation-Date: 2020-06-15 10:43+0300\n"
+"PO-Revision-Date: 2020-06-15 10:43+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -124,7 +124,7 @@ msgstr "edit answer"
 #: templates/help/pageEdit.tpl:74 templates/relation/edit.tpl:23
 #: templates/relationType/edit.tpl:110 templates/statement/edit.tpl:133
 #: templates/staticResource/edit.tpl:81 templates/tag/edit.tpl:155
-#: templates/user/edit.tpl:125
+#: templates/user/edit.tpl:128
 msgid "link-save"
 msgstr "save"
 
@@ -139,7 +139,7 @@ msgid "label-email"
 msgstr "email"
 
 #: templates/auth/login.tpl:49 templates/auth/register.tpl:56
-#: templates/auth/resetPassword.tpl:26
+#: templates/auth/resetPassword.tpl:26 templates/user/edit.tpl:95
 msgid "label-password"
 msgstr "password"
 
@@ -188,7 +188,7 @@ msgid "label-nickname"
 msgstr "nickname"
 
 #: templates/auth/register.tpl:71 templates/auth/resetPassword.tpl:40
-#: templates/user/edit.tpl:108
+#: templates/user/edit.tpl:111
 msgid "label-password-again"
 msgstr "password (again)"
 
@@ -205,8 +205,8 @@ msgid "link-repost-manual"
 msgstr "click here if you are not redirected automatically"
 
 #: templates/auth/resetPassword.tpl:3 templates/auth/resetPassword.tpl:10
-msgid "title-change-password"
-msgstr "change password"
+msgid "title-reset-password"
+msgstr "reset password"
 
 #: templates/bits/actions.tpl:14
 msgid "action-target-answer"
@@ -264,7 +264,7 @@ msgstr "details about verdicts and their effects"
 #: templates/invite/add.tpl:36 templates/relation/edit.tpl:28
 #: templates/relationType/edit.tpl:115 templates/relationType/list.tpl:66
 #: templates/statement/edit.tpl:138 templates/staticResource/edit.tpl:86
-#: templates/tag/edit.tpl:161 templates/user/edit.tpl:130
+#: templates/tag/edit.tpl:161 templates/user/edit.tpl:133
 msgid "link-cancel"
 msgstr "cancel"
 
@@ -519,7 +519,7 @@ msgstr "flag comment"
 msgid "label-author"
 msgstr "author"
 
-#: templates/bits/history.tpl:15 templates/user/view.tpl:71
+#: templates/bits/history.tpl:15 templates/user/view.tpl:68
 msgid "label-date"
 msgstr "date"
 
@@ -765,7 +765,7 @@ msgstr "icon"
 #: templates/domain/list.tpl:21 templates/entity/edit.tpl:54
 #: templates/entity/edit.tpl:123 templates/entityType/list.tpl:22
 #: templates/relationType/list.tpl:30 templates/staticResource/list.tpl:21
-#: templates/user/view.tpl:66
+#: templates/user/view.tpl:63
 msgid "actions"
 msgstr "acțiuni"
 
@@ -1323,8 +1323,8 @@ msgid "label-about-me"
 msgstr "about me"
 
 #: templates/user/edit.tpl:92
-msgid "label-change-password"
-msgstr "password (only if you wish to change it)"
+msgid "title-change-password"
+msgstr "Change password (optional)"
 
 #: templates/user/view.tpl:3
 msgid "title-user"
@@ -1354,7 +1354,7 @@ msgstr "last seen"
 msgid "title-about-me"
 msgstr "about me"
 
-#: templates/user/view.tpl:74
+#: templates/user/view.tpl:71
 msgid "label-action"
 msgstr "action"
 
