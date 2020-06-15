@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2020-06-15 10:43+0300\n"
-"PO-Revision-Date: 2020-06-15 10:43+0300\n"
+"PO-Revision-Date: 2020-06-15 10:47+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -735,7 +735,7 @@ msgstr "image"
 #: templates/domain/edit.tpl:55 templates/entity/edit.tpl:189
 #: templates/user/edit.tpl:69
 msgid "info-upload-image"
-msgstr "choose an image to upload or leave empty to keep existing image"
+msgstr "choose an image to upload"
 
 #: templates/domain/edit.tpl:63 templates/entity/edit.tpl:197
 #: templates/user/edit.tpl:77
