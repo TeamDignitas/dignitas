@@ -88,7 +88,7 @@
       </fieldset>
 
       <fieldset class="related-fields mb-5 ml-3">
-        <legend class="row">
+        <legend class="row capitalize-first-word">
           {t}title-change-password{/t}
         </legend>
         <div class="form-group row">
