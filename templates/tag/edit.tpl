@@ -19,12 +19,12 @@
     <form class="form-horizontal mb-5" method="post">
       <input type="hidden" name="id" value="{$t->id}">
 
-      <fieldset class="related-fields mb-5">
-        <div class="form-group row py-1 pr-1">
-          <label for="value" class="col-2 ml-0 mt-2 control-label">
+      <fieldset class="related-fields mb-5 ml-3">
+        <div class="form-group row">
+          <label for="value" class="col-sm-12 col-lg-2 mt-2 px-0 control-label">
             {t}label-name{/t}
           </label>
-          <div class="col-10">
+          <div class="col-sm-12 col-lg-10 px-0">
             <div>
               <input type="text"
                 class="form-control {if isset($errors.value)}is-invalid{/if}"
@@ -36,11 +36,11 @@
           </div>
         </div>
 
-        <div class="form-group row py-1 pr-1">
-          <label for="tooltip" class="col-2 ml-0 mt-2 control-label">
+        <div class="form-group row">
+          <label for="tooltip" class="col-sm-12 col-lg-2 mt-2 px-0 control-label">
             {t}label-details{/t}
           </label>
-          <div class="col-10">
+          <div class="col-sm-12 col-lg-10 px-0">
             <div>
               <input type="text"
                 class="form-control"
@@ -52,11 +52,11 @@
           </div>
         </div>
 
-        <div class="form-group row py-1 pr-1 mb-0">
-          <label for="parent-id" class="col-2 ml-0 mt-2 control-label">
+        <div class="form-group row">
+          <label for="parent-id" class="col-sm-12 col-lg-2 mt-2 px-0 control-label">
             {t}label-parent-tag{/t}
           </label>
-          <div class="col-10">
+          <div class="col-sm-12 col-lg-10 px-0">
             <div>
               <select
                 id="parent-id"
@@ -72,12 +72,12 @@
         </div>
       </fieldset>
 
-      <fieldset class="related-fields mb-5">
-        <div class="form-group row py-1 pr-1">
-          <label for="color" class="col-2 ml-0 mt-2 control-label">
+      <fieldset class="related-fields mb-5 ml-3">
+        <div class="form-group row">
+          <label for="color" class="col-sm-12 col-lg-2 mt-2 px-0 control-label">
             {t}label-text-color{/t}
           </label>
-          <div class="col-10">
+          <div class="col-sm-12 col-lg-10 px-0">
             <div class="input-group colorpicker-component">
               <span class="input-group-prepend input-group-text colorpicker-input-addon">
                 <i></i>
@@ -91,11 +91,11 @@
           </div>
         </div>
 
-        <div class="form-group row py-1 pr-1">
-          <label for="background" class="col-2 ml-0 mt-2 control-label">
+        <div class="form-group row">
+          <label for="background" class="col-sm-12 col-lg-2 mt-2 px-0 control-label">
             {t}label-background-color{/t}
           </label>
-          <div class="col-10">
+          <div class="col-sm-12 col-lg-10 px-0">
             <div class="input-group colorpicker-component">
               <span class="input-group-prepend input-group-text colorpicker-input-addon">
                 <i></i>
@@ -109,11 +109,11 @@
           </div>
         </div>
 
-        <div class="form-group row py-1 pr-1 mb-0">
-          <label for="icon" class="col-2 ml-0 mt-2 control-label">
+        <div class="form-group row">
+          <label for="icon" class="col-sm-12 col-lg-2 mt-2 px-0 control-label">
             {t}label-icon{/t}
           </label>
-          <div class="col-10">
+          <div class="col-sm-12 col-lg-10 px-0">
             <div class="input-group">
               {if $t->icon}
                 <span class="input-group-prepend input-group-text">
@@ -127,7 +127,7 @@
                 value="{$t->icon}">
             </div>
 
-            <div class="checkbox">
+            <div class="checkbox mt-1">
               <label>
                 <input type="checkbox"
                   name="iconOnly"
