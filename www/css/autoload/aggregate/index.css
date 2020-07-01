@@ -7,11 +7,13 @@
   flex-wrap: wrap;
   width: 94%;
   max-width: 1440px;
-  margin: 2rem auto;
+  margin: 0 auto;
 }
 
 .meta-heading {
   font-size: 1rem;
+  display: inline-block;
+  min-width: 190px;
 }
 
 .meta-line {
@@ -63,4 +65,16 @@
 
 .carousel-item {
   min-height: 14rem;
+}
+
+.dark-background {
+  background-color: #232429;
+}
+
+.ivory.meta-heading {
+  color: #F3E6D7;
+}
+
+.ivory.meta-line {
+  border: 1px solid #F3E6D7;
 }
