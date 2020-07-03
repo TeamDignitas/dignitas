@@ -35,6 +35,17 @@ class Smart {
       'js' => [ 'third-party/bootstrap-colorpicker.min.js' ],
       'deps' => [ 'bootstrap'],
     ],
+    'datepicker' => [
+      'css' => [
+        'third-party/bootstrap-datepicker.min.css',
+        'datepicker.css',
+      ],
+      'js' => [
+        'third-party/bootstrap-datepicker.min.js',
+        'third-party/bootstrap-datepicker.ro.min.js',
+      ],
+      'deps' => [ 'bootstrap'],
+    ],
     'flag' => [
       'js' => [ 'flag.js' ],
     ],

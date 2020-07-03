@@ -41,7 +41,7 @@
         <div class="form-group row">
           <label for="field-date-made" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-statement-date{/t}</label>
           <input
-            type="date"
+            type="text"
             name="dateMade"
             id="field-date-made"
             value="{$statement->dateMade}"

@@ -103,7 +103,7 @@ if ($saveButton) {
   ]);
 }
 
-Smart::addResources('imageModal', 'easymde', 'linkEditor');
+Smart::addResources('imageModal', 'datepicker', 'easymde', 'linkEditor');
 Smart::assign('statement', $statement);
 Smart::display('statement/edit.tpl');
 
