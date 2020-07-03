@@ -42,11 +42,10 @@
           <label for="field-date-made" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-statement-date{/t}</label>
           <input
             type="text"
-            name="dateMade"
             id="field-date-made"
-            value="{$statement->dateMade}"
-            class="form-control {if isset($errors.dateMade)}is-invalid{/if} col-sm-12 col-lg-10"
+            class="form-control date-picker {if isset($errors.dateMade)}is-invalid{/if} col-sm-12 col-lg-10"
             required>
+          <input type="hidden" name="dateMade" value="{$statement->dateMade}">
           {include "bits/fieldErrors.tpl" errors=$errors.dateMade|default:null}
         </div>
       </fieldset>

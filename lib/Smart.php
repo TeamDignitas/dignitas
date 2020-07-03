@@ -43,6 +43,7 @@ class Smart {
       'js' => [
         'third-party/bootstrap-datepicker.min.js',
         'third-party/bootstrap-datepicker.ro.min.js',
+        'datepicker.js',
       ],
       'deps' => [ 'bootstrap'],
     ],

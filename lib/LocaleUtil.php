@@ -65,4 +65,14 @@ class LocaleUtil {
     return Config::SELECT2_LOCALES[$locale] ?? null;
   }
 
+  static function getDatePickerLocale() {
+    $locale = self::getCurrent();
+    return Config::DATEPICKER_LOCALES[$locale][0] ?? null;
+  }
+
+  static function getDatePickerFormat() {
+    $locale = self::getCurrent();
+    return Config::DATEPICKER_LOCALES[$locale][1] ?? null;
+  }
+
 }

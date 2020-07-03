@@ -130,8 +130,14 @@ class Config {
     'en_US.utf8' => 'English',
     'ro_RO.utf8' => 'română',
   ];
-  const SELECT2_LOCALES = [ // Also applicable to the datepicker; split them if they diverge.
+  const SELECT2_LOCALES = [
     'ro_RO.utf8' => 'ro',
+  ];
+  const DATEPICKER_LOCALES = [
+    // For each locale, supply an array of (1) the bootstrap-datepicker language
+    // and (2) the date format to use.
+    'en_US.utf8' => [ 'en', 'MM d, yyyy'],
+    'ro_RO.utf8' => [ 'ro', 'd MM yyyy'],
   ];
   const DEFAULT_LOCALE = 'ro_RO.utf8';
 

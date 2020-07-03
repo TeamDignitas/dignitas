@@ -6,15 +6,6 @@ $(function() {
       },
       minimumInputLength: 2,
     });
-
-    var opts = {
-      format: 'yyyy-mm-dd',
-      todayHighlight: true,
-    };
-    if (SELECT2_LOCALE) {
-      opts['language'] = SELECT2_LOCALE;
-    }
-    $('#field-date-made').datepicker(opts);
   }
 
   init();
