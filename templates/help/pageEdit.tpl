@@ -8,25 +8,25 @@
 
     <form method="post">
 
-      <fieldset class="related-fields mb-5">
-        <div class="form-group row py-1 pr-1">
-          <label for="field-title" class="control-label col-2 mt-2">
+      <fieldset class="related-fields mb-5 ml-3">
+        <div class="form-group row">
+          <label for="field-title" class="control-label col-sm-12 col-lg-2 mt-2 pl-0">
             {t}label-title{/t}
           </label>
           <input type="text"
-            class="form-control {if isset($errors.title)}is-invalid{/if} col-10"
+            class="form-control {if isset($errors.title)}is-invalid{/if} col-sm-12 col-lg-10"
             id="field-title"
             name="title"
             value="{$page->title|escape}">
           {include "bits/fieldErrors.tpl" errors=$errors.title|default:null}
         </div>
 
-        <div class="form-group row py-1 pr-1">
-          <label for="field-path" class="control-label col-2 mt-2">
+        <div class="form-group row">
+          <label for="field-path" class="control-label col-sm-12 col-lg-2 mt-2 pl-0">
             {t}label-help-page-path{/t}
           </label>
           <input type="text"
-            class="form-control {if isset($errors.path)}is-invalid{/if} col-10"
+            class="form-control {if isset($errors.path)}is-invalid{/if} col-sm-12 col-lg-10"
             id="field-path"
             name="path"
             value="{$page->path|escape}"
@@ -34,9 +34,9 @@
           {include "bits/fieldErrors.tpl" errors=$errors.path|default:null}
         </div>
 
-        <div class="form-group row py-1 pr-1 mb-0">
-          <label for="field-category-id" class="col-2 mt-2">{t}label-category{/t}</label>
-          <div class="col-10 px-0">
+        <div class="form-group row">
+          <label for="field-category-id" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-category{/t}</label>
+          <div class="col-sm-12 col-lg-10 px-0">
             <select
               name="categoryId"
               id="field-category-id"
@@ -54,10 +54,10 @@
         </div>
       </fieldset>
 
-      <fieldset class="related-fields mb-5">
-        <div class="form-group row py-1 pr-1 mb-0">
-          <label for="field-contents" class="col-2 mt-2">{t}label-contents{/t}</label>
-          <div class="col-10 px-0">
+      <fieldset class="related-fields mb-5 ml-3">
+        <div class="form-group row">
+          <label for="field-contents" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-contents{/t}</label>
+          <div class="col-sm-12 col-lg-10 px-0">
             <textarea
               id="field-contents"
               class="form-control has-unload-warning easy-mde"
