@@ -22,6 +22,46 @@ class Entity extends Proto {
     return Router::link('entity/edit') . '/' . $this->id;
   }
 
+  /**
+   * @param $form This entity's long or short possessive form as dictated by a
+   * relationship's phrase.
+   *
+   * @return An HTML <a> element.
+   */
+  function getPossessiveHyperlink($form) {
+    if (!$form) {
+      // fallback to the regular (nominative) phrase
+      return $this->getHyperlink(RelationType::PHRASE_REGULAR);
+    }
+    if (!preg_match('/(.*)\[(.*)\](.*)/', $form, $matches)) {
+      // return plain text because there is no [hyperlink] pattern
+      return $form;
+    }
+
+    return sprintf('%s<a href="%s">%s</a>%s',
+                   htmlspecialchars($matches[1]),
+                   $this->getViewUrl(),
+                   htmlspecialchars($matches[2]),
+                   htmlspecialchars($matches[3]));
+  }
+
+  /**
+   * @return An HTML <a> element according to the relationship phrase type.
+   */
+  function getHyperlink($phrase = RelationType::PHRASE_REGULAR) {
+    switch ($phrase) {
+      case RelationType::PHRASE_REGULAR:
+        $n = htmlspecialchars($this->name);
+        return sprintf('<a href="%s">%s</a>', $this->getViewUrl(), $n);
+      case RelationType::PHRASE_LONG_POSSESSIVE:
+        return $this->getPossessiveHyperlink($this->longPossessive);
+      case RelationType::PHRASE_SHORT_POSSESSIVE:
+        return $this->getPossessiveHyperlink($this->shortPossessive);
+      case RelationType::PHRASE_NONE:
+        return '';
+    }
+  }
+
   function getEntityType() {
     return EntityType::get_by_id($this->entityTypeId);
   }

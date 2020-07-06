@@ -42,6 +42,8 @@ $entity->enforceEditPrivileges();
 
 if ($saveButton) {
   $entity->name = Request::get('name');
+  $entity->longPossessive = Request::get('longPossessive');
+  $entity->shortPossessive = Request::get('shortPossessive');
   $entity->entityTypeId = Request::get('entityTypeId');
   $entity->profile = Request::get('profile');
   $color = $entity->hasColor() ? Request::get('color') : Entity::DEFAULT_COLOR;

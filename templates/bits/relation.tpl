@@ -5,10 +5,11 @@
 {assign var="ed" value=$r->endDate|ld}
 
 <div class="{$class} {if $r->ended()}text-muted{/if}">
-  {$r->getRelationType()->name|escape}
+  {$rt=$r->getRelationType()}
+  {$rt->name|escape}
 
   {$to=$r->getToEntity()}
-  {include "bits/entityLink.tpl" e=$to}
+  {include "bits/entityLink.tpl" e=$to phrase=$rt->phrase}
 
   {$r->getDateRangeString()}
 
