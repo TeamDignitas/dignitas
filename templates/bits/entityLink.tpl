@@ -1,8 +1,7 @@
+{$phrase=$phrase|default:RelationType::PHRASE_REGULAR}
 {$showStatus=$showStatus|default:false}
 {strip}
-<a href="{Router::link('entity/view')}/{$e->id}">
-  {$e->name|escape}
-</a>
+{$e->getHyperlink($phrase)}
 {if $showStatus}
   {$statusInfo=$e->getStatusInfo()}
   {if $statusInfo}

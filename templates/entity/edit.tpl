@@ -36,6 +36,34 @@
         </div>
 
         <div class="form-group row">
+          <label
+            for="field-long-possessive"
+            class="col-sm-12 col-lg-2 mt-2 pl-0">
+            {t}phrase-long-possessive{/t}
+          </label>
+          <input
+            name="longPossessive"
+            value="{$entity->longPossessive|escape}"
+            id="field-long-possessive"
+            class="form-control col-sm-12 col-lg-10"
+            placeholder="{t}label-optional{/t}">
+        </div>
+
+        <div class="form-group row">
+          <label
+            for="field-short-possessive"
+            class="col-sm-12 col-lg-2 mt-2 pl-0">
+            {t}phrase-short-possessive{/t}
+          </label>
+          <input
+            name="shortPossessive"
+            value="{$entity->shortPossessive|escape}"
+            id="field-short-possessive"
+            class="form-control col-sm-12 col-lg-10"
+            placeholder="{t}label-optional{/t}">
+        </div>
+
+        <div class="form-group row">
           <label class="col-sm-4 col-lg-2 ml-0 mt-2 pl-0">{t}label-alias{/t}</label>
           <div class="col-sm-8 col-lg-10 pl-0 mt-1 mb-2">
             <button id="add-alias" class="btn btn-outline-secondary btn-sm" type="button">
