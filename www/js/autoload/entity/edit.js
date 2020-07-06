@@ -12,8 +12,8 @@ $(function() {
   var stemRelation = null;
 
   function init() {
-    stemAlias = $('#stem-alias').detach().removeAttr('hidden');
-    stemRelation = $('#stem-relation').detach().removeAttr('hidden');
+    stemAlias = $('#stem-alias').detach().removeAttr('hidden id');
+    stemRelation = $('#stem-relation').detach().removeAttr('hidden id');
 
     initSelect2('.to-entity-id', URL_PREFIX + 'ajax/load-entities', TO_ENTITY_ID_OPTIONS);
 
