@@ -8,24 +8,24 @@
 
     <form method="post">
 
-      <fieldset class="related-fields mb-5">
-        <div class="form-group row py-1 pr-1">
-          <label for="field-name" class="control-label col-2 mt-2">
+      <fieldset class="related-fields mb-5 ml-3">
+        <div class="form-group row">
+          <label for="field-name" class="control-label col-sm-12 col-lg-2 mt-2 pl-0">
             {t}label-name{/t}
           </label>
           <input type="text"
-            class="form-control {if isset($errors.name)}is-invalid{/if} col-10"
+            class="form-control {if isset($errors.name)}is-invalid{/if} col-sm-12 col-lg-10"
             id="field-name"
             name="name"
             value="{$cat->name|escape}">
           {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
         </div>
 
-        <div class="form-group row py-1 pr-1 mb-0">
-          <label for="field-path" class="control-label col-2 mt-2">
+        <div class="form-group row">
+          <label for="field-path" class="control-label col-sm-12 col-lg-2 mt-2 pl-0">
             {t}label-help-category-path{/t}
           </label>
-          <div class="col-10 px-0">
+          <div class="col-sm-12 col-lg-10 px-0">
             <input type="text"
               class="form-control {if isset($errors.path)}is-invalid{/if}"
               id="field-path"
