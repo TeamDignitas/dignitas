@@ -58,6 +58,27 @@
       </div>
 
       <div class="form-group">
+        <label for="field-phrase" class="control-label">
+          {t}label-phrase{/t}
+        </label>
+        <select
+          class="form-control"
+          id="field-phrase"
+          name="phrase">
+          {foreach RelationType::getPhrases() as $phrase}
+            <option
+              value="{$phrase}"
+              {if $rt->phrase == $phrase}selected{/if}>
+              {RelationType::phraseName($phrase)}
+            </option>
+          {/foreach}
+        </select>
+        <small class="form-text text-muted">
+          {t}info-relation-type-phrase{/t}
+        </small>
+      </div>
+
+      <div class="form-group">
         <label for="field-weight" class="control-label">
           {t}label-weight{/t}
         </label>

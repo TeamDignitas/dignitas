@@ -28,6 +28,7 @@ if ($saveButton) {
   $rt->fromEntityTypeId = Request::get('fromEntityTypeId');
   $rt->toEntityTypeId = Request::get('toEntityTypeId');
   $rt->weight = floatval(Request::get('weight'));
+  $rt->phrase = Request::get('phrase');
   $rt->symmetric = Request::has('symmetric');
   $rt->membership = Request::has('membership');
   $rt->assignNewRank();
