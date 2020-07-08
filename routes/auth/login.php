@@ -20,6 +20,7 @@ if ($fakeEmail) {
   $user = User::get_by_email($fakeEmail);
   if (!$user) {
     $user = Model::factory('User')->create();
+    $user->setFakeId();
     $user->email = $fakeEmail;
     $user->nickname = explode('@', $fakeEmail)[0];
   }

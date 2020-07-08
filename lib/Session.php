@@ -78,7 +78,10 @@ class Session {
 
   static function setActiveUser() {
     if ($userId = self::get('userId')) {
-      User::setActive($userId);
+      if (!User::setActive($userId)) {
+        // the underlying user is gone, e.g. if the development database was reimported
+        self::unsetVar('userId');
+      }
     } else {
       self::loadUserFromCookie();
     }

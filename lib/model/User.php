@@ -72,9 +72,18 @@ class User extends Proto {
     return self::$active ? self::$active->id : 0;
   }
 
+  /**
+   * @return bool True iff a user with the given ID exists.
+   */
   static function setActive($userId) {
-    UserExt::setField($userId, 'lastSeen', time());
-    self::$active = self::get_by_id($userId);
+    $u = self::get_by_id($userId);
+    if ($u) {
+      UserExt::setField($userId, 'lastSeen', time());
+      self::$active = $u;
+      return true;
+    } else {
+      return false;
+    }
   }
 
   function getLastSeen() {
@@ -150,6 +159,22 @@ class User extends Proto {
       ->offset(($page - 1) * self::ACTION_LOG_PAGE_SIZE)
       ->limit(self::ACTION_LOG_PAGE_SIZE)
       ->find_many();
+  }
+
+  /**
+   * Chooses a very high ID for a fake user. Using IDs outside the normal
+   * space helps avoid ID conflicts during database imports, which could cause
+   * confusing behavior. For example, if a developer uses a fake login with an
+   * ID of 7, that value may correspond to a real account in the next database
+   * import.
+   */
+  function setFakeId() {
+    $u = Model::factory('User')
+      ->order_by_desc('id')
+      ->find_one();             // user with highest existing ID (or false)
+    $id = 1 + ($u->id ?? 0);    // next available ID
+    $id = max($id, 1000000);    // ensure it is in the high range
+    $this->id = $id;
   }
 
   // Checks if the user can claim this email when registering or editing their profile.
