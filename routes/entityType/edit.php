@@ -28,10 +28,14 @@ if ($saveButton) {
   $et->loyaltySource = Request::has('loyaltySource');
   $et->loyaltySink = Request::has('loyaltySink');
   $et->hasColor = Request::has('hasColor');
+  $et->isDefault = Request::has('isDefault');
 
   $errors = validate($et);
   if (empty($errors)) {
     $et->save();
+    if ($et->isDefault) {
+      EntityType::clearOldDefault($et->id);
+    }
     FlashMessage::add(_('info-entity-type-saved'), 'success');
     Util::redirect(Router::link('entityType/list'));
   } else {

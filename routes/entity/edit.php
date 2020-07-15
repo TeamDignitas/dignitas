@@ -10,6 +10,7 @@ if ($id) {
   $entity = Entity::get_by_id($id);
 } else {
   $entity = Model::factory('Entity')->create();
+  $entity->entityTypeId = EntityType::getDefaultId();
   $entity->userId = User::getActiveId();
 }
 

@@ -55,7 +55,7 @@
           {include "bits/fieldErrors.tpl" errors=$errors.loyaltySink|default:null}
         </div>
 
-        <div class="form-group form-check row py-1 pr-1 mb-0">
+        <div class="form-group form-check row">
           <label class="form-check-label col-12">
             <input
               type="checkbox"
@@ -67,6 +67,21 @@
           </label>
           <small class="form-text text-muted">
             {t}info-has-color{/t}
+          </small>
+        </div>
+
+        <div class="form-group form-check row">
+          <label class="form-check-label col-12">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              name="isDefault"
+              {if $et->isDefault}checked{/if}
+              value="1">
+            {t}label-is-default{/t}
+          </label>
+          <small class="form-text text-muted">
+            {t}info-is-default{/t}
           </small>
         </div>
       </fieldset>

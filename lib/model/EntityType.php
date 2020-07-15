@@ -10,6 +10,15 @@ class EntityType extends Proto {
     return Router::link('entityType/edit') . '/' . $this->id;
   }
 
+  /**
+   * @return int The ID of the EntityType having isDefault = true, or null if
+   * no such EntityType exists.
+   */
+  static function getDefaultId() {
+    $et = self::get_by_isDefault(true);
+    return $et->id ?? null;
+  }
+
   static function loadAll() {
     return Model::factory('EntityType')
       ->order_by_asc('name')
@@ -24,6 +33,20 @@ class EntityType extends Proto {
     $outgoing = RelationType::count_by_fromEntityTypeId($this->id);
     $incoming = RelationType::count_by_toEntityTypeId($this->id);
     return !$entities && !$outgoing && !$incoming;
+  }
+
+  /**
+   * Unsets the isDefault bit for all entity types except $exceptId.
+   */
+  static function clearOldDefault($exceptId) {
+    $others = Model::factory('EntityType')
+      ->where('isDefault', true)
+      ->where_not_equal('id', $exceptId)
+      ->find_many();
+    foreach ($others  as $et) {
+      $et->isDefault = false;
+      $et->save();
+    }
   }
 
 }

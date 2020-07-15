@@ -25,7 +25,12 @@
         <tbody>
           {foreach $entityTypes as $et}
             <tr>
-              <td class="align-middle">{$et->name|escape}</td>
+              <td class="align-middle">
+                {$et->name|escape}
+                {if $et->isDefault}
+                  ({t}label-is-default{/t})
+                {/if}
+              </td>
               <td class="align-middle">
                 {if $et->loyaltySource}
                   <i class="icon icon-ok"></i>
