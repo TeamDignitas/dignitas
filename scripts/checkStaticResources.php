@@ -30,8 +30,8 @@ foreach ($srs as $sr) {
   if (isset($files[$path])) {
     unset($files[$path]);
   } else {
-    Log::warning('StaticResource #%d has no underlying file [%s].',
-                 $sr->id, $path);
+    printf('StaticResource #%d has no underlying file [%s].',
+           $sr->id, $path);
   }
 }
 
@@ -41,6 +41,6 @@ foreach ($files as $file => $ignored) {
     Log::warning('Deleting orphan file [%s].', $file);
     unlink($file);
   } else {
-    Log::warning('File [%s] is an orphan, use -f to delete.', $file);
+    printf('File [%s] is an orphan, use -f to delete.', $file);
   }
 }
