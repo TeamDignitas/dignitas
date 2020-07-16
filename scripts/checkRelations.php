@@ -44,7 +44,9 @@ foreach ($relations as $r) {
 
 }
 
-print "{$numMismatches} symmetry mismatches found.\n";
+if ($numMismatches) {
+  print "{$numMismatches} symmetry mismatches found.\n";
+}
 
 /**
  * Go through entity types and check that loyalty sinks also have colors.
