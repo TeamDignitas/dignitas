@@ -9,40 +9,40 @@
 
 <div class="row statement-title-sources">
 
-  <div class="col-md-12 pl-0">
-    <h1 class="statement-title py-4">
-      {$statement->summary|escape}
-      {if $statusInfo}
-        [{$statusInfo['status']}]
-      {/if}
-      {if $permalink}
-        <a
-          href="{$statement->getViewUrl()}"
-          title="{t}link-visit-statement-page{/t}">
-          <i class="icon icon-link"></i>
-        </a>
-      {/if}
-    </h1>
+  <h1 class="statement-title py-4">
+    {$statement->summary|escape}
+    {if $statusInfo}
+      [{$statusInfo['status']}]
+    {/if}
+    {if $permalink}
+      <a
+        href="{$statement->getViewUrl()}"
+        title="{t}link-visit-statement-page{/t}">
+        <i class="icon icon-link"></i>
+      </a>
+    {/if}
+  </h1>
 
-    <h6 class="col-md-12 statement-authors-date px-0">
+  <div class="col-12 statement-authors-date px-0 mb-1">
+    <span class="mr-5">
       {include "bits/entityLink.tpl" e=$statement->getEntity()},
       {$statement->dateMade|ld}
+    </span>
 
-      {if count($statement->getLinks())}
-        <span class="text-muted mb-3 pl-3 sources">
-          {t}statement-links{/t}:
-          <ul class="list-inline list-inline-bullet d-inline">
-            {foreach $statement->getLinks() as $l}
-              <li class="list-inline-item">
-                {include "bits/link.tpl"}
-              </li>
-            {/foreach}
-          </ul>
-        </span>
-      {/if}
-    </h6>
-
+    {if count($statement->getLinks())}
+      <span class="text-muted mb-3 sources">
+        {t}statement-links{/t}:
+        <ul class="list-inline list-inline-bullet d-inline">
+          {foreach $statement->getLinks() as $l}
+            <li class="list-inline-item">
+              {include "bits/link.tpl"}
+            </li>
+          {/foreach}
+        </ul>
+      </span>
+    {/if}
   </div>
+
   <hr class="w-100 title-divider mt-0"/>
 </div>
 
