@@ -24,13 +24,13 @@
         {include "bits/fieldErrors.tpl" errors=$errors.contents|default:null}
       </div>
 
-      <div>
-        <button name="saveButton" type="submit" class="btn btn-sm btn-outline-primary">
+      <div class="mt-4 row">
+        <button name="saveButton" type="submit" class="btn btn-sm btn-outline-primary col-sm-3 col-lg-2 mr-2 mb-2">
           <i class="icon icon-floppy"></i>
           {t}link-save{/t}
         </button>
 
-        <a href="{Router::link('cannedResponse/list')}" class="btn btn-sm btn-outline-secondary">
+        <a href="{Router::link('cannedResponse/list')}" class="btn btn-sm btn-outline-secondary col-sm-3 col-lg-2 mr-2 mb-2">
           <i class="icon icon-cancel"></i>
           {t}link-cancel{/t}
         </a>
@@ -39,7 +39,7 @@
           <button
             name="deleteButton"
             type="submit"
-            class="btn btn-sm btn-outline-danger float-right"
+            class="btn btn-sm btn-outline-danger col-sm-3 col-lg-2 mr-2 mb-2"
             data-confirm="{t}info-confirm-delete-canned-response{/t}">
             <i class="icon icon-trash"></i>
             {t}link-delete{/t}
