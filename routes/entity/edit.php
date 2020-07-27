@@ -19,6 +19,7 @@ if ($deleteButton) {
     FlashMessage::add(_('info-cannot-delete-entity'));
   } else {
     $entity->markDeleted(Ct::REASON_BY_USER);
+    $entity->subscribe();
     Action::create(Action::TYPE_DELETE, $entity);
     FlashMessage::add(_('info-confirm-entity-deleted.'), 'success');
   }
@@ -33,6 +34,7 @@ if ($reopenButton) {
     $entity->duplicateId = 0;
 
     $entity->reopen();
+    $entity->subscribe();
     Action::create(Action::TYPE_REOPEN, $entity);
     FlashMessage::add(_('info-confirm-entity-reopened.'), 'success');
   }
@@ -80,6 +82,7 @@ if ($saveButton) {
 
     $entity = $entity->maybeClone();
     $entity->saveWithFile($fileData, $deleteImage);
+    $entity->subscribe();
     Action::createUpdateAction($entity, $originalId);
 
     Relation::updateDependants($relations, $entity, 'fromEntityId', 'rank');

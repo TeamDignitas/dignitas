@@ -150,6 +150,19 @@ class Answer extends Proto {
     $this->save($other->modUserId);
   }
 
+  /**
+   * Subscribes the author of the most recent change to this answer and its
+   * statement. Call after saving the answer.
+   */
+  function subscribe() {
+    if ($this->status != Ct::STATUS_PENDING_EDIT) {
+      Subscription::subscribe($this, $this->modUserId);
+      // subscribe to statement changes, but not votes
+      $s = $this->getStatement();
+      Subscription::subscribe($s, $this->modUserId, Subscription::TYPE_CHANGES);
+    }
+  }
+
   function markDeletedEffects() {
     $this->proof = 0;
   }

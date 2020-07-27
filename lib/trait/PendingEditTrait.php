@@ -174,6 +174,7 @@ trait PendingEditTrait {
     // 3
     $original->pendingEditId = $clone->id;
     $original->save();
+    $original->subscribe();
 
     // 4
     Review::ensure($original, Ct::REASON_PENDING_EDIT);
