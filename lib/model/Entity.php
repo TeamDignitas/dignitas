@@ -334,6 +334,16 @@ class Entity extends Proto {
     $this->copyUploadedFileFrom($other);
   }
 
+  /**
+   * Subscribes the author of the most recent change to this entity. Call
+   * after saving the entity.
+   */
+  function subscribe() {
+    if ($this->status != Ct::STATUS_PENDING_EDIT) {
+      Subscription::subscribe($this, $this->modUserId);
+    }
+  }
+
   function delete() {
     if ($this->status != Ct::STATUS_PENDING_EDIT) {
       throw new Exception(

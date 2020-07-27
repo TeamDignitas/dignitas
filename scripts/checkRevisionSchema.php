@@ -9,7 +9,9 @@ require_once __DIR__ . '/../lib/Core.php';
 // these tables, and all those ending in _ext, are not expected to have revisions
 const SKIPPED_TABLES = [
   'action',
+  'notification',
   'loyalty',
+  'subscription',
 ];
 
 const EXPECTED_PROPS = [

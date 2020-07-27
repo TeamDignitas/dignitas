@@ -25,6 +25,7 @@ if ($deleteButton) {
     FlashMessage::add(_('info-cannot-delete-answer'));
   } else {
     $answer->markDeleted(Ct::REASON_BY_USER);
+    $answer->subscribe();
     Action::create(Action::TYPE_DELETE, $answer);
     FlashMessage::add(_('info-confirm-answer-deleted'), 'success');
   }
@@ -36,6 +37,7 @@ if ($reopenButton) {
     FlashMessage::add(_('info-cannot-reopen-answer'));
   } else {
     $answer->reopen();
+    $answer->subscribe();
     Action::create(Action::TYPE_REOPEN, $answer);
     FlashMessage::add(_('info-confirm-answer-reopened'), 'success');
   }
@@ -58,6 +60,7 @@ if ($saveButton) {
     $originalId = $answer->id;
     $answer = $answer->maybeClone();
     $answer->save();
+    $answer->subscribe();
     Action::createUpdateAction($answer, $originalId);
 
     if (!$originalId) {
