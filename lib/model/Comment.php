@@ -128,6 +128,19 @@ class Comment extends Proto {
   }
 
   /**
+   * Subscribes the author to this comment and its statement/answer. Call
+   * after saving the comment.
+   */
+  function subscribe() {
+    if ($this->status != Ct::STATUS_PENDING_EDIT) {
+      Subscription::subscribe($this);
+      // subscribe to object changes, but not votes
+      $obj = $this->getObject();
+      Subscription::subscribe($obj, null, Subscription::TYPE_CHANGES);
+    }
+  }
+
+  /**
    * Checks whether the active user may delete this comment.
    *
    * @return boolean

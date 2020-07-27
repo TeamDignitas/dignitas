@@ -232,6 +232,16 @@ class Statement extends Proto {
     // a pending edit statement should not have answers, reviews or votes
   }
 
+  /**
+   * Subscribes the author of the most recent change to this statement. Call
+   * after saving the statement.
+   */
+  function subscribe() {
+    if ($this->status != Ct::STATUS_PENDING_EDIT) {
+      Subscription::subscribe($this, $this->modUserId);
+    }
+  }
+
   function delete() {
     if ($this->status != Ct::STATUS_PENDING_EDIT) {
       throw new Exception('Statements should never be deleted at the DB level.');
