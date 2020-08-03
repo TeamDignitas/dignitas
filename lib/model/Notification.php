@@ -14,8 +14,19 @@ class Notification extends Precursor {
     return $not;
   }
 
-  static function notify($obj, $type) {
+  /**
+   * Creates Notifications for all users who subscribed to changes to $obj of
+   * type $type. When a $delegate is passed, stores that object in the
+   * Notification instead of $obj.
+   *
+   * Rationale: When issuing notifications of a new answer to a statement, we
+   * should link to the answer, not to the statement. Linking to the statement
+   * would be useless when there are 20 answers already.
+   */
+  static function notify($obj, $type, $delegate = null) {
     $objType = $obj->getObjectType();
+    $target = $delegate ?? $obj;
+    $targetType = $target->getObjectType();
 
     // load active subscriptions
     $subs = Model::factory('Subscription')
@@ -33,10 +44,10 @@ class Notification extends Precursor {
 
       // cluster unseen notifications of the same type
       $existing = Notification::get_by_userId_objectType_objectId_type_seen(
-        $userId, $objType, $obj->id, $type, false);
+        $userId, $targetType, $target->id, $type, false);
 
       if (!$existing) {
-        $not = self::create($userId, $obj, $type);
+        $not = self::create($userId, $target, $type);
       }
     }
   }

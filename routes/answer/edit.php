@@ -26,6 +26,7 @@ if ($deleteButton) {
   } else {
     $answer->markDeleted(Ct::REASON_BY_USER);
     $answer->subscribe();
+    $answer->notify();
     Action::create(Action::TYPE_DELETE, $answer);
     FlashMessage::add(_('info-confirm-answer-deleted'), 'success');
   }
@@ -38,6 +39,7 @@ if ($reopenButton) {
   } else {
     $answer->reopen();
     $answer->subscribe();
+    $answer->notify();
     Action::create(Action::TYPE_REOPEN, $answer);
     FlashMessage::add(_('info-confirm-answer-reopened'), 'success');
   }
@@ -61,6 +63,7 @@ if ($saveButton) {
     $answer = $answer->maybeClone();
     $answer->save();
     $answer->subscribe();
+    $answer->notify();
     Action::createUpdateAction($answer, $originalId);
 
     if (!$originalId) {
