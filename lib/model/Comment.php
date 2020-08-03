@@ -138,12 +138,16 @@ class Comment extends Proto {
   }
 
   /**
-   * Comments have no edits / pending edits, so this must be a new comment.
-   * Trigger the parent's new comment notifications.
+   * Comments have no edits / pending edits, so this must be a new comment or
+   * a vote. Also trigger the parent's new comment notifications.
    */
-  function notify() {
-    $obj = $this->getObject();
-    $obj->notify(Subscription::TYPE_NEW_COMMENT, $this);
+  function notify(int $type = Subscription::TYPE_CHANGES) {
+    Notification::notify($this, $type);
+
+    if ($type == Subscription::TYPE_CHANGES) {
+      $obj = $this->getObject();
+      $obj->notify(Subscription::TYPE_NEW_COMMENT, $this);
+    }
   }
 
   /**
