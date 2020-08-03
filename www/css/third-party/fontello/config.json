@@ -287,6 +287,12 @@
       "css": "industry",
       "code": 62069,
       "src": "fontawesome"
+    },
+    {
+      "uid": "cd21cbfb28ad4d903cede582157f65dc",
+      "css": "bell",
+      "code": 59418,
+      "src": "fontawesome"
     }
   ]
 }

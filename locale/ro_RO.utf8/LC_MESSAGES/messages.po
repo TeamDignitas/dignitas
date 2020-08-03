@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-07-15 15:45+0300\n"
-"PO-Revision-Date: 2020-07-15 15:47+0300\n"
+"POT-Creation-Date: 2020-08-03 17:01+0300\n"
+"PO-Revision-Date: 2020-08-03 17:02+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -156,7 +156,7 @@ msgstr "mi-am uitat parola"
 msgid "label-remember-me"
 msgstr "ține-mă minte un an"
 
-#: templates/auth/login.tpl:71 templates/bits/navmenu.tpl:156
+#: templates/auth/login.tpl:71 templates/bits/navmenu.tpl:155
 msgid "link-log-in"
 msgstr "autentificare"
 
@@ -373,12 +373,12 @@ msgstr "membri"
 msgid "title-test-login"
 msgstr "autentificare ca utilizator de test"
 
-#: templates/bits/fakeLogin.tpl:33 templates/bits/navmenu.tpl:121
+#: templates/bits/fakeLogin.tpl:33 templates/bits/navmenu.tpl:119
 #: templates/user/view.tpl:30
 msgid "label-reputation"
 msgstr "reputație"
 
-#: templates/bits/fakeLogin.tpl:54 templates/bits/navmenu.tpl:133
+#: templates/bits/fakeLogin.tpl:54 templates/bits/navmenu.tpl:131
 #: templates/user/view.tpl:18
 msgid "label-moderator"
 msgstr "moderator"
@@ -556,34 +556,38 @@ msgstr "Cum calculăm loialitatea?"
 msgid "info-markdown-help"
 msgstr "ajutor pentru Markdown"
 
-#: templates/bits/navmenu.tpl:10 templates/bits/navmenu.tpl:40
+#: templates/bits/navmenu.tpl:10 templates/bits/navmenu.tpl:30
 msgid "label-toggle-menu"
 msgstr "arată/ascunde meniul"
 
-#: templates/bits/navmenu.tpl:51 templates/bits/navmenu.tpl:53
+#: templates/bits/navmenu.tpl:41 templates/bits/navmenu.tpl:43
 #: templates/help/categoryView.tpl:3 templates/help/categoryView.tpl:14
 #: templates/help/index.tpl:3 templates/help/index.tpl:7
 #: templates/help/pageView.tpl:3 templates/help/pageView.tpl:14
 msgid "help-center"
 msgstr "ajutor"
 
-#: templates/bits/navmenu.tpl:104
+#: templates/bits/navmenu.tpl:95
 msgid "link-my-profile"
 msgstr "profilul meu"
 
-#: templates/bits/navmenu.tpl:108
+#: templates/bits/navmenu.tpl:99
+msgid "link-notifications"
+msgstr "notificări"
+
+#: templates/bits/navmenu.tpl:106
 msgid "link-dashboard"
 msgstr "panou de control"
 
-#: templates/bits/navmenu.tpl:114
+#: templates/bits/navmenu.tpl:112
 msgid "info-reputation-manual"
 msgstr "schimbă reputația manual (va reîncărca pagina)"
 
-#: templates/bits/navmenu.tpl:139
+#: templates/bits/navmenu.tpl:137
 msgid "link-change"
 msgstr "schimbă"
 
-#: templates/bits/navmenu.tpl:149
+#: templates/bits/navmenu.tpl:147
 msgid "link-log-out"
 msgstr "ieșire"
 
@@ -643,11 +647,11 @@ msgstr "acceptă/șterge răspunsul ca demonstrație"
 msgid "label-answer-is-proof"
 msgstr "acest răspuns servește ca demonstrație pentru verdictul afirmației"
 
-#: templates/bits/statement.tpl:21
+#: templates/bits/statement.tpl:20
 msgid "link-visit-statement-page"
 msgstr "mergi la pagina afirmației"
 
-#: templates/bits/statement.tpl:33
+#: templates/bits/statement.tpl:34
 msgid "statement-links"
 msgstr "surse"
 
@@ -991,17 +995,17 @@ msgstr "Confirmați ștergerea categoriei?"
 msgid "title-help-categories"
 msgstr "categorii de ajutor"
 
-#: templates/help/index.tpl:25
-msgid "link-reorder-help-categories"
-msgstr "reordonează categoriile"
-
-#: templates/help/index.tpl:30
+#: templates/help/index.tpl:13
 msgid "link-add-category"
 msgstr "adaugă o categorie"
 
-#: templates/help/index.tpl:36
+#: templates/help/index.tpl:19
 msgid "link-add-help-page"
 msgstr "adaugă o pagină"
+
+#: templates/help/index.tpl:40
+msgid "link-reorder-help-categories"
+msgstr "reordonează categoriile"
 
 #: templates/help/pageEdit.tpl:3 templates/help/pageEdit.tpl:7
 msgid "title-edit-help-page"
@@ -2236,32 +2240,32 @@ msgstr "Răspunsul căutat nu există."
 msgid "info-cannot-delete-answer"
 msgstr "Nu puteți șterge acest răspuns."
 
-#: routes/answer/edit.php:29
+#: routes/answer/edit.php:31
 msgid "info-confirm-answer-deleted"
 msgstr "Am șters răspunsul."
 
-#: routes/answer/edit.php:36
+#: routes/answer/edit.php:38
 msgid "info-cannot-reopen-answer"
 msgstr "Nu puteți redeschide acest răspuns."
 
-#: routes/answer/edit.php:40
+#: routes/answer/edit.php:44
 msgid "info-confirm-answer-reopened"
 msgstr "Am redeschis răspunsul."
 
-#: routes/answer/edit.php:70 routes/entity/edit.php:96
-#: routes/statement/edit.php:82
+#: routes/answer/edit.php:76 routes/entity/edit.php:102
+#: routes/statement/edit.php:88
 msgid "info-changes-queued"
 msgstr "Modificările dumneavoastră au fost adăugate la coada de evaluare."
 
-#: routes/answer/edit.php:73
+#: routes/answer/edit.php:79
 msgid "info-answer-updated"
 msgstr "Am actualizat răspunsul."
 
-#: routes/answer/edit.php:73
+#: routes/answer/edit.php:79
 msgid "info-answer-posted"
 msgstr "Am publicat răspunsul."
 
-#: routes/answer/edit.php:106
+#: routes/answer/edit.php:112
 msgid "info-empty-answer"
 msgstr "Nu puteți publica un răspuns gol."
 
@@ -2403,7 +2407,7 @@ msgstr "Vă rugăm să salvați domeniul înainte de a-l clona."
 msgid "info-domain-saved"
 msgstr "Am salvat domeniul."
 
-#: routes/domain/edit.php:79 routes/entity/edit.php:140
+#: routes/domain/edit.php:79 routes/entity/edit.php:146
 #: routes/entityType/edit.php:57 routes/help/categoryEdit.php:67
 #: routes/relationType/edit.php:58 routes/staticResource/edit.php:49
 #: routes/tag/edit.php:90
@@ -2422,46 +2426,46 @@ msgstr "Vă rugăm să introduceți o valoare vizibilă."
 msgid "info-cannot-delete-entity"
 msgstr "Aveți o reputație insuficientă pentru a șterge autorul."
 
-#: routes/entity/edit.php:23
+#: routes/entity/edit.php:25
 msgid "info-confirm-entity-deleted."
 msgstr "Am șters autorul."
 
-#: routes/entity/edit.php:30
+#: routes/entity/edit.php:32
 msgid "info-cannot-reopen-entity"
 msgstr "Nu puteți redeschide acest autor."
 
-#: routes/entity/edit.php:37
+#: routes/entity/edit.php:41
 msgid "info-confirm-entity-reopened."
 msgstr "Am redeschis autorul."
 
-#: routes/entity/edit.php:92
+#: routes/entity/edit.php:98
 msgid "info-entity-added"
 msgstr "Am adăugat autorul."
 
-#: routes/entity/edit.php:99
+#: routes/entity/edit.php:105
 msgid "info-entity-updated"
 msgstr "Am salvat autorul."
 
-#: routes/entity/edit.php:104 routes/statement/edit.php:89
+#: routes/entity/edit.php:110 routes/statement/edit.php:95
 msgid "info-validation-error"
 msgstr "Formularul conține erori. Vă rugăm să le reparați mai jos."
 
-#: routes/entity/edit.php:144
+#: routes/entity/edit.php:150
 msgid "info-incorrect-entity-type"
 msgstr "Tip de autor incorect."
 
-#: routes/entity/edit.php:149
+#: routes/entity/edit.php:155
 #, php-format
 msgid "info-entity-profile-length-limit-%d"
 msgstr "Profilul autorului poate avea maximum %d de caractere."
 
-#: routes/entity/edit.php:171
+#: routes/entity/edit.php:177
 msgid "info-entity-type-change-invalidates-incoming-relations"
 msgstr ""
 "Nu pot schimba tipul acestui autor deoarece relațiile altor autori cu acesta "
 "ar deveni incorecte."
 
-#: routes/entity/edit.php:183
+#: routes/entity/edit.php:189
 msgid "info-invalid-entity-links"
 msgstr "Unele dintre legături sînt incorecte."
 
@@ -2664,51 +2668,51 @@ msgstr ""
 msgid "info-cannot-delete-statement"
 msgstr "Nu puteți șterge acest răspuns."
 
-#: routes/statement/edit.php:27
+#: routes/statement/edit.php:29
 msgid "info-confirm-statement-deleted"
 msgstr "Am șters afirmația."
 
-#: routes/statement/edit.php:33
+#: routes/statement/edit.php:35
 msgid "info-cannot-reopen-statement"
 msgstr "Nu puteți redeschide această afirmație."
 
-#: routes/statement/edit.php:40
+#: routes/statement/edit.php:44
 msgid "info-confirm-statement-reopened."
 msgstr "Am redeschis afirmația."
 
-#: routes/statement/edit.php:78
+#: routes/statement/edit.php:84
 msgid "info-statement-added"
 msgstr "Am adăugat afirmația."
 
-#: routes/statement/edit.php:84
+#: routes/statement/edit.php:90
 msgid "info-statement-updated"
 msgstr "Am actualizat afirmația."
 
-#: routes/statement/edit.php:116
+#: routes/statement/edit.php:122
 msgid "info-must-enter-statement-entity"
 msgstr "Vă rugăm să introduceți un autor."
 
-#: routes/statement/edit.php:120
+#: routes/statement/edit.php:126
 msgid "info-must-enter-statement-summary"
 msgstr "Vă rugăm să introduceți sumarul afirmației."
 
-#: routes/statement/edit.php:124
+#: routes/statement/edit.php:130
 msgid "info-must-enter-statement-context"
 msgstr "Vă rugăm să introduceți contextul afirmației."
 
-#: routes/statement/edit.php:128
+#: routes/statement/edit.php:134
 msgid "info-must-enter-statement-goal"
 msgstr "Vă rugăm să introduceți scopul afirmației."
 
-#: routes/statement/edit.php:132
+#: routes/statement/edit.php:138
 msgid "info-must-enter-statement-date"
 msgstr "Vă rugăm să introduceți data afirmației."
 
-#: routes/statement/edit.php:134
+#: routes/statement/edit.php:140
 msgid "info-date-not-future"
 msgstr "Data nu poate fi în viitor."
 
-#: routes/statement/edit.php:144
+#: routes/statement/edit.php:150
 msgid "info-invalid-statement-links"
 msgstr "Unele dintre surse sînt incorecte."
 
