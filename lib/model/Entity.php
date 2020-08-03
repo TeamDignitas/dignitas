@@ -340,7 +340,8 @@ class Entity extends Proto {
    */
   function subscribe() {
     if ($this->status != Ct::STATUS_PENDING_EDIT) {
-      Subscription::subscribe($this, $this->modUserId);
+      // entities don't have votes, answers or comments, so only subscribe to changes
+      Subscription::subscribe($this, $this->modUserId, Subscription::TYPE_CHANGES);
     }
   }
 
