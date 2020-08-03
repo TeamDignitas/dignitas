@@ -134,10 +134,16 @@ class Comment extends Proto {
   function subscribe() {
     if ($this->status != Ct::STATUS_PENDING_EDIT) {
       Subscription::subscribe($this);
-      // subscribe to object changes, but not votes
-      $obj = $this->getObject();
-      Subscription::subscribe($obj, null, Subscription::TYPE_CHANGES);
     }
+  }
+
+  /**
+   * Comments have no edits / pending edits, so this must be a new comment.
+   * Trigger the parent's new comment notifications.
+   */
+  function notify() {
+    $obj = $this->getObject();
+    $obj->notify(Subscription::TYPE_NEW_COMMENT, $this);
   }
 
   /**
