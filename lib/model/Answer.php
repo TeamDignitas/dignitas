@@ -157,9 +157,20 @@ class Answer extends Proto {
   function subscribe() {
     if ($this->status != Ct::STATUS_PENDING_EDIT) {
       Subscription::subscribe($this, $this->modUserId);
-      // subscribe to statement changes, but not votes
-      $s = $this->getStatement();
-      Subscription::subscribe($s, $this->modUserId, Subscription::TYPE_CHANGES);
+    }
+  }
+
+  function notify(int $type = Subscription::TYPE_CHANGES) {
+    if ($this->status != Ct::STATUS_PENDING_EDIT) {
+      Notification::notify($this, $type);
+
+      // if this is a new answer...
+      if (($type == Subscription::TYPE_CHANGES) &&
+          !$this->hasRevisions()) {
+        // trigger the statement's new answer notifications
+        $s = $this->getStatement();
+        $s->notify(Subscription::TYPE_NEW_ANSWER, $this);
+      }
     }
   }
 
