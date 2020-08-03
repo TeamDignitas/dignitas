@@ -242,6 +242,12 @@ class Statement extends Proto {
     }
   }
 
+  function notify(int $type = Subscription::TYPE_CHANGES) {
+    if ($this->status != Ct::STATUS_PENDING_EDIT) {
+      Notification::notify($this, $type);
+    }
+  }
+
   function delete() {
     if ($this->status != Ct::STATUS_PENDING_EDIT) {
       throw new Exception('Statements should never be deleted at the DB level.');

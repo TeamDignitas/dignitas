@@ -24,6 +24,7 @@ if ($deleteButton) {
   }
   $statement->markDeleted(Ct::REASON_BY_USER);
   $statement->subscribe();
+  $statement->notify();
   Action::create(Action::TYPE_DELETE, $statement);
   FlashMessage::add(_('info-confirm-statement-deleted'), 'success');
   Util::redirectToHome();
@@ -38,6 +39,7 @@ if ($reopenButton) {
 
     $statement->reopen();
     $statement->subscribe();
+    $statement->notify();
     Action::create(Action::TYPE_REOPEN, $statement);
     FlashMessage::add(_('info-confirm-statement-reopened.'), 'success');
   }
@@ -68,6 +70,7 @@ if ($saveButton) {
     $statement = $statement->maybeClone();
     $statement->save();
     $statement->subscribe();
+    $statement->notify();
     Action::createUpdateAction($statement, $originalId);
 
     if (!$originalId) {
