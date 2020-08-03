@@ -346,6 +346,10 @@ class User extends Proto {
     }
   }
 
+  function countNotifications() {
+    return Notification::count_by_userId_seen($this->id, false);
+  }
+
   function __toString() {
     return $this->nickname;
   }
