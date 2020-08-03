@@ -25,6 +25,7 @@ try {
 
   $c->save();
   $c->subscribe();
+  $c->notify();
   Action::create(Action::TYPE_CREATE, $c);
 
   print $c->id;

@@ -163,9 +163,9 @@ class Answer extends Proto {
     }
   }
 
-  function notify(int $type = Subscription::TYPE_CHANGES) {
+  function notify(int $type = Subscription::TYPE_CHANGES, $delegate = null) {
     if ($this->status != Ct::STATUS_PENDING_EDIT) {
-      Notification::notify($this, $type);
+      Notification::notify($this, $type, $delegate);
 
       // if this is a new answer...
       if (($type == Subscription::TYPE_CHANGES) &&
