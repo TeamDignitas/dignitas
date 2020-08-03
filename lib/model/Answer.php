@@ -156,7 +156,10 @@ class Answer extends Proto {
    */
   function subscribe() {
     if ($this->status != Ct::STATUS_PENDING_EDIT) {
-      Subscription::subscribe($this, $this->modUserId);
+      $mask = ($this->modUserId == $this->userId)
+        ? Subscription::TYPE_ALL
+        : Subscription::TYPE_CHANGES;
+      Subscription::subscribe($this, $this->modUserId, $mask);
     }
   }
 
