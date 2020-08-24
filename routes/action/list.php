@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Display page #p (1-based) of the user's action log.
+ * Display page #p (1-based) of the user's action log as JSON.
  *
  * For illegal operations, we return an error code of 404 and print the
  * JSON-encoded error message.
