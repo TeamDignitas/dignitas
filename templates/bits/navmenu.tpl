@@ -94,7 +94,7 @@
               <i class="icon icon-user"></i>
               {t}link-my-profile{/t}
             </a>
-            <a class="dropdown-item text-light py-2" href="{Router::link('notification/list')}">
+            <a class="dropdown-item text-light py-2" href="{Router::link('notification/view')}">
               <i class="icon icon-bell"></i>
               {t}link-notifications{/t}
               {if $notCount}

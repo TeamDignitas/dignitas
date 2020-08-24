@@ -19,6 +19,8 @@
         {if $target}
           {if $target->getObjectType() == Proto::TYPE_STATEMENT}
             {$text=$target->summary}
+          {elseif $target->getObjectType() == Proto::TYPE_ENTITY}
+            {$text=$target->name}
           {else}
             {$text=$target->contents}
           {/if}

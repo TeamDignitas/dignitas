@@ -28,3 +28,19 @@ create table notification (
   key (userId),
   key (createDate)
 );
+
+insert into subscription
+  select null, userId, 1, id, 1, 15, unix_timestamp()
+  from statement;
+
+insert into subscription
+  select null, userId, 2, id, 1, 15, unix_timestamp()
+  from answer;
+
+insert into subscription
+  select null, userId, 4, id, 1, 1, unix_timestamp()
+  from entity;
+
+insert into subscription
+  select null, userId, 6, id, 1, 15, unix_timestamp()
+  from comment;
