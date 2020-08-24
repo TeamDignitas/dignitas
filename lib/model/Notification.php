@@ -3,6 +3,8 @@
 class Notification extends Precursor {
   use ObjectTypeIdTrait;
 
+  const PAGE_SIZE = 50;
+
   static function create(int $userId, Object $obj, int $type) {
     $not = Model::factory('Notification')->create();
     $not->userId = $userId;
@@ -12,6 +14,23 @@ class Notification extends Precursor {
     $not->createDate = time();
     $not->save();
     return $not;
+  }
+
+  /**
+   * Returns a localized name of the notification's type, to be displayed in
+   * the notification log.
+   */
+  function getTypeName() {
+    switch ($this->type) {
+      case Subscription::TYPE_CHANGES:
+        return _('subscription-changes');
+      case Subscription::TYPE_VOTE:
+        return _('subscription-vote');
+      case Subscription::TYPE_NEW_ANSWER:
+        return _('subscription-new-answer');
+      case Subscription::TYPE_NEW_COMMENT:
+        return _('subscription-new-comment');
+    }
   }
 
   /**
@@ -50,5 +69,27 @@ class Notification extends Precursor {
         $not = self::create($userId, $target, $type);
       }
     }
+  }
+
+  /**
+   * Loads notifications for the current user.
+   *
+   * @param int $page 1-based page to load
+   */
+  static function getPage(int $page) {
+    return Model::factory('Notification')
+      ->where('userId', User::getActiveId())
+      ->order_by_desc('createDate')
+      ->offset(($page - 1) * self::PAGE_SIZE)
+      ->limit(self::PAGE_SIZE)
+      ->find_many();
+  }
+
+  /**
+   * Returns the number of notification pages for the current user.
+   */
+  static function getNumPages() {
+    $n = Notification::count_by_userId(User::getActiveId());
+    return ceil($n / self::PAGE_SIZE);
   }
 }

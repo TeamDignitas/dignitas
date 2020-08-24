@@ -44,7 +44,7 @@ class User extends Proto {
   const MAX_FLAGS_PER_DAY = 100;
 
   // action log
-  const ACTION_LOG_PAGE_SIZE = 20;
+  const ACTION_LOG_PAGE_SIZE = 50;
 
   private static $active = null; // user currently logged in
 

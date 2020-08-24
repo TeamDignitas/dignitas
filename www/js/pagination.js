@@ -28,10 +28,10 @@ $(function() {
       $.get(url, {
         p: page,
       }).done(function(html) {
-        
+
         target.html(html);
         success = true;
-        
+
       }).fail(function() {
         alert('Cannot load the request page contents.');
       });
@@ -41,7 +41,7 @@ $(function() {
     }).always(function() {
       $('body').removeClass('waiting');
     });
-    
+
     return false;
   }
 

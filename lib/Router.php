@@ -197,6 +197,15 @@ class Router {
       'ro_RO.utf8' => 'invitatii',
     ],
 
+    // notifications
+    'notification/list' => [
+      'en_US.utf8' => 'ajax/notifications',
+    ],
+    'notification/view' => [
+      'en_US.utf8' => 'notifications',
+      'en_US.utf8' => 'notificari',
+    ],
+
     // relations
     'relation/edit' => [
       'en_US.utf8' => 'edit-relation',
