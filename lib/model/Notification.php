@@ -92,4 +92,15 @@ class Notification extends Precursor {
     $n = Notification::count_by_userId(User::getActiveId());
     return ceil($n / self::PAGE_SIZE);
   }
+
+  /**
+   * Marks all notifications for the current user as seen.
+   */
+  static function markAllSeen() {
+    $nots = Notification::get_all_by_userId_seen(User::getActiveId(), false);
+    foreach ($nots as $not) {
+      $not->seen = true;
+      $not->save();
+    }
+  }
 }

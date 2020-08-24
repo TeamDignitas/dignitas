@@ -201,6 +201,9 @@ class Router {
     'notification/list' => [
       'en_US.utf8' => 'ajax/notifications',
     ],
+    'notification/unsubscribe' => [
+      'en_US.utf8' => 'ajax/notification-unsubscribe',
+    ],
     'notification/view' => [
       'en_US.utf8' => 'notifications',
       'en_US.utf8' => 'notificari',
