@@ -1,9 +1,9 @@
 {foreach $notifications as $n}
   <div class="row row-border small py-1 ml-1">
-    <div class="col-sm-4 col-lg-2 text-muted">
+    <div class="col-sm-3 col-lg-2 text-muted">
       {$n->createDate|lt:false}
     </div>
-    <div class="col-sm-8 col-lg-10">
+    <div class="col-sm-8 col-lg-9">
       {* Get the notification object. Note that it may have been deleted. *}
       {$obj=$n->getObject()}
 
@@ -32,6 +32,15 @@
           </a>
         {/if}
       {/if}
+    </div>
+    <div class="col-sm-1 col-lg-1 text-right">
+      <a
+        href="#"
+        class="btn btn-sm btn-link notification-unsubscribe"
+        title="{t}info-notification-unsubscribe{/t}"
+        data-notification-id="{$n->id}">
+        <i class="icon icon-eye-off"></i>
+      </a>
     </div>
   </div>
 {/foreach}
