@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-08-03 17:02+0300\n"
-"PO-Revision-Date: 2020-08-03 17:02+0300\n"
+"POT-Creation-Date: 2020-08-26 16:15+0300\n"
+"PO-Revision-Date: 2020-08-26 16:16+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-Basepath: ../../..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -152,7 +152,7 @@ msgstr "I forgot my password"
 msgid "label-remember-me"
 msgstr "remember me for one year"
 
-#: templates/auth/login.tpl:71 templates/bits/navmenu.tpl:155
+#: templates/auth/login.tpl:71 templates/bits/navmenu.tpl:154
 msgid "link-log-in"
 msgstr "log in"
 
@@ -582,6 +582,10 @@ msgstr "schimbă"
 #: templates/bits/navmenu.tpl:147
 msgid "link-log-out"
 msgstr "log out"
+
+#: templates/bits/notifications.tpl:40
+msgid "info-notification-unsubscribe"
+msgstr "unsubscribe from notifications for this item"
 
 #: templates/bits/relation.tpl:21
 msgid "relation-links"
@@ -1044,6 +1048,10 @@ msgstr "to"
 msgid "label-invite-accepted-by"
 msgstr "accepted by"
 
+#: templates/notification/view.tpl:3 templates/notification/view.tpl:8
+msgid "title-notifications"
+msgstr "notifications"
+
 #: templates/relation/edit.tpl:3 templates/relation/edit.tpl:7
 msgid "title-edit-relation"
 msgstr "edit relationship"
@@ -1440,7 +1448,8 @@ msgstr[1] "%d seconds ago"
 msgid "info-already-logged-in"
 msgstr "You are already logged in."
 
-#: lib/Util.php:39 routes/user/changeReputation.php:16
+#: lib/Util.php:39 routes/notification/list.php:17
+#: routes/user/changeReputation.php:16
 msgid "info-must-log-in"
 msgstr "Please log in to perform this action."
 
@@ -1647,6 +1656,22 @@ msgstr "executive"
 #: lib/model/Flag.php:29
 msgid "flag-moderator"
 msgstr "moderator"
+
+#: lib/model/Notification.php:26
+msgid "subscription-changes"
+msgstr "changes to"
+
+#: lib/model/Notification.php:28
+msgid "subscription-vote"
+msgstr "new vote on"
+
+#: lib/model/Notification.php:30
+msgid "subscription-new-answer"
+msgstr "new answer to"
+
+#: lib/model/Notification.php:32
+msgid "subscription-new-comment"
+msgstr "new comment on"
 
 #: lib/model/Relation.php:32
 msgid "since"
