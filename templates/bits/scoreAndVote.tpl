@@ -1,7 +1,9 @@
 {* $type: type of object being voted *}
 {* $object: object being voted (should have id and score fields) *}
+{* $reminder: for statements, show a popover reminding users when to vote up/down *}
 
 {$voteValue=$object->getVote()->value|default:0}
+{$reminder=$reminder|default:false}
 
 <div class="vote-box col-md-1 col-sm-2 pl-0">
 
@@ -13,6 +15,8 @@
     {elseif !User::may($upvotePriv)}
     disabled
     title="{t 1=$upvotePriv|nf}label-minimum-reputation-upvote{/t}"
+    {else if $reminder}
+    data-toggle="popover"
     {/if}
     data-type="{$type}"
     data-object-id="{$object->id}"
@@ -31,6 +35,8 @@
     {elseif !User::may($downvotePriv)}
     disabled
     title="{t 1=$downvotePriv|nf}label-minimum-reputation-downvote{/t}"
+    {else if $reminder}
+    data-toggle="popover"
     {/if}
     data-type="{$type}"
     data-object-id="{$object->id}"

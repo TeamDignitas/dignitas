@@ -111,6 +111,20 @@ $(function() {
 /*************************** vote submissions ***************************/
 $(function() {
   $('.btn-vote').click(submitVote);
+  $('.btn-vote[data-toggle="popover"]').popover({
+    content: getPopoverContent,
+    placement: 'right',
+    title: getPopoverTitle,
+    trigger: 'focus',
+  });
+
+  function getPopoverContent() {
+    return $(this).closest('.statement-body').find('.statement-vote-reminder').html();
+  }
+
+  function getPopoverTitle() {
+    return $(this).closest('.statement-body').find('.statement-vote-reminder-title').html();
+  }
 
   function submitVote() {
     var btn = $(this);
@@ -193,7 +207,7 @@ $(function() {
 
 /*************************** loyalty popovers ***************************/
 $(function() {
-  $('[data-toggle="popover"]').popover({
+  $('.loyalty-widget[data-toggle="popover"]').popover({
     content: getPopoverContent,
     html: true,
     placement: 'bottom',

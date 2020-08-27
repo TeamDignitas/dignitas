@@ -47,12 +47,19 @@
 </div>
 
 <article class="row mt-3 statement-body">
+  <div class="statement-vote-reminder-title" style="display: none">
+    {t}statement-vote-reminder-title{/t}
+  </div>
+  <div class="statement-vote-reminder" style="display: none">
+    {t}statement-vote-reminder{/t}
+  </div>
   {if $voteBox}
     {include "bits/scoreAndVote.tpl"
       type=Vote::TYPE_STATEMENT
       object=$statement
       upvotePriv=User::PRIV_UPVOTE_STATEMENT
-      downvotePriv=User::PRIV_DOWNVOTE_STATEMENT}
+      downvotePriv=User::PRIV_DOWNVOTE_STATEMENT
+      reminder=User::needsStatementVoteReminder()}
   {/if}
 
   <div class="col-md-7 col-sm-10 px-0">

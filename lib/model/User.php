@@ -38,6 +38,9 @@ class User extends Proto {
   // accordingly.
   const PRIV_REVIEW = 2000;
 
+  // until the user votes on this many statements, keep showing them the reminder
+  const NUM_STATEMENT_VOTE_REMINDERS = 10;
+
   // flag earning
   const BASE_FLAGS_PER_DAY = 10;
   const REPUTATION_FOR_NEW_FLAG = 2000;
@@ -348,6 +351,19 @@ class User extends Proto {
 
   function countNotifications() {
     return Notification::count_by_userId_seen($this->id, false);
+  }
+
+  /**
+   * Returns true iff there is an active user and they need a statement vote reminder.
+   * @return boolean
+   */
+  static function needsStatementVoteReminder() {
+    $u = User::getActive();
+    if (!$u) {
+      return false;
+    }
+    $numStatementVotes = Vote::count_by_userId_objectType($u->id, Proto::TYPE_STATEMENT);
+    return $numStatementVotes < self::NUM_STATEMENT_VOTE_REMINDERS;
   }
 
   function __toString() {
