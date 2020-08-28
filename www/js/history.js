@@ -5,7 +5,6 @@ $(function() {
   }
 
   function toggleIdenticalLines() {
-    console.log('foo');
     $(this).siblings('pre').stop().toggle('fast');
   }
 

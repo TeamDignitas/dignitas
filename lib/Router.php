@@ -286,6 +286,10 @@ class Router {
     ],
 
     // users
+    'user/ban' => [
+      'en_US.utf8' => 'ban-user',
+      'ro_RO.utf8' => 'blocheaza-utilizator',
+    ],
     'user/changeReputation' => [
       'en_US.utf8' => 'ajax/change-reputation',
     ],
@@ -341,6 +345,7 @@ class Router {
     'tag/edit' => [ 'id' ],
     'tag/load' => [ 'ids' ],
     'tag/view' => [ 'id' ],
+    'user/ban' => [ 'id' ],
     'user/edit' => [ 'id' ],
     'user/image' => [ 'id', 'fileName' ],
     'user/view' => [ 'id', 'nickname' ],

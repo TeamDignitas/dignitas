@@ -48,13 +48,52 @@
           </div>
         {/if}
 
-        {if $user->id == User::getActiveId()}
+        {if count($bans)}
+          <h5 class="capitalize-first-word font-weight-bold mt-5">{t}title-user-bans{/t}</h5>
+
+          {foreach $bans as $ban}
+            <div class="row">
+              <div class="col-sm-5">{$ban->getTypeName()}</div>
+              <div class="col-sm-6">
+                {if $ban->isPermanent()}
+                  {t}ban-permanent{/t}
+                {else}
+                  {t}label-ban-until{/t}
+                  {$ban->expiration|lt}
+                {/if}
+              </div>
+              <div class="col-sm-1">
+                {if User::isModerator()}
+                  <a
+                    href="{Router::link('user/ban')}?deleteId={$ban->id}"
+                    class="btn btn-sm btn-link"
+                    title="info-ban-delete">
+                    <i class="icon icon-trash"></i>
+                  </a>
+                {/if}
+              </div>
+            </div>
+          {/foreach}
+          </dl>
+        {/if}
+
+        {if $user->id == User::getActiveId() || User::isModerator()}
           <hr class="mb-2">
           <div class="user-actions text-left">
-            <a href="{Router::link('user/edit')}" class="btn btn-sm btn-outline-primary">
-              <i class="icon icon-edit"></i>
-              {t}link-edit{/t}
-            </a>
+            {if $user->id == User::getActiveId()}
+              <a href="{Router::link('user/edit')}" class="btn btn-sm btn-outline-primary">
+                <i class="icon icon-edit"></i>
+                {t}link-edit{/t}
+              </a>
+            {/if}
+
+            {if User::isModerator()}
+              <a
+                href="{Router::link('user/ban')}/{$user->id}"
+                class="btn btn-sm btn-outline-danger">
+                {t}link-ban{/t}
+              </a>
+            {/if}
           </div>
         {/if}
 

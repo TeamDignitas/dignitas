@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-08-28 11:15+0300\n"
-"PO-Revision-Date: 2020-08-28 11:15+0300\n"
+"POT-Creation-Date: 2020-08-28 13:15+0300\n"
+"PO-Revision-Date: 2020-08-28 13:18+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -129,7 +129,7 @@ msgstr "edit answer"
 #: templates/help/pageEdit.tpl:74 templates/relation/edit.tpl:24
 #: templates/relationType/edit.tpl:131 templates/statement/edit.tpl:141
 #: templates/staticResource/edit.tpl:81 templates/tag/edit.tpl:155
-#: templates/user/edit.tpl:128
+#: templates/user/ban.tpl:54 templates/user/edit.tpl:128
 msgid "link-save"
 msgstr "save"
 
@@ -269,7 +269,8 @@ msgstr "details about verdicts and their effects"
 #: templates/invite/add.tpl:36 templates/relation/edit.tpl:29
 #: templates/relationType/edit.tpl:136 templates/relationType/list.tpl:66
 #: templates/statement/edit.tpl:146 templates/staticResource/edit.tpl:86
-#: templates/tag/edit.tpl:161 templates/user/edit.tpl:133
+#: templates/tag/edit.tpl:161 templates/user/ban.tpl:59
+#: templates/user/edit.tpl:133
 msgid "link-cancel"
 msgstr "cancel"
 
@@ -339,7 +340,7 @@ msgstr[1] "%1 identical lines skipped"
 #: templates/entityType/list.tpl:51 templates/help/categoryView.tpl:39
 #: templates/help/pageView.tpl:36 templates/relationType/list.tpl:46
 #: templates/staticResource/list.tpl:42 templates/tag/view.tpl:15
-#: templates/user/view.tpl:56
+#: templates/user/view.tpl:86
 msgid "link-edit"
 msgstr "edit"
 
@@ -524,7 +525,7 @@ msgstr "flag comment"
 msgid "label-author"
 msgstr "author"
 
-#: templates/bits/history.tpl:15 templates/user/view.tpl:68
+#: templates/bits/history.tpl:15 templates/user/view.tpl:107
 msgid "label-date"
 msgstr "date"
 
@@ -789,7 +790,7 @@ msgstr "icon"
 #: templates/domain/list.tpl:21 templates/entity/edit.tpl:84
 #: templates/entity/edit.tpl:153 templates/entityType/list.tpl:22
 #: templates/relationType/list.tpl:30 templates/staticResource/list.tpl:21
-#: templates/user/view.tpl:63
+#: templates/user/view.tpl:102
 msgid "actions"
 msgstr "acțiuni"
 
@@ -860,6 +861,7 @@ msgid "label-order"
 msgstr "order"
 
 #: templates/entity/edit.tpl:100 templates/entity/edit.tpl:149
+#: templates/user/ban.tpl:14
 msgid "label-type"
 msgstr "type"
 
@@ -1374,6 +1376,74 @@ msgstr "statements (%1 of %2 shown)"
 msgid "title-statement-count"
 msgstr "statements (%1)"
 
+#: templates/user/ban.tpl:3 templates/user/ban.tpl:7
+msgid "title-ban-user"
+msgstr "Ban the user"
+
+#: templates/user/ban.tpl:17
+msgid "label-duration"
+msgstr "duration"
+
+#: templates/user/ban.tpl:31
+msgid "ban-duration-none"
+msgstr "none"
+
+#: templates/user/ban.tpl:32
+msgid "ban-duration-10-minutes"
+msgstr "10 minutes"
+
+#: templates/user/ban.tpl:33
+msgid "ban-duration-30-minutes"
+msgstr "30 minutes"
+
+#: templates/user/ban.tpl:34
+msgid "ban-duration-1-hour"
+msgstr "1 hour"
+
+#: templates/user/ban.tpl:35
+msgid "ban-duration-2-hours"
+msgstr "2 hours"
+
+#: templates/user/ban.tpl:36
+msgid "ban-duration-6-hour"
+msgstr "6 hours"
+
+#: templates/user/ban.tpl:37
+msgid "ban-duration-12-hour"
+msgstr "12 hours"
+
+#: templates/user/ban.tpl:38
+msgid "ban-duration-1-day"
+msgstr "1 day"
+
+#: templates/user/ban.tpl:39
+msgid "ban-duration-3-days"
+msgstr "3 days"
+
+#: templates/user/ban.tpl:40
+msgid "ban-duration-1-week"
+msgstr "1 week"
+
+#: templates/user/ban.tpl:41
+msgid "ban-duration-2-weeks"
+msgstr "2 weeks"
+
+#: templates/user/ban.tpl:42
+msgid "ban-duration-1-month"
+msgstr "1 month"
+
+#: templates/user/ban.tpl:43
+msgid "ban-duration-3-months"
+msgstr "3 months"
+
+#: templates/user/ban.tpl:44
+msgid "ban-duration-6-months"
+msgstr "6 months"
+
+#: templates/user/ban.tpl:45
+msgid "ban-duration-forever"
+msgstr "forever"
+
 #: templates/user/edit.tpl:3 templates/user/edit.tpl:7
 msgid "label-edit-user"
 msgstr "edit my profile"
@@ -1414,7 +1484,23 @@ msgstr "last seen"
 msgid "title-about-me"
 msgstr "about me"
 
-#: templates/user/view.tpl:71
+#: templates/user/view.tpl:52
+msgid "title-user-bans"
+msgstr "bans"
+
+#: templates/user/view.tpl:59
+msgid "ban-permanent"
+msgstr "permanent"
+
+#: templates/user/view.tpl:61
+msgid "label-ban-until"
+msgstr "until"
+
+#: templates/user/view.tpl:94
+msgid "link-ban"
+msgstr "ban..."
+
+#: templates/user/view.tpl:110
 msgid "label-action"
 msgstr "action"
 
@@ -1584,6 +1670,54 @@ msgstr "You need at least %s reputation to edit answers."
 msgid "info-only-moderator-edit-proof-answer"
 msgstr ""
 "This answer was accepted as proof. Only moderators can edit it directly."
+
+#: lib/model/Ban.php:28
+msgid "ban-add-entity"
+msgstr "adding authors"
+
+#: lib/model/Ban.php:29
+msgid "ban-edit-entity"
+msgstr "editing authors"
+
+#: lib/model/Ban.php:30
+msgid "ban-add-statement"
+msgstr "adding statements"
+
+#: lib/model/Ban.php:31
+msgid "ban-edit-statement"
+msgstr "editing statements"
+
+#: lib/model/Ban.php:32
+msgid "ban-add-answer"
+msgstr "adding answers"
+
+#: lib/model/Ban.php:33
+msgid "ban-edit-answer"
+msgstr "editing answers"
+
+#: lib/model/Ban.php:34
+msgid "ban-delete"
+msgstr "deleting items"
+
+#: lib/model/Ban.php:35
+msgid "ban-vote"
+msgstr "voting"
+
+#: lib/model/Ban.php:36
+msgid "ban-flag"
+msgstr "flagging"
+
+#: lib/model/Ban.php:37
+msgid "ban-comment"
+msgstr "commenting"
+
+#: lib/model/Ban.php:38
+msgid "ban-tag"
+msgstr "tags"
+
+#: lib/model/Ban.php:39
+msgid "ban-review"
+msgstr "reviews"
 
 #: lib/model/Comment.php:48
 msgid "info-this-comment-was-deleted"
@@ -2097,72 +2231,72 @@ msgstr "You need at least %s reputation to edit statements."
 msgid "info-only-moderator-edit-statement-verdict"
 msgstr "This statement has a verdict. Only moderators can edit it directly."
 
-#: lib/model/User.php:187 routes/auth/login.php:61
+#: lib/model/User.php:199 routes/auth/login.php:61
 #: routes/auth/lostPassword.php:49 routes/invite/add.php:42
 msgid "info-must-enter-email"
 msgstr "Please enter an email address."
 
-#: lib/model/User.php:192
+#: lib/model/User.php:204
 msgid "info-email-taken"
 msgstr "This email address is already taken."
 
-#: lib/model/User.php:196 routes/auth/lostPassword.php:51
+#: lib/model/User.php:208 routes/auth/lostPassword.php:51
 #: routes/invite/add.php:44
 msgid "info-incorrect-email"
 msgstr "This email address looks incorrect."
 
-#: lib/model/User.php:205
+#: lib/model/User.php:217
 msgid "info-nickname-syntax"
 msgstr ""
 "Your nickname must begin with a letter or digit and consist of 3 to 30 "
 "letters, digits and punctuation from among -_."
 
-#: lib/model/User.php:213 routes/auth/login.php:65
+#: lib/model/User.php:225 routes/auth/login.php:65
 msgid "info-must-enter-password"
 msgstr "Please enter a password."
 
-#: lib/model/User.php:215
+#: lib/model/User.php:227
 msgid "info-must-enter-password-2"
 msgstr "Please enter your password twice to prevent typos."
 
-#: lib/model/User.php:217
+#: lib/model/User.php:229
 msgid "info-password-mismatch"
 msgstr "Passwords don't match."
 
-#: lib/model/User.php:219
+#: lib/model/User.php:231
 msgid "info-password-length"
 msgstr "Your password must be at least 8 characters long."
 
-#: lib/model/User.php:243
+#: lib/model/User.php:255
 #, php-format
 msgid "info-minimum-reputation-%s"
 msgstr "You need at least %s reputation to perform this action."
 
-#: lib/model/User.php:257
+#: lib/model/User.php:269
 msgid "info-moderator-only"
 msgstr "Only moderators may perform this action."
 
-#: lib/model/User.php:275
+#: lib/model/User.php:287
 #, php-format
 msgid "info-minimum-reputation-flag-%s"
 msgstr "You need at least %s reputation to flag."
 
-#: lib/model/User.php:283
+#: lib/model/User.php:295
 #, php-format
 msgid "info-flag-limit-singular"
 msgid_plural "info-flag-limit-plural-%d"
 msgstr[0] "You can use at most one flag every 24 hours."
 msgstr[1] "You can use at most %d flags every 24 hours."
 
-#: lib/model/User.php:290
+#: lib/model/User.php:302
 msgid "info-flag-no-object"
 msgstr "Cannot flag: object does not exist."
 
-#: lib/model/User.php:295
+#: lib/model/User.php:307
 msgid "info-already-flagged"
 msgstr "You already have a pending flag for this object."
 
-#: lib/model/User.php:339
+#: lib/model/User.php:351
 #, php-format
 msgid "info-minimum-reputation-comment-%s"
 msgstr "You need at least %s reputation to comment."
@@ -2776,6 +2910,14 @@ msgstr "You cannot select a descendant as the parent."
 msgid "info-no-such-tag"
 msgstr "The tag you are looking for does not exist."
 
+#: routes/user/ban.php:16
+msgid "info-ban-deleted"
+msgstr "Ban removed."
+
+#: routes/user/ban.php:33 routes/user/edit.php:29
+msgid "info-changes-saved"
+msgstr "Changes saved."
+
 #: routes/user/changeReputation.php:18
 msgid "info-change-reputation-devel"
 msgstr "Changing your reputation is only allowed in development mode."
@@ -2784,10 +2926,6 @@ msgstr "Changing your reputation is only allowed in development mode."
 #, php-format
 msgid "info-reputation-range-%d-%d"
 msgstr "Reputation must be an integer between %d and %d."
-
-#: routes/user/edit.php:29
-msgid "info-changes-saved"
-msgstr "Changes saved."
 
 #: routes/vote/save.php:29
 msgid "info-bad-vote"

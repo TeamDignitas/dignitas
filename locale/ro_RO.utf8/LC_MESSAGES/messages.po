@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-08-28 11:14+0300\n"
-"PO-Revision-Date: 2020-08-28 11:14+0300\n"
+"POT-Creation-Date: 2020-08-28 13:09+0300\n"
+"PO-Revision-Date: 2020-08-28 13:15+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -133,7 +133,7 @@ msgstr "editează răspunsul"
 #: templates/help/pageEdit.tpl:74 templates/relation/edit.tpl:24
 #: templates/relationType/edit.tpl:131 templates/statement/edit.tpl:141
 #: templates/staticResource/edit.tpl:81 templates/tag/edit.tpl:155
-#: templates/user/edit.tpl:128
+#: templates/user/ban.tpl:54 templates/user/edit.tpl:128
 msgid "link-save"
 msgstr "salvează"
 
@@ -274,7 +274,8 @@ msgstr "detalii despre verdicte și efectele lor"
 #: templates/invite/add.tpl:36 templates/relation/edit.tpl:29
 #: templates/relationType/edit.tpl:136 templates/relationType/list.tpl:66
 #: templates/statement/edit.tpl:146 templates/staticResource/edit.tpl:86
-#: templates/tag/edit.tpl:161 templates/user/edit.tpl:133
+#: templates/tag/edit.tpl:161 templates/user/ban.tpl:59
+#: templates/user/edit.tpl:133
 msgid "link-cancel"
 msgstr "renunță"
 
@@ -345,7 +346,7 @@ msgstr[2] "%1 de linii identice omise"
 #: templates/entityType/list.tpl:51 templates/help/categoryView.tpl:39
 #: templates/help/pageView.tpl:36 templates/relationType/list.tpl:46
 #: templates/staticResource/list.tpl:42 templates/tag/view.tpl:15
-#: templates/user/view.tpl:56
+#: templates/user/view.tpl:86
 msgid "link-edit"
 msgstr "editează"
 
@@ -531,7 +532,7 @@ msgstr "raportează comentariul"
 msgid "label-author"
 msgstr "autor"
 
-#: templates/bits/history.tpl:15 templates/user/view.tpl:68
+#: templates/bits/history.tpl:15 templates/user/view.tpl:107
 msgid "label-date"
 msgstr "dată"
 
@@ -797,7 +798,7 @@ msgstr "iconiță"
 #: templates/domain/list.tpl:21 templates/entity/edit.tpl:84
 #: templates/entity/edit.tpl:153 templates/entityType/list.tpl:22
 #: templates/relationType/list.tpl:30 templates/staticResource/list.tpl:21
-#: templates/user/view.tpl:63
+#: templates/user/view.tpl:102
 msgid "actions"
 msgstr "acțiuni"
 
@@ -871,6 +872,7 @@ msgid "label-order"
 msgstr "ordine"
 
 #: templates/entity/edit.tpl:100 templates/entity/edit.tpl:149
+#: templates/user/ban.tpl:14
 msgid "label-type"
 msgstr "tip"
 
@@ -1385,6 +1387,74 @@ msgstr "afirmații (%1 din %2 afișate)"
 msgid "title-statement-count"
 msgstr "afirmații (%1)"
 
+#: templates/user/ban.tpl:3 templates/user/ban.tpl:7
+msgid "title-ban-user"
+msgstr "blochează utilizatorul"
+
+#: templates/user/ban.tpl:17
+msgid "label-duration"
+msgstr "durată"
+
+#: templates/user/ban.tpl:31
+msgid "ban-duration-none"
+msgstr "niciuna"
+
+#: templates/user/ban.tpl:32
+msgid "ban-duration-10-minutes"
+msgstr "10 minute"
+
+#: templates/user/ban.tpl:33
+msgid "ban-duration-30-minutes"
+msgstr "30 de minute"
+
+#: templates/user/ban.tpl:34
+msgid "ban-duration-1-hour"
+msgstr "o oră"
+
+#: templates/user/ban.tpl:35
+msgid "ban-duration-2-hours"
+msgstr "2 ore"
+
+#: templates/user/ban.tpl:36
+msgid "ban-duration-6-hour"
+msgstr "6 ore"
+
+#: templates/user/ban.tpl:37
+msgid "ban-duration-12-hour"
+msgstr "12 ore"
+
+#: templates/user/ban.tpl:38
+msgid "ban-duration-1-day"
+msgstr "o zi"
+
+#: templates/user/ban.tpl:39
+msgid "ban-duration-3-days"
+msgstr "3 zile"
+
+#: templates/user/ban.tpl:40
+msgid "ban-duration-1-week"
+msgstr "o săptămînă"
+
+#: templates/user/ban.tpl:41
+msgid "ban-duration-2-weeks"
+msgstr "2 săptămîni"
+
+#: templates/user/ban.tpl:42
+msgid "ban-duration-1-month"
+msgstr "o lună"
+
+#: templates/user/ban.tpl:43
+msgid "ban-duration-3-months"
+msgstr "3 luni"
+
+#: templates/user/ban.tpl:44
+msgid "ban-duration-6-months"
+msgstr "6 luni"
+
+#: templates/user/ban.tpl:45
+msgid "ban-duration-forever"
+msgstr "pentru totdeauna"
+
 #: templates/user/edit.tpl:3 templates/user/edit.tpl:7
 msgid "label-edit-user"
 msgstr "editează profilul"
@@ -1425,7 +1495,23 @@ msgstr "ultima vizită"
 msgid "title-about-me"
 msgstr "despre mine"
 
-#: templates/user/view.tpl:71
+#: templates/user/view.tpl:52
+msgid "title-user-bans"
+msgstr "blocaje"
+
+#: templates/user/view.tpl:59
+msgid "ban-permanent"
+msgstr "permanent"
+
+#: templates/user/view.tpl:61
+msgid "label-ban-until"
+msgstr "pînă la"
+
+#: templates/user/view.tpl:94
+msgid "link-ban"
+msgstr "blochează..."
+
+#: templates/user/view.tpl:110
 msgid "label-action"
 msgstr "acțiune"
 
@@ -1600,6 +1686,54 @@ msgid "info-only-moderator-edit-proof-answer"
 msgstr ""
 "Acest răspuns a fost acceptat ca demonstrație. Doar moderatorii îl mai pot "
 "modifica direct."
+
+#: lib/model/Ban.php:28
+msgid "ban-add-entity"
+msgstr "adăugarea de autori"
+
+#: lib/model/Ban.php:29
+msgid "ban-edit-entity"
+msgstr "editarea de autori"
+
+#: lib/model/Ban.php:30
+msgid "ban-add-statement"
+msgstr "adăugarea de afirmații"
+
+#: lib/model/Ban.php:31
+msgid "ban-edit-statement"
+msgstr "editarea de afirmații"
+
+#: lib/model/Ban.php:32
+msgid "ban-add-answer"
+msgstr "adăugarea de răspunsuri"
+
+#: lib/model/Ban.php:33
+msgid "ban-edit-answer"
+msgstr "editarea de răspunsuri"
+
+#: lib/model/Ban.php:34
+msgid "ban-delete"
+msgstr "ștergeri"
+
+#: lib/model/Ban.php:35
+msgid "ban-vote"
+msgstr "voturi"
+
+#: lib/model/Ban.php:36
+msgid "ban-flag"
+msgstr "raportări"
+
+#: lib/model/Ban.php:37
+msgid "ban-comment"
+msgstr "comentarii"
+
+#: lib/model/Ban.php:38
+msgid "ban-tag"
+msgstr "etichete"
+
+#: lib/model/Ban.php:39
+msgid "ban-review"
+msgstr "evaluări"
 
 #: lib/model/Comment.php:48
 msgid "info-this-comment-was-deleted"
@@ -2117,59 +2251,59 @@ msgstr ""
 "Această afirmație a primit un verdict. Doar moderatorii o mai pot modifica "
 "direct."
 
-#: lib/model/User.php:187 routes/auth/login.php:61
+#: lib/model/User.php:199 routes/auth/login.php:61
 #: routes/auth/lostPassword.php:49 routes/invite/add.php:42
 msgid "info-must-enter-email"
 msgstr "Vă rugăm să introduceți o adresă de e-mail."
 
-#: lib/model/User.php:192
+#: lib/model/User.php:204
 msgid "info-email-taken"
 msgstr "Această adresă de e-mail este deja folosită."
 
-#: lib/model/User.php:196 routes/auth/lostPassword.php:51
+#: lib/model/User.php:208 routes/auth/lostPassword.php:51
 #: routes/invite/add.php:44
 msgid "info-incorrect-email"
 msgstr "Adresa de e-mail pare incorectă."
 
-#: lib/model/User.php:205
+#: lib/model/User.php:217
 msgid "info-nickname-syntax"
 msgstr ""
 "Porecla trebuie să înceapă cu o literă sau cifră și să conțină 3-30 de "
 "litere, cifre și semne de punctuație dintre -_."
 
-#: lib/model/User.php:213 routes/auth/login.php:65
+#: lib/model/User.php:225 routes/auth/login.php:65
 msgid "info-must-enter-password"
 msgstr "Vă rugăm să introduceți o parolă."
 
-#: lib/model/User.php:215
+#: lib/model/User.php:227
 msgid "info-must-enter-password-2"
 msgstr ""
 "Vă rugăm să introduceți parola de două ori pentru a preveni greșelile de "
 "tastare."
 
-#: lib/model/User.php:217
+#: lib/model/User.php:229
 msgid "info-password-mismatch"
 msgstr "Parolele nu coincid."
 
-#: lib/model/User.php:219
+#: lib/model/User.php:231
 msgid "info-password-length"
 msgstr "Parola trebuie să aibă cel puțin 8 caractere."
 
-#: lib/model/User.php:243
+#: lib/model/User.php:255
 #, php-format
 msgid "info-minimum-reputation-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru această acțiune."
 
-#: lib/model/User.php:257
+#: lib/model/User.php:269
 msgid "info-moderator-only"
 msgstr "Doar moderatorii pot face această acțiune."
 
-#: lib/model/User.php:275
+#: lib/model/User.php:287
 #, php-format
 msgid "info-minimum-reputation-flag-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a face raportări."
 
-#: lib/model/User.php:283
+#: lib/model/User.php:295
 #, php-format
 msgid "info-flag-limit-singular"
 msgid_plural "info-flag-limit-plural-%d"
@@ -2177,15 +2311,15 @@ msgstr[0] "Puteți face cel mult o raportare la 24 de ore."
 msgstr[1] "Puteți face cel mult %d raportări la 24 de ore."
 msgstr[2] "Puteți face cel mult %d de raportări la 24 de ore."
 
-#: lib/model/User.php:290
+#: lib/model/User.php:302
 msgid "info-flag-no-object"
 msgstr "Nu pot face raportarea: articolul nu există."
 
-#: lib/model/User.php:295
+#: lib/model/User.php:307
 msgid "info-already-flagged"
 msgstr "Ați raportat deja acest articol."
 
-#: lib/model/User.php:339
+#: lib/model/User.php:351
 #, php-format
 msgid "info-minimum-reputation-comment-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a comenta."
@@ -2811,6 +2945,14 @@ msgstr "Nu puteți alege un descendent ca părinte."
 msgid "info-no-such-tag"
 msgstr "Eticheta căutată nu există."
 
+#: routes/user/ban.php:16
+msgid "info-ban-deleted"
+msgstr "Am șters blocajul."
+
+#: routes/user/ban.php:33 routes/user/edit.php:29
+msgid "info-changes-saved"
+msgstr "Am salvat modificările."
+
 #: routes/user/changeReputation.php:18
 msgid "info-change-reputation-devel"
 msgstr "Vă puteți schimba reputația numai în modul development."
@@ -2819,10 +2961,6 @@ msgstr "Vă puteți schimba reputația numai în modul development."
 #, php-format
 msgid "info-reputation-range-%d-%d"
 msgstr "Reputația trebuie să fie un întreg între %d și %d."
-
-#: routes/user/edit.php:29
-msgid "info-changes-saved"
-msgstr "Am salvat modificările."
 
 #: routes/vote/save.php:29
 msgid "info-bad-vote"

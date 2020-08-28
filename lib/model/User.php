@@ -165,6 +165,18 @@ class User extends Proto {
   }
 
   /**
+   * Returns the user's active bans, sorted by type
+   */
+  function getActiveBans() {
+    return Model::factory('Ban')
+      ->where('userId', $this->id)
+      ->where_raw('((expiration = ?) or (expiration > ?))',
+                  [ Ban::EXPIRATION_NEVER, time() ])
+      ->order_by_asc('type')
+      ->find_many();
+  }
+
+  /**
    * Chooses a very high ID for a fake user. Using IDs outside the normal
    * space helps avoid ID conflicts during database imports, which could cause
    * confusing behavior. For example, if a developer uses a fake login with an
