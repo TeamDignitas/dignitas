@@ -27,15 +27,24 @@
       <fieldset class="related-fields mb-5 ml-3">
         <div class="form-group row">
           <label for="field-entity-id" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-entity{/t}</label>
-          <select
-            name="entityId"
-            id="field-entity-id"
-            class="form-control {if isset($errors.entityId)}is-invalid{/if} col-sm-12 col-lg-10">
-            {if $statement->entityId}
-              <option value="{$statement->entityId}"></option>
+          <div class="col-sm-12 col-lg-10 px-0">
+            <select
+              name="entityId"
+              id="field-entity-id"
+              class="form-control {if isset($errors.entityId)}is-invalid{/if}">
+              {if $statement->entityId}
+                <option value="{$statement->entityId}"></option>
+              {/if}
+            </select>
+            {include "bits/fieldErrors.tpl" errors=$errors.entityId|default:null}
+            {if !$statement->entityId}
+              <small class="text-muted">
+                {t 1=Router::link('entity/edit')}
+                info-author-not-found-add-author-%1
+              {/t}
+              </small>
             {/if}
-          </select>
-          {include "bits/fieldErrors.tpl" errors=$errors.entityId|default:null}
+          </div>
         </div>
 
         <div class="form-group row">
