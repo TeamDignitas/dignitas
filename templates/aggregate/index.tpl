@@ -13,7 +13,9 @@
       <div class="f-container py-5">
         <div class="col-lg-3 col-sm-12 mt-3 mb-5">
           <div>
-            <span class="col-6 text-uppercase ivory meta-heading pl-0">Contribuie și tu</span>
+            <span class="col-6 text-uppercase ivory meta-heading pl-0">
+              {t}label-contribute-index{/t}
+            </span>
             <span class="col-2 ivory meta-line"></span>
           </div>
         </div>
