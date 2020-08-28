@@ -55,6 +55,7 @@ if ($saveButton) {
   $statement->goal = Request::get('goal');
   $statement->dateMade = Request::get('dateMade');
   if (User::isModerator()) {
+    $origVerdict = $statement->verdict;
     $statement->verdict = Request::get('verdict');
   }
 
@@ -79,6 +80,17 @@ if ($saveButton) {
     Review::checkRecentlyClosedDeleted($statement);
     Link::update($statement, $links);
     ObjectTag::update($statement, $tagIds);
+
+    // grant verdict reputation
+    if (User::isModerator()) {
+      $hadVerdict = ($origVerdict != Ct::VERDICT_NONE);
+      $hasVerdict = ($statement->verdict != Ct::VERDICT_NONE);
+      if ($hadVerdict ^ $hasVerdict) {
+        $u = User::get_by_id($statement->userId);
+        $sign = $hasVerdict ? +1 : -1;
+        $u->grantReputation($sign * Config::REP_VERDICT);
+      }
+    }
 
     if (!$originalId) {
       FlashMessage::add(_('info-statement-added'), 'success');

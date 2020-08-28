@@ -217,6 +217,7 @@ class Config {
   const REP_COMMENT_UPVOTED = 0;
   const REP_COMMENT_DOWNVOTED = 0;
   const REP_DOWNVOTE_COMMENT = 0;
+  const REP_VERDICT = 10;             // your statement receives a verdict
   const REP_ANSWER_PROOF = 10;        // your answer is accepted as proof
   const REP_SUGGESTED_EDIT = 2;
   const REP_SPAM_ABUSE = -100;
