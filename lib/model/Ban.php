@@ -12,14 +12,15 @@ class Ban extends Proto {
   const TYPE_ADD_ANSWER = 5;
   const TYPE_EDIT_ANSWER = 6;
 
-  const TYPE_DELETE = 7;           // delete entities, statements, answers or comments
-  const TYPE_VOTE = 8;
-  const TYPE_FLAG = 9;
-  const TYPE_COMMENT = 10;
-  const TYPE_TAG = 11;             // add, edit or delete tags
-  const TYPE_REVIEW = 12;          // access review queues
+  const TYPE_PENDING_EDITS = 7;    // create pending edits for any objects
+  const TYPE_DELETE = 8;           // delete entities, statements, answers or comments
+  const TYPE_VOTE = 9;
+  const TYPE_FLAG = 10;
+  const TYPE_COMMENT = 11;
+  const TYPE_TAG = 12;             // add, edit or delete tags
+  const TYPE_REVIEW = 13;          // access review queues
 
-  const NUM_TYPES = 12;
+  const NUM_TYPES = 13;
 
   const EXPIRATION_NEVER = -1;
 
@@ -31,6 +32,7 @@ class Ban extends Proto {
       case self::TYPE_EDIT_STATEMENT:  return _('ban-edit-statement');
       case self::TYPE_ADD_ANSWER:      return _('ban-add-answer');
       case self::TYPE_EDIT_ANSWER:     return _('ban-edit-answer');
+      case self::TYPE_PENDING_EDITS:   return _('ban-pending-edits');
       case self::TYPE_DELETE:          return _('ban-delete');
       case self::TYPE_VOTE:            return _('ban-vote');
       case self::TYPE_FLAG:            return _('ban-flag');
@@ -42,6 +44,25 @@ class Ban extends Proto {
 
   function getTypeName() {
     return self::typeName($this->type);
+  }
+
+  /**
+   * Checks if the current has an active ban of the given $type.
+   *
+   * @return boolean
+   */
+  static function exists($type) {
+    $u = User::getActive();
+    if (!$u) {
+      return false;
+    }
+    $ban = Model::factory('Ban')
+      ->where('userId', $u->id)
+      ->where('type', $type)
+      ->where_raw('((expiration = ?) or (expiration > ?))',
+                  [ Ban::EXPIRATION_NEVER, time() ])
+      ->find_one();
+    return ($ban != null);
   }
 
   function isPermanent() {

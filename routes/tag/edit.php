@@ -23,8 +23,7 @@ $used = ObjectTag::get_by_tagId($tag->id);
 $canDelete = empty($children) && !$used;
 
 if ($deleteButton) {
-  User::enforce(User::PRIV_DELETE_TAG);
-  if ($canDelete) {
+  if ($tag->isDeletable() && $canDelete) {
     FlashMessage::add(sprintf(_('tag-deleted-%s'), $tag->value), 'success');
     Action::create(Action::TYPE_DELETE, $tag);
     $tag->delete();
@@ -36,6 +35,11 @@ if ($deleteButton) {
 }
 
 User::enforce($tag->id ? User::PRIV_EDIT_TAG : User::PRIV_ADD_TAG);
+
+if (Ban::exists(Ban::TYPE_TAG)) {
+  FlashMessage::add(_('info-banned-tag'));
+  Util::redirectToHome();
+}
 
 if ($saveButton) {
   $tag->value = Request::get('value');

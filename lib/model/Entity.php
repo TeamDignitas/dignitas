@@ -22,6 +22,10 @@ class Entity extends Proto {
     return Router::link('entity/edit') . '/' . $this->id;
   }
 
+  function getUser() {
+    return User::get_by_id($this->userId);
+  }
+
   /**
    * @param $form This entity's long or short possessive form as dictated by a
    * relationship's phrase.
@@ -237,6 +241,14 @@ class Entity extends Proto {
         _('info-minimum-reputation-edit-entity-%s'),
         Str::formatNumber(User::PRIV_EDIT_ENTITY)));
     }
+
+    if (!$this->id && Ban::exists(Ban::TYPE_ADD_ENTITY)) {
+      throw new Exception(_('info-banned-add-entity'));
+    }
+
+    if ($this->id && Ban::exists(Ban::TYPE_EDIT_ENTITY)) {
+      throw new Exception(_('info-banned-edit-entity'));
+    }
   }
 
 
@@ -266,6 +278,7 @@ class Entity extends Proto {
       !$numStatements &&                       // no publicly visible statements
       $this->id &&                             // not on the add entity page
       in_array($this->status, [ Ct::STATUS_ACTIVE, Ct::STATUS_CLOSED ]) &&
+      !Ban::exists(Ban::TYPE_DELETE) &&
       (User::may(User::PRIV_DELETE_ENTITY) ||  // can delete any entity
        $this->userId == User::getActiveId());  // can always delete user's own entities
   }

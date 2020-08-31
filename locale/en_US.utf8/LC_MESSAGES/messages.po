@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-08-28 13:15+0300\n"
-"PO-Revision-Date: 2020-08-28 13:18+0300\n"
+"POT-Creation-Date: 2020-08-31 15:09+0300\n"
+"PO-Revision-Date: 2020-08-31 15:10+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -1342,7 +1342,7 @@ msgstr ""
 msgid "info-confirm-delete-tag"
 msgstr "Are you sure you want to delete this tag?"
 
-#: templates/tag/edit.tpl:173 routes/tag/edit.php:33
+#: templates/tag/edit.tpl:173 routes/tag/edit.php:32
 msgid "info-cannot-delete-tag"
 msgstr ""
 "Cannot delete this tag because (1) it has descendants or (2) it is being "
@@ -1646,12 +1646,12 @@ msgstr "because it is low-quality."
 msgid "info-answer-by-owner"
 msgstr "by its author."
 
-#: lib/model/Answer.php:62 lib/model/Comment.php:54 lib/model/Entity.php:134
+#: lib/model/Answer.php:62 lib/model/Comment.php:54 lib/model/Entity.php:138
 #: lib/model/Statement.php:121
 msgid "info-by"
 msgstr "by"
 
-#: lib/model/Answer.php:63 lib/model/Comment.php:55 lib/model/Entity.php:135
+#: lib/model/Answer.php:63 lib/model/Comment.php:55 lib/model/Entity.php:139
 #: lib/model/Statement.php:122
 msgid "info-other-reason"
 msgstr "for other reasons."
@@ -1671,51 +1671,63 @@ msgid "info-only-moderator-edit-proof-answer"
 msgstr ""
 "This answer was accepted as proof. Only moderators can edit it directly."
 
-#: lib/model/Ban.php:28
+#: lib/model/Answer.php:115
+msgid "info-banned-add-answer"
+msgstr "You are banned from adding answers."
+
+#: lib/model/Answer.php:119
+msgid "info-banned-edit-answer"
+msgstr "You are banned from editing answers."
+
+#: lib/model/Ban.php:29
 msgid "ban-add-entity"
 msgstr "adding authors"
 
-#: lib/model/Ban.php:29
+#: lib/model/Ban.php:30
 msgid "ban-edit-entity"
 msgstr "editing authors"
 
-#: lib/model/Ban.php:30
+#: lib/model/Ban.php:31
 msgid "ban-add-statement"
 msgstr "adding statements"
 
-#: lib/model/Ban.php:31
+#: lib/model/Ban.php:32
 msgid "ban-edit-statement"
 msgstr "editing statements"
 
-#: lib/model/Ban.php:32
+#: lib/model/Ban.php:33
 msgid "ban-add-answer"
 msgstr "adding answers"
 
-#: lib/model/Ban.php:33
+#: lib/model/Ban.php:34
 msgid "ban-edit-answer"
 msgstr "editing answers"
 
-#: lib/model/Ban.php:34
+#: lib/model/Ban.php:35
+msgid "ban-pending-edits"
+msgstr "You are banned from suggesting changes."
+
+#: lib/model/Ban.php:36
 msgid "ban-delete"
 msgstr "deleting items"
 
-#: lib/model/Ban.php:35
+#: lib/model/Ban.php:37
 msgid "ban-vote"
 msgstr "voting"
 
-#: lib/model/Ban.php:36
+#: lib/model/Ban.php:38
 msgid "ban-flag"
 msgstr "flagging"
 
-#: lib/model/Ban.php:37
+#: lib/model/Ban.php:39
 msgid "ban-comment"
 msgstr "commenting"
 
-#: lib/model/Ban.php:38
+#: lib/model/Ban.php:40
 msgid "ban-tag"
 msgstr "tags"
 
-#: lib/model/Ban.php:39
+#: lib/model/Ban.php:41
 msgid "ban-review"
 msgstr "reviews"
 
@@ -1744,59 +1756,67 @@ msgstr "because it is no longer needed."
 msgid "info-comment-length-limit-%d"
 msgstr "Comments can be at most %d characters long."
 
-#: lib/model/Entity.php:112
+#: lib/model/Entity.php:116
 msgid "status-entity-duplicate"
 msgstr "duplicate"
 
-#: lib/model/Entity.php:114
+#: lib/model/Entity.php:118
 msgid "status-entity-closed"
 msgstr "closed"
 
-#: lib/model/Entity.php:115
+#: lib/model/Entity.php:119
 msgid "status-entity-deleted"
 msgstr "deleted"
 
-#: lib/model/Entity.php:124
+#: lib/model/Entity.php:128
 msgid "info-entity-closed"
 msgstr "This author was closed"
 
-#: lib/model/Entity.php:125
+#: lib/model/Entity.php:129
 msgid "info-entity-deleted"
 msgstr "This author was deleted"
 
-#: lib/model/Entity.php:128
+#: lib/model/Entity.php:132
 msgid "info-entity-spam"
 msgstr "because its profile contains spam."
 
-#: lib/model/Entity.php:129
+#: lib/model/Entity.php:133
 msgid "info-entity-abuse"
 msgstr "because its profile contains insults or abuse."
 
-#: lib/model/Entity.php:130
+#: lib/model/Entity.php:134
 msgid "info-entity-duplicate-of"
 msgstr "as a duplicate of the author"
 
-#: lib/model/Entity.php:131
+#: lib/model/Entity.php:135
 msgid "info-entity-off-topic"
 msgstr "because it is off-topic."
 
-#: lib/model/Entity.php:132
+#: lib/model/Entity.php:136
 msgid "info-entity-unverifiable"
 msgstr "because it is unverifiable."
 
-#: lib/model/Entity.php:133
+#: lib/model/Entity.php:137
 msgid "info-entity-by-owner"
 msgstr "by the user who added it."
 
-#: lib/model/Entity.php:229
+#: lib/model/Entity.php:233
 #, php-format
 msgid "info-minimum-reputation-add-entity-%s"
 msgstr "You need at least %s reputation to add authors."
 
-#: lib/model/Entity.php:237
+#: lib/model/Entity.php:241
 #, php-format
 msgid "info-minimum-reputation-edit-entity-%s"
 msgstr "You need at least %s reputation to edit authors."
+
+#: lib/model/Entity.php:246
+msgid "info-banned-add-entity"
+msgstr "You are banned from adding authors."
+
+#: lib/model/Entity.php:250
+msgid "info-banned-edit-entity"
+msgstr "You are banned from editing authors."
 
 #: lib/model/Flag.php:27
 msgid "flag-advisory"
@@ -2231,6 +2251,14 @@ msgstr "You need at least %s reputation to edit statements."
 msgid "info-only-moderator-edit-statement-verdict"
 msgstr "This statement has a verdict. Only moderators can edit it directly."
 
+#: lib/model/Statement.php:159
+msgid "info-banned-add-statement"
+msgstr "You are banned from adding statements."
+
+#: lib/model/Statement.php:163
+msgid "info-banned-edit-statement"
+msgstr "You are banned from editing statements."
+
 #: lib/model/User.php:199 routes/auth/login.php:61
 #: routes/auth/lostPassword.php:49 routes/invite/add.php:42
 msgid "info-must-enter-email"
@@ -2281,22 +2309,30 @@ msgstr "Only moderators may perform this action."
 msgid "info-minimum-reputation-flag-%s"
 msgstr "You need at least %s reputation to flag."
 
-#: lib/model/User.php:295
+#: lib/model/User.php:292
+msgid "info-banned-flag"
+msgstr "You are banned from flagging."
+
+#: lib/model/User.php:299
 #, php-format
 msgid "info-flag-limit-singular"
 msgid_plural "info-flag-limit-plural-%d"
 msgstr[0] "You can use at most one flag every 24 hours."
 msgstr[1] "You can use at most %d flags every 24 hours."
 
-#: lib/model/User.php:302
+#: lib/model/User.php:306
 msgid "info-flag-no-object"
 msgstr "Cannot flag: object does not exist."
 
-#: lib/model/User.php:307
+#: lib/model/User.php:311
 msgid "info-already-flagged"
 msgstr "You already have a pending flag for this object."
 
-#: lib/model/User.php:351
+#: lib/model/User.php:339
+msgid "info-banned-comment"
+msgstr "You are banned from commenting."
+
+#: lib/model/User.php:360
 #, php-format
 msgid "info-minimum-reputation-comment-%s"
 msgstr "You need at least %s reputation to comment."
@@ -2337,7 +2373,7 @@ msgstr ""
 "You have reached your limit of %d pending edits. Please wait for some of "
 "them to be reviewed."
 
-#: lib/trait/PendingEditTrait.php:133
+#: lib/trait/PendingEditTrait.php:136
 msgid "can-suggest-changes"
 msgstr "You can suggest changes which will be placed in the review queue."
 
@@ -2561,7 +2597,7 @@ msgstr "Domain saved."
 #: routes/domain/edit.php:79 routes/entity/edit.php:146
 #: routes/entityType/edit.php:57 routes/help/categoryEdit.php:67
 #: routes/relationType/edit.php:58 routes/staticResource/edit.php:49
-#: routes/tag/edit.php:90
+#: routes/tag/edit.php:94
 msgid "info-must-enter-name"
 msgstr "Please enter a name."
 
@@ -2790,23 +2826,27 @@ msgid "info-relation-type-symmetric-same-entity-types"
 msgstr ""
 "Symmetric relationships can only occur between authors of the same type."
 
-#: routes/review/view.php:17
+#: routes/review/view.php:14
+msgid "info-banned-review"
+msgstr "You are banned from accessing review queues."
+
+#: routes/review/view.php:21
 msgid "info-no-such-queue"
 msgstr "No review queue exists by that name."
 
-#: routes/review/view.php:26
+#: routes/review/view.php:30
 msgid "info-no-such-review"
 msgstr "No review exists with the given ID."
 
-#: routes/review/view.php:30
+#: routes/review/view.php:34
 msgid "info-moderator-review-only"
 msgstr "Only moderators may perform that review."
 
-#: routes/review/view.php:43
+#: routes/review/view.php:47
 msgid "info-vote-saved"
 msgstr "Your vote was recorded."
 
-#: routes/review/view.php:88
+#: routes/review/view.php:92
 msgid "info-vote-completes-review"
 msgstr ""
 "This review is now complete. We have redirected you to the next review in "
@@ -2893,16 +2933,20 @@ msgstr "A resource by this name and for this language already exists."
 msgid "info-no-content-or-uploaded-file"
 msgstr "Please type in the contents or choose a file to upload."
 
-#: routes/tag/edit.php:28
+#: routes/tag/edit.php:27
 #, php-format
 msgid "tag-deleted-%s"
 msgstr "Tag [%s] deleted."
 
-#: routes/tag/edit.php:57
+#: routes/tag/edit.php:40
+msgid "info-banned-tag"
+msgstr "You are banned from managing tags."
+
+#: routes/tag/edit.php:61
 msgid "info-tag-saved"
 msgstr "Tag saved."
 
-#: routes/tag/edit.php:99
+#: routes/tag/edit.php:103
 msgid "info-tag-loop"
 msgstr "You cannot select a descendant as the parent."
 
@@ -2936,10 +2980,14 @@ msgstr "Bad vote format."
 msgid "info-minimum-reputation-vote-%s"
 msgstr "You need at least %s reputation to vote."
 
-#: routes/vote/save.php:41
+#: routes/vote/save.php:38
+msgid "info-banned-vote"
+msgstr "You are banned from voting."
+
+#: routes/vote/save.php:45
 msgid "info-vote-no-object"
 msgstr "Cannot vote: object does not exist."
 
-#: routes/vote/save.php:46
+#: routes/vote/save.php:50
 msgid "info-cannot-self-vote"
 msgstr "You cannot vote on your own messages."

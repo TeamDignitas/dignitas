@@ -288,6 +288,10 @@ class User extends Proto {
                   Str::formatNumber(self::PRIV_FLAG)));
       }
 
+      if (Ban::exists(Ban::TYPE_FLAG)) {
+        throw new Exception(_('info-banned-flag'));
+      }
+
       // check the user's remaining flags
       if (self::getRemainingFlags() <= 0) {
         $fpd = self::getFlagsPerDay();
@@ -329,6 +333,11 @@ class User extends Proto {
   static function canComment($obj, $throw = false) {
     try {
       $userId = self::getActiveId();
+
+      // banned?
+      if (Ban::exists(Ban::TYPE_COMMENT)) {
+        throw new Exception(_('info-banned-comment'));
+      }
 
       // owner
       if ($obj instanceof Statement) {

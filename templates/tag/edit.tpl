@@ -162,7 +162,7 @@
           </a>
         {/if}
 
-        {if $t->id && User::may(User::PRIV_DELETE_TAG)}
+        {if $t->isDeletable()}
           <button
             name="deleteButton"
             type="submit"

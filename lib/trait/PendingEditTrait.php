@@ -92,7 +92,10 @@ trait PendingEditTrait {
       !$this->pendingEditId &&
 
        // must not exceed pending edit limit
-      ($u->getNumPendingEdits() < Config::MAX_PENDING_EDITS);
+      ($u->getNumPendingEdits() < Config::MAX_PENDING_EDITS) &&
+
+      // not banned from suggesting edits
+      !Ban::exists(Ban::TYPE_PENDING_EDITS);
 
   }
 

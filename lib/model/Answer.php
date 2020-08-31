@@ -110,6 +110,14 @@ class Answer extends Proto {
         !User::isModerator()) {
       throw new Exception(_('info-only-moderator-edit-proof-answer'));
     }
+
+    if (!$this->id && Ban::exists(Ban::TYPE_ADD_ANSWER)) {
+      throw new Exception(_('info-banned-add-answer'));
+    }
+
+    if ($this->id && Ban::exists(Ban::TYPE_EDIT_ANSWER)) {
+      throw new Exception(_('info-banned-edit-answer'));
+    }
   }
 
   /**
@@ -122,6 +130,7 @@ class Answer extends Proto {
       $this->status == Ct::STATUS_ACTIVE &&
       $this->id &&                               // not on the add answer page
       !$this->proof &&                           // not yet accepted as proof
+      !Ban::exists(Ban::TYPE_DELETE) &&          // not banned from deleting objects
       (User::may(User::PRIV_DELETE_ANSWER) ||    // can delete any answer
        $this->userId == User::getActiveId());    // can always delete user's own answers
   }

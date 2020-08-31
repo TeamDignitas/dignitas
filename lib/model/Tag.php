@@ -97,6 +97,16 @@ class Tag extends Proto {
     return $ids;
   }
 
+  /**
+   * @return bool True iff the current user may delete this tag.
+   */
+  function isDeletable() {
+    return
+      $this->id &&
+      !Ban::exists(Ban::TYPE_TAG) &&
+      User::may(User::PRIV_DELETE_TAG);
+  }
+
   function delete() {
     Log::warning("Deleted tag {$this->id} ({$this->value})");
     ObjectTag::delete_all_by_tagId($this->id);

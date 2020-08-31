@@ -34,6 +34,10 @@ if ($priv && !User::may($priv)) {
                    Str::formatNumber($priv));
 }
 
+if (!$error && Ban::exists(Ban::TYPE_VOTE)) {
+  $error = _('info-banned-vote');
+}
+
 $vote = Vote::loadOrCreate($userId, $type, $objectId);
 
 // ensure the object exists

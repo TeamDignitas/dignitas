@@ -4,7 +4,7 @@ if (!User::getActive()) {
   Util::redirectToLogin(); // just ensure user is logged in
 }
 
-if (User::may(User::PRIV_REVIEW)) {
+if (User::may(User::PRIV_REVIEW) && !Ban::exists(Ban::TYPE_REVIEW)) {
   // get reasons of reviews that are
   // (a) pending,
   // (b) not signed off by the current user and

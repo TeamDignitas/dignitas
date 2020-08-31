@@ -158,6 +158,7 @@ class Comment extends Proto {
   function isDeletable() {
     return
       ($this->status == Ct::STATUS_ACTIVE) &&
+      !Ban::exists(Ban::TYPE_DELETE) &&
       (User::isModerator() ||
        $this->userId == User::getActiveId());
   }

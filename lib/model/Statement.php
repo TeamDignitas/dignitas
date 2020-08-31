@@ -154,6 +154,14 @@ class Statement extends Proto {
         !User::isModerator()) {
       throw new Exception(_('info-only-moderator-edit-statement-verdict'));
     }
+
+    if (!$this->id && Ban::exists(Ban::TYPE_ADD_STATEMENT)) {
+      throw new Exception(_('info-banned-add-statement'));
+    }
+
+    if ($this->id && Ban::exists(Ban::TYPE_EDIT_STATEMENT)) {
+      throw new Exception(_('info-banned-edit-statement'));
+    }
   }
 
   /**
@@ -161,6 +169,7 @@ class Statement extends Proto {
    **/
   function isAnswerable() {
     return User::may(User::PRIV_ADD_ANSWER) &&
+      !Ban::exists(Ban::TYPE_ADD_ANSWER) &&
       $this->status == Ct::STATUS_ACTIVE;
   }
 
@@ -189,6 +198,8 @@ class Statement extends Proto {
       return false; // already deleted or pending edit
     } else if (($this->verdict != Ct::VERDICT_NONE) && !User::isModerator()) {
       return false; // only moderators can delete statements with verdicts
+    } else if (Ban::exists(Ban::TYPE_DELETE)) {
+      return false; // banned from deleting objects
     } else if (User::may(User::PRIV_DELETE_STATEMENT)) {
       return true;  // can delete any statement
     } else if (($this->userId == User::getActiveId()) && $this->isDeletableByOwner()) {

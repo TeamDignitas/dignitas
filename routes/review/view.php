@@ -10,6 +10,10 @@ $keepButton = Request::has('keepButton');
 $nextButton = Request::has('nextButton');
 
 User::enforce(User::PRIV_REVIEW);
+if (Ban::exists(Ban::TYPE_REVIEW)) {
+  FlashMessage::add(_('info-banned-review'));
+  Util::redirectToHome();
+}
 $userId = User::getActiveId();
 
 $reason = Review::getReasonFromUrlName($urlName);

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-08-28 13:09+0300\n"
-"PO-Revision-Date: 2020-08-28 13:15+0300\n"
+"POT-Creation-Date: 2020-08-31 15:07+0300\n"
+"PO-Revision-Date: 2020-08-31 15:09+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -1354,7 +1354,7 @@ msgstr ""
 msgid "info-confirm-delete-tag"
 msgstr "Confirmați ștergerea acestei etichete?"
 
-#: templates/tag/edit.tpl:173 routes/tag/edit.php:33
+#: templates/tag/edit.tpl:173 routes/tag/edit.php:32
 msgid "info-cannot-delete-tag"
 msgstr ""
 "Nu pot șterge eticheta deoarece (1) are descendenți sau (2) este folosită."
@@ -1661,12 +1661,12 @@ msgstr "deoarece este de slabă calitate."
 msgid "info-answer-by-owner"
 msgstr "de către autorul său."
 
-#: lib/model/Answer.php:62 lib/model/Comment.php:54 lib/model/Entity.php:134
+#: lib/model/Answer.php:62 lib/model/Comment.php:54 lib/model/Entity.php:138
 #: lib/model/Statement.php:121
 msgid "info-by"
 msgstr "de către"
 
-#: lib/model/Answer.php:63 lib/model/Comment.php:55 lib/model/Entity.php:135
+#: lib/model/Answer.php:63 lib/model/Comment.php:55 lib/model/Entity.php:139
 #: lib/model/Statement.php:122
 msgid "info-other-reason"
 msgstr "pentru alt motiv."
@@ -1687,51 +1687,63 @@ msgstr ""
 "Acest răspuns a fost acceptat ca demonstrație. Doar moderatorii îl mai pot "
 "modifica direct."
 
-#: lib/model/Ban.php:28
+#: lib/model/Answer.php:115
+msgid "info-banned-add-answer"
+msgstr "Vă este interzisă adăugarea de răspunsuri."
+
+#: lib/model/Answer.php:119
+msgid "info-banned-edit-answer"
+msgstr "Vă este interzisă editarea de răspunsuri."
+
+#: lib/model/Ban.php:29
 msgid "ban-add-entity"
 msgstr "adăugarea de autori"
 
-#: lib/model/Ban.php:29
+#: lib/model/Ban.php:30
 msgid "ban-edit-entity"
 msgstr "editarea de autori"
 
-#: lib/model/Ban.php:30
+#: lib/model/Ban.php:31
 msgid "ban-add-statement"
 msgstr "adăugarea de afirmații"
 
-#: lib/model/Ban.php:31
+#: lib/model/Ban.php:32
 msgid "ban-edit-statement"
 msgstr "editarea de afirmații"
 
-#: lib/model/Ban.php:32
+#: lib/model/Ban.php:33
 msgid "ban-add-answer"
 msgstr "adăugarea de răspunsuri"
 
-#: lib/model/Ban.php:33
+#: lib/model/Ban.php:34
 msgid "ban-edit-answer"
 msgstr "editarea de răspunsuri"
 
-#: lib/model/Ban.php:34
+#: lib/model/Ban.php:35
+msgid "ban-pending-edits"
+msgstr "Vă este interzisă sugerarea de modificări."
+
+#: lib/model/Ban.php:36
 msgid "ban-delete"
 msgstr "ștergeri"
 
-#: lib/model/Ban.php:35
+#: lib/model/Ban.php:37
 msgid "ban-vote"
 msgstr "voturi"
 
-#: lib/model/Ban.php:36
+#: lib/model/Ban.php:38
 msgid "ban-flag"
 msgstr "raportări"
 
-#: lib/model/Ban.php:37
+#: lib/model/Ban.php:39
 msgid "ban-comment"
 msgstr "comentarii"
 
-#: lib/model/Ban.php:38
+#: lib/model/Ban.php:40
 msgid "ban-tag"
 msgstr "etichete"
 
-#: lib/model/Ban.php:39
+#: lib/model/Ban.php:41
 msgid "ban-review"
 msgstr "evaluări"
 
@@ -1760,59 +1772,67 @@ msgstr "deoarece nu mai este necesar."
 msgid "info-comment-length-limit-%d"
 msgstr "Comentariile pot avea maximum %d de caractere."
 
-#: lib/model/Entity.php:112
+#: lib/model/Entity.php:116
 msgid "status-entity-duplicate"
 msgstr "duplicat"
 
-#: lib/model/Entity.php:114
+#: lib/model/Entity.php:118
 msgid "status-entity-closed"
 msgstr "închis"
 
-#: lib/model/Entity.php:115
+#: lib/model/Entity.php:119
 msgid "status-entity-deleted"
 msgstr "șters"
 
-#: lib/model/Entity.php:124
+#: lib/model/Entity.php:128
 msgid "info-entity-closed"
 msgstr "Acest autor a fost închis"
 
-#: lib/model/Entity.php:125
+#: lib/model/Entity.php:129
 msgid "info-entity-deleted"
 msgstr "Acest autor a fost șters"
 
-#: lib/model/Entity.php:128
+#: lib/model/Entity.php:132
 msgid "info-entity-spam"
 msgstr "deoarece profilul său conține spam."
 
-#: lib/model/Entity.php:129
+#: lib/model/Entity.php:133
 msgid "info-entity-abuse"
 msgstr "deoarece profilul său conține insulte sau abuzuri."
 
-#: lib/model/Entity.php:130
+#: lib/model/Entity.php:134
 msgid "info-entity-duplicate-of"
 msgstr "ca duplicat al autorului"
 
-#: lib/model/Entity.php:131
+#: lib/model/Entity.php:135
 msgid "info-entity-off-topic"
 msgstr "deoarece este pe lîngă subiect."
 
-#: lib/model/Entity.php:132
+#: lib/model/Entity.php:136
 msgid "info-entity-unverifiable"
 msgstr "deoarece este neverificabil."
 
-#: lib/model/Entity.php:133
+#: lib/model/Entity.php:137
 msgid "info-entity-by-owner"
 msgstr "de către autorul său."
 
-#: lib/model/Entity.php:229
+#: lib/model/Entity.php:233
 #, php-format
 msgid "info-minimum-reputation-add-entity-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
-#: lib/model/Entity.php:237
+#: lib/model/Entity.php:241
 #, php-format
 msgid "info-minimum-reputation-edit-entity-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a adăuga afirmații."
+
+#: lib/model/Entity.php:246
+msgid "info-banned-add-entity"
+msgstr "Vă este interzisă adăugarea de autori."
+
+#: lib/model/Entity.php:250
+msgid "info-banned-edit-entity"
+msgstr "Vă este interzisă editarea de autori."
 
 #: lib/model/Flag.php:27
 msgid "flag-advisory"
@@ -2251,6 +2271,14 @@ msgstr ""
 "Această afirmație a primit un verdict. Doar moderatorii o mai pot modifica "
 "direct."
 
+#: lib/model/Statement.php:159
+msgid "info-banned-add-statement"
+msgstr "Vă este interzisă adăugarea de afirmații."
+
+#: lib/model/Statement.php:163
+msgid "info-banned-edit-statement"
+msgstr "Vă este interzisă editarea de afirmații."
+
 #: lib/model/User.php:199 routes/auth/login.php:61
 #: routes/auth/lostPassword.php:49 routes/invite/add.php:42
 msgid "info-must-enter-email"
@@ -2303,7 +2331,11 @@ msgstr "Doar moderatorii pot face această acțiune."
 msgid "info-minimum-reputation-flag-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a face raportări."
 
-#: lib/model/User.php:295
+#: lib/model/User.php:292
+msgid "info-banned-flag"
+msgstr "Vă este interzisă raportarea articolelor."
+
+#: lib/model/User.php:299
 #, php-format
 msgid "info-flag-limit-singular"
 msgid_plural "info-flag-limit-plural-%d"
@@ -2311,15 +2343,19 @@ msgstr[0] "Puteți face cel mult o raportare la 24 de ore."
 msgstr[1] "Puteți face cel mult %d raportări la 24 de ore."
 msgstr[2] "Puteți face cel mult %d de raportări la 24 de ore."
 
-#: lib/model/User.php:302
+#: lib/model/User.php:306
 msgid "info-flag-no-object"
 msgstr "Nu pot face raportarea: articolul nu există."
 
-#: lib/model/User.php:307
+#: lib/model/User.php:311
 msgid "info-already-flagged"
 msgstr "Ați raportat deja acest articol."
 
-#: lib/model/User.php:351
+#: lib/model/User.php:339
+msgid "info-banned-comment"
+msgstr "Vă este interzisă adăugarea de comentarii."
+
+#: lib/model/User.php:360
 #, php-format
 msgid "info-minimum-reputation-comment-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a comenta."
@@ -2361,7 +2397,7 @@ msgstr ""
 "Ați atins limita zilnică de %d modificări sugerate. Vă rugăm să așteptați "
 "evaluarea unora din ele."
 
-#: lib/trait/PendingEditTrait.php:133
+#: lib/trait/PendingEditTrait.php:136
 msgid "can-suggest-changes"
 msgstr "Puteți sugera modificări care vor fi puse în coada de evaluare."
 
@@ -2589,7 +2625,7 @@ msgstr "Am salvat domeniul."
 #: routes/domain/edit.php:79 routes/entity/edit.php:146
 #: routes/entityType/edit.php:57 routes/help/categoryEdit.php:67
 #: routes/relationType/edit.php:58 routes/staticResource/edit.php:49
-#: routes/tag/edit.php:90
+#: routes/tag/edit.php:94
 msgid "info-must-enter-name"
 msgstr "Vă rugăm să introduceți un nume."
 
@@ -2821,23 +2857,27 @@ msgid "info-relation-type-symmetric-same-entity-types"
 msgstr ""
 "Un tip de relație simetric poate exista doar între entități de același tip."
 
-#: routes/review/view.php:17
+#: routes/review/view.php:14
+msgid "info-banned-review"
+msgstr "Vă este interzis accesul la evaluări."
+
+#: routes/review/view.php:21
 msgid "info-no-such-queue"
 msgstr "Nu există nicio coadă de evaluare cu acest nume."
 
-#: routes/review/view.php:26
+#: routes/review/view.php:30
 msgid "info-no-such-review"
 msgstr "Evaluarea căutată nu există."
 
-#: routes/review/view.php:30
+#: routes/review/view.php:34
 msgid "info-moderator-review-only"
 msgstr "Doar moderatorii pot face această evaluare."
 
-#: routes/review/view.php:43
+#: routes/review/view.php:47
 msgid "info-vote-saved"
 msgstr "Am salvat votul."
 
-#: routes/review/view.php:88
+#: routes/review/view.php:92
 msgid "info-vote-completes-review"
 msgstr ""
 "Această evaluare este acum completă. V-am redirecționat către următoarea "
@@ -2928,16 +2968,20 @@ msgstr ""
 "Trebuie să tastați conținutul resursei sau să alegeți un fișier pentru "
 "încărcare."
 
-#: routes/tag/edit.php:28
+#: routes/tag/edit.php:27
 #, php-format
 msgid "tag-deleted-%s"
 msgstr "Am șters eticheta [%s]."
 
-#: routes/tag/edit.php:57
+#: routes/tag/edit.php:40
+msgid "info-banned-tag"
+msgstr "Vă este interzisă gestionarea etichetelor."
+
+#: routes/tag/edit.php:61
 msgid "info-tag-saved"
 msgstr "Am salvat eticheta."
 
-#: routes/tag/edit.php:99
+#: routes/tag/edit.php:103
 msgid "info-tag-loop"
 msgstr "Nu puteți alege un descendent ca părinte."
 
@@ -2971,10 +3015,14 @@ msgstr "Votul are un format incorect."
 msgid "info-minimum-reputation-vote-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a vota."
 
-#: routes/vote/save.php:41
+#: routes/vote/save.php:38
+msgid "info-banned-vote"
+msgstr "Vă este interzisă votarea."
+
+#: routes/vote/save.php:45
 msgid "info-vote-no-object"
 msgstr "Nu pot salva votul: obiectul nu există."
 
-#: routes/vote/save.php:46
+#: routes/vote/save.php:50
 msgid "info-cannot-self-vote"
 msgstr "Nu puteți vota propriile mesaje."
