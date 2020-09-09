@@ -9,8 +9,9 @@
 
       {if $obj}
         {* Get the actual target, in case it was delegated. It, too, may have been deleted. *}
-        {if $n->type == Subscription::TYPE_NEW_ANSWER ||
-          $n->type == Subscription::TYPE_NEW_COMMENT}
+        {if $n->type == Subscription::TYPE_NEW_ANSWER}
+          {$target=$obj->getStatement()}
+        {else if $n->type == Subscription::TYPE_NEW_COMMENT}
           {$target=$obj->getObject()}
         {else}
           {$target=$obj}
