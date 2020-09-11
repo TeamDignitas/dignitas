@@ -21,6 +21,10 @@ class Statement extends Proto {
     return Router::link('statement/edit') . '/' . $this->id;
   }
 
+  function getHistoryUrl() {
+    return Router::link('statement/history') . '/' . $this->id;
+  }
+
   function getMarkdownFields() {
     return [ 'context' ];
   }

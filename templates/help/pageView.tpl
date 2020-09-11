@@ -30,18 +30,12 @@
         {if User::isModerator()}
           <div class="mt-2">
             <a
-              class="btn btn-sm btn-outline-primary"
-              href="{Router::link('help/pageEdit')}/{$page->id}">
+              class="btn btn-outline-secondary mt-1"
+              href="{Router::link('help/pageEdit')}/{$page->id}"
+              title="{t}link-edit{/t}">
               <i class="icon icon-pencil"></i>
-              {t}link-edit{/t}
             </a>
-            {if $page->hasRevisions()}
-              <a
-                class="btn btn-sm btn-outline-secondary"
-                href="{Router::link('help/pageHistory')}/{$page->id}">
-                {t}link-show-revisions{/t}
-              </a>
-            {/if}
+            {include "bits/historyButton.tpl" obj=$page}
           </div>
         {/if}
       </div>

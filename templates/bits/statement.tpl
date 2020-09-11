@@ -109,14 +109,7 @@
 
     {$comments=Comment::getFor($statement)}
     <div class="clearfix statement-actions mb-2 mt-1 text-right">
-      {if $statement->hasRevisions()}
-        <a
-          href="{Router::link('statement/history')}/{$statement->id}"
-          class="btn btn-outline-secondary mt-1"
-          title="{t}link-show-revisions{/t}">
-          <i class="icon icon-hourglass"></i>
-        </a>
-      {/if}
+      {include "bits/historyButton.tpl" obj=$statement}
 
       {if $editLink}
         {include "bits/editButton.tpl" obj=$statement}
