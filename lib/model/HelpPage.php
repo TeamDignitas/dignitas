@@ -11,6 +11,10 @@ class HelpPage extends Proto {
     return Router::link('help/index') . '/' . $this->path;
   }
 
+  function getHistoryUrl() {
+    return Router::link('help/pageHistory') . '/' . $this->id;
+  }
+
   function getMarkdownFields() {
     return [ 'contents' ];
   }

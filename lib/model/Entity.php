@@ -22,6 +22,10 @@ class Entity extends Proto {
     return Router::link('entity/edit') . '/' . $this->id;
   }
 
+  function getHistoryUrl() {
+    return Router::link('entity/history') . '/' . $this->id;
+  }
+
   function getUser() {
     return User::get_by_id($this->userId);
   }

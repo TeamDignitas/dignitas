@@ -16,6 +16,10 @@ class Answer extends Proto {
     return Router::link('answer/edit') . '/' . $this->id;
   }
 
+  function getHistoryUrl() {
+    return Router::link('answer/history') . '/' . $this->id;
+  }
+
   function getMarkdownFields() {
     return [ 'contents' ];
   }

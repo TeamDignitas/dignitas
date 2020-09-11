@@ -55,15 +55,7 @@
           <i class="icon icon-link"></i>
         </a>
 
-        {if $answer->hasRevisions()}
-          <a
-            href="{Router::link('answer/history')}/{$answer->id}"
-            class="btn btn-outline-secondary mt-1"
-            title="{t}link-show-revisions{/t}">
-            <i class="icon icon-hourglass"></i>
-          </a>
-        {/if}
-
+        {include "bits/historyButton.tpl" obj=$answer}
         {include "bits/editButton.tpl" obj=$answer}
         {include "bits/flagLinks.tpl" obj=$answer class="btn btn-outline-secondary mt-1"}
 

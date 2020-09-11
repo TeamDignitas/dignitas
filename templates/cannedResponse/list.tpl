@@ -35,17 +35,11 @@
               <td class="col-2">
                 <a
                   href="{Router::link('cannedResponse/edit')}/{$cr->id}"
-                  class="btn btn-sm btn-outline-secondary">
+                  class="btn btn-outline-secondary mt-1"
+                  title="{t}link-edit{/t}">
                   <i class="icon icon-pencil"></i>
-                  {t}link-edit{/t}
                 </a>
-                {if $cr->hasRevisions()}
-                  <a
-                    class="btn btn-sm btn-outline-secondary mt-1"
-                    href="{Router::link('cannedResponse/history')}/{$cr->id}">
-                    {t}link-show-revisions{/t}
-                  </a>
-                {/if}
+                {include "bits/historyButton.tpl" obj=$cr}
               </td>
             </tr>
           {/foreach}
