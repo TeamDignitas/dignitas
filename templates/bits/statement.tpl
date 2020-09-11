@@ -109,8 +109,6 @@
 
     {$comments=Comment::getFor($statement)}
     <div class="clearfix statement-actions mb-2 mt-1 text-right">
-      {include "bits/historyButton.tpl" obj=$statement}
-
       {if $editLink}
         {include "bits/editButton.tpl" obj=$statement}
       {/if}
@@ -122,6 +120,8 @@
       {if empty($comments) && $addComment}
         {include "bits/addCommentLink.tpl" object=$statement}
       {/if}
+
+      {include "bits/historyButton.tpl" obj=$statement}
     </div>
 
     {if !empty($comments)}
