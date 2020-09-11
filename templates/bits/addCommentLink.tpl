@@ -1,7 +1,8 @@
 <a
   href="#"
-  class="add-comment btn btn-sm btn-outline-secondary mt-1"
+  class="add-comment btn btn-outline-secondary mt-1"
+  title="{t}link-add-comment{/t}"
   data-object-type="{$object->getObjectType()}"
   data-object-id="{$object->id}">
-  {t}link-add-comment{/t}
+  <i class="icon icon-comment"></i>
 </a>

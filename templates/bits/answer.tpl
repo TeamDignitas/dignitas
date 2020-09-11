@@ -50,20 +50,22 @@
       <div class="text-muted text-left mb-2 ml-0 pl-0">
         <a
           href="#a{$answer->id}"
-          class="btn btn-sm btn-outline-secondary mt-1"
+          class="btn btn-outline-secondary mt-1"
           title="{t}info-answer-permalink{/t}">
           <i class="icon icon-link"></i>
-          {t}link-permalink{/t}
         </a>
 
         {if $answer->hasRevisions()}
-          <a href="{Router::link('answer/history')}/{$answer->id}" class="btn btn-sm btn-outline-secondary mt-1">
-            {t}link-show-revisions{/t}
+          <a
+            href="{Router::link('answer/history')}/{$answer->id}"
+            class="btn btn-outline-secondary mt-1"
+            title="{t}link-show-revisions{/t}">
+            <i class="icon icon-hourglass"></i>
           </a>
         {/if}
 
-        {include "bits/editButton.tpl" obj=$answer class="btn btn-sm btn-outline-secondary mt-1"}
-        {include "bits/flagLinks.tpl" obj=$answer class="btn btn-sm btn-outline-secondary mt-1"}
+        {include "bits/editButton.tpl" obj=$answer}
+        {include "bits/flagLinks.tpl" obj=$answer class="btn btn-outline-secondary mt-1"}
 
         {if $addComment && empty($comments)}
           {include "bits/addCommentLink.tpl" object=$answer}
