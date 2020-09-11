@@ -55,13 +55,14 @@
           <i class="icon icon-link"></i>
         </a>
 
-        {include "bits/historyButton.tpl" obj=$answer}
         {include "bits/editButton.tpl" obj=$answer}
         {include "bits/flagLinks.tpl" obj=$answer class="btn btn-outline-secondary mt-1"}
 
         {if $addComment && empty($comments)}
           {include "bits/addCommentLink.tpl" object=$answer}
         {/if}
+
+        {include "bits/historyButton.tpl" obj=$answer}
       </div>
 
       {if !empty($comments)}
