@@ -67,20 +67,20 @@
         </div>
       </fieldset>
 
-      <div class="mt-4">
-        <button name="saveButton" type="submit" class="btn btn-sm btn-outline-primary">
+      <div class="mt-4 row">
+        <button name="saveButton" type="submit" class="btn btn-sm btn-outline-primary col-sm-4 col-lg-2 mr-2 mb-2">
           <i class="icon icon-floppy"></i>
           {t}link-save{/t}
         </button>
 
         {if $domain->id}
-          <button name="cloneButton" type="submit" class="btn btn-sm btn-outline-secondary">
+          <button name="cloneButton" type="submit" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2">
             <i class="icon icon-clone"></i>
             {t}link-clone{/t}
           </button>
         {/if}
 
-        <a href="{Router::link('domain/list')}" class="btn btn-sm btn-outline-secondary">
+        <a href="{Router::link('domain/list')}" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2">
           <i class="icon icon-cancel"></i>
           {t}link-cancel{/t}
         </a>
@@ -89,7 +89,7 @@
           <button
             name="deleteButton"
             type="submit"
-            class="btn btn-sm btn-outline-danger float-right"
+            class="btn btn-sm btn-outline-danger col-sm-4 col-lg-2 mr-2 mb-2"
             data-confirm="{t}info-confirm-delete-domain{/t}">
             <i class="icon icon-trash"></i>
             {t}link-delete{/t}
