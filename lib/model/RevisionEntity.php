@@ -17,6 +17,14 @@ class RevisionEntity extends Entity {
                         $prev->name,
                         $this->name,
                         $od, Ct::FIELD_CHANGE_STRING);
+    $this->compareField(_('phrase-short-possessive'),
+                        $prev->shortPossessive,
+                        $this->shortPossessive,
+                        $od, Ct::FIELD_CHANGE_STRING);
+    $this->compareField(_('phrase-long-possessive'),
+                        $prev->longPossessive,
+                        $this->longPossessive,
+                        $od, Ct::FIELD_CHANGE_STRING);
     $this->compareField(_('label-entity-type'),
                         $prev->getEntityType()->name,
                         $this->getEntityType()->name,
