@@ -36,7 +36,7 @@
                 <a
                   href="{Router::link('cannedResponse/edit')}/{$cr->id}"
                   class="btn btn-sm btn-outline-secondary">
-                  <i class="icon icon-edit"></i>
+                  <i class="icon icon-pencil"></i>
                   {t}link-edit{/t}
                 </a>
                 {if $cr->hasRevisions()}

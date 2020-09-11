@@ -35,7 +35,7 @@
             <a
               class="btn btn-sm btn-outline-primary"
               href="{Router::link('help/categoryEdit')}/{$category->id}">
-              <i class="icon icon-edit"></i>
+              <i class="icon icon-pencil"></i>
               {t}link-edit{/t}
             </a>
           </div>

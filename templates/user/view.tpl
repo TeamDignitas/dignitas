@@ -82,7 +82,7 @@
           <div class="user-actions text-left">
             {if $user->id == User::getActiveId()}
               <a href="{Router::link('user/edit')}" class="btn btn-sm btn-outline-primary">
-                <i class="icon icon-edit"></i>
+                <i class="icon icon-pencil"></i>
                 {t}link-edit{/t}
               </a>
             {/if}

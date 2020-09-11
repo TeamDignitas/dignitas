@@ -17,6 +17,6 @@
     href="{$obj->getEditUrl()}"
     class="{$class}"
     title="{$smarty.capture.msg}">
-    <i class="icon icon-edit"></i>
+    <i class="icon icon-pencil"></i>
   </a>
 {/if}
