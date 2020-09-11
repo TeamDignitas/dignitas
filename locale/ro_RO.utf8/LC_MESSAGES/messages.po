@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-08-31 15:07+0300\n"
-"PO-Revision-Date: 2020-08-31 15:09+0300\n"
+"POT-Creation-Date: 2020-09-11 15:38+0300\n"
+"PO-Revision-Date: 2020-09-11 15:39+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -230,7 +230,7 @@ msgstr "un comentariu"
 msgid "action-updated-user-profile"
 msgstr "și-a actualizat profilul"
 
-#: templates/bits/addCommentLink.tpl:6
+#: templates/bits/addCommentLink.tpl:4
 msgid "link-add-comment"
 msgstr "adaugă un comentariu"
 
@@ -246,17 +246,7 @@ msgstr "publicat de"
 msgid "info-answer-permalink"
 msgstr "legătură permanentă către acest răspuns"
 
-#: templates/bits/answer.tpl:56
-msgid "link-permalink"
-msgstr "legătură"
-
-#: templates/bits/answer.tpl:61 templates/bits/entity.tpl:118
-#: templates/bits/statement.tpl:116 templates/cannedResponse/list.tpl:46
-#: templates/help/pageView.tpl:42
-msgid "link-show-revisions"
-msgstr "arată versiunile"
-
-#: templates/bits/answerEdit.tpl:18 templates/bits/statement.tpl:165
+#: templates/bits/answerEdit.tpl:18 templates/bits/statement.tpl:159
 #: templates/statement/edit.tpl:121 lib/model/RevisionAnswer.php:15
 #: lib/model/RevisionStatement.php:18
 msgid "label-verdict"
@@ -267,7 +257,7 @@ msgid "link-verdict-details"
 msgstr "detalii despre verdicte și efectele lor"
 
 #: templates/bits/answerEdit.tpl:55 templates/bits/commentForm.tpl:49
-#: templates/cannedResponse/edit.tpl:35 templates/cannedResponse/list.tpl:62
+#: templates/cannedResponse/edit.tpl:35 templates/cannedResponse/list.tpl:56
 #: templates/domain/edit.tpl:85 templates/entity/edit.tpl:248
 #: templates/entityType/edit.tpl:97 templates/help/categoryEdit.tpl:69
 #: templates/help/categoryList.tpl:34 templates/help/pageEdit.tpl:79
@@ -341,16 +331,16 @@ msgstr[0] "o linie identică omisă"
 msgstr[1] "%1 linii identice omise"
 msgstr[2] "%1 de linii identice omise"
 
-#: templates/bits/editButton.tpl:15 templates/bits/reviewActions.tpl:29
-#: templates/cannedResponse/list.tpl:40 templates/domain/list.tpl:34
+#: templates/bits/editButton.tpl:10 templates/bits/reviewActions.tpl:29
+#: templates/cannedResponse/list.tpl:39 templates/domain/list.tpl:34
 #: templates/entityType/list.tpl:51 templates/help/categoryView.tpl:39
-#: templates/help/pageView.tpl:36 templates/relationType/list.tpl:46
+#: templates/help/pageView.tpl:35 templates/relationType/list.tpl:46
 #: templates/staticResource/list.tpl:42 templates/tag/view.tpl:15
 #: templates/user/view.tpl:86
 msgid "link-edit"
 msgstr "editează"
 
-#: templates/bits/editButton.tpl:17
+#: templates/bits/editButton.tpl:12
 msgid "link-suggest-edit"
 msgstr "sugerează o modificare"
 
@@ -392,11 +382,11 @@ msgstr "moderator"
 msgid "link-test-login"
 msgstr "autentificare ca utilizator de test"
 
-#: templates/bits/flagLinks.tpl:20 templates/bits/flagLinks.tpl:23
+#: templates/bits/flagLinks.tpl:19
 msgid "link-flag"
 msgstr "raportează"
 
-#: templates/bits/flagLinks.tpl:35 templates/bits/flagLinks.tpl:38
+#: templates/bits/flagLinks.tpl:31
 msgid "link-unflag"
 msgstr "șterge raportarea"
 
@@ -540,6 +530,10 @@ msgstr "dată"
 msgid "label-changes"
 msgstr "modificări"
 
+#: templates/bits/historyButton.tpl:9
+msgid "link-show-revisions"
+msgstr "arată versiunile"
+
 #: templates/bits/inlineAttachment.tpl:1
 msgid "info-read-guide-inline-attachment"
 msgstr ""
@@ -596,7 +590,7 @@ msgstr "schimbă"
 msgid "link-log-out"
 msgstr "ieșire"
 
-#: templates/bits/notifications.tpl:40
+#: templates/bits/notifications.tpl:41
 msgid "info-notification-unsubscribe"
 msgstr "dezabonează-mă de la toate notificările pentru acest articol"
 
@@ -730,7 +724,7 @@ msgstr "textul comentariului"
 msgid "title-actions"
 msgstr "acțiuni"
 
-#: templates/cannedResponse/list.tpl:58 templates/help/categoryList.tpl:30
+#: templates/cannedResponse/list.tpl:52 templates/help/categoryList.tpl:30
 #: templates/relationType/list.tpl:60
 msgid "link-save-order"
 msgstr "salvează ordinea"
@@ -847,6 +841,7 @@ msgid "title-add-entity"
 msgstr "adaugă un autor"
 
 #: templates/entity/edit.tpl:43 lib/model/RelationType.php:27
+#: lib/model/RevisionEntity.php:24
 msgid "phrase-long-possessive"
 msgstr "genitiv lung"
 
@@ -855,6 +850,7 @@ msgid "label-optional"
 msgstr "opțional"
 
 #: templates/entity/edit.tpl:57 lib/model/RelationType.php:28
+#: lib/model/RevisionEntity.php:20
 msgid "phrase-short-possessive"
 msgstr "genitiv scurt"
 
@@ -1637,61 +1633,61 @@ msgstr "a votat pentru a nu redeschide"
 msgid "action-retracted-flag"
 msgstr "și-a retras raportarea pentru"
 
-#: lib/model/Answer.php:54
+#: lib/model/Answer.php:58
 msgid "info-answer-deleted"
 msgstr "Acest răspuns a fost șters"
 
-#: lib/model/Answer.php:57
+#: lib/model/Answer.php:61
 msgid "info-answer-spam"
 msgstr "deoarece este spam."
 
-#: lib/model/Answer.php:58
+#: lib/model/Answer.php:62
 msgid "info-answer-abuse"
 msgstr "deoarece conține insulte sau abuzuri."
 
-#: lib/model/Answer.php:59
+#: lib/model/Answer.php:63
 msgid "info-answer-off-topic"
 msgstr "deoarece este pe lîngă subiect."
 
-#: lib/model/Answer.php:60
+#: lib/model/Answer.php:64
 msgid "info-answer-low-quality"
 msgstr "deoarece este de slabă calitate."
 
-#: lib/model/Answer.php:61
+#: lib/model/Answer.php:65
 msgid "info-answer-by-owner"
 msgstr "de către autorul său."
 
-#: lib/model/Answer.php:62 lib/model/Comment.php:54 lib/model/Entity.php:138
-#: lib/model/Statement.php:121
+#: lib/model/Answer.php:66 lib/model/Comment.php:54 lib/model/Entity.php:142
+#: lib/model/Statement.php:125
 msgid "info-by"
 msgstr "de către"
 
-#: lib/model/Answer.php:63 lib/model/Comment.php:55 lib/model/Entity.php:139
-#: lib/model/Statement.php:122
+#: lib/model/Answer.php:67 lib/model/Comment.php:55 lib/model/Entity.php:143
+#: lib/model/Statement.php:126
 msgid "info-other-reason"
 msgstr "pentru alt motiv."
 
-#: lib/model/Answer.php:97
+#: lib/model/Answer.php:101
 #, php-format
 msgid "info-minimum-reputation-add-answer-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a adăuga răspunsuri."
 
-#: lib/model/Answer.php:105
+#: lib/model/Answer.php:109
 #, php-format
 msgid "info-minimum-reputation-edit-answer-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a edita răspunsuri."
 
-#: lib/model/Answer.php:111
+#: lib/model/Answer.php:115
 msgid "info-only-moderator-edit-proof-answer"
 msgstr ""
 "Acest răspuns a fost acceptat ca demonstrație. Doar moderatorii îl mai pot "
 "modifica direct."
 
-#: lib/model/Answer.php:115
+#: lib/model/Answer.php:119
 msgid "info-banned-add-answer"
 msgstr "Vă este interzisă adăugarea de răspunsuri."
 
-#: lib/model/Answer.php:119
+#: lib/model/Answer.php:123
 msgid "info-banned-edit-answer"
 msgstr "Vă este interzisă editarea de răspunsuri."
 
@@ -1772,65 +1768,65 @@ msgstr "deoarece nu mai este necesar."
 msgid "info-comment-length-limit-%d"
 msgstr "Comentariile pot avea maximum %d de caractere."
 
-#: lib/model/Entity.php:116
+#: lib/model/Entity.php:120
 msgid "status-entity-duplicate"
 msgstr "duplicat"
 
-#: lib/model/Entity.php:118
+#: lib/model/Entity.php:122
 msgid "status-entity-closed"
 msgstr "închis"
 
-#: lib/model/Entity.php:119
+#: lib/model/Entity.php:123
 msgid "status-entity-deleted"
 msgstr "șters"
 
-#: lib/model/Entity.php:128
+#: lib/model/Entity.php:132
 msgid "info-entity-closed"
 msgstr "Acest autor a fost închis"
 
-#: lib/model/Entity.php:129
+#: lib/model/Entity.php:133
 msgid "info-entity-deleted"
 msgstr "Acest autor a fost șters"
 
-#: lib/model/Entity.php:132
+#: lib/model/Entity.php:136
 msgid "info-entity-spam"
 msgstr "deoarece profilul său conține spam."
 
-#: lib/model/Entity.php:133
+#: lib/model/Entity.php:137
 msgid "info-entity-abuse"
 msgstr "deoarece profilul său conține insulte sau abuzuri."
 
-#: lib/model/Entity.php:134
+#: lib/model/Entity.php:138
 msgid "info-entity-duplicate-of"
 msgstr "ca duplicat al autorului"
 
-#: lib/model/Entity.php:135
+#: lib/model/Entity.php:139
 msgid "info-entity-off-topic"
 msgstr "deoarece este pe lîngă subiect."
 
-#: lib/model/Entity.php:136
+#: lib/model/Entity.php:140
 msgid "info-entity-unverifiable"
 msgstr "deoarece este neverificabil."
 
-#: lib/model/Entity.php:137
+#: lib/model/Entity.php:141
 msgid "info-entity-by-owner"
 msgstr "de către autorul său."
 
-#: lib/model/Entity.php:233
+#: lib/model/Entity.php:237
 #, php-format
 msgid "info-minimum-reputation-add-entity-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
-#: lib/model/Entity.php:241
+#: lib/model/Entity.php:245
 #, php-format
 msgid "info-minimum-reputation-edit-entity-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
-#: lib/model/Entity.php:246
+#: lib/model/Entity.php:250
 msgid "info-banned-add-entity"
 msgstr "Vă este interzisă adăugarea de autori."
 
-#: lib/model/Entity.php:250
+#: lib/model/Entity.php:254
 msgid "info-banned-edit-entity"
 msgstr "Vă este interzisă editarea de autori."
 
@@ -2110,7 +2106,7 @@ msgstr ""
 msgid "title-changes-contents"
 msgstr "modificări la conținut"
 
-#: lib/model/RevisionAnswer.php:19 lib/model/RevisionEntity.php:28
+#: lib/model/RevisionAnswer.php:19 lib/model/RevisionEntity.php:36
 #: lib/model/RevisionStatement.php:30
 msgid "label-status"
 msgstr "stare"
@@ -2123,59 +2119,59 @@ msgstr "modificări la profil"
 msgid "label-entity-name"
 msgstr "nume"
 
-#: lib/model/RevisionEntity.php:20
+#: lib/model/RevisionEntity.php:28
 msgid "label-entity-type"
 msgstr "tip"
 
-#: lib/model/RevisionEntity.php:24
+#: lib/model/RevisionEntity.php:32
 msgid "label-entity-color"
 msgstr "culoare"
 
-#: lib/model/RevisionEntity.php:32
+#: lib/model/RevisionEntity.php:40
 msgid "label-image-file"
 msgstr "fișier imagine"
 
-#: lib/model/RevisionEntity.php:42 lib/model/RevisionStatement.php:40
+#: lib/model/RevisionEntity.php:50 lib/model/RevisionStatement.php:40
 msgid "label-added-tags"
 msgstr "etichete adăugate"
 
-#: lib/model/RevisionEntity.php:48 lib/model/RevisionStatement.php:46
+#: lib/model/RevisionEntity.php:56 lib/model/RevisionStatement.php:46
 msgid "label-deleted-tags"
 msgstr "etichete șterse"
 
-#: lib/model/RevisionEntity.php:55
+#: lib/model/RevisionEntity.php:63
 msgid "label-added-aliases"
 msgstr "aliasuri adăugate"
 
-#: lib/model/RevisionEntity.php:61
+#: lib/model/RevisionEntity.php:69
 msgid "label-deleted-aliases"
 msgstr "aliasuri șterse"
 
-#: lib/model/RevisionEntity.php:69
+#: lib/model/RevisionEntity.php:77
 msgid "label-changed-alias"
 msgstr "alias modificat"
 
-#: lib/model/RevisionEntity.php:77
+#: lib/model/RevisionEntity.php:85
 msgid "label-added-entity-links"
 msgstr "legături adăugate"
 
-#: lib/model/RevisionEntity.php:83
+#: lib/model/RevisionEntity.php:91
 msgid "label-deleted-entity-links"
 msgstr "legături șterse"
 
-#: lib/model/RevisionEntity.php:91
+#: lib/model/RevisionEntity.php:99
 msgid "label-changed-entity-link"
 msgstr "legătură modificată"
 
-#: lib/model/RevisionEntity.php:99
+#: lib/model/RevisionEntity.php:107
 msgid "label-added-relations"
 msgstr "relații adăugate"
 
-#: lib/model/RevisionEntity.php:105
+#: lib/model/RevisionEntity.php:113
 msgid "label-deleted-relations"
 msgstr "relații șterse"
 
-#: lib/model/RevisionEntity.php:113
+#: lib/model/RevisionEntity.php:121
 msgid "label-changed-relation"
 msgstr "relație modificată"
 
@@ -2207,75 +2203,75 @@ msgstr "surse șterse"
 msgid "label-changed-statement-link"
 msgstr "sursă modificată"
 
-#: lib/model/Statement.php:98
+#: lib/model/Statement.php:102
 msgid "status-statement-duplicate"
 msgstr "duplicat"
 
-#: lib/model/Statement.php:100
+#: lib/model/Statement.php:104
 msgid "status-statement-closed"
 msgstr "închisă"
 
-#: lib/model/Statement.php:101
+#: lib/model/Statement.php:105
 msgid "status-statement-deleted"
 msgstr "ștearsă"
 
-#: lib/model/Statement.php:110
+#: lib/model/Statement.php:114
 msgid "info-statement-closed"
 msgstr "Această afirmație a fost închisă"
 
-#: lib/model/Statement.php:111
+#: lib/model/Statement.php:115
 msgid "info-statement-deleted"
 msgstr "Această afirmație a fost ștearsă"
 
-#: lib/model/Statement.php:114
+#: lib/model/Statement.php:118
 msgid "info-statement-spam"
 msgstr "deoarece este spam."
 
-#: lib/model/Statement.php:115
+#: lib/model/Statement.php:119
 msgid "info-statement-abuse"
 msgstr "deoarece conține insulte sau abuzuri."
 
-#: lib/model/Statement.php:116
+#: lib/model/Statement.php:120
 msgid "info-statement-duplicate-of"
 msgstr "ca duplicat al afirmației"
 
-#: lib/model/Statement.php:117
+#: lib/model/Statement.php:121
 msgid "info-statement-off-topic"
 msgstr "deoarece este pe lîngă subiect."
 
-#: lib/model/Statement.php:118
+#: lib/model/Statement.php:122
 msgid "info-statement-unverifiable"
 msgstr "deoarece este neverificabilă."
 
-#: lib/model/Statement.php:119
+#: lib/model/Statement.php:123
 msgid "info-statement-low-quality"
 msgstr "deoarece este de slabă calitate."
 
-#: lib/model/Statement.php:120
+#: lib/model/Statement.php:124
 msgid "info-statement-by-owner"
 msgstr "de către autorul său."
 
-#: lib/model/Statement.php:141
+#: lib/model/Statement.php:145
 #, php-format
 msgid "info-minimum-reputation-add-statement-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
-#: lib/model/Statement.php:149
+#: lib/model/Statement.php:153
 #, php-format
 msgid "info-minimum-reputation-edit-statement-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a edita afirmații."
 
-#: lib/model/Statement.php:155
+#: lib/model/Statement.php:159
 msgid "info-only-moderator-edit-statement-verdict"
 msgstr ""
 "Această afirmație a primit un verdict. Doar moderatorii o mai pot modifica "
 "direct."
 
-#: lib/model/Statement.php:159
+#: lib/model/Statement.php:163
 msgid "info-banned-add-statement"
 msgstr "Vă este interzisă adăugarea de afirmații."
 
-#: lib/model/Statement.php:163
+#: lib/model/Statement.php:167
 msgid "info-banned-edit-statement"
 msgstr "Vă este interzisă editarea de afirmații."
 
