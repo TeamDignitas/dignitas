@@ -25,7 +25,7 @@
         </button>
 
         <a href="{$object->getEditUrl()}" class="btn btn-sm btn-outline-secondary">
-          <i class="icon icon-edit"></i>
+          <i class="icon icon-pencil"></i>
           {t}link-edit{/t}
         </a>
 
