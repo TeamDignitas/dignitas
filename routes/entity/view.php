@@ -18,5 +18,5 @@ Smart::assign([
   'entity' => $entity,
   'statements' => $entity->getStatements(),
 ]);
-Smart::addResources('flag');
+Smart::addResources('flag', 'subscribe');
 Smart::display('entity/view.tpl');

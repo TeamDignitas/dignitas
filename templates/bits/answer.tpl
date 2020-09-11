@@ -56,6 +56,7 @@
         </a>
 
         {include "bits/editButton.tpl" obj=$answer}
+        {include "bits/subscribeLinks.tpl" obj=$answer}
         {include "bits/flagLinks.tpl" obj=$answer class="btn btn-outline-secondary mt-1"}
 
         {if $addComment && empty($comments)}

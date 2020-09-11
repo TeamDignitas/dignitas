@@ -113,6 +113,7 @@
         {include "bits/editButton.tpl" obj=$statement}
       {/if}
 
+      {include "bits/subscribeLinks.tpl" obj=$statement}
       {include "bits/flagLinks.tpl" obj=$statement class="btn btn-outline-secondary mt-1"}
 
       {* when there are no comments, the add comment button sits on the same

@@ -36,4 +36,18 @@ class Subscription extends Precursor {
     $sub->save();
   }
 
+  static function exists($object) {
+    $userId = User::getActiveId();
+    if (!$userId) {
+      return false;
+    }
+
+    return Subscription::get_by_userId_objectType_objectId_active(
+      $userId,
+      $object->getObjectType(),
+      $object->id,
+      true
+    );
+  }
+
 }

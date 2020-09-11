@@ -265,6 +265,14 @@ class Router {
       'en_US.utf8' => 'static-resource',
     ],
 
+    // subscriptions
+    'subscription/delete' => [
+      'en_US.utf8' => 'ajax/unsubscribe',
+    ],
+    'subscription/save' => [
+      'en_US.utf8' => 'ajax/subscribe',
+    ],
+
     // tags
     'tag/edit' => [
       'en_US.utf8' => 'edit-tag',

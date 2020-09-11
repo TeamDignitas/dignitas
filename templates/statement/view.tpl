@@ -38,5 +38,6 @@
 
     {include "bits/commentForm.tpl"}
     {include "bits/flagModal.tpl"}
+    {include "bits/subscribeModal.tpl"}
   </div>
 {/block}

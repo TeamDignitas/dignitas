@@ -109,6 +109,7 @@
         </a>
       {/if}
       {include "bits/editButton.tpl" obj=$entity}
+      {include "bits/subscribeLinks.tpl" obj=$entity}
       {include "bits/flagLinks.tpl" obj=$entity class="btn btn-outline-secondary mt-1"}
       {include "bits/historyButton.tpl" obj=$entity}
     </div>

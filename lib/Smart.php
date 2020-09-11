@@ -84,6 +84,9 @@ class Smart {
     'sortable' => [
       'js' => [ 'third-party/Sortable.min.js' ],
     ],
+    'subscribe' => [
+      'js' => [ 'subscribe.js' ],
+    ],
     'linkEditor' => [
       'js' => [ 'linkEditor.js' ],
       'deps' => [ 'sortable'],

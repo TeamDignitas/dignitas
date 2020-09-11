@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-09-11 15:38+0300\n"
-"PO-Revision-Date: 2020-09-11 15:39+0300\n"
+"POT-Creation-Date: 2020-09-11 16:58+0300\n"
+"PO-Revision-Date: 2020-09-11 17:00+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -246,7 +246,7 @@ msgstr "publicat de"
 msgid "info-answer-permalink"
 msgstr "legătură permanentă către acest răspuns"
 
-#: templates/bits/answerEdit.tpl:18 templates/bits/statement.tpl:159
+#: templates/bits/answerEdit.tpl:18 templates/bits/statement.tpl:160
 #: templates/statement/edit.tpl:121 lib/model/RevisionAnswer.php:15
 #: lib/model/RevisionStatement.php:18
 msgid "label-verdict"
@@ -690,6 +690,14 @@ msgstr "adăugată de"
 #: templates/bits/statementLink.tpl:9
 msgid "quoted-string-%1"
 msgstr "„%1”"
+
+#: templates/bits/subscribeLinks.tpl:16
+msgid "link-subscribe"
+msgstr "urmărește acest articol"
+
+#: templates/bits/subscribeLinks.tpl:28
+msgid "link-unsubscribe"
+msgstr "nu mai urmări acest articol"
 
 #: templates/cannedResponse/edit.tpl:3 templates/cannedResponse/edit.tpl:7
 msgid "title-edit-canned-response"
@@ -1565,7 +1573,7 @@ msgid "info-already-logged-in"
 msgstr "Sînteți deja autentificat(ă)."
 
 #: lib/Util.php:39 routes/notification/list.php:17
-#: routes/user/changeReputation.php:16
+#: routes/subscription/save.php:17 routes/user/changeReputation.php:16
 msgid "info-must-log-in"
 msgstr "Vă rugăm să vă autentificați."
 
@@ -2963,6 +2971,14 @@ msgid "info-no-content-or-uploaded-file"
 msgstr ""
 "Trebuie să tastați conținutul resursei sau să alegeți un fișier pentru "
 "încărcare."
+
+#: routes/subscription/delete.php:20
+msgid "info-unsubscribed"
+msgstr "Nu veți mai primi notificări despre acest articol."
+
+#: routes/subscription/save.php:28
+msgid "info-subscribed"
+msgstr "Veți primi notificări despre acest articol."
 
 #: routes/tag/edit.php:27
 #, php-format
