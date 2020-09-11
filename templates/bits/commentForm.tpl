@@ -20,7 +20,7 @@
     <div class="col-auto dropdown-canned-responses">
       <button
         type="button"
-        class="btn btn-sm btn-outline-secondary dropdown-toggle"
+        class="btn btn-sm btn-outline-secondary dropdown-toggle mb-1"
         data-toggle="dropdown">
         {t}link-pick-canned-response{/t}
       </button>
@@ -39,12 +39,12 @@
     <div class="col"></div>
 
     <div class="col-auto">
-      <button type="submit" class="btn btn-sm btn-outline-primary comment-save">
+      <button type="submit" class="btn btn-sm btn-outline-primary comment-save mb-1">
         <i class="icon icon-floppy"></i>
         {t}link-save{/t}
       </button>
 
-      <button type="button" class="btn btn-sm btn-outline-secondary comment-cancel">
+      <button type="button" class="btn btn-sm btn-outline-secondary comment-cancel mb-1">
         <i class="icon icon-cancel"></i>
         {t}link-cancel{/t}
       </button>
