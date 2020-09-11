@@ -112,8 +112,9 @@
       {if $statement->hasRevisions()}
         <a
           href="{Router::link('statement/history')}/{$statement->id}"
-          class="btn btn-sm btn-outline-secondary mt-1">
-          {t}link-show-revisions{/t}
+          class="btn btn-outline-secondary mt-1"
+          title="{t}link-show-revisions{/t}">
+          <i class="icon icon-hourglass"></i>
         </a>
       {/if}
 
@@ -121,7 +122,7 @@
         {include "bits/editButton.tpl" obj=$statement}
       {/if}
 
-      {include "bits/flagLinks.tpl" obj=$statement class="btn btn-sm btn-outline-secondary mt-1"}
+      {include "bits/flagLinks.tpl" obj=$statement class="btn btn-outline-secondary mt-1"}
 
       {* when there are no comments, the add comment button sits on the same
          row as the other buttons *}

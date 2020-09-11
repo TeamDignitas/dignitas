@@ -104,18 +104,19 @@
       {if $entity->acceptsNewStatements()}
         <a
           href="{Router::link('statement/edit')}?entityId={$entity->id}"
-          class="btn btn-sm btn-outline-primary mt-1">
+          class="btn btn-outline-primary mt-1">
           {t}link-add-statement{/t}
         </a>
       {/if}
       {include "bits/editButton.tpl" obj=$entity}
-      {include "bits/flagLinks.tpl" obj=$entity class="btn btn-sm btn-outline-secondary mt-1"}
+      {include "bits/flagLinks.tpl" obj=$entity class="btn btn-outline-secondary mt-1"}
 
       {if $entity->hasRevisions()}
         <a
           href="{Router::link('entity/history')}/{$entity->id}"
-          class="btn btn-sm btn-outline-secondary mt-1">
-          {t}link-show-revisions{/t}
+          class="btn btn-outline-secondary mt-1"
+          title="{t}link-show-revisions{/t}">
+          <i class="icon icon-hourglass"></i>
         </a>
       {/if}
     </div>
