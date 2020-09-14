@@ -1,5 +1,13 @@
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .fix-min-height {
-    min-height: 134px;
+    min-height: 145px;
   }
+}
+
+.fix-min-height:hover {
+  background-color: #ddd;
+}
+
+.fix-min-height a:hover {
+  text-decoration: none;
 }

@@ -12,9 +12,9 @@
     </a>
 
     {if count($domains)}
-      <table class="table table-sm table-hover mt-5 mb-4">
+      <table class="table table-hover mt-5 mb-4">
         <thead>
-          <tr>
+          <tr class="small">
             <th class="border-0">{t}label-icon{/t}</th>
             <th class="border-0">{t}label-name{/t}</th>
             <th class="border-0">{t}label-display-value{/t}</th>
@@ -23,7 +23,7 @@
         </thead>
         <tbody>
           {foreach $domains as $d}
-            <tr>
+            <tr class="small">
               <td>
                 {include "bits/image.tpl"
                   obj=$d

@@ -53,8 +53,7 @@ blockquote {
   background-color: #232429 !important;
 }
 
-.navbar-dark .navbar-nav .nav-link,
-.navbar-dark .navbar-brand {
+.navbar-dark a {
   color: #F3E6D7 !important;
 }
 

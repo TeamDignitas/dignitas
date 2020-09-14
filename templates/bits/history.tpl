@@ -6,24 +6,22 @@
   <div class="container my-5">
     <h1 class="history mb-4">{$title|escape}</h1>
 
-    <div class="container">
-      <div class="row py-1">
-        <div class="col-sm-6 col-md-2 font-weight-bold pl-0">
-          {t}label-author{/t}
-        </div>
-        <div class="col-sm-6 col-md-2 font-weight-bold pl-0">
-          {t}label-date{/t}
-        </div>
-        <div class="d-none d-sm-none d-md-block col-md-8 font-weight-bold pl-0">
-          {t}label-changes{/t}
-        </div>
-      </div>
+    <table class="table table-hover">
+      <thead>
+        <tr class="d-flex small">
+          <th class="col-sm-3 col-md-2 border-0">{t}label-author{/t}</th>
+          <th class="col-sm-2 col-md-2 border-0">{t}label-date{/t}</th>
+          <th class="col-sm-7 col-md-8 border-0">{t}label-changes{/t}</th>
+        </tr>
+      </thead>
 
-      {foreach $history as $od}
-        <div class="row small row-border py-1">
-          {include "bits/diff/objectDiff.tpl"}
-        </div>
-      {/foreach}
-    </div>
+      <tbody>
+        {foreach $history as $od}
+          <tr class="d-flex small">
+            {include "bits/diff/objectDiff.tpl"}
+          </tr>
+        {/foreach}
+      </tbody>
+    </table>
   </div>
 {/block}

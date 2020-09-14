@@ -19,9 +19,9 @@
 
     {if count($relationTypes)}
       <form method="post">
-        <table class="table table-sm table-hover mt-5 mb-4 sortable">
+        <table class="table table-hover mt-5 mb-4 sortable">
           <thead>
-            <tr>
+            <tr class="small">
               <th class="border-0">{t}label-order{/t}</th>
               <th class="border-0">{t}label-name{/t}</th>
               <th class="border-0">{t}label-from-entity-type{/t}</th>
@@ -32,7 +32,7 @@
           </thead>
           <tbody>
             {foreach $relationTypes as $rt}
-              <tr>
+              <tr class="small">
                 <td class="align-middle">
                   <input type="hidden" name="ids[]" value="{$rt->id}">
                   <label class="icon icon-move"></label>

@@ -12,27 +12,27 @@
     </a>
 
     <form method="post">
-      <table class="table table-sm table-hover mt-5 sortable">
+      <table class="table table-hover mt-5 sortable">
         <thead>
-          <tr class="d-flex">
-            <th class="col-2 border-0">{t}title-order{/t}</th>
-            <th class="col-8 border-0">{t}title-comment-text{/t}</th>
-            <th class="col-2 border-0">{t}title-actions{/t}</th>
+          <tr class="d-flex small">
+            <th class="col-sm-3 col-md-2 border-0">{t}title-order{/t}</th>
+            <th class="col-sm-7 col-md-8 border-0">{t}title-comment-text{/t}</th>
+            <th class="col-sm-2 col-md-2 border-0">{t}title-actions{/t}</th>
           </tr>
         </thead>
         <tbody>
           {foreach $cannedResponses as $cr}
-            <tr class="d-flex">
-              <td class="col-2">
+            <tr class="d-flex small">
+              <td class="col-sm-3 col-md-2">
                 <input type="hidden" name="cannedResponseIds[]" value="{$cr->id}">
                 <label class="icon icon-move"></label>
               </td>
 
-              <td class="col-8">
+              <td class="col-sm-7 col-md-8">
                 {$cr->contents|md}
               </td>
 
-              <td class="col-2">
+              <td class="col-sm-2 col-md-2">
                 <a
                   href="{Router::link('cannedResponse/edit')}/{$cr->id}"
                   class="btn btn-outline-secondary mt-1"

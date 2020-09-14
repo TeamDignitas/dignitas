@@ -100,7 +100,7 @@
       {foreach $statement->getTags() as $t}
         {include "bits/tag.tpl"}
       {/foreach}
-      <div class="text-muted col-md-12 text-right mb-2">
+      <div class="text-muted col-md-12 mb-2 mt-1 pl-0">
         {t}title-added-by{/t}
         {include 'bits/userLink.tpl' u=$statement->getUser()}
         {include 'bits/moment.tpl' t=$statement->createDate}
