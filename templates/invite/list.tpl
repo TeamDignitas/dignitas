@@ -17,7 +17,7 @@
 
     <table class="table table-hover">
       <thead>
-        <tr>
+        <tr class="small">
           <th class="border-0">{t}label-invite-from{/t}</th>
           <th class="border-0">{t}label-invite-to{/t}</th>
           <th class="border-0">{t}label-invite-accepted-by{/t}</th>
@@ -25,7 +25,7 @@
       </thead>
       <tbody>
         {foreach $invites as $i}
-          <tr>
+          <tr class="small">
             <td>{include "bits/userLink.tpl" u=$i->getSender()}</td>
             <td>{$i->email}</td>
             <td>{include "bits/userLink.tpl" u=$i->getReceiver()}</td>
