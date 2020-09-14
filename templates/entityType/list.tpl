@@ -12,9 +12,9 @@
     </a>
 
     {if count($entityTypes)}
-      <table class="table table-sm table-hover mt-5 mb-4">
+      <table class="table table-hover mt-5 mb-4">
         <thead>
-          <tr>
+          <tr class="small">
             <th class="border-0">{t}label-name{/t}</th>
             <th class="border-0">{t}label-loyalty-source{/t}</th>
             <th class="border-0">{t}label-loyalty-sink{/t}</th>
@@ -24,7 +24,7 @@
         </thead>
         <tbody>
           {foreach $entityTypes as $et}
-            <tr>
+            <tr class="small">
               <td class="align-middle">
                 {$et->name|escape}
                 {if $et->isDefault}
