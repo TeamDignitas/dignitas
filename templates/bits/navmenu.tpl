@@ -56,7 +56,7 @@
         <div class="dropdown-menu bg-dark py-0" aria-labelledby="nav-dropdown-lang">
           {foreach LocaleUtil::getAll() as $id => $name}
             <a
-              class="dropdown-item text-light pl-2 py-2"
+              class="dropdown-item pl-2 py-2"
               href="{Router::link('helpers/changeLocale')}?id={$id}">
               <i class="icon icon-ok {if $id != LocaleUtil::getCurrent()}invisible{/if}"></i>
               {$name}
@@ -90,18 +90,18 @@
             </span>
           </a>
           <div class="dropdown-menu dropdown-menu-right bg-dark py-0" aria-labelledby="nav-dropdown-user">
-            <a class="dropdown-item text-light py-2" href="{Router::userLink($u)}">
+            <a class="dropdown-item py-2" href="{Router::userLink($u)}">
               <i class="icon icon-user"></i>
               {t}link-my-profile{/t}
             </a>
-            <a class="dropdown-item text-light py-2" href="{Router::link('notification/view')}">
+            <a class="dropdown-item py-2" href="{Router::link('notification/view')}">
               <i class="icon icon-bell"></i>
               {t}link-notifications{/t}
               {if $notCount}
                 <span class="badge badge-info ml-2 px-2 align-text-top">{$notCount}</span>
               {/if}
             </a>
-            <a class="dropdown-item text-light py-2" href="{Router::link('aggregate/dashboard')}">
+            <a class="dropdown-item py-2" href="{Router::link('aggregate/dashboard')}">
               <i class="icon icon-gauge"></i>
               {t}link-dashboard{/t}
             </a>
@@ -142,7 +142,7 @@
               </form>
             {/if}
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-light py-2" href="{Router::link('auth/logout')}">
+            <a class="dropdown-item py-2" href="{Router::link('auth/logout')}">
               <i class="icon icon-logout"></i>
               {t}link-log-out{/t}
             </a>
