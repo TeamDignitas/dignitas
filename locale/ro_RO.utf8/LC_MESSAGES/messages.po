@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-09-11 16:58+0300\n"
-"PO-Revision-Date: 2020-09-11 17:00+0300\n"
+"POT-Creation-Date: 2020-09-15 13:52+0300\n"
+"PO-Revision-Date: 2020-09-15 17:19+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -518,15 +518,20 @@ msgstr "raportează autorul"
 msgid "link-flag-comment"
 msgstr "raportează comentariul"
 
-#: templates/bits/history.tpl:12
+#: templates/bits/history.tpl:11
+msgid "info-no-history"
+msgstr ""
+"Nu există modificări la acest articol. Versiunea curentă este unica versiune."
+
+#: templates/bits/history.tpl:15
 msgid "label-author"
 msgstr "autor"
 
-#: templates/bits/history.tpl:15 templates/user/view.tpl:107
+#: templates/bits/history.tpl:18 templates/user/view.tpl:107
 msgid "label-date"
 msgstr "dată"
 
-#: templates/bits/history.tpl:18
+#: templates/bits/history.tpl:21
 msgid "label-changes"
 msgstr "modificări"
 
