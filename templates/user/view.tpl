@@ -102,17 +102,16 @@
             {t}actions{/t}
           </h5>
 
-          <div class="row ml-1">
-            <div class="col-sm-6 col-lg-4 font-weight-bold text-muted">
-              {t}label-date{/t}
-            </div>
-            <div class="col-sm-6 col-lg-8 font-weight-bold text-muted">
-              {t}label-action{/t}
-            </div>
-          </div>
-
           <div id="action-wrapper">
-            {include "bits/actions.tpl"}
+            <table class="table table-hover">
+              <thead>
+                <tr class="d-flex small">
+                  <th class="col-sm-3 col-md-2 border-0 py-1">{t}label-date{/t}</th>
+                  <th class="col-sm-9 col-md-10 border-0 py-1">{t}label-action{/t}</th>
+                </tr>
+              </thead>
+              {include "bits/actions.tpl"}
+            </table>
           </div>
 
           {include "bits/paginationWrapper.tpl"
