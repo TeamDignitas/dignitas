@@ -28,43 +28,10 @@
   border-color: #fff;
 }
 
-.bubble-body {
-  border: 1px solid #ccc;
-  border-bottom: 0;
-  border-radius: 1rem;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  position: relative;
-}
-
-.bubble-title a {
+.statement-link a {
   color: #555;
   font-size: 0.9rem;
   font-style: italic;
-}
-
-.bubble-author {
-  font-size: 0.8rem;
-  border: 1px solid #ccc;
-  border-top: 1px dashed #ccc;
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-}
-
-.bubble-author a {
-  color: #007bff;
-}
-
-.bubble a {
-  text-decoration: none;
-}
-
-.carousel-indicators li {
-  background-color: #aaa;
-}
-
-.carousel-item {
-  min-height: 14rem;
 }
 
 .dark-background {

@@ -46,41 +46,7 @@
     </div>
 
     <div class="col-lg-9 col-sm-12 mt-3">
-      <div class="statements-carousel pb-4">
-        <div id="statementCarousel" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner pb-5">
-
-            {$numCols=12/Config::CAROUSEL_COLUMNS}
-            {foreach $carousel as $page => $rows}
-              <div class="carousel-item mb-3 {if !$page}active{/if}">
-                <div class="container px-0">
-
-                  {foreach $rows as $row}
-                    <div class="row">
-                      {foreach $row as $stmt}
-                        <div class="col-md-{$numCols} col-sm-12 mb-3">
-                          {include "bits/carouselStatement.tpl" statement=$stmt}
-                        </div>
-                      {/foreach}
-                    </div>
-                  {/foreach}
-
-                </div>
-              </div>
-            {/foreach}
-
-            <ol class="carousel-indicators">
-              {foreach $carousel as $page => $ignored}
-                <li
-                  data-target="#statementCarousel"
-                  data-slide-to="{$page}"
-                  {if !$page}class="active"{/if}>
-                </li>
-              {/foreach}
-            </ol>
-          </div>
-        </div>
-      </div>
+      {include "bits/statementList.tpl"}
     </div>
   </div>
 
