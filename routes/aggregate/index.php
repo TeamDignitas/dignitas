@@ -10,20 +10,8 @@ if (!User::may(User::PRIV_DELETE_STATEMENT)) {
 
 $statements = $statements
   ->order_by_desc('createDate')
-  ->limit(Config::CAROUSEL_PAGES * Config::CAROUSEL_ROWS * Config::CAROUSEL_COLUMNS)
+  ->limit(Config::STATEMENT_LIST_PAGE_SIZE)
   ->find_many();
-
-$carousel = [];
-$offset = 0;
-for ($p = 0; $p < Config::CAROUSEL_PAGES; $p++) {
-  for ($r = 0; $r < Config::CAROUSEL_ROWS; $r++) {
-    $slice = array_slice($statements, $offset, Config::CAROUSEL_COLUMNS);
-    if (!empty($slice)) {
-      $carousel[$p][$r] = $slice;
-    }
-    $offset += Config::CAROUSEL_COLUMNS;
-  }
-}
 
 // load the static resources for the top/bottom of the page
 $key = User::getActive() ? 'user' : 'guest';
@@ -32,7 +20,7 @@ $staticResourcesBottom = StaticResource::addCustomSections("homepage-bottom-{$ke
 
 Smart::assign([
   'pageType' => 'home',
-  'carousel' => $carousel,
+  'statements' => $statements,
   'staticResourcesTop' => $staticResourcesTop,
   'staticResourcesBottom' => $staticResourcesBottom,
 ]);
