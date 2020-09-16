@@ -232,23 +232,27 @@ img.pic.no-outline,
 }
 
 .statement-box.verdict-2 { /* false */
-  background: #f5b3b3;
+  background: #D90404;
+  color: #FFFFFF;
 }
 
 .statement-box.verdict-3 { /* mostly false */
-  background: #f5d3b3;
+  background: linear-gradient(110deg, #D90404, #FFEB3B 86%);
+  border: 0;
 }
 
 .statement-box.verdict-4 { /* mixed */
-  background: #f5f0b3;
+  background: #FFEB3B;
 }
 
 .statement-box.verdict-5 { /* mostly true */
-  background: #def5b3;
+  background: linear-gradient(110deg, #37700A, #FFEB3B 86%);
+  border: 0;
 }
 
 .statement-box.verdict-6 { /* true */
-  background: #b3f5b7;
+  background: #37700A;
+  color: #FFFFFF;
 }
 
 .statement.card {
