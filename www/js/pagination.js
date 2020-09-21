@@ -65,6 +65,7 @@ $(function() {
   function filterChange() {
     var form = $(this).closest('form')
     var pagWrap = form.siblings('.pagination-wrapper');
+    var target = $(pagWrap.data('target'));
 
     var args = getArgs(form, 1);
 
@@ -74,7 +75,7 @@ $(function() {
       .done(function(json) {
 
         // show the first page
-        $('#statement-list-wrapper').html(json.html);
+        target.html(json.html);
 
         // show the new pager and activate page 1
         $.get(PAGINATION_URL, {
