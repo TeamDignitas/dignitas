@@ -10,7 +10,7 @@
       <div class="form-group row mx-0">
         <button
           name="removeButton"
-          class="btn btn-sm btn-outline-secondary col-12 col-sm-12 col-lg-2 mr-2 mb-2"
+          class="btn btn-sm btn-outline-danger col-12 col-sm-12 col-lg-2 mr-2 mb-2"
           type="submit">
           <i class="icon icon-cancel"></i>
           {$review->getVoteName(Flag::VOTE_REMOVE)}
