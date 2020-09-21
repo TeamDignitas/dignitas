@@ -46,7 +46,18 @@
     </div>
 
     <div class="col-lg-9 col-sm-12 mt-3">
-      {include "bits/statementList.tpl"}
+
+      {include "bits/statementFilters.tpl"}
+
+      <div id="statement-list-wrapper">
+        {include "bits/statementList.tpl"}
+      </div>
+
+      {include "bits/paginationWrapper.tpl"
+        n=$numStatementPages
+        k=1
+        url="{Config::URL_PREFIX}ajax/search-statements"
+        target="#statement-list-wrapper"}
     </div>
   </div>
 

@@ -14,6 +14,7 @@ $(function() {
     // initialize the date pickers
     $('.date-picker').datepicker({
       autoclose: true,
+      clearBtn: true,
       format: DATEPICKER_FORMAT,
       language: DATEPICKER_LOCALE,
       todayHighlight: true,
@@ -27,7 +28,7 @@ $(function() {
 
     // update the hidden value whenever a display value changes
     $('.date-picker').on('changeDate', function(e) {
-      $(this).next('input[type="hidden"]').val(getDateString(e.date));
+      $(this).next('input[type="hidden"]').val(getDateString(e.date)).change();
     });
   }
 
@@ -35,8 +36,12 @@ $(function() {
   // or forward due to timezones: https://stackoverflow.com/a/29774197/6022817
   // Hurray for mature languages that are totally not amateurish jokes.
   function getDateString(d) {
-    d.setMinutes(d.getMinutes() - d.getTimezoneOffset());
-    return d.toISOString().slice(0, 10);
+    if (typeof d !== 'undefined') {
+      d.setMinutes(d.getMinutes() - d.getTimezoneOffset());
+      return d.toISOString().slice(0, 10);
+    } else {
+      return '';
+    }
   }
 
 });
