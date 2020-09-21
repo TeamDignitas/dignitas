@@ -24,6 +24,9 @@ $(function() {
 
     $('.pagination-wrapper').on('click', 'a', paginationClick);
     $('.actionable').change(filterChange);
+    $('input.actionable').on('keypress paste', delay(function(e) {
+      filterChange(e);
+    }, 500));
   }
 
   function paginationClick() {
@@ -62,8 +65,8 @@ $(function() {
     return false;
   }
 
-  function filterChange() {
-    var form = $(this).closest('form')
+  function filterChange(e) {
+    var form = $(e.target).closest('form')
     var pagWrap = form.siblings('.pagination-wrapper');
     var target = $(pagWrap.data('target'));
 
@@ -104,6 +107,15 @@ $(function() {
     });
 
     return args;
+  }
+
+  // kudos https://stackoverflow.com/questions/1909441/how-to-delay-the-keyup-handler-until-the-user-stops-typing
+  function delay(fn, ms) {
+    let timer = 0
+    return function(...args) {
+      clearTimeout(timer)
+      timer = setTimeout(fn.bind(this, ...args), ms || 0)
+    }
   }
 
   init();

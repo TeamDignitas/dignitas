@@ -1,3 +1,4 @@
+{$term=$term|default:''}
 <form class="d-flex mb-2 small">
 
   <div class="mr-2">
@@ -7,8 +8,16 @@
   </div>
 
   <div class="mr-2">
+    <input
+      type="text"
+      name="term"
+      class="form-control form-control-sm actionable"
+      value="{$term}"
+      placeholder="{t}label-term{/t}">
+  </div>
+
+  <div class="mr-2">
     <select
-      id="field-entity-id"
       name="entityId"
       class="form-control form-control-sm actionable"
       data-placeholder="{t}label-author{/t}"
