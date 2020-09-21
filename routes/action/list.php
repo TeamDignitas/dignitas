@@ -8,7 +8,7 @@
  **/
 
 $userId = Request::get('userId');
-$p = Request::get('p');
+$p = Request::get('page');
 
 header('Content-Type: application/json');
 
@@ -23,7 +23,10 @@ try {
 
   Smart::assign('actions', $actions);
   $html = Smart::fetch('bits/actions.tpl');
-  print json_encode($html);
+  $response = [
+    'html' => $html,
+  ];
+  print json_encode($response);
 
 } catch (Exception $e) {
 

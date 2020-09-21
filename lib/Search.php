@@ -2,14 +2,18 @@
 
 class Search {
 
-  // limit per object type - entities and tags
+  // limit per object type - statements, entities and tags
   const LIMIT = 10;
 
   static function run($query, $limit = self::LIMIT) {
     $escapedQuery = addslashes($query);
+
+    list ($ignored, $statements) =
+      self::searchStatements([ 'term' => $escapedQuery ], 'summary asc');
+
     $results = [
       'entities' => self::searchEntities($escapedQuery, 0, $limit),
-      'statements' => self::searchStatements($escapedQuery, 0, $limit),
+      'statements' => $statements,
       'tags' => self::searchTags($escapedQuery, $limit),
     ];
     return $results;
@@ -47,20 +51,68 @@ class Search {
   }
 
   /**
-   * Loads statements by substring match.
+   * Searches and sorts statements.
    *
-   * @param string $escapedQuery Substring query, already escaped
-   * @param int $exceptId ID to exclude from results (useful for duplicate flags)
-   * @param int $limit Maximum results to return
+   * @param array $filters A map of field => value. See code for field definitions.
+   * @param string $order A field + direction such as 'createDate desc'.
+   * @param int $page If zero, load up to $pageSize results. If nonzero, load
+   *   the given page assuming each page has size $pageSize.
+   * @param int $pageSize If $page is zero, this is the result limit. If $page
+   *   is nonzero, this is the size of each page.
+   * @return array A tuple of [ numPages, array(Statement)]. If $page is zero,
+   *   then numPages will also be zero.
    */
-  static function searchStatements($escapedQuery, $exceptId = 0, $limit = self::LIMIT) {
-    return Model::factory('Statement')
-      ->where_like('summary', "%{$escapedQuery}%")
-      ->where_not_equal('id', $exceptId)
-      ->where_not_equal('status', Ct::STATUS_PENDING_EDIT)
-      ->order_by_asc('summary')
-      ->limit($limit)
-      ->find_many();
+  static function searchStatements(
+    $filters,
+    $order = 'createDate desc',
+    $page = 0,
+    $pageSize = null) {
+
+    $query = Model::factory('Statement')
+      ->where_not_equal('status', Ct::STATUS_PENDING_EDIT);
+
+    foreach ($filters as $field => $value) {
+      if (!empty($value)) {
+        switch ($field) {
+          case 'entityId':
+            $query = $query->where('entityId', $value);
+            break;
+          case 'exceptId':
+            $query = $query->where_not_equal('id', $value);
+            break;
+          case 'maxDate':
+            $query = $query->where_lte('dateMade', $value);
+            break;
+          case 'minDate':
+            $query = $query->where_gte('dateMade', $value);
+            break;
+          case 'term':
+            $query = $query->where_like('summary', "%{$value}%");
+            break;
+          case 'verdicts':
+            $query = $query->where_in('verdict', $value);
+            break;
+          default: die('Bad filter field.');
+        }
+      }
+    }
+
+    if (!$pageSize) {
+      $pageSize = ($page > 0) ? Config::STATEMENT_LIST_PAGE_SIZE : self::LIMIT;
+    }
+
+    if ($page > 0) {
+      $numPages = ceil($query->count() / $pageSize);
+      $query = $query->offset(($page - 1) * $pageSize);
+    } else {
+      $numPages = 0;
+    }
+
+    $statements = $query
+      ->order_by_expr($order)
+      ->limit($pageSize)
+      ->findMany();
+    return [ $numPages, $statements ];
   }
 
   // load tags by prefix match

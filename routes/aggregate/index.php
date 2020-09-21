@@ -8,10 +8,8 @@ if (!User::may(User::PRIV_DELETE_STATEMENT)) {
   $statements = $statements->where_not_equal('status', Ct::STATUS_DELETED);
 }
 
-$statements = $statements
-  ->order_by_desc('createDate')
-  ->limit(Config::STATEMENT_LIST_PAGE_SIZE)
-  ->find_many();
+list($numStatementPages, $statements) =
+  Search::searchStatements([], 'createDate desc', 1);
 
 // load the static resources for the top/bottom of the page
 $key = User::getActive() ? 'user' : 'guest';
@@ -20,8 +18,10 @@ $staticResourcesBottom = StaticResource::addCustomSections("homepage-bottom-{$ke
 
 Smart::assign([
   'pageType' => 'home',
+  'numStatementPages' => $numStatementPages,
   'statements' => $statements,
   'staticResourcesTop' => $staticResourcesTop,
   'staticResourcesBottom' => $staticResourcesBottom,
 ]);
+Smart::addResources('pagination', 'datepicker');
 Smart::display('aggregate/index.tpl');

@@ -1,16 +1,27 @@
 <?php
 
-$term = Request::get('term');
-$exceptId = Request::get('exceptId', 0);
+$page = Request::get('page', 0);
+$order = Request::get('order', 'createDate desc');
 
-if ($term) {
-  $term = addslashes($term);
-  $statements = Search::searchStatements($term, $exceptId);
-} else {
-  $statements = [];
-}
+$filters = [
+  'entityId' => Request::get('entityId', 0),
+  'exceptId' => Request::get('exceptId', 0),
+  'maxDate' =>  Request::get('maxDate'),
+  'minDate' =>  Request::get('minDate'),
+  'term' =>  addslashes(Request::get('term')),
+  'verdicts' => Request::getArray('verdicts'),
+];
 
-$resp = ['results' => []];
+list($numPages, $statements) = Search::searchStatements($filters, $order, $page);
+
+Smart::assign('statements', $statements);
+$htmlList = Smart::fetch('bits/statementList.tpl');
+
+$resp = [
+  'numPages' => $numPages,
+  'html' => $htmlList,
+  'results' => [],
+];
 foreach ($statements as $s) {
   $resp['results'][] = [
     'id' => $s->id,

@@ -1,14 +1,34 @@
+/**
+ * Adds support for paginated results.
+ *
+ * Clicking on the pager redraws the page numbers, highlighting the newly
+ * selected page.
+ *
+ * Optionally, inputs with the actionable class permit filtering the results.
+ * In this case, clicking on the pager will pass the current field values to
+ * the underlying search. Changing an input will also trigger a new search
+ * and reset the page number to 1.
+ */
 $(function() {
-
   const PAGINATION_URL = URL_PREFIX + 'ajax/pagination';
 
   function init() {
+    $('select.actionable[multiple]').select2();
+    $('select.actionable[name="entityId"]').select2({
+      ajax: {
+        url: URL_PREFIX + 'ajax/search-entities',
+      },
+      allowClear: true,
+      minimumInputLength: 2,
+    });
+
     $('.pagination-wrapper').on('click', 'a', paginationClick);
+    $('.actionable').change(filterChange);
   }
 
   function paginationClick() {
     var wrapper = $(this).closest('.pagination-wrapper');
-    var n = wrapper.data('numPages');
+    var numPages = $(this).closest('ul').data('numPages');
 
     // the prev/next page links contain the page number in a data- attribute
     var page = $(this).data('dest') || $(this).html();
@@ -16,7 +36,7 @@ $(function() {
     // load the pagination box first
     $('body').addClass('waiting');
     $.get(PAGINATION_URL, {
-      n: n,
+      n: numPages,
       k: page,
     }).done(function(html) {
 
@@ -25,13 +45,10 @@ $(function() {
       // now load the new page contents
       var url = wrapper.data('url');
       var target = $(wrapper.data('target'));
-      $.get(url, {
-        p: page,
-      }).done(function(html) {
+      var args = getArgs(wrapper.siblings('form'), page);
 
-        target.html(html);
-        success = true;
-
+      $.get(url, args).done(function(json) {
+        target.html(json.html);
       }).fail(function() {
         alert('Cannot load the request page contents.');
       });
@@ -43,6 +60,49 @@ $(function() {
     });
 
     return false;
+  }
+
+  function filterChange() {
+    var form = $(this).closest('form')
+    var pagWrap = form.siblings('.pagination-wrapper');
+
+    var args = getArgs(form, 1);
+
+    // load the search results
+    $('body').addClass('waiting');
+    $.get(URL_PREFIX + 'ajax/search-statements', args)
+      .done(function(json) {
+
+        // show the first page
+        $('#statement-list-wrapper').html(json.html);
+
+        // show the new pager and activate page 1
+        $.get(PAGINATION_URL, {
+          n: json.numPages,
+          k: 1,
+        }).done(function(html) {
+          pagWrap.html(html);
+        });
+
+      }).always(function() {
+        $('body').removeClass('waiting');
+      });
+
+    return false;
+  }
+
+  function getArgs(form, page) {
+    var args = {
+      page: page,
+    }
+
+    form.find('.actionable').each(function() {
+      // strip [] from array inputs
+      var name = $(this).attr('name').replace(/[\[\]]+/g,'');
+      args[name] = $(this).val();
+    });
+
+    return args;
   }
 
   init();
