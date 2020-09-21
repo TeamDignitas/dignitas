@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-09-15 13:53+0300\n"
-"PO-Revision-Date: 2020-09-15 17:19+0300\n"
+"POT-Creation-Date: 2020-09-21 17:04+0300\n"
+"PO-Revision-Date: 2020-09-21 17:04+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -96,25 +96,21 @@ msgstr "recent statements"
 msgid "title-search-results"
 msgstr "search results"
 
-#: templates/aggregate/search.tpl:9
-msgid "title-entities-singular"
-msgid_plural "title-entities-plural"
-msgstr[0] "one author"
-msgstr[1] "%1 authors"
+#: templates/aggregate/search.tpl:8
+msgid "title-entities"
+msgstr "authors"
 
-#: templates/aggregate/search.tpl:30
-msgid "title-statements-singular"
-msgid_plural "title-statements-plural"
-msgstr[0] "one statement"
-msgstr[1] "%1 statements"
+#: templates/aggregate/search.tpl:26
+msgid "title-statements"
+msgstr "statements"
 
-#: templates/aggregate/search.tpl:40
+#: templates/aggregate/search.tpl:45
 msgid "title-tags-singular"
 msgid_plural "title-tags-plural"
 msgstr[0] "one tag"
 msgstr[1] "%1 tags"
 
-#: templates/aggregate/search.tpl:51
+#: templates/aggregate/search.tpl:56
 msgid "info-no-search-results"
 msgstr "Your search «%1» produced no results."
 
@@ -242,8 +238,8 @@ msgid "info-answer-permalink"
 msgstr "permanent link to this answer"
 
 #: templates/bits/answerEdit.tpl:18 templates/bits/statement.tpl:160
-#: templates/statement/edit.tpl:121 lib/model/RevisionAnswer.php:15
-#: lib/model/RevisionStatement.php:18
+#: templates/bits/statementFilters.tpl:53 templates/statement/edit.tpl:121
+#: lib/model/RevisionAnswer.php:15 lib/model/RevisionStatement.php:18
 msgid "label-verdict"
 msgstr "verdict"
 
@@ -303,19 +299,19 @@ msgstr "characters remaining"
 msgid "link-pick-canned-response"
 msgstr "canned response"
 
-#: templates/bits/diff/objectDiff.tpl:28
+#: templates/bits/diff/objectDiff.tpl:34
 msgid "label-duplicate-of"
 msgstr "duplicate of"
 
-#: templates/bits/diff/objectDiff.tpl:49
+#: templates/bits/diff/objectDiff.tpl:55
 msgid "info-reviewed-because"
 msgstr "review reason"
 
-#: templates/bits/diff/objectDiff.tpl:52
+#: templates/bits/diff/objectDiff.tpl:58
 msgid "label-resolution"
 msgstr "resolution"
 
-#: templates/bits/diff/objectDiff.tpl:62
+#: templates/bits/diff/objectDiff.tpl:68
 msgid "title-votes"
 msgstr "votes"
 
@@ -357,6 +353,14 @@ msgstr "external links"
 #: templates/bits/entity.tpl:89
 msgid "title-members"
 msgstr "members"
+
+#: templates/bits/entityFilters.tpl:8 templates/bits/statementFilters.tpl:8
+msgid "label-filter"
+msgstr "filter"
+
+#: templates/bits/entityFilters.tpl:18 templates/bits/statementFilters.tpl:18
+msgid "label-term"
+msgstr "text"
 
 #: templates/bits/fakeLogin.tpl:3
 msgid "title-test-login"
@@ -511,20 +515,20 @@ msgstr "flag author"
 msgid "link-flag-comment"
 msgstr "flag comment"
 
-#: templates/bits/history.tpl:11
+#: templates/bits/history.tpl:10
 msgid "info-no-history"
 msgstr ""
 "There are no changes to this item. The current version is the only version."
 
-#: templates/bits/history.tpl:15
+#: templates/bits/history.tpl:15 templates/bits/statementFilters.tpl:25
 msgid "label-author"
 msgstr "author"
 
-#: templates/bits/history.tpl:18 templates/user/view.tpl:107
+#: templates/bits/history.tpl:16 templates/user/view.tpl:107
 msgid "label-date"
 msgstr "date"
 
-#: templates/bits/history.tpl:21
+#: templates/bits/history.tpl:17
 msgid "label-changes"
 msgstr "changes"
 
@@ -683,6 +687,14 @@ msgstr "goal"
 #: templates/bits/statement.tpl:104
 msgid "title-added-by"
 msgstr "added by"
+
+#: templates/bits/statementFilters.tpl:35 templates/entity/edit.tpl:151
+msgid "label-start-date"
+msgstr "start date"
+
+#: templates/bits/statementFilters.tpl:44 templates/entity/edit.tpl:152
+msgid "label-end-date"
+msgstr "end date"
 
 #: templates/bits/statementLink.tpl:9
 msgid "quoted-string-%1"
@@ -895,14 +907,6 @@ msgstr "add a relationship"
 #: templates/entity/edit.tpl:150
 msgid "label-target"
 msgstr "target"
-
-#: templates/entity/edit.tpl:151
-msgid "label-start-date"
-msgstr "start date"
-
-#: templates/entity/edit.tpl:152
-msgid "label-end-date"
-msgstr "end date"
 
 #: templates/entity/edit.tpl:172
 msgid "label-profile"

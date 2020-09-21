@@ -10,9 +10,12 @@ class Search {
 
     list ($numStatementPages, $statements) =
       self::searchStatements([ 'term' => $escapedQuery ], 'createDate desc', 1);
+    list ($numEntityPages, $entities) =
+      self::searchEntities([ 'term' => $escapedQuery ], 1);
 
     $results = [
-      'entities' => self::searchEntities($escapedQuery, 0, $limit),
+      'entities' => $entities,
+      'numEntityPages' => $numEntityPages,
       'statements' => $statements,
       'numStatementPages' => $numStatementPages,
       'tags' => self::searchTags($escapedQuery, $limit),
@@ -21,34 +24,68 @@ class Search {
   }
 
   /**
-   * Load entities by substring match at word boundary. MariaDB has a problem
-   * with regexp and collations, so this one-liner won't work:
+   * Searches and sorts entities.
    *
-   *   name regexp "[[:<:]]%s" collate utf8mb4_general_ci
-   *
-   * @param string $escapedQuery String to match.
-   * @param int $exceptId Skip this entity even if it matches $escapedQuery.
-   * @param int $limit Return at most this many results.
-   * @return Entity[]
+   * @param array $filters A map of field => value. See code for field definitions.
+   * @param int $page If zero, load up to $pageSize results. If nonzero, load
+   *   the given page assuming each page has size $pageSize.
+   * @param int $pageSize If $page is zero, this is the result limit. If $page
+   *   is nonzero, this is the size of each page.
+   * @return array A tuple of [ numPages, array(Entity)]. If $page is zero,
+   *   then numPages will also be zero.
    */
-  static function searchEntities($escapedQuery, $exceptId = 0, $limit = self::LIMIT) {
+  static function searchEntities(
+    $filters,
+    $page = 0,
+    $pageSize = null) {
+
     // Suppress warning due to bad argument order in Idiorm's where_any_is()
-    return @Model::factory('Entity')
+    $query = @Model::factory('Entity')
       ->table_alias('e')
       ->select('e.*')
       ->distinct()
       ->left_outer_join('alias', ['e.id', '=', 'a.entityId'], 'a')
-      ->where_not_equal('e.id', $exceptId ?? 0)
-      ->where('e.status', Ct::STATUS_ACTIVE)
-      ->where_any_is([
-        [ 'e.name' => "{$escapedQuery}%" ],
-        [ 'e.name' => "% {$escapedQuery}%" ],
-        [ 'e.name' => "%-{$escapedQuery}%" ],
-        [ 'a.name' => "{$escapedQuery}%" ],
-      ], 'like')
+      ->where('e.status', Ct::STATUS_ACTIVE);
+
+    foreach ($filters as $field => $value) {
+      if (!empty($value)) {
+        switch ($field) {
+          case 'exceptId':
+            $query = $query->where_not_equal('id', $value);
+            break;
+          case 'term':
+            // Load entities by substring match at word boundary. MariaDB has
+            // a problem with regexp and collations, so this one-liner won' work:
+            //
+            //   name regexp "[[:<:]]%s" collate utf8mb4_general_ci
+            $query = $query->where_any_is([
+              [ 'e.name' => "{$value}%" ],
+              [ 'e.name' => "% {$value}%" ],
+              [ 'e.name' => "%-{$value}%" ],
+              [ 'a.name' => "{$value}%" ],
+            ], 'like');
+            break;
+          default: die('Bad filter field.');
+        }
+      }
+    }
+
+    if (!$pageSize) {
+      $pageSize = ($page > 0) ? Config::ENTITY_LIST_PAGE_SIZE : self::LIMIT;
+    }
+
+    if ($page > 0) {
+      $numPages = ceil($query->count() / $pageSize);
+      $query = $query->offset(($page - 1) * $pageSize);
+    } else {
+      $numPages = 0;
+    }
+
+    $entities = $query
       ->order_by_asc('e.name')
-      ->limit($limit)
+      ->limit($pageSize)
       ->find_many();
+    return [ $numPages, $entities ];
   }
 
   /**
@@ -112,7 +149,7 @@ class Search {
     $statements = $query
       ->order_by_expr($order)
       ->limit($pageSize)
-      ->findMany();
+      ->find_many();
     return [ $numPages, $statements ];
   }
 

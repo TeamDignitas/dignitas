@@ -1,9 +1,11 @@
 {$term=$term|default:''}
-<form class="d-flex mb-2 small">
+<form
+  class="d-flex mb-2 small"
+  data-url="{Config::URL_PREFIX}ajax/search-statements">
 
   <div class="mr-2">
     <label class="col-form-label">
-      {t}label-filter{/t}
+      {t}label-filter{/t}:
     </label>
   </div>
 

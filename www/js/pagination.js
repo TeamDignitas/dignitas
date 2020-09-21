@@ -74,7 +74,7 @@ $(function() {
 
     // load the search results
     $('body').addClass('waiting');
-    $.get(URL_PREFIX + 'ajax/search-statements', args)
+    $.get(form.data('url'), args)
       .done(function(json) {
 
         // show the first page
