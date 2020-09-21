@@ -146,7 +146,8 @@ class Config {
   // all files and should match the language in which our PHP files are named.
   const DEFAULT_ROUTING_LOCALE = 'en_US.utf8';
 
-  // statement list settings
+  // result list settings
+  const ENTITY_LIST_PAGE_SIZE = 20;
   const STATEMENT_LIST_PAGE_SIZE = 20;
 
   // Some pages can vary dramatically between installations. Admins can define

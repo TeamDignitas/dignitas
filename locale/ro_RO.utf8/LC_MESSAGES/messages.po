@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-09-15 13:52+0300\n"
-"PO-Revision-Date: 2020-09-15 17:19+0300\n"
+"POT-Creation-Date: 2020-09-21 17:03+0300\n"
+"PO-Revision-Date: 2020-09-21 17:04+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -97,28 +97,22 @@ msgstr "afirmații recente"
 msgid "title-search-results"
 msgstr "rezultatele căutării"
 
-#: templates/aggregate/search.tpl:9
-msgid "title-entities-singular"
-msgid_plural "title-entities-plural"
-msgstr[0] "un autor"
-msgstr[1] "%1 autori"
-msgstr[2] "%1 de autori"
+#: templates/aggregate/search.tpl:8
+msgid "title-entities"
+msgstr "autori"
 
-#: templates/aggregate/search.tpl:30
-msgid "title-statements-singular"
-msgid_plural "title-statements-plural"
-msgstr[0] "o afirmație"
-msgstr[1] "%1 afirmații"
-msgstr[2] "%1 de afirmații"
+#: templates/aggregate/search.tpl:26
+msgid "title-statements"
+msgstr "afirmații"
 
-#: templates/aggregate/search.tpl:40
+#: templates/aggregate/search.tpl:45
 msgid "title-tags-singular"
 msgid_plural "title-tags-plural"
 msgstr[0] "o etichetă"
 msgstr[1] "%1 etichete"
 msgstr[2] "%1 de etichete"
 
-#: templates/aggregate/search.tpl:51
+#: templates/aggregate/search.tpl:56
 msgid "info-no-search-results"
 msgstr "Căutarea «%1» nu a dat rezultate."
 
@@ -247,8 +241,8 @@ msgid "info-answer-permalink"
 msgstr "legătură permanentă către acest răspuns"
 
 #: templates/bits/answerEdit.tpl:18 templates/bits/statement.tpl:160
-#: templates/statement/edit.tpl:121 lib/model/RevisionAnswer.php:15
-#: lib/model/RevisionStatement.php:18
+#: templates/bits/statementFilters.tpl:53 templates/statement/edit.tpl:121
+#: lib/model/RevisionAnswer.php:15 lib/model/RevisionStatement.php:18
 msgid "label-verdict"
 msgstr "verdict"
 
@@ -308,19 +302,19 @@ msgstr "caractere rămase"
 msgid "link-pick-canned-response"
 msgstr "predefinite"
 
-#: templates/bits/diff/objectDiff.tpl:28
+#: templates/bits/diff/objectDiff.tpl:34
 msgid "label-duplicate-of"
 msgstr "duplicat al lui"
 
-#: templates/bits/diff/objectDiff.tpl:49
+#: templates/bits/diff/objectDiff.tpl:55
 msgid "info-reviewed-because"
 msgstr "evaluare pentru motivul"
 
-#: templates/bits/diff/objectDiff.tpl:52
+#: templates/bits/diff/objectDiff.tpl:58
 msgid "label-resolution"
 msgstr "rezoluție"
 
-#: templates/bits/diff/objectDiff.tpl:62
+#: templates/bits/diff/objectDiff.tpl:68
 msgid "title-votes"
 msgstr "voturi"
 
@@ -363,6 +357,14 @@ msgstr "legături externe"
 #: templates/bits/entity.tpl:89
 msgid "title-members"
 msgstr "membri"
+
+#: templates/bits/entityFilters.tpl:8 templates/bits/statementFilters.tpl:8
+msgid "label-filter"
+msgstr "filtrează"
+
+#: templates/bits/entityFilters.tpl:18 templates/bits/statementFilters.tpl:18
+msgid "label-term"
+msgstr "text"
 
 #: templates/bits/fakeLogin.tpl:3
 msgid "title-test-login"
@@ -518,20 +520,20 @@ msgstr "raportează autorul"
 msgid "link-flag-comment"
 msgstr "raportează comentariul"
 
-#: templates/bits/history.tpl:11
+#: templates/bits/history.tpl:10
 msgid "info-no-history"
 msgstr ""
 "Nu există modificări la acest articol. Versiunea curentă este unica versiune."
 
-#: templates/bits/history.tpl:15
+#: templates/bits/history.tpl:15 templates/bits/statementFilters.tpl:25
 msgid "label-author"
 msgstr "autor"
 
-#: templates/bits/history.tpl:18 templates/user/view.tpl:107
+#: templates/bits/history.tpl:16 templates/user/view.tpl:107
 msgid "label-date"
 msgstr "dată"
 
-#: templates/bits/history.tpl:21
+#: templates/bits/history.tpl:17
 msgid "label-changes"
 msgstr "modificări"
 
@@ -691,6 +693,14 @@ msgstr "scop"
 #: templates/bits/statement.tpl:104
 msgid "title-added-by"
 msgstr "adăugată de"
+
+#: templates/bits/statementFilters.tpl:35 templates/entity/edit.tpl:151
+msgid "label-start-date"
+msgstr "de la"
+
+#: templates/bits/statementFilters.tpl:44 templates/entity/edit.tpl:152
+msgid "label-end-date"
+msgstr "pînă la"
 
 #: templates/bits/statementLink.tpl:9
 msgid "quoted-string-%1"
@@ -906,14 +916,6 @@ msgstr "adaugă o relație"
 #: templates/entity/edit.tpl:150
 msgid "label-target"
 msgstr "țintă"
-
-#: templates/entity/edit.tpl:151
-msgid "label-start-date"
-msgstr "de la"
-
-#: templates/entity/edit.tpl:152
-msgid "label-end-date"
-msgstr "pînă la"
 
 #: templates/entity/edit.tpl:172
 msgid "label-profile"

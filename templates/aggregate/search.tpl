@@ -5,24 +5,21 @@
 {block "content"}
   <div class="container my-5">
     {if count($results.entities)}
-      <h3>
-        {t count=count($results.entities) 1=count($results.entities) plural="title-entities-plural"}
-        title-entities-singular
-        {/t}
-      </h3>
+      <h3>{t}title-entities{/t}</h3>
 
-      {foreach $results.entities as $e}
-        <div class="clearfix">
-          {include "bits/image.tpl"
-            obj=$e
-            geometry=Config::THUMB_ENTITY_SMALL
-            imgClass="pic float-right"}
+      <div>
+        {include "bits/entityFilters.tpl" term=$query}
 
-          {include "bits/entityLink.tpl" e=$e}
-          <div>{$e->getEntityType()->name|escape}</div>
+        <div id="entity-list-wrapper">
+          {include "bits/entityList.tpl" entities=$results.entities}
         </div>
-        <hr>
-      {/foreach}
+
+        {include "bits/paginationWrapper.tpl"
+          n=$results.numEntityPages
+          k=1
+          url="{Config::URL_PREFIX}ajax/search-entities"
+          target="#entity-list-wrapper"}
+      </div>
     {/if}
 
     {if count($results.statements)}
