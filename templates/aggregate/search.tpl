@@ -29,7 +29,7 @@
       <h3>{t}title-statements{/t}</h3>
 
       <div>
-        {include "bits/statementFilters.tpl"}
+        {include "bits/statementFilters.tpl" term=$query}
 
         <div id="statement-list-wrapper">
           {include "bits/statementList.tpl" statements=$results.statements}
