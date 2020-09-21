@@ -8,12 +8,13 @@ class Search {
   static function run($query, $limit = self::LIMIT) {
     $escapedQuery = addslashes($query);
 
-    list ($ignored, $statements) =
-      self::searchStatements([ 'term' => $escapedQuery ], 'summary asc');
+    list ($numStatementPages, $statements) =
+      self::searchStatements([ 'term' => $escapedQuery ], 'createDate desc', 1);
 
     $results = [
       'entities' => self::searchEntities($escapedQuery, 0, $limit),
       'statements' => $statements,
+      'numStatementPages' => $numStatementPages,
       'tags' => self::searchTags($escapedQuery, $limit),
     ];
     return $results;

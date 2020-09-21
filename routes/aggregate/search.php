@@ -2,12 +2,11 @@
 
 $q = Request::get('q');
 
-$objects = Search::run($q);
+$results = Search::run($q);
 
 Smart::assign([
-  'entities' => $objects['entities'],
-  'statements' => $objects['statements'],
-  'tags' => $objects['tags'],
+  'results' => $results,
   'query' => $q,
 ]);
+Smart::addResources('pagination', 'datepicker');
 Smart::display('aggregate/search.tpl');
