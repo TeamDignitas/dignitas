@@ -113,17 +113,32 @@ $(function() {
   $('.btn-vote').click(submitVote);
   $('.btn-vote[data-toggle="popover"]').popover({
     content: getPopoverContent,
+    html: true,
     placement: 'right',
-    title: getPopoverTitle,
+    title: $('#vote-popover-messages .title').html(),
     trigger: 'focus',
   });
 
-  function getPopoverContent() {
-    return $(this).closest('.statement-body').find('.statement-vote-reminder').html();
-  }
+  // don't show the popover when the content is empty
+  $('.btn-vote[data-toggle="popover"]').on('show.bs.popover', function() {
+    return (getPopoverContent.call($(this)) != '');
+  });
 
-  function getPopoverTitle() {
-    return $(this).closest('.statement-body').find('.statement-vote-reminder-title').html();
+  function getPopoverContent() {
+    var msg = [];
+    if ($(this).data('type') == TYPE_STATEMENT) {
+      var html = $('#vote-popover-messages .body-statement').html();
+      if (html) {
+        msg.push(html.trim());
+      }
+    }
+    if ($(this).data('value') == -1) {
+      html = $('#vote-popover-messages .body-downvote').html();
+      if (html) {
+        msg.push(html.trim());
+      }
+    }
+    return msg.join('<br><br>');
   }
 
   function submitVote() {

@@ -1,5 +1,6 @@
 {$link=$link|default:false}
 {$colors=$colors|default:true}
+{$tooltip=$tooltip|default:''}
 
 {$style="color: {$t->getColor()}; background: {$t->getBackground()};"}
 
@@ -9,7 +10,8 @@
     href="{Router::link('tag/view')}/{$t->id}"
     class="badge badge-pill badge-default {if !$link}disabled{/if}"
     {if !$link} disabled tabindex="-1"{/if}
-    {if $colors} style="{$style}"{/if}>
+    {if $colors} style="{$style}"{/if}
+    {if $tooltip} title="{$tooltip}"{/if}>
     {if $t->icon}
       <i class="icon icon-{$t->icon}"></i>
     {/if}

@@ -1,9 +1,28 @@
 {* $type: type of object being voted *}
 {* $object: object being voted (should have id and score fields) *}
-{* $reminder: for statements, show a popover reminding users when to vote up/down *}
 
 {$voteValue=$object->getVote()->value|default:0}
-{$reminder=$reminder|default:false}
+
+{* include the various popover messages just once *}
+{if !isset($VOTE_POPOVER_MESSAGES_ONCE)}
+  {$VOTE_POPOVER_MESSAGES_ONCE=1 scope="global"}
+  <div id="vote-popover-messages" style="display: none">
+    <div class="title">
+      {t}vote-popover-title{/t}
+      <a href="#" class="close" data-dismiss="alert">&times;</a>
+    </div>
+    {if User::needsStatementVoteReminder()}
+      <div class="body-statement">
+        {t}vote-popover-statement{/t}
+      </div>
+    {/if}
+    {if User::needsDownvoteReminder()}
+      <div class="body-downvote">
+        {t}vote-popover-downvote{/t}
+      </div>
+    {/if}
+  </div>
+{/if}
 
 <div class="vote-box col-md-1 col-sm-2 pl-0">
 
@@ -15,7 +34,7 @@
     {elseif !User::may($upvotePriv)}
     disabled
     title="{t 1=$upvotePriv|nf}label-minimum-reputation-upvote{/t}"
-    {else if $reminder}
+    {else}
     data-toggle="popover"
     {/if}
     data-type="{$type}"
@@ -35,7 +54,7 @@
     {elseif !User::may($downvotePriv)}
     disabled
     title="{t 1=$downvotePriv|nf}label-minimum-reputation-downvote{/t}"
-    {else if $reminder}
+    {else}
     data-toggle="popover"
     {/if}
     data-type="{$type}"

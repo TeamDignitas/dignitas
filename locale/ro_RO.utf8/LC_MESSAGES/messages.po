@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-09-21 17:03+0300\n"
-"PO-Revision-Date: 2020-09-23 10:53+0300\n"
+"POT-Creation-Date: 2020-09-23 15:12+0300\n"
+"PO-Revision-Date: 2020-09-23 15:12+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -212,15 +212,15 @@ msgstr "click aici dacă nu sînteți redirectat(ă) automat"
 msgid "title-reset-password"
 msgstr "recuperarea parolei"
 
-#: templates/bits/actions.tpl:14
+#: templates/bits/actions.tpl:15
 msgid "action-target-answer"
 msgstr "un răspuns"
 
-#: templates/bits/actions.tpl:22
+#: templates/bits/actions.tpl:23
 msgid "action-target-comment"
 msgstr "un comentariu"
 
-#: templates/bits/actions.tpl:37
+#: templates/bits/actions.tpl:38
 msgid "action-updated-user-profile"
 msgstr "și-a actualizat profilul"
 
@@ -240,7 +240,7 @@ msgstr "publicat de"
 msgid "info-answer-permalink"
 msgstr "legătură permanentă către acest răspuns"
 
-#: templates/bits/answerEdit.tpl:18 templates/bits/statement.tpl:160
+#: templates/bits/answerEdit.tpl:18 templates/bits/statement.tpl:153
 #: templates/bits/statementFilters.tpl:53 templates/statement/edit.tpl:121
 #: lib/model/RevisionAnswer.php:15 lib/model/RevisionStatement.php:18
 msgid "label-verdict"
@@ -529,7 +529,7 @@ msgstr ""
 msgid "label-author"
 msgstr "autor"
 
-#: templates/bits/history.tpl:16 templates/user/view.tpl:107
+#: templates/bits/history.tpl:16 templates/user/view.tpl:109
 msgid "label-date"
 msgstr "dată"
 
@@ -637,23 +637,38 @@ msgstr "detalii"
 msgid "date"
 msgstr "data"
 
-#: templates/bits/scoreAndVote.tpl:14 templates/bits/scoreAndVote.tpl:34
+#: templates/bits/scoreAndVote.tpl:11
+msgid "vote-popover-title"
+msgstr "Mulțumim pentru vot!"
+
+#: templates/bits/scoreAndVote.tpl:16
+msgid "vote-popover-statement"
+msgstr ""
+"Votați afirmațiile pornind de la formatarea și lizibilitatea lor, nu de la "
+"valoarea de adevăr aparentă. De exemplu, nu votați negativ afirmația doar "
+"pentru că o considerați falsă."
+
+#: templates/bits/scoreAndVote.tpl:21
+msgid "vote-popover-downvote"
+msgstr "Voturile negative vă costă 1 punct de reputație."
+
+#: templates/bits/scoreAndVote.tpl:33 templates/bits/scoreAndVote.tpl:53
 msgid "label-log-in-vote"
 msgstr "Vă rugăm să vă autentificați pentru a vota."
 
-#: templates/bits/scoreAndVote.tpl:17
+#: templates/bits/scoreAndVote.tpl:36
 msgid "label-minimum-reputation-upvote"
 msgstr "Vă trebuie o reputație de minimum %1 pentru a vota pozitiv."
 
-#: templates/bits/scoreAndVote.tpl:37
+#: templates/bits/scoreAndVote.tpl:56
 msgid "label-minimum-reputation-downvote"
 msgstr "Vă trebuie o reputație de minimum %1 pentru a vota negativ."
 
-#: templates/bits/scoreAndVote.tpl:59
+#: templates/bits/scoreAndVote.tpl:78
 msgid "label-toggle-answer-proof"
 msgstr "acceptă/șterge răspunsul ca demonstrație"
 
-#: templates/bits/scoreAndVote.tpl:62
+#: templates/bits/scoreAndVote.tpl:81
 msgid "label-answer-is-proof"
 msgstr "acest răspuns servește ca demonstrație pentru verdictul afirmației"
 
@@ -665,32 +680,25 @@ msgstr "mergi la pagina afirmației"
 msgid "statement-links"
 msgstr "surse"
 
-#: templates/bits/statement.tpl:51
-msgid "statement-vote-reminder-title"
-msgstr "Vă mulțumim pentru vot!"
-
-#: templates/bits/statement.tpl:54
-msgid "statement-vote-reminder"
-msgstr ""
-"Vă rugăm să țineți minte să votați afirmațiile pornind de la formatarea și "
-"lizibilitatea lor, nu de la valoarea de adevăr aparentă. De exemplu, nu "
-"votați negativ afirmația doar pentru că o considerați falsă."
-
-#: templates/bits/statement.tpl:70
+#: templates/bits/statement.tpl:63
 msgid "link-statement-review-pending-edit"
 msgstr ""
 "Această afirmație are o modificare sugerată. O puteți <a href=\"%1\" class="
 "\"alert-link\">evalua</a>."
 
-#: templates/bits/statement.tpl:91
+#: templates/bits/statement.tpl:84
 msgid "title-context"
 msgstr "context"
 
-#: templates/bits/statement.tpl:95
+#: templates/bits/statement.tpl:88
 msgid "title-goal"
 msgstr "scop"
 
-#: templates/bits/statement.tpl:104
+#: templates/bits/statement.tpl:94
+msgid "info-tag-view-statements"
+msgstr "Vedeți toate afirmațiile cu această etichetă."
+
+#: templates/bits/statement.tpl:97
 msgid "title-added-by"
 msgstr "adăugată de"
 
@@ -2290,63 +2298,63 @@ msgstr "Vă este interzisă adăugarea de afirmații."
 msgid "info-banned-edit-statement"
 msgstr "Vă este interzisă editarea de afirmații."
 
-#: lib/model/User.php:199 routes/auth/login.php:61
+#: lib/model/User.php:200 routes/auth/login.php:61
 #: routes/auth/lostPassword.php:49 routes/invite/add.php:42
 msgid "info-must-enter-email"
 msgstr "Vă rugăm să introduceți o adresă de e-mail."
 
-#: lib/model/User.php:204
+#: lib/model/User.php:205
 msgid "info-email-taken"
 msgstr "Această adresă de e-mail este deja folosită."
 
-#: lib/model/User.php:208 routes/auth/lostPassword.php:51
+#: lib/model/User.php:209 routes/auth/lostPassword.php:51
 #: routes/invite/add.php:44
 msgid "info-incorrect-email"
 msgstr "Adresa de e-mail pare incorectă."
 
-#: lib/model/User.php:217
+#: lib/model/User.php:218
 msgid "info-nickname-syntax"
 msgstr ""
 "Porecla trebuie să înceapă cu o literă sau cifră și să conțină 3-30 de "
 "litere, cifre și semne de punctuație dintre -_."
 
-#: lib/model/User.php:225 routes/auth/login.php:65
+#: lib/model/User.php:226 routes/auth/login.php:65
 msgid "info-must-enter-password"
 msgstr "Vă rugăm să introduceți o parolă."
 
-#: lib/model/User.php:227
+#: lib/model/User.php:228
 msgid "info-must-enter-password-2"
 msgstr ""
 "Vă rugăm să introduceți parola de două ori pentru a preveni greșelile de "
 "tastare."
 
-#: lib/model/User.php:229
+#: lib/model/User.php:230
 msgid "info-password-mismatch"
 msgstr "Parolele nu coincid."
 
-#: lib/model/User.php:231
+#: lib/model/User.php:232
 msgid "info-password-length"
 msgstr "Parola trebuie să aibă cel puțin 8 caractere."
 
-#: lib/model/User.php:255
+#: lib/model/User.php:256
 #, php-format
 msgid "info-minimum-reputation-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru această acțiune."
 
-#: lib/model/User.php:269
+#: lib/model/User.php:270
 msgid "info-moderator-only"
 msgstr "Doar moderatorii pot face această acțiune."
 
-#: lib/model/User.php:287
+#: lib/model/User.php:288
 #, php-format
 msgid "info-minimum-reputation-flag-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a face raportări."
 
-#: lib/model/User.php:292
+#: lib/model/User.php:293
 msgid "info-banned-flag"
 msgstr "Vă este interzisă raportarea articolelor."
 
-#: lib/model/User.php:299
+#: lib/model/User.php:300
 #, php-format
 msgid "info-flag-limit-singular"
 msgid_plural "info-flag-limit-plural-%d"
@@ -2354,19 +2362,19 @@ msgstr[0] "Puteți face cel mult o raportare la 24 de ore."
 msgstr[1] "Puteți face cel mult %d raportări la 24 de ore."
 msgstr[2] "Puteți face cel mult %d de raportări la 24 de ore."
 
-#: lib/model/User.php:306
+#: lib/model/User.php:307
 msgid "info-flag-no-object"
 msgstr "Nu pot face raportarea: articolul nu există."
 
-#: lib/model/User.php:311
+#: lib/model/User.php:312
 msgid "info-already-flagged"
 msgstr "Ați raportat deja acest articol."
 
-#: lib/model/User.php:339
+#: lib/model/User.php:340
 msgid "info-banned-comment"
 msgstr "Vă este interzisă adăugarea de comentarii."
 
-#: lib/model/User.php:360
+#: lib/model/User.php:361
 #, php-format
 msgid "info-minimum-reputation-comment-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a comenta."

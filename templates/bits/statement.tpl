@@ -47,19 +47,12 @@
 </div>
 
 <article class="row mt-3 statement-body">
-  <div class="statement-vote-reminder-title" style="display: none">
-    {t}statement-vote-reminder-title{/t}
-  </div>
-  <div class="statement-vote-reminder" style="display: none">
-    {t}statement-vote-reminder{/t}
-  </div>
   {if $voteBox}
     {include "bits/scoreAndVote.tpl"
       type=Vote::TYPE_STATEMENT
       object=$statement
       upvotePriv=User::PRIV_UPVOTE_STATEMENT
-      downvotePriv=User::PRIV_DOWNVOTE_STATEMENT
-      reminder=User::needsStatementVoteReminder()}
+      downvotePriv=User::PRIV_DOWNVOTE_STATEMENT}
   {/if}
 
   <div class="col-md-7 col-sm-10 px-0">
@@ -98,7 +91,7 @@
 
     <div class="statement-read-only row ml-0">
       {foreach $statement->getTags() as $t}
-        {include "bits/tag.tpl"}
+        {include "bits/tag.tpl" link=true tooltip="{t}info-tag-view-statements{/t}"}
       {/foreach}
       <div class="text-muted col-md-12 mb-2 mt-1 pl-0">
         {t}title-added-by{/t}

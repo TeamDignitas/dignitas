@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-09-21 17:04+0300\n"
-"PO-Revision-Date: 2020-09-23 10:54+0300\n"
+"POT-Creation-Date: 2020-09-23 15:12+0300\n"
+"PO-Revision-Date: 2020-09-23 15:13+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -209,15 +209,15 @@ msgstr "click here if you are not redirected automatically"
 msgid "title-reset-password"
 msgstr "reset password"
 
-#: templates/bits/actions.tpl:14
+#: templates/bits/actions.tpl:15
 msgid "action-target-answer"
 msgstr "an answer"
 
-#: templates/bits/actions.tpl:22
+#: templates/bits/actions.tpl:23
 msgid "action-target-comment"
 msgstr "a comment"
 
-#: templates/bits/actions.tpl:37
+#: templates/bits/actions.tpl:38
 msgid "action-updated-user-profile"
 msgstr "updated user profile"
 
@@ -237,7 +237,7 @@ msgstr "posted by"
 msgid "info-answer-permalink"
 msgstr "permanent link to this answer"
 
-#: templates/bits/answerEdit.tpl:18 templates/bits/statement.tpl:160
+#: templates/bits/answerEdit.tpl:18 templates/bits/statement.tpl:153
 #: templates/bits/statementFilters.tpl:53 templates/statement/edit.tpl:121
 #: lib/model/RevisionAnswer.php:15 lib/model/RevisionStatement.php:18
 msgid "label-verdict"
@@ -524,7 +524,7 @@ msgstr ""
 msgid "label-author"
 msgstr "author"
 
-#: templates/bits/history.tpl:16 templates/user/view.tpl:107
+#: templates/bits/history.tpl:16 templates/user/view.tpl:109
 msgid "label-date"
 msgstr "date"
 
@@ -631,23 +631,38 @@ msgstr "details"
 msgid "date"
 msgstr "date"
 
-#: templates/bits/scoreAndVote.tpl:14 templates/bits/scoreAndVote.tpl:34
+#: templates/bits/scoreAndVote.tpl:11
+msgid "vote-popover-title"
+msgstr "Thank you for voting!"
+
+#: templates/bits/scoreAndVote.tpl:16
+msgid "vote-popover-statement"
+msgstr ""
+"Please vote on statements based on their formatting and legibility, not on "
+"their perceived truth value. For example, don't downvote a statement just "
+"because you believe it is false."
+
+#: templates/bits/scoreAndVote.tpl:21
+msgid "vote-popover-downvote"
+msgstr "You lose one reputation point when downvoting statements and answers."
+
+#: templates/bits/scoreAndVote.tpl:33 templates/bits/scoreAndVote.tpl:53
 msgid "label-log-in-vote"
 msgstr "Please log in to vote."
 
-#: templates/bits/scoreAndVote.tpl:17
+#: templates/bits/scoreAndVote.tpl:36
 msgid "label-minimum-reputation-upvote"
 msgstr "You need at least %1 reputation to upvote."
 
-#: templates/bits/scoreAndVote.tpl:37
+#: templates/bits/scoreAndVote.tpl:56
 msgid "label-minimum-reputation-downvote"
 msgstr "You need at least %1 reputation to downvote."
 
-#: templates/bits/scoreAndVote.tpl:59
+#: templates/bits/scoreAndVote.tpl:78
 msgid "label-toggle-answer-proof"
 msgstr "accept/unaccept the answer as proof"
 
-#: templates/bits/scoreAndVote.tpl:62
+#: templates/bits/scoreAndVote.tpl:81
 msgid "label-answer-is-proof"
 msgstr "this answer serves as proof for the statement's verdict"
 
@@ -659,32 +674,25 @@ msgstr "visit the statement's page"
 msgid "statement-links"
 msgstr "sources"
 
-#: templates/bits/statement.tpl:51
-msgid "statement-vote-reminder-title"
-msgstr "Thank you for voting!"
-
-#: templates/bits/statement.tpl:54
-msgid "statement-vote-reminder"
-msgstr ""
-"Please remember to vote on statements based on their formatting and "
-"legibility, not on their perceived truth value. For example, don't downvote "
-"a statement just because you believe it is false."
-
-#: templates/bits/statement.tpl:70
+#: templates/bits/statement.tpl:63
 msgid "link-statement-review-pending-edit"
 msgstr ""
 "This statement has a pending edit. You can <a href=\"%1\" class=\"alert-link"
 "\">review it</a>."
 
-#: templates/bits/statement.tpl:91
+#: templates/bits/statement.tpl:84
 msgid "title-context"
 msgstr "context"
 
-#: templates/bits/statement.tpl:95
+#: templates/bits/statement.tpl:88
 msgid "title-goal"
 msgstr "goal"
 
-#: templates/bits/statement.tpl:104
+#: templates/bits/statement.tpl:94
+msgid "info-tag-view-statements"
+msgstr "View all statements with this tag."
+
+#: templates/bits/statement.tpl:97
 msgid "title-added-by"
 msgstr "added by"
 
@@ -2272,80 +2280,80 @@ msgstr "You are banned from adding statements."
 msgid "info-banned-edit-statement"
 msgstr "You are banned from editing statements."
 
-#: lib/model/User.php:199 routes/auth/login.php:61
+#: lib/model/User.php:200 routes/auth/login.php:61
 #: routes/auth/lostPassword.php:49 routes/invite/add.php:42
 msgid "info-must-enter-email"
 msgstr "Please enter an email address."
 
-#: lib/model/User.php:204
+#: lib/model/User.php:205
 msgid "info-email-taken"
 msgstr "This email address is already taken."
 
-#: lib/model/User.php:208 routes/auth/lostPassword.php:51
+#: lib/model/User.php:209 routes/auth/lostPassword.php:51
 #: routes/invite/add.php:44
 msgid "info-incorrect-email"
 msgstr "This email address looks incorrect."
 
-#: lib/model/User.php:217
+#: lib/model/User.php:218
 msgid "info-nickname-syntax"
 msgstr ""
 "Your nickname must begin with a letter or digit and consist of 3 to 30 "
 "letters, digits and punctuation from among -_."
 
-#: lib/model/User.php:225 routes/auth/login.php:65
+#: lib/model/User.php:226 routes/auth/login.php:65
 msgid "info-must-enter-password"
 msgstr "Please enter a password."
 
-#: lib/model/User.php:227
+#: lib/model/User.php:228
 msgid "info-must-enter-password-2"
 msgstr "Please enter your password twice to prevent typos."
 
-#: lib/model/User.php:229
+#: lib/model/User.php:230
 msgid "info-password-mismatch"
 msgstr "Passwords don't match."
 
-#: lib/model/User.php:231
+#: lib/model/User.php:232
 msgid "info-password-length"
 msgstr "Your password must be at least 8 characters long."
 
-#: lib/model/User.php:255
+#: lib/model/User.php:256
 #, php-format
 msgid "info-minimum-reputation-%s"
 msgstr "You need at least %s reputation to perform this action."
 
-#: lib/model/User.php:269
+#: lib/model/User.php:270
 msgid "info-moderator-only"
 msgstr "Only moderators may perform this action."
 
-#: lib/model/User.php:287
+#: lib/model/User.php:288
 #, php-format
 msgid "info-minimum-reputation-flag-%s"
 msgstr "You need at least %s reputation to flag."
 
-#: lib/model/User.php:292
+#: lib/model/User.php:293
 msgid "info-banned-flag"
 msgstr "You are banned from flagging."
 
-#: lib/model/User.php:299
+#: lib/model/User.php:300
 #, php-format
 msgid "info-flag-limit-singular"
 msgid_plural "info-flag-limit-plural-%d"
 msgstr[0] "You can use at most one flag every 24 hours."
 msgstr[1] "You can use at most %d flags every 24 hours."
 
-#: lib/model/User.php:306
+#: lib/model/User.php:307
 msgid "info-flag-no-object"
 msgstr "Cannot flag: object does not exist."
 
-#: lib/model/User.php:311
+#: lib/model/User.php:312
 msgid "info-already-flagged"
 msgstr "You already have a pending flag for this object."
 
-#: lib/model/User.php:339
+#: lib/model/User.php:340
 msgid "info-banned-comment"
 msgstr "You are banned from commenting."
 
-#: lib/model/User.php:360
+#: lib/model/User.php:361
 #, php-format
 msgid "info-minimum-reputation-comment-%s"
 msgstr "You need at least %s reputation to comment."

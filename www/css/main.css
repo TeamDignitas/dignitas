@@ -435,3 +435,10 @@ body, main {
   max-width: 100px;
   display: block;
 }
+
+/******************************* popovers *******************************/
+
+.popover-header .close {
+  position: relative;
+  bottom: 3px;
+}

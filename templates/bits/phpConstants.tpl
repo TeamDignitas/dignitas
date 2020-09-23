@@ -8,4 +8,7 @@
 
   // used in the flagging modal
   const TYPE_ENTITY = {Proto::TYPE_ENTITY};
+
+  // used in the vote popovers
+  const TYPE_STATEMENT = {Proto::TYPE_STATEMENT};
 </script>

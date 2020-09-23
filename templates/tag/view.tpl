@@ -5,7 +5,7 @@
 {block "content"}
   <div class="container my-5">
     <h1 class="mb-4">{t}title-tag{/t}
-    {include "bits/tagAncestors.tpl"}
+      {include "bits/tagAncestors.tpl"}
     </h1>
 
     {if User::may(User::PRIV_EDIT_TAG)}
