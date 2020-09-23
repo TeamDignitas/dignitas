@@ -264,6 +264,10 @@ img.pic.no-outline,
   font-size: 1.5rem;
 }
 
+.select2-container {
+  width: 100%;
+}
+
 /******************************** answers, entity statements, user profile ********************************/
 
 .answer {
