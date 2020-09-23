@@ -5,12 +5,10 @@
 
 {* When we print the initial page we include this template. Subsequent *}
 {* refreshes via Ajax will include only pagination.tpl. *}
-{if $n > 1}
-  <div
-    class="pagination-wrapper"
-    data-url="{$url}"
-    data-target="{$target}">
+<div
+  class="pagination-wrapper"
+  data-url="{$url}"
+  data-target="{$target}">
 
-    {include "bits/pagination.tpl"}
-  </div>
-{/if}
+  {include "bits/pagination.tpl"}
+</div>
