@@ -9,7 +9,7 @@ if (!User::may(User::PRIV_DELETE_STATEMENT)) {
 }
 
 list($numStatementPages, $statements) =
-  Search::searchStatements([], 'createDate desc', 1);
+  Search::searchStatements([], Ct::SORT_CREATE_DATE_DESC, 1);
 
 // load the static resources for the top/bottom of the page
 $key = User::getActive() ? 'user' : 'guest';

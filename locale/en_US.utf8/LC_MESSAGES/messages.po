@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-09-23 15:12+0300\n"
-"PO-Revision-Date: 2020-09-23 15:13+0300\n"
+"POT-Creation-Date: 2020-09-23 16:28+0300\n"
+"PO-Revision-Date: 2020-09-23 16:28+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -238,7 +238,7 @@ msgid "info-answer-permalink"
 msgstr "permanent link to this answer"
 
 #: templates/bits/answerEdit.tpl:18 templates/bits/statement.tpl:153
-#: templates/bits/statementFilters.tpl:53 templates/statement/edit.tpl:121
+#: templates/bits/statementFilters.tpl:41 templates/statement/edit.tpl:121
 #: lib/model/RevisionAnswer.php:15 lib/model/RevisionStatement.php:18
 msgid "label-verdict"
 msgstr "verdict"
@@ -354,11 +354,31 @@ msgstr "external links"
 msgid "title-members"
 msgstr "members"
 
-#: templates/bits/entityFilters.tpl:8 templates/bits/statementFilters.tpl:8
+#: templates/bits/entityFilters.tpl:7 templates/bits/statementFilters.tpl:6
+msgid "label-sort"
+msgstr "order by"
+
+#: templates/bits/entityFilters.tpl:15
+msgid "sort-name-asc"
+msgstr "name (ascending)"
+
+#: templates/bits/entityFilters.tpl:16
+msgid "sort-name-desc"
+msgstr "name (descending)"
+
+#: templates/bits/entityFilters.tpl:17 templates/bits/statementFilters.tpl:14
+msgid "sort-create-date-desc"
+msgstr "date added (descending)"
+
+#: templates/bits/entityFilters.tpl:18 templates/bits/statementFilters.tpl:15
+msgid "sort-create-date-asc"
+msgstr "date added (ascending)"
+
+#: templates/bits/entityFilters.tpl:24 templates/bits/statementFilters.tpl:23
 msgid "label-filter"
 msgstr "filter"
 
-#: templates/bits/entityFilters.tpl:18 templates/bits/statementFilters.tpl:18
+#: templates/bits/entityFilters.tpl:34 templates/bits/statementFilters.tpl:67
 msgid "label-term"
 msgstr "text"
 
@@ -520,7 +540,7 @@ msgid "info-no-history"
 msgstr ""
 "There are no changes to this item. The current version is the only version."
 
-#: templates/bits/history.tpl:15 templates/bits/statementFilters.tpl:25
+#: templates/bits/history.tpl:15 templates/bits/statementFilters.tpl:31
 msgid "label-author"
 msgstr "author"
 
@@ -696,11 +716,23 @@ msgstr "View all statements with this tag."
 msgid "title-added-by"
 msgstr "added by"
 
-#: templates/bits/statementFilters.tpl:35 templates/entity/edit.tpl:151
+#: templates/bits/statementFilters.tpl:16
+msgid "sort-date-made-desc"
+msgstr "statement date (descending)"
+
+#: templates/bits/statementFilters.tpl:17
+msgid "sort-date-made-asc"
+msgstr "statement date (ascending)"
+
+#: templates/bits/statementFilters.tpl:54
+msgid "label-more-filters"
+msgstr "more filters"
+
+#: templates/bits/statementFilters.tpl:75 templates/entity/edit.tpl:151
 msgid "label-start-date"
 msgstr "start date"
 
-#: templates/bits/statementFilters.tpl:44 templates/entity/edit.tpl:152
+#: templates/bits/statementFilters.tpl:84 templates/entity/edit.tpl:152
 msgid "label-end-date"
 msgstr "end date"
 

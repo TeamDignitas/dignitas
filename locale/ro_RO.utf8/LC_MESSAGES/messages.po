@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-09-23 15:12+0300\n"
-"PO-Revision-Date: 2020-09-23 15:12+0300\n"
+"POT-Creation-Date: 2020-09-23 16:27+0300\n"
+"PO-Revision-Date: 2020-09-23 16:27+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -241,7 +241,7 @@ msgid "info-answer-permalink"
 msgstr "legătură permanentă către acest răspuns"
 
 #: templates/bits/answerEdit.tpl:18 templates/bits/statement.tpl:153
-#: templates/bits/statementFilters.tpl:53 templates/statement/edit.tpl:121
+#: templates/bits/statementFilters.tpl:41 templates/statement/edit.tpl:121
 #: lib/model/RevisionAnswer.php:15 lib/model/RevisionStatement.php:18
 msgid "label-verdict"
 msgstr "verdict"
@@ -358,11 +358,31 @@ msgstr "legături externe"
 msgid "title-members"
 msgstr "membri"
 
-#: templates/bits/entityFilters.tpl:8 templates/bits/statementFilters.tpl:8
-msgid "label-filter"
-msgstr "filtrează"
+#: templates/bits/entityFilters.tpl:7 templates/bits/statementFilters.tpl:6
+msgid "label-sort"
+msgstr "ordine"
 
-#: templates/bits/entityFilters.tpl:18 templates/bits/statementFilters.tpl:18
+#: templates/bits/entityFilters.tpl:15
+msgid "sort-name-asc"
+msgstr "nume (crescător)"
+
+#: templates/bits/entityFilters.tpl:16
+msgid "sort-name-desc"
+msgstr "nume (descrescător)"
+
+#: templates/bits/entityFilters.tpl:17 templates/bits/statementFilters.tpl:14
+msgid "sort-create-date-desc"
+msgstr "data adăugării (descrescător)"
+
+#: templates/bits/entityFilters.tpl:18 templates/bits/statementFilters.tpl:15
+msgid "sort-create-date-asc"
+msgstr "data adăugării (crescător)"
+
+#: templates/bits/entityFilters.tpl:24 templates/bits/statementFilters.tpl:23
+msgid "label-filter"
+msgstr "filtre"
+
+#: templates/bits/entityFilters.tpl:34 templates/bits/statementFilters.tpl:67
 msgid "label-term"
 msgstr "text"
 
@@ -525,7 +545,7 @@ msgid "info-no-history"
 msgstr ""
 "Nu există modificări la acest articol. Versiunea curentă este unica versiune."
 
-#: templates/bits/history.tpl:15 templates/bits/statementFilters.tpl:25
+#: templates/bits/history.tpl:15 templates/bits/statementFilters.tpl:31
 msgid "label-author"
 msgstr "autor"
 
@@ -702,11 +722,23 @@ msgstr "Vedeți toate afirmațiile cu această etichetă."
 msgid "title-added-by"
 msgstr "adăugată de"
 
-#: templates/bits/statementFilters.tpl:35 templates/entity/edit.tpl:151
+#: templates/bits/statementFilters.tpl:16
+msgid "sort-date-made-desc"
+msgstr "data afirmației (descrescător)"
+
+#: templates/bits/statementFilters.tpl:17
+msgid "sort-date-made-asc"
+msgstr "data afirmației (crescător)"
+
+#: templates/bits/statementFilters.tpl:54
+msgid "label-more-filters"
+msgstr "mai multe filtre"
+
+#: templates/bits/statementFilters.tpl:75 templates/entity/edit.tpl:151
 msgid "label-start-date"
 msgstr "de la"
 
-#: templates/bits/statementFilters.tpl:44 templates/entity/edit.tpl:152
+#: templates/bits/statementFilters.tpl:84 templates/entity/edit.tpl:152
 msgid "label-end-date"
 msgstr "pînă la"
 

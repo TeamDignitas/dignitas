@@ -1,7 +1,7 @@
 <?php
 
 $page = Request::get('page', 0);
-$order = Request::get('order', 'createDate desc');
+$order = Request::get('order', 0);
 
 $filters = [
   'entityId' => Request::get('entityId', 0),

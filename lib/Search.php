@@ -9,9 +9,9 @@ class Search {
     $escapedQuery = addslashes($query);
 
     list ($numStatementPages, $statements) =
-      self::searchStatements([ 'term' => $escapedQuery ], 'createDate desc', 1);
+      self::searchStatements([ 'term' => $escapedQuery ], Ct::SORT_CREATE_DATE_DESC, 1);
     list ($numEntityPages, $entities) =
-      self::searchEntities([ 'term' => $escapedQuery ], 1);
+      self::searchEntities([ 'term' => $escapedQuery ], Ct::SORT_NAME_ASC, 1);
 
     $results = [
       'entities' => $entities,
@@ -27,6 +27,7 @@ class Search {
    * Searches and sorts entities.
    *
    * @param array $filters A map of field => value. See code for field definitions.
+   * @param string $order One of the Ct::SORT_* constants
    * @param int $page If zero, load up to $pageSize results. If nonzero, load
    *   the given page assuming each page has size $pageSize.
    * @param int $pageSize If $page is zero, this is the result limit. If $page
@@ -36,6 +37,7 @@ class Search {
    */
   static function searchEntities(
     $filters,
+    $order = Ct::SORT_NAME_ASC,
     $page = 0,
     $pageSize = null) {
 
@@ -81,8 +83,9 @@ class Search {
       $numPages = 0;
     }
 
+    $sqlOrder = Ct::SORT_SQL[$order];
     $entities = $query
-      ->order_by_asc('e.name')
+      ->order_by_expr($sqlOrder)
       ->limit($pageSize)
       ->find_many();
     return [ $numPages, $entities ];
@@ -92,7 +95,7 @@ class Search {
    * Searches and sorts statements.
    *
    * @param array $filters A map of field => value. See code for field definitions.
-   * @param string $order A field + direction such as 'createDate desc'.
+   * @param string $order One of the Ct::SORT_* constants
    * @param int $page If zero, load up to $pageSize results. If nonzero, load
    *   the given page assuming each page has size $pageSize.
    * @param int $pageSize If $page is zero, this is the result limit. If $page
@@ -102,7 +105,7 @@ class Search {
    */
   static function searchStatements(
     $filters,
-    $order = 'createDate desc',
+    $order = Ct::SORT_CREATE_DATE_DESC,
     $page = 0,
     $pageSize = null) {
 
@@ -146,8 +149,9 @@ class Search {
       $numPages = 0;
     }
 
+    $sqlOrder = Ct::SORT_SQL[$order];
     $statements = $query
-      ->order_by_expr($order)
+      ->order_by_expr($sqlOrder)
       ->limit($pageSize)
       ->find_many();
     return [ $numPages, $statements ];

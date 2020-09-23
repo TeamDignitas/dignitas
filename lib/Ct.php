@@ -51,4 +51,20 @@ class Ct {
   const VERDICT_MOSTLY_TRUE = 5;
   const VERDICT_TRUE = 6;
   const NUM_VERDICTS = 7;
+
+  // Sort criteria
+  const SORT_CREATE_DATE_DESC = 0;
+  const SORT_CREATE_DATE_ASC = 1;
+  const SORT_DATE_MADE_DESC = 2;
+  const SORT_DATE_MADE_ASC = 3;
+  const SORT_NAME_DESC = 4;
+  const SORT_NAME_ASC = 5;
+  const SORT_SQL = [
+    self::SORT_CREATE_DATE_DESC => 'createDate desc',
+    self::SORT_CREATE_DATE_ASC => 'createDate asc',
+    self::SORT_DATE_MADE_DESC => 'dateMade desc',
+    self::SORT_DATE_MADE_ASC => 'dateMade asc',
+    self::SORT_NAME_DESC => 'name desc',
+    self::SORT_NAME_ASC => 'name asc',
+  ];
 }
