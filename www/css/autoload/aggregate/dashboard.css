@@ -1,13 +1,12 @@
-@media (max-width: 992px) {
-  .fix-min-height {
-    min-height: 145px;
-  }
+.dashcard {
+  border: 1px solid rgb(108, 117, 125);
+  border-radius: 4px;
 }
 
-.fix-min-height:hover {
+.dashcard:hover {
   background-color: #ddd;
 }
 
-.fix-min-height a:hover {
+.dashcard a:hover {
   text-decoration: none;
 }
