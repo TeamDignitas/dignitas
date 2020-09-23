@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2020-09-21 17:03+0300\n"
-"PO-Revision-Date: 2020-09-21 17:04+0300\n"
+"PO-Revision-Date: 2020-09-23 10:53+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -785,7 +785,7 @@ msgstr "imagine"
 #: templates/domain/edit.tpl:55 templates/entity/edit.tpl:219
 #: templates/user/edit.tpl:69
 msgid "info-upload-image"
-msgstr "alegeți o imagine pentru încărcare"
+msgstr "alegeți o imagine"
 
 #: templates/domain/edit.tpl:63 templates/entity/edit.tpl:227
 #: templates/user/edit.tpl:77
@@ -1303,7 +1303,7 @@ msgstr "toate"
 
 #: templates/staticResource/edit.tpl:70
 msgid "info-choose-static-resource-file"
-msgstr "... sau alegeți un fișier pentru încărcare"
+msgstr "... sau încărcați un fișier"
 
 #: templates/staticResource/edit.tpl:94
 msgid "info-confirm-delete-static-resource"

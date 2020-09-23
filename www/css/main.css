@@ -361,7 +361,7 @@ body, main {
 
 /****************************** file inputs ******************************/
 
-.custom-file-label::after {
+.custom-file-input ~ .custom-file-label::after {
   /* hack: this hardcodes the glyph for icon-folder-open */
   content: '\e809';
   font-family: 'icons';
