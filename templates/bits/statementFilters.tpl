@@ -48,10 +48,11 @@
     </div>
 
     <div class="mr-2">
-      <a class="btn btn-link btn-sm text-nowrap"
+      <a class="btn btn-sm text-nowrap extra-filters"
         data-toggle="collapse"
         href="#more-filters">
-        {t}label-more-filters{/t} ▼
+        {t}label-more-filters{/t}
+        <i class="icon icon-sliders"></i>
       </a>
     </div>
   </div>
