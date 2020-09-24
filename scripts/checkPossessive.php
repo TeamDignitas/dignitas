@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 /**
  * This script checks that entities that need long/short possessive forms have

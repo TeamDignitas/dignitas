@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 /**
  * This script goes through every table and checks that a consistent revision

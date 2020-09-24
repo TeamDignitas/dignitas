@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 /**
  * This script imports a minimal usable dataset. This helps bootstrap a

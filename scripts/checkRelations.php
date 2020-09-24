@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 /**
  * This script goes through entities and relations and reports some

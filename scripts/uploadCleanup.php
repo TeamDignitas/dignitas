@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 /**
  * This script goes through the upload folder on the shared drive and performs
