@@ -1,5 +1,5 @@
 {$showEntity=$showEntity|default:true}
-<div>
+<div class="mt-4">
   {foreach $statements as $i => $s}
     {$e=$s->getEntity()}
     <div class="statement card border-secondary mr-3 mb-3">
