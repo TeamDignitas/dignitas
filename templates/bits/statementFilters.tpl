@@ -51,7 +51,8 @@
       <a class="btn btn-link btn-sm text-nowrap"
         data-toggle="collapse"
         href="#more-filters">
-        {t}label-more-filters{/t} ▼
+        <i class="icon icon-sliders"></i>
+        {t}label-other-filters{/t}
       </a>
     </div>
   </div>

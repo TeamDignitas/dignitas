@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-09-23 16:28+0300\n"
-"PO-Revision-Date: 2020-09-23 16:28+0300\n"
+"POT-Creation-Date: 2020-09-25 13:10+0300\n"
+"PO-Revision-Date: 2020-09-25 13:10+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -35,52 +35,52 @@ msgstr ""
 msgid "title-dashboard"
 msgstr "dashboard"
 
-#: templates/aggregate/dashboard.tpl:16 templates/aggregate/index.tpl:26
+#: templates/aggregate/dashboard.tpl:17 templates/aggregate/index.tpl:26
 #: templates/bits/entity.tpl:108
 msgid "link-add-statement"
 msgstr "add a statement"
 
-#: templates/aggregate/dashboard.tpl:27 templates/aggregate/index.tpl:32
+#: templates/aggregate/dashboard.tpl:30 templates/aggregate/index.tpl:32
 msgid "link-add-entity"
 msgstr "add an author"
 
-#: templates/aggregate/dashboard.tpl:38
+#: templates/aggregate/dashboard.tpl:43
 msgid "link-domains"
 msgstr "domains"
 
-#: templates/aggregate/dashboard.tpl:46
+#: templates/aggregate/dashboard.tpl:54
 msgid "link-canned-responses"
 msgstr "canned responses"
 
-#: templates/aggregate/dashboard.tpl:54
+#: templates/aggregate/dashboard.tpl:65
 msgid "link-invites"
 msgstr "invites"
 
-#: templates/aggregate/dashboard.tpl:62
+#: templates/aggregate/dashboard.tpl:76
 msgid "link-entity-types"
 msgstr "author types"
 
-#: templates/aggregate/dashboard.tpl:70
+#: templates/aggregate/dashboard.tpl:87
 msgid "link-relation-types"
 msgstr "relationship types"
 
-#: templates/aggregate/dashboard.tpl:78
+#: templates/aggregate/dashboard.tpl:98
 msgid "link-static-resources"
 msgstr "static resources"
 
-#: templates/aggregate/dashboard.tpl:88
+#: templates/aggregate/dashboard.tpl:110
 msgid "link-tags"
 msgstr "tags"
 
-#: templates/aggregate/dashboard.tpl:94
+#: templates/aggregate/dashboard.tpl:117
 msgid "title-review-queues"
 msgstr "review queues"
 
-#: templates/aggregate/dashboard.tpl:109
+#: templates/aggregate/dashboard.tpl:132
 msgid "title-reports"
 msgstr "reports in need of attention"
 
-#: templates/aggregate/dashboard.tpl:114
+#: templates/aggregate/dashboard.tpl:137
 msgid "link-verdict-report"
 msgstr "statements with unclear verdicts"
 
@@ -378,7 +378,7 @@ msgstr "date added (ascending)"
 msgid "label-filter"
 msgstr "filter"
 
-#: templates/bits/entityFilters.tpl:34 templates/bits/statementFilters.tpl:67
+#: templates/bits/entityFilters.tpl:34 templates/bits/statementFilters.tpl:68
 msgid "label-term"
 msgstr "text"
 
@@ -724,15 +724,15 @@ msgstr "statement date (descending)"
 msgid "sort-date-made-asc"
 msgstr "statement date (ascending)"
 
-#: templates/bits/statementFilters.tpl:54
-msgid "label-more-filters"
-msgstr "more filters"
+#: templates/bits/statementFilters.tpl:55
+msgid "label-other-filters"
+msgstr "other filters"
 
-#: templates/bits/statementFilters.tpl:75 templates/entity/edit.tpl:151
+#: templates/bits/statementFilters.tpl:76 templates/entity/edit.tpl:151
 msgid "label-start-date"
 msgstr "start date"
 
-#: templates/bits/statementFilters.tpl:84 templates/entity/edit.tpl:152
+#: templates/bits/statementFilters.tpl:85 templates/entity/edit.tpl:152
 msgid "label-end-date"
 msgstr "end date"
 
