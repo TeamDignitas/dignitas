@@ -47,3 +47,27 @@
 .ivory.meta-line {
   border: 1px solid #F3E6D7;
 }
+
+/* ##################### select2 tweaks ###################### */
+.home-filters .select2-container--bootstrap4 .select2-selection--single .select2-selection__placeholder {
+  color: inherit;
+}
+
+.home-filters {
+  font-size: 14px !important;
+}
+
+.home-filters .form-control-sm {
+  height: inherit;
+  padding: 8px;
+}
+
+.home-filters .select2-container--bootstrap4 .select2-selection--multiple .select2-selection__rendered {
+  padding-left: 8px;
+}
+
+.more-filters input {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  height: inherit;
+}

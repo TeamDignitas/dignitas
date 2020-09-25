@@ -1,9 +1,9 @@
 {$term=$term|default:''}
 <form data-url="{Config::URL_PREFIX}ajax/search-statements">
-  <div class="d-flex mb-2 small">
+  <div class="d-flex mb-2 small home-filters">
     <div class="mr-2">
-      <label class="col-form-label">
-        {t}label-sort{/t}:
+      <label class="col-form-label text-capitalize">
+        {t}label-sort{/t}
       </label>
     </div>
 
@@ -19,7 +19,7 @@
     </div>
 
     <div class="mr-2">
-      <label class="col-form-label">
+      <label class="col-form-label text-capitalize">
         {t}label-filter{/t}:
       </label>
     </div>
@@ -48,17 +48,17 @@
     </div>
 
     <div class="mr-2">
-      <a class="btn btn-link btn-sm text-nowrap"
+      <a class="btn btn-link btn-lg text-nowrap py-1"
         data-toggle="collapse"
         href="#more-filters">
         <i class="icon icon-sliders"></i>
-        {t}label-other-filters{/t}
+        <small>{t}label-other-filters{/t}</small>
       </a>
     </div>
   </div>
 
   <div id="more-filters" class="collapse {if $term}show{/if}">
-    <div class="d-flex mb-2 small">
+    <div class="d-flex mb-2 small more-filters">
       <div class="mr-2">
         <input
           type="text"
