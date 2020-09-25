@@ -17,11 +17,44 @@ class Markdown extends Parsedown {
     return $i;
   }
 
+  function __construct() {
+    $this->InlineTypes['@'][]= 'Mention';
+    $this->inlineMarkerList .= '@';
+  }
+
   /**
    * Wrap the resulting markdown in a classed div.
    */
   function text($text) {
     return sprintf('<div class="markdown">%s</div>', parent::text($text));
+  }
+
+  /**
+   * Processes an @-mention.
+   */
+  protected function inlineMention($excerpt) {
+    if (!preg_match('/^@(' . User::NICKNAME_REGEXP . ')/u',
+                    $excerpt['text'],
+                    $matches)) {
+      return null;
+    }
+
+    $nick = $matches[1];
+    $u = User::get_by_nickname($nick);
+    if (!$u) {
+      return null;
+    }
+
+    return [
+      'extent' => strlen($matches[0]), // number of characters to advance
+      'element' => [
+        'name' => 'a',
+        'text' => $matches[0],
+        'attributes' => [
+          'href' => Router::userLink($u),
+        ],
+      ],
+    ];
   }
 
   /**
