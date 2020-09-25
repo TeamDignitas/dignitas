@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 /**
  * This script goes through all the static resources and reports:

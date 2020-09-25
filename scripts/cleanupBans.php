@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 /**
  * This script deletes expired bans.

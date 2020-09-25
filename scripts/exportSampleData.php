@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 /**
  * This script exports a minimal usable dataset. Its counterpart will be able

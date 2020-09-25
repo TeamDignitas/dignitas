@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-09-23 16:27+0300\n"
-"PO-Revision-Date: 2020-09-23 16:27+0300\n"
+"POT-Creation-Date: 2020-09-25 13:10+0300\n"
+"PO-Revision-Date: 2020-09-25 13:10+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -36,52 +36,52 @@ msgstr ""
 msgid "title-dashboard"
 msgstr "panou de control"
 
-#: templates/aggregate/dashboard.tpl:16 templates/aggregate/index.tpl:26
+#: templates/aggregate/dashboard.tpl:17 templates/aggregate/index.tpl:26
 #: templates/bits/entity.tpl:108
 msgid "link-add-statement"
 msgstr "adaugă o afirmație"
 
-#: templates/aggregate/dashboard.tpl:27 templates/aggregate/index.tpl:32
+#: templates/aggregate/dashboard.tpl:30 templates/aggregate/index.tpl:32
 msgid "link-add-entity"
 msgstr "adaugă un autor"
 
-#: templates/aggregate/dashboard.tpl:38
+#: templates/aggregate/dashboard.tpl:43
 msgid "link-domains"
 msgstr "domenii"
 
-#: templates/aggregate/dashboard.tpl:46
+#: templates/aggregate/dashboard.tpl:54
 msgid "link-canned-responses"
 msgstr "răspunsuri predefinite"
 
-#: templates/aggregate/dashboard.tpl:54
+#: templates/aggregate/dashboard.tpl:65
 msgid "link-invites"
 msgstr "invitații"
 
-#: templates/aggregate/dashboard.tpl:62
+#: templates/aggregate/dashboard.tpl:76
 msgid "link-entity-types"
 msgstr "tipuri de autori"
 
-#: templates/aggregate/dashboard.tpl:70
+#: templates/aggregate/dashboard.tpl:87
 msgid "link-relation-types"
 msgstr "tipuri de relații"
 
-#: templates/aggregate/dashboard.tpl:78
+#: templates/aggregate/dashboard.tpl:98
 msgid "link-static-resources"
 msgstr "resurse statice"
 
-#: templates/aggregate/dashboard.tpl:88
+#: templates/aggregate/dashboard.tpl:110
 msgid "link-tags"
 msgstr "etichete"
 
-#: templates/aggregate/dashboard.tpl:94
+#: templates/aggregate/dashboard.tpl:117
 msgid "title-review-queues"
 msgstr "cozi de evaluare"
 
-#: templates/aggregate/dashboard.tpl:109
+#: templates/aggregate/dashboard.tpl:132
 msgid "title-reports"
 msgstr "rapoarte care necesită atenție"
 
-#: templates/aggregate/dashboard.tpl:114
+#: templates/aggregate/dashboard.tpl:137
 msgid "link-verdict-report"
 msgstr "afirmații cu verdicte neclare"
 
@@ -382,7 +382,7 @@ msgstr "data adăugării (crescător)"
 msgid "label-filter"
 msgstr "filtre"
 
-#: templates/bits/entityFilters.tpl:34 templates/bits/statementFilters.tpl:67
+#: templates/bits/entityFilters.tpl:34 templates/bits/statementFilters.tpl:68
 msgid "label-term"
 msgstr "text"
 
@@ -730,17 +730,17 @@ msgstr "data afirmației (descrescător)"
 msgid "sort-date-made-asc"
 msgstr "data afirmației (crescător)"
 
-#: templates/bits/statementFilters.tpl:54
-msgid "label-more-filters"
-msgstr "mai multe filtre"
+#: templates/bits/statementFilters.tpl:55
+msgid "label-other-filters"
+msgstr "alte filtre"
 
-#: templates/bits/statementFilters.tpl:75 templates/entity/edit.tpl:151
+#: templates/bits/statementFilters.tpl:76 templates/entity/edit.tpl:151
 msgid "label-start-date"
-msgstr "de la"
+msgstr "de la data"
 
-#: templates/bits/statementFilters.tpl:84 templates/entity/edit.tpl:152
+#: templates/bits/statementFilters.tpl:85 templates/entity/edit.tpl:152
 msgid "label-end-date"
-msgstr "pînă la"
+msgstr "pînă la data"
 
 #: templates/bits/statementLink.tpl:9
 msgid "quoted-string-%1"

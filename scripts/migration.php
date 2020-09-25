@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 /**
  * This script applies data migration patches, consisting of SQL code and PHP

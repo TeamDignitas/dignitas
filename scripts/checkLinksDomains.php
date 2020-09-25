@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 /**
  * This script goes through all the links and reports two types of problems:
