@@ -50,6 +50,8 @@ class User extends Proto {
   // action log
   const ACTION_LOG_PAGE_SIZE = 50;
 
+  const NICKNAME_REGEXP = '(\p{L}|\d)(\p{L}|\d|[-_.]){2,29}';
+
   private static $active = null; // user currently logged in
 
   function getMarkdownFields() {
@@ -214,7 +216,7 @@ class User extends Proto {
 
   // returns null on success or an error message on failure
   static function validateNickname($nickname) {
-    if (!preg_match('/^(\p{L}|\d)(\p{L}|\d|[-_.]){2,29}$/u', $nickname)) {
+    if (!preg_match('/^' . self::NICKNAME_REGEXP . '$/u', $nickname)) {
       return _('info-nickname-syntax');
     }
     return null;
