@@ -72,3 +72,8 @@
   padding-bottom: 6px;
   height: inherit;
 }
+
+.select2-container--bootstrap4 .select2-selection__clear {
+  line-height: 1.4em;
+  border-radius: 4px;
+}
