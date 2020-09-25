@@ -48,7 +48,7 @@
     </div>
 
     <div class="mr-2">
-      <a class="btn btn-sm text-nowrap extra-filters"
+      <a class="btn btn-link btn-sm text-nowrap"
         data-toggle="collapse"
         href="#more-filters">
         {t}label-more-filters{/t}
