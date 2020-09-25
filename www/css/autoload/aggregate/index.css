@@ -77,3 +77,9 @@
   line-height: 1.4em;
   border-radius: 4px;
 }
+
+@media (max-width: 768px){
+  .home-filters .select2-container {
+    width: 100% !important;
+  }
+}

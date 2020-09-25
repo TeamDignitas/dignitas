@@ -1,13 +1,14 @@
 {$term=$term|default:''}
 <form data-url="{Config::URL_PREFIX}ajax/search-statements">
-  <div class="d-flex mb-2 small home-filters">
-    <div class="mr-2">
+  <div class="row mb-2 small home-filters">
+
+    <div class="col-12 col-sm-12 col-md-1 col-lg-1">
       <label class="col-form-label text-capitalize">
         {t}label-sort{/t}
       </label>
     </div>
 
-    <div class="mr-4">
+    <div class="col-12 col-sm-12 col-md-3 col-lg-3">
       <select
         name="order"
         class="form-control form-control-sm actionable">
@@ -18,13 +19,13 @@
       </select>
     </div>
 
-    <div class="mr-2">
+    <div class="col-12 col-sm-12 col-md-1 col-lg-1">
       <label class="col-form-label text-capitalize">
         {t}label-filter{/t}:
       </label>
     </div>
 
-    <div class="mr-2">
+    <div class="col-12 col-sm-12 col-md-3 col-lg-3 mb-2">
       <select
         name="entityId"
         class="form-control form-control-sm actionable"
@@ -33,7 +34,7 @@
       </select>
     </div>
 
-    <div class="mr-2">
+    <div class="col-12 col-sm-12 col-md-2 col-lg-2">
       <select
         name="verdicts[]"
         class="form-control form-control-sm actionable"
@@ -47,8 +48,8 @@
       </select>
     </div>
 
-    <div class="mr-2">
-      <a class="btn btn-link btn-lg text-nowrap py-1"
+    <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+      <a class="btn btn-link btn-lg text-nowrap py-1 px-0"
         data-toggle="collapse"
         href="#more-filters">
         <i class="icon icon-sliders"></i>
@@ -58,8 +59,8 @@
   </div>
 
   <div id="more-filters" class="collapse {if $term}show{/if}">
-    <div class="d-flex mb-2 small more-filters">
-      <div class="mr-2">
+    <div class="row mb-2 small more-filters">
+      <div class="col-12 col-sm-12 col-md-3 col-lg-3 mb-2">
         <input
           type="text"
           name="term"
@@ -68,7 +69,7 @@
           placeholder="{t}label-term{/t}">
       </div>
 
-      <div class="mr-2">
+      <div class="col-12 col-sm-12 col-md-3 col-lg-3 mb-2">
         <input
           type="text"
           id="field-min-date"
@@ -77,7 +78,7 @@
         <input type="hidden" name="minDate" class="actionable">
       </div>
 
-      <div class="mr-2">
+      <div class="col-12 col-sm-12 col-md-3 col-lg-3 mb-2">
         <input
           type="text"
           id="field-max-date"
