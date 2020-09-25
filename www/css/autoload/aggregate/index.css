@@ -53,7 +53,8 @@
   color: inherit;
 }
 
-.home-filters {
+.home-filters,
+.select2-results__option {
   font-size: 14px !important;
 }
 
