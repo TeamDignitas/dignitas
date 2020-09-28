@@ -76,7 +76,6 @@ class Smart {
       'css' => [ 'third-party/easymde.min.css' ],
       'js' => [
         'third-party/easymde.min.js',
-        'third-party/inline-attachment.min.js',
         'third-party/codemirror-4.inline-attachment.min.js',
         'easyMdeDev.js',
       ],
