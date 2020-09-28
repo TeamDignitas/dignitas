@@ -4,14 +4,14 @@
     {$e=$s->getEntity()}
     <div class="statement card border-secondary mr-3 mb-3">
 
-      <div class="card-body d-flex">
+      <div class="card-body row">
 
-        <div class="flex-grow-1">
-          <div class="pb-4 statement-link">
+        <div class="col-12 col-sm-12 col-md-10 col-lg-10 order-2 order-sm-2 order-md-1 order-lg-1">
+          <div class="py-1 statement-link">
             {include "bits/statementLink.tpl" statement=$s quotes=false}
           </div>
 
-          <div class="text-right small">
+          <div class="text-right small py-1">
             {if $showEntity}
               {$entity=$s->getEntity()}
               — {include "bits/entityLink.tpl" e=$entity},
@@ -21,7 +21,7 @@
         </div>
 
         {if $showEntity}
-          <div class="pl-5">
+          <div class="col-12 col-sm-12 col-md-2 col-lg-2 text-center order-1 order-sm-1 order-md-2 order-lg-2">
             {include "bits/image.tpl"
               obj=$e
               geometry=Config::THUMB_ENTITY_STATEMENT_LIST
