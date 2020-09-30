@@ -79,7 +79,9 @@ $(function() {
       toolbar: EASY_MDE_TOOLBAR,
     });
 
-    easyMde.codemirror.on('beforeChange', function(cm, change) {
+    var cm = easyMde.codemirror;
+
+    cm.on('beforeChange', function(cm, change) {
       var max = $(textarea).prop('maxlength');
       if (max > 0) {
         var len = cm.getValue().length;
@@ -99,21 +101,21 @@ $(function() {
       }
     });
 
-    easyMde.codemirror.on('change', function() {
+    cm.on('change', function() {
       // fire the change event which in turn updates the chars remaining info
       $(textarea).change();
     });
 
     // allow drag-and-drop file uploads, see
     // https://github.com/sparksuite/simplemde-markdown-editor/issues/328
-    inlineAttachment.editors.codemirror4.attach(easyMde.codemirror, {
+    inlineAttachment.editors.codemirror4.attach(cm, {
       allowedTypes: UPLOAD_MIME_TYPES,
       onFileUploadError: handleAjaxError,
       onFileUploadResponse: handleAjaxSuccess,
       uploadUrl: URL_PREFIX + 'ajax/upload-attachment',
     });
 
-    easyMde.codemirror.on('change', unsavedChangesHandler);
+    cm.on('change', unsavedChangesHandler);
 
     return easyMde;
   });

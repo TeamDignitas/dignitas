@@ -375,3 +375,18 @@ $(function() {
   }
 
 });
+
+/*************** Make Node.js better by circumventing it. ***************/
+
+module = {};
+
+function require(name) {
+  // required by EasyMDE
+  if (name == 'codemirror') {
+    return CodeMirror;
+  } else if (name == 'marked/lib/marked') {
+    return marked;
+  }
+
+  return false;
+}
