@@ -1,3 +1,5 @@
+delete module; // unset module.exports set by the EasyMDE lib
+
 $(function() {
   /**
    * Customize EasyMDE's toolbar in order to replace icon CSS classes and get
@@ -84,7 +86,10 @@ $(function() {
       $(cm.getTextArea()).change();
     });
     cm.on('change', unsavedChangesHandler);
-    cm.on('keyup', showHint);
+    if ($(this).data('statementId')) {
+      // only register the @-listener when @-mentions are useful
+      cm.on('keyup', showHint);
+    }
 
     // allow drag-and-drop file uploads, see
     // https://github.com/sparksuite/simplemde-markdown-editor/issues/328
