@@ -64,11 +64,9 @@ $(function() {
 
   // initialize EasyMDE editors
   $('.easy-mde').each(function() {
-    var textarea = this;
-
     var easyMde = new EasyMDE({
       autoDownloadFontAwesome: false,
-      element: textarea,
+      element: this,
       forceSync: true, // so that the remaining chars value gets updated
       inputStyle: 'contenteditable', // needed for nativeSpellchecker to work
       insertTexts: {
@@ -80,56 +78,45 @@ $(function() {
     });
 
     var cm = easyMde.codemirror;
-
-    cm.on('beforeChange', function(cm, change) {
-      var max = $(textarea).prop('maxlength');
-      if (max > 0) {
-        var len = cm.getValue().length;
-
-        if (change.origin == '+input') {
-          len++;
-        } else if (change.origin == 'paste') {
-          // This omits the case where we paste over a selection and we should
-          // subtract the cost of the said selection. This is hard to track,
-          // though, and seems like a corner case.
-          len += change.text.join('\n').length;
-        }
-
-        if (len > max) {
-          change.cancel();
-        }
-      }
-    });
-
+    cm.on('beforeChange', checkMaxLength);
     cm.on('change', function() {
       // fire the change event which in turn updates the chars remaining info
-      $(textarea).change();
+      $(cm.getTextArea()).change();
     });
+    cm.on('change', unsavedChangesHandler);
+    cm.on('keyup', showHint);
 
     // allow drag-and-drop file uploads, see
     // https://github.com/sparksuite/simplemde-markdown-editor/issues/328
     inlineAttachment.editors.codemirror4.attach(cm, {
       allowedTypes: UPLOAD_MIME_TYPES,
-      onFileUploadError: handleAjaxError,
-      onFileUploadResponse: handleAjaxSuccess,
+      onFileUploadError: inlineAttachmentError,
+      onFileUploadResponse: inlineAttachmentSuccess,
       uploadUrl: URL_PREFIX + 'ajax/upload-attachment',
     });
-
-    cm.on('change', unsavedChangesHandler);
-
-    cm.on('keyup', function (cm, event) {
-      if (event.key == '@') {
-        cm.showHint({
-          alignWithWord: true,
-          hint: hintMentions,
-        });
-      }
-    });
-
-    return easyMde;
   });
 
-  function handleAjaxError(xhr) {
+  function checkMaxLength(cm, change) {
+    var max = $(cm.getTextArea()).prop('maxlength');
+    if (max > 0) {
+      var len = cm.getValue().length;
+
+      if (change.origin == '+input') {
+        len++;
+      } else if (change.origin == 'paste') {
+        // This omits the case where we paste over a selection and we should
+        // subtract the cost of the said selection. This is hard to track,
+        // though, and seems like a corner case.
+        len += change.text.join('\n').length;
+      }
+
+      if (len > max) {
+        change.cancel();
+      }
+    }
+  }
+
+  function inlineAttachmentError(xhr) {
     var jsonResponse;
 
     try {
@@ -145,7 +132,7 @@ $(function() {
     return false;
   }
 
-  function handleAjaxSuccess(xhr) {
+  function inlineAttachmentSuccess(xhr) {
     var result = JSON.parse(xhr.responseText);
 
     if (result) {
@@ -164,7 +151,16 @@ $(function() {
     return false;
   }
 
-  function hintMentions(cm) {
+  function showHint(cm, event) {
+    if (event.key == '@') {
+      cm.showHint({
+        alignWithWord: true,
+        hint: getMentions,
+      });
+    }
+  }
+
+  function getMentions(cm) {
     var c = cm.getCursor();
 
     // get the text from after the previous @ to the cursor
@@ -174,14 +170,14 @@ $(function() {
 
     // TODO fetch via AJAX
     var names = [ 'john', 'paul', 'gela', 'gelu', 'george', 'georgiana', 'gheorghe', 'ringo'];
-    var hints = [];
+    var results = [];
     for (var i = 0; i < names.length; i++) {
       if (names[i].startsWith(word)) {
-        hints.push(names[i]);
+        results.push(names[i]);
       }
     }
     return {
-      list: hints,
+      list: results,
       from: { line: c.line, ch: last }, // replace text after the @
       to: c,                            // up to the cursor
     };
