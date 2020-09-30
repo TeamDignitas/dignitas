@@ -117,6 +117,15 @@ $(function() {
 
     cm.on('change', unsavedChangesHandler);
 
+    cm.on('keyup', function (cm, event) {
+      if (event.key == '@') {
+        cm.showHint({
+          alignWithWord: true,
+          hint: hintMentions,
+        });
+      }
+    });
+
     return easyMde;
   });
 
@@ -153,6 +162,29 @@ $(function() {
       cm.doc.setCursor(cm.findPosH(cm.doc.getCursor(), delta, 'char'));
     }
     return false;
+  }
+
+  function hintMentions(cm) {
+    var c = cm.getCursor();
+
+    // get the text from after the previous @ to the cursor
+    var line = cm.getLine(c.line).substring(0, c.ch);
+    var last = 1 + line.lastIndexOf('@'); // if no previous @, start at the beginning
+    var word = line.substr(last);
+
+    // TODO fetch via AJAX
+    var names = [ 'john', 'paul', 'gela', 'gelu', 'george', 'georgiana', 'gheorghe', 'ringo'];
+    var hints = [];
+    for (var i = 0; i < names.length; i++) {
+      if (names[i].startsWith(word)) {
+        hints.push(names[i]);
+      }
+    }
+    return {
+      list: hints,
+      from: { line: c.line, ch: last }, // replace text after the @
+      to: c,                            // up to the cursor
+    };
   }
 
 });
