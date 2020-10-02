@@ -73,7 +73,7 @@ Smart::display('auth/register.tpl');
 function validate($nickname, $email, $password, $password2) {
   $errors = [];
 
-  $msg = User::validateNickname($nickname);
+  $msg = User::canChooseNickname($nickname);
   if ($msg) {
     $errors['nickname'][] = $msg;
   }

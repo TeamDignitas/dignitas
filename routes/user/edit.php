@@ -50,7 +50,7 @@ Smart::display('user/edit.tpl');
 function validate($user, $password, $password2, $fileData) {
   $errors = [];
 
-  $msg = User::validateNickname($user->nickname);
+  $msg = User::canChooseNickname($user->nickname);
   if ($msg) {
     $errors['nickname'][] = $msg;
   }
