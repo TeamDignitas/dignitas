@@ -214,11 +214,18 @@ class User extends Proto {
     return null;
   }
 
-  // returns null on success or an error message on failure
-  static function validateNickname($nickname) {
+  // Checks if the user can claim this nickname when registering or editing their profile.
+  // Returns null on success or an error message on failure.
+  static function canChooseNickname($nickname) {
     if (!preg_match('/^' . self::NICKNAME_REGEXP . '$/u', $nickname)) {
       return _('info-nickname-syntax');
     }
+
+    $u = self::get_by_nickname($nickname);
+    if ($u && $u->id != self::getActiveId()) {
+      return _('info-nickname-taken');
+    }
+
     return null;
   }
 
