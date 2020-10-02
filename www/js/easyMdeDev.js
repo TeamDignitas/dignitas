@@ -64,6 +64,8 @@ $(function() {
     },
   ];
 
+  var cachedMentions = null;
+
   // initialize EasyMDE editors
   $('.easy-mde').each(function() {
     var easyMde = new EasyMDE({
@@ -160,32 +162,50 @@ $(function() {
     if (event.key == '@') {
       cm.showHint({
         alignWithWord: true,
+        completeSingle: false,
         hint: getMentions,
       });
     }
   }
 
-  function getMentions(cm) {
-    var c = cm.getCursor();
-
-    // get the text from after the previous @ to the cursor
-    var line = cm.getLine(c.line).substring(0, c.ch);
-    var last = 1 + line.lastIndexOf('@'); // if no previous @, start at the beginning
-    var word = line.substr(last);
-
-    // TODO fetch via AJAX
-    var names = [ 'john', 'paul', 'gela', 'gelu', 'george', 'georgiana', 'gheorghe', 'ringo'];
-    var results = [];
-    for (var i = 0; i < names.length; i++) {
-      if (names[i].startsWith(word)) {
-        results.push(names[i]);
-      }
+  function getMentionsFromCache(cm) {
+    if (cachedMentions == null) {
+      var statementId = $(cm.getTextArea()).data('statementId');
+      $.ajax(URL_PREFIX + 'ajax/get-mentions', {
+        async: false,
+        data: { statementId: statementId },
+      }).done(function(results) {
+        cachedMentions = results;
+      });
     }
-    return {
-      list: results,
-      from: { line: c.line, ch: last }, // replace text after the @
-      to: c,                            // up to the cursor
-    };
+    // leave cachedMentions null on failures so we keep trying to fetch them
+    return cachedMentions ?? [];
+  }
+
+  function getMentions(cm) {
+    return new Promise(function(accept) {
+      setTimeout(function() {
+        var c = cm.getCursor();
+
+        // get the text from after the previous @ to the cursor
+        var line = cm.getLine(c.line).substring(0, c.ch);
+        var last = 1 + line.lastIndexOf('@'); // if no previous @, start at the beginning
+        var word = line.substr(last);
+
+        var names = getMentionsFromCache(cm);
+        var results = [];
+        for (var i = 0; i < names.length; i++) {
+          if (names[i].startsWith(word)) {
+            results.push(names[i]);
+          }
+        }
+        return accept({
+          list: results,
+          from: { line: c.line, ch: last }, // replace text after the @
+          to: c,                            // up to the cursor
+        });
+      }, 200);
+    });
   }
 
 });
