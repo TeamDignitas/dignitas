@@ -305,6 +305,9 @@ class Router {
       'en_US.utf8' => 'edit-user',
       'ro_RO.utf8' => 'editeaza-utilizator',
     ],
+    'user/getMentions' => [
+      'en_US.utf8' => 'ajax/get-mentions',
+    ],
     'user/image' => [
       'en_US.utf8' => 'avatar',
     ],
