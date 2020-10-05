@@ -435,7 +435,7 @@ class Router {
   }
 
   // Returns a human-readable URL for this file.
-  static function link($file, $absolute = false) {
+  static function link($file, $absolute = false, $prefix = true) {
     if (isset(self::ROUTES[$file])) {
       $routes = self::ROUTES[$file];
       $rel = $routes[LocaleUtil::getCurrent()]     // current locale
@@ -445,7 +445,10 @@ class Router {
       $rel = $file;
     }
 
-    $url = ($absolute ? Config::URL_HOST : '') . Config::URL_PREFIX . $rel;
+    $url =
+      ($absolute ? Config::URL_HOST : '') .
+      ($prefix ? Config::URL_PREFIX : '') .
+      $rel;
     return $url;
   }
 

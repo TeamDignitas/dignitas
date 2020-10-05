@@ -22,8 +22,8 @@ if (!User::may(User::PRIV_UPLOAD_ATTACHMENT)) {
   $a->saveWithFile($fileData, false);
 
   Smart::assign([
-    'fullUrl' => $a->getFileUrl(UploadTrait::$FULL_GEOMETRY),
-    'thumbUrl' => $a->getFileUrl(Config::THUMB_INLINE_ATTACHMENT),
+    'fullUrl' => $a->getFileUrl(UploadTrait::$FULL_GEOMETRY, false),
+    'thumbUrl' => $a->getFileUrl(Config::THUMB_INLINE_ATTACHMENT, false),
   ]);
   $output['html'] = Smart::fetch('bits/inlineAttachment.tpl');
 

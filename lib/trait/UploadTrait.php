@@ -57,9 +57,12 @@ trait UploadTrait {
                    $this->getExtension($geometry));
   }
 
-  function getFileUrl($geometry) {
+  /**
+   * @param boolean $prefix Whether to include URL_PREFIX in the URL.
+   */
+  function getFileUrl($geometry, $prefix = true) {
     return sprintf(self::$URL_PATTERN,
-                   Router::link($this->getFileRoute()),
+                   Router::link($this->getFileRoute(), false, $prefix),
                    $this->id,
                    $geometry,
                    $this->getExtension($geometry));

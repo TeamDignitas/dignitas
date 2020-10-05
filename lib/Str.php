@@ -56,4 +56,12 @@ class Str {
   static function flatten($s) {
     return iconv('UTF-8', 'ASCII//TRANSLIT', $s);
   }
+
+  /**
+   * @return boolean true if $s is a well-formed, relative URL, false otherwise.
+   */
+  static function isRelativeUrl($s) {
+    $scheme = parse_url($s, PHP_URL_SCHEME);
+    return $scheme === null; // false is reserved for malformed URLs
+  }
 }

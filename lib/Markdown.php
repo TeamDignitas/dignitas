@@ -58,6 +58,44 @@ class Markdown extends Parsedown {
   }
 
   /**
+   * Prepends URL_PREFIX to relative URLs in <a href="..." and <img src="...".
+   * This is aimed at HTML blocks, not at Markdown code like [text](url).
+   */
+  protected function inlineMarkup($excerpt) {
+    $results = parent::inlineMarkup($excerpt);
+    if ($results) {
+      self::addUrlPrefix($results);
+    }
+    return $results;
+  }
+
+  protected function blockMarkup($line) {
+    $results = parent::blockMarkup($line);
+    if ($results) {
+      self::addUrlPrefix($results);
+    }
+    return $results;
+  }
+
+  /**
+   * Modifies $a['markup'] to prepend URL_PREFIX to URLs.
+   */
+  static function addUrlPrefix(array &$arr) {
+    if (isset($arr['markup'])) {
+      preg_match_all(
+        '/\b(href|src)=\"([^\"]+)\"/',
+        $arr['markup'],
+        $matches,
+        PREG_OFFSET_CAPTURE);
+      foreach (array_reverse($matches[2]) as $rec) {
+        if (Str::isRelativeUrl($rec[0])) {
+          $arr['markup'] = substr_replace($arr['markup'], Config::URL_PREFIX, $rec[1], 0);
+        }
+      }
+    }
+  }
+
+  /**
    * Add permalinks to header blocks.
    */
   protected function blockHeader($line) {
