@@ -24,7 +24,7 @@ $(function() {
 
     $('.pagination-wrapper').on('click', 'a', paginationClick);
     $('.actionable').change(filterChange);
-    $('input.actionable').on('keypress paste', delay(function(e) {
+    $('input.actionable').on('keydown paste', delay(function(e) {
       filterChange(e);
     }, 500));
   }
