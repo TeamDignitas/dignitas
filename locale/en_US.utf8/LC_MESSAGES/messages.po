@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-10-05 12:30+0300\n"
-"PO-Revision-Date: 2020-10-05 12:31+0300\n"
+"POT-Creation-Date: 2020-10-05 13:05+0300\n"
+"PO-Revision-Date: 2020-10-05 14:49+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -150,13 +150,13 @@ msgstr "I forgot my password"
 
 #: templates/auth/login.tpl:65 templates/auth/register.tpl:83
 msgid "label-remember-me"
-msgstr "remember me for one year"
+msgstr "Remember me for one year."
 
 #: templates/auth/login.tpl:71 templates/bits/navmenu.tpl:154
 msgid "link-log-in"
 msgstr "log in"
 
-#: templates/auth/login.tpl:77 templates/auth/register.tpl:89
+#: templates/auth/login.tpl:77 templates/auth/register.tpl:102
 msgid "link-sign-up"
 msgstr "sign up"
 
@@ -193,7 +193,12 @@ msgstr "nickname"
 msgid "label-password-again"
 msgstr "password (again)"
 
-#: templates/auth/register.tpl:93
+#: templates/auth/register.tpl:95
+msgid "label-register-manual"
+msgstr ""
+"I have read the <a href=\"%1\">Dignitas user manual</a> and agree with it."
+
+#: templates/auth/register.tpl:106
 msgid "link-has-account-already"
 msgstr "I already have an account"
 
@@ -2591,6 +2596,12 @@ msgstr "The invitation code is incorrect."
 #: routes/auth/register.php:22
 msgid "info-invite-already-accepted"
 msgstr "This invitation was already accepted."
+
+#: routes/auth/register.php:94
+msgid "info-register-manual"
+msgstr ""
+"Please confirm reading the manual. It briefly explains the site's principles "
+"and restrictions."
 
 #: routes/cannedResponse/edit.php:17
 msgid "info-canned-response-deleted"

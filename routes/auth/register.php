@@ -31,10 +31,11 @@ $email = Request::get('email');
 $password = Request::get('password');
 $password2 = Request::get('password2');
 $remember = Request::has('remember');
+$manual = Request::has('manual');
 $submitButton = Request::has('submitButton');
 
 if ($submitButton) {
-  $errors = validate($nickname, $email, $password, $password2);
+  $errors = validate($nickname, $email, $password, $password2, $manual);
 
   if ($errors) {
     Smart::assign(['errors' => $errors]);
@@ -65,12 +66,13 @@ Smart::assign([
   'password' => $password,
   'password2' => $password2,
   'remember' => $remember,
+  'manual' => $manual,
 ]);
 Smart::display('auth/register.tpl');
 
 /*************************************************************************/
 
-function validate($nickname, $email, $password, $password2) {
+function validate($nickname, $email, $password, $password2, $manual) {
   $errors = [];
 
   $msg = User::canChooseNickname($nickname);
@@ -86,6 +88,10 @@ function validate($nickname, $email, $password, $password2) {
   $msg = User::validateNewPassword($password, $password2);
   if ($msg) {
     $errors['password'][] = $msg;
+  }
+
+  if (!$manual) {
+    $errors['manual'][] = _('info-register-manual');
   }
 
   return $errors;

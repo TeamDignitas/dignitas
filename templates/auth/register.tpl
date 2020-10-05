@@ -84,6 +84,19 @@
             </label>
           </div>
 
+          <div class="form-check">
+            <label>
+              <input
+                type="checkbox"
+                class="form-check-input"
+                name="manual"
+                value="1"
+                {if $manual}checked{/if}>
+              {t 1=Router::link('help/index')}label-register-manual{/t}
+            </label>
+            {include "bits/fieldErrors.tpl" errors=$errors.manual|default:null}
+          </div>
+
           <div class="mt-2 mx-2 row">
             <button class="btn btn-primary col-sm-12 col-md-6" type="submit" name="submitButton">
               {t}link-sign-up{/t}

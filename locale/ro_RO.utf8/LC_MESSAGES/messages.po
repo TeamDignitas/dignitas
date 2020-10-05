@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-10-05 12:27+0300\n"
-"PO-Revision-Date: 2020-10-05 12:29+0300\n"
+"POT-Creation-Date: 2020-10-05 12:52+0300\n"
+"PO-Revision-Date: 2020-10-05 13:03+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -152,13 +152,13 @@ msgstr "mi-am uitat parola"
 
 #: templates/auth/login.tpl:65 templates/auth/register.tpl:83
 msgid "label-remember-me"
-msgstr "ține-mă minte un an"
+msgstr "Ține-mă minte un an."
 
 #: templates/auth/login.tpl:71 templates/bits/navmenu.tpl:154
 msgid "link-log-in"
 msgstr "autentificare"
 
-#: templates/auth/login.tpl:77 templates/auth/register.tpl:89
+#: templates/auth/login.tpl:77 templates/auth/register.tpl:102
 msgid "link-sign-up"
 msgstr "înregistrare"
 
@@ -196,7 +196,13 @@ msgstr "poreclă"
 msgid "label-password-again"
 msgstr "parola (din nou)"
 
-#: templates/auth/register.tpl:93
+#: templates/auth/register.tpl:95
+msgid "label-register-manual"
+msgstr ""
+"Am citit <a href=\"%1\">Manualul de utilizare</a> al platformei Dignitas și "
+"sînt de acord cu el."
+
+#: templates/auth/register.tpl:106
 msgid "link-has-account-already"
 msgstr "am deja un cont"
 
@@ -2615,6 +2621,12 @@ msgstr "Codul invitației este incorect."
 #: routes/auth/register.php:22
 msgid "info-invite-already-accepted"
 msgstr "Această invitație a fost deja acceptată."
+
+#: routes/auth/register.php:94
+msgid "info-register-manual"
+msgstr ""
+"Confirmați că ați citit manualul. El explică succint funcționarea și "
+"restricțiile platformei."
 
 #: routes/cannedResponse/edit.php:17
 msgid "info-canned-response-deleted"
