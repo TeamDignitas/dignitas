@@ -226,33 +226,54 @@ img.pic.no-outline,
 .statement-box.verdict-0 { /* none */
   background: #eee;
 }
+.statement.verdict-0 {
+  border-color: #eee;
+}
 
 .statement-box.verdict-1 { /* undecidable */
   background: #aaa;
+}
+.statement.verdict-1 {
+  border-color: #aaa;
 }
 
 .statement-box.verdict-2 { /* false */
   background: #D90404;
   color: #FFFFFF;
 }
+.statement.verdict-2 {
+  border-color: #D90404;
+}
 
 .statement-box.verdict-3 { /* mostly false */
   background: linear-gradient(110deg, #D90404, #FFEB3B 86%);
   border: 0;
 }
+.statement.verdict-3 {
+  border-color: #ec771f;
+}
 
 .statement-box.verdict-4 { /* mixed */
   background: #FFEB3B;
+}
+.statement.verdict-4 {
+  border-color: #FFEB3B;
 }
 
 .statement-box.verdict-5 { /* mostly true */
   background: linear-gradient(110deg, #37700A, #FFEB3B 86%);
   border: 0;
 }
+.statement.verdict-5 {
+  border-color: #9bad22;
+}
 
 .statement-box.verdict-6 { /* true */
   background: #37700A;
   color: #FFFFFF;
+}
+.statement.verdict-6 {
+  border-color: #37700A;
 }
 
 .statement.card {
