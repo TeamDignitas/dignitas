@@ -41,7 +41,7 @@
     data-object-id="{$object->id}"
     data-score-id="#score-{$type}-{$object->id}"
     data-value="1">
-    <i class="icon icon-up-open"></i>
+    <i class="icon icon-thumbs-up-alt"></i>
   </button>
 
   <div id="score-{$type}-{$object->id}">{$object->getScore()|nf}</div>
@@ -61,7 +61,7 @@
     data-object-id="{$object->id}"
     data-score-id="#score-{$type}-{$object->id}"
     data-value="-1">
-    <i class="icon icon-down-open"></i>
+    <i class="icon icon-thumbs-down-alt"></i>
   </button>
 
   {**
