@@ -111,6 +111,9 @@ class Search {
 
     $query = Model::factory('Statement')
       ->where_not_equal('status', Ct::STATUS_PENDING_EDIT);
+    if (!User::may(User::PRIV_DELETE_STATEMENT)) {
+      $query = $query->where_not_equal('status', Ct::STATUS_DELETED);
+    }
 
     foreach ($filters as $field => $value) {
       if (!empty($value)) {

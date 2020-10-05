@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-10-05 12:52+0300\n"
-"PO-Revision-Date: 2020-10-05 13:03+0300\n"
+"POT-Creation-Date: 2020-10-05 15:27+0300\n"
+"PO-Revision-Date: 2020-10-05 15:28+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -36,12 +36,12 @@ msgstr ""
 msgid "title-dashboard"
 msgstr "panou de control"
 
-#: templates/aggregate/dashboard.tpl:17 templates/aggregate/index.tpl:26
+#: templates/aggregate/dashboard.tpl:17 templates/aggregate/index.tpl:28
 #: templates/bits/entity.tpl:108
 msgid "link-add-statement"
 msgstr "adaugă o afirmație"
 
-#: templates/aggregate/dashboard.tpl:30 templates/aggregate/index.tpl:32
+#: templates/aggregate/dashboard.tpl:30 templates/aggregate/index.tpl:36
 msgid "link-add-entity"
 msgstr "adaugă un autor"
 
@@ -89,7 +89,11 @@ msgstr "afirmații cu verdicte neclare"
 msgid "label-contribute-index"
 msgstr "contribuie și tu"
 
-#: templates/aggregate/index.tpl:43
+#: templates/aggregate/index.tpl:44
+msgid "link-add-answer"
+msgstr "adaugă un răspuns"
+
+#: templates/aggregate/index.tpl:55
 msgid "title-recent-statements"
 msgstr "afirmații recente"
 
@@ -247,7 +251,7 @@ msgid "info-answer-permalink"
 msgstr "legătură permanentă către acest răspuns"
 
 #: templates/bits/answerEdit.tpl:19 templates/bits/statement.tpl:153
-#: templates/bits/statementFilters.tpl:42 templates/statement/edit.tpl:122
+#: templates/bits/statementFilters.tpl:43 templates/statement/edit.tpl:122
 #: lib/model/RevisionAnswer.php:15 lib/model/RevisionStatement.php:18
 msgid "label-verdict"
 msgstr "verdict"
@@ -364,7 +368,7 @@ msgstr "legături externe"
 msgid "title-members"
 msgstr "membri"
 
-#: templates/bits/entityFilters.tpl:7 templates/bits/statementFilters.tpl:7
+#: templates/bits/entityFilters.tpl:7 templates/bits/statementFilters.tpl:8
 msgid "label-sort"
 msgstr "ordine"
 
@@ -376,19 +380,19 @@ msgstr "nume (crescător)"
 msgid "sort-name-desc"
 msgstr "nume (descrescător)"
 
-#: templates/bits/entityFilters.tpl:17 templates/bits/statementFilters.tpl:15
+#: templates/bits/entityFilters.tpl:17 templates/bits/statementFilters.tpl:16
 msgid "sort-create-date-desc"
 msgstr "data adăugării (descrescător)"
 
-#: templates/bits/entityFilters.tpl:18 templates/bits/statementFilters.tpl:16
+#: templates/bits/entityFilters.tpl:18 templates/bits/statementFilters.tpl:17
 msgid "sort-create-date-asc"
 msgstr "data adăugării (crescător)"
 
-#: templates/bits/entityFilters.tpl:24 templates/bits/statementFilters.tpl:24
+#: templates/bits/entityFilters.tpl:24 templates/bits/statementFilters.tpl:25
 msgid "label-filter"
 msgstr "filtre"
 
-#: templates/bits/entityFilters.tpl:34 templates/bits/statementFilters.tpl:69
+#: templates/bits/entityFilters.tpl:34 templates/bits/statementFilters.tpl:70
 msgid "label-term"
 msgstr "text"
 
@@ -551,7 +555,7 @@ msgid "info-no-history"
 msgstr ""
 "Nu există modificări la acest articol. Versiunea curentă este unica versiune."
 
-#: templates/bits/history.tpl:15 templates/bits/statementFilters.tpl:32
+#: templates/bits/history.tpl:15 templates/bits/statementFilters.tpl:33
 msgid "label-author"
 msgstr "autor"
 
@@ -728,23 +732,23 @@ msgstr "Vedeți toate afirmațiile cu această etichetă."
 msgid "title-added-by"
 msgstr "adăugată de"
 
-#: templates/bits/statementFilters.tpl:17
+#: templates/bits/statementFilters.tpl:18
 msgid "sort-date-made-desc"
 msgstr "data afirmației (descrescător)"
 
-#: templates/bits/statementFilters.tpl:18
+#: templates/bits/statementFilters.tpl:19
 msgid "sort-date-made-asc"
 msgstr "data afirmației (crescător)"
 
-#: templates/bits/statementFilters.tpl:56
+#: templates/bits/statementFilters.tpl:57
 msgid "label-other-filters"
 msgstr "alte filtre"
 
-#: templates/bits/statementFilters.tpl:77 templates/entity/edit.tpl:151
+#: templates/bits/statementFilters.tpl:78 templates/entity/edit.tpl:151
 msgid "label-start-date"
 msgstr "de la data"
 
-#: templates/bits/statementFilters.tpl:86 templates/entity/edit.tpl:152
+#: templates/bits/statementFilters.tpl:87 templates/entity/edit.tpl:152
 msgid "label-end-date"
 msgstr "pînă la data"
 
@@ -1296,6 +1300,10 @@ msgstr "Confirmați ștergerea acestei afirmații?"
 #: templates/statement/edit.tpl:167
 msgid "info-confirm-reopen-statement"
 msgstr "Confirmați redeschiderea acestei afirmații?"
+
+#: templates/statement/unanswered.tpl:3 templates/statement/unanswered.tpl:8
+msgid "title-unanswered-statements"
+msgstr "afirmații fără răspuns"
 
 #: templates/statement/verdictReport.tpl:3
 #: templates/statement/verdictReport.tpl:7

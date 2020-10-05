@@ -1,4 +1,5 @@
 {$term=$term|default:''}
+{$verdicts=$verdicts|default:[]}
 <form data-url="{Config::URL_PREFIX}ajax/search-statements">
   <div class="row mb-2 small home-filters">
 
@@ -41,7 +42,7 @@
         multiple
         data-placeholder="{t}label-verdict{/t}">
         {for $v = 0 to Ct::NUM_VERDICTS - 1}
-          <option value="{$v}">
+          <option value="{$v}" {if in_array($v, $verdicts)}selected{/if}>
             {Statement::verdictName($v)}
           </option>
         {/for}

@@ -243,6 +243,10 @@ class Router {
     'statement/search' => [
       'en_US.utf8' => 'ajax/search-statements',
     ],
+    'statement/unanswered' => [
+      'en_US.utf8' => 'unanswered-statements',
+      'ro_RO.utf8' => 'afirmatii-fara-raspuns',
+    ],
     'statement/view' => [
       'en_US.utf8' => 'statement',
       'ro_RO.utf8' => 'afirmatie',

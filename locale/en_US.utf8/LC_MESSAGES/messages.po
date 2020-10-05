@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-10-05 13:05+0300\n"
-"PO-Revision-Date: 2020-10-05 14:49+0300\n"
+"POT-Creation-Date: 2020-10-05 15:27+0300\n"
+"PO-Revision-Date: 2020-10-05 15:27+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -35,12 +35,12 @@ msgstr ""
 msgid "title-dashboard"
 msgstr "dashboard"
 
-#: templates/aggregate/dashboard.tpl:17 templates/aggregate/index.tpl:26
+#: templates/aggregate/dashboard.tpl:17 templates/aggregate/index.tpl:28
 #: templates/bits/entity.tpl:108
 msgid "link-add-statement"
 msgstr "add a statement"
 
-#: templates/aggregate/dashboard.tpl:30 templates/aggregate/index.tpl:32
+#: templates/aggregate/dashboard.tpl:30 templates/aggregate/index.tpl:36
 msgid "link-add-entity"
 msgstr "add an author"
 
@@ -88,7 +88,11 @@ msgstr "statements with unclear verdicts"
 msgid "label-contribute-index"
 msgstr "contribute"
 
-#: templates/aggregate/index.tpl:43
+#: templates/aggregate/index.tpl:44
+msgid "link-add-answer"
+msgstr "add an answer"
+
+#: templates/aggregate/index.tpl:55
 msgid "title-recent-statements"
 msgstr "recent statements"
 
@@ -243,7 +247,7 @@ msgid "info-answer-permalink"
 msgstr "permanent link to this answer"
 
 #: templates/bits/answerEdit.tpl:19 templates/bits/statement.tpl:153
-#: templates/bits/statementFilters.tpl:42 templates/statement/edit.tpl:122
+#: templates/bits/statementFilters.tpl:43 templates/statement/edit.tpl:122
 #: lib/model/RevisionAnswer.php:15 lib/model/RevisionStatement.php:18
 msgid "label-verdict"
 msgstr "verdict"
@@ -359,7 +363,7 @@ msgstr "external links"
 msgid "title-members"
 msgstr "members"
 
-#: templates/bits/entityFilters.tpl:7 templates/bits/statementFilters.tpl:7
+#: templates/bits/entityFilters.tpl:7 templates/bits/statementFilters.tpl:8
 msgid "label-sort"
 msgstr "order by"
 
@@ -371,19 +375,19 @@ msgstr "name (ascending)"
 msgid "sort-name-desc"
 msgstr "name (descending)"
 
-#: templates/bits/entityFilters.tpl:17 templates/bits/statementFilters.tpl:15
+#: templates/bits/entityFilters.tpl:17 templates/bits/statementFilters.tpl:16
 msgid "sort-create-date-desc"
 msgstr "date added (descending)"
 
-#: templates/bits/entityFilters.tpl:18 templates/bits/statementFilters.tpl:16
+#: templates/bits/entityFilters.tpl:18 templates/bits/statementFilters.tpl:17
 msgid "sort-create-date-asc"
 msgstr "date added (ascending)"
 
-#: templates/bits/entityFilters.tpl:24 templates/bits/statementFilters.tpl:24
+#: templates/bits/entityFilters.tpl:24 templates/bits/statementFilters.tpl:25
 msgid "label-filter"
 msgstr "filter"
 
-#: templates/bits/entityFilters.tpl:34 templates/bits/statementFilters.tpl:69
+#: templates/bits/entityFilters.tpl:34 templates/bits/statementFilters.tpl:70
 msgid "label-term"
 msgstr "text"
 
@@ -545,7 +549,7 @@ msgid "info-no-history"
 msgstr ""
 "There are no changes to this item. The current version is the only version."
 
-#: templates/bits/history.tpl:15 templates/bits/statementFilters.tpl:32
+#: templates/bits/history.tpl:15 templates/bits/statementFilters.tpl:33
 msgid "label-author"
 msgstr "author"
 
@@ -721,23 +725,23 @@ msgstr "View all statements with this tag."
 msgid "title-added-by"
 msgstr "added by"
 
-#: templates/bits/statementFilters.tpl:17
+#: templates/bits/statementFilters.tpl:18
 msgid "sort-date-made-desc"
 msgstr "statement date (descending)"
 
-#: templates/bits/statementFilters.tpl:18
+#: templates/bits/statementFilters.tpl:19
 msgid "sort-date-made-asc"
 msgstr "statement date (ascending)"
 
-#: templates/bits/statementFilters.tpl:56
+#: templates/bits/statementFilters.tpl:57
 msgid "label-other-filters"
 msgstr "other filters"
 
-#: templates/bits/statementFilters.tpl:77 templates/entity/edit.tpl:151
+#: templates/bits/statementFilters.tpl:78 templates/entity/edit.tpl:151
 msgid "label-start-date"
 msgstr "start date"
 
-#: templates/bits/statementFilters.tpl:86 templates/entity/edit.tpl:152
+#: templates/bits/statementFilters.tpl:87 templates/entity/edit.tpl:152
 msgid "label-end-date"
 msgstr "end date"
 
@@ -1286,6 +1290,10 @@ msgstr "Are you sure you want to delete this statement?"
 #: templates/statement/edit.tpl:167
 msgid "info-confirm-reopen-statement"
 msgstr "Are you sure you want to reopen this statement?"
+
+#: templates/statement/unanswered.tpl:3 templates/statement/unanswered.tpl:8
+msgid "title-unanswered-statements"
+msgstr "Unanswered statements"
 
 #: templates/statement/verdictReport.tpl:3
 #: templates/statement/verdictReport.tpl:7

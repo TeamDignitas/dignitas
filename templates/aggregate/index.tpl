@@ -22,14 +22,26 @@
 
         <div class="col-12 col-sm-12 col-lg-9 mt-3">
           {if User::may(User::PRIV_ADD_STATEMENT)}
-            <a href="{Router::link('statement/edit')}" class="btn btn-primary mr-3 mb-2 px-2 col-8 col-sm-8 col-lg-4">
+            <a
+              href="{Router::link('statement/edit')}"
+              class="btn btn-primary mr-3 mb-2 px-2 col-8 col-sm-8 col-lg-4">
               <i class="icon icon-pencil pr-2"></i>{t}link-add-statement{/t}
             </a>
           {/if}
 
           {if User::may(User::PRIV_ADD_ENTITY)}
-            <a href="{Router::link('entity/edit')}" class="btn btn-outline-primary mb-2 px-2 col-8 col-sm-8 col-lg-4">
+            <a
+              href="{Router::link('entity/edit')}"
+              class="btn btn-secondary mb-2 px-2 col-8 col-sm-8 col-lg-4">
               <i class="icon icon-user-plus pr-2"></i>{t}link-add-entity{/t}
+            </a>
+          {/if}
+
+          {if User::may(User::PRIV_ADD_ANSWER)}
+            <a
+              href="{Router::link('statement/unanswered')}"
+              class="btn btn-secondary mb-2 px-2 col-8 col-sm-8 col-lg-4">
+              <i class="icon icon-pencil pr-2"></i>{t}link-add-answer{/t}
             </a>
           {/if}
         </div>
