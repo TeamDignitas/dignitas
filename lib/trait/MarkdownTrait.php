@@ -16,7 +16,7 @@ trait MarkdownTrait {
     $seenIds = []; // prevent duplicates
 
     AttachmentReference::deleteObject($this);
-    $pattern = sprintf(self::$URL_PCRE, Router::link('attachment/view'));
+    $pattern = sprintf(self::$URL_PCRE, Router::link('attachment/view', false, false));
 
     foreach ($this->getMarkdownFields() as $fieldName) {
       preg_match_all($pattern, $this->$fieldName, $matches, PREG_SET_ORDER);
