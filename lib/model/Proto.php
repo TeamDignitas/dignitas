@@ -60,6 +60,21 @@ class Proto extends Precursor {
   }
 
   /**
+   * Returns the value of $this->$field in the previous revision.
+   * @return The previous value of $field, or $default if there are no revisions.
+   */
+  function getPreviousValue($field, $default = null) {
+    // load the latest revision
+    $class = $this->getRevisionClass();
+    $prev = Model::factory($class)
+      ->where('id', $this->id)
+      ->order_by_desc('revisionId')
+      ->offset(1)
+      ->find_one();
+    return $prev->$field ?? $default;
+  }
+
+  /**
    * What type of object are we? Children may override this.
    *
    * @return int One of the Proto::TYPE_* values.

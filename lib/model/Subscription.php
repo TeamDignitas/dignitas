@@ -4,13 +4,7 @@ class Subscription extends Precursor {
 
   use ObjectTypeIdTrait;
 
-  const TYPE_CHANGES = 0x1;
-  const TYPE_VOTE = 0x2;
-  const TYPE_NEW_ANSWER = 0x4;
-  const TYPE_NEW_COMMENT = 0x8;
-  const TYPE_ALL = 0xf;
-
-  static function subscribe($object, $userId = null, $typeMask = self::TYPE_ALL) {
+  static function subscribe($object, $userId = null, $typeMask = Notification::TYPE_ALL) {
     if (!$userId) {
       $userId = User::getActiveId();
     }

@@ -123,7 +123,7 @@ class Vote extends Proto {
     } else {
       $this->value = $value;
       $this->save();
-      $obj->notify(Subscription::TYPE_VOTE);
+      $obj->notify(Notification::TYPE_VOTE);
       $action = ($value == +1) ? Action::TYPE_VOTE_UP : Action::TYPE_VOTE_DOWN;
       Action::create($action, $obj);
     }

@@ -18,7 +18,7 @@ try {
   }
 
   $obj = Proto::getObjectByTypeId($objectType, $objectId);
-  $mask = Subscription::TYPE_ALL ^ Subscription::TYPE_VOTE; // no votes
+  $mask = Notification::TYPE_ALL ^ Notification::TYPE_VOTE; // no votes
 
   // subscribe() won't work if an inactive subscription exists, so delete it first
   Subscription::delete_all_by_userId_objectType_objectId(

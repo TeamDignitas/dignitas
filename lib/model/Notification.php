@@ -3,6 +3,13 @@
 class Notification extends Precursor {
   use ObjectTypeIdTrait;
 
+  const TYPE_CHANGES = 0x1;
+  const TYPE_VOTE = 0x2;
+  const TYPE_NEW_ANSWER = 0x4;
+  const TYPE_NEW_COMMENT = 0x8;
+  const TYPE_MENTION = 0x10;
+  const TYPE_ALL = 0x1f;
+
   const PAGE_SIZE = 50;
 
   static function create(int $userId, Object $obj, int $type) {
@@ -22,14 +29,16 @@ class Notification extends Precursor {
    */
   function getTypeName() {
     switch ($this->type) {
-      case Subscription::TYPE_CHANGES:
-        return _('subscription-changes');
-      case Subscription::TYPE_VOTE:
-        return _('subscription-vote');
-      case Subscription::TYPE_NEW_ANSWER:
-        return _('subscription-new-answer');
-      case Subscription::TYPE_NEW_COMMENT:
-        return _('subscription-new-comment');
+      case self::TYPE_CHANGES:
+        return _('notification-changes');
+      case self::TYPE_VOTE:
+        return _('notification-vote');
+      case self::TYPE_NEW_ANSWER:
+        return _('notification-new-answer');
+      case self::TYPE_NEW_COMMENT:
+        return _('notification-new-comment');
+      case self::TYPE_MENTION:
+        return _('notification-mention');
     }
   }
 
@@ -66,7 +75,34 @@ class Notification extends Precursor {
         $userId, $targetType, $target->id, $type, false);
 
       if (!$existing) {
-        $not = self::create($userId, $target, $type);
+        self::create($userId, $target, $type);
+      }
+    }
+  }
+
+  /**
+   * Creates Notifications for users @mentioned in $obj->$field. To avoid
+   * notifying a user every time an article is edited, only notify users who
+   * are not mentioned in the previous version of $obj->$field.
+   * @param string $obj An article (statement, answer, comment).
+   * @param string $field The field being scanned for mentions.
+   */
+  static function notifyMentions($obj, $field) {
+    $cur = $obj->$field;
+    $prev = $obj->getPreviousValue($field, '');
+
+    $regexp = sprintf('/@(%s)/u', User::NICKNAME_REGEXP);
+    preg_match_all($regexp, $cur, $matches);
+    $curUsers = $matches[1];
+    preg_match_all($regexp, $prev, $prevMatches);
+    $prevUsers = $prevMatches[1];
+
+    foreach ($curUsers as $nickname) {
+      if (!in_array($nickname, $prevUsers)) {
+        $u = User::get_by_nickname($nickname);
+        if ($u) {
+          self::create($u->id, $obj, self::TYPE_MENTION);
+        }
       }
     }
   }

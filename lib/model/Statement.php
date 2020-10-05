@@ -254,15 +254,16 @@ class Statement extends Proto {
   function subscribe() {
     if ($this->status != Ct::STATUS_PENDING_EDIT) {
       $mask = ($this->modUserId == $this->userId)
-        ? Subscription::TYPE_ALL
-        : Subscription::TYPE_CHANGES;
+        ? Notification::TYPE_ALL
+        : Notification::TYPE_CHANGES;
       Subscription::subscribe($this, $this->modUserId, $mask);
     }
   }
 
-  function notify(int $type = Subscription::TYPE_CHANGES, $delegate = null) {
+  function notify(int $type = Notification::TYPE_CHANGES, $delegate = null) {
     if ($this->status != Ct::STATUS_PENDING_EDIT) {
       Notification::notify($this, $type, $delegate);
+      Notification::notifyMentions($this, 'context');
     }
   }
 
