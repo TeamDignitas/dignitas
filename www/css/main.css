@@ -296,6 +296,7 @@ img.pic.no-outline,
   padding: 2px 5px;
   position: absolute;
   text-align: center;
+  transition: .5s ease;
 }
 
 .statement.card:hover .mask {
