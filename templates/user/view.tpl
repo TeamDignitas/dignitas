@@ -103,15 +103,7 @@
           </h5>
 
           <div id="action-wrapper">
-            <table class="table table-hover">
-              <thead>
-                <tr class="d-flex small">
-                  <th class="col-sm-3 col-md-2 border-0 py-1">{t}label-date{/t}</th>
-                  <th class="col-sm-9 col-md-10 border-0 py-1">{t}label-action{/t}</th>
-                </tr>
-              </thead>
-              {include "bits/actions.tpl"}
-            </table>
+            {include "bits/actions.tpl"}
           </div>
 
           {include "bits/paginationWrapper.tpl"
