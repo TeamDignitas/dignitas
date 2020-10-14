@@ -31,9 +31,9 @@
 
       </div>
 
-      <div class="mask bg-verdict-{$s->verdict}">
+      <div class="mask bg-verdict-{$s->verdict} px-3 py-2">
         <span class="text-capitalize">{t}label-verdict{/t}:</span>
-        {$s->getVerdictName()}
+        <span class="text-uppercase">{$s->getVerdictName()}</span>
       </div>
     </div>
   {/foreach}
