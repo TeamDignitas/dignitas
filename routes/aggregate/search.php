@@ -8,5 +8,5 @@ Smart::assign([
   'results' => $results,
   'query' => $q,
 ]);
-Smart::addResources('pagination', 'datepicker');
+Smart::addResources('pagination', 'datepicker', 'bootstrap-select');
 Smart::display('aggregate/search.tpl');

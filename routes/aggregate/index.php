@@ -15,5 +15,5 @@ Smart::assign([
   'staticResourcesTop' => $staticResourcesTop,
   'staticResourcesBottom' => $staticResourcesBottom,
 ]);
-Smart::addResources('pagination', 'datepicker');
+Smart::addResources('pagination', 'datepicker', 'bootstrap-select');
 Smart::display('aggregate/index.tpl');

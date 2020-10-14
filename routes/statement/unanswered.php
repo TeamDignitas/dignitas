@@ -13,5 +13,5 @@ Smart::assign([
   'statements' => $statements,
   'verdicts' => $verdicts,
 ]);
-Smart::addResources('pagination', 'datepicker');
+Smart::addResources('pagination', 'datepicker', 'bootstrap-select');
 Smart::display('statement/unanswered.tpl');

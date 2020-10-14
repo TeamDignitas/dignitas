@@ -13,7 +13,6 @@ $(function() {
   const PAGINATION_URL = URL_PREFIX + 'ajax/pagination';
 
   function init() {
-    $('select.actionable[multiple]').select2();
     $('select.actionable[name="entityId"]').select2({
       ajax: {
         url: URL_PREFIX + 'ajax/search-entities',
@@ -100,7 +99,7 @@ $(function() {
       page: page,
     }
 
-    form.find('.actionable').each(function() {
+    form.find('input.actionable, select.actionable').each(function() {
       // strip [] from array inputs
       var name = $(this).attr('name').replace(/[\[\]]+/g,'');
       args[name] = $(this).val();

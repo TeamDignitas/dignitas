@@ -38,11 +38,15 @@
     <div class="col-12 col-sm-12 col-md-2 col-lg-2">
       <select
         name="verdicts[]"
-        class="form-control form-control-sm actionable"
+        class="form-control form-control-sm selectpicker actionable"
         multiple
-        data-placeholder="{t}label-verdict{/t}">
+        title="{t}label-verdict{/t}"
+        data-selected-text-format="count">
         {for $v = 0 to Ct::NUM_VERDICTS - 1}
-          <option value="{$v}" {if in_array($v, $verdicts)}selected{/if}>
+          <option
+            value="{$v}"
+            {if in_array($v, $verdicts)}selected{/if}
+            data-content="<span class='badge badge-pill align-top bg-verdict-{$v}'>&nbsp;</span> {Statement::verdictName($v)}">
             {Statement::verdictName($v)}
           </option>
         {/for}

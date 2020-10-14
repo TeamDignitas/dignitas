@@ -58,7 +58,7 @@
   font-size: 14px !important;
 }
 
-.home-filters .form-control-sm {
+.home-filters select.form-control-sm {
   height: inherit;
   padding: 8px;
 }
