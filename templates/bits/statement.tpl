@@ -137,7 +137,7 @@
   </div>
 
   <div class="statement-box-area col-md-3 offset-md-1 pr-0">
-    <aside class="statement-box card px-2 verdict-{$statement->verdict}">
+    <aside class="card px-2 bg-verdict-{$statement->verdict}">
       <h6 class="card-title mt-3 text-center">
         {$statement->getEntity()},
         {$statement->dateMade|ld}

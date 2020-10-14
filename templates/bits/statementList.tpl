@@ -30,6 +30,11 @@
         {/if}
 
       </div>
+
+      <div class="mask bg-verdict-{$s->verdict}">
+        <span class="text-capitalize">{t}label-verdict{/t}:</span>
+        {$s->getVerdictName()}
+      </div>
     </div>
   {/foreach}
 </div>

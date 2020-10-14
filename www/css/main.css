@@ -44,6 +44,10 @@ blockquote {
   border-top: 1px solid #dee2e6;
 }
 
+.select2-container {
+  width: 100%;
+}
+
 /******************************** navbar *********************************/
 .navbar,
 #navbar-left,
@@ -223,54 +227,54 @@ img.pic.no-outline,
 }
 
 /* keep these values in sync with lib/Ct.php::VERDICT_* constants */
-.statement-box.verdict-0 { /* none */
-  background: #eee;
+.bg-verdict-0 { /* none */
+  background: #eee !important;
 }
 .statement.verdict-0 {
   border-color: #eee;
 }
 
-.statement-box.verdict-1 { /* undecidable */
-  background: #aaa;
+.bg-verdict-1 { /* undecidable */
+  background: #aaa !important;
 }
 .statement.verdict-1 {
   border-color: #aaa;
 }
 
-.statement-box.verdict-2 { /* false */
-  background: #D90404;
-  color: #FFFFFF;
+.bg-verdict-2 { /* false */
+  background: #D90404 !important;
+  color: #FFFFFF !important;
 }
 .statement.verdict-2 {
   border-color: #D90404;
 }
 
-.statement-box.verdict-3 { /* mostly false */
-  background: linear-gradient(110deg, #D90404, #FFEB3B 86%);
+.bg-verdict-3 { /* mostly false */
+  background: linear-gradient(110deg, #D90404, #FFEB3B 86%) !important;
   border: 0;
 }
 .statement.verdict-3 {
   border-color: #ec771f;
 }
 
-.statement-box.verdict-4 { /* mixed */
-  background: #FFEB3B;
+.bg-verdict-4 { /* mixed */
+  background: #FFEB3B !important;
 }
 .statement.verdict-4 {
   border-color: #FFEB3B;
 }
 
-.statement-box.verdict-5 { /* mostly true */
-  background: linear-gradient(110deg, #37700A, #FFEB3B 86%);
+.bg-verdict-5 { /* mostly true */
+  background: linear-gradient(110deg, #37700A, #FFEB3B 86%) !important;
   border: 0;
 }
 .statement.verdict-5 {
   border-color: #9bad22;
 }
 
-.statement-box.verdict-6 { /* true */
-  background: #37700A;
-  color: #FFFFFF;
+.bg-verdict-6 { /* true */
+  background: #37700A !important;
+  color: #FFFFFF !important;
 }
 .statement.verdict-6 {
   border-color: #37700A;
@@ -281,15 +285,24 @@ img.pic.no-outline,
   font-weight: 400;
 }
 
-.review-message .statement-title {
-  font-size: 1.5rem;
+/* statement hover effect showing the verdict */
+.statement.card .mask {
+  border-top-right-radius: 4px;
+  bottom: 0;
+  color: black;
+  font-size: 0.8rem;
+  left: 0;
+  opacity: 0;
+  padding: 2px 5px;
+  position: absolute;
+  text-align: center;
 }
 
-.select2-container {
-  width: 100%;
+.statement.card:hover .mask {
+  opacity: 1;
 }
 
-/******************************** answers, entity statements, user profile ********************************/
+/*************** answers, entity statements, user profile ***************/
 
 .answer {
   padding-top: 10px;
