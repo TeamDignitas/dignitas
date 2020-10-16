@@ -390,3 +390,15 @@ function require(name) {
 
   return false;
 }
+
+/*********************** localize bootstrap-select ***********************/
+
+// Hacky. Ideally we should load this file based on locale, but lib/Smart.php
+// cannot include resources conditionally.
+$(function() {
+  if (SELECT2_LOCALE == 'ro') {
+    $.fn.selectpicker.defaults = {
+      countSelectedText: '{0} selectate',
+    }
+  }
+});
