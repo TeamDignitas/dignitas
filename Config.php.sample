@@ -159,6 +159,10 @@ class Config {
   // - the 'all locales' version
   // - the version with the lexicographically smallest locale
   const CUSTOM_SECTIONS = [
+    // about page
+    'about' => [
+      'html' => [ 'about.html' ],
+    ],
     // top of the home page, before the statement list, for anonymous users
     'homepage-top-guest' => [
       'html' => [ 'homepage-top.html' ],
@@ -168,20 +172,12 @@ class Config {
     // bottom of the home page, after the statement list, for anonymous users
     'homepage-bottom-guest' => [
       'html' => [ 'homepage-bottom.html' ],
-      'css' => [],
-      'js' => [],
     ],
     // top of the home page, before the statement list, for logged in users
     'homepage-top-user' => [
-      'html' => [],
-      'css' => [],
-      'js' => [],
     ],
     // bottom of the home page, after the statement list, for logged in users
     'homepage-bottom-user' => [
-      'html' => [],
-      'css' => [],
-      'js' => [],
     ],
   ];
 

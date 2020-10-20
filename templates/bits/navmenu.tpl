@@ -13,6 +13,17 @@
 
   <div class="navbar-collapse py-2" id="navbar-left">
     {include "bits/searchForm.tpl"}
+
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a
+          class="nav-link pl-2 py-2"
+          href="{Router::link('aggregate/about')}"
+        >
+          {cap}{t}link-about{/t}{/cap}
+        </a>
+      </li>
+    </ul>
   </div>
 
   <!-- logo -->

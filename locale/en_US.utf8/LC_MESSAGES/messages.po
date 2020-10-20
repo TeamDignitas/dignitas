@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-10-05 15:27+0300\n"
-"PO-Revision-Date: 2020-10-05 15:27+0300\n"
+"POT-Creation-Date: 2020-10-20 16:55+0300\n"
+"PO-Revision-Date: 2020-10-20 16:55+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -30,6 +30,10 @@ msgid "info-page-not-found"
 msgstr ""
 "We're sorry, the page you requested does not exist. Please ensure you typed "
 "in the correct address or go back to the <a href=\"%1\">home page</a>."
+
+#: templates/aggregate/about.tpl:3
+msgid "title-about"
+msgstr "about us"
 
 #: templates/aggregate/dashboard.tpl:3 templates/aggregate/dashboard.tpl:7
 msgid "title-dashboard"
@@ -156,7 +160,7 @@ msgstr "I forgot my password"
 msgid "label-remember-me"
 msgstr "Remember me for one year."
 
-#: templates/auth/login.tpl:71 templates/bits/navmenu.tpl:154
+#: templates/auth/login.tpl:71 templates/bits/navmenu.tpl:166
 msgid "link-log-in"
 msgstr "log in"
 
@@ -218,15 +222,23 @@ msgstr "click here if you are not redirected automatically"
 msgid "title-reset-password"
 msgstr "reset password"
 
-#: templates/bits/actions.tpl:15
+#: templates/bits/actions.tpl:4 templates/bits/history.tpl:16
+msgid "label-date"
+msgstr "date"
+
+#: templates/bits/actions.tpl:5
+msgid "label-action"
+msgstr "action"
+
+#: templates/bits/actions.tpl:22
 msgid "action-target-answer"
 msgstr "an answer"
 
-#: templates/bits/actions.tpl:23
+#: templates/bits/actions.tpl:30
 msgid "action-target-comment"
 msgstr "a comment"
 
-#: templates/bits/actions.tpl:38
+#: templates/bits/actions.tpl:45
 msgid "action-updated-user-profile"
 msgstr "updated user profile"
 
@@ -247,8 +259,9 @@ msgid "info-answer-permalink"
 msgstr "permanent link to this answer"
 
 #: templates/bits/answerEdit.tpl:19 templates/bits/statement.tpl:153
-#: templates/bits/statementFilters.tpl:43 templates/statement/edit.tpl:122
-#: lib/model/RevisionAnswer.php:15 lib/model/RevisionStatement.php:18
+#: templates/bits/statementFilters.tpl:43 templates/bits/statementList.tpl:35
+#: templates/statement/edit.tpl:122 lib/model/RevisionAnswer.php:15
+#: lib/model/RevisionStatement.php:18
 msgid "label-verdict"
 msgstr "verdict"
 
@@ -387,7 +400,7 @@ msgstr "date added (ascending)"
 msgid "label-filter"
 msgstr "filter"
 
-#: templates/bits/entityFilters.tpl:34 templates/bits/statementFilters.tpl:70
+#: templates/bits/entityFilters.tpl:34 templates/bits/statementFilters.tpl:74
 msgid "label-term"
 msgstr "text"
 
@@ -395,12 +408,12 @@ msgstr "text"
 msgid "title-test-login"
 msgstr "test user login"
 
-#: templates/bits/fakeLogin.tpl:33 templates/bits/navmenu.tpl:119
+#: templates/bits/fakeLogin.tpl:33 templates/bits/navmenu.tpl:131
 #: templates/user/view.tpl:30
 msgid "label-reputation"
 msgstr "reputation"
 
-#: templates/bits/fakeLogin.tpl:54 templates/bits/navmenu.tpl:131
+#: templates/bits/fakeLogin.tpl:54 templates/bits/navmenu.tpl:143
 #: templates/user/view.tpl:18
 msgid "label-moderator"
 msgstr "moderator"
@@ -553,10 +566,6 @@ msgstr ""
 msgid "label-author"
 msgstr "author"
 
-#: templates/bits/history.tpl:16 templates/user/view.tpl:109
-msgid "label-date"
-msgstr "date"
-
 #: templates/bits/history.tpl:17
 msgid "label-changes"
 msgstr "changes"
@@ -585,38 +594,43 @@ msgstr "How is loyalty computed?"
 msgid "info-markdown-help"
 msgstr "Markdown help"
 
-#: templates/bits/navmenu.tpl:10 templates/bits/navmenu.tpl:30
+#: templates/bits/navmenu.tpl:10 templates/bits/navmenu.tpl:42
 msgid "label-toggle-menu"
 msgstr "toggle sidebar"
 
-#: templates/bits/navmenu.tpl:41 templates/bits/navmenu.tpl:43
-#: templates/help/categoryView.tpl:3 templates/help/categoryView.tpl:14
-#: templates/help/index.tpl:3 templates/help/index.tpl:7
-#: templates/help/pageView.tpl:3 templates/help/pageView.tpl:14
+#: templates/bits/navmenu.tpl:22 templates/bits/navmenu.tpl:53
+#: templates/bits/navmenu.tpl:55 templates/help/categoryView.tpl:3
+#: templates/help/categoryView.tpl:14 templates/help/index.tpl:3
+#: templates/help/index.tpl:7 templates/help/pageView.tpl:3
+#: templates/help/pageView.tpl:14
 msgid "help-center"
 msgstr "help center"
 
-#: templates/bits/navmenu.tpl:95
+#: templates/bits/navmenu.tpl:24
+msgid "link-about"
+msgstr "about us"
+
+#: templates/bits/navmenu.tpl:107
 msgid "link-my-profile"
 msgstr "my profile"
 
-#: templates/bits/navmenu.tpl:99
+#: templates/bits/navmenu.tpl:111
 msgid "link-notifications"
 msgstr "notifications"
 
-#: templates/bits/navmenu.tpl:106
+#: templates/bits/navmenu.tpl:118
 msgid "link-dashboard"
 msgstr "dashboard"
 
-#: templates/bits/navmenu.tpl:112
+#: templates/bits/navmenu.tpl:124
 msgid "info-reputation-manual"
 msgstr "change reputation manually (will refresh the page)"
 
-#: templates/bits/navmenu.tpl:137
+#: templates/bits/navmenu.tpl:149
 msgid "link-change"
 msgstr "schimbă"
 
-#: templates/bits/navmenu.tpl:147
+#: templates/bits/navmenu.tpl:159
 msgid "link-log-out"
 msgstr "log out"
 
@@ -733,15 +747,15 @@ msgstr "statement date (descending)"
 msgid "sort-date-made-asc"
 msgstr "statement date (ascending)"
 
-#: templates/bits/statementFilters.tpl:57
+#: templates/bits/statementFilters.tpl:61
 msgid "label-other-filters"
 msgstr "other filters"
 
-#: templates/bits/statementFilters.tpl:78 templates/entity/edit.tpl:151
+#: templates/bits/statementFilters.tpl:82 templates/entity/edit.tpl:151
 msgid "label-start-date"
 msgstr "start date"
 
-#: templates/bits/statementFilters.tpl:87 templates/entity/edit.tpl:152
+#: templates/bits/statementFilters.tpl:91 templates/entity/edit.tpl:152
 msgid "label-end-date"
 msgstr "end date"
 
@@ -1565,10 +1579,6 @@ msgstr "until"
 #: templates/user/view.tpl:94
 msgid "link-ban"
 msgstr "ban..."
-
-#: templates/user/view.tpl:110
-msgid "label-action"
-msgstr "action"
 
 #: lib/Time.php:21 lib/Time.php:44
 msgid "date-format-ymd"
@@ -2451,17 +2461,17 @@ msgstr ""
 msgid "can-suggest-changes"
 msgstr "You can suggest changes which will be placed in the review queue."
 
-#: lib/trait/UploadTrait.php:171
+#: lib/trait/UploadTrait.php:174
 #, php-format
 msgid "info-upload-size-%d"
 msgstr "Maximum file size is %d MB."
 
-#: lib/trait/UploadTrait.php:176
+#: lib/trait/UploadTrait.php:179
 #, php-format
 msgid "info-upload-type-%s"
 msgstr "Supported file types are: %s."
 
-#: lib/trait/UploadTrait.php:179
+#: lib/trait/UploadTrait.php:182
 msgid "info-upload-error"
 msgstr "An error occurred while uploading the file."
 

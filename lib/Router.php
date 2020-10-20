@@ -19,6 +19,10 @@ class Router {
     ],
 
     // aggregate
+    'aggregate/about' => [
+      'en_US.utf8' => 'about',
+      'ro_RO.utf8' => 'despre',
+    ],
     'aggregate/dashboard' => [
       'en_US.utf8' => 'dashboard',
       'ro_RO.utf8' => 'panou-control',
