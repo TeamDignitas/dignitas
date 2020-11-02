@@ -15,14 +15,31 @@
     {include "bits/searchForm.tpl"}
 
     <ul class="navbar-nav">
-      <li class="nav-item">
-        <a
-          class="nav-link pl-2 py-2"
-          href="{Router::link('aggregate/about')}"
-        >
-          {cap}{t}link-about{/t}{/cap}
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle pl-2 py-2"
+          href="#"
+          id="nav-dropdown-info"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false">
+          {cap}{t}link-info{/t}{/cap}
         </a>
+        <div class="dropdown-menu bg-dark py-0" aria-labelledby="nav-dropdown-info">
+          <a
+            class="dropdown-item pl-2 py-2"
+            href="{Router::link('aggregate/about')}">
+            {cap}{t}link-about{/t}{/cap}
+          </a>
+          <a
+            class="dropdown-item pl-2 py-2"
+            href="{Router::link('aggregate/contact')}">
+            {cap}{t}link-contact{/t}{/cap}
+          </a>
+        </div>
       </li>
+
     </ul>
   </div>
 

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-10-20 16:55+0300\n"
-"PO-Revision-Date: 2020-10-20 16:55+0300\n"
+"POT-Creation-Date: 2020-11-02 16:30+0200\n"
+"PO-Revision-Date: 2020-11-02 16:30+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -34,6 +34,10 @@ msgstr ""
 #: templates/aggregate/about.tpl:3
 msgid "title-about"
 msgstr "about us"
+
+#: templates/aggregate/contact.tpl:3
+msgid "title-contact"
+msgstr "contact us"
 
 #: templates/aggregate/dashboard.tpl:3 templates/aggregate/dashboard.tpl:7
 msgid "title-dashboard"
@@ -160,7 +164,7 @@ msgstr "I forgot my password"
 msgid "label-remember-me"
 msgstr "Remember me for one year."
 
-#: templates/auth/login.tpl:71 templates/bits/navmenu.tpl:166
+#: templates/auth/login.tpl:71 templates/bits/navmenu.tpl:182
 msgid "link-log-in"
 msgstr "log in"
 
@@ -408,12 +412,12 @@ msgstr "text"
 msgid "title-test-login"
 msgstr "test user login"
 
-#: templates/bits/fakeLogin.tpl:33 templates/bits/navmenu.tpl:131
+#: templates/bits/fakeLogin.tpl:33 templates/bits/navmenu.tpl:147
 #: templates/user/view.tpl:30
 msgid "label-reputation"
 msgstr "reputation"
 
-#: templates/bits/fakeLogin.tpl:54 templates/bits/navmenu.tpl:143
+#: templates/bits/fakeLogin.tpl:54 templates/bits/navmenu.tpl:159
 #: templates/user/view.tpl:18
 msgid "label-moderator"
 msgstr "moderator"
@@ -594,43 +598,50 @@ msgstr "How is loyalty computed?"
 msgid "info-markdown-help"
 msgstr "Markdown help"
 
-#: templates/bits/navmenu.tpl:10 templates/bits/navmenu.tpl:42
+#: templates/bits/navmenu.tpl:10 templates/bits/navmenu.tpl:58
 msgid "label-toggle-menu"
 msgstr "toggle sidebar"
 
-#: templates/bits/navmenu.tpl:22 templates/bits/navmenu.tpl:53
-#: templates/bits/navmenu.tpl:55 templates/help/categoryView.tpl:3
-#: templates/help/categoryView.tpl:14 templates/help/index.tpl:3
-#: templates/help/index.tpl:7 templates/help/pageView.tpl:3
-#: templates/help/pageView.tpl:14
-msgid "help-center"
-msgstr "help center"
+#: templates/bits/navmenu.tpl:27
+msgid "link-info"
+msgstr "Info"
 
-#: templates/bits/navmenu.tpl:24
+#: templates/bits/navmenu.tpl:33
 msgid "link-about"
 msgstr "about us"
 
-#: templates/bits/navmenu.tpl:107
+#: templates/bits/navmenu.tpl:38
+msgid "link-contact"
+msgstr "contact us"
+
+#: templates/bits/navmenu.tpl:69 templates/bits/navmenu.tpl:71
+#: templates/help/categoryView.tpl:3 templates/help/categoryView.tpl:14
+#: templates/help/index.tpl:3 templates/help/index.tpl:7
+#: templates/help/pageView.tpl:3 templates/help/pageView.tpl:14
+msgid "help-center"
+msgstr "help center"
+
+#: templates/bits/navmenu.tpl:123
 msgid "link-my-profile"
 msgstr "my profile"
 
-#: templates/bits/navmenu.tpl:111
+#: templates/bits/navmenu.tpl:127
 msgid "link-notifications"
 msgstr "notifications"
 
-#: templates/bits/navmenu.tpl:118
+#: templates/bits/navmenu.tpl:134
 msgid "link-dashboard"
 msgstr "dashboard"
 
-#: templates/bits/navmenu.tpl:124
+#: templates/bits/navmenu.tpl:140
 msgid "info-reputation-manual"
 msgstr "change reputation manually (will refresh the page)"
 
-#: templates/bits/navmenu.tpl:149
+#: templates/bits/navmenu.tpl:165
 msgid "link-change"
 msgstr "schimbă"
 
-#: templates/bits/navmenu.tpl:159
+#: templates/bits/navmenu.tpl:175
 msgid "link-log-out"
 msgstr "log out"
 

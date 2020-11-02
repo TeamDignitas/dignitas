@@ -163,6 +163,10 @@ class Config {
     'about' => [
       'html' => [ 'about.html' ],
     ],
+    // contact page
+    'contact' => [
+      'html' => [ 'contact.html' ],
+    ],
     // top of the home page, before the statement list, for anonymous users
     'homepage-top-guest' => [
       'html' => [ 'homepage-top.html' ],

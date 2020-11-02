@@ -23,6 +23,10 @@ class Router {
       'en_US.utf8' => 'about',
       'ro_RO.utf8' => 'despre',
     ],
+    'aggregate/contact' => [
+      'en_US.utf8' => 'contact',
+      'ro_RO.utf8' => 'contact',
+    ],
     'aggregate/dashboard' => [
       'en_US.utf8' => 'dashboard',
       'ro_RO.utf8' => 'panou-control',
