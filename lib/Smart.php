@@ -12,17 +12,22 @@ class Smart {
     'jquery' => [
       'js' => [ 'third-party/jquery-3.3.1.min.js' ],
     ],
-    'main' => [
-      'css' => [ 'main.css', 'fonts.css' ],
-      'js' => [ 'main.js' ],
-    ],
     'bootstrap' => [
-      'css' => [ 'third-party/bootstrap-4.3.1.min.css' ],
-      'js' => [ 'third-party/bootstrap-4.3.1.bundle.min.js' ],
+      'css' => [ 'third-party/bootstrap.min.css' ],
+      'js' => [ 'third-party/bootstrap.bundle.min.js' ],
     ],
     'bootstrap-select' => [
       'css' => [ 'third-party/bootstrap-select.min.css' ],
       'js' => [ 'third-party/bootstrap-select.min.js' ],
+    ],
+    'colorpicker' => [
+      'css' => [ 'third-party/bootstrap-colorpicker.min.css' ],
+      'js' => [ 'third-party/bootstrap-colorpicker.min.js' ],
+      'deps' => [ 'bootstrap'],
+    ],
+    'main' => [
+      'css' => [ 'main.css', 'fonts.css' ],
+      'js' => [ 'main.js' ],
     ],
     'codemirror' => [
       'css' => [
@@ -47,11 +52,6 @@ class Smart {
         'third-party/codemirror-5.58.1/mode/xml/xml.js',
       ],
     ],
-    'colorpicker' => [
-      'css' => [ 'third-party/bootstrap-colorpicker.min.css' ],
-      'js' => [ 'third-party/bootstrap-colorpicker.min.js' ],
-      'deps' => [ 'bootstrap'],
-    ],
     'datepicker' => [
       'css' => [
         'third-party/bootstrap-datepicker.min.css',
@@ -64,19 +64,8 @@ class Smart {
       ],
       'deps' => [ 'bootstrap'],
     ],
-    'flag' => [
-      'js' => [ 'flag.js' ],
-    ],
     'fontello' => [
       'css' => [ 'third-party/fontello/css/icons.css' ],
-    ],
-    'history' => [
-      'css' => [ 'history.css' ],
-      'js' => [ 'history.js' ],
-    ],
-    'imageModal' => [
-      'css' => [ 'imageModal.css' ],
-      'js' => [ 'imageModal.js' ],
     ],
     'select2' => [
       'css' => [
@@ -102,6 +91,17 @@ class Smart {
     ],
     'sortable' => [
       'js' => [ 'third-party/Sortable.min.js' ],
+    ],
+    'flag' => [
+      'js' => [ 'flag.js' ],
+    ],
+    'history' => [
+      'css' => [ 'history.css' ],
+      'js' => [ 'history.js' ],
+    ],
+    'imageModal' => [
+      'css' => [ 'imageModal.css' ],
+      'js' => [ 'imageModal.js' ],
     ],
     'subscribe' => [
       'js' => [ 'subscribe.js' ],

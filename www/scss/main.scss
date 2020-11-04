@@ -1,0 +1,15 @@
+/**
+ * If you modify this file, remember to recompile the CSS file by running
+ * scripts/recompileCss.sh
+ **/
+
+$body-color: #495057;
+$font-family-sans-serif: Spartan, Helvetica, Calibri, Arial, sans-serif;
+
+$navbar-padding-y: 0rem;
+$navbar-padding-x: 1rem;
+
+$input-btn-padding-y: 0.5rem;
+$btn-border-radius-sm: 0.25rem;
+
+@import "third-party/bootstrap/bootstrap";
