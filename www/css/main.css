@@ -449,27 +449,6 @@ body, main {
   color: #777;
 }
 
-/***************************** Edit author pages ****************************/
-.select2-container--bootstrap4 .select2-selection {
-  background-color: white !important;
-}
-
-.select2-container--bootstrap4 .select2-selection--single {
-  height: calc(1.5em + .5rem) !important;
-}
-
-.select2-container--bootstrap4 .select2-selection--single {
-  padding: 0rem .5rem !important;
-  font-size: .875rem;
-  line-height: 1.5 !important;
-  border-radius: .2rem;
-}
-
-.narrow-column {
-  max-width: 100px;
-  display: block;
-}
-
 /******************************* popovers *******************************/
 
 .popover-header .close {

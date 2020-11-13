@@ -25,9 +25,24 @@ class Smart {
       'js' => [ 'third-party/bootstrap-colorpicker.min.js' ],
       'deps' => [ 'bootstrap'],
     ],
+    'select2' => [
+      'css' => [
+        'third-party/select2-4.0.5.min.css',
+        'third-party/select2-bootstrap4.min.css',
+      ],
+      'js' => [
+        'third-party/select2/select2-4.0.5.min.js',
+        'third-party/select2/i18n/ro.js',
+        'select2Dev.js',
+      ],
+    ],
+    'fontello' => [
+      'css' => [ 'third-party/fontello/css/icons.css' ],
+    ],
     'main' => [
       'css' => [ 'main.css', 'fonts.css' ],
       'js' => [ 'main.js' ],
+      'deps' => ['jquery', 'bootstrap', 'select2', 'fontello'],
     ],
     'codemirror' => [
       'css' => [
@@ -63,20 +78,6 @@ class Smart {
         'datepicker.js',
       ],
       'deps' => [ 'bootstrap'],
-    ],
-    'fontello' => [
-      'css' => [ 'third-party/fontello/css/icons.css' ],
-    ],
-    'select2' => [
-      'css' => [
-        'third-party/select2-4.0.5.min.css',
-        'third-party/select2-bootstrap4.min.css',
-      ],
-      'js' => [
-        'third-party/select2/select2-4.0.5.min.js',
-        'third-party/select2/i18n/ro.js',
-        'select2Dev.js',
-      ],
     ],
     'easymde' => [
       'css' => [ 'third-party/easymde-2.11.0.css' ],
@@ -324,7 +325,7 @@ class Smart {
 
   /* Prepare and display a template. */
   static function display($templateName) {
-    self::addResources('bootstrap', 'fontello', 'jquery', 'main', 'select2');
+    self::addResources('main');
     self::addSameNameFiles($templateName);
     print self::fetch($templateName);
   }
