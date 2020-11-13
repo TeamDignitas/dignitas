@@ -1,7 +1,7 @@
 {$term=$term|default:''}
 {$verdicts=$verdicts|default:[]}
 <form data-url="{Config::URL_PREFIX}ajax/search-statements">
-  <div class="row mb-2 small home-filters">
+  <div class="row mb-2 small statement-filters">
 
     <div class="col-12 col-sm-12 col-md-1 col-lg-1">
       <label class="col-form-label text-capitalize">

@@ -476,3 +476,49 @@ body, main {
   position: relative;
   bottom: 3px;
 }
+
+/************************ statement filter tweaks ************************/
+
+.statement-filters .select2-container--bootstrap4 .select2-selection--single .select2-selection__placeholder {
+  color: inherit;
+}
+
+.statement-filters,
+.select2-results__option {
+  font-size: 14px !important;
+}
+
+.statement-filters select.form-control-sm {
+  height: inherit;
+  padding: 8px;
+}
+
+.statement-filters .select2-container--bootstrap4 .select2-selection--multiple .select2-selection__rendered {
+  padding-left: 8px;
+}
+
+.statement-filters .btn-light {
+  background: white;
+  border: 1px solid #ced4da;
+  color: #495057 !important;
+  height: calc(1.5em + .75rem + 2px) !important; /* same as select2 */
+  line-height: 1.5 !important;
+  padding-top: 6px !important;
+}
+
+.more-filters input {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  height: inherit;
+}
+
+.select2-container--bootstrap4 .select2-selection__clear {
+  line-height: 1.4em;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px){
+  .statement-filters .select2-container {
+    width: 100% !important;
+  }
+}
