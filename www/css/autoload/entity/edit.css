@@ -19,7 +19,7 @@
   min-width: 200px;
 }
 
-.select2-container--bootstrap4 .select2-selection--single {
+.select2-container .selection-mine {
   border-radius: .2rem;
   font-size: .875rem;
   height: calc(1.5em + .5rem + 2px) !important;

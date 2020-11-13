@@ -38,6 +38,7 @@ $(function() {
       delay: 300,
     },
     minimumInputLength: 1,
+    selectionCssClass: 'navbar-selection',
     tags: true,
     templateResult: formatResult,
     width: 'resolve',

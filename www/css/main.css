@@ -133,7 +133,7 @@ blockquote {
   border-top-left-radius: 0.25rem;
 }
 
-.navbar .select2-container--bootstrap4 .select2-selection {
+.navbar .navbar-selection {
   border-width: 0;
 }
 
@@ -458,22 +458,18 @@ body, main {
 
 /************************ statement filter tweaks ************************/
 
-.statement-filters .select2-container--bootstrap4 .select2-selection--single .select2-selection__placeholder {
+.statement-filters .selection-entity-id .select2-selection__placeholder {
   color: inherit;
 }
 
 .statement-filters,
-.select2-results__option {
+.dropdown-entity-id li {
   font-size: 14px !important;
 }
 
 .statement-filters select.form-control-sm {
   height: inherit;
   padding: 8px;
-}
-
-.statement-filters .select2-container--bootstrap4 .select2-selection--multiple .select2-selection__rendered {
-  padding-left: 8px;
 }
 
 .statement-filters .btn-light {
@@ -491,9 +487,11 @@ body, main {
   height: inherit;
 }
 
-.select2-container--bootstrap4 .select2-selection__clear {
-  line-height: 1.4em;
+.statement-filters .selection-entity-id .select2-selection__clear {
+  background-color: #495057;
   border-radius: 4px;
+  line-height: 1.4em;
+  margin-right: 1.5em;
 }
 
 @media (max-width: 768px){

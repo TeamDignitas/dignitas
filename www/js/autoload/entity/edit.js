@@ -5,6 +5,7 @@ $(function() {
       url: URL_PREFIX + 'ajax/search-entities',
     },
     minimumInputLength: 2,
+    selectionCssClass: 'selection-mine',
     width: '100%',
   };
 

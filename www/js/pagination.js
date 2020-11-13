@@ -18,7 +18,9 @@ $(function() {
         url: URL_PREFIX + 'ajax/search-entities',
       },
       allowClear: true,
+      dropdownCssClass: 'dropdown-entity-id',
       minimumInputLength: 2,
+      selectionCssClass: 'selection-entity-id',
     });
 
     $('.pagination-wrapper').on('click', 'a', paginationClick);
