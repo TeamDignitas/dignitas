@@ -6,7 +6,7 @@
   <div class="container my-5">
     <h1 class="mb-4">{cap}{t}title-canned-responses{/t}{/cap}</h1>
 
-    <a href="{Router::link('cannedResponse/edit')}" class="btn btn-sm btn-outline-primary">
+    <a href="{Router::link('cannedResponse/edit')}" class="btn btn-sm btn-primary">
       <i class="icon icon-plus"></i>
       {t}link-add-canned-response{/t}
     </a>
