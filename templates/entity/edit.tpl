@@ -243,7 +243,7 @@
             <button
               name="deleteButton"
               type="submit"
-              class="btn btn-sm btn-outline-danger"
+              class="btn btn-sm btn-outline-danger col-sm-4 col-lg-2 mr-2 mb-2"
               data-confirm="{t}info-confirm-delete-entity{/t}">
               <i class="icon icon-trash"></i>
               {t}link-delete{/t}
@@ -254,19 +254,19 @@
             <button
               name="reopenButton"
               type="submit"
-              class="btn btn-sm btn-outline-secondary"
+              class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2"
               data-confirm="{t}info-confirm-reopen-entity{/t}">
               {t}link-reopen{/t}
             </button>
           {/if}
         </div>
 
-        <a href="{$referrer}" class="btn btn-sm btn-outline-secondary">
+        <a href="{$referrer}" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2">
           <i class="icon icon-cancel"></i>
           {t}link-cancel{/t}
         </a>
 
-        <button name="saveButton" type="submit" class="btn btn-sm btn-primary">
+        <button name="saveButton" type="submit" class="btn btn-sm btn-primary col-sm-4 col-lg-2 mb-2">
           <i class="icon icon-floppy"></i>
           {t}link-save{/t}
         </button>
