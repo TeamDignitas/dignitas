@@ -377,6 +377,13 @@ $(function() {
 
 });
 
+/**************************** number padding ****************************/
+
+// horrible horrible hack
+function pad(n, width) {
+  return ('00000000000' + n).slice(-width);
+}
+
 /*************** Make Node.js better by circumventing it. ***************/
 
 module = {};
