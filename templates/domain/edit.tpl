@@ -91,7 +91,7 @@
           {t}link-cancel{/t}
         </a>
 
-        <button name="saveButton" type="submit" class="btn btn-sm btn-outline-primary col-sm-4 col-lg-2 mb-2">
+        <button name="saveButton" type="submit" class="btn btn-sm btn-primary col-sm-4 col-lg-2 mb-2">
           <i class="icon icon-floppy"></i>
           {t}link-save{/t}
         </button>
