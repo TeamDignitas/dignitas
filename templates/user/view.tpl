@@ -79,17 +79,17 @@
 
         {if $user->id == User::getActiveId() || User::isModerator()}
           <hr class="mb-2">
-          <div class="user-actions text-right">
+          <div class="mt-4 user-actions text-right">
             {if User::isModerator()}
               <a
                 href="{Router::link('user/ban')}/{$user->id}"
-                class="btn btn-sm btn-outline-danger">
+                class="btn btn-sm btn-outline-danger col-sm-4 col-lg-2 mr-2 mb-2">
                 {t}link-ban{/t}
               </a>
             {/if}
 
             {if $user->id == User::getActiveId()}
-              <a href="{Router::link('user/edit')}" class="btn btn-sm btn-primary">
+              <a href="{Router::link('user/edit')}" class="btn btn-sm btn-primary col-sm-4 col-lg-2 mb-2">
                 <i class="icon icon-pencil"></i>
                 {t}link-edit{/t}
               </a>
