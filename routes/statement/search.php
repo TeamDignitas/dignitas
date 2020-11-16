@@ -6,7 +6,7 @@ $order = Request::get('order', 0);
 $filters = [
   'entityId' => Request::get('entityId', 0),
   'exceptId' => Request::get('exceptId', 0),
-  'maxDate' =>  Request::get('maxDate'),
+  'maxDate' =>  Time::extendPartialDate(Request::get('maxDate')),
   'minDate' =>  Request::get('minDate'),
   'term' =>  addslashes(Request::get('term')),
   'verdicts' => Request::getArray('verdicts'),
@@ -31,3 +31,6 @@ foreach ($statements as $s) {
 
 header('Content-Type: application/json');
 print json_encode($resp);
+
+
+/*************************************************************************/

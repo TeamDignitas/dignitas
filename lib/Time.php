@@ -101,4 +101,24 @@ class Time {
     return sprintf('%04d-%02d-%02d', $year, $month, $day);
   }
 
+  // Replaces the 00 values in partial dates with the largest possible values.
+  // This is useful when searching for data up to a date which may be partial.
+  // Examples: 2010-02-00 -> 2010-02-29, 2010-00-00 -> 2010-12-31
+  static function extendPartialDate($date) {
+    list($year, $month, $day) = explode('-', $date);
+
+    if ($month == '00') {
+      $month = '12';
+    }
+
+    if ($day == '00') {
+      // cal_days_in_month() works, but requires the calendar library
+      $op = sprintf('%04d-%02d-01 +1 month -1 day', $year, $month);
+      $time = strtotime($op);
+      return date("Y-m-d", $time);
+    }
+
+    return sprintf('%04d-%02d-%02d', $year, $month, $day);
+  }
+
 }
