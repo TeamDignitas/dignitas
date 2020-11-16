@@ -237,18 +237,8 @@
         </div>
       </fieldset>
 
-      <div class="mt-4">
-        <button name="saveButton" type="submit" class="btn btn-sm btn-outline-primary">
-          <i class="icon icon-floppy"></i>
-          {t}link-save{/t}
-        </button>
-
-        <a href="{$referrer}" class="btn btn-sm btn-outline-secondary">
-          <i class="icon icon-cancel"></i>
-          {t}link-cancel{/t}
-        </a>
-
-        <div class="float-right">
+      <div class="mt-4 text-right">
+        <div class="">
           {if $entity->isDeletable()}
             <button
               name="deleteButton"
@@ -270,6 +260,16 @@
             </button>
           {/if}
         </div>
+
+        <a href="{$referrer}" class="btn btn-sm btn-outline-secondary">
+          <i class="icon icon-cancel"></i>
+          {t}link-cancel{/t}
+        </a>
+
+        <button name="saveButton" type="submit" class="btn btn-sm btn-outline-primary">
+          <i class="icon icon-floppy"></i>
+          {t}link-save{/t}
+        </button>
       </div>
 
     </form>
