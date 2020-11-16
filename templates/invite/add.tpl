@@ -25,16 +25,16 @@
           {include "bits/fieldErrors.tpl" errors=$errors.email|default:null}
       </div>
 
-      <div class="mt-5">
-        <button name="saveButton" type="submit" class="btn btn-sm btn-outline-primary">
-          <i class="icon icon-paper-plane"></i>
-          {t}link-send{/t}
-        </button>
-
-        <a href="{Router::link('invite/list')}" class="btn btn-sm btn-outline-secondary">
+      <div class="mt-4 text-right">
+        <a href="{Router::link('invite/list')}" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mb-2 mr-2">
           <i class="icon icon-cancel"></i>
           {t}link-cancel{/t}
         </a>
+
+        <button name="saveButton" type="submit" class="btn btn-sm btn-primary col-sm-4 col-lg-2 mb-2">
+          <i class="icon icon-paper-plane"></i>
+          {t}link-send{/t}
+        </button>
       </div>
     </form>
   </div>
