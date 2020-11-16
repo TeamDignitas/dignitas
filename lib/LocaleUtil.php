@@ -25,6 +25,12 @@ class LocaleUtil {
     return $locale;
   }
 
+  // Returns the locale with the encoding stripped off, e.g. en_US instead of en_US.utf8
+  static function getShort() {
+    $l = self::getCurrent();
+    return explode('.', $l)[0];
+  }
+
   static function getDisplayName($locale) {
     return Config::LOCALES[$locale] ?? '';
   }

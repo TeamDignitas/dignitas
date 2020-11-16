@@ -78,7 +78,7 @@
         <input
           type="text"
           id="field-min-date"
-          class="form-control form-control-sm date-picker"
+          class="form-control form-control-sm datepicker"
           placeholder="{t}label-start-date{/t}">
         <input type="hidden" name="minDate" class="actionable">
       </div>
@@ -87,7 +87,7 @@
         <input
           type="text"
           id="field-max-date"
-          class="form-control form-control-sm date-picker"
+          class="form-control form-control-sm datepicker"
           placeholder="{t}label-end-date{/t}">
         <input type="hidden" name="maxDate" class="actionable">
       </div>

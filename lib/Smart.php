@@ -68,14 +68,9 @@ class Smart {
       ],
     ],
     'datepicker' => [
-      'css' => [
-        'third-party/bootstrap-datepicker.min.css',
-        'datepicker.css',
-      ],
       'js' => [
-        'third-party/bootstrap-datepicker.min.js',
-        'third-party/bootstrap-datepicker.ro.min.js',
-        'datepicker.js',
+        'datepicker/datepicker.js',
+        'datepicker/intl/%l.js',
       ],
       'deps' => [ 'bootstrap'],
     ],
@@ -190,10 +185,17 @@ class Smart {
   }
 
   static function mergeResources($files, $type) {
+    // %L and %l will be substituted by the long/short locale name
+    $longLocale = LocaleUtil::getCurrent();
+    $shortLocale = LocaleUtil::getShort();
+
     // compute the full file names and get the latest timestamp
     $full = [];
     $maxTimestamp = 0;
     foreach ($files as $file) {
+      $file = str_replace('%L', $longLocale, $file);
+      $file = str_replace('%l', $shortLocale, $file);
+
       if (!Str::startsWith($file, '/')) {
         // don't touch paths which are already absolute
         $file = sprintf('%swww/%s/%s', Config::ROOT, $type, $file);
