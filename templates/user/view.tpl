@@ -89,7 +89,7 @@
             {/if}
 
             {if $user->id == User::getActiveId()}
-              <a href="{Router::link('user/edit')}" class="btn btn-sm btn-outline-primary">
+              <a href="{Router::link('user/edit')}" class="btn btn-sm btn-primary">
                 <i class="icon icon-pencil"></i>
                 {t}link-edit{/t}
               </a>
