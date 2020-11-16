@@ -8,7 +8,7 @@
 
     {if Config::ALLOW_INVITES}
       <div class="mb-5">
-        <a href="{Router::link('invite/add')}" class="btn btn-sm btn-outline-primary">
+        <a href="{Router::link('invite/add')}" class="btn btn-sm btn-primary">
           <i class="icon icon-plus"></i>
           {t}link-add-invite{/t}
         </a>
