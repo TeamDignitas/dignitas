@@ -53,6 +53,7 @@
             type="text"
             id="field-date-made"
             class="form-control datepicker {if isset($errors.dateMade)}is-invalid{/if} col-sm-12 col-lg-10"
+            data-allow-partial="false"
             required>
           <input type="hidden" name="dateMade" value="{$statement->dateMade}">
           {include "bits/fieldErrors.tpl" errors=$errors.dateMade|default:null}
