@@ -18,7 +18,10 @@ class Smart {
     ],
     'bootstrap-select' => [
       'css' => [ 'third-party/bootstrap-select.min.css' ],
-      'js' => [ 'third-party/bootstrap-select.min.js' ],
+      'js' => [
+        'third-party/bootstrap-select/bootstrap-select.min.js',
+        'third-party/bootstrap-select/i18n/%l.js',
+      ],
     ],
     'colorpicker' => [
       'css' => [ 'third-party/bootstrap-colorpicker.min.css' ],
