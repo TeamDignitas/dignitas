@@ -1,5 +1,5 @@
 $(function(){
-  $.fn.datepicker.options = {
+  $.fn.datepickerOptions = {
     months: [
       'necunoscută',
       'ianuarie', 'februarie', 'martie', 'aprilie',
