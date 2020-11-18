@@ -88,6 +88,10 @@ class Time {
   // This is useful when searching for data up to a date which may be partial.
   // Examples: 2010-02-00 -> 2010-02-29, 2010-00-00 -> 2010-12-31
   static function extendPartialDate($date) {
+    if (!$date) {
+      return ''; // nothing to extend
+    }
+
     list($year, $month, $day) = explode('-', $date);
 
     if ($month == '00') {
