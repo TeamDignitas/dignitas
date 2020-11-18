@@ -50,19 +50,17 @@ $(function() {
   init();
 
   function init() {
-    $.fn.datepicker = function(opts) {
+    MODAL.on('show.bs.modal', modalShow);
+    MODAL.find('.datepicker-month').change(monthChanged);
+    MODAL.find('.datepicker-year').change(populateDays);
+    MODAL.find('.btn-accept').click(acceptClicked);
+    MODAL.find('.btn-clear').click(clearClicked);
+    MODAL.find('.btn-today').click(todayClicked);
 
-      MODAL.on('show.bs.modal', modalShown);
-      MODAL.find('.datepicker-month').change(monthChanged);
-      MODAL.find('.datepicker-year').change(populateDays);
-      MODAL.find('.btn-accept').click(acceptClicked);
-      MODAL.find('.btn-clear').click(clearClicked);
-      MODAL.find('.btn-today').click(todayClicked);
-
-      this.each(setDisplay);
-
+    $.fn.datepicker = function(options) {
       this.focus(function() {
         invoker = $(this);
+        invoker.options = options;
         MODAL.modal('show');
       });
 
@@ -95,11 +93,17 @@ $(function() {
       },
     };
 
-    // initialize the date pickers; no configurable options at this point
-    $('.datepicker').datepicker();
+    $('.datepicker').each(function() {
+      setDisplay();
+
+      var allowPartial = $(this).data('allowPartial') ?? true;
+      $(this).datepicker({
+        allowPartial: allowPartial,
+      });
+    });
   }
 
-  function modalShown(e) {
+  function modalShow(e) {
     // lazy select population to give the localized names time to load
     populateModal();
     setPickerFromInput();
@@ -129,6 +133,11 @@ $(function() {
       // same effect as clicking the today button
       todayClicked();
     }
+
+    // show/hide unkown month/day based on partial dates option
+    var hidden = !invoker.options.allowPartial;
+    MODAL.find('.datepicker-month option').first().attr('hidden', hidden);
+    MODAL.find('.datepicker-day option').first().attr('hidden', hidden);
   }
 
   function populateModal() {
