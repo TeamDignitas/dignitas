@@ -89,12 +89,18 @@ $(function() {
       },
 
       format: function(y, m, d) {
-        return this.months[m] + ' ' + d + ', ' + y;
+        if (!m) {
+          return y;
+        } else if (!d) {
+          return this.months[m] + ' ' + y;
+        } else {
+          return d + ' ' + this.months[m] + ' ' + y;
+        }
       },
     };
 
     $('.datepicker').each(function() {
-      setDisplay();
+      setDisplay($(this));
 
       var allowPartial = $(this).data('allowPartial') ?? true;
       $(this).datepicker({
@@ -110,25 +116,26 @@ $(function() {
   }
 
   // Sets the display value from the hidden value. Used during initialization.
-  function setDisplay() {
-    var val = $(this).next().val();
-    if (/\d\d\d\d-\d\d-\d\d/.test(val)) {
-      var parts = val.split('-');
-      var display =  $.fn.datepickerOptions.format(
-        parts[0], parseInt(parts[1]), parseInt(parts[2]));
-      $(this).val(display);
-    }
+  function setDisplay(element) {
+    var val = element.next().val();
+    var d = parseDate(val);
+
+    var display = d.year
+        ? $.fn.datepickerOptions.format(d.year, d.month, d.day)
+        : '';
+    element.val(display);
   }
 
   // input: the visible input; we'll work with the hidden sibling
   function setPickerFromInput() {
     var val = invoker.next().val();
-    if (/\d\d\d\d-\d\d-\d\d/.test(val)) {
-      var parts = val.split('-');
-      MODAL.find('.datepicker-year').val(parts[0]);
-      MODAL.find('.datepicker-month').val(parseInt(parts[1])).trigger('change');
+    var d = parseDate(val);
+
+    if (d.year) {
+      MODAL.find('.datepicker-year').val(d.year);
+      MODAL.find('.datepicker-month').val(d.month).trigger('change');
       populateDays();
-      MODAL.find('.datepicker-day').val(parseInt(parts[2]));
+      MODAL.find('.datepicker-day').val(d.day);
     } else {
       // same effect as clicking the today button
       todayClicked();
@@ -226,19 +233,10 @@ $(function() {
     var month = parseInt(MODAL.find('.datepicker-month').val());
     var day = parseInt(MODAL.find('.datepicker-day').val());
 
-    // Compute the display value. To facilitate translations, this code is not localized.
-    var display;
-    if (!month) {
-      display = year;
-    } else if (!day) {
-      display = $.fn.datepickerOptions.months[month] + ' ' + year;
-    } else {
-      display = $.fn.datepickerOptions.format(year, month, day);
-    }
-    invoker.val(display);
-
+    // compute the hidden and display values
     var hiddenVal = year + '-' + pad(month, 2) + '-' + pad(day, 2);
     invoker.next().val(hiddenVal).trigger('change');
+    setDisplay(invoker);
 
     MODAL.modal('hide');
   }
@@ -259,6 +257,21 @@ $(function() {
     MODAL.find('.datepicker-month').val(month).trigger('change');
     populateDays();
     MODAL.find('.datepicker-day').val(day);
+  }
+
+  /**
+   * Parses a date in one of the formats: '', YYYY, YYYY-MM, YYYY-MM-DD.
+   * 0000-00-00 and '' both signify empty dates.
+   * Returns a dictionary.
+   **/
+  function parseDate(s) {
+    var parts = s.split('-');
+
+    return {
+      year: parseInt(parts[0]) || 0,
+      month: parseInt(parts[1] ?? 0),
+      day: parseInt(parts[2] ?? 0),
+    }
   }
 
 });

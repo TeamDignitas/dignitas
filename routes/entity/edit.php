@@ -60,12 +60,8 @@ if ($saveButton) {
     Request::getArray('relIds'),
     Request::getArray('relTypes'),
     Request::getArray('relEntityIds'),
-    Request::getArray('relStartDatesY'),
-    Request::getArray('relStartDatesM'),
-    Request::getArray('relStartDatesD'),
-    Request::getArray('relEndDatesY'),
-    Request::getArray('relEndDatesM'),
-    Request::getArray('relEndDatesD'));
+    Request::getArray('relStartDates'),
+    Request::getArray('relEndDates'));
   $aliases = buildAliases(
     Request::getArray('aliasIds'),
     Request::getArray('aliasNames'));
@@ -128,7 +124,7 @@ if ($saveButton) {
   ]);
 }
 
-Smart::addResources('colorpicker', 'easymde', 'linkEditor');
+Smart::addResources('colorpicker', 'datepicker', 'easymde', 'linkEditor');
 Smart::assign([
   'entity' => $entity,
   'entityTypes' => EntityType::loadAll(),
@@ -198,9 +194,7 @@ function validate($entity, $relations, $links, $fileData) {
   return $errors;
 }
 
-function buildRelations($ids, $types, $toEntityIds,
-                        $startYears, $startMonths, $startDays,
-                        $endYears, $endMonths, $endDays) {
+function buildRelations($ids, $types, $toEntityIds, $startDates, $endDates) {
   $result = [];
 
   foreach ($ids as $i => $id) {
@@ -209,8 +203,8 @@ function buildRelations($ids, $types, $toEntityIds,
       : Model::factory('Relation')->create();
     $r->relationTypeId = $types[$i];
     $r->toEntityId = $toEntityIds[$i];
-    $r->startDate = Time::partialDate($startYears[$i], $startMonths[$i], $startDays[$i]);
-    $r->endDate = Time::partialDate($endYears[$i], $endMonths[$i], $endDays[$i]);
+    $r->startDate = $startDates[$i];
+    $r->endDate = $endDates[$i];
 
     // ignore empty records
     if ($r->toEntityId ||

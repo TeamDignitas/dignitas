@@ -20,7 +20,13 @@ $(function(){
     },
 
     format: function(y, m, d) {
-      return d + ' ' + this.months[m] + ' ' + y;
+      if (!m) {
+        return y;
+      } else if (!d) {
+        return this.months[m] + ' ' + y;
+      } else {
+        return d + ' ' + this.months[m] + ' ' + y;
+      }
     },
   };
 });

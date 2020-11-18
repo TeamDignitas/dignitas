@@ -29,17 +29,17 @@
   </td>
 
   <td>
-    {include "bits/dateFields.tpl"
-      namePrefix="relStartDates"
-      nameSuffix="[]"
-      date=$relation->startDate|default:null}
+    <div class="input-group">
+      <input type="text" class="form-control form-control-sm datepicker">
+      <input type="hidden" name="relStartDates[]" value="{$relation->startDate|default:''}">
+    </div>
   </td>
 
   <td>
-    {include "bits/dateFields.tpl"
-      namePrefix="relEndDates"
-      nameSuffix="[]"
-      date=$relation->endDate|default:null}
+    <div class="input-group">
+      <input type="text" class="form-control form-control-sm datepicker">
+      <input type="hidden" name="relEndDates[]" value="{$relation->endDate|default:''}">
+    </div>
   </td>
 
   <td>

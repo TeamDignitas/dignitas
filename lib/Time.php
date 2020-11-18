@@ -84,23 +84,6 @@ class Time {
     return (int)((time() - strtotime($date)) / 86400);
   }
 
-  // Converts the values to a YYYY-MM-DD string. Certain value combinations may be empty.
-  // Returns zeroes for empty parts, null for invalid combinations or incorrect dates.
-  static function partialDate($year, $month, $day) {
-    if ((!$year && ($month || $day)) ||
-        ($year && !$month && $day)) {
-      return null;
-    }
-
-    if (($day && !checkdate((int)$month, (int)$day, (int)$year)) ||
-        ($month && !checkdate((int)$month, 1, (int)$year)) ||
-        ($year && !checkdate(1, 1, (int)$year))) {
-      return null;
-    }
-
-    return sprintf('%04d-%02d-%02d', $year, $month, $day);
-  }
-
   // Replaces the 00 values in partial dates with the largest possible values.
   // This is useful when searching for data up to a date which may be partial.
   // Examples: 2010-02-00 -> 2010-02-29, 2010-00-00 -> 2010-12-31
