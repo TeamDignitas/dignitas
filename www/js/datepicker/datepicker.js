@@ -59,6 +59,8 @@ $(function() {
       MODAL.find('.btn-clear').click(clearClicked);
       MODAL.find('.btn-today').click(todayClicked);
 
+      this.each(setDisplay);
+
       this.focus(function() {
         invoker = $(this);
         MODAL.modal('show');
@@ -68,7 +70,7 @@ $(function() {
     };
 
     // these can be overridden by including a file from intl/
-    $.fn.datepicker.options = {
+    $.fn.datepickerOptions = $.fn.datepickerOptions || {
       months: [
         'unknown',
         'January', 'February', 'March', 'April',
@@ -103,6 +105,17 @@ $(function() {
     setPickerFromInput();
   }
 
+  // Sets the display value from the hidden value. Used during initialization.
+  function setDisplay() {
+    var val = $(this).next().val();
+    if (/\d\d\d\d-\d\d-\d\d/.test(val)) {
+      var parts = val.split('-');
+      var display =  $.fn.datepickerOptions.format(
+        parts[0], parseInt(parts[1]), parseInt(parts[2]));
+      $(this).val(display);
+    }
+  }
+
   // input: the visible input; we'll work with the hidden sibling
   function setPickerFromInput() {
     var val = invoker.next().val();
@@ -135,12 +148,12 @@ $(function() {
     // create month options
     sel = MODAL.find('.datepicker-month');
     for (i = 0; i <= 12; i++) {
-      var name = $.fn.datepicker.options.months[i];
+      var name = $.fn.datepickerOptions.months[i];
       $('<option/>', { value : i }).text(name).appendTo(sel);
     }
 
     // populate buttons
-    var labels = $.fn.datepicker.options.labels;
+    var labels = $.fn.datepickerOptions.labels;
     MODAL.find('.modal-title').html(labels.title);
     MODAL.find('.datepicker-year-label').html(labels.year);
     MODAL.find('.datepicker-month-label').html(labels.month);
@@ -164,7 +177,7 @@ $(function() {
 
     if (!cur) {
       cur = 1;
-      var text = $.fn.datepicker.options.months[0];
+      var text = $.fn.datepickerOptions.months[0];
       $('<option/>', { value : 0 }).text(text).appendTo(sel);
     }
 
@@ -209,9 +222,9 @@ $(function() {
     if (!month) {
       display = year;
     } else if (!day) {
-      display = $.fn.datepicker.options.months[month] + ' ' + year;
+      display = $.fn.datepickerOptions.months[month] + ' ' + year;
     } else {
-      display = $.fn.datepicker.options.format(year, month, day);
+      display = $.fn.datepickerOptions.format(year, month, day);
     }
     invoker.val(display);
 

@@ -69,8 +69,8 @@ class Smart {
     ],
     'datepicker' => [
       'js' => [
-        'datepicker/datepicker.js',
         'datepicker/intl/%l.js',
+        'datepicker/datepicker.js',
       ],
       'deps' => [ 'bootstrap'],
     ],
