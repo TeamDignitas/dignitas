@@ -203,8 +203,8 @@ function buildRelations($ids, $types, $toEntityIds, $startDates, $endDates) {
       : Model::factory('Relation')->create();
     $r->relationTypeId = $types[$i];
     $r->toEntityId = $toEntityIds[$i];
-    $r->startDate = $startDates[$i];
-    $r->endDate = $endDates[$i];
+    $r->startDate = $startDates[$i] ?: '0000-00-00';
+    $r->endDate = $endDates[$i] ?: '0000-00-00';
 
     // ignore empty records
     if ($r->toEntityId ||
