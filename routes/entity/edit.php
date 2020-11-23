@@ -51,6 +51,7 @@ if ($saveButton) {
   $entity->profile = Request::get('profile');
   $color = $entity->hasColor() ? Request::get('color') : Entity::DEFAULT_COLOR;
   $entity->setColor($color);
+  $entity->regionId = Request::get('regionId');
   if (User::isModerator()) {
     $entity->longPossessive = Request::get('longPossessive');
     $entity->shortPossessive = Request::get('shortPossessive');
@@ -128,6 +129,7 @@ Smart::addResources('colorpicker', 'datepicker', 'easymde', 'linkEditor');
 Smart::assign([
   'entity' => $entity,
   'entityTypes' => EntityType::loadAll(),
+  'regions' => Region::loadAll(),
   'profileCharsRemaining' => Entity::PROFILE_MAX_LENGTH - mb_strlen($entity->profile),
 ]);
 Smart::display('entity/edit.tpl');

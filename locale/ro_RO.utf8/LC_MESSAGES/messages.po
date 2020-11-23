@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-11-23 15:19+0200\n"
-"PO-Revision-Date: 2020-11-23 15:19+0200\n"
+"POT-Creation-Date: 2020-11-23 15:42+0200\n"
+"PO-Revision-Date: 2020-11-23 15:42+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -45,7 +45,7 @@ msgid "title-dashboard"
 msgstr "panou de control"
 
 #: templates/aggregate/dashboard.tpl:17 templates/aggregate/index.tpl:28
-#: templates/bits/entity.tpl:108
+#: templates/bits/entity.tpl:113
 msgid "link-add-statement"
 msgstr "adaugă o afirmație"
 
@@ -138,7 +138,7 @@ msgstr "editează răspunsul"
 
 #: templates/answer/edit.tpl:16 templates/auth/resetPassword.tpl:46
 #: templates/bits/commentForm.tpl:44 templates/cannedResponse/edit.tpl:46
-#: templates/domain/edit.tpl:96 templates/entity/edit.tpl:271
+#: templates/domain/edit.tpl:96 templates/entity/edit.tpl:287
 #: templates/entityType/edit.tpl:108 templates/help/categoryEdit.tpl:80
 #: templates/help/pageEdit.tpl:74 templates/region/edit.tpl:68
 #: templates/region/list.tpl:45 templates/relation/edit.tpl:24
@@ -287,7 +287,7 @@ msgid "info-confirm-delete-answer"
 msgstr "Confirmați ștergerea acestui răspuns?"
 
 #: templates/bits/answerEdit.tpl:56 templates/cannedResponse/edit.tpl:35
-#: templates/domain/edit.tpl:78 templates/entity/edit.tpl:249
+#: templates/domain/edit.tpl:78 templates/entity/edit.tpl:265
 #: templates/entityType/edit.tpl:97 templates/help/categoryEdit.tpl:69
 #: templates/help/pageEdit.tpl:89 templates/region/edit.tpl:92
 #: templates/relationType/edit.tpl:136 templates/statement/edit.tpl:149
@@ -299,14 +299,14 @@ msgstr "șterge"
 msgid "info-confirm-reopen-answer"
 msgstr "Confirmați redeschiderea acestui răspuns?"
 
-#: templates/bits/answerEdit.tpl:66 templates/entity/edit.tpl:259
+#: templates/bits/answerEdit.tpl:66 templates/entity/edit.tpl:275
 #: templates/statement/edit.tpl:159
 msgid "link-reopen"
 msgstr "redeschide"
 
 #: templates/bits/answerEdit.tpl:72 templates/bits/commentForm.tpl:49
 #: templates/cannedResponse/edit.tpl:41 templates/cannedResponse/list.tpl:52
-#: templates/domain/edit.tpl:91 templates/entity/edit.tpl:266
+#: templates/domain/edit.tpl:91 templates/entity/edit.tpl:282
 #: templates/entityType/edit.tpl:103 templates/help/categoryEdit.tpl:75
 #: templates/help/categoryList.tpl:30 templates/help/pageEdit.tpl:79
 #: templates/invite/add.tpl:31 templates/region/edit.tpl:76
@@ -378,15 +378,20 @@ msgstr "alias"
 msgid "title-relations"
 msgstr "relații"
 
-#: templates/bits/entity.tpl:65
+#: templates/bits/entity.tpl:63 templates/region/view.tpl:3
+#: templates/region/view.tpl:7
+msgid "title-region"
+msgstr "regiune"
+
+#: templates/bits/entity.tpl:70
 msgid "title-profile"
 msgstr "profil"
 
-#: templates/bits/entity.tpl:74
+#: templates/bits/entity.tpl:79
 msgid "title-entity-links"
 msgstr "legături externe"
 
-#: templates/bits/entity.tpl:89
+#: templates/bits/entity.tpl:94
 msgid "title-members"
 msgstr "membri"
 
@@ -857,17 +862,17 @@ msgstr "valoare vizibilă"
 msgid "info-domain-display-value"
 msgstr "o valoare mai potrivită pentru oameni"
 
-#: templates/domain/edit.tpl:39 templates/entity/edit.tpl:209
+#: templates/domain/edit.tpl:39 templates/entity/edit.tpl:225
 #: templates/user/edit.tpl:59
 msgid "label-image"
 msgstr "imagine"
 
-#: templates/domain/edit.tpl:55 templates/entity/edit.tpl:219
+#: templates/domain/edit.tpl:55 templates/entity/edit.tpl:235
 #: templates/user/edit.tpl:69
 msgid "info-upload-image"
 msgstr "alegeți o imagine"
 
-#: templates/domain/edit.tpl:63 templates/entity/edit.tpl:227
+#: templates/domain/edit.tpl:63 templates/entity/edit.tpl:243
 #: templates/user/edit.tpl:77
 msgid "label-delete-image"
 msgstr "șterge imaginea"
@@ -1009,15 +1014,19 @@ msgstr "legături externe"
 msgid "link-add-entity-link"
 msgstr "adaugă o legătură"
 
-#: templates/entity/edit.tpl:198 templates/statement/edit.tpl:111
+#: templates/entity/edit.tpl:198 lib/model/RevisionEntity.php:36
+msgid "label-region"
+msgstr "regiune"
+
+#: templates/entity/edit.tpl:214 templates/statement/edit.tpl:111
 msgid "label-tags"
 msgstr "etichete"
 
-#: templates/entity/edit.tpl:247
+#: templates/entity/edit.tpl:263
 msgid "info-confirm-delete-entity"
 msgstr "Confirmați ștergerea acestui autor?"
 
-#: templates/entity/edit.tpl:258
+#: templates/entity/edit.tpl:274
 msgid "info-confirm-reopen-entity"
 msgstr "Confirmați redeschiderea acestui autor?"
 
@@ -1215,10 +1224,6 @@ msgstr "nomenclatura regiunilor"
 #: templates/region/list.tpl:28
 msgid "info-region-depth"
 msgstr "nivelul"
-
-#: templates/region/view.tpl:3 templates/region/view.tpl:7
-msgid "title-region"
-msgstr "regiune"
 
 #: templates/region/view.tpl:23
 msgid "title-entity-count-with-limit"
@@ -1805,12 +1810,12 @@ msgstr "deoarece este de slabă calitate."
 msgid "info-answer-by-owner"
 msgstr "de către autorul său."
 
-#: lib/model/Answer.php:66 lib/model/Comment.php:54 lib/model/Entity.php:142
+#: lib/model/Answer.php:66 lib/model/Comment.php:54 lib/model/Entity.php:146
 #: lib/model/Statement.php:125
 msgid "info-by"
 msgstr "de către"
 
-#: lib/model/Answer.php:67 lib/model/Comment.php:55 lib/model/Entity.php:143
+#: lib/model/Answer.php:67 lib/model/Comment.php:55 lib/model/Entity.php:147
 #: lib/model/Statement.php:126
 msgid "info-other-reason"
 msgstr "pentru alt motiv."
@@ -1916,65 +1921,65 @@ msgstr "deoarece nu mai este necesar."
 msgid "info-comment-length-limit-%d"
 msgstr "Comentariile pot avea maximum %d de caractere."
 
-#: lib/model/Entity.php:120
+#: lib/model/Entity.php:124
 msgid "status-entity-duplicate"
 msgstr "duplicat"
 
-#: lib/model/Entity.php:122
+#: lib/model/Entity.php:126
 msgid "status-entity-closed"
 msgstr "închis"
 
-#: lib/model/Entity.php:123
+#: lib/model/Entity.php:127
 msgid "status-entity-deleted"
 msgstr "șters"
 
-#: lib/model/Entity.php:132
+#: lib/model/Entity.php:136
 msgid "info-entity-closed"
 msgstr "Acest autor a fost închis"
 
-#: lib/model/Entity.php:133
+#: lib/model/Entity.php:137
 msgid "info-entity-deleted"
 msgstr "Acest autor a fost șters"
 
-#: lib/model/Entity.php:136
+#: lib/model/Entity.php:140
 msgid "info-entity-spam"
 msgstr "deoarece profilul său conține spam."
 
-#: lib/model/Entity.php:137
+#: lib/model/Entity.php:141
 msgid "info-entity-abuse"
 msgstr "deoarece profilul său conține insulte sau abuzuri."
 
-#: lib/model/Entity.php:138
+#: lib/model/Entity.php:142
 msgid "info-entity-duplicate-of"
 msgstr "ca duplicat al autorului"
 
-#: lib/model/Entity.php:139
+#: lib/model/Entity.php:143
 msgid "info-entity-off-topic"
 msgstr "deoarece este pe lîngă subiect."
 
-#: lib/model/Entity.php:140
+#: lib/model/Entity.php:144
 msgid "info-entity-unverifiable"
 msgstr "deoarece este neverificabil."
 
-#: lib/model/Entity.php:141
+#: lib/model/Entity.php:145
 msgid "info-entity-by-owner"
 msgstr "de către autorul său."
 
-#: lib/model/Entity.php:237
+#: lib/model/Entity.php:241
 #, php-format
 msgid "info-minimum-reputation-add-entity-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
-#: lib/model/Entity.php:245
+#: lib/model/Entity.php:249
 #, php-format
 msgid "info-minimum-reputation-edit-entity-%s"
 msgstr "Vă trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
-#: lib/model/Entity.php:250
+#: lib/model/Entity.php:254
 msgid "info-banned-add-entity"
 msgstr "Vă este interzisă adăugarea de autori."
 
-#: lib/model/Entity.php:254
+#: lib/model/Entity.php:258
 msgid "info-banned-edit-entity"
 msgstr "Vă este interzisă editarea de autori."
 
@@ -2258,7 +2263,7 @@ msgstr ""
 msgid "title-changes-contents"
 msgstr "modificări la conținut"
 
-#: lib/model/RevisionAnswer.php:19 lib/model/RevisionEntity.php:36
+#: lib/model/RevisionAnswer.php:19 lib/model/RevisionEntity.php:40
 #: lib/model/RevisionStatement.php:30
 msgid "label-status"
 msgstr "stare"
@@ -2279,51 +2284,51 @@ msgstr "tip"
 msgid "label-entity-color"
 msgstr "culoare"
 
-#: lib/model/RevisionEntity.php:40
+#: lib/model/RevisionEntity.php:44
 msgid "label-image-file"
 msgstr "fișier imagine"
 
-#: lib/model/RevisionEntity.php:50 lib/model/RevisionStatement.php:40
+#: lib/model/RevisionEntity.php:54 lib/model/RevisionStatement.php:40
 msgid "label-added-tags"
 msgstr "etichete adăugate"
 
-#: lib/model/RevisionEntity.php:56 lib/model/RevisionStatement.php:46
+#: lib/model/RevisionEntity.php:60 lib/model/RevisionStatement.php:46
 msgid "label-deleted-tags"
 msgstr "etichete șterse"
 
-#: lib/model/RevisionEntity.php:63
+#: lib/model/RevisionEntity.php:67
 msgid "label-added-aliases"
 msgstr "aliasuri adăugate"
 
-#: lib/model/RevisionEntity.php:69
+#: lib/model/RevisionEntity.php:73
 msgid "label-deleted-aliases"
 msgstr "aliasuri șterse"
 
-#: lib/model/RevisionEntity.php:77
+#: lib/model/RevisionEntity.php:81
 msgid "label-changed-alias"
 msgstr "alias modificat"
 
-#: lib/model/RevisionEntity.php:85
+#: lib/model/RevisionEntity.php:89
 msgid "label-added-entity-links"
 msgstr "legături adăugate"
 
-#: lib/model/RevisionEntity.php:91
+#: lib/model/RevisionEntity.php:95
 msgid "label-deleted-entity-links"
 msgstr "legături șterse"
 
-#: lib/model/RevisionEntity.php:99
+#: lib/model/RevisionEntity.php:103
 msgid "label-changed-entity-link"
 msgstr "legătură modificată"
 
-#: lib/model/RevisionEntity.php:107
+#: lib/model/RevisionEntity.php:111
 msgid "label-added-relations"
 msgstr "relații adăugate"
 
-#: lib/model/RevisionEntity.php:113
+#: lib/model/RevisionEntity.php:117
 msgid "label-deleted-relations"
 msgstr "relații șterse"
 
-#: lib/model/RevisionEntity.php:121
+#: lib/model/RevisionEntity.php:125
 msgid "label-changed-relation"
 msgstr "relație modificată"
 
@@ -2619,7 +2624,7 @@ msgstr "Nu puteți redeschide acest răspuns."
 msgid "info-confirm-answer-reopened"
 msgstr "Am redeschis răspunsul."
 
-#: routes/answer/edit.php:76 routes/entity/edit.php:98
+#: routes/answer/edit.php:76 routes/entity/edit.php:99
 #: routes/statement/edit.php:100
 msgid "info-changes-queued"
 msgstr "Modificările dumneavoastră au fost adăugate la coada de evaluare."
@@ -2780,9 +2785,9 @@ msgstr "Vă rugăm să salvați domeniul înainte de a-l clona."
 msgid "info-domain-saved"
 msgstr "Am salvat domeniul."
 
-#: routes/domain/edit.php:79 routes/entity/edit.php:142
+#: routes/domain/edit.php:79 routes/entity/edit.php:144
 #: routes/entityType/edit.php:57 routes/help/categoryEdit.php:67
-#: routes/region/edit.php:90 routes/relationType/edit.php:58
+#: routes/region/edit.php:86 routes/relationType/edit.php:58
 #: routes/staticResource/edit.php:49 routes/tag/edit.php:94
 msgid "info-must-enter-name"
 msgstr "Vă rugăm să introduceți un nume."
@@ -2811,34 +2816,34 @@ msgstr "Nu puteți redeschide acest autor."
 msgid "info-confirm-entity-reopened."
 msgstr "Am redeschis autorul."
 
-#: routes/entity/edit.php:94
+#: routes/entity/edit.php:95
 msgid "info-entity-added"
 msgstr "Am adăugat autorul."
 
-#: routes/entity/edit.php:101
+#: routes/entity/edit.php:102
 msgid "info-entity-updated"
 msgstr "Am salvat autorul."
 
-#: routes/entity/edit.php:106 routes/statement/edit.php:107
+#: routes/entity/edit.php:107 routes/statement/edit.php:107
 msgid "info-validation-error"
 msgstr "Formularul conține erori. Vă rugăm să le reparați mai jos."
 
-#: routes/entity/edit.php:146
+#: routes/entity/edit.php:148
 msgid "info-incorrect-entity-type"
 msgstr "Tip de autor incorect."
 
-#: routes/entity/edit.php:151
+#: routes/entity/edit.php:153
 #, php-format
 msgid "info-entity-profile-length-limit-%d"
 msgstr "Profilul autorului poate avea maximum %d de caractere."
 
-#: routes/entity/edit.php:173
+#: routes/entity/edit.php:175
 msgid "info-entity-type-change-invalidates-incoming-relations"
 msgstr ""
 "Nu pot schimba tipul acestui autor deoarece relațiile altor autori cu acesta "
 "ar deveni incorecte."
 
-#: routes/entity/edit.php:185
+#: routes/entity/edit.php:187
 msgid "info-invalid-entity-links"
 msgstr "Unele dintre legături sînt incorecte."
 
@@ -2990,7 +2995,7 @@ msgstr "Vă este interzisă gestionarea regiunilor."
 msgid "info-region-saved"
 msgstr "Am salvat regiunea."
 
-#: routes/region/edit.php:99
+#: routes/region/edit.php:95
 msgid "info-region-loop"
 msgstr "Nu puteți alege un descendent ca părinte."
 

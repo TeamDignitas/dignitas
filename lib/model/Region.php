@@ -29,6 +29,12 @@ class Region extends Proto {
     return "Region.{$depth}.{$locale}";
   }
 
+  static function loadAll() {
+    return Model::factory('Region')
+      ->order_by_asc('name')
+      ->find_many();
+  }
+
   // Returns an array of root regions with their $children fields populated
   static function loadTree() {
     $regions = Model::factory('Region')->order_by_asc('name')->find_many();

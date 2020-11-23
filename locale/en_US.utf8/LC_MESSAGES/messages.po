@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-11-23 15:18+0200\n"
-"PO-Revision-Date: 2020-11-23 15:19+0200\n"
+"POT-Creation-Date: 2020-11-23 15:43+0200\n"
+"PO-Revision-Date: 2020-11-23 15:43+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -44,7 +44,7 @@ msgid "title-dashboard"
 msgstr "dashboard"
 
 #: templates/aggregate/dashboard.tpl:17 templates/aggregate/index.tpl:28
-#: templates/bits/entity.tpl:108
+#: templates/bits/entity.tpl:113
 msgid "link-add-statement"
 msgstr "add a statement"
 
@@ -136,7 +136,7 @@ msgstr "edit answer"
 
 #: templates/answer/edit.tpl:16 templates/auth/resetPassword.tpl:46
 #: templates/bits/commentForm.tpl:44 templates/cannedResponse/edit.tpl:46
-#: templates/domain/edit.tpl:96 templates/entity/edit.tpl:271
+#: templates/domain/edit.tpl:96 templates/entity/edit.tpl:287
 #: templates/entityType/edit.tpl:108 templates/help/categoryEdit.tpl:80
 #: templates/help/pageEdit.tpl:74 templates/region/edit.tpl:68
 #: templates/region/list.tpl:45 templates/relation/edit.tpl:24
@@ -283,7 +283,7 @@ msgid "info-confirm-delete-answer"
 msgstr "Are you sure you want to delete this answer?"
 
 #: templates/bits/answerEdit.tpl:56 templates/cannedResponse/edit.tpl:35
-#: templates/domain/edit.tpl:78 templates/entity/edit.tpl:249
+#: templates/domain/edit.tpl:78 templates/entity/edit.tpl:265
 #: templates/entityType/edit.tpl:97 templates/help/categoryEdit.tpl:69
 #: templates/help/pageEdit.tpl:89 templates/region/edit.tpl:92
 #: templates/relationType/edit.tpl:136 templates/statement/edit.tpl:149
@@ -295,14 +295,14 @@ msgstr "delete"
 msgid "info-confirm-reopen-answer"
 msgstr "Are you sure you want to reopen this answer?"
 
-#: templates/bits/answerEdit.tpl:66 templates/entity/edit.tpl:259
+#: templates/bits/answerEdit.tpl:66 templates/entity/edit.tpl:275
 #: templates/statement/edit.tpl:159
 msgid "link-reopen"
 msgstr "reopen"
 
 #: templates/bits/answerEdit.tpl:72 templates/bits/commentForm.tpl:49
 #: templates/cannedResponse/edit.tpl:41 templates/cannedResponse/list.tpl:52
-#: templates/domain/edit.tpl:91 templates/entity/edit.tpl:266
+#: templates/domain/edit.tpl:91 templates/entity/edit.tpl:282
 #: templates/entityType/edit.tpl:103 templates/help/categoryEdit.tpl:75
 #: templates/help/categoryList.tpl:30 templates/help/pageEdit.tpl:79
 #: templates/invite/add.tpl:31 templates/region/edit.tpl:76
@@ -373,15 +373,20 @@ msgstr "also known as"
 msgid "title-relations"
 msgstr "relationships"
 
-#: templates/bits/entity.tpl:65
+#: templates/bits/entity.tpl:63 templates/region/view.tpl:3
+#: templates/region/view.tpl:7
+msgid "title-region"
+msgstr "region"
+
+#: templates/bits/entity.tpl:70
 msgid "title-profile"
 msgstr "profile"
 
-#: templates/bits/entity.tpl:74
+#: templates/bits/entity.tpl:79
 msgid "title-entity-links"
 msgstr "external links"
 
-#: templates/bits/entity.tpl:89
+#: templates/bits/entity.tpl:94
 msgid "title-members"
 msgstr "members"
 
@@ -850,17 +855,17 @@ msgstr "display value"
 msgid "info-domain-display-value"
 msgstr "a value more suitable for humans"
 
-#: templates/domain/edit.tpl:39 templates/entity/edit.tpl:209
+#: templates/domain/edit.tpl:39 templates/entity/edit.tpl:225
 #: templates/user/edit.tpl:59
 msgid "label-image"
 msgstr "image"
 
-#: templates/domain/edit.tpl:55 templates/entity/edit.tpl:219
+#: templates/domain/edit.tpl:55 templates/entity/edit.tpl:235
 #: templates/user/edit.tpl:69
 msgid "info-upload-image"
 msgstr "choose an image"
 
-#: templates/domain/edit.tpl:63 templates/entity/edit.tpl:227
+#: templates/domain/edit.tpl:63 templates/entity/edit.tpl:243
 #: templates/user/edit.tpl:77
 msgid "label-delete-image"
 msgstr "delete image"
@@ -999,15 +1004,19 @@ msgstr "external links"
 msgid "link-add-entity-link"
 msgstr "add a link"
 
-#: templates/entity/edit.tpl:198 templates/statement/edit.tpl:111
+#: templates/entity/edit.tpl:198 lib/model/RevisionEntity.php:36
+msgid "label-region"
+msgstr "region"
+
+#: templates/entity/edit.tpl:214 templates/statement/edit.tpl:111
 msgid "label-tags"
 msgstr "tags"
 
-#: templates/entity/edit.tpl:247
+#: templates/entity/edit.tpl:263
 msgid "info-confirm-delete-entity"
 msgstr "Are you sure you want to delete this author?"
 
-#: templates/entity/edit.tpl:258
+#: templates/entity/edit.tpl:274
 msgid "info-confirm-reopen-entity"
 msgstr "Are you sure you want to reopen this author?"
 
@@ -1206,10 +1215,6 @@ msgstr "region nomenclature"
 #: templates/region/list.tpl:28
 msgid "info-region-depth"
 msgstr "level"
-
-#: templates/region/view.tpl:3 templates/region/view.tpl:7
-msgid "title-region"
-msgstr "region"
 
 #: templates/region/view.tpl:23
 msgid "title-entity-count-with-limit"
@@ -1792,12 +1797,12 @@ msgstr "because it is low-quality."
 msgid "info-answer-by-owner"
 msgstr "by its author."
 
-#: lib/model/Answer.php:66 lib/model/Comment.php:54 lib/model/Entity.php:142
+#: lib/model/Answer.php:66 lib/model/Comment.php:54 lib/model/Entity.php:146
 #: lib/model/Statement.php:125
 msgid "info-by"
 msgstr "by"
 
-#: lib/model/Answer.php:67 lib/model/Comment.php:55 lib/model/Entity.php:143
+#: lib/model/Answer.php:67 lib/model/Comment.php:55 lib/model/Entity.php:147
 #: lib/model/Statement.php:126
 msgid "info-other-reason"
 msgstr "for other reasons."
@@ -1902,65 +1907,65 @@ msgstr "because it is no longer needed."
 msgid "info-comment-length-limit-%d"
 msgstr "Comments can be at most %d characters long."
 
-#: lib/model/Entity.php:120
+#: lib/model/Entity.php:124
 msgid "status-entity-duplicate"
 msgstr "duplicate"
 
-#: lib/model/Entity.php:122
+#: lib/model/Entity.php:126
 msgid "status-entity-closed"
 msgstr "closed"
 
-#: lib/model/Entity.php:123
+#: lib/model/Entity.php:127
 msgid "status-entity-deleted"
 msgstr "deleted"
 
-#: lib/model/Entity.php:132
+#: lib/model/Entity.php:136
 msgid "info-entity-closed"
 msgstr "This author was closed"
 
-#: lib/model/Entity.php:133
+#: lib/model/Entity.php:137
 msgid "info-entity-deleted"
 msgstr "This author was deleted"
 
-#: lib/model/Entity.php:136
+#: lib/model/Entity.php:140
 msgid "info-entity-spam"
 msgstr "because its profile contains spam."
 
-#: lib/model/Entity.php:137
+#: lib/model/Entity.php:141
 msgid "info-entity-abuse"
 msgstr "because its profile contains insults or abuse."
 
-#: lib/model/Entity.php:138
+#: lib/model/Entity.php:142
 msgid "info-entity-duplicate-of"
 msgstr "as a duplicate of the author"
 
-#: lib/model/Entity.php:139
+#: lib/model/Entity.php:143
 msgid "info-entity-off-topic"
 msgstr "because it is off-topic."
 
-#: lib/model/Entity.php:140
+#: lib/model/Entity.php:144
 msgid "info-entity-unverifiable"
 msgstr "because it is unverifiable."
 
-#: lib/model/Entity.php:141
+#: lib/model/Entity.php:145
 msgid "info-entity-by-owner"
 msgstr "by the user who added it."
 
-#: lib/model/Entity.php:237
+#: lib/model/Entity.php:241
 #, php-format
 msgid "info-minimum-reputation-add-entity-%s"
 msgstr "You need at least %s reputation to add authors."
 
-#: lib/model/Entity.php:245
+#: lib/model/Entity.php:249
 #, php-format
 msgid "info-minimum-reputation-edit-entity-%s"
 msgstr "You need at least %s reputation to edit authors."
 
-#: lib/model/Entity.php:250
+#: lib/model/Entity.php:254
 msgid "info-banned-add-entity"
 msgstr "You are banned from adding authors."
 
-#: lib/model/Entity.php:254
+#: lib/model/Entity.php:258
 msgid "info-banned-edit-entity"
 msgstr "You are banned from editing authors."
 
@@ -2242,7 +2247,7 @@ msgstr "The post was added to the reopen queue and will be evaluated soon."
 msgid "title-changes-contents"
 msgstr "changes to contents"
 
-#: lib/model/RevisionAnswer.php:19 lib/model/RevisionEntity.php:36
+#: lib/model/RevisionAnswer.php:19 lib/model/RevisionEntity.php:40
 #: lib/model/RevisionStatement.php:30
 msgid "label-status"
 msgstr "status"
@@ -2263,51 +2268,51 @@ msgstr "type"
 msgid "label-entity-color"
 msgstr "color"
 
-#: lib/model/RevisionEntity.php:40
+#: lib/model/RevisionEntity.php:44
 msgid "label-image-file"
 msgstr "image file"
 
-#: lib/model/RevisionEntity.php:50 lib/model/RevisionStatement.php:40
+#: lib/model/RevisionEntity.php:54 lib/model/RevisionStatement.php:40
 msgid "label-added-tags"
 msgstr "added tags"
 
-#: lib/model/RevisionEntity.php:56 lib/model/RevisionStatement.php:46
+#: lib/model/RevisionEntity.php:60 lib/model/RevisionStatement.php:46
 msgid "label-deleted-tags"
 msgstr "deleted tags"
 
-#: lib/model/RevisionEntity.php:63
+#: lib/model/RevisionEntity.php:67
 msgid "label-added-aliases"
 msgstr "added aliases"
 
-#: lib/model/RevisionEntity.php:69
+#: lib/model/RevisionEntity.php:73
 msgid "label-deleted-aliases"
 msgstr "deleted aliases"
 
-#: lib/model/RevisionEntity.php:77
+#: lib/model/RevisionEntity.php:81
 msgid "label-changed-alias"
 msgstr "changed alias"
 
-#: lib/model/RevisionEntity.php:85
+#: lib/model/RevisionEntity.php:89
 msgid "label-added-entity-links"
 msgstr "added links"
 
-#: lib/model/RevisionEntity.php:91
+#: lib/model/RevisionEntity.php:95
 msgid "label-deleted-entity-links"
 msgstr "deleted links"
 
-#: lib/model/RevisionEntity.php:99
+#: lib/model/RevisionEntity.php:103
 msgid "label-changed-entity-link"
 msgstr "changed link"
 
-#: lib/model/RevisionEntity.php:107
+#: lib/model/RevisionEntity.php:111
 msgid "label-added-relations"
 msgstr "added relationships"
 
-#: lib/model/RevisionEntity.php:113
+#: lib/model/RevisionEntity.php:117
 msgid "label-deleted-relations"
 msgstr "deleted relationships"
 
-#: lib/model/RevisionEntity.php:121
+#: lib/model/RevisionEntity.php:125
 msgid "label-changed-relation"
 msgstr "changed relationship"
 
@@ -2597,7 +2602,7 @@ msgstr "You cannot reopen this answer."
 msgid "info-confirm-answer-reopened"
 msgstr "Answer reopened."
 
-#: routes/answer/edit.php:76 routes/entity/edit.php:98
+#: routes/answer/edit.php:76 routes/entity/edit.php:99
 #: routes/statement/edit.php:100
 msgid "info-changes-queued"
 msgstr "Your changes were placed in the review queue."
@@ -2754,9 +2759,9 @@ msgstr "Please save the domain before cloning it."
 msgid "info-domain-saved"
 msgstr "Domain saved."
 
-#: routes/domain/edit.php:79 routes/entity/edit.php:142
+#: routes/domain/edit.php:79 routes/entity/edit.php:144
 #: routes/entityType/edit.php:57 routes/help/categoryEdit.php:67
-#: routes/region/edit.php:90 routes/relationType/edit.php:58
+#: routes/region/edit.php:86 routes/relationType/edit.php:58
 #: routes/staticResource/edit.php:49 routes/tag/edit.php:94
 msgid "info-must-enter-name"
 msgstr "Please enter a name."
@@ -2785,34 +2790,34 @@ msgstr "You cannot reopen this author."
 msgid "info-confirm-entity-reopened."
 msgstr "Author reopened."
 
-#: routes/entity/edit.php:94
+#: routes/entity/edit.php:95
 msgid "info-entity-added"
 msgstr "Author added."
 
-#: routes/entity/edit.php:101
+#: routes/entity/edit.php:102
 msgid "info-entity-updated"
 msgstr "Author updated."
 
-#: routes/entity/edit.php:106 routes/statement/edit.php:107
+#: routes/entity/edit.php:107 routes/statement/edit.php:107
 msgid "info-validation-error"
 msgstr "There are some errors in the data. Please fix them below."
 
-#: routes/entity/edit.php:146
+#: routes/entity/edit.php:148
 msgid "info-incorrect-entity-type"
 msgstr "Incorrect entity type."
 
-#: routes/entity/edit.php:151
+#: routes/entity/edit.php:153
 #, php-format
 msgid "info-entity-profile-length-limit-%d"
 msgstr "Author profiles can be at most %d characters long."
 
-#: routes/entity/edit.php:173
+#: routes/entity/edit.php:175
 msgid "info-entity-type-change-invalidates-incoming-relations"
 msgstr ""
 "Cannot change this author's type because other authors' relationships to "
 "this one would become invalid."
 
-#: routes/entity/edit.php:185
+#: routes/entity/edit.php:187
 msgid "info-invalid-entity-links"
 msgstr "Some links are invalid."
 
@@ -2961,7 +2966,7 @@ msgstr "You are banned from managing regions."
 msgid "info-region-saved"
 msgstr "Region saved."
 
-#: routes/region/edit.php:99
+#: routes/region/edit.php:95
 msgid "info-region-loop"
 msgstr "You cannot select a descendant as the parent."
 

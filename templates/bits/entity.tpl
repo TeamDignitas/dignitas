@@ -59,6 +59,11 @@
       {/foreach}
     </ul>
 
+    {if $entity->regionId}
+      <h6 class="font-weight-bold capitalize-first-word mt-4">{t}title-region{/t}</h6>
+      {include "bits/regionAncestors.tpl" region=$entity->getRegion() link=true}
+    {/if}
+
     {include "bits/loyalty.tpl" data=$entity->getLoyalties()}
 
     {if $entity->profile}

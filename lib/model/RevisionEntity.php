@@ -33,6 +33,10 @@ class RevisionEntity extends Entity {
                         $prev->getColor(),
                         $this->getColor(),
                         $od, Ct::FIELD_CHANGE_COLOR);
+    $this->compareField(_('label-region'),
+                        $prev->getRegion()->name ?? '',
+                        $this->getRegion()->name ?? '',
+                        $od, Ct::FIELD_CHANGE_STRING);
     $this->compareField(_('label-status'),
                         $prev->getStatusName(),
                         $this->getStatusName(),
