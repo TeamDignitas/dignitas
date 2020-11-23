@@ -111,6 +111,17 @@
           </a>
         </div>
       </div>
+
+      <div class="col-12 col-sm-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
+        <div class="card-body">
+          <h3 class="card-title">
+            <i class="icon icon-map-signs"></i>
+          </h3>
+          <a href="{Router::link('region/list')}" class="stretched-link">
+            {t}link-regions{/t}
+          </a>
+        </div>
+      </div>
     </div>
 
     {if User::may(User::PRIV_REVIEW) && !empty($activeReviewReasons)}

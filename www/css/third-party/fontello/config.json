@@ -323,6 +323,12 @@
       "css": "thumbs-down-alt",
       "code": 61797,
       "src": "fontawesome"
+    },
+    {
+      "uid": "94aa5db477515f1da4ce43b239badb9e",
+      "css": "map-signs",
+      "code": 62071,
+      "src": "fontawesome"
     }
   ]
 }

@@ -217,6 +217,20 @@ class Router {
       'en_US.utf8' => 'notificari',
     ],
 
+    // regions
+    'region/edit' => [
+      'en_US.utf8' => 'edit-region',
+      'ro_RO.utf8' => 'editeaza-regiune',
+    ],
+    'region/list' => [
+      'en_US.utf8' => 'regions',
+      'ro_RO.utf8' => 'regiuni',
+    ],
+    'region/view' => [
+      'en_US.utf8' => 'region',
+      'ro_RO.utf8' => 'regiune',
+    ],
+
     // relations
     'relation/edit' => [
       'en_US.utf8' => 'edit-relation',
@@ -357,6 +371,8 @@ class Router {
     'help/index' => [ 'path' ],
     'help/pageEdit' => [ 'id' ],
     'help/pageHistory' => [ 'id' ],
+    'region/edit' => [ 'id' ],
+    'region/view' => [ 'id' ],
     'relation/edit' => [ 'id', ],
     'relationType/edit' => [ 'id' ],
     'review/view' => [ 'reason', 'reviewId', ],

@@ -54,3 +54,11 @@ create trigger region_before_delete
     insert into revision_region
     select null, "delete", @request_id, region.* from region
     where region.id = OLD.id;
+
+alter table entity
+  add regionId int not null default 0 after profile,
+  add key(regionId);
+
+alter table revision_entity
+  add regionId int not null default 0 after profile,
+  add key(regionId);

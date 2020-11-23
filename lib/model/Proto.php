@@ -24,6 +24,7 @@ class Proto extends Precursor {
   const TYPE_RELATION_TYPE = 10;
   const TYPE_STATIC_RESOURCE = 11;
   const TYPE_TAG = 12;
+  const TYPE_REGION = 13;
 
   function getModUser() {
     return User::get_by_id($this->modUserId);
@@ -113,6 +114,8 @@ class Proto extends Precursor {
         return Comment::get_by_id($objectId);
       case self::TYPE_TAG:
         return Tag::get_by_id($objectId);
+      case self::TYPE_REGION:
+        return Region::get_by_id($objectId);
       default:
         return null;
     }
