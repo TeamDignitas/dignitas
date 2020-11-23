@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-11-02 16:30+0200\n"
-"PO-Revision-Date: 2020-11-02 16:30+0200\n"
+"POT-Creation-Date: 2020-11-23 13:52+0200\n"
+"PO-Revision-Date: 2020-11-23 13:53+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -80,15 +80,19 @@ msgstr "static resources"
 msgid "link-tags"
 msgstr "tags"
 
-#: templates/aggregate/dashboard.tpl:117
+#: templates/aggregate/dashboard.tpl:121
+msgid "link-regions"
+msgstr "regions"
+
+#: templates/aggregate/dashboard.tpl:128
 msgid "title-review-queues"
 msgstr "review queues"
 
-#: templates/aggregate/dashboard.tpl:132
+#: templates/aggregate/dashboard.tpl:143
 msgid "title-reports"
 msgstr "reports in need of attention"
 
-#: templates/aggregate/dashboard.tpl:137
+#: templates/aggregate/dashboard.tpl:148
 msgid "link-verdict-report"
 msgstr "statements with unclear verdicts"
 
@@ -131,13 +135,14 @@ msgid "title-edit-answer"
 msgstr "edit answer"
 
 #: templates/answer/edit.tpl:16 templates/auth/resetPassword.tpl:46
-#: templates/bits/commentForm.tpl:44 templates/cannedResponse/edit.tpl:30
-#: templates/domain/edit.tpl:73 templates/entity/edit.tpl:243
-#: templates/entityType/edit.tpl:92 templates/help/categoryEdit.tpl:64
-#: templates/help/pageEdit.tpl:74 templates/relation/edit.tpl:24
-#: templates/relationType/edit.tpl:131 templates/statement/edit.tpl:142
-#: templates/staticResource/edit.tpl:81 templates/tag/edit.tpl:155
-#: templates/user/ban.tpl:54 templates/user/edit.tpl:128
+#: templates/bits/commentForm.tpl:44 templates/cannedResponse/edit.tpl:46
+#: templates/domain/edit.tpl:96 templates/entity/edit.tpl:271
+#: templates/entityType/edit.tpl:108 templates/help/categoryEdit.tpl:80
+#: templates/help/pageEdit.tpl:74 templates/region/edit.tpl:68
+#: templates/relation/edit.tpl:24 templates/relationType/edit.tpl:147
+#: templates/statement/edit.tpl:171 templates/staticResource/edit.tpl:81
+#: templates/tag/edit.tpl:155 templates/user/ban.tpl:59
+#: templates/user/edit.tpl:133
 msgid "link-save"
 msgstr "save"
 
@@ -182,7 +187,7 @@ msgid "info-password-recovery-process"
 msgstr ""
 "Enter your email address and we will send you a link to reset your password."
 
-#: templates/auth/lostPassword.tpl:39 templates/invite/add.tpl:31
+#: templates/auth/lostPassword.tpl:39 templates/invite/add.tpl:36
 msgid "link-send"
 msgstr "send"
 
@@ -264,7 +269,7 @@ msgstr "permanent link to this answer"
 
 #: templates/bits/answerEdit.tpl:19 templates/bits/statement.tpl:153
 #: templates/bits/statementFilters.tpl:43 templates/bits/statementList.tpl:35
-#: templates/statement/edit.tpl:122 lib/model/RevisionAnswer.php:15
+#: templates/statement/edit.tpl:123 lib/model/RevisionAnswer.php:15
 #: lib/model/RevisionStatement.php:18
 msgid "label-verdict"
 msgstr "verdict"
@@ -273,40 +278,40 @@ msgstr "verdict"
 msgid "link-verdict-details"
 msgstr "details about verdicts and their effects"
 
-#: templates/bits/answerEdit.tpl:56 templates/bits/commentForm.tpl:49
-#: templates/cannedResponse/edit.tpl:35 templates/cannedResponse/list.tpl:56
-#: templates/domain/edit.tpl:85 templates/entity/edit.tpl:248
-#: templates/entityType/edit.tpl:97 templates/help/categoryEdit.tpl:69
-#: templates/help/categoryList.tpl:34 templates/help/pageEdit.tpl:79
-#: templates/invite/add.tpl:36 templates/relation/edit.tpl:29
-#: templates/relationType/edit.tpl:136 templates/relationType/list.tpl:66
-#: templates/statement/edit.tpl:147 templates/staticResource/edit.tpl:86
-#: templates/tag/edit.tpl:161 templates/user/ban.tpl:59
-#: templates/user/edit.tpl:133
-msgid "link-cancel"
-msgstr "cancel"
-
-#: templates/bits/answerEdit.tpl:64
+#: templates/bits/answerEdit.tpl:54
 msgid "info-confirm-delete-answer"
 msgstr "Are you sure you want to delete this answer?"
 
-#: templates/bits/answerEdit.tpl:66 templates/cannedResponse/edit.tpl:45
-#: templates/domain/edit.tpl:95 templates/entity/edit.tpl:259
-#: templates/entityType/edit.tpl:107 templates/help/categoryEdit.tpl:79
-#: templates/help/pageEdit.tpl:89 templates/relationType/edit.tpl:146
-#: templates/statement/edit.tpl:158 templates/staticResource/edit.tpl:96
-#: templates/tag/edit.tpl:177
+#: templates/bits/answerEdit.tpl:56 templates/cannedResponse/edit.tpl:35
+#: templates/domain/edit.tpl:78 templates/entity/edit.tpl:249
+#: templates/entityType/edit.tpl:97 templates/help/categoryEdit.tpl:69
+#: templates/help/pageEdit.tpl:89 templates/region/edit.tpl:92
+#: templates/relationType/edit.tpl:136 templates/statement/edit.tpl:149
+#: templates/staticResource/edit.tpl:96 templates/tag/edit.tpl:177
 msgid "link-delete"
 msgstr "delete"
 
-#: templates/bits/answerEdit.tpl:75
+#: templates/bits/answerEdit.tpl:65
 msgid "info-confirm-reopen-answer"
 msgstr "Are you sure you want to reopen this answer?"
 
-#: templates/bits/answerEdit.tpl:76 templates/entity/edit.tpl:269
-#: templates/statement/edit.tpl:168
+#: templates/bits/answerEdit.tpl:66 templates/entity/edit.tpl:259
+#: templates/statement/edit.tpl:159
 msgid "link-reopen"
 msgstr "reopen"
+
+#: templates/bits/answerEdit.tpl:72 templates/bits/commentForm.tpl:49
+#: templates/cannedResponse/edit.tpl:41 templates/cannedResponse/list.tpl:52
+#: templates/domain/edit.tpl:91 templates/entity/edit.tpl:266
+#: templates/entityType/edit.tpl:103 templates/help/categoryEdit.tpl:75
+#: templates/help/categoryList.tpl:30 templates/help/pageEdit.tpl:79
+#: templates/invite/add.tpl:31 templates/region/edit.tpl:76
+#: templates/relation/edit.tpl:29 templates/relationType/edit.tpl:142
+#: templates/relationType/list.tpl:66 templates/statement/edit.tpl:166
+#: templates/staticResource/edit.tpl:86 templates/tag/edit.tpl:161
+#: templates/user/ban.tpl:54 templates/user/edit.tpl:128
+msgid "link-cancel"
+msgstr "cancel"
 
 #: templates/bits/comment.tpl:22
 msgid "info-comment-permalink"
@@ -350,9 +355,9 @@ msgstr[1] "%1 identical lines skipped"
 #: templates/bits/editButton.tpl:10 templates/bits/reviewActions.tpl:29
 #: templates/cannedResponse/list.tpl:39 templates/domain/list.tpl:34
 #: templates/entityType/list.tpl:51 templates/help/categoryView.tpl:39
-#: templates/help/pageView.tpl:35 templates/relationType/list.tpl:46
-#: templates/staticResource/list.tpl:42 templates/tag/view.tpl:15
-#: templates/user/view.tpl:86
+#: templates/help/pageView.tpl:35 templates/region/view.tpl:15
+#: templates/relationType/list.tpl:46 templates/staticResource/list.tpl:42
+#: templates/tag/view.tpl:15 templates/user/view.tpl:94
 msgid "link-edit"
 msgstr "edit"
 
@@ -791,7 +796,7 @@ msgstr "edit canned response"
 msgid "label-contents"
 msgstr "contents"
 
-#: templates/cannedResponse/edit.tpl:43
+#: templates/cannedResponse/edit.tpl:33
 msgid "info-confirm-delete-canned-response"
 msgstr "Are you sure you want to delete this canned response?"
 
@@ -815,7 +820,7 @@ msgstr "comment text"
 msgid "title-actions"
 msgstr "actions"
 
-#: templates/cannedResponse/list.tpl:52 templates/help/categoryList.tpl:30
+#: templates/cannedResponse/list.tpl:56 templates/help/categoryList.tpl:35
 #: templates/relationType/list.tpl:60
 msgid "link-save-order"
 msgstr "save order"
@@ -827,9 +832,9 @@ msgstr "edit domain"
 #: templates/domain/edit.tpl:14 templates/domain/list.tpl:19
 #: templates/entity/edit.tpl:29 templates/entityType/edit.tpl:14
 #: templates/entityType/list.tpl:18 templates/help/categoryEdit.tpl:14
-#: templates/relationType/edit.tpl:13 templates/relationType/list.tpl:26
-#: templates/staticResource/edit.tpl:14 templates/staticResource/list.tpl:18
-#: templates/tag/edit.tpl:25
+#: templates/region/edit.tpl:24 templates/relationType/edit.tpl:13
+#: templates/relationType/list.tpl:26 templates/staticResource/edit.tpl:14
+#: templates/staticResource/list.tpl:18 templates/tag/edit.tpl:25
 msgid "label-name"
 msgstr "name"
 
@@ -860,13 +865,13 @@ msgstr "choose an image"
 msgid "label-delete-image"
 msgstr "delete image"
 
-#: templates/domain/edit.tpl:79
-msgid "link-clone"
-msgstr "clone"
-
-#: templates/domain/edit.tpl:93
+#: templates/domain/edit.tpl:76
 msgid "info-confirm-delete-domain"
 msgstr "Are you sure you want to delete this domain?"
+
+#: templates/domain/edit.tpl:85
+msgid "link-clone"
+msgstr "clone"
 
 #: templates/domain/list.tpl:3 templates/domain/list.tpl:7
 msgid "title-domains"
@@ -994,15 +999,15 @@ msgstr "external links"
 msgid "link-add-entity-link"
 msgstr "add a link"
 
-#: templates/entity/edit.tpl:198 templates/statement/edit.tpl:110
+#: templates/entity/edit.tpl:198 templates/statement/edit.tpl:111
 msgid "label-tags"
 msgstr "tags"
 
-#: templates/entity/edit.tpl:257
+#: templates/entity/edit.tpl:247
 msgid "info-confirm-delete-entity"
 msgstr "Are you sure you want to delete this author?"
 
-#: templates/entity/edit.tpl:268
+#: templates/entity/edit.tpl:258
 msgid "info-confirm-reopen-entity"
 msgstr "Are you sure you want to reopen this author?"
 
@@ -1056,7 +1061,7 @@ msgstr "default"
 msgid "info-is-default"
 msgstr "Show this type by default for newly created authors."
 
-#: templates/entityType/edit.tpl:105
+#: templates/entityType/edit.tpl:95
 msgid "info-confirm-delete-entity-type"
 msgstr "Are you sure you want to delete this author type?"
 
@@ -1084,7 +1089,7 @@ msgstr "visible in the category's URL"
 msgid "title-help-pages-in-category"
 msgstr "pages in this category"
 
-#: templates/help/categoryEdit.tpl:77
+#: templates/help/categoryEdit.tpl:67
 msgid "info-confirm-delete-help-category"
 msgstr "Are you sure you want to delete this category?"
 
@@ -1156,6 +1161,56 @@ msgstr "accepted by"
 msgid "title-notifications"
 msgstr "notifications"
 
+#: templates/region/edit.tpl:5
+msgid "title-edit-region"
+msgstr "edit region"
+
+#: templates/region/edit.tpl:7
+msgid "title-add-region"
+msgstr "add a region"
+
+#: templates/region/edit.tpl:40
+msgid "label-parent-region"
+msgstr "parent region"
+
+#: templates/region/edit.tpl:85
+msgid "info-confirm-delete-region"
+msgstr "Are you sure you want to delete this region?"
+
+#: templates/region/edit.tpl:88 routes/region/edit.php:30
+msgid "info-cannot-delete-region"
+msgstr ""
+"Cannot delete this region because (1) it has descendants or (2) it is being "
+"used."
+
+#: templates/region/edit.tpl:99 templates/tag/edit.tpl:184
+msgid "title-direct-descendants"
+msgstr "direct descendants"
+
+#: templates/region/edit.tpl:109
+msgid "title-duplicate-regions"
+msgstr "duplicate regions"
+
+#: templates/region/list.tpl:3 templates/region/list.tpl:7
+msgid "title-regions"
+msgstr "regions"
+
+#: templates/region/list.tpl:12
+msgid "link-add-region"
+msgstr "add a region"
+
+#: templates/region/view.tpl:3 templates/region/view.tpl:7
+msgid "title-region"
+msgstr "region"
+
+#: templates/region/view.tpl:23
+msgid "title-entity-count-with-limit"
+msgstr "entities (%1 of %2 shown)"
+
+#: templates/region/view.tpl:25
+msgid "title-entity-count"
+msgstr "entities (%1)"
+
 #: templates/relation/edit.tpl:3 templates/relation/edit.tpl:7
 msgid "title-edit-relation"
 msgstr "edit relationship"
@@ -1214,7 +1269,7 @@ msgstr "membership relationship"
 msgid "info-relation-type-membership"
 msgstr "Membership relations are listed on the target author page."
 
-#: templates/relationType/edit.tpl:144
+#: templates/relationType/edit.tpl:134
 msgid "info-confirm-delete-relation-type"
 msgstr "Are you sure you want to delete this relationship type?"
 
@@ -1288,31 +1343,31 @@ msgstr "Author not found? You can <a href=\"%1\">add an author</a> first."
 msgid "label-statement-date"
 msgstr "statement date"
 
-#: templates/statement/edit.tpl:64
+#: templates/statement/edit.tpl:65
 msgid "label-summary"
 msgstr "summary"
 
-#: templates/statement/edit.tpl:76
+#: templates/statement/edit.tpl:77
 msgid "label-context"
 msgstr "context"
 
-#: templates/statement/edit.tpl:90
+#: templates/statement/edit.tpl:91
 msgid "label-goal"
 msgstr "goal"
 
-#: templates/statement/edit.tpl:101
+#: templates/statement/edit.tpl:102
 msgid "label-statement-links"
 msgstr "sources"
 
-#: templates/statement/edit.tpl:102
+#: templates/statement/edit.tpl:103
 msgid "link-add-statement-link"
 msgstr "add a source"
 
-#: templates/statement/edit.tpl:156
+#: templates/statement/edit.tpl:147
 msgid "info-confirm-delete-statement"
 msgstr "Are you sure you want to delete this statement?"
 
-#: templates/statement/edit.tpl:167
+#: templates/statement/edit.tpl:158
 msgid "info-confirm-reopen-statement"
 msgstr "Are you sure you want to reopen this statement?"
 
@@ -1438,10 +1493,6 @@ msgid "info-cannot-delete-tag"
 msgstr ""
 "Cannot delete this tag because (1) it has descendants or (2) it is being "
 "used."
-
-#: templates/tag/edit.tpl:184
-msgid "title-direct-descendants"
-msgstr "direct descendants"
 
 #: templates/tag/edit.tpl:192
 msgid "title-duplicate-tags"
@@ -1587,7 +1638,7 @@ msgstr "permanent"
 msgid "label-ban-until"
 msgstr "until"
 
-#: templates/user/view.tpl:94
+#: templates/user/view.tpl:87
 msgid "link-ban"
 msgstr "ban..."
 
@@ -1811,8 +1862,8 @@ msgid "ban-comment"
 msgstr "commenting"
 
 #: lib/model/Ban.php:40
-msgid "ban-tag"
-msgstr "tags"
+msgid "ban-tag-region"
+msgstr "tags and regions"
 
 #: lib/model/Ban.php:41
 msgid "ban-review"
@@ -2350,84 +2401,84 @@ msgstr "You are banned from adding statements."
 msgid "info-banned-edit-statement"
 msgstr "You are banned from editing statements."
 
-#: lib/model/User.php:202 routes/auth/login.php:61
+#: lib/model/User.php:203 routes/auth/login.php:61
 #: routes/auth/lostPassword.php:49 routes/invite/add.php:42
 msgid "info-must-enter-email"
 msgstr "Please enter an email address."
 
-#: lib/model/User.php:207
+#: lib/model/User.php:208
 msgid "info-email-taken"
 msgstr "This email address is already taken."
 
-#: lib/model/User.php:211 routes/auth/lostPassword.php:51
+#: lib/model/User.php:212 routes/auth/lostPassword.php:51
 #: routes/invite/add.php:44
 msgid "info-incorrect-email"
 msgstr "This email address looks incorrect."
 
-#: lib/model/User.php:221
+#: lib/model/User.php:222
 msgid "info-nickname-syntax"
 msgstr ""
 "Your nickname must begin with a letter or digit and consist of 3 to 30 "
 "letters, digits and punctuation from among -_."
 
-#: lib/model/User.php:226
+#: lib/model/User.php:227
 msgid "info-nickname-taken"
 msgstr "This nickname is already taken."
 
-#: lib/model/User.php:235 routes/auth/login.php:65
+#: lib/model/User.php:236 routes/auth/login.php:65
 msgid "info-must-enter-password"
 msgstr "Please enter a password."
 
-#: lib/model/User.php:237
+#: lib/model/User.php:238
 msgid "info-must-enter-password-2"
 msgstr "Please enter your password twice to prevent typos."
 
-#: lib/model/User.php:239
+#: lib/model/User.php:240
 msgid "info-password-mismatch"
 msgstr "Passwords don't match."
 
-#: lib/model/User.php:241
+#: lib/model/User.php:242
 msgid "info-password-length"
 msgstr "Your password must be at least 8 characters long."
 
-#: lib/model/User.php:265
+#: lib/model/User.php:266
 #, php-format
 msgid "info-minimum-reputation-%s"
 msgstr "You need at least %s reputation to perform this action."
 
-#: lib/model/User.php:279
+#: lib/model/User.php:280
 msgid "info-moderator-only"
 msgstr "Only moderators may perform this action."
 
-#: lib/model/User.php:297
+#: lib/model/User.php:298
 #, php-format
 msgid "info-minimum-reputation-flag-%s"
 msgstr "You need at least %s reputation to flag."
 
-#: lib/model/User.php:302
+#: lib/model/User.php:303
 msgid "info-banned-flag"
 msgstr "You are banned from flagging."
 
-#: lib/model/User.php:309
+#: lib/model/User.php:310
 #, php-format
 msgid "info-flag-limit-singular"
 msgid_plural "info-flag-limit-plural-%d"
 msgstr[0] "You can use at most one flag every 24 hours."
 msgstr[1] "You can use at most %d flags every 24 hours."
 
-#: lib/model/User.php:316
+#: lib/model/User.php:317
 msgid "info-flag-no-object"
 msgstr "Cannot flag: object does not exist."
 
-#: lib/model/User.php:321
+#: lib/model/User.php:322
 msgid "info-already-flagged"
 msgstr "You already have a pending flag for this object."
 
-#: lib/model/User.php:349
+#: lib/model/User.php:350
 msgid "info-banned-comment"
 msgstr "You are banned from commenting."
 
-#: lib/model/User.php:370
+#: lib/model/User.php:371
 #, php-format
 msgid "info-minimum-reputation-comment-%s"
 msgstr "You need at least %s reputation to comment."
@@ -2538,7 +2589,7 @@ msgstr "You cannot reopen this answer."
 msgid "info-confirm-answer-reopened"
 msgstr "Answer reopened."
 
-#: routes/answer/edit.php:76 routes/entity/edit.php:102
+#: routes/answer/edit.php:76 routes/entity/edit.php:98
 #: routes/statement/edit.php:100
 msgid "info-changes-queued"
 msgstr "Your changes were placed in the review queue."
@@ -2695,10 +2746,10 @@ msgstr "Please save the domain before cloning it."
 msgid "info-domain-saved"
 msgstr "Domain saved."
 
-#: routes/domain/edit.php:79 routes/entity/edit.php:146
+#: routes/domain/edit.php:79 routes/entity/edit.php:142
 #: routes/entityType/edit.php:57 routes/help/categoryEdit.php:67
-#: routes/relationType/edit.php:58 routes/staticResource/edit.php:49
-#: routes/tag/edit.php:94
+#: routes/region/edit.php:85 routes/relationType/edit.php:58
+#: routes/staticResource/edit.php:49 routes/tag/edit.php:94
 msgid "info-must-enter-name"
 msgstr "Please enter a name."
 
@@ -2726,34 +2777,34 @@ msgstr "You cannot reopen this author."
 msgid "info-confirm-entity-reopened."
 msgstr "Author reopened."
 
-#: routes/entity/edit.php:98
+#: routes/entity/edit.php:94
 msgid "info-entity-added"
 msgstr "Author added."
 
-#: routes/entity/edit.php:105
+#: routes/entity/edit.php:101
 msgid "info-entity-updated"
 msgstr "Author updated."
 
-#: routes/entity/edit.php:110 routes/statement/edit.php:107
+#: routes/entity/edit.php:106 routes/statement/edit.php:107
 msgid "info-validation-error"
 msgstr "There are some errors in the data. Please fix them below."
 
-#: routes/entity/edit.php:150
+#: routes/entity/edit.php:146
 msgid "info-incorrect-entity-type"
 msgstr "Incorrect entity type."
 
-#: routes/entity/edit.php:155
+#: routes/entity/edit.php:151
 #, php-format
 msgid "info-entity-profile-length-limit-%d"
 msgstr "Author profiles can be at most %d characters long."
 
-#: routes/entity/edit.php:177
+#: routes/entity/edit.php:173
 msgid "info-entity-type-change-invalidates-incoming-relations"
 msgstr ""
 "Cannot change this author's type because other authors' relationships to "
 "this one would become invalid."
 
-#: routes/entity/edit.php:189
+#: routes/entity/edit.php:185
 msgid "info-invalid-entity-links"
 msgstr "Some links are invalid."
 
@@ -2888,6 +2939,27 @@ msgstr "An invite was already sent to this email address."
 #: routes/invite/add.php:64
 msgid "email-subject-invite"
 msgstr "Invitation to Dignitas"
+
+#: routes/region/edit.php:25
+#, php-format
+msgid "region-deleted-%s"
+msgstr "Region [%s] deleted."
+
+#: routes/region/edit.php:38
+msgid "info-banned-region"
+msgstr "You are banned from managing regions."
+
+#: routes/region/edit.php:54
+msgid "info-region-saved"
+msgstr "Region saved."
+
+#: routes/region/edit.php:94
+msgid "info-region-loop"
+msgstr "You cannot select a descendant as the parent."
+
+#: routes/region/view.php:10
+msgid "info-no-such-region"
+msgstr "The region you are looking for does not exist."
 
 #: routes/relation/edit.php:8
 msgid "info-no-such-relation"
