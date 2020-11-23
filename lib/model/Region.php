@@ -46,6 +46,25 @@ class Region extends Proto {
   }
 
   /**
+   * If the given depth differs from the curent depth, changes the depth and
+   * call all children recursively. Otherwise does nothing.
+   */
+  function recursiveDepthUpdate($depth) {
+    if ($this->depth == $depth) {
+      return;
+    }
+
+    Log::info("Depth of region [#{$this->id}]({$this->name}) changed from {$this->depth} to {$depth}");
+    $this->depth = $depth;
+    $this->save();
+
+    $children = Region::get_all_by_parentId($this->id);
+    foreach ($children as $c) {
+      $c->recursiveDepthUpdate($depth + 1);
+    }
+  }
+
+  /**
    * @return bool True iff the current user may delete this region.
    */
   function isDeletable() {

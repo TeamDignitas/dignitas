@@ -47,7 +47,7 @@ class Ban extends Proto {
   }
 
   /**
-   * Checks if the current has an active ban of the given $type.
+   * Checks if the current user has an active ban of the given $type.
    *
    * @return boolean
    */
