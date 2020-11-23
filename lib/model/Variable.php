@@ -17,4 +17,8 @@ class Variable extends Proto {
     $v->save();
   }
 
+  static function deleteByName($name) {
+    Variable::delete_all_by_name($name);
+  }
+
 }

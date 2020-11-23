@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-11-23 13:50+0200\n"
-"PO-Revision-Date: 2020-11-23 13:50+0200\n"
+"POT-Creation-Date: 2020-11-23 15:19+0200\n"
+"PO-Revision-Date: 2020-11-23 15:19+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -141,10 +141,10 @@ msgstr "editează răspunsul"
 #: templates/domain/edit.tpl:96 templates/entity/edit.tpl:271
 #: templates/entityType/edit.tpl:108 templates/help/categoryEdit.tpl:80
 #: templates/help/pageEdit.tpl:74 templates/region/edit.tpl:68
-#: templates/relation/edit.tpl:24 templates/relationType/edit.tpl:147
-#: templates/statement/edit.tpl:171 templates/staticResource/edit.tpl:81
-#: templates/tag/edit.tpl:155 templates/user/ban.tpl:59
-#: templates/user/edit.tpl:133
+#: templates/region/list.tpl:45 templates/relation/edit.tpl:24
+#: templates/relationType/edit.tpl:147 templates/statement/edit.tpl:171
+#: templates/staticResource/edit.tpl:81 templates/tag/edit.tpl:155
+#: templates/user/ban.tpl:59 templates/user/edit.tpl:133
 msgid "link-save"
 msgstr "salvează"
 
@@ -1207,6 +1207,14 @@ msgstr "regiuni"
 #: templates/region/list.tpl:12
 msgid "link-add-region"
 msgstr "adaugă o regiune"
+
+#: templates/region/list.tpl:21
+msgid "title-region-nomenclature"
+msgstr "nomenclatura regiunilor"
+
+#: templates/region/list.tpl:28
+msgid "info-region-depth"
+msgstr "nivelul"
 
 #: templates/region/view.tpl:3 templates/region/view.tpl:7
 msgid "title-region"
@@ -2774,7 +2782,7 @@ msgstr "Am salvat domeniul."
 
 #: routes/domain/edit.php:79 routes/entity/edit.php:142
 #: routes/entityType/edit.php:57 routes/help/categoryEdit.php:67
-#: routes/region/edit.php:85 routes/relationType/edit.php:58
+#: routes/region/edit.php:90 routes/relationType/edit.php:58
 #: routes/staticResource/edit.php:49 routes/tag/edit.php:94
 msgid "info-must-enter-name"
 msgstr "Vă rugăm să introduceți un nume."
@@ -2978,13 +2986,17 @@ msgstr "Am șters regiunea [%s]."
 msgid "info-banned-region"
 msgstr "Vă este interzisă gestionarea regiunilor."
 
-#: routes/region/edit.php:54
+#: routes/region/edit.php:59
 msgid "info-region-saved"
 msgstr "Am salvat regiunea."
 
-#: routes/region/edit.php:94
+#: routes/region/edit.php:99
 msgid "info-region-loop"
 msgstr "Nu puteți alege un descendent ca părinte."
+
+#: routes/region/list.php:24
+msgid "info-region-nomenclature-saved"
+msgstr "Am salvat nomenclatura regiunilor."
 
 #: routes/region/view.php:10
 msgid "info-no-such-region"
