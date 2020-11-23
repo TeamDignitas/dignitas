@@ -29,6 +29,14 @@ class Region extends Proto {
     return "Region.{$depth}.{$locale}";
   }
 
+  /**
+   * Gets the region's nomenclature in the current locale
+   */
+  function getNomenclature() {
+    $varName = self::getVariableName($this->depth, LocaleUtil::getCurrent());
+    return Variable::peek($varName);
+  }
+
   static function loadAll() {
     return Model::factory('Region')
       ->order_by_asc('name')

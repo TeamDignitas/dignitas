@@ -35,6 +35,15 @@ foreach ($objects['tags'] as $t) {
   ];
 }
 
+foreach ($objects['regions'] as $r) {
+  Smart::assign('region', $r);
+  $results[] = [
+    'id' => $r->id,
+    'url' => Router::link('region/view') . '/' . $r->id,
+    'html' => Smart::fetch('bits/ajaxSearchResultRegion.tpl'),
+  ];
+}
+
 $output['results'] = $results;
 
 header('Content-Type: application/json');
