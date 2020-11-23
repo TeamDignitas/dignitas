@@ -37,7 +37,7 @@ class Ban extends Proto {
       case self::TYPE_VOTE:            return _('ban-vote');
       case self::TYPE_FLAG:            return _('ban-flag');
       case self::TYPE_COMMENT:         return _('ban-comment');
-      case self::TYPE_TAG:             return _('ban-tag');
+      case self::TYPE_TAG:             return _('ban-tag-region');
       case self::TYPE_REVIEW:          return _('ban-review');
     }
   }
