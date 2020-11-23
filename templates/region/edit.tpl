@@ -29,7 +29,8 @@
               class="form-control {if isset($errors.name)}is-invalid{/if}"
               id="name"
               name="name"
-              value="{$r->name}">
+              value="{$r->name}"
+              autofocus>
             {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
           </div>
         </div>
