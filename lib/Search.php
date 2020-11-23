@@ -2,7 +2,7 @@
 
 class Search {
 
-  // limit per object type - statements, entities and tags
+  // limit per object type - statements, entities, tags and regions
   const LIMIT = 10;
 
   static function run($query, $limit = self::LIMIT) {
@@ -19,6 +19,7 @@ class Search {
       'statements' => $statements,
       'numStatementPages' => $numStatementPages,
       'tags' => self::searchTags($escapedQuery, $limit),
+      'regions' => self::searchRegions($escapedQuery, $limit),
     ];
     return $results;
   }
@@ -165,6 +166,15 @@ class Search {
     return Model::factory('Tag')
       ->where_like('value', "{$escapedQuery}%")
       ->order_by_asc('value')
+      ->limit($limit)
+      ->find_many();
+  }
+
+  // load regions by prefix match
+  static function searchRegions($escapedQuery, $limit = self::LIMIT) {
+    return Model::factory('Region')
+      ->where_like('name', "{$escapedQuery}%")
+      ->order_by_asc('name')
       ->limit($limit)
       ->find_many();
   }
