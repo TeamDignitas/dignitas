@@ -68,14 +68,10 @@ $homonyms = Model::factory('Region')
   ->where_not_equal('id', $region->id)
   ->find_many();
 
-$regions = Model::factory('Region')
-  ->order_by_asc('name')
-  ->find_many();
-
 Smart::assign([
   'r' => $region,
   'children' => $children,
-  'regions' => $regions,
+  'regions' => Region::loadAll(),
   'canDelete' => $canDelete,
   'homonyms' => $homonyms,
 ]);

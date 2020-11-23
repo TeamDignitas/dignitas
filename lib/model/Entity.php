@@ -86,6 +86,10 @@ class Entity extends Proto {
     return [ 'profile' ];
   }
 
+  function getRegion() {
+    return Region::get_by_id($this->regionId);
+  }
+
   function getColor() {
     return $this->color ?: self::DEFAULT_COLOR;
   }
