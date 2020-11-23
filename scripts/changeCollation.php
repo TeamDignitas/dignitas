@@ -20,9 +20,19 @@ $SPECS = [
     'definition' => "varchar(255) not null default ''",
   ],
   [
+    'table' => 'region',
+    'column' => 'name',
+    'definition' => "varchar(100) not null default ''",
+  ],
+  [
     'table' => 'revision_entity',
     'column' => 'name',
     'definition' => "varchar(255) not null default ''",
+  ],
+  [
+    'table' => 'revision_region',
+    'column' => 'name',
+    'definition' => "varchar(100) not null default ''",
   ],
 ];
 
