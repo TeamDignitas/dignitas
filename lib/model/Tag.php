@@ -89,14 +89,6 @@ class Tag extends Proto {
     return $result;
   }
 
-  // returns the IDs of all ancestors of $tagId, including $tagId
-  static function getAncestorIds($tagId) {
-    $tag = Tag::get_by_id($tagId);
-    $ancestors = $tag->getAncestors();
-    $ids = Util::objectProperty($ancestors, 'id');
-    return $ids;
-  }
-
   /**
    * @return bool True iff the current user may delete this tag.
    */

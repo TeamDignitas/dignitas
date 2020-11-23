@@ -17,7 +17,7 @@ class Ban extends Proto {
   const TYPE_VOTE = 9;
   const TYPE_FLAG = 10;
   const TYPE_COMMENT = 11;
-  const TYPE_TAG = 12;             // add, edit or delete tags
+  const TYPE_TAG = 12;             // add, edit or delete tags and regions
   const TYPE_REVIEW = 13;          // access review queues
 
   const NUM_TYPES = 13;
