@@ -9,6 +9,26 @@ class Region extends Proto {
     return Proto::TYPE_REGION;
   }
 
+  /**
+   * Returns the maximum depth among all regions or null if no regions are
+   * defined.
+   */
+  static function getMaxDepth() {
+    $r = Model::factory('Region')
+      ->order_by_desc('depth')
+      ->find_one();
+    return $r ? $r->depth : null;
+  }
+
+  /**
+   * Region nomenclature (e.g. 'state' and 'county' for the US) is defined by
+   * admins and stored in the variable table. This function returns the
+   * variable name.
+   */
+  static function getVariableName($depth, $locale) {
+    return "Region.{$depth}.{$locale}";
+  }
+
   // Returns an array of root regions with their $children fields populated
   static function loadTree() {
     $regions = Model::factory('Region')->order_by_asc('name')->find_many();
