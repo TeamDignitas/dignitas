@@ -47,6 +47,11 @@ if ($saveButton) {
   if (empty($errors)) {
     $new = !$region->id;
     $region->save();
+
+    $parent = Region::get_by_id($region->parentId);
+    $depth = $parent ? ($parent->depth + 1) : 0;
+    $region->recursiveDepthUpdate($depth);
+
     Action::create(
       $new ? Action::TYPE_CREATE : Action::TYPE_UPDATE,
       $region);
