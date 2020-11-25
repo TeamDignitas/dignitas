@@ -2,7 +2,7 @@
 {$voteBox=$voteBox|default:true}
 {$addComment=$addComment|default:false}
 
-<div class="row row-cols-2 vote-container answer" id="a{$answer->id}">
+<div class="answer-container row pt-2" id="a{$answer->id}">
   {if $voteBox}
     {include "bits/scoreAndVote.tpl"
       type=Vote::TYPE_ANSWER
@@ -11,7 +11,7 @@
       downvotePriv=User::PRIV_DOWNVOTE_ANSWER}
   {/if}
 
-  <div class="col-md-7 col-sm-10 mb-1 px-0">
+  <div class="col-sm-12 col-md-11 mb-1">
     <div class="answer-body col-md-12 px-0">
       {$answer->contents|md}
     </div>
@@ -82,5 +82,5 @@
 
     </div>
   </div>
-  <div class="border-bottom col-md-8"></div>
 </div>
+<div class="border-bottom"></div>

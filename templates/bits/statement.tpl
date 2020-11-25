@@ -55,7 +55,7 @@
       downvotePriv=User::PRIV_DOWNVOTE_STATEMENT}
   {/if}
 
-  <div class="col-md-7 col-sm-10 px-0">
+  <div class="col-sm-12 col-md-7 px-0">
     {$statusInfo=$statement->getStatusInfo()}
 
     {if isset($pendingEditReview)}
@@ -136,7 +136,7 @@
 
   </div>
 
-  <div class="statement-box-area col-md-3 offset-md-1 pr-0">
+  <div class="verdict-area col-sm-12 col-md-3 offset-md-1 pr-0">
     <aside class="card px-2 bg-verdict-{$statement->verdict}">
       <h6 class="card-title mt-3 text-center">
         {$statement->getEntity()},
