@@ -51,7 +51,13 @@
           </tbody>
         </table>
 
-        <div>
+        <div class="mt-4 text-right">
+          <a
+            href="{Router::link('relationType/list')}"
+            class="btn btn-sm btn-outline-secondary">
+            <i class="icon icon-cancel"></i>
+            {t}link-cancel{/t}
+          </a>
           <button
             type="submit"
             class="btn btn-sm btn-outline-secondary"
@@ -59,12 +65,6 @@
             <i class="icon icon-floppy"></i>
             {t}link-save-order{/t}
           </button>
-          <a
-            href="{Router::link('relationType/list')}"
-            class="btn btn-sm btn-outline-secondary">
-            <i class="icon icon-cancel"></i>
-            {t}link-cancel{/t}
-          </a>
         </div>
       </form>
     {/if}
