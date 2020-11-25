@@ -1,4 +1,4 @@
-<form id="form-comment" class="mt-1">
+<form id="form-comment" class="col-12 text-right mt-1">
   <input type="hidden" name="objectType">
   <input type="hidden" name="objectId">
 

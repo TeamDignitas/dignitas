@@ -31,56 +31,75 @@
 
     <div class="answer-footer col-md-12 px-0">
       <div class="answer-read-only text-muted mb-2 row">
-        <div class="col-md-7">
+        <div class="col-md-6">
           {t}answer-posted-by{/t}
           {include 'bits/userLink.tpl' u=$answer->getUser()}
           {include 'bits/moment.tpl' t=$answer->createDate}
         </div>
+
         {if $answer->verdict != Ct::VERDICT_NONE}
-          <div class="col-md-5 mb-1 text-right">
+          <div class="col-md-4 mb-1">
             <span class="badge badge-pill badge-secondary">
               <i class="icon icon-hammer"></i>
               {$answer->getVerdictName()}
             </span>
           </div>
         {/if}
-      </div>
 
-      {$comments=Comment::getFor($answer)}
-      <div class="text-muted text-left mb-2 ml-0 pl-0">
-        <a
-          href="#a{$answer->id}"
-          class="btn mt-1"
-          title="{t}info-answer-permalink{/t}">
-          <i class="icon icon-link"></i>
-        </a>
-
-        {include "bits/editButton.tpl" obj=$answer}
-        {include "bits/subscribeLinks.tpl" obj=$answer}
-        {include "bits/flagLinks.tpl" obj=$answer class="btn mt-1"}
-
-        {if $addComment && empty($comments)}
-          {include "bits/addCommentLink.tpl" object=$answer}
-        {/if}
-
-        {include "bits/historyButton.tpl" obj=$answer}
-      </div>
-
-      {if !empty($comments)}
-        <div class="comment-list">
-          {foreach $comments as $comment}
-            {include 'bits/comment.tpl'}
-          {/foreach}
-        </div>
-
-        {if $addComment}
-          <div class="text-muted text-right mb-2 ml-0 pl-0">
+        <div class="col-md-2 text-right">
+          {if $addComment && empty($comments)}
             {include "bits/addCommentLink.tpl" object=$answer}
+          {/if}
+
+          {$comments=Comment::getFor($answer)}
+          <button class="btn pt-0" type="button" id="ellipsisMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="icon icon-plus"></i>
+          </button>
+
+          <div class="dropdown-menu" aria-labelledby="ellipsisMenu">
+            <button class="dropdown-item" type="button">
+              <a href="#a{$answer->id}"
+                 class="btn"
+                 title="{t}info-answer-permalink{/t}">
+                <i class="icon icon-link"></i>
+              </a>
+            </button>
+
+            <button class="dropdown-item" type="button">
+              {include "bits/editButton.tpl" obj=$answer}
+            </button>
+
+            <button class="dropdown-item" type="button">
+              {include "bits/subscribeLinks.tpl" obj=$answer}
+            </button>
+
+            <button class="dropdown-item" type="button">
+              {include "bits/flagLinks.tpl" obj=$answer class="btn mt-1"}
+            </button>
+
+            <button class="dropdown-item" type="button">
+              {include "bits/historyButton.tpl" obj=$answer}
+            </button>
           </div>
-        {/if}
-      {/if}
+        </div>
+      </div>
 
     </div>
+
+    {if !empty($comments)}
+      <div class="comment-list">
+        {foreach $comments as $comment}
+          {include 'bits/comment.tpl'}
+        {/foreach}
+      </div>
+
+      {if $addComment}
+        <div class="text-muted text-right mb-2 ml-0 pl-0">
+          {include "bits/addCommentLink.tpl" object=$answer}
+        </div>
+      {/if}
+    {/if}
+
   </div>
 </div>
 <div class="border-bottom"></div>
