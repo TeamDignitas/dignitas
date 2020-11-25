@@ -1,6 +1,6 @@
 {* history button for objects that may have revisions *}
 {* mandatory argument: $obj *}
-{$class=$class|default:"btn btn-outline-secondary mt-1"}
+{$class=$class|default:"btn mt-1"}
 
 {if $obj->hasRevisions()}
   <a
