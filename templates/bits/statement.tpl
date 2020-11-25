@@ -89,7 +89,7 @@
 
     {$statement->goal|escape}
 
-    <div class="statement-read-only row ml-0">
+    <div class="statement-read-only row ml-0 mt-2">
       {foreach $statement->getTags() as $t}
         {include "bits/tag.tpl" link=true tooltip="{t}info-tag-view-statements{/t}"}
       {/foreach}
