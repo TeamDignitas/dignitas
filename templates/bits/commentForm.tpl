@@ -39,14 +39,14 @@
     <div class="col"></div>
 
     <div class="col-auto">
-      <button type="submit" class="btn btn-sm btn-outline-primary comment-save mb-1">
-        <i class="icon icon-floppy"></i>
-        {t}link-save{/t}
-      </button>
-
       <button type="button" class="btn btn-sm btn-outline-secondary comment-cancel mb-1">
         <i class="icon icon-cancel"></i>
         {t}link-cancel{/t}
+      </button>
+
+      <button type="submit" class="btn btn-sm btn-outline-primary comment-save mb-1">
+        <i class="icon icon-floppy"></i>
+        {t}link-save{/t}
       </button>
     </div>
   </div>
