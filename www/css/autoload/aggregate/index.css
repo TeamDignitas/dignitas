@@ -28,12 +28,6 @@
   border-color: #fff;
 }
 
-.statement-link a {
-  color: #555;
-  font-size: 0.9rem;
-  font-style: italic;
-}
-
 .dark-background {
   background-color: #232429;
   margin-left: -15px;

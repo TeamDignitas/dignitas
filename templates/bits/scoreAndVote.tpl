@@ -24,7 +24,7 @@
   </div>
 {/if}
 
-<div class="vote-box col-md-1 col-sm-2 pl-0">
+<div class="vote-box col-sm-12 col-md-1">
 
   <button
     class="btn btn-vote {if $voteValue == 1}voted{/if}"

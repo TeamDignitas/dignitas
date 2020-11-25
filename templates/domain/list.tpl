@@ -31,7 +31,14 @@
               </td>
               <td class="align-middle">{$d->name|escape}</td>
               <td class="align-middle">{$d->displayValue|escape}</td>
-              <td><a href="{$d->getEditUrl()}" class="btn btn-sm btn-outline-secondary">{t}link-edit{/t}</a></td>
+              <td>
+                <a
+                  href="{$d->getEditUrl()}"
+                  class="btn btn-sm"
+                  title="{t}link-edit{/t}">
+                  <i class="icon icon-pencil"></i>
+                </a>
+              </td>
             </tr>
           {/foreach}
         </tbody>

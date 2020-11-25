@@ -149,24 +149,12 @@
         </div>
       </fieldset>
 
-      <div class="mt-4 row">
-        <button name="saveButton" type="submit" class="btn btn-sm btn-outline-primary col-sm-3 col-lg-2 mr-2 mb-2">
-          <i class="icon icon-floppy"></i>
-          {t}link-save{/t}
-        </button>
-
-        {if $t->id}
-          <a class="btn btn-sm btn-outline-secondary col-sm-3 col-lg-2 mr-2 mb-2" href="{Router::link('tag/view')}/{$t->id}">
-            <i class="icon icon-cancel"></i>
-            {t}link-cancel{/t}
-          </a>
-        {/if}
-
+      <div class="mt-4 text-right">
         {if $t->isDeletable()}
           <button
             name="deleteButton"
             type="submit"
-            class="btn btn-sm btn-outline-danger col-sm-3 col-lg-2 mr-2 mb-2"
+            class="btn btn-sm btn-outline-danger col-sm-4 col-lg-2 mr-2 mb-2"
             data-confirm="{t}info-confirm-delete-tag{/t}"
             {if !$canDelete}
             disabled
@@ -177,6 +165,18 @@
             {t}link-delete{/t}
           </button>
         {/if}
+
+        {if $t->id}
+          <a class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2" href="{Router::link('tag/view')}/{$t->id}">
+            <i class="icon icon-cancel"></i>
+            {t}link-cancel{/t}
+          </a>
+        {/if}
+
+        <button name="saveButton" type="submit" class="btn btn-sm btn-primary col-sm-4 col-lg-2 mb-2">
+          <i class="icon icon-floppy"></i>
+          {t}link-save{/t}
+        </button>
       </div>
     </form>
 

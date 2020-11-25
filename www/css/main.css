@@ -210,7 +210,6 @@ img.pic.no-outline,
   outline: 0;
 }
 
-.statement-actions .btn,
 .statement-read-only .text-muted,
 .answer-footer *,
 .answer-footer .btn,
@@ -298,12 +297,14 @@ img.pic.no-outline,
   opacity: 1;
 }
 
-/*************** answers, entity statements, user profile ***************/
-
-.answer {
-  padding-top: 10px;
+.statement-link a {
+  color: #555;
+  font-size: 0.9rem;
+  font-style: italic;
 }
 
+
+/*************** answers, entity statements, user profile ***************/
 .subsection {
   border-bottom: 1px solid #999;
 }

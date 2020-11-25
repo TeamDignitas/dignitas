@@ -35,7 +35,7 @@
               <td class="col-sm-2 col-md-2">
                 <a
                   href="{Router::link('cannedResponse/edit')}/{$cr->id}"
-                  class="btn btn-outline-secondary mt-1"
+                  class="btn mt-1"
                   title="{t}link-edit{/t}">
                   <i class="icon icon-pencil"></i>
                 </a>
@@ -51,7 +51,7 @@
           <i class="icon icon-cancel"></i>
           {t}link-cancel{/t}
         </a>
-        <button type="submit" class="btn btn-sm btn-outline-secondary" name="saveButton">
+        <button type="submit" class="btn btn-sm btn-outline-primary" name="saveButton">
           <i class="icon icon-floppy"></i>
           {t}link-save-order{/t}
         </button>

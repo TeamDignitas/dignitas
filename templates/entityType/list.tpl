@@ -47,8 +47,11 @@
                 {/if}
               </td>
               <td>
-                <a href="{$et->getEditUrl()}" class="btn btn-sm btn-outline-secondary">
-                  {t}link-edit{/t}
+                <a
+                  href="{$et->getEditUrl()}"
+                  class="btn"
+                  title="{t}link-edit{/t}">
+                  <i class="icon icon-pencil"></i>
                 </a>
               </td>
             </tr>

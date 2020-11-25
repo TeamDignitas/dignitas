@@ -75,27 +75,27 @@
         </div>
       </fieldset>
 
-      <div class="mt-4 row">
-        <button name="saveButton" type="submit" class="btn btn-sm btn-outline-primary col-12 col-sm-12 col-lg-2 mb-2 mr-2">
-          <i class="icon icon-floppy"></i>
-          {t}link-save{/t}
-        </button>
-
-        <a href="{Router::link('staticResource/list')}" class="btn btn-sm btn-outline-secondary col-12 col-sm-12 col-lg-2 mb-2 mr-2">
-          <i class="icon icon-cancel"></i>
-          {t}link-cancel{/t}
-        </a>
-
+      <div class="mt-4 text-right">
         {if $sr->id}
           <button
             name="deleteButton"
             type="submit"
-            class="btn btn-sm btn-outline-danger col-12 col-sm-12 col-lg-2 mb-2 mr-2"
+            class="btn btn-sm btn-outline-danger col-sm-4 col-lg-2 mr-2 mb-2"
             data-confirm="{t}info-confirm-delete-static-resource{/t}">
             <i class="icon icon-trash"></i>
             {t}link-delete{/t}
           </button>
         {/if}
+
+        <a href="{Router::link('staticResource/list')}" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2">
+          <i class="icon icon-cancel"></i>
+          {t}link-cancel{/t}
+        </a>
+
+        <button name="saveButton" type="submit" class="btn btn-sm btn-primary col-sm-4 col-lg-2 mb-2">
+          <i class="icon icon-floppy"></i>
+          {t}link-save{/t}
+        </button>
 
       </div>
     </form>

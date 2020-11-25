@@ -6,7 +6,7 @@
   <div class="container my-5">
     <h1 class="mb-5">{cap}{t}title-static-resources{/t}{/cap}</h1>
 
-    <a class="btn btn-sm btn-outline-primary" href="{Router::link('staticResource/edit')}">
+    <a class="btn btn-sm btn-primary" href="{Router::link('staticResource/edit')}">
       <i class="icon icon-plus"></i>
       {t}link-add-static-resource{/t}
     </a>
@@ -38,8 +38,11 @@
                 </a>
               </td>
               <td>
-                <a href="{$sr->getEditUrl()}" class="btn btn-sm btn-outline-secondary">
-                  {t}link-edit{/t}
+                <a
+                  href="{$sr->getEditUrl()}"
+                  class="btn"
+                  title="{t}link-edit{/t}">
+                  <i class="icon icon-pencil"></i>
                 </a>
               </td>
             </tr>
