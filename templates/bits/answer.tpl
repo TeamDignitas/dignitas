@@ -50,14 +50,14 @@
       <div class="text-muted text-left mb-2 ml-0 pl-0">
         <a
           href="#a{$answer->id}"
-          class="btn btn-outline-secondary mt-1"
+          class="btn mt-1"
           title="{t}info-answer-permalink{/t}">
           <i class="icon icon-link"></i>
         </a>
 
         {include "bits/editButton.tpl" obj=$answer}
         {include "bits/subscribeLinks.tpl" obj=$answer}
-        {include "bits/flagLinks.tpl" obj=$answer class="btn btn-outline-secondary mt-1"}
+        {include "bits/flagLinks.tpl" obj=$answer class="btn mt-1"}
 
         {if $addComment && empty($comments)}
           {include "bits/addCommentLink.tpl" object=$answer}

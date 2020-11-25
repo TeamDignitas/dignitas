@@ -1,5 +1,5 @@
 {* Mandatory argument: $obj *}
-{$class=$class|default:'btn btn-outline-secondary mt-1'}
+{$class=$class|default:'btn mt-1'}
 
 {if User::getActive()}
   {$subscribeId="subscribe_{$obj->getObjectType()}_{$obj->id}"}

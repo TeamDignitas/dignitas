@@ -107,7 +107,7 @@
       {/if}
 
       {include "bits/subscribeLinks.tpl" obj=$statement}
-      {include "bits/flagLinks.tpl" obj=$statement class="btn btn-outline-secondary mt-1"}
+      {include "bits/flagLinks.tpl" obj=$statement class="btn mt-1"}
 
       {* when there are no comments, the add comment button sits on the same
          row as the other buttons *}
