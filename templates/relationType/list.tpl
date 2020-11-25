@@ -42,8 +42,11 @@
                 <td class="align-middle">{$rt->getToEntityType()->name|escape}</td>
                 <td class="align-middle">{$rt->weight}</td>
                 <td>
-                  <a href="{$rt->getEditUrl()}" class="btn btn-sm btn-outline-secondary">
-                    {t}link-edit{/t}
+                  <a
+                    href="{$rt->getEditUrl()}"
+                    class="btn"
+                    title="{t}link-edit{/t}">
+                    <i class="icon icon-pencil"></i>
                   </a>
                 </td>
               </tr>

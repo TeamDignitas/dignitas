@@ -38,8 +38,11 @@
                 </a>
               </td>
               <td>
-                <a href="{$sr->getEditUrl()}" class="btn btn-sm btn-outline-secondary">
-                  {t}link-edit{/t}
+                <a
+                  href="{$sr->getEditUrl()}"
+                  class="btn"
+                  title="{t}link-edit{/t}">
+                  <i class="icon icon-pencil"></i>
                 </a>
               </td>
             </tr>
