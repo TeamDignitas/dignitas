@@ -298,6 +298,13 @@ img.pic.no-outline,
   opacity: 1;
 }
 
+.statement-link a {
+  color: #555;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+
 /*************** answers, entity statements, user profile ***************/
 
 .answer {
