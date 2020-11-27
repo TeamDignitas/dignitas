@@ -196,16 +196,22 @@ class Smart {
     $full = [];
     $maxTimestamp = 0;
     foreach ($files as $file) {
+      $orig = $file;
       $file = str_replace('%L', $longLocale, $file);
       $file = str_replace('%l', $shortLocale, $file);
+      $hasLocale = ($file != $orig);
 
       if (!Str::startsWith($file, '/')) {
         // don't touch paths which are already absolute
         $file = sprintf('%swww/%s/%s', Config::ROOT, $type, $file);
       }
-      $full[] = $file;
-      $timestamp = filemtime($file);
-      $maxTimestamp = max($maxTimestamp, $timestamp);
+
+      // complain about missing files, unless they are localizations
+      if (!$hasLocale || file_exists($file)) {
+        $full[] = $file;
+        $timestamp = filemtime($file);
+        $maxTimestamp = max($maxTimestamp, $timestamp);
+      }
     }
 
     // compute the output file name
