@@ -56,6 +56,9 @@ class Search {
           case 'exceptId':
             $query = $query->where_not_equal('id', $value);
             break;
+          case 'regionId':
+            $query = $query->where('regionId', $value);
+            break;
           case 'term':
             // Load entities by substring match at word boundary. MariaDB has
             // a problem with regexp and collations, so this one-liner won' work:

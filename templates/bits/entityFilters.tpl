@@ -33,6 +33,24 @@
         value="{$term}"
         placeholder="{t}label-term{/t}">
     </div>
+
+    <div class="col-12 col-sm-12 col-md-1 col-lg-1">
+      <label class="col-form-label text-capitalize">
+        {t}label-region{/t}:
+      </label>
+    </div>
+
+    <div class="col-12 col-sm-12 col-md-3 col-lg-3 mb-2">
+      <select name="regionId" class="form-control form-control-sm actionable">
+        <option value="0"></option>
+        {foreach $regions as $option}
+          <option value="{$option->id}">
+            {$option->name}
+          </option>
+        {/foreach}
+      </select>
+    </div>
+
   </div>
 
 </form>

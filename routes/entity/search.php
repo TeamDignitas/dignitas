@@ -5,6 +5,7 @@ $order = Request::get('order', 0);
 
 $filters = [
   'exceptId' => Request::get('exceptId', 0),
+  'regionId' => Request::get('regionId', 0),
   'term' =>  addslashes(Request::get('term')),
 ];
 
