@@ -4,8 +4,8 @@
 
 {block "content"}
   <div class="container my-5">
-    <h1 class="mb-4">{t}title-region{/t}
-      {include "bits/regionAncestors.tpl"}
+    <h1 class="mb-4">
+      {include "bits/regionAncestors.tpl" root=true}
     </h1>
 
     {if User::may(User::PRIV_EDIT_TAG)}

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-11-23 15:42+0200\n"
-"PO-Revision-Date: 2020-11-23 15:42+0200\n"
+"POT-Creation-Date: 2020-11-27 16:04+0200\n"
+"PO-Revision-Date: 2020-11-27 16:04+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -81,7 +81,7 @@ msgstr "resurse statice"
 msgid "link-tags"
 msgstr "etichete"
 
-#: templates/aggregate/dashboard.tpl:121
+#: templates/aggregate/dashboard.tpl:121 templates/bits/regionAncestors.tpl:8
 msgid "link-regions"
 msgstr "regiuni"
 
@@ -140,7 +140,7 @@ msgstr "editează răspunsul"
 #: templates/bits/commentForm.tpl:44 templates/cannedResponse/edit.tpl:46
 #: templates/domain/edit.tpl:96 templates/entity/edit.tpl:287
 #: templates/entityType/edit.tpl:108 templates/help/categoryEdit.tpl:80
-#: templates/help/pageEdit.tpl:74 templates/region/edit.tpl:68
+#: templates/help/pageEdit.tpl:74 templates/region/edit.tpl:69
 #: templates/region/list.tpl:45 templates/relation/edit.tpl:24
 #: templates/relationType/edit.tpl:147 templates/statement/edit.tpl:171
 #: templates/staticResource/edit.tpl:81 templates/tag/edit.tpl:155
@@ -289,7 +289,7 @@ msgstr "Confirmați ștergerea acestui răspuns?"
 #: templates/bits/answerEdit.tpl:56 templates/cannedResponse/edit.tpl:35
 #: templates/domain/edit.tpl:78 templates/entity/edit.tpl:265
 #: templates/entityType/edit.tpl:97 templates/help/categoryEdit.tpl:69
-#: templates/help/pageEdit.tpl:89 templates/region/edit.tpl:92
+#: templates/help/pageEdit.tpl:89 templates/region/edit.tpl:93
 #: templates/relationType/edit.tpl:136 templates/statement/edit.tpl:149
 #: templates/staticResource/edit.tpl:96 templates/tag/edit.tpl:177
 msgid "link-delete"
@@ -309,7 +309,7 @@ msgstr "redeschide"
 #: templates/domain/edit.tpl:91 templates/entity/edit.tpl:282
 #: templates/entityType/edit.tpl:103 templates/help/categoryEdit.tpl:75
 #: templates/help/categoryList.tpl:30 templates/help/pageEdit.tpl:79
-#: templates/invite/add.tpl:31 templates/region/edit.tpl:76
+#: templates/invite/add.tpl:31 templates/region/edit.tpl:77
 #: templates/relation/edit.tpl:29 templates/relationType/edit.tpl:142
 #: templates/relationType/list.tpl:66 templates/statement/edit.tpl:166
 #: templates/staticResource/edit.tpl:86 templates/tag/edit.tpl:161
@@ -379,7 +379,6 @@ msgid "title-relations"
 msgstr "relații"
 
 #: templates/bits/entity.tpl:63 templates/region/view.tpl:3
-#: templates/region/view.tpl:7
 msgid "title-region"
 msgstr "regiune"
 
@@ -1188,24 +1187,24 @@ msgstr "editează regiunea"
 msgid "title-add-region"
 msgstr "adaugă o regiune"
 
-#: templates/region/edit.tpl:40
+#: templates/region/edit.tpl:41
 msgid "label-parent-region"
 msgstr "regiunea-părinte"
 
-#: templates/region/edit.tpl:85
+#: templates/region/edit.tpl:86
 msgid "info-confirm-delete-region"
 msgstr "Confirmați ștergerea acestei regiuni?"
 
-#: templates/region/edit.tpl:88 routes/region/edit.php:30
+#: templates/region/edit.tpl:89 routes/region/edit.php:30
 msgid "info-cannot-delete-region"
 msgstr ""
 "Nu pot șterge regiuni deoarece (1) are descendenți sau (2) este folosită."
 
-#: templates/region/edit.tpl:99 templates/tag/edit.tpl:184
+#: templates/region/edit.tpl:100 templates/tag/edit.tpl:184
 msgid "title-direct-descendants"
 msgstr "descendenți direcți"
 
-#: templates/region/edit.tpl:109
+#: templates/region/edit.tpl:110
 msgid "title-duplicate-regions"
 msgstr "regiuni cu același nume"
 
@@ -3222,6 +3221,3 @@ msgstr "Nu pot salva votul: obiectul nu există."
 #: routes/vote/save.php:50
 msgid "info-cannot-self-vote"
 msgstr "Nu puteți vota propriile mesaje."
-
-#~ msgid "ban-tag"
-#~ msgstr "etichete"
