@@ -1,14 +1,14 @@
 {$term=$term|default:''}
 <form data-url="{Config::URL_PREFIX}ajax/search-entities">
 
-  <div class="d-flex mb-2 small">
-    <div class="mr-2">
-      <label class="col-form-label">
+  <div class="row mb-2 small statement-filters">
+    <div class="col-12 col-sm-12 col-md-1 col-lg-1">
+      <label class="col-form-label text-capitalize">
         {t}label-sort{/t}:
       </label>
     </div>
 
-    <div class="mr-4">
+    <div class="col-12 col-sm-12 col-md-3 col-lg-3">
       <select
         name="order"
         class="form-control form-control-sm actionable">
@@ -19,13 +19,13 @@
       </select>
     </div>
 
-    <div class="mr-2">
-      <label class="col-form-label">
+    <div class="col-12 col-sm-12 col-md-1 col-lg-1">
+      <label class="col-form-label text-capitalize">
         {t}label-filter{/t}:
       </label>
     </div>
 
-    <div class="mr-2">
+    <div class="col-12 col-sm-12 col-md-3 col-lg-3 mb-2">
       <input
         type="text"
         name="term"
