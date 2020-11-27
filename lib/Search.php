@@ -21,6 +21,11 @@ class Search {
       'tags' => self::searchTags($escapedQuery, $limit),
       'regions' => self::searchRegions($escapedQuery, $limit),
     ];
+    $results['empty'] =
+      empty($results['entities']) &&
+      empty($results['statements']) &&
+      empty($results['tags']) &&
+      empty($results['regions']);
     return $results;
   }
 

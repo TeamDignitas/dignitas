@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-11-27 16:04+0200\n"
-"PO-Revision-Date: 2020-11-27 16:04+0200\n"
+"POT-Creation-Date: 2020-11-27 16:52+0200\n"
+"PO-Revision-Date: 2020-11-27 16:53+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -121,14 +121,21 @@ msgstr "autori"
 msgid "title-statements"
 msgstr "afirmații"
 
-#: templates/aggregate/search.tpl:45
+#: templates/aggregate/search.tpl:46
+msgid "title-regions-singular"
+msgid_plural "title-regions-plural"
+msgstr[0] "o regiune"
+msgstr[1] "%1 regiuni"
+msgstr[2] "%1 de regiuni"
+
+#: templates/aggregate/search.tpl:60
 msgid "title-tags-singular"
 msgid_plural "title-tags-plural"
 msgstr[0] "o etichetă"
 msgstr[1] "%1 etichete"
 msgstr[2] "%1 de etichete"
 
-#: templates/aggregate/search.tpl:56
+#: templates/aggregate/search.tpl:71
 msgid "info-no-search-results"
 msgstr "Căutarea «%1» nu a dat rezultate."
 
@@ -137,13 +144,13 @@ msgid "title-edit-answer"
 msgstr "editează răspunsul"
 
 #: templates/answer/edit.tpl:16 templates/auth/resetPassword.tpl:46
-#: templates/bits/commentForm.tpl:44 templates/cannedResponse/edit.tpl:46
+#: templates/bits/commentForm.tpl:49 templates/cannedResponse/edit.tpl:46
 #: templates/domain/edit.tpl:96 templates/entity/edit.tpl:287
 #: templates/entityType/edit.tpl:108 templates/help/categoryEdit.tpl:80
 #: templates/help/pageEdit.tpl:74 templates/region/edit.tpl:69
 #: templates/region/list.tpl:45 templates/relation/edit.tpl:24
 #: templates/relationType/edit.tpl:147 templates/statement/edit.tpl:171
-#: templates/staticResource/edit.tpl:81 templates/tag/edit.tpl:155
+#: templates/staticResource/edit.tpl:97 templates/tag/edit.tpl:178
 #: templates/user/ban.tpl:59 templates/user/edit.tpl:133
 msgid "link-save"
 msgstr "salvează"
@@ -267,7 +274,7 @@ msgstr "etichetă"
 msgid "answer-posted-by"
 msgstr "publicat de"
 
-#: templates/bits/answer.tpl:54
+#: templates/bits/answer.tpl:63
 msgid "info-answer-permalink"
 msgstr "legătură permanentă către acest răspuns"
 
@@ -291,7 +298,7 @@ msgstr "Confirmați ștergerea acestui răspuns?"
 #: templates/entityType/edit.tpl:97 templates/help/categoryEdit.tpl:69
 #: templates/help/pageEdit.tpl:89 templates/region/edit.tpl:93
 #: templates/relationType/edit.tpl:136 templates/statement/edit.tpl:149
-#: templates/staticResource/edit.tpl:96 templates/tag/edit.tpl:177
+#: templates/staticResource/edit.tpl:86 templates/tag/edit.tpl:165
 msgid "link-delete"
 msgstr "șterge"
 
@@ -304,15 +311,15 @@ msgstr "Confirmați redeschiderea acestui răspuns?"
 msgid "link-reopen"
 msgstr "redeschide"
 
-#: templates/bits/answerEdit.tpl:72 templates/bits/commentForm.tpl:49
+#: templates/bits/answerEdit.tpl:72 templates/bits/commentForm.tpl:44
 #: templates/cannedResponse/edit.tpl:41 templates/cannedResponse/list.tpl:52
 #: templates/domain/edit.tpl:91 templates/entity/edit.tpl:282
 #: templates/entityType/edit.tpl:103 templates/help/categoryEdit.tpl:75
 #: templates/help/categoryList.tpl:30 templates/help/pageEdit.tpl:79
 #: templates/invite/add.tpl:31 templates/region/edit.tpl:77
 #: templates/relation/edit.tpl:29 templates/relationType/edit.tpl:142
-#: templates/relationType/list.tpl:66 templates/statement/edit.tpl:166
-#: templates/staticResource/edit.tpl:86 templates/tag/edit.tpl:161
+#: templates/relationType/list.tpl:62 templates/statement/edit.tpl:166
+#: templates/staticResource/edit.tpl:92 templates/tag/edit.tpl:172
 #: templates/user/ban.tpl:54 templates/user/edit.tpl:128
 msgid "link-cancel"
 msgstr "renunță"
@@ -358,10 +365,10 @@ msgstr[1] "%1 linii identice omise"
 msgstr[2] "%1 de linii identice omise"
 
 #: templates/bits/editButton.tpl:10 templates/bits/reviewActions.tpl:29
-#: templates/cannedResponse/list.tpl:39 templates/domain/list.tpl:34
-#: templates/entityType/list.tpl:51 templates/help/categoryView.tpl:39
+#: templates/cannedResponse/list.tpl:39 templates/domain/list.tpl:38
+#: templates/entityType/list.tpl:53 templates/help/categoryView.tpl:39
 #: templates/help/pageView.tpl:35 templates/region/view.tpl:15
-#: templates/relationType/list.tpl:46 templates/staticResource/list.tpl:42
+#: templates/relationType/list.tpl:48 templates/staticResource/list.tpl:44
 #: templates/tag/view.tpl:15 templates/user/view.tpl:94
 msgid "link-edit"
 msgstr "editează"
@@ -421,6 +428,11 @@ msgstr "filtre"
 #: templates/bits/entityFilters.tpl:34 templates/bits/statementFilters.tpl:74
 msgid "label-term"
 msgstr "text"
+
+#: templates/bits/entityFilters.tpl:39 templates/entity/edit.tpl:198
+#: lib/model/RevisionEntity.php:36
+msgid "label-region"
+msgstr "regiune"
 
 #: templates/bits/fakeLogin.tpl:3
 msgid "title-test-login"
@@ -832,7 +844,7 @@ msgid "title-actions"
 msgstr "acțiuni"
 
 #: templates/cannedResponse/list.tpl:56 templates/help/categoryList.tpl:35
-#: templates/relationType/list.tpl:60
+#: templates/relationType/list.tpl:70
 msgid "link-save-order"
 msgstr "salvează ordinea"
 
@@ -1012,10 +1024,6 @@ msgstr "legături externe"
 #: templates/entity/edit.tpl:191
 msgid "link-add-entity-link"
 msgstr "adaugă o legătură"
-
-#: templates/entity/edit.tpl:198 lib/model/RevisionEntity.php:36
-msgid "label-region"
-msgstr "regiune"
 
 #: templates/entity/edit.tpl:214 templates/statement/edit.tpl:111
 msgid "label-tags"
@@ -1413,18 +1421,18 @@ msgstr "afirmații cu verdict, dar fără demonstrație"
 msgid "title-statements-verdict-mismatch"
 msgstr "afirmații cu un verdict opus față de cel al demonstrației"
 
-#: templates/statement/view.tpl:14
+#: templates/statement/view.tpl:15
 msgid "title-answers-singular"
 msgid_plural "title-answers-plural"
 msgstr[0] "un răspuns"
 msgstr[1] "%1 răspunsuri"
 msgstr[2] "%1 de răspunsuri"
 
-#: templates/statement/view.tpl:29
+#: templates/statement/view.tpl:31
 msgid "title-your-answer"
 msgstr "răspunsul dumneavoastră"
 
-#: templates/statement/view.tpl:32
+#: templates/statement/view.tpl:34
 msgid "link-post-answer"
 msgstr "trimite răspunsul"
 
@@ -1450,7 +1458,7 @@ msgstr "toate"
 msgid "info-choose-static-resource-file"
 msgstr "... sau încărcați un fișier"
 
-#: templates/staticResource/edit.tpl:94
+#: templates/staticResource/edit.tpl:84
 msgid "info-confirm-delete-static-resource"
 msgstr "Confirmați ștergerea acestei resurse?"
 
@@ -1506,11 +1514,11 @@ msgstr ""
 "ne puteți contacta ca să cereți să o adăugăm la set. Puteți vedea setul de "
 "iconițe disponibile la <a href=\"%2\">Fontello</a>."
 
-#: templates/tag/edit.tpl:170
+#: templates/tag/edit.tpl:158
 msgid "info-confirm-delete-tag"
 msgstr "Confirmați ștergerea acestei etichete?"
 
-#: templates/tag/edit.tpl:173 routes/tag/edit.php:32
+#: templates/tag/edit.tpl:161 routes/tag/edit.php:32
 msgid "info-cannot-delete-tag"
 msgstr ""
 "Nu pot șterge eticheta deoarece (1) are descendenți sau (2) este folosită."

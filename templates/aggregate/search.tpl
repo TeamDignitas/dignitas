@@ -40,6 +40,21 @@
       </div>
     {/if}
 
+    {if count($results.regions)}
+      <h3>
+        {t
+          count=count($results.regions)
+          1=count($results.regions)
+          plural="title-regions-plural"}
+        title-regions-singular
+        {/t}
+      </h3>
+
+      {foreach $results.regions as $r}
+        {include "bits/regionAncestors.tpl" region=$r link=true}
+      {/foreach}
+    {/if}
+
     {if count($results.tags)}
       <h3>
         {t count=count($results.tags) 1=count($results.tags) plural="title-tags-plural"}
@@ -52,7 +67,7 @@
       {/foreach}
     {/if}
 
-    {if empty($results.entities) && empty($results.statements) && empty($results.tags)}
+    {if $results.empty}
       <h3>{t 1=$query|escape}info-no-search-results{/t}
     {/if}
   </div>

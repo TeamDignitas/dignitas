@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-11-27 16:04+0200\n"
-"PO-Revision-Date: 2020-11-27 16:04+0200\n"
+"POT-Creation-Date: 2020-11-27 16:53+0200\n"
+"PO-Revision-Date: 2020-11-27 16:53+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -120,13 +120,19 @@ msgstr "authors"
 msgid "title-statements"
 msgstr "statements"
 
-#: templates/aggregate/search.tpl:45
+#: templates/aggregate/search.tpl:46
+msgid "title-regions-singular"
+msgid_plural "title-regions-plural"
+msgstr[0] "one region"
+msgstr[1] "%1 regions"
+
+#: templates/aggregate/search.tpl:60
 msgid "title-tags-singular"
 msgid_plural "title-tags-plural"
 msgstr[0] "one tag"
 msgstr[1] "%1 tags"
 
-#: templates/aggregate/search.tpl:56
+#: templates/aggregate/search.tpl:71
 msgid "info-no-search-results"
 msgstr "Your search «%1» produced no results."
 
@@ -135,13 +141,13 @@ msgid "title-edit-answer"
 msgstr "edit answer"
 
 #: templates/answer/edit.tpl:16 templates/auth/resetPassword.tpl:46
-#: templates/bits/commentForm.tpl:44 templates/cannedResponse/edit.tpl:46
+#: templates/bits/commentForm.tpl:49 templates/cannedResponse/edit.tpl:46
 #: templates/domain/edit.tpl:96 templates/entity/edit.tpl:287
 #: templates/entityType/edit.tpl:108 templates/help/categoryEdit.tpl:80
 #: templates/help/pageEdit.tpl:74 templates/region/edit.tpl:69
 #: templates/region/list.tpl:45 templates/relation/edit.tpl:24
 #: templates/relationType/edit.tpl:147 templates/statement/edit.tpl:171
-#: templates/staticResource/edit.tpl:81 templates/tag/edit.tpl:155
+#: templates/staticResource/edit.tpl:97 templates/tag/edit.tpl:178
 #: templates/user/ban.tpl:59 templates/user/edit.tpl:133
 msgid "link-save"
 msgstr "save"
@@ -263,7 +269,7 @@ msgstr "tag"
 msgid "answer-posted-by"
 msgstr "posted by"
 
-#: templates/bits/answer.tpl:54
+#: templates/bits/answer.tpl:63
 msgid "info-answer-permalink"
 msgstr "permanent link to this answer"
 
@@ -287,7 +293,7 @@ msgstr "Are you sure you want to delete this answer?"
 #: templates/entityType/edit.tpl:97 templates/help/categoryEdit.tpl:69
 #: templates/help/pageEdit.tpl:89 templates/region/edit.tpl:93
 #: templates/relationType/edit.tpl:136 templates/statement/edit.tpl:149
-#: templates/staticResource/edit.tpl:96 templates/tag/edit.tpl:177
+#: templates/staticResource/edit.tpl:86 templates/tag/edit.tpl:165
 msgid "link-delete"
 msgstr "delete"
 
@@ -300,15 +306,15 @@ msgstr "Are you sure you want to reopen this answer?"
 msgid "link-reopen"
 msgstr "reopen"
 
-#: templates/bits/answerEdit.tpl:72 templates/bits/commentForm.tpl:49
+#: templates/bits/answerEdit.tpl:72 templates/bits/commentForm.tpl:44
 #: templates/cannedResponse/edit.tpl:41 templates/cannedResponse/list.tpl:52
 #: templates/domain/edit.tpl:91 templates/entity/edit.tpl:282
 #: templates/entityType/edit.tpl:103 templates/help/categoryEdit.tpl:75
 #: templates/help/categoryList.tpl:30 templates/help/pageEdit.tpl:79
 #: templates/invite/add.tpl:31 templates/region/edit.tpl:77
 #: templates/relation/edit.tpl:29 templates/relationType/edit.tpl:142
-#: templates/relationType/list.tpl:66 templates/statement/edit.tpl:166
-#: templates/staticResource/edit.tpl:86 templates/tag/edit.tpl:161
+#: templates/relationType/list.tpl:62 templates/statement/edit.tpl:166
+#: templates/staticResource/edit.tpl:92 templates/tag/edit.tpl:172
 #: templates/user/ban.tpl:54 templates/user/edit.tpl:128
 msgid "link-cancel"
 msgstr "cancel"
@@ -353,10 +359,10 @@ msgstr[0] "one identical line skipped"
 msgstr[1] "%1 identical lines skipped"
 
 #: templates/bits/editButton.tpl:10 templates/bits/reviewActions.tpl:29
-#: templates/cannedResponse/list.tpl:39 templates/domain/list.tpl:34
-#: templates/entityType/list.tpl:51 templates/help/categoryView.tpl:39
+#: templates/cannedResponse/list.tpl:39 templates/domain/list.tpl:38
+#: templates/entityType/list.tpl:53 templates/help/categoryView.tpl:39
 #: templates/help/pageView.tpl:35 templates/region/view.tpl:15
-#: templates/relationType/list.tpl:46 templates/staticResource/list.tpl:42
+#: templates/relationType/list.tpl:48 templates/staticResource/list.tpl:44
 #: templates/tag/view.tpl:15 templates/user/view.tpl:94
 msgid "link-edit"
 msgstr "edit"
@@ -416,6 +422,11 @@ msgstr "filter"
 #: templates/bits/entityFilters.tpl:34 templates/bits/statementFilters.tpl:74
 msgid "label-term"
 msgstr "text"
+
+#: templates/bits/entityFilters.tpl:39 templates/entity/edit.tpl:198
+#: lib/model/RevisionEntity.php:36
+msgid "label-region"
+msgstr "region"
 
 #: templates/bits/fakeLogin.tpl:3
 msgid "title-test-login"
@@ -825,7 +836,7 @@ msgid "title-actions"
 msgstr "actions"
 
 #: templates/cannedResponse/list.tpl:56 templates/help/categoryList.tpl:35
-#: templates/relationType/list.tpl:60
+#: templates/relationType/list.tpl:70
 msgid "link-save-order"
 msgstr "save order"
 
@@ -1002,10 +1013,6 @@ msgstr "external links"
 #: templates/entity/edit.tpl:191
 msgid "link-add-entity-link"
 msgstr "add a link"
-
-#: templates/entity/edit.tpl:198 lib/model/RevisionEntity.php:36
-msgid "label-region"
-msgstr "region"
 
 #: templates/entity/edit.tpl:214 templates/statement/edit.tpl:111
 msgid "label-tags"
@@ -1404,17 +1411,17 @@ msgstr "statements with a verdict, but no proof"
 msgid "title-statements-verdict-mismatch"
 msgstr "statements with a verdict opposite to the proof's verdict"
 
-#: templates/statement/view.tpl:14
+#: templates/statement/view.tpl:15
 msgid "title-answers-singular"
 msgid_plural "title-answers-plural"
 msgstr[0] "one answer"
 msgstr[1] "%1 answers"
 
-#: templates/statement/view.tpl:29
+#: templates/statement/view.tpl:31
 msgid "title-your-answer"
 msgstr "your answer"
 
-#: templates/statement/view.tpl:32
+#: templates/statement/view.tpl:34
 msgid "link-post-answer"
 msgstr "post answer"
 
@@ -1440,7 +1447,7 @@ msgstr "all"
 msgid "info-choose-static-resource-file"
 msgstr "... or upload a file"
 
-#: templates/staticResource/edit.tpl:94
+#: templates/staticResource/edit.tpl:84
 msgid "info-confirm-delete-static-resource"
 msgstr "Are you sure you want to delete this resource?"
 
@@ -1496,11 +1503,11 @@ msgstr ""
 "you can contact us and ask that we add it to our set. You can preview the "
 "set of available icons on <a href=\"%2\">Fontello</a>."
 
-#: templates/tag/edit.tpl:170
+#: templates/tag/edit.tpl:158
 msgid "info-confirm-delete-tag"
 msgstr "Are you sure you want to delete this tag?"
 
-#: templates/tag/edit.tpl:173 routes/tag/edit.php:32
+#: templates/tag/edit.tpl:161 routes/tag/edit.php:32
 msgid "info-cannot-delete-tag"
 msgstr ""
 "Cannot delete this tag because (1) it has descendants or (2) it is being "
