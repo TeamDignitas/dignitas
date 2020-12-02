@@ -39,7 +39,7 @@
                   title="{t}link-edit{/t}">
                   <i class="icon icon-pencil"></i>
                 </a>
-                {include "bits/historyButton.tpl" obj=$cr}
+                {include "bits/historyButton.tpl" obj=$cr iconOnly=true}
               </td>
             </tr>
           {/foreach}
