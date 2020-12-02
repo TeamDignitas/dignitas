@@ -13,8 +13,9 @@
     data-object-id="{$obj->id}"
     data-unsubscribe-link="#{$unsubscribeId}"
     {if Subscription::exists($obj)}hidden{/if}
-    title="{t}link-subscribe{/t}">
+    title="{t}info-subscribe{/t}">
     <i class="icon icon-eye"></i>
+    {t}link-subscribe{/t}
   </a>
 
   <a
@@ -25,7 +26,8 @@
     data-object-id="{$obj->id}"
     data-subscribe-link="#{$subscribeId}"
     {if !Subscription::exists($obj)}hidden{/if}
-    title="{t}link-unsubscribe{/t}">
+    title="{t}info-unsubscribe{/t}">
     <i class="icon icon-eye-off"></i>
+    {t}link-unsubscribe{/t}
   </a>
 {/if}

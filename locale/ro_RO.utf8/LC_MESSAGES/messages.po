@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-11-27 16:52+0200\n"
-"PO-Revision-Date: 2020-11-27 16:53+0200\n"
+"POT-Creation-Date: 2020-12-02 10:50+0200\n"
+"PO-Revision-Date: 2020-12-02 11:05+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -274,9 +274,13 @@ msgstr "etichetă"
 msgid "answer-posted-by"
 msgstr "publicat de"
 
-#: templates/bits/answer.tpl:63
+#: templates/bits/answer.tpl:68
 msgid "info-answer-permalink"
 msgstr "legătură permanentă către acest răspuns"
+
+#: templates/bits/answer.tpl:70
+msgid "link-answer-permalink"
+msgstr "legătură permanentă"
 
 #: templates/bits/answerEdit.tpl:19 templates/bits/statement.tpl:153
 #: templates/bits/statementFilters.tpl:43 templates/bits/statementList.tpl:35
@@ -452,11 +456,11 @@ msgstr "moderator"
 msgid "link-test-login"
 msgstr "autentificare ca utilizator de test"
 
-#: templates/bits/flagLinks.tpl:19
+#: templates/bits/flagLinks.tpl:20
 msgid "link-flag"
 msgstr "raportează"
 
-#: templates/bits/flagLinks.tpl:31
+#: templates/bits/flagLinks.tpl:32
 msgid "link-unflag"
 msgstr "șterge raportarea"
 
@@ -601,7 +605,7 @@ msgstr "autor"
 msgid "label-changes"
 msgstr "modificări"
 
-#: templates/bits/historyButton.tpl:9
+#: templates/bits/historyButton.tpl:10
 msgid "link-show-revisions"
 msgstr "arată versiunile"
 
@@ -803,12 +807,20 @@ msgid "quoted-string-%1"
 msgstr "„%1”"
 
 #: templates/bits/subscribeLinks.tpl:16
-msgid "link-subscribe"
-msgstr "urmărește acest articol"
+msgid "info-subscribe"
+msgstr "abonează-mă la notificări despre acest articol"
 
-#: templates/bits/subscribeLinks.tpl:28
+#: templates/bits/subscribeLinks.tpl:18
+msgid "link-subscribe"
+msgstr "urmărește"
+
+#: templates/bits/subscribeLinks.tpl:29
+msgid "info-unsubscribe"
+msgstr "dezabonează-mă de la toate notificările despre acest articol"
+
+#: templates/bits/subscribeLinks.tpl:31
 msgid "link-unsubscribe"
-msgstr "nu mai urmări acest articol"
+msgstr "nu mai urmări"
 
 #: templates/cannedResponse/edit.tpl:3 templates/cannedResponse/edit.tpl:7
 msgid "title-edit-canned-response"

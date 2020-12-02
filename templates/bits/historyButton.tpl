@@ -5,8 +5,8 @@
 {if $obj->hasRevisions()}
   <a
     href="{$obj->getHistoryUrl()}"
-    class="{$class}"
-    title="{t}link-show-revisions{/t}">
+    class="{$class}">
     <i class="icon icon-hourglass"></i>
+    {t}link-show-revisions{/t}
   </a>
 {/if}

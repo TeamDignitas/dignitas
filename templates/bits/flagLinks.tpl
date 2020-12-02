@@ -15,9 +15,9 @@
     data-object-type="{$obj->getObjectType()}"
     data-object-id="{$obj->id}"
     data-unflag-link="#{$unflagId}"
-    {if $obj->isFlagged()}hidden{/if}
-    title="{t}link-flag{/t}">
+    {if $obj->isFlagged()}hidden{/if}>
     <i class="icon icon-flag"></i>
+    {t}link-flag{/t}
   </a>
 
   <a
@@ -27,8 +27,8 @@
     data-object-type="{$obj->getObjectType()}"
     data-object-id="{$obj->id}"
     data-flag-link="#{$flagId}"
-    {if !$obj->isFlagged()}hidden{/if}
-    title="{t}link-unflag{/t}">
+    {if !$obj->isFlagged()}hidden{/if}>
     <i class="icon icon-flag-empty"></i>
+    {t}link-unflag{/t}
   </a>
 {/if}

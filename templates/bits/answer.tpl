@@ -47,39 +47,33 @@
         {/if}
 
         <div class="col-md-2 text-right">
+          {$comments=Comment::getFor($answer)}
           {if $addComment && empty($comments)}
             {include "bits/addCommentLink.tpl" object=$answer}
           {/if}
 
-          {$comments=Comment::getFor($answer)}
-          <button class="btn pt-0" type="button" id="ellipsisMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="icon icon-plus"></i>
+          <button
+            class="btn pt-0"
+            type="button"
+            id="answer-menu-{$answer->id}"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false">
+            <i class="icon icon-ellipsis-vert"></i>
           </button>
 
-          <div class="dropdown-menu" aria-labelledby="ellipsisMenu">
-            <button class="dropdown-item" type="button">
-              <a href="#a{$answer->id}"
-                 class="btn"
-                 title="{t}info-answer-permalink{/t}">
-                <i class="icon icon-link"></i>
-              </a>
-            </button>
+          <div class="dropdown-menu" aria-labelledby="answer-menu-{$answer->id}">
+            <a href="#a{$answer->id}"
+              class="dropdown-item"
+              title="{t}info-answer-permalink{/t}">
+              <i class="icon icon-link"></i>
+              {t}link-answer-permalink{/t}
+            </a>
 
-            <button class="dropdown-item" type="button">
-              {include "bits/editButton.tpl" obj=$answer}
-            </button>
-
-            <button class="dropdown-item" type="button">
-              {include "bits/subscribeLinks.tpl" obj=$answer}
-            </button>
-
-            <button class="dropdown-item" type="button">
-              {include "bits/flagLinks.tpl" obj=$answer class="btn mt-1"}
-            </button>
-
-            <button class="dropdown-item" type="button">
-              {include "bits/historyButton.tpl" obj=$answer}
-            </button>
+            {include "bits/editButton.tpl" obj=$answer class="dropdown-item"}
+            {include "bits/subscribeLinks.tpl" obj=$answer class="dropdown-item"}
+            {include "bits/flagLinks.tpl" obj=$answer class="dropdown-item"}
+            {include "bits/historyButton.tpl" obj=$answer class="dropdown-item"}
           </div>
         </div>
       </div>

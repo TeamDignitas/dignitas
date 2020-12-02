@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-11-27 16:53+0200\n"
-"PO-Revision-Date: 2020-11-27 16:53+0200\n"
+"POT-Creation-Date: 2020-12-02 10:59+0200\n"
+"PO-Revision-Date: 2020-12-02 11:05+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -269,9 +269,13 @@ msgstr "tag"
 msgid "answer-posted-by"
 msgstr "posted by"
 
-#: templates/bits/answer.tpl:63
+#: templates/bits/answer.tpl:68
 msgid "info-answer-permalink"
 msgstr "permanent link to this answer"
+
+#: templates/bits/answer.tpl:70
+msgid "link-answer-permalink"
+msgstr "permalink"
 
 #: templates/bits/answerEdit.tpl:19 templates/bits/statement.tpl:153
 #: templates/bits/statementFilters.tpl:43 templates/bits/statementList.tpl:35
@@ -446,11 +450,11 @@ msgstr "moderator"
 msgid "link-test-login"
 msgstr "test user login"
 
-#: templates/bits/flagLinks.tpl:19
+#: templates/bits/flagLinks.tpl:20
 msgid "link-flag"
 msgstr "flag"
 
-#: templates/bits/flagLinks.tpl:31
+#: templates/bits/flagLinks.tpl:32
 msgid "link-unflag"
 msgstr "unflag"
 
@@ -594,7 +598,7 @@ msgstr "author"
 msgid "label-changes"
 msgstr "changes"
 
-#: templates/bits/historyButton.tpl:9
+#: templates/bits/historyButton.tpl:10
 msgid "link-show-revisions"
 msgstr "show revisions"
 
@@ -795,12 +799,20 @@ msgid "quoted-string-%1"
 msgstr "\"%1\""
 
 #: templates/bits/subscribeLinks.tpl:16
-msgid "link-subscribe"
-msgstr "watch this item"
+msgid "info-subscribe"
+msgstr "request notifications about this item"
 
-#: templates/bits/subscribeLinks.tpl:28
-msgid "link-unsubscribe"
+#: templates/bits/subscribeLinks.tpl:18
+msgid "link-subscribe"
+msgstr "watch"
+
+#: templates/bits/subscribeLinks.tpl:29
+msgid "info-unsubscribe"
 msgstr "stop watching this item"
+
+#: templates/bits/subscribeLinks.tpl:31
+msgid "link-unsubscribe"
+msgstr "unwatch"
 
 #: templates/cannedResponse/edit.tpl:3 templates/cannedResponse/edit.tpl:7
 msgid "title-edit-canned-response"
