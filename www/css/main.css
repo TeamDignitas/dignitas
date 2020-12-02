@@ -212,7 +212,7 @@ img.pic.no-outline,
 
 .statement-read-only .text-muted,
 .answer-read-only,
-.answer-actions a,
+.answer-actions .dropdown-menu a,
 .answer-buttons .btn-sm,
 .answer-buttons .dropdown-menu,
 .entity-actions a,

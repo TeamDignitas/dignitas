@@ -31,29 +31,20 @@
 
     <div class="answer-footer col-md-12 px-0">
       <div class="text-muted mb-2 row">
-        <div class="answer-read-only col-sm-12 col-md-6 mb-1">
+        <div class="answer-read-only col-9 mt-3 mb-1 pr-0">
           {t}answer-posted-by{/t}
           {include 'bits/userLink.tpl' u=$answer->getUser()}
           {include 'bits/moment.tpl' t=$answer->createDate}
         </div>
 
-        {if $answer->verdict != Ct::VERDICT_NONE}
-          <div class="col-sm-6 col-md-4 mb-1">
-            <span class="badge badge-pill badge-secondary">
-              <i class="icon icon-hammer"></i>
-              {$answer->getVerdictName()}
-            </span>
-          </div>
-        {/if}
-
-        <div class="answer-actions col-sm-6 col-md-2 px-0 text-right">
+        <div class="answer-actions col-3 px-0 text-right">
           {$comments=Comment::getFor($answer)}
           {if $addComment && empty($comments)}
             {include "bits/addCommentLink.tpl" object=$answer}
           {/if}
 
           <button
-            class="btn pt-0"
+            class="btn"
             type="button"
             id="answer-menu-{$answer->id}"
             data-toggle="dropdown"
@@ -76,6 +67,16 @@
             {include "bits/historyButton.tpl" obj=$answer class="dropdown-item"}
           </div>
         </div>
+
+        {if $answer->verdict != Ct::VERDICT_NONE}
+          <div class="col-12 mt-2 mb-1">
+            <span class="badge badge-pill badge-secondary">
+              <i class="icon icon-hammer"></i>
+              {$answer->getVerdictName()}
+            </span>
+          </div>
+        {/if}
+
       </div>
 
     </div>
