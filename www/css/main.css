@@ -211,8 +211,8 @@ img.pic.no-outline,
 }
 
 .statement-read-only .text-muted,
-.answer-footer *,
-.answer-footer .btn,
+.answer-read-only,
+.answer-actions a,
 .answer-buttons .btn-sm,
 .answer-buttons .dropdown-menu,
 .entity-actions a,
