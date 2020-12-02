@@ -33,7 +33,7 @@
         </a>
       {/if}
 
-      {include "bits/flagLinks.tpl" obj=$comment}
+      {include "bits/flagLinks.tpl" obj=$comment iconOnly=true}
     </span>
 
     {if $comment->status == Ct::STATUS_DELETED}
