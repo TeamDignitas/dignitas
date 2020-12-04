@@ -33,7 +33,7 @@
         {if User::isModerator()}
           <div class="mt-4">
             <a
-              class="btn btn-sm btn-primary"
+              class="btn btn-sm btn-primary col-sm-12 col-md-2"
               href="{Router::link('help/categoryEdit')}/{$category->id}">
               <i class="icon icon-pencil"></i>
               {t}link-edit{/t}
