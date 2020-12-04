@@ -7,7 +7,7 @@
     <h1 class="mb-4">{cap}{t}title-relation-types{/t}{/cap}</h1>
 
     {if $numEntityTypes}
-      <a class="btn btn-sm btn-primary" href="{Router::link('relationType/edit')}">
+      <a class="btn btn-sm btn-primary col-sm-12 col-md-3" href="{Router::link('relationType/edit')}">
         <i class="icon icon-plus"></i>
         {t}link-add-relation-type{/t}
       </a>

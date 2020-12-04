@@ -7,7 +7,7 @@
     <h1 class="mb-4">{cap}{t}title-tags{/t}{/cap}</h1>
 
     {if User::may(User::PRIV_ADD_TAG)}
-      <a class="btn btn-sm btn-primary" href="{Router::link('tag/edit')}">
+      <a class="btn btn-sm btn-primary col-sm-12 col-md-3" href="{Router::link('tag/edit')}">
         <i class="icon icon-plus"></i>
         {t}link-add-tag{/t}
       </a>
