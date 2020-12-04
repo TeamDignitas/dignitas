@@ -101,21 +101,31 @@
     </div>
 
     {$comments=Comment::getFor($statement)}
-    <div class="clearfix statement-actions mb-2 mt-1 text-right">
-      {if $editLink}
-        {include "bits/editButton.tpl" obj=$statement}
-      {/if}
-
-      {include "bits/subscribeLinks.tpl" obj=$statement}
-      {include "bits/flagLinks.tpl" obj=$statement class="btn mt-1"}
-
+    <div class="clearfix mb-2 mt-1 text-right">
       {* when there are no comments, the add comment button sits on the same
          row as the other buttons *}
       {if empty($comments) && $addComment}
         {include "bits/addCommentLink.tpl" object=$statement}
       {/if}
 
-      {include "bits/historyButton.tpl" obj=$statement}
+      <button
+        class="btn"
+        type="button"
+        id="statement-menu-{$statement->id}"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <i class="icon icon-ellipsis-vert"></i>
+      </button>
+
+      <div class="dropdown-menu" aria-labelledby="statement-menu-{$statement->id}">
+        {if $editLink}
+          {include "bits/editButton.tpl" obj=$statement class="dropdown-item"}
+        {/if}
+        {include "bits/subscribeLinks.tpl" obj=$statement class="dropdown-item"}
+        {include "bits/flagLinks.tpl" obj=$statement class="dropdown-item"}
+        {include "bits/historyButton.tpl" obj=$statement class="dropdown-item"}
+      </div>
     </div>
 
     {if !empty($comments)}
@@ -127,7 +137,7 @@
 
       {* when there are comments, the add comment button sits on a separate row *}
       {if $addComment}
-        <div class="clearfix statement-actions mb-2 mt-1 text-right">
+        <div class="clearfix mb-2 mt-1 text-right">
           {include "bits/addCommentLink.tpl" object=$statement}
         </div>
       {/if}
