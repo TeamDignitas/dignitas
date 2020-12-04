@@ -6,7 +6,7 @@
   <div class="container my-5">
     <h1 class="mb-4">{cap}{t}title-canned-responses{/t}{/cap}</h1>
 
-    <a href="{Router::link('cannedResponse/edit')}" class="btn btn-sm btn-primary">
+    <a href="{Router::link('cannedResponse/edit')}" class="btn btn-sm btn-primary col-sm-12 col-md-3">
       <i class="icon icon-plus"></i>
       {t}link-add-canned-response{/t}
     </a>
@@ -47,11 +47,11 @@
       </table>
 
       <div class="mt-4 text-right">
-        <a href="{Router::link('cannedResponse/list')}" class="btn btn-sm btn-outline-secondary">
+        <a href="{Router::link('cannedResponse/list')}" class="btn btn-sm btn-outline-secondary col-sm-12 col-md-2 mb-2 mr-1">
           <i class="icon icon-cancel"></i>
           {t}link-cancel{/t}
         </a>
-        <button type="submit" class="btn btn-sm btn-outline-primary" name="saveButton">
+        <button type="submit" class="btn btn-sm btn-outline-primary col-sm-12 col-md-2 mb-2" name="saveButton">
           <i class="icon icon-floppy"></i>
           {t}link-save-order{/t}
         </button>
