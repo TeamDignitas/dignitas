@@ -109,14 +109,26 @@
       {if $entity->acceptsNewStatements()}
         <a
           href="{Router::link('statement/edit')}?entityId={$entity->id}"
-          class="btn btn-outline-primary mt-1">
+          class="btn btn-primary mt-1">
           {t}link-add-statement{/t}
         </a>
       {/if}
-      {include "bits/editButton.tpl" obj=$entity}
-      {include "bits/subscribeLinks.tpl" obj=$entity}
-      {include "bits/flagLinks.tpl" obj=$entity class="btn btn-outline-secondary mt-1"}
-      {include "bits/historyButton.tpl" obj=$entity}
+
+      <button
+        class="btn mt-1"
+        type="button"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <i class="icon icon-ellipsis-vert"></i>
+      </button>
+      <div class="dropdown-menu" aria-labelledby="entity-menu">
+
+        {include "bits/editButton.tpl" obj=$entity class="dropdown-item"}
+        {include "bits/subscribeLinks.tpl" obj=$entity class="dropdown-item"}
+        {include "bits/flagLinks.tpl" obj=$entity class="dropdown-item"}
+        {include "bits/historyButton.tpl" obj=$entity class="dropdown-item"}
+      </div>
     </div>
 
   </div>

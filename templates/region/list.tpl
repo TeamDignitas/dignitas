@@ -7,7 +7,7 @@
     <h1 class="mb-4">{cap}{t}title-regions{/t}{/cap}</h1>
 
     {if User::may(User::PRIV_ADD_TAG)}
-      <a class="btn btn-sm btn-outline-primary" href="{Router::link('region/edit')}">
+      <a class="btn btn-sm btn-primary" href="{Router::link('region/edit')}">
         <i class="icon icon-plus"></i>
         {t}link-add-region{/t}
       </a>
@@ -37,13 +37,15 @@
           {/foreach}
         {/for}
 
-        <button
-          name="saveButton"
-          type="submit"
-          class="btn btn-sm btn-outline-primary col-sm-3 col-lg-2 mr-2 mb-2">
-          <i class="icon icon-floppy"></i>
-          {t}link-save{/t}
-        </button>
+        <div class="mt-4 text-right">
+          <button
+            name="saveButton"
+            type="submit"
+            class="btn btn-sm btn-outline-primary col-sm-3 col-lg-2 mr-2 mb-2">
+            <i class="icon icon-floppy"></i>
+            {t}link-save{/t}
+          </button>
+        </div>
 
       </form>
     {/if}
