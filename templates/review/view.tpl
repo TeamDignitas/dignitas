@@ -44,9 +44,11 @@
 
         {elseif $type == Proto::TYPE_ANSWER}
 
-          {include "bits/answer.tpl" answer=$object addComment=true}
+          <div class="border border-dark px-4 py-4">
+            {include "bits/answer.tpl" answer=$object addComment=true}
+          </div>
 
-          <h3 class="mt-5 mb-3">{cap}{t}title-pertaining-to-statement{/t}{/cap}</h3>
+          <h5 class="mt-5 mb-3">{cap}{t}title-pertaining-to-statement{/t}{/cap}</h5>
 
           <div id="parent-object" class="ml-5 callout">
             {include "bits/statement.tpl"
@@ -79,7 +81,7 @@
 
             <h3>{cap}{t}title-pertaining-to-answer{/t}{/cap}</h3>
 
-            <div id="parent-object">
+            <div id="parent-object" class="border border-dark px-4 py-4">
               {include "bits/answer.tpl"
                 answer=$parent
                 flagLinks=false

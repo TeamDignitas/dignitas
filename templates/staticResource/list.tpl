@@ -6,7 +6,7 @@
   <div class="container my-5">
     <h1 class="mb-5">{cap}{t}title-static-resources{/t}{/cap}</h1>
 
-    <a class="btn btn-sm btn-primary" href="{Router::link('staticResource/edit')}">
+    <a class="btn btn-sm btn-primary col-sm-12 col-md-3" href="{Router::link('staticResource/edit')}">
       <i class="icon icon-plus"></i>
       {t}link-add-static-resource{/t}
     </a>

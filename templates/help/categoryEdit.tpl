@@ -63,19 +63,19 @@
           <button
             name="deleteButton"
             type="submit"
-            class="btn btn-sm btn-outline-danger col-sm-4 col-lg-2 mr-2 mb-2"
+            class="btn btn-sm btn-outline-danger col-sm-12 col-md-2 mr-2 mb-2"
             data-confirm="{t}info-confirm-delete-help-category{/t}">
             <i class="icon icon-trash"></i>
             {t}link-delete{/t}
           </button>
         {/if}
 
-        <a href="{$cat->getViewUrl()}" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2">
+        <a href="{$cat->getViewUrl()}" class="btn btn-sm btn-outline-secondary col-sm-12 col-md-2 mr-2 mb-2">
           <i class="icon icon-cancel"></i>
           {t}link-cancel{/t}
         </a>
 
-        <button name="saveButton" type="submit" class="btn btn-sm btn-primary col-sm-4 col-lg-2 mb-2">
+        <button name="saveButton" type="submit" class="btn btn-sm btn-primary col-sm-12 col-md-2 mb-2">
           <i class="icon icon-floppy"></i>
           {t}link-save{/t}
         </button>
