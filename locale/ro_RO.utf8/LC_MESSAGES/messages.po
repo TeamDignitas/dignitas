@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-12-02 10:50+0200\n"
-"PO-Revision-Date: 2020-12-02 11:05+0200\n"
+"POT-Creation-Date: 2020-12-04 14:35+0200\n"
+"PO-Revision-Date: 2020-12-04 14:35+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -274,15 +274,15 @@ msgstr "etichetă"
 msgid "answer-posted-by"
 msgstr "publicat de"
 
-#: templates/bits/answer.tpl:68
+#: templates/bits/answer.tpl:60
 msgid "info-answer-permalink"
 msgstr "legătură permanentă către acest răspuns"
 
-#: templates/bits/answer.tpl:70
-msgid "link-answer-permalink"
+#: templates/bits/answer.tpl:62 templates/bits/comment.tpl:35
+msgid "link-permalink"
 msgstr "legătură permanentă"
 
-#: templates/bits/answerEdit.tpl:19 templates/bits/statement.tpl:153
+#: templates/bits/answerEdit.tpl:19 templates/bits/statement.tpl:163
 #: templates/bits/statementFilters.tpl:43 templates/bits/statementList.tpl:35
 #: templates/statement/edit.tpl:123 lib/model/RevisionAnswer.php:15
 #: lib/model/RevisionStatement.php:18
@@ -297,12 +297,13 @@ msgstr "detalii despre verdicte și efectele lor"
 msgid "info-confirm-delete-answer"
 msgstr "Confirmați ștergerea acestui răspuns?"
 
-#: templates/bits/answerEdit.tpl:56 templates/cannedResponse/edit.tpl:35
-#: templates/domain/edit.tpl:78 templates/entity/edit.tpl:265
-#: templates/entityType/edit.tpl:97 templates/help/categoryEdit.tpl:69
-#: templates/help/pageEdit.tpl:89 templates/region/edit.tpl:93
-#: templates/relationType/edit.tpl:136 templates/statement/edit.tpl:149
-#: templates/staticResource/edit.tpl:86 templates/tag/edit.tpl:165
+#: templates/bits/answerEdit.tpl:56 templates/bits/comment.tpl:45
+#: templates/cannedResponse/edit.tpl:35 templates/domain/edit.tpl:78
+#: templates/entity/edit.tpl:265 templates/entityType/edit.tpl:97
+#: templates/help/categoryEdit.tpl:69 templates/help/pageEdit.tpl:89
+#: templates/region/edit.tpl:93 templates/relationType/edit.tpl:136
+#: templates/statement/edit.tpl:149 templates/staticResource/edit.tpl:86
+#: templates/tag/edit.tpl:165
 msgid "link-delete"
 msgstr "șterge"
 
@@ -328,11 +329,11 @@ msgstr "redeschide"
 msgid "link-cancel"
 msgstr "renunță"
 
-#: templates/bits/comment.tpl:22
+#: templates/bits/comment.tpl:33
 msgid "info-comment-permalink"
 msgstr "legătură permanentă către acest comentariu"
 
-#: templates/bits/comment.tpl:31
+#: templates/bits/comment.tpl:43
 msgid "info-confirm-delete-comment"
 msgstr "Confirmați ștergerea acestui comentariu?"
 

@@ -54,11 +54,12 @@
           </button>
 
           <div class="dropdown-menu" aria-labelledby="answer-menu-{$answer->id}">
-            <a href="#a{$answer->id}"
+            <a
+              href="#a{$answer->id}"
               class="dropdown-item"
               title="{t}info-answer-permalink{/t}">
               <i class="icon icon-link"></i>
-              {t}link-answer-permalink{/t}
+              {t}link-permalink{/t}
             </a>
 
             {include "bits/editButton.tpl" obj=$answer class="dropdown-item"}

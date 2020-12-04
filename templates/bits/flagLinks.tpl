@@ -1,7 +1,6 @@
 {* Mandatory argument: $obj *}
 {$flagLinks=$flagLinks|default:true} {* pages can request the absence of flag links *}
 {$class=$class|default:''}
-{$iconOnly=$iconOnly|default:false}
 
 {if $flagLinks && ($obj->isFlaggable() || $obj->isFlagged())}
   {$flagId="flag_{$obj->getObjectType()}_{$obj->id}"}
@@ -18,10 +17,7 @@
     data-unflag-link="#{$unflagId}"
     {if $obj->isFlagged()}hidden{/if}>
     <i class="icon icon-flag"></i>
-
-    {if !$iconOnly}
-      {t}link-flag{/t}
-    {/if}
+    {t}link-flag{/t}
   </a>
 
   <a
@@ -33,8 +29,6 @@
     data-flag-link="#{$flagId}"
     {if !$obj->isFlagged()}hidden{/if}>
     <i class="icon icon-flag-empty"></i>
-    {if !$iconOnly}
-      {t}link-unflag{/t}
-    {/if}
+    {t}link-unflag{/t}
   </a>
 {/if}

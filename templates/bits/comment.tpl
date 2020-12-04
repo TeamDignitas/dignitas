@@ -16,25 +16,38 @@
     {include 'bits/userLink.tpl' u=$comment->getUser()}
     {include 'bits/moment.tpl' t=$comment->createDate}
 
-    <span class="comment-actions">
+    <button
+      class="btn comment-actions"
+      type="button"
+      id="comment-menu-{$comment->id}"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false">
+      <i class="icon icon-ellipsis-vert"></i>
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="comment-menu-{$comment->id}">
       <a
         href="#c{$comment->id}"
+        class="dropdown-item"
         title="{t}info-comment-permalink{/t}">
         <i class="icon icon-link"></i>
+        {t}link-permalink{/t}
       </a>
 
       {if $comment->isDeletable()}
         <a
           href="#"
-          class="delete-comment"
+          class="dropdown-item delete-comment"
           data-comment-id="{$comment->id}"
           data-confirm-msg="{t}info-confirm-delete-comment{/t}">
           <i class="icon icon-trash"></i>
+          {t}link-delete{/t}
         </a>
       {/if}
 
-      {include "bits/flagLinks.tpl" obj=$comment iconOnly=true}
-    </span>
+      {include "bits/flagLinks.tpl" obj=$comment class="dropdown-item"}
+    </div>
 
     {if $comment->status == Ct::STATUS_DELETED}
       <div class="alert alert-secondary">
