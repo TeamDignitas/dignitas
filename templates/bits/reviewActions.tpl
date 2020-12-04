@@ -10,32 +10,33 @@
       <div class="form-group row mx-0">
         <button
           name="removeButton"
-          class="btn btn-sm btn-outline-danger col-12 col-sm-12 col-lg-2 mr-2 mb-2"
+          class="btn btn-sm btn-outline-danger col-12 col-sm-12 col-md-2 mr-2 mb-2"
           type="submit">
           <i class="icon icon-cancel"></i>
           {$review->getVoteName(Flag::VOTE_REMOVE)}
         </button>
 
-        <button
-          name="keepButton"
-          class="btn btn-sm btn-outline-primary col-12 col-sm-12 col-lg-2 mr-2 mb-2"
-          type="submit">
-          <i class="icon icon-ok"></i>
-          {$review->getVoteName(Flag::VOTE_KEEP)}
-        </button>
-
-        <a href="{$object->getEditUrl()}" class="btn btn-sm btn-outline-secondary col-12 col-sm-12 col-lg-2 mr-2 mb-2">
+        <a href="{$object->getEditUrl()}" class="btn btn-sm btn-outline-secondary col-12 col-sm-12 col-md-2 mr-2 mb-2">
           <i class="icon icon-pencil"></i>
           {t}link-edit{/t}
         </a>
 
         <button
+          name="keepButton"
+          class="btn btn-sm btn-primary col-12 col-sm-12 col-md-2 mr-2 mb-2"
+          type="submit">
+          <i class="icon icon-ok"></i>
+          {$review->getVoteName(Flag::VOTE_KEEP)}
+        </button>
+
+        <button
           name="nextButton"
           type="submit"
-          class="btn btn-sm btn-outline-secondary col-12 col-sm-12 col-lg-2 mr-2 mb-2">
+          class="btn btn-sm btn-outline-secondary col-12 col-sm-12 col-md-2 offset-md-3 mb-2">
           <i class="icon icon-right-open"></i>
           {t}link-next{/t}
         </button>
+
       </div>
 
       <div class="form-group">
