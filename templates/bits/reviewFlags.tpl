@@ -1,4 +1,4 @@
-<h4 class="mt-5 capitalize-first-word">{t}title-review-votes{/t}</h4>
+<h3 class="my-5 capitalize-first-word">{t}title-review-votes{/t}</h3>
 
 <table class="table table-sm mb-5">
   <thead>
