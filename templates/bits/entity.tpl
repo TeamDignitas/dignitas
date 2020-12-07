@@ -25,7 +25,7 @@
       {$aliases=$entity->getAliases()}
       {if count($aliases)}
         <span class="capitalize-first-word d-inline-block">{t}title-alias{/t}:</span>
-        <ul class="d-inline list-inline">
+        <ul class="d-inline list-inline list-inline-bullet">
           {foreach $aliases as $a}
             <li class="list-inline-item">{$a->name|escape}
           {/foreach}
