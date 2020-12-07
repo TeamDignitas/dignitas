@@ -24,10 +24,6 @@ $(function() {
     $('#alias-container, #relation-container')
       .on('click', 'button.delete-dependant', deleteDependant);
 
-    $('.colorpicker-component').colorpicker({
-      fallbackColor: '#ffffff',
-    });
-
     var sel = $('#field-entity-type-id');
     sel.data('lastSelected', sel.val());
     sel.click(function() {
