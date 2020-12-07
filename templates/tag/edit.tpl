@@ -25,14 +25,12 @@
             {t}label-name{/t}
           </label>
           <div class="col-sm-12 col-lg-10 px-0">
-            <div>
-              <input type="text"
-                class="form-control {if isset($errors.value)}is-invalid{/if}"
-                id="value"
-                name="value"
-                value="{$t->value}">
-              {include "bits/fieldErrors.tpl" errors=$errors.value|default:null}
-            </div>
+            <input type="text"
+              class="form-control {if isset($errors.value)}is-invalid{/if}"
+              id="value"
+              name="value"
+              value="{$t->value}">
+            {include "bits/fieldErrors.tpl" errors=$errors.value|default:null}
           </div>
         </div>
 
@@ -41,14 +39,12 @@
             {t}label-details{/t}
           </label>
           <div class="col-sm-12 col-lg-10 px-0">
-            <div>
-              <input type="text"
-                class="form-control"
-                id="tooltip"
-                name="tooltip"
-                value="{$t->tooltip}"
-                placeholder="{t}label-optional-tooltip{/t}">
-            </div>
+            <input type="text"
+              class="form-control"
+              id="tooltip"
+              name="tooltip"
+              value="{$t->tooltip}"
+              placeholder="{t}label-optional-tooltip{/t}">
           </div>
         </div>
 
@@ -57,17 +53,15 @@
             {t}label-parent-tag{/t}
           </label>
           <div class="col-sm-12 col-lg-10 px-0">
-            <div>
-              <select
-                id="parent-id"
-                name="parentId"
-                class="form-control {if isset($errors.parentId)}is-invalid{/if}">
-                {if $t->parentId}
-                  <option value="{$t->parentId}" selected></option>
-                {/if}
-              </select>
-              {include "bits/fieldErrors.tpl" errors=$errors.parentId|default:null}
-            </div>
+            <select
+              id="parent-id"
+              name="parentId"
+              class="form-control {if isset($errors.parentId)}is-invalid{/if}">
+              {if $t->parentId}
+                <option value="{$t->parentId}" selected></option>
+              {/if}
+            </select>
+            {include "bits/fieldErrors.tpl" errors=$errors.parentId|default:null}
           </div>
         </div>
       </fieldset>
@@ -78,16 +72,16 @@
             {t}label-text-color{/t}
           </label>
           <div class="col-sm-12 col-lg-10 px-0">
-            <div class="input-group colorpicker-component">
-              <span class="input-group-prepend input-group-text colorpicker-input-addon">
-                <i></i>
-              </span>
-              <input type="text"
+            <div>
+              <input type="color"
                 class="form-control"
                 id="color"
                 name="color"
                 value="{$t->getColor()}">
             </div>
+            {include "bits/frequentColors.tpl"
+              colors=$frequentColors.color
+              target="#color"}
           </div>
         </div>
 
@@ -96,16 +90,16 @@
             {t}label-background-color{/t}
           </label>
           <div class="col-sm-12 col-lg-10 px-0">
-            <div class="input-group colorpicker-component">
-              <span class="input-group-prepend input-group-text colorpicker-input-addon">
-                <i></i>
-              </span>
-              <input type="text"
+            <div>
+              <input type="color"
                 class="form-control"
                 id="background"
                 name="background"
                 value="{$t->getBackground()}">
             </div>
+            {include "bits/frequentColors.tpl"
+              colors=$frequentColors.background
+              target="#background"}
           </div>
         </div>
 
@@ -197,14 +191,5 @@
         </div>
       {/foreach}
     {/if}
-
-    {* frequent colors to be used by the color pickers *}
-    {foreach $frequentColors as $color => $list}
-      <div id="frequent-{$color}">
-        {foreach $list as $color}
-          <div>{$color}</div>
-        {/foreach}
-      </div>
-    {/foreach}
   </div>
 {/block}

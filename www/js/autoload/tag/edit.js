@@ -8,33 +8,12 @@ $(function() {
       width: '100%',
     });
 
-    $('#color').closest('.colorpicker-component').colorpicker({
-      extensions: [
-        {
-          name: 'swatches',
-          options: { colors: collectFrequentColors('#frequent-color') },
-        }
-      ],
-      fallbackColor: '#ffffff',
-    });
-    $('#background').closest('.colorpicker-component').colorpicker({
-      extensions: [
-        {
-          name: 'swatches',
-          options: { colors: collectFrequentColors('#frequent-background') },
-        }
-      ],
-      fallbackColor: '#1e83c2',
-    });
+    $('.frequent-color').click(frequentColorClick);
   }
 
-  function collectFrequentColors(sel) {
-    var result = {};
-    $(sel).find('div').each(function() {
-      var hex = $(this).text();
-      result[hex] = hex;
-    });
-    return result;
+  function frequentColorClick() {
+    var input = $($(this).data('target'));
+    input.val($(this).data('value'));
   }
 
   init();

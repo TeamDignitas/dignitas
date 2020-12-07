@@ -82,7 +82,6 @@ Smart::assign([
   'homonyms' => $homonyms,
   'frequentColors' => $frequentColors,
 ]);
-Smart::addResources('colorpicker');
 Smart::display('tag/edit.tpl');
 
 /*************************************************************************/

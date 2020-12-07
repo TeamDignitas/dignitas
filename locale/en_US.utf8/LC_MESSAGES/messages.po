@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-12-04 14:35+0200\n"
-"PO-Revision-Date: 2020-12-04 14:35+0200\n"
+"POT-Creation-Date: 2020-12-07 14:04+0200\n"
+"PO-Revision-Date: 2020-12-07 14:04+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -142,12 +142,12 @@ msgstr "edit answer"
 
 #: templates/answer/edit.tpl:16 templates/auth/resetPassword.tpl:46
 #: templates/bits/commentForm.tpl:49 templates/cannedResponse/edit.tpl:46
-#: templates/domain/edit.tpl:96 templates/entity/edit.tpl:287
+#: templates/domain/edit.tpl:96 templates/entity/edit.tpl:282
 #: templates/entityType/edit.tpl:108 templates/help/categoryEdit.tpl:80
-#: templates/help/pageEdit.tpl:74 templates/region/edit.tpl:69
-#: templates/region/list.tpl:45 templates/relation/edit.tpl:24
+#: templates/help/pageEdit.tpl:91 templates/region/edit.tpl:95
+#: templates/region/list.tpl:46 templates/relation/edit.tpl:24
 #: templates/relationType/edit.tpl:147 templates/statement/edit.tpl:171
-#: templates/staticResource/edit.tpl:97 templates/tag/edit.tpl:178
+#: templates/staticResource/edit.tpl:97 templates/tag/edit.tpl:172
 #: templates/user/ban.tpl:59 templates/user/edit.tpl:133
 msgid "link-save"
 msgstr "save"
@@ -294,11 +294,11 @@ msgstr "Are you sure you want to delete this answer?"
 
 #: templates/bits/answerEdit.tpl:56 templates/bits/comment.tpl:45
 #: templates/cannedResponse/edit.tpl:35 templates/domain/edit.tpl:78
-#: templates/entity/edit.tpl:265 templates/entityType/edit.tpl:97
-#: templates/help/categoryEdit.tpl:69 templates/help/pageEdit.tpl:89
-#: templates/region/edit.tpl:93 templates/relationType/edit.tpl:136
+#: templates/entity/edit.tpl:260 templates/entityType/edit.tpl:97
+#: templates/help/categoryEdit.tpl:69 templates/help/pageEdit.tpl:80
+#: templates/region/edit.tpl:77 templates/relationType/edit.tpl:136
 #: templates/statement/edit.tpl:149 templates/staticResource/edit.tpl:86
-#: templates/tag/edit.tpl:165
+#: templates/tag/edit.tpl:159
 msgid "link-delete"
 msgstr "delete"
 
@@ -306,20 +306,20 @@ msgstr "delete"
 msgid "info-confirm-reopen-answer"
 msgstr "Are you sure you want to reopen this answer?"
 
-#: templates/bits/answerEdit.tpl:66 templates/entity/edit.tpl:275
+#: templates/bits/answerEdit.tpl:66 templates/entity/edit.tpl:270
 #: templates/statement/edit.tpl:159
 msgid "link-reopen"
 msgstr "reopen"
 
 #: templates/bits/answerEdit.tpl:72 templates/bits/commentForm.tpl:44
 #: templates/cannedResponse/edit.tpl:41 templates/cannedResponse/list.tpl:52
-#: templates/domain/edit.tpl:91 templates/entity/edit.tpl:282
+#: templates/domain/edit.tpl:91 templates/entity/edit.tpl:277
 #: templates/entityType/edit.tpl:103 templates/help/categoryEdit.tpl:75
-#: templates/help/categoryList.tpl:30 templates/help/pageEdit.tpl:79
-#: templates/invite/add.tpl:31 templates/region/edit.tpl:77
+#: templates/help/categoryList.tpl:30 templates/help/pageEdit.tpl:86
+#: templates/invite/add.tpl:31 templates/region/edit.tpl:86
 #: templates/relation/edit.tpl:29 templates/relationType/edit.tpl:142
 #: templates/relationType/list.tpl:62 templates/statement/edit.tpl:166
-#: templates/staticResource/edit.tpl:92 templates/tag/edit.tpl:172
+#: templates/staticResource/edit.tpl:92 templates/tag/edit.tpl:166
 #: templates/user/ban.tpl:54 templates/user/edit.tpl:128
 msgid "link-cancel"
 msgstr "cancel"
@@ -333,7 +333,7 @@ msgid "info-confirm-delete-comment"
 msgstr "Are you sure you want to delete this comment?"
 
 #: templates/bits/commentForm.tpl:14 templates/cannedResponse/edit.tpl:21
-#: templates/entity/edit.tpl:183
+#: templates/entity/edit.tpl:178
 msgid "label-characters-remaining"
 msgstr "characters remaining"
 
@@ -363,10 +363,10 @@ msgid_plural "identical-lines-skipped-plural"
 msgstr[0] "one identical line skipped"
 msgstr[1] "%1 identical lines skipped"
 
-#: templates/bits/editButton.tpl:10 templates/bits/reviewActions.tpl:29
+#: templates/bits/editButton.tpl:10 templates/bits/reviewActions.tpl:21
 #: templates/cannedResponse/list.tpl:39 templates/domain/list.tpl:38
 #: templates/entityType/list.tpl:53 templates/help/categoryView.tpl:39
-#: templates/help/pageView.tpl:35 templates/region/view.tpl:15
+#: templates/help/pageView.tpl:36 templates/region/view.tpl:15
 #: templates/relationType/list.tpl:48 templates/staticResource/list.tpl:44
 #: templates/tag/view.tpl:15 templates/user/view.tpl:94
 msgid "link-edit"
@@ -428,7 +428,7 @@ msgstr "filter"
 msgid "label-term"
 msgstr "text"
 
-#: templates/bits/entityFilters.tpl:39 templates/entity/edit.tpl:198
+#: templates/bits/entityFilters.tpl:39 templates/entity/edit.tpl:193
 #: lib/model/RevisionEntity.php:36
 msgid "label-region"
 msgstr "region"
@@ -586,6 +586,10 @@ msgstr "flag author"
 msgid "link-flag-comment"
 msgstr "flag comment"
 
+#: templates/bits/frequentColors.tpl:3
+msgid "label-frequent-colors"
+msgstr "frequently used colors"
+
 #: templates/bits/history.tpl:10
 msgid "info-no-history"
 msgstr ""
@@ -599,7 +603,7 @@ msgstr "author"
 msgid "label-changes"
 msgstr "changes"
 
-#: templates/bits/historyButton.tpl:10
+#: templates/bits/historyButton.tpl:13
 msgid "link-show-revisions"
 msgstr "show revisions"
 
@@ -686,7 +690,7 @@ msgstr "sources"
 msgid "link-next"
 msgstr "next"
 
-#: templates/bits/reviewActions.tpl:47
+#: templates/bits/reviewActions.tpl:48
 msgid "label-details-optional"
 msgstr "details (optional)"
 
@@ -787,11 +791,11 @@ msgstr "statement date (ascending)"
 msgid "label-other-filters"
 msgstr "other filters"
 
-#: templates/bits/statementFilters.tpl:82 templates/entity/edit.tpl:151
+#: templates/bits/statementFilters.tpl:82 templates/entity/edit.tpl:146
 msgid "label-start-date"
 msgstr "start date"
 
-#: templates/bits/statementFilters.tpl:91 templates/entity/edit.tpl:152
+#: templates/bits/statementFilters.tpl:91 templates/entity/edit.tpl:147
 msgid "label-end-date"
 msgstr "end date"
 
@@ -878,17 +882,17 @@ msgstr "display value"
 msgid "info-domain-display-value"
 msgstr "a value more suitable for humans"
 
-#: templates/domain/edit.tpl:39 templates/entity/edit.tpl:225
+#: templates/domain/edit.tpl:39 templates/entity/edit.tpl:220
 #: templates/user/edit.tpl:59
 msgid "label-image"
 msgstr "image"
 
-#: templates/domain/edit.tpl:55 templates/entity/edit.tpl:235
+#: templates/domain/edit.tpl:55 templates/entity/edit.tpl:230
 #: templates/user/edit.tpl:69
 msgid "info-upload-image"
 msgstr "choose an image"
 
-#: templates/domain/edit.tpl:63 templates/entity/edit.tpl:243
+#: templates/domain/edit.tpl:63 templates/entity/edit.tpl:238
 #: templates/user/edit.tpl:77
 msgid "label-delete-image"
 msgstr "delete image"
@@ -909,12 +913,12 @@ msgstr "domains"
 msgid "link-add-domain"
 msgstr "add a domain"
 
-#: templates/domain/list.tpl:18 templates/tag/edit.tpl:114
+#: templates/domain/list.tpl:18 templates/tag/edit.tpl:108
 msgid "label-icon"
 msgstr "icon"
 
 #: templates/domain/list.tpl:21 templates/entity/edit.tpl:84
-#: templates/entity/edit.tpl:153 templates/entityType/list.tpl:22
+#: templates/entity/edit.tpl:148 templates/entityType/list.tpl:22
 #: templates/relationType/list.tpl:30 templates/staticResource/list.tpl:21
 #: templates/user/view.tpl:102
 msgid "actions"
@@ -983,12 +987,12 @@ msgstr "also known as"
 msgid "link-add-alias"
 msgstr "add an alias"
 
-#: templates/entity/edit.tpl:82 templates/entity/edit.tpl:148
+#: templates/entity/edit.tpl:82 templates/entity/edit.tpl:143
 #: templates/relationType/list.tpl:25
 msgid "label-order"
 msgstr "order"
 
-#: templates/entity/edit.tpl:100 templates/entity/edit.tpl:149
+#: templates/entity/edit.tpl:100 templates/entity/edit.tpl:144
 #: templates/user/ban.tpl:14
 msgid "label-type"
 msgstr "type"
@@ -1003,39 +1007,39 @@ msgstr ""
 msgid "label-color"
 msgstr "color"
 
-#: templates/entity/edit.tpl:135
+#: templates/entity/edit.tpl:130
 msgid "label-relations"
 msgstr "relationships"
 
-#: templates/entity/edit.tpl:139
+#: templates/entity/edit.tpl:134
 msgid "label-add-relation"
 msgstr "add a relationship"
 
-#: templates/entity/edit.tpl:150
+#: templates/entity/edit.tpl:145
 msgid "label-target"
 msgstr "target"
 
-#: templates/entity/edit.tpl:172
+#: templates/entity/edit.tpl:167
 msgid "label-profile"
 msgstr "profile"
 
-#: templates/entity/edit.tpl:190
+#: templates/entity/edit.tpl:185
 msgid "label-entity-links"
 msgstr "external links"
 
-#: templates/entity/edit.tpl:191
+#: templates/entity/edit.tpl:186
 msgid "link-add-entity-link"
 msgstr "add a link"
 
-#: templates/entity/edit.tpl:214 templates/statement/edit.tpl:111
+#: templates/entity/edit.tpl:209 templates/statement/edit.tpl:111
 msgid "label-tags"
 msgstr "tags"
 
-#: templates/entity/edit.tpl:263
+#: templates/entity/edit.tpl:258
 msgid "info-confirm-delete-entity"
 msgstr "Are you sure you want to delete this author?"
 
-#: templates/entity/edit.tpl:274
+#: templates/entity/edit.tpl:269
 msgid "info-confirm-reopen-entity"
 msgstr "Are you sure you want to reopen this author?"
 
@@ -1157,7 +1161,7 @@ msgstr "visible in the page's URL"
 msgid "label-category"
 msgstr "category"
 
-#: templates/help/pageEdit.tpl:87
+#: templates/help/pageEdit.tpl:78
 msgid "info-confirm-delete-help-page"
 msgstr "Are you sure you want to delete this page?"
 
@@ -1201,21 +1205,21 @@ msgstr "add a region"
 msgid "label-parent-region"
 msgstr "parent region"
 
-#: templates/region/edit.tpl:86
+#: templates/region/edit.tpl:70
 msgid "info-confirm-delete-region"
 msgstr "Are you sure you want to delete this region?"
 
-#: templates/region/edit.tpl:89 routes/region/edit.php:30
+#: templates/region/edit.tpl:73 routes/region/edit.php:30
 msgid "info-cannot-delete-region"
 msgstr ""
 "Cannot delete this region because (1) it has descendants or (2) it is being "
 "used."
 
-#: templates/region/edit.tpl:100 templates/tag/edit.tpl:184
+#: templates/region/edit.tpl:101 templates/tag/edit.tpl:178
 msgid "title-direct-descendants"
 msgstr "direct descendants"
 
-#: templates/region/edit.tpl:110
+#: templates/region/edit.tpl:111
 msgid "title-duplicate-regions"
 msgstr "duplicate regions"
 
@@ -1331,27 +1335,27 @@ msgstr "Complete item:"
 msgid "info-statement-duplicate"
 msgstr "This statement was flagged as a duplicate of"
 
-#: templates/review/view.tpl:49 templates/review/view.tpl:89
-#: templates/review/view.tpl:101
+#: templates/review/view.tpl:51 templates/review/view.tpl:91
+#: templates/review/view.tpl:103
 msgid "title-pertaining-to-statement"
 msgstr "pertaining to statement:"
 
-#: templates/review/view.tpl:63
+#: templates/review/view.tpl:65
 msgid "info-entity-duplicate"
 msgstr "This author was flagged as a duplicate of"
 
-#: templates/review/view.tpl:66
+#: templates/review/view.tpl:68
 msgid "info-entity-duplicate-process"
 msgstr ""
 "Accepting this flag will transfer all statements from this duplicate to its "
 "canonical author. The aliases, relationships and other attributes will not "
 "be transferred."
 
-#: templates/review/view.tpl:80
+#: templates/review/view.tpl:82
 msgid "title-pertaining-to-answer"
 msgstr "pertaining to answer:"
 
-#: templates/review/view.tpl:118
+#: templates/review/view.tpl:120
 msgid "info-review-queue-empty"
 msgstr "This review queue is empty."
 
@@ -1484,31 +1488,31 @@ msgstr "edit tag"
 msgid "title-add-tag"
 msgstr "add a tag"
 
-#: templates/tag/edit.tpl:41
+#: templates/tag/edit.tpl:39
 msgid "label-details"
 msgstr "details"
 
-#: templates/tag/edit.tpl:50
+#: templates/tag/edit.tpl:47
 msgid "label-optional-tooltip"
 msgstr "optional; visible in a tooltip while hovering"
 
-#: templates/tag/edit.tpl:57
+#: templates/tag/edit.tpl:53
 msgid "label-parent-tag"
 msgstr "parent tag"
 
-#: templates/tag/edit.tpl:78
+#: templates/tag/edit.tpl:72
 msgid "label-text-color"
 msgstr "text color"
 
-#: templates/tag/edit.tpl:96
+#: templates/tag/edit.tpl:90
 msgid "label-background-color"
 msgstr "background color"
 
-#: templates/tag/edit.tpl:136
+#: templates/tag/edit.tpl:130
 msgid "label-icon-only"
 msgstr "show only the icon, no text"
 
-#: templates/tag/edit.tpl:142
+#: templates/tag/edit.tpl:136
 msgid "info-tag-icon-name"
 msgstr ""
 "Optionally, an <a href=\"%1\">icon name</a>. Copy the portion after <i>icon-"
@@ -1516,17 +1520,17 @@ msgstr ""
 "you can contact us and ask that we add it to our set. You can preview the "
 "set of available icons on <a href=\"%2\">Fontello</a>."
 
-#: templates/tag/edit.tpl:158
+#: templates/tag/edit.tpl:152
 msgid "info-confirm-delete-tag"
 msgstr "Are you sure you want to delete this tag?"
 
-#: templates/tag/edit.tpl:161 routes/tag/edit.php:32
+#: templates/tag/edit.tpl:155 routes/tag/edit.php:32
 msgid "info-cannot-delete-tag"
 msgstr ""
 "Cannot delete this tag because (1) it has descendants or (2) it is being "
 "used."
 
-#: templates/tag/edit.tpl:192
+#: templates/tag/edit.tpl:186
 msgid "title-duplicate-tags"
 msgstr "duplicate tags"
 
@@ -2781,7 +2785,7 @@ msgstr "Domain saved."
 #: routes/domain/edit.php:79 routes/entity/edit.php:144
 #: routes/entityType/edit.php:57 routes/help/categoryEdit.php:67
 #: routes/region/edit.php:86 routes/relationType/edit.php:58
-#: routes/staticResource/edit.php:49 routes/tag/edit.php:94
+#: routes/staticResource/edit.php:49 routes/tag/edit.php:93
 msgid "info-must-enter-name"
 msgstr "Please enter a name."
 
@@ -3163,7 +3167,7 @@ msgstr "You are banned from managing tags."
 msgid "info-tag-saved"
 msgstr "Tag saved."
 
-#: routes/tag/edit.php:103
+#: routes/tag/edit.php:102
 msgid "info-tag-loop"
 msgstr "You cannot select a descendant as the parent."
 
