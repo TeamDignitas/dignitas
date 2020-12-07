@@ -125,7 +125,7 @@ if ($saveButton) {
   ]);
 }
 
-Smart::addResources('colorpicker', 'datepicker', 'easymde', 'linkEditor');
+Smart::addResources('datepicker', 'easymde', 'linkEditor');
 Smart::assign([
   'entity' => $entity,
   'entityTypes' => EntityType::loadAll(),

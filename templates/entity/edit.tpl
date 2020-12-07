@@ -119,16 +119,11 @@
           class="form-group row""
           {if !$entity->hasColor()}hidden{/if}>
           <label for="field-color" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-color{/t}</label>
-          <div class="input-group colorpicker-component col-sm-12 col-lg-10 pl-0 pr-1">
-            <span class="input-group-prepend input-group-text colorpicker-input-addon">
-              <i></i>
-            </span>
-            <input type="text"
-              class="form-control"
-              id="field-color"
-              name="color"
-              value="{$entity->getColor()}">
-          </div>
+          <input type="color"
+            class="form-control col-sm-12 col-lg-10"
+            id="field-color"
+            name="color"
+            value="{$entity->getColor()}">
         </div>
 
         <div class="form-group row">
