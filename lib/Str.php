@@ -61,6 +61,9 @@ class Str {
    * @return boolean true if $s is a well-formed, relative URL, false otherwise.
    */
   static function isRelativeUrl($s) {
+    if (Str::startsWith($s, '#')) {
+      return false; // don't touch fragment-only URLs
+    }
     $scheme = parse_url($s, PHP_URL_SCHEME);
     return $scheme === null; // false is reserved for malformed URLs
   }
