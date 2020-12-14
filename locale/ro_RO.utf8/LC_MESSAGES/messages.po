@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2020-12-04 14:35+0200\n"
-"PO-Revision-Date: 2020-12-14 17:15+0200\n"
+"PO-Revision-Date: 2020-12-14 17:28+0200\n"
 "Last-Translator: Sonia Frâncu <sonia@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -1376,8 +1376,7 @@ msgstr "autor"
 
 #: templates/statement/edit.tpl:42
 msgid "info-author-not-found-add-author-%1"
-msgstr ""
-"Nu găsiți autorul? Puteți <a href=\"%1\">adăuga un autor</a> mai întîi."
+msgstr "Nu găsești autorul? Poți <a href=\"%1\">adăuga un autor</a> mai întîi."
 
 #: templates/statement/edit.tpl:51 lib/model/RevisionStatement.php:26
 msgid "label-statement-date"
@@ -1405,11 +1404,11 @@ msgstr "adaugă o sursă"
 
 #: templates/statement/edit.tpl:147
 msgid "info-confirm-delete-statement"
-msgstr "Confirmați ștergerea acestei afirmații?"
+msgstr "Confirmi ștergerea acestei afirmații?"
 
 #: templates/statement/edit.tpl:158
 msgid "info-confirm-reopen-statement"
-msgstr "Confirmați redeschiderea acestei afirmații?"
+msgstr "Confirmi redeschiderea acestei afirmații?"
 
 #: templates/statement/unanswered.tpl:3 templates/statement/unanswered.tpl:8
 msgid "title-unanswered-statements"
@@ -1441,7 +1440,7 @@ msgstr[2] "%1 de răspunsuri"
 
 #: templates/statement/view.tpl:31
 msgid "title-your-answer"
-msgstr "răspunsul dumneavoastră"
+msgstr "răspunsul tău"
 
 #: templates/statement/view.tpl:34
 msgid "link-post-answer"
@@ -1467,11 +1466,11 @@ msgstr "toate"
 
 #: templates/staticResource/edit.tpl:70
 msgid "info-choose-static-resource-file"
-msgstr "... sau încărcați un fișier"
+msgstr "... sau încarcă un fișier"
 
 #: templates/staticResource/edit.tpl:84
 msgid "info-confirm-delete-static-resource"
-msgstr "Confirmați ștergerea acestei resurse?"
+msgstr "Confirmi ștergerea acestei resurse?"
 
 #: templates/staticResource/list.tpl:3 templates/staticResource/list.tpl:7
 msgid "title-static-resources"
@@ -1520,14 +1519,14 @@ msgstr "arată doar iconița, fără text"
 #: templates/tag/edit.tpl:142
 msgid "info-tag-icon-name"
 msgstr ""
-"Opțional, un <a href=\"%1\">nume de iconiță</a>. Copiați partea de după "
+"Opțional, un <a href=\"%1\">nume de iconiță</a>. Copiază partea de după "
 "<i>icon-</i>, de exemplu <i>globe</i> sau <i>user</i>. Dacă nu avem iconița, "
-"ne puteți contacta ca să cereți să o adăugăm la set. Puteți vedea setul de "
-"iconițe disponibile la <a href=\"%2\">Fontello</a>."
+"ne poți contacta ca să ceri să o adăugăm la set. Poți vedea setul de iconițe "
+"disponibile la <a href=\"%2\">Fontello</a>."
 
 #: templates/tag/edit.tpl:158
 msgid "info-confirm-delete-tag"
-msgstr "Confirmați ștergerea acestei etichete?"
+msgstr "Confirmi ștergerea acestei etichete?"
 
 #: templates/tag/edit.tpl:161 routes/tag/edit.php:32
 msgid "info-cannot-delete-tag"
@@ -1733,12 +1732,12 @@ msgstr[2] "acum %d de secunde"
 
 #: lib/Util.php:7
 msgid "info-already-logged-in"
-msgstr "Sînteți deja autentificat(ă)."
+msgstr "Ești deja autentificat(ă)."
 
 #: lib/Util.php:39 routes/notification/list.php:17
 #: routes/subscription/save.php:17 routes/user/changeReputation.php:16
 msgid "info-must-log-in"
-msgstr "Vă rugăm să vă autentificați."
+msgstr "Te rugăm să te autentifici."
 
 #: lib/model/Action.php:128
 msgid "action-created"
