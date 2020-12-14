@@ -118,7 +118,7 @@
         <i class="icon icon-ellipsis-vert"></i>
       </button>
 
-      <div class="dropdown-menu" aria-labelledby="statement-menu-{$statement->id}">
+      <div class="dropdown-menu ellipsis-menu" aria-labelledby="statement-menu-{$statement->id}">
         {if $editLink}
           {include "bits/editButton.tpl" obj=$statement class="dropdown-item"}
         {/if}
