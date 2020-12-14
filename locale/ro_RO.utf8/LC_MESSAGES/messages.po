@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2020-12-04 14:35+0200\n"
-"PO-Revision-Date: 2020-12-14 17:28+0200\n"
+"PO-Revision-Date: 2020-12-14 17:39+0200\n"
 "Last-Translator: Sonia Frâncu <sonia@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -1840,12 +1840,12 @@ msgstr "pentru alt motiv."
 #: lib/model/Answer.php:101
 #, php-format
 msgid "info-minimum-reputation-add-answer-%s"
-msgstr "Vă trebuie o reputație de minimum %s pentru a adăuga răspunsuri."
+msgstr "Îți trebuie o reputație de minimum %s pentru a adăuga răspunsuri."
 
 #: lib/model/Answer.php:109
 #, php-format
 msgid "info-minimum-reputation-edit-answer-%s"
-msgstr "Vă trebuie o reputație de minimum %s pentru a edita răspunsuri."
+msgstr "Îți trebuie o reputație de minimum %s pentru a edita răspunsuri."
 
 #: lib/model/Answer.php:115
 msgid "info-only-moderator-edit-proof-answer"
@@ -1855,11 +1855,11 @@ msgstr ""
 
 #: lib/model/Answer.php:119
 msgid "info-banned-add-answer"
-msgstr "Vă este interzisă adăugarea de răspunsuri."
+msgstr "Îți este interzisă adăugarea de răspunsuri."
 
 #: lib/model/Answer.php:123
 msgid "info-banned-edit-answer"
-msgstr "Vă este interzisă editarea de răspunsuri."
+msgstr "Îți este interzisă editarea de răspunsuri."
 
 #: lib/model/Ban.php:29
 msgid "ban-add-entity"
@@ -1887,7 +1887,7 @@ msgstr "editarea de răspunsuri"
 
 #: lib/model/Ban.php:35
 msgid "ban-pending-edits"
-msgstr "Vă este interzisă sugerarea de modificări."
+msgstr "Îți este interzisă sugerarea de modificări."
 
 #: lib/model/Ban.php:36
 msgid "ban-delete"
@@ -1985,20 +1985,20 @@ msgstr "de către autorul său."
 #: lib/model/Entity.php:241
 #, php-format
 msgid "info-minimum-reputation-add-entity-%s"
-msgstr "Vă trebuie o reputație de minimum %s pentru a adăuga afirmații."
+msgstr "Îți trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
 #: lib/model/Entity.php:249
 #, php-format
 msgid "info-minimum-reputation-edit-entity-%s"
-msgstr "Vă trebuie o reputație de minimum %s pentru a adăuga afirmații."
+msgstr "Îți trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
 #: lib/model/Entity.php:254
 msgid "info-banned-add-entity"
-msgstr "Vă este interzisă adăugarea de autori."
+msgstr "Îți este interzisă adăugarea de autori."
 
 #: lib/model/Entity.php:258
 msgid "info-banned-edit-entity"
-msgstr "Vă este interzisă editarea de autori."
+msgstr "Îți este interzisă editarea de autori."
 
 #: lib/model/Flag.php:27
 msgid "flag-advisory"
@@ -2030,7 +2030,7 @@ msgstr "comentariu nou la"
 
 #: lib/model/Notification.php:41
 msgid "notification-mention"
-msgstr "ați fost menționat(ă) în"
+msgstr "ai fost menționat(ă) în"
 
 #: lib/model/Relation.php:32
 msgid "since"
@@ -2042,7 +2042,7 @@ msgstr "pînă la"
 
 #: lib/model/Relation.php:87
 msgid "info-target-entity"
-msgstr "Vă rugăm să alegeți un autor-țintă."
+msgstr "Te rugăm să alegi un autor-țintă."
 
 #: lib/model/Relation.php:89
 msgid "info-related-itself"
@@ -2428,12 +2428,12 @@ msgstr "de către autorul său."
 #: lib/model/Statement.php:145
 #, php-format
 msgid "info-minimum-reputation-add-statement-%s"
-msgstr "Vă trebuie o reputație de minimum %s pentru a adăuga afirmații."
+msgstr "Îți trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
 #: lib/model/Statement.php:153
 #, php-format
 msgid "info-minimum-reputation-edit-statement-%s"
-msgstr "Vă trebuie o reputație de minimum %s pentru a edita afirmații."
+msgstr "Îți trebuie o reputație de minimum %s pentru a edita afirmații."
 
 #: lib/model/Statement.php:159
 msgid "info-only-moderator-edit-statement-verdict"
