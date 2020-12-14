@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2020-12-04 14:35+0200\n"
-"PO-Revision-Date: 2020-12-14 17:46+0200\n"
+"PO-Revision-Date: 2020-12-14 18:22+0200\n"
 "Last-Translator: Sonia Frâncu <sonia@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -2627,7 +2627,7 @@ msgstr "Răspunsul căutat nu există."
 
 #: routes/answer/edit.php:25
 msgid "info-cannot-delete-answer"
-msgstr "Nu puteți șterge acest răspuns."
+msgstr "Nu poți șterge acest răspuns."
 
 #: routes/answer/edit.php:31
 msgid "info-confirm-answer-deleted"
@@ -2635,7 +2635,7 @@ msgstr "Am șters răspunsul."
 
 #: routes/answer/edit.php:38
 msgid "info-cannot-reopen-answer"
-msgstr "Nu puteți redeschide acest răspuns."
+msgstr "Nu poți redeschide acest răspuns."
 
 #: routes/answer/edit.php:44
 msgid "info-confirm-answer-reopened"
@@ -2644,7 +2644,7 @@ msgstr "Am redeschis răspunsul."
 #: routes/answer/edit.php:76 routes/entity/edit.php:99
 #: routes/statement/edit.php:100
 msgid "info-changes-queued"
-msgstr "Modificările dumneavoastră au fost adăugate la coada de evaluare."
+msgstr "Modificările tale au fost adăugate la coada de evaluare."
 
 #: routes/answer/edit.php:79
 msgid "info-answer-updated"
@@ -2656,7 +2656,7 @@ msgstr "Am publicat răspunsul."
 
 #: routes/answer/edit.php:112
 msgid "info-empty-answer"
-msgstr "Nu puteți publica un răspuns gol."
+msgstr "Nu poți publica un răspuns gol."
 
 #: routes/answer/history.php:7
 msgid "info-answer-does-not-exist"
@@ -2679,8 +2679,8 @@ msgstr "Doar moderatorii pot accepta răspunsuri ca demonstrații."
 #: routes/answer/saveProof.php:24
 msgid "info-proof-pending-edit"
 msgstr ""
-"Răspunsul are o modificare sugerată. O puteți evalua sau puteți aștepta să "
-"fie evaluată."
+"Răspunsul are o modificare sugerată. O poți evalua sau poți aștepta să fie "
+"evaluată."
 
 #: routes/answer/saveProof.php:28
 msgid "info-proof-active-status"
@@ -2689,7 +2689,7 @@ msgstr "Doar răspunsurile active pot fi acceptate ca demonstrație."
 #: routes/attachment/upload.php:11
 #, php-format
 msgid "info-minimum-reputation-upload-%s"
-msgstr "Vă trebuie o reputație de minimum %s pentru a încărca fișiere."
+msgstr "îți trebuie o reputație de minimum %s pentru a încărca fișiere."
 
 #: routes/auth/login.php:17
 msgid "info-fake-login-devel"
@@ -2734,7 +2734,7 @@ msgstr "Această invitație a fost deja acceptată."
 #: routes/auth/register.php:94
 msgid "info-register-manual"
 msgstr ""
-"Confirmați că ați citit manualul. El explică succint funcționarea și "
+"Confirmă că ai citit manualul. El explică succint funcționarea și "
 "restricțiile platformei."
 
 #: routes/cannedResponse/edit.php:17
@@ -2747,7 +2747,7 @@ msgstr "Am salvat modificările."
 
 #: routes/cannedResponse/edit.php:48
 msgid "info-must-enter-canned-response-contents"
-msgstr "Vă rugăm să introduceți conținutul."
+msgstr "Te rugăm să introduci conținutul."
 
 #: routes/cannedResponse/edit.php:53
 #, php-format
@@ -2775,7 +2775,7 @@ msgstr "Comentariul căutat nu există."
 
 #: routes/comment/delete.php:16
 msgid "info-cannot-delete-comment"
-msgstr "Aveți o reputație insuficientă pentru a șterge comentariul."
+msgstr "Ai o reputație insuficientă pentru a șterge comentariul."
 
 #: routes/comment/delete.php:22
 msgid "info-comment-deleted"
@@ -2796,7 +2796,7 @@ msgstr "Am clonat domeniul. Aceasta este pagina clonei."
 
 #: routes/domain/edit.php:40
 msgid "info-save-domain-before-clone"
-msgstr "Vă rugăm să salvați domeniul înainte de a-l clona."
+msgstr "Te rugăm să salvezi domeniul înainte de a-l clona."
 
 #: routes/domain/edit.php:60
 msgid "info-domain-saved"
@@ -2807,7 +2807,7 @@ msgstr "Am salvat domeniul."
 #: routes/region/edit.php:86 routes/relationType/edit.php:58
 #: routes/staticResource/edit.php:49 routes/tag/edit.php:94
 msgid "info-must-enter-name"
-msgstr "Vă rugăm să introduceți un nume."
+msgstr "Te rugăm să introduci un nume."
 
 #: routes/domain/edit.php:84
 msgid "info-domain-name-taken"
@@ -2815,11 +2815,11 @@ msgstr "Există deja un domeniu cu acest nume."
 
 #: routes/domain/edit.php:88
 msgid "info-must-enter-domain-display-value"
-msgstr "Vă rugăm să introduceți o valoare vizibilă."
+msgstr "Te rugăm să introduci o valoare vizibilă."
 
 #: routes/entity/edit.php:19
 msgid "info-cannot-delete-entity"
-msgstr "Aveți o reputație insuficientă pentru a șterge autorul."
+msgstr "Ai o reputație insuficientă pentru a șterge autorul."
 
 #: routes/entity/edit.php:25
 msgid "info-confirm-entity-deleted."
@@ -2827,7 +2827,7 @@ msgstr "Am șters autorul."
 
 #: routes/entity/edit.php:32
 msgid "info-cannot-reopen-entity"
-msgstr "Nu puteți redeschide acest autor."
+msgstr "Nu poți redeschide acest autor."
 
 #: routes/entity/edit.php:41
 msgid "info-confirm-entity-reopened."
@@ -2843,7 +2843,7 @@ msgstr "Am salvat autorul."
 
 #: routes/entity/edit.php:107 routes/statement/edit.php:107
 msgid "info-validation-error"
-msgstr "Formularul conține erori. Vă rugăm să le reparați mai jos."
+msgstr "Formularul conține erori. Te rugăm să le repari mai jos."
 
 #: routes/entity/edit.php:148
 msgid "info-incorrect-entity-type"
@@ -2885,7 +2885,7 @@ msgstr "Am șters tipul de autor %s."
 
 #: routes/entityType/edit.php:21
 msgid "info-cannot-delete-entity-type"
-msgstr "Nu puteți șterge acest tip de autor deoarece este folosit."
+msgstr "Nu poți șterge acest tip de autor deoarece este folosit."
 
 #: routes/entityType/edit.php:39
 msgid "info-entity-type-saved"
@@ -2905,7 +2905,7 @@ msgstr "Raportarea a fost ștearsă."
 
 #: routes/flag/save.php:22
 msgid "info-cannot-flag-duplicate-itself"
-msgstr "Nu puteți raporta obiectul ca duplicat al său însuși."
+msgstr "Nu poți raporta obiectul ca duplicat al său însuși."
 
 #: routes/flag/save.php:36
 msgid "info-flag-saved"
@@ -2926,7 +2926,7 @@ msgstr "Am salvat categoria."
 
 #: routes/help/categoryEdit.php:71
 msgid "info-must-enter-help-category-path"
-msgstr "Vă rugăm să introduceți o cale."
+msgstr "Te rugăm să introduci o cale."
 
 #: routes/help/categoryEdit.php:75 routes/help/pageEdit.php:62
 msgid "info-help-path-syntax"
@@ -2951,15 +2951,15 @@ msgstr "Am salvat pagina."
 
 #: routes/help/pageEdit.php:50
 msgid "info-must-select-help-page-category"
-msgstr "Vă rugăm să selectați o categorie."
+msgstr "Te rugăm să selectezi o categorie."
 
 #: routes/help/pageEdit.php:54
 msgid "info-must-enter-help-page-title"
-msgstr "Vă rugăm să introduceți un titlu."
+msgstr "Te rugăm să introduci un titlu."
 
 #: routes/help/pageEdit.php:58
 msgid "info-must-enter-help-page-path"
-msgstr "Vă rugăm să introduceți o cale."
+msgstr "Te rugăm să introduci o cale."
 
 #: routes/help/pageEdit.php:67
 msgid "info-help-page-path-taken"
@@ -2967,7 +2967,7 @@ msgstr "Această cale este deja folosită."
 
 #: routes/help/pageEdit.php:71
 msgid "info-must-enter-help-page-contents"
-msgstr "Vă rugăm să introduceți conținutul."
+msgstr "Te rugăm să introduci conținutul."
 
 #: routes/help/pageHistory.php:9
 msgid "info-no-such-help-page"
@@ -3006,7 +3006,7 @@ msgstr "Am șters regiunea [%s]."
 
 #: routes/region/edit.php:38
 msgid "info-banned-region"
-msgstr "Vă este interzisă gestionarea regiunilor."
+msgstr "Îți este interzisă gestionarea regiunilor."
 
 #: routes/region/edit.php:59
 msgid "info-region-saved"
@@ -3014,7 +3014,7 @@ msgstr "Am salvat regiunea."
 
 #: routes/region/edit.php:95
 msgid "info-region-loop"
-msgstr "Nu puteți alege un descendent ca părinte."
+msgstr "Nu poți alege un descendent ca părinte."
 
 #: routes/region/list.php:24
 msgid "info-region-nomenclature-saved"
@@ -3030,7 +3030,7 @@ msgstr "Relația căutată nu există."
 
 #: routes/relation/edit.php:14
 msgid "info-cannot-edit-relations"
-msgstr "Nu puteți edita relațiile acestui autor."
+msgstr "Nu poți edita relațiile acestui autor."
 
 #: routes/relation/edit.php:26
 msgid "info-relation-updated"
@@ -3047,7 +3047,7 @@ msgstr "Am șters tipul de relație %s."
 
 #: routes/relationType/edit.php:21
 msgid "info-cannot-delete-relation-type"
-msgstr "Nu puteți șterge acest tip de relație deoarece este folosit."
+msgstr "Nu poți șterge acest tip de relație deoarece este folosit."
 
 #: routes/relationType/edit.php:39
 msgid "info-relation-type-saved"
@@ -3064,7 +3064,7 @@ msgstr ""
 
 #: routes/review/view.php:14
 msgid "info-banned-review"
-msgstr "Vă este interzis accesul la evaluări."
+msgstr "Îți este interzis accesul la evaluări."
 
 #: routes/review/view.php:21
 msgid "info-no-such-queue"
@@ -3085,12 +3085,12 @@ msgstr "Am salvat votul."
 #: routes/review/view.php:92
 msgid "info-vote-completes-review"
 msgstr ""
-"Această evaluare este acum completă. V-am redirecționat către următoarea "
+"Această evaluare este acum completă. Te-am redirecționat către următoarea "
 "evaluare din această coadă."
 
 #: routes/statement/edit.php:22
 msgid "info-cannot-delete-statement"
-msgstr "Nu puteți șterge acest răspuns."
+msgstr "Nu poți șterge acest răspuns."
 
 #: routes/statement/edit.php:29
 msgid "info-confirm-statement-deleted"
@@ -3098,7 +3098,7 @@ msgstr "Am șters afirmația."
 
 #: routes/statement/edit.php:35
 msgid "info-cannot-reopen-statement"
-msgstr "Nu puteți redeschide această afirmație."
+msgstr "Nu poți redeschide această afirmație."
 
 #: routes/statement/edit.php:44
 msgid "info-confirm-statement-reopened."
@@ -3114,23 +3114,23 @@ msgstr "Am actualizat afirmația."
 
 #: routes/statement/edit.php:134
 msgid "info-must-enter-statement-entity"
-msgstr "Vă rugăm să introduceți un autor."
+msgstr "Te rugăm să introduci un autor."
 
 #: routes/statement/edit.php:138
 msgid "info-must-enter-statement-summary"
-msgstr "Vă rugăm să introduceți sumarul afirmației."
+msgstr "Te rugăm să introduci sumarul afirmației."
 
 #: routes/statement/edit.php:142
 msgid "info-must-enter-statement-context"
-msgstr "Vă rugăm să introduceți contextul afirmației."
+msgstr "Te rugăm să introduci contextul afirmației."
 
 #: routes/statement/edit.php:146
 msgid "info-must-enter-statement-goal"
-msgstr "Vă rugăm să introduceți scopul afirmației."
+msgstr "Te rugăm să introduci scopul afirmației."
 
 #: routes/statement/edit.php:150
 msgid "info-must-enter-statement-date"
-msgstr "Vă rugăm să introduceți data afirmației."
+msgstr "Te rugăm să introduci data afirmației."
 
 #: routes/statement/edit.php:152
 msgid "info-date-not-future"
@@ -3170,16 +3170,16 @@ msgstr "Există deja o resursă cu acest nume și pentru această limbă."
 #: routes/staticResource/edit.php:67
 msgid "info-no-content-or-uploaded-file"
 msgstr ""
-"Trebuie să tastați conținutul resursei sau să alegeți un fișier pentru "
+"Trebuie să tastezi conținutul resursei sau să alegi un fișier pentru "
 "încărcare."
 
 #: routes/subscription/delete.php:20
 msgid "info-unsubscribed"
-msgstr "Nu veți mai primi notificări despre acest articol."
+msgstr "Nu vei mai primi notificări despre acest articol."
 
 #: routes/subscription/save.php:28
 msgid "info-subscribed"
-msgstr "Veți primi notificări despre acest articol."
+msgstr "Vei primi notificări despre acest articol."
 
 #: routes/tag/edit.php:27
 #, php-format
@@ -3188,7 +3188,7 @@ msgstr "Am șters eticheta [%s]."
 
 #: routes/tag/edit.php:40
 msgid "info-banned-tag"
-msgstr "Vă este interzisă gestionarea etichetelor."
+msgstr "Îți este interzisă gestionarea etichetelor."
 
 #: routes/tag/edit.php:61
 msgid "info-tag-saved"
@@ -3196,7 +3196,7 @@ msgstr "Am salvat eticheta."
 
 #: routes/tag/edit.php:103
 msgid "info-tag-loop"
-msgstr "Nu puteți alege un descendent ca părinte."
+msgstr "Nu poți alege un descendent ca părinte."
 
 #: routes/tag/view.php:10
 msgid "info-no-such-tag"
@@ -3212,7 +3212,7 @@ msgstr "Am salvat modificările."
 
 #: routes/user/changeReputation.php:18
 msgid "info-change-reputation-devel"
-msgstr "Vă puteți schimba reputația numai în modul development."
+msgstr "Îți poți schimba reputația numai în modul development."
 
 #: routes/user/changeReputation.php:20
 #, php-format
@@ -3226,11 +3226,11 @@ msgstr "Votul are un format incorect."
 #: routes/vote/save.php:33
 #, php-format
 msgid "info-minimum-reputation-vote-%s"
-msgstr "Vă trebuie o reputație de minimum %s pentru a vota."
+msgstr "Îți trebuie o reputație de minimum %s pentru a vota."
 
 #: routes/vote/save.php:38
 msgid "info-banned-vote"
-msgstr "Vă este interzisă votarea."
+msgstr "Îți este interzisă votarea."
 
 #: routes/vote/save.php:45
 msgid "info-vote-no-object"
@@ -3238,4 +3238,4 @@ msgstr "Nu pot salva votul: obiectul nu există."
 
 #: routes/vote/save.php:50
 msgid "info-cannot-self-vote"
-msgstr "Nu puteți vota propriile mesaje."
+msgstr "Nu poți vota propriile mesaje."
