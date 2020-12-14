@@ -26,7 +26,7 @@
       <i class="icon icon-ellipsis-vert"></i>
     </button>
 
-    <div class="dropdown-menu" aria-labelledby="comment-menu-{$comment->id}">
+    <div class="dropdown-menu ellipsis-menu" aria-labelledby="comment-menu-{$comment->id}">
       <a
         href="#c{$comment->id}"
         class="dropdown-item"

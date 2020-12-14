@@ -37,7 +37,7 @@
           {include 'bits/moment.tpl' t=$answer->createDate}
         </div>
 
-        <div class="answer-actions col-3 px-0 text-right">
+        <div class="col-3 px-0 text-right">
           {$comments=Comment::getFor($answer)}
           {if $addComment && empty($comments)}
             {include "bits/addCommentLink.tpl" object=$answer}
@@ -53,7 +53,7 @@
             <i class="icon icon-ellipsis-vert"></i>
           </button>
 
-          <div class="dropdown-menu" aria-labelledby="answer-menu-{$answer->id}">
+          <div class="dropdown-menu ellipsis-menu" aria-labelledby="answer-menu-{$answer->id}">
             <a
               href="#a{$answer->id}"
               class="dropdown-item"
