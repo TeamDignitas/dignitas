@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2020-12-04 14:35+0200\n"
-"PO-Revision-Date: 2020-12-14 17:39+0200\n"
+"PO-Revision-Date: 2020-12-14 17:46+0200\n"
 "Last-Translator: Sonia Frâncu <sonia@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -2443,16 +2443,16 @@ msgstr ""
 
 #: lib/model/Statement.php:163
 msgid "info-banned-add-statement"
-msgstr "Vă este interzisă adăugarea de afirmații."
+msgstr "Îți este interzisă adăugarea de afirmații."
 
 #: lib/model/Statement.php:167
 msgid "info-banned-edit-statement"
-msgstr "Vă este interzisă editarea de afirmații."
+msgstr "Îți este interzisă editarea de afirmații."
 
 #: lib/model/User.php:203 routes/auth/login.php:61
 #: routes/auth/lostPassword.php:49 routes/invite/add.php:42
 msgid "info-must-enter-email"
-msgstr "Vă rugăm să introduceți o adresă de e-mail."
+msgstr "Te rugăm să introduci o adresă de e-mail."
 
 #: lib/model/User.php:208
 msgid "info-email-taken"
@@ -2475,12 +2475,12 @@ msgstr "Această poreclă este deja folosită."
 
 #: lib/model/User.php:236 routes/auth/login.php:65
 msgid "info-must-enter-password"
-msgstr "Vă rugăm să introduceți o parolă."
+msgstr "Te rugăm să introduci o parolă."
 
 #: lib/model/User.php:238
 msgid "info-must-enter-password-2"
 msgstr ""
-"Vă rugăm să introduceți parola de două ori pentru a preveni greșelile de "
+"Te rugăm să introduci parola de două ori pentru a preveni greșelile de "
 "tastare."
 
 #: lib/model/User.php:240
@@ -2494,7 +2494,7 @@ msgstr "Parola trebuie să aibă cel puțin 8 caractere."
 #: lib/model/User.php:266
 #, php-format
 msgid "info-minimum-reputation-%s"
-msgstr "Vă trebuie o reputație de minimum %s pentru această acțiune."
+msgstr "Îți trebuie o reputație de minimum %s pentru această acțiune."
 
 #: lib/model/User.php:280
 msgid "info-moderator-only"
@@ -2503,17 +2503,17 @@ msgstr "Doar moderatorii pot face această acțiune."
 #: lib/model/User.php:298
 #, php-format
 msgid "info-minimum-reputation-flag-%s"
-msgstr "Vă trebuie o reputație de minimum %s pentru a face raportări."
+msgstr "Îți trebuie o reputație de minimum %s pentru a face raportări."
 
 #: lib/model/User.php:303
 msgid "info-banned-flag"
-msgstr "Vă este interzisă raportarea articolelor."
+msgstr "Îți este interzisă raportarea articolelor."
 
 #: lib/model/User.php:310
 #, php-format
 msgid "info-flag-limit-singular"
 msgid_plural "info-flag-limit-plural-%d"
-msgstr[0] "Puteți face cel mult o raportare la 24 de ore."
+msgstr[0] "Poți face cel mult o raportare la 24 de ore."
 msgstr[1] "Puteți face cel mult %d raportări la 24 de ore."
 msgstr[2] "Puteți face cel mult %d de raportări la 24 de ore."
 
@@ -2523,16 +2523,16 @@ msgstr "Nu pot face raportarea: articolul nu există."
 
 #: lib/model/User.php:322
 msgid "info-already-flagged"
-msgstr "Ați raportat deja acest articol."
+msgstr "Ai raportat deja acest articol."
 
 #: lib/model/User.php:350
 msgid "info-banned-comment"
-msgstr "Vă este interzisă adăugarea de comentarii."
+msgstr "Îți este interzisă adăugarea de comentarii."
 
 #: lib/model/User.php:371
 #, php-format
 msgid "info-minimum-reputation-comment-%s"
-msgstr "Vă trebuie o reputație de minimum %s pentru a comenta."
+msgstr "Îți trebuie o reputație de minimum %s pentru a comenta."
 
 #: lib/trait/FlaggableTrait.php:73
 msgid "status-diff-active"
@@ -2561,19 +2561,19 @@ msgstr "Articolul însuși este o modificare în așteptare."
 #: lib/trait/PendingEditTrait.php:56
 msgid "info-item-has-pending-edit"
 msgstr ""
-"Acest articol are deja o modificare sugerată. Vă rugăm să așteptați "
-"evaluarea ei."
+"Acest articol are deja o modificare sugerată. Te rugăm să aștepți evaluarea "
+"ei."
 
 #: lib/trait/PendingEditTrait.php:61
 #, php-format
 msgid "info-pending-edit-limit-%d"
 msgstr ""
-"Ați atins limita zilnică de %d modificări sugerate. Vă rugăm să așteptați "
+"Ai atins limita zilnică de %d modificări sugerate. Te rugăm să aștepți "
 "evaluarea unora din ele."
 
 #: lib/trait/PendingEditTrait.php:136
 msgid "can-suggest-changes"
-msgstr "Puteți sugera modificări care vor fi puse în coada de evaluare."
+msgstr "Poți sugera modificări care vor fi puse în coada de evaluare."
 
 #: lib/trait/UploadTrait.php:174
 #, php-format
