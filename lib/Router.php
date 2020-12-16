@@ -269,13 +269,16 @@ class Router {
       'en_US.utf8' => 'unanswered-statements',
       'ro_RO.utf8' => 'afirmatii-fara-raspuns',
     ],
-    'statement/view' => [
-      'en_US.utf8' => 'statement',
-      'ro_RO.utf8' => 'afirmatie',
+    'statement/verdictList' => [
+      'en_US.utf8' => 'ajax/get-verdicts',
     ],
     'statement/verdictReport' => [
       'en_US.utf8' => 'verdict-report',
       'ro_RO.utf8' => 'raport-verdicte',
+    ],
+    'statement/view' => [
+      'en_US.utf8' => 'statement',
+      'ro_RO.utf8' => 'afirmatie',
     ],
 
     // static resources
