@@ -21,7 +21,7 @@
     {/if}
 
     <form method="post">
-      <input type="hidden" name="id" value="{$statement->id}">
+      <input type="hidden" id="field-id" name="id" value="{$statement->id}">
       <input type="hidden" name="referrer" value="{$referrer}">
 
       <fieldset class="related-fields mb-5 ml-3">
@@ -64,6 +64,8 @@
           <select
             id="field-type"
             name="type"
+            data-prev-value="{$statement->type}"
+            data-confirm-msg="{t}info-confirm-statement-type-change{/t}"
             class="form-control has-unload-warning col-sm-12 col-lg-10">
             {for $t = 0 to Statement::NUM_TYPES - 1}
               <option
@@ -137,18 +139,24 @@
         {if User::isModerator()}
           <div class="form-group row">
             <label for="field-verdict" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-verdict{/t}</label>
-            <select
-              id="field-verdict"
-              name="verdict"
-              class="form-control has-unload-warning col-sm-12 col-lg-10">
-              {foreach $statement->getVerdictChoices() as $v}
-                <option
-                  value="{$v}"
-                  {if $v == $statement->verdict}selected{/if}>
-                  {Statement::verdictName($v)}
-                </option>
-              {/foreach}
-            </select>
+            <div class="col-sm-12 col-lg-10 px-0">
+
+              <select
+                id="field-verdict"
+                name="verdict"
+                class="form-control has-unload-warning {if isset($errors.verdict)}is-invalid{/if}">
+
+                {foreach $statement->getVerdictChoices() as $v}
+                  <option
+                    value="{$v}"
+                    {if $v == $statement->verdict}selected{/if}>
+                    {Statement::verdictName($v)}
+                  </option>
+                {/foreach}
+              </select>
+
+              {include "bits/fieldErrors.tpl" errors=$errors.verdict|default:null}
+            </div>
           </div>
         {/if}
       </fieldset>

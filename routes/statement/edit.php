@@ -13,6 +13,7 @@ if ($id) {
 } else {
   $statement = Model::factory('Statement')->create();
   $statement->dateMade = Time::today();
+  $statement->type = Statement::TYPE_CLAIM;
   $statement->userId = User::getActiveId();
   $statement->entityId = $entityId;
 }
@@ -54,6 +55,7 @@ if ($saveButton) {
   $statement->context = Request::get('context');
   $statement->goal = Request::get('goal');
   $statement->dateMade = Request::get('dateMade');
+  $statement->type = Request::get('type');
   if (User::isModerator()) {
     $origVerdict = $statement->verdict;
     $statement->verdict = Request::get('verdict');
@@ -160,6 +162,12 @@ function validate($statement, $links) {
   }
   if ($countBadUrls) {
     $errors['links'][] = _('info-invalid-statement-links');
+  }
+
+  // Check that the verdict matches the statement type. This should not happen
+  // with normal usage because JS sets the verdict to none when the type changes.
+  if (!in_array($statement->verdict, $statement->getVerdictChoices())) {
+    $errors['verdict'][] = _('info-mismatch-statement-type-verdict');
   }
 
   return $errors;
