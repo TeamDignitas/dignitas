@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-12-07 14:03+0200\n"
-"PO-Revision-Date: 2020-12-07 14:03+0200\n"
+"POT-Creation-Date: 2020-12-04 14:35+0200\n"
+"PO-Revision-Date: 2020-12-16 11:55+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -29,8 +29,8 @@ msgstr "pagină negăsită"
 #: templates/404.tpl:9
 msgid "info-page-not-found"
 msgstr ""
-"Regretăm, dar pagina cerută nu există. Asigurați-vă că ați tastat adresa "
-"corectă sau vizitați <a href=\"%1\">pagina principală</a>."
+"Regretăm, dar pagina cerută nu există. Asigură-te că ai tastat adresa "
+"corectă sau vizitează <a href=\"%1\">pagina principală</a>."
 
 #: templates/aggregate/about.tpl:3
 msgid "title-about"
@@ -194,7 +194,7 @@ msgstr "parolă uitată"
 #: templates/auth/lostPassword.tpl:16
 msgid "info-password-recovery-process"
 msgstr ""
-"Introduceți adresa de e-mail și vă vom trimite o adresă pentru schimbarea "
+"Introdu adresa de e-mail și îți vom trimite un link pentru schimbarea "
 "parolei."
 
 #: templates/auth/lostPassword.tpl:39 templates/invite/add.tpl:36
@@ -204,8 +204,8 @@ msgstr "trimite"
 #: templates/auth/lostPasswordEmailSent.tpl:8
 msgid "info-password-recovery-email-sent"
 msgstr ""
-"Am trimis un e-mail la <b>%1</b>. Dați click pe adresa din mesaj pentru a vă "
-"reseta parola."
+"Am trimis un e-mail la <b>%1</b>. Te rugăm accesează link-ul din e-mail "
+"pentru a îți reseta parola."
 
 #: templates/auth/register.tpl:3 templates/auth/register.tpl:9
 msgid "title-sign-up"
@@ -232,11 +232,11 @@ msgstr "am deja un cont"
 
 #: templates/auth/repost.tpl:3 templates/auth/repost.tpl:7
 msgid "title-redirecting"
-msgstr "vă redirecționăm"
+msgstr "te redirecționăm"
 
 #: templates/auth/repost.tpl:19
 msgid "link-repost-manual"
-msgstr "click aici dacă nu sînteți redirectat(ă) automat"
+msgstr "click aici dacă nu ești redirectat(ă) automat"
 
 #: templates/auth/resetPassword.tpl:3 templates/auth/resetPassword.tpl:10
 msgid "title-reset-password"
@@ -295,7 +295,7 @@ msgstr "detalii despre verdicte și efectele lor"
 
 #: templates/bits/answerEdit.tpl:54
 msgid "info-confirm-delete-answer"
-msgstr "Confirmați ștergerea acestui răspuns?"
+msgstr "Confirmi ștergerea acestui răspuns?"
 
 #: templates/bits/answerEdit.tpl:56 templates/bits/comment.tpl:45
 #: templates/cannedResponse/edit.tpl:35 templates/domain/edit.tpl:78
@@ -309,7 +309,7 @@ msgstr "șterge"
 
 #: templates/bits/answerEdit.tpl:65
 msgid "info-confirm-reopen-answer"
-msgstr "Confirmați redeschiderea acestui răspuns?"
+msgstr "Confirmi redeschiderea acestui răspuns?"
 
 #: templates/bits/answerEdit.tpl:66 templates/entity/edit.tpl:270
 #: templates/statement/edit.tpl:159
@@ -335,7 +335,7 @@ msgstr "legătură permanentă către acest comentariu"
 
 #: templates/bits/comment.tpl:43
 msgid "info-confirm-delete-comment"
-msgstr "Confirmați ștergerea acestui comentariu?"
+msgstr "Confirmi ștergerea acestui comentariu?"
 
 #: templates/bits/commentForm.tpl:14 templates/cannedResponse/edit.tpl:21
 #: templates/entity/edit.tpl:178
@@ -513,7 +513,7 @@ msgstr "Acest autor există deja în Dignitas."
 
 #: templates/bits/flagModal.tpl:79
 msgid "label-type-something"
-msgstr "tastați niște termeni..."
+msgstr "tastează niște termeni..."
 
 #: templates/bits/flagModal.tpl:93
 msgid "label-off-topic"
@@ -575,7 +575,7 @@ msgstr "alt motiv"
 
 #: templates/bits/flagModal.tpl:181
 msgid "label-provide-details"
-msgstr "vă rugăm să dați detalii..."
+msgstr "te rugăm să dai detalii..."
 
 #: templates/bits/flagModal.tpl:194
 msgid "link-flag-answer"
@@ -617,7 +617,7 @@ msgstr "arată versiunile"
 #: templates/bits/inlineAttachment.tpl:1
 msgid "info-read-guide-inline-attachment"
 msgstr ""
-"Vă rugăm citiți TODO pentru moduri de personalizare a iconiței și a adresei."
+"Te rugăm citește TODO pentru moduri de personalizare a iconiței și a adresei."
 
 #: templates/bits/inlineAttachment.tpl:3
 msgid "label-uploaded-file"
@@ -729,25 +729,25 @@ msgstr "Mulțumim pentru vot!"
 #: templates/bits/scoreAndVote.tpl:16
 msgid "vote-popover-statement"
 msgstr ""
-"Votați afirmațiile pornind de la formatarea și lizibilitatea lor, nu de la "
-"valoarea de adevăr aparentă. De exemplu, nu votați negativ afirmația doar "
-"pentru că o considerați falsă."
+"Votează afirmațiile pornind de la formatarea și lizibilitatea lor, nu de la "
+"valoarea de adevăr aparentă. De exemplu, nu vota negativ afirmația doar "
+"pentru că o consideri falsă."
 
 #: templates/bits/scoreAndVote.tpl:21
 msgid "vote-popover-downvote"
-msgstr "Voturile negative vă costă 1 punct de reputație."
+msgstr "Voturile negative te costă 1 punct de reputație."
 
 #: templates/bits/scoreAndVote.tpl:33 templates/bits/scoreAndVote.tpl:53
 msgid "label-log-in-vote"
-msgstr "Vă rugăm să vă autentificați pentru a vota."
+msgstr "Te rugăm să te autentifici pentru a vota."
 
 #: templates/bits/scoreAndVote.tpl:36
 msgid "label-minimum-reputation-upvote"
-msgstr "Vă trebuie o reputație de minimum %1 pentru a vota pozitiv."
+msgstr "Îți trebuie o reputație de minimum %1 pentru a vota pozitiv."
 
 #: templates/bits/scoreAndVote.tpl:56
 msgid "label-minimum-reputation-downvote"
-msgstr "Vă trebuie o reputație de minimum %1 pentru a vota negativ."
+msgstr "Îți trebuie o reputație de minimum %1 pentru a vota negativ."
 
 #: templates/bits/scoreAndVote.tpl:78
 msgid "label-toggle-answer-proof"
@@ -768,7 +768,7 @@ msgstr "surse"
 #: templates/bits/statement.tpl:63
 msgid "link-statement-review-pending-edit"
 msgstr ""
-"Această afirmație are o modificare sugerată. O puteți <a href=\"%1\" class="
+"Această afirmație are o modificare sugerată. O poți <a href=\"%1\" class="
 "\"alert-link\">evalua</a>."
 
 #: templates/bits/statement.tpl:84
@@ -781,7 +781,7 @@ msgstr "scop"
 
 #: templates/bits/statement.tpl:94
 msgid "info-tag-view-statements"
-msgstr "Vedeți toate afirmațiile cu această etichetă."
+msgstr "Vezi toate afirmațiile cu această etichetă."
 
 #: templates/bits/statement.tpl:97
 msgid "title-added-by"
@@ -838,7 +838,7 @@ msgstr "conținut"
 
 #: templates/cannedResponse/edit.tpl:33
 msgid "info-confirm-delete-canned-response"
-msgstr "Confirmați ștergerea acestui răspuns predefinit?"
+msgstr "Confirmi ștergerea acestui răspuns predefinit?"
 
 #: templates/cannedResponse/list.tpl:3 templates/cannedResponse/list.tpl:7
 msgid "title-canned-responses"
@@ -898,7 +898,7 @@ msgstr "imagine"
 #: templates/domain/edit.tpl:55 templates/entity/edit.tpl:230
 #: templates/user/edit.tpl:69
 msgid "info-upload-image"
-msgstr "alegeți o imagine"
+msgstr "alege o imagine"
 
 #: templates/domain/edit.tpl:63 templates/entity/edit.tpl:238
 #: templates/user/edit.tpl:77
@@ -907,7 +907,7 @@ msgstr "șterge imaginea"
 
 #: templates/domain/edit.tpl:76
 msgid "info-confirm-delete-domain"
-msgstr "Confirmați ștergerea acestui domeniu?"
+msgstr "Confirmi ștergerea acestui domeniu?"
 
 #: templates/domain/edit.tpl:85
 msgid "link-clone"
@@ -939,18 +939,18 @@ msgstr "Bună ziua,"
 #: templates/email/invite.tpl:9
 msgid "email-user-invited-you-to-dignitas-%1-%2"
 msgstr ""
-"Utilizatorul %1 (%2) v-a invitat să vă creați un cont pe Dignitas. Pentru a "
-"accepta invitația, vizitați pagina:"
+"Utilizatorul %1 (%2) te-a invitat să îți creezi un cont pe Dignitas. Pentru "
+"a accepta invitația, vizitează pagina:"
 
 #: templates/email/invite.tpl:17
 msgid "email-discard-invite"
 msgstr ""
-"Dacă nu doriți să vă înregistrați pe Dignitas, vă rugăm să ignorați acest "
+"Dacă nu dorești să te înregistrezi pe Dignitas, te rugăm să ignori acest "
 "mesaj."
 
 #: templates/email/invite.tpl:20 templates/email/lostPassword.tpl:16
 msgid "email-thank-you"
-msgstr "Vă mulțumim,"
+msgstr "Îți mulțumim,"
 
 #: templates/email/invite.tpl:22 templates/email/lostPassword.tpl:18
 msgid "email-signature"
@@ -959,14 +959,12 @@ msgstr "echipa Dignitas"
 #: templates/email/lostPassword.tpl:8
 msgid "email-you-requested-password-change"
 msgstr ""
-"Cineva, posibil dumneavoastră, a cerut schimbarea parolei pentru contul "
-"dumneavoastră la Dignitas. Pentru a vă schimba parola, vizitați:"
+"Cineva, posibil tu, a cerut schimbarea parolei pentru contul tău la "
+"Dignitas. Pentru a îți schimba parola, vizitează:"
 
 #: templates/email/lostPassword.tpl:13
 msgid "email-discard-password-change"
-msgstr ""
-"Dacă nu dumneavoastră ați cerut schimbarea parolei, vă rugăm să ignorați "
-"acest mesaj."
+msgstr "Dacă nu ai cerut schimbarea parolei, te rugăm să ignori acest mesaj."
 
 #: templates/entity/edit.tpl:5
 msgid "title-edit-entity"
@@ -1011,8 +1009,8 @@ msgstr "tip"
 #: templates/entity/edit.tpl:105
 msgid "info-change-entity-type-while-relations-exist"
 msgstr ""
-"Dacă schimbați tipul de autor, toate relațiile existente vor fi șterse. "
-"Pentru a putea adăuga alte relații, va trebui să salvați mai întîi pagina."
+"Dacă schimbi tipul de autor, toate relațiile existente vor fi șterse. Pentru "
+"a putea adăuga alte relații, va trebui să salvezi mai întîi pagina."
 
 #: templates/entity/edit.tpl:121
 msgid "label-color"
@@ -1048,16 +1046,16 @@ msgstr "etichete"
 
 #: templates/entity/edit.tpl:258
 msgid "info-confirm-delete-entity"
-msgstr "Confirmați ștergerea acestui autor?"
+msgstr "Confirmi ștergerea acestui autor?"
 
 #: templates/entity/edit.tpl:269
 msgid "info-confirm-reopen-entity"
-msgstr "Confirmați redeschiderea acestui autor?"
+msgstr "Confirmi redeschiderea acestui autor?"
 
 #: templates/entity/view.tpl:9
 msgid "link-entity-review-pending-edit"
 msgstr ""
-"Acest autor are o modificare sugerată. O puteți <a href=\"%1\" class=\"alert-"
+"Acest autor are o modificare sugerată. O poți <a href=\"%1\" class=\"alert-"
 "link\">evalua</a>."
 
 #: templates/entity/view.tpl:16
@@ -1106,7 +1104,7 @@ msgstr "Oferă implicit acest tip pentru autorii nou creați."
 
 #: templates/entityType/edit.tpl:95
 msgid "info-confirm-delete-entity-type"
-msgstr "Confirmați ștergerea acestui tip de autor?"
+msgstr "Confirmi ștergerea acestui tip de autor?"
 
 #: templates/entityType/list.tpl:3 templates/entityType/list.tpl:7
 msgid "title-entity-types"
@@ -1134,7 +1132,7 @@ msgstr "pagini în această categorie"
 
 #: templates/help/categoryEdit.tpl:67
 msgid "info-confirm-delete-help-category"
-msgstr "Confirmați ștergerea categoriei?"
+msgstr "Confirmi ștergerea categoriei?"
 
 #: templates/help/categoryList.tpl:3 templates/help/categoryList.tpl:7
 msgid "title-help-categories"
@@ -1174,7 +1172,7 @@ msgstr "categorie"
 
 #: templates/help/pageEdit.tpl:78
 msgid "info-confirm-delete-help-page"
-msgstr "Confirmați ștergerea paginii?"
+msgstr "Confirmi ștergerea paginii?"
 
 #: templates/invite/add.tpl:3 templates/invite/add.tpl:7
 msgid "title-send-invite"
@@ -1218,7 +1216,7 @@ msgstr "regiunea-părinte"
 
 #: templates/region/edit.tpl:70
 msgid "info-confirm-delete-region"
-msgstr "Confirmați ștergerea acestei regiuni?"
+msgstr "Confirmi ștergerea acestei regiuni?"
 
 #: templates/region/edit.tpl:73 routes/region/edit.php:30
 msgid "info-cannot-delete-region"
@@ -1316,7 +1314,7 @@ msgstr "Relațiile de apartenență sînt listate pe pagina destinatarului."
 
 #: templates/relationType/edit.tpl:134
 msgid "info-confirm-delete-relation-type"
-msgstr "Confirmați ștergerea acestui tip de relație?"
+msgstr "Confirmi ștergerea acestui tip de relație?"
 
 #: templates/relationType/list.tpl:3 templates/relationType/list.tpl:7
 msgid "title-relation-types"
@@ -1329,12 +1327,12 @@ msgstr "adaugă un tip de relație"
 #: templates/relationType/list.tpl:15
 msgid "info-add-entity-types-before-relation-types-%1"
 msgstr ""
-"Trebuie să <a href=\"%1\">adăugați un tip de entitate</a> înainte să puteți "
+"Trebuie să <a href=\"%1\">adaugi un tip de entitate</a> înainte să poți "
 "adăuga tipuri de relații."
 
 #: templates/review/view.tpl:19
 msgid "info-review-complete"
-msgstr "Această evaluare este completă. Nu mai puteți face alte acțiuni."
+msgstr "Această evaluare este completă. Nu mai poți face alte acțiuni."
 
 #: templates/review/view.tpl:28
 msgid "info-review-target-item"
@@ -1382,8 +1380,7 @@ msgstr "autor"
 
 #: templates/statement/edit.tpl:42
 msgid "info-author-not-found-add-author-%1"
-msgstr ""
-"Nu găsiți autorul? Puteți <a href=\"%1\">adăuga un autor</a> mai întîi."
+msgstr "Nu găsești autorul? Poți <a href=\"%1\">adăuga un autor</a> mai întîi."
 
 #: templates/statement/edit.tpl:51 lib/model/RevisionStatement.php:26
 msgid "label-statement-date"
@@ -1411,11 +1408,11 @@ msgstr "adaugă o sursă"
 
 #: templates/statement/edit.tpl:147
 msgid "info-confirm-delete-statement"
-msgstr "Confirmați ștergerea acestei afirmații?"
+msgstr "Confirmi ștergerea acestei afirmații?"
 
 #: templates/statement/edit.tpl:158
 msgid "info-confirm-reopen-statement"
-msgstr "Confirmați redeschiderea acestei afirmații?"
+msgstr "Confirmi redeschiderea acestei afirmații?"
 
 #: templates/statement/unanswered.tpl:3 templates/statement/unanswered.tpl:8
 msgid "title-unanswered-statements"
@@ -1447,7 +1444,7 @@ msgstr[2] "%1 de răspunsuri"
 
 #: templates/statement/view.tpl:31
 msgid "title-your-answer"
-msgstr "răspunsul dumneavoastră"
+msgstr "răspunsul tău"
 
 #: templates/statement/view.tpl:34
 msgid "link-post-answer"
@@ -1473,11 +1470,11 @@ msgstr "toate"
 
 #: templates/staticResource/edit.tpl:70
 msgid "info-choose-static-resource-file"
-msgstr "... sau încărcați un fișier"
+msgstr "... sau încarcă un fișier"
 
 #: templates/staticResource/edit.tpl:84
 msgid "info-confirm-delete-static-resource"
-msgstr "Confirmați ștergerea acestei resurse?"
+msgstr "Confirmi ștergerea acestei resurse?"
 
 #: templates/staticResource/list.tpl:3 templates/staticResource/list.tpl:7
 msgid "title-static-resources"
@@ -1526,14 +1523,14 @@ msgstr "arată doar iconița, fără text"
 #: templates/tag/edit.tpl:136
 msgid "info-tag-icon-name"
 msgstr ""
-"Opțional, un <a href=\"%1\">nume de iconiță</a>. Copiați partea de după "
+"Opțional, un <a href=\"%1\">nume de iconiță</a>. Copiază partea de după "
 "<i>icon-</i>, de exemplu <i>globe</i> sau <i>user</i>. Dacă nu avem iconița, "
-"ne puteți contacta ca să cereți să o adăugăm la set. Puteți vedea setul de "
-"iconițe disponibile la <a href=\"%2\">Fontello</a>."
+"ne poți contacta ca să ceri să o adăugăm la set. Poți vedea setul de iconițe "
+"disponibile la <a href=\"%2\">Fontello</a>."
 
 #: templates/tag/edit.tpl:152
 msgid "info-confirm-delete-tag"
-msgstr "Confirmați ștergerea acestei etichete?"
+msgstr "Confirmi ștergerea acestei etichete?"
 
 #: templates/tag/edit.tpl:155 routes/tag/edit.php:32
 msgid "info-cannot-delete-tag"
@@ -1739,12 +1736,12 @@ msgstr[2] "acum %d de secunde"
 
 #: lib/Util.php:7
 msgid "info-already-logged-in"
-msgstr "Sînteți deja autentificat(ă)."
+msgstr "Ești deja autentificat(ă)."
 
 #: lib/Util.php:39 routes/notification/list.php:17
 #: routes/subscription/save.php:17 routes/user/changeReputation.php:16
 msgid "info-must-log-in"
-msgstr "Vă rugăm să vă autentificați."
+msgstr "Te rugăm să te autentifici."
 
 #: lib/model/Action.php:128
 msgid "action-created"
@@ -1847,12 +1844,12 @@ msgstr "pentru alt motiv."
 #: lib/model/Answer.php:101
 #, php-format
 msgid "info-minimum-reputation-add-answer-%s"
-msgstr "Vă trebuie o reputație de minimum %s pentru a adăuga răspunsuri."
+msgstr "Îți trebuie o reputație de minimum %s pentru a adăuga răspunsuri."
 
 #: lib/model/Answer.php:109
 #, php-format
 msgid "info-minimum-reputation-edit-answer-%s"
-msgstr "Vă trebuie o reputație de minimum %s pentru a edita răspunsuri."
+msgstr "Îți trebuie o reputație de minimum %s pentru a edita răspunsuri."
 
 #: lib/model/Answer.php:115
 msgid "info-only-moderator-edit-proof-answer"
@@ -1862,11 +1859,11 @@ msgstr ""
 
 #: lib/model/Answer.php:119
 msgid "info-banned-add-answer"
-msgstr "Vă este interzisă adăugarea de răspunsuri."
+msgstr "Îți este interzisă adăugarea de răspunsuri."
 
 #: lib/model/Answer.php:123
 msgid "info-banned-edit-answer"
-msgstr "Vă este interzisă editarea de răspunsuri."
+msgstr "Îți este interzisă editarea de răspunsuri."
 
 #: lib/model/Ban.php:29
 msgid "ban-add-entity"
@@ -1894,7 +1891,7 @@ msgstr "editarea de răspunsuri"
 
 #: lib/model/Ban.php:35
 msgid "ban-pending-edits"
-msgstr "Vă este interzisă sugerarea de modificări."
+msgstr "Îți este interzisă sugerarea de modificări."
 
 #: lib/model/Ban.php:36
 msgid "ban-delete"
@@ -1992,20 +1989,20 @@ msgstr "de către autorul său."
 #: lib/model/Entity.php:241
 #, php-format
 msgid "info-minimum-reputation-add-entity-%s"
-msgstr "Vă trebuie o reputație de minimum %s pentru a adăuga afirmații."
+msgstr "Îți trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
 #: lib/model/Entity.php:249
 #, php-format
 msgid "info-minimum-reputation-edit-entity-%s"
-msgstr "Vă trebuie o reputație de minimum %s pentru a adăuga afirmații."
+msgstr "Îți trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
 #: lib/model/Entity.php:254
 msgid "info-banned-add-entity"
-msgstr "Vă este interzisă adăugarea de autori."
+msgstr "Îți este interzisă adăugarea de autori."
 
 #: lib/model/Entity.php:258
 msgid "info-banned-edit-entity"
-msgstr "Vă este interzisă editarea de autori."
+msgstr "Îți este interzisă editarea de autori."
 
 #: lib/model/Flag.php:27
 msgid "flag-advisory"
@@ -2037,7 +2034,7 @@ msgstr "comentariu nou la"
 
 #: lib/model/Notification.php:41
 msgid "notification-mention"
-msgstr "ați fost menționat(ă) în"
+msgstr "ai fost menționat(ă) în"
 
 #: lib/model/Relation.php:32
 msgid "since"
@@ -2049,7 +2046,7 @@ msgstr "pînă la"
 
 #: lib/model/Relation.php:87
 msgid "info-target-entity"
-msgstr "Vă rugăm să alegeți un autor-țintă."
+msgstr "Te rugăm să alegi un autor-țintă."
 
 #: lib/model/Relation.php:89
 msgid "info-related-itself"
@@ -2435,12 +2432,12 @@ msgstr "de către autorul său."
 #: lib/model/Statement.php:145
 #, php-format
 msgid "info-minimum-reputation-add-statement-%s"
-msgstr "Vă trebuie o reputație de minimum %s pentru a adăuga afirmații."
+msgstr "Îți trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
 #: lib/model/Statement.php:153
 #, php-format
 msgid "info-minimum-reputation-edit-statement-%s"
-msgstr "Vă trebuie o reputație de minimum %s pentru a edita afirmații."
+msgstr "Îți trebuie o reputație de minimum %s pentru a edita afirmații."
 
 #: lib/model/Statement.php:159
 msgid "info-only-moderator-edit-statement-verdict"
@@ -2450,16 +2447,16 @@ msgstr ""
 
 #: lib/model/Statement.php:163
 msgid "info-banned-add-statement"
-msgstr "Vă este interzisă adăugarea de afirmații."
+msgstr "Îți este interzisă adăugarea de afirmații."
 
 #: lib/model/Statement.php:167
 msgid "info-banned-edit-statement"
-msgstr "Vă este interzisă editarea de afirmații."
+msgstr "Îți este interzisă editarea de afirmații."
 
 #: lib/model/User.php:203 routes/auth/login.php:61
 #: routes/auth/lostPassword.php:49 routes/invite/add.php:42
 msgid "info-must-enter-email"
-msgstr "Vă rugăm să introduceți o adresă de e-mail."
+msgstr "Te rugăm să introduci o adresă de e-mail."
 
 #: lib/model/User.php:208
 msgid "info-email-taken"
@@ -2482,12 +2479,12 @@ msgstr "Această poreclă este deja folosită."
 
 #: lib/model/User.php:236 routes/auth/login.php:65
 msgid "info-must-enter-password"
-msgstr "Vă rugăm să introduceți o parolă."
+msgstr "Te rugăm să introduci o parolă."
 
 #: lib/model/User.php:238
 msgid "info-must-enter-password-2"
 msgstr ""
-"Vă rugăm să introduceți parola de două ori pentru a preveni greșelile de "
+"Te rugăm să introduci parola de două ori pentru a preveni greșelile de "
 "tastare."
 
 #: lib/model/User.php:240
@@ -2501,7 +2498,7 @@ msgstr "Parola trebuie să aibă cel puțin 8 caractere."
 #: lib/model/User.php:266
 #, php-format
 msgid "info-minimum-reputation-%s"
-msgstr "Vă trebuie o reputație de minimum %s pentru această acțiune."
+msgstr "Îți trebuie o reputație de minimum %s pentru această acțiune."
 
 #: lib/model/User.php:280
 msgid "info-moderator-only"
@@ -2510,17 +2507,17 @@ msgstr "Doar moderatorii pot face această acțiune."
 #: lib/model/User.php:298
 #, php-format
 msgid "info-minimum-reputation-flag-%s"
-msgstr "Vă trebuie o reputație de minimum %s pentru a face raportări."
+msgstr "Îți trebuie o reputație de minimum %s pentru a face raportări."
 
 #: lib/model/User.php:303
 msgid "info-banned-flag"
-msgstr "Vă este interzisă raportarea articolelor."
+msgstr "Îți este interzisă raportarea articolelor."
 
 #: lib/model/User.php:310
 #, php-format
 msgid "info-flag-limit-singular"
 msgid_plural "info-flag-limit-plural-%d"
-msgstr[0] "Puteți face cel mult o raportare la 24 de ore."
+msgstr[0] "Poți face cel mult o raportare la 24 de ore."
 msgstr[1] "Puteți face cel mult %d raportări la 24 de ore."
 msgstr[2] "Puteți face cel mult %d de raportări la 24 de ore."
 
@@ -2530,16 +2527,16 @@ msgstr "Nu pot face raportarea: articolul nu există."
 
 #: lib/model/User.php:322
 msgid "info-already-flagged"
-msgstr "Ați raportat deja acest articol."
+msgstr "Ai raportat deja acest articol."
 
 #: lib/model/User.php:350
 msgid "info-banned-comment"
-msgstr "Vă este interzisă adăugarea de comentarii."
+msgstr "Îți este interzisă adăugarea de comentarii."
 
 #: lib/model/User.php:371
 #, php-format
 msgid "info-minimum-reputation-comment-%s"
-msgstr "Vă trebuie o reputație de minimum %s pentru a comenta."
+msgstr "Îți trebuie o reputație de minimum %s pentru a comenta."
 
 #: lib/trait/FlaggableTrait.php:73
 msgid "status-diff-active"
@@ -2568,19 +2565,19 @@ msgstr "Articolul însuși este o modificare în așteptare."
 #: lib/trait/PendingEditTrait.php:56
 msgid "info-item-has-pending-edit"
 msgstr ""
-"Acest articol are deja o modificare sugerată. Vă rugăm să așteptați "
-"evaluarea ei."
+"Acest articol are deja o modificare sugerată. Te rugăm să aștepți evaluarea "
+"ei."
 
 #: lib/trait/PendingEditTrait.php:61
 #, php-format
 msgid "info-pending-edit-limit-%d"
 msgstr ""
-"Ați atins limita zilnică de %d modificări sugerate. Vă rugăm să așteptați "
+"Ai atins limita zilnică de %d modificări sugerate. Te rugăm să aștepți "
 "evaluarea unora din ele."
 
 #: lib/trait/PendingEditTrait.php:136
 msgid "can-suggest-changes"
-msgstr "Puteți sugera modificări care vor fi puse în coada de evaluare."
+msgstr "Poți sugera modificări care vor fi puse în coada de evaluare."
 
 #: lib/trait/UploadTrait.php:174
 #, php-format
@@ -2634,7 +2631,7 @@ msgstr "Răspunsul căutat nu există."
 
 #: routes/answer/edit.php:25
 msgid "info-cannot-delete-answer"
-msgstr "Nu puteți șterge acest răspuns."
+msgstr "Nu poți șterge acest răspuns."
 
 #: routes/answer/edit.php:31
 msgid "info-confirm-answer-deleted"
@@ -2642,7 +2639,7 @@ msgstr "Am șters răspunsul."
 
 #: routes/answer/edit.php:38
 msgid "info-cannot-reopen-answer"
-msgstr "Nu puteți redeschide acest răspuns."
+msgstr "Nu poți redeschide acest răspuns."
 
 #: routes/answer/edit.php:44
 msgid "info-confirm-answer-reopened"
@@ -2651,7 +2648,7 @@ msgstr "Am redeschis răspunsul."
 #: routes/answer/edit.php:76 routes/entity/edit.php:99
 #: routes/statement/edit.php:100
 msgid "info-changes-queued"
-msgstr "Modificările dumneavoastră au fost adăugate la coada de evaluare."
+msgstr "Modificările tale au fost adăugate la coada de evaluare."
 
 #: routes/answer/edit.php:79
 msgid "info-answer-updated"
@@ -2663,7 +2660,7 @@ msgstr "Am publicat răspunsul."
 
 #: routes/answer/edit.php:112
 msgid "info-empty-answer"
-msgstr "Nu puteți publica un răspuns gol."
+msgstr "Nu poți publica un răspuns gol."
 
 #: routes/answer/history.php:7
 msgid "info-answer-does-not-exist"
@@ -2686,8 +2683,8 @@ msgstr "Doar moderatorii pot accepta răspunsuri ca demonstrații."
 #: routes/answer/saveProof.php:24
 msgid "info-proof-pending-edit"
 msgstr ""
-"Răspunsul are o modificare sugerată. O puteți evalua sau puteți aștepta să "
-"fie evaluată."
+"Răspunsul are o modificare sugerată. O poți evalua sau poți aștepta să fie "
+"evaluată."
 
 #: routes/answer/saveProof.php:28
 msgid "info-proof-active-status"
@@ -2696,7 +2693,7 @@ msgstr "Doar răspunsurile active pot fi acceptate ca demonstrație."
 #: routes/attachment/upload.php:11
 #, php-format
 msgid "info-minimum-reputation-upload-%s"
-msgstr "Vă trebuie o reputație de minimum %s pentru a încărca fișiere."
+msgstr "îți trebuie o reputație de minimum %s pentru a încărca fișiere."
 
 #: routes/auth/login.php:17
 msgid "info-fake-login-devel"
@@ -2741,7 +2738,7 @@ msgstr "Această invitație a fost deja acceptată."
 #: routes/auth/register.php:94
 msgid "info-register-manual"
 msgstr ""
-"Confirmați că ați citit manualul. El explică succint funcționarea și "
+"Confirmă că ai citit manualul. El explică succint funcționarea și "
 "restricțiile platformei."
 
 #: routes/cannedResponse/edit.php:17
@@ -2754,7 +2751,7 @@ msgstr "Am salvat modificările."
 
 #: routes/cannedResponse/edit.php:48
 msgid "info-must-enter-canned-response-contents"
-msgstr "Vă rugăm să introduceți conținutul."
+msgstr "Te rugăm să introduci conținutul."
 
 #: routes/cannedResponse/edit.php:53
 #, php-format
@@ -2782,7 +2779,7 @@ msgstr "Comentariul căutat nu există."
 
 #: routes/comment/delete.php:16
 msgid "info-cannot-delete-comment"
-msgstr "Aveți o reputație insuficientă pentru a șterge comentariul."
+msgstr "Ai o reputație insuficientă pentru a șterge comentariul."
 
 #: routes/comment/delete.php:22
 msgid "info-comment-deleted"
@@ -2803,7 +2800,7 @@ msgstr "Am clonat domeniul. Aceasta este pagina clonei."
 
 #: routes/domain/edit.php:40
 msgid "info-save-domain-before-clone"
-msgstr "Vă rugăm să salvați domeniul înainte de a-l clona."
+msgstr "Te rugăm să salvezi domeniul înainte de a-l clona."
 
 #: routes/domain/edit.php:60
 msgid "info-domain-saved"
@@ -2814,7 +2811,7 @@ msgstr "Am salvat domeniul."
 #: routes/region/edit.php:86 routes/relationType/edit.php:58
 #: routes/staticResource/edit.php:49 routes/tag/edit.php:93
 msgid "info-must-enter-name"
-msgstr "Vă rugăm să introduceți un nume."
+msgstr "Te rugăm să introduci un nume."
 
 #: routes/domain/edit.php:84
 msgid "info-domain-name-taken"
@@ -2822,11 +2819,11 @@ msgstr "Există deja un domeniu cu acest nume."
 
 #: routes/domain/edit.php:88
 msgid "info-must-enter-domain-display-value"
-msgstr "Vă rugăm să introduceți o valoare vizibilă."
+msgstr "Te rugăm să introduci o valoare vizibilă."
 
 #: routes/entity/edit.php:19
 msgid "info-cannot-delete-entity"
-msgstr "Aveți o reputație insuficientă pentru a șterge autorul."
+msgstr "Ai o reputație insuficientă pentru a șterge autorul."
 
 #: routes/entity/edit.php:25
 msgid "info-confirm-entity-deleted."
@@ -2834,7 +2831,7 @@ msgstr "Am șters autorul."
 
 #: routes/entity/edit.php:32
 msgid "info-cannot-reopen-entity"
-msgstr "Nu puteți redeschide acest autor."
+msgstr "Nu poți redeschide acest autor."
 
 #: routes/entity/edit.php:41
 msgid "info-confirm-entity-reopened."
@@ -2850,7 +2847,7 @@ msgstr "Am salvat autorul."
 
 #: routes/entity/edit.php:107 routes/statement/edit.php:107
 msgid "info-validation-error"
-msgstr "Formularul conține erori. Vă rugăm să le reparați mai jos."
+msgstr "Formularul conține erori. Te rugăm să le repari mai jos."
 
 #: routes/entity/edit.php:148
 msgid "info-incorrect-entity-type"
@@ -2892,7 +2889,7 @@ msgstr "Am șters tipul de autor %s."
 
 #: routes/entityType/edit.php:21
 msgid "info-cannot-delete-entity-type"
-msgstr "Nu puteți șterge acest tip de autor deoarece este folosit."
+msgstr "Nu poți șterge acest tip de autor deoarece este folosit."
 
 #: routes/entityType/edit.php:39
 msgid "info-entity-type-saved"
@@ -2912,7 +2909,7 @@ msgstr "Raportarea a fost ștearsă."
 
 #: routes/flag/save.php:22
 msgid "info-cannot-flag-duplicate-itself"
-msgstr "Nu puteți raporta obiectul ca duplicat al său însuși."
+msgstr "Nu poți raporta obiectul ca duplicat al său însuși."
 
 #: routes/flag/save.php:36
 msgid "info-flag-saved"
@@ -2933,7 +2930,7 @@ msgstr "Am salvat categoria."
 
 #: routes/help/categoryEdit.php:71
 msgid "info-must-enter-help-category-path"
-msgstr "Vă rugăm să introduceți o cale."
+msgstr "Te rugăm să introduci o cale."
 
 #: routes/help/categoryEdit.php:75 routes/help/pageEdit.php:62
 msgid "info-help-path-syntax"
@@ -2958,15 +2955,15 @@ msgstr "Am salvat pagina."
 
 #: routes/help/pageEdit.php:50
 msgid "info-must-select-help-page-category"
-msgstr "Vă rugăm să selectați o categorie."
+msgstr "Te rugăm să selectezi o categorie."
 
 #: routes/help/pageEdit.php:54
 msgid "info-must-enter-help-page-title"
-msgstr "Vă rugăm să introduceți un titlu."
+msgstr "Te rugăm să introduci un titlu."
 
 #: routes/help/pageEdit.php:58
 msgid "info-must-enter-help-page-path"
-msgstr "Vă rugăm să introduceți o cale."
+msgstr "Te rugăm să introduci o cale."
 
 #: routes/help/pageEdit.php:67
 msgid "info-help-page-path-taken"
@@ -2974,7 +2971,7 @@ msgstr "Această cale este deja folosită."
 
 #: routes/help/pageEdit.php:71
 msgid "info-must-enter-help-page-contents"
-msgstr "Vă rugăm să introduceți conținutul."
+msgstr "Te rugăm să introduci conținutul."
 
 #: routes/help/pageHistory.php:9
 msgid "info-no-such-help-page"
@@ -3013,7 +3010,7 @@ msgstr "Am șters regiunea [%s]."
 
 #: routes/region/edit.php:38
 msgid "info-banned-region"
-msgstr "Vă este interzisă gestionarea regiunilor."
+msgstr "Îți este interzisă gestionarea regiunilor."
 
 #: routes/region/edit.php:59
 msgid "info-region-saved"
@@ -3021,7 +3018,7 @@ msgstr "Am salvat regiunea."
 
 #: routes/region/edit.php:95
 msgid "info-region-loop"
-msgstr "Nu puteți alege un descendent ca părinte."
+msgstr "Nu poți alege un descendent ca părinte."
 
 #: routes/region/list.php:24
 msgid "info-region-nomenclature-saved"
@@ -3037,7 +3034,7 @@ msgstr "Relația căutată nu există."
 
 #: routes/relation/edit.php:14
 msgid "info-cannot-edit-relations"
-msgstr "Nu puteți edita relațiile acestui autor."
+msgstr "Nu poți edita relațiile acestui autor."
 
 #: routes/relation/edit.php:26
 msgid "info-relation-updated"
@@ -3054,7 +3051,7 @@ msgstr "Am șters tipul de relație %s."
 
 #: routes/relationType/edit.php:21
 msgid "info-cannot-delete-relation-type"
-msgstr "Nu puteți șterge acest tip de relație deoarece este folosit."
+msgstr "Nu poți șterge acest tip de relație deoarece este folosit."
 
 #: routes/relationType/edit.php:39
 msgid "info-relation-type-saved"
@@ -3071,7 +3068,7 @@ msgstr ""
 
 #: routes/review/view.php:14
 msgid "info-banned-review"
-msgstr "Vă este interzis accesul la evaluări."
+msgstr "Îți este interzis accesul la evaluări."
 
 #: routes/review/view.php:21
 msgid "info-no-such-queue"
@@ -3092,12 +3089,12 @@ msgstr "Am salvat votul."
 #: routes/review/view.php:92
 msgid "info-vote-completes-review"
 msgstr ""
-"Această evaluare este acum completă. V-am redirecționat către următoarea "
+"Această evaluare este acum completă. Te-am redirecționat către următoarea "
 "evaluare din această coadă."
 
 #: routes/statement/edit.php:22
 msgid "info-cannot-delete-statement"
-msgstr "Nu puteți șterge acest răspuns."
+msgstr "Nu poți șterge acest răspuns."
 
 #: routes/statement/edit.php:29
 msgid "info-confirm-statement-deleted"
@@ -3105,7 +3102,7 @@ msgstr "Am șters afirmația."
 
 #: routes/statement/edit.php:35
 msgid "info-cannot-reopen-statement"
-msgstr "Nu puteți redeschide această afirmație."
+msgstr "Nu poți redeschide această afirmație."
 
 #: routes/statement/edit.php:44
 msgid "info-confirm-statement-reopened."
@@ -3121,23 +3118,23 @@ msgstr "Am actualizat afirmația."
 
 #: routes/statement/edit.php:134
 msgid "info-must-enter-statement-entity"
-msgstr "Vă rugăm să introduceți un autor."
+msgstr "Te rugăm să introduci un autor."
 
 #: routes/statement/edit.php:138
 msgid "info-must-enter-statement-summary"
-msgstr "Vă rugăm să introduceți sumarul afirmației."
+msgstr "Te rugăm să introduci sumarul afirmației."
 
 #: routes/statement/edit.php:142
 msgid "info-must-enter-statement-context"
-msgstr "Vă rugăm să introduceți contextul afirmației."
+msgstr "Te rugăm să introduci contextul afirmației."
 
 #: routes/statement/edit.php:146
 msgid "info-must-enter-statement-goal"
-msgstr "Vă rugăm să introduceți scopul afirmației."
+msgstr "Te rugăm să introduci scopul afirmației."
 
 #: routes/statement/edit.php:150
 msgid "info-must-enter-statement-date"
-msgstr "Vă rugăm să introduceți data afirmației."
+msgstr "Te rugăm să introduci data afirmației."
 
 #: routes/statement/edit.php:152
 msgid "info-date-not-future"
@@ -3177,16 +3174,16 @@ msgstr "Există deja o resursă cu acest nume și pentru această limbă."
 #: routes/staticResource/edit.php:67
 msgid "info-no-content-or-uploaded-file"
 msgstr ""
-"Trebuie să tastați conținutul resursei sau să alegeți un fișier pentru "
+"Trebuie să tastezi conținutul resursei sau să alegi un fișier pentru "
 "încărcare."
 
 #: routes/subscription/delete.php:20
 msgid "info-unsubscribed"
-msgstr "Nu veți mai primi notificări despre acest articol."
+msgstr "Nu vei mai primi notificări despre acest articol."
 
 #: routes/subscription/save.php:28
 msgid "info-subscribed"
-msgstr "Veți primi notificări despre acest articol."
+msgstr "Vei primi notificări despre acest articol."
 
 #: routes/tag/edit.php:27
 #, php-format
@@ -3195,7 +3192,7 @@ msgstr "Am șters eticheta [%s]."
 
 #: routes/tag/edit.php:40
 msgid "info-banned-tag"
-msgstr "Vă este interzisă gestionarea etichetelor."
+msgstr "Îți este interzisă gestionarea etichetelor."
 
 #: routes/tag/edit.php:61
 msgid "info-tag-saved"
@@ -3203,7 +3200,7 @@ msgstr "Am salvat eticheta."
 
 #: routes/tag/edit.php:102
 msgid "info-tag-loop"
-msgstr "Nu puteți alege un descendent ca părinte."
+msgstr "Nu poți alege un descendent ca părinte."
 
 #: routes/tag/view.php:10
 msgid "info-no-such-tag"
@@ -3219,7 +3216,7 @@ msgstr "Am salvat modificările."
 
 #: routes/user/changeReputation.php:18
 msgid "info-change-reputation-devel"
-msgstr "Vă puteți schimba reputația numai în modul development."
+msgstr "Îți poți schimba reputația numai în modul development."
 
 #: routes/user/changeReputation.php:20
 #, php-format
@@ -3233,11 +3230,11 @@ msgstr "Votul are un format incorect."
 #: routes/vote/save.php:33
 #, php-format
 msgid "info-minimum-reputation-vote-%s"
-msgstr "Vă trebuie o reputație de minimum %s pentru a vota."
+msgstr "Îți trebuie o reputație de minimum %s pentru a vota."
 
 #: routes/vote/save.php:38
 msgid "info-banned-vote"
-msgstr "Vă este interzisă votarea."
+msgstr "Îți este interzisă votarea."
 
 #: routes/vote/save.php:45
 msgid "info-vote-no-object"
@@ -3245,4 +3242,4 @@ msgstr "Nu pot salva votul: obiectul nu există."
 
 #: routes/vote/save.php:50
 msgid "info-cannot-self-vote"
-msgstr "Nu puteți vota propriile mesaje."
+msgstr "Nu poți vota propriile mesaje."
