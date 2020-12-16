@@ -69,7 +69,7 @@
           </div>
         </div>
 
-        {if $answer->verdict != Ct::VERDICT_NONE}
+        {if $answer->verdict != Statement::VERDICT_NONE}
           <div class="col-12 mt-2 mb-1">
             <span class="badge badge-pill badge-secondary">
               <i class="icon icon-hammer"></i>

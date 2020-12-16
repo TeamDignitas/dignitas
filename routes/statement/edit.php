@@ -83,8 +83,8 @@ if ($saveButton) {
 
     // grant verdict reputation
     if (User::isModerator()) {
-      $hadVerdict = ($origVerdict != Ct::VERDICT_NONE);
-      $hasVerdict = ($statement->verdict != Ct::VERDICT_NONE);
+      $hadVerdict = ($origVerdict != Statement::VERDICT_NONE);
+      $hasVerdict = ($statement->verdict != Statement::VERDICT_NONE);
       if ($hadVerdict ^ $hasVerdict) {
         $u = User::get_by_id($statement->userId);
         $sign = $hasVerdict ? +1 : -1;

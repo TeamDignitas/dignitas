@@ -1,6 +1,6 @@
 <?php
 
-$verdicts = [ Ct::VERDICT_NONE ];
+$verdicts = [ Statement::VERDICT_NONE ];
 
 list($numStatementPages, $statements) =
   Search::searchStatements(
