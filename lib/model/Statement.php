@@ -37,8 +37,6 @@ class Statement extends Proto {
   const VERDICT_PROMISE_KEPT_LATE = 13;
   const VERDICT_PROMISE_KEPT = 14;
 
-  const NUM_VERDICTS = 15;
-
   // Also applicable to answers.
   const VERDICTS_BY_TYPE = [
     self::TYPE_CLAIM => [
