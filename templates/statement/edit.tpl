@@ -58,6 +58,22 @@
           <input type="hidden" name="dateMade" value="{$statement->dateMade}">
           {include "bits/fieldErrors.tpl" errors=$errors.dateMade|default:null}
         </div>
+
+        <div class="form-group row">
+          <label for="field-type" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-type{/t}</label>
+          <select
+            id="field-type"
+            name="type"
+            class="form-control has-unload-warning col-sm-12 col-lg-10">
+            {for $t = 0 to Statement::NUM_TYPES - 1}
+              <option
+                value="{$t}"
+                {if $t == $statement->type}selected{/if}>
+                {Statement::typeName($t)}
+              </option>
+            {/for}
+          </select>
+        </div>
       </fieldset>
 
       <fieldset class="related-fields mb-5 ml-3">
@@ -125,13 +141,13 @@
               id="field-verdict"
               name="verdict"
               class="form-control has-unload-warning col-sm-12 col-lg-10">
-              {for $v = 0 to Ct::NUM_VERDICTS - 1}
+              {foreach $statement->getVerdictChoices() as $v}
                 <option
                   value="{$v}"
                   {if $v == $statement->verdict}selected{/if}>
                   {Statement::verdictName($v)}
                 </option>
-              {/for}
+              {/foreach}
             </select>
           </div>
         {/if}

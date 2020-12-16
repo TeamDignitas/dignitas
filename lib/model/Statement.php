@@ -9,8 +9,83 @@ class Statement extends Proto {
     VerdictTrait,
     VotableTrait;
 
+  const TYPE_CLAIM = 0;
+  const TYPE_FLOP = 1;
+  const TYPE_PROMISE = 2;
+  const NUM_TYPES = 3;
+
+  // Verdicts for all statements
+  const VERDICT_NONE = 0;
+  const VERDICT_UNDECIDABLE = 1;
+
+  // Verdicts for claims
+  const VERDICT_FALSE = 2;
+  const VERDICT_MOSTLY_FALSE = 3;
+  const VERDICT_MIXED = 4;
+  const VERDICT_MOSTLY_TRUE = 5;
+  const VERDICT_TRUE = 6;
+
+  // Verdicts for flops
+  const VERDICT_FLOP = 7;
+  const VERDICT_HALF_FLOP = 8;
+  const VERDICT_NO_FLOP = 9;
+
+  // Verdicts for promises
+  const VERDICT_PROMISE_BROKEN = 10;
+  const VERDICT_PROMISE_STALLED = 11;
+  const VERDICT_PROMISE_PARTIAL = 12;
+  const VERDICT_PROMISE_KEPT_LATE = 13;
+  const VERDICT_PROMISE_KEPT = 14;
+
+  const NUM_VERDICTS = 15;
+
+  // Also applicable to answers.
+  const VERDICTS_BY_TYPE = [
+    self::TYPE_CLAIM => [
+      self::VERDICT_NONE,
+      self::VERDICT_UNDECIDABLE,
+      self::VERDICT_FALSE,
+      self::VERDICT_MOSTLY_FALSE,
+      self::VERDICT_MIXED,
+      self::VERDICT_MOSTLY_TRUE,
+      self::VERDICT_TRUE,
+    ],
+    self::TYPE_FLOP => [
+      self::VERDICT_NONE,
+      self::VERDICT_UNDECIDABLE,
+      self::VERDICT_FLOP,
+      self::VERDICT_HALF_FLOP,
+      self::VERDICT_NO_FLOP,
+    ],
+    self::TYPE_PROMISE => [
+      self::VERDICT_NONE,
+      self::VERDICT_UNDECIDABLE,
+      self::VERDICT_PROMISE_BROKEN,
+      self::VERDICT_PROMISE_STALLED,
+      self::VERDICT_PROMISE_PARTIAL,
+      self::VERDICT_PROMISE_KEPT_LATE,
+      self::VERDICT_PROMISE_KEPT,
+    ],
+  ];
+
   function getObjectType() {
     return self::TYPE_STATEMENT;
+  }
+
+  static function typeName($type) {
+    switch ($type) {
+      case self::TYPE_CLAIM:   return _('statement-type-claim');
+      case self::TYPE_FLOP:    return _('statement-type-flop');
+      case self::TYPE_PROMISE: return _('statement-type-promise');
+    }
+  }
+
+  function getTypeName() {
+    return self::typeName($this->type);
+  }
+
+  function getVerdictChoices() {
+    return self::VERDICTS_BY_TYPE[$this->type];
   }
 
   function getViewUrl() {
@@ -30,7 +105,7 @@ class Statement extends Proto {
   }
 
   function requiresModeratorReview() {
-    return ($this->verdict != Ct::VERDICT_NONE);
+    return ($this->verdict != self::VERDICT_NONE);
   }
 
   function getEntity() {
@@ -154,7 +229,7 @@ class Statement extends Proto {
         Str::formatNumber(User::PRIV_EDIT_STATEMENT)));
     }
 
-    if ($this->verdict != Ct::VERDICT_NONE &&
+    if ($this->verdict != self::VERDICT_NONE &&
         !User::isModerator()) {
       throw new Exception(_('info-only-moderator-edit-statement-verdict'));
     }
@@ -200,7 +275,7 @@ class Statement extends Proto {
       return false; // not on the add statement page
     } else if (in_array($this->status, [Ct::STATUS_DELETED, Ct::STATUS_PENDING_EDIT])) {
       return false; // already deleted or pending edit
-    } else if (($this->verdict != Ct::VERDICT_NONE) && !User::isModerator()) {
+    } else if (($this->verdict != self::VERDICT_NONE) && !User::isModerator()) {
       return false; // only moderators can delete statements with verdicts
     } else if (Ban::exists(Ban::TYPE_DELETE)) {
       return false; // banned from deleting objects
@@ -298,7 +373,7 @@ class Statement extends Proto {
     $haveVerdict = Model::factory('Statement')
       ->select('id')
       ->where('status', Ct::STATUS_ACTIVE)
-      ->where_not_equal('verdict', Ct::VERDICT_NONE)
+      ->where_not_equal('verdict', self::VERDICT_NONE)
       ->find_array();
     $haveVerdict = array_column($haveVerdict, 'id');
 
@@ -311,7 +386,7 @@ class Statement extends Proto {
       ->where('s.status', Ct::STATUS_ACTIVE)
       ->where('a.status', Ct::STATUS_ACTIVE)
       ->where('a.proof', true)
-      ->where_not_equal('a.verdict', Ct::VERDICT_NONE)
+      ->where_not_equal('a.verdict', self::VERDICT_NONE)
       ->find_array();
     $haveProof = array_column($haveProof, 'id');
 
@@ -325,8 +400,8 @@ class Statement extends Proto {
       ->where('a.status', Ct::STATUS_ACTIVE)
       ->where('a.proof', true)
       ->where_any_is([
-        ['s.verdict' => Ct::VERDICT_TRUE, 'a.verdict' => Ct::VERDICT_FALSE],
-        ['s.verdict' => Ct::VERDICT_FALSE, 'a.verdict' => Ct::VERDICT_TRUE],
+        ['s.verdict' => self::VERDICT_TRUE, 'a.verdict' => self::VERDICT_FALSE],
+        ['s.verdict' => self::VERDICT_FALSE, 'a.verdict' => self::VERDICT_TRUE],
       ])
       ->find_array();
     $verdictMismatch = array_column($verdictMismatch, 'id');

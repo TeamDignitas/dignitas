@@ -42,16 +42,6 @@ class Ct {
   const FIELD_CHANGE_TAG_LIST = 6;
   const FIELD_CHANGE_RELATION_LIST = 7;
 
-  // Applicable to statements and asnwers.
-  const VERDICT_NONE = 0;
-  const VERDICT_UNDECIDABLE = 1;
-  const VERDICT_FALSE = 2;
-  const VERDICT_MOSTLY_FALSE = 3;
-  const VERDICT_MIXED = 4;
-  const VERDICT_MOSTLY_TRUE = 5;
-  const VERDICT_TRUE = 6;
-  const NUM_VERDICTS = 7;
-
   // Sort criteria
   const SORT_CREATE_DATE_DESC = 0;
   const SORT_CREATE_DATE_ASC = 1;
