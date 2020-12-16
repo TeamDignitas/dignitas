@@ -34,13 +34,13 @@
         id="field-verdict"
         name="verdict"
         class="form-control has-unload-warning">
-        {for $v = 0 to Ct::NUM_VERDICTS - 1}
+        {foreach $answer->getStatement()->getVerdictChoices() as $v}
           <option
             value="{$v}"
             {if $v == $answer->verdict}selected{/if}>
             {Statement::verdictName($v)}
           </option>
-        {/for}
+        {/foreach}
       </select>
     </div>
   </div>
