@@ -9,10 +9,11 @@ class Statement extends Proto {
     VerdictTrait,
     VotableTrait;
 
-  const TYPE_CLAIM = 0;
-  const TYPE_FLOP = 1;
-  const TYPE_PROMISE = 2;
-  const NUM_TYPES = 3;
+  const TYPE_ANY = 0; // not a real type, but used by statement filters
+  const TYPE_CLAIM = 1;
+  const TYPE_FLOP = 2;
+  const TYPE_PROMISE = 3;
+  const NUM_TYPES = 4;
 
   // Verdicts for all statements
   const VERDICT_NONE = 0;
@@ -39,6 +40,10 @@ class Statement extends Proto {
 
   // Also applicable to answers.
   const VERDICTS_BY_TYPE = [
+    self::TYPE_ANY => [
+      self::VERDICT_NONE,
+      self::VERDICT_UNDECIDABLE,
+    ],
     self::TYPE_CLAIM => [
       self::VERDICT_NONE,
       self::VERDICT_UNDECIDABLE,
@@ -66,12 +71,27 @@ class Statement extends Proto {
     ],
   ];
 
+  // Suspicious pairs of statement and answer verdicts which will appear on
+  // the verdict report. Each pair below goes both ways: [ A, B ] can mean
+  // [ statement verdict = A, answer verdict = B ] or viceversa.
+  const BAD_VERDICTS = [
+    [ self::VERDICT_TRUE, self::VERDICT_FALSE ],
+    [ self::VERDICT_TRUE, self::VERDICT_MOSTLY_FALSE ],
+    [ self::VERDICT_MOSTLY_TRUE, self::VERDICT_FALSE ],
+    [ self::VERDICT_NO_FLOP, self::VERDICT_FLOP ],
+    [ self::VERDICT_PROMISE_KEPT, self::VERDICT_PROMISE_STALLED ],
+    [ self::VERDICT_PROMISE_KEPT, self::VERDICT_PROMISE_BROKEN ],
+    [ self::VERDICT_PROMISE_KEPT_LATE, self::VERDICT_PROMISE_STALLED ],
+    [ self::VERDICT_PROMISE_KEPT_LATE, self::VERDICT_PROMISE_BROKEN ],
+  ];
+
   function getObjectType() {
     return self::TYPE_STATEMENT;
   }
 
   static function typeName($type) {
     switch ($type) {
+      case self::TYPE_ANY:     return _('statement-type-any');
       case self::TYPE_CLAIM:   return _('statement-type-claim');
       case self::TYPE_FLOP:    return _('statement-type-flop');
       case self::TYPE_PROMISE: return _('statement-type-promise');
@@ -83,7 +103,11 @@ class Statement extends Proto {
   }
 
   function getVerdictChoices() {
-    return self::VERDICTS_BY_TYPE[$this->type];
+    return self::getVerdictsByType($this->type);
+  }
+
+  static function getVerdictsByType($type) {
+    return self::VERDICTS_BY_TYPE[$type];
   }
 
   function getViewUrl() {
@@ -384,11 +408,15 @@ class Statement extends Proto {
       ->where('s.status', Ct::STATUS_ACTIVE)
       ->where('a.status', Ct::STATUS_ACTIVE)
       ->where('a.proof', true)
-      ->where_not_equal('a.verdict', self::VERDICT_NONE)
       ->find_array();
     $haveProof = array_column($haveProof, 'id');
 
     // statement-answer pairs with mismatched verdicts
+    $verdictPairs = [];
+    foreach (self::BAD_VERDICTS as $pair) {
+      $verdictPairs[] = [ 's.verdict' => $pair[0], 'a.verdict' => $pair[1] ];
+      $verdictPairs[] = [ 's.verdict' => $pair[1], 'a.verdict' => $pair[0] ];
+    }
     $verdictMismatch = Model::factory('Statement')
       ->table_alias('s')
       ->select('s.id')
@@ -397,10 +425,7 @@ class Statement extends Proto {
       ->where('s.status', Ct::STATUS_ACTIVE)
       ->where('a.status', Ct::STATUS_ACTIVE)
       ->where('a.proof', true)
-      ->where_any_is([
-        ['s.verdict' => self::VERDICT_TRUE, 'a.verdict' => self::VERDICT_FALSE],
-        ['s.verdict' => self::VERDICT_FALSE, 'a.verdict' => self::VERDICT_TRUE],
-      ])
+      ->where_any_is($verdictPairs)
       ->find_array();
     $verdictMismatch = array_column($verdictMismatch, 'id');
 

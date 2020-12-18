@@ -22,6 +22,7 @@ $(function() {
       minimumInputLength: 2,
       selectionCssClass: 'selection-entity-id',
     });
+    $('select.actionable[name="type"]').change(typeChange);
 
     $('.pagination-wrapper').on('click', 'a', paginationClick);
     $('.actionable').change(filterChange);
@@ -64,6 +65,28 @@ $(function() {
     });
 
     return false;
+  }
+
+  function typeChange(e) {
+    var v = $('#statement-filters-verdicts');
+    v.find('option').remove();
+
+    // It is safe to populate the verdict list asynchronously and let the Ajax
+    // filter run in the meantime. We do not need to select any verdicts anyway.
+
+    $.get(URL_PREFIX + 'ajax/get-verdicts', {
+      statementType: $(this).val(),
+      selectpicker: true,
+    }).done(function(data) {
+      for (var i = 0; i < data.length; i++) {
+        v.append(
+          '<option value="' + data[i].value + '" ' +
+            'data-content="' + data[i].html + '">' +
+            data[i].text + '</option>'
+        );
+      }
+      v.selectpicker('refresh');
+    });
   }
 
   function filterChange(e) {

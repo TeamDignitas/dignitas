@@ -55,6 +55,7 @@ if ($saveButton) {
   $statement->context = Request::get('context');
   $statement->goal = Request::get('goal');
   $statement->dateMade = Request::get('dateMade');
+  $origType = $statement->type;
   $statement->type = Request::get('type');
   if (User::isModerator()) {
     $origVerdict = $statement->verdict;
@@ -91,6 +92,14 @@ if ($saveButton) {
         $u = User::get_by_id($statement->userId);
         $sign = $hasVerdict ? +1 : -1;
         $u->grantReputation($sign * Config::REP_VERDICT);
+      }
+    }
+
+    if ($origType != $statement->type) {
+      $answers = Answer::get_all_by_statementId($statement->id);
+      foreach ($answers as $answer) {
+        $answer->verdict = Statement::VERDICT_NONE;
+        $answer->save();
       }
     }
 

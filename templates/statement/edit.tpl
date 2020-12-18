@@ -67,7 +67,7 @@
             data-prev-value="{$statement->type}"
             data-confirm-msg="{t}info-confirm-statement-type-change{/t}"
             class="form-control has-unload-warning col-sm-12 col-lg-10">
-            {for $t = 0 to Statement::NUM_TYPES - 1}
+            {for $t = 1 to Statement::NUM_TYPES - 1}
               <option
                 value="{$t}"
                 {if $t == $statement->type}selected{/if}>
