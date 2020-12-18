@@ -127,6 +127,9 @@ class Search {
     foreach ($filters as $field => $value) {
       if (!empty($value)) {
         switch ($field) {
+          case 'type':
+            $query = $query->where('type', $value);
+            break;
           case 'entityId':
             $query = $query->where('entityId', $value);
             break;

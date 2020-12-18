@@ -4,6 +4,7 @@ $page = Request::get('page', 0);
 $order = Request::get('order', 0);
 
 $filters = [
+  'type' => Request::get('type'),
   'entityId' => Request::get('entityId', 0),
   'exceptId' => Request::get('exceptId', 0),
   'maxDate' =>  Time::extendPartialDate(Request::get('maxDate')),

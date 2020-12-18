@@ -3,12 +3,6 @@
 <form data-url="{Config::URL_PREFIX}ajax/search-statements">
   <div class="row mb-2 small statement-filters">
 
-    <div class="col-12 col-sm-12 col-md-1 col-lg-1">
-      <label class="col-form-label text-capitalize">
-        {t}label-sort{/t}
-      </label>
-    </div>
-
     <div class="col-12 col-sm-12 col-md-3 col-lg-3">
       <select
         name="order"
@@ -20,12 +14,6 @@
       </select>
     </div>
 
-    <div class="col-12 col-sm-12 col-md-1 col-lg-1">
-      <label class="col-form-label text-capitalize">
-        {t}label-filter{/t}:
-      </label>
-    </div>
-
     <div class="col-12 col-sm-12 col-md-3 col-lg-3 mb-2">
       <select
         name="entityId"
@@ -35,21 +23,34 @@
       </select>
     </div>
 
+    <div class="col-12 col-sm-12 col-md-2 col-lg-2 mb-2">
+      <select
+        name="type"
+        class="form-control form-control-sm actionable">
+        {for $t = 0 to Statement::NUM_TYPES - 1}
+          <option value="{$t}">
+            {Statement::typeName($t)}
+          </option>
+        {/for}
+      </select>
+    </div>
+
     <div class="col-12 col-sm-12 col-md-2 col-lg-2">
       <select
+        id="statement-filters-verdicts"
         name="verdicts[]"
         class="form-control form-control-sm selectpicker actionable"
         multiple
         title="{t}label-verdict{/t}"
         data-selected-text-format="count">
-        {for $v = 0 to Ct::NUM_VERDICTS - 1}
+        {foreach Statement::getVerdictsByType(Statement::TYPE_ANY) as $v}
           <option
             value="{$v}"
             {if in_array($v, $verdicts)}selected{/if}
-            data-content="<span class='badge badge-pill align-top bg-verdict-{$v}'>&nbsp;</span> {Statement::verdictName($v)}">
+            data-content="{include 'bits/selectPickerVerdict.tpl'}">
             {Statement::verdictName($v)}
           </option>
-        {/for}
+        {/foreach}
       </select>
     </div>
 
