@@ -349,10 +349,21 @@ img.pic.no-outline,
   text-transform: capitalize;
 }
 
+.your-answer {
+  background-color: #eee;
+  padding: 3rem;
+}
+
 @media (max-width: 768px) {
   .center-mobile {
     text-align: center;
   }
+
+  .your-answer {
+   padding: 1rem;
+   margin-right: -30px;
+   margin-left: -30px;
+ }
 }
 
 /******************************* comments *******************************/
