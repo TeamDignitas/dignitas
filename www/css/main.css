@@ -240,7 +240,7 @@ img.pic.no-outline,
   font-size: 0.75rem;
 }
 
-/* keep these values in sync with lib/Ct.php::VERDICT_* constants */
+/* keep these values in sync with lib/model/Statement.php::VERDICT_* constants */
 .bg-verdict-0 { /* none */
   background: #eee !important;
 }
@@ -255,42 +255,58 @@ img.pic.no-outline,
   border-color: #aaa;
 }
 
-.bg-verdict-2 { /* false */
+.bg-verdict-2,   /* false */
+.bg-verdict-7,   /* flop */
+.bg-verdict-10 { /* broken promise */
   background: #D90404 !important;
   color: #FFFFFF !important;
 }
-.statement.verdict-2 {
+.statement.verdict-2,
+.statement.verdict-7,
+.statement.verdict-10 {
   border-color: #D90404;
 }
 
-.bg-verdict-3 { /* mostly false */
+.bg-verdict-3,   /* mostly false */
+.bg-verdict-11 { /* stalled promise */
   background: linear-gradient(110deg, #D90404, #FFEB3B 86%) !important;
   border: 0;
 }
-.statement.verdict-3 {
+.statement.verdict-3,
+.statement.verdict-11 {
   border-color: #ec771f;
 }
 
-.bg-verdict-4 { /* mixed */
+.bg-verdict-4,   /* mixed */
+.bg-verdict-8,   /* half flop */
+.bg-verdict-12 { /* partially kept promise */
   background: #FFEB3B !important;
 }
-.statement.verdict-4 {
+.statement.verdict-4,
+.statement.verdict-8,
+.statement.verdict-12 {
   border-color: #FFEB3B;
 }
 
-.bg-verdict-5 { /* mostly true */
+.bg-verdict-5,   /* mostly true */
+.bg-verdict-13 { /* promise kept past the deadline */
   background: linear-gradient(110deg, #37700A, #FFEB3B 86%) !important;
   border: 0;
 }
-.statement.verdict-5 {
+.statement.verdict-5,
+.statement.verdict-13 {
   border-color: #9bad22;
 }
 
-.bg-verdict-6 { /* true */
+.bg-verdict-6,   /* true */
+.bg-verdict-9,   /* no flop */
+.bg-verdict-14 { /* kept promise */
   background: #37700A !important;
   color: #FFFFFF !important;
 }
-.statement.verdict-6 {
+.statement.verdict-6,
+.statement.verdict-9,
+.statement.verdict-14 {
   border-color: #37700A;
 }
 
