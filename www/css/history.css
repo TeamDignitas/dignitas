@@ -1,6 +1,6 @@
 @media (max-width: 768px){
   .highlight-sm {
-    background: #ccc;
+    background-color: #ccc;
     margin-top: 0.75rem;
     margin-bottom: 0.5rem;
   }
@@ -34,11 +34,11 @@ pre.diff {
 }
 
 .diff-op1 {
-  background: #c8ffc8;
+  background-color: #c8ffc8;
   color: black;
 }
 
 .diff-op2 {
-  background: #ffc8c8;
+  background-color: #ffc8c8;
   color: black;
 }

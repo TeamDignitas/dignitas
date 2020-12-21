@@ -7,7 +7,7 @@ h1::first-letter {
 }
 
 .navbar-nav a:hover {
-  background: #ccc; /* slightly more visible */
+  background-color: #ccc; /* slightly more visible */
 }
 
 .navbar-nav {
@@ -52,7 +52,7 @@ blockquote {
 }
 
 .select2-container--bootstrap4 .select2-selection--multiple .select2-selection__choice__remove {
-  background: white;
+  background-color: white;
   border: 0;
 }
 
@@ -242,14 +242,14 @@ img.pic.no-outline,
 
 /* keep these values in sync with lib/model/Statement.php::VERDICT_* constants */
 .bg-verdict-0 { /* none */
-  background: #eee !important;
+  background-color: #eee !important;
 }
 .statement.verdict-0 {
   border-color: #eee;
 }
 
 .bg-verdict-1 { /* undecidable */
-  background: #aaa !important;
+  background-color: #aaa !important;
 }
 .statement.verdict-1 {
   border-color: #aaa;
@@ -258,7 +258,7 @@ img.pic.no-outline,
 .bg-verdict-2,   /* false */
 .bg-verdict-7,   /* flop */
 .bg-verdict-10 { /* broken promise */
-  background: #D90404 !important;
+  background-color: #D90404 !important;
   color: #FFFFFF !important;
 }
 .statement.verdict-2,
@@ -269,7 +269,7 @@ img.pic.no-outline,
 
 .bg-verdict-3,   /* mostly false */
 .bg-verdict-11 { /* stalled promise */
-  background: linear-gradient(110deg, #D90404, #FFEB3B 86%) !important;
+  background-image: linear-gradient(110deg, #D90404, #FFEB3B 86%) !important;
   border: 0;
 }
 .statement.verdict-3,
@@ -280,7 +280,7 @@ img.pic.no-outline,
 .bg-verdict-4,   /* mixed */
 .bg-verdict-8,   /* half flop */
 .bg-verdict-12 { /* partially kept promise */
-  background: #FFEB3B !important;
+  background-color: #FFEB3B !important;
 }
 .statement.verdict-4,
 .statement.verdict-8,
@@ -290,7 +290,7 @@ img.pic.no-outline,
 
 .bg-verdict-5,   /* mostly true */
 .bg-verdict-13 { /* promise kept past the deadline */
-  background: linear-gradient(110deg, #37700A, #FFEB3B 86%) !important;
+  background-image: linear-gradient(110deg, #37700A, #FFEB3B 86%) !important;
   border: 0;
 }
 .statement.verdict-5,
@@ -301,7 +301,7 @@ img.pic.no-outline,
 .bg-verdict-6,   /* true */
 .bg-verdict-9,   /* no flop */
 .bg-verdict-14 { /* kept promise */
-  background: #37700A !important;
+  background-color: #37700A !important;
   color: #FFFFFF !important;
 }
 .statement.verdict-6,
@@ -520,7 +520,7 @@ body, main {
 }
 
 .statement-filters .btn-light {
-  background: white;
+  background-color: white;
   border: 1px solid #ced4da;
   color: #495057 !important;
   height: calc(1.5em + .75rem + 2px) !important; /* same as select2 */
