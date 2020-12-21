@@ -65,7 +65,9 @@
             id="field-type"
             name="type"
             data-prev-value="{$statement->type}"
+            {if $statement->needsTypeChangeWarning()}
             data-confirm-msg="{t}info-confirm-statement-type-change{/t}"
+            {/if}
             class="form-control has-unload-warning col-sm-12 col-lg-10">
             {for $t = 1 to Statement::NUM_TYPES - 1}
               <option

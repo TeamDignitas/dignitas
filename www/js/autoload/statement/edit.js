@@ -11,7 +11,9 @@ $(function() {
   }
 
   /**
-   * Ask for confirmation before changing the statement type.
+   * Ask for confirmation before changing the statement type. Skip this when
+   * the statement is being created (it has no ID) or when there are no
+   * answers with verdicts (i.e., no confirmation message is set).
    **/
   function typeChange(evt) {
     var id = $('#field-id').val();
@@ -19,7 +21,7 @@ $(function() {
     if (id) {
       var msg = $(this).data('confirmMsg');
 
-      if (confirm(msg)) {
+      if (!msg || confirm(msg)) {
         $(this).data('prevValue', $(this).val());
         refreshVerdicts();
       } else {

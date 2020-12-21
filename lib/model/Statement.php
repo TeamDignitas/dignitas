@@ -173,6 +173,17 @@ class Statement extends Proto {
     return $results;
   }
 
+  /**
+   * @return true if the user should get a warning before changing the
+   * statement's type. This is necessary when there are answers with verdicts.
+   */
+  function needsTypeChangeWarning() {
+    return Model::factory('Answer')
+      ->where('statementId', $this->id)
+      ->where_not_equal('verdict', Statement::VERDICT_NONE)
+      ->count();
+  }
+
   function getLinks() {
     return Link::getFor($this);
   }
