@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark navbar-expand-md">
+<nav class="navbar navbar-dark bg-dark navbar-expand-md">
 
   <button
     class="navbar-toggler"
@@ -59,7 +59,7 @@
     <span class="icon icon-user"></span>
   </button>
 
-  <div class="navbar-collapse bg-dark" id="navbar-right">
+  <div class="navbar-collapse" id="navbar-right">
 
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
@@ -135,7 +135,7 @@
             </a>
             {if Config::DEVELOPMENT_MODE}
               <div class="dropdown-divider"></div>
-              <form id="rep-change" class="px-4 text-light">
+              <form id="rep-change" class="px-4 text-navbar-link">
                 <small class="form-text mb-2">
                   {t}info-reputation-manual{/t}
                 </small>

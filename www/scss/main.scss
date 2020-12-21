@@ -3,9 +3,29 @@
  * scripts/recompileCss.sh
  **/
 
+/* our variables, not Bootstrap's */
+$navbar-link-color: #f3e6d7;
+
+/* Bootstrap overrides */
 $body-color: #495057;
 $font-family-sans-serif: Spartan, Helvetica, Calibri, Arial, sans-serif;
 
+/**
+ * These are usable
+ *   - in class names like btn-darkish;
+ *   - in CSS variables like color: var(--darkish) !important;
+ **/
+$theme-colors: (
+  "dark": #232429,
+  "darkish": #343a40, /* usable in custom class names like btn-darkish */
+  "navbar-link": $navbar-link-color,
+  "navbar-link-hover": #c4b9ac,
+);
+
+$navbar-dark-color: $navbar-link-color;   /* only used by the togglers */
+$navbar-dark-toggler-border-color: $navbar-link-color;
+$navbar-dark-brand-color: $navbar-link-color;
+$navbar-dark-brand-hover-color: $navbar-link-color;
 $navbar-padding-y: 0rem;
 $navbar-padding-x: 1rem;
 

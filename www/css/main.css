@@ -6,14 +6,6 @@ h1::first-letter {
   text-transform: capitalize;
 }
 
-.navbar-nav a:hover {
-  background-color: #ccc; /* slightly more visible */
-}
-
-.navbar-nav {
-  white-space: nowrap;
-}
-
 img.pic {
   outline: 1px solid #ddd;
 }
@@ -63,39 +55,25 @@ blockquote {
 }
 
 /******************************** navbar *********************************/
-.navbar,
-#navbar-left,
-#navbar-right,
-.navbar-nav a:hover,
-.bg-dark {
-  background-color: #232429 !important;
+
+.navbar-nav {
+  white-space: nowrap;
 }
 
-.navbar-dark a {
-  color: #F3E6D7 !important;
+.nav-item a {
+  background-color: var(--dark) !important;
+  color: var(--navbar-link) !important;
 }
 
-.nav-item a:hover,
-.navbar a.text-light:focus,
-.navbar a.text-light:hover,
-.navbar-dark .navbar-nav .nav-link:hover {
-  color: #c4b9ac !important;
-}
-
-.navbar-dark .navbar-toggler {
-  color: #F3E6D7 !important;
-  border-color: #F3E6D7 !important;
+.nav-item a:hover {
+  color: var(--navbar-link-hover) !important;
 }
 
 #navbar-left.shown,
 #navbar-right.shown {
   margin-top: 1.2rem;
   padding-top: 1rem;
-  background-color: #343a40 !important;
-}
-
-.navbar-nav {
-  white-space: nowrap;
+  background-color: var(--darkish) !important;
 }
 
 .navbar-brand,
@@ -103,7 +81,6 @@ blockquote {
   font-family: Helvetica, sans-serif;
   font-weight: bold;
   font-size: 2rem !important;
-  color: #222;
 }
 
 @media (max-width: 768px) {

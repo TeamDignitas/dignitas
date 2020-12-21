@@ -16,7 +16,7 @@
     </noscript>
 
     <span class="input-group-append">
-      <button type="submit" class="btn btn-dark">
+      <button type="submit" class="btn btn-darkish">
         <i class="icon icon-search"></i>
       </button>
     </span>
