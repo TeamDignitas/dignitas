@@ -69,13 +69,6 @@ blockquote {
   color: var(--navbar-link-hover) !important;
 }
 
-#navbar-left.shown,
-#navbar-right.shown {
-  margin-top: 1.2rem;
-  padding-top: 1rem;
-  background-color: var(--darkish) !important;
-}
-
 .navbar-brand,
 .navbar-brand:hover {
   font-family: Helvetica, sans-serif;
@@ -85,10 +78,12 @@ blockquote {
 
 @media (max-width: 768px) {
   .navbar-collapse {
+    background-color: var(--darkish) !important;
     height: 100%;
-    padding: 0 15px 15px;
+    margin-top: 3px;
+    padding: 1rem;
     position: fixed;
-    top: 54px;
+    top: 55px;
     transition: left 0.3s linear;
     width: 75%;
     z-index: 10;
