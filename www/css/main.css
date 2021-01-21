@@ -61,7 +61,6 @@ blockquote {
 }
 
 .nav-item a {
-  background-color: var(--dark) !important;
   color: var(--navbar-link) !important;
 }
 
@@ -76,9 +75,13 @@ blockquote {
   font-size: 2rem !important;
 }
 
+.navbar .dropdown-menu {
+  margin-top: 8px;
+}
+
 @media (max-width: 768px) {
   .navbar-collapse {
-    background-color: var(--darkish) !important;
+    background-color: var(--darkish);
     height: 100%;
     margin-top: 3px;
     padding: 1rem;

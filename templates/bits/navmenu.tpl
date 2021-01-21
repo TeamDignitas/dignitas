@@ -26,7 +26,7 @@
           aria-expanded="false">
           {cap}{t}link-info{/t}{/cap}
         </a>
-        <div class="dropdown-menu bg-dark py-0" aria-labelledby="nav-dropdown-info">
+        <div class="dropdown-menu bg-darkish py-0" aria-labelledby="nav-dropdown-info">
           <a
             class="dropdown-item pl-2 py-2"
             href="{Router::link('aggregate/about')}">
@@ -81,7 +81,7 @@
           aria-expanded="false">
           <i class="icon icon-globe"></i>
         </a>
-        <div class="dropdown-menu bg-dark py-0" aria-labelledby="nav-dropdown-lang">
+        <div class="dropdown-menu bg-darkish py-0" aria-labelledby="nav-dropdown-lang">
           {foreach LocaleUtil::getAll() as $id => $name}
             <a
               class="dropdown-item pl-2 py-2"
@@ -117,7 +117,7 @@
               {$u->getReputation()|nf}
             </span>
           </a>
-          <div class="dropdown-menu dropdown-menu-right bg-dark py-0" aria-labelledby="nav-dropdown-user">
+          <div class="dropdown-menu dropdown-menu-right bg-darkish py-0" aria-labelledby="nav-dropdown-user">
             <a class="dropdown-item py-2" href="{Router::userLink($u)}">
               <i class="icon icon-user"></i>
               {t}link-my-profile{/t}
