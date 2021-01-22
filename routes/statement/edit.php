@@ -148,6 +148,10 @@ function validate($statement, $links) {
   if (!$statement->summary) {
     $errors['summary'][] = _('info-must-enter-statement-summary');
   }
+  if (mb_strlen($statement->summary) > Statement::MAX_SUMMARY_LENGTH) {
+    $errors['summary'][] = sprintf(
+      _('info-field-length-limit-%d'), Statement::MAX_SUMMARY_LENGTH);
+  }
 
   if (!$statement->context) {
     $errors['context'][] = _('info-must-enter-statement-context');
@@ -155,6 +159,10 @@ function validate($statement, $links) {
 
   if (!$statement->goal) {
     $errors['goal'][] = _('info-must-enter-statement-goal');
+  }
+  if (mb_strlen($statement->goal) > Statement::MAX_GOAL_LENGTH) {
+    $errors['goal'][] = sprintf(
+      _('info-field-length-limit-%d'), Statement::MAX_GOAL_LENGTH);
   }
 
   if (!$statement->dateMade) {

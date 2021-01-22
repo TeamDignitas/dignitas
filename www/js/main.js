@@ -272,6 +272,14 @@ $(function() {
   });
 });
 
+/************************* Single-line textareas *************************/
+
+$(function() {
+  $('textarea.single-line').keypress(function(e) {
+    return (e.keyCode != 13);
+  });
+});
+
 /******************************* comments *******************************/
 
 $(function() {

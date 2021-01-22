@@ -83,14 +83,24 @@
       <fieldset class="related-fields mb-5 ml-3">
         <div class="form-group row">
           <label for="field-summary" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-summary{/t}</label>
-          <input
-            type="text"
-            name="summary"
-            id="field-summary"
-            value="{$statement->summary|escape}"
-            class="form-control has-unload-warning {if isset($errors.summary)}is-invalid{/if} col-sm-12 col-lg-10"
-            required>
-          {include "bits/fieldErrors.tpl" errors=$errors.summary|default:null}
+          <div class="col-sm-12 col-lg-10 px-0">
+            <textarea
+              name="summary"
+              id="field-summary"
+              class="form-control single-line size-limit has-unload-warning {if isset($errors.summary)}is-invalid{/if}"
+              maxlength="{Statement::MAX_SUMMARY_LENGTH}"
+              rows="3"
+              required>{$statement->summary|escape}</textarea>
+
+            {include "bits/fieldErrors.tpl" errors=$errors.summary|default:null}
+
+            <small class="form-text text-muted float-left">
+              <span class="chars-remaining">
+                {Statement::MAX_SUMMARY_LENGTH-mb_strlen($statement->summary)}
+              </span>
+              {t}label-characters-remaining{/t}
+            </small>
+          </div>
         </div>
 
         <div class="form-group row">
@@ -109,14 +119,24 @@
 
         <div class="form-group row">
           <label for="field-goal" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-goal{/t}</label>
-          <input
-            type="text"
-            name="goal"
-            id="field-goal"
-            value="{$statement->goal|escape}"
-            class="form-control has-unload-warning {if isset($errors.goal)}is-invalid{/if} col-sm-12 col-lg-10"
-            required>
-          {include "bits/fieldErrors.tpl" errors=$errors.goal|default:null}
+          <div class="col-sm-12 col-lg-10 px-0">
+            <textarea
+              name="goal"
+              id="field-goal"
+              class="form-control single-line size-limit has-unload-warning {if isset($errors.goal)}is-invalid{/if}"
+              maxlength="{Statement::MAX_GOAL_LENGTH}"
+              rows="3"
+              required>{$statement->goal|escape}</textarea>
+
+            {include "bits/fieldErrors.tpl" errors=$errors.goal|default:null}
+
+            <small class="form-text text-muted float-left">
+              <span class="chars-remaining">
+                {Statement::MAX_GOAL_LENGTH-mb_strlen($statement->goal)}
+              </span>
+              {t}label-characters-remaining{/t}
+            </small>
+          </div>
         </div>
 
         {capture "labelText" assign=labelText}{t}label-statement-links{/t}{/capture}

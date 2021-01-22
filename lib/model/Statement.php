@@ -15,6 +15,9 @@ class Statement extends Proto {
   const TYPE_PROMISE = 3;
   const NUM_TYPES = 4;
 
+  const MAX_SUMMARY_LENGTH = 500;
+  const MAX_GOAL_LENGTH = 500;
+
   // Verdicts for all statements
   const VERDICT_NONE = 0;
   const VERDICT_UNDECIDABLE = 1;
