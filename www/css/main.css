@@ -536,3 +536,9 @@ body, main {
 .relation-source .small {
   margin-top: 20px;
 }
+
+.add-relation-sources .form-group {
+  background-color: #eee;
+  padding: 1rem;
+  border-radius: .25rem;
+}
