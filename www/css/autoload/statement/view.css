@@ -1,47 +1,90 @@
 /******************** side sheet for answer resources ********************/
 
-#answer-resources {
-  --width: 336px;
-  --border-width: 6px;
+@media (min-width: 1681px) {
+  /* wide screens -- there must be enough empty space to fit the side sheet */
+  #answer-resources {
+    --width: 336px;
+    --border-width: 6px;
 
-  height: 100%;
-  padding-top: 58px; /* keep in sync with navbar height */
-  position: fixed;
-  right: calc(0px - var(--width));
-  top: 0;
-  transition: right 0.4s ease;
-  width: var(--width);
+    height: 100%;
+    padding-top: 58px; /* keep in sync with navbar height */
+    position: fixed;
+    right: calc(0px - var(--width));
+    top: 0;
+    transition: right 0.4s ease;
+    width: var(--width);
+  }
+
+  #answer-resources.maximized {
+    right: 0;
+  }
+
+  #answer-resources.minimized {
+    right: calc(var(--border-width) - var(--width)); /* keep the border visible */
+  }
+
+  #answer-resources.minimized .card {
+    border-left: var(--border-width) solid #aaa;
+  }
+
+  #answer-resources-maximize {
+    --bulb-width: 30px;
+
+    background: #aaa;
+    border-bottom-left-radius: calc(var(--bulb-width) / 2);
+    border-top-left-radius: calc(var(--bulb-width) / 2);
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    font-size: 150%;
+    left: calc(0px - var(--bulb-width));
+    position: absolute;
+    top: 50%;
+  }
+
 }
 
-#answer-resources.maximized {
-  right: 0;
-}
+@media (max-width: 1680px) {
+  #answer-resources {
+    --border-width: 6px;
 
-#answer-resources.minimized {
-  right: calc(var(--border-width) - var(--width)); /* keep the border visible */
-}
+    height: 75%;
+    left: 0;
+    position: fixed;
+    top: 100%;
+    transition: top 0.4s ease;
+    width: 100%;
+  }
 
-#answer-resources.minimized .card {
-  border-left: var(--border-width) solid #aaa;
+  #answer-resources.maximized {
+    top: 25%;
+  }
+
+  #answer-resources.minimized {
+    border-top: var(--border-width) solid #aaa;
+    top: calc(100% - var(--border-width)); /* keep the border visible */
+  }
+
+  #answer-resources-maximize {
+    --bulb-height: 30px;
+
+    background: #aaa;
+    border-top-left-radius: calc(var(--bulb-height) / 2);
+    border-top-right-radius: calc(var(--bulb-height) / 2);
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    font-size: 150%;
+    left: 50%;
+    position: absolute;
+    top: calc(0px - var(--bulb-height));
+    transform: translateX(-50%); /* works in conjunction with left to really center it */
+  }
+
 }
 
 #answer-resources.minimized #answer-resources-maximize {
   display: block;
-}
-
-#answer-resources-maximize {
-  --bulb-width: 30px;
-
-  background: #aaa;
-  border-bottom-left-radius: calc(var(--bulb-width) / 2);
-  border-top-left-radius: calc(var(--bulb-width) / 2);
-  color: #fff;
-  cursor: pointer;
-  display: none;
-  font-size: 150%;
-  left: calc(0px - var(--bulb-width));
-  position: absolute;
-  top: 50%;
 }
 
 #answer-resources > .card {
