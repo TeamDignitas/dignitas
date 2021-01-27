@@ -148,10 +148,10 @@
 
   <div class="verdict-area col-sm-12 col-md-3 offset-md-1 pr-0">
     <aside class="card px-2 bg-verdict-{$statement->verdict}">
-      <h6 class="card-title mt-3 text-center">
-        {$statement->getEntity()},
-        {$statement->dateMade|ld}
-      </h6>
+      <h5 class="card-title mt-4 mb-1 text-center font-weight-bold">
+        {$statement->getEntity()}
+      </h5>
+      <span class="card-date mb-3">{$statement->dateMade|ld}</span>
       <span class="mx-auto">
         {include "bits/image.tpl"
           obj=$entity
@@ -159,10 +159,10 @@
           spanClass=""
           imgClass="pic rounded-circle img-fluid no-outline"}
       </span>
-      <h5 class="card-body mx-auto text-center">
-        <span class="text-capitalize">{t}label-verdict{/t}:</span>
+      <h6 class="card-body mx-auto text-center">
+        <div class="capitalize-first-word">{t}label-verdict{/t}:</div>
         <span class="text-uppercase">{$statement->getVerdictName()}</span>
-      </h5>
+      </h6>
     </aside>
   </div>
 
