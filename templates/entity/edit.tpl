@@ -249,28 +249,26 @@
       </fieldset>
 
       <div class="mt-4 text-right">
-        <div class="">
-          {if $entity->isDeletable()}
-            <button
-              name="deleteButton"
-              type="submit"
-              class="btn btn-sm btn-outline-danger col-sm-4 col-lg-2 mr-2 mb-2"
-              data-confirm="{t}info-confirm-delete-entity{/t}">
-              <i class="icon icon-trash"></i>
-              {t}link-delete{/t}
-            </button>
-          {/if}
+        {if $entity->isDeletable()}
+          <button
+            name="deleteButton"
+            type="submit"
+            class="btn btn-sm btn-outline-danger col-sm-4 col-lg-2 mr-2 mb-2"
+            data-confirm="{t}info-confirm-delete-entity{/t}">
+            <i class="icon icon-trash"></i>
+            {t}link-delete{/t}
+          </button>
+        {/if}
 
-          {if $entity->isReopenable()}
-            <button
-              name="reopenButton"
-              type="submit"
-              class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2"
-              data-confirm="{t}info-confirm-reopen-entity{/t}">
-              {t}link-reopen{/t}
-            </button>
-          {/if}
-        </div>
+        {if $entity->isReopenable()}
+          <button
+            name="reopenButton"
+            type="submit"
+            class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2"
+            data-confirm="{t}info-confirm-reopen-entity{/t}">
+            {t}link-reopen{/t}
+          </button>
+        {/if}
 
         <a href="{$referrer}" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2">
           <i class="icon icon-cancel"></i>
