@@ -36,6 +36,47 @@
           answer=$newAnswer
           buttonText=$smarty.capture.buttonText}
       </div>
+
+      {* #answer-resources will always be in one of these three states:
+
+         1. Invisible (no CSS class). This is the initial state. If and when
+         the answer box receives focus, then #answer-resources becomes either
+         maximized or minimized, depending on the user's preference.
+
+         2. Maximized (using the "maximized" CSS class). The div is visible,
+         including the minimize button.
+
+         3. Minimized (using the "minimized" CSS class). The div is invisible
+         except for a thin border. The maximize button is visible. *}
+      <div id="answer-resources">
+
+        <div id="answer-resources-maximize">
+          <span class="icon icon-lightbulb"></span>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h6 class="card-title">
+              {t}title-answer-resources{/t}
+
+              <button
+                id="answer-resources-minimize"
+                class="close"
+                type="button"
+                aria-label="close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </h6>
+
+            <p class="card-text">
+              TODO
+            </p>
+          </div>
+        </div>
+
+      </div>
+
     {/if}
 
     {include "bits/commentForm.tpl"}

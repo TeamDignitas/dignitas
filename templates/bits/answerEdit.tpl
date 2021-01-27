@@ -1,5 +1,10 @@
 {* mandatory arguments: $answer, $buttonText, $referrer *}
-<form method="post" action="{Router::link('answer/edit')}" class="col-md-12 px-0">
+<form
+  id="answer-edit"
+  method="post"
+  action="{Router::link('answer/edit')}"
+  class="col-md-12 px-0">
+
   <input type="hidden" name="id" value="{$answer->id}">
   <input type="hidden" name="statementId" value="{$answer->statementId}">
   <input type="hidden" name="referrer" value="{$referrer}">
