@@ -215,6 +215,15 @@ img.pic.no-outline,
   font-size: 0.75rem;
 }
 
+.card-date {
+  text-align: center;
+  font-size: 12px;
+}
+
+.card-body {
+  line-height: 1.5;
+}
+
 /* keep these values in sync with lib/model/Statement.php::VERDICT_* constants */
 .bg-verdict-0 { /* none */
   background-color: #eee !important;
