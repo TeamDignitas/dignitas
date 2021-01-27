@@ -340,6 +340,9 @@ class Router {
     'user/image' => [
       'en_US.utf8' => 'avatar',
     ],
+    'user/toggleAnswerResources' => [
+      'en_US.utf8' => 'ajax/toggle-answer-resources',
+    ],
     'user/view' => [
       'en_US.utf8' => 'user',
       'ro_RO.utf8' => 'utilizator',

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-01-27 15:18+0200\n"
-"PO-Revision-Date: 2021-01-27 15:18+0200\n"
+"POT-Creation-Date: 2021-01-27 16:53+0200\n"
+"PO-Revision-Date: 2021-01-27 16:53+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -1450,9 +1450,13 @@ msgstr "your answer"
 msgid "link-post-answer"
 msgstr "post answer"
 
-#: templates/statement/view.tpl:61
+#: templates/statement/view.tpl:57 templates/statement/view.tpl:65
 msgid "title-answer-resources"
 msgstr "Tips for answering"
+
+#: templates/statement/view.tpl:91
+msgid "label-answer-resources-checkbox"
+msgstr "show tips when I'm composing an answer"
 
 #: templates/staticResource/edit.tpl:3 templates/staticResource/edit.tpl:7
 msgid "title-edit-static-resource"
@@ -2465,84 +2469,84 @@ msgstr "You are banned from adding statements."
 msgid "info-banned-edit-statement"
 msgstr "You are banned from editing statements."
 
-#: lib/model/User.php:203 routes/auth/login.php:61
+#: lib/model/User.php:214 routes/auth/login.php:61
 #: routes/auth/lostPassword.php:49 routes/invite/add.php:42
 msgid "info-must-enter-email"
 msgstr "Please enter an email address."
 
-#: lib/model/User.php:208
+#: lib/model/User.php:219
 msgid "info-email-taken"
 msgstr "This email address is already taken."
 
-#: lib/model/User.php:212 routes/auth/lostPassword.php:51
+#: lib/model/User.php:223 routes/auth/lostPassword.php:51
 #: routes/invite/add.php:44
 msgid "info-incorrect-email"
 msgstr "This email address looks incorrect."
 
-#: lib/model/User.php:222
+#: lib/model/User.php:233
 msgid "info-nickname-syntax"
 msgstr ""
 "Your nickname must begin with a letter or digit and consist of 3 to 30 "
 "letters, digits and punctuation from among -_."
 
-#: lib/model/User.php:227
+#: lib/model/User.php:238
 msgid "info-nickname-taken"
 msgstr "This nickname is already taken."
 
-#: lib/model/User.php:236 routes/auth/login.php:65
+#: lib/model/User.php:247 routes/auth/login.php:65
 msgid "info-must-enter-password"
 msgstr "Please enter a password."
 
-#: lib/model/User.php:238
+#: lib/model/User.php:249
 msgid "info-must-enter-password-2"
 msgstr "Please enter your password twice to prevent typos."
 
-#: lib/model/User.php:240
+#: lib/model/User.php:251
 msgid "info-password-mismatch"
 msgstr "Passwords don't match."
 
-#: lib/model/User.php:242
+#: lib/model/User.php:253
 msgid "info-password-length"
 msgstr "Your password must be at least 8 characters long."
 
-#: lib/model/User.php:266
+#: lib/model/User.php:277
 #, php-format
 msgid "info-minimum-reputation-%s"
 msgstr "You need at least %s reputation to perform this action."
 
-#: lib/model/User.php:280
+#: lib/model/User.php:291
 msgid "info-moderator-only"
 msgstr "Only moderators may perform this action."
 
-#: lib/model/User.php:298
+#: lib/model/User.php:309
 #, php-format
 msgid "info-minimum-reputation-flag-%s"
 msgstr "You need at least %s reputation to flag."
 
-#: lib/model/User.php:303
+#: lib/model/User.php:314
 msgid "info-banned-flag"
 msgstr "You are banned from flagging."
 
-#: lib/model/User.php:310
+#: lib/model/User.php:321
 #, php-format
 msgid "info-flag-limit-singular"
 msgid_plural "info-flag-limit-plural-%d"
 msgstr[0] "You can use at most one flag every 24 hours."
 msgstr[1] "You can use at most %d flags every 24 hours."
 
-#: lib/model/User.php:317
+#: lib/model/User.php:328
 msgid "info-flag-no-object"
 msgstr "Cannot flag: object does not exist."
 
-#: lib/model/User.php:322
+#: lib/model/User.php:333
 msgid "info-already-flagged"
 msgstr "You already have a pending flag for this object."
 
-#: lib/model/User.php:350
+#: lib/model/User.php:361
 msgid "info-banned-comment"
 msgstr "You are banned from commenting."
 
-#: lib/model/User.php:371
+#: lib/model/User.php:382
 #, php-format
 msgid "info-minimum-reputation-comment-%s"
 msgstr "You need at least %s reputation to comment."

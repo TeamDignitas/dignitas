@@ -126,6 +126,17 @@ class User extends Proto {
     UserExt::setField($this->id, 'numPendingEdits', $value);
   }
 
+  function getMinimizeAnswerResources() {
+    return UserExt::getField($this->id, 'minimizeAnswerResources');
+  }
+
+  function toggleMinimizeAnswerResources() {
+    UserExt::setField(
+      $this->id,
+      'minimizeAnswerResources',
+      !$this->getMinimizeAnswerResources());
+  }
+
   static function getFlagsPerDay() {
     if (!self::$active) {
       return 0;
