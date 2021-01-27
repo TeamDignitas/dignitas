@@ -19,11 +19,15 @@ if ($statement->hasPendingEdit() && User::may(User::PRIV_REVIEW)) {
   ]);
 }
 
+$sideSheet = StaticResource::addCustomSections('answer-resources');
+$sideSheet = $sideSheet[0]->getContents() ?? '';
+
 Smart::addResources('flag', 'imageModal', 'easymde', 'subscribe');
 Smart::assign([
   'answers' => $statement->getAnswers(),
   'newAnswer' => Answer::create($statement->id),
   'referrer' => Router::link('statement/view', true) . '/' . $statement->id,
   'statement' => $statement,
+  'sideSheet' => $sideSheet,
 ]);
 Smart::display('statement/view.tpl');
