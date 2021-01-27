@@ -1,3 +1,5 @@
+/******************** side sheet for answer resources ********************/
+
 #answer-resources {
   --width: 336px;
   --border-width: 6px;
@@ -42,6 +44,6 @@
   top: 50%;
 }
 
-#answer-resources .card {
+#answer-resources > .card {
   height: 100%;
 }
