@@ -48,34 +48,39 @@
 
          3. Minimized (using the "minimized" CSS class). The div is invisible
          except for a thin border. The maximize button is visible. *}
-      <div id="answer-resources">
+      {if $sideSheet}
+        <div id="answer-resources">
 
-        <div id="answer-resources-maximize">
-          <span class="icon icon-lightbulb"></span>
-        </div>
-
-        <div class="card">
-          <div class="card-body">
-            <h6 class="card-title">
-              {t}title-answer-resources{/t}
-
-              <button
-                id="answer-resources-minimize"
-                class="close"
-                type="button"
-                aria-label="close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </h6>
-
-            <p class="card-text">
-              TODO
-            </p>
+          <div id="answer-resources-maximize">
+            <span
+              class="icon icon-lightbulb"
+              title="{t}title-answer-resources{/t}"
+            ></span>
           </div>
-        </div>
 
-      </div>
+          <div class="card">
+            <div class="card-body pl-0 pr-0">
+              <h6 class="card-title pl-3 pr-3">
+                {t}title-answer-resources{/t}
+
+                <button
+                  id="answer-resources-minimize"
+                  class="close"
+                  type="button"
+                  aria-label="close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </h6>
+
+              <div class="card-text">
+                {$sideSheet}
+              </div>
+            </div>
+          </div>
+
+        </div>
+      {/if}
 
     {/if}
 

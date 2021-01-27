@@ -531,7 +531,6 @@ body, main {
   }
 }
 
-
 /************************ entity relations ************************/
 .relation-source .small {
   margin-top: 20px;
@@ -541,4 +540,24 @@ body, main {
   background-color: #eee;
   padding: 1rem;
   border-radius: .25rem;
+}
+
+/********* collapsible card with icon-down-open visual indicator *********/
+
+.card-collapse-icon .card-header a {
+  color: #555;
+  display: block;
+  text-decoration: none;
+}
+
+.card-collapse-icon .card-header a:before {
+  /* hack: this hardcodes the glyph for icon-down-open */
+  content: '\e80d';
+  float: right;
+  font-family: 'icons';
+  transition: all 0.5s;
+}
+
+.card-collapse-icon .card-header.active a:before {
+  transform: rotate(180deg);
 }

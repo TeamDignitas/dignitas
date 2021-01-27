@@ -18,6 +18,17 @@ $(function() {
   });
 });
 
+
+/********* collapsible card with icon-down-open visual indicator *********/
+$(document).on(
+  'show.bs.collapse hide.bs.collapse',
+  '.card-collapse-icon>.collapse',
+  function (e) {
+    $(e.target).siblings('.card-header').toggleClass('active');
+  }
+);
+
+
 /****************************** search form ******************************/
 $(function() {
 

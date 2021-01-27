@@ -163,6 +163,11 @@ class Config {
     'about' => [
       'html' => [ 'about.html' ],
     ],
+    // side sheet of hints while composing an answer
+    'answer-resources' => [
+      'css' => [ 'answer-resources.css' ],
+      'html' => [ 'answer-resources.html' ],
+    ],
     // contact page
     'contact' => [
       'html' => [ 'contact.html' ],
