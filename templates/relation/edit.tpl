@@ -19,15 +19,16 @@
       {include "bits/linkEditor.tpl" errors=$errors.links|default:null}
 
       <div class="form-group mt-4 text-right">
-        <button name="saveButton" type="submit" class="btn btn-primary">
-          <i class="icon icon-floppy"></i>
-          {t}link-save{/t}
-        </button>
-
-        <a href="{Router::link('entity/view')}/{$fromEntity->id}" class="btn btn-link">
+        <a href="{Router::link('entity/view')}/{$fromEntity->id}"
+           class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2">
           <i class="icon icon-cancel"></i>
           {t}link-cancel{/t}
         </a>
+
+        <button name="saveButton" type="submit" class="btn btn-sm btn-primary col-sm-4 col-lg-2 mb-2">
+          <i class="icon icon-floppy"></i>
+          {t}link-save{/t}
+        </button>
       </div>
 
     </form>
