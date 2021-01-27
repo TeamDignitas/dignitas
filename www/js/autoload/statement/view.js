@@ -25,7 +25,6 @@ $(function() {
   }
 
   function maximizeAnswerResources() {
-    console.log('hello');
     $('#answer-resources')
       .removeClass('minimized')
       .addClass('maximized');

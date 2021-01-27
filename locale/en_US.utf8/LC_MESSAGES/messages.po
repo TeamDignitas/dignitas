@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-01-22 14:15+0200\n"
-"PO-Revision-Date: 2021-01-22 14:15+0200\n"
+"POT-Creation-Date: 2021-01-27 15:18+0200\n"
+"PO-Revision-Date: 2021-01-27 15:18+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -277,22 +277,22 @@ msgstr "permanent link to this answer"
 msgid "link-permalink"
 msgstr "permalink"
 
-#: templates/bits/answerEdit.tpl:19 templates/bits/statement.tpl:163
+#: templates/bits/answerEdit.tpl:24 templates/bits/statement.tpl:163
 #: templates/bits/statementFilters.tpl:44 templates/bits/statementList.tpl:35
 #: templates/statement/edit.tpl:163 lib/model/RevisionAnswer.php:15
 #: lib/model/RevisionStatement.php:22
 msgid "label-verdict"
 msgstr "verdict"
 
-#: templates/bits/answerEdit.tpl:24
+#: templates/bits/answerEdit.tpl:29
 msgid "link-verdict-details"
 msgstr "details about verdicts and their effects"
 
-#: templates/bits/answerEdit.tpl:54
+#: templates/bits/answerEdit.tpl:59
 msgid "info-confirm-delete-answer"
 msgstr "Are you sure you want to delete this answer?"
 
-#: templates/bits/answerEdit.tpl:56 templates/bits/comment.tpl:45
+#: templates/bits/answerEdit.tpl:61 templates/bits/comment.tpl:45
 #: templates/cannedResponse/edit.tpl:35 templates/domain/edit.tpl:78
 #: templates/entity/edit.tpl:260 templates/entityType/edit.tpl:97
 #: templates/help/categoryEdit.tpl:69 templates/help/pageEdit.tpl:80
@@ -302,16 +302,16 @@ msgstr "Are you sure you want to delete this answer?"
 msgid "link-delete"
 msgstr "delete"
 
-#: templates/bits/answerEdit.tpl:65
+#: templates/bits/answerEdit.tpl:70
 msgid "info-confirm-reopen-answer"
 msgstr "Are you sure you want to reopen this answer?"
 
-#: templates/bits/answerEdit.tpl:66 templates/entity/edit.tpl:270
+#: templates/bits/answerEdit.tpl:71 templates/entity/edit.tpl:270
 #: templates/statement/edit.tpl:205
 msgid "link-reopen"
 msgstr "reopen"
 
-#: templates/bits/answerEdit.tpl:72 templates/bits/commentForm.tpl:44
+#: templates/bits/answerEdit.tpl:77 templates/bits/commentForm.tpl:44
 #: templates/cannedResponse/edit.tpl:41 templates/cannedResponse/list.tpl:52
 #: templates/domain/edit.tpl:91 templates/entity/edit.tpl:277
 #: templates/entityType/edit.tpl:103 templates/help/categoryEdit.tpl:75
@@ -1449,6 +1449,10 @@ msgstr "your answer"
 #: templates/statement/view.tpl:34
 msgid "link-post-answer"
 msgstr "post answer"
+
+#: templates/statement/view.tpl:61
+msgid "title-answer-resources"
+msgstr "Tips for answering"
 
 #: templates/staticResource/edit.tpl:3 templates/staticResource/edit.tpl:7
 msgid "title-edit-static-resource"
