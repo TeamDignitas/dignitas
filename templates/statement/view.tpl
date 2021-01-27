@@ -59,6 +59,7 @@
           </div>
 
           <div class="card">
+
             <div class="card-body pl-0 pr-0">
               <h6 class="card-title pl-3 pr-3">
                 {t}title-answer-resources{/t}
@@ -77,6 +78,20 @@
                 {$sideSheet}
               </div>
             </div>
+
+            <div class="card-footer small bg-transparent border-0">
+              <input
+                id="checkboxAnswerResources"
+                type="checkbox"
+                {if !User::getActive()->getMinimizeAnswerResources()}
+                checked
+                {/if}
+              >
+              <label for="checkboxAnswerResources" class="d-inline">
+                {t}label-answer-resources-checkbox{/t}
+              </label>
+            </div>
+
           </div>
 
         </div>

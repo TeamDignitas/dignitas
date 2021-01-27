@@ -19,8 +19,13 @@ if ($statement->hasPendingEdit() && User::may(User::PRIV_REVIEW)) {
   ]);
 }
 
-$sideSheet = StaticResource::addCustomSections('answer-resources');
-$sideSheet = $sideSheet[0]->getContents() ?? '';
+if (User::getActive()) {
+  $sideSheet = StaticResource::addCustomSections('answer-resources');
+  $sideSheet = $sideSheet[0]->getContents() ?? '';
+} else {
+  // don't even bother loading the static resources
+  $sideSheet = '';
+}
 
 Smart::addResources('flag', 'imageModal', 'easymde', 'subscribe');
 Smart::assign([

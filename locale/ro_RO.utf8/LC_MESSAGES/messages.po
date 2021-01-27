@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-01-27 15:17+0200\n"
-"PO-Revision-Date: 2021-01-27 15:18+0200\n"
+"POT-Creation-Date: 2021-01-27 16:52+0200\n"
+"PO-Revision-Date: 2021-01-27 16:53+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -1458,9 +1458,13 @@ msgstr "răspunsul tău"
 msgid "link-post-answer"
 msgstr "trimite răspunsul"
 
-#: templates/statement/view.tpl:61
+#: templates/statement/view.tpl:57 templates/statement/view.tpl:65
 msgid "title-answer-resources"
 msgstr "Sugestii de analiză"
+
+#: templates/statement/view.tpl:91
+msgid "label-answer-resources-checkbox"
+msgstr "arată sugestiile cînd compun un răspuns"
 
 #: templates/staticResource/edit.tpl:3 templates/staticResource/edit.tpl:7
 msgid "title-edit-static-resource"
@@ -2481,67 +2485,67 @@ msgstr "Îți este interzisă adăugarea de afirmații."
 msgid "info-banned-edit-statement"
 msgstr "Îți este interzisă editarea de afirmații."
 
-#: lib/model/User.php:203 routes/auth/login.php:61
+#: lib/model/User.php:214 routes/auth/login.php:61
 #: routes/auth/lostPassword.php:49 routes/invite/add.php:42
 msgid "info-must-enter-email"
 msgstr "Te rugăm să introduci o adresă de e-mail."
 
-#: lib/model/User.php:208
+#: lib/model/User.php:219
 msgid "info-email-taken"
 msgstr "Această adresă de e-mail este deja folosită."
 
-#: lib/model/User.php:212 routes/auth/lostPassword.php:51
+#: lib/model/User.php:223 routes/auth/lostPassword.php:51
 #: routes/invite/add.php:44
 msgid "info-incorrect-email"
 msgstr "Adresa de e-mail pare incorectă."
 
-#: lib/model/User.php:222
+#: lib/model/User.php:233
 msgid "info-nickname-syntax"
 msgstr ""
 "Porecla trebuie să înceapă cu o literă sau cifră și să conțină 3-30 de "
 "litere, cifre și semne de punctuație dintre -_."
 
-#: lib/model/User.php:227
+#: lib/model/User.php:238
 msgid "info-nickname-taken"
 msgstr "Această poreclă este deja folosită."
 
-#: lib/model/User.php:236 routes/auth/login.php:65
+#: lib/model/User.php:247 routes/auth/login.php:65
 msgid "info-must-enter-password"
 msgstr "Te rugăm să introduci o parolă."
 
-#: lib/model/User.php:238
+#: lib/model/User.php:249
 msgid "info-must-enter-password-2"
 msgstr ""
 "Te rugăm să introduci parola de două ori pentru a preveni greșelile de "
 "tastare."
 
-#: lib/model/User.php:240
+#: lib/model/User.php:251
 msgid "info-password-mismatch"
 msgstr "Parolele nu coincid."
 
-#: lib/model/User.php:242
+#: lib/model/User.php:253
 msgid "info-password-length"
 msgstr "Parola trebuie să aibă cel puțin 8 caractere."
 
-#: lib/model/User.php:266
+#: lib/model/User.php:277
 #, php-format
 msgid "info-minimum-reputation-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru această acțiune."
 
-#: lib/model/User.php:280
+#: lib/model/User.php:291
 msgid "info-moderator-only"
 msgstr "Doar moderatorii pot face această acțiune."
 
-#: lib/model/User.php:298
+#: lib/model/User.php:309
 #, php-format
 msgid "info-minimum-reputation-flag-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a face raportări."
 
-#: lib/model/User.php:303
+#: lib/model/User.php:314
 msgid "info-banned-flag"
 msgstr "Îți este interzisă raportarea articolelor."
 
-#: lib/model/User.php:310
+#: lib/model/User.php:321
 #, php-format
 msgid "info-flag-limit-singular"
 msgid_plural "info-flag-limit-plural-%d"
@@ -2549,19 +2553,19 @@ msgstr[0] "Poți face cel mult o raportare la 24 de ore."
 msgstr[1] "Puteți face cel mult %d raportări la 24 de ore."
 msgstr[2] "Puteți face cel mult %d de raportări la 24 de ore."
 
-#: lib/model/User.php:317
+#: lib/model/User.php:328
 msgid "info-flag-no-object"
 msgstr "Nu pot face raportarea: articolul nu există."
 
-#: lib/model/User.php:322
+#: lib/model/User.php:333
 msgid "info-already-flagged"
 msgstr "Ai raportat deja acest articol."
 
-#: lib/model/User.php:350
+#: lib/model/User.php:361
 msgid "info-banned-comment"
 msgstr "Îți este interzisă adăugarea de comentarii."
 
-#: lib/model/User.php:371
+#: lib/model/User.php:382
 #, php-format
 msgid "info-minimum-reputation-comment-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a comenta."
