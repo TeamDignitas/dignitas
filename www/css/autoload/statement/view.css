@@ -4,7 +4,6 @@
   /* wide screens -- there must be enough empty space to fit the side sheet */
   #answer-resources {
     --width: 336px;
-    --border-width: 6px;
 
     height: 100%;
     padding-top: 58px; /* keep in sync with navbar height */
@@ -20,6 +19,7 @@
   }
 
   #answer-resources.minimized {
+    --border-width: 6px;
     right: calc(var(--border-width) - var(--width)); /* keep the border visible */
   }
 
@@ -46,23 +46,22 @@
 
 @media (max-width: 1680px) {
   #answer-resources {
-    --border-width: 6px;
-
-    height: 75%;
+    bottom: 0;
     left: 0;
+    max-height: 0;
     position: fixed;
-    top: 100%;
-    transition: top 0.4s ease;
+    transition: max-height 0.4s ease;
     width: 100%;
   }
 
   #answer-resources.maximized {
-    top: 25%;
+    max-height: 50%;
   }
 
   #answer-resources.minimized {
+    --border-width: 6px;
     border-top: var(--border-width) solid #aaa;
-    top: calc(100% - var(--border-width)); /* keep the border visible */
+    max-height: var(--border-width);
   }
 
   #answer-resources-maximize {
