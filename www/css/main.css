@@ -530,3 +530,9 @@ body, main {
     width: 100% !important;
   }
 }
+
+
+/************************ entity relations ************************/
+.relation-source .small {
+  margin-top: 20px;
+}
