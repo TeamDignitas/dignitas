@@ -101,6 +101,18 @@ class Statement extends Proto {
     }
   }
 
+  /**
+   * Necessary because some languages use the genitive case.
+   */
+  function getVerdictLabel() {
+    switch ($this->type) {
+      case self::TYPE_CLAIM:   return _('label-claim-verdict');
+      case self::TYPE_FLOP:   return _('label-flop-verdict');
+      case self::TYPE_PROMISE:   return _('label-promise-verdict');
+      default: return _('label-verdict');
+    }
+  }
+
   function getTypeName() {
     return self::typeName($this->type);
   }

@@ -32,7 +32,8 @@
       </div>
 
       <div class="mask bg-verdict-{$s->verdict} px-3 py-2">
-        <span class="text-capitalize">{t}label-verdict{/t}:</span>
+        {* d-inline-block is necessary for ::first-letter to kick in *}
+        <span class="capitalize-first-word d-inline-block">{$s->getVerdictLabel()}:</span>
         <span class="text-uppercase">{$s->getVerdictName()}</span>
       </div>
     </div>

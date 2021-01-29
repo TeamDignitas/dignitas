@@ -160,7 +160,7 @@
           imgClass="pic rounded-circle img-fluid no-outline"}
       </span>
       <h6 class="card-body mx-auto text-center">
-        <div class="capitalize-first-word">{t}label-verdict{/t}:</div>
+        <div class="capitalize-first-word">{$statement->getVerdictLabel()}:</div>
         <span class="text-uppercase">{$statement->getVerdictName()}</span>
       </h6>
     </aside>
