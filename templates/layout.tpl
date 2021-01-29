@@ -32,7 +32,7 @@
       <div class="text-center container mt-3">
         <ul class="list-inline list-inline-bullet">
           <li class="list-inline-item">
-            © 2019-2020 <a href="https://github.com/TeamDignitas">Team Dignitas</a>
+            © 2019-{'Y'|date} <a href="https://github.com/TeamDignitas">Team Dignitas</a>
           </li>
         </ul>
       </div>
