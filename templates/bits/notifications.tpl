@@ -37,7 +37,7 @@
     <div class="col-sm-1 col-lg-1 text-right">
       <a
         href="#"
-        class="btn btn-sm btn-link notification-unsubscribe"
+        class="btn notification-unsubscribe"
         title="{t}info-notification-unsubscribe{/t}"
         data-notification-id="{$n->id}">
         <i class="icon icon-eye-off"></i>

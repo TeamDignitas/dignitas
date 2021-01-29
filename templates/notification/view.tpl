@@ -8,7 +8,7 @@
       {t}title-notifications{/t}
     </h1>
 
-    <div id="notification-wrapper">
+    <div id="notification-wrapper" class="mb-4">
       {include "bits/notifications.tpl"}
     </div>
 
