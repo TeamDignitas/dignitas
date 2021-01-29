@@ -71,18 +71,25 @@
     **}
   {$isAnswer=($object->getObjectType() == Proto::TYPE_ANSWER)}
   {if $isAnswer && (User::isModerator() || $object->proof)}
-    <button
-      class="btn btn-proof {if $object->proof}accepted{/if}"
-      data-answer-id="{$object->id}"
+    {* Move tooltip management to a wrapper div. Bootstrap recommends this *}
+    {* approach when the underlying button may be disabled. *}
+    <div
+      data-toggle="tooltip"
+      data-trigger="hover"
       {if User::isModerator()}
       title="{t}label-toggle-answer-proof{/t}"
       {else}
-      disabled
       title="{t}label-answer-is-proof{/t}"
       {/if}
     >
-      <i class="icon icon-ok"></i>
-    </button>
+      <button
+        class="btn btn-proof {if $object->proof}accepted{/if}"
+        data-answer-id="{$object->id}"
+        {if !User::isModerator()}disabled style="pointer-events: none;"{/if}
+      >
+        <i class="icon icon-ok"></i>
+      </button>
+    </div>
   {/if}
 
 </div>

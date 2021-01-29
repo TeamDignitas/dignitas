@@ -122,6 +122,9 @@ $(function() {
 
 /*************************** vote submissions ***************************/
 $(function() {
+  // tooltips everywhere
+  $('[data-toggle="tooltip"]').tooltip();
+
   $('.btn-vote').click(submitVote);
   $('.btn-vote[data-toggle="popover"]').popover({
     content: getPopoverContent,

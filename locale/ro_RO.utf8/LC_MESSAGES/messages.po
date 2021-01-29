@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2021-01-29 10:15+0200\n"
-"PO-Revision-Date: 2021-01-29 10:18+0200\n"
+"PO-Revision-Date: 2021-01-29 14:32+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -752,11 +752,11 @@ msgstr "Îți trebuie o reputație de minimum %1 pentru a vota negativ."
 
 #: templates/bits/scoreAndVote.tpl:78
 msgid "label-toggle-answer-proof"
-msgstr "acceptă/șterge răspunsul ca demonstrație"
+msgstr "Acceptă/respinge răspunsul ca demonstrație."
 
 #: templates/bits/scoreAndVote.tpl:81
 msgid "label-answer-is-proof"
-msgstr "acest răspuns servește ca demonstrație pentru verdictul afirmației"
+msgstr "Răspuns acceptat ca demonstrație."
 
 #: templates/bits/statement.tpl:20
 msgid "link-visit-statement-page"
