@@ -34,7 +34,7 @@
               <td>
                 <a
                   href="{$d->getEditUrl()}"
-                  class="btn btn-sm"
+                  class="btn"
                   title="{t}link-edit{/t}">
                   <i class="icon icon-pencil"></i>
                 </a>
