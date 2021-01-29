@@ -72,7 +72,7 @@
         </a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle pl-2 py-2"
+        <a class="nav-link pl-2 py-2"
           href="#"
           id="nav-dropdown-lang"
           role="button"
@@ -96,8 +96,18 @@
       {$u=User::getActive()}
       {if $u}
         {$notCount=$u->countNotifications()}
+
+        <li class="nav-item">
+          <a
+            class="nav-link pl-2 py-2"
+            href="{Router::link('notification/view')}"
+            title="{t}link-notifications{/t}">
+            <i class="icon icon-bell-alt {if $notCount}text-danger{/if}"></i>
+          </a>
+        </li>
+
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle {if $notCount}bg-info{/if} pl-2 py-2"
+          <a class="nav-link dropdown-toggle pl-2 py-2"
             href="#"
             id="nav-dropdown-user"
             role="button"
@@ -121,13 +131,6 @@
             <a class="dropdown-item py-2" href="{Router::userLink($u)}">
               <i class="icon icon-user"></i>
               {t}link-my-profile{/t}
-            </a>
-            <a class="dropdown-item py-2" href="{Router::link('notification/view')}">
-              <i class="icon icon-bell"></i>
-              {t}link-notifications{/t}
-              {if $notCount}
-                <span class="badge badge-info ml-2 px-2 align-text-top">{$notCount}</span>
-              {/if}
             </a>
             <a class="dropdown-item py-2" href="{Router::link('aggregate/dashboard')}">
               <i class="icon icon-gauge"></i>
