@@ -126,38 +126,13 @@ $(function() {
   $('[data-toggle="tooltip"]').tooltip();
 
   $('.btn-vote').click(submitVote);
-  $('.btn-vote[data-toggle="popover"]').popover({
-    content: getPopoverContent,
-    html: true,
-    placement: 'right',
-    title: $('#vote-popover-messages .title').html(),
-    trigger: 'focus',
-  });
-
-  // don't show the popover when the content is empty
-  $('.btn-vote[data-toggle="popover"]').on('show.bs.popover', function() {
-    return (getPopoverContent.call($(this)) != '');
-  });
-
-  function getPopoverContent() {
-    var msg = [];
-    if ($(this).data('type') == TYPE_STATEMENT) {
-      var html = $('#vote-popover-messages .body-statement').html();
-      if (html) {
-        msg.push(html.trim());
-      }
-    }
-    if ($(this).data('value') == -1) {
-      html = $('#vote-popover-messages .body-downvote').html();
-      if (html) {
-        msg.push(html.trim());
-      }
-    }
-    return msg.join('<br><br>');
-  }
 
   function submitVote() {
     var btn = $(this);
+
+    // hide tooltip on the wrapper div
+    btn.parent('[data-toggle="tooltip"]').tooltip('hide');
+
     $('body').addClass('waiting');
     $.post(URL_PREFIX + 'ajax/save-vote', {
       value: btn.data('value'),
@@ -169,10 +144,17 @@ $(function() {
       $(btn.data('scoreId')).text(newScore);
 
       // enable the opposite button
-      btn.siblings('.voted').removeClass('voted');
+      btn.parents('.vote-box').find('.btn-vote.voted').not(btn).removeClass('voted');
 
       // toggle this button
       btn.toggleClass('voted');
+
+      // show an alert if needed
+      if ((btn.data('type') != TYPE_COMMENT) && btn.hasClass('voted')) {
+        var id = (btn.data('value') == 1) ? '#toast-upvote' : '#toast-downvote';
+        var toast = $(id).clone(true).removeAttr('id');
+        toast.appendTo('#toasts').toast('show');
+      }
 
     }).fail(function(errorMsg) {
       if (errorMsg.responseJSON) {

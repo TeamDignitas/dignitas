@@ -111,12 +111,20 @@ blockquote {
   }
 }
 
+/*************************** alerts and toasts ***************************/
+
 #flash-messages {
   position: absolute;
   bottom: 5vh;
   left: 10vw;
   background-color: white;
   z-index: 1000;
+}
+
+#toasts {
+  bottom: 50px;
+  position: fixed;
+  right: 50px;
 }
 
 /*************************** navbar search box ***************************/
@@ -480,11 +488,10 @@ body, main {
   color: #777;
 }
 
-/******************************* popovers *******************************/
+/******************************* tooltips *******************************/
 
-.popover-header .close {
-  position: relative;
-  bottom: 3px;
+.tooltip-inner {
+  text-align: left;
 }
 
 /************************ statement filter tweaks ************************/

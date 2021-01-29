@@ -40,8 +40,7 @@ class User extends Proto {
   const PRIV_REVIEW = 2000;
 
   // until the user votes this many times, keep showing them reminders
-  const NUM_STATEMENT_VOTE_REMINDERS = 10;
-  const NUM_DOWNVOTE_REMINDERS = 10;
+  const NUM_VOTE_REMINDERS = 1000000000;
 
   // flag earning
   const BASE_FLAGS_PER_DAY = 10;
@@ -397,29 +396,16 @@ class User extends Proto {
   }
 
   /**
-   * Returns true iff there is an active user and they need a statement vote reminder.
+   * Returns true iff there is an active user and they need an alert after voting.
    * @return boolean
    */
-  static function needsStatementVoteReminder() {
+  static function needsVoteReminder() {
     $u = User::getActive();
     if (!$u) {
       return false;
     }
-    $numStatementVotes = Vote::count_by_userId_objectType($u->id, Proto::TYPE_STATEMENT);
-    return $numStatementVotes < self::NUM_STATEMENT_VOTE_REMINDERS;
-  }
-
-  /**
-   * Returns true iff there is an active user and they need a downvote reminder.
-   * @return boolean
-   */
-  static function needsDownvoteReminder() {
-    $u = User::getActive();
-    if (!$u) {
-      return false;
-    }
-    $numDownvotes = Vote::count_by_userId_value($u->id, -1);
-    return $numDownvotes < self::NUM_DOWNVOTE_REMINDERS;
+    $numStatementVotes = Vote::count_by_userId($u->id);
+    return $numStatementVotes < self::NUM_VOTE_REMINDERS;
   }
 
   function __toString() {
