@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-01-29 10:15+0200\n"
-"PO-Revision-Date: 2021-01-29 14:32+0200\n"
+"POT-Creation-Date: 2021-01-29 17:39+0200\n"
+"PO-Revision-Date: 2021-01-29 17:39+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -270,22 +270,28 @@ msgstr "adaugă un comentariu"
 msgid "tag"
 msgstr "etichetă"
 
-#: templates/bits/answer.tpl:35
+#: templates/bits/answer.tpl:9
+msgid "tooltip-downvote-answer-singular-%1"
+msgid_plural "tooltip-downvote-answer-plural-%1"
+msgstr[0] "Votul negativ te costă un punct de reputație."
+msgstr[1] "Votul negativ te costă %1 puncte de reputație."
+msgstr[2] "Votul negativ te costă %1 de puncte de reputație."
+
+#: templates/bits/answer.tpl:45
 msgid "answer-posted-by"
 msgstr "publicat de"
 
-#: templates/bits/answer.tpl:60
+#: templates/bits/answer.tpl:70
 msgid "info-answer-permalink"
 msgstr "legătură permanentă către acest răspuns"
 
-#: templates/bits/answer.tpl:62 templates/bits/comment.tpl:35
+#: templates/bits/answer.tpl:72 templates/bits/comment.tpl:35
 msgid "link-permalink"
 msgstr "legătură permanentă"
 
 #: templates/bits/answerEdit.tpl:24 templates/bits/statementFilters.tpl:44
-#: templates/bits/statementList.tpl:35 templates/statement/edit.tpl:163
-#: lib/model/RevisionAnswer.php:15 lib/model/RevisionStatement.php:22
-#: lib/model/Statement.php:112
+#: templates/statement/edit.tpl:163 lib/model/RevisionAnswer.php:15
+#: lib/model/RevisionStatement.php:22 lib/model/Statement.php:112
 msgid "label-verdict"
 msgstr "verdict"
 
@@ -723,39 +729,34 @@ msgstr "detalii"
 msgid "date"
 msgstr "data"
 
-#: templates/bits/scoreAndVote.tpl:11
-msgid "vote-popover-title"
-msgstr "Mulțumim pentru vot!"
+#: templates/bits/scoreAndVote.tpl:25
+msgid "info-confirm-upvote"
+msgstr "Am înregistrat votul tău pozitiv. Apreciem implicarea ta."
 
-#: templates/bits/scoreAndVote.tpl:16
-msgid "vote-popover-statement"
+#: templates/bits/scoreAndVote.tpl:38
+msgid "info-confirm-downvote"
 msgstr ""
-"Votează afirmațiile pornind de la formatarea și lizibilitatea lor, nu de la "
-"valoarea de adevăr aparentă. De exemplu, nu vota negativ afirmația doar "
-"pentru că o consideri falsă."
+"Am înregistrat votul tău negativ. Ai pierdut un punct de reputație. Apreciem "
+"însă implicarea ta."
 
-#: templates/bits/scoreAndVote.tpl:21
-msgid "vote-popover-downvote"
-msgstr "Voturile negative te costă 1 punct de reputație."
+#: templates/bits/scoreAndVote.tpl:51 templates/bits/scoreAndVote.tpl:77
+msgid "tooltip-log-in-vote"
+msgstr "Autentifică-te pentru a vota."
 
-#: templates/bits/scoreAndVote.tpl:33 templates/bits/scoreAndVote.tpl:53
-msgid "label-log-in-vote"
-msgstr "Te rugăm să te autentifici pentru a vota."
-
-#: templates/bits/scoreAndVote.tpl:36
-msgid "label-minimum-reputation-upvote"
+#: templates/bits/scoreAndVote.tpl:53
+msgid "tooltip-minimum-reputation-upvote-%1"
 msgstr "Îți trebuie o reputație de minimum %1 pentru a vota pozitiv."
 
-#: templates/bits/scoreAndVote.tpl:56
-msgid "label-minimum-reputation-downvote"
+#: templates/bits/scoreAndVote.tpl:79
+msgid "tooltip-minimum-reputation-downvote-%1"
 msgstr "Îți trebuie o reputație de minimum %1 pentru a vota negativ."
 
-#: templates/bits/scoreAndVote.tpl:78
-msgid "label-toggle-answer-proof"
+#: templates/bits/scoreAndVote.tpl:108
+msgid "tooltip-toggle-answer-proof"
 msgstr "Acceptă/respinge răspunsul ca demonstrație."
 
-#: templates/bits/scoreAndVote.tpl:81
-msgid "label-answer-is-proof"
+#: templates/bits/scoreAndVote.tpl:110
+msgid "tooltip-answer-is-proof"
 msgstr "Răspuns acceptat ca demonstrație."
 
 #: templates/bits/statement.tpl:20
@@ -766,25 +767,44 @@ msgstr "mergi la pagina afirmației"
 msgid "statement-links"
 msgstr "surse"
 
-#: templates/bits/statement.tpl:63
+#: templates/bits/statement.tpl:53
+msgid "tooltip-downvote-statement-singular-%1"
+msgid_plural "tooltip-downvote-statement-plural-%1"
+msgstr[0] ""
+"Votează negativ afirmațiile preluate inexact sau formatate defectuos. "
+"Această acțiune te costă un punct de reputație."
+msgstr[1] ""
+"Votează negativ afirmațiile preluate inexact sau formatate defectuos. "
+"Această acțiune te costă %1 puncte de reputație."
+msgstr[2] ""
+"Votează negativ afirmațiile preluate inexact sau formatate defectuos. "
+"Această acțiune te costă %1 de puncte de reputație."
+
+#: templates/bits/statement.tpl:64
+msgid "tooltip-upvote-statement"
+msgstr ""
+"Votează pozitiv afirmațiile preluate exact și bine formatate. Valoarea de "
+"adevăr a afirmației nu se votează."
+
+#: templates/bits/statement.tpl:74
 msgid "link-statement-review-pending-edit"
 msgstr ""
 "Această afirmație are o modificare sugerată. O poți <a href=\"%1\" class="
 "\"alert-link\">evalua</a>."
 
-#: templates/bits/statement.tpl:84
+#: templates/bits/statement.tpl:95
 msgid "title-context"
 msgstr "context"
 
-#: templates/bits/statement.tpl:88
+#: templates/bits/statement.tpl:99
 msgid "title-goal"
 msgstr "scop"
 
-#: templates/bits/statement.tpl:94
+#: templates/bits/statement.tpl:105
 msgid "info-tag-view-statements"
 msgstr "Vezi toate afirmațiile cu această etichetă."
 
-#: templates/bits/statement.tpl:97
+#: templates/bits/statement.tpl:108
 msgid "title-added-by"
 msgstr "adăugată de"
 
@@ -2497,67 +2517,67 @@ msgstr "Îți este interzisă adăugarea de afirmații."
 msgid "info-banned-edit-statement"
 msgstr "Îți este interzisă editarea de afirmații."
 
-#: lib/model/User.php:214 routes/auth/login.php:61
+#: lib/model/User.php:213 routes/auth/login.php:61
 #: routes/auth/lostPassword.php:49 routes/invite/add.php:42
 msgid "info-must-enter-email"
 msgstr "Te rugăm să introduci o adresă de e-mail."
 
-#: lib/model/User.php:219
+#: lib/model/User.php:218
 msgid "info-email-taken"
 msgstr "Această adresă de e-mail este deja folosită."
 
-#: lib/model/User.php:223 routes/auth/lostPassword.php:51
+#: lib/model/User.php:222 routes/auth/lostPassword.php:51
 #: routes/invite/add.php:44
 msgid "info-incorrect-email"
 msgstr "Adresa de e-mail pare incorectă."
 
-#: lib/model/User.php:233
+#: lib/model/User.php:232
 msgid "info-nickname-syntax"
 msgstr ""
 "Porecla trebuie să înceapă cu o literă sau cifră și să conțină 3-30 de "
 "litere, cifre și semne de punctuație dintre -_."
 
-#: lib/model/User.php:238
+#: lib/model/User.php:237
 msgid "info-nickname-taken"
 msgstr "Această poreclă este deja folosită."
 
-#: lib/model/User.php:247 routes/auth/login.php:65
+#: lib/model/User.php:246 routes/auth/login.php:65
 msgid "info-must-enter-password"
 msgstr "Te rugăm să introduci o parolă."
 
-#: lib/model/User.php:249
+#: lib/model/User.php:248
 msgid "info-must-enter-password-2"
 msgstr ""
 "Te rugăm să introduci parola de două ori pentru a preveni greșelile de "
 "tastare."
 
-#: lib/model/User.php:251
+#: lib/model/User.php:250
 msgid "info-password-mismatch"
 msgstr "Parolele nu coincid."
 
-#: lib/model/User.php:253
+#: lib/model/User.php:252
 msgid "info-password-length"
 msgstr "Parola trebuie să aibă cel puțin 8 caractere."
 
-#: lib/model/User.php:277
+#: lib/model/User.php:276
 #, php-format
 msgid "info-minimum-reputation-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru această acțiune."
 
-#: lib/model/User.php:291
+#: lib/model/User.php:290
 msgid "info-moderator-only"
 msgstr "Doar moderatorii pot face această acțiune."
 
-#: lib/model/User.php:309
+#: lib/model/User.php:308
 #, php-format
 msgid "info-minimum-reputation-flag-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a face raportări."
 
-#: lib/model/User.php:314
+#: lib/model/User.php:313
 msgid "info-banned-flag"
 msgstr "Îți este interzisă raportarea articolelor."
 
-#: lib/model/User.php:321
+#: lib/model/User.php:320
 #, php-format
 msgid "info-flag-limit-singular"
 msgid_plural "info-flag-limit-plural-%d"
@@ -2565,19 +2585,19 @@ msgstr[0] "Poți face cel mult o raportare la 24 de ore."
 msgstr[1] "Puteți face cel mult %d raportări la 24 de ore."
 msgstr[2] "Puteți face cel mult %d de raportări la 24 de ore."
 
-#: lib/model/User.php:328
+#: lib/model/User.php:327
 msgid "info-flag-no-object"
 msgstr "Nu pot face raportarea: articolul nu există."
 
-#: lib/model/User.php:333
+#: lib/model/User.php:332
 msgid "info-already-flagged"
 msgstr "Ai raportat deja acest articol."
 
-#: lib/model/User.php:361
+#: lib/model/User.php:360
 msgid "info-banned-comment"
 msgstr "Îți este interzisă adăugarea de comentarii."
 
-#: lib/model/User.php:382
+#: lib/model/User.php:381
 #, php-format
 msgid "info-minimum-reputation-comment-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a comenta."

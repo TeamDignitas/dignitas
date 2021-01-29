@@ -1,24 +1,42 @@
 {* $type: type of object being voted *}
 {* $object: object being voted (should have id and score fields) *}
 
-{$voteValue=$object->getVote()->value|default:0}
+{* Tooltips are managed in wrapper divs. Bootstrap recommends this approach *}
+{* when the underlying button may be disabled. *}
 
-{* include the various popover messages just once *}
-{if !isset($VOTE_POPOVER_MESSAGES_ONCE)}
-  {$VOTE_POPOVER_MESSAGES_ONCE=1 scope="global"}
-  <div id="vote-popover-messages" style="display: none">
-    <div class="title">
-      {t}vote-popover-title{/t}
-      <a href="#" class="close" data-dismiss="alert">&times;</a>
-    </div>
-    {if User::needsStatementVoteReminder()}
-      <div class="body-statement">
-        {t}vote-popover-statement{/t}
+{$voteValue=$object->getVote()->value|default:0}
+{$tooltipUpvote=$tooltipUpvote|default:''}
+{$tooltipDownvote=$tooltipDownvote|default:''}
+
+{* include the various confirmation messages just once *}
+{if !isset($VOTE_REMINDER_MESSAGES_ONCE)}
+  {$VOTE_REMINDER_MESSAGES_ONCE=1 scope="global"}
+  <div id="vote-reminder-messages" style="display: none">
+    {if User::needsVoteReminder()}
+      <div
+        id="toast-upvote"
+        class="toast text-success"
+        role="alert"
+        data-delay="2000"
+        aria-live="assertive"
+        aria-atomic="true">
+
+        <div class="toast-body">
+          {t}info-confirm-upvote{/t}
+        </div>
       </div>
-    {/if}
-    {if User::needsDownvoteReminder()}
-      <div class="body-downvote">
-        {t}vote-popover-downvote{/t}
+
+      <div
+        id="toast-downvote"
+        class="toast text-warning"
+        role="alert"
+        data-delay="2000"
+        aria-live="assertive"
+        aria-atomic="true">
+
+        <div class="toast-body">
+          {t}info-confirm-downvote{/t}
+        </div>
       </div>
     {/if}
   </div>
@@ -26,43 +44,55 @@
 
 <div class="vote-box col-sm-12 col-md-1">
 
-  <button
-    class="btn btn-vote {if $voteValue == 1}voted{/if}"
+  <div
+    data-toggle="tooltip"
+    data-trigger="hover"
     {if !User::getActive()}
-    disabled
-    title="{t}label-log-in-vote{/t}"
+    title="{t}tooltip-log-in-vote{/t}"
     {elseif !User::may($upvotePriv)}
-    disabled
-    title="{t 1=$upvotePriv|nf}label-minimum-reputation-upvote{/t}"
+    title="{t 1=$upvotePriv|nf}tooltip-minimum-reputation-upvote-%1{/t}"
     {else}
-    data-toggle="popover"
+    title="{$tooltipUpvote}"
     {/if}
-    data-type="{$type}"
-    data-object-id="{$object->id}"
-    data-score-id="#score-{$type}-{$object->id}"
-    data-value="1">
-    <i class="icon icon-thumbs-up-alt"></i>
-  </button>
+  >
+    <button
+      class="btn btn-vote {if $voteValue == 1}voted{/if}"
+      {if !User::may($upvotePriv)}
+      disabled style="pointer-events: none;"
+      {/if}
+      data-type="{$type}"
+      data-object-id="{$object->id}"
+      data-score-id="#score-{$type}-{$object->id}"
+      data-value="1">
+      <i class="icon icon-thumbs-up-alt"></i>
+    </button>
+  </div>
 
   <div id="score-{$type}-{$object->id}">{$object->getScore()|nf}</div>
 
-  <button
-    class="btn btn-vote {if $voteValue == -1}voted{/if}"
+  <div
+    data-toggle="tooltip"
+    data-trigger="hover"
     {if !User::getActive()}
-    disabled
-    title="{t}label-log-in-vote{/t}"
+    title="{t}tooltip-log-in-vote{/t}"
     {elseif !User::may($downvotePriv)}
-    disabled
-    title="{t 1=$downvotePriv|nf}label-minimum-reputation-downvote{/t}"
+    title="{t 1=$downvotePriv|nf}tooltip-minimum-reputation-downvote-%1{/t}"
     {else}
-    data-toggle="popover"
+    title="{$tooltipDownvote}"
     {/if}
-    data-type="{$type}"
-    data-object-id="{$object->id}"
-    data-score-id="#score-{$type}-{$object->id}"
-    data-value="-1">
-    <i class="icon icon-thumbs-down-alt"></i>
-  </button>
+  >
+    <button
+      class="btn btn-vote {if $voteValue == -1}voted{/if}"
+      {if !User::may($downvotePriv)}
+      disabled style="pointer-events: none;"
+      {/if}
+      data-type="{$type}"
+      data-object-id="{$object->id}"
+      data-score-id="#score-{$type}-{$object->id}"
+      data-value="-1">
+      <i class="icon icon-thumbs-down-alt"></i>
+    </button>
+  </div>
 
   {**
     * Show the "proof" icon for answers in two situations:
@@ -71,15 +101,13 @@
     **}
   {$isAnswer=($object->getObjectType() == Proto::TYPE_ANSWER)}
   {if $isAnswer && (User::isModerator() || $object->proof)}
-    {* Move tooltip management to a wrapper div. Bootstrap recommends this *}
-    {* approach when the underlying button may be disabled. *}
     <div
       data-toggle="tooltip"
       data-trigger="hover"
       {if User::isModerator()}
-      title="{t}label-toggle-answer-proof{/t}"
+      title="{t}tooltip-toggle-answer-proof{/t}"
       {else}
-      title="{t}label-answer-is-proof{/t}"
+      title="{t}tooltip-answer-is-proof{/t}"
       {/if}
     >
       <button

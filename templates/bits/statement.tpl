@@ -48,11 +48,22 @@
 
 <article class="row mt-3 statement-body">
   {if $voteBox}
+    {capture "tooltipDownvote"}
+    {t
+      count=-Config::REP_DOWNVOTE_STATEMENT
+      1=-Config::REP_DOWNVOTE_STATEMENT
+      plural="tooltip-downvote-statement-plural-%1"}
+    tooltip-downvote-statement-singular-%1
+    {/t}
+    {/capture}
     {include "bits/scoreAndVote.tpl"
       type=Vote::TYPE_STATEMENT
       object=$statement
       upvotePriv=User::PRIV_UPVOTE_STATEMENT
-      downvotePriv=User::PRIV_DOWNVOTE_STATEMENT}
+      downvotePriv=User::PRIV_DOWNVOTE_STATEMENT
+      tooltipUpvote="{t}tooltip-upvote-statement{/t}"
+      tooltipDownvote="{$smarty.capture.tooltipDownvote}"
+    }
   {/if}
 
   <div class="col-sm-12 col-md-7 px-0">

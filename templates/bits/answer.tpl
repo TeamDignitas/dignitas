@@ -4,11 +4,21 @@
 
 <div class="answer-container row pt-2" id="a{$answer->id}">
   {if $voteBox}
+    {capture "tooltipDownvote"}
+    {t
+      count=-Config::REP_DOWNVOTE_ANSWER
+      1=-Config::REP_DOWNVOTE_ANSWER
+      plural="tooltip-downvote-answer-plural-%1"}
+    tooltip-downvote-answer-singular-%1
+    {/t}
+    {/capture}
     {include "bits/scoreAndVote.tpl"
       type=Vote::TYPE_ANSWER
       object=$answer
       upvotePriv=User::PRIV_UPVOTE_ANSWER
-      downvotePriv=User::PRIV_DOWNVOTE_ANSWER}
+      downvotePriv=User::PRIV_DOWNVOTE_ANSWER
+      tooltipDownvote="{$smarty.capture.tooltipDownvote}"
+    } {* no upvote tooltip for now *}
   {/if}
 
   <div class="col-sm-12 col-md-11 mb-1">
