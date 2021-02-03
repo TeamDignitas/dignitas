@@ -127,6 +127,10 @@ blockquote {
   right: 50px;
 }
 
+.toast-color {
+  min-width: 23px;
+}
+
 /*************************** navbar search box ***************************/
 
 .navbar .select2 {

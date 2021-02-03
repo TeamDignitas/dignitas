@@ -13,31 +13,14 @@
   {$VOTE_REMINDER_MESSAGES_ONCE=1 scope="global"}
   <div id="vote-reminder-messages" style="display: none">
     {if User::needsVoteReminder()}
-      <div
+      {include "bits/toast.tpl"
         id="toast-upvote"
-        class="toast text-success"
-        role="alert"
-        data-delay="2000"
-        aria-live="assertive"
-        aria-atomic="true">
+        msg="{t}info-confirm-upvote{/t}"}
 
-        <div class="toast-body">
-          {t}info-confirm-upvote{/t}
-        </div>
-      </div>
-
-      <div
+      {include "bits/toast.tpl"
         id="toast-downvote"
-        class="toast text-warning"
-        role="alert"
-        data-delay="2000"
-        aria-live="assertive"
-        aria-atomic="true">
-
-        <div class="toast-body">
-          {t}info-confirm-downvote{/t}
-        </div>
-      </div>
+        status="warning"
+        msg="{t}info-confirm-downvote{/t}"}
     {/if}
   </div>
 {/if}
