@@ -18,6 +18,6 @@
     </div>
 
     {include "bits/flagModal.tpl"}
-    {include "bits/subscribeModal.tpl"}
+    {include "bits/subscribeToast.tpl"}
   </div>
 {/block}

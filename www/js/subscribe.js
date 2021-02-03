@@ -17,7 +17,7 @@ $(function() {
     }).done(function(successMsg, textStatus, xhr) {
       subscribeLink.prop('hidden', true);
       unsubscribeLink.prop('hidden', false);
-      showConfirmModal(successMsg);
+      showConfirmToast(successMsg, subscribeLink);
 
     }).fail(function(errorMsg) {
 
@@ -51,7 +51,7 @@ $(function() {
       // swap link visibility
       subscribeLink.prop('hidden', false);
       unsubscribeLink.prop('hidden', true);
-      showConfirmModal(successMsg);
+      showConfirmToast(successMsg, unsubscribeLink);
 
     }).fail(function(errorMsg) {
 
@@ -69,13 +69,21 @@ $(function() {
     return false;
   }
 
-  function showConfirmModal(msg) {
-    $('#modal-subscribe-confirm .modal-body').html(msg);
-    $('#modal-subscribe-confirm').modal('show');
+  /**
+   * @param link Link that caused the toast to be displayed.
+   **/
+  function showConfirmToast(msg, link) {
+    link.closest('.dropdown-menu').prev().dropdown('toggle');
 
-    setTimeout(function() {
-      $('#modal-subscribe-confirm').modal('hide');
-    }, 1500);
+    var t = $('#toast-subscribe-confirm')
+        .clone(true)
+        .removeAttr('id')
+        .removeClass('d-none');
+
+    t.find('.toast-body').html(msg);
+
+    t.appendTo('#toasts')
+      .toast('show');
   }
 
   $('a.subscribe').click(submitSubscribe);

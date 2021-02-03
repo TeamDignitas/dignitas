@@ -1,9 +1,11 @@
-{$status=$status|default:'success'} {* A bootstrap status color *}
+{$msg=$msg|default:''} {* can be empty if supplied by the backend at a later time *}
+{$status=$status|default:'success'} {* a bootstrap status color *}
+{$cssClass=$cssClass|default:''}
 <div
   {if isset($id)}
   id="{$id}"
   {/if}
-  class="toast"
+  class="toast {$cssClass}"
   role="alert"
   data-delay="2000"
   aria-live="assertive"

@@ -101,6 +101,6 @@
 
     {include "bits/commentForm.tpl"}
     {include "bits/flagModal.tpl"}
-    {include "bits/subscribeModal.tpl"}
+    {include "bits/subscribeToast.tpl"}
   </div>
 {/block}
