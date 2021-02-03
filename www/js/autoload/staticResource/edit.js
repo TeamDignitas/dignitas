@@ -5,6 +5,10 @@ $(function() {
     CodeMirror.fromTextArea(textarea, {
       lineWrapping: true,
       mode: mimeType,
+      extraKeys: {
+        Home: 'goLineLeft',
+        End: 'goLineRight',
+      },
     });
   }
 
