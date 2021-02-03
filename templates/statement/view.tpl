@@ -61,7 +61,7 @@
           <div class="card">
 
             <div class="card-body pl-0 pr-0">
-              <h6 class="card-title pl-3 pr-3">
+              <h6 class="card-title pl-3 pr-3 font-weight-bold">
                 {t}title-answer-resources{/t}
 
                 <button

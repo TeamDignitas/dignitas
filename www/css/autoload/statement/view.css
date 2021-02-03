@@ -89,3 +89,17 @@
 #answer-resources > .card {
   height: 100%;
 }
+
+#answer-resources .card-body {
+  font-size: 12px;
+}
+
+#answer-resources .area-title {
+  color: #656565;
+  display: block;
+  text-decoration: none;
+}
+
+#answer-resources .card-text {
+  border-bottom: 1px solid rgba(0,0,0,0.125);
+}
