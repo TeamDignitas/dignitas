@@ -11,22 +11,17 @@ $(function() {
   }
 
   /**
-   * Ask for confirmation before changing the statement type. Skip this when
-   * the statement is being created (it has no ID) or when there are no
-   * answers with verdicts (i.e., no confirmation message is set).
+   * Ask for confirmation before changing the statement type. Will only be
+   * called when the statement has answers with verdicts.
+   *
+   * @param bool choice Choice from the confirmation modal.
    **/
-  function typeChange(evt) {
-    var id = $('#field-id').val();
-
-    if (id) {
-      var msg = $(this).data('confirmMsg');
-
-      if (!msg || confirm(msg)) {
-        $(this).data('prevValue', $(this).val());
-        refreshVerdicts();
-      } else {
-        $(this).val($(this).data('prevValue'));
-      }
+  function typeChange(evt, choice) {
+    if (choice) {
+      $(this).data('prevValue', $(this).val());
+      refreshVerdicts();
+    } else {
+      $(this).val($(this).data('prevValue'));
     }
   }
 

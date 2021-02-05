@@ -21,7 +21,7 @@
     {/if}
 
     <form method="post">
-      <input type="hidden" id="field-id" name="id" value="{$statement->id}">
+      <input type="hidden" name="id" value="{$statement->id}">
       <input type="hidden" name="referrer" value="{$referrer}">
 
       <fieldset class="related-fields mb-5 ml-3">
@@ -66,7 +66,7 @@
             name="type"
             data-prev-value="{$statement->type}"
             {if $statement->needsTypeChangeWarning()}
-            data-confirm-msg="{t}info-confirm-statement-type-change{/t}"
+            data-confirm="{t}info-confirm-statement-type-change{/t}"
             {/if}
             class="form-control has-unload-warning col-sm-12 col-lg-10">
             {for $t = 1 to Statement::NUM_TYPES - 1}

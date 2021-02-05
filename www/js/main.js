@@ -88,14 +88,75 @@ $(function() {
 
 });
 
+
+/*********** confirmations before obeying click() and change() ***********/
+$(function() {
+
+  $('a[data-confirm], button[data-confirm]').click(launchConfirm);
+  $('select[data-confirm]').change(launchConfirm);
+
+  function launchConfirm(evt) {
+    if (evt.isTrigger) {
+      // We were called as a result of the user making a choice.
+      // Step aside and let the other handler run on the object.
+      return true;
+    }
+
+    // prevent the other handlers from running
+    evt.stopImmediatePropagation();
+
+    // The modal can be closed by clicking either button OR by clicking outside
+    // it. Therefore, the only way to guarantee a callback is to handle the
+    // modal's hidden event.
+    var choice = false;
+    var target = $(this);
+
+    var m = $(
+      '<div class="modal fade" tabindex="-1">' +
+        '<div class="modal-dialog">' +
+        '<div class="modal-content">' +
+        '<div class="modal-body">' +
+        $(this).data('confirm') +
+        '</div>' +
+        '<div class="modal-footer">' +
+        '<button type="button" class="btn btn-sm btn-outline-secondary px-4" data-dismiss="modal">' +
+        CONFIRM_CANCEL_TEXT +
+        '</button>' +
+        '<button type="button" class="btn btn-sm btn-primary btn-confirm px-4" data-dismiss="modal">' +
+        CONFIRM_OK_TEXT +
+        '</button>' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+        '</div>'
+    );
+
+    m.find('.btn-confirm').click(function() {
+      choice = true;
+    });
+
+    m.on('hide.bs.modal', function() {
+      // Call the handlers again if necessary. This will include ourselves,
+      // but we'll just return.
+      if (evt.type == 'change') {
+        // For change events, always trigger the callback. Selects cannot
+        // prevent a change, only roll it back afterwards.
+        target.trigger('change', choice);
+      } else if ((evt.type == 'click') && choice) {
+        target.click();
+      }
+    });
+
+    m.modal('show');
+
+    return false;
+  }
+});
+
+
 /************ confirmations before discarding pending changes ************/
 $(function() {
   var beforeUnloadHandlerAttached = false;
-
-  $('[data-confirm]').click(function() {
-    var msg = $(this).data('confirm');
-    return confirm(msg);
-  });
 
   // Expose this as a function so that other objects can also attach the
   // handler. For example, EasyMDE fields don't obey the .has-unload-warning
@@ -119,6 +180,7 @@ $(function() {
   });
 
 });
+
 
 /*************************** vote submissions ***************************/
 $(function() {
@@ -282,6 +344,8 @@ $(function() {
   var commentForm = $('#form-comment').detach().removeAttr('id');
 
   $('a.add-comment').click(addCommentForm);
+  // this will ask for confirmation first because the data-confirm handler is
+  // registered first
   $('a.delete-comment').click(deleteComment);
   $('body').on('click', 'button.comment-save', saveComment);
   $('body').on('click', 'button.comment-cancel', hideCommentForm);
@@ -343,12 +407,7 @@ $(function() {
     return false;
   }
 
-  function deleteComment() {
-    var msg = $(this).data('confirmMsg');
-    if (!confirm(msg)) {
-      return false;
-    }
-
+  function deleteComment(evt) {
     $('body').addClass('waiting');
 
     var comment = $(this).closest('.comment');

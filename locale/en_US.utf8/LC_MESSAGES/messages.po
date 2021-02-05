@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-02-05 10:42+0200\n"
-"PO-Revision-Date: 2021-02-05 10:43+0200\n"
+"POT-Creation-Date: 2021-02-05 15:25+0200\n"
+"PO-Revision-Date: 2021-02-05 15:25+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -317,6 +317,7 @@ msgid "link-reopen"
 msgstr "reopen"
 
 #: templates/bits/answerEdit.tpl:77 templates/bits/commentForm.tpl:44
+#: templates/bits/flagModal.tpl:190 templates/bits/phpConstants.tpl:16
 #: templates/cannedResponse/edit.tpl:41 templates/cannedResponse/list.tpl:52
 #: templates/domain/edit.tpl:91 templates/entity/edit.tpl:275
 #: templates/entityType/edit.tpl:103 templates/help/categoryEdit.tpl:75
@@ -481,114 +482,114 @@ msgstr "Flag this author for the following reason:"
 msgid "title-flag-comment"
 msgstr "Flag this comment for the following reason:"
 
-#: templates/bits/flagModal.tpl:34
+#: templates/bits/flagModal.tpl:31
 msgid "label-spam"
 msgstr "spam"
 
-#: templates/bits/flagModal.tpl:37
+#: templates/bits/flagModal.tpl:34
 msgid "info-reason-spam"
 msgstr "This post appears to promote a product or service."
 
-#: templates/bits/flagModal.tpl:48
+#: templates/bits/flagModal.tpl:45
 msgid "label-abuse"
 msgstr "insults or rudeness"
 
-#: templates/bits/flagModal.tpl:51
+#: templates/bits/flagModal.tpl:48
 msgid "info-reason-abuse"
 msgstr "This post is insulting or rude toward other users of Dignitas."
 
-#: templates/bits/flagModal.tpl:66
+#: templates/bits/flagModal.tpl:63
 msgid "label-duplicate"
 msgstr "duplicate of..."
 
-#: templates/bits/flagModal.tpl:69
+#: templates/bits/flagModal.tpl:66
 msgid "info-reason-statement-duplicate"
 msgstr "This statement already appears in Dignitas."
 
-#: templates/bits/flagModal.tpl:72
+#: templates/bits/flagModal.tpl:69
 msgid "info-reason-entity-duplicate"
 msgstr "This author already appears in Dignitas."
 
-#: templates/bits/flagModal.tpl:79
+#: templates/bits/flagModal.tpl:76
 msgid "label-type-something"
 msgstr "type in some keywords..."
 
-#: templates/bits/flagModal.tpl:93
+#: templates/bits/flagModal.tpl:90
 msgid "label-off-topic"
 msgstr "off-topic"
 
-#: templates/bits/flagModal.tpl:97
+#: templates/bits/flagModal.tpl:94
 msgid "info-reason-asnwer-off-topic"
 msgstr "This answer does not address the topic of the statement."
 
-#: templates/bits/flagModal.tpl:100
+#: templates/bits/flagModal.tpl:97
 msgid "info-reason-statement-off-topic"
 msgstr ""
 "This statement is outside the intended scope of Dignitas or is too broad to "
 "prove or disprove."
 
-#: templates/bits/flagModal.tpl:103
+#: templates/bits/flagModal.tpl:100
 msgid "info-reason-entity-off-topic"
 msgstr "Dignitas does not concern itself with this author's statements."
 
-#: templates/bits/flagModal.tpl:116
+#: templates/bits/flagModal.tpl:113
 msgid "label-statement-unverifiable"
 msgstr "unverifiable"
 
-#: templates/bits/flagModal.tpl:119
+#: templates/bits/flagModal.tpl:116
 msgid "label-entity-unverifiable"
 msgstr "unverifiable"
 
-#: templates/bits/flagModal.tpl:124
+#: templates/bits/flagModal.tpl:121
 msgid "info-reason-statement-unverifiable"
 msgstr "It is not obvious that the author really made the statement."
 
-#: templates/bits/flagModal.tpl:127
+#: templates/bits/flagModal.tpl:124
 msgid "info-reason-entity-unverifiable"
 msgstr ""
 "It is not obvious that the author exists and the profile data is correct."
 
-#: templates/bits/flagModal.tpl:141
+#: templates/bits/flagModal.tpl:138
 msgid "label-low-quality"
 msgstr "low quality"
 
-#: templates/bits/flagModal.tpl:144
+#: templates/bits/flagModal.tpl:141
 msgid "info-reason-low-quality"
 msgstr ""
 "This post has severe formatting or content problems that cannot be salvaged "
 "through editing."
 
-#: templates/bits/flagModal.tpl:157
+#: templates/bits/flagModal.tpl:154
 msgid "label-not-needed"
 msgstr "no longer needed"
 
-#: templates/bits/flagModal.tpl:160
+#: templates/bits/flagModal.tpl:157
 msgid "info-reason-not-needed"
 msgstr ""
 "This comment has been incorporated in the post, is outdated or not relevant "
 "to this post."
 
-#: templates/bits/flagModal.tpl:173
+#: templates/bits/flagModal.tpl:170
 msgid "label-other-reason"
 msgstr "other reason"
 
-#: templates/bits/flagModal.tpl:181
+#: templates/bits/flagModal.tpl:178
 msgid "label-provide-details"
 msgstr "please provide details..."
 
-#: templates/bits/flagModal.tpl:194
+#: templates/bits/flagModal.tpl:195
 msgid "link-flag-answer"
 msgstr "flag answer"
 
-#: templates/bits/flagModal.tpl:197
+#: templates/bits/flagModal.tpl:198
 msgid "link-flag-statement"
 msgstr "flag statement"
 
-#: templates/bits/flagModal.tpl:200
+#: templates/bits/flagModal.tpl:201
 msgid "link-flag-entity"
 msgstr "flag author"
 
-#: templates/bits/flagModal.tpl:203
+#: templates/bits/flagModal.tpl:204
 msgid "link-flag-comment"
 msgstr "flag comment"
 
@@ -683,6 +684,10 @@ msgstr "log out"
 #: templates/bits/notifications.tpl:41
 msgid "info-notification-unsubscribe"
 msgstr "unsubscribe from notifications for this item"
+
+#: templates/bits/phpConstants.tpl:17
+msgid "link-confirm"
+msgstr "OK"
 
 #: templates/bits/relation.tpl:21
 msgid "relation-links"
@@ -3147,11 +3152,11 @@ msgstr "No review exists with the given ID."
 msgid "info-moderator-review-only"
 msgstr "Only moderators may perform that review."
 
-#: routes/review/view.php:47
+#: routes/review/view.php:53
 msgid "info-vote-saved"
 msgstr "Your vote was recorded."
 
-#: routes/review/view.php:92
+#: routes/review/view.php:95
 msgid "info-vote-completes-review"
 msgstr ""
 "This review is now complete. We have redirected you to the next review in "

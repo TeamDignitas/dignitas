@@ -40,7 +40,7 @@
           href="#"
           class="dropdown-item delete-comment"
           data-comment-id="{$comment->id}"
-          data-confirm-msg="{t}info-confirm-delete-comment{/t}">
+          data-confirm="{t}info-confirm-delete-comment{/t}">
           <i class="icon icon-trash"></i>
           {t}link-delete{/t}
         </a>
