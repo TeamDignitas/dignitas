@@ -64,8 +64,8 @@
           <select
             id="field-type"
             name="type"
-            data-prev-value="{$statement->type}"
             {if $statement->needsTypeChangeWarning()}
+            data-prev-value="{$statement->type}"
             data-confirm="{t}info-confirm-statement-type-change{/t}"
             {/if}
             class="form-control has-unload-warning col-sm-12 col-lg-10">
