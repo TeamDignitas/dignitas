@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-02-05 15:25+0200\n"
-"PO-Revision-Date: 2021-02-05 15:25+0200\n"
+"POT-Creation-Date: 2021-02-05 17:26+0200\n"
+"PO-Revision-Date: 2021-02-05 17:26+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -377,7 +377,7 @@ msgstr[0] "o linie identică omisă"
 msgstr[1] "%1 linii identice omise"
 msgstr[2] "%1 de linii identice omise"
 
-#: templates/bits/editButton.tpl:10 templates/bits/reviewActions.tpl:21
+#: templates/bits/editButton.tpl:10 templates/bits/reviewActions.tpl:25
 #: templates/cannedResponse/list.tpl:39 templates/domain/list.tpl:38
 #: templates/entityType/list.tpl:53 templates/help/categoryView.tpl:39
 #: templates/help/pageView.tpl:36 templates/region/view.tpl:15
@@ -706,11 +706,15 @@ msgstr "surse"
 msgid "label-relation-links"
 msgstr "surse"
 
-#: templates/bits/reviewActions.tpl:37
+#: templates/bits/reviewActions.tpl:16
+msgid "info-confirm-moderator-review-remove"
+msgstr "Confirmați ștergerea acestui mesaj?"
+
+#: templates/bits/reviewActions.tpl:41
 msgid "link-next"
 msgstr "următoarea"
 
-#: templates/bits/reviewActions.tpl:48
+#: templates/bits/reviewActions.tpl:52
 msgid "label-details-optional"
 msgstr "detalii (opționale)"
 

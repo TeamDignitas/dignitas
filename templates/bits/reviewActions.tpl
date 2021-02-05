@@ -11,6 +11,9 @@
         <button
           name="removeButton"
           class="btn btn-sm btn-outline-danger col-12 col-sm-12 col-md-2 mr-2 mb-2"
+          {if User::isModerator()}
+          data-confirm="{t}info-confirm-moderator-review-remove{/t}"
+          {/if}
           type="submit">
           <i class="icon icon-cancel"></i>
           {$review->getVoteName(Flag::VOTE_REMOVE)}

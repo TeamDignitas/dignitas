@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-02-05 15:25+0200\n"
-"PO-Revision-Date: 2021-02-05 15:25+0200\n"
+"POT-Creation-Date: 2021-02-05 17:28+0200\n"
+"PO-Revision-Date: 2021-02-05 17:28+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -370,7 +370,7 @@ msgid_plural "identical-lines-skipped-plural"
 msgstr[0] "one identical line skipped"
 msgstr[1] "%1 identical lines skipped"
 
-#: templates/bits/editButton.tpl:10 templates/bits/reviewActions.tpl:21
+#: templates/bits/editButton.tpl:10 templates/bits/reviewActions.tpl:25
 #: templates/cannedResponse/list.tpl:39 templates/domain/list.tpl:38
 #: templates/entityType/list.tpl:53 templates/help/categoryView.tpl:39
 #: templates/help/pageView.tpl:36 templates/region/view.tpl:15
@@ -697,11 +697,15 @@ msgstr "sources"
 msgid "label-relation-links"
 msgstr "sources"
 
-#: templates/bits/reviewActions.tpl:37
+#: templates/bits/reviewActions.tpl:16
+msgid "info-confirm-moderator-review-remove"
+msgstr "Are you sure you want to delete this item?"
+
+#: templates/bits/reviewActions.tpl:41
 msgid "link-next"
 msgstr "next"
 
-#: templates/bits/reviewActions.tpl:48
+#: templates/bits/reviewActions.tpl:52
 msgid "label-details-optional"
 msgstr "details (optional)"
 
