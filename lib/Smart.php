@@ -30,8 +30,8 @@ class Smart {
       ],
       'js' => [
         'third-party/select2/select2.min.js',
-        'third-party/select2/i18n/ro.js',
-        'select2Dev.js',
+        'select2/i18n/ro.js',
+        'select2/select2Dev.js',
       ],
     ],
     'fontello' => [
