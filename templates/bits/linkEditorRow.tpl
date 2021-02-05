@@ -17,7 +17,11 @@
   </td>
 
   <td class="narrow-column">
-    <button type="button" class="btn btn-outline-danger delete-link">
+    <button
+      type="button"
+      class="btn btn-outline-danger delete-link"
+      data-toggle="tooltip"
+      title="{t}link-delete-source{/t}">
       <i class="icon icon-trash"></i>
     </button>
   </td>

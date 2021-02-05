@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-02-05 17:28+0200\n"
-"PO-Revision-Date: 2021-02-05 17:28+0200\n"
+"POT-Creation-Date: 2021-02-05 17:48+0200\n"
+"PO-Revision-Date: 2021-02-05 17:48+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -265,6 +265,10 @@ msgstr "add a comment"
 msgid "tag"
 msgstr "tag"
 
+#: templates/bits/aliasEdit.tpl:24
+msgid "link-delete-alias"
+msgstr "delete the alias"
+
 #: templates/bits/answer.tpl:9
 msgid "tooltip-downvote-answer-singular-%1"
 msgid_plural "tooltip-downvote-answer-plural-%1"
@@ -346,7 +350,7 @@ msgstr "characters remaining"
 
 #: templates/bits/commentForm.tpl:25
 msgid "link-pick-canned-response"
-msgstr "canned response"
+msgstr "canned responses"
 
 #: templates/bits/diff/objectDiff.tpl:34
 msgid "label-duplicate-of"
@@ -370,7 +374,7 @@ msgid_plural "identical-lines-skipped-plural"
 msgstr[0] "one identical line skipped"
 msgstr[1] "%1 identical lines skipped"
 
-#: templates/bits/editButton.tpl:10 templates/bits/reviewActions.tpl:25
+#: templates/bits/editButton.tpl:10 templates/bits/reviewActions.tpl:24
 #: templates/cannedResponse/list.tpl:39 templates/domain/list.tpl:38
 #: templates/entityType/list.tpl:53 templates/help/categoryView.tpl:39
 #: templates/help/pageView.tpl:36 templates/region/view.tpl:15
@@ -622,6 +626,10 @@ msgstr "Please read TODO for ways of customizing the thumbnail and link."
 msgid "label-uploaded-file"
 msgstr "uploaded file"
 
+#: templates/bits/linkEditorRow.tpl:23
+msgid "link-delete-source"
+msgstr "delete the source"
+
 #: templates/bits/loyalty.tpl:3
 msgid "title-loyalty"
 msgstr "loyalty"
@@ -697,15 +705,19 @@ msgstr "sources"
 msgid "label-relation-links"
 msgstr "sources"
 
-#: templates/bits/reviewActions.tpl:16
+#: templates/bits/relationEdit.tpl:49
+msgid "link-delete-relation"
+msgstr "delete the relationship"
+
+#: templates/bits/reviewActions.tpl:15
 msgid "info-confirm-moderator-review-remove"
 msgstr "Are you sure you want to delete this item?"
 
-#: templates/bits/reviewActions.tpl:41
+#: templates/bits/reviewActions.tpl:40
 msgid "link-next"
 msgstr "next"
 
-#: templates/bits/reviewActions.tpl:52
+#: templates/bits/reviewActions.tpl:51
 msgid "label-details-optional"
 msgstr "details (optional)"
 

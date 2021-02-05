@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-02-05 17:26+0200\n"
-"PO-Revision-Date: 2021-02-05 17:26+0200\n"
+"POT-Creation-Date: 2021-02-05 17:48+0200\n"
+"PO-Revision-Date: 2021-02-05 17:49+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -270,6 +270,10 @@ msgstr "adaugă un comentariu"
 msgid "tag"
 msgstr "etichetă"
 
+#: templates/bits/aliasEdit.tpl:24
+msgid "link-delete-alias"
+msgstr "șterge aliasul"
+
 #: templates/bits/answer.tpl:9
 msgid "tooltip-downvote-answer-singular-%1"
 msgid_plural "tooltip-downvote-answer-plural-%1"
@@ -352,7 +356,7 @@ msgstr "caractere rămase"
 
 #: templates/bits/commentForm.tpl:25
 msgid "link-pick-canned-response"
-msgstr "predefinite"
+msgstr "mesaje predefinite"
 
 #: templates/bits/diff/objectDiff.tpl:34
 msgid "label-duplicate-of"
@@ -377,7 +381,7 @@ msgstr[0] "o linie identică omisă"
 msgstr[1] "%1 linii identice omise"
 msgstr[2] "%1 de linii identice omise"
 
-#: templates/bits/editButton.tpl:10 templates/bits/reviewActions.tpl:25
+#: templates/bits/editButton.tpl:10 templates/bits/reviewActions.tpl:24
 #: templates/cannedResponse/list.tpl:39 templates/domain/list.tpl:38
 #: templates/entityType/list.tpl:53 templates/help/categoryView.tpl:39
 #: templates/help/pageView.tpl:36 templates/region/view.tpl:15
@@ -631,6 +635,10 @@ msgstr ""
 msgid "label-uploaded-file"
 msgstr "fișier încărcat"
 
+#: templates/bits/linkEditorRow.tpl:23
+msgid "link-delete-source"
+msgstr "șterge sursa"
+
 #: templates/bits/loyalty.tpl:3
 msgid "title-loyalty"
 msgstr "loialitate"
@@ -706,15 +714,19 @@ msgstr "surse"
 msgid "label-relation-links"
 msgstr "surse"
 
-#: templates/bits/reviewActions.tpl:16
+#: templates/bits/relationEdit.tpl:49
+msgid "link-delete-relation"
+msgstr "șterge relația"
+
+#: templates/bits/reviewActions.tpl:15
 msgid "info-confirm-moderator-review-remove"
 msgstr "Confirmați ștergerea acestui mesaj?"
 
-#: templates/bits/reviewActions.tpl:41
+#: templates/bits/reviewActions.tpl:40
 msgid "link-next"
 msgstr "următoarea"
 
-#: templates/bits/reviewActions.tpl:52
+#: templates/bits/reviewActions.tpl:51
 msgid "label-details-optional"
 msgstr "detalii (opționale)"
 

@@ -43,7 +43,11 @@
   </td>
 
   <td>
-    <button type="button" class="btn btn-sm btn-outline-danger delete-dependant">
+    <button
+      type="button"
+      class="btn btn-sm btn-outline-danger delete-dependant"
+      data-toggle="tooltip"
+      title="{t}link-delete-relation{/t}">
       <i class="icon icon-trash"></i>
     </button>
   </td>
