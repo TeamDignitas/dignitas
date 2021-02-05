@@ -17,7 +17,7 @@ $data = [];
 // Grab some tables entirely.
 const WHOLE_TABLES = [
   'CannedResponse', 'Domain', 'EntityType', 'HelpPage', 'HelpCategory',
-  'RelationType', 'StaticResource', 'Tag', 'Variable',
+  'Region', 'RelationType', 'StaticResource', 'Tag', 'Variable',
 ];
 foreach (WHOLE_TABLES as $table) {
   $data[$table] = Model::factory($table)->find_array();
