@@ -44,10 +44,13 @@ if ($reviewId) {
     $flag = Flag::create($r->id, $details, $vote);
     $flag->save();
     Action::createFlagReviewAction($flag);
-    FlashMessage::add(_('info-vote-saved'), 'success');
 
     $r->evaluate();
     redirectIfComplete($r, $urlName);
+
+    // Only now do we generate a flash message about the vote. If the vote had
+    // completed the review, we would have printed that message instead.
+    FlashMessage::add(_('info-vote-saved'), 'success');
     redirectToReview($r, $urlName);
   }
 

@@ -7,7 +7,7 @@
   {/if}
   class="toast {$cssClass}"
   role="alert"
-  data-delay="2000"
+  data-delay="5000"
   aria-live="assertive"
   aria-atomic="true">
 

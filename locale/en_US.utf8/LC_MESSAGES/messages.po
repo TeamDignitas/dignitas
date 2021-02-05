@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-01-29 17:39+0200\n"
-"PO-Revision-Date: 2021-01-29 17:39+0200\n"
+"POT-Creation-Date: 2021-02-05 10:42+0200\n"
+"PO-Revision-Date: 2021-02-05 10:43+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -175,7 +175,7 @@ msgstr "I forgot my password"
 msgid "label-remember-me"
 msgstr "Remember me for one year."
 
-#: templates/auth/login.tpl:71 templates/bits/navmenu.tpl:182
+#: templates/auth/login.tpl:71 templates/bits/navmenu.tpl:185
 msgid "link-log-in"
 msgstr "log in"
 
@@ -443,12 +443,12 @@ msgstr "region"
 msgid "title-test-login"
 msgstr "test user login"
 
-#: templates/bits/fakeLogin.tpl:33 templates/bits/navmenu.tpl:147
+#: templates/bits/fakeLogin.tpl:33 templates/bits/navmenu.tpl:150
 #: templates/user/view.tpl:30
 msgid "label-reputation"
 msgstr "reputation"
 
-#: templates/bits/fakeLogin.tpl:54 templates/bits/navmenu.tpl:159
+#: templates/bits/fakeLogin.tpl:54 templates/bits/navmenu.tpl:162
 #: templates/user/view.tpl:18
 msgid "label-moderator"
 msgstr "moderator"
@@ -656,27 +656,27 @@ msgstr "contact us"
 msgid "help-center"
 msgstr "help center"
 
-#: templates/bits/navmenu.tpl:123
-msgid "link-my-profile"
-msgstr "my profile"
-
-#: templates/bits/navmenu.tpl:127
+#: templates/bits/navmenu.tpl:104
 msgid "link-notifications"
 msgstr "notifications"
 
-#: templates/bits/navmenu.tpl:134
+#: templates/bits/navmenu.tpl:133
+msgid "link-my-profile"
+msgstr "my profile"
+
+#: templates/bits/navmenu.tpl:137
 msgid "link-dashboard"
 msgstr "dashboard"
 
-#: templates/bits/navmenu.tpl:140
+#: templates/bits/navmenu.tpl:143
 msgid "info-reputation-manual"
 msgstr "change reputation manually (will refresh the page)"
 
-#: templates/bits/navmenu.tpl:165
+#: templates/bits/navmenu.tpl:168
 msgid "link-change"
 msgstr "schimbă"
 
-#: templates/bits/navmenu.tpl:175
+#: templates/bits/navmenu.tpl:178
 msgid "link-log-out"
 msgstr "log out"
 
@@ -720,33 +720,33 @@ msgstr "details"
 msgid "date"
 msgstr "date"
 
-#: templates/bits/scoreAndVote.tpl:25
+#: templates/bits/scoreAndVote.tpl:18
 msgid "info-confirm-upvote"
 msgstr "Your upvote was saved. Thanks for helping!"
 
-#: templates/bits/scoreAndVote.tpl:38
+#: templates/bits/scoreAndVote.tpl:23
 msgid "info-confirm-downvote"
 msgstr ""
 "Your downvote was saved. You lost one reputation point, but we thank you for "
 "helping!"
 
-#: templates/bits/scoreAndVote.tpl:51 templates/bits/scoreAndVote.tpl:77
+#: templates/bits/scoreAndVote.tpl:34 templates/bits/scoreAndVote.tpl:60
 msgid "tooltip-log-in-vote"
 msgstr "Please log in to vote."
 
-#: templates/bits/scoreAndVote.tpl:53
+#: templates/bits/scoreAndVote.tpl:36
 msgid "tooltip-minimum-reputation-upvote-%1"
 msgstr "You need at least %1 reputation to upvote."
 
-#: templates/bits/scoreAndVote.tpl:79
+#: templates/bits/scoreAndVote.tpl:62
 msgid "tooltip-minimum-reputation-downvote-%1"
 msgstr "You need at least %1 reputation to downvote."
 
-#: templates/bits/scoreAndVote.tpl:108
+#: templates/bits/scoreAndVote.tpl:91
 msgid "tooltip-toggle-answer-proof"
 msgstr "Accept/reject the answer as proof."
 
-#: templates/bits/scoreAndVote.tpl:110
+#: templates/bits/scoreAndVote.tpl:93
 msgid "tooltip-answer-is-proof"
 msgstr "Answer accepted as proof."
 
@@ -3251,11 +3251,11 @@ msgstr "Please type in the contents or choose a file to upload."
 
 #: routes/subscription/delete.php:20
 msgid "info-unsubscribed"
-msgstr "You will not receive notifications about this item."
+msgstr "You unsubscribed from this item."
 
 #: routes/subscription/save.php:28
 msgid "info-subscribed"
-msgstr "You will receive notifications about this item."
+msgstr "You subscribed to this item."
 
 #: routes/tag/edit.php:27
 #, php-format
