@@ -1,5 +1,5 @@
 <div id="modal-flag" class="modal fade" role="dialog" tabindex="-1">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
 
       <div class="modal-header">
@@ -17,9 +17,6 @@
             {t}title-flag-comment{/t}
           </span>
         </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
       </div>
 
       <div class="modal-body">
@@ -188,6 +185,10 @@
 
       <div class="modal-footer">
         <div class="text-center">
+          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">
+            <i class="icon icon-cancel"></i>
+            {t}link-cancel{/t}
+          </button>
           <button id="button-flag" type="button" class="btn btn-primary">
             <i class="icon icon-flag"></i>
             <span data-flag-visibility="{Flag::TYPE_ANSWER}">
