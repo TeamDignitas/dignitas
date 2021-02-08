@@ -160,12 +160,17 @@
           </button>
         {/if}
 
-        {if $t->id}
-          <a class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2" href="{Router::link('tag/view')}/{$t->id}">
-            <i class="icon icon-cancel"></i>
-            {t}link-cancel{/t}
-          </a>
-        {/if}
+        <a
+          class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2"
+          {if $t->id}
+          href="{Router::link('tag/view')}/{$t->id}"
+          {else}
+          href="{Router::link('tag/list')}"
+          {/if}
+        >
+          <i class="icon icon-cancel"></i>
+          {t}link-cancel{/t}
+        </a>
 
         <button name="saveButton" type="submit" class="btn btn-sm btn-primary col-sm-4 col-lg-2 mb-2">
           <i class="icon icon-floppy"></i>

@@ -78,14 +78,17 @@
           </button>
         {/if}
 
-        {if $r->id}
-          <a
-            class="btn btn-sm btn-outline-secondary col-sm-3 col-lg-2 mr-2 mb-2"
-            href="{Router::link('region/view')}/{$r->id}">
-            <i class="icon icon-cancel"></i>
-            {t}link-cancel{/t}
-          </a>
-        {/if}
+        <a
+          class="btn btn-sm btn-outline-secondary col-sm-3 col-lg-2 mr-2 mb-2"
+          {if $r->id}
+          href="{Router::link('region/view')}/{$r->id}"
+          {else}
+          href="{Router::link('region/list')}"
+          {/if}
+        >
+          <i class="icon icon-cancel"></i>
+          {t}link-cancel{/t}
+        </a>
 
         <button
           name="saveButton"
