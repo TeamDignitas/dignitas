@@ -69,7 +69,7 @@
             </div>
           {/if}
 
-          {include "bits/entity.tpl" entity=$object}
+          {include "bits/entity.tpl" entity=$object showAddStatementButton=false}
 
         {elseif $type == Proto::TYPE_COMMENT}
 

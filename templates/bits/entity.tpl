@@ -1,4 +1,5 @@
 {$statusInfo=$entity->getStatusInfo()}
+{$showAddStatementButton=$showAddStatementButton|default:true}
 
 <div class="row">
   <div class="col-md-3 col-sm-12 mt-2 text-center">
@@ -106,7 +107,7 @@
     <hr class="w-100 title-divider mt-0 mb-2">
 
     <div class="entity-actions mb-2 text-right">
-      {if $entity->acceptsNewStatements()}
+      {if $showAddStatementButton && $entity->acceptsNewStatements()}
         <a
           href="{Router::link('statement/edit')}?entityId={$entity->id}"
           class="btn btn-primary mt-1">
