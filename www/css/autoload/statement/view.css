@@ -55,7 +55,7 @@
   }
 
   #answer-resources.maximized {
-    max-height: 50%;
+    max-height: 82%;
   }
 
   #answer-resources.minimized {
@@ -102,4 +102,5 @@
 
 #answer-resources .card-text {
   border-bottom: 1px solid rgba(0,0,0,0.125);
+  height: 94%;
 }
