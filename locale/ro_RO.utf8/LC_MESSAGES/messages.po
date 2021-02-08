@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-02-05 17:48+0200\n"
-"PO-Revision-Date: 2021-02-05 17:49+0200\n"
+"POT-Creation-Date: 2021-02-08 15:06+0200\n"
+"PO-Revision-Date: 2021-02-08 15:08+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -45,7 +45,7 @@ msgid "title-dashboard"
 msgstr "panou de control"
 
 #: templates/aggregate/dashboard.tpl:17 templates/aggregate/index.tpl:28
-#: templates/bits/entity.tpl:113
+#: templates/bits/entity.tpl:115
 msgid "link-add-statement"
 msgstr "adaugă o afirmație"
 
@@ -147,10 +147,10 @@ msgstr "editează răspunsul"
 #: templates/bits/commentForm.tpl:49 templates/cannedResponse/edit.tpl:46
 #: templates/domain/edit.tpl:96 templates/entity/edit.tpl:280
 #: templates/entityType/edit.tpl:108 templates/help/categoryEdit.tpl:80
-#: templates/help/pageEdit.tpl:91 templates/region/edit.tpl:95
+#: templates/help/pageEdit.tpl:91 templates/region/edit.tpl:98
 #: templates/region/list.tpl:46 templates/relation/edit.tpl:30
 #: templates/relationType/edit.tpl:147 templates/statement/edit.tpl:215
-#: templates/staticResource/edit.tpl:97 templates/tag/edit.tpl:172
+#: templates/staticResource/edit.tpl:97 templates/tag/edit.tpl:177
 #: templates/user/ban.tpl:59 templates/user/edit.tpl:133
 msgid "link-save"
 msgstr "salvează"
@@ -270,26 +270,26 @@ msgstr "adaugă un comentariu"
 msgid "tag"
 msgstr "etichetă"
 
-#: templates/bits/aliasEdit.tpl:24
+#: templates/bits/aliasEdit.tpl:25
 msgid "link-delete-alias"
 msgstr "șterge aliasul"
 
-#: templates/bits/answer.tpl:9
+#: templates/bits/answer.tpl:10
 msgid "tooltip-downvote-answer-singular-%1"
 msgid_plural "tooltip-downvote-answer-plural-%1"
 msgstr[0] "Votul negativ te costă un punct de reputație."
 msgstr[1] "Votul negativ te costă %1 puncte de reputație."
 msgstr[2] "Votul negativ te costă %1 de puncte de reputație."
 
-#: templates/bits/answer.tpl:45
+#: templates/bits/answer.tpl:46
 msgid "answer-posted-by"
 msgstr "publicat de"
 
-#: templates/bits/answer.tpl:70
+#: templates/bits/answer.tpl:72
 msgid "info-answer-permalink"
 msgstr "legătură permanentă către acest răspuns"
 
-#: templates/bits/answer.tpl:72 templates/bits/comment.tpl:35
+#: templates/bits/answer.tpl:74 templates/bits/comment.tpl:37
 msgid "link-permalink"
 msgstr "legătură permanentă"
 
@@ -307,7 +307,7 @@ msgstr "detalii despre verdicte și efectele lor"
 msgid "info-confirm-delete-answer"
 msgstr "Confirmi ștergerea acestui răspuns?"
 
-#: templates/bits/answerEdit.tpl:61 templates/bits/comment.tpl:45
+#: templates/bits/answerEdit.tpl:61 templates/bits/comment.tpl:47
 #: templates/cannedResponse/edit.tpl:35 templates/domain/edit.tpl:78
 #: templates/entity/edit.tpl:259 templates/entityType/edit.tpl:97
 #: templates/help/categoryEdit.tpl:69 templates/help/pageEdit.tpl:80
@@ -332,19 +332,19 @@ msgstr "redeschide"
 #: templates/domain/edit.tpl:91 templates/entity/edit.tpl:275
 #: templates/entityType/edit.tpl:103 templates/help/categoryEdit.tpl:75
 #: templates/help/categoryList.tpl:30 templates/help/pageEdit.tpl:86
-#: templates/invite/add.tpl:31 templates/region/edit.tpl:86
+#: templates/invite/add.tpl:31 templates/region/edit.tpl:90
 #: templates/relation/edit.tpl:25 templates/relationType/edit.tpl:142
 #: templates/relationType/list.tpl:62 templates/statement/edit.tpl:210
-#: templates/staticResource/edit.tpl:92 templates/tag/edit.tpl:166
+#: templates/staticResource/edit.tpl:92 templates/tag/edit.tpl:172
 #: templates/user/ban.tpl:54 templates/user/edit.tpl:128
 msgid "link-cancel"
 msgstr "renunță"
 
-#: templates/bits/comment.tpl:33
+#: templates/bits/comment.tpl:35
 msgid "info-comment-permalink"
 msgstr "legătură permanentă către acest comentariu"
 
-#: templates/bits/comment.tpl:43
+#: templates/bits/comment.tpl:45
 msgid "info-confirm-delete-comment"
 msgstr "Confirmi ștergerea acestui comentariu?"
 
@@ -381,12 +381,12 @@ msgstr[0] "o linie identică omisă"
 msgstr[1] "%1 linii identice omise"
 msgstr[2] "%1 de linii identice omise"
 
-#: templates/bits/editButton.tpl:10 templates/bits/reviewActions.tpl:24
-#: templates/cannedResponse/list.tpl:39 templates/domain/list.tpl:38
-#: templates/entityType/list.tpl:53 templates/help/categoryView.tpl:39
-#: templates/help/pageView.tpl:36 templates/region/view.tpl:15
-#: templates/relationType/list.tpl:48 templates/staticResource/list.tpl:44
-#: templates/tag/view.tpl:15 templates/user/view.tpl:94
+#: templates/bits/editButton.tpl:10 templates/cannedResponse/list.tpl:39
+#: templates/domain/list.tpl:38 templates/entityType/list.tpl:53
+#: templates/help/categoryView.tpl:39 templates/help/pageView.tpl:36
+#: templates/region/view.tpl:15 templates/relationType/list.tpl:48
+#: templates/staticResource/list.tpl:44 templates/tag/view.tpl:15
+#: templates/user/view.tpl:94
 msgid "link-edit"
 msgstr "editează"
 
@@ -394,27 +394,27 @@ msgstr "editează"
 msgid "link-suggest-edit"
 msgstr "sugerează o modificare"
 
-#: templates/bits/entity.tpl:27
+#: templates/bits/entity.tpl:29
 msgid "title-alias"
 msgstr "alias"
 
-#: templates/bits/entity.tpl:53
+#: templates/bits/entity.tpl:55
 msgid "title-relations"
 msgstr "relații"
 
-#: templates/bits/entity.tpl:63 templates/region/view.tpl:3
+#: templates/bits/entity.tpl:65 templates/region/view.tpl:3
 msgid "title-region"
 msgstr "regiune"
 
-#: templates/bits/entity.tpl:70
+#: templates/bits/entity.tpl:72
 msgid "title-profile"
 msgstr "profil"
 
-#: templates/bits/entity.tpl:79
+#: templates/bits/entity.tpl:81
 msgid "title-entity-links"
 msgstr "legături externe"
 
-#: templates/bits/entity.tpl:94
+#: templates/bits/entity.tpl:96
 msgid "title-members"
 msgstr "membri"
 
@@ -635,7 +635,7 @@ msgstr ""
 msgid "label-uploaded-file"
 msgstr "fișier încărcat"
 
-#: templates/bits/linkEditorRow.tpl:23
+#: templates/bits/linkEditorRow.tpl:24
 msgid "link-delete-source"
 msgstr "șterge sursa"
 
@@ -714,7 +714,7 @@ msgstr "surse"
 msgid "label-relation-links"
 msgstr "surse"
 
-#: templates/bits/relationEdit.tpl:49
+#: templates/bits/relationEdit.tpl:50
 msgid "link-delete-relation"
 msgstr "șterge relația"
 
@@ -722,11 +722,12 @@ msgstr "șterge relația"
 msgid "info-confirm-moderator-review-remove"
 msgstr "Confirmați ștergerea acestui mesaj?"
 
-#: templates/bits/reviewActions.tpl:40
-msgid "link-next"
-msgstr "următoarea"
+#: templates/bits/reviewActions.tpl:57
+msgid "tooltip-review-next"
+msgstr ""
+"Sari permanent peste acest articol și treci la următorul articol din coadă."
 
-#: templates/bits/reviewActions.tpl:51
+#: templates/bits/reviewActions.tpl:70
 msgid "label-details-optional"
 msgstr "detalii (opționale)"
 
@@ -780,15 +781,15 @@ msgstr "Acceptă/respinge răspunsul ca demonstrație."
 msgid "tooltip-answer-is-proof"
 msgstr "Răspuns acceptat ca demonstrație."
 
-#: templates/bits/statement.tpl:20
+#: templates/bits/statement.tpl:21
 msgid "link-visit-statement-page"
 msgstr "mergi la pagina afirmației"
 
-#: templates/bits/statement.tpl:34
+#: templates/bits/statement.tpl:35
 msgid "statement-links"
 msgstr "surse"
 
-#: templates/bits/statement.tpl:53
+#: templates/bits/statement.tpl:54
 msgid "tooltip-downvote-statement-singular-%1"
 msgid_plural "tooltip-downvote-statement-plural-%1"
 msgstr[0] ""
@@ -801,31 +802,31 @@ msgstr[2] ""
 "Votează negativ afirmațiile preluate inexact sau formatate defectuos. "
 "Această acțiune te costă %1 de puncte de reputație."
 
-#: templates/bits/statement.tpl:64
+#: templates/bits/statement.tpl:65
 msgid "tooltip-upvote-statement"
 msgstr ""
 "Votează pozitiv afirmațiile preluate exact și bine formatate. Valoarea de "
 "adevăr a afirmației nu se votează."
 
-#: templates/bits/statement.tpl:74
+#: templates/bits/statement.tpl:75
 msgid "link-statement-review-pending-edit"
 msgstr ""
 "Această afirmație are o modificare sugerată. O poți <a href=\"%1\" class="
 "\"alert-link\">evalua</a>."
 
-#: templates/bits/statement.tpl:95
+#: templates/bits/statement.tpl:96
 msgid "title-context"
 msgstr "context"
 
-#: templates/bits/statement.tpl:99
+#: templates/bits/statement.tpl:100
 msgid "title-goal"
 msgstr "scop"
 
-#: templates/bits/statement.tpl:105
+#: templates/bits/statement.tpl:106
 msgid "info-tag-view-statements"
 msgstr "Vezi toate afirmațiile cu această etichetă."
 
-#: templates/bits/statement.tpl:108
+#: templates/bits/statement.tpl:109
 msgid "title-added-by"
 msgstr "adăugată de"
 
@@ -1266,11 +1267,11 @@ msgid "info-cannot-delete-region"
 msgstr ""
 "Nu pot șterge regiuni deoarece (1) are descendenți sau (2) este folosită."
 
-#: templates/region/edit.tpl:101 templates/tag/edit.tpl:178
+#: templates/region/edit.tpl:104 templates/tag/edit.tpl:183
 msgid "title-direct-descendants"
 msgstr "descendenți direcți"
 
-#: templates/region/edit.tpl:111
+#: templates/region/edit.tpl:114
 msgid "title-duplicate-regions"
 msgstr "regiuni cu același nume"
 
@@ -1385,27 +1386,27 @@ msgstr "Articolul complet:"
 msgid "info-statement-duplicate"
 msgstr "Această afirmație a fost marcată ca duplicat al afirmației"
 
-#: templates/review/view.tpl:51 templates/review/view.tpl:91
-#: templates/review/view.tpl:103
+#: templates/review/view.tpl:58 templates/review/view.tpl:103
+#: templates/review/view.tpl:116
 msgid "title-pertaining-to-statement"
 msgstr "referitor la afirmația:"
 
-#: templates/review/view.tpl:65
+#: templates/review/view.tpl:73
 msgid "info-entity-duplicate"
 msgstr "Acest autor a fost marcat ca duplicat al autorului"
 
-#: templates/review/view.tpl:68
+#: templates/review/view.tpl:76
 msgid "info-entity-duplicate-process"
 msgstr ""
 "Acceptarea acestei raportări va transfera toate afirmațiile de la acest "
 "duplicat la autorul canonic. Aliasurile, relațiile și alte atribute nu vor "
 "fi transferate."
 
-#: templates/review/view.tpl:82
+#: templates/review/view.tpl:93
 msgid "title-pertaining-to-answer"
 msgstr "referitor la răspunsul:"
 
-#: templates/review/view.tpl:120
+#: templates/review/view.tpl:134
 msgid "info-review-queue-empty"
 msgstr "Această coadă de evaluare este goală."
 
@@ -1594,7 +1595,7 @@ msgid "info-cannot-delete-tag"
 msgstr ""
 "Nu pot șterge eticheta deoarece (1) are descendenți sau (2) este folosită."
 
-#: templates/tag/edit.tpl:186
+#: templates/tag/edit.tpl:191
 msgid "title-duplicate-tags"
 msgstr "etichete duplicate"
 

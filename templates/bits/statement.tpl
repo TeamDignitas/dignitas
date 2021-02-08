@@ -1,9 +1,10 @@
 {* mandatory argument: $statement *}
-{$editLink=$editLink|default:false}
-{$voteBox=$voteBox|default:true}
 {$addComment=$addComment|default:false}
-{$statusInfo=$statement->getStatusInfo()}
+{$editLink=$editLink|default:false}
+{$ellipsisMenu=$ellipsisMenu|default:true}
 {$permalink=$permalink|default:false}
+{$statusInfo=$statement->getStatusInfo()}
+{$voteBox=$voteBox|default:true}
 
 {$entity=$statement->getEntity()}
 
@@ -119,24 +120,26 @@
         {include "bits/addCommentLink.tpl" object=$statement}
       {/if}
 
-      <button
-        class="btn"
-        type="button"
-        id="statement-menu-{$statement->id}"
-        data-toggle="dropdown"
-        aria-haspopup="true"
-        aria-expanded="false">
-        <i class="icon icon-ellipsis-vert"></i>
-      </button>
+      {if $ellipsisMenu}
+        <button
+          class="btn"
+          type="button"
+          id="statement-menu-{$statement->id}"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false">
+          <i class="icon icon-ellipsis-vert"></i>
+        </button>
 
-      <div class="dropdown-menu ellipsis-menu" aria-labelledby="statement-menu-{$statement->id}">
-        {if $editLink}
-          {include "bits/editButton.tpl" obj=$statement class="dropdown-item"}
-        {/if}
-        {include "bits/subscribeLinks.tpl" obj=$statement class="dropdown-item"}
-        {include "bits/flagLinks.tpl" obj=$statement class="dropdown-item"}
-        {include "bits/historyButton.tpl" obj=$statement class="dropdown-item"}
-      </div>
+        <div class="dropdown-menu ellipsis-menu" aria-labelledby="statement-menu-{$statement->id}">
+          {if $editLink}
+            {include "bits/editButton.tpl" obj=$statement class="dropdown-item"}
+          {/if}
+          {include "bits/subscribeLinks.tpl" obj=$statement class="dropdown-item"}
+          {include "bits/flagLinks.tpl" obj=$statement class="dropdown-item"}
+          {include "bits/historyButton.tpl" obj=$statement class="dropdown-item"}
+        </div>
+      {/if}
     </div>
 
     {if !empty($comments)}

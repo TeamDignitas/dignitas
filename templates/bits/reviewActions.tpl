@@ -7,10 +7,10 @@
   <div class="card-body pb-1">
     <form method="post">
 
-      <div class="form-group row mx-0">
+      <div class="d-flex flex-sm-row flex-column">
         <button
           name="removeButton"
-          class="btn btn-sm btn-outline-danger col-12 col-sm-12 col-md-2 mr-2 mb-2"
+          class="btn btn-sm btn-outline-danger mr-2 mb-2"
           {if User::isModerator()}
           data-confirm="{t}info-confirm-moderator-review-remove{/t}"
           {/if}
@@ -19,27 +19,46 @@
           {$review->getVoteName(Flag::VOTE_REMOVE)}
         </button>
 
-        <a href="{$object->getEditUrl()}" class="btn btn-sm btn-outline-secondary col-12 col-sm-12 col-md-2 mr-2 mb-2">
-          <i class="icon icon-pencil"></i>
-          {t}link-edit{/t}
-        </a>
-
         <button
           name="keepButton"
-          class="btn btn-sm btn-primary col-12 col-sm-12 col-md-2 mr-2 mb-2"
+          class="btn btn-sm btn-primary mr-2 mb-2"
           type="submit">
           <i class="icon icon-ok"></i>
           {$review->getVoteName(Flag::VOTE_KEEP)}
         </button>
 
-        <button
-          name="nextButton"
-          type="submit"
-          class="btn btn-sm btn-outline-secondary col-12 col-sm-12 col-md-2 offset-md-3 mb-2">
-          <i class="icon icon-right-open"></i>
-          {t}link-next{/t}
-        </button>
+        {* fit all these on one row on narrow displays *}
+        <div class="flex-grow-1 d-flex">
+          <button
+            class="btn btn-sm mb-2 flex-shrink-1"
+            type="button"
+            id="review-ellipsis"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false">
+            <i class="icon icon-ellipsis-vert"></i>
+          </button>
 
+          <div class="dropdown-menu ellipsis-menu" aria-labelledby="review-ellipsis">
+            {if $object->getEditUrl()} {* comments aren't editable and have no history *}
+              {include "bits/editButton.tpl" obj=$object class="dropdown-item"}
+              {include "bits/historyButton.tpl" obj=$object class="dropdown-item"}
+            {/if}
+            {include "bits/flagLinks.tpl" obj=$object class="dropdown-item"}
+          </div>
+
+          <div class="flex-grow-1"></div>
+
+          <button
+            name="nextButton"
+            type="submit"
+            class="btn btn-sm btn-outline-secondary mr-2 mb-2 flex-shrink-1"
+            data-toggle="tooltip"
+            title="{t}tooltip-review-next{/t}"
+          >
+            <i class="icon icon-right-open"></i>
+          </button>
+        </div>
       </div>
 
       <div class="form-group">

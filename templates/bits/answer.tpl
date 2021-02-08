@@ -1,6 +1,7 @@
 {* mandatory argument: $answer *}
-{$voteBox=$voteBox|default:true}
 {$addComment=$addComment|default:false}
+{$ellipsisMenu=$ellipsisMenu|default:true}
+{$voteBox=$voteBox|default:true}
 
 <div class="answer-container row pt-2" id="a{$answer->id}">
   {if $voteBox}
@@ -53,30 +54,32 @@
             {include "bits/addCommentLink.tpl" object=$answer}
           {/if}
 
-          <button
-            class="btn"
-            type="button"
-            id="answer-menu-{$answer->id}"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false">
-            <i class="icon icon-ellipsis-vert"></i>
-          </button>
+          {if $ellipsisMenu}
+            <button
+              class="btn"
+              type="button"
+              id="answer-menu-{$answer->id}"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false">
+              <i class="icon icon-ellipsis-vert"></i>
+            </button>
 
-          <div class="dropdown-menu ellipsis-menu" aria-labelledby="answer-menu-{$answer->id}">
-            <a
-              href="#a{$answer->id}"
-              class="dropdown-item"
-              title="{t}info-answer-permalink{/t}">
-              <i class="icon icon-link"></i>
-              {t}link-permalink{/t}
-            </a>
+            <div class="dropdown-menu ellipsis-menu" aria-labelledby="answer-menu-{$answer->id}">
+              <a
+                href="#a{$answer->id}"
+                class="dropdown-item"
+                title="{t}info-answer-permalink{/t}">
+                <i class="icon icon-link"></i>
+                {t}link-permalink{/t}
+              </a>
 
-            {include "bits/editButton.tpl" obj=$answer class="dropdown-item"}
-            {include "bits/subscribeLinks.tpl" obj=$answer class="dropdown-item"}
-            {include "bits/flagLinks.tpl" obj=$answer class="dropdown-item"}
-            {include "bits/historyButton.tpl" obj=$answer class="dropdown-item"}
-          </div>
+              {include "bits/editButton.tpl" obj=$answer class="dropdown-item"}
+              {include "bits/subscribeLinks.tpl" obj=$answer class="dropdown-item"}
+              {include "bits/flagLinks.tpl" obj=$answer class="dropdown-item"}
+              {include "bits/historyButton.tpl" obj=$answer class="dropdown-item"}
+            </div>
+          {/if}
         </div>
 
         {if $answer->verdict != Statement::VERDICT_NONE}

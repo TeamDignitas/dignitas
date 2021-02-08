@@ -39,13 +39,20 @@
           {/if}
 
           <div class="ml-5 mr-1 callout">
-            {include "bits/statement.tpl" statement=$object addComment=true permalink=true}
+            {include "bits/statement.tpl"
+              statement=$object
+              addComment=true
+              ellipsisMenu=false
+              permalink=true}
           </div>
 
         {elseif $type == Proto::TYPE_ANSWER}
 
           <div class="border border-dark px-4 py-4">
-            {include "bits/answer.tpl" answer=$object addComment=true}
+            {include "bits/answer.tpl"
+              answer=$object
+              addComment=true
+              ellipsisMenu=false}
           </div>
 
           <h5 class="mt-5 mb-3">{cap}{t}title-pertaining-to-statement{/t}{/cap}</h5>
@@ -53,9 +60,10 @@
           <div id="parent-object" class="ml-5 callout">
             {include "bits/statement.tpl"
               statement=$object->getStatement()
+              ellipsisMenu=false
               flagLinks=false
-              voteBox=false
-              permalink=true}
+              permalink=true
+              voteBox=false}
           </div>
 
         {elseif $type == Proto::TYPE_ENTITY}
@@ -69,11 +77,14 @@
             </div>
           {/if}
 
-          {include "bits/entity.tpl" entity=$object showAddStatementButton=false}
+          {include "bits/entity.tpl"
+            entity=$object
+            ellipsisMenu=false
+            showAddStatementButton=false}
 
         {elseif $type == Proto::TYPE_COMMENT}
 
-          {include "bits/comment.tpl" comment=$object}
+          {include "bits/comment.tpl" comment=$object ellipsisMenu=false}
 
           {$parent=$object->getObject()} {* What a nice sentence *}
 
@@ -84,6 +95,7 @@
             <div id="parent-object" class="border border-dark px-4 py-4">
               {include "bits/answer.tpl"
                 answer=$parent
+                ellipsisMenu=false
                 flagLinks=false
                 voteBox=false}
             </div>
@@ -93,9 +105,10 @@
             <div id="parent-object">
               {include "bits/statement.tpl"
                 statement=$parent->getStatement()
+                ellipsisMenu=false
                 flagLinks=false
-                voteBox=false
-                permalink=true}
+                permalink=true
+                voteBox=false}
             </div>
 
           {else}  {* Comment on a statement *}
@@ -105,9 +118,10 @@
             <div id="parent-object">
               {include "bits/statement.tpl"
                 statement=$parent
+                ellipsisMenu=false
                 flagLinks=false
-                voteBox=false
-                permalink=true}
+                permalink=true
+                voteBox=false}
             </div>
 
           {/if}

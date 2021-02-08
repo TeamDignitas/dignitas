@@ -1,5 +1,6 @@
-{$statusInfo=$entity->getStatusInfo()}
+{$ellipsisMenu=$ellipsisMenu|default:true}
 {$showAddStatementButton=$showAddStatementButton|default:true}
+{$statusInfo=$entity->getStatusInfo()}
 
 <div class="row">
   <div class="col-md-3 col-sm-12 mt-2 text-center">
@@ -115,21 +116,23 @@
         </a>
       {/if}
 
-      <button
-        class="btn mt-1"
-        type="button"
-        data-toggle="dropdown"
-        aria-haspopup="true"
-        aria-expanded="false">
-        <i class="icon icon-ellipsis-vert"></i>
-      </button>
-      <div class="dropdown-menu" aria-labelledby="entity-menu">
+      {if $ellipsisMenu}
+        <button
+          class="btn mt-1"
+          type="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false">
+          <i class="icon icon-ellipsis-vert"></i>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="entity-menu">
 
-        {include "bits/editButton.tpl" obj=$entity class="dropdown-item"}
-        {include "bits/subscribeLinks.tpl" obj=$entity class="dropdown-item"}
-        {include "bits/flagLinks.tpl" obj=$entity class="dropdown-item"}
-        {include "bits/historyButton.tpl" obj=$entity class="dropdown-item"}
-      </div>
+          {include "bits/editButton.tpl" obj=$entity class="dropdown-item"}
+          {include "bits/subscribeLinks.tpl" obj=$entity class="dropdown-item"}
+          {include "bits/flagLinks.tpl" obj=$entity class="dropdown-item"}
+          {include "bits/historyButton.tpl" obj=$entity class="dropdown-item"}
+        </div>
+      {/if}
     </div>
 
   </div>
