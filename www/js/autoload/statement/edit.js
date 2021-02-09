@@ -11,12 +11,13 @@ $(function() {
   }
 
   /**
-   * Ask for confirmation before changing the statement type. Will only be
-   * called when the statement has answers with verdicts.
+   * Handles statement type changes. There may or may not be a confirmation
+   * dialog (it's not always required), in which case choice holds the answer
+   * from the dialog. If no confirmation is needed, choice defaults to true.
    *
    * @param bool choice Choice from the confirmation modal.
    **/
-  function typeChange(evt, choice) {
+  function typeChange(evt, choice = true) {
     if (choice) {
       $(this).data('prevValue', $(this).val());
       refreshVerdicts();
