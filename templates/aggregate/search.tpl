@@ -5,12 +5,12 @@
 {block "content"}
   <div class="container my-5">
     {if count($results.entities)}
-      <h3>{t}title-entities{/t}</h3>
+      <h3 class="text-capitalize mb-4">{t}title-entities{/t}</h3>
 
-      <div>
+      <div class="mb-5">
         {include "bits/entityFilters.tpl" term=$query}
 
-        <div id="entity-list-wrapper">
+        <div id="entity-list-wrapper" class="row mt-4">
           {include "bits/entityList.tpl" entities=$results.entities}
         </div>
 
@@ -23,9 +23,9 @@
     {/if}
 
     {if count($results.statements)}
-      <h3>{t}title-statements{/t}</h3>
+      <h3 class="text-capitalize mb-4">{t}title-statements{/t}</h3>
 
-      <div>
+      <div class="mb-5">
         {include "bits/statementFilters.tpl" term=$query}
 
         <div id="statement-list-wrapper">
@@ -41,7 +41,7 @@
     {/if}
 
     {if count($results.regions)}
-      <h3>
+      <h3 class="text-capitalize mb-4">
         {t
           count=count($results.regions)
           1=count($results.regions)
@@ -56,7 +56,7 @@
     {/if}
 
     {if count($results.tags)}
-      <h3>
+      <h3 class="capitalize-first-word">
         {t count=count($results.tags) 1=count($results.tags) plural="title-tags-plural"}
         title-tags-singular
         {/t}
