@@ -335,11 +335,6 @@ img.pic.no-outline,
   font-style: italic;
 }
 
-.statement-body img,
-.answer-body img {
-  max-width: 100%;
-}
-
 
 /*************** answers, entity statements, user profile ***************/
 .subsection {
