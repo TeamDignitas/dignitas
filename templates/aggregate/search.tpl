@@ -5,12 +5,12 @@
 {block "content"}
   <div class="container my-5">
     {if count($results.entities)}
-      <h3>{t}title-entities{/t}</h3>
+      <h3 class="text-capitalize mb-4">{t}title-entities{/t}</h3>
 
       <div>
         {include "bits/entityFilters.tpl" term=$query}
 
-        <div id="entity-list-wrapper">
+        <div id="entity-list-wrapper" class="row mt-4">
           {include "bits/entityList.tpl" entities=$results.entities}
         </div>
 
@@ -23,7 +23,7 @@
     {/if}
 
     {if count($results.statements)}
-      <h3>{t}title-statements{/t}</h3>
+      <h3 class="mt-5 mb-4 text-capitalize">{t}title-statements{/t}</h3>
 
       <div>
         {include "bits/statementFilters.tpl" term=$query}
