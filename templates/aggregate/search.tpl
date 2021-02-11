@@ -5,23 +5,23 @@
 {block "content"}
   <div class="container my-5 search-results">
 
-    <nav class="nav nav-pills flex-column flex-sm-row mt-5 pt-5">
+    <nav class="nav nav-pills nav-justified mt-5 pt-5">
       {if count($results.entities)}
-        <a class="flex-sm-fill text-sm-center nav-link active text-capitalize" id="entities-tab" data-toggle="tab" role="tab" aria-controls="results-entities"
+        <a class="nav-link active text-capitalize" id="entities-tab" data-toggle="tab" role="tab" aria-controls="results-entities"
            href="#results-entities">
           {t}title-entities{/t}
         </a>
       {/if}
 
       {if count($results.statements)}
-        <a class="flex-sm-fill text-sm-center nav-link text-capitalize" id="statements-tab" data-toggle="tab" role="tab" aria-controls="results-statements"
+        <a class="nav-link text-capitalize" id="statements-tab" data-toggle="tab" role="tab" aria-controls="results-statements"
            href="#results-statements">
           {t}title-statements{/t}
         </a>
       {/if}
 
       {if count($results.regions)}
-        <a class="flex-sm-fill text-sm-center nav-link text-capitalize" id="regions-tab" data-toggle="tab" role="tab" aria-controls="results-regions"
+        <a class="nav-link text-capitalize" id="regions-tab" data-toggle="tab" role="tab" aria-controls="results-regions"
            href="#results-regions">
           {t
             count=count($results.regions)
@@ -33,7 +33,7 @@
       {/if}
 
       {if count($results.tags)}
-        <a class="flex-sm-fill text-sm-center nav-link text-capitalize" id="tags-tab" data-toggle="tab" role="tab" aria-controls="results-tags"
+        <a class="nav-link text-capitalize" id="tags-tab" data-toggle="tab" role="tab" aria-controls="results-tags"
            href="#results-tags">
           {t count=count($results.tags) 1=count($results.tags) plural="title-tags-plural"}
             title-tags-singular
