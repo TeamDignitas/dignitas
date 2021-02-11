@@ -5,42 +5,42 @@
 {block "content"}
   <div class="container my-5 search-results">
 
-    <ul class="nav nav-pills flex-column flex-sm-row mt-5 pt-5">
+    <nav class="nav nav-pills flex-column flex-sm-row mt-5 pt-5">
       {if count($results.entities)}
-        <li class="nav-item">
-          <a class="flex-sm-fill text-sm-center nav-link active text-capitalize" id="entities-tab" data-toggle="tab" role="tab" aria-controls="results-entities" href="#results-entities">{t}title-entities{/t}</a>
-        </li>
+        <a class="flex-sm-fill text-sm-center nav-link active text-capitalize" id="entities-tab" data-toggle="tab" role="tab" aria-controls="results-entities"
+           href="#results-entities">
+          {t}title-entities{/t}
+        </a>
       {/if}
 
       {if count($results.statements)}
-        <li class="nav-item">
-          <a class="flex-sm-fill text-sm-center nav-link text-capitalize" id="statements-tab" data-toggle="tab" role="tab" aria-controls="results-statements" href="#results-statements">{t}title-statements{/t}</a>
-        </li>
+        <a class="flex-sm-fill text-sm-center nav-link text-capitalize" id="statements-tab" data-toggle="tab" role="tab" aria-controls="results-statements"
+           href="#results-statements">
+          {t}title-statements{/t}
+        </a>
       {/if}
 
       {if count($results.regions)}
-        <li class="nav-item">
-          <a class="flex-sm-fill text-sm-center nav-link text-capitalize" id="regions-tab" data-toggle="tab" role="tab" aria-controls="results-regions" href="#results-regions">
-            {t
-              count=count($results.regions)
-              1=count($results.regions)
-              plural="title-regions-plural"}
-            title-regions-singular
-            {/t}
-          </a>
-        </li>
+        <a class="flex-sm-fill text-sm-center nav-link text-capitalize" id="regions-tab" data-toggle="tab" role="tab" aria-controls="results-regions"
+           href="#results-regions">
+          {t
+            count=count($results.regions)
+            1=count($results.regions)
+            plural="title-regions-plural"}
+          title-regions-singular
+          {/t}
+        </a>
       {/if}
 
       {if count($results.tags)}
-        <li class="nav-item">
-          <a class="flex-sm-fill text-sm-center nav-link text-capitalize" id="tags-tab" data-toggle="tab" role="tab" aria-controls="results-tags" href="#results-tags">
-            {t count=count($results.tags) 1=count($results.tags) plural="title-tags-plural"}
-              title-tags-singular
-            {/t}
-          </a>
-        </li>
+        <a class="flex-sm-fill text-sm-center nav-link text-capitalize" id="tags-tab" data-toggle="tab" role="tab" aria-controls="results-tags"
+           href="#results-tags">
+          {t count=count($results.tags) 1=count($results.tags) plural="title-tags-plural"}
+            title-tags-singular
+          {/t}
+        </a>
       {/if}
-    </ul>
+    </nav>
 
     {if $results.empty}
       <h3>{t 1=$query|escape}info-no-search-results{/t}</h3>
