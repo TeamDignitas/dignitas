@@ -23,21 +23,14 @@
       {if count($results.regions)}
         <a class="nav-link text-capitalize" id="regions-tab" data-toggle="tab" role="tab" aria-controls="results-regions"
            href="#results-regions">
-          {t
-            count=count($results.regions)
-            1=count($results.regions)
-            plural="title-regions-plural"}
-          title-regions-singular
-          {/t}
+          {t}title-regions{/t}
         </a>
       {/if}
 
       {if count($results.tags)}
         <a class="nav-link text-capitalize" id="tags-tab" data-toggle="tab" role="tab" aria-controls="results-tags"
            href="#results-tags">
-          {t count=count($results.tags) 1=count($results.tags) plural="title-tags-plural"}
-            title-tags-singular
-          {/t}
+          {t}title-tags{/t}
         </a>
       {/if}
     </nav>
