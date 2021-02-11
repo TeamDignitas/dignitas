@@ -151,6 +151,14 @@ blockquote {
   width: 1%;
 }
 
+.search-results .nav-item a {
+  color: #007bff !important;
+}
+
+.search-results .nav-tabs .nav-link.active {
+  color: #495057 !important;
+}
+
 /***************************** vote sidebar *****************************/
 
 .vote-container {
