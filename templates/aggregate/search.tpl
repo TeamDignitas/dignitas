@@ -6,9 +6,9 @@
   <div class="container my-5 search-results">
 
     {if !$results.empty}
-      <nav class="nav nav-pills mt-5 pt-5">
+      <nav id="search-pills" class="nav nav-pills mt-5 pt-5">
         {if count($results.entities)}
-          <a class="nav-link active text-capitalize" id="entities-tab" data-toggle="tab" role="tab" aria-controls="results-entities"
+          <a class="nav-link text-capitalize" id="entities-tab" data-toggle="tab" role="tab" aria-controls="results-entities"
              href="#results-entities">
             {t}title-entities{/t}
           </a>
