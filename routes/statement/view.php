@@ -27,7 +27,10 @@ if (User::getActive()) {
   $sideSheet = '';
 }
 
-Smart::addResources('flag', 'imageModal', 'easymde', 'subscribe');
+Smart::addResources('imageModal');
+if (User::getActive()) {
+  Smart::addResources('easymde', 'flag', 'subscribe');
+}
 Smart::assign([
   'answers' => $statement->getAnswers(),
   'newAnswer' => Answer::create($statement->id),
