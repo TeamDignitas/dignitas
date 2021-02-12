@@ -61,10 +61,12 @@
           <div class="col-sm-12 col-lg-10 px-0">
             <div class="custom-file">
               <input
+                id="field-image"
                 name="image"
                 type="file"
-                class="custom-file-input {if isset($errors.image)}is-invalid{/if}"
-                id="field-image">
+                data-toggle="tooltip"
+                title="{t}tooltip-upload-user-image{/t}"
+                class="custom-file-input {if isset($errors.image)}is-invalid{/if}">
               <label class="custom-file-label" for="field-image">
                 {t}info-upload-image{/t}
               </label>

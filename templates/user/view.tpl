@@ -12,13 +12,13 @@
             geometry=Config::THUMB_USER_PROFILE
             imgClass="pic rounded-circle img-fluid no-outline"}
         </div>
-        <h4 class="user-badge mt-3">
-          {if $user->moderator}
+        {if $user->moderator}
+          <h4 class="user-badge mt-3">
             <span class="badge badge-info">
               {t}label-moderator{/t}
             </span>
-          {/if}
-        </h4>
+          </h4>
+        {/if}
       </div>
 
       <div class="col-md-9 col-sm-12 mt-2">

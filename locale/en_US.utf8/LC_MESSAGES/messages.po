@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-02-08 15:06+0200\n"
-"PO-Revision-Date: 2021-02-08 15:07+0200\n"
+"POT-Creation-Date: 2021-02-12 14:25+0200\n"
+"PO-Revision-Date: 2021-02-12 14:25+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -112,27 +112,25 @@ msgstr "recent statements"
 msgid "title-search-results"
 msgstr "search results"
 
-#: templates/aggregate/search.tpl:8
+#: templates/aggregate/search.tpl:13
 msgid "title-entities"
 msgstr "authors"
 
-#: templates/aggregate/search.tpl:26
+#: templates/aggregate/search.tpl:20
 msgid "title-statements"
 msgstr "statements"
 
-#: templates/aggregate/search.tpl:46
-msgid "title-regions-singular"
-msgid_plural "title-regions-plural"
-msgstr[0] "one region"
-msgstr[1] "%1 regions"
+#: templates/aggregate/search.tpl:27 templates/region/list.tpl:3
+#: templates/region/list.tpl:7
+msgid "title-regions"
+msgstr "regions"
 
-#: templates/aggregate/search.tpl:60
-msgid "title-tags-singular"
-msgid_plural "title-tags-plural"
-msgstr[0] "one tag"
-msgstr[1] "%1 tags"
+#: templates/aggregate/search.tpl:34 templates/tag/list.tpl:3
+#: templates/tag/list.tpl:7
+msgid "title-tags"
+msgstr "tags"
 
-#: templates/aggregate/search.tpl:71
+#: templates/aggregate/search.tpl:39
 msgid "info-no-search-results"
 msgstr "Your search «%1» produced no results."
 
@@ -142,13 +140,13 @@ msgstr "edit answer"
 
 #: templates/answer/edit.tpl:16 templates/auth/resetPassword.tpl:46
 #: templates/bits/commentForm.tpl:49 templates/cannedResponse/edit.tpl:46
-#: templates/domain/edit.tpl:96 templates/entity/edit.tpl:280
+#: templates/domain/edit.tpl:96 templates/entity/edit.tpl:282
 #: templates/entityType/edit.tpl:108 templates/help/categoryEdit.tpl:80
 #: templates/help/pageEdit.tpl:91 templates/region/edit.tpl:98
 #: templates/region/list.tpl:46 templates/relation/edit.tpl:30
 #: templates/relationType/edit.tpl:147 templates/statement/edit.tpl:215
 #: templates/staticResource/edit.tpl:97 templates/tag/edit.tpl:177
-#: templates/user/ban.tpl:59 templates/user/edit.tpl:133
+#: templates/user/ban.tpl:59 templates/user/edit.tpl:135
 msgid "link-save"
 msgstr "save"
 
@@ -163,7 +161,7 @@ msgid "label-email"
 msgstr "email"
 
 #: templates/auth/login.tpl:49 templates/auth/register.tpl:56
-#: templates/auth/resetPassword.tpl:26 templates/user/edit.tpl:95
+#: templates/auth/resetPassword.tpl:26 templates/user/edit.tpl:97
 msgid "label-password"
 msgstr "password"
 
@@ -212,7 +210,7 @@ msgid "label-nickname"
 msgstr "nickname"
 
 #: templates/auth/register.tpl:71 templates/auth/resetPassword.tpl:40
-#: templates/user/edit.tpl:111
+#: templates/user/edit.tpl:113
 msgid "label-password-again"
 msgstr "password (again)"
 
@@ -303,7 +301,7 @@ msgstr "Are you sure you want to delete this answer?"
 
 #: templates/bits/answerEdit.tpl:61 templates/bits/comment.tpl:47
 #: templates/cannedResponse/edit.tpl:35 templates/domain/edit.tpl:78
-#: templates/entity/edit.tpl:259 templates/entityType/edit.tpl:97
+#: templates/entity/edit.tpl:261 templates/entityType/edit.tpl:97
 #: templates/help/categoryEdit.tpl:69 templates/help/pageEdit.tpl:80
 #: templates/region/edit.tpl:77 templates/relationType/edit.tpl:136
 #: templates/statement/edit.tpl:194 templates/staticResource/edit.tpl:86
@@ -315,7 +313,7 @@ msgstr "delete"
 msgid "info-confirm-reopen-answer"
 msgstr "Are you sure you want to reopen this answer?"
 
-#: templates/bits/answerEdit.tpl:71 templates/entity/edit.tpl:269
+#: templates/bits/answerEdit.tpl:71 templates/entity/edit.tpl:271
 #: templates/statement/edit.tpl:204
 msgid "link-reopen"
 msgstr "reopen"
@@ -323,14 +321,14 @@ msgstr "reopen"
 #: templates/bits/answerEdit.tpl:77 templates/bits/commentForm.tpl:44
 #: templates/bits/flagModal.tpl:190 templates/bits/phpConstants.tpl:16
 #: templates/cannedResponse/edit.tpl:41 templates/cannedResponse/list.tpl:52
-#: templates/domain/edit.tpl:91 templates/entity/edit.tpl:275
+#: templates/domain/edit.tpl:91 templates/entity/edit.tpl:277
 #: templates/entityType/edit.tpl:103 templates/help/categoryEdit.tpl:75
 #: templates/help/categoryList.tpl:30 templates/help/pageEdit.tpl:86
 #: templates/invite/add.tpl:31 templates/region/edit.tpl:90
 #: templates/relation/edit.tpl:25 templates/relationType/edit.tpl:142
 #: templates/relationType/list.tpl:62 templates/statement/edit.tpl:210
 #: templates/staticResource/edit.tpl:92 templates/tag/edit.tpl:172
-#: templates/user/ban.tpl:54 templates/user/edit.tpl:128
+#: templates/user/ban.tpl:54 templates/user/edit.tpl:130
 msgid "link-cancel"
 msgstr "cancel"
 
@@ -925,13 +923,13 @@ msgstr "a value more suitable for humans"
 msgid "label-image"
 msgstr "image"
 
-#: templates/domain/edit.tpl:55 templates/entity/edit.tpl:230
-#: templates/user/edit.tpl:69
+#: templates/domain/edit.tpl:55 templates/entity/edit.tpl:232
+#: templates/user/edit.tpl:71
 msgid "info-upload-image"
 msgstr "choose an image"
 
-#: templates/domain/edit.tpl:63 templates/entity/edit.tpl:238
-#: templates/user/edit.tpl:77
+#: templates/domain/edit.tpl:63 templates/entity/edit.tpl:240
+#: templates/user/edit.tpl:79
 msgid "label-delete-image"
 msgstr "delete image"
 
@@ -1074,11 +1072,17 @@ msgstr "add a link"
 msgid "label-tags"
 msgstr "tags"
 
-#: templates/entity/edit.tpl:257
+#: templates/entity/edit.tpl:229
+msgid "tooltip-upload-entity-image"
+msgstr ""
+"Try to choose an official imag, such as the author's Facebook profile "
+"picture. "
+
+#: templates/entity/edit.tpl:259
 msgid "info-confirm-delete-entity"
 msgstr "Are you sure you want to delete this author?"
 
-#: templates/entity/edit.tpl:268
+#: templates/entity/edit.tpl:270
 msgid "info-confirm-reopen-entity"
 msgstr "Are you sure you want to reopen this author?"
 
@@ -1261,10 +1265,6 @@ msgstr "direct descendants"
 #: templates/region/edit.tpl:114
 msgid "title-duplicate-regions"
 msgstr "duplicate regions"
-
-#: templates/region/list.tpl:3 templates/region/list.tpl:7
-msgid "title-regions"
-msgstr "regions"
 
 #: templates/region/list.tpl:12
 msgid "link-add-region"
@@ -1587,10 +1587,6 @@ msgstr ""
 msgid "title-duplicate-tags"
 msgstr "duplicate tags"
 
-#: templates/tag/list.tpl:3 templates/tag/list.tpl:7
-msgid "title-tags"
-msgstr "tags"
-
 #: templates/tag/list.tpl:12
 msgid "link-add-tag"
 msgstr "add a tag"
@@ -1683,7 +1679,11 @@ msgstr "edit my profile"
 msgid "label-about-me"
 msgstr "about me"
 
-#: templates/user/edit.tpl:92
+#: templates/user/edit.tpl:68
+msgid "tooltip-upload-user-image"
+msgstr "Try to choose a square image."
+
+#: templates/user/edit.tpl:94
 msgid "title-change-password"
 msgstr "Change password (optional)"
 
