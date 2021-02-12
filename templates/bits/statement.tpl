@@ -170,7 +170,6 @@
         {include "bits/image.tpl"
           obj=$entity
           geometry=Config::THUMB_ENTITY_LARGE
-          spanClass=""
           imgClass="pic rounded-circle img-fluid no-outline"}
       </span>
       <h6 class="card-body mx-auto text-center">
