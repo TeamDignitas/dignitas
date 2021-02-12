@@ -5,37 +5,37 @@
 {block "content"}
   <div class="container my-5 search-results">
 
-    <nav class="nav nav-pills nav-justified mt-5 pt-5">
-      {if count($results.entities)}
-        <a class="nav-link active text-capitalize" id="entities-tab" data-toggle="tab" role="tab" aria-controls="results-entities"
-           href="#results-entities">
-          {t}title-entities{/t}
-        </a>
-      {/if}
+    {if !$results.empty}
+      <nav class="nav nav-pills nav-justified mt-5 pt-5">
+        {if count($results.entities)}
+          <a class="nav-link active text-capitalize" id="entities-tab" data-toggle="tab" role="tab" aria-controls="results-entities"
+             href="#results-entities">
+            {t}title-entities{/t}
+          </a>
+        {/if}
 
-      {if count($results.statements)}
-        <a class="nav-link text-capitalize" id="statements-tab" data-toggle="tab" role="tab" aria-controls="results-statements"
-           href="#results-statements">
-          {t}title-statements{/t}
-        </a>
-      {/if}
+        {if count($results.statements)}
+          <a class="nav-link text-capitalize" id="statements-tab" data-toggle="tab" role="tab" aria-controls="results-statements"
+             href="#results-statements">
+            {t}title-statements{/t}
+          </a>
+        {/if}
 
-      {if count($results.regions)}
-        <a class="nav-link text-capitalize" id="regions-tab" data-toggle="tab" role="tab" aria-controls="results-regions"
-           href="#results-regions">
-          {t}title-regions{/t}
-        </a>
-      {/if}
+        {if count($results.regions)}
+          <a class="nav-link text-capitalize" id="regions-tab" data-toggle="tab" role="tab" aria-controls="results-regions"
+             href="#results-regions">
+            {t}title-regions{/t}
+          </a>
+        {/if}
 
-      {if count($results.tags)}
-        <a class="nav-link text-capitalize" id="tags-tab" data-toggle="tab" role="tab" aria-controls="results-tags"
-           href="#results-tags">
-          {t}title-tags{/t}
-        </a>
-      {/if}
-    </nav>
-
-    {if $results.empty}
+        {if count($results.tags)}
+          <a class="nav-link text-capitalize" id="tags-tab" data-toggle="tab" role="tab" aria-controls="results-tags"
+             href="#results-tags">
+            {t}title-tags{/t}
+          </a>
+        {/if}
+      </nav>
+    {else}
       <h3>{t 1=$query|escape}info-no-search-results{/t}</h3>
     {/if}
 
