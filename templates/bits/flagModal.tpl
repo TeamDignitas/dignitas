@@ -185,11 +185,11 @@
 
       <div class="modal-footer">
         <div class="text-center">
-          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">
+          <button type="button" class="btn btn-sm btn-outline-secondary" data-dismiss="modal">
             <i class="icon icon-cancel"></i>
             {t}link-cancel{/t}
           </button>
-          <button id="button-flag" type="button" class="btn btn-primary">
+          <button id="button-flag" type="button" class="btn btn-sm btn-primary">
             <i class="icon icon-flag"></i>
             <span data-flag-visibility="{Flag::TYPE_ANSWER}">
               {t}link-flag-answer{/t}
