@@ -21,7 +21,7 @@
             <div class="form-group">
               <div class="input-group">
                 <span class="input-group-prepend">
-                  <i class="input-group-text icon icon-mail"></i>
+                  {include "bits/icon.tpl" i=email class="input-group-text"}
                 </span>
                 <input
                   class="form-control {if isset($errors.email)}is-invalid{/if}"
@@ -34,9 +34,14 @@
               {include "bits/fieldErrors.tpl" errors=$errors.email|default:null}
             </div>
 
-            <button class="btn btn-primary col-sm-12 col-md-6" type="submit" name="submitButton">
-              <i class="icon icon-paper-plane"></i>
+            <button
+              class="btn btn-primary col-sm-12 col-md-6"
+              type="submit"
+              name="submitButton">
+
+              {include "bits/icon.tpl" i=send}
               {t}link-send{/t}
+
             </button>
 
           </form>

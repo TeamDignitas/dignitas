@@ -25,7 +25,7 @@
             <tr class="d-flex small">
               <td class="col-sm-3 col-md-2">
                 <input type="hidden" name="cannedResponseIds[]" value="{$cr->id}">
-                <label class="icon icon-move"></label>
+                {include "bits/icon.tpl" i=drag_indicator class="drag-indicator"}
               </td>
 
               <td class="col-sm-7 col-md-8">

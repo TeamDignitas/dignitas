@@ -19,7 +19,7 @@ $(function() {
 });
 
 
-/********* collapsible card with icon-down-open visual indicator *********/
+/******** collapsible card with expand/collapse visual indicator ********/
 $(document).on(
   'show.bs.collapse hide.bs.collapse',
   '.card-collapse-icon>.collapse',
@@ -309,7 +309,7 @@ $(function() {
 
   $('table.sortable tbody').each(function() {
     Sortable.create(this, {
-      handle: '.icon-move',
+      handle: '.drag-indicator',
 	    animation: 150,
     });
   });

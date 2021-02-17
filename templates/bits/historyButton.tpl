@@ -7,7 +7,9 @@
   <a
     href="{$obj->getHistoryUrl()}"
     class="{$class}">
-    <i class="icon icon-hourglass"></i>
+
+    {* override $class from before *}
+    {include "bits/icon.tpl" i=hourglass_full class=""}
 
     {if !$iconOnly}
       {t}link-show-revisions{/t}

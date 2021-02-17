@@ -4,5 +4,5 @@
   title="{t}link-add-comment{/t}"
   data-object-type="{$object->getObjectType()}"
   data-object-id="{$object->id}">
-  <i class="icon icon-comment"></i>
+  {include "bits/icon.tpl" i=insert_comment}
 </a>

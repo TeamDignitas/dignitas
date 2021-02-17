@@ -15,7 +15,7 @@
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-prepend">
-                <i class="input-group-text icon icon-user"></i>
+                {include "bits/icon.tpl" i=person class="input-group-text"}
               </span>
               <input
                 class="form-control {if isset($errors.nickname)}is-invalid{/if}"
@@ -31,7 +31,7 @@
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-prepend">
-                <i class="input-group-text icon icon-mail"></i>
+                {include "bits/icon.tpl" i=email class="input-group-text"}
               </span>
               <input
                 class="form-control {if isset($errors.email)}is-invalid{/if}"
@@ -46,7 +46,7 @@
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-prepend">
-                <i class="input-group-text icon icon-lock"></i>
+                {include "bits/icon.tpl" i=lock class="input-group-text"}
               </span>
               <input
                 class="form-control {if isset($errors.password)}is-invalid{/if}"
@@ -61,7 +61,7 @@
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-prepend">
-                <i class="input-group-text icon icon-lock"></i>
+                {include "bits/icon.tpl" i=lock class="input-group-text"}
               </span>
               <input
                 class="form-control"

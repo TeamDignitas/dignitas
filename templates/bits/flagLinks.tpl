@@ -16,7 +16,7 @@
     data-object-id="{$obj->id}"
     data-unflag-link="#{$unflagId}"
     {if $obj->isFlagged()}hidden{/if}>
-    <i class="icon icon-flag"></i>
+    {include "bits/icon.tpl" i=flag class=""}
     {t}link-flag{/t}
   </a>
 
@@ -28,7 +28,8 @@
     data-object-id="{$obj->id}"
     data-flag-link="#{$flagId}"
     {if !$obj->isFlagged()}hidden{/if}>
-    <i class="icon icon-flag-empty"></i>
-    {t}link-unflag{/t}
+    {* we could have a different icon for cancelling a flag *}
+    {include "bits/icon.tpl" i=flag class=""}
+     {t}link-unflag{/t}
   </a>
 {/if}

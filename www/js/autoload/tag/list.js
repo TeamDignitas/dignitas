@@ -12,7 +12,7 @@ $(function() {
 
   function toggleSubtree() {
     $(this).siblings('ul').stop().slideToggle();
-    $(this).toggleClass('icon-up-open icon-down-open');
+    $(this).toggleClass('expanded');
   }
 
   init();

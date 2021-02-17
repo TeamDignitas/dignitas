@@ -5,8 +5,7 @@
 <tr {if $id}id="{$id}" hidden{/if}>
   <td>
     <input type="hidden" name="aliasIds[]" value="{$alias->id|default:''}">
-    <label class="col-form-label icon icon-move">
-    </label>
+    {include "bits/icon.tpl" i=drag_indicator class="drag-indicator"}
   </td>
 
   <td>

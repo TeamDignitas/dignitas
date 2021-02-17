@@ -16,7 +16,7 @@
   <a
     href="{$obj->getEditUrl()}"
     class="{$class}">
-    <i class="icon icon-pencil"></i>
+    {include "bits/icon.tpl" i=mode_edit class=""}
     {$smarty.capture.msg}
   </a>
 {/if}

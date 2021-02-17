@@ -62,7 +62,7 @@
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false">
-              <i class="icon icon-ellipsis-vert"></i>
+              {include "bits/icon.tpl" i=more_vert}
             </button>
 
             <div class="dropdown-menu ellipsis-menu" aria-labelledby="answer-menu-{$answer->id}">
@@ -70,7 +70,7 @@
                 href="#a{$answer->id}"
                 class="dropdown-item"
                 title="{t}info-answer-permalink{/t}">
-                <i class="icon icon-link"></i>
+                {include "bits/icon.tpl" i=insert_link}
                 {t}link-permalink{/t}
               </a>
 
@@ -85,7 +85,7 @@
         {if $answer->verdict != Statement::VERDICT_NONE}
           <div class="col-12 mt-2 mb-1">
             <span class="badge badge-pill badge-secondary">
-              <i class="icon icon-hammer"></i>
+              {include "bits/icon.tpl" i=gavel}
               {$answer->getVerdictName()}
             </span>
           </div>

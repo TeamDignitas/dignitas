@@ -35,7 +35,7 @@
               <tr class="small">
                 <td class="align-middle">
                   <input type="hidden" name="ids[]" value="{$rt->id}">
-                  <label class="icon icon-move"></label>
+                  {include "bits/icon.tpl" i=drag_indicator class="drag-indicator"}
                 </td>
                 <td class="align-middle">{$rt->name|escape}</td>
                 <td class="align-middle">{$rt->getFromEntityType()->name|escape}</td>

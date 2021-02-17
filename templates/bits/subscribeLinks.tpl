@@ -14,7 +14,7 @@
     data-unsubscribe-link="#{$unsubscribeId}"
     {if Subscription::exists($obj)}hidden{/if}
     title="{t}info-subscribe{/t}">
-    <i class="icon icon-eye"></i>
+    {include "bits/icon.tpl" i=visibility class=""}
     {t}link-subscribe{/t}
   </a>
 
@@ -27,7 +27,7 @@
     data-subscribe-link="#{$subscribeId}"
     {if !Subscription::exists($obj)}hidden{/if}
     title="{t}info-unsubscribe{/t}">
-    <i class="icon icon-eye-off"></i>
+    {include "bits/icon.tpl" i=visibility_off class=""}
     {t}link-unsubscribe{/t}
   </a>
 {/if}

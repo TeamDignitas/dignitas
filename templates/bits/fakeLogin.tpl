@@ -10,7 +10,7 @@
       <div class="form-group">
         <div class="input-group">
           <span class="input-group-prepend">
-            <i class="input-group-text icon icon-mail"></i>
+            {include "bits/icon.tpl" i=email class="input-group-text"}
           </span>
           <input
             class="form-control"
@@ -23,7 +23,7 @@
       <div class="form-group">
         <div class="input-group">
           <span class="input-group-prepend">
-            <i class="input-group-text icon icon-award"></i>
+            {include "bits/icon.tpl" i=emoji_events class="input-group-text"}
           </span>
 
           <input

@@ -13,7 +13,7 @@
             <tr class="d-flex">
               <td class="col-1">
                 <input type="hidden" name="categoryIds[]" value="{$c->id}">
-                <label class="icon icon-move mb-0"></label>
+                {include "bits/icon.tpl" i=drag_indicator class="drag-indicator"}
               </td>
 
               <td class="col-11">
@@ -26,12 +26,12 @@
 
       <div class="mt-4 text-right">
         <a href="{Router::link('help/index')}" class="btn btn-sm btn-outline-secondary col-sm-12 col-md-2 mr-2 mb-2">
-          <i class="icon icon-cancel"></i>
+          {include "bits/icon.tpl" i=cancel}
           {t}link-cancel{/t}
         </a>
 
         <button type="submit" class="btn btn-sm btn-primary col-sm-12 col-md-2 mb-2" name="saveButton">
-          <i class="icon icon-floppy"></i>
+          {include "bits/icon.tpl" i=save}
           {t}link-save-order{/t}
         </button>
       </div>

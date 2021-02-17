@@ -6,8 +6,7 @@
 <tr {if $id}id="{$id}" hidden{/if}>
   <td>
     <input type="hidden" name="relIds[]" value="{$relation->id|default:''}">
-    <label class="col-form-label form-control-sm icon icon-move">
-    </label>
+    {include "bits/icon.tpl" i=drag_indicator class="drag-indicator"}
   </td>
 
   <td>
@@ -48,7 +47,7 @@
       class="btn btn-sm btn-outline-danger delete-dependant"
       data-toggle="tooltip"
       title="{t}link-delete-relation{/t}">
-      <i class="icon icon-trash"></i>
+      {include "bits/icon.tpl" i=delete_forever}
     </button>
   </td>
 </tr>

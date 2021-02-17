@@ -32,7 +32,7 @@
             <a
               class="btn btn-sm btn-primary col-sm-12 col-md-3 mb-2"
               href="{Router::link('help/pageEdit')}/{$page->id}">
-              <i class="icon icon-pencil"></i>
+              {include "bits/icon.tpl" i=mode_edit}
               {t}link-edit{/t}
             </a>
             {include "bits/historyButton.tpl" obj=$page class="btn btn-sm btn-outline-secondary col-sm-12 col-md-3 mb-2"}
