@@ -4,8 +4,7 @@
 <tr {if $rowId}id="{$rowId}" hidden{/if}>
   <td>
     <input type="hidden" name="linkIds[]" value="{$link->id|default:''}">
-    <label class="col-form-label icon icon-move">
-    </label>
+    {include "bits/icon.tpl" i=drag_indicator class="drag-indicator"}
   </td>
 
   <td>
@@ -22,7 +21,7 @@
       class="btn btn-outline-danger delete-link"
       data-toggle="tooltip"
       title="{t}link-delete-source{/t}">
-      <i class="icon icon-trash"></i>
+      {include "bits/icon.tpl" i=delete_forever}
     </button>
   </td>
 </tr>

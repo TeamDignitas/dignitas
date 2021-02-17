@@ -456,14 +456,13 @@ body, main {
 /****************************** file inputs ******************************/
 
 .custom-file-input ~ .custom-file-label::after {
-  /* hack: this hardcodes the glyph for icon-folder-open */
-  content: '\e809';
-  font-family: 'icons';
+  content: 'folder';
+  font-family: 'Material Icons';
 }
 
 /****************************** SortableJS ******************************/
 
-.icon-move {
+.drag-indicator {
   cursor: pointer;
 }
 
@@ -570,7 +569,7 @@ body, main {
   border-radius: .25rem;
 }
 
-/********* collapsible card with icon-down-open visual indicator *********/
+/******** collapsible card with expand/collapse visual indicator ********/
 
 .card-collapse-icon .card-header a {
   color: #555;
@@ -579,10 +578,9 @@ body, main {
 }
 
 .card-collapse-icon .card-header a:before {
-  /* hack: this hardcodes the glyph for icon-down-open */
-  content: '\e80d';
+  content: 'expand_more';
   float: right;
-  font-family: 'icons';
+  font-family: 'Material Icons';
   transition: all 0.5s;
 }
 
@@ -594,7 +592,7 @@ body, main {
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
+  font-size: 125%;
   display: inline-block;
   line-height: 1;
   text-transform: none;
@@ -602,6 +600,7 @@ body, main {
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
+  vertical-align: middle;
 
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
@@ -613,4 +612,14 @@ body, main {
 
   /* Support for IE. */
   font-feature-settings: 'liga';
+}
+
+.btn .material-icons {
+  margin-right: 3px;
+  position: relative;
+  top: -1px;
+}
+
+.dropdown-item .material-icons {
+  margin-right: 3px;
 }

@@ -7,7 +7,7 @@
     <h1 class="mb-5">{cap}{t}title-static-resources{/t}{/cap}</h1>
 
     <a class="btn btn-sm btn-primary col-sm-12 col-md-3" href="{Router::link('staticResource/edit')}">
-      <i class="icon icon-plus"></i>
+      {include "bits/icon.tpl" i=add_circle}
       {t}link-add-static-resource{/t}
     </a>
 
@@ -40,9 +40,9 @@
               <td>
                 <a
                   href="{$sr->getEditUrl()}"
-                  class="btn"
+                  class="btn btn-sm"
                   title="{t}link-edit{/t}">
-                  <i class="icon icon-pencil"></i>
+                  {include "bits/icon.tpl" i=mode_edit}
                 </a>
               </td>
             </tr>

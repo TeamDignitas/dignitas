@@ -47,7 +47,7 @@
       data-object-id="{$object->id}"
       data-score-id="#score-{$type}-{$object->id}"
       data-value="1">
-      <i class="icon icon-thumbs-up-alt"></i>
+      {include "bits/icon.tpl" i=thumb_up}
     </button>
   </div>
 
@@ -73,7 +73,7 @@
       data-object-id="{$object->id}"
       data-score-id="#score-{$type}-{$object->id}"
       data-value="-1">
-      <i class="icon icon-thumbs-down-alt"></i>
+      {include "bits/icon.tpl" i=thumb_down}
     </button>
   </div>
 
@@ -98,7 +98,7 @@
         data-answer-id="{$object->id}"
         {if !User::isModerator()}disabled style="pointer-events: none;"{/if}
       >
-        <i class="icon icon-ok"></i>
+        {include "bits/icon.tpl" i=done}
       </button>
     </div>
   {/if}

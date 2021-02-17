@@ -25,7 +25,7 @@
         data-toggle="dropdown"
         aria-haspopup="true"
         aria-expanded="false">
-        <i class="icon icon-ellipsis-vert"></i>
+        {include "bits/icon.tpl" i=more_vert}
       </button>
 
       <div class="dropdown-menu ellipsis-menu" aria-labelledby="comment-menu-{$comment->id}">

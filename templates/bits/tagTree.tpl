@@ -3,7 +3,9 @@
   <ul>
     {foreach $tags as $t}
       <li>
-        <i class="expand icon {if count($t->children)}icon-down-open{/if}"></i>
+        {if count($t->children)}
+          {include "bits/icon.tpl" i=expand_more class="expand"}
+        {/if}
         {include "bits/tag.tpl" link=$link}
         {include "bits/tagTree.tpl" tags=$t->children link=$link}
       </li>
