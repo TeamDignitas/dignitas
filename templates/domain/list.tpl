@@ -7,7 +7,7 @@
     <h1 class="mb-5">{cap}{t}title-domains{/t}{/cap}</h1>
 
     <a class="btn btn-sm btn-primary col-sm-12 col-md-3" href="{Router::link('domain/edit')}">
-      <i class="icon icon-plus"></i>
+      {include "bits/icon.tpl" i=add_circle}
       {t}link-add-domain{/t}
     </a>
 
@@ -36,7 +36,7 @@
                   href="{$d->getEditUrl()}"
                   class="btn"
                   title="{t}link-edit{/t}">
-                  <i class="icon icon-pencil"></i>
+                  {include "bits/icon.tpl" i=mode_edit}
                 </a>
               </td>
             </tr>

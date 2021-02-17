@@ -8,7 +8,7 @@
 
     {if User::may(User::PRIV_ADD_TAG)}
       <a class="btn btn-sm btn-primary col-sm-12 col-md-3" href="{Router::link('region/edit')}">
-        <i class="icon icon-plus"></i>
+        {include "bits/icon.tpl" i=add_circle}
         {t}link-add-region{/t}
       </a>
     {/if}
@@ -42,7 +42,7 @@
             name="saveButton"
             type="submit"
             class="btn btn-sm btn-outline-primary col-sm-3 col-lg-2 mr-2 mb-2">
-            <i class="icon icon-floppy"></i>
+            {include "bits/icon.tpl" i=save}
             {t}link-save{/t}
           </button>
         </div>

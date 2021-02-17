@@ -19,7 +19,7 @@
       <a
         href="{$statement->getViewUrl()}"
         title="{t}link-visit-statement-page{/t}">
-        <i class="icon icon-link"></i>
+        {include "bits/icon.tpl" i=insert_link}
       </a>
     {/if}
   </h1>
@@ -128,7 +128,7 @@
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false">
-          <i class="icon icon-ellipsis-vert"></i>
+          {include "bits/icon.tpl" i=more_vert}
         </button>
 
         <div class="dropdown-menu ellipsis-menu" aria-labelledby="statement-menu-{$statement->id}">

@@ -132,18 +132,18 @@
             type="submit"
             class="btn btn-sm btn-outline-danger col-sm-4 col-lg-2 mr-2 mb-2"
             data-confirm="{t}info-confirm-delete-relation-type{/t}">
-            <i class="icon icon-trash"></i>
+            {include "bits/icon.tpl" i=delete_forever}
             {t}link-delete{/t}
           </button>
         {/if}
 
         <a href="{Router::link('relationType/list')}" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2">
-          <i class="icon icon-cancel"></i>
+          {include "bits/icon.tpl" i=cancel}
           {t}link-cancel{/t}
         </a>
 
         <button name="saveButton" type="submit" class="btn btn-sm btn-primary col-sm-4 col-lg-2 mb-2">
-          <i class="icon icon-floppy"></i>
+          {include "bits/icon.tpl" i=save}
           {t}link-save{/t}
         </button>
       </div>

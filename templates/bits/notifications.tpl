@@ -40,7 +40,7 @@
         class="btn notification-unsubscribe"
         title="{t}info-notification-unsubscribe{/t}"
         data-notification-id="{$n->id}">
-        <i class="icon icon-eye-off"></i>
+        {include "bits/icon.tpl" i=visibility_off}
       </a>
     </div>
   </div>

@@ -40,12 +40,12 @@
 
     <div class="col-auto">
       <button type="button" class="btn btn-sm btn-outline-secondary comment-cancel mb-1">
-        <i class="icon icon-cancel"></i>
+        {include "bits/icon.tpl" i=cancel}
         {t}link-cancel{/t}
       </button>
 
       <button type="submit" class="btn btn-sm btn-outline-primary comment-save mb-1">
-        <i class="icon icon-floppy"></i>
+        {include "bits/icon.tpl" i=save}
         {t}link-save{/t}
       </button>
     </div>

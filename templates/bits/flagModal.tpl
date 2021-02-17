@@ -186,11 +186,11 @@
       <div class="modal-footer">
         <div class="text-center">
           <button type="button" class="btn btn-sm btn-outline-secondary" data-dismiss="modal">
-            <i class="icon icon-cancel"></i>
+            {include "bits/icon.tpl" i=cancel}
             {t}link-cancel{/t}
           </button>
           <button id="button-flag" type="button" class="btn btn-sm btn-primary">
-            <i class="icon icon-flag"></i>
+            {include "bits/icon.tpl" i=flag}
             <span data-flag-visibility="{Flag::TYPE_ANSWER}">
               {t}link-flag-answer{/t}
             </span>

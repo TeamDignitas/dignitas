@@ -73,7 +73,7 @@
             title="{t}info-cannot-delete-region{/t}"
             {/if}
           >
-            <i class="icon icon-trash"></i>
+            {include "bits/icon.tpl" i=delete_forever}
             {t}link-delete{/t}
           </button>
         {/if}
@@ -86,7 +86,7 @@
           href="{Router::link('region/list')}"
           {/if}
         >
-          <i class="icon icon-cancel"></i>
+          {include "bits/icon.tpl" i=cancel}
           {t}link-cancel{/t}
         </a>
 
@@ -94,7 +94,7 @@
           name="saveButton"
           type="submit"
           class="btn btn-sm btn-primary col-sm-3 col-lg-2 mr-2 mb-2">
-          <i class="icon icon-floppy"></i>
+          {include "bits/icon.tpl" i=save}
           {t}link-save{/t}
         </button>
       </div>

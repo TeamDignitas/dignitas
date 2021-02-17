@@ -17,7 +17,7 @@
     <a
       class="small text-muted ml-2"
       href="{Router::link('relation/edit')}/{$r->id}">
-      <i class="icon icon-pencil"></i>
+      {include "bits/icon.tpl" i=mode_edit}
       {t}relation-links{/t}
     </a>
   {/if}

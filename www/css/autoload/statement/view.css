@@ -28,7 +28,7 @@
   }
 
   #answer-resources-maximize {
-    --bulb-width: 30px;
+    --bulb-width: 20px;
 
     background: #aaa;
     border-bottom-left-radius: calc(var(--bulb-width) / 2);
@@ -36,8 +36,9 @@
     color: #fff;
     cursor: pointer;
     display: none;
-    font-size: 150%;
+    font-size: 20px;
     left: calc(0px - var(--bulb-width));
+    padding: 5px 0px;
     position: absolute;
     top: 50%;
   }

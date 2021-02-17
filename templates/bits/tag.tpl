@@ -13,7 +13,7 @@
     {if $colors} style="{$style}"{/if}
     {if $tooltip} title="{$tooltip}"{/if}>
     {if $t->icon}
-      <i class="icon icon-{$t->icon}"></i>
+      {include "bits/icon.tpl" i=$t->icon}
     {/if}
     {if $t->icon && !$t->iconOnly}
       &nbsp;

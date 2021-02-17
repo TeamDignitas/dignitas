@@ -33,7 +33,7 @@
           href="#c{$comment->id}"
           class="dropdown-item"
           title="{t}info-comment-permalink{/t}">
-          <i class="icon icon-link"></i>
+          {include "bits/icon.tpl" i=insert_link}
           {t}link-permalink{/t}
         </a>
 
@@ -43,7 +43,7 @@
             class="dropdown-item delete-comment"
             data-comment-id="{$comment->id}"
             data-confirm="{t}info-confirm-delete-comment{/t}">
-            <i class="icon icon-trash"></i>
+            {include "bits/icon.tpl" i=delete_forever}
             {t}link-delete{/t}
           </a>
         {/if}

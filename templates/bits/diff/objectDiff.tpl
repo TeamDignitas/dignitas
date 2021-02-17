@@ -44,34 +44,34 @@
 
     {if $od->review}
       {$id=$od->review->id}
-        <tr class="d-flex">
-          <td class="col-4 border-0">
-            <button
-              class="btn btn-sm btn-light"
-              type="button"
-              data-toggle="collapse"
-              data-target="#collapse-{$id}">
-              <i class="icon icon-right-open"></i>
-              {t}info-reviewed-because{/t}: {$od->review->getReasonName()}
-            </button>
-            <span class="btn btn-sm">
-              {t}label-resolution{/t}:
-              <span {if $od->review->status != Review::STATUS_KEEP}class="text-danger"{/if}>
-                {$od->review->getResolutionName()}
-              </span>
+      <tr class="d-flex">
+        <td class="col-4 border-0">
+          <button
+            class="btn btn-sm btn-light"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapse-{$id}">
+            {include "bits/icon.tpl" i=chevron_right}
+            {t}info-reviewed-because{/t}: {$od->review->getReasonName()}
+          </button>
+          <span class="btn btn-sm">
+            {t}label-resolution{/t}:
+            <span {if $od->review->status != Review::STATUS_KEEP}class="text-danger"{/if}>
+              {$od->review->getResolutionName()}
             </span>
-          </td>
+          </span>
+        </td>
 
-          <td class="col-8 border-0">
-            <div id="collapse-{$id}" class="card collapse mt-2">
-              <div class="card-body">
-                <h6 class="card-title">{t}title-votes{/t}</h6>
-                <hr>
-                {include "bits/reviewFlagList.tpl" review=$od->review}
-              </div>
+        <td class="col-8 border-0">
+          <div id="collapse-{$id}" class="card collapse mt-2">
+            <div class="card-body">
+              <h6 class="card-title">{t}title-votes{/t}</h6>
+              <hr>
+              {include "bits/reviewFlagList.tpl" review=$od->review}
             </div>
-          </td>
-        </tr>
+          </div>
+        </td>
+      </tr>
     {/if}
   </table>
 </td>

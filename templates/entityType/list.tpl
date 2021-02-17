@@ -7,7 +7,7 @@
     <h1 class="mb-5">{cap}{t}title-entity-types{/t}{/cap}</h1>
 
     <a class="btn btn-sm btn-primary col-sm-12 col-md-3" href="{Router::link('entityType/edit')}">
-      <i class="icon icon-plus"></i>
+      {include "bits/icon.tpl" i=add_circle}
       {t}link-add-entity-type{/t}
     </a>
 
@@ -16,9 +16,9 @@
         <thead>
           <tr class="small">
             <th class="border-0">{t}label-name{/t}</th>
-            <th class="border-0">{t}label-loyalty-source{/t}</th>
-            <th class="border-0">{t}label-loyalty-sink{/t}</th>
-            <th class="border-0">{t}label-has-color{/t}</th>
+            <th class="border-0 text-center">{t}label-loyalty-source{/t}</th>
+            <th class="border-0 text-center">{t}label-loyalty-sink{/t}</th>
+            <th class="border-0 text-center">{t}label-has-color{/t}</th>
             <th class="border-0">{t}actions{/t}</th>
           </tr>
         </thead>
@@ -31,19 +31,19 @@
                   ({t}label-is-default{/t})
                 {/if}
               </td>
-              <td class="align-middle">
+              <td class="align-middle text-center">
                 {if $et->loyaltySource}
-                  <i class="icon icon-ok"></i>
+                  {include "bits/icon.tpl" i=done}
                 {/if}
               </td>
-              <td class="align-middle">
+              <td class="align-middle text-center">
                 {if $et->loyaltySink}
-                  <i class="icon icon-ok"></i>
+                  {include "bits/icon.tpl" i=done}
                 {/if}
               </td>
-              <td class="align-middle">
+              <td class="align-middle text-center">
                 {if $et->hasColor}
-                  <i class="icon icon-ok"></i>
+                  {include "bits/icon.tpl" i=done}
                 {/if}
               </td>
               <td>
@@ -51,7 +51,7 @@
                   href="{$et->getEditUrl()}"
                   class="btn"
                   title="{t}link-edit{/t}">
-                  <i class="icon icon-pencil"></i>
+                  {include "bits/icon.tpl" i=mode_edit}
                 </a>
               </td>
             </tr>

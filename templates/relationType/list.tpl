@@ -8,7 +8,7 @@
 
     {if $numEntityTypes}
       <a class="btn btn-sm btn-primary col-sm-12 col-md-3" href="{Router::link('relationType/edit')}">
-        <i class="icon icon-plus"></i>
+        {include "bits/icon.tpl" i=add_circle}
         {t}link-add-relation-type{/t}
       </a>
     {else}
@@ -46,7 +46,7 @@
                     href="{$rt->getEditUrl()}"
                     class="btn"
                     title="{t}link-edit{/t}">
-                    <i class="icon icon-pencil"></i>
+                    {include "bits/icon.tpl" i=mode_edit}
                   </a>
                 </td>
               </tr>
@@ -58,7 +58,7 @@
           <a
             href="{Router::link('relationType/list')}"
             class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2">
-            <i class="icon icon-cancel"></i>
+            {include "bits/icon.tpl" i=cancel}
             {t}link-cancel{/t}
           </a>
 
@@ -66,7 +66,7 @@
             type="submit"
             class="btn btn-sm btn-outline-primary col-sm-4 col-lg-2 mb-2"
             name="saveButton">
-            <i class="icon icon-floppy"></i>
+            {include "bits/icon.tpl" i=save}
             {t}link-save-order{/t}
           </button>
         </div>

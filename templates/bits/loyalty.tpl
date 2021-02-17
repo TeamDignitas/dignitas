@@ -17,7 +17,7 @@
     {if Config::LOYALTY_URL}
       <div class="ml-2">
         <a href="{Config::LOYALTY_URL}" title="{t}link-loyalty-details{/t}">
-          <i class="icon icon-help"></i>
+          {include "bits/icon.tpl" i=help}
         </a>
       </div>
     {/if}

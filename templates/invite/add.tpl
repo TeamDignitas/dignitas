@@ -12,7 +12,7 @@
         <label for="field-email">{t}label-email{/t}</label>
         <div class="input-group">
           <span class="input-group-prepend">
-            <i class="input-group-text icon icon-mail"></i>
+            {include "bits/icon.tpl" i=email class="input-group-text"}
           </span>
           <input
             class="form-control {if isset($errors.email)}is-invalid{/if}"
@@ -22,17 +22,17 @@
             autofocus
             placeholder="{t}label-email{/t}">
         </div>
-          {include "bits/fieldErrors.tpl" errors=$errors.email|default:null}
+        {include "bits/fieldErrors.tpl" errors=$errors.email|default:null}
       </div>
 
       <div class="mt-4 text-right">
         <a href="{Router::link('invite/list')}" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mb-2 mr-2">
-          <i class="icon icon-cancel"></i>
+          {include "bits/icon.tpl" i=cancel}
           {t}link-cancel{/t}
         </a>
 
         <button name="saveButton" type="submit" class="btn btn-sm btn-primary col-sm-4 col-lg-2 mb-2">
-          <i class="icon icon-paper-plane"></i>
+          {include "bits/icon.tpl" i=send}
           {t}link-send{/t}
         </button>
       </div>
