@@ -34,13 +34,10 @@ class Smart {
         'select2/select2Dev.js',
       ],
     ],
-    'fontello' => [
-      'css' => [ 'third-party/fontello/css/icons.css' ],
-    ],
     'main' => [
       'css' => [ 'main.css', 'fonts.css' ],
       'js' => [ 'main.js' ],
-      'deps' => ['jquery', 'bootstrap', 'select2', 'fontello'],
+      'deps' => ['jquery', 'bootstrap', 'select2'],
     ],
     'codemirror' => [
       'css' => [

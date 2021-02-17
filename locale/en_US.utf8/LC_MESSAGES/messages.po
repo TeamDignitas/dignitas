@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-02-12 14:25+0200\n"
-"PO-Revision-Date: 2021-02-12 14:25+0200\n"
+"POT-Creation-Date: 2021-02-17 18:06+0200\n"
+"PO-Revision-Date: 2021-02-17 18:08+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -43,12 +43,12 @@ msgstr "contact us"
 msgid "title-dashboard"
 msgstr "dashboard"
 
-#: templates/aggregate/dashboard.tpl:17 templates/aggregate/index.tpl:28
+#: templates/aggregate/dashboard.tpl:17 templates/aggregate/index.tpl:29
 #: templates/bits/entity.tpl:115
 msgid "link-add-statement"
 msgstr "add a statement"
 
-#: templates/aggregate/dashboard.tpl:30 templates/aggregate/index.tpl:36
+#: templates/aggregate/dashboard.tpl:30 templates/aggregate/index.tpl:38
 msgid "link-add-entity"
 msgstr "add an author"
 
@@ -100,11 +100,11 @@ msgstr "statements with unclear verdicts"
 msgid "label-contribute-index"
 msgstr "contribute"
 
-#: templates/aggregate/index.tpl:44
+#: templates/aggregate/index.tpl:47
 msgid "link-add-answer"
 msgstr "add an answer"
 
-#: templates/aggregate/index.tpl:55
+#: templates/aggregate/index.tpl:58
 msgid "title-recent-statements"
 msgstr "recent statements"
 
@@ -145,7 +145,7 @@ msgstr "edit answer"
 #: templates/help/pageEdit.tpl:91 templates/region/edit.tpl:98
 #: templates/region/list.tpl:46 templates/relation/edit.tpl:30
 #: templates/relationType/edit.tpl:147 templates/statement/edit.tpl:215
-#: templates/staticResource/edit.tpl:97 templates/tag/edit.tpl:177
+#: templates/staticResource/edit.tpl:97 templates/tag/edit.tpl:176
 #: templates/user/ban.tpl:59 templates/user/edit.tpl:135
 msgid "link-save"
 msgstr "save"
@@ -173,7 +173,7 @@ msgstr "I forgot my password"
 msgid "label-remember-me"
 msgstr "Remember me for one year."
 
-#: templates/auth/login.tpl:71 templates/bits/navmenu.tpl:185
+#: templates/auth/login.tpl:71 templates/bits/navmenu.tpl:190
 msgid "link-log-in"
 msgstr "log in"
 
@@ -191,7 +191,7 @@ msgid "info-password-recovery-process"
 msgstr ""
 "Enter your email address and we will send you a link to reset your password."
 
-#: templates/auth/lostPassword.tpl:39 templates/invite/add.tpl:36
+#: templates/auth/lostPassword.tpl:43 templates/invite/add.tpl:36
 msgid "link-send"
 msgstr "send"
 
@@ -263,7 +263,7 @@ msgstr "add a comment"
 msgid "tag"
 msgstr "tag"
 
-#: templates/bits/aliasEdit.tpl:25
+#: templates/bits/aliasEdit.tpl:24
 msgid "link-delete-alias"
 msgstr "delete the alias"
 
@@ -305,7 +305,7 @@ msgstr "Are you sure you want to delete this answer?"
 #: templates/help/categoryEdit.tpl:69 templates/help/pageEdit.tpl:80
 #: templates/region/edit.tpl:77 templates/relationType/edit.tpl:136
 #: templates/statement/edit.tpl:194 templates/staticResource/edit.tpl:86
-#: templates/tag/edit.tpl:159
+#: templates/tag/edit.tpl:158
 msgid "link-delete"
 msgstr "delete"
 
@@ -327,7 +327,7 @@ msgstr "reopen"
 #: templates/invite/add.tpl:31 templates/region/edit.tpl:90
 #: templates/relation/edit.tpl:25 templates/relationType/edit.tpl:142
 #: templates/relationType/list.tpl:62 templates/statement/edit.tpl:210
-#: templates/staticResource/edit.tpl:92 templates/tag/edit.tpl:172
+#: templates/staticResource/edit.tpl:92 templates/tag/edit.tpl:171
 #: templates/user/ban.tpl:54 templates/user/edit.tpl:130
 msgid "link-cancel"
 msgstr "cancel"
@@ -377,7 +377,7 @@ msgstr[1] "%1 identical lines skipped"
 #: templates/help/categoryView.tpl:39 templates/help/pageView.tpl:36
 #: templates/region/view.tpl:15 templates/relationType/list.tpl:48
 #: templates/staticResource/list.tpl:44 templates/tag/view.tpl:15
-#: templates/user/view.tpl:94
+#: templates/user/view.tpl:93
 msgid "link-edit"
 msgstr "edit"
 
@@ -446,12 +446,12 @@ msgstr "region"
 msgid "title-test-login"
 msgstr "test user login"
 
-#: templates/bits/fakeLogin.tpl:33 templates/bits/navmenu.tpl:150
+#: templates/bits/fakeLogin.tpl:33 templates/bits/navmenu.tpl:155
 #: templates/user/view.tpl:30
 msgid "label-reputation"
 msgstr "reputation"
 
-#: templates/bits/fakeLogin.tpl:54 templates/bits/navmenu.tpl:162
+#: templates/bits/fakeLogin.tpl:54 templates/bits/navmenu.tpl:167
 #: templates/user/view.tpl:18
 msgid "label-moderator"
 msgstr "moderator"
@@ -464,7 +464,7 @@ msgstr "test user login"
 msgid "link-flag"
 msgstr "flag"
 
-#: templates/bits/flagLinks.tpl:32
+#: templates/bits/flagLinks.tpl:33
 msgid "link-unflag"
 msgstr "unflag"
 
@@ -612,7 +612,7 @@ msgstr "author"
 msgid "label-changes"
 msgstr "changes"
 
-#: templates/bits/historyButton.tpl:13
+#: templates/bits/historyButton.tpl:15
 msgid "link-show-revisions"
 msgstr "show revisions"
 
@@ -624,7 +624,7 @@ msgstr "Please read TODO for ways of customizing the thumbnail and link."
 msgid "label-uploaded-file"
 msgstr "uploaded file"
 
-#: templates/bits/linkEditorRow.tpl:24
+#: templates/bits/linkEditorRow.tpl:23
 msgid "link-delete-source"
 msgstr "delete the source"
 
@@ -663,27 +663,27 @@ msgstr "contact us"
 msgid "help-center"
 msgstr "help center"
 
-#: templates/bits/navmenu.tpl:104
+#: templates/bits/navmenu.tpl:106
 msgid "link-notifications"
 msgstr "notifications"
 
-#: templates/bits/navmenu.tpl:133
+#: templates/bits/navmenu.tpl:138
 msgid "link-my-profile"
 msgstr "my profile"
 
-#: templates/bits/navmenu.tpl:137
+#: templates/bits/navmenu.tpl:142
 msgid "link-dashboard"
 msgstr "dashboard"
 
-#: templates/bits/navmenu.tpl:143
+#: templates/bits/navmenu.tpl:148
 msgid "info-reputation-manual"
 msgstr "change reputation manually (will refresh the page)"
 
-#: templates/bits/navmenu.tpl:168
+#: templates/bits/navmenu.tpl:173
 msgid "link-change"
 msgstr "schimbă"
 
-#: templates/bits/navmenu.tpl:178
+#: templates/bits/navmenu.tpl:183
 msgid "link-log-out"
 msgstr "log out"
 
@@ -703,7 +703,7 @@ msgstr "sources"
 msgid "label-relation-links"
 msgstr "sources"
 
-#: templates/bits/relationEdit.tpl:50
+#: templates/bits/relationEdit.tpl:49
 msgid "link-delete-relation"
 msgstr "delete the relationship"
 
@@ -956,7 +956,7 @@ msgstr "icon"
 #: templates/domain/list.tpl:21 templates/entity/edit.tpl:84
 #: templates/entity/edit.tpl:148 templates/entityType/list.tpl:22
 #: templates/relationType/list.tpl:30 templates/staticResource/list.tpl:21
-#: templates/user/view.tpl:102
+#: templates/user/view.tpl:101
 msgid "actions"
 msgstr "acțiuni"
 
@@ -1180,7 +1180,7 @@ msgstr "add a category"
 msgid "link-add-help-page"
 msgstr "add a page"
 
-#: templates/help/index.tpl:40
+#: templates/help/index.tpl:39
 msgid "link-reorder-help-categories"
 msgstr "reorder categories"
 
@@ -1258,7 +1258,7 @@ msgstr ""
 "Cannot delete this region because (1) it has descendants or (2) it is being "
 "used."
 
-#: templates/region/edit.tpl:104 templates/tag/edit.tpl:183
+#: templates/region/edit.tpl:104 templates/tag/edit.tpl:182
 msgid "title-direct-descendants"
 msgstr "direct descendants"
 
@@ -1487,11 +1487,11 @@ msgstr "your answer"
 msgid "link-post-answer"
 msgstr "post answer"
 
-#: templates/statement/view.tpl:57 templates/statement/view.tpl:65
+#: templates/statement/view.tpl:55 templates/statement/view.tpl:64
 msgid "title-answer-resources"
 msgstr "Tips for answering"
 
-#: templates/statement/view.tpl:91
+#: templates/statement/view.tpl:90
 msgid "label-answer-resources-checkbox"
 msgstr "show tips when I'm composing an answer"
 
@@ -1568,22 +1568,21 @@ msgstr "show only the icon, no text"
 #: templates/tag/edit.tpl:136
 msgid "info-tag-icon-name"
 msgstr ""
-"Optionally, an <a href=\"%1\">icon name</a>. Copy the portion after <i>icon-"
-"</i>, for example <i>globe</i> or <i>user</i>. If we don't have the icon, "
-"you can contact us and ask that we add it to our set. You can preview the "
-"set of available icons on <a href=\"%2\">Fontello</a>."
+"Optionally, an icon name. Here is <a href=\"https://material.io/resources/"
+"icons/\">the set of available icons</a>. If we don't have the icon, you can "
+"contact us and ask that we add it to our set."
 
-#: templates/tag/edit.tpl:152
+#: templates/tag/edit.tpl:151
 msgid "info-confirm-delete-tag"
 msgstr "Are you sure you want to delete this tag?"
 
-#: templates/tag/edit.tpl:155 routes/tag/edit.php:32
+#: templates/tag/edit.tpl:154 routes/tag/edit.php:32
 msgid "info-cannot-delete-tag"
 msgstr ""
 "Cannot delete this tag because (1) it has descendants or (2) it is being "
 "used."
 
-#: templates/tag/edit.tpl:191
+#: templates/tag/edit.tpl:190
 msgid "title-duplicate-tags"
 msgstr "duplicate tags"
 
@@ -1727,7 +1726,7 @@ msgstr "permanent"
 msgid "label-ban-until"
 msgstr "until"
 
-#: templates/user/view.tpl:87
+#: templates/user/view.tpl:86
 msgid "link-ban"
 msgstr "ban..."
 

@@ -132,11 +132,7 @@
             </div>
 
             <small class="form-text text-muted">
-              {t
-                1="https://github.com/TeamDignitas/dignitas/blob/master/www/css/third-party/fontello/css/icons.css"
-                2="http://fontello.com/"}
-              info-tag-icon-name
-              {/t}
+              {t}info-tag-icon-name{/t}
             </small>
 
           </div>
