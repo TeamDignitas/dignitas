@@ -11,7 +11,7 @@
     {if User::may(User::PRIV_EDIT_TAG)}
       <p>
         <a href="{Router::link('tag/edit')}/{$tag->id}" class="btn btn-sm btn-primary">
-          <i class="icon icon-pencil"></i>
+          {include "bits/icon.tpl" i=mode_edit}
           {t}link-edit{/t}
         </a>
       </p>

@@ -110,8 +110,8 @@
           <div class="col-sm-12 col-lg-10 px-0">
             <div class="input-group">
               {if $t->icon}
-                <span class="input-group-prepend input-group-text">
-                  <i class="icon icon-{$t->icon}"></i>
+                <span class="input-group-prepend">
+                  {include "bits/icon.tpl" i=$t->icon class="input-group-text"}
                 </span>
               {/if}
               <input type="text"
@@ -155,7 +155,7 @@
             title="{t}info-cannot-delete-tag{/t}"
             {/if}
           >
-            <i class="icon icon-trash"></i>
+            {include "bits/icon.tpl" i=delete_forever}
             {t}link-delete{/t}
           </button>
         {/if}
@@ -168,12 +168,12 @@
           href="{Router::link('tag/list')}"
           {/if}
         >
-          <i class="icon icon-cancel"></i>
+          {include "bits/icon.tpl" i=cancel}
           {t}link-cancel{/t}
         </a>
 
         <button name="saveButton" type="submit" class="btn btn-sm btn-primary col-sm-4 col-lg-2 mb-2">
-          <i class="icon icon-floppy"></i>
+          {include "bits/icon.tpl" i=save}
           {t}link-save{/t}
         </button>
       </div>

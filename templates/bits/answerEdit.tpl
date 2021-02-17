@@ -28,7 +28,7 @@
           <a href="{Config::VERDICT_URL}"
             title="{t}link-verdict-details{/t}"
             target="_blank">
-            <i class="icon icon-help"></i>
+            {include "bits/icon.tpl" i=help}
           </a>
         </span>
       {/if}
@@ -57,7 +57,7 @@
         type="submit"
         class="btn btn-sm btn-outline-danger col-sm-4 col-lg-2 mr-2 mb-2"
         data-confirm="{t}info-confirm-delete-answer{/t}">
-        <i class="icon icon-trash"></i>
+        {include "bits/icon.tpl" i=delete_forever}
         {t}link-delete{/t}
       </button>
     {/if}
@@ -73,12 +73,12 @@
     {/if}
 
     <a href="{$referrer}" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2">
-      <i class="icon icon-cancel"></i>
+      {include "bits/icon.tpl" i=cancel}
       {t}link-cancel{/t}
     </a>
 
     <button name="saveButton" type="submit" class="btn btn-sm btn-primary col-sm-4 col-lg-2 mb-2">
-      <i class="icon icon-floppy"></i>
+      {include "bits/icon.tpl" i=save}
       {$buttonText}
     </button>
   </div>

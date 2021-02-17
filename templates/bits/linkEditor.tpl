@@ -3,7 +3,7 @@
   <label class="col-sm-4 col-lg-2 mt-1 pl-0">{$labelText}</label>
   <div class="col-sm-8 col-lg-10 mb-2 pl-0">
     <button class="add-link btn btn-outline-secondary btn-sm" type="button">
-      <i class="icon icon-plus"></i>
+      {include "bits/icon.tpl" i=add_circle}
       {$addButtonText}
     </button>
   </div>

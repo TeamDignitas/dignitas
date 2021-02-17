@@ -69,7 +69,7 @@
           <label class="col-sm-4 col-lg-2 ml-0 mt-2 pl-0">{t}label-alias{/t}</label>
           <div class="col-sm-8 col-lg-10 pl-0 mt-1 mb-2">
             <button id="add-alias" class="btn btn-outline-secondary btn-sm" type="button">
-              <i class="icon icon-plus"></i>
+              {include "bits/icon.tpl" i=add_circle}
               {t}link-add-alias{/t}
             </button>
           </div>
@@ -130,7 +130,7 @@
           <label class="col-sm-4 col-lg-2 mt-2 pl-0">{t}label-relations{/t}</label>
           <div class="col-sm-8 col-lg-10 pl-0 mb-2">
             <button id="add-relation" class="btn btn-outline-secondary btn-sm" type="button">
-              <i class="icon icon-plus"></i>
+              {include "bits/icon.tpl" i=add_circle}
               {t}label-add-relation{/t}
             </button>
           </div>
@@ -257,7 +257,7 @@
             type="submit"
             class="btn btn-sm btn-outline-danger col-sm-4 col-lg-2 mr-2 mb-2"
             data-confirm="{t}info-confirm-delete-entity{/t}">
-            <i class="icon icon-trash"></i>
+            {include "bits/icon.tpl" i=delete_forever}
             {t}link-delete{/t}
           </button>
         {/if}
@@ -273,12 +273,12 @@
         {/if}
 
         <a href="{$referrer}" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2">
-          <i class="icon icon-cancel"></i>
+          {include "bits/icon.tpl" i=cancel}
           {t}link-cancel{/t}
         </a>
 
         <button name="saveButton" type="submit" class="btn btn-sm btn-primary col-sm-4 col-lg-2 mb-2">
-          <i class="icon icon-floppy"></i>
+          {include "bits/icon.tpl" i=save}
           {t}link-save{/t}
         </button>
       </div>

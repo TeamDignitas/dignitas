@@ -68,13 +68,12 @@
                     href="{Router::link('user/ban')}?deleteId={$ban->id}"
                     class="btn btn-sm btn-link"
                     title="info-ban-delete">
-                    <i class="icon icon-trash"></i>
+                    {include "bits/icon.tpl" i=delete_forever}
                   </a>
                 {/if}
               </div>
             </div>
           {/foreach}
-          </dl>
         {/if}
 
         {if $user->id == User::getActiveId() || User::isModerator()}
@@ -90,7 +89,7 @@
 
             {if $user->id == User::getActiveId()}
               <a href="{Router::link('user/edit')}" class="btn btn-sm btn-primary col-sm-4 col-lg-2 mb-2">
-                <i class="icon icon-pencil"></i>
+                {include "bits/icon.tpl" i=mode_edit}
                 {t}link-edit{/t}
               </a>
             {/if}

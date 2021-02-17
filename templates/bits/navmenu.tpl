@@ -56,7 +56,7 @@
     aria-controls="navbar-right"
     aria-expanded="false"
     aria-label="{t}label-toggle-menu{/t}">
-    <span class="icon icon-user"></span>
+    {include "bits/icon.tpl" i=person}
   </button>
 
   <div class="navbar-collapse" id="navbar-right">
@@ -79,14 +79,16 @@
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false">
-          <i class="icon icon-globe"></i>
+          {include "bits/icon.tpl" i=language}
         </a>
         <div class="dropdown-menu bg-darkish py-0" aria-labelledby="nav-dropdown-lang">
           {foreach LocaleUtil::getAll() as $id => $name}
             <a
               class="dropdown-item pl-2 py-2"
               href="{Router::link('helpers/changeLocale')}?id={$id}">
-              <i class="icon icon-ok {if $id != LocaleUtil::getCurrent()}invisible{/if}"></i>
+              <span {if $id != LocaleUtil::getCurrent()}class="invisible"{/if}>
+                {include "bits/icon.tpl" i=done}
+              </span>
               {$name}
             </a>
           {/foreach}
@@ -102,7 +104,10 @@
             class="nav-link pl-2 py-2"
             href="{Router::link('notification/view')}"
             title="{t}link-notifications{/t}">
-            <i class="icon icon-bell-alt {if $notCount}text-danger{/if}"></i>
+
+            <span class="{if $notCount}text-danger{/if}">
+              {include "bits/icon.tpl" i=notifications}
+            </span>
           </a>
         </li>
 
@@ -120,7 +125,7 @@
                 geometry=Config::THUMB_USER_NAVBAR
                 imgClass="rounded"}
             {else}
-              <i class="icon icon-user"></i>
+              {include "bits/icon.tpl" i=person}
             {/if}
             {$u}
             <span class="badge badge-secondary align-text-top">
@@ -129,11 +134,11 @@
           </a>
           <div class="dropdown-menu dropdown-menu-right bg-darkish py-0" aria-labelledby="nav-dropdown-user">
             <a class="dropdown-item py-2" href="{Router::userLink($u)}">
-              <i class="icon icon-user"></i>
+              {include "bits/icon.tpl" i=person}
               {t}link-my-profile{/t}
             </a>
             <a class="dropdown-item py-2" href="{Router::link('aggregate/dashboard')}">
-              <i class="icon icon-gauge"></i>
+              {include "bits/icon.tpl" i=inventory}
               {t}link-dashboard{/t}
             </a>
             {if Config::DEVELOPMENT_MODE}
@@ -174,7 +179,7 @@
             {/if}
             <div class="dropdown-divider"></div>
             <a class="dropdown-item py-2" href="{Router::link('auth/logout')}">
-              <i class="icon icon-logout"></i>
+              {include "bits/icon.tpl" i=logout}
               {t}link-log-out{/t}
             </a>
           </div>

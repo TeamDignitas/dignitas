@@ -58,7 +58,7 @@
       <a class="btn btn-link btn-lg text-nowrap py-1 px-0"
         data-toggle="collapse"
         href="#more-filters">
-        <i class="icon icon-sliders"></i>
+        {include "bits/icon.tpl" i=filter_list}
         <small>{t}label-other-filters{/t}</small>
       </a>
     </div>

@@ -110,7 +110,7 @@ class Markdown extends Parsedown {
     $text = substr($text, 0, 20);
 
     // add an anchor to the header text
-    $anchor = sprintf('<a href="#%s"><i class="icon icon-link"></i></a>', $text);
+    $anchor = sprintf('<a href="#%s"><span class="material-icons">insert_link</span></a>', $text);
     $block['element']['text'] .= $anchor;
 
     // add an ID and class to the header element

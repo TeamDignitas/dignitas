@@ -32,6 +32,7 @@ const CODEPOINTS = [
   'format_size',
   'gavel',
   'groups',
+  'help',
   'hourglass_full',
   'insert_comment',
   'insert_invitation',
@@ -40,6 +41,7 @@ const CODEPOINTS = [
   'integration_instructions',
   'inventory',
   'language',
+  'lightbulb',
   'local_offer',
   'lock',
   'logout',
@@ -62,7 +64,7 @@ const CODEPOINTS = [
   'visibility_off',
 ];
 
-const ASCII_GLYPHS = [ '5f-7a', '40-49' ]; // always include [_a-z0-9]
+const ASCII_GLYPHS = [ '5f-7a', '30-39' ]; // always include [_a-z0-9]
 
 // Use the stable font, but the master codepoints (there are no codepoints in
 // the release).

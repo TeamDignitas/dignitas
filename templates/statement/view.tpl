@@ -52,10 +52,9 @@
         <div id="answer-resources">
 
           <div id="answer-resources-maximize">
-            <span
-              class="icon icon-lightbulb"
-              title="{t}title-answer-resources{/t}"
-            ></span>
+            <span title="{t}title-answer-resources{/t}">
+              {include "bits/icon.tpl" i=lightbulb}
+            </span>
           </div>
 
           <div class="card">

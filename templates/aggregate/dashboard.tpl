@@ -11,7 +11,7 @@
         <div class="col-12 col-sm-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
           <div class="card-body">
             <h3 class="card-title">
-              <i class="icon icon-pencil"></i>
+              {include "bits/icon.tpl" i=mode_edit}
             </h3>
             <a href="{Router::link('statement/edit')}" class="stretched-link">
               {t}link-add-statement{/t}
@@ -24,7 +24,7 @@
         <div class="col-12 col-sm-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
           <div class="card-body">
             <h3 class="card-title">
-              <i class="icon icon-user-plus"></i>
+              {include "bits/icon.tpl" i="person_add_alt_1"}
             </h3>
             <a href="{Router::link('entity/edit')}" class="stretched-link">
               {t}link-add-entity{/t}
@@ -37,7 +37,7 @@
         <div class="col-12 col-sm-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
           <div class="card-body">
             <h3 class="card-title">
-              <i class="icon icon-link"></i>
+              {include "bits/icon.tpl" i="insert_link"}
             </h3>
             <a href="{Router::link('domain/list')}" class="stretched-link">
               {t}link-domains{/t}
@@ -48,7 +48,7 @@
         <div class="col-12 col-sm-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
           <div class="card-body">
             <h3 class="card-title">
-              <i class="icon icon-doc-text-inv"></i>
+              {include "bits/icon.tpl" i="text_snippet"}
             </h3>
             <a href="{Router::link('cannedResponse/list')}" class="stretched-link">
               {t}link-canned-responses{/t}
@@ -59,7 +59,7 @@
         <div class="col-12 col-sm-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
           <div class="card-body">
             <h3 class="card-title">
-              <i class="icon icon-id-card-o"></i>
+              {include "bits/icon.tpl" i="insert_invitation"}
             </h3>
             <a href="{Router::link('invite/list')}" class="stretched-link">
               {t}link-invites{/t}
@@ -70,7 +70,7 @@
         <div class="col-12 col-sm-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
           <div class="card-body">
             <h3 class="card-title">
-              <i class="icon icon-cubes"></i>
+              {include "bits/icon.tpl" i="groups"}
             </h3>
             <a href="{Router::link('entityType/list')}" class="stretched-link">
               {t}link-entity-types{/t}
@@ -81,7 +81,7 @@
         <div class="col-12 col-sm-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
           <div class="card-body">
             <h3 class="card-title">
-              <i class="icon icon-exchange"></i>
+              {include "bits/icon.tpl" i="compare_arrows"}
             </h3>
             <a href="{Router::link('relationType/list')}" class="stretched-link">
               {t}link-relation-types{/t}
@@ -92,7 +92,7 @@
         <div class="col-12 col-sm-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
           <div class="card-body">
             <h3 class="card-title">
-              <i class="icon icon-industry"></i>
+              {include "bits/icon.tpl" i="integration_instructions"}
             </h3>
             <a href="{Router::link('staticResource/list')}" class="stretched-link">
               {t}link-static-resources{/t}
@@ -104,7 +104,7 @@
       <div class="col-12 col-sm-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
         <div class="card-body">
           <h3 class="card-title">
-            <i class="icon icon-tags"></i>
+            {include "bits/icon.tpl" i="local_offer"}
           </h3>
           <a href="{Router::link('tag/list')}" class="stretched-link">
             {t}link-tags{/t}
@@ -115,7 +115,7 @@
       <div class="col-12 col-sm-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
         <div class="card-body">
           <h3 class="card-title">
-            <i class="icon icon-map-signs"></i>
+            {include "bits/icon.tpl" i="map"}
           </h3>
           <a href="{Router::link('region/list')}" class="stretched-link">
             {t}link-regions{/t}
@@ -146,10 +146,10 @@
           <li class="col-12 col-sm-12 col-lg-4 py-3 m-2 text-center dashcard">
             <a href="{Router::link('statement/verdictReport')}" class="capitalize-first-word stretched-link">
               {t}link-verdict-report{/t}
-             </a>
-             ({$numBadVerdicts})
-           </li>
-         </ul>
+            </a>
+            ({$numBadVerdicts})
+          </li>
+        </ul>
       {/if}
     {/if}
   </div>

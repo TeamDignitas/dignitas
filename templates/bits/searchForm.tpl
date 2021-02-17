@@ -17,7 +17,7 @@
 
     <span class="input-group-append">
       <button type="submit" class="btn btn-darkish">
-        <i class="icon icon-search"></i>
+        {include "bits/icon.tpl" i=search}
       </button>
     </span>
   </div>

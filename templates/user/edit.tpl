@@ -14,7 +14,7 @@
 
           <div class="input-group col-sm-12 col-lg-10 px-0">
             <span class="input-group-prepend">
-              <i class="input-group-text icon icon-user"></i>
+              {include "bits/icon.tpl" i=person class="input-group-text"}
             </span>
             <input
               class="form-control {if isset($errors.nickname)}is-invalid{/if}"
@@ -31,7 +31,7 @@
 
           <div class="input-group col-sm-12 col-lg-10 px-0">
             <span class="input-group-prepend">
-              <i class="input-group-text icon icon-mail"></i>
+              {include "bits/icon.tpl" i=email class="input-group-text"}
             </span>
             <input
               class="form-control {if isset($errors.email)}is-invalid{/if}"
@@ -98,7 +98,7 @@
 
           <div class="input-group col-sm-12 col-lg-10 px-0">
             <span class="input-group-prepend">
-              <i class="input-group-text icon icon-lock"></i>
+              {include "bits/icon.tpl" i=lock class="input-group-text"}
             </span>
             <input
               class="form-control {if isset($errors.password)}is-invalid{/if}"
@@ -113,7 +113,7 @@
           <label class="col-sm-12 col-lg-2 mt-2 px-0">{t}label-password-again{/t}</label>
           <div class="input-group col-sm-12 col-lg-10 px-0">
             <span class="input-group-prepend">
-              <i class="input-group-text icon icon-lock"></i>
+              {include "bits/icon.tpl" i=lock class="input-group-text"}
             </span>
             <input
               class="form-control"
@@ -126,12 +126,12 @@
 
       <div class="mt-4 text-right">
         <a href="{Router::userLink($user)}" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2">
-          <i class="icon icon-cancel"></i>
+          {include "bits/icon.tpl" i=cancel}
           {t}link-cancel{/t}
         </a>
 
         <button name="saveButton" type="submit" class="btn btn-sm btn-primary col-sm-4 col-lg-2 mb-2">
-          <i class="icon icon-floppy"></i>
+          {include "bits/icon.tpl" i=save}
           {t}link-save{/t}
         </button>
       </div>

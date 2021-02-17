@@ -25,7 +25,8 @@
             <a
               href="{Router::link('statement/edit')}"
               class="btn btn-primary mr-3 mb-2 px-2 col-8 col-sm-8 col-lg-4">
-              <i class="icon icon-pencil pr-2"></i>{t}link-add-statement{/t}
+              {include "bits/icon.tpl" i=mode_edit class="pr-2"}
+              {t}link-add-statement{/t}
             </a>
           {/if}
 
@@ -33,7 +34,8 @@
             <a
               href="{Router::link('entity/edit')}"
               class="btn btn-secondary mb-2 px-2 col-8 col-sm-8 col-lg-4">
-              <i class="icon icon-user-plus pr-2"></i>{t}link-add-entity{/t}
+              {include "bits/icon.tpl" i=person_add_alt_1 class="pr-2"}
+              {t}link-add-entity{/t}
             </a>
           {/if}
 
@@ -41,7 +43,8 @@
             <a
               href="{Router::link('statement/unanswered')}"
               class="btn btn-secondary mb-2 px-2 col-8 col-sm-8 col-lg-4">
-              <i class="icon icon-pencil pr-2"></i>{t}link-add-answer{/t}
+              {include "bits/icon.tpl" i=mode_edit class="pr-2"}
+              {t}link-add-answer{/t}
             </a>
           {/if}
         </div>

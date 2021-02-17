@@ -15,7 +15,7 @@
           data-confirm="{t}info-confirm-moderator-review-remove{/t}"
           {/if}
           type="submit">
-          <i class="icon icon-cancel"></i>
+          {include "bits/icon.tpl" i=cancel}
           {$review->getVoteName(Flag::VOTE_REMOVE)}
         </button>
 
@@ -23,7 +23,7 @@
           name="keepButton"
           class="btn btn-sm btn-primary mr-2 mb-2"
           type="submit">
-          <i class="icon icon-ok"></i>
+          {include "bits/icon.tpl" i=done}
           {$review->getVoteName(Flag::VOTE_KEEP)}
         </button>
 
@@ -36,7 +36,7 @@
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false">
-            <i class="icon icon-ellipsis-vert"></i>
+            {include "bits/icon.tpl" i=more_vert}
           </button>
 
           <div class="dropdown-menu ellipsis-menu" aria-labelledby="review-ellipsis">
@@ -56,7 +56,7 @@
             data-toggle="tooltip"
             title="{t}tooltip-review-next{/t}"
           >
-            <i class="icon icon-right-open"></i>
+            {include "bits/icon.tpl" i=chevron_right}
           </button>
         </div>
       </div>

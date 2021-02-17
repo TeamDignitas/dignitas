@@ -7,7 +7,7 @@
     <h1 class="mb-4">{cap}{t}title-canned-responses{/t}{/cap}</h1>
 
     <a href="{Router::link('cannedResponse/edit')}" class="btn btn-sm btn-primary col-sm-12 col-md-3">
-      <i class="icon icon-plus"></i>
+      {include "bits/icon.tpl" i=add_circle}
       {t}link-add-canned-response{/t}
     </a>
 
@@ -37,7 +37,7 @@
                   href="{Router::link('cannedResponse/edit')}/{$cr->id}"
                   class="btn mt-1"
                   title="{t}link-edit{/t}">
-                  <i class="icon icon-pencil"></i>
+                  {include "bits/icon.tpl" i=mode_edit}
                 </a>
                 {include "bits/historyButton.tpl" obj=$cr iconOnly=true}
               </td>
@@ -48,11 +48,11 @@
 
       <div class="mt-4 text-right">
         <a href="{Router::link('cannedResponse/list')}" class="btn btn-sm btn-outline-secondary col-sm-12 col-md-2 mb-2 mr-1">
-          <i class="icon icon-cancel"></i>
+          {include "bits/icon.tpl" i=cancel}
           {t}link-cancel{/t}
         </a>
         <button type="submit" class="btn btn-sm btn-outline-primary col-sm-12 col-md-2 mb-2" name="saveButton">
-          <i class="icon icon-floppy"></i>
+          {include "bits/icon.tpl" i=save}
           {t}link-save-order{/t}
         </button>
       </div>
