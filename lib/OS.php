@@ -14,7 +14,7 @@ class OS {
     return $exitCode;
   }
 
-  static function executeAndAssert($command, &$output) {
+  static function executeAndAssert($command, &$output = null) {
     $exitCode = self::execute($command, $output);
     if ($exitCode) {
       Log::error('Output: %s', $output);
