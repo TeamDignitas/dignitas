@@ -191,18 +191,7 @@
           </button>
           <button id="button-flag" type="button" class="btn btn-sm btn-primary">
             {include "bits/icon.tpl" i=flag}
-            <span data-flag-visibility="{Flag::TYPE_ANSWER}">
-              {t}link-flag-answer{/t}
-            </span>
-            <span data-flag-visibility="{Flag::TYPE_STATEMENT}">
-              {t}link-flag-statement{/t}
-            </span>
-            <span data-flag-visibility="{Flag::TYPE_ENTITY}">
-              {t}link-flag-entity{/t}
-            </span>
-            <span data-flag-visibility="{Flag::TYPE_COMMENT}">
-              {t}link-flag-comment{/t}
-            </span>
+            {t}link-flag{/t}
           </button>
         </div>
       </div>

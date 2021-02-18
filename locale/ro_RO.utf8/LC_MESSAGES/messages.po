@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-02-17 18:03+0200\n"
-"PO-Revision-Date: 2021-02-17 18:06+0200\n"
+"POT-Creation-Date: 2021-02-18 17:26+0200\n"
+"PO-Revision-Date: 2021-02-18 17:26+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -146,7 +146,7 @@ msgstr "editează răspunsul"
 #: templates/help/pageEdit.tpl:91 templates/region/edit.tpl:98
 #: templates/region/list.tpl:46 templates/relation/edit.tpl:30
 #: templates/relationType/edit.tpl:147 templates/statement/edit.tpl:215
-#: templates/staticResource/edit.tpl:97 templates/tag/edit.tpl:176
+#: templates/staticResource/edit.tpl:97 templates/tag/edit.tpl:173
 #: templates/user/ban.tpl:59 templates/user/edit.tpl:135
 msgid "link-save"
 msgstr "salvează"
@@ -309,7 +309,7 @@ msgstr "Confirmi ștergerea acestui răspuns?"
 #: templates/help/categoryEdit.tpl:69 templates/help/pageEdit.tpl:80
 #: templates/region/edit.tpl:77 templates/relationType/edit.tpl:136
 #: templates/statement/edit.tpl:194 templates/staticResource/edit.tpl:86
-#: templates/tag/edit.tpl:158
+#: templates/tag/edit.tpl:155
 msgid "link-delete"
 msgstr "șterge"
 
@@ -331,7 +331,7 @@ msgstr "redeschide"
 #: templates/invite/add.tpl:31 templates/region/edit.tpl:90
 #: templates/relation/edit.tpl:25 templates/relationType/edit.tpl:142
 #: templates/relationType/list.tpl:62 templates/statement/edit.tpl:210
-#: templates/staticResource/edit.tpl:92 templates/tag/edit.tpl:171
+#: templates/staticResource/edit.tpl:92 templates/tag/edit.tpl:168
 #: templates/user/ban.tpl:54 templates/user/edit.tpl:130
 msgid "link-cancel"
 msgstr "renunță"
@@ -465,7 +465,7 @@ msgstr "moderator"
 msgid "link-test-login"
 msgstr "autentificare ca utilizator de test"
 
-#: templates/bits/flagLinks.tpl:20
+#: templates/bits/flagLinks.tpl:20 templates/bits/flagModal.tpl:194
 msgid "link-flag"
 msgstr "raportează"
 
@@ -584,22 +584,6 @@ msgstr "alt motiv"
 #: templates/bits/flagModal.tpl:178
 msgid "label-provide-details"
 msgstr "te rugăm să dai detalii..."
-
-#: templates/bits/flagModal.tpl:195
-msgid "link-flag-answer"
-msgstr "raportează răspunsul"
-
-#: templates/bits/flagModal.tpl:198
-msgid "link-flag-statement"
-msgstr "raportează afirmația"
-
-#: templates/bits/flagModal.tpl:201
-msgid "link-flag-entity"
-msgstr "raportează autorul"
-
-#: templates/bits/flagModal.tpl:204
-msgid "link-flag-comment"
-msgstr "raportează comentariul"
 
 #: templates/bits/frequentColors.tpl:3
 msgid "label-frequent-colors"
@@ -1269,7 +1253,7 @@ msgid "info-cannot-delete-region"
 msgstr ""
 "Nu pot șterge regiuni deoarece (1) are descendenți sau (2) este folosită."
 
-#: templates/region/edit.tpl:104 templates/tag/edit.tpl:182
+#: templates/region/edit.tpl:104 templates/tag/edit.tpl:179
 msgid "title-direct-descendants"
 msgstr "descendenți direcți"
 
@@ -1576,23 +1560,23 @@ msgstr "culoarea fundalului"
 msgid "label-icon-only"
 msgstr "arată doar iconița, fără text"
 
-#: templates/tag/edit.tpl:136
+#: templates/tag/edit.tpl:135
 msgid "info-tag-icon-name"
 msgstr ""
 "Opțional, un nume de iconiță. Poți vedea <a href=\"https://material.io/"
 "resources/icons/\">setul de iconițe disponibile</a>. Dacă nu avem iconița, "
 "ne poți contacta ca să ceri să o adăugăm la set."
 
-#: templates/tag/edit.tpl:151
+#: templates/tag/edit.tpl:148
 msgid "info-confirm-delete-tag"
 msgstr "Confirmi ștergerea acestei etichete?"
 
-#: templates/tag/edit.tpl:154 routes/tag/edit.php:32
+#: templates/tag/edit.tpl:151 routes/tag/edit.php:32
 msgid "info-cannot-delete-tag"
 msgstr ""
 "Nu pot șterge eticheta deoarece (1) are descendenți sau (2) este folosită."
 
-#: templates/tag/edit.tpl:190
+#: templates/tag/edit.tpl:187
 msgid "title-duplicate-tags"
 msgstr "etichete duplicate"
 
