@@ -570,6 +570,9 @@ body, main {
 }
 
 /******** collapsible card with expand/collapse visual indicator ********/
+#answer-resources .card-header {
+  padding: 1rem 1.25rem .5rem;
+}
 
 .card-collapse-icon .card-header a {
   color: #555;
@@ -582,6 +585,8 @@ body, main {
   float: right;
   font-family: 'Material Icons';
   transition: all 0.5s;
+  font-size: 1.3rem;
+  margin-top: -4px;
 }
 
 .card-collapse-icon .card-header.active a:before {
