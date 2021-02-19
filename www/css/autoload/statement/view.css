@@ -1,7 +1,6 @@
 /******************** side sheet for answer resources ********************/
-/* 1681 */
 
-@media (min-width: 1400px) {
+@media (min-width: 1681px) {
   /* wide screens -- there must be enough empty space to fit the side sheet */
 
   #answer-resources {
@@ -37,11 +36,6 @@
 
   .modal-backdrop {
     display: none;
-  }
-}
-
-@media (max-width: 1399px) {
-  #answer-resources {
   }
 }
 
