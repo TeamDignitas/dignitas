@@ -174,7 +174,7 @@ blockquote {
   display: flex;
 }
 
-.vote-container.highlighted {
+.highlighted {
   animation-name: answer-highlight-animation;
   animation-duration: 2s;
 }

@@ -20,6 +20,7 @@ if ($statement->hasPendingEdit() && User::may(User::PRIV_REVIEW)) {
 }
 
 if (User::getActive()) {
+  Smart::addResources('answerResources');
   $sideSheet = StaticResource::addCustomSections('answer-resources');
   $sideSheet = $sideSheet[0]->getContents() ?? '';
 } else {

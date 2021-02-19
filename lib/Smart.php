@@ -104,6 +104,10 @@ class Smart {
     'pagination' => [
       'js' => [ 'pagination.js' ],
     ],
+    'answerResources' => [
+      'css' => [ 'answerResources.css' ],
+      'js' => [ 'answerResources.js' ],
+    ],
   ];
 
   static function init() {

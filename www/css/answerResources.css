@@ -55,7 +55,7 @@ button.answer-resources-link {
   font-size: 12px;
 }
 
-.card-collapse-icon {
+#answer-resources .card-collapse-icon {
   border-radius: 0px;
   border-width: 1px 0 0 0;
 }
