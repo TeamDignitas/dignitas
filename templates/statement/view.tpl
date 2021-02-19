@@ -11,11 +11,11 @@
     <div class="row mt-5 answers-area">
       <div class="col-sm-12 col-md-8 px-0">
         {if count($answers)}
-            <h6 class="mt-4 pb-2 pl-0 subsection text-uppercase font-weight-bold">
-              {t count=count($answers) 1=count($answers) plural="title-answers-plural"}
-              title-answers-singular
-              {/t}
-            </h6>
+          <h6 class="mt-4 pb-2 pl-0 subsection text-uppercase font-weight-bold">
+            {t count=count($answers) 1=count($answers) plural="title-answers-plural"}
+            title-answers-singular
+            {/t}
+          </h6>
 
           {foreach $answers as $answer}
             {include "bits/answer.tpl"
@@ -37,62 +37,44 @@
           buttonText=$smarty.capture.buttonText}
       </div>
 
-      {* #answer-resources will always be in one of these three states:
-
-         1. Invisible (no CSS class). This is the initial state. If and when
-         the answer box receives focus, then #answer-resources becomes either
-         maximized or minimized, depending on the user's preference.
-
-         2. Maximized (using the "maximized" CSS class). The div is visible,
-         including the minimize button.
-
-         3. Minimized (using the "minimized" CSS class). The div is invisible
-         except for a thin border. The maximize button is visible. *}
       {if $sideSheet}
-        <div id="answer-resources">
+        <div
+          id="answer-resources"
+          class="modal fade"
+          data-focus="false"
+          tabindex="-1">
 
-          <div id="answer-resources-maximize">
-            <span title="{t}title-answer-resources{/t}">
-              {include "bits/icon.tpl" i=lightbulb}
-            </span>
-          </div>
+          <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
 
-          <div class="card">
-
-            <div class="card-body pl-0 pr-0">
-              <h6 class="card-title pl-3 pr-3 font-weight-bold">
-                {t}title-answer-resources{/t}
-
-                <button
-                  id="answer-resources-minimize"
-                  class="close"
-                  type="button"
-                  aria-label="close"
-                >
+              <div class="modal-header">
+                <h6 class="modal-title">
+                  {t}title-answer-resources{/t}
+                </h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
-              </h6>
+              </div>
 
-              <div class="card-text">
+              <div class="modal-body p-0">
                 {$sideSheet}
               </div>
-            </div>
 
-            <div class="card-footer small bg-transparent border-0">
-              <input
-                id="checkboxAnswerResources"
-                type="checkbox"
-                {if !User::getActive()->getMinimizeAnswerResources()}
-                checked
-                {/if}
-              >
-              <label for="checkboxAnswerResources" class="d-inline">
-                {t}label-answer-resources-checkbox{/t}
-              </label>
-            </div>
+              <div class="modal-footer small">
+                <input
+                  id="checkboxAnswerResources"
+                  type="checkbox"
+                  {if !User::getActive()->getMinimizeAnswerResources()}
+                  checked
+                  {/if}
+                >
+                <label for="checkboxAnswerResources" class="d-inline">
+                  {t}label-answer-resources-checkbox{/t}
+                </label>
+              </div>
 
+            </div>
           </div>
-
         </div>
       {/if}
 

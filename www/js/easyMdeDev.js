@@ -64,6 +64,12 @@ $(function() {
       icon: '<i class="material-icons">open_in_full</i>',
       className: 'no-disable no-mobile',
       title: 'Toggle Fullscreen',
+    }, {
+      name: 'answer-resources-link',
+      action: null,
+      icon: '<i class="material-icons">lightbulb</i>',
+      className: 'answer-resources-link float-right d-none',
+      title: 'Show answer resources',
     },
   ];
 

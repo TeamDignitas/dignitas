@@ -1,6 +1,7 @@
 $(function() {
 
   var sideSheet = $('#answer-resources');
+  var initialized = false;
 
   function init() {
     var hash = window.location.hash;
@@ -8,29 +9,25 @@ $(function() {
       $(hash).addClass('highlighted');
     }
 
-    $('#answer-resources-minimize').click(minimizeAnswerResources);
-    $('#answer-resources-maximize').click(maximizeAnswerResources);
-    $('#answer-edit').focusin(initAnswerResources);
+    var cm = $('.CodeMirror')[0].CodeMirror;
+    cm.on('focus', initAnswerResources);
+    $('.answer-resources-link').click(toggleModal);
     $('#checkboxAnswerResources').change(toggleCheckbox);
   }
 
-  function initAnswerResources() {
-    // only do this the first time we focus the form
-    if (!sideSheet.hasClass('minimized') && !sideSheet.hasClass('maximized')) {
+  function initAnswerResources(evt) {
+    // only do this the first time we focus the CodeMirror field
+    if (!initialized) {
+      initialized = true;
       if ($("#checkboxAnswerResources").is(':checked')) {
-        maximizeAnswerResources();
-      } else {
-        minimizeAnswerResources();
+        $('#answer-resources').modal('show');
       }
     }
   }
 
-  function minimizeAnswerResources() {
-    sideSheet.removeClass('maximized').addClass('minimized');
-  }
-
-  function maximizeAnswerResources() {
-    sideSheet.removeClass('minimized').addClass('maximized');
+  function toggleModal(evt) {
+    initialized = true;
+    $('#answer-resources').modal('toggle');
   }
 
   function toggleCheckbox() {

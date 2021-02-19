@@ -1,107 +1,67 @@
 /******************** side sheet for answer resources ********************/
+/* 1681 */
 
-@media (min-width: 1681px) {
+@media (min-width: 1400px) {
   /* wide screens -- there must be enough empty space to fit the side sheet */
+
   #answer-resources {
-    --width: 336px;
-
-    height: 100%;
-    padding-top: 58px; /* keep in sync with navbar height */
-    position: fixed;
-    right: calc(0px - var(--width));
-    top: 0;
-    transition: right 0.4s ease;
-    width: var(--width);
+    left: inherit;
+    padding-right: 0 !important;
+		right: -336px;
+		transition: opacity 0.3s linear, right 0.3s ease-out;
+    width: 336px;
   }
 
-  #answer-resources.maximized {
-    right: 0;
+  #answer-resources.show {
+		right: 0;
+	}
+
+  #answer-resources .modal-dialog {
+    margin: 0;
+    min-height: 100%;
+    transition-duration: 0s; /* prevent default transition */
+    transform: none;         /* prevent upshift when faded */
   }
 
-  #answer-resources.minimized {
-    --border-width: 6px;
-    right: calc(var(--border-width) - var(--width)); /* keep the border visible */
+  #answer-resources .modal-dialog-scrollable,
+  #answer-resources .modal-dialog-scrollable .modal-content {
+    max-height: 100%;
   }
 
-  #answer-resources.minimized .card {
-    border-left: var(--border-width) solid #aaa;
+  /* Some rules to keep the rest of the page reachable. Unfortunately, these
+   also apply to the flagging modal. */
+  .modal-open {
+    overflow-y: scroll; /* Keep the main page scroll bar visible */
+    padding-right: 0px !important;
   }
 
-  #answer-resources-maximize {
-    --bulb-width: 20px;
-
-    background: #aaa;
-    border-bottom-left-radius: calc(var(--bulb-width) / 2);
-    border-top-left-radius: calc(var(--bulb-width) / 2);
-    color: #fff;
-    cursor: pointer;
+  .modal-backdrop {
     display: none;
-    font-size: 20px;
-    left: calc(0px - var(--bulb-width));
-    padding: 5px 0px;
-    position: absolute;
-    top: 50%;
   }
-
 }
 
-@media (max-width: 1680px) {
+@media (max-width: 1399px) {
   #answer-resources {
-    bottom: 0;
-    left: 0;
-    max-height: 0;
-    position: fixed;
-    transition: max-height 0.4s ease;
-    width: 100%;
   }
-
-  #answer-resources.maximized {
-    max-height: 82%;
-  }
-
-  #answer-resources.minimized {
-    --border-width: 6px;
-    border-top: var(--border-width) solid #aaa;
-    max-height: var(--border-width);
-  }
-
-  #answer-resources-maximize {
-    --bulb-height: 30px;
-
-    background: #aaa;
-    border-top-left-radius: calc(var(--bulb-height) / 2);
-    border-top-right-radius: calc(var(--bulb-height) / 2);
-    color: #fff;
-    cursor: pointer;
-    display: none;
-    font-size: 150%;
-    left: 50%;
-    position: absolute;
-    top: calc(0px - var(--bulb-height));
-    transform: translateX(-50%); /* works in conjunction with left to really center it */
-  }
-
 }
 
-#answer-resources.minimized #answer-resources-maximize {
-  display: block;
+button.answer-resources-link {
+  display: inline-block !important;
 }
 
-#answer-resources > .card {
-  height: 100%;
+#answer-resources .modal-header {
+  border: 0;
 }
 
-#answer-resources .card-body {
+#answer-resources .card-header {
+  background-color: #fff;
+}
+
+#answer-resources .card {
   font-size: 12px;
 }
 
-#answer-resources .area-title {
-  color: #656565;
-  display: block;
-  text-decoration: none;
-}
-
-#answer-resources .card-text {
-  border-bottom: 1px solid rgba(0,0,0,0.125);
-  height: 94%;
+.card-collapse-icon {
+  border-radius: 0px;
+  border-width: 1px 0 0 0;
 }
