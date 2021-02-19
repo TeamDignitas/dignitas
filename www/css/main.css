@@ -630,3 +630,9 @@ body, main {
 .dropdown-item .material-icons {
   margin-right: 3px;
 }
+
+
+/************************ EasyMDEContainer ************************/
+.editor-toolbar button {
+  color: #6c757d;
+}
