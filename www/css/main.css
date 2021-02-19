@@ -124,11 +124,11 @@ blockquote {
 #toasts {
   bottom: 50px;
   position: fixed;
-  right: 50px;
+  left: 50px;
 }
 
-.toast-color {
-  min-width: 23px;
+.toast-body {
+  color: #000;
 }
 
 /****************** navbar search box & search results ******************/
