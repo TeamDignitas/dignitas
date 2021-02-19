@@ -83,3 +83,5 @@
     </button>
   </div>
 </form>
+
+{include "bits/answerResources.tpl"}

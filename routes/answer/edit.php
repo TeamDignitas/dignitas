@@ -93,9 +93,13 @@ if ($saveButton) {
   Smart::assign('referrer', Util::getReferrer());
 }
 
-Smart::addResources('imageModal', 'easymde');
+$sideSheet = StaticResource::addCustomSections('answer-resources');
+$sideSheet = $sideSheet[0]->getContents() ?? '';
+
+Smart::addResources('answerResources', 'easymde', 'imageModal');
 Smart::assign([
   'answer' => $answer,
+  'sideSheet' => $sideSheet,
 ]);
 Smart::display('answer/edit.tpl');
 
