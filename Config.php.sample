@@ -165,7 +165,6 @@ class Config {
     ],
     // side sheet of hints while composing an answer
     'answer-resources' => [
-      'css' => [ 'answer-resources.css' ],
       'html' => [ 'answer-resources.html' ],
     ],
     // contact page
