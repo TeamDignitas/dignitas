@@ -6,7 +6,7 @@
 <tr {if $id}id="{$id}" hidden{/if}>
   <td>
     <input type="hidden" name="relIds[]" value="{$relation->id|default:''}">
-    {include "bits/icon.tpl" i=drag_indicator class="drag-indicator"}
+    {include "bits/icon.tpl" i=drag_indicator class="drag-indicator pt-1"}
   </td>
 
   <td>

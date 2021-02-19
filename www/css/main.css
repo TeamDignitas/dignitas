@@ -464,7 +464,9 @@ body, main {
 
 .drag-indicator {
   cursor: pointer;
+  padding-top: 12px;
 }
+
 
 /************************ help pages and sidebar ************************/
 
