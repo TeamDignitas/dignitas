@@ -4,12 +4,12 @@ $id = Request::get('id');
 
 $answer = Answer::get_by_id($id);
 if (!$answer) {
-  FlashMessage::add(_('info-answer-does-not-exist'));
+  Snackbar::add(_('info-answer-does-not-exist'));
   Util::redirectToHome();
 }
 
 if (!$answer->isViewable()) {
-  FlashMessage::add(_('info-answer-restricted'));
+  Snackbar::add(_('info-answer-restricted'));
   Util::redirectToHome();
 }
 

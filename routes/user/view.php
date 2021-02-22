@@ -6,7 +6,7 @@ $nickname = Request::get('nickname');
 $user = User::get_by_id_nickname($id, $nickname);
 
 if (!$user) {
-  FlashMessage::add(_('info-no-such-user'));
+  Snackbar::add(_('info-no-such-user'));
   Util::redirectToHome();
 }
 

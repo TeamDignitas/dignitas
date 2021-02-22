@@ -13,7 +13,7 @@ if ($id) {
 }
 
 if ($deleteButton) {
-  FlashMessage::add(sprintf(_('info-static-resource-deleted-%s'), $sr->name), 'success');
+  Snackbar::add(sprintf(_('info-static-resource-deleted-%s'), $sr->name), 'success');
   $sr->delete();
   Util::redirectToRoute('staticResource/list');
 }
@@ -27,7 +27,7 @@ if ($saveButton) {
   $errors = validate($sr, $fileData);
   if (empty($errors)) {
     $sr->saveWithFile($fileData);
-    FlashMessage::add(_('info-static-resource-saved'), 'success');
+    Snackbar::add(_('info-static-resource-saved'), 'success');
     Util::redirect(Router::link('staticResource/list'));
   } else {
     Smart::assign('errors', $errors);

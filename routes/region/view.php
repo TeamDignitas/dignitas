@@ -7,7 +7,7 @@ $id = Request::get('id');
 $region = Region::get_by_id($id);
 
 if (!$region) {
-  FlashMessage::add(_('info-no-such-region'));
+  Snackbar::add(_('info-no-such-region'));
   Util::redirectToHome();
 }
 

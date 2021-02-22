@@ -6,7 +6,7 @@ $id = Request::get('id');
 
 $page = HelpPage::get_by_id($id);
 if (!$page) {
-  FlashMessage::add(_('info-no-such-help-page'));
+  Snackbar::add(_('info-no-such-help-page'));
   Util::redirectToHome();
 }
 

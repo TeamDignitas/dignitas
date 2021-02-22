@@ -3,7 +3,7 @@
 $id = Request::get('id');
 LocaleUtil::change($id);
 
-FlashMessage::add(
+Snackbar::add(
   _('info-language-changed'),
   'success');
 Util::redirectToHome();

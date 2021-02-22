@@ -16,7 +16,7 @@ if ($path) {
       ]);
       Smart::display('help/pageView.tpl');
     } else {
-      FlashMessage::add(_('info-no-such-help-item'));
+      Snackbar::add(_('info-no-such-help-item'));
       Smart::assign('categories', HelpCategory::loadAll());
       Smart::display('help/index.tpl');
     }

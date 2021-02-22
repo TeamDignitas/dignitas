@@ -6,7 +6,7 @@ $id = Request::get('id');
 
 $cr = CannedResponse::get_by_id($id);
 if (!$cr) {
-  FlashMessage::add(_('info-no-such-canned-response'));
+  Snackbar::add(_('info-no-such-canned-response'));
   Util::redirectToHome();
 }
 

@@ -22,12 +22,12 @@ $canDelete = empty($children) && !$used;
 
 if ($deleteButton) {
   if ($region->isDeletable() && $canDelete) {
-    FlashMessage::add(sprintf(_('region-deleted-%s'), $region->name), 'success');
+    Snackbar::add(sprintf(_('region-deleted-%s'), $region->name), 'success');
     Action::create(Action::TYPE_DELETE, $region);
     $region->delete();
     Util::redirectToRoute('region/list');
   } else {
-    FlashMessage::add(_('info-cannot-delete-region'), 'danger');
+    Snackbar::add(_('info-cannot-delete-region'), 'danger');
     Util::redirect("/{$region->id}");
   }
 }
@@ -35,7 +35,7 @@ if ($deleteButton) {
 User::enforce($region->id ? User::PRIV_EDIT_TAG : User::PRIV_ADD_TAG);
 
 if (Ban::exists(Ban::TYPE_TAG)) {
-  FlashMessage::add(_('info-banned-region'));
+  Snackbar::add(_('info-banned-region'));
   Util::redirectToHome();
 }
 
@@ -56,7 +56,7 @@ if ($saveButton) {
       $new ? Action::TYPE_CREATE : Action::TYPE_UPDATE,
       $region);
 
-    FlashMessage::add(_('info-region-saved'), 'success');
+    Snackbar::add(_('info-region-saved'), 'success');
     Util::redirect(Router::link('region/list'));
   } else {
     Smart::assign('errors', $errors);

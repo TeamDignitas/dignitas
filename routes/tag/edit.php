@@ -24,12 +24,12 @@ $canDelete = empty($children) && !$used;
 
 if ($deleteButton) {
   if ($tag->isDeletable() && $canDelete) {
-    FlashMessage::add(sprintf(_('tag-deleted-%s'), $tag->value), 'success');
+    Snackbar::add(sprintf(_('tag-deleted-%s'), $tag->value), 'success');
     Action::create(Action::TYPE_DELETE, $tag);
     $tag->delete();
     Util::redirectToRoute('tag/list');
   } else {
-    FlashMessage::add(_('info-cannot-delete-tag'), 'danger');
+    Snackbar::add(_('info-cannot-delete-tag'), 'danger');
     Util::redirect("/{$tag->id}");
   }
 }
@@ -37,7 +37,7 @@ if ($deleteButton) {
 User::enforce($tag->id ? User::PRIV_EDIT_TAG : User::PRIV_ADD_TAG);
 
 if (Ban::exists(Ban::TYPE_TAG)) {
-  FlashMessage::add(_('info-banned-tag'));
+  Snackbar::add(_('info-banned-tag'));
   Util::redirectToHome();
 }
 
@@ -58,7 +58,7 @@ if ($saveButton) {
       $new ? Action::TYPE_CREATE : Action::TYPE_UPDATE,
       $tag);
 
-    FlashMessage::add(_('info-tag-saved'), 'success');
+    Snackbar::add(_('info-tag-saved'), 'success');
     Util::redirect(Router::link('tag/list'));
   } else {
     Smart::assign('errors', $errors);

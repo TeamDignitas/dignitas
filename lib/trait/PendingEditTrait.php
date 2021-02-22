@@ -117,7 +117,7 @@ trait PendingEditTrait {
     try {
       $this->isEditable(true);
     } catch (Exception $e) {
-      FlashMessage::add($e->getMessage());
+      Snackbar::add($e->getMessage());
       Util::redirect(Util::getReferrer());
     }
   }

@@ -16,20 +16,20 @@ if ($id) {
 
 if ($deleteButton) {
   if (!$entity->isDeletable()) {
-    FlashMessage::add(_('info-cannot-delete-entity'));
+    Snackbar::add(_('info-cannot-delete-entity'));
   } else {
     $entity->markDeleted(Ct::REASON_BY_USER);
     $entity->subscribe();
     $entity->notify();
     Action::create(Action::TYPE_DELETE, $entity);
-    FlashMessage::add(_('info-confirm-entity-deleted.'), 'success');
+    Snackbar::add(_('info-confirm-entity-deleted.'), 'success');
   }
   Util::redirectToHome();
 }
 
 if ($reopenButton) {
   if (!$entity->isReopenable()) {
-    FlashMessage::add(_('info-cannot-reopen-entity'));
+    Snackbar::add(_('info-cannot-reopen-entity'));
   } else {
     // TODO this should be factored out in reopenEffects(), similar to markDeletedEffects().
     $entity->duplicateId = 0;
@@ -38,7 +38,7 @@ if ($reopenButton) {
     $entity->subscribe();
     $entity->notify();
     Action::create(Action::TYPE_REOPEN, $entity);
-    FlashMessage::add(_('info-confirm-entity-reopened.'), 'success');
+    Snackbar::add(_('info-confirm-entity-reopened.'), 'success');
   }
   Util::redirect($entity->getViewUrl());
 }
@@ -92,19 +92,19 @@ if ($saveButton) {
 
     if (!$originalId) {
       Review::checkNewUser($entity);
-      FlashMessage::add(_('info-entity-added'), 'success');
+      Snackbar::add(_('info-entity-added'), 'success');
       Util::redirect(Router::link('entity/view') . '/' . $entity->id);
     } else {
       if ($entity->status == Ct::STATUS_PENDING_EDIT) {
-        FlashMessage::add(_('info-changes-queued'), 'success');
+        Snackbar::add(_('info-changes-queued'), 'success');
       } else {
         Review::checkRecentlyClosedDeleted($entity);
-        FlashMessage::add(_('info-entity-updated'), 'success');
+        Snackbar::add(_('info-entity-updated'), 'success');
       }
       Util::redirect($referrer ?: $entity->getViewUrl());
     }
   } else {
-    FlashMessage::add(_('info-validation-error'));
+    Snackbar::add(_('info-validation-error'));
     Smart::assign([
       'errors' => $errors,
       'referrer' => $referrer,

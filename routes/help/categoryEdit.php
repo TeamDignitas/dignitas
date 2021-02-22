@@ -19,11 +19,11 @@ $canDelete = $id && !$numPages;
 
 if ($deleteButton) {
   if ($canDelete) {
-    FlashMessage::add(sprintf(_('info-help-category-deleted-%s'), $cat->name), 'success');
+    Snackbar::add(sprintf(_('info-help-category-deleted-%s'), $cat->name), 'success');
     $cat->delete();
     Util::redirectToRoute('help/index');
   } else {
-    FlashMessage::add(_('info-cannot-delete-help-category'), 'danger');
+    Snackbar::add(_('info-cannot-delete-help-category'), 'danger');
     Util::redirectToSelf();
   }
 }
@@ -44,7 +44,7 @@ if ($saveButton) {
       $p->save();
     }
 
-    FlashMessage::add(_('info-help-category-saved'), 'success');
+    Snackbar::add(_('info-help-category-saved'), 'success');
     Util::redirect($cat->getViewUrl());
   } else {
     Smart::assign('errors', $errors);

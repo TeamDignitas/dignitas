@@ -7,7 +7,7 @@ $id = Request::get('id');
 $tag = Tag::get_by_id($id);
 
 if (!$tag) {
-  FlashMessage::add(_('info-no-such-tag'));
+  Snackbar::add(_('info-no-such-tag'));
   Util::redirectToHome();
 }
 

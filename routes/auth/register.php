@@ -6,20 +6,20 @@ Util::assertNotLoggedIn();
 $code = Request::get('code');
 
 if (!$code && !Config::ALLOW_REGISTRATION) {
-  FlashMessage::add(_('info-registration-disabled'));
+  Snackbar::add(_('info-registration-disabled'));
   Util::redirectToHome();
 } else if ($code && !Config::ALLOW_INVITES) {
-  FlashMessage::add(_('info-invites-disabled'));
+  Snackbar::add(_('info-invites-disabled'));
   Util::redirectToHome();
 }
 
 if ($code) {
   $invite = Invite::get_by_code($code);
   if (!$invite) {
-    FlashMessage::add(_('info-incorrect-invite-code'));
+    Snackbar::add(_('info-incorrect-invite-code'));
     Util::redirectToHome();
   } else if ($invite->receiverId) {
-    FlashMessage::add(_('info-invite-already-accepted'));
+    Snackbar::add(_('info-invite-already-accepted'));
     Util::redirectToHome();
   }
 } else {
