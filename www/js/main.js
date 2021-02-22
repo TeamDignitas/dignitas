@@ -4,9 +4,11 @@ $(function() {
 });
 
 function snackbar(msg) {
-  var t = $('#snackbar-stub .toast').clone();
-  t.find('.toast-body').html(msg);
-  t.appendTo('#snackbars').toast('show');
+  if (msg) {
+    var t = $('#snackbar-stub .toast').clone();
+    t.find('.toast-body').html(msg);
+    t.appendTo('#snackbars').toast('show');
+  }
 }
 
 
