@@ -21,7 +21,7 @@ if ($saveButton) {
     }
   }
 
-  FlashMessage::add(_('info-region-nomenclature-saved'), 'success');
+  Snackbar::add(_('info-region-nomenclature-saved'), 'success');
   Util::redirectToSelf();
 }
 

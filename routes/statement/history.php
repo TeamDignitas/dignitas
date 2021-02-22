@@ -4,12 +4,12 @@ $id = Request::get('id');
 
 $statement = Statement::get_by_id($id);
 if (!$statement) {
-  FlashMessage::add(_('info-no-such-statement'));
+  Snackbar::add(_('info-no-such-statement'));
   Util::redirectToHome();
 }
 
 if (!$statement->isViewable()) {
-  FlashMessage::add(_('info-restricted-statement'));
+  Snackbar::add(_('info-restricted-statement'));
   Util::redirectToHome();
 }
 

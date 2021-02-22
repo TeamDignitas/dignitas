@@ -12,13 +12,13 @@ $pt = PasswordToken::get_by_token($token);
 // Validate the token and load the user
 $user = null;
 if (!$pt) {
-  FlashMessage::add(_('info-password-incorrect-token'));
+  Snackbar::add(_('info-password-incorrect-token'));
 } else if ($pt->createDate < time() - 24 * 3600) {
-  FlashMessage::add(_('info-password-expired-token'));
+  Snackbar::add(_('info-password-expired-token'));
 } else {
   $user = User::get_by_id($pt->userId);
   if (!$user) {
-    FlashMessage::add(_('info-password-incorrect-token'));
+    Snackbar::add(_('info-password-incorrect-token'));
   }
 }
 
@@ -32,7 +32,7 @@ if ($user && $submitButton) {
     $user->password = md5($password);
     $user->save();
     $pt->delete();
-    FlashMessage::add(_('info-password-changed'), 'success');
+    Snackbar::add(_('info-password-changed'), 'success');
     Session::login($user);
   }
 

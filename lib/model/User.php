@@ -272,7 +272,7 @@ class User extends Proto {
     if (!self::$active) {
       Util::redirectToLogin();
     } else if (!self::may($privilege)) {
-      FlashMessage::add(sprintf(
+      Snackbar::add(sprintf(
         _('info-minimum-reputation-%s'),
         Str::formatNumber($privilege)));
       Util::redirectToHome();
@@ -287,7 +287,7 @@ class User extends Proto {
     if (!self::$active) {
       Util::redirectToLogin();
     } else if (!self::isModerator()) {
-      FlashMessage::add(_('info-moderator-only'));
+      Snackbar::add(_('info-moderator-only'));
       Util::redirectToHome();
     }
   }

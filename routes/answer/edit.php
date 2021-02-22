@@ -11,7 +11,7 @@ $referrer = Request::get('referrer');
 if ($id) {
   $answer = Answer::get_by_id($id);
   if (!$answer) {
-    FlashMessage::add(_('info-no-such-answer'));
+    Snackbar::add(_('info-no-such-answer'));
     Util::redirectToHome();
   }
 } else {
@@ -22,26 +22,26 @@ if ($id) {
 
 if ($deleteButton) {
   if (!$answer->isDeletable()) {
-    FlashMessage::add(_('info-cannot-delete-answer'));
+    Snackbar::add(_('info-cannot-delete-answer'));
   } else {
     $answer->markDeleted(Ct::REASON_BY_USER);
     $answer->subscribe();
     $answer->notify();
     Action::create(Action::TYPE_DELETE, $answer);
-    FlashMessage::add(_('info-confirm-answer-deleted'), 'success');
+    Snackbar::add(_('info-confirm-answer-deleted'), 'success');
   }
   Util::redirect(Router::link('statement/view') . '/' . $answer->statementId);
 }
 
 if ($reopenButton) {
   if (!$answer->isReopenable()) {
-    FlashMessage::add(_('info-cannot-reopen-answer'));
+    Snackbar::add(_('info-cannot-reopen-answer'));
   } else {
     $answer->reopen();
     $answer->subscribe();
     $answer->notify();
     Action::create(Action::TYPE_REOPEN, $answer);
-    FlashMessage::add(_('info-confirm-answer-reopened'), 'success');
+    Snackbar::add(_('info-confirm-answer-reopened'), 'success');
   }
 
   Util::redirect(sprintf('%s/%s#a%s',
@@ -73,9 +73,9 @@ if ($saveButton) {
     Review::checkRecentlyClosedDeleted($answer);
 
     if ($answer->status == Ct::STATUS_PENDING_EDIT) {
-      FlashMessage::add(_('info-changes-queued'), 'success');
+      Snackbar::add(_('info-changes-queued'), 'success');
     } else {
-      FlashMessage::add(
+      Snackbar::add(
         $originalId ? _('info-answer-updated') : _('info-answer-posted'),
         'success');
     }

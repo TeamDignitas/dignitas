@@ -14,7 +14,7 @@ $referrer = Util::getReferrer();
 
 if ($fakeEmail) {
   if (!Config::DEVELOPMENT_MODE) {
-    FlashMessage::add(_('info-fake-login-devel'));
+    Snackbar::add(_('info-fake-login-devel'));
     Util::redirect('login');
   }
   $user = User::get_by_email($fakeEmail);

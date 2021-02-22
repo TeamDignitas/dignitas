@@ -3,7 +3,7 @@
 User::enforceModerator();
 
 if (!Config::ALLOW_INVITES) {
-  FlashMessage::add(_('info-invites-disabled'));
+  Snackbar::add(_('info-invites-disabled'));
   Util::redirect(Router::link('invite/list'));
 }
 
@@ -21,7 +21,7 @@ if ($saveButton) {
 
     sendEmail($i);
     
-    FlashMessage::add(_('info-invite-sent'), 'success');
+    Snackbar::add(_('info-invite-sent'), 'success');
     Util::redirect(Router::link('invite/list'));
   } else {
     Smart::assign('errors', $errors);
