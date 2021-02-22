@@ -8,7 +8,10 @@
 }
 
 .review-message .title-divider,
-.review-message .border-bottom {
+.review-message .border-bottom,
+.review-message .card-title,
+.review-message .card-date,
+.review-message .rounded-circle {
   display: none;
 }
 
@@ -17,6 +20,10 @@
   margin-right: 0;
   border: 1px solid #007bff;
   border-radius: .25rem;
+}
+
+.review-message .card-body {
+  margin-top: 8px;
 }
 
 .callout {
