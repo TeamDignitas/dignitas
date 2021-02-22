@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-02-18 17:26+0200\n"
-"PO-Revision-Date: 2021-02-18 17:26+0200\n"
+"POT-Creation-Date: 2021-02-22 15:22+0200\n"
+"PO-Revision-Date: 2021-02-22 15:22+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -331,6 +331,14 @@ msgstr "reopen"
 #: templates/user/ban.tpl:54 templates/user/edit.tpl:130
 msgid "link-cancel"
 msgstr "cancel"
+
+#: templates/bits/answerResources.tpl:13
+msgid "title-answer-resources"
+msgstr "Tips for answering"
+
+#: templates/bits/answerResources.tpl:33
+msgid "label-answer-resources-checkbox"
+msgstr "show tips when I'm composing an answer"
 
 #: templates/bits/comment.tpl:35
 msgid "info-comment-permalink"
@@ -723,33 +731,33 @@ msgstr "details"
 msgid "date"
 msgstr "date"
 
-#: templates/bits/scoreAndVote.tpl:18
+#: templates/bits/scoreAndVote.tpl:15
 msgid "info-confirm-upvote"
 msgstr "Your upvote was saved. Thanks for helping!"
 
-#: templates/bits/scoreAndVote.tpl:23
+#: templates/bits/scoreAndVote.tpl:18
 msgid "info-confirm-downvote"
 msgstr ""
 "Your downvote was saved. You lost one reputation point, but we thank you for "
 "helping!"
 
-#: templates/bits/scoreAndVote.tpl:34 templates/bits/scoreAndVote.tpl:60
+#: templates/bits/scoreAndVote.tpl:28 templates/bits/scoreAndVote.tpl:54
 msgid "tooltip-log-in-vote"
 msgstr "Please log in to vote."
 
-#: templates/bits/scoreAndVote.tpl:36
+#: templates/bits/scoreAndVote.tpl:30
 msgid "tooltip-minimum-reputation-upvote-%1"
 msgstr "You need at least %1 reputation to upvote."
 
-#: templates/bits/scoreAndVote.tpl:62
+#: templates/bits/scoreAndVote.tpl:56
 msgid "tooltip-minimum-reputation-downvote-%1"
 msgstr "You need at least %1 reputation to downvote."
 
-#: templates/bits/scoreAndVote.tpl:91
+#: templates/bits/scoreAndVote.tpl:85
 msgid "tooltip-toggle-answer-proof"
 msgstr "Accept/reject the answer as proof."
 
-#: templates/bits/scoreAndVote.tpl:93
+#: templates/bits/scoreAndVote.tpl:87
 msgid "tooltip-answer-is-proof"
 msgstr "Answer accepted as proof."
 
@@ -1470,14 +1478,6 @@ msgstr "your answer"
 #: templates/statement/view.tpl:34
 msgid "link-post-answer"
 msgstr "post answer"
-
-#: templates/statement/view.tpl:55 templates/statement/view.tpl:64
-msgid "title-answer-resources"
-msgstr "Tips for answering"
-
-#: templates/statement/view.tpl:90
-msgid "label-answer-resources-checkbox"
-msgstr "show tips when I'm composing an answer"
 
 #: templates/staticResource/edit.tpl:3 templates/staticResource/edit.tpl:7
 msgid "title-edit-static-resource"
@@ -2734,7 +2734,7 @@ msgstr "Answer updated."
 msgid "info-answer-posted"
 msgstr "Answer posted."
 
-#: routes/answer/edit.php:112
+#: routes/answer/edit.php:116
 msgid "info-empty-answer"
 msgstr "Cannot post an empty answer."
 
@@ -2919,7 +2919,7 @@ msgstr "Author updated."
 
 #: routes/entity/edit.php:107 routes/statement/edit.php:118
 msgid "info-validation-error"
-msgstr "There are some errors in the data. Please fix them below."
+msgstr "There are some errors in the data. Please fix them."
 
 #: routes/entity/edit.php:148
 msgid "info-incorrect-entity-type"
