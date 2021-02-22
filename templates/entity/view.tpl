@@ -18,6 +18,9 @@
     </div>
 
     {include "bits/flagModal.tpl"}
-    {include "bits/subscribeToast.tpl"}
+
+    <div id="subscribe-confirm">
+      {include "bits/toast.tpl"}
+    </div>
   </div>
 {/block}

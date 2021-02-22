@@ -1,6 +1,6 @@
 /******************************* snackbars *******************************/
 $(function() {
-  $('.toast').toast('show');
+  $('#snackbars .toast').toast('show');
 });
 
 
@@ -209,8 +209,8 @@ $(function() {
 
       // show a snackbar if needed
       if ((btn.data('type') != TYPE_COMMENT) && btn.hasClass('voted')) {
-        var id = (btn.data('value') == 1) ? '#toast-upvote' : '#toast-downvote';
-        var toast = $(id).clone(true).removeAttr('id');
+        var id = (btn.data('value') == 1) ? '#upvote-snackbar' : '#downvote-snackbar';
+        var toast = $(id + ' .toast').clone();
         toast.appendTo('#snackbars').toast('show');
       }
 
