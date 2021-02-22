@@ -4,7 +4,7 @@ class Util {
 
   static function assertNotLoggedIn() {
     if (User::getActive()) {
-      FlashMessage::add(_('info-already-logged-in'));
+      Snackbar::add(_('info-already-logged-in'));
       Util::redirectToHome();
     }
   }
@@ -19,7 +19,7 @@ class Util {
   }
 
   static function redirect($location, $statusCode = 303) {
-    FlashMessage::saveToSession();
+    Snackbar::saveToSession();
     header("Location: $location", true, $statusCode);
     exit;
   }
@@ -36,7 +36,7 @@ class Util {
     if (!empty($_POST)) {
       Session::set('postData', $_POST);
     }
-    FlashMessage::add(_('info-must-log-in'), 'warning');
+    Snackbar::add(_('info-must-log-in'), 'warning');
     Session::set('REAL_REFERRER', $_SERVER['REQUEST_URI']);
     self::redirectToRoute('auth/login');
   }

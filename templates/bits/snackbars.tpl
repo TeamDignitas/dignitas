@@ -1,8 +1,8 @@
-{if $flashMessages}
-  <div id="flash-messages" class="w-50 mx-auto">
-    {foreach $flashMessages as $m}
-      <div class="alert alert-{$m.type} alert-dismissible fade show" role="alert">
-        {$m.text}
+{if $snackbars}
+  <div id="snackbars" class="w-50 mx-auto">
+    {foreach $snackbars as $s}
+      <div class="alert alert-{$s.type} alert-dismissible fade show" role="alert">
+        {$s.text}
         <button
           type="button"
           class="close"
