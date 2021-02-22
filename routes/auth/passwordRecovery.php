@@ -32,7 +32,7 @@ if ($user && $submitButton) {
     $user->password = md5($password);
     $user->save();
     $pt->delete();
-    Snackbar::add(_('info-password-changed'), 'success');
+    Snackbar::add(_('info-password-changed'));
     Session::login($user);
   }
 

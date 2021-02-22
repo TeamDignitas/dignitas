@@ -19,25 +19,25 @@ $canDelete = $id && !$numLinks;
 
 if ($deleteButton) {
   if ($canDelete) {
-    Snackbar::add(sprintf(_('info-domain-deleted-%s'), $domain->name), 'success');
+    Snackbar::add(sprintf(_('info-domain-deleted-%s'), $domain->name));
     $domain->delete();
     Util::redirectToRoute('domain/list');
   } else {
-    Snackbar::add(_('info-cannot-delete-domain'), 'danger');
+    Snackbar::add(_('info-cannot-delete-domain'));
     Util::redirect($domain->getEditUrl());
   }
 }
 
 if ($cloneButton) {
   if ($id) {
-    Snackbar::add(_('info-domain-cloned'), 'success');
+    Snackbar::add(_('info-domain-cloned'));
     $clone = $domain->parisClone();
     $clone->name .= ' CLONE';
     $clone->save();
     $clone->copyUploadedFileFrom($domain);
     Util::redirect($clone->getEditUrl());
   } else {
-    Snackbar::add(_('info-save-domain-before-clone'), 'danger');
+    Snackbar::add(_('info-save-domain-before-clone'));
     Util::redirect($domain->getEditUrl());
   }
 }
@@ -57,7 +57,7 @@ if ($saveButton) {
     $domain->saveWithFile($fileData, $deleteImage);
     $domain->associateLinks();
 
-    Snackbar::add(_('info-domain-saved'), 'success');
+    Snackbar::add(_('info-domain-saved'));
     Util::redirect(Router::link('domain/list'));
   } else {
     Smart::assign('errors', $errors);

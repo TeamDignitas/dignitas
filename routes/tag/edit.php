@@ -24,12 +24,12 @@ $canDelete = empty($children) && !$used;
 
 if ($deleteButton) {
   if ($tag->isDeletable() && $canDelete) {
-    Snackbar::add(sprintf(_('tag-deleted-%s'), $tag->value), 'success');
+    Snackbar::add(sprintf(_('tag-deleted-%s'), $tag->value));
     Action::create(Action::TYPE_DELETE, $tag);
     $tag->delete();
     Util::redirectToRoute('tag/list');
   } else {
-    Snackbar::add(_('info-cannot-delete-tag'), 'danger');
+    Snackbar::add(_('info-cannot-delete-tag'));
     Util::redirect("/{$tag->id}");
   }
 }
@@ -58,7 +58,7 @@ if ($saveButton) {
       $new ? Action::TYPE_CREATE : Action::TYPE_UPDATE,
       $tag);
 
-    Snackbar::add(_('info-tag-saved'), 'success');
+    Snackbar::add(_('info-tag-saved'));
     Util::redirect(Router::link('tag/list'));
   } else {
     Smart::assign('errors', $errors);

@@ -36,7 +36,7 @@ class Util {
     if (!empty($_POST)) {
       Session::set('postData', $_POST);
     }
-    Snackbar::add(_('info-must-log-in'), 'warning');
+    Snackbar::add(_('info-must-log-in'));
     Session::set('REAL_REFERRER', $_SERVER['REQUEST_URI']);
     self::redirectToRoute('auth/login');
   }

@@ -20,8 +20,8 @@ if ($saveButton) {
     $i->save();
 
     sendEmail($i);
-    
-    Snackbar::add(_('info-invite-sent'), 'success');
+
+    Snackbar::add(_('info-invite-sent'));
     Util::redirect(Router::link('invite/list'));
   } else {
     Smart::assign('errors', $errors);
@@ -67,4 +67,3 @@ function sendEmail($i) {
   Mailer::setRealMode();
   Mailer::send($from, [$i->email], $subject, $body);
 }
-

@@ -14,7 +14,7 @@ if ($id) {
 }
 
 if ($deleteButton) {
-  Snackbar::add(_('info-canned-response-deleted'), 'success');
+  Snackbar::add(_('info-canned-response-deleted'));
   $cr->delete();
   Util::redirectToRoute('cannedResponse/list');
 }
@@ -25,7 +25,7 @@ if ($saveButton) {
   $errors = validate($cr);
   if (empty($errors)) {
     $cr->save();
-    Snackbar::add(_('info-canned-response-saved'), 'success');
+    Snackbar::add(_('info-canned-response-saved'));
     Util::redirect(Router::link('cannedResponse/list'));
   } else {
     Smart::assign('errors', $errors);

@@ -13,7 +13,7 @@ if ($saveButton) {
     $cr->save();
   }
 
-  Snackbar::add(_('info-order-saved'), 'success');
+  Snackbar::add(_('info-order-saved'));
   Util::redirectToRoute('cannedResponse/list');
 }
 

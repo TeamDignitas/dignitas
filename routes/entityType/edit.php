@@ -14,11 +14,11 @@ if ($id) {
 
 if ($deleteButton) {
   if ($et->canDelete()) {
-    Snackbar::add(sprintf(_('info-entity-type-deleted-%s'), $et->name), 'success');
+    Snackbar::add(sprintf(_('info-entity-type-deleted-%s'), $et->name));
     $et->delete();
     Util::redirectToRoute('entityType/list');
   } else {
-    Snackbar::add(_('info-cannot-delete-entity-type'), 'danger');
+    Snackbar::add(_('info-cannot-delete-entity-type'));
     Util::redirect($et->getEditUrl());
   }
 }
@@ -36,7 +36,7 @@ if ($saveButton) {
     if ($et->isDefault) {
       EntityType::clearOldDefault($et->id);
     }
-    Snackbar::add(_('info-entity-type-saved'), 'success');
+    Snackbar::add(_('info-entity-type-saved'));
     Util::redirect(Router::link('entityType/list'));
   } else {
     Smart::assign('errors', $errors);

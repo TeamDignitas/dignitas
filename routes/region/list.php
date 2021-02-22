@@ -21,7 +21,7 @@ if ($saveButton) {
     }
   }
 
-  Snackbar::add(_('info-region-nomenclature-saved'), 'success');
+  Snackbar::add(_('info-region-nomenclature-saved'));
   Util::redirectToSelf();
 }
 

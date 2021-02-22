@@ -26,7 +26,7 @@ if ($saveButton) {
     $user->saveWithFile($fileData, $deleteImage);
     Action::create(Action::TYPE_UPDATE, $user);
 
-    Snackbar::add(_('info-changes-saved'), 'success');
+    Snackbar::add(_('info-changes-saved'));
     Util::redirect(Router::userLink($user));
   } else {
     Smart::assign([

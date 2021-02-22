@@ -1,10 +1,6 @@
-/*************************** vanishing alerts ***************************/
+/******************************* snackbars *******************************/
 $(function() {
-  setTimeout(function() {
-    $('#snackbars > .alert').fadeTo(1000, 0, function() {
-      $(this).hide();
-    });
-  }, 5000);
+  $('.toast').toast('show');
 });
 
 
@@ -211,11 +207,11 @@ $(function() {
       // toggle this button
       btn.toggleClass('voted');
 
-      // show an alert if needed
+      // show a snackbar if needed
       if ((btn.data('type') != TYPE_COMMENT) && btn.hasClass('voted')) {
         var id = (btn.data('value') == 1) ? '#toast-upvote' : '#toast-downvote';
         var toast = $(id).clone(true).removeAttr('id');
-        toast.appendTo('#toasts').toast('show');
+        toast.appendTo('#snackbars').toast('show');
       }
 
     }).fail(function(errorMsg) {

@@ -3,7 +3,7 @@
 User::enforceModerator();
 
 if (!Config::ALLOW_INVITES) {
-  Snackbar::add(_('info-invites-disabled'), 'warning');
+  Snackbar::add(_('info-invites-disabled'));
 }
 
 Smart::assign('invites', Invite::loadAll());

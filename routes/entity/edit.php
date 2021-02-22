@@ -22,7 +22,7 @@ if ($deleteButton) {
     $entity->subscribe();
     $entity->notify();
     Action::create(Action::TYPE_DELETE, $entity);
-    Snackbar::add(_('info-confirm-entity-deleted.'), 'success');
+    Snackbar::add(_('info-confirm-entity-deleted.'));
   }
   Util::redirectToHome();
 }
@@ -38,7 +38,7 @@ if ($reopenButton) {
     $entity->subscribe();
     $entity->notify();
     Action::create(Action::TYPE_REOPEN, $entity);
-    Snackbar::add(_('info-confirm-entity-reopened.'), 'success');
+    Snackbar::add(_('info-confirm-entity-reopened.'));
   }
   Util::redirect($entity->getViewUrl());
 }
@@ -92,14 +92,14 @@ if ($saveButton) {
 
     if (!$originalId) {
       Review::checkNewUser($entity);
-      Snackbar::add(_('info-entity-added'), 'success');
+      Snackbar::add(_('info-entity-added'));
       Util::redirect(Router::link('entity/view') . '/' . $entity->id);
     } else {
       if ($entity->status == Ct::STATUS_PENDING_EDIT) {
-        Snackbar::add(_('info-changes-queued'), 'success');
+        Snackbar::add(_('info-changes-queued'));
       } else {
         Review::checkRecentlyClosedDeleted($entity);
-        Snackbar::add(_('info-entity-updated'), 'success');
+        Snackbar::add(_('info-entity-updated'));
       }
       Util::redirect($referrer ?: $entity->getViewUrl());
     }
