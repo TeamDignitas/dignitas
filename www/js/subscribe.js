@@ -17,7 +17,7 @@ $(function() {
     }).done(function(successMsg, textStatus, xhr) {
       subscribeLink.prop('hidden', true);
       unsubscribeLink.prop('hidden', false);
-      showConfirmToast(successMsg, subscribeLink);
+      showSnackbar(successMsg, subscribeLink);
 
     }).fail(function(errorMsg) {
 
@@ -51,7 +51,7 @@ $(function() {
       // swap link visibility
       subscribeLink.prop('hidden', false);
       unsubscribeLink.prop('hidden', true);
-      showConfirmToast(successMsg, unsubscribeLink);
+      showSnackbar(successMsg, unsubscribeLink);
 
     }).fail(function(errorMsg) {
 
@@ -72,13 +72,10 @@ $(function() {
   /**
    * @param link Link that caused the toast to be displayed.
    **/
-  function showConfirmToast(msg, link) {
+  function showSnackbar(msg, link) {
     link.closest('.dropdown-menu').prev().dropdown('toggle');
 
-    var t = $('#toast-subscribe-confirm')
-        .clone(true)
-        .removeAttr('id')
-        .removeClass('d-none');
+    var t = $('#subscribe-confirm .toast').clone();
 
     t.find('.toast-body').html(msg);
     t.appendTo('#snackbars').toast('show');
