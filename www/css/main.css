@@ -124,11 +124,11 @@ blockquote {
 #toasts {
   bottom: 50px;
   position: fixed;
-  right: 50px;
+  left: 50px;
 }
 
-.toast-color {
-  min-width: 23px;
+.toast-body {
+  color: #000;
 }
 
 /****************** navbar search box & search results ******************/
@@ -464,7 +464,9 @@ body, main {
 
 .drag-indicator {
   cursor: pointer;
+  padding-top: 12px;
 }
+
 
 /************************ help pages and sidebar ************************/
 
@@ -570,6 +572,9 @@ body, main {
 }
 
 /******** collapsible card with expand/collapse visual indicator ********/
+#answer-resources .card-header {
+  padding: 1rem 1.25rem .5rem;
+}
 
 .card-collapse-icon .card-header a {
   color: #555;
@@ -582,6 +587,8 @@ body, main {
   float: right;
   font-family: 'Material Icons';
   transition: all 0.5s;
+  font-size: 1.3rem;
+  margin-top: -4px;
 }
 
 .card-collapse-icon .card-header.active a:before {
@@ -622,4 +629,10 @@ body, main {
 
 .dropdown-item .material-icons {
   margin-right: 3px;
+}
+
+
+/************************ EasyMDEContainer ************************/
+.editor-toolbar button {
+  color: #6c757d;
 }
