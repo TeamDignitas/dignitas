@@ -13,7 +13,7 @@ if ($saveButton) {
     $cat->save();
   }
 
-  Snackbar::add(_('info-order-saved'), 'success');
+  Snackbar::add(_('info-order-saved'));
   Util::redirectToRoute('help/index');
 }
 

@@ -14,7 +14,7 @@ if ($id) {
 
 if ($deleteButton) {
   Log::notice('deleted help page %d [%s]', $page->id, $page->title);
-  Snackbar::add(_('info-help-page-deleted'), 'success');
+  Snackbar::add(_('info-help-page-deleted'));
   $page->delete();
   Util::redirectToRoute('help/index');
 }
@@ -30,7 +30,7 @@ if ($saveButton) {
   if (empty($errors)) {
     $page->save();
 
-    Snackbar::add(_('info-help-page-saved'), 'success');
+    Snackbar::add(_('info-help-page-saved'));
     Util::redirect($page->getViewUrl());
   } else {
     Smart::assign('errors', $errors);

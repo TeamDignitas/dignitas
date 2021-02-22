@@ -396,7 +396,7 @@ class User extends Proto {
   }
 
   /**
-   * Returns true iff there is an active user and they need an alert after voting.
+   * Returns true iff the an active user needs a snackbar after voting.
    * @return boolean
    */
   static function needsVoteReminder() {

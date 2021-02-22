@@ -13,7 +13,7 @@ if ($deleteId) {
   $user = User::get_by_id($ban->userId);
   $ban->delete();
 
-  Snackbar::add(_('info-ban-deleted'), 'success');
+  Snackbar::add(_('info-ban-deleted'));
   Util::redirect(Router::userLink($user));
 }
 
@@ -30,7 +30,7 @@ if ($saveButton) {
     }
   }
 
-  Snackbar::add(_('info-changes-saved'), 'success');
+  Snackbar::add(_('info-changes-saved'));
   Util::redirect(Router::userLink($user));
 }
 

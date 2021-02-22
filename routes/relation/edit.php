@@ -23,7 +23,7 @@ if ($saveButton) {
   $errors = validate($links);
   if (empty($errors)) {
     Link::update($relation, $links);
-    Snackbar::add(_('info-relation-updated'), 'success');
+    Snackbar::add(_('info-relation-updated'));
     Util::redirect(Router::link('entity/view') . '/' . $fromEntity->id);
   } else {
     Smart::assign([

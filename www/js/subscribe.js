@@ -81,9 +81,7 @@ $(function() {
         .removeClass('d-none');
 
     t.find('.toast-body').html(msg);
-
-    t.appendTo('#toasts')
-      .toast('show');
+    t.appendTo('#snackbars').toast('show');
   }
 
   $('a.subscribe').click(submitSubscribe);

@@ -24,10 +24,8 @@
     </header>
 
     <main class="container-fluid">
-      {include "bits/snackbars.tpl"}
       {block "content"}{/block}
-
-      <div id="toasts" aria-live="polite" aria-atomic="true"></div>
+      {include "bits/snackbars.tpl"}
     </main>
 
     <footer>

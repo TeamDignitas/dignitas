@@ -27,7 +27,7 @@ if ($deleteButton) {
   $statement->subscribe();
   $statement->notify();
   Action::create(Action::TYPE_DELETE, $statement);
-  Snackbar::add(_('info-confirm-statement-deleted'), 'success');
+  Snackbar::add(_('info-confirm-statement-deleted'));
   Util::redirectToHome();
 }
 
@@ -42,7 +42,7 @@ if ($reopenButton) {
     $statement->subscribe();
     $statement->notify();
     Action::create(Action::TYPE_REOPEN, $statement);
-    Snackbar::add(_('info-confirm-statement-reopened.'), 'success');
+    Snackbar::add(_('info-confirm-statement-reopened.'));
   }
   Util::redirect($statement->getViewUrl());
 }
@@ -104,13 +104,13 @@ if ($saveButton) {
     }
 
     if (!$originalId) {
-      Snackbar::add(_('info-statement-added'), 'success');
+      Snackbar::add(_('info-statement-added'));
       Util::redirect(Router::link('statement/view') . '/' . $statement->id);
     } else {
       if ($statement->status == Ct::STATUS_PENDING_EDIT) {
-        Snackbar::add(_('info-changes-queued'), 'success');
+        Snackbar::add(_('info-changes-queued'));
       } else {
-        Snackbar::add(_('info-statement-updated'), 'success');
+        Snackbar::add(_('info-statement-updated'));
       }
       Util::redirect($referrer ?: $statement->getViewUrl());
     }

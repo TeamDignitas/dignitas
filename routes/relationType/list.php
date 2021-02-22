@@ -13,7 +13,7 @@ if ($saveButton) {
     $rt->save();
   }
 
-  Snackbar::add(_('info-order-saved'), 'success');
+  Snackbar::add(_('info-order-saved'));
   Util::redirectToRoute('relationType/list');
 }
 

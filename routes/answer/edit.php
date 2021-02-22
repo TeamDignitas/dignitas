@@ -28,7 +28,7 @@ if ($deleteButton) {
     $answer->subscribe();
     $answer->notify();
     Action::create(Action::TYPE_DELETE, $answer);
-    Snackbar::add(_('info-confirm-answer-deleted'), 'success');
+    Snackbar::add(_('info-confirm-answer-deleted'));
   }
   Util::redirect(Router::link('statement/view') . '/' . $answer->statementId);
 }
@@ -41,7 +41,7 @@ if ($reopenButton) {
     $answer->subscribe();
     $answer->notify();
     Action::create(Action::TYPE_REOPEN, $answer);
-    Snackbar::add(_('info-confirm-answer-reopened'), 'success');
+    Snackbar::add(_('info-confirm-answer-reopened'));
   }
 
   Util::redirect(sprintf('%s/%s#a%s',
@@ -73,7 +73,7 @@ if ($saveButton) {
     Review::checkRecentlyClosedDeleted($answer);
 
     if ($answer->status == Ct::STATUS_PENDING_EDIT) {
-      Snackbar::add(_('info-changes-queued'), 'success');
+      Snackbar::add(_('info-changes-queued'));
     } else {
       Snackbar::add(
         $originalId ? _('info-answer-updated') : _('info-answer-posted'),

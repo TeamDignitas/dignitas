@@ -50,7 +50,7 @@ if ($reviewId) {
 
     // Only now do we generate a snackbar about the vote. If the vote had
     // completed the review, we would have printed that message instead.
-    Snackbar::add(_('info-vote-saved'), 'success');
+    Snackbar::add(_('info-vote-saved'));
     redirectToReview($r, $urlName);
   }
 
@@ -92,7 +92,7 @@ Smart::display('review/view.tpl');
  */
 function redirectIfComplete($review, $urlName) {
   if ($review->status != Review::STATUS_PENDING) {
-    Snackbar::add(_('info-vote-completes-review'), 'success');
+    Snackbar::add(_('info-vote-completes-review'));
     Util::redirect(Router::link('review/view') . '/' . $urlName);
   }
 }

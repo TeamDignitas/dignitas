@@ -8,34 +8,15 @@
  */
 
 class Snackbar {
-   // an array of [$text, $type] pairs, where $type follows Bootstrap conventions
+  // an array of text messages
   private static $messages = [];
 
   /**
-   * Adds messages to a message queue for later processing.
-   *
-   * @param string $message
-   * @param string $type info, success, warning, danger (default)
+   * Adds a message to a message queue for later processing.
    */
-  static function add($message, $type = 'danger') {
+  static function add($message) {
     if (Request::isWeb()) {
-      self::$messages[] = [
-        'text' => $message,
-        'type' => $type
-      ];
-    }
-  }
-
-  /**
-   * Adds a more complex message that requires some templating.
-   **/
-  static function addTemplate($template, $args, $type = 'danger') {
-    // TODO this overwrites previously assigned variables. We really should
-    // instantiate a separate Smarty.
-    if (Request::isWeb()) {
-      Smart::assign($args);
-      $message = Smart::fetch("alerts/{$template}");
-      self::add($message, $type);
+      self::$messages[] = $message;
     }
   }
 

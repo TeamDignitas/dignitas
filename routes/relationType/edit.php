@@ -14,11 +14,11 @@ if ($id) {
 
 if ($deleteButton) {
   if ($rt->canDelete()) {
-    Snackbar::add(sprintf(_('info-relation-type-deleted-%s'), $rt->name), 'success');
+    Snackbar::add(sprintf(_('info-relation-type-deleted-%s'), $rt->name));
     $rt->delete();
     Util::redirectToRoute('relationType/list');
   } else {
-    Snackbar::add(_('info-cannot-delete-relation-type'), 'danger');
+    Snackbar::add(_('info-cannot-delete-relation-type'));
     Util::redirect($rt->getEditUrl());
   }
 }
@@ -36,7 +36,7 @@ if ($saveButton) {
   $errors = validate($rt);
   if (empty($errors)) {
     $rt->save();
-    Snackbar::add(_('info-relation-type-saved'), 'success');
+    Snackbar::add(_('info-relation-type-saved'));
     Util::redirect(Router::link('relationType/list'));
   } else {
     Smart::assign('errors', $errors);

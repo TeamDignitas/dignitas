@@ -111,24 +111,12 @@ blockquote {
   }
 }
 
-/*************************** alerts and toasts ***************************/
+/******************************* snackbars *******************************/
 
 #snackbars {
-  position: absolute;
-  bottom: 5vh;
-  left: 10vw;
-  background-color: white;
-  z-index: 1000;
-}
-
-#toasts {
   bottom: 50px;
   position: fixed;
   left: 50px;
-}
-
-.toast-body {
-  color: #000;
 }
 
 /****************** navbar search box & search results ******************/
