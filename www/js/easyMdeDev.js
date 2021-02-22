@@ -85,6 +85,7 @@ $(function() {
       insertTexts: {
         link: ["[", "]()"], // insert []() for links, not [](http://)
       },
+      previewRender: customPreview,
       spellChecker: false, // disable in favor of nativeSpellchecker
       status: false,
       toolbar: EASY_MDE_TOOLBAR,
@@ -215,6 +216,30 @@ $(function() {
         });
       }, 200);
     });
+  }
+
+  // Adds URL_PREFIX to relative URLs. See also addUrlPrefix() in lib/Markdown.php.
+  function customPreview(text) {
+    text = text.replace(
+      /(href|src)=\"([^\"]+)\"/g,
+
+      function(match, p1, p2) {
+        if (isRelativeUrl(p2)) {
+          p2 = URL_PREFIX + p2;
+        }
+        return p1 + '="' + p2 + '"';
+      }
+
+    );
+
+    return this.parent.markdown(text);
+  }
+
+  // See also isRelativeUrl() in lib/Str.php.
+  function isRelativeUrl(url) {
+    return !url.startsWith('#') &&
+      !url.startsWith('http://') &&
+      !url.startsWith('https://');
   }
 
 });
