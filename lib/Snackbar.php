@@ -1,9 +1,15 @@
 <?php
 
-class FlashMessage {
+/**
+ * Snackbars modeled after https://material.io/components/snackbars with
+ * a few exceptions:
+ *  * They can stack.
+ *
+ */
+
+class Snackbar {
    // an array of [$text, $type] pairs, where $type follows Bootstrap conventions
-  static $messages = [];
-  static $hasErrors = false;
+  private static $messages = [];
 
   /**
    * Adds messages to a message queue for later processing.
@@ -17,7 +23,6 @@ class FlashMessage {
         'text' => $message,
         'type' => $type
       ];
-      self::$hasErrors |= ($type == 'danger');
     }
   }
 
@@ -34,24 +39,20 @@ class FlashMessage {
     }
   }
 
-  static function getMessages() {
+  static function getAll() {
     return self::$messages;
-  }
-
-  static function hasErrors() {
-    return self::$hasErrors;
   }
 
   static function saveToSession() {
     if (count(self::$messages)) {
-      Session::set('flashMessages', self::$messages);
+      Session::set('snackbars', self::$messages);
     }
   }
 
   static function restoreFromSession() {
-    if ($messages = Session::get('flashMessages')) {
+    if ($messages = Session::get('snackbars')) {
       self::$messages = $messages;
-      Session::unsetVar('flashMessages');
+      Session::unsetVar('snackbars');
     }
   }
 }

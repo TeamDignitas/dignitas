@@ -290,7 +290,7 @@ class Smart {
   static function addResources(...$keys) {
     foreach ($keys as $key) {
       if (!isset(self::RESOURCE_MAP[$key])) {
-        FlashMessage::add("Unknown resource ID {$key}");
+        Snackbar::add("Unknown resource ID {$key}");
         Util::redirectToHome();
       }
       self::$includedResources[] = $key;
@@ -346,7 +346,7 @@ class Smart {
     self::assign([
       'cssFile' => self::mergeResources($cssFiles, 'css'),
       'jsFile' => self::mergeResources($jsFiles, 'js'),
-      'flashMessages' => FlashMessage::getMessages(),
+      'snackbars' => Snackbar::getAll(),
     ]);
     return self::$theSmarty->fetch($templateName);
   }

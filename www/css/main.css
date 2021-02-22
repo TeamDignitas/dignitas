@@ -113,7 +113,7 @@ blockquote {
 
 /*************************** alerts and toasts ***************************/
 
-#flash-messages {
+#snackbars {
   position: absolute;
   bottom: 5vh;
   left: 10vw;

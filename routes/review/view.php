@@ -11,14 +11,14 @@ $nextButton = Request::has('nextButton');
 
 User::enforce(User::PRIV_REVIEW);
 if (Ban::exists(Ban::TYPE_REVIEW)) {
-  FlashMessage::add(_('info-banned-review'));
+  Snackbar::add(_('info-banned-review'));
   Util::redirectToHome();
 }
 $userId = User::getActiveId();
 
 $reason = Review::getReasonFromUrlName($urlName);
 if ($reason === null) {
-  FlashMessage::add(_('info-no-such-queue'));
+  Snackbar::add(_('info-no-such-queue'));
   Util::redirectToHome();
 }
 
@@ -27,11 +27,11 @@ if ($reviewId) {
 
   $r = Review::get_by_id_reason($reviewId, $reason);
   if (!$r) {
-    FlashMessage::add(_('info-no-such-review'));
+    Snackbar::add(_('info-no-such-review'));
     Util::redirectToHome();
   }
   if ($r->moderator && !User::isModerator()) {
-    FlashMessage::add(_('info-moderator-review-only'));
+    Snackbar::add(_('info-moderator-review-only'));
     Util::redirectToHome();
   }
 
@@ -48,9 +48,9 @@ if ($reviewId) {
     $r->evaluate();
     redirectIfComplete($r, $urlName);
 
-    // Only now do we generate a flash message about the vote. If the vote had
+    // Only now do we generate a snackbar about the vote. If the vote had
     // completed the review, we would have printed that message instead.
-    FlashMessage::add(_('info-vote-saved'), 'success');
+    Snackbar::add(_('info-vote-saved'), 'success');
     redirectToReview($r, $urlName);
   }
 
@@ -92,7 +92,7 @@ Smart::display('review/view.tpl');
  */
 function redirectIfComplete($review, $urlName) {
   if ($review->status != Review::STATUS_PENDING) {
-    FlashMessage::add(_('info-vote-completes-review'), 'success');
+    Snackbar::add(_('info-vote-completes-review'), 'success');
     Util::redirect(Router::link('review/view') . '/' . $urlName);
   }
 }

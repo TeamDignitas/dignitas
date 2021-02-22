@@ -34,7 +34,7 @@ class Core {
     Session::init();
     Request::init();
     if (!Request::isAjax()) {
-      FlashMessage::restoreFromSession();
+      Snackbar::restoreFromSession();
     }
     Smart::init();
     LocaleUtil::init();

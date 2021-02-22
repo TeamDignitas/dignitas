@@ -1,7 +1,7 @@
 /*************************** vanishing alerts ***************************/
 $(function() {
   setTimeout(function() {
-    $('#flash-messages > .alert').fadeTo(1000, 0, function() {
+    $('#snackbars > .alert').fadeTo(1000, 0, function() {
       $(this).hide();
     });
   }, 5000);
