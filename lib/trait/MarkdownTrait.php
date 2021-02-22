@@ -10,7 +10,7 @@ trait MarkdownTrait {
   abstract function getMarkdownFields();
 
   // keep in sync with UploadTrait.php::$URL_PATTERN
-  private static $URL_PCRE = '#(?:href|src)="%s/([0-9]+)/[a-z0-9]+\.[a-z]+"#';
+  private static $URL_PCRE = '#(?:href|src)="/?%s/([0-9]+)/[a-z0-9]+\.[a-z]+"#';
 
   private function extractAttachmentReferences() {
     $seenIds = []; // prevent duplicates
