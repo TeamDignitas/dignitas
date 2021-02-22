@@ -70,15 +70,11 @@ $(function() {
   }
 
   /**
-   * @param link Link that caused the toast to be displayed.
+   * @param link Link that caused the snackbar to be displayed.
    **/
   function showSnackbar(msg, link) {
     link.closest('.dropdown-menu').prev().dropdown('toggle');
-
-    var t = $('#subscribe-confirm .toast').clone();
-
-    t.find('.toast-body').html(msg);
-    t.appendTo('#snackbars').toast('show');
+    snackbar(msg);
   }
 
   $('a.subscribe').click(submitSubscribe);

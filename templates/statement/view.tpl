@@ -41,9 +41,5 @@
 
     {include "bits/commentForm.tpl"}
     {include "bits/flagModal.tpl"}
-
-    <div id="subscribe-confirm">
-      {include "bits/toast.tpl"}
-    </div>
   </div>
 {/block}

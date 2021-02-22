@@ -3,6 +3,12 @@ $(function() {
   $('#snackbars .toast').toast('show');
 });
 
+function snackbar(msg) {
+  var t = $('#snackbar-stub .toast').clone();
+  t.find('.toast-body').html(msg);
+  t.appendTo('#snackbars').toast('show');
+}
+
 
 /*************************** nav sidebar slide ***************************/
 $(function() {
@@ -210,8 +216,8 @@ $(function() {
       // show a snackbar if needed
       if ((btn.data('type') != TYPE_COMMENT) && btn.hasClass('voted')) {
         var id = (btn.data('value') == 1) ? '#upvote-snackbar' : '#downvote-snackbar';
-        var toast = $(id + ' .toast').clone();
-        toast.appendTo('#snackbars').toast('show');
+        var msg = $(id).html();
+        snackbar(msg);
       }
 
     }).fail(function(errorMsg) {

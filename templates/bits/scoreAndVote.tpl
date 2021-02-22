@@ -11,11 +11,11 @@
 {* include the various confirmation messages just once *}
 {if User::needsVoteReminder() && !isset($VOTE_REMINDER_MESSAGES_ONCE)}
   {$VOTE_REMINDER_MESSAGES_ONCE=1 scope="global"}
-  <div id="upvote-snackbar">
-    {include "bits/toast.tpl" msg="{t}info-confirm-upvote{/t}"}
+  <div id="upvote-snackbar" class="d-none">
+    {t}info-confirm-upvote{/t}
   </div>
-  <div id="downvote-snackbar">
-    {include "bits/toast.tpl" msg="{t}info-confirm-downvote{/t}"}
+  <div id="downvote-snackbar" class="d-none">
+    {t}info-confirm-downvote{/t}
   </div>
 {/if}
 
