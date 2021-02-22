@@ -8,14 +8,16 @@
     </button>
   </div>
 
-  <table class="table table-sm sortable col-md-10 offset-md-2">
-    <tbody id="link-container">
-      {include "bits/linkEditorRow.tpl" rowId="linkStem"}
-      {foreach $links as $link}
-        {include "bits/linkEditorRow.tpl"}
-      {/foreach}
-    </tbody>
-  </table>
+  <div class="col-md-10 offset-md-2 px-0">
+    <table class="table table-sm sortable">
+      <tbody id="link-container">
+        {include "bits/linkEditorRow.tpl" rowId="linkStem"}
+        {foreach $links as $link}
+          {include "bits/linkEditorRow.tpl"}
+        {/foreach}
+      </tbody>
+    </table>
 
-  {include "bits/fieldErrors.tpl" errors=$errors|default:null}
+    {include "bits/fieldErrors.tpl" errors=$errors|default:null}
+  </div>
 </div>

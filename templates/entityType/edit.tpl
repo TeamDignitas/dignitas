@@ -13,13 +13,15 @@
           <label for="field-name" class="control-label col-sm-12 col-lg-2 mt-2 pl-0">
             {t}label-name{/t}
           </label>
-          <input type="text"
-            class="form-control {if isset($errors.name)}is-invalid{/if} col-sm-12 col-lg-10"
-            id="field-name"
-            name="name"
-            value="{$et->name|escape}"
-            placeholder="{t}info-entity-type-name{/t}">
-          {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
+          <div class="col-sm-12 col-lg-10 px-0">
+            <input type="text"
+              class="form-control {if isset($errors.name)}is-invalid{/if}"
+              id="field-name"
+              name="name"
+              value="{$et->name|escape}"
+              placeholder="{t}info-entity-type-name{/t}">
+            {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
+          </div>
         </div>
       </fieldset>
 

@@ -12,32 +12,36 @@
         <div class="form-group row">
           <label class="col-sm-12 col-lg-2 mt-2 px-0">{t}label-nickname{/t}</label>
 
-          <div class="input-group col-sm-12 col-lg-10 px-0">
-            <span class="input-group-prepend">
-              {include "bits/icon.tpl" i=person class="input-group-text"}
-            </span>
-            <input
-              class="form-control {if isset($errors.nickname)}is-invalid{/if}"
-              type="text"
-              name="nickname"
-              value="{$user->nickname}"
-              autofocus>
+          <div class="col-sm-12 col-lg-10 px-0">
+            <div class="input-group">
+              <span class="input-group-prepend">
+                {include "bits/icon.tpl" i=person class="input-group-text"}
+              </span>
+              <input
+                class="form-control {if isset($errors.nickname)}is-invalid{/if}"
+                type="text"
+                name="nickname"
+                value="{$user->nickname}"
+                autofocus>
+            </div>
+            {include "bits/fieldErrors.tpl" errors=$errors.nickname|default:null}
           </div>
-          {include "bits/fieldErrors.tpl" errors=$errors.nickname|default:null}
         </div>
 
         <div class="form-group row">
           <label class="col-sm-12 col-lg-2 mt-2 px-0">{t}label-email{/t}</label>
 
-          <div class="input-group col-sm-12 col-lg-10 px-0">
-            <span class="input-group-prepend">
-              {include "bits/icon.tpl" i=email class="input-group-text"}
-            </span>
-            <input
-              class="form-control {if isset($errors.email)}is-invalid{/if}"
-              type="email"
-              name="email"
-              value="{$user->email|escape}">
+          <div class="col-sm-12 col-lg-10 px-0">
+            <div class="input-group">
+              <span class="input-group-prepend">
+                {include "bits/icon.tpl" i=email class="input-group-text"}
+              </span>
+              <input
+                class="form-control {if isset($errors.email)}is-invalid{/if}"
+                type="email"
+                name="email"
+                value="{$user->email|escape}">
+            </div>
             {include "bits/fieldErrors.tpl" errors=$errors.email|default:null}
           </div>
         </div>
@@ -96,15 +100,17 @@
         <div class="form-group row">
           <label class="col-sm-12 col-lg-2 mt-2 px-0">{t}label-password{/t}</label>
 
-          <div class="input-group col-sm-12 col-lg-10 px-0">
-            <span class="input-group-prepend">
-              {include "bits/icon.tpl" i=lock class="input-group-text"}
-            </span>
-            <input
-              class="form-control {if isset($errors.password)}is-invalid{/if}"
-              type="password"
-              name="password"
-              value="{$password|default:''}">
+          <div class="col-sm-12 col-lg-10 px-0">
+            <div class="input-group">
+              <span class="input-group-prepend">
+                {include "bits/icon.tpl" i=lock class="input-group-text"}
+              </span>
+              <input
+                class="form-control {if isset($errors.password)}is-invalid{/if}"
+                type="password"
+                name="password"
+                value="{$password|default:''}">
+            </div>
             {include "bits/fieldErrors.tpl" errors=$errors.password|default:null}
           </div>
         </div>

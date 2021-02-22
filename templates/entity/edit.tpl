@@ -27,12 +27,14 @@
       <fieldset class="related-fields mb-5 ml-3">
         <div class="form-group row">
           <label for="field-name" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-name{/t}</label>
-          <input
-            name="name"
-            value="{$entity->name|escape}"
-            id="field-name"
-            class="form-control {if isset($errors.name)}is-invalid{/if} col-sm-12 col-lg-10">
-          {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
+          <div class="col-sm-12 col-lg-10 px-0">
+            <input
+              name="name"
+              value="{$entity->name|escape}"
+              id="field-name"
+              class="form-control {if isset($errors.name)}is-invalid{/if}">
+            {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
+          </div>
         </div>
 
         {if User::isModerator()}
@@ -98,21 +100,23 @@
       <fieldset class="related-fields mb-5 ml-3">
         <div class="form-group row">
           <label for="field-entity-type-id" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-type{/t}</label>
-          <select
-            name="entityTypeId"
-            id="field-entity-type-id"
-            class="form-control col-sm-12 col-lg-10 {if isset($errors.entityTypeId)}is-invalid{/if}"
-            data-change-msg="{t}info-change-entity-type-while-relations-exist{/t}">
-            {foreach $entityTypes as $et}
-              <option
-                value="{$et->id}"
-                data-has-color="{$et->hasColor}"
-                {if $entity->entityTypeId == $et->id}selected{/if}>
-                {$et->name|escape}
-              </option>
-            {/foreach}
-          </select>
-          {include "bits/fieldErrors.tpl" errors=$errors.type|default:null}
+          <div class="col-sm-12 col-lg-10 px-0">
+            <select
+              name="entityTypeId"
+              id="field-entity-type-id"
+              class="form-control {if isset($errors.entityTypeId)}is-invalid{/if}"
+              data-change-msg="{t}info-change-entity-type-while-relations-exist{/t}">
+              {foreach $entityTypes as $et}
+                <option
+                  value="{$et->id}"
+                  data-has-color="{$et->hasColor}"
+                  {if $entity->entityTypeId == $et->id}selected{/if}>
+                  {$et->name|escape}
+                </option>
+              {/foreach}
+            </select>
+            {include "bits/fieldErrors.tpl" errors=$errors.type|default:null}
+          </div>
         </div>
 
         <div id="color-wrapper"
@@ -135,29 +139,31 @@
             </button>
           </div>
 
-          <table class="table table-sm table-rel sortable col-md-10 offset-md-2">
-            <thead
-              id="relation-header"
-              {if empty($relations)}hidden{/if}>
-              <tr>
-                <th class="border-0">{t}label-order{/t}</th>
-                <th class="border-0">{t}label-type{/t}</th>
-                <th class="border-0">{t}label-target{/t}</th>
-                <th class="border-0">{t}label-start-date{/t}</th>
-                <th class="border-0">{t}label-end-date{/t}</th>
-                <th class="border-0">{t}actions{/t}</th>
-              </tr>
-            </thead>
-            <tbody id="relation-container">
-              {$entityTypeId=$entity->getEntityType()->id|default:$entityTypes[0]->id}
-              {include "bits/relationEdit.tpl" id="stem-relation"}
-              {foreach $relations as $r}
-                {include "bits/relationEdit.tpl" relation=$r}
-              {/foreach}
-            </tbody>
-          </table>
+          <div class="col-md-10 offset-md-2 px-0">
+            <table class="table table-sm table-rel sortable">
+              <thead
+                id="relation-header"
+                {if empty($relations)}hidden{/if}>
+                <tr>
+                  <th class="border-0">{t}label-order{/t}</th>
+                  <th class="border-0">{t}label-type{/t}</th>
+                  <th class="border-0">{t}label-target{/t}</th>
+                  <th class="border-0">{t}label-start-date{/t}</th>
+                  <th class="border-0">{t}label-end-date{/t}</th>
+                  <th class="border-0">{t}actions{/t}</th>
+                </tr>
+              </thead>
+              <tbody id="relation-container">
+                {$entityTypeId=$entity->getEntityType()->id|default:$entityTypes[0]->id}
+                {include "bits/relationEdit.tpl" id="stem-relation"}
+                {foreach $relations as $r}
+                  {include "bits/relationEdit.tpl" relation=$r}
+                {/foreach}
+              </tbody>
+            </table>
 
-          {include "bits/fieldErrors.tpl" errors=$errors.relations|default:null}
+            {include "bits/fieldErrors.tpl" errors=$errors.relations|default:null}
+          </div>
 
         </div>
       </fieldset>

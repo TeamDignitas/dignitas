@@ -49,14 +49,16 @@
 
         <div class="form-group row">
           <label for="field-date-made" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-statement-date{/t}</label>
-          <input
-            type="text"
-            id="field-date-made"
-            class="form-control datepicker {if isset($errors.dateMade)}is-invalid{/if} col-sm-12 col-lg-10"
-            data-allow-partial="false"
-            required>
-          <input type="hidden" name="dateMade" value="{$statement->dateMade}">
-          {include "bits/fieldErrors.tpl" errors=$errors.dateMade|default:null}
+          <div class="col-sm-12 col-lg-10 px-0">
+            <input
+              type="text"
+              id="field-date-made"
+              class="form-control datepicker {if isset($errors.dateMade)}is-invalid{/if}"
+              data-allow-partial="false"
+              required>
+            <input type="hidden" name="dateMade" value="{$statement->dateMade}">
+            {include "bits/fieldErrors.tpl" errors=$errors.dateMade|default:null}
+          </div>
         </div>
 
         <div class="form-group row">

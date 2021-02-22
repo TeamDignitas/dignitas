@@ -13,25 +13,29 @@
           <label for="field-title" class="control-label col-sm-12 col-lg-2 mt-2 pl-0">
             {t}label-title{/t}
           </label>
-          <input type="text"
-            class="form-control {if isset($errors.title)}is-invalid{/if} col-sm-12 col-lg-10"
-            id="field-title"
-            name="title"
-            value="{$page->title|escape}">
-          {include "bits/fieldErrors.tpl" errors=$errors.title|default:null}
+          <div class="col-sm-12 col-lg-10 px-0">
+            <input type="text"
+              class="form-control {if isset($errors.title)}is-invalid{/if}"
+              id="field-title"
+              name="title"
+              value="{$page->title|escape}">
+            {include "bits/fieldErrors.tpl" errors=$errors.title|default:null}
+          </div>
         </div>
 
         <div class="form-group row">
           <label for="field-path" class="control-label col-sm-12 col-lg-2 mt-2 pl-0">
             {t}label-help-page-path{/t}
           </label>
-          <input type="text"
-            class="form-control {if isset($errors.path)}is-invalid{/if} col-sm-12 col-lg-10"
-            id="field-path"
-            name="path"
-            value="{$page->path|escape}"
-            placeholder="{t}info-help-page-path{/t}">
-          {include "bits/fieldErrors.tpl" errors=$errors.path|default:null}
+          <div class="col-sm-12 col-lg-10 px-0">
+            <input type="text"
+              class="form-control {if isset($errors.path)}is-invalid{/if}"
+              id="field-path"
+              name="path"
+              value="{$page->path|escape}"
+              placeholder="{t}info-help-page-path{/t}">
+            {include "bits/fieldErrors.tpl" errors=$errors.path|default:null}
+          </div>
         </div>
 
         <div class="form-group row">

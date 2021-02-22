@@ -13,26 +13,30 @@
           <label for="field-name" class="control-label col-sm-12 col-lg-2 mt-2 pl-0">
             {t}label-name{/t}
           </label>
-          <input type="text"
-            class="form-control {if isset($errors.name)}is-invalid{/if} col-sm-12 col-lg-10"
-            id="field-name"
-            name="name"
-            value="{$domain->name|escape}"
-            placeholder="{t}info-domain-name{/t}">
-          {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
+          <div class="col-sm-12 col-lg-10 px-0">
+            <input type="text"
+              class="form-control {if isset($errors.name)}is-invalid{/if}"
+              id="field-name"
+              name="name"
+              value="{$domain->name|escape}"
+              placeholder="{t}info-domain-name{/t}">
+            {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
+          </div>
         </div>
 
         <div class="form-group row">
           <label for="field-display-value" class="control-label col-sm-12 col-lg-2 mt-2 pl-0">
             {t}label-display-value{/t}
           </label>
-          <input type="text"
-            class="form-control {if isset($errors.displayValue)}is-invalid{/if} col-sm-12 col-lg-10"
-            id="field-display-value"
-            name="displayValue"
-            value="{$domain->displayValue|escape}"
-            placeholder="{t}info-domain-display-value{/t}">
-          {include "bits/fieldErrors.tpl" errors=$errors.displayValue|default:null}
+          <div class="col-sm-12 col-lg-10 px-0">
+            <input type="text"
+              class="form-control {if isset($errors.displayValue)}is-invalid{/if}"
+              id="field-display-value"
+              name="displayValue"
+              value="{$domain->displayValue|escape}"
+              placeholder="{t}info-domain-display-value{/t}">
+            {include "bits/fieldErrors.tpl" errors=$errors.displayValue|default:null}
+          </div>
         </div>
 
         <div class="form-group row">
