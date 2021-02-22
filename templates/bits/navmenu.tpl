@@ -152,7 +152,7 @@
                     type="text"
                     class="form-control"
                     id="fakeReputation"
-                    placeholder="{t}label-reputation{/t}">
+                    value="{$u->getReputation()}">
                 </div>
 
                 <div class="form-row align-items-center">
