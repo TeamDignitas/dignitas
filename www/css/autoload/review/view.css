@@ -3,8 +3,9 @@
 }
 
 .review-message .statement-title {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: normal;
+  line-height: 1.56;
 }
 
 .review-message .title-divider,
