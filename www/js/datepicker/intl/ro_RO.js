@@ -8,7 +8,7 @@ $(function(){
     ],
 
     labels: {
-      title: 'alegeți o dată',
+      title: 'alege o dată',
 
       year: 'anul',
       month: 'luna',

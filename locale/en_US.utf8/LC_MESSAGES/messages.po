@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-02-22 15:22+0200\n"
-"PO-Revision-Date: 2021-02-22 15:22+0200\n"
+"POT-Creation-Date: 2021-02-22 18:10+0200\n"
+"PO-Revision-Date: 2021-02-22 18:10+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -140,13 +140,13 @@ msgstr "edit answer"
 
 #: templates/answer/edit.tpl:16 templates/auth/resetPassword.tpl:46
 #: templates/bits/commentForm.tpl:49 templates/cannedResponse/edit.tpl:46
-#: templates/domain/edit.tpl:96 templates/entity/edit.tpl:282
-#: templates/entityType/edit.tpl:108 templates/help/categoryEdit.tpl:80
-#: templates/help/pageEdit.tpl:91 templates/region/edit.tpl:98
+#: templates/domain/edit.tpl:100 templates/entity/edit.tpl:288
+#: templates/entityType/edit.tpl:110 templates/help/categoryEdit.tpl:82
+#: templates/help/pageEdit.tpl:95 templates/region/edit.tpl:98
 #: templates/region/list.tpl:46 templates/relation/edit.tpl:30
-#: templates/relationType/edit.tpl:147 templates/statement/edit.tpl:215
+#: templates/relationType/edit.tpl:147 templates/statement/edit.tpl:217
 #: templates/staticResource/edit.tpl:97 templates/tag/edit.tpl:173
-#: templates/user/ban.tpl:59 templates/user/edit.tpl:135
+#: templates/user/ban.tpl:59 templates/user/edit.tpl:141
 msgid "link-save"
 msgstr "save"
 
@@ -156,12 +156,12 @@ msgstr "log in"
 
 #: templates/auth/login.tpl:35 templates/auth/lostPassword.tpl:32
 #: templates/auth/register.tpl:41 templates/invite/add.tpl:12
-#: templates/invite/add.tpl:23 templates/user/edit.tpl:30
+#: templates/invite/add.tpl:23 templates/user/edit.tpl:32
 msgid "label-email"
 msgstr "email"
 
 #: templates/auth/login.tpl:49 templates/auth/register.tpl:56
-#: templates/auth/resetPassword.tpl:26 templates/user/edit.tpl:97
+#: templates/auth/resetPassword.tpl:26 templates/user/edit.tpl:101
 msgid "label-password"
 msgstr "password"
 
@@ -210,7 +210,7 @@ msgid "label-nickname"
 msgstr "nickname"
 
 #: templates/auth/register.tpl:71 templates/auth/resetPassword.tpl:40
-#: templates/user/edit.tpl:113
+#: templates/user/edit.tpl:119
 msgid "label-password-again"
 msgstr "password (again)"
 
@@ -286,7 +286,7 @@ msgid "link-permalink"
 msgstr "permalink"
 
 #: templates/bits/answerEdit.tpl:24 templates/bits/statementFilters.tpl:44
-#: templates/statement/edit.tpl:163 lib/model/RevisionAnswer.php:15
+#: templates/statement/edit.tpl:165 lib/model/RevisionAnswer.php:15
 #: lib/model/RevisionStatement.php:22 lib/model/Statement.php:112
 msgid "label-verdict"
 msgstr "verdict"
@@ -300,11 +300,11 @@ msgid "info-confirm-delete-answer"
 msgstr "Are you sure you want to delete this answer?"
 
 #: templates/bits/answerEdit.tpl:61 templates/bits/comment.tpl:47
-#: templates/cannedResponse/edit.tpl:35 templates/domain/edit.tpl:78
-#: templates/entity/edit.tpl:261 templates/entityType/edit.tpl:97
-#: templates/help/categoryEdit.tpl:69 templates/help/pageEdit.tpl:80
+#: templates/cannedResponse/edit.tpl:35 templates/domain/edit.tpl:82
+#: templates/entity/edit.tpl:267 templates/entityType/edit.tpl:99
+#: templates/help/categoryEdit.tpl:71 templates/help/pageEdit.tpl:84
 #: templates/region/edit.tpl:77 templates/relationType/edit.tpl:136
-#: templates/statement/edit.tpl:194 templates/staticResource/edit.tpl:86
+#: templates/statement/edit.tpl:196 templates/staticResource/edit.tpl:86
 #: templates/tag/edit.tpl:155
 msgid "link-delete"
 msgstr "delete"
@@ -313,22 +313,22 @@ msgstr "delete"
 msgid "info-confirm-reopen-answer"
 msgstr "Are you sure you want to reopen this answer?"
 
-#: templates/bits/answerEdit.tpl:71 templates/entity/edit.tpl:271
-#: templates/statement/edit.tpl:204
+#: templates/bits/answerEdit.tpl:71 templates/entity/edit.tpl:277
+#: templates/statement/edit.tpl:206
 msgid "link-reopen"
 msgstr "reopen"
 
 #: templates/bits/answerEdit.tpl:77 templates/bits/commentForm.tpl:44
 #: templates/bits/flagModal.tpl:190 templates/bits/phpConstants.tpl:16
 #: templates/cannedResponse/edit.tpl:41 templates/cannedResponse/list.tpl:52
-#: templates/domain/edit.tpl:91 templates/entity/edit.tpl:277
-#: templates/entityType/edit.tpl:103 templates/help/categoryEdit.tpl:75
-#: templates/help/categoryList.tpl:30 templates/help/pageEdit.tpl:86
+#: templates/domain/edit.tpl:95 templates/entity/edit.tpl:283
+#: templates/entityType/edit.tpl:105 templates/help/categoryEdit.tpl:77
+#: templates/help/categoryList.tpl:30 templates/help/pageEdit.tpl:90
 #: templates/invite/add.tpl:31 templates/region/edit.tpl:90
 #: templates/relation/edit.tpl:25 templates/relationType/edit.tpl:142
-#: templates/relationType/list.tpl:62 templates/statement/edit.tpl:210
+#: templates/relationType/list.tpl:62 templates/statement/edit.tpl:212
 #: templates/staticResource/edit.tpl:92 templates/tag/edit.tpl:168
-#: templates/user/ban.tpl:54 templates/user/edit.tpl:130
+#: templates/user/ban.tpl:54 templates/user/edit.tpl:136
 msgid "link-cancel"
 msgstr "cancel"
 
@@ -349,8 +349,8 @@ msgid "info-confirm-delete-comment"
 msgstr "Are you sure you want to delete this comment?"
 
 #: templates/bits/commentForm.tpl:14 templates/cannedResponse/edit.tpl:21
-#: templates/entity/edit.tpl:178 templates/statement/edit.tpl:101
-#: templates/statement/edit.tpl:137
+#: templates/entity/edit.tpl:184 templates/statement/edit.tpl:103
+#: templates/statement/edit.tpl:139
 msgid "label-characters-remaining"
 msgstr "characters remaining"
 
@@ -445,7 +445,7 @@ msgstr "filter"
 msgid "label-term"
 msgstr "text"
 
-#: templates/bits/entityFilters.tpl:39 templates/entity/edit.tpl:193
+#: templates/bits/entityFilters.tpl:39 templates/entity/edit.tpl:199
 #: lib/model/RevisionEntity.php:36
 msgid "label-region"
 msgstr "region"
@@ -454,8 +454,7 @@ msgstr "region"
 msgid "title-test-login"
 msgstr "test user login"
 
-#: templates/bits/fakeLogin.tpl:33 templates/bits/navmenu.tpl:155
-#: templates/user/view.tpl:30
+#: templates/bits/fakeLogin.tpl:33 templates/user/view.tpl:30
 msgid "label-reputation"
 msgstr "reputation"
 
@@ -731,33 +730,41 @@ msgstr "details"
 msgid "date"
 msgstr "date"
 
-#: templates/bits/scoreAndVote.tpl:15
+#: templates/bits/scoreAndVote.tpl:17
 msgid "info-confirm-upvote"
 msgstr "Your upvote was saved. Thanks for helping!"
 
-#: templates/bits/scoreAndVote.tpl:18
+#: templates/bits/scoreAndVote.tpl:20
 msgid "info-confirm-downvote"
 msgstr ""
 "Your downvote was saved. You lost one reputation point, but we thank you for "
 "helping!"
 
-#: templates/bits/scoreAndVote.tpl:28 templates/bits/scoreAndVote.tpl:54
+#: templates/bits/scoreAndVote.tpl:26
+msgid "info-confirm-accept"
+msgstr "Answer accepted as proof."
+
+#: templates/bits/scoreAndVote.tpl:29
+msgid "info-confirm-unaccept"
+msgstr "Answer rejected as proof."
+
+#: templates/bits/scoreAndVote.tpl:41 templates/bits/scoreAndVote.tpl:67
 msgid "tooltip-log-in-vote"
 msgstr "Please log in to vote."
 
-#: templates/bits/scoreAndVote.tpl:30
+#: templates/bits/scoreAndVote.tpl:43
 msgid "tooltip-minimum-reputation-upvote-%1"
 msgstr "You need at least %1 reputation to upvote."
 
-#: templates/bits/scoreAndVote.tpl:56
+#: templates/bits/scoreAndVote.tpl:69
 msgid "tooltip-minimum-reputation-downvote-%1"
 msgstr "You need at least %1 reputation to downvote."
 
-#: templates/bits/scoreAndVote.tpl:85
+#: templates/bits/scoreAndVote.tpl:98
 msgid "tooltip-toggle-answer-proof"
 msgstr "Accept/reject the answer as proof."
 
-#: templates/bits/scoreAndVote.tpl:87
+#: templates/bits/scoreAndVote.tpl:100
 msgid "tooltip-answer-is-proof"
 msgstr "Answer accepted as proof."
 
@@ -819,11 +826,11 @@ msgstr "statement date (ascending)"
 msgid "label-other-filters"
 msgstr "other filters"
 
-#: templates/bits/statementFilters.tpl:83 templates/entity/edit.tpl:146
+#: templates/bits/statementFilters.tpl:83 templates/entity/edit.tpl:151
 msgid "label-start-date"
 msgstr "start date"
 
-#: templates/bits/statementFilters.tpl:92 templates/entity/edit.tpl:147
+#: templates/bits/statementFilters.tpl:92 templates/entity/edit.tpl:152
 msgid "label-end-date"
 msgstr "end date"
 
@@ -851,7 +858,7 @@ msgstr "unwatch"
 msgid "title-edit-canned-response"
 msgstr "edit canned response"
 
-#: templates/cannedResponse/edit.tpl:12 templates/help/pageEdit.tpl:59
+#: templates/cannedResponse/edit.tpl:12 templates/help/pageEdit.tpl:63
 #: templates/staticResource/edit.tpl:51
 msgid "label-contents"
 msgstr "contents"
@@ -898,38 +905,38 @@ msgstr "edit domain"
 msgid "label-name"
 msgstr "name"
 
-#: templates/domain/edit.tpl:21
+#: templates/domain/edit.tpl:22
 msgid "info-domain-name"
 msgstr "a domain name like google.com"
 
-#: templates/domain/edit.tpl:27 templates/domain/list.tpl:20
+#: templates/domain/edit.tpl:29 templates/domain/list.tpl:20
 msgid "label-display-value"
 msgstr "display value"
 
-#: templates/domain/edit.tpl:34
+#: templates/domain/edit.tpl:37
 msgid "info-domain-display-value"
 msgstr "a value more suitable for humans"
 
-#: templates/domain/edit.tpl:39 templates/entity/edit.tpl:220
-#: templates/user/edit.tpl:59
+#: templates/domain/edit.tpl:43 templates/entity/edit.tpl:226
+#: templates/user/edit.tpl:63
 msgid "label-image"
 msgstr "image"
 
-#: templates/domain/edit.tpl:55 templates/entity/edit.tpl:232
-#: templates/user/edit.tpl:71
+#: templates/domain/edit.tpl:59 templates/entity/edit.tpl:238
+#: templates/user/edit.tpl:75
 msgid "info-upload-image"
 msgstr "choose an image"
 
-#: templates/domain/edit.tpl:63 templates/entity/edit.tpl:240
-#: templates/user/edit.tpl:79
+#: templates/domain/edit.tpl:67 templates/entity/edit.tpl:246
+#: templates/user/edit.tpl:83
 msgid "label-delete-image"
 msgstr "delete image"
 
-#: templates/domain/edit.tpl:76
+#: templates/domain/edit.tpl:80
 msgid "info-confirm-delete-domain"
 msgstr "Are you sure you want to delete this domain?"
 
-#: templates/domain/edit.tpl:85
+#: templates/domain/edit.tpl:89
 msgid "link-clone"
 msgstr "clone"
 
@@ -945,8 +952,8 @@ msgstr "add a domain"
 msgid "label-icon"
 msgstr "icon"
 
-#: templates/domain/list.tpl:21 templates/entity/edit.tpl:84
-#: templates/entity/edit.tpl:148 templates/entityType/list.tpl:22
+#: templates/domain/list.tpl:21 templates/entity/edit.tpl:86
+#: templates/entity/edit.tpl:153 templates/entityType/list.tpl:22
 #: templates/relationType/list.tpl:30 templates/staticResource/list.tpl:21
 #: templates/user/view.tpl:101
 msgid "actions"
@@ -993,88 +1000,88 @@ msgstr "edit author"
 msgid "title-add-entity"
 msgstr "add an author"
 
-#: templates/entity/edit.tpl:43 lib/model/RelationType.php:27
+#: templates/entity/edit.tpl:45 lib/model/RelationType.php:27
 #: lib/model/RevisionEntity.php:24
 msgid "phrase-long-possessive"
 msgstr "long possessive"
 
-#: templates/entity/edit.tpl:50 templates/entity/edit.tpl:64
+#: templates/entity/edit.tpl:52 templates/entity/edit.tpl:66
 msgid "label-optional"
 msgstr "optional"
 
-#: templates/entity/edit.tpl:57 lib/model/RelationType.php:28
+#: templates/entity/edit.tpl:59 lib/model/RelationType.php:28
 #: lib/model/RevisionEntity.php:20
 msgid "phrase-short-possessive"
 msgstr "short possessive"
 
-#: templates/entity/edit.tpl:69 templates/entity/edit.tpl:83
+#: templates/entity/edit.tpl:71 templates/entity/edit.tpl:85
 msgid "label-alias"
 msgstr "also known as"
 
-#: templates/entity/edit.tpl:73
+#: templates/entity/edit.tpl:75
 msgid "link-add-alias"
 msgstr "add an alias"
 
-#: templates/entity/edit.tpl:82 templates/entity/edit.tpl:143
+#: templates/entity/edit.tpl:84 templates/entity/edit.tpl:148
 #: templates/relationType/list.tpl:25
 msgid "label-order"
 msgstr "order"
 
-#: templates/entity/edit.tpl:100 templates/entity/edit.tpl:144
-#: templates/statement/edit.tpl:63 templates/user/ban.tpl:14
+#: templates/entity/edit.tpl:102 templates/entity/edit.tpl:149
+#: templates/statement/edit.tpl:65 templates/user/ban.tpl:14
 #: lib/model/RevisionStatement.php:18
 msgid "label-type"
 msgstr "type"
 
-#: templates/entity/edit.tpl:105
+#: templates/entity/edit.tpl:108
 msgid "info-change-entity-type-while-relations-exist"
 msgstr ""
 "If you change the author type, all existing relations will be deleted. You "
 "can add new relations after you save the page."
 
-#: templates/entity/edit.tpl:121
+#: templates/entity/edit.tpl:125
 msgid "label-color"
 msgstr "color"
 
-#: templates/entity/edit.tpl:130
+#: templates/entity/edit.tpl:134
 msgid "label-relations"
 msgstr "relationships"
 
-#: templates/entity/edit.tpl:134
+#: templates/entity/edit.tpl:138
 msgid "label-add-relation"
 msgstr "add a relationship"
 
-#: templates/entity/edit.tpl:145
+#: templates/entity/edit.tpl:150
 msgid "label-target"
 msgstr "target"
 
-#: templates/entity/edit.tpl:167
+#: templates/entity/edit.tpl:173
 msgid "label-profile"
 msgstr "profile"
 
-#: templates/entity/edit.tpl:185
+#: templates/entity/edit.tpl:191
 msgid "label-entity-links"
 msgstr "external links"
 
-#: templates/entity/edit.tpl:186
+#: templates/entity/edit.tpl:192
 msgid "link-add-entity-link"
 msgstr "add a link"
 
-#: templates/entity/edit.tpl:209 templates/statement/edit.tpl:151
+#: templates/entity/edit.tpl:215 templates/statement/edit.tpl:153
 msgid "label-tags"
 msgstr "tags"
 
-#: templates/entity/edit.tpl:229
+#: templates/entity/edit.tpl:235
 msgid "tooltip-upload-entity-image"
 msgstr ""
 "Try to choose an official imag, such as the author's Facebook profile "
 "picture. "
 
-#: templates/entity/edit.tpl:259
+#: templates/entity/edit.tpl:265
 msgid "info-confirm-delete-entity"
 msgstr "Are you sure you want to delete this author?"
 
-#: templates/entity/edit.tpl:270
+#: templates/entity/edit.tpl:276
 msgid "info-confirm-reopen-entity"
 msgstr "Are you sure you want to reopen this author?"
 
@@ -1092,43 +1099,43 @@ msgstr "afirmații"
 msgid "title-edit-entity-type"
 msgstr "edit author type"
 
-#: templates/entityType/edit.tpl:21
+#: templates/entityType/edit.tpl:22
 msgid "info-entity-type-name"
 msgstr "name"
 
-#: templates/entityType/edit.tpl:35 templates/entityType/list.tpl:19
+#: templates/entityType/edit.tpl:37 templates/entityType/list.tpl:19
 msgid "label-loyalty-source"
 msgstr "has loyalty"
 
-#: templates/entityType/edit.tpl:38
+#: templates/entityType/edit.tpl:40
 msgid "info-loyalty-source"
 msgstr "Authors of this type have loyalty."
 
-#: templates/entityType/edit.tpl:50 templates/entityType/list.tpl:20
+#: templates/entityType/edit.tpl:52 templates/entityType/list.tpl:20
 msgid "label-loyalty-sink"
 msgstr "object of loyalty"
 
-#: templates/entityType/edit.tpl:53
+#: templates/entityType/edit.tpl:55
 msgid "info-loyalty-sink"
 msgstr "Authors of this type can be the object of loyalty."
 
-#: templates/entityType/edit.tpl:66 templates/entityType/list.tpl:21
+#: templates/entityType/edit.tpl:68 templates/entityType/list.tpl:21
 msgid "label-has-color"
 msgstr "has a color"
 
-#: templates/entityType/edit.tpl:69
+#: templates/entityType/edit.tpl:71
 msgid "info-has-color"
 msgstr "Authors of this type have a color."
 
-#: templates/entityType/edit.tpl:81 templates/entityType/list.tpl:31
+#: templates/entityType/edit.tpl:83 templates/entityType/list.tpl:31
 msgid "label-is-default"
 msgstr "default"
 
-#: templates/entityType/edit.tpl:84
+#: templates/entityType/edit.tpl:86
 msgid "info-is-default"
 msgstr "Show this type by default for newly created authors."
 
-#: templates/entityType/edit.tpl:95
+#: templates/entityType/edit.tpl:97
 msgid "info-confirm-delete-entity-type"
 msgstr "Are you sure you want to delete this author type?"
 
@@ -1144,19 +1151,19 @@ msgstr "add an author type"
 msgid "title-edit-help-category"
 msgstr "edit category"
 
-#: templates/help/categoryEdit.tpl:26
+#: templates/help/categoryEdit.tpl:28
 msgid "label-help-category-path"
 msgstr "path"
 
-#: templates/help/categoryEdit.tpl:34
+#: templates/help/categoryEdit.tpl:36
 msgid "info-help-category-path"
 msgstr "visible in the category's URL"
 
-#: templates/help/categoryEdit.tpl:41
+#: templates/help/categoryEdit.tpl:43
 msgid "title-help-pages-in-category"
 msgstr "pages in this category"
 
-#: templates/help/categoryEdit.tpl:67
+#: templates/help/categoryEdit.tpl:69
 msgid "info-confirm-delete-help-category"
 msgstr "Are you sure you want to delete this category?"
 
@@ -1184,19 +1191,19 @@ msgstr "edit help page"
 msgid "label-title"
 msgstr "title"
 
-#: templates/help/pageEdit.tpl:26 lib/model/RevisionHelpPage.php:20
+#: templates/help/pageEdit.tpl:28 lib/model/RevisionHelpPage.php:20
 msgid "label-help-page-path"
 msgstr "path"
 
-#: templates/help/pageEdit.tpl:33
+#: templates/help/pageEdit.tpl:36
 msgid "info-help-page-path"
 msgstr "visible in the page's URL"
 
-#: templates/help/pageEdit.tpl:38 lib/model/RevisionHelpPage.php:24
+#: templates/help/pageEdit.tpl:42 lib/model/RevisionHelpPage.php:24
 msgid "label-category"
 msgstr "category"
 
-#: templates/help/pageEdit.tpl:78
+#: templates/help/pageEdit.tpl:82
 msgid "info-confirm-delete-help-page"
 msgstr "Are you sure you want to delete this page?"
 
@@ -1410,37 +1417,37 @@ msgstr "Author not found? You can <a href=\"%1\">add an author</a> first."
 msgid "label-statement-date"
 msgstr "statement date"
 
-#: templates/statement/edit.tpl:69
+#: templates/statement/edit.tpl:71
 msgid "info-confirm-statement-type-change"
 msgstr ""
 "Are you sure you want to change the statement's type? This will clear the "
 "verdicts from all the statement's answers."
 
-#: templates/statement/edit.tpl:85
+#: templates/statement/edit.tpl:87
 msgid "label-summary"
 msgstr "summary"
 
-#: templates/statement/edit.tpl:107
+#: templates/statement/edit.tpl:109
 msgid "label-context"
 msgstr "context"
 
-#: templates/statement/edit.tpl:121
+#: templates/statement/edit.tpl:123
 msgid "label-goal"
 msgstr "goal"
 
-#: templates/statement/edit.tpl:142
+#: templates/statement/edit.tpl:144
 msgid "label-statement-links"
 msgstr "sources"
 
-#: templates/statement/edit.tpl:143
+#: templates/statement/edit.tpl:145
 msgid "link-add-statement-link"
 msgstr "add a source"
 
-#: templates/statement/edit.tpl:192
+#: templates/statement/edit.tpl:194
 msgid "info-confirm-delete-statement"
 msgstr "Are you sure you want to delete this statement?"
 
-#: templates/statement/edit.tpl:203
+#: templates/statement/edit.tpl:205
 msgid "info-confirm-reopen-statement"
 msgstr "Are you sure you want to reopen this statement?"
 
@@ -1658,15 +1665,15 @@ msgstr "forever"
 msgid "label-edit-user"
 msgstr "edit my profile"
 
-#: templates/user/edit.tpl:48
+#: templates/user/edit.tpl:52
 msgid "label-about-me"
 msgstr "about me"
 
-#: templates/user/edit.tpl:68
+#: templates/user/edit.tpl:72
 msgid "tooltip-upload-user-image"
 msgstr "Try to choose a square image."
 
-#: templates/user/edit.tpl:94
+#: templates/user/edit.tpl:98
 msgid "title-change-password"
 msgstr "Change password (optional)"
 

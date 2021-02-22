@@ -9,14 +9,27 @@
 {$tooltipDownvote=$tooltipDownvote|default:''}
 
 {* include the various confirmation messages just once *}
-{if User::needsVoteReminder() && !isset($VOTE_REMINDER_MESSAGES_ONCE)}
-  {$VOTE_REMINDER_MESSAGES_ONCE=1 scope="global"}
-  <div id="upvote-snackbar" class="d-none">
-    {t}info-confirm-upvote{/t}
-  </div>
-  <div id="downvote-snackbar" class="d-none">
-    {t}info-confirm-downvote{/t}
-  </div>
+{if !isset($VOTE_BOX_SNACKBARS_ONCE)}
+  {$VOTE_BOX_SNACKBARS_ONCE=1 scope="global"}
+
+  {if User::needsVoteReminder()}
+    <div id="upvote-snackbar" class="d-none">
+      {t}info-confirm-upvote{/t}
+    </div>
+    <div id="downvote-snackbar" class="d-none">
+      {t}info-confirm-downvote{/t}
+    </div>
+  {/if}
+
+  {if User::isModerator()}
+    <div id="accept-snackbar" class="d-none">
+      {t}info-confirm-accept{/t}
+    </div>
+    <div id="unaccept-snackbar" class="d-none">
+      {t}info-confirm-unaccept{/t}
+    </div>
+  {/if}
+
 {/if}
 
 <div class="vote-box col-sm-12 col-md-1">

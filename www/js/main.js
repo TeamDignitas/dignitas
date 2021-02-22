@@ -245,6 +245,11 @@ $(function() {
     }).done(function() {
 
       btn.toggleClass('accepted');
+      var id = btn.hasClass('accepted') ? '#accept-snackbar' : '#unaccept-snackbar';
+      var msg = $(id).html();
+      snackbar(msg);
+
+      console.log(btn.hasClass('accepted'));
 
     }).fail(function(errorMsg) {
       if (errorMsg.responseJSON) {
