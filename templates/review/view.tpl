@@ -38,7 +38,7 @@
             </div>
           {/if}
 
-          <div class="ml-5 mr-1 callout">
+          <div class="mr-1 callout">
             {include "bits/statement.tpl"
               statement=$object
               addComment=true
@@ -48,7 +48,7 @@
 
         {elseif $type == Proto::TYPE_ANSWER}
 
-          <div class="border border-dark px-4 py-4">
+          <div class="rounded border border-dark pt-4 pb-3 pl-3 pr-4">
             {include "bits/answer.tpl"
               answer=$object
               addComment=true
@@ -57,7 +57,7 @@
 
           <h5 class="mt-5 mb-3">{cap}{t}title-pertaining-to-statement{/t}{/cap}</h5>
 
-          <div id="parent-object" class="ml-5 callout">
+          <div id="parent-object" class="callout">
             {include "bits/statement.tpl"
               statement=$object->getStatement()
               ellipsisMenu=false

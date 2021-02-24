@@ -10,7 +10,7 @@
 
 <div class="row statement-title-sources">
 
-  <h1 class="statement-title py-4">
+  <h1 class="col-12 statement-title py-4 px-0">
     {$statement->summary|escape}
     {if $statusInfo}
       [{$statusInfo['status']}]
@@ -25,13 +25,13 @@
   </h1>
 
   <div class="col-12 statement-authors-date px-0 mb-1">
-    <span class="mr-5">
+    <span class="col-sm-12 col-md-6 px-0">
       {include "bits/entityLink.tpl" e=$statement->getEntity()},
       {$statement->dateMade|ld}
     </span>
 
     {if count($statement->getLinks())}
-      <span class="text-muted mb-3 sources">
+      <span class="col-sm-12 col-md-5 offset-md-1 mb-3 px-0 text-muted sources">
         {t}statement-links{/t}:
         <ul class="list-inline list-inline-bullet d-inline">
           {foreach $statement->getLinks() as $l}

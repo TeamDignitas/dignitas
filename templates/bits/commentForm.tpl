@@ -1,4 +1,4 @@
-<form id="form-comment" class="col-12 text-right mt-1">
+<form id="form-comment" class="col-12 mt-1">
   <input type="hidden" name="objectType">
   <input type="hidden" name="objectId">
 
@@ -17,10 +17,10 @@
   </div>
 
   <div class="row answer-buttons mb-2">
-    <div class="col-auto dropdown-canned-responses">
+    <div class="col-sm-12 col-md-6 dropdown-canned-responses">
       <button
         type="button"
-        class="btn btn-sm btn-outline-secondary dropdown-toggle mb-1"
+        class="col-12 btn btn-sm btn-outline-secondary dropdown-toggle mb-1"
         data-toggle="dropdown">
         {t}link-pick-canned-response{/t}
       </button>
@@ -36,15 +36,13 @@
       </div>
     </div>
 
-    <div class="col"></div>
-
-    <div class="col-auto">
-      <button type="button" class="btn btn-sm btn-outline-secondary comment-cancel mb-1">
+    <div class="col-sm-12 col-md-6 text-right">
+      <button type="button" class="col-sm-12 col-md-5 btn btn-sm btn-outline-secondary comment-cancel mb-1">
         {include "bits/icon.tpl" i=cancel}
         {t}link-cancel{/t}
       </button>
 
-      <button type="submit" class="btn btn-sm btn-outline-primary comment-save mb-1">
+      <button type="submit" class="col-sm-12 col-md-5 btn btn-sm btn-outline-primary comment-save mb-1">
         {include "bits/icon.tpl" i=save}
         {t}link-save{/t}
       </button>
