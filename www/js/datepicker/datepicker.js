@@ -14,7 +14,7 @@ $(function() {
       '<div class="modal-dialog modal-dialog-centered">' +
       '  <div class="modal-content">' +
       '    <div class="modal-header">' +
-      '      <h5 class="modal-title"></h5>' +
+      '      <h5 class="modal-title capitalize-first-word"></h5>' +
       '      <button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
       '        <span aria-hidden="true">&times;</span>' +
       '      </button>' +
@@ -34,9 +34,9 @@ $(function() {
       '      </div>' +
       '    </div>' +
       '    <div class="modal-footer">' +
-      '      <button type="button" class="btn btn-light btn-clear"></button>' +
-      '      <button type="button" class="btn btn-secondary btn-today"></button>' +
-      '      <button type="button" class="btn btn-primary btn-accept"></button>' +
+      '      <button type="button" class="btn btn-sm btn-outline-warning btn-clear"></button>' +
+      '      <button type="button" class="btn btn-sm btn-outline-secondary btn-today"></button>' +
+      '      <button type="button" class="btn btn-sm btn-primary btn-accept"></button>' +
       '    </div>' +
       '  </div>' +
       '</div>' +
