@@ -129,8 +129,15 @@ if ($saveButton) {
 
   $statement->summary = Request::get('summary');
   $links = Link::build([ 0 ], [ Request::get('linkUrl') ]);
+  $errors = [];
+
+  if (mb_strlen($statement->summary) > Statement::MAX_SUMMARY_LENGTH) {
+    $errors['summary'][] = sprintf(
+      _('info-field-length-limit-%d'), Statement::MAX_SUMMARY_LENGTH);
+  }
 
   Smart::assign([
+    'errors' => $errors,
     'referrer' => Config::URL_PREFIX, // home
     'links' => $links,
     'tagIds' => [],
