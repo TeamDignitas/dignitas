@@ -1,7 +1,3 @@
-// these should match the sites defined in manifest.json
-// const DIGNITAS_ADD_STATEMENT_URL = 'https://dignitas.ro/editeaza-afirmatie';
-const DIGNITAS_ADD_STATEMENT_URL = 'http://localhost/dignitas/www/editeaza-afirmatie';
-
 function messageHandler(data) {
   // ensure it is run only once, as we will try to message twice
   chrome.runtime.onMessage.removeListener(messageHandler);
@@ -9,12 +5,12 @@ function messageHandler(data) {
   // create and populate a form
   var form = document.createElement('form');
   form.setAttribute('method', 'post');
-  form.setAttribute('action', DIGNITAS_ADD_STATEMENT_URL);
-  for (var key in data) {
+  form.setAttribute('action', data.url);
+  for (var key in data.params) {
     var field = document.createElement('input');
     field.setAttribute('type', 'hidden');
     field.setAttribute('name', key);
-    field.setAttribute('value', data[key]);
+    field.setAttribute('value', data.params[key]);
     form.appendChild(field);
   }
 
