@@ -1,0 +1,36 @@
+{
+  "name": "Dignitas",
+  "version": "1.0",
+  "description": "Add statements to Dignitas straight from a news page.",
+  "short_name": "Dignitas",
+
+  "browser_action": {
+    "default_icon": {
+      "16": "img/d-16.png",
+      "32": "img/d-32.png",
+      "48": "img/d-48.png",
+      "128": "img/d-128.png"
+    }
+  },
+
+  "icons": {
+    "16": "img/d-16.png",
+    "32": "img/d-32.png",
+    "48": "img/d-48.png",
+    "128": "img/d-128.png"
+  },
+
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "http://localhost/",
+    "https://dignitas.ro/"
+  ],
+  "incognito": "split",
+
+  "background": {
+    "scripts": [ "background.js" ]
+  },
+
+  "manifest_version": 2
+}

@@ -6,6 +6,7 @@ $entityId = Request::get('entityId');
 $saveButton = Request::has('saveButton');
 $deleteButton = Request::has('deleteButton');
 $reopenButton = Request::has('reopenButton');
+$extensionSubmit = Request::has('extensionSubmit');
 $referrer = Request::get('referrer');
 
 if ($id) {
@@ -123,6 +124,18 @@ if ($saveButton) {
       'tagIds' => $tagIds,
     ]);
   }
+} else if ($extensionSubmit) {
+  // summary and linkUrl submitted via the Chrome extension
+
+  $statement->summary = Request::get('summary');
+  $links = Link::build([ 0 ], [ Request::get('linkUrl') ]);
+
+  Smart::assign([
+    'referrer' => Config::URL_PREFIX, // home
+    'links' => $links,
+    'tagIds' => [],
+  ]);
+
 } else {
   // first time loading the page
   Smart::assign([

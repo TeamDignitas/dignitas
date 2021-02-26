@@ -6,12 +6,22 @@ class Session {
 
   static function init() {
     if (isset($_COOKIE[session_name()])) {
-      session_start();
+      self::start();
     }
     if (Request::isWeb()) {
       self::setActiveUser();
     }
     // Otherwise we're being called by a local script, not a web-based one.
+  }
+
+  static function start() {
+    // TODO: safe to remove this?
+    // session_set_cookie_params([
+    //   // necessary so that the browser extension can post to us and have the
+    //   // session available; see https://web.dev/samesite-cookies-explained/
+    //   'samesite' => 'Lax',
+    // ]);
+    session_start();
   }
 
   static function login($user, $remember = false, $referrer = null) {
@@ -94,7 +104,7 @@ class Session {
   static function set($var, $value) {
     // Lazy start of the session so we don't send a PHPSESSID cookie unless we have to
     if (!isset($_SESSION)) {
-      session_start();
+      self::start();
     }
     $_SESSION[$var] = $value;
   }
@@ -121,7 +131,7 @@ class Session {
 
   static function kill() {
     if (!isset($_SESSION)) {
-      session_start(); // It has to have been started in order to be destroyed.
+      self::start(); // It has to have been started in order to be destroyed.
     }
     session_unset();
     @session_destroy();
