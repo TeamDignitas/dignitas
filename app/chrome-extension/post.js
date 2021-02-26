@@ -2,6 +2,11 @@ function messageHandler(data) {
   // ensure it is run only once, as we will try to message twice
   chrome.runtime.onMessage.removeListener(messageHandler);
 
+  // populate the title and header
+  var redirectMsg = chrome.i18n.getMessage('redirecting');
+  document.title = redirectMsg;
+  document.querySelector('#header').innerHTML = redirectMsg;
+
   // create and populate a form
   var form = document.createElement('form');
   form.setAttribute('method', 'post');

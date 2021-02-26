@@ -7,21 +7,8 @@
 
   <body>
 
-    <!--
-         The possible destinations are stored here. When the popup opens,
-         popup.js copies these values to popup.html. When the users selects a
-         different option in popup.html, popup.js relays this information to
-         background.js, which updates this select.
-
-         The values should match the sites defined in manifest.json.
-    -->
     <select id="destination">
-      <option value="https://dignitas.ro/editeaza-afirmatie">
-        dignitas.ro
-      </option>
-      <option value="http://localhost/dignitas/www/editeaza-afirmatie">
-        localhost (for developers only)
-      </option>
+      <!-- this will be populated when initializing the extension -->
     </select>
 
   </body>
