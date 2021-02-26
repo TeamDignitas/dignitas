@@ -5,16 +5,23 @@ chrome.contextMenus.create({
   onclick: submitStatement,
 });
 
-function responseListener () {
-  console.log(this.responseText);
+// Receives notifications when the user selected a different index in the popup.
+function changeDestination(index) {
+  var select = document.querySelector('#destination');
+  select.selectedIndex = index;
 }
 
-// Opens a new tab and POSTs in it. Based on https://stackoverflow.com/a/23687543/6022817
+// Opens a new tab and messages it with the data to POST.
+// Based on https://stackoverflow.com/a/23687543/6022817.
 function submitStatement(sel) {
+  var url = document.querySelector('#destination').value;
   var data = {
-    'linkUrl': sel.pageUrl,
-    'summary': sel.selectionText,
-    'extensionSubmit': true,
+    'url': url,
+    'params': {
+      'linkUrl': sel.pageUrl,
+      'summary': sel.selectionText,
+      'extensionSubmit': true,
+    },
   };
 
   chrome.tabs.create(
