@@ -1,0 +1,26 @@
+{
+  "manifestDescription": {
+    "message": "Add statements to Dignitas straight from a news page.",
+    "description": "description in manifest.json"
+  },
+  "manifestPopupTitle": {
+    "message": "open Dignitas options",
+    "description": "tooltip when hovering over the icon"
+  },
+  "popupHeader": {
+    "message": "select destination site:",
+    "description": "message at the top of the popup"
+  },
+  "submit": {
+    "message": "submit to Dignitas",
+    "description": "option on right-click menu"
+  },
+  "forDevelopersOnly": {
+    "message": "for developers only",
+    "description": "label for submitting to localhost"
+  },
+  "redirecting": {
+    "message": "Redirecting...",
+    "description": "visibile while submitting the form"
+  }
+}

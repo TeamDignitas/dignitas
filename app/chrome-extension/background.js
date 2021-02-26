@@ -1,8 +1,39 @@
-// Adds a right-click context menu option.
-chrome.contextMenus.create({
-  title: 'Submit to Dignitas',
-  contexts: ['selection'],
-  onclick: submitStatement,
+/**
+ * The possible destinations are stored here. When the extension initializes,
+ * we copy these into the background #destination select. When the popup
+ * opens, popup.js copies these values to popup.html. When the users selects a
+ * different option in popup.html, popup.js relays this information to
+ * background.js, which updates the background select.
+ *
+ * The values should match the sites defined in manifest.json.
+ */
+const DESTINATIONS = [
+  {
+    'url': 'https://dignitas.ro/editeaza-afirmatie',
+    'text': 'dignitas.ro',
+  },
+  {
+    'url': 'http://localhost/dignitas/www/editeaza-afirmatie',
+    'text': 'localhost (' + chrome.i18n.getMessage('forDevelopersOnly') + ')',
+  },
+];
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Populate the destination select.
+  var select = document.querySelector('#destination');
+  for (var i = 0; i < DESTINATIONS.length; i++) {
+    var opt = document.createElement('option');
+    opt.value = DESTINATIONS[i].url;
+    opt.innerHTML = DESTINATIONS[i].text;
+    select.appendChild(opt);
+  }
+
+  // Add a right-click context menu option.
+  chrome.contextMenus.create({
+    title: chrome.i18n.getMessage('submit'),
+    contexts: ['selection'],
+    onclick: submitStatement,
+  });
 });
 
 // Receives notifications when the user selected a different index in the popup.

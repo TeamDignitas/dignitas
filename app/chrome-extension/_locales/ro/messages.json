@@ -1,0 +1,27 @@
+{
+  "manifestDescription": {
+    "message": "Adaugă afirmații în Dignitas direct de pe pagina unei știri.",
+    "description": "Description in manifest.json"
+  },
+  "manifestPopupTitle": {
+    "message": "deschide opțiunile pentru Dignitas",
+    "description": "Tooltip when hovering over the icon"
+  },
+  "popupHeader": {
+    "message": "alege site-ul destinație:",
+    "description": "message at the top of the popup"
+  },
+  "submit": {
+    "message": "trimite la Dignitas",
+    "description": "option on right-click menu"
+  },
+  "forDevelopersOnly": {
+    "message": "doar pentru dezvoltatori",
+    "description": "label for submitting to localhost"
+  },
+  "redirecting": {
+    "message": "Te redirecționăm...",
+    "description": "visibile while submitting the form"
+  }
+
+}
