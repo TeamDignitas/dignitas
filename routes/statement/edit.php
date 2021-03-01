@@ -127,8 +127,10 @@ if ($saveButton) {
 } else if ($extensionSubmit) {
   // summary and linkUrl submitted via the Chrome extension
 
+  $url = Request::get('linkUrl');
+  $statement->entityId = Entity::getFromStatementUrl($url);
   $statement->summary = Request::get('summary');
-  $links = Link::build([ 0 ], [ Request::get('linkUrl') ]);
+  $links = Link::build([ 0 ], [ $url ]);
   $errors = [];
 
   if (mb_strlen($statement->summary) > Statement::MAX_SUMMARY_LENGTH) {
