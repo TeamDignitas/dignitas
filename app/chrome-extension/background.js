@@ -28,6 +28,13 @@ document.addEventListener('DOMContentLoaded', function() {
     select.appendChild(opt);
   }
 
+  // Load the preferred submit URL from local storage.
+  chrome.storage.local.get(['submitUrl'], function(result) {
+    if ('submitUrl' in result) {
+      select.value = result.submitUrl;
+    }
+  });
+
   // Add a right-click context menu option.
   chrome.contextMenus.create({
     title: chrome.i18n.getMessage('submit'),
@@ -40,6 +47,12 @@ document.addEventListener('DOMContentLoaded', function() {
 function changeDestination(index) {
   var select = document.querySelector('#destination');
   select.selectedIndex = index;
+
+  // Persist the choice to local storage.
+  chrome.storage.local.set({
+    submitUrl: select.value
+  }, function() {});
+
 }
 
 // Opens a new tab and messages it with the data to POST.
