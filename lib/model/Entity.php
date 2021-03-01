@@ -228,6 +228,26 @@ class Entity extends Proto {
       ->find_many();
   }
 
+  /**
+   * Tries to find the entity that made the statement at $url.
+   * Currently only handles Facebook posts.
+   *
+   * @return int The entity's ID or null if there is no match.
+   */
+  static function getFromStatementUrl($url) {
+    if (preg_match('#(^https://www.facebook.com/[^/]+)/#', $url, $matches)) {
+      $entityUrl = $matches[1];
+
+      // see if we have an entity with this Facebook page
+      $l = Model::factory('Link')
+        ->where('objectType', Proto::TYPE_ENTITY)
+        ->where_in('url', [ $entityUrl, $entityUrl . '/' ])
+        ->find_one();
+      return $l->objectId ?? null;
+    }
+    return null;
+  }
+
   function isViewable() {
     return
       ($this->status != Ct::STATUS_PENDING_EDIT) &&
