@@ -25,6 +25,7 @@
 
   "permissions": [
     "contextMenus",
+    "storage",
     "tabs",
     "http://localhost/",
     "https://dignitas.ro/"
