@@ -27,6 +27,10 @@
     max-height: 100%;
   }
 
+  #answer-resources-backdrop {
+    display: none;
+  }
+
   /* Some rules to keep the rest of the page reachable. Unfortunately, these
    also apply to the flagging modal. */
   .modal-open {
@@ -34,9 +38,6 @@
     padding-right: 0px !important;
   }
 
-  .modal-backdrop {
-    display: none;
-  }
 }
 
 button.answer-resources-link {

@@ -7,6 +7,7 @@ $(function() {
     cm.on('focus', initAnswerResources);
     $('.answer-resources-link').click(toggleModal);
     $('#checkboxAnswerResources').change(toggleCheckbox);
+    $('#answer-resources').on('shown.bs.modal', identifyBackdrop);
   }
 
   function initAnswerResources(evt) {
@@ -30,6 +31,12 @@ $(function() {
       .always(function() {
         $('body').removeClass('waiting');
       });
+  }
+
+  // When this modal is shown, it should be the only one. So we take this
+  // chance to give an ID to its backdrop so we can style it.
+  function identifyBackdrop() {
+    $('.modal-backdrop').first().attr('id', 'answer-resources-backdrop');
   }
 
   init();

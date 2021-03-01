@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-03-01 15:37+0200\n"
-"PO-Revision-Date: 2021-03-01 15:37+0200\n"
+"POT-Creation-Date: 2021-03-01 16:59+0200\n"
+"PO-Revision-Date: 2021-03-01 16:59+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -319,7 +319,7 @@ msgid "link-reopen"
 msgstr "reopen"
 
 #: templates/bits/answerEdit.tpl:77 templates/bits/commentForm.tpl:42
-#: templates/bits/flagModal.tpl:190 templates/bits/phpConstants.tpl:16
+#: templates/bits/flagModal.tpl:190 templates/bits/phpConstants.tpl:17
 #: templates/cannedResponse/edit.tpl:41 templates/cannedResponse/list.tpl:52
 #: templates/domain/edit.tpl:95 templates/entity/edit.tpl:283
 #: templates/entityType/edit.tpl:105 templates/help/categoryEdit.tpl:77
@@ -682,7 +682,11 @@ msgstr "log out"
 msgid "info-notification-unsubscribe"
 msgstr "unsubscribe from notifications for this item"
 
-#: templates/bits/phpConstants.tpl:17
+#: templates/bits/phpConstants.tpl:16
+msgid "link-ok"
+msgstr "OK"
+
+#: templates/bits/phpConstants.tpl:18
 msgid "link-confirm"
 msgstr "OK"
 

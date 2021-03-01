@@ -12,7 +12,8 @@
   // used in the vote confirmation alerts
   const TYPE_COMMENT = {Proto::TYPE_COMMENT};
 
-  // used in confirmation modals
+  // used in confirmation and alert modals
+  const ALERT_OK_TEXT = '{t}link-ok{/t}';
   const CONFIRM_CANCEL_TEXT = '{t}link-cancel{/t}';
   const CONFIRM_OK_TEXT = '{t}link-confirm{/t}';
 </script>

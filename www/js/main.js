@@ -93,6 +93,33 @@ $(function() {
 });
 
 
+/***************** alert() written as a Bootstrap modal *****************/
+$(function() {
+
+  window.alert = function(msg) {
+    var m = $(
+      '<div class="modal fade" data-backdrop="static" tabindex="-1">' +
+        '<div class="modal-dialog modal-dialog-centered modal-sm">' +
+        '<div class="modal-content shadow">' +
+        '<div class="modal-body">' +
+        msg +
+        '</div>' +
+        '<div class="modal-footer">' +
+        '<button type="button" class="btn btn-sm btn-primary btn-confirm px-4" data-dismiss="modal">' +
+        ALERT_OK_TEXT +
+        '</button>' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+        '</div>'
+    );
+
+    m.modal('show');
+  }
+
+});
+
+
 /*********** confirmations before obeying click() and change() ***********/
 $(function() {
 
