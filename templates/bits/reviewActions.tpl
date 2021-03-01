@@ -22,7 +22,9 @@
         <button
           name="keepButton"
           class="btn btn-sm btn-primary mr-2 mb-2"
-          type="submit">
+          type="submit"
+          data-toggle="tooltip"
+          title="{t}tooltip-review-keep{/t}">
           {include "bits/icon.tpl" i=done}
           {$review->getVoteName(Flag::VOTE_KEEP)}
         </button>
