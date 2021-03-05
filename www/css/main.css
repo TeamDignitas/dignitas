@@ -559,6 +559,11 @@ body, main {
   border-radius: .25rem;
 }
 
+#field-long-possessive,
+#field-short-possessive {
+  height: auto;
+}
+
 /******** collapsible card with expand/collapse visual indicator ********/
 #answer-resources .card-header {
   padding: 1rem 1.25rem .5rem;
