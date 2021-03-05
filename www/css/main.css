@@ -559,8 +559,7 @@ body, main {
   border-radius: .25rem;
 }
 
-#field-long-possessive,
-#field-short-possessive {
+.form-control {
   height: auto;
 }
 
