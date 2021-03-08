@@ -3,7 +3,7 @@
 class Comment extends Proto {
   // Comments support Markdown, but do not support attachments explicitly.
   // Therefore, using MarkdownTrait is not necessary.
-  use FlaggableTrait, ObjectTypeIdTrait, VotableTrait;
+  use ArchivableLinksTrait, FlaggableTrait, ObjectTypeIdTrait, VotableTrait;
 
   const MAX_LENGTH = 500;
 
@@ -20,6 +20,14 @@ class Comment extends Proto {
     }
     return sprintf('%s/%s#c%s', Router::link('statement/view'),
                    $statementId, $this->id);
+  }
+
+  function getArchivableUrls() {
+    if ($this->status == Ct::STATUS_ACTIVE) {
+      return self::extractArchivableUrls($this->contents);
+    } else {
+      return [];
+    }
   }
 
   function getUser() {
@@ -170,5 +178,9 @@ class Comment extends Proto {
 
   function delete() {
     throw new Exception('Comments should never be deleted at the DB level.');
+  }
+
+  function __toString() {
+    return Str::shorten($this->contents, 50);
   }
 }

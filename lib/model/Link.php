@@ -1,9 +1,13 @@
 <?php
 
 class Link extends Proto {
-  use ObjectTypeIdTrait;
+  use ArchivableLinksTrait, ObjectTypeIdTrait;
 
   private $domain = null;
+
+  function getObjectType() {
+    return self::TYPE_LINK;
+  }
 
   static function getFor($object) {
     return Model::factory('Link')
@@ -30,6 +34,10 @@ class Link extends Proto {
 
   function validUrl() {
     return filter_var($this->url, FILTER_VALIDATE_URL);
+  }
+
+  function getArchivableUrls() {
+    return [ $this->url ];
   }
 
   /**

@@ -1,7 +1,7 @@
 <?php
 
 class User extends Proto {
-  use MarkdownTrait, UploadTrait;
+  use ArchivableLinksTrait, MarkdownTrait, UploadTrait;
 
   // privileges and their required reputation
   const PRIV_ADD_ENTITY = -100;
@@ -52,6 +52,9 @@ class User extends Proto {
 
   const NICKNAME_REGEXP = '(\p{L}|\d)(\p{L}|\d|[-_.]){2,29}';
 
+  // worth archiving
+  const REP_FOR_ARCHIVING = 200;
+
   private static $active = null; // user currently logged in
 
   function getMarkdownFields() {
@@ -68,6 +71,14 @@ class User extends Proto {
 
   private function getFileRoute() {
     return 'user/image';
+  }
+
+  function getArchivableUrls() {
+    if ($this->getReputation() >= self::REP_FOR_ARCHIVING) {
+      return self::extractArchivableUrls($this->aboutMe);
+    } else {
+      return [];
+    }
   }
 
   static function getActive() {

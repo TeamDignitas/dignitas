@@ -1,7 +1,8 @@
 <?php
 
 class Statement extends Proto {
-  use DuplicateTrait,
+  use ArchivableLinksTrait,
+    DuplicateTrait,
     FlaggableTrait,
     RevisionTrait,
     MarkdownTrait,
@@ -139,6 +140,14 @@ class Statement extends Proto {
 
   function getMarkdownFields() {
     return [ 'context' ];
+  }
+
+  function getArchivableUrls() {
+    if (in_array($this->status, [ Ct::STATUS_ACTIVE, Ct::STATUS_CLOSED ])) {
+      return self::extractArchivableUrls($this->context);
+    } else {
+      return [];
+    }
   }
 
   function requiresModeratorReview() {
@@ -474,5 +483,9 @@ class Statement extends Proto {
       count($results['verdictMismatch']);
 
     return $results;
+  }
+
+  function __toString() {
+    return Str::shorten($this->summary, 50);
   }
 }

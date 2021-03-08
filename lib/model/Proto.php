@@ -25,6 +25,7 @@ class Proto extends Precursor {
   const TYPE_STATIC_RESOURCE = 11;
   const TYPE_TAG = 12;
   const TYPE_REGION = 13;
+  const TYPE_LINK = 14;
 
   function getModUser() {
     return User::get_by_id($this->modUserId);

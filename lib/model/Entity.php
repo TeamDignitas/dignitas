@@ -4,7 +4,11 @@ class Entity extends Proto {
   use DuplicateTrait {
     closeAsDuplicate as protected traitCloseAsDuplicate;
   }
-  use FlaggableTrait, MarkdownTrait, PendingEditTrait, UploadTrait;
+  use ArchivableLinksTrait,
+    FlaggableTrait,
+    MarkdownTrait,
+    PendingEditTrait,
+    UploadTrait;
 
   const DEFAULT_COLOR = '#ffffff';
 
@@ -24,6 +28,14 @@ class Entity extends Proto {
 
   function getHistoryUrl() {
     return Router::link('entity/history') . '/' . $this->id;
+  }
+
+  function getArchivableUrls() {
+    if (in_array($this->status, [ Ct::STATUS_ACTIVE, Ct::STATUS_CLOSED ])) {
+      return self::extractArchivableUrls($this->profile);
+    } else {
+      return [];
+    }
   }
 
   function getUser() {
