@@ -1,7 +1,13 @@
 <?php
 
 class Answer extends Proto {
-  use FlaggableTrait, MarkdownTrait, PendingEditTrait, VerdictTrait, VotableTrait;
+  use
+    ArchivableLinksTrait,
+    FlaggableTrait,
+    MarkdownTrait,
+    PendingEditTrait,
+    VerdictTrait,
+    VotableTrait;
 
   function getObjectType() {
     return self::TYPE_ANSWER;
@@ -34,6 +40,14 @@ class Answer extends Proto {
 
   function getStatement() {
     return Statement::get_by_id($this->statementId);
+  }
+
+  function getArchivableUrls() {
+    if ($this->status == Ct::STATUS_ACTIVE) {
+      return self::extractArchivableUrls($this->contents);
+    } else {
+      return [];
+    }
   }
 
   function getScore() {
@@ -206,5 +220,9 @@ class Answer extends Proto {
     AnswerExt::delete_all_by_answerId($this->id);
 
     parent::delete();
+  }
+
+  function __toString() {
+    return Str::shorten($this->contents, 50);
   }
 }
