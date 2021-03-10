@@ -13,7 +13,7 @@
     <link href="{$cssFile.path}?v={$cssFile.date}" rel="stylesheet" type="text/css">
 
     {include "bits/phpConstants.tpl"}
-    <script src="{$jsFile.path}?v={$jsFile.date}"></script>
+    <script src="{$jsFile.path}?v={$jsFile.date}" defer></script>
 
   </head>
 

@@ -1,8 +1,3 @@
-{* expose the localized search URL *}
-<script>
-  const SEARCH_URL = '{Router::link('aggregate/search')}';
-</script>
-
 <form
   id="form-search"
   action="{Router::link('aggregate/search')}"

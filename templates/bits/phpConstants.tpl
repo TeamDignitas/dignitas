@@ -1,5 +1,5 @@
 {* expose some PHP constants *}
-<script>
+<script defer>
   const SELECT2_LOCALE = '{LocaleUtil::getSelect2Locale()}';
   const DATEPICKER_LOCALE = '{LocaleUtil::getDatePickerLocale()}';
   const DATEPICKER_FORMAT = '{LocaleUtil::getDatePickerFormat()}';
@@ -16,4 +16,7 @@
   const ALERT_OK_TEXT = '{t}link-ok{/t}';
   const CONFIRM_CANCEL_TEXT = '{t}link-cancel{/t}';
   const CONFIRM_OK_TEXT = '{t}link-confirm{/t}';
+
+  // localized search URL
+  const SEARCH_URL = '{Router::link('aggregate/search')}';
 </script>
