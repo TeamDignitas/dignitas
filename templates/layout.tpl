@@ -16,6 +16,7 @@
     {include "bits/preloadFont.tpl" font="spartan-v1-latin-ext_latin-500"}
     {include "bits/preloadFont.tpl" font="material-icons"}
 
+    <link rel="preload" href="{$cssFile.path}?v={$cssFile.date}" as="style">
     <link href="{$cssFile.path}?v={$cssFile.date}" rel="stylesheet" type="text/css">
 
     {include "bits/phpConstants.tpl"}
