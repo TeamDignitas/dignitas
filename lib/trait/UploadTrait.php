@@ -158,6 +158,7 @@ trait UploadTrait {
       $mimeType = array_search($extension, Config::MIME_TYPES);
       header('Content-Type: ' . $mimeType);
       header('Content-Length: ' . filesize($thumbLocation));
+      header('Cache-Control: max-age=' . Config::CACHE_DURATION);
       readfile($thumbLocation);
 
     } else {

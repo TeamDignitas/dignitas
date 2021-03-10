@@ -107,6 +107,7 @@ class StaticResource extends Proto {
     $path = $this->getFilePath();
     header('Content-Type: ' . $this->getMimeType());
     header('Content-Length: ' . filesize($path));
+    header('Cache-Control: max-age=' . Config::CACHE_DURATION);
     readfile($path);
   }
 
