@@ -251,4 +251,8 @@ class Config {
   // Cache duration for uploaded files and static resources, in seconds.
   // Google's Page Speed Insights recommends one year.
   const CACHE_DURATION = 31536000;
+
+// Archiver to use for archiving URLs. Should match a child of lib/Archiver.php.
+  const ARCHIVER_CLASS = 'Archiver';
+  const ARCHIVER_OPTIONS = [];
 }

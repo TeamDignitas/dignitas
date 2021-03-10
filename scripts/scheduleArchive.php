@@ -1,10 +1,12 @@
 #!/usr/bin/php
 <?php
 /**
- * This script adds or deletes links from the archive backend.
+ * This script examines recent changes, extracts archivable links and
+ * schedules them for addition to / removal from the archive. The actual
+ * interface with the archiving framework happens in scripts/runArchive.php.
  *
  * Use with -s <M> or --since <M> to only consider objects modified within the
- * last M minutes.
+ * last M minutes. Without this flag, the script examines everything.
  * Use with -n or --dry-run to see what the script would do without actually
  * executing anything.
  **/
