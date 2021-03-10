@@ -10,6 +10,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    {* Preload some fonts. Note that this will be wasted for browsers that *}
+    {* don't support WOFF2. *}
+    {include "bits/preloadFont.tpl" font="spartan-v1-latin-ext_latin-regular"}
+    {include "bits/preloadFont.tpl" font="spartan-v1-latin-ext_latin-500"}
+    {include "bits/preloadFont.tpl" font="material-icons"}
+
     <link href="{$cssFile.path}?v={$cssFile.date}" rel="stylesheet" type="text/css">
 
     {include "bits/phpConstants.tpl"}
