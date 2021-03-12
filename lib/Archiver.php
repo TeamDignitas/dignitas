@@ -3,6 +3,10 @@
 /**
  * Defines the archiving protocol. Provides a dummy implementation that simply
  * logs the jobs it is given.
+ *
+ * Sample options:
+ *
+ * const ARCHIVER_OPTIONS = []; // This archiver ignores all options.
  **/
 class Archiver {
 
