@@ -57,19 +57,38 @@ class ArchiveBoxArchiver extends Archiver {
   }
 
   /**
-   * Checkes whether ArchiveBox has this URL.
+   * Gets storage information about this URL.
    *
-   * @return bool
+   * @return mixed The timestamp and path if ArchiveBox has this URL, false
+   * otherwise.
    */
-  function exists($url) {
+  function getData($url) {
     $cmd = sprintf('list --json "%s"', $this->formatUrl($url));
     $cmd = $this->wrapArchiveBoxCommand($cmd);
     Log::debug('Running %s', $cmd);
     OS::execute($cmd, $json);
     $result = json_decode($json);
 
-    // TODO discern between sucessful and unsuccessful crawls
-    return !empty($result);
+    $timestamp = $result[0]->timestamp ?? null;
+    if (!$timestamp) {
+      return false;
+    }
+
+    $wgetHistory = $result[0]->history->wget ?? null;
+    if (empty($wgetHistory)) {
+      return false;
+    }
+
+    $lastWget = $wgetHistory[array_key_first($wgetHistory)];
+    $status = $lastWget->status ?? null;
+    if ($lastWget->status != 'succeeded') {
+      return false;
+    }
+
+    return [
+      'timestamp' => $timestamp,
+      'path' => $lastWget->output,
+    ];
   }
 
   /**
@@ -86,8 +105,13 @@ class ArchiveBoxArchiver extends Archiver {
 
       if (!$this->dryRun) {
         exec($cmd);
-        if ($this->exists($al->url)) {
+
+        // update our record if the crawl was successful
+        $data = $this->getData($al->url);
+        if ($data) {
           $al->status = ArchivedLink::STATUS_ARCHIVED;
+          $al->timestamp = $data['timestamp'];
+          $al->path = $data['path'];
           $al->save();
         }
       }
