@@ -252,7 +252,9 @@ class Config {
   // Google's Page Speed Insights recommends one year.
   const CACHE_DURATION = 31536000;
 
-// Archiver to use for archiving URLs. Should match a child of lib/Archiver.php.
+  // Archiver to use for archiving URLs. Should match a child of lib/Archiver.php.
   const ARCHIVER_CLASS = 'Archiver';
+
+  // Refer to the archiver class for available options.
   const ARCHIVER_OPTIONS = [];
 }

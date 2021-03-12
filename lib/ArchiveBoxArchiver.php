@@ -3,12 +3,18 @@
  * Archiver that uses a local installation of ArchiveBox. Must be run by a
  * user that can su to another user.
  *
- * Mandatory constructor options:
- *   user - user to run as (owner of the archive)
- *   workingDir - absolute path of the archive on the disk
+ * Sample options:
  *
- * Optional constructor options:
- *   dryRun - report what would happen without touching anything
+ * const ARCHIVER_OPTIONS = [
+ *   // mandatory; user to run as (owner of the archive)
+ *   'user' => 'archivebox',
+ *   // mandatory; absolute path of the archive on the disk
+ *   'workingDir' => '/srv/http/dignitas-archive',
+ *   // optional; report what would happen without touching anything
+ *   // (this can also be achieved by passing -n to archive.php
+ *   'dryRun' => true,
+ * ];
+ *
  **/
 class ArchiveBoxArchiver extends Archiver {
 
