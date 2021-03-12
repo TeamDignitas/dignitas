@@ -5,7 +5,7 @@ class ArchivedLink extends Precursor {
   const STATUS_NEW = 1;       // when we initially extract the link
   const STATUS_ARCHIVED = 2;  // once the archiver has it
   const STATUS_DELETED = 3;   // when scheduled for deletion
-  
+
   static function create(Object $obj, String $url) {
     $al = Model::factory('ArchivedLink')->create();
     $al->status = self::STATUS_NEW;
@@ -19,6 +19,19 @@ class ArchivedLink extends Precursor {
 
   static function getForObject($obj) {
     return self::get_all_by_objectType_objectId($obj->getObjectType(), $obj->id);
+  }
+
+  /**
+   * Returns the URL for the archived version of this link, or false if the
+   * link is not archived.
+   */
+  function getArchivedUrl() {
+    if ($this->status == self::STATUS_ARCHIVED &&
+        $this->timestamp &&
+        $this->path) {
+      return sprintf('%s%s/%s', Config::ARCHIVE_URL, $this->timestamp, $this->path);
+    }
+    return false;
   }
 
   function markForDeletion() {

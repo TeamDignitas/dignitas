@@ -252,6 +252,9 @@ class Config {
   // Google's Page Speed Insights recommends one year.
   const CACHE_DURATION = 31536000;
 
+  // Base URL for archived links. Invidual URLs will be appended to this.
+  const ARCHIVE_URL = 'http://localhost:8000/archive/';
+
   // Archiver to use for archiving URLs. Should match a child of lib/Archiver.php.
   const ARCHIVER_CLASS = 'Archiver';
 

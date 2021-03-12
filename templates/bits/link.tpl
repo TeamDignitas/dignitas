@@ -1,5 +1,6 @@
 {strip}
 <a
+  class="archivable"
   href="{$l->url}"
   {if $l->isNofollow()}rel="nofollow"{/if}>
 

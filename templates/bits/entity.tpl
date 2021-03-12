@@ -70,7 +70,7 @@
 
     {if $entity->profile}
       <h6 class="font-weight-bold capitalize-first-word mt-4">{t}title-profile{/t}</h6>
-      <div>
+      <div class="archivable">
         {$entity->profile|md}
       </div>
     {/if}

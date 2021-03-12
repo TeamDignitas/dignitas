@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-03-01 16:59+0200\n"
-"PO-Revision-Date: 2021-03-01 16:59+0200\n"
+"POT-Creation-Date: 2021-03-12 18:14+0200\n"
+"PO-Revision-Date: 2021-03-12 18:15+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -281,13 +281,13 @@ msgstr "posted by"
 msgid "info-answer-permalink"
 msgstr "permanent link to this answer"
 
-#: templates/bits/answer.tpl:74 templates/bits/comment.tpl:37
+#: templates/bits/answer.tpl:74 templates/bits/comment.tpl:39
 msgid "link-permalink"
 msgstr "permalink"
 
 #: templates/bits/answerEdit.tpl:24 templates/bits/statementFilters.tpl:44
 #: templates/statement/edit.tpl:165 lib/model/RevisionAnswer.php:15
-#: lib/model/RevisionStatement.php:22 lib/model/Statement.php:112
+#: lib/model/RevisionStatement.php:22 lib/model/Statement.php:113
 msgid "label-verdict"
 msgstr "verdict"
 
@@ -299,7 +299,7 @@ msgstr "details about verdicts and their effects"
 msgid "info-confirm-delete-answer"
 msgstr "Are you sure you want to delete this answer?"
 
-#: templates/bits/answerEdit.tpl:61 templates/bits/comment.tpl:47
+#: templates/bits/answerEdit.tpl:61 templates/bits/comment.tpl:49
 #: templates/cannedResponse/edit.tpl:35 templates/domain/edit.tpl:82
 #: templates/entity/edit.tpl:267 templates/entityType/edit.tpl:99
 #: templates/help/categoryEdit.tpl:71 templates/help/pageEdit.tpl:84
@@ -340,11 +340,11 @@ msgstr "Tips for answering"
 msgid "label-answer-resources-checkbox"
 msgstr "show tips when I'm composing an answer"
 
-#: templates/bits/comment.tpl:35
+#: templates/bits/comment.tpl:37
 msgid "info-comment-permalink"
 msgstr "permanent link to this comment"
 
-#: templates/bits/comment.tpl:45
+#: templates/bits/comment.tpl:47
 msgid "info-confirm-delete-comment"
 msgstr "Are you sure you want to delete this comment?"
 
@@ -690,6 +690,10 @@ msgstr "OK"
 msgid "link-confirm"
 msgstr "OK"
 
+#: templates/bits/phpConstants.tpl:21
+msgid "archived-version-%1"
+msgstr "An <a href=\"%1\">archived version</a> is available for this link."
+
 #: templates/bits/relation.tpl:21
 msgid "relation-links"
 msgstr "sources"
@@ -810,15 +814,15 @@ msgstr ""
 msgid "title-context"
 msgstr "context"
 
-#: templates/bits/statement.tpl:100
+#: templates/bits/statement.tpl:102
 msgid "title-goal"
 msgstr "goal"
 
-#: templates/bits/statement.tpl:106
+#: templates/bits/statement.tpl:108
 msgid "info-tag-view-statements"
 msgstr "View all statements with this tag."
 
-#: templates/bits/statement.tpl:109
+#: templates/bits/statement.tpl:111
 msgid "title-added-by"
 msgstr "added by"
 
@@ -1847,60 +1851,60 @@ msgstr "voted to ignore reopen request for"
 msgid "action-retracted-flag"
 msgstr "retracted flag for"
 
-#: lib/model/Answer.php:58
+#: lib/model/Answer.php:72
 msgid "info-answer-deleted"
 msgstr "This answer was deleted"
 
-#: lib/model/Answer.php:61
+#: lib/model/Answer.php:75
 msgid "info-answer-spam"
 msgstr "because it is spam."
 
-#: lib/model/Answer.php:62
+#: lib/model/Answer.php:76
 msgid "info-answer-abuse"
 msgstr "because it is rude or abusive."
 
-#: lib/model/Answer.php:63
+#: lib/model/Answer.php:77
 msgid "info-answer-off-topic"
 msgstr "because it is off-topic."
 
-#: lib/model/Answer.php:64
+#: lib/model/Answer.php:78
 msgid "info-answer-low-quality"
 msgstr "because it is low-quality."
 
-#: lib/model/Answer.php:65
+#: lib/model/Answer.php:79
 msgid "info-answer-by-owner"
 msgstr "by its author."
 
-#: lib/model/Answer.php:66 lib/model/Comment.php:54 lib/model/Entity.php:146
-#: lib/model/Statement.php:248
+#: lib/model/Answer.php:80 lib/model/Comment.php:62 lib/model/Entity.php:158
+#: lib/model/Statement.php:257
 msgid "info-by"
 msgstr "by"
 
-#: lib/model/Answer.php:67 lib/model/Comment.php:55 lib/model/Entity.php:147
-#: lib/model/Statement.php:249
+#: lib/model/Answer.php:81 lib/model/Comment.php:63 lib/model/Entity.php:159
+#: lib/model/Statement.php:258
 msgid "info-other-reason"
 msgstr "for other reasons."
 
-#: lib/model/Answer.php:101
+#: lib/model/Answer.php:115
 #, php-format
 msgid "info-minimum-reputation-add-answer-%s"
 msgstr "You need at least %s reputation to add answers."
 
-#: lib/model/Answer.php:109
+#: lib/model/Answer.php:123
 #, php-format
 msgid "info-minimum-reputation-edit-answer-%s"
 msgstr "You need at least %s reputation to edit answers."
 
-#: lib/model/Answer.php:115
+#: lib/model/Answer.php:129
 msgid "info-only-moderator-edit-proof-answer"
 msgstr ""
 "This answer was accepted as proof. Only moderators can edit it directly."
 
-#: lib/model/Answer.php:119
+#: lib/model/Answer.php:133
 msgid "info-banned-add-answer"
 msgstr "You are banned from adding answers."
 
-#: lib/model/Answer.php:123
+#: lib/model/Answer.php:137
 msgid "info-banned-edit-answer"
 msgstr "You are banned from editing answers."
 
@@ -1956,90 +1960,90 @@ msgstr "tags and regions"
 msgid "ban-review"
 msgstr "reviews"
 
-#: lib/model/Comment.php:48
+#: lib/model/Comment.php:56
 msgid "info-this-comment-was-deleted"
 msgstr "This comment was deleted"
 
-#: lib/model/Comment.php:51
+#: lib/model/Comment.php:59
 msgid "info-comment-spam"
 msgstr "because it is spam."
 
-#: lib/model/Comment.php:52
+#: lib/model/Comment.php:60
 msgid "info-comment-abuse"
 msgstr "because it is rude or abusive."
 
-#: lib/model/Comment.php:53
+#: lib/model/Comment.php:61
 msgid "info-comment-by-owner"
 msgstr "by its author."
 
-#: lib/model/Comment.php:56
+#: lib/model/Comment.php:64
 msgid "info-comment-not-needed"
 msgstr "because it is no longer needed."
 
-#: lib/model/Comment.php:112
+#: lib/model/Comment.php:120
 #, php-format
 msgid "info-comment-length-limit-%d"
 msgstr "Comments can be at most %d characters long."
 
-#: lib/model/Entity.php:124
+#: lib/model/Entity.php:136
 msgid "status-entity-duplicate"
 msgstr "duplicate"
 
-#: lib/model/Entity.php:126
+#: lib/model/Entity.php:138
 msgid "status-entity-closed"
 msgstr "closed"
 
-#: lib/model/Entity.php:127
+#: lib/model/Entity.php:139
 msgid "status-entity-deleted"
 msgstr "deleted"
 
-#: lib/model/Entity.php:136
+#: lib/model/Entity.php:148
 msgid "info-entity-closed"
 msgstr "This author was closed"
 
-#: lib/model/Entity.php:137
+#: lib/model/Entity.php:149
 msgid "info-entity-deleted"
 msgstr "This author was deleted"
 
-#: lib/model/Entity.php:140
+#: lib/model/Entity.php:152
 msgid "info-entity-spam"
 msgstr "because its profile contains spam."
 
-#: lib/model/Entity.php:141
+#: lib/model/Entity.php:153
 msgid "info-entity-abuse"
 msgstr "because its profile contains insults or abuse."
 
-#: lib/model/Entity.php:142
+#: lib/model/Entity.php:154
 msgid "info-entity-duplicate-of"
 msgstr "as a duplicate of the author"
 
-#: lib/model/Entity.php:143
+#: lib/model/Entity.php:155
 msgid "info-entity-off-topic"
 msgstr "because it is off-topic."
 
-#: lib/model/Entity.php:144
+#: lib/model/Entity.php:156
 msgid "info-entity-unverifiable"
 msgstr "because it is unverifiable."
 
-#: lib/model/Entity.php:145
+#: lib/model/Entity.php:157
 msgid "info-entity-by-owner"
 msgstr "by the user who added it."
 
-#: lib/model/Entity.php:261
+#: lib/model/Entity.php:273
 #, php-format
 msgid "info-minimum-reputation-add-entity-%s"
 msgstr "You need at least %s reputation to add authors."
 
-#: lib/model/Entity.php:269
+#: lib/model/Entity.php:281
 #, php-format
 msgid "info-minimum-reputation-edit-entity-%s"
 msgstr "You need at least %s reputation to edit authors."
 
-#: lib/model/Entity.php:274
+#: lib/model/Entity.php:286
 msgid "info-banned-add-entity"
 msgstr "You are banned from adding authors."
 
-#: lib/model/Entity.php:278
+#: lib/model/Entity.php:290
 msgid "info-banned-edit-entity"
 msgstr "You are banned from editing authors."
 
@@ -2418,182 +2422,182 @@ msgstr "deleted sources"
 msgid "label-changed-statement-link"
 msgstr "changed source"
 
-#: lib/model/Statement.php:97
+#: lib/model/Statement.php:98
 msgid "statement-type-any"
 msgstr "any type"
 
-#: lib/model/Statement.php:98
+#: lib/model/Statement.php:99
 msgid "statement-type-claim"
 msgstr "claim"
 
-#: lib/model/Statement.php:99
+#: lib/model/Statement.php:100
 msgid "statement-type-flop"
 msgstr "flip-flop"
 
-#: lib/model/Statement.php:100
+#: lib/model/Statement.php:101
 msgid "statement-type-promise"
 msgstr "promise"
 
-#: lib/model/Statement.php:109
+#: lib/model/Statement.php:110
 msgid "label-claim-verdict"
 msgstr "claim verdict"
 
-#: lib/model/Statement.php:110
+#: lib/model/Statement.php:111
 msgid "label-flop-verdict"
 msgstr "flip-flop verdict"
 
-#: lib/model/Statement.php:111
+#: lib/model/Statement.php:112
 msgid "label-promise-verdict"
 msgstr "promise verdict"
 
-#: lib/model/Statement.php:225
+#: lib/model/Statement.php:234
 msgid "status-statement-duplicate"
 msgstr "duplicate"
 
-#: lib/model/Statement.php:227
+#: lib/model/Statement.php:236
 msgid "status-statement-closed"
 msgstr "closed"
 
-#: lib/model/Statement.php:228
+#: lib/model/Statement.php:237
 msgid "status-statement-deleted"
 msgstr "deleted"
 
-#: lib/model/Statement.php:237
+#: lib/model/Statement.php:246
 msgid "info-statement-closed"
 msgstr "This statement was closed"
 
-#: lib/model/Statement.php:238
+#: lib/model/Statement.php:247
 msgid "info-statement-deleted"
 msgstr "This statement was deleted"
 
-#: lib/model/Statement.php:241
+#: lib/model/Statement.php:250
 msgid "info-statement-spam"
 msgstr "because it is spam."
 
-#: lib/model/Statement.php:242
+#: lib/model/Statement.php:251
 msgid "info-statement-abuse"
 msgstr "because it is rude or abusive."
 
-#: lib/model/Statement.php:243
+#: lib/model/Statement.php:252
 msgid "info-statement-duplicate-of"
 msgstr "as a duplicate of the statement"
 
-#: lib/model/Statement.php:244
+#: lib/model/Statement.php:253
 msgid "info-statement-off-topic"
 msgstr "because it is off-topic."
 
-#: lib/model/Statement.php:245
+#: lib/model/Statement.php:254
 msgid "info-statement-unverifiable"
 msgstr "because it is unverifiable."
 
-#: lib/model/Statement.php:246
+#: lib/model/Statement.php:255
 msgid "info-statement-low-quality"
 msgstr "because it is low-quality."
 
-#: lib/model/Statement.php:247
+#: lib/model/Statement.php:256
 msgid "info-statement-by-owner"
 msgstr "by the user who added it."
 
-#: lib/model/Statement.php:268
+#: lib/model/Statement.php:277
 #, php-format
 msgid "info-minimum-reputation-add-statement-%s"
 msgstr "You need at least %s reputation to add statements."
 
-#: lib/model/Statement.php:276
+#: lib/model/Statement.php:285
 #, php-format
 msgid "info-minimum-reputation-edit-statement-%s"
 msgstr "You need at least %s reputation to edit statements."
 
-#: lib/model/Statement.php:282
+#: lib/model/Statement.php:291
 msgid "info-only-moderator-edit-statement-verdict"
 msgstr "This statement has a verdict. Only moderators can edit it directly."
 
-#: lib/model/Statement.php:286
+#: lib/model/Statement.php:295
 msgid "info-banned-add-statement"
 msgstr "You are banned from adding statements."
 
-#: lib/model/Statement.php:290
+#: lib/model/Statement.php:299
 msgid "info-banned-edit-statement"
 msgstr "You are banned from editing statements."
 
-#: lib/model/User.php:213 routes/auth/login.php:61
+#: lib/model/User.php:224 routes/auth/login.php:61
 #: routes/auth/lostPassword.php:49 routes/invite/add.php:42
 msgid "info-must-enter-email"
 msgstr "Please enter an email address."
 
-#: lib/model/User.php:218
+#: lib/model/User.php:229
 msgid "info-email-taken"
 msgstr "This email address is already taken."
 
-#: lib/model/User.php:222 routes/auth/lostPassword.php:51
+#: lib/model/User.php:233 routes/auth/lostPassword.php:51
 #: routes/invite/add.php:44
 msgid "info-incorrect-email"
 msgstr "This email address looks incorrect."
 
-#: lib/model/User.php:232
+#: lib/model/User.php:243
 msgid "info-nickname-syntax"
 msgstr ""
 "Your nickname must begin with a letter or digit and consist of 3 to 30 "
 "letters, digits and punctuation from among -_."
 
-#: lib/model/User.php:237
+#: lib/model/User.php:248
 msgid "info-nickname-taken"
 msgstr "This nickname is already taken."
 
-#: lib/model/User.php:246 routes/auth/login.php:65
+#: lib/model/User.php:257 routes/auth/login.php:65
 msgid "info-must-enter-password"
 msgstr "Please enter a password."
 
-#: lib/model/User.php:248
+#: lib/model/User.php:259
 msgid "info-must-enter-password-2"
 msgstr "Please enter your password twice to prevent typos."
 
-#: lib/model/User.php:250
+#: lib/model/User.php:261
 msgid "info-password-mismatch"
 msgstr "Passwords don't match."
 
-#: lib/model/User.php:252
+#: lib/model/User.php:263
 msgid "info-password-length"
 msgstr "Your password must be at least 8 characters long."
 
-#: lib/model/User.php:276
+#: lib/model/User.php:287
 #, php-format
 msgid "info-minimum-reputation-%s"
 msgstr "You need at least %s reputation to perform this action."
 
-#: lib/model/User.php:290
+#: lib/model/User.php:301
 msgid "info-moderator-only"
 msgstr "Only moderators may perform this action."
 
-#: lib/model/User.php:308
+#: lib/model/User.php:319
 #, php-format
 msgid "info-minimum-reputation-flag-%s"
 msgstr "You need at least %s reputation to flag."
 
-#: lib/model/User.php:313
+#: lib/model/User.php:324
 msgid "info-banned-flag"
 msgstr "You are banned from flagging."
 
-#: lib/model/User.php:320
+#: lib/model/User.php:331
 #, php-format
 msgid "info-flag-limit-singular"
 msgid_plural "info-flag-limit-plural-%d"
 msgstr[0] "You can use at most one flag every 24 hours."
 msgstr[1] "You can use at most %d flags every 24 hours."
 
-#: lib/model/User.php:327
+#: lib/model/User.php:338
 msgid "info-flag-no-object"
 msgstr "Cannot flag: object does not exist."
 
-#: lib/model/User.php:332
+#: lib/model/User.php:343
 msgid "info-already-flagged"
 msgstr "You already have a pending flag for this object."
 
-#: lib/model/User.php:360
+#: lib/model/User.php:371
 msgid "info-banned-comment"
 msgstr "You are banned from commenting."
 
-#: lib/model/User.php:381
+#: lib/model/User.php:392
 #, php-format
 msgid "info-minimum-reputation-comment-%s"
 msgstr "You need at least %s reputation to comment."
@@ -2638,17 +2642,17 @@ msgstr ""
 msgid "can-suggest-changes"
 msgstr "You can suggest changes which will be placed in the review queue."
 
-#: lib/trait/UploadTrait.php:174
+#: lib/trait/UploadTrait.php:175
 #, php-format
 msgid "info-upload-size-%d"
 msgstr "Maximum file size is %d MB."
 
-#: lib/trait/UploadTrait.php:179
+#: lib/trait/UploadTrait.php:180
 #, php-format
 msgid "info-upload-type-%s"
 msgstr "Supported file types are: %s."
 
-#: lib/trait/UploadTrait.php:182
+#: lib/trait/UploadTrait.php:183
 msgid "info-upload-error"
 msgstr "An error occurred while uploading the file."
 

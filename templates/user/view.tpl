@@ -43,7 +43,7 @@
 
         {if $user->aboutMe}
           <h5 class="capitalize-first-word font-weight-bold mt-5">{t}title-about-me{/t}</h5>
-          <div>
+          <div class="archivable">
             {$user->aboutMe|md}
           </div>
         {/if}
