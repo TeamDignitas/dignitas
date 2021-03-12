@@ -23,4 +23,15 @@ class Archiver {
     }
   }
 
+  /**
+   * Tells the archiver to remove the given links. This one simply logs them.
+   *
+   * @param array<ArchivedLink> $archivedLinks
+   */
+  function remove(array $archivedLinks) {
+    foreach ($archivedLinks as $al) {
+      Log::info('removing %s', $al->url);
+    }
+  }
+
 }

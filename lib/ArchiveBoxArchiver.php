@@ -28,13 +28,26 @@ class ArchiveBoxArchiver extends Archiver {
    *
    * @return string
    */
-  function wrapArchiveBoxCommand($cmd) {
+  function wrapArchiveBoxCommand(string $cmd) {
     return sprintf(
-      "sudo su %s -c 'cd \"%s\" && archivebox %s'",
+      "sudo su %s -c 'cd \"%s\" && archivebox %s 2>/dev/null'",
       $this->user,
       $this->workingDir,
       $cmd
     );
+  }
+
+  /**
+   * Adds slashes. Also compensates for a shortcoming of ArchiveBox concerning
+   * parentheses: https://github.com/ArchiveBox/ArchiveBox/issues/235
+   * @return string The corrected URL.
+   */
+  function formatUrl(string $url) {
+    $url = str_replace([ '(', ')' ],
+                       [ '%28', '%29' ],
+                       $url);
+    $url = addslashes($url);
+    return $url;
   }
 
   /**
@@ -43,10 +56,14 @@ class ArchiveBoxArchiver extends Archiver {
    * @return bool
    */
   function exists($url) {
-    $cmd = sprintf('list --json "%s"', addslashes($url));
+    $cmd = sprintf('list --json "%s"', $this->formatUrl($url));
     $cmd = $this->wrapArchiveBoxCommand($cmd);
-    Log::info('Running %s', $cmd);
-    exit;
+    Log::debug('Running %s', $cmd);
+    OS::execute($cmd, $json);
+    $result = json_decode($json);
+
+    // TODO discern between sucessful and unsuccessful crawls
+    return !empty($result);
   }
 
   /**
@@ -56,16 +73,37 @@ class ArchiveBoxArchiver extends Archiver {
    * @param array<ArchivedLink> $archivedLinks
    */
   function add(array $archivedLinks) {
-    foreach ($archivedLinks as $al) {
-      $cmd = sprintf('add "%s"', addslashes($al->url));
+    foreach ($archivedLinks as $i => $al) {
+      $cmd = sprintf('add "%s"', $this->formatUrl($al->url));
       $cmd = $this->wrapArchiveBoxCommand($cmd);
-      Log::info('Running %s', $cmd);
+      Log::info('(%d/%d) Running %s', $i + 1, count($archivedLinks), $cmd);
 
       if (!$this->dryRun) {
         exec($cmd);
+        if ($this->exists($al->url)) {
+          $al->status = ArchivedLink::STATUS_ARCHIVED;
+          $al->save();
+        }
       }
     }
+  }
 
+  /**
+   * Tells the archiver to remove the given links.
+   *
+   * @param array<ArchivedLink> $archivedLinks
+   */
+  function remove(array $archivedLinks) {
+    foreach ($archivedLinks as $i => $al) {
+      $cmd = sprintf('remove --delete --yes "%s"', $this->formatUrl($al->url));
+      $cmd = $this->wrapArchiveBoxCommand($cmd);
+      Log::info('(%d/%d) Running %s', $i + 1, count($archivedLinks), $cmd);
+
+      if (!$this->dryRun) {
+        exec($cmd);
+        $al->delete();
+      }
+    }
   }
 
 }

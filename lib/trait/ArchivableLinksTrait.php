@@ -13,7 +13,7 @@ trait ArchivableLinksTrait {
   // but forbidding <>'"() in order to correctly match Markdown-style links
   // [text](url) and HTML-style links <a href="url">text</a>.
   // Note: we care about absolute URLs only.
-  static $URL_REGEX = "@(https?|ftp)://(-\.)?([^\s<>'\"()/?\.#-]+\.?)+(/[^\s<>'\"()]*)?@iS";
+  static $URL_REGEX = "@(https?|ftp)://(-\.)?([^\s<>'\"()/?\.#]+\.?)+(/[^\s<>'\"()]*)?@iS";
 
   /**
    * @return array An array of URLs worth archiving for this object.

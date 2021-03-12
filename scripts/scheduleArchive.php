@@ -25,6 +25,8 @@ foreach (getArchivableClasses() as $class) {
 
 // second, run the archiver
 $archiver = getArchiver($dryRun);
+$removeJobs = getRemoveJobs();
+$archiver->remove($removeJobs);
 $addJobs = getAddJobs();
 $archiver->add($addJobs);
 
@@ -82,7 +84,7 @@ function updateClass(string $class, int $since) {
  * Extracts links from one object containing archivable URLs.
  */
 function updateLinks($obj) {
-  Log::info('Analyzing %s#%d (%s)', get_class($obj), $obj->id, $obj);
+  Log::debug('Analyzing %s#%d (%s)', get_class($obj), $obj->id, $obj);
 
   // extract URLs and add them to a map indexed by URL
   $urls = $obj->getArchivableUrls();
@@ -177,6 +179,41 @@ function getArchiver($dryRun) {
 function getAddJobs() {
   return Model::factory('ArchivedLink')
     ->where('status', ArchivedLink::STATUS_NEW)
+    ->order_by_asc('createDate')
+    ->find_many();
+}
+
+/**
+ * Returns a list of ArchivedLinks that should be deleted.
+ *
+ * If possible, peforms safe deletions which do not involve the archiver.
+ * Specifically, if multiple articles link to the same URL and only some of
+ * them are deleted, then those can be removed from the database without
+ * talking to the archiver. We keep the underlying archive for the links which
+ * are not deleted.
+ *
+ * @return array<ArchivedLink>
+ */
+function getRemoveJobs() {
+  // grab deleted links with matching non-deleted lins
+  $als = Model::factory('ArchivedLink')
+    ->where('status', ArchivedLink::STATUS_DELETED)
+    ->where_raw('url in (select url from archived_link where status != ?)',
+                [ ArchivedLink::STATUS_DELETED ])
+    ->find_many();
+
+  foreach ($als as $al) {
+    if ($GLOBALS['dryRun']) {
+      Log::info('  DRY RUN deleting orphan: [%s]', $al->url);
+    } else {
+      Log::info('  deleting orphan: [%s]', $al->url);
+      $al->delete();
+    }
+  }
+
+  // every other deleted link should go through the archiver
+  return Model::factory('ArchivedLink')
+    ->where('status', ArchivedLink::STATUS_DELETED)
     ->order_by_asc('createDate')
     ->find_many();
 }
