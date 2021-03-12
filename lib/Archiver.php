@@ -6,31 +6,20 @@
  **/
 class Archiver {
 
-  protected bool $dryRun;
   protected array $options;
 
-  function __construct($options) {
+  function __construct(array $options) {
     $this->options = $options;
-    $this->dryRun = $options['dryRun'] ?? true;
-  }
-
-  function add($url) {
-    if ($this->dryRun) {
-      Log::info('DRY RUN archiving: [%s]', $url);
-    } else {
-      Log::info('archiving: [%s]', $url);
-    }
   }
 
   /**
-   * Invokes the archiver on the given links. Duplicate URLs are OK; the
-   * archiver should notice them and skip them.
+   * Invokes the archiver on the given links. This one simply logs them.
    *
    * @param array<ArchivedLink> $archivedLinks
    */
-  function batchAdd($archivedLinks) {
+  function add(array $archivedLinks) {
     foreach ($archivedLinks as $al) {
-      $this->add($al->url);
+      Log::info('adding %s', $al->url);
     }
   }
 
