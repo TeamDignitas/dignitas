@@ -12,7 +12,9 @@
   {/if}
 
   <div class="text-left">
-    {$comment->contents|md}
+    <span class="archivable">
+      {$comment->contents|md}
+    </span>
     &mdash;
     {include 'bits/userLink.tpl' u=$comment->getUser()}
     {include 'bits/moment.tpl' t=$comment->createDate}

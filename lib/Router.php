@@ -55,6 +55,11 @@ class Router {
       'en_US.utf8' => 'ajax/save-proof',
     ],
 
+    // archived links
+    'archivedLink/lookup' => [
+      'en_US.utf8' => 'ajax/archive-lookup',
+    ],
+
     // attachments
     'attachment/upload' => [
       'en_US.utf8' => 'ajax/upload-attachment',

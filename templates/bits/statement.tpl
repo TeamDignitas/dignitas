@@ -95,7 +95,9 @@
 
     <h6 class="text-uppercase font-weight-bold">{t}title-context{/t}</h6>
 
-    {$statement->context|md}
+    <div class="archivable">
+      {$statement->context|md}
+    </div>
 
     <h6 class="text-uppercase font-weight-bold">{t}title-goal{/t}</h6>
 

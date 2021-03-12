@@ -476,6 +476,73 @@ $(function() {
 
 });
 
+/**************************** archived links ****************************/
+
+$(function() {
+  const DELAY_SHOW = 1000;
+  const DELAY_HIDE = 300;
+  var timer;
+  var link = null;
+
+  $('a.archivable, .archivable a').hover(mouseIn, mouseOut);
+
+  function mouseIn(e) {
+    // clear any existing popover
+    if (link) {
+      link.popover('dispose');
+    }
+
+    // delay, then check if archived link exists
+    link = $(e.target);
+    timer = setTimeout(archiveLookup, DELAY_SHOW);
+  }
+
+  function mouseOut() {
+    // cancel the archived link check
+    clearTimeout(timer);
+  }
+
+  function archiveLookup() {
+    // check if archived link exists
+    $.get(URL_PREFIX + 'ajax/archive-lookup', {
+      url: link.attr('href'),
+    }).done(function(data) {
+      var url = data.archivedUrl;
+
+      if (url) {
+        createPopover(url);
+      }
+    });
+  }
+
+  function createPopover(url) {
+    // Create and show the popover.
+    link.popover({
+      content: ARCHIVED_VERSION_MESSAGE.replace('%1', url),
+      html: true,
+      placement: 'auto',
+    });
+    link.popover('show');
+
+    // Hide the popover when the mouse leaves *the popover*.
+    $('.popover').mouseleave(function () {
+      link.popover('hide');
+    });
+
+    // Hide the popover when the mouse leaves *the link*,
+    // unless it enters the popover.
+    // See https://embed.plnkr.co/plunk/HLqrJ6
+    link.mouseleave(function () {
+      setTimeout(function () {
+        if (!$('.popover:hover').length) {
+          link.popover('dispose');
+        }
+      }, DELAY_HIDE);
+    });
+  }
+
+});
+
 /**************************** number padding ****************************/
 
 // horrible horrible hack

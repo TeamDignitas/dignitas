@@ -23,7 +23,7 @@
   {/if}
 
   <div class="col-sm-12 col-md-11 mt-2 mb-1">
-    <div class="answer-body col-md-12 px-0">
+    <div class="answer-body archivable col-md-12 px-0">
       {$answer->contents|md}
     </div>
 
