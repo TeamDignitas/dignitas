@@ -624,3 +624,8 @@ body, main {
 .editor-toolbar button {
   color: #6c757d;
 }
+
+/**************************** archived links ****************************/
+.popover-archive {
+  max-width: 350px;
+}
