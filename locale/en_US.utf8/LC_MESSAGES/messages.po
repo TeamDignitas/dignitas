@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-03-12 18:14+0200\n"
-"PO-Revision-Date: 2021-03-12 18:15+0200\n"
+"POT-Creation-Date: 2021-03-15 14:54+0200\n"
+"PO-Revision-Date: 2021-03-15 14:54+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -149,6 +149,18 @@ msgstr "edit answer"
 #: templates/user/ban.tpl:59 templates/user/edit.tpl:141
 msgid "link-save"
 msgstr "save"
+
+#: templates/archivedLink/view.tpl:3
+msgid "title-archived-link"
+msgstr "Archived page"
+
+#: templates/archivedLink/view.tpl:8
+msgid "info-archived-link"
+msgstr "This is an archived version."
+
+#: templates/archivedLink/view.tpl:11
+msgid "link-live-page"
+msgstr "view the live page"
 
 #: templates/auth/login.tpl:3 templates/auth/login.tpl:17
 msgid "title-log-in"
@@ -2782,6 +2794,10 @@ msgstr ""
 #: routes/answer/saveProof.php:28
 msgid "info-proof-active-status"
 msgstr "Only active answers may be accepted as proof."
+
+#: routes/archivedLink/view.php:8
+msgid "info-no-such-archived-link"
+msgstr "The archived page you requested does not exist."
 
 #: routes/attachment/upload.php:11
 #, php-format

@@ -1,0 +1,24 @@
+body, html {
+  height: 100%;
+}
+
+/* expand body and give <main> all the available vertical space */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* expand body and give <iframe> all the available vertical space */
+main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 0 !important;
+}
+
+.frame-archive {
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  border-color: #ddd;
+  flex-grow: 1;
+}

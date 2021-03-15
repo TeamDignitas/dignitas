@@ -23,6 +23,19 @@ class ArchivedLink extends Precursor {
   }
 
   /**
+   * Returns the URL for the Dignitas page wrapping the archived version of
+   * this link, or false if the link is not archived.
+   */
+  function getViewUrl() {
+    if ($this->status == self::STATUS_ARCHIVED &&
+        $this->timestamp &&
+        $this->path) {
+      return Router::link('archivedLink/view') . '/' . $this->id;
+    }
+    return false;
+  }
+
+  /**
    * Returns the URL for the archived version of this link, or false if the
    * link is not archived.
    */

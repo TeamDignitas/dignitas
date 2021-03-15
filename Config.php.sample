@@ -252,8 +252,10 @@ class Config {
   // Google's Page Speed Insights recommends one year.
   const CACHE_DURATION = 31536000;
 
-  // Base URL for archived links. Invidual URLs will be appended to this.
-  const ARCHIVE_URL = 'http://localhost:8000/archive/';
+  // Base URL for archived links. Invidual URLs will be appended to this. You
+  // should be able to set up an alias in your web server, for example:
+  //   Alias "/archive" "/srv/http/dignitas-archive/archive"
+  const ARCHIVE_URL = 'http://localhost/archive/';
 
   // Archiver to use for archiving URLs. Should match a child of lib/Archiver.php.
   const ARCHIVER_CLASS = 'Archiver';

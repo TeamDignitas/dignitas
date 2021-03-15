@@ -4,7 +4,7 @@ $url = Request::get('url');
 
 $al = ArchivedLink::get_by_url_status($url, ArchivedLink::STATUS_ARCHIVED);
 
-$archivedUrl = $al ? $al->getArchivedUrl() : false;
+$archivedUrl = $al ? $al->getViewUrl() : false;
 
 $resp = [
   'archivedUrl' => $archivedUrl,
