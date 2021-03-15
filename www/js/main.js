@@ -523,6 +523,8 @@ $(function() {
       placement: 'auto',
     });
     link.popover('show');
+    var pop = $(link.data('bs.popover').tip);
+    pop.addClass('popover-archive shadow');
 
     // Hide the popover when the mouse leaves *the popover*.
     $('.popover').mouseleave(function () {

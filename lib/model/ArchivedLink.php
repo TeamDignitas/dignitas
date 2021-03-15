@@ -4,7 +4,8 @@ class ArchivedLink extends Precursor {
 
   const STATUS_NEW = 1;       // when we initially extract the link
   const STATUS_ARCHIVED = 2;  // once the archiver has it
-  const STATUS_DELETED = 3;   // when scheduled for deletion
+  const STATUS_FAILED = 3;    // if not available after an attempted archival
+  const STATUS_DELETED = 4;   // when scheduled for deletion
 
   static function create(Object $obj, String $url) {
     $al = Model::factory('ArchivedLink')->create();

@@ -112,8 +112,12 @@ class ArchiveBoxArchiver extends Archiver {
           $al->status = ArchivedLink::STATUS_ARCHIVED;
           $al->timestamp = $data['timestamp'];
           $al->path = $data['path'];
-          $al->save();
+        } else {
+          // Mark it as failed so we don't keep retrying. Sysadmins should run
+          // 'archivebox update' periodically to retry failed jobs.
+          $al->status = ArchivedLink::STATUS_FAILED;
         }
+        $al->save();
       }
     }
   }
