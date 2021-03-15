@@ -59,6 +59,10 @@ class Router {
     'archivedLink/lookup' => [
       'en_US.utf8' => 'ajax/archive-lookup',
     ],
+    'archivedLink/view' => [
+      'en_US.utf8' => 'archived-version',
+      'ro_RO.utf8' => 'versiune-arhivata',
+    ],
 
     // attachments
     'attachment/upload' => [
@@ -219,7 +223,7 @@ class Router {
     ],
     'notification/view' => [
       'en_US.utf8' => 'notifications',
-      'en_US.utf8' => 'notificari',
+      'ro_RO.utf8' => 'notificari',
     ],
 
     // regions
@@ -365,6 +369,7 @@ class Router {
     'aggregate/search' => [ 'q' ],
     'answer/edit' => [ 'id' ],
     'answer/history' => [ 'id' ],
+    'archivedLink/view' => [ 'id' ],
     'attachment/view' => [ 'id', 'fileName' ],
     'cannedResponse/edit' => [ 'id' ],
     'cannedResponse/history' => [ 'id' ],
