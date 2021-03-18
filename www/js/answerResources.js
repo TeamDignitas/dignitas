@@ -7,7 +7,7 @@ $(function() {
     cm.on('focus', initAnswerResources);
     $('.answer-resources-link').click(toggleModal);
     $('#checkboxAnswerResources').change(toggleCheckbox);
-    $('#answer-resources').on('shown.bs.modal', identifyBackdrop);
+    $('#answer-resources').on('show.bs.modal hidden.bs.modal', styleBody);
   }
 
   function initAnswerResources(evt) {
@@ -33,10 +33,11 @@ $(function() {
       });
   }
 
-  // When this modal is shown, it should be the only one. So we take this
-  // chance to give an ID to its backdrop so we can style it.
-  function identifyBackdrop() {
-    $('.modal-backdrop').first().attr('id', 'answer-resources-backdrop');
+  // Add a class to the <body> as soon as the modal opens ('show') and last
+  // thing after it closes ('hidden'). We will use the class to control the
+  // backdrop.
+  function styleBody() {
+    $('body').toggleClass('has-answer-resources');
   }
 
   init();

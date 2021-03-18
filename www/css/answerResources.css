@@ -27,8 +27,14 @@
     max-height: 100%;
   }
 
-  #answer-resources-backdrop {
+  /* While the resources are open, hide the first backdrop. There is no selector */
+  /* for this, so we hide all the backdrops, then we display all the backdrops */
+  /* that follow a backdrop. */
+  body.has-answer-resources .modal-backdrop {
     display: none;
+  }
+  body.has-answer-resources .modal-backdrop ~ .modal-backdrop {
+    display: block;
   }
 
   /* Some rules to keep the rest of the page reachable. Unfortunately, these
