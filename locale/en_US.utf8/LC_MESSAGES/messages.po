@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-03-15 14:54+0200\n"
-"PO-Revision-Date: 2021-03-15 14:54+0200\n"
+"POT-Creation-Date: 2021-03-18 15:57+0200\n"
+"PO-Revision-Date: 2021-03-18 15:58+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -331,7 +331,7 @@ msgid "link-reopen"
 msgstr "reopen"
 
 #: templates/bits/answerEdit.tpl:77 templates/bits/commentForm.tpl:42
-#: templates/bits/flagModal.tpl:190 templates/bits/phpConstants.tpl:17
+#: templates/bits/flagModal.tpl:190 templates/bits/phpConstants.tpl:35
 #: templates/cannedResponse/edit.tpl:41 templates/cannedResponse/list.tpl:52
 #: templates/domain/edit.tpl:95 templates/entity/edit.tpl:283
 #: templates/entityType/edit.tpl:105 templates/help/categoryEdit.tpl:77
@@ -694,15 +694,63 @@ msgstr "log out"
 msgid "info-notification-unsubscribe"
 msgstr "unsubscribe from notifications for this item"
 
-#: templates/bits/phpConstants.tpl:16
+#: templates/bits/phpConstants.tpl:20
+msgid "easymde-bold"
+msgstr "bold"
+
+#: templates/bits/phpConstants.tpl:21
+msgid "easymde-italic"
+msgstr "italic"
+
+#: templates/bits/phpConstants.tpl:22
+msgid "easymde-heading"
+msgstr "heading"
+
+#: templates/bits/phpConstants.tpl:23
+msgid "easymde-quote"
+msgstr "quote"
+
+#: templates/bits/phpConstants.tpl:24
+msgid "easymde-generic-list"
+msgstr "generic list"
+
+#: templates/bits/phpConstants.tpl:25
+msgid "easymde-numbered-list"
+msgstr "numbered list"
+
+#: templates/bits/phpConstants.tpl:26
+msgid "easymde-link"
+msgstr "create link"
+
+#: templates/bits/phpConstants.tpl:27
+msgid "easymde-image"
+msgstr "insert image"
+
+#: templates/bits/phpConstants.tpl:28
+msgid "easymde-preview"
+msgstr "toggle preview"
+
+#: templates/bits/phpConstants.tpl:29
+msgid "easymde-side-by-side"
+msgstr "toggle side by side"
+
+#: templates/bits/phpConstants.tpl:30
+msgid "easymde-fullscreen"
+msgstr "toggle fullscreen"
+
+#: templates/bits/phpConstants.tpl:31
+msgid "easymde-resources"
+msgstr "show answer resources"
+
+#: templates/bits/phpConstants.tpl:34
 msgid "link-ok"
 msgstr "OK"
 
-#: templates/bits/phpConstants.tpl:18
+#: templates/bits/phpConstants.tpl:36
 msgid "link-confirm"
 msgstr "OK"
 
-#: templates/bits/phpConstants.tpl:21
+#: templates/bits/phpConstants.tpl:39
 msgid "archived-version-%1"
 msgstr "An <a href=\"%1\">archived version</a> is available for this link."
 

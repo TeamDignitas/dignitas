@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-03-15 14:54+0200\n"
-"PO-Revision-Date: 2021-03-15 14:54+0200\n"
+"POT-Creation-Date: 2021-03-18 15:54+0200\n"
+"PO-Revision-Date: 2021-03-18 15:57+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -335,7 +335,7 @@ msgid "link-reopen"
 msgstr "redeschide"
 
 #: templates/bits/answerEdit.tpl:77 templates/bits/commentForm.tpl:42
-#: templates/bits/flagModal.tpl:190 templates/bits/phpConstants.tpl:17
+#: templates/bits/flagModal.tpl:190 templates/bits/phpConstants.tpl:35
 #: templates/cannedResponse/edit.tpl:41 templates/cannedResponse/list.tpl:52
 #: templates/domain/edit.tpl:95 templates/entity/edit.tpl:283
 #: templates/entityType/edit.tpl:105 templates/help/categoryEdit.tpl:77
@@ -701,15 +701,63 @@ msgstr "ieșire"
 msgid "info-notification-unsubscribe"
 msgstr "dezabonează-mă de la toate notificările pentru acest articol"
 
-#: templates/bits/phpConstants.tpl:16
+#: templates/bits/phpConstants.tpl:20
+msgid "easymde-bold"
+msgstr "aldin"
+
+#: templates/bits/phpConstants.tpl:21
+msgid "easymde-italic"
+msgstr "cursiv"
+
+#: templates/bits/phpConstants.tpl:22
+msgid "easymde-heading"
+msgstr "antet"
+
+#: templates/bits/phpConstants.tpl:23
+msgid "easymde-quote"
+msgstr "citat"
+
+#: templates/bits/phpConstants.tpl:24
+msgid "easymde-generic-list"
+msgstr "listă generică"
+
+#: templates/bits/phpConstants.tpl:25
+msgid "easymde-numbered-list"
+msgstr "listă numerotată"
+
+#: templates/bits/phpConstants.tpl:26
+msgid "easymde-link"
+msgstr "creează o legătură"
+
+#: templates/bits/phpConstants.tpl:27
+msgid "easymde-image"
+msgstr "inserează o imagine"
+
+#: templates/bits/phpConstants.tpl:28
+msgid "easymde-preview"
+msgstr "previzualizare"
+
+#: templates/bits/phpConstants.tpl:29
+msgid "easymde-side-by-side"
+msgstr "două coloane"
+
+#: templates/bits/phpConstants.tpl:30
+msgid "easymde-fullscreen"
+msgstr "ecran complet"
+
+#: templates/bits/phpConstants.tpl:31
+msgid "easymde-resources"
+msgstr "arată sugestiile de analiză"
+
+#: templates/bits/phpConstants.tpl:34
 msgid "link-ok"
 msgstr "OK"
 
-#: templates/bits/phpConstants.tpl:18
+#: templates/bits/phpConstants.tpl:36
 msgid "link-confirm"
 msgstr "confirmă"
 
-#: templates/bits/phpConstants.tpl:21
+#: templates/bits/phpConstants.tpl:39
 msgid "archived-version-%1"
 msgstr ""
 "Este disponibilă o <a href=\"%1\">versiune arhivată</a> pentru această "
