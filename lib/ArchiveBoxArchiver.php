@@ -24,7 +24,7 @@ class ArchiveBoxArchiver extends Archiver {
 
   function __construct(array $options) {
     parent::__construct($options);
-    $this->dryRun = $options['dryRun'] ?? true;
+    $this->dryRun = $options['dryRun'] ?? false;
     $this->user = $options['user'] ?? 'root';
     $this->workingDir = $options['workingDir'] ?? '/tmp';
   }

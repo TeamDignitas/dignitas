@@ -167,7 +167,10 @@ function getArchiver($dryRun) {
   }
 
   $options = Config::ARCHIVER_OPTIONS;
-  $options['dryRun'] = $dryRun;
+  if ($dryRun) {
+    // Passing -n overrides the archiver's dryRun value in Config.php.
+    $options['dryRun'] = true;
+  }
   return new $class($options);
 }
 
