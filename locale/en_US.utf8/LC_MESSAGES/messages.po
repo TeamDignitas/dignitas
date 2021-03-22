@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-03-18 15:57+0200\n"
-"PO-Revision-Date: 2021-03-18 15:58+0200\n"
+"POT-Creation-Date: 2021-03-22 10:31+0200\n"
+"PO-Revision-Date: 2021-03-22 10:31+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -158,7 +158,11 @@ msgstr "Archived page"
 msgid "info-archived-link"
 msgstr "This is an archived version."
 
-#: templates/archivedLink/view.tpl:11
+#: templates/archivedLink/view.tpl:12
+msgid "label-archived-link-downloaded"
+msgstr "downloaded"
+
+#: templates/archivedLink/view.tpl:17
 msgid "link-live-page"
 msgstr "view the live page"
 

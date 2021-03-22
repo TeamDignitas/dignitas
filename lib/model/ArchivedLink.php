@@ -48,6 +48,16 @@ class ArchivedLink extends Precursor {
     return false;
   }
 
+  /**
+   * Returns the archival timestamp in seconds. Note: this is the timestamp
+   * when the page was crawled, not when the ArchivedLink record was created.
+   */
+  function getTimestamp() {
+    // discard fractional values if any
+    $parts = explode('.', $this->timestamp);
+    return $parts[0] ?? 0;
+  }
+
   function markForDeletion() {
     $this->status = self::STATUS_DELETED;
     $this->save();
