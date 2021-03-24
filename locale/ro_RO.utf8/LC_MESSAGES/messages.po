@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-03-22 10:32+0200\n"
-"PO-Revision-Date: 2021-03-22 10:32+0200\n"
+"POT-Creation-Date: 2021-03-24 18:24+0200\n"
+"PO-Revision-Date: 2021-03-24 18:24+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -19,8 +19,7 @@ msgstr ""
 "X-Poedit-SearchPath-2: templates\n"
 "X-Poedit-SearchPath-3: www\n"
 "X-Poedit-SearchPathExcluded-0: lib/third-party\n"
-"X-Poedit-SearchPathExcluded-1: www/js/merged\n"
-"X-Poedit-SearchPathExcluded-2: www/js/third-party\n"
+"X-Poedit-SearchPathExcluded-1: www/js\n"
 
 #: templates/404.tpl:3 templates/404.tpl:7
 msgid "title-page-not-found"
@@ -44,12 +43,12 @@ msgstr "contact"
 msgid "title-dashboard"
 msgstr "panou de control"
 
-#: templates/aggregate/dashboard.tpl:17 templates/aggregate/index.tpl:29
-#: templates/bits/entity.tpl:115
+#: templates/aggregate/dashboard.tpl:17 templates/aggregate/index.tpl:30
+#: templates/bits/entity.tpl:116
 msgid "link-add-statement"
 msgstr "adaugă o afirmație"
 
-#: templates/aggregate/dashboard.tpl:30 templates/aggregate/index.tpl:38
+#: templates/aggregate/dashboard.tpl:30 templates/aggregate/index.tpl:39
 msgid "link-add-entity"
 msgstr "adaugă un autor"
 
@@ -101,11 +100,11 @@ msgstr "afirmații cu verdicte neclare"
 msgid "label-contribute-index"
 msgstr "contribuie și tu"
 
-#: templates/aggregate/index.tpl:47
+#: templates/aggregate/index.tpl:48
 msgid "link-add-answer"
 msgstr "adaugă un răspuns"
 
-#: templates/aggregate/index.tpl:58
+#: templates/aggregate/index.tpl:60
 msgid "title-recent-statements"
 msgstr "afirmații recente"
 
@@ -339,7 +338,7 @@ msgid "link-reopen"
 msgstr "redeschide"
 
 #: templates/bits/answerEdit.tpl:77 templates/bits/commentForm.tpl:42
-#: templates/bits/flagModal.tpl:190 templates/bits/phpConstants.tpl:35
+#: templates/bits/flagModal.tpl:190 templates/bits/phpConstants.tpl:22
 #: templates/cannedResponse/edit.tpl:41 templates/cannedResponse/list.tpl:52
 #: templates/domain/edit.tpl:95 templates/entity/edit.tpl:283
 #: templates/entityType/edit.tpl:105 templates/help/categoryEdit.tpl:77
@@ -406,7 +405,7 @@ msgstr[2] "%1 de linii identice omise"
 #: templates/help/categoryView.tpl:39 templates/help/pageView.tpl:36
 #: templates/region/view.tpl:15 templates/relationType/list.tpl:48
 #: templates/staticResource/list.tpl:44 templates/tag/view.tpl:15
-#: templates/user/view.tpl:93
+#: templates/user/view.tpl:94
 msgid "link-edit"
 msgstr "editează"
 
@@ -414,27 +413,27 @@ msgstr "editează"
 msgid "link-suggest-edit"
 msgstr "sugerează o modificare"
 
-#: templates/bits/entity.tpl:29
+#: templates/bits/entity.tpl:30
 msgid "title-alias"
 msgstr "alias"
 
-#: templates/bits/entity.tpl:55
+#: templates/bits/entity.tpl:56
 msgid "title-relations"
 msgstr "relații"
 
-#: templates/bits/entity.tpl:65 templates/region/view.tpl:3
+#: templates/bits/entity.tpl:66 templates/region/view.tpl:3
 msgid "title-region"
 msgstr "regiune"
 
-#: templates/bits/entity.tpl:72
+#: templates/bits/entity.tpl:73
 msgid "title-profile"
 msgstr "profil"
 
-#: templates/bits/entity.tpl:81
+#: templates/bits/entity.tpl:82
 msgid "title-entity-links"
 msgstr "legături externe"
 
-#: templates/bits/entity.tpl:96
+#: templates/bits/entity.tpl:97
 msgid "title-members"
 msgstr "membri"
 
@@ -475,12 +474,12 @@ msgstr "regiune"
 msgid "title-test-login"
 msgstr "autentificare ca utilizator de test"
 
-#: templates/bits/fakeLogin.tpl:33 templates/user/view.tpl:30
+#: templates/bits/fakeLogin.tpl:33 templates/user/view.tpl:31
 msgid "label-reputation"
 msgstr "reputație"
 
 #: templates/bits/fakeLogin.tpl:54 templates/bits/navmenu.tpl:167
-#: templates/user/view.tpl:18
+#: templates/user/view.tpl:19
 msgid "label-moderator"
 msgstr "moderator"
 
@@ -705,63 +704,15 @@ msgstr "ieșire"
 msgid "info-notification-unsubscribe"
 msgstr "dezabonează-mă de la toate notificările pentru acest articol"
 
-#: templates/bits/phpConstants.tpl:20
-msgid "easymde-bold"
-msgstr "aldin"
-
 #: templates/bits/phpConstants.tpl:21
-msgid "easymde-italic"
-msgstr "cursiv"
-
-#: templates/bits/phpConstants.tpl:22
-msgid "easymde-heading"
-msgstr "antet"
-
-#: templates/bits/phpConstants.tpl:23
-msgid "easymde-quote"
-msgstr "citat"
-
-#: templates/bits/phpConstants.tpl:24
-msgid "easymde-generic-list"
-msgstr "listă generică"
-
-#: templates/bits/phpConstants.tpl:25
-msgid "easymde-numbered-list"
-msgstr "listă numerotată"
-
-#: templates/bits/phpConstants.tpl:26
-msgid "easymde-link"
-msgstr "creează o legătură"
-
-#: templates/bits/phpConstants.tpl:27
-msgid "easymde-image"
-msgstr "inserează o imagine"
-
-#: templates/bits/phpConstants.tpl:28
-msgid "easymde-preview"
-msgstr "previzualizare"
-
-#: templates/bits/phpConstants.tpl:29
-msgid "easymde-side-by-side"
-msgstr "două coloane"
-
-#: templates/bits/phpConstants.tpl:30
-msgid "easymde-fullscreen"
-msgstr "ecran complet"
-
-#: templates/bits/phpConstants.tpl:31
-msgid "easymde-resources"
-msgstr "arată sugestiile de analiză"
-
-#: templates/bits/phpConstants.tpl:34
 msgid "link-ok"
 msgstr "OK"
 
-#: templates/bits/phpConstants.tpl:36
+#: templates/bits/phpConstants.tpl:23
 msgid "link-confirm"
 msgstr "confirmă"
 
-#: templates/bits/phpConstants.tpl:39
+#: templates/bits/phpConstants.tpl:26
 msgid "archived-version-%1"
 msgstr ""
 "Este disponibilă o <a href=\"%1\">versiune arhivată</a> pentru această "
@@ -854,7 +805,7 @@ msgstr "Acceptă/respinge răspunsul ca demonstrație."
 msgid "tooltip-answer-is-proof"
 msgstr "Răspuns acceptat ca demonstrație."
 
-#: templates/bits/statement.tpl:21
+#: templates/bits/statement.tpl:19
 msgid "link-visit-statement-page"
 msgstr "mergi la pagina afirmației"
 
@@ -862,7 +813,7 @@ msgstr "mergi la pagina afirmației"
 msgid "statement-links"
 msgstr "surse"
 
-#: templates/bits/statement.tpl:54
+#: templates/bits/statement.tpl:53
 msgid "tooltip-downvote-statement-singular-%1"
 msgid_plural "tooltip-downvote-statement-plural-%1"
 msgstr[0] ""
@@ -875,31 +826,31 @@ msgstr[2] ""
 "Votează negativ afirmațiile preluate inexact sau formatate defectuos. "
 "Această acțiune te costă %1 de puncte de reputație."
 
-#: templates/bits/statement.tpl:65
+#: templates/bits/statement.tpl:64
 msgid "tooltip-upvote-statement"
 msgstr ""
 "Votează pozitiv afirmațiile preluate exact și bine formatate. Valoarea de "
 "adevăr a afirmației nu se votează."
 
-#: templates/bits/statement.tpl:75
+#: templates/bits/statement.tpl:74
 msgid "link-statement-review-pending-edit"
 msgstr ""
 "Această afirmație are o modificare sugerată. O poți <a href=\"%1\" class="
 "\"alert-link\">evalua</a>."
 
-#: templates/bits/statement.tpl:96
+#: templates/bits/statement.tpl:95
 msgid "title-context"
 msgstr "context"
 
-#: templates/bits/statement.tpl:102
+#: templates/bits/statement.tpl:101
 msgid "title-goal"
 msgstr "scop"
 
-#: templates/bits/statement.tpl:108
+#: templates/bits/statement.tpl:107
 msgid "info-tag-view-statements"
 msgstr "Vezi toate afirmațiile cu această etichetă."
 
-#: templates/bits/statement.tpl:111
+#: templates/bits/statement.tpl:110
 msgid "title-added-by"
 msgstr "adăugată de"
 
@@ -1044,7 +995,7 @@ msgstr "iconiță"
 #: templates/domain/list.tpl:21 templates/entity/edit.tpl:86
 #: templates/entity/edit.tpl:153 templates/entityType/list.tpl:22
 #: templates/relationType/list.tpl:30 templates/staticResource/list.tpl:21
-#: templates/user/view.tpl:101
+#: templates/user/view.tpl:102
 msgid "actions"
 msgstr "acțiuni"
 
@@ -1769,43 +1720,43 @@ msgstr "Schimbă parola (opțional)"
 msgid "title-user"
 msgstr "utilizator"
 
-#: templates/user/view.tpl:26
+#: templates/user/view.tpl:27
 msgid "label-user"
 msgstr "utilizator"
 
-#: templates/user/view.tpl:32
+#: templates/user/view.tpl:33
 msgid "label-statements"
 msgstr "afirmații"
 
-#: templates/user/view.tpl:34
+#: templates/user/view.tpl:35
 msgid "label-answers"
 msgstr "răspunsuri"
 
-#: templates/user/view.tpl:36
+#: templates/user/view.tpl:37
 msgid "label-member-since"
 msgstr "membr(u/ă) de pe"
 
-#: templates/user/view.tpl:39
+#: templates/user/view.tpl:40
 msgid "label-last-seen"
 msgstr "ultima vizită"
 
-#: templates/user/view.tpl:45
+#: templates/user/view.tpl:46
 msgid "title-about-me"
 msgstr "despre mine"
 
-#: templates/user/view.tpl:52
+#: templates/user/view.tpl:53
 msgid "title-user-bans"
 msgstr "blocaje"
 
-#: templates/user/view.tpl:59
+#: templates/user/view.tpl:60
 msgid "ban-permanent"
 msgstr "permanent"
 
-#: templates/user/view.tpl:61
+#: templates/user/view.tpl:62
 msgid "label-ban-until"
 msgstr "pînă la"
 
-#: templates/user/view.tpl:86
+#: templates/user/view.tpl:87
 msgid "link-ban"
 msgstr "blochează..."
 

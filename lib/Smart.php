@@ -9,6 +9,12 @@ class Smart {
   private static $includedResources = [];
 
   const RESOURCE_MAP = [
+    'i18n' => [
+      'js' => [
+        'locale/%l.js',
+        'i18n.js',
+      ],
+    ],
     'jquery' => [
       'js' => [ 'third-party/jquery-3.3.1.min.js' ],
     ],
@@ -37,7 +43,7 @@ class Smart {
     'main' => [
       'css' => [ 'main.css', 'fonts.css' ],
       'js' => [ 'main.js' ],
-      'deps' => ['jquery', 'bootstrap', 'select2'],
+      'deps' => ['i18n', 'jquery', 'bootstrap', 'select2'],
     ],
     'codemirror' => [
       'css' => [

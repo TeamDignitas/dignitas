@@ -17,19 +17,6 @@
 
   {******************** translations ********************}
 
-  const EASYMDE_BOLD = '{t}easymde-bold{/t}';
-  const EASYMDE_ITALIC = '{t}easymde-italic{/t}';
-  const EASYMDE_HEADING = '{t}easymde-heading{/t}';
-  const EASYMDE_QUOTE = '{t}easymde-quote{/t}';
-  const EASYMDE_GENERIC_LIST = '{t}easymde-generic-list{/t}';
-  const EASYMDE_NUMBERED_LIST = '{t}easymde-numbered-list{/t}';
-  const EASYMDE_LINK = '{t}easymde-link{/t}';
-  const EASYMDE_IMAGE = '{t}easymde-image{/t}';
-  const EASYMDE_PREVIEW = '{t}easymde-preview{/t}';
-  const EASYMDE_SIDE_BY_SIDE = '{t}easymde-side-by-side{/t}';
-  const EASYMDE_FULLSCREEN = '{t}easymde-fullscreen{/t}';
-  const EASYMDE_RESOURCES = '{t}easymde-resources{/t}';
-
   // used in confirmation and alert modals
   const ALERT_OK_TEXT = '{t}link-ok{/t}';
   const CONFIRM_CANCEL_TEXT = '{t}link-cancel{/t}';

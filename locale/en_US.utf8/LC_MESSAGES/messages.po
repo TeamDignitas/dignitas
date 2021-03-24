@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-03-22 10:31+0200\n"
-"PO-Revision-Date: 2021-03-22 10:31+0200\n"
+"POT-Creation-Date: 2021-03-24 18:26+0200\n"
+"PO-Revision-Date: 2021-03-24 18:26+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -18,8 +18,7 @@ msgstr ""
 "X-Poedit-SearchPath-2: templates\n"
 "X-Poedit-SearchPath-3: www\n"
 "X-Poedit-SearchPathExcluded-0: lib/third-party\n"
-"X-Poedit-SearchPathExcluded-1: www/js/merged\n"
-"X-Poedit-SearchPathExcluded-2: www/js/third-party\n"
+"X-Poedit-SearchPathExcluded-1: www/js\n"
 
 #: templates/404.tpl:3 templates/404.tpl:7
 msgid "title-page-not-found"
@@ -43,12 +42,12 @@ msgstr "contact us"
 msgid "title-dashboard"
 msgstr "dashboard"
 
-#: templates/aggregate/dashboard.tpl:17 templates/aggregate/index.tpl:29
-#: templates/bits/entity.tpl:115
+#: templates/aggregate/dashboard.tpl:17 templates/aggregate/index.tpl:30
+#: templates/bits/entity.tpl:116
 msgid "link-add-statement"
 msgstr "add a statement"
 
-#: templates/aggregate/dashboard.tpl:30 templates/aggregate/index.tpl:38
+#: templates/aggregate/dashboard.tpl:30 templates/aggregate/index.tpl:39
 msgid "link-add-entity"
 msgstr "add an author"
 
@@ -100,11 +99,11 @@ msgstr "statements with unclear verdicts"
 msgid "label-contribute-index"
 msgstr "contribute"
 
-#: templates/aggregate/index.tpl:47
+#: templates/aggregate/index.tpl:48
 msgid "link-add-answer"
 msgstr "add an answer"
 
-#: templates/aggregate/index.tpl:58
+#: templates/aggregate/index.tpl:60
 msgid "title-recent-statements"
 msgstr "recent statements"
 
@@ -335,7 +334,7 @@ msgid "link-reopen"
 msgstr "reopen"
 
 #: templates/bits/answerEdit.tpl:77 templates/bits/commentForm.tpl:42
-#: templates/bits/flagModal.tpl:190 templates/bits/phpConstants.tpl:35
+#: templates/bits/flagModal.tpl:190 templates/bits/phpConstants.tpl:22
 #: templates/cannedResponse/edit.tpl:41 templates/cannedResponse/list.tpl:52
 #: templates/domain/edit.tpl:95 templates/entity/edit.tpl:283
 #: templates/entityType/edit.tpl:105 templates/help/categoryEdit.tpl:77
@@ -401,7 +400,7 @@ msgstr[1] "%1 identical lines skipped"
 #: templates/help/categoryView.tpl:39 templates/help/pageView.tpl:36
 #: templates/region/view.tpl:15 templates/relationType/list.tpl:48
 #: templates/staticResource/list.tpl:44 templates/tag/view.tpl:15
-#: templates/user/view.tpl:93
+#: templates/user/view.tpl:94
 msgid "link-edit"
 msgstr "edit"
 
@@ -409,27 +408,27 @@ msgstr "edit"
 msgid "link-suggest-edit"
 msgstr "suggest an edit"
 
-#: templates/bits/entity.tpl:29
+#: templates/bits/entity.tpl:30
 msgid "title-alias"
 msgstr "also known as"
 
-#: templates/bits/entity.tpl:55
+#: templates/bits/entity.tpl:56
 msgid "title-relations"
 msgstr "relationships"
 
-#: templates/bits/entity.tpl:65 templates/region/view.tpl:3
+#: templates/bits/entity.tpl:66 templates/region/view.tpl:3
 msgid "title-region"
 msgstr "region"
 
-#: templates/bits/entity.tpl:72
+#: templates/bits/entity.tpl:73
 msgid "title-profile"
 msgstr "profile"
 
-#: templates/bits/entity.tpl:81
+#: templates/bits/entity.tpl:82
 msgid "title-entity-links"
 msgstr "external links"
 
-#: templates/bits/entity.tpl:96
+#: templates/bits/entity.tpl:97
 msgid "title-members"
 msgstr "members"
 
@@ -470,12 +469,12 @@ msgstr "region"
 msgid "title-test-login"
 msgstr "test user login"
 
-#: templates/bits/fakeLogin.tpl:33 templates/user/view.tpl:30
+#: templates/bits/fakeLogin.tpl:33 templates/user/view.tpl:31
 msgid "label-reputation"
 msgstr "reputation"
 
 #: templates/bits/fakeLogin.tpl:54 templates/bits/navmenu.tpl:167
-#: templates/user/view.tpl:18
+#: templates/user/view.tpl:19
 msgid "label-moderator"
 msgstr "moderator"
 
@@ -698,63 +697,15 @@ msgstr "log out"
 msgid "info-notification-unsubscribe"
 msgstr "unsubscribe from notifications for this item"
 
-#: templates/bits/phpConstants.tpl:20
-msgid "easymde-bold"
-msgstr "bold"
-
 #: templates/bits/phpConstants.tpl:21
-msgid "easymde-italic"
-msgstr "italic"
-
-#: templates/bits/phpConstants.tpl:22
-msgid "easymde-heading"
-msgstr "heading"
-
-#: templates/bits/phpConstants.tpl:23
-msgid "easymde-quote"
-msgstr "quote"
-
-#: templates/bits/phpConstants.tpl:24
-msgid "easymde-generic-list"
-msgstr "generic list"
-
-#: templates/bits/phpConstants.tpl:25
-msgid "easymde-numbered-list"
-msgstr "numbered list"
-
-#: templates/bits/phpConstants.tpl:26
-msgid "easymde-link"
-msgstr "create link"
-
-#: templates/bits/phpConstants.tpl:27
-msgid "easymde-image"
-msgstr "insert image"
-
-#: templates/bits/phpConstants.tpl:28
-msgid "easymde-preview"
-msgstr "toggle preview"
-
-#: templates/bits/phpConstants.tpl:29
-msgid "easymde-side-by-side"
-msgstr "toggle side by side"
-
-#: templates/bits/phpConstants.tpl:30
-msgid "easymde-fullscreen"
-msgstr "toggle fullscreen"
-
-#: templates/bits/phpConstants.tpl:31
-msgid "easymde-resources"
-msgstr "show answer resources"
-
-#: templates/bits/phpConstants.tpl:34
 msgid "link-ok"
 msgstr "OK"
 
-#: templates/bits/phpConstants.tpl:36
+#: templates/bits/phpConstants.tpl:23
 msgid "link-confirm"
 msgstr "OK"
 
-#: templates/bits/phpConstants.tpl:39
+#: templates/bits/phpConstants.tpl:26
 msgid "archived-version-%1"
 msgstr "An <a href=\"%1\">archived version</a> is available for this link."
 
@@ -844,7 +795,7 @@ msgstr "Accept/reject the answer as proof."
 msgid "tooltip-answer-is-proof"
 msgstr "Answer accepted as proof."
 
-#: templates/bits/statement.tpl:21
+#: templates/bits/statement.tpl:19
 msgid "link-visit-statement-page"
 msgstr "visit the statement's page"
 
@@ -852,7 +803,7 @@ msgstr "visit the statement's page"
 msgid "statement-links"
 msgstr "sources"
 
-#: templates/bits/statement.tpl:54
+#: templates/bits/statement.tpl:53
 msgid "tooltip-downvote-statement-singular-%1"
 msgid_plural "tooltip-downvote-statement-plural-%1"
 msgstr[0] ""
@@ -862,31 +813,31 @@ msgstr[1] ""
 "Downvote poorly sourced and formatted statements. Downvoting costs %1 "
 "reputation points."
 
-#: templates/bits/statement.tpl:65
+#: templates/bits/statement.tpl:64
 msgid "tooltip-upvote-statement"
 msgstr ""
 "Upvote properly sourced and formatted statements. Do not vote the "
 "statement's truth value."
 
-#: templates/bits/statement.tpl:75
+#: templates/bits/statement.tpl:74
 msgid "link-statement-review-pending-edit"
 msgstr ""
 "This statement has a pending edit. You can <a href=\"%1\" class=\"alert-link"
 "\">review it</a>."
 
-#: templates/bits/statement.tpl:96
+#: templates/bits/statement.tpl:95
 msgid "title-context"
 msgstr "context"
 
-#: templates/bits/statement.tpl:102
+#: templates/bits/statement.tpl:101
 msgid "title-goal"
 msgstr "goal"
 
-#: templates/bits/statement.tpl:108
+#: templates/bits/statement.tpl:107
 msgid "info-tag-view-statements"
 msgstr "View all statements with this tag."
 
-#: templates/bits/statement.tpl:111
+#: templates/bits/statement.tpl:110
 msgid "title-added-by"
 msgstr "added by"
 
@@ -1031,7 +982,7 @@ msgstr "icon"
 #: templates/domain/list.tpl:21 templates/entity/edit.tpl:86
 #: templates/entity/edit.tpl:153 templates/entityType/list.tpl:22
 #: templates/relationType/list.tpl:30 templates/staticResource/list.tpl:21
-#: templates/user/view.tpl:101
+#: templates/user/view.tpl:102
 msgid "actions"
 msgstr "acțiuni"
 
@@ -1757,43 +1708,43 @@ msgstr "Change password (optional)"
 msgid "title-user"
 msgstr "user"
 
-#: templates/user/view.tpl:26
+#: templates/user/view.tpl:27
 msgid "label-user"
 msgstr "user"
 
-#: templates/user/view.tpl:32
+#: templates/user/view.tpl:33
 msgid "label-statements"
 msgstr "statements"
 
-#: templates/user/view.tpl:34
+#: templates/user/view.tpl:35
 msgid "label-answers"
 msgstr "answers"
 
-#: templates/user/view.tpl:36
+#: templates/user/view.tpl:37
 msgid "label-member-since"
 msgstr "member since"
 
-#: templates/user/view.tpl:39
+#: templates/user/view.tpl:40
 msgid "label-last-seen"
 msgstr "last seen"
 
-#: templates/user/view.tpl:45
+#: templates/user/view.tpl:46
 msgid "title-about-me"
 msgstr "about me"
 
-#: templates/user/view.tpl:52
+#: templates/user/view.tpl:53
 msgid "title-user-bans"
 msgstr "bans"
 
-#: templates/user/view.tpl:59
+#: templates/user/view.tpl:60
 msgid "ban-permanent"
 msgstr "permanent"
 
-#: templates/user/view.tpl:61
+#: templates/user/view.tpl:62
 msgid "label-ban-until"
 msgstr "until"
 
-#: templates/user/view.tpl:86
+#: templates/user/view.tpl:87
 msgid "link-ban"
 msgstr "ban..."
 
