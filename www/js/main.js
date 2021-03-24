@@ -361,8 +361,19 @@ $(function() {
     // have a backend check.
     var l = $(this).val().length;
     var max = $(this).attr('maxlength');
+    var remaining = max - l;
 
-    $(this).parent().find('.chars-remaining').text(max - l);
+    var span = $(this).parent().find('.chars-remaining');
+    var prev = parseInt(span.text());
+    span.text(remaining);
+
+    // Hide errors when the constraint is satisfied. This is necessary because
+    // the browser extension is allowed to submit strings longer than the
+    // limit.
+    if ((prev < 0) && (remaining >= 0)) {
+      $(this).removeClass('is-invalid');
+      $(this).siblings('.text-danger').remove();
+    }
   });
 });
 
