@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
   for (var i = 0; i < DESTINATIONS.length; i++) {
     var opt = document.createElement('option');
     opt.value = DESTINATIONS[i].url;
-    opt.innerHTML = DESTINATIONS[i].text;
+    opt.innerText = DESTINATIONS[i].text;
     select.appendChild(opt);
   }
 

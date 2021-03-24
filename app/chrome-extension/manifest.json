@@ -1,6 +1,6 @@
 {
   "name": "Dignitas",
-  "version": "1.0",
+  "version": "1.0.1",
   "default_locale": "en",
   "description": "__MSG_manifestDescription__",
   "short_name": "Dignitas",
@@ -30,7 +30,6 @@
     "http://localhost/",
     "https://dignitas.ro/"
   ],
-  "incognito": "split",
 
   "background": {
     "page": "background.html"

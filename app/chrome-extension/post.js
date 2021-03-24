@@ -5,7 +5,7 @@ function messageHandler(data) {
   // populate the title and header
   var redirectMsg = chrome.i18n.getMessage('redirecting');
   document.title = redirectMsg;
-  document.querySelector('#header').innerHTML = redirectMsg;
+  document.querySelector('#header').innerText = redirectMsg;
 
   // create and populate a form
   var form = document.createElement('form');
