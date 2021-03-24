@@ -529,7 +529,7 @@ $(function() {
   function createPopover(url) {
     // Create and show the popover.
     link.popover({
-      content: ARCHIVED_VERSION_MESSAGE.replace('%1', url),
+      content: _('archived-version-tooltip', url),
       html: true,
       placement: 'auto',
     });

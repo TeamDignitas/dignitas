@@ -1,10 +1,24 @@
 /**
  * Returns a translated string for the given key.
+ * @param string key Key to look up in the dictionary.
+ * @param string[] args Any additional arguments will be supplied for %1, %2
+ *   etc. in the translated string.
+ * @return string
  */
-function _(key) {
+function _(key, ...args) {
   if (typeof I18N_MESSAGES == 'undefined') {
     return 'translation dictionary not loaded';
   }
 
-  return I18N_MESSAGES[key] ?? ('undefined translation key: [' + key + ']');
+  if (!key in I18N_MESSAGES) {
+    return 'undefined translation key: [' + key + ']';
+  }
+
+  var s = I18N_MESSAGES[key];
+
+  for (var i = 0; i < args.length; i++) {
+    s = s.replace('%' + (i + 1), args[i]);
+  }
+
+  return s;
 }

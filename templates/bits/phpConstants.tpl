@@ -15,9 +15,4 @@
   {** localized search URL **}
   const SEARCH_URL = '{Router::link('aggregate/search')}';
 
-  {******************** translations ********************}
-
-  // used for archived versions of URLs
-  const ARCHIVED_VERSION_MESSAGE = '{t}archived-version-%1{/t}';
-
 </script>

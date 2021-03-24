@@ -1,8 +1,12 @@
 const I18N_MESSAGES = {
+
   // alert and confirmation modals
   'alert-ok-text': 'OK',
   'confirm-ok-text': 'confirmă',
   'confirm-cancel-text': 'renunță',
+
+  // archived version tooltip
+  'archived-version-tooltip': 'Este disponibilă o <a href="%1">versiune arhivată</a> pentru această legătură.',
 
   // EasyMDE button tooltips
   'easymde-bold': 'aldin',
@@ -17,4 +21,5 @@ const I18N_MESSAGES = {
   'easymde-side-by-side': 'două coloane',
   'easymde-fullscreen': 'ecran complet',
   'easymde-resources': 'arată sugestiile de analiză',
+
 };

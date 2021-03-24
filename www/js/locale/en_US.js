@@ -1,8 +1,12 @@
 const I18N_MESSAGES = {
+
   // alert and confirmation modals
   'alert-ok-text': 'OK',
   'confirm-ok-text': 'OK',
   'confirm-cancel-text': 'cancel',
+
+  // archived version tooltip
+  'archived-version-tooltip': 'An <a href="%1">archived version</a> is available for this link.',
 
   // EasyMDE button tooltips
   'easymde-bold': 'bold',
@@ -17,4 +21,5 @@ const I18N_MESSAGES = {
   'easymde-side-by-side': 'toggle side by side',
   'easymde-fullscreen': 'toggle fullscreen',
   'easymde-resources': 'show answer resources',
+
 };

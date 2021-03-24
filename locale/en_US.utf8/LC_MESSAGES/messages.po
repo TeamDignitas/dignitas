@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-03-24 18:35+0200\n"
-"PO-Revision-Date: 2021-03-24 18:35+0200\n"
+"POT-Creation-Date: 2021-03-24 19:30+0200\n"
+"PO-Revision-Date: 2021-03-24 19:30+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -696,10 +696,6 @@ msgstr "log out"
 #: templates/bits/notifications.tpl:41
 msgid "info-notification-unsubscribe"
 msgstr "unsubscribe from notifications for this item"
-
-#: templates/bits/phpConstants.tpl:21
-msgid "archived-version-%1"
-msgstr "An <a href=\"%1\">archived version</a> is available for this link."
 
 #: templates/bits/relation.tpl:21
 msgid "relation-links"
