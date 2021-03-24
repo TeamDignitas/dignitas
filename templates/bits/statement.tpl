@@ -8,44 +8,43 @@
 
 {$entity=$statement->getEntity()}
 
-<div class="row statement-title-sources">
+<h1 class="row statement-title py-4 px-0">
+  {$statement->summary|escape}
+  {if $statusInfo}
+    [{$statusInfo['status']}]
+  {/if}
+  {if $permalink}
+    <a
+      href="{$statement->getViewUrl()}"
+      title="{t}link-visit-statement-page{/t}">
+      {include "bits/icon.tpl" i=insert_link}
+    </a>
+  {/if}
+</h1>
 
-  <h1 class="col-12 statement-title py-4 px-0">
-    {$statement->summary|escape}
-    {if $statusInfo}
-      [{$statusInfo['status']}]
-    {/if}
-    {if $permalink}
-      <a
-        href="{$statement->getViewUrl()}"
-        title="{t}link-visit-statement-page{/t}">
-        {include "bits/icon.tpl" i=insert_link}
-      </a>
-    {/if}
-  </h1>
+<div class="row statement-authors-date px-0 mb-1">
+  <span class="col-sm-12 col-md-3 pl-0">
+    {include "bits/entityLink.tpl" e=$statement->getEntity()}
+  </span>
+  <span class="col-sm-12 col-md-3 pl-0">
+    {$statement->dateMade|ld}
+  </span>
 
-  <div class="col-12 statement-authors-date px-0 mb-1">
-    <span class="col-sm-12 col-md-6 px-0">
-      {include "bits/entityLink.tpl" e=$statement->getEntity()},
-      {$statement->dateMade|ld}
+  {if count($statement->getLinks())}
+    <span class="col-sm-12 col-md-6 pl-0 text-muted sources">
+      {t}statement-links{/t}:
+      <ul class="list-inline list-inline-bullet d-inline">
+        {foreach $statement->getLinks() as $l}
+          <li class="list-inline-item">
+            {include "bits/link.tpl"}
+          </li>
+        {/foreach}
+      </ul>
     </span>
-
-    {if count($statement->getLinks())}
-      <span class="col-sm-12 col-md-5 offset-md-1 mb-3 px-0 text-muted sources">
-        {t}statement-links{/t}:
-        <ul class="list-inline list-inline-bullet d-inline">
-          {foreach $statement->getLinks() as $l}
-            <li class="list-inline-item">
-              {include "bits/link.tpl"}
-            </li>
-          {/foreach}
-        </ul>
-      </span>
-    {/if}
-  </div>
-
-  <hr class="w-100 title-divider mt-0"/>
+  {/if}
 </div>
+
+<hr class="row title-divider mt-0"/>
 
 <article class="row mt-3 statement-body">
   {if $voteBox}
