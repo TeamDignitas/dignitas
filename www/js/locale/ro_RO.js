@@ -1,4 +1,10 @@
 const I18N_MESSAGES = {
+  // alert and confirmation modals
+  'alert-ok-text': 'OK',
+  'confirm-ok-text': 'confirmă',
+  'confirm-cancel-text': 'renunță',
+
+  // EasyMDE button tooltips
   'easymde-bold': 'aldin',
   'easymde-italic': 'cursiv',
   'easymde-heading': 'antet',

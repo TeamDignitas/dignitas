@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-03-24 18:26+0200\n"
-"PO-Revision-Date: 2021-03-24 18:26+0200\n"
+"POT-Creation-Date: 2021-03-24 18:35+0200\n"
+"PO-Revision-Date: 2021-03-24 18:35+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -334,16 +334,16 @@ msgid "link-reopen"
 msgstr "reopen"
 
 #: templates/bits/answerEdit.tpl:77 templates/bits/commentForm.tpl:42
-#: templates/bits/flagModal.tpl:190 templates/bits/phpConstants.tpl:22
-#: templates/cannedResponse/edit.tpl:41 templates/cannedResponse/list.tpl:52
-#: templates/domain/edit.tpl:95 templates/entity/edit.tpl:283
-#: templates/entityType/edit.tpl:105 templates/help/categoryEdit.tpl:77
-#: templates/help/categoryList.tpl:30 templates/help/pageEdit.tpl:90
-#: templates/invite/add.tpl:31 templates/region/edit.tpl:90
-#: templates/relation/edit.tpl:25 templates/relationType/edit.tpl:142
-#: templates/relationType/list.tpl:62 templates/statement/edit.tpl:212
-#: templates/staticResource/edit.tpl:92 templates/tag/edit.tpl:168
-#: templates/user/ban.tpl:54 templates/user/edit.tpl:136
+#: templates/bits/flagModal.tpl:190 templates/cannedResponse/edit.tpl:41
+#: templates/cannedResponse/list.tpl:52 templates/domain/edit.tpl:95
+#: templates/entity/edit.tpl:283 templates/entityType/edit.tpl:105
+#: templates/help/categoryEdit.tpl:77 templates/help/categoryList.tpl:30
+#: templates/help/pageEdit.tpl:90 templates/invite/add.tpl:31
+#: templates/region/edit.tpl:90 templates/relation/edit.tpl:25
+#: templates/relationType/edit.tpl:142 templates/relationType/list.tpl:62
+#: templates/statement/edit.tpl:212 templates/staticResource/edit.tpl:92
+#: templates/tag/edit.tpl:168 templates/user/ban.tpl:54
+#: templates/user/edit.tpl:136
 msgid "link-cancel"
 msgstr "cancel"
 
@@ -698,14 +698,6 @@ msgid "info-notification-unsubscribe"
 msgstr "unsubscribe from notifications for this item"
 
 #: templates/bits/phpConstants.tpl:21
-msgid "link-ok"
-msgstr "OK"
-
-#: templates/bits/phpConstants.tpl:23
-msgid "link-confirm"
-msgstr "OK"
-
-#: templates/bits/phpConstants.tpl:26
 msgid "archived-version-%1"
 msgstr "An <a href=\"%1\">archived version</a> is available for this link."
 

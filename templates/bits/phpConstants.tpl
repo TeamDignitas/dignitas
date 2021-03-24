@@ -17,11 +17,6 @@
 
   {******************** translations ********************}
 
-  // used in confirmation and alert modals
-  const ALERT_OK_TEXT = '{t}link-ok{/t}';
-  const CONFIRM_CANCEL_TEXT = '{t}link-cancel{/t}';
-  const CONFIRM_OK_TEXT = '{t}link-confirm{/t}';
-
   // used for archived versions of URLs
   const ARCHIVED_VERSION_MESSAGE = '{t}archived-version-%1{/t}';
 

@@ -106,7 +106,7 @@ $(function() {
         '</div>' +
         '<div class="modal-footer">' +
         '<button type="button" class="btn btn-sm btn-primary btn-confirm px-4" data-dismiss="modal">' +
-        ALERT_OK_TEXT +
+        _('alert-ok-text') +
         '</button>' +
         '</div>' +
         '</div>' +
@@ -151,10 +151,10 @@ $(function() {
         '</div>' +
         '<div class="modal-footer">' +
         '<button type="button" class="btn btn-sm btn-outline-secondary px-4" data-dismiss="modal">' +
-        CONFIRM_CANCEL_TEXT +
+        _('confirm-cancel-text') +
         '</button>' +
         '<button type="button" class="btn btn-sm btn-primary btn-confirm px-4" data-dismiss="modal">' +
-        CONFIRM_OK_TEXT +
+        _('confirm-ok-text') +
         '</button>' +
         '</div>' +
         '</div>' +
