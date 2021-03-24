@@ -46,7 +46,7 @@
 
 <hr class="row title-divider mt-0"/>
 
-<article class="row mt-3 statement-body">
+<article class="row mt-5 statement-body">
   {if $voteBox}
     {capture "tooltipDownvote"}
     {t
