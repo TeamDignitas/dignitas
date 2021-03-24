@@ -11,7 +11,7 @@
   {if User::getActive()}
     <div class="bg-dark hero">
       <div class="f-container py-5">
-        <div class="col-12 col-sm-12 col-lg-3 mt-3 mb-5">
+        <div class="col-sm-12 col-lg-3 mt-3 mb-5">
           <div>
             <span class="col-6 text-uppercase ivory meta-heading pl-0">
               {t}label-contribute-index{/t}
@@ -20,33 +20,35 @@
           </div>
         </div>
 
-        <div class="col-12 col-sm-12 col-lg-9 mt-3">
-          {if User::may(User::PRIV_ADD_STATEMENT)}
-            <a
-              href="{Router::link('statement/edit')}"
-              class="btn btn-primary mr-3 mb-2 px-2 col-8 col-sm-8 col-lg-4">
-              {include "bits/icon.tpl" i=mode_edit class="pr-2"}
-              {t}link-add-statement{/t}
-            </a>
-          {/if}
+        <div class="col-sm-12 col-lg-9 mt-3">
+          <div class="row mx-0">
+            {if User::may(User::PRIV_ADD_STATEMENT)}
+              <a
+                href="{Router::link('statement/edit')}"
+                class="btn btn-primary mr-3 mb-3 col-sm-12 col-lg-4">
+                {include "bits/icon.tpl" i=mode_edit class="pr-2"}
+                {t}link-add-statement{/t}
+              </a>
+            {/if}
 
-          {if User::may(User::PRIV_ADD_ENTITY)}
-            <a
-              href="{Router::link('entity/edit')}"
-              class="btn btn-secondary mb-2 px-2 col-8 col-sm-8 col-lg-4">
-              {include "bits/icon.tpl" i=person_add_alt_1 class="pr-2"}
-              {t}link-add-entity{/t}
-            </a>
-          {/if}
+            {if User::may(User::PRIV_ADD_ENTITY)}
+              <a
+                href="{Router::link('entity/edit')}"
+                class="btn btn-secondary mr-3 mb-3 col-sm-12 col-lg-4">
+                {include "bits/icon.tpl" i=person_add_alt_1 class="pr-2"}
+                {t}link-add-entity{/t}
+              </a>
+            {/if}
 
-          {if User::may(User::PRIV_ADD_ANSWER)}
-            <a
-              href="{Router::link('statement/unanswered')}"
-              class="btn btn-secondary mb-2 px-2 col-8 col-sm-8 col-lg-4">
-              {include "bits/icon.tpl" i=mode_edit class="pr-2"}
-              {t}link-add-answer{/t}
-            </a>
-          {/if}
+            {if User::may(User::PRIV_ADD_ANSWER)}
+              <a
+                href="{Router::link('statement/unanswered')}"
+                class="btn btn-secondary mr-3 mb-3 col-sm-12 col-lg-4">
+                {include "bits/icon.tpl" i=mode_edit class="pr-2"}
+                {t}link-add-answer{/t}
+              </a>
+            {/if}
+          </div>
         </div>
       </div>
     </div>
