@@ -75,6 +75,7 @@ class Config {
       'geometries' => [
         self::THUMB_USER_NAVBAR,
         self::THUMB_USER_PROFILE,
+        'full',
       ],
     ],
     // entity profile images
@@ -86,12 +87,13 @@ class Config {
         self::THUMB_ENTITY_SMALL,
         self::THUMB_ENTITY_STATEMENT_LIST,
         self::THUMB_ENTITY_LARGE,
+        'full',
       ],
     ],
     // uploaded attachments
     'Attachment' => [
       'extensions' => [ 'gif', 'jpg', 'pdf', 'png', 'svg' ],
-      'limit' => 64 << 20, // 16 MB,
+      'limit' => 64 << 20, // 64 MB,
       'geometries' => [ '100', '200', '300', '400', 'x100', 'x200', 'x300', 'x400', 'full' ],
     ],
     // domain images
