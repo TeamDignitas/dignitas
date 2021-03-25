@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-03-24 19:30+0200\n"
-"PO-Revision-Date: 2021-03-24 19:30+0200\n"
+"POT-Creation-Date: 2021-03-25 12:48+0200\n"
+"PO-Revision-Date: 2021-03-25 12:48+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -143,7 +143,7 @@ msgstr "edit answer"
 #: templates/entityType/edit.tpl:110 templates/help/categoryEdit.tpl:82
 #: templates/help/pageEdit.tpl:95 templates/region/edit.tpl:98
 #: templates/region/list.tpl:46 templates/relation/edit.tpl:30
-#: templates/relationType/edit.tpl:147 templates/statement/edit.tpl:217
+#: templates/relationType/edit.tpl:147 templates/statement/edit.tpl:213
 #: templates/staticResource/edit.tpl:97 templates/tag/edit.tpl:173
 #: templates/user/ban.tpl:59 templates/user/edit.tpl:141
 msgid "link-save"
@@ -301,7 +301,7 @@ msgid "link-permalink"
 msgstr "permalink"
 
 #: templates/bits/answerEdit.tpl:24 templates/bits/statementFilters.tpl:44
-#: templates/statement/edit.tpl:165 lib/model/RevisionAnswer.php:15
+#: templates/statement/edit.tpl:161 lib/model/RevisionAnswer.php:15
 #: lib/model/RevisionStatement.php:22 lib/model/Statement.php:113
 msgid "label-verdict"
 msgstr "verdict"
@@ -319,7 +319,7 @@ msgstr "Are you sure you want to delete this answer?"
 #: templates/entity/edit.tpl:267 templates/entityType/edit.tpl:99
 #: templates/help/categoryEdit.tpl:71 templates/help/pageEdit.tpl:84
 #: templates/region/edit.tpl:77 templates/relationType/edit.tpl:136
-#: templates/statement/edit.tpl:196 templates/staticResource/edit.tpl:86
+#: templates/statement/edit.tpl:192 templates/staticResource/edit.tpl:86
 #: templates/tag/edit.tpl:155
 msgid "link-delete"
 msgstr "delete"
@@ -329,7 +329,7 @@ msgid "info-confirm-reopen-answer"
 msgstr "Are you sure you want to reopen this answer?"
 
 #: templates/bits/answerEdit.tpl:71 templates/entity/edit.tpl:277
-#: templates/statement/edit.tpl:206
+#: templates/statement/edit.tpl:202
 msgid "link-reopen"
 msgstr "reopen"
 
@@ -341,7 +341,7 @@ msgstr "reopen"
 #: templates/help/pageEdit.tpl:90 templates/invite/add.tpl:31
 #: templates/region/edit.tpl:90 templates/relation/edit.tpl:25
 #: templates/relationType/edit.tpl:142 templates/relationType/list.tpl:62
-#: templates/statement/edit.tpl:212 templates/staticResource/edit.tpl:92
+#: templates/statement/edit.tpl:208 templates/staticResource/edit.tpl:92
 #: templates/tag/edit.tpl:168 templates/user/ban.tpl:54
 #: templates/user/edit.tpl:136
 msgid "link-cancel"
@@ -362,12 +362,6 @@ msgstr "permanent link to this comment"
 #: templates/bits/comment.tpl:47
 msgid "info-confirm-delete-comment"
 msgstr "Are you sure you want to delete this comment?"
-
-#: templates/bits/commentForm.tpl:14 templates/cannedResponse/edit.tpl:21
-#: templates/entity/edit.tpl:184 templates/statement/edit.tpl:103
-#: templates/statement/edit.tpl:139
-msgid "label-characters-remaining"
-msgstr "characters remaining"
 
 #: templates/bits/commentForm.tpl:25
 msgid "link-pick-canned-response"
@@ -1082,7 +1076,7 @@ msgstr "external links"
 msgid "link-add-entity-link"
 msgstr "add a link"
 
-#: templates/entity/edit.tpl:215 templates/statement/edit.tpl:153
+#: templates/entity/edit.tpl:215 templates/statement/edit.tpl:149
 msgid "label-tags"
 msgstr "tags"
 
@@ -1442,27 +1436,27 @@ msgstr ""
 msgid "label-summary"
 msgstr "summary"
 
-#: templates/statement/edit.tpl:109
+#: templates/statement/edit.tpl:107
 msgid "label-context"
 msgstr "context"
 
-#: templates/statement/edit.tpl:123
+#: templates/statement/edit.tpl:121
 msgid "label-goal"
 msgstr "goal"
 
-#: templates/statement/edit.tpl:144
+#: templates/statement/edit.tpl:140
 msgid "label-statement-links"
 msgstr "sources"
 
-#: templates/statement/edit.tpl:145
+#: templates/statement/edit.tpl:141
 msgid "link-add-statement-link"
 msgstr "add a source"
 
-#: templates/statement/edit.tpl:194
+#: templates/statement/edit.tpl:190
 msgid "info-confirm-delete-statement"
 msgstr "Are you sure you want to delete this statement?"
 
-#: templates/statement/edit.tpl:205
+#: templates/statement/edit.tpl:201
 msgid "info-confirm-reopen-statement"
 msgstr "Are you sure you want to reopen this statement?"
 

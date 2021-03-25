@@ -10,11 +10,17 @@ function _(key, ...args) {
     return 'translation dictionary not loaded';
   }
 
-  if (!key in I18N_MESSAGES) {
+  if (!(key in I18N_MESSAGES)) {
     return 'undefined translation key: [' + key + ']';
   }
 
   var s = I18N_MESSAGES[key];
+
+  if (Array.isArray(s)) {
+    // pick the correct singular/plural form
+    var n = args[0] ?? 1; // pick singular by default
+    s = I18N_MESSAGES[key][_plural(n)];
+  }
 
   for (var i = 0; i < args.length; i++) {
     s = s.replace('%' + (i + 1), args[i]);

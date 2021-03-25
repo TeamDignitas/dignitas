@@ -22,4 +22,24 @@ const I18N_MESSAGES = {
   'easymde-fullscreen': 'ecran complet',
   'easymde-resources': 'arată sugestiile de analiză',
 
+  // remaining chars
+  'remaining-chars': [
+    'un caracter rămas',
+    '%1 caractere rămase',
+    '%1 de caractere rămase',
+  ],
+  'exceeding-chars': [
+    'șterge un caracter',
+    'șterge %1 caractere',
+    'șterge %1 de caractere',
+  ],
+
 };
+
+function _plural(n) {
+  return (n == 1)
+    ? 0 // un copil
+    : ((n == 0 || (n % 100 > 0 && n % 100 < 20))
+       ? 1   // 0 copii / 19 copii
+       : 2); // 34 de copii
+}

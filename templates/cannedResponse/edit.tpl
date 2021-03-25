@@ -16,10 +16,10 @@
           class="form-control has-unload-warning size-limit easy-mde"
           maxlength="{Comment::MAX_LENGTH}"
         >{$cannedResponse->contents|escape}</textarea>
-        <small class="form-text text-muted float-left">
-          <span class="chars-remaining">{$charsRemaining}</span>
-          {t}label-characters-remaining{/t}
-        </small>
+        <span
+          class="chars-remaining form-text small float-left"
+          data-chars-remaining="{$charsRemaining}">
+        </span>
         {include "bits/markdownHelp.tpl"}
         {include "bits/fieldErrors.tpl" errors=$errors.contents|default:null}
       </div>

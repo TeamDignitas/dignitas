@@ -276,8 +276,6 @@ $(function() {
       var msg = $(id).html();
       snackbar(msg);
 
-      console.log(btn.hasClass('accepted'));
-
     }).fail(function(errorMsg) {
       if (errorMsg.responseJSON) {
         alert(errorMsg.responseJSON);
@@ -355,6 +353,8 @@ $(function() {
 /************************* show remaining chars *************************/
 
 $(function() {
+  $('.chars-remaining').each(function() { updateText($(this)) });
+
   $('body').on('keyup paste change', '.size-limit', function() {
 
     // We trust the browser to obey maxlength. This is safe because we also
@@ -363,18 +363,27 @@ $(function() {
     var max = $(this).attr('maxlength');
     var remaining = max - l;
 
-    var span = $(this).parent().find('.chars-remaining');
-    var prev = parseInt(span.text());
-    span.text(remaining);
-
-    // Hide errors when the constraint is satisfied. This is necessary because
-    // the browser extension is allowed to submit strings longer than the
-    // limit.
-    if ((prev < 0) && (remaining >= 0)) {
-      $(this).removeClass('is-invalid');
-      $(this).siblings('.text-danger').remove();
-    }
+    var span = $(this).siblings('.chars-remaining');
+    span.data('charsRemaining', remaining);
+    updateText(span);
   });
+
+  function updateText(span) {
+    var n = parseInt(span.data('charsRemaining'));
+
+    if (n >= 0) {
+      // Hide errors when the constraint is satisfied. This is necessary because
+      // the browser extension is allowed to submit strings longer than the
+      // limit.
+      span.text(_('remaining-chars', n));
+      span.removeClass('text-danger').addClass('text-muted');
+      span.siblings('.text-danger').remove();
+      span.siblings('.is-invalid').removeClass('is-invalid');
+    } else {
+      span.text(_('exceeding-chars', -n));
+      span.addClass('text-danger').removeClass('text-muted');
+    }
+  }
 });
 
 /************************* Single-line textareas *************************/
