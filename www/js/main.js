@@ -353,37 +353,30 @@ $(function() {
 /************************* show remaining chars *************************/
 
 $(function() {
-  $('.chars-remaining').each(function() { updateText($(this)) });
-
   $('body').on('keyup paste change', '.size-limit', function() {
 
-    // We trust the browser to obey maxlength. This is safe because we also
-    // have a backend check.
-    var l = $(this).val().length;
-    var max = $(this).attr('maxlength');
-    var remaining = max - l;
-
+    var remaining = $(this).attr('maxlength') - $(this).val().length;
     var span = $(this).siblings('.chars-remaining');
-    span.data('charsRemaining', remaining);
-    updateText(span);
-  });
 
-  function updateText(span) {
-    var n = parseInt(span.data('charsRemaining'));
-
-    if (n >= 0) {
+    if (remaining >= 0) {
       // Hide errors when the constraint is satisfied. This is necessary because
       // the browser extension is allowed to submit strings longer than the
       // limit.
-      span.text(_('remaining-chars', n));
+      span.text(_('remaining-chars', remaining));
       span.removeClass('text-danger').addClass('text-muted');
       span.siblings('.text-danger').remove();
-      span.siblings('.is-invalid').removeClass('is-invalid');
+      $(this).removeClass('is-invalid');
     } else {
-      span.text(_('exceeding-chars', -n));
+      span.text(_('exceeding-chars', -remaining));
       span.addClass('text-danger').removeClass('text-muted');
     }
-  }
+
+    // Never prevent the change. We trust the browser to obey maxlength. This
+    // is safe because we also have a backend check.
+  });
+
+  $('.size-limit').change();
+
 });
 
 /************************* Single-line textareas *************************/
@@ -491,7 +484,7 @@ $(function() {
   function copyCannedResponse(e) {
     var wrap = $(e.clickEvent.target).closest('.canned-response-wrapper');
     var textarea =  wrap.closest('form').find('textarea');
-    textarea.val(wrap.data('raw'));
+    textarea.val(wrap.data('raw')).change().focus();
   }
 
 });

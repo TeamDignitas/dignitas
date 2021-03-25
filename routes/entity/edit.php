@@ -130,7 +130,6 @@ Smart::assign([
   'entity' => $entity,
   'entityTypes' => EntityType::loadAll(),
   'regions' => Region::loadAll(),
-  'profileCharsRemaining' => Entity::PROFILE_MAX_LENGTH - mb_strlen($entity->profile),
 ]);
 Smart::display('entity/edit.tpl');
 

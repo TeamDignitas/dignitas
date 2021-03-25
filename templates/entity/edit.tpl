@@ -179,10 +179,7 @@
               maxlength="{Entity::PROFILE_MAX_LENGTH}"
               rows="5">{$entity->profile|escape}</textarea>
 
-            <span
-              class="chars-remaining form-text small float-left"
-              data-chars-remaining="{$profileCharsRemaining}">
-            </span>
+            <span class="chars-remaining form-text small float-left"></span>
             {include "bits/markdownHelp.tpl"}
             {include "bits/fieldErrors.tpl" errors=$errors.profile|default:null}
           </div>

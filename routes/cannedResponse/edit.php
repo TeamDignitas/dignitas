@@ -34,7 +34,6 @@ if ($saveButton) {
 
 Smart::assign([
   'cannedResponse' => $cr,
-  'charsRemaining' => Comment::MAX_LENGTH - mb_strlen($cr->contents),
 ]);
 Smart::addResources('easymde');
 Smart::display('cannedResponse/edit.tpl');

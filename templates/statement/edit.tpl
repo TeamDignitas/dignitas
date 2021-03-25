@@ -96,10 +96,7 @@
 
             {include "bits/fieldErrors.tpl" errors=$errors.summary|default:null}
 
-            <span
-              class="chars-remaining form-text small float-left"
-              data-chars-remaining="{Statement::MAX_SUMMARY_LENGTH-mb_strlen($statement->summary)}">
-            </span>
+            <span class="chars-remaining form-text small float-left"></span>
           </div>
         </div>
 
@@ -130,10 +127,7 @@
 
             {include "bits/fieldErrors.tpl" errors=$errors.goal|default:null}
 
-            <span
-              class="chars-remaining form-text small float-left"
-              data-chars-remaining="{Statement::MAX_GOAL_LENGTH-mb_strlen($statement->goal)}">
-            </span>
+            <span class="chars-remaining form-text small float-left"></span>
           </div>
         </div>
 

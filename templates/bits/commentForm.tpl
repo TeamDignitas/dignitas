@@ -9,10 +9,7 @@
       rows="2"
       maxlength="{Comment::MAX_LENGTH}"
     ></textarea>
-    <span
-      class="chars-remaining form-text small float-left"
-      data-chars-remaining="{Comment::MAX_LENGTH}">
-    </span>
+    <span class="chars-remaining form-text small float-left"></span>
     {include "bits/markdownHelp.tpl"}
   </div>
 
