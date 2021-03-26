@@ -364,8 +364,6 @@ $(function() {
       // limit.
       span.text(_('remaining-chars', remaining));
       span.removeClass('text-danger').addClass('text-muted');
-      span.siblings('.text-danger').remove();
-      $(this).removeClass('is-invalid');
     } else {
       span.text(_('exceeding-chars', -remaining));
       span.addClass('text-danger').removeClass('text-muted');
