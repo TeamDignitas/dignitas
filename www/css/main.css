@@ -629,6 +629,11 @@ body, main {
   color: #6c757d;
 }
 
+.is-invalid + .EasyMDEContainer > .editor-toolbar,
+.is-invalid + .EasyMDEContainer > .CodeMirror {
+  border-color: red;
+}
+
 /**************************** archived links ****************************/
 .popover-archive {
   max-width: 350px;
