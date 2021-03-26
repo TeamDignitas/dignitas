@@ -170,12 +170,15 @@
 
       <fieldset class="related-fields mb-5 ml-3">
         <div class="form-group row">
-          <label for="field-profile" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-profile{/t}</label>
+          <label for="field-profile" class="col-sm-12 col-lg-2 mt-2 pl-0">
+            {t}label-profile{/t}
+          </label>
+
           <div class="col-sm-12 col-lg-10 px-0">
             <textarea
               id="field-profile"
               name="profile"
-              class="form-control has-unload-warning size-limit easy-mde"
+              class="form-control has-unload-warning size-limit easy-mde {if isset($errors.profile)}is-invalid{/if}"
               maxlength="{Entity::PROFILE_MAX_LENGTH}"
               rows="5">{$entity->profile|escape}</textarea>
 

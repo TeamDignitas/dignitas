@@ -25,6 +25,7 @@
                   value="{$password|escape}"
                   placeholder="{t}label-password{/t}">
               </div>
+              {include "bits/fieldErrors.tpl" errors=$errors.password|default:null}
             </div>
 
             <div class="form-group">
@@ -39,7 +40,6 @@
                   value="{$password2|escape}"
                   placeholder="{t}label-password-again{/t}">
               </div>
-              {include "bits/fieldErrors.tpl" errors=$errors.password|default:null}
             </div>
 
             <button class="btn btn-primary" type="submit" name="submitButton">

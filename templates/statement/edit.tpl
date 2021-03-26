@@ -152,7 +152,10 @@
 
         {if User::isModerator()}
           <div class="form-group row">
-            <label for="field-verdict" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-verdict{/t}</label>
+            <label for="field-verdict" class="col-sm-12 col-lg-2 mt-2 pl-0">
+              {t}label-verdict{/t}
+            </label>
+
             <div class="col-sm-12 col-lg-10 px-0">
 
               <select

@@ -85,13 +85,14 @@
           </div>
 
           <div class="form-check">
-            <label>
-              <input
-                type="checkbox"
-                class="form-check-input"
-                name="manual"
-                value="1"
-                {if $manual}checked{/if}>
+            <input
+              id="field-manual"
+              type="checkbox"
+              class="form-check-input {if isset($errors.manual)}is-invalid{/if}"
+              name="manual"
+              value="1"
+              {if $manual}checked{/if}>
+            <label class="form-check-label" for="field-manual">
               {t 1=Router::link('help/index')}label-register-manual{/t}
             </label>
             {include "bits/fieldErrors.tpl" errors=$errors.manual|default:null}

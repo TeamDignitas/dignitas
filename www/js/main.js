@@ -558,6 +558,23 @@ $(function() {
 
 });
 
+/************** Clear error messages when fields are edited **************/
+
+$(function() {
+  $('.is-invalid, .table-rel .form-control, #link-container .form-control')
+    .on('change input paste', clearErrors);
+  $('.delete-dependant, #link-container .delete-link').click(clearErrors);
+
+  function clearErrors() {
+    $(this)
+      .removeClass('is-invalid')
+      .closest('.form-group, .form-check')
+      .find('.field-error')
+      .fadeOut();
+  }
+});
+
+
 /**************************** number padding ****************************/
 
 // horrible horrible hack

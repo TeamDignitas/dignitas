@@ -237,12 +237,13 @@ $(function() {
     var hiddenVal = year + '-' + pad(month, 2) + '-' + pad(day, 2);
     invoker.next().val(hiddenVal).trigger('change');
     setDisplay(invoker);
+    invoker.trigger('change'); // in order to clear any field errors
 
     MODAL.modal('hide');
   }
 
   function clearClicked() {
-    invoker.val('');
+    invoker.val('').trigger('change'); // in order to clear any field errors
     invoker.next().val('').trigger('change');
     MODAL.modal('hide');
   }

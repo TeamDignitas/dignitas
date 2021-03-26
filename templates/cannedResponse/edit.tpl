@@ -13,7 +13,7 @@
         <textarea
           id="field-contents"
           name="contents"
-          class="form-control has-unload-warning size-limit easy-mde"
+          class="form-control has-unload-warning size-limit easy-mde {if isset($errors.contents)}is-invalid{/if}"
           maxlength="{Comment::MAX_LENGTH}"
         >{$cannedResponse->contents|escape}</textarea>
         <span class="chars-remaining form-text small float-left"></span>

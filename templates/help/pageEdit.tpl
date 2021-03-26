@@ -60,11 +60,14 @@
 
       <fieldset class="related-fields mb-5 ml-3">
         <div class="form-group row">
-          <label for="field-contents" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-contents{/t}</label>
+          <label for="field-contents" class="col-sm-12 col-lg-2 mt-2 pl-0">
+            {t}label-contents{/t}
+          </label>
+
           <div class="col-sm-12 col-lg-10 px-0">
             <textarea
               id="field-contents"
-              class="form-control has-unload-warning easy-mde"
+              class="form-control has-unload-warning easy-mde {if isset($errors.contents)}is-invalid{/if}"
               name="contents">{$page->contents|escape}</textarea>
             {include "bits/markdownHelp.tpl"}
             {include "bits/fieldErrors.tpl" errors=$errors.contents|default:null}
