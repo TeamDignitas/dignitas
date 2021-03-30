@@ -48,7 +48,7 @@ $entity->enforceEditPrivileges();
 if ($saveButton) {
   $entity->name = Request::get('name');
   $entity->entityTypeId = Request::get('entityTypeId');
-  $entity->profile = Request::get('profile');
+  $entity->profile = trim(Request::get('profile'));
   $color = $entity->hasColor() ? Request::get('color') : Entity::DEFAULT_COLOR;
   $entity->setColor($color);
   $entity->regionId = Request::get('regionId');

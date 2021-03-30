@@ -53,14 +53,17 @@
       </div>
     {/if}
 
-    <h6 class="font-weight-bold capitalize-first-word mt-5">{t}title-relations{/t}</h6>
-    <ul class="relations">
-      {foreach $entity->getRelations() as $r}
-        <li>
-          {include "bits/relation.tpl" fromEntity=$entity}
-        </li>
-      {/foreach}
-    </ul>
+    {$relations=$entity->getRelations()}
+    {if count($relations)}
+      <h6 class="font-weight-bold capitalize-first-word mt-5">{t}title-relations{/t}</h6>
+      <ul class="relations">
+        {foreach $relations as $r}
+          <li>
+            {include "bits/relation.tpl" fromEntity=$entity}
+          </li>
+        {/foreach}
+      </ul>
+    {/if}
 
     {if $entity->regionId}
       <h6 class="font-weight-bold capitalize-first-word mt-4">{t}title-region{/t}</h6>

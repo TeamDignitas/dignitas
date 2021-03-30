@@ -12,10 +12,12 @@
 
     {include "bits/entity.tpl"}
 
-    <div class="mr-0 mt-5 pl-3">
-      <h6 class="font-weight-bold text-uppercase pl-0">{cap}{t}statements{/t}{/cap}</h6>
-      {include "bits/statementList.tpl" showEntity=false}
-    </div>
+    {if count($statements)}
+      <div class="mr-0 mt-5 pl-3">
+        <h6 class="font-weight-bold text-uppercase pl-0">{cap}{t}statements{/t}{/cap}</h6>
+        {include "bits/statementList.tpl" showEntity=false}
+      </div>
+    {/if}
 
     {include "bits/flagModal.tpl"}
   </div>
