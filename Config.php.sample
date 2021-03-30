@@ -122,6 +122,7 @@ class Config {
   const SMTP_SERVER = 'tls://your-server.com:587'; // for outgoing emails
   const EMAIL_IDENTITIES = [
     'test@test.com' => [
+      'username' => 'test',
       'name' => 'dignitas',
       'password' => '1234',
     ],

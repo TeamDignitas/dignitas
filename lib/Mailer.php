@@ -87,12 +87,6 @@ class Mailer {
       throw new Exception('No email identity found for ' . $from);
     }
 
-    $username = explode('@', $from)[0];
-
-    return [
-      'username' => $username,
-      'name' => $identity['name'],
-      'password' => $identity['password'],
-    ];
+    return $identity;
   }
 }
