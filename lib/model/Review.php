@@ -337,7 +337,7 @@ class Review extends Proto {
    */
   static function checkNewUser($obj) {
     $user = User::getActive();
-    if ($user->reputation < Config::NEW_USER_REPUTATION) {
+    if ($user->getReputation() < Config::NEW_USER_REPUTATION) {
       self::ensure($obj, Ct::REASON_NEW_USER);
     }
   }
