@@ -82,6 +82,14 @@
             ellipsisMenu=false
             showAddStatementButton=false}
 
+          <hr>
+
+          {* These aren't shown as part of the entity, but they come in handy *}
+          {* during the review *}
+          {t}title-added-by{/t}
+          {include 'bits/userLink.tpl' u=$object->getUser()}
+          {include 'bits/moment.tpl' t=$object->createDate}
+
         {elseif $type == Proto::TYPE_COMMENT}
 
           {include "bits/comment.tpl" comment=$object ellipsisMenu=false}
