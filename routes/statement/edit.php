@@ -12,11 +12,7 @@ $referrer = Request::get('referrer');
 if ($id) {
   $statement = Statement::get_by_id($id);
 } else {
-  $statement = Model::factory('Statement')->create();
-  $statement->dateMade = Time::today();
-  $statement->type = Statement::TYPE_CLAIM;
-  $statement->userId = User::getActiveId();
-  $statement->entityId = $entityId;
+  $statement = Statement::create($entityId);
 }
 
 if ($deleteButton) {
@@ -61,6 +57,7 @@ if ($saveButton) {
   if (User::isModerator()) {
     $origVerdict = $statement->verdict;
     $statement->verdict = Request::get('verdict');
+    $statement->updateVerdictDate($origVerdict);
   }
 
   $links = Link::build(

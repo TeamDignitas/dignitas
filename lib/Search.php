@@ -9,7 +9,7 @@ class Search {
     $escapedQuery = addslashes($query);
 
     list ($numStatementPages, $statements) =
-      self::searchStatements([ 'term' => $escapedQuery ], Ct::SORT_CREATE_DATE_DESC, 1);
+      self::searchStatements([ 'term' => $escapedQuery ], Ct::SORT_VERDICT_DATE_DESC, 1);
     list ($numEntityPages, $entities) =
       self::searchEntities([ 'term' => $escapedQuery ], Ct::SORT_NAME_ASC, 1);
 
@@ -114,7 +114,7 @@ class Search {
    */
   static function searchStatements(
     $filters,
-    $order = Ct::SORT_CREATE_DATE_DESC,
+    $order = Ct::SORT_VERDICT_DATE_DESC,
     $page = 0,
     $pageSize = null) {
 

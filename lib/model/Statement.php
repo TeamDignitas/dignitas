@@ -89,6 +89,17 @@ class Statement extends Proto {
     [ self::VERDICT_PROMISE_KEPT_LATE, self::VERDICT_PROMISE_BROKEN ],
   ];
 
+  static function create($entityId) {
+    $s = Model::factory('Statement')->create();
+    $s->dateMade = Time::today();
+    $s->type = Statement::TYPE_CLAIM;
+    $s->userId = User::getActiveId();
+    $s->entityId = $entityId;
+    $s->verdict = self::VERDICT_NONE;
+    $s->verdictDate = time();
+    return $s;
+  }
+
   function getObjectType() {
     return self::TYPE_STATEMENT;
   }
@@ -124,6 +135,12 @@ class Statement extends Proto {
 
   static function getVerdictsByType($type) {
     return self::VERDICTS_BY_TYPE[$type];
+  }
+
+  function updateVerdictDate(int $origVerdict) {
+    if ($this->verdict != $origVerdict) {
+      $this->verdictDate = time();
+    }
   }
 
   function getViewUrl() {

@@ -49,6 +49,8 @@ class Ct {
   const SORT_DATE_MADE_ASC = 3;
   const SORT_NAME_DESC = 4;
   const SORT_NAME_ASC = 5;
+  const SORT_VERDICT_DATE_DESC = 6;
+  const SORT_VERDICT_DATE_ASC = 7;
   const SORT_SQL = [
     self::SORT_CREATE_DATE_DESC => 'createDate desc',
     self::SORT_CREATE_DATE_ASC => 'createDate asc',
@@ -56,5 +58,7 @@ class Ct {
     self::SORT_DATE_MADE_ASC => 'dateMade asc',
     self::SORT_NAME_DESC => 'name desc',
     self::SORT_NAME_ASC => 'name asc',
+    self::SORT_VERDICT_DATE_DESC => 'verdictDate desc',
+    self::SORT_VERDICT_DATE_ASC => 'verdictDate asc',
   ];
 }

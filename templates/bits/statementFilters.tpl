@@ -7,6 +7,8 @@
       <select
         name="order"
         class="form-control form-control-sm actionable">
+        <option value="{Ct::SORT_VERDICT_DATE_DESC}">{t}sort-verdict-date-desc{/t}</option>
+        <option value="{Ct::SORT_VERDICT_DATE_ASC}">{t}sort-verdict-date-asc{/t}</option>
         <option value="{Ct::SORT_CREATE_DATE_DESC}">{t}sort-create-date-desc{/t}</option>
         <option value="{Ct::SORT_CREATE_DATE_ASC}">{t}sort-create-date-asc{/t}</option>
         <option value="{Ct::SORT_DATE_MADE_DESC}">{t}sort-date-made-desc{/t}</option>

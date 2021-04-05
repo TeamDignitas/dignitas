@@ -1,7 +1,7 @@
 <?php
 
 list($numStatementPages, $statements) =
-  Search::searchStatements([], Ct::SORT_CREATE_DATE_DESC, 1);
+  Search::searchStatements([], Ct::SORT_VERDICT_DATE_DESC, 1);
 
 // load the static resources for the top/bottom of the page
 $key = User::getActive() ? 'user' : 'guest';

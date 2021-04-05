@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-04-05 15:19+0300\n"
-"PO-Revision-Date: 2021-04-05 15:20+0300\n"
+"POT-Creation-Date: 2021-04-05 16:53+0300\n"
+"PO-Revision-Date: 2021-04-05 16:54+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -300,9 +300,9 @@ msgstr "permanent link to this answer"
 msgid "link-permalink"
 msgstr "permalink"
 
-#: templates/bits/answerEdit.tpl:24 templates/bits/statementFilters.tpl:44
+#: templates/bits/answerEdit.tpl:24 templates/bits/statementFilters.tpl:46
 #: templates/statement/edit.tpl:156 lib/model/RevisionAnswer.php:15
-#: lib/model/RevisionStatement.php:22 lib/model/Statement.php:113
+#: lib/model/RevisionStatement.php:22 lib/model/Statement.php:124
 msgid "label-verdict"
 msgstr "verdict"
 
@@ -431,25 +431,25 @@ msgstr "order by"
 
 #: templates/bits/entityFilters.tpl:15
 msgid "sort-name-asc"
-msgstr "name (ascending)"
+msgstr "alphabetical order"
 
 #: templates/bits/entityFilters.tpl:16
 msgid "sort-name-desc"
-msgstr "name (descending)"
+msgstr "reverse alphabetical order"
 
-#: templates/bits/entityFilters.tpl:17 templates/bits/statementFilters.tpl:10
+#: templates/bits/entityFilters.tpl:17 templates/bits/statementFilters.tpl:12
 msgid "sort-create-date-desc"
-msgstr "date added (descending)"
+msgstr "most recently added"
 
-#: templates/bits/entityFilters.tpl:18 templates/bits/statementFilters.tpl:11
+#: templates/bits/entityFilters.tpl:18 templates/bits/statementFilters.tpl:13
 msgid "sort-create-date-asc"
-msgstr "date added (ascending)"
+msgstr "least recently added"
 
 #: templates/bits/entityFilters.tpl:24
 msgid "label-filter"
 msgstr "filter"
 
-#: templates/bits/entityFilters.tpl:34 templates/bits/statementFilters.tpl:75
+#: templates/bits/entityFilters.tpl:34 templates/bits/statementFilters.tpl:77
 msgid "label-term"
 msgstr "text"
 
@@ -603,7 +603,7 @@ msgid "info-no-history"
 msgstr ""
 "There are no changes to this item. The current version is the only version."
 
-#: templates/bits/history.tpl:15 templates/bits/statementFilters.tpl:21
+#: templates/bits/history.tpl:15 templates/bits/statementFilters.tpl:23
 msgid "label-author"
 msgstr "author"
 
@@ -822,23 +822,31 @@ msgstr "View all statements with this tag."
 msgid "title-added-by"
 msgstr "added by"
 
-#: templates/bits/statementFilters.tpl:12
+#: templates/bits/statementFilters.tpl:10
+msgid "sort-verdict-date-desc"
+msgstr "newest verdicts"
+
+#: templates/bits/statementFilters.tpl:11
+msgid "sort-verdict-date-asc"
+msgstr "oldest verdicts"
+
+#: templates/bits/statementFilters.tpl:14
 msgid "sort-date-made-desc"
-msgstr "statement date (descending)"
+msgstr "newest statements"
 
-#: templates/bits/statementFilters.tpl:13
+#: templates/bits/statementFilters.tpl:15
 msgid "sort-date-made-asc"
-msgstr "statement date (ascending)"
+msgstr "oldest statements"
 
-#: templates/bits/statementFilters.tpl:62
+#: templates/bits/statementFilters.tpl:64
 msgid "label-other-filters"
 msgstr "other filters"
 
-#: templates/bits/statementFilters.tpl:83 templates/entity/edit.tpl:151
+#: templates/bits/statementFilters.tpl:85 templates/entity/edit.tpl:151
 msgid "label-start-date"
 msgstr "start date"
 
-#: templates/bits/statementFilters.tpl:92 templates/entity/edit.tpl:152
+#: templates/bits/statementFilters.tpl:94 templates/entity/edit.tpl:152
 msgid "label-end-date"
 msgstr "end date"
 
@@ -1871,12 +1879,12 @@ msgid "info-answer-by-owner"
 msgstr "by its author."
 
 #: lib/model/Answer.php:80 lib/model/Comment.php:62 lib/model/Entity.php:158
-#: lib/model/Statement.php:257
+#: lib/model/Statement.php:274
 msgid "info-by"
 msgstr "by"
 
 #: lib/model/Answer.php:81 lib/model/Comment.php:63 lib/model/Entity.php:159
-#: lib/model/Statement.php:258
+#: lib/model/Statement.php:275
 msgid "info-other-reason"
 msgstr "for other reasons."
 
@@ -2417,101 +2425,101 @@ msgstr "deleted sources"
 msgid "label-changed-statement-link"
 msgstr "changed source"
 
-#: lib/model/Statement.php:98
+#: lib/model/Statement.php:109
 msgid "statement-type-any"
 msgstr "any type"
 
-#: lib/model/Statement.php:99
+#: lib/model/Statement.php:110
 msgid "statement-type-claim"
 msgstr "claim"
 
-#: lib/model/Statement.php:100
+#: lib/model/Statement.php:111
 msgid "statement-type-flop"
 msgstr "flip-flop"
 
-#: lib/model/Statement.php:101
+#: lib/model/Statement.php:112
 msgid "statement-type-promise"
 msgstr "promise"
 
-#: lib/model/Statement.php:110
+#: lib/model/Statement.php:121
 msgid "label-claim-verdict"
 msgstr "claim verdict"
 
-#: lib/model/Statement.php:111
+#: lib/model/Statement.php:122
 msgid "label-flop-verdict"
 msgstr "flip-flop verdict"
 
-#: lib/model/Statement.php:112
+#: lib/model/Statement.php:123
 msgid "label-promise-verdict"
 msgstr "promise verdict"
 
-#: lib/model/Statement.php:234
+#: lib/model/Statement.php:251
 msgid "status-statement-duplicate"
 msgstr "duplicate"
 
-#: lib/model/Statement.php:236
+#: lib/model/Statement.php:253
 msgid "status-statement-closed"
 msgstr "closed"
 
-#: lib/model/Statement.php:237
+#: lib/model/Statement.php:254
 msgid "status-statement-deleted"
 msgstr "deleted"
 
-#: lib/model/Statement.php:246
+#: lib/model/Statement.php:263
 msgid "info-statement-closed"
 msgstr "This statement was closed"
 
-#: lib/model/Statement.php:247
+#: lib/model/Statement.php:264
 msgid "info-statement-deleted"
 msgstr "This statement was deleted"
 
-#: lib/model/Statement.php:250
+#: lib/model/Statement.php:267
 msgid "info-statement-spam"
 msgstr "because it is spam."
 
-#: lib/model/Statement.php:251
+#: lib/model/Statement.php:268
 msgid "info-statement-abuse"
 msgstr "because it is rude or abusive."
 
-#: lib/model/Statement.php:252
+#: lib/model/Statement.php:269
 msgid "info-statement-duplicate-of"
 msgstr "as a duplicate of the statement"
 
-#: lib/model/Statement.php:253
+#: lib/model/Statement.php:270
 msgid "info-statement-off-topic"
 msgstr "because it is off-topic."
 
-#: lib/model/Statement.php:254
+#: lib/model/Statement.php:271
 msgid "info-statement-unverifiable"
 msgstr "because it is unverifiable."
 
-#: lib/model/Statement.php:255
+#: lib/model/Statement.php:272
 msgid "info-statement-low-quality"
 msgstr "because it is low-quality."
 
-#: lib/model/Statement.php:256
+#: lib/model/Statement.php:273
 msgid "info-statement-by-owner"
 msgstr "by the user who added it."
 
-#: lib/model/Statement.php:277
+#: lib/model/Statement.php:294
 #, php-format
 msgid "info-minimum-reputation-add-statement-%s"
 msgstr "You need at least %s reputation to add statements."
 
-#: lib/model/Statement.php:285
+#: lib/model/Statement.php:302
 #, php-format
 msgid "info-minimum-reputation-edit-statement-%s"
 msgstr "You need at least %s reputation to edit statements."
 
-#: lib/model/Statement.php:291
+#: lib/model/Statement.php:308
 msgid "info-only-moderator-edit-statement-verdict"
 msgstr "This statement has a verdict. Only moderators can edit it directly."
 
-#: lib/model/Statement.php:295
+#: lib/model/Statement.php:312
 msgid "info-banned-add-statement"
 msgstr "You are banned from adding statements."
 
-#: lib/model/Statement.php:299
+#: lib/model/Statement.php:316
 msgid "info-banned-edit-statement"
 msgstr "You are banned from editing statements."
 
@@ -2736,7 +2744,7 @@ msgid "info-confirm-answer-reopened"
 msgstr "Answer reopened."
 
 #: routes/answer/edit.php:76 routes/entity/edit.php:99
-#: routes/statement/edit.php:112
+#: routes/statement/edit.php:109
 msgid "info-changes-queued"
 msgstr "Your changes were placed in the review queue."
 
@@ -2939,7 +2947,7 @@ msgstr "Author added."
 msgid "info-entity-updated"
 msgstr "Author updated."
 
-#: routes/entity/edit.php:107 routes/statement/edit.php:119
+#: routes/entity/edit.php:107 routes/statement/edit.php:116
 msgid "info-validation-error"
 msgstr "There are some errors in the data. Please fix them."
 
@@ -3191,65 +3199,65 @@ msgstr ""
 "This review is now complete. We have redirected you to the next review in "
 "this queue."
 
-#: routes/statement/edit.php:24
+#: routes/statement/edit.php:20
 msgid "info-cannot-delete-statement"
 msgstr "You cannot delete this answer."
 
-#: routes/statement/edit.php:31
+#: routes/statement/edit.php:27
 msgid "info-confirm-statement-deleted"
 msgstr "Statement deleted."
 
-#: routes/statement/edit.php:37
+#: routes/statement/edit.php:33
 msgid "info-cannot-reopen-statement"
 msgstr "You cannot reopen this statement."
 
-#: routes/statement/edit.php:46
+#: routes/statement/edit.php:42
 msgid "info-confirm-statement-reopened."
 msgstr "Statement reopened."
 
-#: routes/statement/edit.php:108
+#: routes/statement/edit.php:105
 msgid "info-statement-added"
 msgstr "Statement added."
 
-#: routes/statement/edit.php:114
+#: routes/statement/edit.php:111
 msgid "info-statement-updated"
 msgstr "Statement updated."
 
-#: routes/statement/edit.php:138 routes/statement/edit.php:175
-#: routes/statement/edit.php:187
+#: routes/statement/edit.php:135 routes/statement/edit.php:172
+#: routes/statement/edit.php:184
 #, php-format
 msgid "info-field-length-limit-%d"
 msgstr "This field can be at most %d characters long."
 
-#: routes/statement/edit.php:167
+#: routes/statement/edit.php:164
 msgid "info-must-enter-statement-entity"
 msgstr "Please enter an author."
 
-#: routes/statement/edit.php:171
+#: routes/statement/edit.php:168
 msgid "info-must-enter-statement-summary"
 msgstr "Please enter the statement summary."
 
-#: routes/statement/edit.php:179
+#: routes/statement/edit.php:176
 msgid "info-must-enter-statement-context"
 msgstr "Please enter the statement context."
 
-#: routes/statement/edit.php:183
+#: routes/statement/edit.php:180
 msgid "info-must-enter-statement-goal"
 msgstr "Please enter the statement goal."
 
-#: routes/statement/edit.php:191
+#: routes/statement/edit.php:188
 msgid "info-must-enter-statement-date"
 msgstr "Please enter a date."
 
-#: routes/statement/edit.php:193
+#: routes/statement/edit.php:190
 msgid "info-date-not-future"
 msgstr "This date may not be in the future."
 
-#: routes/statement/edit.php:203
+#: routes/statement/edit.php:200
 msgid "info-invalid-statement-links"
 msgstr "Some source URLs are invalid."
 
-#: routes/statement/edit.php:209
+#: routes/statement/edit.php:206
 msgid "info-mismatch-statement-type-verdict"
 msgstr ""
 "The verdict does not match the statement type. We reset it to \"none\" "
