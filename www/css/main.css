@@ -548,21 +548,6 @@ body, main {
   }
 }
 
-/************************ entity relations ************************/
-.relation-source .small {
-  margin-top: 20px;
-}
-
-.add-relation-sources .form-group {
-  background-color: #eee;
-  padding: 1rem;
-  border-radius: .25rem;
-}
-
-.form-control {
-  height: auto;
-}
-
 /******** collapsible card with expand/collapse visual indicator ********/
 #answer-resources .card-header {
   padding: 1rem 1.25rem .5rem;
