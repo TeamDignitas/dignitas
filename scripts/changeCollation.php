@@ -30,6 +30,11 @@ $SPECS = [
     'definition' => "varchar(255) not null default ''",
   ],
   [
+    'table' => 'tag',
+    'column' => 'value',
+    'definition' => "varchar(100) not null default ''",
+  ],
+  [
     'table' => 'revision_entity',
     'column' => 'name',
     'definition' => "varchar(255) not null default ''",
@@ -43,6 +48,11 @@ $SPECS = [
     'table' => 'revision_relation_type',
     'column' => 'name',
     'definition' => "varchar(255) not null default ''",
+  ],
+  [
+    'table' => 'revision_tag',
+    'column' => 'value',
+    'definition' => "varchar(100) not null default ''",
   ],
 ];
 

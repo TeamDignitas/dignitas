@@ -6,6 +6,7 @@ const ENTITY_LIMIT = 10;
 
 $id = Request::get('id');
 $saveButton = Request::has('saveButton');
+$cloneButton = Request::has('cloneButton');
 $deleteButton = Request::has('deleteButton');
 
 if ($id) {
@@ -39,6 +40,20 @@ User::enforce($tag->id ? User::PRIV_EDIT_TAG : User::PRIV_ADD_TAG);
 if (Ban::exists(Ban::TYPE_TAG)) {
   Snackbar::add(_('info-banned-tag'));
   Util::redirectToHome();
+}
+
+if ($cloneButton) {
+  if ($tag->id) {
+    Snackbar::add(_('info-tag-cloned'));
+    $clone = $tag->parisClone();
+    $clone->value .= sprintf(' (%s)', _('label-clone'));
+    $clone->save();
+    Util::redirect($clone->getEditUrl());
+  } else {
+    // unreachable via normal UI actions
+    Snackbar::add(_('info-save-tag-before-clone'));
+    Util::redirect($tag->getEditUrl());
+  }
 }
 
 if ($saveButton) {

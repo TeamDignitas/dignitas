@@ -12,6 +12,10 @@ class Tag extends Proto {
     return Proto::TYPE_TAG;
   }
 
+  function getEditUrl() {
+    return Router::link('tag/edit') . '/' . $this->id;
+  }
+
   function getColor() {
     return $this->color ? $this->color : self::DEFAULT_COLOR;
   }

@@ -156,6 +156,16 @@
           </button>
         {/if}
 
+        {if $t->id}
+          <button
+            name="cloneButton"
+            type="submit"
+            class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2">
+            {include "bits/icon.tpl" i=content_copy}
+            {t}link-clone{/t}
+          </button>
+        {/if}
+
         <a
           class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2"
           {if $t->id}
