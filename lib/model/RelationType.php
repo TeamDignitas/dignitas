@@ -45,7 +45,7 @@ class RelationType extends Proto {
 
   static function loadAll() {
     return Model::factory('RelationType')
-      ->order_by_asc('rank')
+      ->order_by_asc('name')
       ->find_many();
   }
 
@@ -55,18 +55,8 @@ class RelationType extends Proto {
   static function loadForEntityType($entityTypeId) {
     return Model::factory('RelationType')
       ->where('fromEntityTypeId', $entityTypeId)
-      ->order_by_asc('rank')
+      ->order_by_asc('name')
       ->find_many();
-  }
-
-  /**
-   * For newly created objects, assigns the next available rank. For existing
-   * pages, does nothing.
-   */
-  function assignNewRank() {
-    if (!$this->id) {
-      $this->rank = 1 + Model::factory('RelationType')->count();
-    }
   }
 
   function canDelete() {

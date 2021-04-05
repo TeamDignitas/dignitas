@@ -18,59 +18,35 @@
     {/if}
 
     {if count($relationTypes)}
-      <form method="post">
-        <table class="table table-hover mt-5 mb-4 sortable">
-          <thead>
+      <table class="table table-hover mt-5 mb-4 sortable">
+        <thead>
+          <tr class="small">
+            <th class="border-0">{t}label-name{/t}</th>
+            <th class="border-0">{t}label-from-entity-type{/t}</th>
+            <th class="border-0">{t}label-to-entity-type{/t}</th>
+            <th class="border-0">{t}label-weight{/t}</th>
+            <th class="border-0">{t}actions{/t}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {foreach $relationTypes as $rt}
             <tr class="small">
-              <th class="border-0">{t}label-order{/t}</th>
-              <th class="border-0">{t}label-name{/t}</th>
-              <th class="border-0">{t}label-from-entity-type{/t}</th>
-              <th class="border-0">{t}label-to-entity-type{/t}</th>
-              <th class="border-0">{t}label-weight{/t}</th>
-              <th class="border-0">{t}actions{/t}</th>
+              <td class="align-middle">{$rt->name|escape}</td>
+              <td class="align-middle">{$rt->getFromEntityType()->name|escape}</td>
+              <td class="align-middle">{$rt->getToEntityType()->name|escape}</td>
+              <td class="align-middle">{$rt->weight}</td>
+              <td>
+                <a
+                  href="{$rt->getEditUrl()}"
+                  class="btn"
+                  title="{t}link-edit{/t}">
+                  {include "bits/icon.tpl" i=mode_edit}
+                </a>
+              </td>
             </tr>
-          </thead>
-          <tbody>
-            {foreach $relationTypes as $rt}
-              <tr class="small">
-                <td class="align-middle">
-                  <input type="hidden" name="ids[]" value="{$rt->id}">
-                  {include "bits/icon.tpl" i=drag_indicator class="drag-indicator pt-0"}
-                </td>
-                <td class="align-middle">{$rt->name|escape}</td>
-                <td class="align-middle">{$rt->getFromEntityType()->name|escape}</td>
-                <td class="align-middle">{$rt->getToEntityType()->name|escape}</td>
-                <td class="align-middle">{$rt->weight}</td>
-                <td>
-                  <a
-                    href="{$rt->getEditUrl()}"
-                    class="btn"
-                    title="{t}link-edit{/t}">
-                    {include "bits/icon.tpl" i=mode_edit}
-                  </a>
-                </td>
-              </tr>
-            {/foreach}
-          </tbody>
-        </table>
-
-        <div class="mt-4 text-right">
-          <a
-            href="{Router::link('relationType/list')}"
-            class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2">
-            {include "bits/icon.tpl" i=cancel}
-            {t}link-cancel{/t}
-          </a>
-
-          <button
-            type="submit"
-            class="btn btn-sm btn-outline-primary col-sm-4 col-lg-2 mb-2"
-            name="saveButton">
-            {include "bits/icon.tpl" i=save}
-            {t}link-save-order{/t}
-          </button>
-        </div>
-      </form>
+          {/foreach}
+        </tbody>
+      </table>
     {/if}
   </div>
 {/block}

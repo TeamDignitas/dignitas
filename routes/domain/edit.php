@@ -32,11 +32,12 @@ if ($cloneButton) {
   if ($id) {
     Snackbar::add(_('info-domain-cloned'));
     $clone = $domain->parisClone();
-    $clone->name .= ' CLONE';
+    $clone->name .= sprintf(' (%s)', _('label-clone'));
     $clone->save();
     $clone->copyUploadedFileFrom($domain);
     Util::redirect($clone->getEditUrl());
   } else {
+    // unreachable via normal UI actions
     Snackbar::add(_('info-save-domain-before-clone'));
     Util::redirect($domain->getEditUrl());
   }

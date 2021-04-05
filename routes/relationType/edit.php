@@ -4,6 +4,7 @@ User::enforceModerator();
 
 $id = Request::get('id');
 $saveButton = Request::has('saveButton');
+$cloneButton = Request::has('cloneButton');
 $deleteButton = Request::has('deleteButton');
 
 if ($id) {
@@ -23,6 +24,20 @@ if ($deleteButton) {
   }
 }
 
+if ($cloneButton) {
+  if ($id) {
+    Snackbar::add(_('info-relation-type-cloned'));
+    $clone = $rt->parisClone();
+    $clone->name .= sprintf(' (%s)', _('label-clone'));
+    $clone->save();
+    Util::redirect($clone->getEditUrl());
+  } else {
+    // unreachable via normal UI actions
+    Snackbar::add(_('info-save-relation-type-before-clone'));
+    Util::redirect($rt->getEditUrl());
+  }
+}
+
 if ($saveButton) {
   $rt->name = Request::get('name');
   $rt->fromEntityTypeId = Request::get('fromEntityTypeId');
@@ -31,7 +46,6 @@ if ($saveButton) {
   $rt->phrase = Request::get('phrase');
   $rt->symmetric = Request::has('symmetric');
   $rt->membership = Request::has('membership');
-  $rt->assignNewRank();
 
   $errors = validate($rt);
   if (empty($errors)) {
