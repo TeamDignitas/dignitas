@@ -9,10 +9,14 @@
 }
 
 .review-message .title-divider,
-.review-message .border-bottom,
-.review-message .card-title,
-.review-message .card-date,
-.review-message .rounded-circle {
+.review-message .border-bottom {
+  display: none;
+}
+
+/* hide everything except the verdict from statement side cards */
+aside .card-title,
+aside .card-date,
+aside .rounded-circle {
   display: none;
 }
 
