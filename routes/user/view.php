@@ -11,7 +11,7 @@ if (!$user) {
 }
 
 $statements = Statement::count_by_userId($user->id);
-$answers = Answer::count_by_userId($user->id);
+$answers = Answer::count_by_userId_status($user->id, Ct::STATUS_ACTIVE);
 
 // moderators and the user herself can see the user's bans
 $bans = (User::isModerator() || ($user->id == User::getActiveId()))

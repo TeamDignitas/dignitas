@@ -35,6 +35,7 @@ const CODEPOINTS = [
   'help',
   'hourglass_full',
   'insert_comment',
+  'insert_drive_file',
   'insert_invitation',
   'insert_link',
   'insert_photo',

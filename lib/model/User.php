@@ -371,6 +371,11 @@ class User extends Proto {
         throw new Exception(_('info-banned-comment'));
       }
 
+      // draft?
+      if ($obj->status == Ct::STATUS_DRAFT) {
+        throw new Exception(_('info-cannot-comment-draft'));
+      }
+
       // owner
       if ($obj instanceof Statement) {
         if ($obj->userId == $userId) {

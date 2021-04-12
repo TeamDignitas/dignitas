@@ -94,6 +94,7 @@ class Answer extends Proto {
   static function create($statementId) {
     $a = Model::factory('Answer')->create();
     $a->statementId = $statementId;
+    $a->status = Ct::STATUS_DRAFT;
     return $a;
   }
 
@@ -104,7 +105,7 @@ class Answer extends Proto {
   function isViewable() {
     return
       ($this->status != Ct::STATUS_PENDING_EDIT) &&
-      (($this->status != Ct::STATUS_DELETED) ||   // active
+      (($this->status == Ct::STATUS_ACTIVE) ||    // active
        ($this->userId == User::getActiveId()) ||  // owner
        User::may(User::PRIV_DELETE_ANSWER));      // privileged
   }
@@ -145,7 +146,7 @@ class Answer extends Proto {
    */
   function isDeletable() {
     return
-      $this->status == Ct::STATUS_ACTIVE &&
+      in_array($this->status, [ Ct::STATUS_ACTIVE, Ct::STATUS_DRAFT ]) &&
       $this->id &&                               // not on the add answer page
       !$this->proof &&                           // not yet accepted as proof
       !Ban::exists(Ban::TYPE_DELETE) &&          // not banned from deleting objects
@@ -210,7 +211,7 @@ class Answer extends Proto {
   }
 
   function delete() {
-    if ($this->status != Ct::STATUS_PENDING_EDIT) {
+    if (!in_array($this->status, [ Ct::STATUS_PENDING_EDIT, Ct::STATUS_DRAFT ])) {
       throw new Exception('Answers should never be deleted at the DB level.');
     }
 
@@ -220,6 +221,17 @@ class Answer extends Proto {
     AnswerExt::delete_all_by_answerId($this->id);
 
     parent::delete();
+  }
+
+  /**
+   * Deletes the answer from the database, including its revisions. Call for
+   * drafts only!
+   */
+  function purge() {
+    $this->delete();
+    Model::factory('RevisionAnswer')
+      ->where('id', $this->id)
+      ->delete_many();
   }
 
   function __toString() {

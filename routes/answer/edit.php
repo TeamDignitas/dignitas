@@ -4,6 +4,7 @@ $id = Request::get('id');
 $statementId = Request::get('statementId');
 $contents = Request::get('contents');
 $saveButton = Request::has('saveButton');
+$saveDraftButton = Request::has('saveDraftButton');
 $deleteButton = Request::has('deleteButton');
 $reopenButton = Request::has('reopenButton');
 $referrer = Request::get('referrer');
@@ -15,14 +16,16 @@ if ($id) {
     Util::redirectToHome();
   }
 } else {
-  $answer = Model::factory('Answer')->create();
-  $answer->statementId = $statementId;
+  $answer = Answer::create($statementId);
   $answer->userId = User::getActiveId();
 }
 
 if ($deleteButton) {
   if (!$answer->isDeletable()) {
     Snackbar::add(_('info-cannot-delete-answer'));
+  } else if ($answer->status == Ct::STATUS_DRAFT) {
+    $answer->purge();
+    Snackbar::add(_('info-confirm-answer-draft-deleted'));
   } else {
     $answer->markDeleted(Ct::REASON_BY_USER);
     $answer->subscribe();
@@ -52,25 +55,41 @@ if ($reopenButton) {
 
 $answer->enforceEditPrivileges();
 
-if ($saveButton) {
+if ($saveButton || $saveDraftButton) {
+  $publicized = false; // true if the answer was a draft and is now publicized
+
   $answer->contents = Request::get('contents');
   $answer->verdict = Request::get('verdict');
+  if ($saveButton && ($answer->status == Ct::STATUS_DRAFT)) {
+    $publicized = true;
+    $answer->status = Ct::STATUS_ACTIVE;
+    $answer->createDate = time(); // make it look like $answer was just created
+  }
   $answer->sanitize();
 
   $errors = validate($answer);
   if (empty($errors)) {
-    $originalId = $answer->id;
+    // This will trigger the new user review when the answer is published, not
+    // while it is a draft. Also, the action logged will be a create, not an
+    // update.
+    $originalId = $publicized ? null : $answer->id;
     $answer = $answer->maybeClone();
     $answer->save();
-    $answer->subscribe();
-    $answer->notify();
-    Action::createUpdateAction($answer, $originalId);
 
-    if (!$originalId) {
-      Review::checkNewUser($answer);
+    if ($answer->status != Ct::STATUS_DRAFT) {
+      if ($publicized) {
+        RevisionAnswer::deleteDraftRevisions($answer);
+      }
+      $answer->subscribe();
+      $answer->notify();
+      Action::createUpdateAction($answer, $originalId);
+
+      if (!$originalId) {
+        Review::checkNewUser($answer);
+      }
+      Review::checkLateAnswer($answer);
+      Review::checkRecentlyClosedDeleted($answer);
     }
-    Review::checkLateAnswer($answer);
-    Review::checkRecentlyClosedDeleted($answer);
 
     if ($answer->status == Ct::STATUS_PENDING_EDIT) {
       Snackbar::add(_('info-changes-queued'));

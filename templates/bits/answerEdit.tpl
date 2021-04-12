@@ -77,6 +77,18 @@
       {t}link-cancel{/t}
     </a>
 
+    {if $answer->status == Ct::STATUS_DRAFT}
+      <button
+        name="saveDraftButton"
+        type="submit"
+        class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2"
+        data-toggle="tooltip"
+        title="{t}tooltip-save-draft{/t}">
+        {include "bits/icon.tpl" i=insert_drive_file}
+        {t}link-save-draft{/t}
+      </button>
+    {/if}
+
     <button name="saveButton" type="submit" class="btn btn-sm btn-primary col-sm-4 col-lg-2 mb-2">
       {include "bits/icon.tpl" i=save}
       {$buttonText}

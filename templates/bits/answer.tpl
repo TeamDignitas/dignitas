@@ -4,7 +4,9 @@
 {$voteBox=$voteBox|default:true}
 
 <div class="answer-container row pt-2" id="a{$answer->id}">
-  {if $voteBox}
+  {if $answer->status == Ct::STATUS_DRAFT}
+    {include "bits/draftIndicator.tpl"}
+  {elseif $voteBox}
     {capture "tooltipDownvote"}
     {t
       count=-Config::REP_DOWNVOTE_ANSWER

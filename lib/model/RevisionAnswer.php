@@ -25,4 +25,23 @@ class RevisionAnswer extends Answer {
 
     return $od;
   }
+
+  /**
+   * Rewrites the history of $answer to delete all its draft revisions.
+   * Call us when an answer is publicized.
+   */
+  static function deleteDraftRevisions($answer) {
+    Model::factory('RevisionAnswer')
+      ->where('id', $answer->id)
+      ->where('status', Ct::STATUS_DRAFT)
+      ->delete_many();
+
+    // there should be exactly one of these
+    $rev = Model::factory('RevisionAnswer')
+      ->where('id', $answer->id)
+      ->find_one();
+    $rev->revisionAction = 'insert';
+    $rev->save();
+  }
+
 }
