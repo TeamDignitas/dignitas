@@ -94,6 +94,17 @@
           placeholder="{t}label-end-date{/t}">
         <input type="hidden" name="maxDate" class="actionable">
       </div>
+
+      <div class="col-12 col-sm-12 col-md-3 col-lg-3 mb-2">
+        <select name="regionId" class="form-control form-control-sm actionable">
+          <option value="0">{t}label-region{/t}</option>
+          {foreach Region::loadAll() as $option}
+            <option value="{$option->id}">
+              {$option->name}
+            </option>
+          {/foreach}
+        </select>
+      </div>
     </div>
   </div>
 

@@ -6,6 +6,7 @@ $order = Request::get('order', 0);
 $filters = [
   'type' => Request::get('type'),
   'entityId' => Request::get('entityId', 0),
+  'regionId' => Request::get('regionId', 0),
   'exceptId' => Request::get('exceptId', 0),
   'maxDate' =>  Time::extendPartialDate(Request::get('maxDate')),
   'minDate' =>  Request::get('minDate'),

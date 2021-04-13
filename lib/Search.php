@@ -133,6 +133,9 @@ class Search {
           case 'entityId':
             $query = $query->where('entityId', $value);
             break;
+          case 'regionId':
+            $query = $query->where('regionId', $value);
+            break;
           case 'exceptId':
             $query = $query->where_not_equal('id', $value);
             break;
