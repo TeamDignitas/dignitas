@@ -8,8 +8,9 @@ $(function() {
 
   $('body').on('click', 'a.expand', function() {
     var href = $(this).attr('href');
+    var noHash = href.split('#')[0]; // strip the fragment
 
-    if (href.endsWith('.pdf')) {
+    if (noHash.endsWith('.pdf')) {
       // open PDFs in separate tab
       window.open(href, '_blank');
     } else {
