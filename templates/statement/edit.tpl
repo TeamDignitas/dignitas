@@ -140,6 +140,22 @@
 
       <fieldset class="related-fields mb-5 ml-3">
         <div class="form-group row">
+          <label class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-region{/t}</label>
+          <div class="col-sm-12 col-lg-10 px-0">
+            <select name="regionId" class="form-control">
+              <option value="0"></option>
+              {foreach $regions as $option}
+                <option
+                  value="{$option->id}"
+                  {if $statement->regionId == $option->id}selected{/if}>
+                  {$option->name}
+                </option>
+              {/foreach}
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group row">
           <label class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-tags{/t}</label>
           <div class="col-sm-12 col-lg-10 px-0">
             <select name="tagIds[]" class="form-control select2Tags col-10" multiple>

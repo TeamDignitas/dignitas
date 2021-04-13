@@ -175,6 +175,10 @@ class Statement extends Proto {
     return Entity::get_by_id($this->entityId);
   }
 
+  function getRegion() {
+    return Region::get_by_id($this->regionId);
+  }
+
   function getUser() {
     return User::get_by_id($this->userId);
   }

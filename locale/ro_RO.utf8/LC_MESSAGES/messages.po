@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-04-12 15:55+0300\n"
-"PO-Revision-Date: 2021-04-12 15:56+0300\n"
+"POT-Creation-Date: 2021-04-13 18:21+0300\n"
+"PO-Revision-Date: 2021-04-13 18:21+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -144,7 +144,7 @@ msgstr "editează răspunsul"
 #: templates/entityType/edit.tpl:110 templates/help/categoryEdit.tpl:82
 #: templates/help/pageEdit.tpl:98 templates/region/edit.tpl:98
 #: templates/region/list.tpl:46 templates/relation/edit.tpl:30
-#: templates/relationType/edit.tpl:157 templates/statement/edit.tpl:210
+#: templates/relationType/edit.tpl:157 templates/statement/edit.tpl:226
 #: templates/staticResource/edit.tpl:97 templates/tag/edit.tpl:183
 #: templates/user/ban.tpl:59 templates/user/edit.tpl:141
 msgid "link-save"
@@ -305,7 +305,7 @@ msgid "link-permalink"
 msgstr "legătură permanentă"
 
 #: templates/bits/answerEdit.tpl:24 templates/bits/statementFilters.tpl:46
-#: templates/statement/edit.tpl:156 lib/model/RevisionAnswer.php:15
+#: templates/statement/edit.tpl:172 lib/model/RevisionAnswer.php:15
 #: lib/model/RevisionStatement.php:22 lib/model/Statement.php:124
 msgid "label-verdict"
 msgstr "verdict"
@@ -323,7 +323,7 @@ msgstr "Confirmi ștergerea acestui răspuns?"
 #: templates/entity/edit.tpl:267 templates/entityType/edit.tpl:99
 #: templates/help/categoryEdit.tpl:71 templates/help/pageEdit.tpl:87
 #: templates/region/edit.tpl:77 templates/relationType/edit.tpl:136
-#: templates/statement/edit.tpl:189 templates/staticResource/edit.tpl:86
+#: templates/statement/edit.tpl:205 templates/staticResource/edit.tpl:86
 #: templates/tag/edit.tpl:155
 msgid "link-delete"
 msgstr "șterge"
@@ -333,7 +333,7 @@ msgid "info-confirm-reopen-answer"
 msgstr "Confirmi redeschiderea acestui răspuns?"
 
 #: templates/bits/answerEdit.tpl:71 templates/entity/edit.tpl:277
-#: templates/statement/edit.tpl:199
+#: templates/statement/edit.tpl:215
 msgid "link-reopen"
 msgstr "redeschide"
 
@@ -344,7 +344,7 @@ msgstr "redeschide"
 #: templates/help/categoryEdit.tpl:77 templates/help/categoryList.tpl:30
 #: templates/help/pageEdit.tpl:93 templates/invite/add.tpl:31
 #: templates/region/edit.tpl:90 templates/relation/edit.tpl:25
-#: templates/relationType/edit.tpl:152 templates/statement/edit.tpl:205
+#: templates/relationType/edit.tpl:152 templates/statement/edit.tpl:221
 #: templates/staticResource/edit.tpl:92 templates/tag/edit.tpl:178
 #: templates/user/ban.tpl:54 templates/user/edit.tpl:136
 msgid "link-cancel"
@@ -473,7 +473,8 @@ msgid "label-term"
 msgstr "text"
 
 #: templates/bits/entityFilters.tpl:39 templates/entity/edit.tpl:199
-#: lib/model/RevisionEntity.php:36
+#: templates/statement/edit.tpl:143 lib/model/RevisionEntity.php:36
+#: lib/model/RevisionStatement.php:30
 msgid "label-region"
 msgstr "regiune"
 
@@ -839,11 +840,11 @@ msgstr "context"
 msgid "title-goal"
 msgstr "scop"
 
-#: templates/bits/statement.tpl:107
+#: templates/bits/statement.tpl:119
 msgid "info-tag-view-statements"
 msgstr "Vezi toate afirmațiile cu această etichetă."
 
-#: templates/bits/statement.tpl:110 templates/review/view.tpl:89
+#: templates/bits/statement.tpl:122 templates/review/view.tpl:89
 msgid "title-added-by"
 msgstr "adăugată de"
 
@@ -1108,7 +1109,7 @@ msgstr "legături externe"
 msgid "link-add-entity-link"
 msgstr "adaugă o legătură"
 
-#: templates/entity/edit.tpl:215 templates/statement/edit.tpl:143
+#: templates/entity/edit.tpl:215 templates/statement/edit.tpl:159
 msgid "label-tags"
 msgstr "etichete"
 
@@ -1325,6 +1326,14 @@ msgstr "autori (%1 din %2 afișați)"
 msgid "title-entity-count"
 msgstr "autori (%1)"
 
+#: templates/region/view.tpl:35 templates/tag/view.tpl:23
+msgid "title-statement-count-with-limit"
+msgstr "afirmații (%1 din %2 afișate)"
+
+#: templates/region/view.tpl:37 templates/tag/view.tpl:25
+msgid "title-statement-count"
+msgstr "afirmații (%1)"
+
 #: templates/relation/edit.tpl:3 templates/relation/edit.tpl:7
 msgid "title-edit-relation"
 msgstr "editează relația"
@@ -1452,7 +1461,7 @@ msgstr "autor"
 msgid "info-author-not-found-add-author-%1"
 msgstr "Nu găsești autorul? Poți <a href=\"%1\">adăuga un autor</a> mai întîi."
 
-#: templates/statement/edit.tpl:51 lib/model/RevisionStatement.php:30
+#: templates/statement/edit.tpl:51 lib/model/RevisionStatement.php:34
 msgid "label-statement-date"
 msgstr "data afirmației"
 
@@ -1482,11 +1491,11 @@ msgstr "surse"
 msgid "link-add-statement-link"
 msgstr "adaugă o sursă"
 
-#: templates/statement/edit.tpl:187
+#: templates/statement/edit.tpl:203
 msgid "info-confirm-delete-statement"
 msgstr "Confirmi ștergerea acestei afirmații?"
 
-#: templates/statement/edit.tpl:198
+#: templates/statement/edit.tpl:214
 msgid "info-confirm-reopen-statement"
 msgstr "Confirmi redeschiderea acestei afirmații?"
 
@@ -1623,14 +1632,6 @@ msgstr "adaugă o etichetă"
 #: templates/tag/view.tpl:3 templates/tag/view.tpl:7
 msgid "title-tag"
 msgstr "etichetă"
-
-#: templates/tag/view.tpl:23
-msgid "title-statement-count-with-limit"
-msgstr "afirmații (%1 din %2 afișate)"
-
-#: templates/tag/view.tpl:25
-msgid "title-statement-count"
-msgstr "afirmații (%1)"
 
 #: templates/user/ban.tpl:3 templates/user/ban.tpl:7
 msgid "title-ban-user"
@@ -1907,12 +1908,12 @@ msgid "info-answer-by-owner"
 msgstr "de către autorul său."
 
 #: lib/model/Answer.php:80 lib/model/Comment.php:62 lib/model/Entity.php:158
-#: lib/model/Statement.php:274
+#: lib/model/Statement.php:278
 msgid "info-by"
 msgstr "de către"
 
 #: lib/model/Answer.php:81 lib/model/Comment.php:63 lib/model/Entity.php:159
-#: lib/model/Statement.php:275
+#: lib/model/Statement.php:279
 msgid "info-other-reason"
 msgstr "pentru alt motiv."
 
@@ -2360,7 +2361,7 @@ msgid "title-changes-contents"
 msgstr "modificări la conținut"
 
 #: lib/model/RevisionAnswer.php:19 lib/model/RevisionEntity.php:40
-#: lib/model/RevisionStatement.php:34
+#: lib/model/RevisionStatement.php:38
 msgid "label-status"
 msgstr "stare"
 
@@ -2384,11 +2385,11 @@ msgstr "culoare"
 msgid "label-image-file"
 msgstr "fișier imagine"
 
-#: lib/model/RevisionEntity.php:54 lib/model/RevisionStatement.php:44
+#: lib/model/RevisionEntity.php:54 lib/model/RevisionStatement.php:48
 msgid "label-added-tags"
 msgstr "etichete adăugate"
 
-#: lib/model/RevisionEntity.php:60 lib/model/RevisionStatement.php:50
+#: lib/model/RevisionEntity.php:60 lib/model/RevisionStatement.php:54
 msgid "label-deleted-tags"
 msgstr "etichete șterse"
 
@@ -2444,15 +2445,15 @@ msgstr "modificări la scop"
 msgid "label-statement-entity"
 msgstr "autor"
 
-#: lib/model/RevisionStatement.php:57
+#: lib/model/RevisionStatement.php:61
 msgid "label-added-statement-links"
 msgstr "surse adăugate"
 
-#: lib/model/RevisionStatement.php:63
+#: lib/model/RevisionStatement.php:67
 msgid "label-deleted-statement-links"
 msgstr "surse șterse"
 
-#: lib/model/RevisionStatement.php:71
+#: lib/model/RevisionStatement.php:75
 msgid "label-changed-statement-link"
 msgstr "sursă modificată"
 
@@ -2484,75 +2485,75 @@ msgstr "verdictul răzgîndirii"
 msgid "label-promise-verdict"
 msgstr "verdictul promisiunii"
 
-#: lib/model/Statement.php:251
+#: lib/model/Statement.php:255
 msgid "status-statement-duplicate"
 msgstr "duplicat"
 
-#: lib/model/Statement.php:253
+#: lib/model/Statement.php:257
 msgid "status-statement-closed"
 msgstr "închisă"
 
-#: lib/model/Statement.php:254
+#: lib/model/Statement.php:258
 msgid "status-statement-deleted"
 msgstr "ștearsă"
 
-#: lib/model/Statement.php:263
+#: lib/model/Statement.php:267
 msgid "info-statement-closed"
 msgstr "Această afirmație a fost închisă"
 
-#: lib/model/Statement.php:264
+#: lib/model/Statement.php:268
 msgid "info-statement-deleted"
 msgstr "Această afirmație a fost ștearsă"
 
-#: lib/model/Statement.php:267
+#: lib/model/Statement.php:271
 msgid "info-statement-spam"
 msgstr "deoarece este spam."
 
-#: lib/model/Statement.php:268
+#: lib/model/Statement.php:272
 msgid "info-statement-abuse"
 msgstr "deoarece conține insulte sau abuzuri."
 
-#: lib/model/Statement.php:269
+#: lib/model/Statement.php:273
 msgid "info-statement-duplicate-of"
 msgstr "ca duplicat al afirmației"
 
-#: lib/model/Statement.php:270
+#: lib/model/Statement.php:274
 msgid "info-statement-off-topic"
 msgstr "deoarece este pe lîngă subiect."
 
-#: lib/model/Statement.php:271
+#: lib/model/Statement.php:275
 msgid "info-statement-unverifiable"
 msgstr "deoarece este neverificabilă."
 
-#: lib/model/Statement.php:272
+#: lib/model/Statement.php:276
 msgid "info-statement-low-quality"
 msgstr "deoarece este de slabă calitate."
 
-#: lib/model/Statement.php:273
+#: lib/model/Statement.php:277
 msgid "info-statement-by-owner"
 msgstr "de către autorul său."
 
-#: lib/model/Statement.php:294
+#: lib/model/Statement.php:298
 #, php-format
 msgid "info-minimum-reputation-add-statement-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
-#: lib/model/Statement.php:302
+#: lib/model/Statement.php:306
 #, php-format
 msgid "info-minimum-reputation-edit-statement-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a edita afirmații."
 
-#: lib/model/Statement.php:308
+#: lib/model/Statement.php:312
 msgid "info-only-moderator-edit-statement-verdict"
 msgstr ""
 "Această afirmație a primit un verdict. Doar moderatorii o mai pot modifica "
 "direct."
 
-#: lib/model/Statement.php:312
+#: lib/model/Statement.php:316
 msgid "info-banned-add-statement"
 msgstr "Îți este interzisă adăugarea de afirmații."
 
-#: lib/model/Statement.php:316
+#: lib/model/Statement.php:320
 msgid "info-banned-edit-statement"
 msgstr "Îți este interzisă editarea de afirmații."
 
@@ -2789,7 +2790,7 @@ msgid "info-confirm-answer-reopened"
 msgstr "Am redeschis răspunsul."
 
 #: routes/answer/edit.php:95 routes/entity/edit.php:99
-#: routes/statement/edit.php:109
+#: routes/statement/edit.php:110
 msgid "info-changes-queued"
 msgstr "Modificările tale au fost adăugate la coada de evaluare."
 
@@ -2996,7 +2997,7 @@ msgstr "Am adăugat autorul."
 msgid "info-entity-updated"
 msgstr "Am salvat autorul."
 
-#: routes/entity/edit.php:107 routes/statement/edit.php:116
+#: routes/entity/edit.php:107 routes/statement/edit.php:117
 msgid "info-validation-error"
 msgstr "Formularul conține erori. Te rugăm să le repari."
 
@@ -3175,7 +3176,7 @@ msgstr "Nu poți alege un descendent ca părinte."
 msgid "info-region-nomenclature-saved"
 msgstr "Am salvat nomenclatura regiunilor."
 
-#: routes/region/view.php:10
+#: routes/region/view.php:11
 msgid "info-no-such-region"
 msgstr "Regiunea căutată nu există."
 
@@ -3267,49 +3268,49 @@ msgstr "Nu poți redeschide această afirmație."
 msgid "info-confirm-statement-reopened."
 msgstr "Am redeschis afirmația."
 
-#: routes/statement/edit.php:105
+#: routes/statement/edit.php:106
 msgid "info-statement-added"
 msgstr "Am adăugat afirmația."
 
-#: routes/statement/edit.php:111
+#: routes/statement/edit.php:112
 msgid "info-statement-updated"
 msgstr "Am actualizat afirmația."
 
-#: routes/statement/edit.php:135 routes/statement/edit.php:172
-#: routes/statement/edit.php:184
+#: routes/statement/edit.php:136 routes/statement/edit.php:174
+#: routes/statement/edit.php:186
 #, php-format
 msgid "info-field-length-limit-%d"
 msgstr "Acest cîmp poate avea maximum %d de caractere."
 
-#: routes/statement/edit.php:164
+#: routes/statement/edit.php:166
 msgid "info-must-enter-statement-entity"
 msgstr "Te rugăm să introduci un autor."
 
-#: routes/statement/edit.php:168
+#: routes/statement/edit.php:170
 msgid "info-must-enter-statement-summary"
 msgstr "Te rugăm să introduci sumarul afirmației."
 
-#: routes/statement/edit.php:176
+#: routes/statement/edit.php:178
 msgid "info-must-enter-statement-context"
 msgstr "Te rugăm să introduci contextul afirmației."
 
-#: routes/statement/edit.php:180
+#: routes/statement/edit.php:182
 msgid "info-must-enter-statement-goal"
 msgstr "Te rugăm să introduci scopul afirmației."
 
-#: routes/statement/edit.php:188
+#: routes/statement/edit.php:190
 msgid "info-must-enter-statement-date"
 msgstr "Te rugăm să introduci data afirmației."
 
-#: routes/statement/edit.php:190
+#: routes/statement/edit.php:192
 msgid "info-date-not-future"
 msgstr "Data nu poate fi în viitor."
 
-#: routes/statement/edit.php:200
+#: routes/statement/edit.php:202
 msgid "info-invalid-statement-links"
 msgstr "Unele dintre surse sînt incorecte."
 
-#: routes/statement/edit.php:206
+#: routes/statement/edit.php:208
 msgid "info-mismatch-statement-type-verdict"
 msgstr ""
 "Verdictul nu se potrivește cu tipul afirmației. Am ales automat verdictul "

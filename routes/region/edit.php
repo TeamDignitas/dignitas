@@ -17,7 +17,7 @@ $children = Model::factory('Region')
   ->where('parentId', $region->id)
   ->order_by_asc('name')
   ->find_many();
-$used = Entity::get_by_regionId($region->id);
+$used = Entity::get_by_regionId($region->id) || Statement::get_by_regionId($region->id);
 $canDelete = empty($children) && !$used;
 
 if ($deleteButton) {

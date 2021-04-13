@@ -27,6 +27,10 @@ class RevisionStatement extends Statement {
                         (string)$prev->getEntity(),
                         (string)$this->getEntity(),
                         $od, Ct::FIELD_CHANGE_STRING);
+    $this->compareField(_('label-region'),
+                        $prev->getRegion()->name ?? '',
+                        $this->getRegion()->name ?? '',
+                        $od, Ct::FIELD_CHANGE_STRING);
     $this->compareField(_('label-statement-date'),
                         Time::localDate($prev->dateMade),
                         Time::localDate($this->dateMade),

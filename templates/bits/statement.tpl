@@ -103,6 +103,18 @@
     {$statement->goal|escape}
 
     <div class="statement-read-only row ml-0 mt-2">
+      {if $statement->regionId}
+        {$region=$statement->getRegion()}
+        {* mimic tag presentation *}
+        <span class="tag mr-1">
+          <a
+            href="{Router::link('region/view')}/{$region->id}"
+            class="badge badge-pill badge-secondary">
+            {$region->name}
+          </a>
+        </span>
+      {/if}
+
       {foreach $statement->getTags() as $t}
         {include "bits/tag.tpl" link=true tooltip="{t}info-tag-view-statements{/t}"}
       {/foreach}

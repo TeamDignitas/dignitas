@@ -48,6 +48,7 @@ $statement->enforceEditPrivileges();
 
 if ($saveButton) {
   $statement->entityId = $entityId;
+  $statement->regionId = Request::get('regionId');
   $statement->summary = Request::get('summary');
   $statement->context = Request::get('context');
   $statement->goal = Request::get('goal');
@@ -147,6 +148,7 @@ if ($saveButton) {
   Smart::assign([
     'referrer' => Util::getReferrer(),
     'links' => $statement->getLinks(),
+    'regions' => Region::loadAll(),
     'tagIds' => ObjectTag::getTagIds($statement),
   ]);
 }

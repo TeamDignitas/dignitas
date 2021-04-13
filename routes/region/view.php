@@ -1,6 +1,7 @@
 <?php
 
 const ENTITY_LIMIT = 10;
+const STATEMENT_LIMIT = 10;
 
 $id = Request::get('id');
 
@@ -17,9 +18,17 @@ $entities = Model::factory('Entity')
   ->limit(ENTITY_LIMIT)
   ->find_many();
 
+$statementCount = Statement::count_by_regionId($region->id);
+$statements = Model::factory('Statement')
+  ->where('regionId', $region->id)
+  ->limit(STATEMENT_LIMIT)
+  ->find_many();
+
 Smart::assign([
   'region' => $region,
   'entities' => $entities,
   'entityCount' => $entityCount,
+  'statements' => $statements,
+  'statementCount' => $statementCount,
 ]);
 Smart::display('region/view.tpl');
