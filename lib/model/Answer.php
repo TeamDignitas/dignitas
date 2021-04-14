@@ -59,6 +59,14 @@ class Answer extends Proto {
   }
 
   /**
+   * Returns a human-readable description of the current proof value.
+   * Used in the revision history.
+   */
+  function getProofString() {
+    return $this->proof ? _('info-confirm-accept') : _('info-confirm-unaccept');
+  }
+
+  /**
    * Returns a human-readable message if this Answer is deleted or null
    * otherwise.
    *

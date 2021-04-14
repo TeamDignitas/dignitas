@@ -20,6 +20,10 @@ class RevisionAnswer extends Answer {
                         $prev->getStatusName(),
                         $this->getStatusName(),
                         $od, Ct::FIELD_CHANGE_STRING);
+    $this->compareField(_('label-proof'),
+                        $prev->getProofString(),
+                        $this->getProofString(),
+                        $od, Ct::FIELD_CHANGE_BOOLEAN);
 
     $od->checkReview($this);
 

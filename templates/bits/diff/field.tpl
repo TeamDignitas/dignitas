@@ -34,6 +34,10 @@
     <span style="padding-left: 1em; background-color: {$new};"></span>
     &nbsp; {$new}
 
+  {elseif $change.type == Ct::FIELD_CHANGE_BOOLEAN}
+
+    {$new}
+
   {else}
 
     <span class="diff-op2">{$old}</span>

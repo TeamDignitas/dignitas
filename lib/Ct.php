@@ -42,6 +42,7 @@ class Ct {
   const FIELD_CHANGE_LINK_LIST = 5;
   const FIELD_CHANGE_TAG_LIST = 6;
   const FIELD_CHANGE_RELATION_LIST = 7;
+  const FIELD_CHANGE_BOOLEAN = 8;
 
   // Sort criteria
   const SORT_CREATE_DATE_DESC = 0;
