@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-04-13 18:21+0300\n"
-"PO-Revision-Date: 2021-04-13 18:21+0300\n"
+"POT-Creation-Date: 2021-04-14 19:01+0300\n"
+"PO-Revision-Date: 2021-04-14 19:02+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -472,9 +472,9 @@ msgstr "filtre"
 msgid "label-term"
 msgstr "text"
 
-#: templates/bits/entityFilters.tpl:39 templates/entity/edit.tpl:199
-#: templates/statement/edit.tpl:143 lib/model/RevisionEntity.php:36
-#: lib/model/RevisionStatement.php:30
+#: templates/bits/entityFilters.tpl:39 templates/bits/statementFilters.tpl:100
+#: templates/entity/edit.tpl:199 templates/statement/edit.tpl:143
+#: lib/model/RevisionEntity.php:36 lib/model/RevisionStatement.php:30
 msgid "label-region"
 msgstr "regiune"
 
@@ -771,11 +771,11 @@ msgstr ""
 "Am înregistrat votul tău negativ. Ai pierdut un punct de reputație. Apreciem "
 "însă implicarea ta."
 
-#: templates/bits/scoreAndVote.tpl:26
+#: templates/bits/scoreAndVote.tpl:26 lib/model/Answer.php:66
 msgid "info-confirm-accept"
 msgstr "Răspuns acceptat ca demonstrație."
 
-#: templates/bits/scoreAndVote.tpl:29
+#: templates/bits/scoreAndVote.tpl:29 lib/model/Answer.php:66
 msgid "info-confirm-unaccept"
 msgstr "Răspuns respins ca demonstrație."
 
@@ -1883,61 +1883,61 @@ msgstr "a votat pentru a nu redeschide"
 msgid "action-retracted-flag"
 msgstr "și-a retras raportarea pentru"
 
-#: lib/model/Answer.php:72
+#: lib/model/Answer.php:80
 msgid "info-answer-deleted"
 msgstr "Acest răspuns a fost șters"
 
-#: lib/model/Answer.php:75
+#: lib/model/Answer.php:83
 msgid "info-answer-spam"
 msgstr "deoarece este spam."
 
-#: lib/model/Answer.php:76
+#: lib/model/Answer.php:84
 msgid "info-answer-abuse"
 msgstr "deoarece conține insulte sau abuzuri."
 
-#: lib/model/Answer.php:77
+#: lib/model/Answer.php:85
 msgid "info-answer-off-topic"
 msgstr "deoarece este pe lîngă subiect."
 
-#: lib/model/Answer.php:78
+#: lib/model/Answer.php:86
 msgid "info-answer-low-quality"
 msgstr "deoarece este de slabă calitate."
 
-#: lib/model/Answer.php:79
+#: lib/model/Answer.php:87
 msgid "info-answer-by-owner"
 msgstr "de către autorul său."
 
-#: lib/model/Answer.php:80 lib/model/Comment.php:62 lib/model/Entity.php:158
+#: lib/model/Answer.php:88 lib/model/Comment.php:62 lib/model/Entity.php:158
 #: lib/model/Statement.php:278
 msgid "info-by"
 msgstr "de către"
 
-#: lib/model/Answer.php:81 lib/model/Comment.php:63 lib/model/Entity.php:159
+#: lib/model/Answer.php:89 lib/model/Comment.php:63 lib/model/Entity.php:159
 #: lib/model/Statement.php:279
 msgid "info-other-reason"
 msgstr "pentru alt motiv."
 
-#: lib/model/Answer.php:116
+#: lib/model/Answer.php:124
 #, php-format
 msgid "info-minimum-reputation-add-answer-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a adăuga răspunsuri."
 
-#: lib/model/Answer.php:124
+#: lib/model/Answer.php:132
 #, php-format
 msgid "info-minimum-reputation-edit-answer-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a edita răspunsuri."
 
-#: lib/model/Answer.php:130
+#: lib/model/Answer.php:138
 msgid "info-only-moderator-edit-proof-answer"
 msgstr ""
 "Acest răspuns a fost acceptat ca demonstrație. Doar moderatorii îl mai pot "
 "modifica direct."
 
-#: lib/model/Answer.php:134
+#: lib/model/Answer.php:142
 msgid "info-banned-add-answer"
 msgstr "Îți este interzisă adăugarea de răspunsuri."
 
-#: lib/model/Answer.php:138
+#: lib/model/Answer.php:146
 msgid "info-banned-edit-answer"
 msgstr "Îți este interzisă editarea de răspunsuri."
 
@@ -2364,6 +2364,10 @@ msgstr "modificări la conținut"
 #: lib/model/RevisionStatement.php:38
 msgid "label-status"
 msgstr "stare"
+
+#: lib/model/RevisionAnswer.php:23
+msgid "label-proof"
+msgstr "acceptare"
 
 #: lib/model/RevisionEntity.php:14
 msgid "title-changes-profile"
