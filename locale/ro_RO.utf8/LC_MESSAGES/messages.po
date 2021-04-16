@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-04-14 19:01+0300\n"
-"PO-Revision-Date: 2021-04-14 19:02+0300\n"
+"POT-Creation-Date: 2021-04-16 15:39+0300\n"
+"PO-Revision-Date: 2021-04-16 15:39+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -472,7 +472,7 @@ msgstr "filtre"
 msgid "label-term"
 msgstr "text"
 
-#: templates/bits/entityFilters.tpl:39 templates/bits/statementFilters.tpl:100
+#: templates/bits/entityFilters.tpl:39 templates/bits/statementFilters.tpl:110
 #: templates/entity/edit.tpl:199 templates/statement/edit.tpl:143
 #: lib/model/RevisionEntity.php:36 lib/model/RevisionStatement.php:30
 msgid "label-region"
@@ -868,11 +868,15 @@ msgstr "cele mai vechi afirmații"
 msgid "label-other-filters"
 msgstr "alte filtre"
 
-#: templates/bits/statementFilters.tpl:85 templates/entity/edit.tpl:151
+#: templates/bits/statementFilters.tpl:82
+msgid "link-search-details"
+msgstr "ajutor pentru căutare"
+
+#: templates/bits/statementFilters.tpl:95 templates/entity/edit.tpl:151
 msgid "label-start-date"
 msgstr "de la data"
 
-#: templates/bits/statementFilters.tpl:94 templates/entity/edit.tpl:152
+#: templates/bits/statementFilters.tpl:104 templates/entity/edit.tpl:152
 msgid "label-end-date"
 msgstr "pînă la data"
 
@@ -1760,6 +1764,30 @@ msgstr "pînă la"
 #: templates/user/view.tpl:87
 msgid "link-ban"
 msgstr "blochează..."
+
+#: lib/Search.php:279
+msgid "search-keyword-closed"
+msgstr "inchis"
+
+#: lib/Search.php:279 lib/Search.php:283 lib/Search.php:305 lib/Search.php:309
+msgid "search-keyword-yes"
+msgstr "da"
+
+#: lib/Search.php:279 lib/Search.php:283
+msgid "search-keyword-no"
+msgstr "nu"
+
+#: lib/Search.php:283
+msgid "search-keyword-duplicate"
+msgstr "duplicat"
+
+#: lib/Search.php:288
+msgid "search-keyword-answers"
+msgstr "raspunsuri"
+
+#: lib/Search.php:293
+msgid "search-keyword-score"
+msgstr "scor"
 
 #: lib/Time.php:21 lib/Time.php:44
 msgid "date-format-ymd"
@@ -3097,7 +3125,7 @@ msgstr ""
 msgid "info-help-category-path-taken"
 msgstr "Această cale este deja folosită."
 
-#: routes/help/index.php:19
+#: routes/help/index.php:20
 msgid "info-no-such-help-item"
 msgstr "Pagina de ajutor cerută nu există."
 

@@ -68,13 +68,23 @@
 
   <div id="more-filters" class="collapse {if $term}show{/if}">
     <div class="row mb-2 small statement-filters">
-      <div class="col-12 col-sm-12 col-md-3 col-lg-3 mb-2">
+      <div class="input-group col-12 col-sm-12 col-md-3 col-lg-3 mb-2">
         <input
           type="text"
           name="term"
           class="form-control form-control-sm actionable"
           value="{$term}"
           placeholder="{t}label-term{/t}">
+        {if Config::SEARCH_URL}
+          <div class="input-group-append">
+            <a href="{Config::SEARCH_URL}"
+              class="btn btn-sm btn-link"
+              title="{t}link-search-details{/t}"
+              target="_blank">
+              {include "bits/icon.tpl" i=help}
+            </a>
+          </div>
+        {/if}
       </div>
 
       <div class="col-12 col-sm-12 col-md-3 col-lg-3 mb-2">

@@ -10,6 +10,7 @@ if ($path) {
   } else {
     $page = HelpPage::get_by_path($path);
     if ($page) {
+      Smart::addResources('imageModal');
       Smart::assign([
         'page' => $page,
         'category' => $page->getCategory(),

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-04-14 19:01+0300\n"
-"PO-Revision-Date: 2021-04-14 19:01+0300\n"
+"POT-Creation-Date: 2021-04-16 15:39+0300\n"
+"PO-Revision-Date: 2021-04-16 15:39+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -467,7 +467,7 @@ msgstr "filter"
 msgid "label-term"
 msgstr "text"
 
-#: templates/bits/entityFilters.tpl:39 templates/bits/statementFilters.tpl:100
+#: templates/bits/entityFilters.tpl:39 templates/bits/statementFilters.tpl:110
 #: templates/entity/edit.tpl:199 templates/statement/edit.tpl:143
 #: lib/model/RevisionEntity.php:36 lib/model/RevisionStatement.php:30
 msgid "label-region"
@@ -857,11 +857,15 @@ msgstr "oldest statements"
 msgid "label-other-filters"
 msgstr "other filters"
 
-#: templates/bits/statementFilters.tpl:85 templates/entity/edit.tpl:151
+#: templates/bits/statementFilters.tpl:82
+msgid "link-search-details"
+msgstr "search help"
+
+#: templates/bits/statementFilters.tpl:95 templates/entity/edit.tpl:151
 msgid "label-start-date"
 msgstr "start date"
 
-#: templates/bits/statementFilters.tpl:94 templates/entity/edit.tpl:152
+#: templates/bits/statementFilters.tpl:104 templates/entity/edit.tpl:152
 msgid "label-end-date"
 msgstr "end date"
 
@@ -1750,6 +1754,30 @@ msgstr "until"
 #: templates/user/view.tpl:87
 msgid "link-ban"
 msgstr "ban..."
+
+#: lib/Search.php:279
+msgid "search-keyword-closed"
+msgstr "closed"
+
+#: lib/Search.php:279 lib/Search.php:283 lib/Search.php:305 lib/Search.php:309
+msgid "search-keyword-yes"
+msgstr "yes"
+
+#: lib/Search.php:279 lib/Search.php:283
+msgid "search-keyword-no"
+msgstr "no"
+
+#: lib/Search.php:283
+msgid "search-keyword-duplicate"
+msgstr "duplicate"
+
+#: lib/Search.php:288
+msgid "search-keyword-answers"
+msgstr "answers"
+
+#: lib/Search.php:293
+msgid "search-keyword-score"
+msgstr "score"
 
 #: lib/Time.php:21 lib/Time.php:44
 msgid "date-format-ymd"
@@ -3067,7 +3095,7 @@ msgstr "Paths can only contain lowercase Latin letters, digits and dashes."
 msgid "info-help-category-path-taken"
 msgstr "This path is already used."
 
-#: routes/help/index.php:19
+#: routes/help/index.php:20
 msgid "info-no-such-help-item"
 msgstr "The help page you are looking for does not exist."
 
