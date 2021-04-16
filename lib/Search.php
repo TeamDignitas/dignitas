@@ -170,7 +170,7 @@ class Search {
             $query = $query->where_like('s.summary', "%{$value}%");
             break;
           case 'verdicts':
-            $query = $query->where_in('verdict', $value);
+            $query = $query->where_in('s.verdict', $value);
             break;
           default: die('Bad filter field.');
         }
