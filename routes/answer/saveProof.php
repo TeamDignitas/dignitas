@@ -30,6 +30,9 @@ try {
 
   $answer->proof = !$answer->proof;
   $answer->save();
+  $answer->notify($answer->proof
+                  ? Notification::TYPE_ANSWER_ACCEPTED
+                  : Notification::TYPE_ANSWER_REJECTED);
 
   $u = User::get_by_id($answer->userId);
   $sign = $answer->proof ? +1 : -1;

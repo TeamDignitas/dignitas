@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-04-16 15:39+0300\n"
-"PO-Revision-Date: 2021-04-16 15:39+0300\n"
+"POT-Creation-Date: 2021-04-17 10:49+0300\n"
+"PO-Revision-Date: 2021-04-17 10:49+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -2105,25 +2105,33 @@ msgstr "executive"
 msgid "flag-moderator"
 msgstr "moderator"
 
-#: lib/model/Notification.php:33
+#: lib/model/Notification.php:35
 msgid "notification-changes"
 msgstr "changes to"
 
-#: lib/model/Notification.php:35
+#: lib/model/Notification.php:37
 msgid "notification-vote"
 msgstr "new vote on"
 
-#: lib/model/Notification.php:37
+#: lib/model/Notification.php:39
 msgid "notification-new-answer"
 msgstr "new answer to"
 
-#: lib/model/Notification.php:39
+#: lib/model/Notification.php:41
 msgid "notification-new-comment"
 msgstr "new comment on"
 
-#: lib/model/Notification.php:41
+#: lib/model/Notification.php:43
 msgid "notification-mention"
 msgstr "you were mentioned in"
+
+#: lib/model/Notification.php:45
+msgid "notification-answer-accepted"
+msgstr "answer accepted as proof:"
+
+#: lib/model/Notification.php:47
+msgid "notification-answer-rejected"
+msgstr "answer rejected as proof:"
 
 #: lib/model/Relation.php:32
 msgid "since"

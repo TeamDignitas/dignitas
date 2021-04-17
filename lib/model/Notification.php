@@ -8,7 +8,9 @@ class Notification extends Precursor {
   const TYPE_NEW_ANSWER = 0x4;
   const TYPE_NEW_COMMENT = 0x8;
   const TYPE_MENTION = 0x10;
-  const TYPE_ALL = 0x1f;
+  const TYPE_ANSWER_ACCEPTED = 0x20;
+  const TYPE_ANSWER_REJECTED = 0x40;
+  const TYPE_ALL = 0x7f;
 
   const PAGE_SIZE = 50;
 
@@ -39,6 +41,10 @@ class Notification extends Precursor {
         return _('notification-new-comment');
       case self::TYPE_MENTION:
         return _('notification-mention');
+      case self::TYPE_ANSWER_ACCEPTED:
+        return _('notification-answer-accepted');
+      case self::TYPE_ANSWER_REJECTED:
+        return _('notification-answer-rejected');
     }
   }
 
