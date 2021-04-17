@@ -202,8 +202,12 @@ $(function() {
     }
   }
 
-  // ask for confirmation before navigating away from a modified field...
-  $('.has-unload-warning').on('change input', unsavedChangesHandler);
+  // Ask for confirmation before navigating away from a modified field. Do
+  // this with a delay because the remaining chars module calls change() upon
+  // initialization.
+  setTimeout(function() {
+    $('.has-unload-warning').on('change input', unsavedChangesHandler);
+  }, 2000);
 
   // ...except when actually submitting the form
   $('.has-unload-warning').closest('form').submit(function() {
