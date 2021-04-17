@@ -3,6 +3,9 @@ $(function() {
   var initialized = false;
 
   function init() {
+    if (!$('.CodeMirror').length) {
+      return; // no editor, for example for closed questions
+    }
     var cm = $('.CodeMirror')[0].CodeMirror;
     cm.on('focus', initAnswerResources);
     $('.answer-resources-link').click(toggleModal);
