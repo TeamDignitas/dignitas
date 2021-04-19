@@ -389,6 +389,12 @@ $(function() {
   });
 });
 
+/* Activate the first tab when we don't know which one is first */
+
+$(function() {
+  $('.activate-first-tab .nav-link:first-child').tab('show');
+});
+
 /******************************* comments *******************************/
 
 $(function() {

@@ -17,6 +17,7 @@ if ($entity->hasPendingEdit() && User::may(User::PRIV_REVIEW)) {
 Smart::assign([
   'entity' => $entity,
   'statements' => $entity->getStatements(),
+  'mentions' => $entity->getInvolvementStatements(),
 ]);
 Smart::addResources('flag', 'subscribe');
 Smart::display('entity/view.tpl');

@@ -207,6 +207,35 @@ class Entity extends Proto {
     return $results;
   }
 
+  /**
+   * Returns a list of statements that involve the entity and are visible to
+   * the active user.
+   *
+   * @return Statement[]
+   */
+  function getInvolvementStatements(int $limit = 10) {
+    // First load all the statements. Load up to twice the limit so we can
+    // filter it later.
+    $statements = Model::factory('Statement')
+      ->select('s.*')
+      ->table_alias('s')
+      ->join('involvement', ['s.id', '=', 'i.statementId'], 'i')
+      ->where_not_equal('status', Ct::STATUS_PENDING_EDIT)
+      ->where('i.entityId', $this->id)
+      ->order_by_desc('createDate')
+      ->limit(2 * $limit)
+      ->find_many();
+
+    // Now filter them by visibility.
+    $results = [];
+    foreach ($statements as $s) {
+      if ($s->isViewable() && (count($results) < $limit)) {
+        $results[] = $s;
+      }
+    }
+    return $results;
+  }
+
   function getMembers() {
     return Model::factory('Entity')
       ->table_alias('m')
