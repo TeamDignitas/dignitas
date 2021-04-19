@@ -237,6 +237,10 @@ class Statement extends Proto {
     return ObjectTag::getTags($this);
   }
 
+  function getInvolvements() {
+    return Involvement::getFor($this);
+  }
+
   /**
    * Returns human-readable information about the status of this Statement.
    *
@@ -385,6 +389,9 @@ class Statement extends Proto {
     foreach (ObjectTag::getObjectTags($this) as $ot) {
       $ot->deepClone($clone, [ 'objectId' => $clone->id]);
     }
+    foreach ($this->getInvolvements() as $inv) {
+      $inv->deepClone($clone, [ 'statementId' => $clone->id]);
+    }
     return $clone;
   }
 
@@ -396,6 +403,8 @@ class Statement extends Proto {
       $other, $this->getLinks(), $other->getLinks(), 'objectId');
     $this->mergeDependants(
       $other, ObjectTag::getObjectTags($this), ObjectTag::getObjectTags($other), 'objectId');
+    $this->mergeDependants(
+      $other, $this->getInvolvements(), $other->getInvolvements(), 'statementId');
 
     // a pending edit statement should not have answers, reviews or votes
   }
@@ -428,6 +437,7 @@ class Statement extends Proto {
     Link::deleteObject($this);
     ObjectTag::deleteObject($this);
     AttachmentReference::deleteObject($this);
+    Involvement::deleteFor($this);
     // a pending edit statement should not have answers, reviews or votes
 
     StatementExt::delete_all_by_statementId($this->id);

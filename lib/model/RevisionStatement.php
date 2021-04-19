@@ -78,6 +78,19 @@ class RevisionStatement extends Statement {
                           $od, Ct::FIELD_CHANGE_LINK);
     }
 
+    // added / removed involvements
+    $involvements = RevisionInvolvement::getChangesFor($this, 'insert');
+    $this->compareField(_('label-added-involvements'),
+                        $involvements,
+                        [],
+                        $od, Ct::FIELD_CHANGE_STRING_LIST);
+
+    $involvements = RevisionInvolvement::getChangesFor($this, 'delete');
+    $this->compareField(_('label-deleted-involvements'),
+                        $involvements,
+                        [],
+                        $od, Ct::FIELD_CHANGE_STRING_LIST);
+
     $od->checkReview($this);
 
     return $od;

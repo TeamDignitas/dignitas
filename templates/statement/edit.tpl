@@ -140,6 +140,26 @@
 
       <fieldset class="related-fields mb-5 ml-3">
         <div class="form-group row">
+          <label
+            for="field-involvements"
+            class="col-sm-12 col-lg-2 mt-2 pl-0">
+            {t}label-involvements{/t}
+          </label>
+          <div class="col-sm-12 col-lg-10 px-0">
+            <select
+              name="involvedEntityIds[]"
+              id="field-involvements"
+              class="form-control select2Entities"
+              data-placeholder="{t}info-involvements{/t}"
+              multiple>
+              {foreach $involvedEntityIds as $involvedEntityId}
+                <option value="{$involvedEntityId}" selected></option>
+              {/foreach}
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group row">
           <label class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-region{/t}</label>
           <div class="col-sm-12 col-lg-10 px-0">
             <select name="regionId" class="form-control">
@@ -158,7 +178,7 @@
         <div class="form-group row">
           <label class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-tags{/t}</label>
           <div class="col-sm-12 col-lg-10 px-0">
-            <select name="tagIds[]" class="form-control select2Tags col-10" multiple>
+            <select name="tagIds[]" class="form-control select2Tags" multiple>
               {foreach $tagIds as $tagId}
                 <option value="{$tagId}" selected></option>
               {/foreach}

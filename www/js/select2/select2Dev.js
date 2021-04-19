@@ -12,6 +12,12 @@ $(function() {
     minimumInputLength: 1,
     width: '100%',
   });
+
+  initSelect2('.select2Entities', URL_PREFIX + 'ajax/load-entities', {
+    ajax: { url: URL_PREFIX + 'ajax/search-entities' },
+    minimumInputLength: 1,
+    width: '100%',
+  });
 });
 
 /**

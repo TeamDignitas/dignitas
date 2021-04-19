@@ -66,6 +66,7 @@ if ($saveButton) {
     Request::getArray('linkUrls'));
 
   $tagIds = Request::getArray('tagIds');
+  $involvements = buildInvolvements($statement->id, Request::getArray('involvedEntityIds'));
 
   $errors = validate($statement, $links);
   if (empty($errors)) {
@@ -82,6 +83,7 @@ if ($saveButton) {
     Review::checkRecentlyClosedDeleted($statement);
     Link::update($statement, $links);
     ObjectTag::update($statement, $tagIds);
+    Involvement::updateDependants($involvements, $statement, 'statementId', 'rank');
 
     // grant verdict reputation
     if (User::isModerator()) {
@@ -120,6 +122,7 @@ if ($saveButton) {
       'referrer' => $referrer,
       'links' =>  $links,
       'tagIds' => $tagIds,
+      'involvedEntityIds' => Util::objectProperty($involvements, 'entityId'),
     ]);
   }
 } else if ($extensionSubmit) {
@@ -141,6 +144,7 @@ if ($saveButton) {
     'referrer' => Config::URL_PREFIX, // home
     'links' => $links,
     'tagIds' => [],
+    'involvedEntityIds' => [],
   ]);
 
 } else {
@@ -150,6 +154,7 @@ if ($saveButton) {
     'links' => $statement->getLinks(),
     'regions' => Region::loadAll(),
     'tagIds' => ObjectTag::getTagIds($statement),
+    'involvedEntityIds' => Involvement::getEntityIds($statement),
   ]);
 }
 
@@ -209,4 +214,16 @@ function validate($statement, $links) {
   }
 
   return $errors;
+}
+
+function buildInvolvements($statementId, $entityIds) {
+  $result = [];
+
+  foreach ($entityIds as $id) {
+    $result[] =
+      Involvement::get_by_statementId_entityId($statementId, $id) ?:
+      Involvement::create($statementId, $id);
+  }
+
+  return $result;
 }
