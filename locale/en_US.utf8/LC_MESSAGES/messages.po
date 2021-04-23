@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-04-19 17:25+0300\n"
-"PO-Revision-Date: 2021-04-19 17:26+0300\n"
+"POT-Creation-Date: 2021-04-23 18:27+0300\n"
+"PO-Revision-Date: 2021-04-23 18:27+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -188,7 +188,7 @@ msgstr "I forgot my password"
 msgid "label-remember-me"
 msgstr "Remember me for one year."
 
-#: templates/auth/login.tpl:71 templates/bits/navmenu.tpl:190
+#: templates/auth/login.tpl:71 templates/bits/navmenu.tpl:197
 msgid "link-log-in"
 msgstr "log in"
 
@@ -481,7 +481,7 @@ msgstr "test user login"
 msgid "label-reputation"
 msgstr "reputation"
 
-#: templates/bits/fakeLogin.tpl:54 templates/bits/navmenu.tpl:167
+#: templates/bits/fakeLogin.tpl:54 templates/bits/navmenu.tpl:174
 #: templates/user/view.tpl:19
 msgid "label-moderator"
 msgstr "moderator"
@@ -654,7 +654,7 @@ msgstr "How is loyalty computed?"
 msgid "info-markdown-help"
 msgstr "Markdown help"
 
-#: templates/bits/navmenu.tpl:10 templates/bits/navmenu.tpl:58
+#: templates/bits/navmenu.tpl:10 templates/bits/navmenu.tpl:65
 msgid "label-toggle-menu"
 msgstr "toggle sidebar"
 
@@ -670,34 +670,38 @@ msgstr "about us"
 msgid "link-contact"
 msgstr "contact us"
 
-#: templates/bits/navmenu.tpl:69 templates/bits/navmenu.tpl:71
+#: templates/bits/navmenu.tpl:53
+msgid "tooltip-dignitas-logo"
+msgstr "Dignitas logo"
+
+#: templates/bits/navmenu.tpl:76 templates/bits/navmenu.tpl:78
 #: templates/help/categoryView.tpl:3 templates/help/categoryView.tpl:14
 #: templates/help/index.tpl:3 templates/help/index.tpl:7
 #: templates/help/pageView.tpl:3 templates/help/pageView.tpl:14
 msgid "help-center"
 msgstr "help center"
 
-#: templates/bits/navmenu.tpl:106
+#: templates/bits/navmenu.tpl:113
 msgid "link-notifications"
 msgstr "notifications"
 
-#: templates/bits/navmenu.tpl:138
+#: templates/bits/navmenu.tpl:145
 msgid "link-my-profile"
 msgstr "my profile"
 
-#: templates/bits/navmenu.tpl:142
+#: templates/bits/navmenu.tpl:149
 msgid "link-dashboard"
 msgstr "dashboard"
 
-#: templates/bits/navmenu.tpl:148
+#: templates/bits/navmenu.tpl:155
 msgid "info-reputation-manual"
 msgstr "change reputation manually (will refresh the page)"
 
-#: templates/bits/navmenu.tpl:173
+#: templates/bits/navmenu.tpl:180
 msgid "link-change"
 msgstr "schimbă"
 
-#: templates/bits/navmenu.tpl:183
+#: templates/bits/navmenu.tpl:190
 msgid "link-log-out"
 msgstr "log out"
 
@@ -1125,9 +1129,13 @@ msgstr ""
 "This author has a pending edit. You can <a href=\"%1\" class=\"alert-link"
 "\">review it</a>."
 
-#: templates/entity/view.tpl:17
-msgid "statements"
-msgstr "afirmații"
+#: templates/entity/view.tpl:25 templates/user/view.tpl:33
+msgid "label-statements"
+msgstr "statements"
+
+#: templates/entity/view.tpl:37 templates/statement/edit.tpl:146
+msgid "label-involvements"
+msgstr "mentions"
 
 #: templates/entityType/edit.tpl:3 templates/entityType/edit.tpl:7
 msgid "title-edit-entity-type"
@@ -1485,10 +1493,6 @@ msgstr "sources"
 msgid "link-add-statement-link"
 msgstr "add a source"
 
-#: templates/statement/edit.tpl:146
-msgid "label-involvements"
-msgstr "mentions"
-
 #: templates/statement/edit.tpl:153
 msgid "info-involvements"
 msgstr "authors mentioned in the statement"
@@ -1726,10 +1730,6 @@ msgstr "user"
 #: templates/user/view.tpl:27
 msgid "label-user"
 msgstr "user"
-
-#: templates/user/view.tpl:33
-msgid "label-statements"
-msgstr "statements"
 
 #: templates/user/view.tpl:35
 msgid "label-answers"
@@ -2083,21 +2083,21 @@ msgstr "because it is unverifiable."
 msgid "info-entity-by-owner"
 msgstr "by the user who added it."
 
-#: lib/model/Entity.php:273
+#: lib/model/Entity.php:302
 #, php-format
 msgid "info-minimum-reputation-add-entity-%s"
 msgstr "You need at least %s reputation to add authors."
 
-#: lib/model/Entity.php:281
+#: lib/model/Entity.php:310
 #, php-format
 msgid "info-minimum-reputation-edit-entity-%s"
 msgstr "You need at least %s reputation to edit authors."
 
-#: lib/model/Entity.php:286
+#: lib/model/Entity.php:315
 msgid "info-banned-add-entity"
 msgstr "You are banned from adding authors."
 
-#: lib/model/Entity.php:290
+#: lib/model/Entity.php:319
 msgid "info-banned-edit-entity"
 msgstr "You are banned from editing authors."
 
@@ -3445,3 +3445,6 @@ msgstr "Cannot vote: object does not exist."
 #: routes/vote/save.php:50
 msgid "info-cannot-self-vote"
 msgstr "You cannot vote on your own messages."
+
+#~ msgid "statements"
+#~ msgstr "afirmații"

@@ -45,7 +45,13 @@
 
   <!-- logo -->
   <div class="mx-auto">
-    <a class="navbar-brand" href="{Config::URL_PREFIX}">DIGNITAS</a>
+    <a class="navbar-brand" href="{Config::URL_PREFIX}">
+      <img
+        src="{Config::URL_PREFIX}img/logo-white.svg"
+        height="24"
+        class="align-middle"
+        alt="{t}tooltip-dignitas-logo{/t}">
+    </a>
   </div>
 
   <button

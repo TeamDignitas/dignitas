@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-04-19 17:23+0300\n"
-"PO-Revision-Date: 2021-04-19 17:25+0300\n"
+"POT-Creation-Date: 2021-04-23 18:27+0300\n"
+"PO-Revision-Date: 2021-04-23 18:27+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -189,7 +189,7 @@ msgstr "mi-am uitat parola"
 msgid "label-remember-me"
 msgstr "Ține-mă minte un an."
 
-#: templates/auth/login.tpl:71 templates/bits/navmenu.tpl:190
+#: templates/auth/login.tpl:71 templates/bits/navmenu.tpl:197
 msgid "link-log-in"
 msgstr "autentificare"
 
@@ -486,7 +486,7 @@ msgstr "autentificare ca utilizator de test"
 msgid "label-reputation"
 msgstr "reputație"
 
-#: templates/bits/fakeLogin.tpl:54 templates/bits/navmenu.tpl:167
+#: templates/bits/fakeLogin.tpl:54 templates/bits/navmenu.tpl:174
 #: templates/user/view.tpl:19
 msgid "label-moderator"
 msgstr "moderator"
@@ -661,7 +661,7 @@ msgstr "Cum calculăm loialitatea?"
 msgid "info-markdown-help"
 msgstr "ajutor pentru Markdown"
 
-#: templates/bits/navmenu.tpl:10 templates/bits/navmenu.tpl:58
+#: templates/bits/navmenu.tpl:10 templates/bits/navmenu.tpl:65
 msgid "label-toggle-menu"
 msgstr "arată/ascunde meniul"
 
@@ -677,34 +677,38 @@ msgstr "despre noi"
 msgid "link-contact"
 msgstr "contact"
 
-#: templates/bits/navmenu.tpl:69 templates/bits/navmenu.tpl:71
+#: templates/bits/navmenu.tpl:53
+msgid "tooltip-dignitas-logo"
+msgstr "logoul Dignitas"
+
+#: templates/bits/navmenu.tpl:76 templates/bits/navmenu.tpl:78
 #: templates/help/categoryView.tpl:3 templates/help/categoryView.tpl:14
 #: templates/help/index.tpl:3 templates/help/index.tpl:7
 #: templates/help/pageView.tpl:3 templates/help/pageView.tpl:14
 msgid "help-center"
 msgstr "ajutor"
 
-#: templates/bits/navmenu.tpl:106
+#: templates/bits/navmenu.tpl:113
 msgid "link-notifications"
 msgstr "notificări"
 
-#: templates/bits/navmenu.tpl:138
+#: templates/bits/navmenu.tpl:145
 msgid "link-my-profile"
 msgstr "profilul meu"
 
-#: templates/bits/navmenu.tpl:142
+#: templates/bits/navmenu.tpl:149
 msgid "link-dashboard"
 msgstr "panou de control"
 
-#: templates/bits/navmenu.tpl:148
+#: templates/bits/navmenu.tpl:155
 msgid "info-reputation-manual"
 msgstr "schimbă reputația manual (va reîncărca pagina)"
 
-#: templates/bits/navmenu.tpl:173
+#: templates/bits/navmenu.tpl:180
 msgid "link-change"
 msgstr "schimbă"
 
-#: templates/bits/navmenu.tpl:183
+#: templates/bits/navmenu.tpl:190
 msgid "link-log-out"
 msgstr "ieșire"
 
@@ -1137,9 +1141,13 @@ msgstr ""
 "Acest autor are o modificare sugerată. O poți <a href=\"%1\" class=\"alert-"
 "link\">evalua</a>."
 
-#: templates/entity/view.tpl:17
-msgid "statements"
+#: templates/entity/view.tpl:25 templates/user/view.tpl:33
+msgid "label-statements"
 msgstr "afirmații"
+
+#: templates/entity/view.tpl:37 templates/statement/edit.tpl:146
+msgid "label-involvements"
+msgstr "mențiuni"
 
 #: templates/entityType/edit.tpl:3 templates/entityType/edit.tpl:7
 msgid "title-edit-entity-type"
@@ -1495,10 +1503,6 @@ msgstr "surse"
 msgid "link-add-statement-link"
 msgstr "adaugă o sursă"
 
-#: templates/statement/edit.tpl:146
-msgid "label-involvements"
-msgstr "mențiuni"
-
 #: templates/statement/edit.tpl:153
 msgid "info-involvements"
 msgstr "autori menționați în afirmație"
@@ -1736,10 +1740,6 @@ msgstr "utilizator"
 #: templates/user/view.tpl:27
 msgid "label-user"
 msgstr "utilizator"
-
-#: templates/user/view.tpl:33
-msgid "label-statements"
-msgstr "afirmații"
 
 #: templates/user/view.tpl:35
 msgid "label-answers"
@@ -2098,21 +2098,21 @@ msgstr "deoarece este neverificabil."
 msgid "info-entity-by-owner"
 msgstr "de către autorul său."
 
-#: lib/model/Entity.php:273
+#: lib/model/Entity.php:302
 #, php-format
 msgid "info-minimum-reputation-add-entity-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
-#: lib/model/Entity.php:281
+#: lib/model/Entity.php:310
 #, php-format
 msgid "info-minimum-reputation-edit-entity-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
-#: lib/model/Entity.php:286
+#: lib/model/Entity.php:315
 msgid "info-banned-add-entity"
 msgstr "Îți este interzisă adăugarea de autori."
 
-#: lib/model/Entity.php:290
+#: lib/model/Entity.php:319
 msgid "info-banned-edit-entity"
 msgstr "Îți este interzisă editarea de autori."
 
@@ -3479,3 +3479,6 @@ msgstr "Nu pot salva votul: obiectul nu există."
 #: routes/vote/save.php:50
 msgid "info-cannot-self-vote"
 msgstr "Nu poți vota propriile mesaje."
+
+#~ msgid "statements"
+#~ msgstr "afirmații"

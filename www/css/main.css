@@ -68,13 +68,6 @@ blockquote {
   color: var(--navbar-link-hover) !important;
 }
 
-.navbar-brand,
-.navbar-brand:hover {
-  font-family: Helvetica, sans-serif;
-  font-weight: bold;
-  font-size: 2rem !important;
-}
-
 .navbar .dropdown-menu {
   margin-top: 8px;
 }
