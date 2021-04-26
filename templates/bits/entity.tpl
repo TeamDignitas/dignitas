@@ -55,7 +55,7 @@
 
     {$relations=$entity->getRelations()}
     {if count($relations)}
-      <h6 class="font-weight-bold capitalize-first-word mt-5">{t}title-relations{/t}</h6>
+      <h6 class="font-weight-bold capitalize-first-word mt-4">{t}title-relations{/t}</h6>
       <ul class="relations">
         {foreach $relations as $r}
           <li>
@@ -79,25 +79,23 @@
       </div>
     {/if}
 
-    <div>
-      {$links=$entity->getLinks()}
-      {if count($links)}
-        <h6 class="font-weight-bold capitalize-first-word mt-4">{t}title-entity-links{/t}</h6>
+    {$links=$entity->getLinks()}
+    {if count($links)}
+      <h6 class="font-weight-bold capitalize-first-word mt-4">{t}title-entity-links{/t}</h6>
 
-        <ul id="links" class="list-inline list-inline-bullet">
-          {foreach $links as $l}
-            <li class="list-inline-item">
-              {include "bits/link.tpl"}
-            </li>
-          {/foreach}
-        </ul>
-      {/if}
-    </div>
+      <ul id="links" class="list-inline list-inline-bullet">
+        {foreach $links as $l}
+          <li class="list-inline-item">
+            {include "bits/link.tpl"}
+          </li>
+        {/foreach}
+      </ul>
+    {/if}
 
     <div class="title-members">
       {$members=$entity->getMembers()}
       {if count($members)}
-        <h6 class="font-weight-bold capitalize-first-word">{t}title-members{/t}</h6>
+        <h6 class="font-weight-bold capitalize-first-word mt-4">{t}title-members{/t}</h6>
 
         <ul>
           {foreach $members as $m}

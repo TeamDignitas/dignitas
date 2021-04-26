@@ -15,16 +15,16 @@
 
   {if $showEditLink && $fromEntity->isEditable()}
     <a
-      class="small text-muted ml-2"
-      href="{Router::link('relation/edit')}/{$r->id}">
+      class="btn btn-sm ml-2"
+      href="{Router::link('relation/edit')}/{$r->id}"
+      title="{t}relation-links{/t}">
       {include "bits/icon.tpl" i=mode_edit}
-      {t}relation-links{/t}
     </a>
   {/if}
 
   {$links=$r->getLinks()}
   {if count($links)}
-    <div class="small text-muted">
+    <div class="small text-muted ml-2">
       {t}label-relation-links{/t}:
       <ul class="list-inline list-inline-bullet d-inline">
         {foreach $links as $l}
