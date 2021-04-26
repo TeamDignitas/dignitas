@@ -17,3 +17,7 @@
   max-width: 100px;
   display: block;
 }
+
+.relation-fit {
+  max-width: 250px;
+}
