@@ -15,7 +15,7 @@
 
   {if $showEditLink && $fromEntity->isEditable()}
     <a
-      class="btn btn-sm btn-outline-secondary ml-2"
+      class="btn btn-sm ml-2"
       href="{Router::link('relation/edit')}/{$r->id}"
       title="{t}relation-links{/t}">
       {include "bits/icon.tpl" i=mode_edit}
