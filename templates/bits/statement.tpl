@@ -109,7 +109,7 @@
         <span class="tag mr-1">
           <a
             href="{Router::link('region/view')}/{$region->id}"
-            class="badge badge-pill badge-secondary">
+            class="badge badge-pill badge-secondary py-1 px-2">
             {$region->name}
           </a>
         </span>

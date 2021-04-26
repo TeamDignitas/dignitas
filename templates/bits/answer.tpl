@@ -86,7 +86,7 @@
 
         {if $answer->verdict != Statement::VERDICT_NONE}
           <div class="col-12 mt-2 mb-1">
-            <span class="badge badge-pill badge-secondary">
+            <span class="badge badge-pill badge-secondary py-1 px-2">
               {include "bits/icon.tpl" i=gavel}
               {$answer->getVerdictName()}
             </span>
