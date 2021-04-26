@@ -1,6 +1,6 @@
 {if $entity->getEntityType()->loyaltySource && $entity->hasLoyalties()}
   {$data=$entity->getLoyalties()}
-  <h6 class="font-weight-bold capitalize-first-word">{t}title-loyalty{/t}</h6>
+  <h6 class="font-weight-bold capitalize-first-word mt-4">{t}title-loyalty{/t}</h6>
 
   <div class="d-flex">
     {* use floor, not round, to ensure the sum doesn't exceed 100% *}
