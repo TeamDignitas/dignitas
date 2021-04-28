@@ -2,7 +2,7 @@
 <div class="mt-4">
   {foreach $statements as $i => $s}
     {$e=$s->getEntity()}
-    <div class="statement card verdict-{$s->verdict} mr-3 mb-3">
+    <div class="statement card verdict-{$s->verdict} mb-3">
 
       <div class="card-body row">
 
