@@ -149,6 +149,10 @@ blockquote {
   vertical-align: baseline;
   }
 
+  .select2-container .select2-search--inline .select2-search__field {
+    padding-top: 6px;
+  }
+
 /***************************** vote sidebar *****************************/
 
 .vote-container {
