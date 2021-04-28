@@ -76,7 +76,7 @@
           value="{$term}"
           placeholder="{t}label-term{/t}">
         {if Config::SEARCH_URL}
-          <div class="input-group-append">
+          <div class="input-group-append mt-1">
             <a href="{Config::SEARCH_URL}"
               class="btn btn-sm btn-link"
               title="{t}link-search-details{/t}"
