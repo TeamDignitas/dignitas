@@ -51,7 +51,6 @@
 
           {include "bits/paginationWrapper.tpl"
             n=$results.numEntityPages
-            k=1
             url="{Config::URL_PREFIX}ajax/search-entities"
             target="#entity-list-wrapper"}
         </div>
@@ -67,7 +66,6 @@
 
           {include "bits/paginationWrapper.tpl"
             n=$results.numStatementPages
-            k=1
             url="{Config::URL_PREFIX}ajax/search-statements"
             target="#statement-list-wrapper"}
         </div>

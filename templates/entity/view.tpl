@@ -47,7 +47,13 @@
           class="tab-pane fade"
           role="tabpanel"
           aria-labelledby="statements-tab">
-          {include "bits/statementList.tpl" showEntity=false}
+          <div id="statement-wrapper">
+            {include "bits/statementList.tpl" showEntity=false}
+          </div>
+          {include "bits/paginationWrapper.tpl"
+            n=$statementPages
+            url="{Config::URL_PREFIX}ajax/get-entity-statements/{$entity->id}/0"
+            target="#statement-wrapper"}
         </div>
       {/if}
 
@@ -57,7 +63,13 @@
           class="tab-pane fade"
           role="tabpanel"
           aria-labelledby="mentions-tab">
-          {include "bits/statementList.tpl" statements=$mentions}
+          <div id="mention-wrapper">
+            {include "bits/statementList.tpl" statements=$mentions}
+          </div>
+          {include "bits/paginationWrapper.tpl"
+            n=$mentionPages
+            url="{Config::URL_PREFIX}ajax/get-entity-statements/{$entity->id}/1"
+            target="#mention-wrapper"}
         </div>
       {/if}
     </div>

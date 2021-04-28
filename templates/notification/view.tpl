@@ -14,7 +14,6 @@
 
     {include "bits/paginationWrapper.tpl"
       n=$numPages
-      k=1
       url="{Config::URL_PREFIX}ajax/notifications"
       target="#notification-wrapper"}
 

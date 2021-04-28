@@ -183,57 +183,32 @@ class Entity extends Proto {
   }
 
   /**
-   * Returns a list of the entity's statements visible to the active user.
+   * Returns a query that loads or counts this entity's statements visible to
+   * the current user.
    *
-   * @return Statement[]
+   * @return ORMWrapper
    */
-  function getStatements($limit = 10) {
-    // First load all the statements. Load up to twice the limit so we can
-    // filter it later.
-    $statements = Model::factory('Statement')
-      ->where('entityId', $this->id)
-      ->where_not_equal('status', Ct::STATUS_PENDING_EDIT)
-      ->order_by_desc('createDate')
-      ->limit(2 * $limit)
-      ->find_many();
+  function getStatementQuery() {
+    $query = Model::factory('Statement')
+      ->where('entityId', $this->id);
 
-    // Now filter them by visibility.
-    $results = [];
-    foreach ($statements as $s) {
-      if ($s->isViewable() && (count($results) < $limit)) {
-        $results[] = $s;
-      }
-    }
-    return $results;
+    return Statement::filterViewable($query);
   }
 
   /**
-   * Returns a list of statements that involve the entity and are visible to
-   * the active user.
+   * Returns a query that loads or counts statements involving this entity
+   * that are visible to the active user.
    *
-   * @return Statement[]
+   * @return ORMWrapper
    */
-  function getInvolvementStatements(int $limit = 10) {
-    // First load all the statements. Load up to twice the limit so we can
-    // filter it later.
-    $statements = Model::factory('Statement')
+  function getInvolvementQuery() {
+    $query = Model::factory('Statement')
       ->select('s.*')
       ->table_alias('s')
       ->join('involvement', ['s.id', '=', 'i.statementId'], 'i')
-      ->where_not_equal('status', Ct::STATUS_PENDING_EDIT)
-      ->where('i.entityId', $this->id)
-      ->order_by_desc('createDate')
-      ->limit(2 * $limit)
-      ->find_many();
+      ->where('i.entityId', $this->id);
 
-    // Now filter them by visibility.
-    $results = [];
-    foreach ($statements as $s) {
-      if ($s->isViewable() && (count($results) < $limit)) {
-        $results[] = $s;
-      }
-    }
-    return $results;
+    return Statement::filterViewable($query);
   }
 
   function getMembers() {

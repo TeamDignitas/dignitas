@@ -14,10 +14,15 @@ if ($entity->hasPendingEdit() && User::may(User::PRIV_REVIEW)) {
   ]);
 }
 
+$sq = $entity->getStatementQuery();
+$iq = $entity->getInvolvementQuery();
+
 Smart::assign([
   'entity' => $entity,
-  'statements' => $entity->getStatements(),
-  'mentions' => $entity->getInvolvementStatements(),
+  'statements' => Statement::getPage($sq, 1),
+  'statementPages' => Statement::getNumPages($sq),
+  'mentions' => Statement::getPage($iq, 1),
+  'mentionPages' => Statement::getNumPages($iq),
 ]);
-Smart::addResources('flag', 'subscribe');
+Smart::addResources('flag', 'pagination', 'subscribe');
 Smart::display('entity/view.tpl');

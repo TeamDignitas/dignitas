@@ -16,7 +16,6 @@
 
       {include "bits/paginationWrapper.tpl"
         n=$numStatementPages
-        k=1
         url="{Config::URL_PREFIX}ajax/search-statements"
         target="#statement-list-wrapper"}
     </div>

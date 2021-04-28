@@ -19,6 +19,9 @@ class Statement extends Proto {
   const MAX_SUMMARY_LENGTH = 500;
   const MAX_GOAL_LENGTH = 500;
 
+  // number of statements per page for paginated statement lists
+  const PAGE_SIZE = 20;
+
   // Verdicts for all statements
   const VERDICT_NONE = 0;
   const VERDICT_UNDECIDABLE = 1;
@@ -294,6 +297,41 @@ class Statement extends Proto {
       (($this->status != Ct::STATUS_DELETED) ||  // active statement
        User::may(User::PRIV_DELETE_STATEMENT) || // privileged user
        (User::getActiveId() == $this->userId));  // owner
+  }
+
+  /**
+   * Adds clauses to a SQL query to select only those that are visible to the
+   * current user. This is necessary for pagination because we cannot filter
+   * the statements afterwards.
+   * Keep this in sync with isViewable().
+   */
+  static function filterViewable(ORMWrapper $query) {
+    $query = $query->where_not_equal('status', Ct::STATUS_PENDING_EDIT);
+
+    if (!User::may(User::PRIV_DELETE_STATEMENT)) { // unprivileged user
+      $query = $query->where_raw(
+        '(status != ?) OR (userId = ?)',
+        [ Ct::STATUS_DELETED, User::getActiveId() ]);
+    }
+
+    return $query;
+  }
+
+  static function getNumPages(ORMWrapper $query) {
+    $numStatements = $query->count();
+    return ceil($numStatements / self::PAGE_SIZE);
+  }
+
+  /**
+   * @param int $page 1-based page number to load
+   * @return Statement[]
+   */
+  static function getPage(ORMWrapper $query, int $page) {
+    return $query
+      ->order_by_desc('verdictDate')
+      ->offset(($page - 1) * self::PAGE_SIZE)
+      ->limit(self::PAGE_SIZE)
+      ->find_many();
   }
 
   protected function isEditableCore() {

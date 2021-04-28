@@ -108,7 +108,6 @@
 
           {include "bits/paginationWrapper.tpl"
             n=$actionPages
-            k=1
             url="{Config::URL_PREFIX}ajax/action-log/{$user->id}"
             target="#action-wrapper"}
         {/if}

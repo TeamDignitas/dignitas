@@ -140,6 +140,9 @@ class Router {
       'en_US.utf8' => 'edit-author',
       'ro_RO.utf8' => 'editeaza-autor',
     ],
+    'entity/getStatements' => [
+      'en_US.utf8' => 'ajax/get-entity-statements',
+    ],
     'entity/history' => [
       'en_US.utf8' => 'author-history',
       'ro_RO.utf8' => 'istoric-autor',
@@ -377,6 +380,7 @@ class Router {
     'domain/image' => [ 'id', 'fileName' ],
     'domain/edit' => [ 'id' ],
     'entity/edit' => [ 'id' ],
+    'entity/getStatements' => [ 'id', 'mentions' ],
     'entity/history' => [ 'id' ],
     'entity/image' => [ 'id', 'fileName' ],
     'entity/load' => [ 'ids' ],

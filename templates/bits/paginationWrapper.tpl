@@ -10,5 +10,5 @@
   data-url="{$url}"
   data-target="{$target}">
 
-  {include "bits/pagination.tpl"}
+  {include "bits/pagination.tpl" k=1}
 </div>
