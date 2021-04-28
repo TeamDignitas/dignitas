@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-04-23 18:27+0300\n"
-"PO-Revision-Date: 2021-04-23 18:27+0300\n"
+"POT-Creation-Date: 2021-04-28 11:09+0300\n"
+"PO-Revision-Date: 2021-04-28 11:09+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -43,7 +43,7 @@ msgid "title-dashboard"
 msgstr "dashboard"
 
 #: templates/aggregate/dashboard.tpl:17 templates/aggregate/index.tpl:30
-#: templates/bits/entity.tpl:119
+#: templates/bits/entity.tpl:117
 msgid "link-add-statement"
 msgstr "add a statement"
 
@@ -115,7 +115,7 @@ msgstr "search results"
 msgid "title-entities"
 msgstr "authors"
 
-#: templates/aggregate/search.tpl:20
+#: templates/aggregate/search.tpl:20 templates/tag/view.tpl:22
 msgid "title-statements"
 msgstr "statements"
 
@@ -188,7 +188,7 @@ msgstr "I forgot my password"
 msgid "label-remember-me"
 msgstr "Remember me for one year."
 
-#: templates/auth/login.tpl:71 templates/bits/navmenu.tpl:197
+#: templates/auth/login.tpl:71 templates/bits/navmenu.tpl:196
 msgid "link-log-in"
 msgstr "log in"
 
@@ -302,7 +302,7 @@ msgstr "permalink"
 
 #: templates/bits/answerEdit.tpl:24 templates/bits/statementFilters.tpl:46
 #: templates/statement/edit.tpl:192 lib/model/RevisionAnswer.php:15
-#: lib/model/RevisionStatement.php:22 lib/model/Statement.php:124
+#: lib/model/RevisionStatement.php:22 lib/model/Statement.php:127
 msgid "label-verdict"
 msgstr "verdict"
 
@@ -431,11 +431,11 @@ msgstr "region"
 msgid "title-profile"
 msgstr "profile"
 
-#: templates/bits/entity.tpl:85
+#: templates/bits/entity.tpl:84
 msgid "title-entity-links"
 msgstr "external links"
 
-#: templates/bits/entity.tpl:100
+#: templates/bits/entity.tpl:98
 msgid "title-members"
 msgstr "members"
 
@@ -481,7 +481,7 @@ msgstr "test user login"
 msgid "label-reputation"
 msgstr "reputation"
 
-#: templates/bits/fakeLogin.tpl:54 templates/bits/navmenu.tpl:174
+#: templates/bits/fakeLogin.tpl:54 templates/bits/navmenu.tpl:173
 #: templates/user/view.tpl:19
 msgid "label-moderator"
 msgstr "moderator"
@@ -654,7 +654,7 @@ msgstr "How is loyalty computed?"
 msgid "info-markdown-help"
 msgstr "Markdown help"
 
-#: templates/bits/navmenu.tpl:10 templates/bits/navmenu.tpl:65
+#: templates/bits/navmenu.tpl:10 templates/bits/navmenu.tpl:64
 msgid "label-toggle-menu"
 msgstr "toggle sidebar"
 
@@ -674,34 +674,34 @@ msgstr "contact us"
 msgid "tooltip-dignitas-logo"
 msgstr "Dignitas logo"
 
-#: templates/bits/navmenu.tpl:76 templates/bits/navmenu.tpl:78
+#: templates/bits/navmenu.tpl:75 templates/bits/navmenu.tpl:77
 #: templates/help/categoryView.tpl:3 templates/help/categoryView.tpl:14
 #: templates/help/index.tpl:3 templates/help/index.tpl:7
 #: templates/help/pageView.tpl:3 templates/help/pageView.tpl:14
 msgid "help-center"
 msgstr "help center"
 
-#: templates/bits/navmenu.tpl:113
+#: templates/bits/navmenu.tpl:112
 msgid "link-notifications"
 msgstr "notifications"
 
-#: templates/bits/navmenu.tpl:145
+#: templates/bits/navmenu.tpl:144
 msgid "link-my-profile"
 msgstr "my profile"
 
-#: templates/bits/navmenu.tpl:149
+#: templates/bits/navmenu.tpl:148
 msgid "link-dashboard"
 msgstr "dashboard"
 
-#: templates/bits/navmenu.tpl:155
+#: templates/bits/navmenu.tpl:154
 msgid "info-reputation-manual"
 msgstr "change reputation manually (will refresh the page)"
 
-#: templates/bits/navmenu.tpl:180
+#: templates/bits/navmenu.tpl:179
 msgid "link-change"
 msgstr "schimbă"
 
-#: templates/bits/navmenu.tpl:190
+#: templates/bits/navmenu.tpl:189
 msgid "link-log-out"
 msgstr "log out"
 
@@ -709,7 +709,7 @@ msgstr "log out"
 msgid "info-notification-unsubscribe"
 msgstr "unsubscribe from notifications for this item"
 
-#: templates/bits/relation.tpl:21
+#: templates/bits/relation.tpl:20
 msgid "relation-links"
 msgstr "sources"
 
@@ -1327,11 +1327,11 @@ msgstr "entities (%1 of %2 shown)"
 msgid "title-entity-count"
 msgstr "entities (%1)"
 
-#: templates/region/view.tpl:35 templates/tag/view.tpl:23
+#: templates/region/view.tpl:35
 msgid "title-statement-count-with-limit"
 msgstr "statements (%1 of %2 shown)"
 
-#: templates/region/view.tpl:37 templates/tag/view.tpl:25
+#: templates/region/view.tpl:37
 msgid "title-statement-count"
 msgstr "statements (%1)"
 
@@ -1930,12 +1930,12 @@ msgid "info-answer-by-owner"
 msgstr "by its author."
 
 #: lib/model/Answer.php:88 lib/model/Comment.php:62 lib/model/Entity.php:158
-#: lib/model/Statement.php:282
+#: lib/model/Statement.php:285
 msgid "info-by"
 msgstr "by"
 
 #: lib/model/Answer.php:89 lib/model/Comment.php:63 lib/model/Entity.php:159
-#: lib/model/Statement.php:283
+#: lib/model/Statement.php:286
 msgid "info-other-reason"
 msgstr "for other reasons."
 
@@ -2083,21 +2083,21 @@ msgstr "because it is unverifiable."
 msgid "info-entity-by-owner"
 msgstr "by the user who added it."
 
-#: lib/model/Entity.php:302
+#: lib/model/Entity.php:277
 #, php-format
 msgid "info-minimum-reputation-add-entity-%s"
 msgstr "You need at least %s reputation to add authors."
 
-#: lib/model/Entity.php:310
+#: lib/model/Entity.php:285
 #, php-format
 msgid "info-minimum-reputation-edit-entity-%s"
 msgstr "You need at least %s reputation to edit authors."
 
-#: lib/model/Entity.php:315
+#: lib/model/Entity.php:290
 msgid "info-banned-add-entity"
 msgstr "You are banned from adding authors."
 
-#: lib/model/Entity.php:319
+#: lib/model/Entity.php:294
 msgid "info-banned-edit-entity"
 msgstr "You are banned from editing authors."
 
@@ -2496,101 +2496,101 @@ msgstr "added mentions"
 msgid "label-deleted-involvements"
 msgstr "deleted mentions"
 
-#: lib/model/Statement.php:109
+#: lib/model/Statement.php:112
 msgid "statement-type-any"
 msgstr "any type"
 
-#: lib/model/Statement.php:110
+#: lib/model/Statement.php:113
 msgid "statement-type-claim"
 msgstr "claim"
 
-#: lib/model/Statement.php:111
+#: lib/model/Statement.php:114
 msgid "statement-type-flop"
 msgstr "flip-flop"
 
-#: lib/model/Statement.php:112
+#: lib/model/Statement.php:115
 msgid "statement-type-promise"
 msgstr "promise"
 
-#: lib/model/Statement.php:121
+#: lib/model/Statement.php:124
 msgid "label-claim-verdict"
 msgstr "claim verdict"
 
-#: lib/model/Statement.php:122
+#: lib/model/Statement.php:125
 msgid "label-flop-verdict"
 msgstr "flip-flop verdict"
 
-#: lib/model/Statement.php:123
+#: lib/model/Statement.php:126
 msgid "label-promise-verdict"
 msgstr "promise verdict"
 
-#: lib/model/Statement.php:259
+#: lib/model/Statement.php:262
 msgid "status-statement-duplicate"
 msgstr "duplicate"
 
-#: lib/model/Statement.php:261
+#: lib/model/Statement.php:264
 msgid "status-statement-closed"
 msgstr "closed"
 
-#: lib/model/Statement.php:262
+#: lib/model/Statement.php:265
 msgid "status-statement-deleted"
 msgstr "deleted"
 
-#: lib/model/Statement.php:271
+#: lib/model/Statement.php:274
 msgid "info-statement-closed"
 msgstr "This statement was closed"
 
-#: lib/model/Statement.php:272
+#: lib/model/Statement.php:275
 msgid "info-statement-deleted"
 msgstr "This statement was deleted"
 
-#: lib/model/Statement.php:275
+#: lib/model/Statement.php:278
 msgid "info-statement-spam"
 msgstr "because it is spam."
 
-#: lib/model/Statement.php:276
+#: lib/model/Statement.php:279
 msgid "info-statement-abuse"
 msgstr "because it is rude or abusive."
 
-#: lib/model/Statement.php:277
+#: lib/model/Statement.php:280
 msgid "info-statement-duplicate-of"
 msgstr "as a duplicate of the statement"
 
-#: lib/model/Statement.php:278
+#: lib/model/Statement.php:281
 msgid "info-statement-off-topic"
 msgstr "because it is off-topic."
 
-#: lib/model/Statement.php:279
+#: lib/model/Statement.php:282
 msgid "info-statement-unverifiable"
 msgstr "because it is unverifiable."
 
-#: lib/model/Statement.php:280
+#: lib/model/Statement.php:283
 msgid "info-statement-low-quality"
 msgstr "because it is low-quality."
 
-#: lib/model/Statement.php:281
+#: lib/model/Statement.php:284
 msgid "info-statement-by-owner"
 msgstr "by the user who added it."
 
-#: lib/model/Statement.php:302
+#: lib/model/Statement.php:340
 #, php-format
 msgid "info-minimum-reputation-add-statement-%s"
 msgstr "You need at least %s reputation to add statements."
 
-#: lib/model/Statement.php:310
+#: lib/model/Statement.php:348
 #, php-format
 msgid "info-minimum-reputation-edit-statement-%s"
 msgstr "You need at least %s reputation to edit statements."
 
-#: lib/model/Statement.php:316
+#: lib/model/Statement.php:354
 msgid "info-only-moderator-edit-statement-verdict"
 msgstr "This statement has a verdict. Only moderators can edit it directly."
 
-#: lib/model/Statement.php:320
+#: lib/model/Statement.php:358
 msgid "info-banned-add-statement"
 msgstr "You are banned from adding statements."
 
-#: lib/model/Statement.php:324
+#: lib/model/Statement.php:362
 msgid "info-banned-edit-statement"
 msgstr "You are banned from editing statements."
 
@@ -3049,7 +3049,8 @@ msgstr ""
 msgid "info-invalid-entity-links"
 msgstr "Some links are invalid."
 
-#: routes/entity/history.php:7 routes/entity/view.php:7
+#: routes/entity/getStatements.php:20 routes/entity/history.php:7
+#: routes/entity/view.php:7
 msgid "info-no-such-entity"
 msgstr "The author you are looking for does not exist."
 
@@ -3404,7 +3405,7 @@ msgstr "Tag saved."
 msgid "info-tag-loop"
 msgstr "You cannot select a descendant as the parent."
 
-#: routes/tag/view.php:10
+#: routes/tag/getStatements.php:19 routes/tag/view.php:8
 msgid "info-no-such-tag"
 msgstr "The tag you are looking for does not exist."
 
@@ -3445,6 +3446,3 @@ msgstr "Cannot vote: object does not exist."
 #: routes/vote/save.php:50
 msgid "info-cannot-self-vote"
 msgstr "You cannot vote on your own messages."
-
-#~ msgid "statements"
-#~ msgstr "afirmații"

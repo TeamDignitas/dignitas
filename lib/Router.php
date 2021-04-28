@@ -319,6 +319,9 @@ class Router {
       'en_US.utf8' => 'edit-tag',
       'ro_RO.utf8' => 'editeaza-eticheta',
     ],
+    'tag/getStatements' => [
+      'en_US.utf8' => 'ajax/get-tag-statements',
+    ],
     'tag/list' => [
       'en_US.utf8' => 'tags',
       'ro_RO.utf8' => 'etichete',
@@ -401,6 +404,7 @@ class Router {
     'statement/view' => [ 'id' ],
     'staticResource/edit' => [ 'id' ],
     'staticResource/view' => [ 'locale', 'name' ],
+    'tag/getStatements' => [ 'id' ],
     'tag/edit' => [ 'id' ],
     'tag/load' => [ 'ids' ],
     'tag/view' => [ 'id' ],

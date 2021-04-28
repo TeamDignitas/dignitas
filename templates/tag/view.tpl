@@ -19,14 +19,16 @@
 
     {if count($statements)}
       <h4 class="mt-5 capitalize-first-word">
-        {if $statementCount > count($statements)}
-          {t 1=count($statements) 2=$statementCount}title-statement-count-with-limit{/t}
-        {else}
-          {t 1=count($statements)}title-statement-count{/t}
-        {/if}
+        {t}title-statements{/t}
       </h4>
 
-      {include "bits/statementList.tpl"}
+      <div id="statement-wrapper">
+        {include "bits/statementList.tpl"}
+      </div>
+      {include "bits/paginationWrapper.tpl"
+        n=$statementPages
+        url="{Config::URL_PREFIX}ajax/get-tag-statements/{$tag->id}"
+        target="#statement-wrapper"}
     {/if}
   </div>
 {/block}

@@ -94,6 +94,23 @@ class Tag extends Proto {
   }
 
   /**
+   * Returns a query that loads or counts statements tagged with $this and
+   * visible to the current user.
+   *
+   * @return ORMWrapper
+   */
+  function getStatementQuery() {
+    $query = Model::factory('Statement')
+      ->select('s.*')
+      ->table_alias('s')
+      ->join('object_tag', ['ot.objectId', '=', 's.id'], 'ot')
+      ->where('ot.objectType', ObjectTag::TYPE_STATEMENT)
+      ->where('ot.tagId', $this->id);
+
+    return Statement::filterViewable($query);
+  }
+
+  /**
    * @return bool True iff the current user may delete this tag.
    */
   function isDeletable() {
