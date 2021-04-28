@@ -2,7 +2,7 @@
 {* @param $k current page *}
 {$ends=Util::getPaginationRange($n, $k)}
 <ul
-  class="pagination pagination-sm justify-content-end mr-3"
+  class="pagination pagination-sm justify-content-end"
   data-num-pages="{$n}">
   {* previous page *}
   <li class="page-item {if $k == 1}disabled{/if}">

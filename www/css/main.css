@@ -66,6 +66,7 @@ blockquote {
 
 .nav-item a:hover {
   color: var(--navbar-link-hover) !important;
+  background-color: var(--dark) !important;
 }
 
 .navbar .dropdown-menu {
@@ -147,6 +148,10 @@ blockquote {
   color: #999;
   border-radius: 0;
   vertical-align: baseline;
+  }
+
+  .select2-container .select2-search--inline .select2-search__field {
+    padding-top: 6px;
   }
 
 /***************************** vote sidebar *****************************/
