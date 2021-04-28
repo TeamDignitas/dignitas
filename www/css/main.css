@@ -66,6 +66,7 @@ blockquote {
 
 .nav-item a:hover {
   color: var(--navbar-link-hover) !important;
+  background-color: var(--dark) !important;
 }
 
 .navbar .dropdown-menu {
