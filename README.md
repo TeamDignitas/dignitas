@@ -1,6 +1,6 @@
 # Dignitas
 
-Dignitas is server-side software for collaborative fact checking. Many features are borrowed from [Stack Overflow](https://stackoverflow.com), such as the question and answer format and the privilege system.
+Dignitas is server-side software for collaborative fact checking. You can see a working copy at [dignitas.ro](https://dignitas.ro/). Many features are borrowed from [Stack Overflow](https://stackoverflow.com), such as the question and answer format and the privilege system.
 
 ## Installation instructions
 
