@@ -10,6 +10,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <link rel="icon" type="image/svg+xml" href="{Config::URL_PREFIX}img/favicon.svg">
+
     {* Preload some fonts. Note that this will be wasted for browsers that *}
     {* don't support WOFF2. *}
     {include "bits/preloadFont.tpl" font="spartan-v1-latin-ext_latin-regular"}
