@@ -48,6 +48,7 @@
     <a class="navbar-brand" href="{Config::URL_PREFIX}">
       <img
         src="{Config::URL_PREFIX}img/logo-white.svg"
+        width="151"
         height="24"
         class="align-middle"
         alt="{t}tooltip-dignitas-logo{/t}">
