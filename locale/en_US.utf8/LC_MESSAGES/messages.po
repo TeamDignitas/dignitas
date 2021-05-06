@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2021-04-28 11:09+0300\n"
-"PO-Revision-Date: 2021-04-28 11:09+0300\n"
+"PO-Revision-Date: 2021-05-06 14:37+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -1988,7 +1988,7 @@ msgstr "editing answers"
 
 #: lib/model/Ban.php:35
 msgid "ban-pending-edits"
-msgstr "You are banned from suggesting changes."
+msgstr "suggesting changes"
 
 #: lib/model/Ban.php:36
 msgid "ban-delete"
