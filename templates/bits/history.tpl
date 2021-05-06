@@ -27,5 +27,12 @@
         </tbody>
       </table>
     {/if}
+
+    <div class="mt-3">
+      <a href="{$backButtonUrl}" class="btn btn-sm btn-primary">
+        {include "bits/icon.tpl" i=arrow_back}
+        {$backButtonText}
+      </a>
+    </div>
   </div>
 {/block}

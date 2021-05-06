@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-04-28 11:09+0300\n"
-"PO-Revision-Date: 2021-05-06 14:38+0300\n"
+"POT-Creation-Date: 2021-05-06 15:19+0300\n"
+"PO-Revision-Date: 2021-05-06 15:20+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -189,7 +189,7 @@ msgstr "mi-am uitat parola"
 msgid "label-remember-me"
 msgstr "Ține-mă minte un an."
 
-#: templates/auth/login.tpl:71 templates/bits/navmenu.tpl:196
+#: templates/auth/login.tpl:71 templates/bits/navmenu.tpl:197
 msgid "link-log-in"
 msgstr "autentificare"
 
@@ -486,7 +486,7 @@ msgstr "autentificare ca utilizator de test"
 msgid "label-reputation"
 msgstr "reputație"
 
-#: templates/bits/fakeLogin.tpl:54 templates/bits/navmenu.tpl:173
+#: templates/bits/fakeLogin.tpl:54 templates/bits/navmenu.tpl:174
 #: templates/user/view.tpl:19
 msgid "label-moderator"
 msgstr "moderator"
@@ -632,7 +632,7 @@ msgstr "autor"
 msgid "label-changes"
 msgstr "modificări"
 
-#: templates/bits/historyButton.tpl:15
+#: templates/bits/historyButton.tpl:10 templates/bits/historyButton.tpl:17
 msgid "link-show-revisions"
 msgstr "arată versiunile"
 
@@ -661,7 +661,7 @@ msgstr "Cum calculăm loialitatea?"
 msgid "info-markdown-help"
 msgstr "ajutor pentru Markdown"
 
-#: templates/bits/navmenu.tpl:10 templates/bits/navmenu.tpl:64
+#: templates/bits/navmenu.tpl:10 templates/bits/navmenu.tpl:65
 msgid "label-toggle-menu"
 msgstr "arată/ascunde meniul"
 
@@ -677,38 +677,38 @@ msgstr "despre noi"
 msgid "link-contact"
 msgstr "contact"
 
-#: templates/bits/navmenu.tpl:53
+#: templates/bits/navmenu.tpl:54
 msgid "tooltip-dignitas-logo"
 msgstr "logoul Dignitas"
 
-#: templates/bits/navmenu.tpl:75 templates/bits/navmenu.tpl:77
+#: templates/bits/navmenu.tpl:76 templates/bits/navmenu.tpl:78
 #: templates/help/categoryView.tpl:3 templates/help/categoryView.tpl:14
 #: templates/help/index.tpl:3 templates/help/index.tpl:7
 #: templates/help/pageView.tpl:3 templates/help/pageView.tpl:14
 msgid "help-center"
 msgstr "ajutor"
 
-#: templates/bits/navmenu.tpl:112
+#: templates/bits/navmenu.tpl:113
 msgid "link-notifications"
 msgstr "notificări"
 
-#: templates/bits/navmenu.tpl:144
+#: templates/bits/navmenu.tpl:145
 msgid "link-my-profile"
 msgstr "profilul meu"
 
-#: templates/bits/navmenu.tpl:148
+#: templates/bits/navmenu.tpl:149
 msgid "link-dashboard"
 msgstr "panou de control"
 
-#: templates/bits/navmenu.tpl:154
+#: templates/bits/navmenu.tpl:155
 msgid "info-reputation-manual"
 msgstr "schimbă reputația manual (va reîncărca pagina)"
 
-#: templates/bits/navmenu.tpl:179
+#: templates/bits/navmenu.tpl:180
 msgid "link-change"
 msgstr "schimbă"
 
-#: templates/bits/navmenu.tpl:189
+#: templates/bits/navmenu.tpl:190
 msgid "link-log-out"
 msgstr "ieșire"
 
@@ -2876,6 +2876,10 @@ msgstr ""
 msgid "title-answer-history"
 msgstr "Istoricul răspunsului"
 
+#: routes/answer/history.php:21
+msgid "label-back-to-answer"
+msgstr "înapoi la răspuns"
+
 #: routes/answer/saveProof.php:15
 msgid "info-proof-requires-moderator"
 msgstr "Doar moderatorii pot accepta răspunsuri ca demonstrații."
@@ -2971,6 +2975,10 @@ msgstr "Răspunsul predefinit căutat nu există."
 #: routes/cannedResponse/history.php:15
 msgid "info-canned-response-history"
 msgstr "Istoricul răspunsului predefinit"
+
+#: routes/cannedResponse/history.php:16
+msgid "label-back-to-canned-response"
+msgstr "înapoi la răspunsuri"
 
 #: routes/cannedResponse/list.php:16 routes/help/categoryList.php:16
 msgid "info-order-saved"
@@ -3091,6 +3099,10 @@ msgstr ""
 msgid "info-entity-history"
 msgstr "Istoricul autorului"
 
+#: routes/entity/history.php:21
+msgid "label-back-to-entity"
+msgstr "înapoi la autor"
+
 #: routes/entityType/edit.php:17
 #, php-format
 msgid "info-entity-type-deleted-%s"
@@ -3189,6 +3201,10 @@ msgstr "Pagina de ajutor cerută nu există."
 #: routes/help/pageHistory.php:13
 msgid "info-help-page-history"
 msgstr "Istoricul paginii de ajutor"
+
+#: routes/help/pageHistory.php:18
+msgid "label-back-to-help-page"
+msgstr "înapoi la pagină"
 
 #: routes/helpers/changeLocale.php:7
 msgid "info-language-changed"
@@ -3386,6 +3402,10 @@ msgstr ""
 #: routes/statement/history.php:16
 msgid "title-statement-history"
 msgstr "Istoricul afirmației"
+
+#: routes/statement/history.php:21
+msgid "label-back-to-statement"
+msgstr "înapoi la afirmație"
 
 #: routes/staticResource/edit.php:16
 #, php-format

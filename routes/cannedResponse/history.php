@@ -13,6 +13,8 @@ if (!$cr) {
 Smart::assign([
   'history' => ObjectDiff::loadFor($cr),
   'title' => _('info-canned-response-history'),
+  'backButtonText' => _('label-back-to-canned-response'),
+  'backButtonUrl' => Router::link('cannedResponse/list'),
 ]);
 
 Smart::addResources('history');

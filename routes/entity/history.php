@@ -18,6 +18,8 @@ $title = _('info-entity-history') . ': ' . $entity;
 Smart::assign([
   'history' => ObjectDiff::loadFor($entity),
   'title' => $title,
+  'backButtonText' => _('label-back-to-entity'),
+  'backButtonUrl' => $entity->getViewUrl(),
 ]);
 
 Smart::addResources('history');

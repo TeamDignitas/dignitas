@@ -15,6 +15,8 @@ $title = _('info-help-page-history') . ': ' . $page->title;
 Smart::assign([
   'history' => ObjectDiff::loadFor($page),
   'title' => $title,
+  'backButtonText' => _('label-back-to-help-page'),
+  'backButtonUrl' => $page->getViewUrl(),
 ]);
 
 Smart::addResources('history');

@@ -18,6 +18,8 @@ $title = _('title-statement-history') . ': ' . $statement->summary;
 Smart::assign([
   'history' => ObjectDiff::loadFor($statement),
   'title' => $title,
+  'backButtonText' => _('label-back-to-statement'),
+  'backButtonUrl' => $statement->getViewUrl(),
 ]);
 
 Smart::addResources('history');

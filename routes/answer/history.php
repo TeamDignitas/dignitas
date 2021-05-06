@@ -18,6 +18,8 @@ $title = _('title-answer-history') . ' #' . $answer->id;
 Smart::assign([
   'history' => ObjectDiff::loadFor($answer),
   'title' => $title,
+  'backButtonText' => _('label-back-to-answer'),
+  'backButtonUrl' => $answer->getViewUrl(),
 ]);
 
 Smart::addResources('history');

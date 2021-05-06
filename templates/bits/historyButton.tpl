@@ -6,7 +6,9 @@
 {if $obj->hasRevisions()}
   <a
     href="{$obj->getHistoryUrl()}"
-    class="{$class}">
+    class="{$class}"
+    {if $iconOnly}title="{t}link-show-revisions{/t}"{/if}
+  >
 
     {* override $class from before *}
     {include "bits/icon.tpl" i=hourglass_full class=""}
