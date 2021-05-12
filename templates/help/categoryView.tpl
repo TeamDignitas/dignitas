@@ -1,6 +1,6 @@
 {extends "layout.tpl"}
 
-{block "title"}{cap}{$category->name}{/cap} - {cap}{t}help-center{/t}{/cap}{/block}
+{block "title"}{cap}{$category->getName()}{/cap} - {cap}{t}help-center{/t}{/cap}{/block}
 
 {block "content"}
   <div class="container my-5">
@@ -15,17 +15,17 @@
               </a>
             </li>
             <li class="breadcrumb-item active">
-              {cap}{$category->name}{/cap}
+              {cap}{$category->getName()}{/cap}
             </li>
           </ol>
         </nav>
 
-        <h1 class="my-4">{$category->name}</h1>
+        <h1 class="my-4">{$category->getName()}</h1>
 
         <ul>
         {foreach $category->getPages() as $p}
           <li class="pl-2">
-            <a href="{$p->getViewUrl()}">{$p->title}</a>
+            <a href="{$p->getViewUrl()}">{$p->getTitle()}</a>
           </li>
         {/foreach}
       </ul>

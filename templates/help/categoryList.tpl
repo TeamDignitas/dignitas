@@ -17,7 +17,7 @@
               </td>
 
               <td class="col-11">
-                {$c->name}
+                {$c->getName()}
               </td>
             </tr>
           {/foreach}

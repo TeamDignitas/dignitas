@@ -3,12 +3,12 @@
 $path = Request::get('path');
 
 if ($path) {
-  $cat = HelpCategory::get_by_path($path);
+  $cat = HelpCategory::getByPath($path);
   if ($cat) {
     Smart::assign('category', $cat);
     Smart::display('help/categoryView.tpl');
   } else {
-    $page = HelpPage::get_by_path($path);
+    $page = HelpPage::getByPath($path);
     if ($page) {
       Smart::addResources('imageModal');
       Smart::assign([
