@@ -1,6 +1,6 @@
 {extends "layout.tpl"}
 
-{block "title"}{cap}{$page->title}{/cap} - {cap}{t}help-center{/t}{/cap}{/block}
+{block "title"}{cap}{$page->getTitle()}{/cap} - {cap}{t}help-center{/t}{/cap}{/block}
 
 {block "content"}
   <div class="container my-5">
@@ -16,15 +16,15 @@
             </li>
             <li class="breadcrumb-item">
               <a href="{$category->getViewUrl()}">
-                {cap}{$category->name}{/cap}
+                {cap}{$category->getName()}{/cap}
               </a>
             </li>
           </ol>
         </nav>
 
-        <h1 class="mb-4">{$page->title}</h1>
+        <h1 class="mb-4">{$page->getTitle()}</h1>
 
-        {$page->contents|md}
+        {$page->getContents()|md}
 
 
         {if User::isModerator()}

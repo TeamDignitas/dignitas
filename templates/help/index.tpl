@@ -23,11 +23,11 @@
     {/if}
 
     {foreach $categories as $cat}
-      <h4 class="mt-3">{cap}{$cat->name}{/cap}</h4>
+      <h4 class="mt-3">{cap}{$cat->getName()}{/cap}</h4>
       <ul>
         {foreach $cat->getPages() as $p}
           <li>
-            <a href="{$p->getViewUrl()}">{$p->title}</a>
+            <a href="{$p->getViewUrl()}">{$p->getTitle()}</a>
           </li>
         {/foreach}
       </ul>
@@ -35,7 +35,9 @@
 
     {if User::isModerator()}
       <div class="my-4">
-        <a class="btn btn-sm btn-outline-secondary col-sm-12 col-md-4 col-lg-3 mb-2" href="{Router::link('help/categoryList')}">
+        <a
+          class="btn btn-sm btn-outline-secondary col-sm-12 col-md-4 col-lg-3 mb-2"
+          href="{Router::link('help/categoryList')}">
           {t}link-reorder-help-categories{/t}
         </a>
       </div>
