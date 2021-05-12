@@ -21,6 +21,7 @@ const CODEPOINTS = [
   'drag_indicator',
   'email',
   'emoji_events',
+  'error',
   'expand_more',
   'filter_list',
   'flag',

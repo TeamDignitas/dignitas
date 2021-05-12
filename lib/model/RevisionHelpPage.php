@@ -10,17 +10,6 @@ class RevisionHelpPage extends HelpPage {
   function compare($prev) {
     $od = new ObjectDiff($this);
 
-    // object fields
-    $this->diffField(_('title-changes-contents'), $prev->contents, $this->contents, $od);
-
-    $this->compareField(_('label-title'),
-                        $prev->title,
-                        $this->title,
-                        $od, Ct::FIELD_CHANGE_STRING);
-    $this->compareField(_('label-help-page-path'),
-                        $prev->path,
-                        $this->path,
-                        $od, Ct::FIELD_CHANGE_STRING);
     $this->compareField(_('label-category'),
                         $prev->getCategory()->name,
                         $this->getCategory()->name,
