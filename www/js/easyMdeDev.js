@@ -103,6 +103,16 @@ $(function() {
       cm.on('keyup', showHint);
     }
 
+    // If inside a tab, refresh the editor when the tab is shown.
+    // https://stackoverflow.com/a/38913835/6022817
+    $(this).closest('.tab-pane').each(function() {
+      var triggerId = $(this).data('trigger');
+      var trigger = $(triggerId);
+      trigger.on('shown.bs.tab', function() {
+        cm.refresh();
+      });
+    });
+
     // allow drag-and-drop file uploads, see
     // https://github.com/sparksuite/simplemde-markdown-editor/issues/328
     inlineAttachment.editors.codemirror4.attach(cm, {

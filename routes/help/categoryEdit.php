@@ -31,12 +31,9 @@ if ($deleteButton) {
 }
 
 if ($saveButton) {
-  foreach (LocaleUtil::getAll() as $locale => $ignored) {
-    // PHP does this to submitted variables names...
-    // https://www.php.net/manual/en/language.variables.external.php
-    $loc = str_replace('.', '_', $locale);
-    $translations[$locale]->name = Request::get("name-{$loc}");
-    $translations[$locale]->path = Request::get("path-{$loc}");
+  foreach (LocaleUtil::getAll() as $l => $ignored) {
+    $translations[$l]->name = Request::get("name-{$l}");
+    $translations[$l]->path = Request::get("path-{$l}");
   }
 
   $errors = validate($translations);
@@ -77,21 +74,26 @@ Smart::display('help/categoryEdit.tpl');
 
 /*************************************************************************/
 
+/**
+ * @param HelpCategoryT[] $translations
+ */
 function validate($translations) {
   $errors = [];
 
   foreach ($translations as $locale => $hct) {
+    $def = ($locale == Config::DEFAULT_LOCALE);
 
     // The default locale must be fully specified. Other locales may be fully
     // specified or entirely empty.
-    if (!$hct->name && ($hct->path || $locale == Config::DEFAULT_LOCALE)) {
+    if (!$hct->name && (!$hct->isEmpty() || $def)) {
       $errors['name'][$locale][] = _('info-must-enter-name');
     }
 
-    if (!$hct->path && ($hct->name || $locale == Config::DEFAULT_LOCALE)) {
+    if (!$hct->path && (!$hct->isEmpty() || $def)) {
       $errors['path'][$locale][] = _('info-must-enter-help-category-path');
     }
 
+    // other checks
     if (!preg_match('/^[-a-z0-9]*$/', $hct->path)) {
       $errors['path'][$locale][] = _('info-help-path-syntax');
     }
