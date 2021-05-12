@@ -30,6 +30,19 @@ class HelpCategory extends Proto {
     return $this->getTranslation()->path;
   }
 
+  /**
+   * Loads the HelpCategoryT object for every locale. If a HelpCategoryT does
+   * not exist for a locale, creates it (in memory only).
+   * @return array An array mapping every locale to a HelpCategoryT.
+   */
+  function getAllTranslations() {
+    $results = [];
+    foreach (LocaleUtil::getAll() as $code => $ignored) {
+      $results[$code] = HelpCategoryT::loadOrCreate($this->id, $code);
+    }
+    return $results;
+  }
+
   static function getByPath($path) {
     $hct = HelpCategoryT::get_by_path($path);
     return $hct

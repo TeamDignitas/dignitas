@@ -3,7 +3,7 @@
 {block "title"}{t}title-search-results{/t}{/block}
 
 {block "content"}
-  <div class="container my-5 search-results">
+  <div class="container my-5 tabs-wrapper">
 
     {if !$results.empty}
       <nav class="nav nav-pills mt-5 pt-5 activate-first-tab">

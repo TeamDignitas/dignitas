@@ -8,36 +8,71 @@
 
     <form method="post">
 
-      <fieldset class="related-fields mb-5 ml-3">
-        <div class="form-group row">
-          <label for="field-name" class="control-label col-sm-12 col-lg-2 mt-2 pl-0">
-            {t}label-name{/t}
-          </label>
-          <div class="col-sm-12 col-lg-10 px-0">
-            <input type="text"
-              class="form-control {if isset($errors.name)}is-invalid{/if}"
-              id="field-name"
-              name="name"
-              value="{$cat->name|escape}">
-            {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
-          </div>
+      <div class="tabs-wrapper">
+        {$locales=Config::LOCALES}
+
+        <nav class="nav nav-pills">
+          {foreach $translations as $locale => $ignored}
+            {$loc=$locale|replace:'.utf8':''} {* no dots in selectors *}
+            <a
+              class="nav-link {if $locale == Config::DEFAULT_LOCALE}active{/if}"
+              id="tab-{$loc}"
+              data-toggle="tab"
+              role="tab"
+              href="#tab-contents-{$loc}">
+              {t}{$locales.$locale}{/t}
+              {if isset($errors.name.$locale) || isset($errors.path.$locale)}
+                <span class="text-danger">
+                  {include "bits/icon.tpl" i=error}
+                </span>
+              {/if}
+            </a>
+          {/foreach}
+        </nav>
+
+        <div class="tab-content my-4">
+          {foreach $translations as $locale => $hct}
+            {$loc=$locale|replace:'.utf8':''} {* no dots in selectors *}
+            <div
+              id="tab-contents-{$loc}"
+              class="tab-pane fade {if $locale == Config::DEFAULT_LOCALE}show active{/if}"
+              role="tabpanel">
+
+              <fieldset class="related-fields mb-5 ml-3">
+                <div class="form-group row">
+                  <label for="field-name" class="control-label col-sm-12 col-lg-2 mt-2 pl-0">
+                    {t}label-name{/t}
+                  </label>
+                  <div class="col-sm-12 col-lg-10 px-0">
+                    <input type="text"
+                      class="form-control {if isset($errors.name.$locale)}is-invalid{/if}"
+                      id="field-name"
+                      name="name-{$locale}"
+                      value="{$hct->name|escape}">
+                    {include "bits/fieldErrors.tpl" errors=$errors.name.$locale|default:null}
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="field-path" class="control-label col-sm-12 col-lg-2 mt-2 pl-0">
+                    {t}label-help-category-path{/t}
+                  </label>
+                  <div class="col-sm-12 col-lg-10 px-0">
+                    <input type="text"
+                      class="form-control {if isset($errors.path.$locale)}is-invalid{/if}"
+                      id="field-path"
+                      name="path-{$locale}"
+                      value="{$hct->path|escape}"
+                      placeholder="{t}info-help-category-path{/t}">
+                    {include "bits/fieldErrors.tpl" errors=$errors.path.$locale|default:null}
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          {/foreach}
         </div>
 
-        <div class="form-group row">
-          <label for="field-path" class="control-label col-sm-12 col-lg-2 mt-2 pl-0">
-            {t}label-help-category-path{/t}
-          </label>
-          <div class="col-sm-12 col-lg-10 px-0">
-            <input type="text"
-              class="form-control {if isset($errors.path)}is-invalid{/if}"
-              id="field-path"
-              name="path"
-              value="{$cat->path|escape}"
-              placeholder="{t}info-help-category-path{/t}">
-            {include "bits/fieldErrors.tpl" errors=$errors.path|default:null}
-          </div>
-        </div>
-      </fieldset>
+      </div>
 
       <fieldset class="mt-5">
         <legend>{cap}{t}title-help-pages-in-category{/t}{/cap}</legend>
@@ -52,7 +87,7 @@
                 </td>
 
                 <td class="col-11">
-                  {$p->title}
+                  {$p->getTitle()}
                 </td>
               </tr>
             {/foreach}

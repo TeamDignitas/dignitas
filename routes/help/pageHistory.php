@@ -10,10 +10,10 @@ if (!$page) {
   Util::redirectToHome();
 }
 
-$title = _('info-help-page-history') . ': ' . $page->title;
+$title = _('info-help-page-history') . ': ' . $page->getTitle();
 
 Smart::assign([
-  'history' => ObjectDiff::loadFor($page),
+  'history' => ObjectDiff::loadFor($page->getTranslation()),
   'title' => $title,
   'backButtonText' => _('label-back-to-help-page'),
   'backButtonUrl' => $page->getViewUrl(),

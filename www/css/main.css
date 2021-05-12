@@ -138,7 +138,7 @@ blockquote {
   border-color: #999;
 }
 
-.search-results .nav {
+.tabs-wrapper .nav {
   border-bottom: 1px solid #999;
 }
 
@@ -148,11 +148,11 @@ blockquote {
   color: #999;
   border-radius: 0;
   vertical-align: baseline;
-  }
+}
 
-  .select2-container .select2-search--inline .select2-search__field {
-    padding-top: 6px;
-  }
+.select2-container .select2-search--inline .select2-search__field {
+  padding-top: 6px;
+}
 
 /***************************** vote sidebar *****************************/
 
