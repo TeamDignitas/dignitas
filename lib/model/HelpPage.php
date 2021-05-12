@@ -44,6 +44,19 @@ class HelpPage extends Proto {
     return $this->getTranslation()->contents;
   }
 
+  /**
+   * Loads the HelpPageT object for every locale. If a HelpPageT does
+   * not exist for a locale, creates it (in memory only).
+   * @return array An array mapping every locale to a HelpPageT.
+   */
+  function getAllTranslations() {
+    $results = [];
+    foreach (LocaleUtil::getAll() as $code => $ignored) {
+      $results[$code] = HelpPageT::loadOrCreate($this->id, $code);
+    }
+    return $results;
+  }
+
   static function getByPath($path) {
     $hpt = HelpPageT::get_by_path($path);
     return $hpt

@@ -28,6 +28,10 @@ class Request {
 
   /* Reads a request parameter. Cleans up string and array values. */
   static function get($name, $default = null) {
+    // PHP does this to submitted variables names...
+    // https://www.php.net/manual/en/language.variables.external.php
+    $name = str_replace('.', '_', $name);
+
     return $_REQUEST[$name] ?? $default;
   }
 
