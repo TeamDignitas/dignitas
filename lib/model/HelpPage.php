@@ -52,7 +52,7 @@ class HelpPage extends Proto {
   function getAllTranslations() {
     $results = [];
     foreach (LocaleUtil::getAll() as $code => $ignored) {
-      $results[$code] = HelpPageT::loadOrCreate($this->id, $code);
+      $results[$code] = HelpPageT::loadOrCreate((int)$this->id, $code);
     }
     return $results;
   }
