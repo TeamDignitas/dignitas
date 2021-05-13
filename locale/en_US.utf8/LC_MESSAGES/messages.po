@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-05-06 15:19+0300\n"
-"PO-Revision-Date: 2021-05-06 15:19+0300\n"
+"POT-Creation-Date: 2021-05-13 10:33+0300\n"
+"PO-Revision-Date: 2021-05-13 10:33+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -140,8 +140,8 @@ msgstr "edit answer"
 #: templates/answer/edit.tpl:16 templates/auth/resetPassword.tpl:46
 #: templates/bits/commentForm.tpl:44 templates/cannedResponse/edit.tpl:43
 #: templates/domain/edit.tpl:100 templates/entity/edit.tpl:288
-#: templates/entityType/edit.tpl:110 templates/help/categoryEdit.tpl:82
-#: templates/help/pageEdit.tpl:98 templates/region/edit.tpl:98
+#: templates/entityType/edit.tpl:110 templates/help/categoryEdit.tpl:117
+#: templates/help/pageEdit.tpl:138 templates/region/edit.tpl:98
 #: templates/region/list.tpl:46 templates/relation/edit.tpl:30
 #: templates/relationType/edit.tpl:157 templates/statement/edit.tpl:246
 #: templates/staticResource/edit.tpl:97 templates/tag/edit.tpl:183
@@ -317,7 +317,7 @@ msgstr "Are you sure you want to delete this answer?"
 #: templates/bits/answerEdit.tpl:61 templates/bits/comment.tpl:49
 #: templates/cannedResponse/edit.tpl:32 templates/domain/edit.tpl:82
 #: templates/entity/edit.tpl:267 templates/entityType/edit.tpl:99
-#: templates/help/categoryEdit.tpl:71 templates/help/pageEdit.tpl:87
+#: templates/help/categoryEdit.tpl:106 templates/help/pageEdit.tpl:127
 #: templates/region/edit.tpl:77 templates/relationType/edit.tpl:136
 #: templates/statement/edit.tpl:225 templates/staticResource/edit.tpl:86
 #: templates/tag/edit.tpl:155
@@ -337,8 +337,8 @@ msgstr "reopen"
 #: templates/bits/flagModal.tpl:190 templates/cannedResponse/edit.tpl:38
 #: templates/cannedResponse/list.tpl:52 templates/domain/edit.tpl:95
 #: templates/entity/edit.tpl:283 templates/entityType/edit.tpl:105
-#: templates/help/categoryEdit.tpl:77 templates/help/categoryList.tpl:30
-#: templates/help/pageEdit.tpl:93 templates/invite/add.tpl:31
+#: templates/help/categoryEdit.tpl:112 templates/help/categoryList.tpl:30
+#: templates/help/pageEdit.tpl:133 templates/invite/add.tpl:31
 #: templates/region/edit.tpl:90 templates/relation/edit.tpl:25
 #: templates/relationType/edit.tpl:152 templates/statement/edit.tpl:241
 #: templates/staticResource/edit.tpl:92 templates/tag/edit.tpl:178
@@ -897,7 +897,7 @@ msgstr "unwatch"
 msgid "title-edit-canned-response"
 msgstr "edit canned response"
 
-#: templates/cannedResponse/edit.tpl:12 templates/help/pageEdit.tpl:64
+#: templates/cannedResponse/edit.tpl:12 templates/help/pageEdit.tpl:100
 #: templates/staticResource/edit.tpl:51
 msgid "label-contents"
 msgstr "contents"
@@ -936,7 +936,7 @@ msgstr "edit domain"
 
 #: templates/domain/edit.tpl:14 templates/domain/list.tpl:19
 #: templates/entity/edit.tpl:29 templates/entityType/edit.tpl:14
-#: templates/entityType/list.tpl:18 templates/help/categoryEdit.tpl:14
+#: templates/entityType/list.tpl:18 templates/help/categoryEdit.tpl:44
 #: templates/region/edit.tpl:24 templates/relationType/edit.tpl:13
 #: templates/relationType/list.tpl:24 templates/staticResource/edit.tpl:14
 #: templates/staticResource/list.tpl:18 templates/tag/edit.tpl:25
@@ -1193,19 +1193,19 @@ msgstr "add an author type"
 msgid "title-edit-help-category"
 msgstr "edit category"
 
-#: templates/help/categoryEdit.tpl:28
+#: templates/help/categoryEdit.tpl:58
 msgid "label-help-category-path"
 msgstr "path"
 
-#: templates/help/categoryEdit.tpl:36
+#: templates/help/categoryEdit.tpl:66
 msgid "info-help-category-path"
 msgstr "visible in the category's URL"
 
-#: templates/help/categoryEdit.tpl:43
+#: templates/help/categoryEdit.tpl:78
 msgid "title-help-pages-in-category"
 msgstr "pages in this category"
 
-#: templates/help/categoryEdit.tpl:69
+#: templates/help/categoryEdit.tpl:104
 msgid "info-confirm-delete-help-category"
 msgstr "Are you sure you want to delete this category?"
 
@@ -1221,7 +1221,7 @@ msgstr "add a category"
 msgid "link-add-help-page"
 msgstr "add a page"
 
-#: templates/help/index.tpl:39
+#: templates/help/index.tpl:41
 msgid "link-reorder-help-categories"
 msgstr "reorder categories"
 
@@ -1229,23 +1229,24 @@ msgstr "reorder categories"
 msgid "title-edit-help-page"
 msgstr "edit help page"
 
-#: templates/help/pageEdit.tpl:14 lib/model/RevisionHelpPage.php:16
-msgid "label-title"
-msgstr "title"
-
-#: templates/help/pageEdit.tpl:28 lib/model/RevisionHelpPage.php:20
-msgid "label-help-page-path"
-msgstr "path"
-
-#: templates/help/pageEdit.tpl:36
-msgid "info-help-page-path"
-msgstr "visible in the page's URL"
-
-#: templates/help/pageEdit.tpl:42 lib/model/RevisionHelpPage.php:24
+#: templates/help/pageEdit.tpl:13 lib/model/RevisionHelpPage.php:13
+#: lib/model/RevisionHelpPageT.php:39
 msgid "label-category"
 msgstr "category"
 
-#: templates/help/pageEdit.tpl:85
+#: templates/help/pageEdit.tpl:68 lib/model/RevisionHelpPageT.php:19
+msgid "label-title"
+msgstr "title"
+
+#: templates/help/pageEdit.tpl:82 lib/model/RevisionHelpPageT.php:23
+msgid "label-help-page-path"
+msgstr "path"
+
+#: templates/help/pageEdit.tpl:90
+msgid "info-help-page-path"
+msgstr "visible in the page's URL"
+
+#: templates/help/pageEdit.tpl:125
 msgid "info-confirm-delete-help-page"
 msgstr "Are you sure you want to delete this page?"
 
@@ -2383,7 +2384,7 @@ msgid "info-added-reopen-queue"
 msgstr "The post was added to the reopen queue and will be evaluated soon."
 
 #: lib/model/RevisionAnswer.php:13 lib/model/RevisionCannedResponse.php:14
-#: lib/model/RevisionHelpPage.php:14
+#: lib/model/RevisionHelpPageT.php:14
 msgid "title-changes-contents"
 msgstr "changes to contents"
 
@@ -2996,7 +2997,7 @@ msgid "info-domain-saved"
 msgstr "Domain saved."
 
 #: routes/domain/edit.php:80 routes/entity/edit.php:143
-#: routes/entityType/edit.php:57 routes/help/categoryEdit.php:67
+#: routes/entityType/edit.php:57 routes/help/categoryEdit.php:91
 #: routes/region/edit.php:86 routes/relationType/edit.php:72
 #: routes/staticResource/edit.php:49 routes/tag/edit.php:108
 msgid "info-must-enter-name"
@@ -3034,7 +3035,8 @@ msgstr "Author added."
 msgid "info-entity-updated"
 msgstr "Author updated."
 
-#: routes/entity/edit.php:107 routes/statement/edit.php:119
+#: routes/entity/edit.php:107 routes/help/categoryEdit.php:63
+#: routes/help/pageEdit.php:50 routes/statement/edit.php:119
 msgid "info-validation-error"
 msgstr "There are some errors in the data. Please fix them."
 
@@ -3107,30 +3109,34 @@ msgstr "Cannot flag item as a duplicate of itself."
 msgid "info-flag-saved"
 msgstr "Your flag was saved."
 
-#: routes/help/categoryEdit.php:22
+#: routes/help/categoryEdit.php:24
 #, php-format
 msgid "info-help-category-deleted-%s"
 msgstr "Category %s deleted."
 
-#: routes/help/categoryEdit.php:26
+#: routes/help/categoryEdit.php:28
 msgid "info-cannot-delete-help-category"
 msgstr "Cannot delete this category because it contains pages."
 
-#: routes/help/categoryEdit.php:47
+#: routes/help/categoryEdit.php:60
 msgid "info-help-category-saved"
 msgstr "Category saved."
 
-#: routes/help/categoryEdit.php:71
+#: routes/help/categoryEdit.php:95
 msgid "info-must-enter-help-category-path"
 msgstr "Please enter a path."
 
-#: routes/help/categoryEdit.php:75 routes/help/pageEdit.php:62
+#: routes/help/categoryEdit.php:100 routes/help/pageEdit.php:94
 msgid "info-help-path-syntax"
 msgstr "Paths can only contain lowercase Latin letters, digits and dashes."
 
-#: routes/help/categoryEdit.php:80
+#: routes/help/categoryEdit.php:105
 msgid "info-help-category-path-taken"
 msgstr "This path is already used."
+
+#: routes/help/categoryEdit.php:111 routes/help/pageEdit.php:105
+msgid "info-duplicate-path-in-form"
+msgstr "This path is used elsewhere in this form."
 
 #: routes/help/index.php:20
 msgid "info-no-such-help-item"
@@ -3140,29 +3146,29 @@ msgstr "The help page you are looking for does not exist."
 msgid "info-help-page-deleted"
 msgstr "Page deleted."
 
-#: routes/help/pageEdit.php:33
+#: routes/help/pageEdit.php:47
 msgid "info-help-page-saved"
 msgstr "Page saved."
 
-#: routes/help/pageEdit.php:50
+#: routes/help/pageEdit.php:72
 msgid "info-must-select-help-page-category"
 msgstr "Please select a category."
 
-#: routes/help/pageEdit.php:54
+#: routes/help/pageEdit.php:81
 msgid "info-must-enter-help-page-title"
 msgstr "Please enter a page title."
 
-#: routes/help/pageEdit.php:58
+#: routes/help/pageEdit.php:85
 msgid "info-must-enter-help-page-path"
 msgstr "Please enter a path."
 
-#: routes/help/pageEdit.php:67
-msgid "info-help-page-path-taken"
-msgstr "This path is already used."
-
-#: routes/help/pageEdit.php:71
+#: routes/help/pageEdit.php:89
 msgid "info-must-enter-help-page-contents"
 msgstr "Please enter the page contents."
+
+#: routes/help/pageEdit.php:99
+msgid "info-help-page-path-taken"
+msgstr "This path is already used."
 
 #: routes/help/pageHistory.php:9
 msgid "info-no-such-help-page"

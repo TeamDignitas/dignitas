@@ -80,6 +80,7 @@ Smart::display('help/categoryEdit.tpl');
  */
 function validate($translations) {
   $errors = [];
+  $paths = [];
 
   foreach ($translations as $locale => $hct) {
     $def = ($locale == Config::DEFAULT_LOCALE);
@@ -104,6 +105,13 @@ function validate($translations) {
       $errors['path'][$locale][] = _('info-help-category-path-taken');
     }
 
+    // ensure that all paths on this page are distinct from one another
+    if ($hct->path) {
+      if (isset($paths[$hct->path])) {
+        $errors['path'][$locale][] = _('info-duplicate-path-in-form');
+      }
+      $paths[$hct->path] = true;
+    }
   }
 
   return $errors;

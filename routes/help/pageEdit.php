@@ -66,6 +66,7 @@ Smart::display('help/pageEdit.tpl');
  */
 function validate(HelpPage $page, array $translations) {
   $errors = [];
+  $paths = [];
 
   if (!$page->categoryId) {
     $errors['categoryId'][] = _('info-must-select-help-page-category');
@@ -98,6 +99,13 @@ function validate(HelpPage $page, array $translations) {
       $errors['path'][$locale][] = _('info-help-page-path-taken');
     }
 
+    // ensure that all paths on this page are distinct from one another
+    if ($hpt->path) {
+      if (isset($paths[$hpt->path])) {
+        $errors['path'][$locale][] = _('info-duplicate-path-in-form');
+      }
+      $paths[$hpt->path] = true;
+    }
   }
 
   return $errors;
