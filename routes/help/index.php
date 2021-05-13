@@ -5,11 +5,13 @@ $path = Request::get('path');
 if ($path) {
   $cat = HelpCategory::getByPath($path);
   if ($cat) {
+    $cat->updateRelAlternates();
     Smart::assign('category', $cat);
     Smart::display('help/categoryView.tpl');
   } else {
     $page = HelpPage::getByPath($path);
     if ($page) {
+      $page->updateRelAlternates();
       Smart::addResources('imageModal');
       Smart::assign([
         'page' => $page,

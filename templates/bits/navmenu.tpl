@@ -88,11 +88,13 @@
           aria-expanded="false">
           {include "bits/icon.tpl" i=language}
         </a>
+
+        {* leverage rel alternates to stay on the page after changing language *}
         <div class="dropdown-menu bg-darkish py-0" aria-labelledby="nav-dropdown-lang">
           {foreach LocaleUtil::getAll() as $id => $name}
             <a
               class="dropdown-item pl-2 py-2"
-              href="{Router::link('helpers/changeLocale')}?id={$id}">
+              href="{Router::getRelAlternate($id)}">
               <span {if $id != LocaleUtil::getCurrent()}class="invisible"{/if}>
                 {include "bits/icon.tpl" i=done}
               </span>

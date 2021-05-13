@@ -74,6 +74,24 @@ class HelpPage extends Proto {
     }
   }
 
+  /**
+   * Rel alternates are trickier for help pages, because we need to also
+   * localize the path. Router.php isn't aware of this, but we are.
+   */
+  function updateRelAlternates() {
+    foreach (Config::LOCALES as $locale => $ignored) {
+      if ($locale != LocaleUtil::getCurrent()) {
+        $hpt = HelpPageT::get_by_pageId_locale($this->id, $locale);
+        if ($hpt) {
+          $url = Router::getRelAlternate($locale);
+          // the path is the string following the rightmost slash
+          $url = substr($url, 0, 1 + strrpos($url, '/')) . $hpt->path;
+          Router::updateRelAlternate($locale, $url);
+        }
+      }
+    }
+  }
+
   function delete() {
     Log::warning('Deleted help page %d', $this->id);
     HelpPageT::delete_all_by_pageId($this->id);
