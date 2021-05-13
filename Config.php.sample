@@ -136,12 +136,6 @@ class Config {
   const SELECT2_LOCALES = [
     'ro_RO.utf8' => 'ro',
   ];
-  const DATEPICKER_LOCALES = [
-    // For each locale, supply an array of (1) the bootstrap-datepicker language
-    // and (2) the date format to use.
-    'en_US.utf8' => [ 'en', 'MM d, yyyy'],
-    'ro_RO.utf8' => [ 'ro', 'd MM yyyy'],
-  ];
   const DEFAULT_LOCALE = 'ro_RO.utf8';
 
   // When a file cannot be mapped to a URL in the current locale, use this
