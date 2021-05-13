@@ -10,7 +10,6 @@ class RevisionHelpPageT extends HelpPage {
   function compare($prev) {
     $od = new ObjectDiff($this);
 
-    // object fields
     $this->diffField(
       _('title-changes-contents'),
       $prev->contents,
@@ -25,6 +24,23 @@ class RevisionHelpPageT extends HelpPage {
                         $prev->path,
                         $this->path,
                         $od, Ct::FIELD_CHANGE_STRING);
+
+    // categoryId belongs to HelpPage, not HelpPageT. Therefore, look for a
+    // revision_help_page with the same requestId
+    $hpt = RevisionHelpPage::get_by_requestId($this->requestId);
+    if ($hpt) { // paranoia
+      $prevHpt = Model::factory('RevisionHelpPage')
+        ->where('id', $this->pageId)
+        ->where_lt('revisionId', $hpt->revisionId)
+        ->order_by_desc('revisionId')
+        ->find_one();
+      $cat = HelpCategory::get_by_id($hpt->categoryId);
+      $prevCat = HelpCategory::get_by_id($prevHpt->categoryId);
+      $this->compareField(_('label-category'),
+                          $prevCat->getName(),
+                          $cat->getName(),
+                          $od, Ct::FIELD_CHANGE_STRING);
+    }
 
     return $od;
   }
