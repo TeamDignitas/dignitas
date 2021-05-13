@@ -74,4 +74,25 @@ class LocaleUtil {
     return Config::SELECT2_LOCALES[self::$current] ?? null;
   }
 
+  /**
+   * Returns the URL for loyalty documentation, in the current locale.
+   */
+  static function getLoyaltyUrl() {
+    return Config::LOYALTY_URL[self::$current] ?? '';
+  }
+
+  /**
+   * Returns the URL for search documentation, in the current locale.
+   */
+  static function getSearchUrl() {
+    return Config::SEARCH_URL[self::$current] ?? '';
+  }
+
+  /**
+   * Returns the URL for verdict documentation, in the current locale.
+   */
+  static function getVerdictUrl() {
+    return Config::VERDICT_URL[self::$current] ?? '';
+  }
+
 }
