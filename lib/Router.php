@@ -414,14 +414,17 @@ class Router {
     'user/view' => [ 'id', 'nickname' ],
   ];
 
+  /**
+   * A map of URLs to (file, language) pairs.
+   */
   private static $fwdRoutes = [];
   private static $relAlternate = [];
 
   static function init() {
     // compute the forward routes, mapping localized URLs to PHP files
-    foreach (self::ROUTES as $file => $locales) {
-      foreach ($locales as $url) {
-        self::$fwdRoutes[$url] = $file;
+    foreach (self::ROUTES as $file => $urls) {
+      foreach ($urls as $locale => $url) {
+        self::$fwdRoutes[$url] = [ $file, $locale ];
       }
     }
   }
@@ -443,8 +446,16 @@ class Router {
     if (isset(self::$fwdRoutes[$route])) {
 
       // get the PHP file
-      $rec = self::$fwdRoutes[$route];
+      $rec = self::$fwdRoutes[$route][0];
       $file = $rec . '.php';
+
+      // Change the locale if needed. Do this only when multiple locales are
+      // available to begin with (e.g. not for Ajax URLs).
+      $locale =  self::$fwdRoutes[$route][1];
+      if ((count(self::ROUTES[$rec]) > 1) &&
+          ($locale != LocaleUtil::getCurrent())) {
+        LocaleUtil::change($locale);
+      }
 
       // save any alternate versions in case we need to print them in header tags
       self::setRelAlternate($route, $uri);
@@ -510,7 +521,7 @@ class Router {
   // Collect URLs for localized versions of this page.
   // See https://support.google.com/webmasters/answer/189077
   static function setRelAlternate($route, $uri) {
-    $routes = self::ROUTES[self::$fwdRoutes[$route]];
+    $routes = self::ROUTES[self::$fwdRoutes[$route][0]];
 
     if (count($routes) > 1) {
       foreach ($routes as $locale => $langRoute) {

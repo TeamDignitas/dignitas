@@ -3,26 +3,28 @@
 class LocaleUtil {
   const COOKIE_NAME = 'language';
 
+  private static $current;
+
+  // Initializes the locale, in order of priority, from
+  // 1. user cookie
+  // 2. config file
   static function init() {
-    self::set(self::getCurrent());
+    self::$current = Config::DEFAULT_LOCALE;
+
+    $cookie = $_COOKIE[self::COOKIE_NAME] ?? null;
+    if ($cookie && isset(Config::LOCALES[$cookie])) { // sanity check
+      self::$current = $cookie;
+    }
+
+    self::configure();
   }
 
   static function getAll() {
     return Config::LOCALES;
   }
 
-  // Returns the locale as dictated, in order of priority, by
-  // 1. user cookie
-  // 2. config file
   static function getCurrent() {
-    $locale = Config::DEFAULT_LOCALE;
-
-    $cookie = $_COOKIE[self::COOKIE_NAME] ?? null;
-    if ($cookie && isset(Config::LOCALES[$cookie])) { // sanity check
-      $locale = $cookie;
-    }
-
-    return $locale;
+    return self::$current;
   }
 
   // Returns the locale with the encoding stripped off, e.g. en_US instead of en_US.utf8
@@ -35,16 +37,17 @@ class LocaleUtil {
     return Config::LOCALES[$locale] ?? '';
   }
 
-  private static function set($locale) {
+  private static function configure() {
+    $l = self::$current;
     mb_internal_encoding('UTF-8');
 
     // workaround for Windows lovers
     if (PHP_OS_FAMILY == 'Windows') {
-      putenv("LC_ALL=$locale");
+      putenv("LC_ALL=$l");
     }
 
-    setlocale(LC_ALL, $locale);
-    $domain = "messages";
+    setlocale(LC_ALL, $l);
+    $domain = 'messages';
     bindtextdomain($domain, Config::ROOT . '/locale');
     bind_textdomain_codeset($domain, 'UTF-8');
     textdomain($domain);
@@ -57,18 +60,18 @@ class LocaleUtil {
     }
 
     // delete the existing cookie if it matches the config value
+    self::$current = $id;
     if ($id == Config::DEFAULT_LOCALE) {
       Session::unsetCookie(self::COOKIE_NAME);
     } else {
       setcookie(self::COOKIE_NAME, $id, time() + Session::ONE_YEAR_IN_SECONDS, '/');
     }
 
-    self::set($id);
+    self::configure();
   }
 
   static function getSelect2Locale() {
-    $locale = self::getCurrent();
-    return Config::SELECT2_LOCALES[$locale] ?? null;
+    return Config::SELECT2_LOCALES[self::$current] ?? null;
   }
 
 }
