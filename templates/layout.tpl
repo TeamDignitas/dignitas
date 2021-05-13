@@ -21,6 +21,7 @@
     <link rel="preload" href="{$cssFile.path}?v={$cssFile.date}" as="style">
     <link href="{$cssFile.path}?v={$cssFile.date}" rel="stylesheet" type="text/css">
 
+    {include "bits/relAlternate.tpl"}
     {include "bits/phpConstants.tpl"}
     <script src="{$jsFile.path}?v={$jsFile.date}" defer></script>
 
