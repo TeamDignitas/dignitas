@@ -23,9 +23,10 @@
     <label for="field-verdict" class="col-md-6 col-sm-4 col-form-label text-right">
       {t}label-verdict{/t}
 
-      {if Config::VERDICT_URL}
+      {$url=LocaleUtil::getVerdictUrl()}
+      {if $url}
         <span class="ml-2">
-          <a href="{Config::VERDICT_URL}"
+          <a href="{$url}"
             title="{t}link-verdict-details{/t}"
             target="_blank">
             {include "bits/icon.tpl" i=help}

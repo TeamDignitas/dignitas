@@ -14,9 +14,10 @@
     </div>
     {/strip}
 
-    {if Config::LOYALTY_URL}
+    {$url=LocaleUtil::getLoyaltyUrl()}
+    {if $url}
       <div class="ml-2">
-        <a href="{Config::LOYALTY_URL}" title="{t}link-loyalty-details{/t}">
+        <a href="{$url}" title="{t}link-loyalty-details{/t}">
           {include "bits/icon.tpl" i=help}
         </a>
       </div>

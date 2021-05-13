@@ -75,9 +75,10 @@
           class="form-control form-control-sm actionable"
           value="{$term}"
           placeholder="{t}label-term{/t}">
-        {if Config::SEARCH_URL}
+        {$url=LocaleUtil::getSearchUrl()}
+        {if $url}
           <div class="input-group-append mt-1">
-            <a href="{Config::SEARCH_URL}"
+            <a href="{$url}"
               class="btn btn-sm btn-link"
               title="{t}link-search-details{/t}"
               target="_blank">
