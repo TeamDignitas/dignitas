@@ -38,7 +38,7 @@ class HelpCategory extends Proto {
   function getAllTranslations() {
     $results = [];
     foreach (LocaleUtil::getAll() as $code => $ignored) {
-      $results[$code] = HelpCategoryT::loadOrCreate($this->id, $code);
+      $results[$code] = HelpCategoryT::loadOrCreate((int)$this->id, $code);
     }
     return $results;
   }

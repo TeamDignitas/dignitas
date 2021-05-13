@@ -42,6 +42,7 @@ if ($saveButton) {
 
     foreach ($translations as $t) {
       if (!$t->isEmpty()) {
+        $t->categoryId = $cat->id; // in case it was just added
         $t->save();
       } else if ($t->id) {
         $t->delete();
