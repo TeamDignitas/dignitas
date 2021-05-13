@@ -74,4 +74,10 @@ class HelpPage extends Proto {
     }
   }
 
+  function delete() {
+    Log::warning('Deleted help page %d', $this->id);
+    HelpPageT::delete_all_by_pageId($this->id);
+    parent::delete();
+  }
+
 }

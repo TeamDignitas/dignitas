@@ -63,4 +63,10 @@ class HelpCategory extends Proto {
       ->find_many();
   }
 
+  function delete() {
+    Log::warning('Deleted help category %d', $this->id);
+    HelpCategoryT::delete_all_by_categoryId($this->id);
+    parent::delete();
+  }
+
 }
