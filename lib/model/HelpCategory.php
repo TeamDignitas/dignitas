@@ -63,6 +63,24 @@ class HelpCategory extends Proto {
       ->find_many();
   }
 
+  /**
+   * Rel alternates are trickier for help categories, because we need to also
+   * localize the path. Router.php isn't aware of this, but we are.
+   */
+  function updateRelAlternates() {
+    foreach (Config::LOCALES as $locale => $ignored) {
+      if ($locale != LocaleUtil::getCurrent()) {
+        $hct = HelpCategoryT::get_by_categoryId_locale($this->id, $locale);
+        if ($hct) {
+          $url = Router::getRelAlternate($locale);
+          // the path is the string following the rightmost slash
+          $url = substr($url, 0, 1 + strrpos($url, '/')) . $hct->path;
+          Router::updateRelAlternate($locale, $url);
+        }
+      }
+    }
+  }
+
   function delete() {
     Log::warning('Deleted help category %d', $this->id);
     HelpCategoryT::delete_all_by_categoryId($this->id);

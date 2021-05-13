@@ -418,7 +418,7 @@ class Router {
    * A map of URLs to (file, language) pairs.
    */
   private static $fwdRoutes = [];
-  private static $relAlternate = [];
+  private static $relAlternates = [];
 
   static function init() {
     // compute the forward routes, mapping localized URLs to PHP files
@@ -458,7 +458,7 @@ class Router {
       }
 
       // save any alternate versions in case we need to print them in header tags
-      self::setRelAlternate($route, $uri);
+      self::setRelAlternates($route, $uri);
 
     } else {
 
@@ -520,7 +520,7 @@ class Router {
 
   // Collect URLs for localized versions of this page.
   // See https://support.google.com/webmasters/answer/189077
-  static function setRelAlternate($route, $uri) {
+  static function setRelAlternates($route, $uri) {
     $routes = self::ROUTES[self::$fwdRoutes[$route][0]];
 
     if (count($routes) > 1) {
@@ -528,13 +528,32 @@ class Router {
         $langCode = explode('_', $locale)[0];
         $langUri = substr_replace($uri, $langRoute, 0, strlen($route));
         $langUrl = Config::URL_HOST . Config::URL_PREFIX . $langUri;
-        self::$relAlternate[$langCode] = $langUrl;
+        self::$relAlternates[$locale] = [$langCode, $langUrl];
       }
     }
   }
 
-  static function getRelAlternate() {
-    return self::$relAlternate;
+  static function getRelAlternates() {
+    return self::$relAlternates;
+  }
+
+  /**
+   * Returns an alternate URL suitable for the language dropdown. If there is
+   * no rel alternate for the given $locale, returns a link to
+   * changeLocale.php
+   */
+  static function getRelAlternate($locale) {
+    return
+      self::$relAlternates[$locale][1] ??
+      sprintf('%s?id=%s', self::link('helpers/changeLocale'), $locale);
+  }
+
+  /**
+   * Some pages, e.g. help pages and categories, need to localize more than
+   * just the route. Give them a chance to provide a better URL.
+   */
+  static function updateRelAlternate($locale, $url) {
+    self::$relAlternates[$locale][1] = $url;
   }
 
 }
