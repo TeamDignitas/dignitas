@@ -23,6 +23,9 @@ class Router {
       'en_US.utf8' => 'about',
       'ro_RO.utf8' => 'despre',
     ],
+    'aggregate/ajaxSearch' => [
+      'en_US.utf8' => 'ajax/search',
+    ],
     'aggregate/contact' => [
       'en_US.utf8' => 'contact',
       'ro_RO.utf8' => 'contact',
@@ -31,15 +34,12 @@ class Router {
       'en_US.utf8' => 'dashboard',
       'ro_RO.utf8' => 'panou-control',
     ],
+    'aggregate/index' => [
+      'en_US.utf8' => '',
+    ],
     'aggregate/search' => [
       'en_US.utf8' => 'search',
       'ro_RO.utf8' => 'cautare',
-    ],
-    'aggregate/ajaxSearch' => [
-      'en_US.utf8' => 'ajax/search',
-    ],
-    'aggregate/index' => [
-      'en_US.utf8' => '',
     ],
 
     // answers
