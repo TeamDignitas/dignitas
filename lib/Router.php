@@ -34,6 +34,10 @@ class Router {
       'en_US.utf8' => 'dashboard',
       'ro_RO.utf8' => 'panou-control',
     ],
+    'aggregate/home' => [
+      'en_US.utf8' => 'home',
+      'ro_RO.utf8' => 'acasa',
+    ],
     'aggregate/index' => [
       'en_US.utf8' => '',
     ],
@@ -200,11 +204,6 @@ class Router {
     'help/pageHistory' => [
       'en_US.utf8' => 'help-history',
       'ro_RO.utf8' => 'istoric-ajutor',
-    ],
-
-    // helpers
-    'helpers/changeLocale' => [
-      'en_US.utf8' => 'changeLocale',
     ],
 
     // invites
@@ -455,6 +454,7 @@ class Router {
       if ((count(self::ROUTES[$rec]) > 1) &&
           ($locale != LocaleUtil::getCurrent())) {
         LocaleUtil::change($locale);
+        Snackbar::add(_('info-language-changed'), 'success');
       }
 
       // save any alternate versions in case we need to print them in header tags
@@ -494,10 +494,11 @@ class Router {
   }
 
   // Returns a human-readable URL for this file.
-  static function link($file, $absolute = false, $prefix = true) {
+  static function link($file, $absolute = false, $prefix = true, $locale = null) {
+    $locale ??= LocaleUtil::getCurrent();
     if (isset(self::ROUTES[$file])) {
       $routes = self::ROUTES[$file];
-      $rel = $routes[LocaleUtil::getCurrent()]     // current locale
+      $rel = $routes[$locale]                      // specified or current locale
         ?? $routes[Config::DEFAULT_ROUTING_LOCALE] // or default locale
         ?? '';                                     // or home page
     } else {
@@ -539,13 +540,13 @@ class Router {
 
   /**
    * Returns an alternate URL suitable for the language dropdown. If there is
-   * no rel alternate for the given $locale, returns a link to
-   * changeLocale.php
+   * no rel alternate for the given $locale, returns a link to the (named)
+   * home page.
    */
   static function getRelAlternate($locale) {
     return
       self::$relAlternates[$locale][1] ??
-      sprintf('%s?id=%s', self::link('helpers/changeLocale'), $locale);
+      self::link('aggregate/home', false, true, $locale);
   }
 
   /**
