@@ -26,66 +26,41 @@
       </fieldset>
 
       <fieldset class="related-fields mb-5">
-        <div class="form-group form-check row">
-          <label class="form-check-label col-12">
-            <input
-              type="checkbox"
-              class="form-check-input"
-              name="loyaltySource"
-              {if $et->loyaltySource}checked{/if}
-              value="1">
-            {t}label-loyalty-source{/t}
-          </label>
-          <small class="form-text text-muted">
-            {t}info-loyalty-source{/t}
-          </small>
-        </div>
+        {capture 'label'}{t}label-loyalty-source{/t}{/capture}
+        {capture 'help'}{t}info-loyalty-source{/t}{/capture}
+        {include 'bs/checkbox.tpl'
+          checked=$et->loyaltySource
+          divClass='mb-3'
+          help=$smarty.capture.help
+          label=$smarty.capture.label
+          name='loyaltySource'}
 
-        <div class="form-group form-check row">
-          <label class="form-check-label col-12">
-            <input
-              type="checkbox"
-              class="form-check-input {if isset($errors.loyaltySink)}is-invalid{/if}"
-              name="loyaltySink"
-              {if $et->loyaltySink}checked{/if}
-              value="1">
-            {t}label-loyalty-sink{/t}
-          </label>
-          <small class="form-text text-muted">
-            {t}info-loyalty-sink{/t}
-          </small>
-          {include "bits/fieldErrors.tpl" errors=$errors.loyaltySink|default:null}
-        </div>
+        {capture 'label'}{t}label-loyalty-sink{/t}{/capture}
+        {capture 'help'}{t}info-loyalty-sink{/t}{/capture}
+        {include 'bs/checkbox.tpl'
+          checked=$et->loyaltySink
+          divClass='mb-3'
+          help=$smarty.capture.help
+          label=$smarty.capture.label
+          name='loyaltySink'}
 
-        <div class="form-group form-check row">
-          <label class="form-check-label col-12">
-            <input
-              type="checkbox"
-              class="form-check-input"
-              name="hasColor"
-              {if $et->hasColor}checked{/if}
-              value="1">
-            {t}label-has-color{/t}
-          </label>
-          <small class="form-text text-muted">
-            {t}info-has-color{/t}
-          </small>
-        </div>
+        {capture 'label'}{t}label-has-color{/t}{/capture}
+        {capture 'help'}{t}info-has-color{/t}{/capture}
+        {include 'bs/checkbox.tpl'
+          checked=$et->hasColor
+          divClass='mb-3'
+          help=$smarty.capture.help
+          label=$smarty.capture.label
+          name='hasColor'}
 
-        <div class="form-group form-check row">
-          <label class="form-check-label col-12">
-            <input
-              type="checkbox"
-              class="form-check-input"
-              name="isDefault"
-              {if $et->isDefault}checked{/if}
-              value="1">
-            {t}label-is-default{/t}
-          </label>
-          <small class="form-text text-muted">
-            {t}info-is-default{/t}
-          </small>
-        </div>
+        {capture 'label'}{t}label-is-default{/t}{/capture}
+        {capture 'help'}{t}info-is-default{/t}{/capture}
+        {include 'bs/checkbox.tpl'
+          checked=$et->isDefault
+          divClass='mb-3'
+          help=$smarty.capture.help
+          label=$smarty.capture.label
+          name='isDefault'}
       </fieldset>
 
       <div class="mt-4 text-right">

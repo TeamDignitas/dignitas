@@ -72,31 +72,22 @@
             </div>
           </div>
 
-          <div class="form-check">
-            <label>
-              <input
-                type="checkbox"
-                class="form-check-input"
-                name="remember"
-                value="1"
-                {if $remember}checked{/if}>
-              {t}label-remember-me{/t}
-            </label>
-          </div>
+          {capture 'label'}{t}label-remember-me{/t}{/capture}
+          {include 'bs/checkbox.tpl'
+            checked=$remember
+            divClass='mb-1'
+            label=$smarty.capture.label
+            name='remember'}
 
-          <div class="form-check">
-            <input
-              id="field-manual"
-              type="checkbox"
-              class="form-check-input {if isset($errors.manual)}is-invalid{/if}"
-              name="manual"
-              value="1"
-              {if $manual}checked{/if}>
-            <label class="form-check-label" for="field-manual">
-              {t 1=Router::link('help/index')}label-register-manual{/t}
-            </label>
-            {include "bits/fieldErrors.tpl" errors=$errors.manual|default:null}
-          </div>
+          {capture 'label'}
+          {t 1=Router::link('help/index')}label-register-manual{/t}
+          {/capture}
+          {include 'bs/checkbox.tpl'
+            cbErrors=$errors.manual|default:null
+            checked=$manual
+            divClass='mb-1'
+            label=$smarty.capture.label
+            name='manual'}
 
           <div class="mt-2 mx-2 row">
             <button class="btn btn-primary col-sm-12 col-md-6" type="submit" name="submitButton">

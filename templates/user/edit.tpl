@@ -77,12 +77,11 @@
             </div>
             {include "bits/fieldErrors.tpl" errors=$errors.image|default:null}
 
-            <div class="form-check mt-1">
-              <label class="form-check-label">
-                <input type="checkbox" name="deleteImage" class="form-check-input">
-                {t}label-delete-image{/t}
-              </label>
-            </div>
+            {capture 'label'}{t}label-delete-image{/t}{/capture}
+            {include 'bs/checkbox.tpl'
+              divClass='mt-1'
+              label=$smarty.capture.label
+              name='deleteImage'}
 
             {include "bits/image.tpl"
               obj=$user

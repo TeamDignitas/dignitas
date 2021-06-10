@@ -44,16 +44,11 @@
         </div>
       </div>
 
-      <div class="form-group form-check">
-        <label class="form-check-label">
-          <input
-            type="checkbox"
-            class="form-check-input"
-            name="fakeModerator"
-            value="1">
-          {t}label-moderator{/t}
-        </label>
-      </div>
+      {capture 'label'}{t}label-moderator{/t}{/capture}
+      {include 'bs/checkbox.tpl'
+        divClass='mb-3'
+        label=$smarty.capture.label
+        name='fakeModerator'}
 
       <input
         class="btn btn-warning"

@@ -121,19 +121,16 @@
                 value="{$t->icon}">
             </div>
 
-            <div class="checkbox mt-1">
-              <label>
-                <input type="checkbox"
-                  name="iconOnly"
-                  value="1"
-                  {if $t->iconOnly}checked{/if}>
-                {t}label-icon-only{/t}
-              </label>
-            </div>
-
             <small class="form-text text-muted">
               {t}info-tag-icon-name{/t}
             </small>
+
+            {capture 'label'}{t}label-icon-only{/t}{/capture}
+            {include 'bs/checkbox.tpl'
+              checked=$t->iconOnly
+              divClass='mt-1'
+              label=$smarty.capture.label
+              name='iconOnly'}
 
           </div>
         </div>

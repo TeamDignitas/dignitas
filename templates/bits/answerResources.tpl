@@ -22,16 +22,12 @@
         </div>
 
         <div class="modal-footer small">
-          <input
-            id="checkboxAnswerResources"
-            type="checkbox"
-            {if !User::getActive()->getMinimizeAnswerResources()}
-            checked
-            {/if}
-          >
-          <label for="checkboxAnswerResources" class="d-inline">
-            {t}label-answer-resources-checkbox{/t}
-          </label>
+          {capture 'label'}{t}label-answer-resources-checkbox{/t}{/capture}
+          {include 'bs/checkbox.tpl'
+            checked=!User::getActive()->getMinimizeAnswerResources()
+            inputId='checkboxAnswerResources'
+            label=$smarty.capture.label
+            name='deleteImage'}
         </div>
 
       </div>

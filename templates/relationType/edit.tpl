@@ -94,36 +94,23 @@
         {include "bits/fieldErrors.tpl" errors=$errors.weight|default:null}
       </div>
 
-      <div class="form-group form-check">
-        <label class="form-check-label">
-          <input
-            type="checkbox"
-            class="form-check-input {if isset($errors.symmetric)}is-invalid{/if}"
-            name="symmetric"
-            {if $rt->symmetric}checked{/if}
-            value="1">
-          {t}label-symmetric{/t}
-        </label>
-        <small class="form-text text-muted">
-          {t}info-symmetric{/t}
-        </small>
-        {include "bits/fieldErrors.tpl" errors=$errors.symmetric|default:null}
-      </div>
+      {capture 'label'}{t}label-symmetric{/t}{/capture}
+      {capture 'help'}{t}info-symmetric{/t}{/capture}
+      {include 'bs/checkbox.tpl'
+        cbErrors=$errors.symmetric|default:null
+        checked=$rt->symmetric
+        divClass='mb-3'
+        help=$smarty.capture.help
+        label=$smarty.capture.label
+        name='symmetric'}
 
-      <div class="form-group form-check">
-        <label class="form-check-label">
-          <input
-            type="checkbox"
-            class="form-check-input"
-            name="membership"
-            {if $rt->membership}checked{/if}
-            value="1">
-          {t}label-relation-type-membership{/t}
-        </label>
-        <small class="form-text text-muted">
-          {t}info-relation-type-membership{/t}
-        </small>
-      </div>
+      {capture 'label'}{t}label-relation-type-membership{/t}{/capture}
+      {capture 'help'}{t}info-relation-type-membership{/t}{/capture}
+      {include 'bs/checkbox.tpl'
+        checked=$rt->membership
+        help=$smarty.capture.help
+        label=$smarty.capture.label
+        name='membership'}
 
       <div class="mt-4 text-right">
         {if $rt->canDelete()}
