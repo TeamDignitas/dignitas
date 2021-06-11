@@ -185,7 +185,7 @@
 
       <div class="modal-footer">
         <div class="text-center">
-          <button type="button" class="btn btn-sm btn-outline-secondary" data-dismiss="modal">
+          <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-dismiss="modal">
             {include "bits/icon.tpl" i=cancel}
             {t}link-cancel{/t}
           </button>

@@ -122,7 +122,7 @@
         <button
           class="btn mt-1"
           type="button"
-          data-toggle="dropdown"
+          data-bs-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false">
           {include "bits/icon.tpl" i=more_vert}

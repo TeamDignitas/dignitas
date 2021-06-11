@@ -58,7 +58,7 @@
 
     <div class="col-12 col-sm-12 col-md-2 col-lg-2">
       <a class="btn btn-link btn-lg text-nowrap py-1 px-0"
-        data-toggle="collapse"
+        data-bs-toggle="collapse"
         href="#more-filters">
         {include "bits/icon.tpl" i=filter_list}
         <small>{t}label-other-filters{/t}</small>

@@ -61,7 +61,7 @@
               class="btn"
               type="button"
               id="answer-menu-{$answer->id}"
-              data-toggle="dropdown"
+              data-bs-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false">
               {include "bits/icon.tpl" i=more_vert}

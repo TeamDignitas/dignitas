@@ -68,7 +68,7 @@
                 id="field-image"
                 name="image"
                 type="file"
-                data-toggle="tooltip"
+                data-bs-toggle="tooltip"
                 title="{t}tooltip-upload-user-image{/t}"
                 class="custom-file-input {if isset($errors.image)}is-invalid{/if}">
               <label class="custom-file-label" for="field-image">

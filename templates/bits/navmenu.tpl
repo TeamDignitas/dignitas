@@ -3,8 +3,8 @@
   <button
     class="navbar-toggler"
     type="button"
-    data-toggle="slide-collapse"
-    data-target="#navbar-left"
+    data-bs-toggle="slide-collapse"
+    data-bs-target="#navbar-left"
     aria-controls="navbar-left"
     aria-expanded="false"
     aria-label="{t}label-toggle-menu{/t}">
@@ -21,7 +21,7 @@
           href="#"
           id="nav-dropdown-info"
           role="button"
-          data-toggle="dropdown"
+          data-bs-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false">
           {cap}{t}link-info{/t}{/cap}
@@ -58,8 +58,8 @@
   <button
     class="navbar-toggler"
     type="button"
-    data-toggle="slide-collapse"
-    data-target="#navbar-right"
+    data-bs-toggle="slide-collapse"
+    data-bs-target="#navbar-right"
     aria-controls="navbar-right"
     aria-expanded="false"
     aria-label="{t}label-toggle-menu{/t}">
@@ -83,7 +83,7 @@
           href="#"
           id="nav-dropdown-lang"
           role="button"
-          data-toggle="dropdown"
+          data-bs-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false">
           {include "bits/icon.tpl" i=language}
@@ -125,7 +125,7 @@
             href="#"
             id="nav-dropdown-user"
             role="button"
-            data-toggle="dropdown"
+            data-bs-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false">
             {if $u->fileExtension}

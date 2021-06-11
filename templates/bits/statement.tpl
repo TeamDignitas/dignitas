@@ -138,7 +138,7 @@
           class="btn"
           type="button"
           id="statement-menu-{$statement->id}"
-          data-toggle="dropdown"
+          data-bs-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false">
           {include "bits/icon.tpl" i=more_vert}

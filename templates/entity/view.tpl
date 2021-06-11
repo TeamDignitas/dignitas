@@ -18,7 +18,7 @@
           <a
             class="nav-link text-capitalize"
             id="statements-tab"
-            data-toggle="tab"
+            data-bs-toggle="tab"
             role="tab"
             aria-controls="results-statements"
             href="#results-statements">
@@ -30,7 +30,7 @@
           <a
             class="nav-link text-capitalize"
             id="mentions-tab"
-            data-toggle="tab"
+            data-bs-toggle="tab"
             role="tab"
             aria-controls="results-mentions"
             href="#results-mentions">
