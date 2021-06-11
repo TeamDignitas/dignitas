@@ -11,7 +11,7 @@
       downvotePriv=User::PRIV_DOWNVOTE_COMMENT}
   {/if}
 
-  <div class="text-left">
+  <div class="text-start">
     <span class="archivable">
       {$comment->contents|md}
     </span>

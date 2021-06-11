@@ -34,7 +34,7 @@
         {/if}
       {/if}
     </div>
-    <div class="col-sm-1 col-lg-1 text-right">
+    <div class="col-sm-1 col-lg-1 text-end">
       <a
         href="#"
         class="btn notification-unsubscribe"

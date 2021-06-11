@@ -115,7 +115,7 @@
         </div>
       </div>
 
-      <div class="mt-4 text-right">
+      <div class="mt-4 text-end">
 
         {if $page->id}
           <button

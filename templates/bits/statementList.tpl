@@ -11,7 +11,7 @@
             {include "bits/statementLink.tpl" statement=$s quotes=false}
           </div>
 
-          <div class="text-right small py-1">
+          <div class="text-end small py-1">
             {if $showEntity}
               {$entity=$s->getEntity()}
               — {include "bits/entityLink.tpl" e=$entity},

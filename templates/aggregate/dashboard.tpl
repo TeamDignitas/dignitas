@@ -8,7 +8,7 @@
 
     <div class="row dashboard-cards">
       {if User::may(User::PRIV_ADD_STATEMENT)}
-        <div class="col-12 col-sm-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
+        <div class="card col-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
           <div class="card-body">
             <h3 class="card-title">
               {include "bits/icon.tpl" i=mode_edit}
@@ -21,7 +21,7 @@
       {/if}
 
       {if User::may(User::PRIV_ADD_ENTITY)}
-        <div class="col-12 col-sm-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
+        <div class="card col-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
           <div class="card-body">
             <h3 class="card-title">
               {include "bits/icon.tpl" i="person_add_alt_1"}
@@ -34,7 +34,7 @@
       {/if}
 
       {if User::isModerator()}
-        <div class="col-12 col-sm-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
+        <div class="card col-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
           <div class="card-body">
             <h3 class="card-title">
               {include "bits/icon.tpl" i="insert_link"}
@@ -45,7 +45,7 @@
           </div>
         </div>
 
-        <div class="col-12 col-sm-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
+        <div class="card col-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
           <div class="card-body">
             <h3 class="card-title">
               {include "bits/icon.tpl" i="text_snippet"}
@@ -56,7 +56,7 @@
           </div>
         </div>
 
-        <div class="col-12 col-sm-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
+        <div class="card col-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
           <div class="card-body">
             <h3 class="card-title">
               {include "bits/icon.tpl" i="insert_invitation"}
@@ -67,7 +67,7 @@
           </div>
         </div>
 
-        <div class="col-12 col-sm-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
+        <div class="card col-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
           <div class="card-body">
             <h3 class="card-title">
               {include "bits/icon.tpl" i="groups"}
@@ -78,7 +78,7 @@
           </div>
         </div>
 
-        <div class="col-12 col-sm-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
+        <div class="card col-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
           <div class="card-body">
             <h3 class="card-title">
               {include "bits/icon.tpl" i="compare_arrows"}
@@ -89,7 +89,7 @@
           </div>
         </div>
 
-        <div class="col-12 col-sm-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
+        <div class="card col-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
           <div class="card-body">
             <h3 class="card-title">
               {include "bits/icon.tpl" i="integration_instructions"}
@@ -101,7 +101,7 @@
         </div>
       {/if}
 
-      <div class="col-12 col-sm-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
+      <div class="card col-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
         <div class="card-body">
           <h3 class="card-title">
             {include "bits/icon.tpl" i="local_offer"}
@@ -112,7 +112,7 @@
         </div>
       </div>
 
-      <div class="col-12 col-sm-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
+      <div class="card col-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
         <div class="card-body">
           <h3 class="card-title">
             {include "bits/icon.tpl" i="map"}
@@ -129,7 +129,7 @@
 
       <ul class="row dashboard-cards list-unstyled pl-0">
         {foreach $activeReviewReasons as $r}
-          <li class="col-12 col-sm-12 col-lg-4 py-3 m-2 text-center dashcard">
+          <li class="card col-12 col-lg-4 py-3 m-2 text-center dashcard">
             <a href="{Router::link('review/view')}/{Review::getUrlName($r)}" class="capitalize-first-word stretched-link">
               {Review::getDescription($r)}
             </a>
@@ -143,7 +143,7 @@
         <h4 class="mt-5">{cap}{t}title-reports{/t}{/cap}</h4>
 
         <ul class="row dashboard-cards list-unstyled pl-0">
-          <li class="col-12 col-sm-12 col-lg-4 py-3 m-2 text-center dashcard">
+          <li class="card col-12 col-lg-4 py-3 m-2 text-center dashcard">
             <a href="{Router::link('statement/verdictReport')}" class="capitalize-first-word stretched-link">
               {t}link-verdict-report{/t}
             </a>

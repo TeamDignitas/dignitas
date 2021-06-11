@@ -360,7 +360,7 @@ $(function() {
   $('body').on('keyup paste change', '.size-limit', function() {
 
     var remaining = $(this).attr('maxlength') - $(this).val().length;
-    var span = $(this).siblings('.chars-remaining');
+    var span = $(this).parent().find('.chars-remaining');
 
     if (remaining >= 0) {
       // Hide errors when the constraint is satisfied. This is necessary because

@@ -177,7 +177,7 @@
                       </label>
                     </div>
                   </div>
-                  <div class="col-6 text-right">
+                  <div class="col-6 text-end">
                     <button type="submit" class="btn btn-sm btn-secondary">
                       {t}link-change{/t}
                     </button>

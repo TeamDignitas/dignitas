@@ -50,7 +50,7 @@
           {include 'bits/moment.tpl' t=$answer->createDate}
         </div>
 
-        <div class="col-sm-12 col-md-3 px-0 text-right">
+        <div class="col-sm-12 col-md-3 px-0 text-end">
           {$comments=Comment::getFor($answer)}
           {if $addComment && empty($comments)}
             {include "bits/addCommentLink.tpl" object=$answer}
@@ -105,7 +105,7 @@
       </div>
 
       {if $addComment}
-        <div class="text-muted text-right mb-2 ml-0 pl-0">
+        <div class="text-muted text-end mb-2 ml-0 pl-0">
           {include "bits/addCommentLink.tpl" object=$answer}
         </div>
       {/if}

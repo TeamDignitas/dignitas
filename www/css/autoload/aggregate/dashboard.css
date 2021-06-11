@@ -1,12 +1,7 @@
 .dashcard {
-  border: 1px solid rgb(108, 117, 125);
-  border-radius: 4px;
+  border: 1px solid var(--bs-gray);
 }
 
 .dashcard:hover {
   background-color: #ddd;
-}
-
-.dashcard a:hover {
-  text-decoration: none;
 }

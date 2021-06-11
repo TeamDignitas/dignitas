@@ -109,7 +109,7 @@
 
     <hr class="w-100 title-divider mt-0 mb-2">
 
-    <div class="entity-actions mb-2 text-right">
+    <div class="entity-actions mb-2 text-end">
       {if $showAddStatementButton && $entity->acceptsNewStatements()}
         <a
           href="{Router::link('statement/edit')}?entityId={$entity->id}"

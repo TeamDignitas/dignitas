@@ -126,7 +126,7 @@
     </div>
 
     {$comments=Comment::getFor($statement)}
-    <div class="clearfix mb-2 mt-1 text-right">
+    <div class="clearfix mb-2 mt-1 text-end">
       {* when there are no comments, the add comment button sits on the same
          row as the other buttons *}
       {if empty($comments) && $addComment}
@@ -164,7 +164,7 @@
 
       {* when there are comments, the add comment button sits on a separate row *}
       {if $addComment}
-        <div class="clearfix mb-2 mt-1 text-right">
+        <div class="clearfix mb-2 mt-1 text-end">
           {include "bits/addCommentLink.tpl" object=$statement}
         </div>
       {/if}

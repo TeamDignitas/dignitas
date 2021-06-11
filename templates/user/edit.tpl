@@ -129,7 +129,7 @@
         </div>
       </fieldset>
 
-      <div class="mt-4 text-right">
+      <div class="mt-4 text-end">
         <a href="{Router::userLink($user)}" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2">
           {include "bits/icon.tpl" i=cancel}
           {t}link-cancel{/t}
