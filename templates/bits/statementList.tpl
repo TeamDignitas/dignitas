@@ -6,7 +6,7 @@
 
       <div class="card-body row">
 
-        <div class="col-12 col-sm-12 col-md-10 col-lg-10 order-2 order-sm-2 order-md-1 order-lg-1">
+        <div class="col-12 {if $showEntity}col-md-10 order-2 order-md-1{/if}">
           <div class="py-1 statement-link">
             {include "bits/statementLink.tpl" statement=$s quotes=false}
           </div>
@@ -21,7 +21,7 @@
         </div>
 
         {if $showEntity}
-          <div class="col-12 col-sm-12 col-md-2 col-lg-2 text-center order-1 order-sm-1 order-md-2 order-lg-2">
+          <div class="col-12 col-md-2 text-center order-1 order-md-2">
             {include "bits/image.tpl"
               obj=$e
               geometry=Config::THUMB_ENTITY_STATEMENT_LIST
