@@ -20,7 +20,7 @@
     <button
       type="button"
       class="btn btn-outline-danger delete-dependant"
-      data-toggle="tooltip"
+      data-bs-toggle="tooltip"
       title="{t}link-delete-alias{/t}">
       {include "bits/icon.tpl" i=delete_forever}
     </button>

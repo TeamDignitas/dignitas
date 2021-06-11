@@ -36,8 +36,8 @@
 <div class="vote-box col-sm-12 col-md-1">
 
   <div
-    data-toggle="tooltip"
-    data-trigger="hover"
+    data-bs-toggle="tooltip"
+    data-bs-trigger="hover"
     {if !User::getActive()}
     title="{t}tooltip-log-in-vote{/t}"
     {elseif !User::may($upvotePriv)}
@@ -62,8 +62,8 @@
   <div id="score-{$type}-{$object->id}">{$object->getScore()|nf}</div>
 
   <div
-    data-toggle="tooltip"
-    data-trigger="hover"
+    data-bs-toggle="tooltip"
+    data-bs-trigger="hover"
     {if !User::getActive()}
     title="{t}tooltip-log-in-vote{/t}"
     {elseif !User::may($downvotePriv)}
@@ -93,8 +93,8 @@
   {$isAnswer=($object->getObjectType() == Proto::TYPE_ANSWER)}
   {if $isAnswer && (User::isModerator() || $object->proof)}
     <div
-      data-toggle="tooltip"
-      data-trigger="hover"
+      data-bs-toggle="tooltip"
+      data-bs-trigger="hover"
       {if User::isModerator()}
       title="{t}tooltip-toggle-answer-proof{/t}"
       {else}

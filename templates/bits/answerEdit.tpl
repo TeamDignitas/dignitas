@@ -83,7 +83,7 @@
         name="saveDraftButton"
         type="submit"
         class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2"
-        data-toggle="tooltip"
+        data-bs-toggle="tooltip"
         title="{t}tooltip-save-draft{/t}">
         {include "bits/icon.tpl" i=insert_drive_file}
         {t}link-save-draft{/t}

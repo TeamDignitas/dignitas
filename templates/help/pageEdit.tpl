@@ -38,7 +38,7 @@
             <a
               class="nav-link {if $locale == Config::DEFAULT_LOCALE}active{/if}"
               id="tab-{$loc}"
-              data-toggle="tab"
+              data-bs-toggle="tab"
               role="tab"
               href="#tab-contents-{$loc}">
               {t}{$locales.$locale}{/t}
@@ -59,7 +59,7 @@
             <div
               id="tab-contents-{$loc}"
               class="tab-pane fade {if $locale == Config::DEFAULT_LOCALE}show active{/if}"
-              data-trigger="#tab-{$loc}"
+              data-bs-trigger="#tab-{$loc}"
               role="tabpanel">
 
               <fieldset class="related-fields mb-5 ml-3">

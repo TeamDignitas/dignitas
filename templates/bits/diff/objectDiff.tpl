@@ -49,8 +49,8 @@
           <button
             class="btn btn-sm btn-light"
             type="button"
-            data-toggle="collapse"
-            data-target="#collapse-{$id}">
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse-{$id}">
             {include "bits/icon.tpl" i=chevron_right}
             {t}info-reviewed-because{/t}: {$od->review->getReasonName()}
           </button>

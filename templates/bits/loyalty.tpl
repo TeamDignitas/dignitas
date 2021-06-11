@@ -5,7 +5,7 @@
   <div class="d-flex">
     {* use floor, not round, to ensure the sum doesn't exceed 100% *}
     {strip}
-    <div class="loyalty-widget" data-toggle="popover">
+    <div class="loyalty-widget" data-bs-toggle="popover">
       {foreach $data as $e}
         {$percent=(floor($e->value*10000)/100)|number_format:2}
         {$color=$e->getColor()}

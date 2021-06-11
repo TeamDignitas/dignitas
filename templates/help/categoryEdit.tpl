@@ -17,7 +17,7 @@
             <a
               class="nav-link {if $locale == Config::DEFAULT_LOCALE}active{/if}"
               id="tab-{$loc}"
-              data-toggle="tab"
+              data-bs-toggle="tab"
               role="tab"
               href="#tab-contents-{$loc}">
               {t}{$locales.$locale}{/t}

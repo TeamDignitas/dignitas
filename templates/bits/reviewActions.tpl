@@ -23,7 +23,7 @@
           name="keepButton"
           class="btn btn-sm btn-primary mr-2 mb-2"
           type="submit"
-          data-toggle="tooltip"
+          data-bs-toggle="tooltip"
           title="{t}tooltip-review-keep{/t}">
           {include "bits/icon.tpl" i=done}
           {$review->getVoteName(Flag::VOTE_KEEP)}
@@ -35,7 +35,7 @@
             class="btn btn-sm mb-2 flex-shrink-1"
             type="button"
             id="review-ellipsis"
-            data-toggle="dropdown"
+            data-bs-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false">
             {include "bits/icon.tpl" i=more_vert}
@@ -55,7 +55,7 @@
             name="nextButton"
             type="submit"
             class="btn btn-sm btn-outline-secondary mr-2 mb-2 flex-shrink-1"
-            data-toggle="tooltip"
+            data-bs-toggle="tooltip"
             title="{t}tooltip-review-next{/t}"
           >
             {include "bits/icon.tpl" i=chevron_right}

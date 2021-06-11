@@ -45,7 +45,7 @@
     <button
       type="button"
       class="btn btn-sm btn-outline-danger delete-dependant"
-      data-toggle="tooltip"
+      data-bs-toggle="tooltip"
       title="{t}link-delete-relation{/t}">
       {include "bits/icon.tpl" i=delete_forever}
     </button>

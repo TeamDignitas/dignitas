@@ -98,14 +98,14 @@ $(function() {
 
   window.alert = function(msg) {
     var m = $(
-      '<div class="modal fade" data-backdrop="static" tabindex="-1">' +
+      '<div class="modal fade" data-bs-backdrop="static" tabindex="-1">' +
         '<div class="modal-dialog modal-dialog-centered modal-sm">' +
         '<div class="modal-content shadow">' +
         '<div class="modal-body">' +
         msg +
         '</div>' +
         '<div class="modal-footer">' +
-        '<button type="button" class="btn btn-sm btn-primary btn-confirm px-4" data-dismiss="modal">' +
+        '<button type="button" class="btn btn-sm btn-primary btn-confirm px-4" data-bs-dismiss="modal">' +
         _('alert-ok-text') +
         '</button>' +
         '</div>' +
@@ -150,10 +150,10 @@ $(function() {
         $(this).data('confirm') +
         '</div>' +
         '<div class="modal-footer">' +
-        '<button type="button" class="btn btn-sm btn-outline-secondary px-4" data-dismiss="modal">' +
+        '<button type="button" class="btn btn-sm btn-outline-secondary px-4" data-bs-dismiss="modal">' +
         _('confirm-cancel-text') +
         '</button>' +
-        '<button type="button" class="btn btn-sm btn-primary btn-confirm px-4" data-dismiss="modal">' +
+        '<button type="button" class="btn btn-sm btn-primary btn-confirm px-4" data-bs-dismiss="modal">' +
         _('confirm-ok-text') +
         '</button>' +
         '</div>' +
@@ -220,7 +220,7 @@ $(function() {
 /*************************** vote submissions ***************************/
 $(function() {
   // tooltips everywhere
-  $('[data-toggle="tooltip"]').tooltip();
+  $('[data-bs-toggle="tooltip"]').tooltip();
 
   $('.btn-vote').click(submitVote);
 
@@ -228,7 +228,7 @@ $(function() {
     var btn = $(this);
 
     // hide tooltip on the wrapper div
-    btn.parent('[data-toggle="tooltip"]').tooltip('hide');
+    btn.parent('[data-bs-toggle="tooltip"]').tooltip('hide');
 
     $('body').addClass('waiting');
     $.post(URL_PREFIX + 'ajax/save-vote', {
@@ -319,7 +319,7 @@ $(function() {
 
 /*************************** loyalty popovers ***************************/
 $(function() {
-  $('.loyalty-widget[data-toggle="popover"]').popover({
+  $('.loyalty-widget[data-bs-toggle="popover"]').popover({
     content: getPopoverContent,
     html: true,
     placement: 'bottom',

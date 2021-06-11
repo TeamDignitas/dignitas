@@ -18,7 +18,7 @@
       <button
         type="button"
         class="col-12 btn btn-sm btn-outline-secondary dropdown-toggle mb-1"
-        data-toggle="dropdown">
+        data-bs-toggle="dropdown">
         {t}link-pick-canned-response{/t}
       </button>
       <div class="dropdown-menu p-2 text-muted">

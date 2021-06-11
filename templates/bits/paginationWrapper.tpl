@@ -8,7 +8,7 @@
 <div
   class="pagination-wrapper"
   data-url="{$url}"
-  data-target="{$target}">
+  data-bs-target="{$target}">
 
   {include "bits/pagination.tpl" k=1}
 </div>
