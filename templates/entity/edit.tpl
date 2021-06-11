@@ -255,7 +255,7 @@
         </div>
       </fieldset>
 
-      <div class="mt-4 text-right">
+      <div class="mt-4 text-end">
         {if $entity->isDeletable()}
           <button
             name="deleteButton"

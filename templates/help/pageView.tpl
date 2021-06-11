@@ -28,7 +28,7 @@
 
 
         {if User::isModerator()}
-          <div class="mt-4 text-right">
+          <div class="mt-4 text-end">
             <a
               class="btn btn-sm btn-primary col-sm-12 col-md-3 mb-2"
               href="{Router::link('help/pageEdit')}/{$page->id}">

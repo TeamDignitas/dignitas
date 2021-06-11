@@ -66,12 +66,11 @@ blockquote {
 }
 
 .nav-item a {
-  color: var(--navbar-link) !important;
+  color: var(--bs-navbar-link) !important;
 }
 
 .nav-item a:hover {
-  color: var(--navbar-link-hover) !important;
-  background-color: var(--dark) !important;
+  color: var(--bs-navbar-link-hover) !important;
 }
 
 .navbar .dropdown-menu {
@@ -80,7 +79,7 @@ blockquote {
 
 @media (max-width: 768px) {
   .navbar-collapse {
-    background-color: var(--darkish);
+    background-color: var(--bs-darkish);
     height: 100%;
     margin-top: 3px;
     padding: 1rem;
@@ -614,7 +613,7 @@ body, main {
 
 /************************ EasyMDEContainer ************************/
 .editor-toolbar button {
-  color: #6c757d;
+  color: var(--bs-gray);
 }
 
 .is-invalid + .EasyMDEContainer > .editor-toolbar,

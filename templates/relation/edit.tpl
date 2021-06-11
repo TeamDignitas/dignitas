@@ -18,7 +18,7 @@
       {capture "addButtonText" assign=addButtonText}{t}link-add-relation-link{/t}{/capture}
       {include "bits/linkEditor.tpl" errors=$errors.links|default:null}
 
-      <div class="mt-4 text-right">
+      <div class="mt-4 text-end">
         <a href="{Router::link('entity/view')}/{$fromEntity->id}"
           class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2">
           {include "bits/icon.tpl" i=cancel}

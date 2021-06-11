@@ -79,7 +79,7 @@
 
         {if $user->id == User::getActiveId() || User::isModerator()}
           <hr class="mb-2">
-          <div class="mt-4 user-actions text-right">
+          <div class="mt-4 user-actions text-end">
             {if User::isModerator()}
               <a
                 href="{Router::link('user/ban')}/{$user->id}"

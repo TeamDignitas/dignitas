@@ -63,7 +63,7 @@
           name='isDefault'}
       </fieldset>
 
-      <div class="mt-4 text-right">
+      <div class="mt-4 text-end">
         {if $et->canDelete()}
           <button
             name="deleteButton"

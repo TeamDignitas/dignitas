@@ -112,7 +112,7 @@
         label=$smarty.capture.label
         name='membership'}
 
-      <div class="mt-4 text-right">
+      <div class="mt-4 text-end">
         {if $rt->canDelete()}
           <button
             name="deleteButton"

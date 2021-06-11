@@ -16,12 +16,14 @@
           class="form-control has-unload-warning size-limit easy-mde {if isset($errors.contents)}is-invalid{/if}"
           maxlength="{Comment::MAX_LENGTH}"
         >{$cannedResponse->contents|escape}</textarea>
-        <span class="chars-remaining form-text small float-left"></span>
-        {include "bits/markdownHelp.tpl"}
+        <div class="form-text d-flex justify-content-between">
+          <small class="chars-remaining"></small>
+          {include "bits/markdownHelp.tpl"}
+        </div>
         {include "bits/fieldErrors.tpl" errors=$errors.contents|default:null}
       </div>
 
-      <div class="mt-4 text-right">
+      <div class="mt-4 text-end">
         {if $cannedResponse->id}
           <button
             name="deleteButton"

@@ -37,7 +37,7 @@
           {/foreach}
         {/for}
 
-        <div class="mt-4 text-right">
+        <div class="mt-4 text-end">
           <button
             name="saveButton"
             type="submit"

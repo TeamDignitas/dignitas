@@ -136,7 +136,7 @@
         </div>
       </fieldset>
 
-      <div class="mt-4 text-right">
+      <div class="mt-4 text-end">
         {if $t->isDeletable()}
           <button
             name="deleteButton"

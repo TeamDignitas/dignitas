@@ -20,7 +20,7 @@
     </small>
   {/if}
 
-  <div class="float-right">
+  <div class="float-end">
     <small class="text-muted">
       {$entity->getEntityType()->name|escape}
     </small>

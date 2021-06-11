@@ -33,7 +33,7 @@
       </div>
     </div>
 
-    <div class="col-sm-12 col-md-6 text-right">
+    <div class="col-sm-12 col-md-6 text-end">
       <button type="button" class="col-sm-12 col-md-5 btn btn-sm btn-outline-secondary comment-cancel mb-1">
         {include "bits/icon.tpl" i=cancel}
         {t}link-cancel{/t}

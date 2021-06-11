@@ -95,7 +95,7 @@
         </table>
       </fieldset>
 
-      <div class="mb-4 text-right">
+      <div class="mb-4 text-end">
         {if $canDelete}
           <button
             name="deleteButton"

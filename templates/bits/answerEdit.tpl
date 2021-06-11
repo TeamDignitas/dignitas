@@ -20,7 +20,7 @@
   </div>
 
   <div class="form-group row">
-    <label for="field-verdict" class="col-md-6 col-sm-4 col-form-label text-right">
+    <label for="field-verdict" class="col-md-6 col-sm-4 col-form-label text-end">
       {t}label-verdict{/t}
 
       {$url=LocaleUtil::getVerdictUrl()}
@@ -51,7 +51,7 @@
     </div>
   </div>
 
-  <div class="mt-4 text-right answer-buttons">
+  <div class="mt-4 text-end answer-buttons">
     {if $answer->isDeletable()}
       <button
         name="deleteButton"
