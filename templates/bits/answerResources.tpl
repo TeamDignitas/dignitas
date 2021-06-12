@@ -2,7 +2,7 @@
   <div
     id="answer-resources"
     class="modal fade"
-    data-focus="false"
+    data-bs-focus="false"
     tabindex="-1">
 
     <div class="modal-dialog modal-dialog-scrollable">

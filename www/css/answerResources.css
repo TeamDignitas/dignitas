@@ -40,7 +40,7 @@
   /* Some rules to keep the rest of the page reachable. Unfortunately, these
    also apply to the flagging modal. */
   .modal-open {
-    overflow-y: auto; /* Keep the main page scroll bar visible */
+    overflow-y: auto !important; /* Keep the main page scroll bar visible */
     padding-right: 0px !important;
   }
 
