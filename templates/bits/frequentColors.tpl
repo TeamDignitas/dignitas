@@ -4,7 +4,7 @@
   {foreach $colors as $color}
     <span
       data-value="{$color}"
-      data-bs-target="{$target}"
+      data-target="{$target}"
       class="frequent-color"
       style="background: {$color}">
       &nbsp;
