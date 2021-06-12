@@ -49,7 +49,7 @@ $(function() {
 
       // now load the new page contents
       var url = wrapper.data('url');
-      var target = $(wrapper.data('target'));
+      var target = $(wrapper.data('bs-target'));
       var args = getArgs(wrapper.siblings('form'), page);
 
       $.get(url, args).done(function(json) {
@@ -92,7 +92,7 @@ $(function() {
   function filterChange(e) {
     var form = $(e.target).closest('form')
     var pagWrap = form.siblings('.pagination-wrapper');
-    var target = $(pagWrap.data('target'));
+    var target = $(pagWrap.data('bs-target'));
 
     var args = getArgs(form, 1);
 
