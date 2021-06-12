@@ -20,118 +20,83 @@
       <input type="hidden" name="id" value="{$t->id}">
 
       <fieldset class="related-fields mb-5 ml-3">
-        <div class="row mb-3">
-          <label for="value" class="col-sm-12 col-lg-2 mt-2 px-0 control-label">
-            {t}label-name{/t}
-          </label>
-          <div class="col-sm-12 col-lg-10 px-0">
-            <input type="text"
-              class="form-control {if isset($errors.value)}is-invalid{/if}"
-              id="value"
-              name="value"
-              value="{$t->value}">
-            {include "bits/fieldErrors.tpl" errors=$errors.value|default:null}
-          </div>
-        </div>
+        {hf inputId='value' label="{t}label-name{/t}"}
+          <input type="text"
+            class="form-control {if isset($errors.value)}is-invalid{/if}"
+            id="value"
+            name="value"
+            value="{$t->value}">
+          {include "bits/fieldErrors.tpl" errors=$errors.value|default:null}
+        {/hf}
 
-        <div class="row mb-3">
-          <label for="tooltip" class="col-sm-12 col-lg-2 mt-2 px-0 control-label">
-            {t}label-details{/t}
-          </label>
-          <div class="col-sm-12 col-lg-10 px-0">
-            <input type="text"
-              class="form-control"
-              id="tooltip"
-              name="tooltip"
-              value="{$t->tooltip}"
-              placeholder="{t}label-optional-tooltip{/t}">
-          </div>
-        </div>
+        {hf inputId='tooltip' label="{t}label-details{/t}"}
+          <input type="text"
+            class="form-control"
+            id="tooltip"
+            name="tooltip"
+            value="{$t->tooltip}"
+            placeholder="{t}label-optional-tooltip{/t}">
+        {/hf}
 
-        <div class="row mb-3">
-          <label for="parent-id" class="col-sm-12 col-lg-2 mt-2 px-0 control-label">
-            {t}label-parent-tag{/t}
-          </label>
-          <div class="col-sm-12 col-lg-10 px-0">
-            <select
-              id="parent-id"
-              name="parentId"
-              class="form-select {if isset($errors.parentId)}is-invalid{/if}">
-              {if $t->parentId}
-                <option value="{$t->parentId}" selected></option>
-              {/if}
-            </select>
-            {include "bits/fieldErrors.tpl" errors=$errors.parentId|default:null}
-          </div>
-        </div>
+        {hf inputId='parent-id' label="{t}label-parent-tag{/t}"}
+          <select
+            id="parent-id"
+            name="parentId"
+            class="form-select {if isset($errors.parentId)}is-invalid{/if}">
+            {if $t->parentId}
+              <option value="{$t->parentId}" selected></option>
+            {/if}
+          </select>
+          {include "bits/fieldErrors.tpl" errors=$errors.parentId|default:null}
+        {/hf}
       </fieldset>
 
       <fieldset class="related-fields mb-5 ml-3">
-        <div class="row mb-3">
-          <label for="color" class="col-sm-12 col-lg-2 mt-2 px-0 control-label">
-            {t}label-text-color{/t}
-          </label>
-          <div class="col-sm-12 col-lg-10 px-0">
-            <div>
-              <input type="color"
-                class="form-control form-control-color"
-                id="color"
-                name="color"
-                value="{$t->getColor()}">
-            </div>
-            {include "bits/frequentColors.tpl"
-              colors=$frequentColors.color
-              target="#color"}
+        {hf inputId='color' label="{t}label-text-color{/t}"}
+          <input type="color"
+            class="form-control form-control-color"
+            id="color"
+            name="color"
+            value="{$t->getColor()}">
+          {include "bits/frequentColors.tpl"
+            colors=$frequentColors.color
+            target="#color"}
+        {/hf}
+
+        {hf inputId='background' label="{t}label-background-color{/t}"}
+          <input type="color"
+            class="form-control form-control-color"
+            id="background"
+            name="background"
+            value="{$t->getBackground()}">
+          {include "bits/frequentColors.tpl"
+            colors=$frequentColors.background
+            target="#background"}
+        {/hf}
+
+        {hf inputId='icon' label="{t}label-icon{/t}"}
+          <div class="input-group">
+            {if $t->icon}
+              {include "bits/icon.tpl" i=$t->icon class="input-group-text"}
+            {/if}
+            <input type="text"
+              class="form-control"
+              id="icon"
+              name="icon"
+              value="{$t->icon}">
           </div>
-        </div>
 
-        <div class="row mb-3">
-          <label for="background" class="col-sm-12 col-lg-2 mt-2 px-0 control-label">
-            {t}label-background-color{/t}
-          </label>
-          <div class="col-sm-12 col-lg-10 px-0">
-            <div>
-              <input type="color"
-                class="form-control form-control-color"
-                id="background"
-                name="background"
-                value="{$t->getBackground()}">
-            </div>
-            {include "bits/frequentColors.tpl"
-              colors=$frequentColors.background
-              target="#background"}
-          </div>
-        </div>
+          <small class="form-text text-muted">
+            {t}info-tag-icon-name{/t}
+          </small>
 
-        <div class="row mb-3">
-          <label for="icon" class="col-sm-12 col-lg-2 mt-2 px-0 control-label">
-            {t}label-icon{/t}
-          </label>
-          <div class="col-sm-12 col-lg-10 px-0">
-            <div class="input-group">
-              {if $t->icon}
-                <span class="input-group-prepend">
-                  {include "bits/icon.tpl" i=$t->icon class="input-group-text"}
-                </span>
-              {/if}
-              <input type="text"
-                class="form-control"
-                id="icon"
-                name="icon"
-                value="{$t->icon}">
-            </div>
+          {include 'bs/checkbox.tpl'
+            checked=$t->iconOnly
+            divClass='mt-1'
+            label="{t}label-icon-only{/t}"
+            name='iconOnly'}
 
-            <small class="form-text text-muted">
-              {t}info-tag-icon-name{/t}
-            </small>
-
-            {include 'bs/checkbox.tpl'
-              checked=$t->iconOnly
-              divClass='mt-1'
-              label="{t}label-icon-only{/t}"
-              name='iconOnly'}
-
-          </div>
+        {/hf}
         </div>
       </fieldset>
 

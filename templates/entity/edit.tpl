@@ -25,58 +25,42 @@
       <input type="hidden" name="referrer" value="{$referrer}">
 
       <fieldset class="related-fields mb-5 ml-3">
-        <div class="form-group row">
-          <label for="field-name" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-name{/t}</label>
-          <div class="col-sm-12 col-lg-10 px-0">
-            <input
-              name="name"
-              value="{$entity->name|escape}"
-              id="field-name"
-              class="form-control {if isset($errors.name)}is-invalid{/if}">
-            {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
-          </div>
-        </div>
+        {hf inputId='field-name' label="{t}label-name{/t}"}
+          <input
+            name="name"
+            value="{$entity->name|escape}"
+            id="field-name"
+            class="form-control {if isset($errors.name)}is-invalid{/if}">
+          {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
+        {/hf}
 
         {if User::isModerator()}
-          <div class="form-group row">
-            <label
-              for="field-long-possessive"
-              class="col-sm-12 col-lg-2 mt-2 pl-0">
-              {t}phrase-long-possessive{/t}
-            </label>
+          {hf inputId='field-long-possessive' label="{t}phrase-long-possessive{/t}"}
             <input
               name="longPossessive"
               value="{$entity->longPossessive|escape}"
               id="field-long-possessive"
-              class="form-control col-sm-12 col-lg-10"
+              class="form-control"
               placeholder="{t}label-optional{/t}">
-          </div>
+          {/hf}
 
-          <div class="form-group row">
-            <label
-              for="field-short-possessive"
-              class="col-sm-12 col-lg-2 mt-2 pl-0">
-              {t}phrase-short-possessive{/t}
-            </label>
+          {hf inputId='field-short-possessive' label="{t}phrase-short-possessive{/t}"}
             <input
               name="shortPossessive"
               value="{$entity->shortPossessive|escape}"
               id="field-short-possessive"
-              class="form-control col-sm-12 col-lg-10"
+              class="form-control"
               placeholder="{t}label-optional{/t}">
-          </div>
+          {/hf}
         {/if}
 
-        <div class="form-group row">
-          <label class="col-sm-4 col-lg-2 ml-0 mt-2 pl-0">{t}label-alias{/t}</label>
-          <div class="col-sm-8 col-lg-10 pl-0 mt-1 mb-2">
-            <button id="add-alias" class="btn btn-outline-secondary btn-sm" type="button">
-              {include "bits/icon.tpl" i=add_circle}
-              {t}link-add-alias{/t}
-            </button>
-          </div>
+        {hf label="{t}label-alias{/t}"}
+          <button id="add-alias" class="btn btn-outline-secondary btn-sm mb-2" type="button">
+            {include "bits/icon.tpl" i=add_circle}
+            {t}link-add-alias{/t}
+          </button>
 
-          <table class="table table-sm sortable col-md-10 offset-md-2">
+          <table class="table table-sm sortable">
             <thead
               id="alias-header"
               {if empty($aliases)}hidden{/if}>
@@ -93,100 +77,84 @@
               {/foreach}
             </tbody>
           </table>
-        </div>
+        {/hf}
 
       </fieldset>
 
       <fieldset class="related-fields mb-5 ml-3">
-        <div class="form-group row">
-          <label for="field-entity-type-id" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-type{/t}</label>
-          <div class="col-sm-12 col-lg-10 px-0">
-            <select
-              name="entityTypeId"
-              id="field-entity-type-id"
-              class="form-select {if isset($errors.entityTypeId)}is-invalid{/if}"
-              data-change-msg="{t}info-change-entity-type-while-relations-exist{/t}">
-              {foreach $entityTypes as $et}
-                <option
-                  value="{$et->id}"
-                  data-has-color="{$et->hasColor}"
-                  {if $entity->entityTypeId == $et->id}selected{/if}>
-                  {$et->name|escape}
-                </option>
+        {hf inputId='field-entity-type-id' label="{t}label-type{/t}"}
+          <select
+            name="entityTypeId"
+            id="field-entity-type-id"
+            class="form-select {if isset($errors.entityTypeId)}is-invalid{/if}"
+            data-change-msg="{t}info-change-entity-type-while-relations-exist{/t}">
+            {foreach $entityTypes as $et}
+              <option
+                value="{$et->id}"
+                data-has-color="{$et->hasColor}"
+                {if $entity->entityTypeId == $et->id}selected{/if}>
+                {$et->name|escape}
+              </option>
+            {/foreach}
+          </select>
+          {include "bits/fieldErrors.tpl" errors=$errors.type|default:null}
+        {/hf}
+
+        <div id="color-wrapper" {if !$entity->hasColor()}hidden{/if}>
+          {hf inputId='field-color' label="{t}label-color{/t}"}
+            <input type="color"
+              class="form-control form-control-color"
+              id="field-color"
+              name="color"
+              value="{$entity->getColor()}">
+          {/hf}
+        </div>
+
+        {hf label="{t}label-relations{/t}"}
+          <button id="add-relation" class="btn btn-outline-secondary btn-sm mb-2" type="button">
+            {include "bits/icon.tpl" i=add_circle}
+            {t}label-add-relation{/t}
+          </button>
+
+          <table class="table table-sm table-rel sortable">
+            <thead
+              id="relation-header"
+              {if empty($relations)}hidden{/if}>
+              <tr>
+                <th class="border-0">{t}label-order{/t}</th>
+                <th class="border-0">{t}label-type{/t}</th>
+                <th class="border-0">{t}label-target{/t}</th>
+                <th class="border-0">{t}label-start-date{/t}</th>
+                <th class="border-0">{t}label-end-date{/t}</th>
+                <th class="border-0">{t}actions{/t}</th>
+              </tr>
+            </thead>
+            <tbody id="relation-container">
+              {$entityTypeId=$entity->getEntityType()->id|default:$entityTypes[0]->id}
+              {include "bits/relationEdit.tpl" id="stem-relation"}
+              {foreach $relations as $r}
+                {include "bits/relationEdit.tpl" relation=$r}
               {/foreach}
-            </select>
-            {include "bits/fieldErrors.tpl" errors=$errors.type|default:null}
-          </div>
-        </div>
+            </tbody>
+          </table>
 
-        <div id="color-wrapper"
-          class="form-group row""
-          {if !$entity->hasColor()}hidden{/if}>
-          <label for="field-color" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-color{/t}</label>
-          <input type="color"
-            class="form-control form-control-color col-sm-12 col-lg-10"
-            id="field-color"
-            name="color"
-            value="{$entity->getColor()}">
-        </div>
-
-        <div class="form-group row">
-          <label class="col-sm-4 col-lg-2 mt-2 pl-0">{t}label-relations{/t}</label>
-          <div class="col-sm-8 col-lg-10 pl-0 mb-2">
-            <button id="add-relation" class="btn btn-outline-secondary btn-sm" type="button">
-              {include "bits/icon.tpl" i=add_circle}
-              {t}label-add-relation{/t}
-            </button>
-          </div>
-
-          <div class="col-md-10 offset-md-2 px-0">
-            <table class="table table-sm table-rel sortable">
-              <thead
-                id="relation-header"
-                {if empty($relations)}hidden{/if}>
-                <tr>
-                  <th class="border-0">{t}label-order{/t}</th>
-                  <th class="border-0">{t}label-type{/t}</th>
-                  <th class="border-0">{t}label-target{/t}</th>
-                  <th class="border-0">{t}label-start-date{/t}</th>
-                  <th class="border-0">{t}label-end-date{/t}</th>
-                  <th class="border-0">{t}actions{/t}</th>
-                </tr>
-              </thead>
-              <tbody id="relation-container">
-                {$entityTypeId=$entity->getEntityType()->id|default:$entityTypes[0]->id}
-                {include "bits/relationEdit.tpl" id="stem-relation"}
-                {foreach $relations as $r}
-                  {include "bits/relationEdit.tpl" relation=$r}
-                {/foreach}
-              </tbody>
-            </table>
-
-            {include "bits/fieldErrors.tpl" errors=$errors.relations|default:null}
-          </div>
-
-        </div>
+          {include "bits/fieldErrors.tpl" errors=$errors.relations|default:null}
+        {/hf}
       </fieldset>
 
       <fieldset class="related-fields mb-5 ml-3">
-        <div class="form-group row">
-          <label for="field-profile" class="col-sm-12 col-lg-2 mt-2 pl-0">
-            {t}label-profile{/t}
-          </label>
+        {hf inputId='field-profile' label="{t}label-profile{/t}"}
+          <textarea
+            id="field-profile"
+            name="profile"
+            class="form-control has-unload-warning size-limit easy-mde {if isset($errors.profile)}is-invalid{/if}"
+            maxlength="{Entity::PROFILE_MAX_LENGTH}"
+            rows="5">{$entity->profile|escape}</textarea>
 
-          <div class="col-sm-12 col-lg-10 px-0">
-            <textarea
-              id="field-profile"
-              name="profile"
-              class="form-control has-unload-warning size-limit easy-mde {if isset($errors.profile)}is-invalid{/if}"
-              maxlength="{Entity::PROFILE_MAX_LENGTH}"
-              rows="5">{$entity->profile|escape}</textarea>
-
-            <span class="chars-remaining form-text small float-left"></span>
-            {include "bits/markdownHelp.tpl"}
-            {include "bits/fieldErrors.tpl" errors=$errors.profile|default:null}
-          </div>
-        </div>
+          <span class="chars-remaining form-text small float-left"></span>
+          {include "bits/markdownHelp.tpl"}
+          {include "bits/fieldErrors.tpl" errors=$errors.profile|default:null}
+        {/hf}
 
         {include "bits/linkEditor.tpl"
           labelText="{t}label-entity-links{/t}"
@@ -196,63 +164,53 @@
       </fieldset>
 
       <fieldset class="related-fields mb-5 ml-3">
-        <div class="form-group row">
-          <label class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-region{/t}</label>
-          <div class="col-sm-12 col-lg-10 px-0">
-            <select name="regionId" class="form-select">
-              <option value="0"></option>
-              {foreach $regions as $option}
-                <option
-                  value="{$option->id}"
-                  {if $entity->regionId == $option->id}selected{/if}>
-                  {$option->name}
-                </option>
-              {/foreach}
-            </select>
+        {hf label="{t}label-region{/t}"}
+          <select name="regionId" class="form-select">
+            <option value="0"></option>
+            {foreach $regions as $option}
+              <option
+                value="{$option->id}"
+                {if $entity->regionId == $option->id}selected{/if}>
+                {$option->name}
+              </option>
+            {/foreach}
+          </select>
+        {/hf}
+
+        {hf label="{t}label-tags{/t}"}
+          <select name="tagIds[]" class="form-select select2Tags" multiple>
+            {foreach $tagIds as $tagId}
+              <option value="{$tagId}" selected></option>
+            {/foreach}
+          </select>
+        {/hf}
+
+        {hf inputId='field-image' label="{t}label-image{/t}"}
+          <div class="custom-file">
+            <input
+              id="field-image"
+              name="image"
+              type="file"
+              data-bs-toggle="tooltip"
+              title="{t}tooltip-upload-entity-image{/t}"
+              class="custom-file-input {if isset($errors.image)}is-invalid{/if}">
+            <label class="custom-file-label" for="field-image">
+              {t}info-upload-image{/t}
+            </label>
           </div>
-        </div>
+          {include "bits/fieldErrors.tpl" errors=$errors.image|default:null}
 
-        <div class="form-group row">
-          <label class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-tags{/t}</label>
-          <div class="col-sm-12 col-lg-10 px-0">
-            <select name="tagIds[]" class="form-select select2Tags" multiple>
-              {foreach $tagIds as $tagId}
-                <option value="{$tagId}" selected></option>
-              {/foreach}
-            </select>
-          </div>
-        </div>
+          {include 'bs/checkbox.tpl'
+            divClass='mt-1'
+            label="{t}label-delete-image{/t}"
+            name='deleteImage'}
 
-        <div class="form-group row">
-          <label class="col-sm-12 col-lg-2 mt-2 pl-0" for="field-image">{t}label-image{/t}</label>
-
-          <div class="col-sm-12 col-lg-10 px-0">
-            <div class="custom-file">
-              <input
-                id="field-image"
-                name="image"
-                type="file"
-                data-bs-toggle="tooltip"
-                title="{t}tooltip-upload-entity-image{/t}"
-                class="custom-file-input {if isset($errors.image)}is-invalid{/if}">
-              <label class="custom-file-label" for="field-image">
-                {t}info-upload-image{/t}
-              </label>
-            </div>
-            {include "bits/fieldErrors.tpl" errors=$errors.image|default:null}
-
-            {include 'bs/checkbox.tpl'
-              divClass='mt-1'
-              label="{t}label-delete-image{/t}"
-              name='deleteImage'}
-
-            {include "bits/image.tpl"
-              obj=$entity
-              geometry=Config::THUMB_ENTITY_LARGE
-              spanClass="col-3"
-              imgClass="pic float-right"}
-          </div>
-        </div>
+          {include "bits/image.tpl"
+            obj=$entity
+            geometry=Config::THUMB_ENTITY_LARGE
+            spanClass="col-3"
+            imgClass="pic float-right"}
+        {/hf}
       </fieldset>
 
       <div class="mt-4 text-end">

@@ -9,24 +9,21 @@
     <form method="post">
 
       <fieldset class="related-fields mb-5 ml-3">
-        <div class="form-group row">
-          <label for="field-category-id" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-category{/t}</label>
-          <div class="col-sm-12 col-lg-10 px-0">
-            <select
-              name="categoryId"
-              id="field-category-id"
-              class="form-select {if isset($errors.categoryId)}is-invalid{/if}">
-              {foreach HelpCategory::loadAll() as $cat}
-                <option
-                  value="{$cat->id}"
-                  {if $cat->id == $page->categoryId}selected{/if}>
-                  {$cat->getName()}
-                </option>
-              {/foreach}
-            </select>
-            {include "bits/fieldErrors.tpl" errors=$errors.categoryId|default:null}
-          </div>
-        </div>
+        {hf inputId='field-category-id' label="{t}label-category{/t}"}
+          <select
+            name="categoryId"
+            id="field-category-id"
+            class="form-select {if isset($errors.categoryId)}is-invalid{/if}">
+            {foreach HelpCategory::loadAll() as $cat}
+              <option
+                value="{$cat->id}"
+                {if $cat->id == $page->categoryId}selected{/if}>
+                {$cat->getName()}
+              </option>
+            {/foreach}
+          </select>
+          {include "bits/fieldErrors.tpl" errors=$errors.categoryId|default:null}
+        {/hf}
       </fieldset>
 
       <div class="tabs-wrapper">
@@ -63,52 +60,35 @@
               role="tabpanel">
 
               <fieldset class="related-fields mb-5 ml-3">
-                <div class="form-group row">
-                  <label for="field-title" class="control-label col-sm-12 col-lg-2 mt-2 pl-0">
-                    {t}label-title{/t}
-                  </label>
-                  <div class="col-sm-12 col-lg-10 px-0">
-                    <input type="text"
-                      class="form-control {if isset($errors.title.$locale)}is-invalid{/if}"
-                      id="field-title"
-                      name="title-{$locale}"
-                      value="{$hpt->title|escape}">
-                    {include "bits/fieldErrors.tpl" errors=$errors.title.$locale|default:null}
-                  </div>
-                </div>
+                {hf inputId='field-title' label="{t}label-title{/t}"}
+                  <input type="text"
+                    class="form-control {if isset($errors.title.$locale)}is-invalid{/if}"
+                    id="field-title"
+                    name="title-{$locale}"
+                    value="{$hpt->title|escape}">
+                  {include "bits/fieldErrors.tpl" errors=$errors.title.$locale|default:null}
+                {/hf}
 
-                <div class="form-group row">
-                  <label for="field-path" class="control-label col-sm-12 col-lg-2 mt-2 pl-0">
-                    {t}label-help-page-path{/t}
-                  </label>
-                  <div class="col-sm-12 col-lg-10 px-0">
-                    <input type="text"
-                      class="form-control {if isset($errors.path.$locale)}is-invalid{/if}"
-                      id="field-path"
-                      name="path-{$locale}"
-                      value="{$hpt->path|escape}"
-                      placeholder="{t}info-help-page-path{/t}">
-                    {include "bits/fieldErrors.tpl" errors=$errors.path.$locale|default:null}
-                  </div>
-                </div>
-
+                {hf inputId='field-path' label="{t}label-help-page-path{/t}"}
+                  <input type="text"
+                    class="form-control {if isset($errors.path.$locale)}is-invalid{/if}"
+                    id="field-path"
+                    name="path-{$locale}"
+                    value="{$hpt->path|escape}"
+                    placeholder="{t}info-help-page-path{/t}">
+                  {include "bits/fieldErrors.tpl" errors=$errors.path.$locale|default:null}
+                {/hf}
               </fieldset>
 
               <fieldset class="related-fields mb-5 ml-3">
-                <div class="form-group row">
-                  <label for="field-contents" class="col-sm-12 col-lg-2 mt-2 pl-0">
-                    {t}label-contents{/t}
-                  </label>
-
-                  <div class="col-sm-12 col-lg-10 px-0">
-                    <textarea
-                      id="field-contents"
-                      class="form-control has-unload-warning easy-mde {if isset($errors.contents.$locale)}is-invalid{/if}"
-                      name="contents-{$locale}">{$hpt->contents|escape}</textarea>
-                    {include "bits/markdownHelp.tpl"}
-                    {include "bits/fieldErrors.tpl" errors=$errors.contents.$locale|default:null}
-                  </div>
-                </div>
+                {hf inputId='field-contents' label="{t}label-contents{/t}"}
+                  <textarea
+                    id="field-contents"
+                    class="form-control has-unload-warning easy-mde {if isset($errors.contents.$locale)}is-invalid{/if}"
+                    name="contents-{$locale}">{$hpt->contents|escape}</textarea>
+                  {include "bits/markdownHelp.tpl"}
+                  {include "bits/fieldErrors.tpl" errors=$errors.contents.$locale|default:null}
+                {/hf}
               </fieldset>
             </div>
           {/foreach}

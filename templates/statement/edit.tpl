@@ -25,9 +25,7 @@
       <input type="hidden" name="referrer" value="{$referrer}">
 
       <fieldset class="related-fields mb-5 ml-3">
-        {hf
-          inputId='field-entity-id'
-          label="{t}label-entity{/t}"}
+        {hf inputId='field-entity-id' label="{t}label-entity{/t}"}
           <select
             name="entityId"
             id="field-entity-id"
@@ -46,22 +44,18 @@
           {/if}
         {/hf}
 
-        <div class="form-group row">
-          <label for="field-date-made" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-statement-date{/t}</label>
-          <div class="col-sm-12 col-lg-10 px-0">
-            <input
-              type="text"
-              id="field-date-made"
-              class="form-control datepicker {if isset($errors.dateMade)}is-invalid{/if}"
-              data-allow-partial="false"
-              required>
-            <input type="hidden" name="dateMade" value="{$statement->dateMade}">
-            {include "bits/fieldErrors.tpl" errors=$errors.dateMade|default:null}
-          </div>
-        </div>
+        {hf inputId='field-date-made' label="{t}label-statement-date{/t}"}
+          <input
+            type="text"
+            id="field-date-made"
+            class="form-control datepicker {if isset($errors.dateMade)}is-invalid{/if}"
+            data-allow-partial="false"
+            required>
+          <input type="hidden" name="dateMade" value="{$statement->dateMade}">
+          {include "bits/fieldErrors.tpl" errors=$errors.dateMade|default:null}
+        {/hf}
 
-        <div class="form-group row">
-          <label for="field-type" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-type{/t}</label>
+        {hf inputId='field-type' label="{t}label-type{/t}"}
           <select
             id="field-type"
             name="type"
@@ -69,7 +63,7 @@
             data-prev-value="{$statement->type}"
             data-confirm="{t}info-confirm-statement-type-change{/t}"
             {/if}
-            class="form-select has-unload-warning col-sm-12 col-lg-10">
+            class="form-select has-unload-warning">
             {for $t = 1 to Statement::NUM_TYPES - 1}
               <option
                 value="{$t}"
@@ -78,57 +72,47 @@
               </option>
             {/for}
           </select>
-        </div>
+        {/hf}
       </fieldset>
 
       <fieldset class="related-fields mb-5 ml-3">
-        <div class="form-group row">
-          <label for="field-summary" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-summary{/t}</label>
-          <div class="col-sm-12 col-lg-10 px-0">
-            <textarea
-              name="summary"
-              id="field-summary"
-              class="form-control single-line size-limit has-unload-warning {if isset($errors.summary)}is-invalid{/if}"
-              maxlength="{Statement::MAX_SUMMARY_LENGTH}"
-              rows="3"
-              required>{$statement->summary|escape}</textarea>
+        {hf inputId='field-summary' label="{t}label-summary{/t}"}
+          <textarea
+            name="summary"
+            id="field-summary"
+            class="form-control single-line size-limit has-unload-warning {if isset($errors.summary)}is-invalid{/if}"
+            maxlength="{Statement::MAX_SUMMARY_LENGTH}"
+            rows="3"
+            required>{$statement->summary|escape}</textarea>
 
-            {include "bits/fieldErrors.tpl" errors=$errors.summary|default:null}
+          {include "bits/fieldErrors.tpl" errors=$errors.summary|default:null}
+          <span class="chars-remaining form-text small"></span>
+        {/hf}
 
-            <span class="chars-remaining form-text small float-left"></span>
-          </div>
-        </div>
+        {hf inputId='field-context' label="{t}label-context{/t}"}
+          <textarea
+            name="context"
+            id="field-context"
+            class="form-control has-unload-warning easy-mde {if isset($errors.context)}is-invalid{/if}"
+            data-statement-id="{$statement->id}"
+            rows="10">{$statement->context|escape}</textarea>
+          {include "bits/fieldErrors.tpl" errors=$errors.context|default:null}
+          {include "bits/markdownHelp.tpl"}
+        {/hf}
 
-        <div class="form-group row">
-          <label for="field-context" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-context{/t}</label>
-          <div class="col-sm-12 col-lg-10 px-0">
-            <textarea
-              name="context"
-              id="field-context"
-              class="form-control has-unload-warning easy-mde {if isset($errors.context)}is-invalid{/if}"
-              data-statement-id="{$statement->id}"
-              rows="10">{$statement->context|escape}</textarea>
-            {include "bits/fieldErrors.tpl" errors=$errors.context|default:null}
-            {include "bits/markdownHelp.tpl"}
-          </div>
-        </div>
+        {hf inputId='field-goal' label="{t}label-goal{/t}"}
+          <textarea
+            name="goal"
+            id="field-goal"
+            class="form-control single-line size-limit has-unload-warning {if isset($errors.goal)}is-invalid{/if}"
+            maxlength="{Statement::MAX_GOAL_LENGTH}"
+            rows="3"
+            required>{$statement->goal|escape}</textarea>
 
-        <div class="form-group row">
-          <label for="field-goal" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-goal{/t}</label>
-          <div class="col-sm-12 col-lg-10 px-0">
-            <textarea
-              name="goal"
-              id="field-goal"
-              class="form-control single-line size-limit has-unload-warning {if isset($errors.goal)}is-invalid{/if}"
-              maxlength="{Statement::MAX_GOAL_LENGTH}"
-              rows="3"
-              required>{$statement->goal|escape}</textarea>
+          {include "bits/fieldErrors.tpl" errors=$errors.goal|default:null}
 
-            {include "bits/fieldErrors.tpl" errors=$errors.goal|default:null}
-
-            <span class="chars-remaining form-text small float-left"></span>
-          </div>
-        </div>
+          <span class="chars-remaining form-text small float-left"></span>
+        {/hf}
 
         {include "bits/linkEditor.tpl"
           labelText="{t}label-statement-links{/t}"
@@ -137,78 +121,58 @@
       </fieldset>
 
       <fieldset class="related-fields mb-5 ml-3">
-        <div class="form-group row">
-          <label
-            for="field-involvements"
-            class="col-sm-12 col-lg-2 mt-2 pl-0">
-            {t}label-involvements{/t}
-          </label>
-          <div class="col-sm-12 col-lg-10 px-0">
-            <select
-              name="involvedEntityIds[]"
-              id="field-involvements"
-              class="form-select select2Entities"
-              data-placeholder="{t}info-involvements{/t}"
-              multiple>
-              {foreach $involvedEntityIds as $involvedEntityId}
-                <option value="{$involvedEntityId}" selected></option>
-              {/foreach}
-            </select>
-          </div>
-        </div>
+        {hf inputId='field-involvements' label="{t}label-involvements{/t}"}
+          <select
+            name="involvedEntityIds[]"
+            id="field-involvements"
+            class="form-select select2Entities"
+            data-placeholder="{t}info-involvements{/t}"
+            multiple>
+            {foreach $involvedEntityIds as $involvedEntityId}
+              <option value="{$involvedEntityId}" selected></option>
+            {/foreach}
+          </select>
+        {/hf}
 
-        <div class="form-group row">
-          <label class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-region{/t}</label>
-          <div class="col-sm-12 col-lg-10 px-0">
-            <select name="regionId" class="form-select">
-              <option value="0"></option>
-              {foreach $regions as $option}
+        {hf label="{t}label-region{/t}"}
+          <select name="regionId" class="form-select">
+            <option value="0"></option>
+            {foreach $regions as $option}
+              <option
+                value="{$option->id}"
+                {if $statement->regionId == $option->id}selected{/if}>
+                {$option->name}
+              </option>
+            {/foreach}
+          </select>
+        {/hf}
+
+        {hf label="{t}label-tags{/t}"}
+          <select name="tagIds[]" class="form-select select2Tags" multiple>
+            {foreach $tagIds as $tagId}
+              <option value="{$tagId}" selected></option>
+            {/foreach}
+          </select>
+        {/hf}
+
+        {if User::isModerator()}
+          {hf inputId='field-verdict' label="{t}label-verdict{/t}"}
+            <select
+              id="field-verdict"
+              name="verdict"
+              class="form-select has-unload-warning {if isset($errors.verdict)}is-invalid{/if}">
+
+              {foreach $statement->getVerdictChoices() as $v}
                 <option
-                  value="{$option->id}"
-                  {if $statement->regionId == $option->id}selected{/if}>
-                  {$option->name}
+                  value="{$v}"
+                  {if $v == $statement->verdict}selected{/if}>
+                  {Statement::verdictName($v)}
                 </option>
               {/foreach}
             </select>
-          </div>
-        </div>
 
-        <div class="form-group row">
-          <label class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-tags{/t}</label>
-          <div class="col-sm-12 col-lg-10 px-0">
-            <select name="tagIds[]" class="form-select select2Tags" multiple>
-              {foreach $tagIds as $tagId}
-                <option value="{$tagId}" selected></option>
-              {/foreach}
-            </select>
-          </div>
-        </div>
-
-        {if User::isModerator()}
-          <div class="form-group row">
-            <label for="field-verdict" class="col-sm-12 col-lg-2 mt-2 pl-0">
-              {t}label-verdict{/t}
-            </label>
-
-            <div class="col-sm-12 col-lg-10 px-0">
-
-              <select
-                id="field-verdict"
-                name="verdict"
-                class="form-select has-unload-warning {if isset($errors.verdict)}is-invalid{/if}">
-
-                {foreach $statement->getVerdictChoices() as $v}
-                  <option
-                    value="{$v}"
-                    {if $v == $statement->verdict}selected{/if}>
-                    {Statement::verdictName($v)}
-                  </option>
-                {/foreach}
-              </select>
-
-              {include "bits/fieldErrors.tpl" errors=$errors.verdict|default:null}
-            </div>
-          </div>
+            {include "bits/fieldErrors.tpl" errors=$errors.verdict|default:null}
+          {/hf}
         {/if}
       </fieldset>
 
