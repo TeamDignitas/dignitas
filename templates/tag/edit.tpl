@@ -1,11 +1,11 @@
 {extends "layout.tpl"}
 
 {capture "title"}
-{if $t->id}
-  {t}title-edit-tag{/t}
-{else}
-  {t}title-add-tag{/t}
-{/if}
+  {if $t->id}
+    {t}title-edit-tag{/t}
+  {else}
+    {t}title-add-tag{/t}
+  {/if}
 {/capture}
 
 {block "title"}{cap}{$smarty.capture.title}{/cap}{/block}
@@ -125,11 +125,10 @@
               {t}info-tag-icon-name{/t}
             </small>
 
-            {capture 'label'}{t}label-icon-only{/t}{/capture}
             {include 'bs/checkbox.tpl'
               checked=$t->iconOnly
               divClass='mt-1'
-              label=$smarty.capture.label
+              label="{t}label-icon-only{/t}"
               name='iconOnly'}
 
           </div>

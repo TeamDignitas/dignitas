@@ -165,11 +165,10 @@
 
                 <div class="d-flex mt-2 justify-content-between align-items-center">
                   <div id="fake-moderator-wrapper">
-                    {capture 'label'}{t}label-moderator{/t}{/capture}
                     {include "bs/checkbox.tpl"
                       checked=User::isModerator()
                       inputId='fakeModerator'
-                      label=$smarty.capture.label
+                      label="{t}label-moderator{/t}"
                       name=''}
                   </div>
                   <div>

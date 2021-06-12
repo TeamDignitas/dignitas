@@ -1,11 +1,11 @@
 {extends "layout.tpl"}
 
 {capture "title"}
-{if $statement->id}
-  {t}title-edit-statement{/t}
-{else}
-  {t}title-add-statement{/t}
-{/if}
+  {if $statement->id}
+    {t}title-edit-statement{/t}
+  {else}
+    {t}title-add-statement{/t}
+  {/if}
 {/capture}
 
 {block "title"}{cap}{$smarty.capture.title}{/cap}{/block}
@@ -25,27 +25,26 @@
       <input type="hidden" name="referrer" value="{$referrer}">
 
       <fieldset class="related-fields mb-5 ml-3">
-        <div class="form-group row">
-          <label for="field-entity-id" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-entity{/t}</label>
-          <div class="col-sm-12 col-lg-10 px-0">
-            <select
-              name="entityId"
-              id="field-entity-id"
-              class="form-select {if isset($errors.entityId)}is-invalid{/if}">
-              {if $statement->entityId}
-                <option value="{$statement->entityId}"></option>
-              {/if}
-            </select>
-            {include "bits/fieldErrors.tpl" errors=$errors.entityId|default:null}
-            {if !$statement->entityId}
-              <small class="text-muted">
-                {t 1=Router::link('entity/edit')}
-                info-author-not-found-add-author-%1
-              {/t}
-              </small>
+        {hf
+          inputId='field-entity-id'
+          label="{t}label-entity{/t}"}
+          <select
+            name="entityId"
+            id="field-entity-id"
+            class="form-select {if isset($errors.entityId)}is-invalid{/if}">
+            {if $statement->entityId}
+              <option value="{$statement->entityId}"></option>
             {/if}
-          </div>
-        </div>
+          </select>
+          {include "bits/fieldErrors.tpl" errors=$errors.entityId|default:null}
+          {if !$statement->entityId}
+            <small class="text-muted">
+              {t 1=Router::link('entity/edit')}
+              info-author-not-found-add-author-%1
+              {/t}
+            </small>
+          {/if}
+        {/hf}
 
         <div class="form-group row">
           <label for="field-date-made" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-statement-date{/t}</label>
@@ -131,11 +130,10 @@
           </div>
         </div>
 
-        {capture "labelText" assign=labelText}{t}label-statement-links{/t}{/capture}
-        {capture "addButtonText" assign=addButtonText}{t}link-add-statement-link{/t}{/capture}
         {include "bits/linkEditor.tpl"
-          errors=$errors.links|default:null
-        }
+          labelText="{t}label-statement-links{/t}"
+          addButtonText="{t}link-add-statement-link{/t}"
+          errors=$errors.links|default:null}
       </fieldset>
 
       <fieldset class="related-fields mb-5 ml-3">

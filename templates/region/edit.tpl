@@ -1,11 +1,11 @@
 {extends "layout.tpl"}
 
 {capture "title"}
-{if $r->id}
-  {t}title-edit-region{/t}
-{else}
-  {t}title-add-region{/t}
-{/if}
+  {if $r->id}
+    {t}title-edit-region{/t}
+  {else}
+    {t}title-add-region{/t}
+  {/if}
 {/capture}
 
 {block "title"}{cap}{$smarty.capture.title}{/cap}{/block}

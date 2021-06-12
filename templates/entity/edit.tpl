@@ -1,11 +1,11 @@
 {extends "layout.tpl"}
 
 {capture "title"}
-{if $entity->id}
-  {t}title-edit-entity{/t}
-{else}
-  {t}title-add-entity{/t}
-{/if}
+  {if $entity->id}
+    {t}title-edit-entity{/t}
+  {else}
+    {t}title-add-entity{/t}
+  {/if}
 {/capture}
 
 {block "title"}{cap}{$smarty.capture.title}{/cap}{/block}
@@ -188,9 +188,10 @@
           </div>
         </div>
 
-        {capture "labelText" assign=labelText}{t}label-entity-links{/t}{/capture}
-        {capture "addButtonText" assign=addButtonText}{t}link-add-entity-link{/t}{/capture}
-        {include "bits/linkEditor.tpl" errors=$errors.links|default:null}
+        {include "bits/linkEditor.tpl"
+          labelText="{t}label-entity-links{/t}"
+          addButtonText="{t}link-add-entity-link{/t}"
+          errors=$errors.links|default:null}
 
       </fieldset>
 
@@ -240,10 +241,9 @@
             </div>
             {include "bits/fieldErrors.tpl" errors=$errors.image|default:null}
 
-            {capture 'label'}{t}label-delete-image{/t}{/capture}
             {include 'bs/checkbox.tpl'
               divClass='mt-1'
-              label=$smarty.capture.label
+              label="{t}label-delete-image{/t}"
               name='deleteImage'}
 
             {include "bits/image.tpl"

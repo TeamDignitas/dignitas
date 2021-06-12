@@ -7,11 +7,11 @@
   {* prepare the <img> tag *}
   {$sz=$obj->getFileSize($geometry)}
   {capture "imgTag"}
-  <img
-    src="{$obj->getFileUrl($geometry)}"
-    class="{$imgClass}"
-    {if $sz.width}width="{$sz.width}"{/if}
-    {if $sz.height}height="{$sz.height}"{/if}>
+    <img
+      src="{$obj->getFileUrl($geometry)}"
+      class="{$imgClass}"
+      {if $sz.width}width="{$sz.width}"{/if}
+      {if $sz.height}height="{$sz.height}"{/if}>
   {/capture}
 
   {* wrap the <img> tag in an <a> tag or a <span> tag *}

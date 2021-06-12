@@ -44,10 +44,9 @@
         </div>
       </div>
 
-      {capture 'label'}{t}label-moderator{/t}{/capture}
       {include 'bs/checkbox.tpl'
         divClass='mb-3'
-        label=$smarty.capture.label
+        label="{t}label-moderator{/t}"
         name='fakeModerator'}
 
       <input

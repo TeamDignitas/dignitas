@@ -72,15 +72,14 @@
             </div>
           </div>
 
-          {capture 'label'}{t}label-remember-me{/t}{/capture}
           {include 'bs/checkbox.tpl'
             checked=$remember
             divClass='mb-1'
-            label=$smarty.capture.label
+            label="{t}label-remember-me{/t}"
             name='remember'}
 
           {capture 'label'}
-          {t 1=Router::link('help/index')}label-register-manual{/t}
+            {t 1=Router::link('help/index')}label-register-manual{/t}
           {/capture}
           {include 'bs/checkbox.tpl'
             cbErrors=$errors.manual|default:null

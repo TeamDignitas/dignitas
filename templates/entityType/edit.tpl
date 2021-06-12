@@ -26,40 +26,32 @@
       </fieldset>
 
       <fieldset class="related-fields mb-5">
-        {capture 'label'}{t}label-loyalty-source{/t}{/capture}
-        {capture 'help'}{t}info-loyalty-source{/t}{/capture}
         {include 'bs/checkbox.tpl'
           checked=$et->loyaltySource
           divClass='mb-3'
-          help=$smarty.capture.help
-          label=$smarty.capture.label
+          help="{t}info-loyalty-source{/t}"
+          label="{t}label-loyalty-source{/t}"
           name='loyaltySource'}
 
-        {capture 'label'}{t}label-loyalty-sink{/t}{/capture}
-        {capture 'help'}{t}info-loyalty-sink{/t}{/capture}
         {include 'bs/checkbox.tpl'
           checked=$et->loyaltySink
           divClass='mb-3'
-          help=$smarty.capture.help
-          label=$smarty.capture.label
+          help="{t}info-loyalty-sink{/t}"
+          label="{t}label-loyalty-sink{/t}"
           name='loyaltySink'}
 
-        {capture 'label'}{t}label-has-color{/t}{/capture}
-        {capture 'help'}{t}info-has-color{/t}{/capture}
         {include 'bs/checkbox.tpl'
           checked=$et->hasColor
           divClass='mb-3'
-          help=$smarty.capture.help
-          label=$smarty.capture.label
+          help="{t}info-has-color{/t}"
+          label="{t}label-has-color{/t}"
           name='hasColor'}
 
-        {capture 'label'}{t}label-is-default{/t}{/capture}
-        {capture 'help'}{t}info-is-default{/t}{/capture}
         {include 'bs/checkbox.tpl'
           checked=$et->isDefault
           divClass='mb-3'
-          help=$smarty.capture.help
-          label=$smarty.capture.label
+          help="{t}info-is-default{/t}"
+          label="{t}label-is-default{/t}"
           name='isDefault'}
       </fieldset>
 
