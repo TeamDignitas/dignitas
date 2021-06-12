@@ -113,20 +113,14 @@ blockquote {
 
 .navbar .select2 {
   background-color: #fff;
-  border-bottom-left-radius: 0.25rem;
-  border-top-left-radius: 0.25rem;
+  /* Add rounded corners explicitly. This is necessary because the span is */
+  /* not the first in the input-group; the hidden <select> comes before. */
+  border-bottom-left-radius: 0.25rem !important;
+  border-top-left-radius: 0.25rem !important;
 }
 
 .navbar .navbar-selection {
   border-width: 0;
-}
-
-/* Firefox and Chrome insert a <div> in place of the <noscript> element, which
-   breaks Bootstrap's CSS because it uses the > selector. */
-#search-field-container div {
-  position: relative;
-  flex: 1 1 auto;
-  width: 1%;
 }
 
 .page-item.active .page-link {

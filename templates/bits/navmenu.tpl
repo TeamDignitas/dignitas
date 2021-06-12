@@ -137,7 +137,7 @@
               {include "bits/icon.tpl" i=person}
             {/if}
             {$u}
-            <span class="badge bg-secondary align-text-top">
+            <span class="badge bg-secondary align-middle pt-2">
               {$u->getReputation()|nf}
             </span>
           </a>
