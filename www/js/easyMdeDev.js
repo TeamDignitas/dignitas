@@ -68,7 +68,7 @@ $(function() {
       name: 'answer-resources-link',
       action: null,
       icon: '<i class="material-icons">lightbulb</i>',
-      className: 'answer-resources-link float-right d-none',
+      className: 'answer-resources-link float-end d-none',
       title: _('easymde-resources'),
     },
   ];
