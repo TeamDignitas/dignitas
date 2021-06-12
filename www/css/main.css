@@ -65,14 +65,6 @@ blockquote {
   white-space: nowrap;
 }
 
-.nav-item a {
-  color: var(--bs-navbar-link) !important;
-}
-
-.nav-item a:hover {
-  color: var(--bs-navbar-link-hover) !important;
-}
-
 .navbar .dropdown-menu {
   margin-top: 8px;
 }
@@ -98,12 +90,12 @@ blockquote {
     left: 100%;
   }
 
-  #navbar-left.shown {
+  #navbar-left.show {
     left: 0;
     transition: left 0.3s linear;
   }
 
-  #navbar-right.shown {
+  #navbar-right.show {
     left: 25%;
     transition: left 0.3s linear;
   }
