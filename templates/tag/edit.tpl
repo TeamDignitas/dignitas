@@ -74,7 +74,7 @@
           <div class="col-sm-12 col-lg-10 px-0">
             <div>
               <input type="color"
-                class="form-control"
+                class="form-control form-control-color"
                 id="color"
                 name="color"
                 value="{$t->getColor()}">
@@ -92,7 +92,7 @@
           <div class="col-sm-12 col-lg-10 px-0">
             <div>
               <input type="color"
-                class="form-control"
+                class="form-control form-control-color"
                 id="background"
                 name="background"
                 value="{$t->getBackground()}">

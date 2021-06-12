@@ -124,7 +124,7 @@
           {if !$entity->hasColor()}hidden{/if}>
           <label for="field-color" class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-color{/t}</label>
           <input type="color"
-            class="form-control col-sm-12 col-lg-10"
+            class="form-control form-control-color col-sm-12 col-lg-10"
             id="field-color"
             name="color"
             value="{$entity->getColor()}">
