@@ -28,17 +28,13 @@
   </td>
 
   <td>
-    <div class="input-group">
-      <input type="text" class="form-control form-control-sm datepicker">
-      <input type="hidden" name="relStartDates[]" value="{$relation->startDate|default:''}">
-    </div>
+    <input type="text" class="form-control form-control-sm datepicker">
+    <input type="hidden" name="relStartDates[]" value="{$relation->startDate|default:''}">
   </td>
 
   <td>
-    <div class="input-group">
-      <input type="text" class="form-control form-control-sm datepicker">
-      <input type="hidden" name="relEndDates[]" value="{$relation->endDate|default:''}">
-    </div>
+    <input type="text" class="form-control form-control-sm datepicker">
+    <input type="hidden" name="relEndDates[]" value="{$relation->endDate|default:''}">
   </td>
 
   <td>
