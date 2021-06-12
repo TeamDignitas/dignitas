@@ -71,7 +71,7 @@
             <div class="form-group flag-related" id="duplicate-search">
               <select
                 id="flag-duplicate-id"
-                class="form-control"
+                class="form-select"
                 name="flagDuplicateId"
                 data-placeholder="{t}label-type-something{/t}">
               </select>

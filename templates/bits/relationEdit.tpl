@@ -10,7 +10,7 @@
   </td>
 
   <td>
-    <select class="form-control form-control-sm relation-fit" name="relTypes[]">
+    <select class="form-select form-select-sm relation-fit" name="relTypes[]">
       {foreach RelationType::loadForEntityType($entityTypeId) as $rt}
         <option
           value="{$rt->id}"
@@ -22,7 +22,7 @@
   </td>
 
   <td class="col-entity-id">
-    <select name="relEntityIds[]" class="form-control to-entity-id">
+    <select name="relEntityIds[]" class="form-select to-entity-id">
       <option value="{$relation->toEntityId|default:''}"></option>
     </select>
   </td>

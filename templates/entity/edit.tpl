@@ -104,7 +104,7 @@
             <select
               name="entityTypeId"
               id="field-entity-type-id"
-              class="form-control {if isset($errors.entityTypeId)}is-invalid{/if}"
+              class="form-select {if isset($errors.entityTypeId)}is-invalid{/if}"
               data-change-msg="{t}info-change-entity-type-while-relations-exist{/t}">
               {foreach $entityTypes as $et}
                 <option
@@ -198,7 +198,7 @@
         <div class="form-group row">
           <label class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-region{/t}</label>
           <div class="col-sm-12 col-lg-10 px-0">
-            <select name="regionId" class="form-control">
+            <select name="regionId" class="form-select">
               <option value="0"></option>
               {foreach $regions as $option}
                 <option
@@ -214,7 +214,7 @@
         <div class="form-group row">
           <label class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-tags{/t}</label>
           <div class="col-sm-12 col-lg-10 px-0">
-            <select name="tagIds[]" class="form-control select2Tags" multiple>
+            <select name="tagIds[]" class="form-select select2Tags" multiple>
               {foreach $tagIds as $tagId}
                 <option value="{$tagId}" selected></option>
               {/foreach}

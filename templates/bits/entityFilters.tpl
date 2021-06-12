@@ -11,7 +11,7 @@
     <div class="col-12 col-sm-12 col-md-3 col-lg-3">
       <select
         name="order"
-        class="form-control form-control-sm actionable">
+        class="form-select form-select-sm actionable">
         <option value="{Ct::SORT_NAME_ASC}">{t}sort-name-asc{/t}</option>
         <option value="{Ct::SORT_NAME_DESC}">{t}sort-name-desc{/t}</option>
         <option value="{Ct::SORT_CREATE_DATE_DESC}">{t}sort-create-date-desc{/t}</option>
@@ -41,7 +41,7 @@
     </div>
 
     <div class="col-12 col-sm-12 col-md-3 col-lg-3 mb-2">
-      <select name="regionId" class="form-control form-control-sm actionable">
+      <select name="regionId" class="form-select form-select-sm actionable">
         <option value="0"></option>
         {foreach $regions as $option}
           <option value="{$option->id}">

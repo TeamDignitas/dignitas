@@ -20,7 +20,7 @@
       <input type="hidden" name="id" value="{$t->id}">
 
       <fieldset class="related-fields mb-5 ml-3">
-        <div class="form-group row">
+        <div class="row mb-3">
           <label for="value" class="col-sm-12 col-lg-2 mt-2 px-0 control-label">
             {t}label-name{/t}
           </label>
@@ -34,7 +34,7 @@
           </div>
         </div>
 
-        <div class="form-group row">
+        <div class="row mb-3">
           <label for="tooltip" class="col-sm-12 col-lg-2 mt-2 px-0 control-label">
             {t}label-details{/t}
           </label>
@@ -48,7 +48,7 @@
           </div>
         </div>
 
-        <div class="form-group row">
+        <div class="row mb-3">
           <label for="parent-id" class="col-sm-12 col-lg-2 mt-2 px-0 control-label">
             {t}label-parent-tag{/t}
           </label>
@@ -56,7 +56,7 @@
             <select
               id="parent-id"
               name="parentId"
-              class="form-control {if isset($errors.parentId)}is-invalid{/if}">
+              class="form-select {if isset($errors.parentId)}is-invalid{/if}">
               {if $t->parentId}
                 <option value="{$t->parentId}" selected></option>
               {/if}
@@ -67,7 +67,7 @@
       </fieldset>
 
       <fieldset class="related-fields mb-5 ml-3">
-        <div class="form-group row">
+        <div class="row mb-3">
           <label for="color" class="col-sm-12 col-lg-2 mt-2 px-0 control-label">
             {t}label-text-color{/t}
           </label>
@@ -85,7 +85,7 @@
           </div>
         </div>
 
-        <div class="form-group row">
+        <div class="row mb-3">
           <label for="background" class="col-sm-12 col-lg-2 mt-2 px-0 control-label">
             {t}label-background-color{/t}
           </label>
@@ -103,7 +103,7 @@
           </div>
         </div>
 
-        <div class="form-group row">
+        <div class="row mb-3">
           <label for="icon" class="col-sm-12 col-lg-2 mt-2 px-0 control-label">
             {t}label-icon{/t}
           </label>

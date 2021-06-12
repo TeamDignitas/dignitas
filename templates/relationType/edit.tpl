@@ -26,7 +26,7 @@
           {t}label-from-entity-type{/t}
         </label>
         <select
-          class="form-control"
+          class="form-select"
           id="field-from-entity-type-id"
           name="fromEntityTypeId">
           {foreach $entityTypes as $et}
@@ -44,7 +44,7 @@
           {t}label-to-entity-type{/t}
         </label>
         <select
-          class="form-control"
+          class="form-select"
           id="field-to-entity-type-id"
           name="toEntityTypeId">
           {foreach $entityTypes as $et}
@@ -62,7 +62,7 @@
           {t}label-phrase{/t}
         </label>
         <select
-          class="form-control"
+          class="form-select"
           id="field-phrase"
           name="phrase">
           {foreach RelationType::getPhrases() as $phrase}

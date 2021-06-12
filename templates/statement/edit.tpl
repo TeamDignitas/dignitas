@@ -31,7 +31,7 @@
             <select
               name="entityId"
               id="field-entity-id"
-              class="form-control {if isset($errors.entityId)}is-invalid{/if}">
+              class="form-select {if isset($errors.entityId)}is-invalid{/if}">
               {if $statement->entityId}
                 <option value="{$statement->entityId}"></option>
               {/if}
@@ -70,7 +70,7 @@
             data-prev-value="{$statement->type}"
             data-confirm="{t}info-confirm-statement-type-change{/t}"
             {/if}
-            class="form-control has-unload-warning col-sm-12 col-lg-10">
+            class="form-select has-unload-warning col-sm-12 col-lg-10">
             {for $t = 1 to Statement::NUM_TYPES - 1}
               <option
                 value="{$t}"
@@ -149,7 +149,7 @@
             <select
               name="involvedEntityIds[]"
               id="field-involvements"
-              class="form-control select2Entities"
+              class="form-select select2Entities"
               data-placeholder="{t}info-involvements{/t}"
               multiple>
               {foreach $involvedEntityIds as $involvedEntityId}
@@ -162,7 +162,7 @@
         <div class="form-group row">
           <label class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-region{/t}</label>
           <div class="col-sm-12 col-lg-10 px-0">
-            <select name="regionId" class="form-control">
+            <select name="regionId" class="form-select">
               <option value="0"></option>
               {foreach $regions as $option}
                 <option
@@ -178,7 +178,7 @@
         <div class="form-group row">
           <label class="col-sm-12 col-lg-2 mt-2 pl-0">{t}label-tags{/t}</label>
           <div class="col-sm-12 col-lg-10 px-0">
-            <select name="tagIds[]" class="form-control select2Tags" multiple>
+            <select name="tagIds[]" class="form-select select2Tags" multiple>
               {foreach $tagIds as $tagId}
                 <option value="{$tagId}" selected></option>
               {/foreach}
@@ -197,7 +197,7 @@
               <select
                 id="field-verdict"
                 name="verdict"
-                class="form-control has-unload-warning {if isset($errors.verdict)}is-invalid{/if}">
+                class="form-select has-unload-warning {if isset($errors.verdict)}is-invalid{/if}">
 
                 {foreach $statement->getVerdictChoices() as $v}
                   <option

@@ -31,7 +31,7 @@
           <select
             name="locale"
             id="field-locale"
-            class="form-control col-sm-12 col-lg-10">
+            class="form-select col-sm-12 col-lg-10">
             <option value="">
               {t}label-all-locales{/t}
             </option>

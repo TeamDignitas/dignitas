@@ -6,7 +6,7 @@
     <div class="col-12 col-sm-12 col-md-3 col-lg-3 mb-2">
       <select
         name="order"
-        class="form-control form-control-sm actionable">
+        class="form-select form-select-sm actionable">
         <option value="{Ct::SORT_VERDICT_DATE_DESC}">{t}sort-verdict-date-desc{/t}</option>
         <option value="{Ct::SORT_VERDICT_DATE_ASC}">{t}sort-verdict-date-asc{/t}</option>
         <option value="{Ct::SORT_CREATE_DATE_DESC}">{t}sort-create-date-desc{/t}</option>
@@ -19,7 +19,7 @@
     <div class="col-12 col-sm-12 col-md-3 col-lg-3 mb-2">
       <select
         name="entityId"
-        class="form-control form-control-sm actionable"
+        class="form-select form-select-sm actionable"
         data-placeholder="{t}label-author{/t}"
         data-width="200px">
       </select>
@@ -28,7 +28,7 @@
     <div class="col-12 col-sm-12 col-md-2 col-lg-2 mb-2">
       <select
         name="type"
-        class="form-control form-control-sm actionable">
+        class="form-select form-select-sm actionable">
         {for $t = 0 to Statement::NUM_TYPES - 1}
           <option value="{$t}">
             {Statement::typeName($t)}
@@ -41,7 +41,7 @@
       <select
         id="statement-filters-verdicts"
         name="verdicts[]"
-        class="form-control form-control-sm selectpicker actionable"
+        class="form-select form-select-sm selectpicker actionable"
         multiple
         title="{t}label-verdict{/t}"
         data-selected-text-format="count">
@@ -107,7 +107,7 @@
       </div>
 
       <div class="col-12 col-sm-12 col-md-3 col-lg-3 mb-2">
-        <select name="regionId" class="form-control form-control-sm actionable">
+        <select name="regionId" class="form-select form-select-sm actionable">
           <option value="0">{t}label-region{/t}</option>
           {foreach Region::loadAll() as $option}
             <option value="{$option->id}">
