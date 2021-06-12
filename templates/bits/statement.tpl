@@ -102,14 +102,14 @@
 
     {$statement->goal|escape}
 
-    <div class="statement-read-only row ml-0 mt-2">
+    <div class="statement-read-only ml-0 mt-2">
       {if $statement->regionId}
         {$region=$statement->getRegion()}
         {* mimic tag presentation *}
         <span class="tag mr-1">
           <a
             href="{Router::link('region/view')}/{$region->id}"
-            class="badge badge-pill badge-secondary py-1 px-2">
+            class="badge rounded-pill bg-secondary py-1 px-2">
             {$region->name}
           </a>
         </span>

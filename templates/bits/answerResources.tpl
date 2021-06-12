@@ -12,8 +12,7 @@
           <h6 class="modal-title">
             {t}title-answer-resources{/t}
           </h6>
-          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
           </button>
         </div>
 
