@@ -1,9 +1,9 @@
-<nav class="navbar navbar-dark bg-dark navbar-expand-md">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
 
   <button
     class="navbar-toggler"
     type="button"
-    data-bs-toggle="slide-collapse"
+    data-bs-toggle="collapse"
     data-bs-target="#navbar-left"
     aria-controls="navbar-left"
     aria-expanded="false"
@@ -11,7 +11,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="navbar-collapse py-2" id="navbar-left">
+  <div class="collapse navbar-collapse py-2" id="navbar-left">
     {include "bits/searchForm.tpl"}
 
     <ul class="navbar-nav">
@@ -26,7 +26,7 @@
           aria-expanded="false">
           {cap}{t}link-info{/t}{/cap}
         </a>
-        <div class="dropdown-menu bg-darkish py-0" aria-labelledby="nav-dropdown-info">
+        <div class="dropdown-menu dropdown-menu-dark py-0" aria-labelledby="nav-dropdown-info">
           <a
             class="dropdown-item pl-2 py-2"
             href="{Router::link('aggregate/about')}">
@@ -58,7 +58,7 @@
   <button
     class="navbar-toggler"
     type="button"
-    data-bs-toggle="slide-collapse"
+    data-bs-toggle="collapse"
     data-bs-target="#navbar-right"
     aria-controls="navbar-right"
     aria-expanded="false"
@@ -66,7 +66,7 @@
     {include "bits/icon.tpl" i=person}
   </button>
 
-  <div class="navbar-collapse" id="navbar-right">
+  <div class="collapse navbar-collapse justify-content-end" id="navbar-right">
 
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
@@ -90,7 +90,7 @@
         </a>
 
         {* leverage rel alternates to stay on the page after changing language *}
-        <div class="dropdown-menu bg-darkish py-0" aria-labelledby="nav-dropdown-lang">
+        <div class="dropdown-menu dropdown-menu-dark py-0" aria-labelledby="nav-dropdown-lang">
           {foreach LocaleUtil::getAll() as $id => $name}
             <a
               class="dropdown-item pl-2 py-2"
@@ -137,11 +137,11 @@
               {include "bits/icon.tpl" i=person}
             {/if}
             {$u}
-            <span class="badge badge-secondary align-text-top">
+            <span class="badge bg-secondary align-text-top">
               {$u->getReputation()|nf}
             </span>
           </a>
-          <div class="dropdown-menu dropdown-menu-right bg-darkish py-0" aria-labelledby="nav-dropdown-user">
+          <div class="dropdown-menu dropdown-menu-dark dropdown-menu-end py-0" aria-labelledby="nav-dropdown-user">
             <a class="dropdown-item py-2" href="{Router::userLink($u)}">
               {include "bits/icon.tpl" i=person}
               {t}link-my-profile{/t}
@@ -152,32 +152,27 @@
             </a>
             {if Config::DEVELOPMENT_MODE}
               <div class="dropdown-divider"></div>
-              <form id="rep-change" class="px-4 text-navbar-link">
-                <small class="form-text mb-2">
+              <form id="rep-change" class="px-4">
+                <small class="mb-2">
                   {t}info-reputation-manual{/t}
                 </small>
-                <div class="form-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="fakeReputation"
-                    value="{$u->getReputation()}">
-                </div>
 
-                <div class="form-row align-items-center">
-                  <div class="col-6">
-                    <div class="custom-control custom-checkbox mr-sm-2">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="fakeModerator"
-                        {if User::isModerator()}checked{/if}>
-                      <label class="custom-control-label" for="fakeModerator">
-                        {t}label-moderator{/t}
-                      </label>
-                    </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fakeReputation"
+                  value="{$u->getReputation()}">
+
+                <div class="d-flex mt-2 justify-content-between align-items-center">
+                  <div id="fake-moderator-wrapper">
+                    {capture 'label'}{t}label-moderator{/t}{/capture}
+                    {include "bs/checkbox.tpl"
+                      checked=User::isModerator()
+                      inputId='fakeModerator'
+                      label=$smarty.capture.label
+                      name=''}
                   </div>
-                  <div class="col-6 text-end">
+                  <div>
                     <button type="submit" class="btn btn-sm btn-secondary">
                       {t}link-change{/t}
                     </button>
