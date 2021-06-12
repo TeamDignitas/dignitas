@@ -19,46 +19,32 @@
     <form class="form-horizontal mb-5" method="post">
       <input type="hidden" name="id" value="{$r->id}">
 
-      <div class="form-group row">
-        <label for="name" class="col-sm-12 col-lg-2 mt-2 px-0 control-label">
-          {t}label-name{/t}
-        </label>
-        <div class="col-sm-12 col-lg-10 px-0">
-          <div>
-            <input type="text"
-              class="form-control {if isset($errors.name)}is-invalid{/if}"
-              id="name"
-              name="name"
-              value="{$r->name}"
-              autofocus>
-            {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
-          </div>
-        </div>
-      </div>
+      {hf inputId='name' label="{t}label-name{/t}"}
+        <input type="text"
+          class="form-control {if isset($errors.name)}is-invalid{/if}"
+          id="name"
+          name="name"
+          value="{$r->name}"
+          autofocus>
+        {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
+      {/hf}
 
-      <div class="form-group row">
-        <label for="parent-id" class="col-sm-12 col-lg-2 mt-2 px-0 control-label">
-          {t}label-parent-region{/t}
-        </label>
-        <div class="col-sm-12 col-lg-10 px-0">
-          <div>
-            <select
-              id="parent-id"
-              name="parentId"
-              class="form-select {if isset($errors.parentId)}is-invalid{/if}">
-              <option value="0"></option>
-              {foreach $regions as $option}
-                <option
-                  value="{$option->id}"
-                  {if $r->parentId == $option->id}selected{/if}>
-                  {$option->name}
-                </option>
-              {/foreach}
-            </select>
-            {include "bits/fieldErrors.tpl" errors=$errors.parentId|default:null}
-          </div>
-        </div>
-      </div>
+      {hf inputId='parent-id' label="{t}label-parent-region{/t}"}
+        <select
+          id="parent-id"
+          name="parentId"
+          class="form-select {if isset($errors.parentId)}is-invalid{/if}">
+          <option value="0"></option>
+          {foreach $regions as $option}
+            <option
+              value="{$option->id}"
+              {if $r->parentId == $option->id}selected{/if}>
+              {$option->name}
+            </option>
+          {/foreach}
+        </select>
+        {include "bits/fieldErrors.tpl" errors=$errors.parentId|default:null}
+      {/hf}
 
       <div class="mt-4 text-end">
 

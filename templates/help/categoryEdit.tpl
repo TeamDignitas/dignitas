@@ -39,34 +39,24 @@
               role="tabpanel">
 
               <fieldset class="related-fields mb-5 ml-3">
-                <div class="form-group row">
-                  <label for="field-name" class="control-label col-sm-12 col-lg-2 mt-2 pl-0">
-                    {t}label-name{/t}
-                  </label>
-                  <div class="col-sm-12 col-lg-10 px-0">
-                    <input type="text"
-                      class="form-control {if isset($errors.name.$locale)}is-invalid{/if}"
-                      id="field-name"
-                      name="name-{$locale}"
-                      value="{$hct->name|escape}">
-                    {include "bits/fieldErrors.tpl" errors=$errors.name.$locale|default:null}
-                  </div>
-                </div>
+                {hf inputId='field-name' label="{t}label-name{/t}"}
+                  <input type="text"
+                    class="form-control {if isset($errors.name.$locale)}is-invalid{/if}"
+                    id="field-name"
+                    name="name-{$locale}"
+                    value="{$hct->name|escape}">
+                  {include "bits/fieldErrors.tpl" errors=$errors.name.$locale|default:null}
+                {/hf}
 
-                <div class="form-group row">
-                  <label for="field-path" class="control-label col-sm-12 col-lg-2 mt-2 pl-0">
-                    {t}label-help-category-path{/t}
-                  </label>
-                  <div class="col-sm-12 col-lg-10 px-0">
-                    <input type="text"
-                      class="form-control {if isset($errors.path.$locale)}is-invalid{/if}"
-                      id="field-path"
-                      name="path-{$locale}"
-                      value="{$hct->path|escape}"
-                      placeholder="{t}info-help-category-path{/t}">
-                    {include "bits/fieldErrors.tpl" errors=$errors.path.$locale|default:null}
-                  </div>
-                </div>
+                {hf inputId='field-path' label="{t}label-help-category-path{/t}"}
+                  <input type="text"
+                    class="form-control {if isset($errors.path.$locale)}is-invalid{/if}"
+                    id="field-path"
+                    name="path-{$locale}"
+                    value="{$hct->path|escape}"
+                    placeholder="{t}info-help-category-path{/t}">
+                  {include "bits/fieldErrors.tpl" errors=$errors.path.$locale|default:null}
+                {/hf}
               </fieldset>
             </div>
           {/foreach}

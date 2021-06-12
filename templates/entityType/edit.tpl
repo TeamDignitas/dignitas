@@ -9,20 +9,15 @@
     <form method="post">
 
       <fieldset class="related-fields mb-5 ml-3">
-        <div class="form-group row">
-          <label for="field-name" class="control-label col-sm-12 col-lg-2 mt-2 pl-0">
-            {t}label-name{/t}
-          </label>
-          <div class="col-sm-12 col-lg-10 px-0">
-            <input type="text"
-              class="form-control {if isset($errors.name)}is-invalid{/if}"
-              id="field-name"
-              name="name"
-              value="{$et->name|escape}"
-              placeholder="{t}info-entity-type-name{/t}">
-            {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
-          </div>
-        </div>
+        {hf inputId='field-name' label="{t}label-name{/t}"}
+          <input type="text"
+            class="form-control {if isset($errors.name)}is-invalid{/if}"
+            id="field-name"
+            name="name"
+            value="{$et->name|escape}"
+            placeholder="{t}info-entity-type-name{/t}">
+          {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
+        {/hf}
       </fieldset>
 
       <fieldset class="related-fields mb-5">
