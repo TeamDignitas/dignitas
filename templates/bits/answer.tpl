@@ -8,12 +8,12 @@
     {include "bits/draftIndicator.tpl"}
   {elseif $voteBox}
     {capture "tooltipDownvote"}
-    {t
-      count=-Config::REP_DOWNVOTE_ANSWER
-      1=-Config::REP_DOWNVOTE_ANSWER
-      plural="tooltip-downvote-answer-plural-%1"}
-    tooltip-downvote-answer-singular-%1
-    {/t}
+      {t
+        count=-Config::REP_DOWNVOTE_ANSWER
+        1=-Config::REP_DOWNVOTE_ANSWER
+        plural="tooltip-downvote-answer-plural-%1"}
+        tooltip-downvote-answer-singular-%1
+      {/t}
     {/capture}
     {include "bits/scoreAndVote.tpl"
       type=Vote::TYPE_ANSWER

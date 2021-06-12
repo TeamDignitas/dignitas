@@ -13,7 +13,6 @@
       </div>
     {/if}
 
-    {capture "buttonText"}{t}link-save{/t}{/capture}
-    {include "bits/answerEdit.tpl" buttonText=$smarty.capture.buttonText}
+    {include "bits/answerEdit.tpl" buttonText="{t}link-save{/t}"}
   </div>
 {/block}

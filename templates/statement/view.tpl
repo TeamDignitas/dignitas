@@ -31,10 +31,9 @@
           {t}title-your-answer{/t}
         </h6>
 
-        {capture "buttonText"}{t}link-post-answer{/t}{/capture}
         {include "bits/answerEdit.tpl"
           answer=$newAnswer
-          buttonText=$smarty.capture.buttonText}
+          buttonText="{t}link-post-answer{/t}"}
       </div>
 
     {/if}

@@ -55,10 +55,9 @@
               {include "bits/fieldErrors.tpl" errors=$errors.password|default:null}
             </div>
 
-            {capture 'label'}{t}label-remember-me{/t}{/capture}
             {include 'bs/checkbox.tpl'
               checked=$remember
-              label=$smarty.capture.label
+              label="{t}label-remember-me{/t}"
               name='remember'}
 
             <div class="mt-2 mx-2 row">

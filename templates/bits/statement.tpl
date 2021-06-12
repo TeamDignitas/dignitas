@@ -49,12 +49,12 @@
 <article class="row mt-5 statement-body">
   {if $voteBox}
     {capture "tooltipDownvote"}
-    {t
-      count=-Config::REP_DOWNVOTE_STATEMENT
-      1=-Config::REP_DOWNVOTE_STATEMENT
-      plural="tooltip-downvote-statement-plural-%1"}
-    tooltip-downvote-statement-singular-%1
-    {/t}
+      {t
+        count=-Config::REP_DOWNVOTE_STATEMENT
+        1=-Config::REP_DOWNVOTE_STATEMENT
+        plural="tooltip-downvote-statement-plural-%1"}
+        tooltip-downvote-statement-singular-%1
+      {/t}
     {/capture}
     {include "bits/scoreAndVote.tpl"
       type=Vote::TYPE_STATEMENT

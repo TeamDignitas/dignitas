@@ -77,10 +77,9 @@
             </div>
             {include "bits/fieldErrors.tpl" errors=$errors.image|default:null}
 
-            {capture 'label'}{t}label-delete-image{/t}{/capture}
             {include 'bs/checkbox.tpl'
               divClass='mt-1'
-              label=$smarty.capture.label
+              label="{t}label-delete-image{/t}"
               name='deleteImage'}
 
             {include "bits/image.tpl"

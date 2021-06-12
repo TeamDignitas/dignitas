@@ -6,11 +6,11 @@
 
 {if $editable || $suggestable}
   {capture "msg"}
-  {if $editable}
-    {t}link-edit{/t}
-  {else}
-    {t}link-suggest-edit{/t}
-  {/if}
+    {if $editable}
+      {t}link-edit{/t}
+    {else}
+      {t}link-suggest-edit{/t}
+    {/if}
   {/capture}
 
   <a

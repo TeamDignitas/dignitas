@@ -94,22 +94,18 @@
         {include "bits/fieldErrors.tpl" errors=$errors.weight|default:null}
       </div>
 
-      {capture 'label'}{t}label-symmetric{/t}{/capture}
-      {capture 'help'}{t}info-symmetric{/t}{/capture}
       {include 'bs/checkbox.tpl'
         cbErrors=$errors.symmetric|default:null
         checked=$rt->symmetric
         divClass='mb-3'
-        help=$smarty.capture.help
-        label=$smarty.capture.label
+        help="{t}info-symmetric{/t}"
+        label="{t}label-symmetric{/t}"
         name='symmetric'}
 
-      {capture 'label'}{t}label-relation-type-membership{/t}{/capture}
-      {capture 'help'}{t}info-relation-type-membership{/t}{/capture}
       {include 'bs/checkbox.tpl'
         checked=$rt->membership
-        help=$smarty.capture.help
-        label=$smarty.capture.label
+        help="{t}info-relation-type-membership{/t}"
+        label="{t}label-relation-type-membership{/t}"
         name='membership'}
 
       <div class="mt-4 text-end">
