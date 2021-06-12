@@ -10,10 +10,8 @@
       <input type="text" class="form-control" name="q" aria-label="search">
     </noscript>
 
-    <span class="input-group-append">
-      <button type="submit" class="btn btn-darkish">
-        {include "bits/icon.tpl" i=search}
-      </button>
-    </span>
+    <button type="submit" class="btn btn-darkish">
+      {include "bits/icon.tpl" i=search}
+    </button>
   </div>
 </form>
