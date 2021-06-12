@@ -21,15 +21,15 @@ $(function() {
       '    <div class="modal-body d-flex">' +
       '      <div class="p-2">' +
       '        <label class="datepicker-year-label"></label>' +
-      '        <select class="datepicker-year form-control" tabindex="-1"></select>' +
+      '        <select class="datepicker-year form-select" tabindex="-1"></select>' +
       '      </div>' +
       '      <div class="p-2">' +
       '        <label class="datepicker-month-label"></label>' +
-      '        <select class="datepicker-month form-control"></select>' +
+      '        <select class="datepicker-month form-select"></select>' +
       '      </div>' +
       '      <div class="p-2">' +
       '        <label class="datepicker-day-label"></label>' +
-      '        <select class="datepicker-day form-control"></select>' +
+      '        <select class="datepicker-day form-select"></select>' +
       '      </div>' +
       '    </div>' +
       '    <div class="modal-footer">' +

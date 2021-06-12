@@ -39,7 +39,7 @@
       <select
         id="field-verdict"
         name="verdict"
-        class="form-control has-unload-warning">
+        class="form-select has-unload-warning">
         {foreach $answer->getStatement()->getVerdictChoices() as $v}
           <option
             value="{$v}"

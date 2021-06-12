@@ -15,7 +15,7 @@
             <select
               name="categoryId"
               id="field-category-id"
-              class="form-control {if isset($errors.categoryId)}is-invalid{/if}">
+              class="form-select {if isset($errors.categoryId)}is-invalid{/if}">
               {foreach HelpCategory::loadAll() as $cat}
                 <option
                   value="{$cat->id}"

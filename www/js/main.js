@@ -40,7 +40,7 @@ $(function() {
 
   $('<select>', {
     id: 'searchField',
-    class: 'formControl',
+    class: 'formSelect',
     name: 'q',
     multiple: true,
   }).prependTo('#search-field-container');

@@ -18,7 +18,7 @@
     {/if}
 
     {if count($relationTypes)}
-      <table class="table table-hover mt-5 mb-4 sortable">
+      <table class="table table-hover mt-5 mb-4">
         <thead>
           <tr class="small">
             <th class="border-0">{t}label-name{/t}</th>

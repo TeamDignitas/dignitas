@@ -45,7 +45,7 @@
             <select
               id="parent-id"
               name="parentId"
-              class="form-control {if isset($errors.parentId)}is-invalid{/if}">
+              class="form-select {if isset($errors.parentId)}is-invalid{/if}">
               <option value="0"></option>
               {foreach $regions as $option}
                 <option

@@ -27,7 +27,7 @@
             <select
               id="ban-type-{$t}"
               name="banDuration[{$t}]"
-              class="form-control">
+              class="form-select">
               <option value="0">{t}ban-duration-none{/t}</option>
               <option value="10">{t}ban-duration-10-minutes{/t}</option>
               <option value="30">{t}ban-duration-30-minutes{/t}</option>
