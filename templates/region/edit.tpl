@@ -52,7 +52,7 @@
           <button
             name="deleteButton"
             type="submit"
-            class="btn btn-sm btn-outline-danger col-sm-3 col-lg-2 mr-2 mb-2"
+            class="btn btn-sm btn-outline-danger col-sm-3 col-lg-2 me-2 mb-2"
             data-confirm="{t}info-confirm-delete-region{/t}"
             {if !$canDelete}
             disabled
@@ -65,7 +65,7 @@
         {/if}
 
         <a
-          class="btn btn-sm btn-outline-secondary col-sm-3 col-lg-2 mr-2 mb-2"
+          class="btn btn-sm btn-outline-secondary col-sm-3 col-lg-2 me-2 mb-2"
           {if $r->id}
           href="{Router::link('region/view')}/{$r->id}"
           {else}
@@ -79,7 +79,7 @@
         <button
           name="saveButton"
           type="submit"
-          class="btn btn-sm btn-primary col-sm-3 col-lg-2 mr-2 mb-2">
+          class="btn btn-sm btn-primary col-sm-3 col-lg-2 me-2 mb-2">
           {include "bits/icon.tpl" i=save}
           {t}link-save{/t}
         </button>

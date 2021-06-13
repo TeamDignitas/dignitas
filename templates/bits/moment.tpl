@@ -1,3 +1,3 @@
-<span title="{$t|lt}" class="mr-1">
+<span title="{$t|lt}" class="me-1">
   {$t|moment}
 </span>

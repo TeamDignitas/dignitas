@@ -19,7 +19,7 @@
     <form class="form-horizontal mb-5" method="post">
       <input type="hidden" name="id" value="{$t->id}">
 
-      <fieldset class="related-fields mb-5 ml-3">
+      <fieldset class="related-fields mb-5 ms-3">
         {hf inputId='value' label="{t}label-name{/t}"}
           <input type="text"
             class="form-control {if isset($errors.value)}is-invalid{/if}"
@@ -51,7 +51,7 @@
         {/hf}
       </fieldset>
 
-      <fieldset class="related-fields mb-5 ml-3">
+      <fieldset class="related-fields mb-5 ms-3">
         {hf inputId='color' label="{t}label-text-color{/t}"}
           <input type="color"
             class="form-control form-control-color"
@@ -105,7 +105,7 @@
           <button
             name="deleteButton"
             type="submit"
-            class="btn btn-sm btn-outline-danger col-sm-4 col-lg-2 mr-2 mb-2"
+            class="btn btn-sm btn-outline-danger col-sm-4 col-lg-2 me-2 mb-2"
             data-confirm="{t}info-confirm-delete-tag{/t}"
             {if !$canDelete}
             disabled
@@ -121,14 +121,14 @@
           <button
             name="cloneButton"
             type="submit"
-            class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2">
+            class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 me-2 mb-2">
             {include "bits/icon.tpl" i=content_copy}
             {t}link-clone{/t}
           </button>
         {/if}
 
         <a
-          class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2"
+          class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 me-2 mb-2"
           {if $t->id}
           href="{Router::link('tag/view')}/{$t->id}"
           {else}

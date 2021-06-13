@@ -5,7 +5,7 @@
       geometry=Config::THUMB_ENTITY_SMALL
       imgClass="pic rounded-circle img-fluid no-outline"}
 
-    <span class="ml-2 mt-2">{include "bits/entityLink.tpl" e=$e}</span>
-    <div class="ml-2 text-muted small">{$e->getEntityType()->name|escape}</div>
+    <span class="ms-2 mt-2">{include "bits/entityLink.tpl" e=$e}</span>
+    <div class="ms-2 text-muted small">{$e->getEntityType()->name|escape}</div>
   </div>
 {/foreach}

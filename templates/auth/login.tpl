@@ -49,7 +49,7 @@
                   {if $email}autofocus{/if}
                   placeholder="{t}label-password{/t}">
               </div>
-              <a class="btn btn-sm btn-link ml-5 mt-1" href="{Router::link('auth/lostPassword')}">
+              <a class="btn btn-sm btn-link ms-5 mt-1" href="{Router::link('auth/lostPassword')}">
                 {t}link-forgot-password{/t}
               </a>
               {include "bits/fieldErrors.tpl" errors=$errors.password|default:null}

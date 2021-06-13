@@ -38,7 +38,7 @@
             </div>
           {/if}
 
-          <div class="mr-1 callout">
+          <div class="me-1 callout">
             {include "bits/statement.tpl"
               statement=$object
               addComment=true

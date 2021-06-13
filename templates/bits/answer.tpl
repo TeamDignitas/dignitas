@@ -105,7 +105,7 @@
       </div>
 
       {if $addComment}
-        <div class="text-muted text-end mb-2 ml-0 ps-0">
+        <div class="text-muted text-end mb-2 ms-0 ps-0">
           {include "bits/addCommentLink.tpl" object=$answer}
         </div>
       {/if}

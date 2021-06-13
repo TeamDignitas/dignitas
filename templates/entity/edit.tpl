@@ -24,7 +24,7 @@
       <input type="hidden" name="id" value="{$entity->id}">
       <input type="hidden" name="referrer" value="{$referrer}">
 
-      <fieldset class="related-fields mb-5 ml-3">
+      <fieldset class="related-fields mb-5 ms-3">
         {hf inputId='field-name' label="{t}label-name{/t}"}
           <input
             name="name"
@@ -81,7 +81,7 @@
 
       </fieldset>
 
-      <fieldset class="related-fields mb-5 ml-3">
+      <fieldset class="related-fields mb-5 ms-3">
         {hf inputId='field-entity-type-id' label="{t}label-type{/t}"}
           <select
             name="entityTypeId"
@@ -142,7 +142,7 @@
         {/hf}
       </fieldset>
 
-      <fieldset class="related-fields mb-5 ml-3">
+      <fieldset class="related-fields mb-5 ms-3">
         {hf inputId='field-profile' label="{t}label-profile{/t}"}
           <textarea
             id="field-profile"
@@ -163,7 +163,7 @@
 
       </fieldset>
 
-      <fieldset class="related-fields mb-5 ml-3">
+      <fieldset class="related-fields mb-5 ms-3">
         {hf label="{t}label-region{/t}"}
           <select name="regionId" class="form-select">
             <option value="0"></option>
@@ -218,7 +218,7 @@
           <button
             name="deleteButton"
             type="submit"
-            class="btn btn-sm btn-outline-danger col-sm-4 col-lg-2 mr-2 mb-2"
+            class="btn btn-sm btn-outline-danger col-sm-4 col-lg-2 me-2 mb-2"
             data-confirm="{t}info-confirm-delete-entity{/t}">
             {include "bits/icon.tpl" i=delete_forever}
             {t}link-delete{/t}
@@ -229,13 +229,13 @@
           <button
             name="reopenButton"
             type="submit"
-            class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2"
+            class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 me-2 mb-2"
             data-confirm="{t}info-confirm-reopen-entity{/t}">
             {t}link-reopen{/t}
           </button>
         {/if}
 
-        <a href="{$referrer}" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2">
+        <a href="{$referrer}" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 me-2 mb-2">
           {include "bits/icon.tpl" i=cancel}
           {t}link-cancel{/t}
         </a>

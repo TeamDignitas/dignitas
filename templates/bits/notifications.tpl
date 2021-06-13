@@ -1,5 +1,5 @@
 {foreach $notifications as $n}
-  <div class="row row-border small py-1 ml-1">
+  <div class="row row-border small py-1 ms-1">
     <div class="col-sm-3 col-lg-2 text-muted">
       {$n->createDate|lt:false}
     </div>

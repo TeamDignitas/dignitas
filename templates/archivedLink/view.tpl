@@ -8,7 +8,7 @@
       {t}info-archived-link{/t}
     </h3>
 
-    <span class="mr-5">
+    <span class="me-5">
       {t}label-archived-link-downloaded{/t}
       {include "bits/moment.tpl" t=$archivedLink->getTimestamp()}
     </span>

@@ -7,7 +7,7 @@
   </thead>
   <tbody>
     {foreach $actions as $a}
-      <tr class="d-flex small ml-0">
+      <tr class="d-flex small ms-0">
         <td class="col-sm-3 col-lg-2 text-muted">
           {include "bits/moment.tpl" t=$a->createDate}
         </td>

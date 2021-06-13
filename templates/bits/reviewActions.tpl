@@ -10,7 +10,7 @@
       <div class="d-flex flex-sm-row flex-column">
         <button
           name="removeButton"
-          class="btn btn-sm btn-outline-danger mr-2 mb-2"
+          class="btn btn-sm btn-outline-danger me-2 mb-2"
           {if User::isModerator()}
           data-confirm="{t}info-confirm-moderator-review-remove{/t}"
           {/if}
@@ -21,7 +21,7 @@
 
         <button
           name="keepButton"
-          class="btn btn-sm btn-primary mr-2 mb-2"
+          class="btn btn-sm btn-primary me-2 mb-2"
           type="submit"
           data-bs-toggle="tooltip"
           title="{t}tooltip-review-keep{/t}">
@@ -54,7 +54,7 @@
           <button
             name="nextButton"
             type="submit"
-            class="btn btn-sm btn-outline-secondary mr-2 mb-2 flex-shrink-1"
+            class="btn btn-sm btn-outline-secondary me-2 mb-2 flex-shrink-1"
             data-bs-toggle="tooltip"
             title="{t}tooltip-review-next{/t}"
           >

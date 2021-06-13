@@ -25,7 +25,7 @@
             {if User::may(User::PRIV_ADD_STATEMENT)}
               <a
                 href="{Router::link('statement/edit')}"
-                class="btn btn-primary mr-3 mb-3 col-sm-12 col-lg-4">
+                class="btn btn-primary me-3 mb-3 col-sm-12 col-lg-4">
                 {include "bits/icon.tpl" i=mode_edit class="pe-2"}
                 {t}link-add-statement{/t}
               </a>
@@ -34,7 +34,7 @@
             {if User::may(User::PRIV_ADD_ENTITY)}
               <a
                 href="{Router::link('entity/edit')}"
-                class="btn btn-secondary mr-3 mb-3 col-sm-12 col-lg-4">
+                class="btn btn-secondary me-3 mb-3 col-sm-12 col-lg-4">
                 {include "bits/icon.tpl" i=person_add_alt_1 class="pe-2"}
                 {t}link-add-entity{/t}
               </a>
@@ -43,7 +43,7 @@
             {if User::may(User::PRIV_ADD_ANSWER)}
               <a
                 href="{Router::link('statement/unanswered')}"
-                class="btn btn-secondary mr-3 mb-3 col-sm-12 col-lg-4">
+                class="btn btn-secondary me-3 mb-3 col-sm-12 col-lg-4">
                 {include "bits/icon.tpl" i=mode_edit class="pe-2"}
                 {t}link-add-answer{/t}
               </a>

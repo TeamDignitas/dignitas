@@ -68,7 +68,7 @@
 
   <div class="collapse navbar-collapse justify-content-end" id="navbar-right">
 
-    <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav ms-auto">
       <li class="nav-item">
         <a
           class="nav-link capitalize-first-word py-2"

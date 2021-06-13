@@ -8,7 +8,7 @@
 
     <form method="post" enctype="multipart/form-data">
 
-      <fieldset class="related-fields mb-5 ml-3">
+      <fieldset class="related-fields mb-5 ms-3">
         {hf label="{t}label-nickname{/t}"}
           <div class="input-group">
             {include "bits/icon.tpl" i=person class="input-group-text"}
@@ -35,7 +35,7 @@
         {/hf}
       </fieldset>
 
-      <fieldset class="related-fields mb-5 ml-3">
+      <fieldset class="related-fields mb-5 ms-3">
         {hf label="{t}label-about-me{/t}"}
           <textarea
             name="aboutMe"
@@ -72,7 +72,7 @@
         {/hf}
       </fieldset>
 
-      <fieldset class="related-fields mb-5 ml-3">
+      <fieldset class="related-fields mb-5 ms-3">
         <legend class="row capitalize-first-word">
           {t}title-change-password{/t}
         </legend>
@@ -103,7 +103,7 @@
       </fieldset>
 
       <div class="mt-4 text-end">
-        <a href="{Router::userLink($user)}" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2">
+        <a href="{Router::userLink($user)}" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 me-2 mb-2">
           {include "bits/icon.tpl" i=cancel}
           {t}link-cancel{/t}
         </a>
