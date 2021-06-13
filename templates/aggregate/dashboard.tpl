@@ -127,7 +127,7 @@
     {if User::may(User::PRIV_REVIEW) && !empty($activeReviewReasons)}
       <h4 class="mt-5">{cap}{t}title-review-queues{/t}{/cap}</h4>
 
-      <ul class="row dashboard-cards list-unstyled pl-0">
+      <ul class="row dashboard-cards list-unstyled ps-0">
         {foreach $activeReviewReasons as $r}
           <li class="card col-12 col-lg-4 py-3 m-2 text-center dashcard">
             <a href="{Router::link('review/view')}/{Review::getUrlName($r)}" class="capitalize-first-word stretched-link">
@@ -142,7 +142,7 @@
       {if $numBadVerdicts}
         <h4 class="mt-5">{cap}{t}title-reports{/t}{/cap}</h4>
 
-        <ul class="row dashboard-cards list-unstyled pl-0">
+        <ul class="row dashboard-cards list-unstyled ps-0">
           <li class="card col-12 col-lg-4 py-3 m-2 text-center dashcard">
             <a href="{Router::link('statement/verdictReport')}" class="capitalize-first-word stretched-link">
               {t}link-verdict-report{/t}

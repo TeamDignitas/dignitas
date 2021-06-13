@@ -1,6 +1,6 @@
 {$activeCategoryId=$activeCategoryId|default:null}
 {$activePageId=$activePageId|default:null}
-<div class="help-sidebar pl-2 py-3">
+<div class="help-sidebar ps-2 py-3">
   {foreach HelpCategory::loadAll() as $c}
 
     {$active=($c->id == $activeCategoryId)}

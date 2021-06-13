@@ -23,15 +23,15 @@
 </h1>
 
 <div class="row statement-authors-date px-0 mb-1">
-  <span class="col-sm-12 col-md-3 pl-0">
+  <span class="col-sm-12 col-md-3 ps-0">
     {include "bits/entityLink.tpl" e=$statement->getEntity()}
   </span>
-  <span class="col-sm-12 col-md-3 pl-0">
+  <span class="col-sm-12 col-md-3 ps-0">
     {$statement->dateMade|ld}
   </span>
 
   {if count($statement->getLinks())}
-    <span class="col-sm-12 col-md-6 pl-0 text-muted sources">
+    <span class="col-sm-12 col-md-6 ps-0 text-muted sources">
       {t}statement-links{/t}:
       <ul class="list-inline list-inline-bullet d-inline">
         {foreach $statement->getLinks() as $l}
@@ -118,7 +118,7 @@
       {foreach $statement->getTags() as $t}
         {include "bits/tag.tpl" link=true tooltip="{t}info-tag-view-statements{/t}"}
       {/foreach}
-      <div class="text-muted col-md-12 mb-2 mt-1 pl-0">
+      <div class="text-muted col-md-12 mb-2 mt-1 ps-0">
         {t}title-added-by{/t}
         {include 'bits/userLink.tpl' u=$statement->getUser()}
         {include 'bits/moment.tpl' t=$statement->createDate}

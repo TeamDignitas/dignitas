@@ -20,7 +20,7 @@
     </ul>
 
     {if $f->details}
-      <div class="pl-3">
+      <div class="ps-3">
         {$f->details|escape}
       </div>
     {/if}

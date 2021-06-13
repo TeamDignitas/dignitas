@@ -24,7 +24,7 @@
         [{$statusInfo['status']}]
       {/if}
     </h1>
-    <div class="font-italic text-muted pl-2 center-mobile">
+    <div class="font-italic text-muted ps-2 center-mobile">
       {$aliases=$entity->getAliases()}
       {if count($aliases)}
         <span class="capitalize-first-word d-inline-block">{t}title-alias{/t}:</span>
