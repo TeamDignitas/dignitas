@@ -44,7 +44,7 @@
 
     <div class="answer-footer col-md-12 px-0">
       <div class="text-muted mb-2 row">
-        <div class="answer-read-only col-sm-12 col-md-9 mt-2 mb-1 pr-0">
+        <div class="answer-read-only col-sm-12 col-md-9 mt-2 mb-1 pe-0">
           {t}answer-posted-by{/t}
           {include 'bits/userLink.tpl' u=$answer->getUser()}
           {include 'bits/moment.tpl' t=$answer->createDate}
