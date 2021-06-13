@@ -24,7 +24,7 @@
 
         <ul>
         {foreach $category->getPages() as $p}
-          <li class="pl-2">
+          <li class="ps-2">
             <a href="{$p->getViewUrl()}">{$p->getTitle()}</a>
           </li>
         {/foreach}

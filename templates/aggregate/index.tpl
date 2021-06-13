@@ -13,7 +13,7 @@
       <div class="f-container py-5">
         <div class="col-sm-12 col-lg-3 mt-3 mb-5">
           <div>
-            <span class="col-6 text-uppercase ivory meta-heading pl-0">
+            <span class="col-6 text-uppercase ivory meta-heading ps-0">
               {t}label-contribute-index{/t}
             </span>
             <span class="col-2 ivory meta-line"></span>
@@ -57,7 +57,7 @@
   <div class="f-container py-5">
     <div class="col-lg-3 col-sm-12 mt-3 mb-5">
       <div>
-        <span class="col-6 text-uppercase meta-heading pl-0">{t}title-recent-statements{/t}</span>
+        <span class="col-6 text-uppercase meta-heading ps-0">{t}title-recent-statements{/t}</span>
         <span class="col-2 meta-line"></span>
       </div>
     </div>

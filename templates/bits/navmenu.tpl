@@ -17,7 +17,7 @@
     <ul class="navbar-nav">
 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle pl-2 py-2"
+        <a class="nav-link dropdown-toggle ps-2 py-2"
           href="#"
           id="nav-dropdown-info"
           role="button"
@@ -28,12 +28,12 @@
         </a>
         <div class="dropdown-menu dropdown-menu-dark py-0" aria-labelledby="nav-dropdown-info">
           <a
-            class="dropdown-item pl-2 py-2"
+            class="dropdown-item ps-2 py-2"
             href="{Router::link('aggregate/about')}">
             {cap}{t}link-about{/t}{/cap}
           </a>
           <a
-            class="dropdown-item pl-2 py-2"
+            class="dropdown-item ps-2 py-2"
             href="{Router::link('aggregate/contact')}">
             {cap}{t}link-contact{/t}{/cap}
           </a>
@@ -71,7 +71,7 @@
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
         <a
-          class="nav-link capitalize-first-word pl-2 py-2"
+          class="nav-link capitalize-first-word ps-2 py-2"
           href="{Router::link('help/index')}"
           title="{t}help-center{/t}"
         >
@@ -79,7 +79,7 @@
         </a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link pl-2 py-2"
+        <a class="nav-link ps-2 py-2"
           href="#"
           id="nav-dropdown-lang"
           role="button"
@@ -93,7 +93,7 @@
         <div class="dropdown-menu dropdown-menu-dark py-0" aria-labelledby="nav-dropdown-lang">
           {foreach LocaleUtil::getAll() as $id => $name}
             <a
-              class="dropdown-item pl-2 py-2"
+              class="dropdown-item ps-2 py-2"
               href="{Router::getRelAlternate($id)}">
               <span {if $id != LocaleUtil::getCurrent()}class="invisible"{/if}>
                 {include "bits/icon.tpl" i=done}
@@ -110,7 +110,7 @@
 
         <li class="nav-item">
           <a
-            class="nav-link pl-2 py-2"
+            class="nav-link ps-2 py-2"
             href="{Router::link('notification/view')}"
             title="{t}link-notifications{/t}">
 
@@ -121,7 +121,7 @@
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle pl-2 py-2"
+          <a class="nav-link dropdown-toggle ps-2 py-2"
             href="#"
             id="nav-dropdown-user"
             role="button"
