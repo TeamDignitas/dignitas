@@ -48,7 +48,7 @@
 
         {elseif $type == Proto::TYPE_ANSWER}
 
-          <div class="rounded border border-dark pt-4 pb-3 ps-3 pr-4">
+          <div class="rounded border border-dark pt-4 pb-3 ps-3 pe-4">
             {include "bits/answer.tpl"
               answer=$object
               addComment=true

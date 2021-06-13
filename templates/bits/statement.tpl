@@ -173,7 +173,7 @@
 
   </div>
 
-  <div class="verdict-area col-sm-12 col-md-3 offset-md-1 pr-0">
+  <div class="verdict-area col-sm-12 col-md-3 offset-md-1 pe-0">
     <aside class="card px-2 bg-verdict-{$statement->verdict}">
       <h5 class="card-title mt-4 mb-1 text-center font-weight-bold">
         {$statement->getEntity()}
