@@ -16,7 +16,7 @@
 
     {$url=LocaleUtil::getLoyaltyUrl()}
     {if $url}
-      <div class="ml-2">
+      <div class="ms-2">
         <a href="{$url}" title="{t}link-loyalty-details{/t}">
           {include "bits/icon.tpl" i=help}
         </a>

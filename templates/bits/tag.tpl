@@ -5,7 +5,7 @@
 {$style="color: {$t->getColor()}; background: {$t->getBackground()};"}
 
 {strip}
-<span class="tag mr-1 {if $t->tooltip}tag-tooltip{/if}" title="{$t->tooltip}">
+<span class="tag me-1 {if $t->tooltip}tag-tooltip{/if}" title="{$t->tooltip}">
   <a
     href="{Router::link('tag/view')}/{$t->id}"
     class="badge rounded-pill {if !$link}disabled{/if} py-1 px-2"

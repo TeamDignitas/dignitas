@@ -83,7 +83,7 @@
             {if User::isModerator()}
               <a
                 href="{Router::link('user/ban')}/{$user->id}"
-                class="btn btn-sm btn-outline-danger col-sm-4 col-lg-2 mr-2 mb-2">
+                class="btn btn-sm btn-outline-danger col-sm-4 col-lg-2 me-2 mb-2">
                 {t}link-ban{/t}
               </a>
             {/if}

@@ -24,7 +24,7 @@
       <input type="hidden" name="id" value="{$statement->id}">
       <input type="hidden" name="referrer" value="{$referrer}">
 
-      <fieldset class="related-fields mb-5 ml-3">
+      <fieldset class="related-fields mb-5 ms-3">
         {hf inputId='field-entity-id' label="{t}label-entity{/t}"}
           <select
             name="entityId"
@@ -75,7 +75,7 @@
         {/hf}
       </fieldset>
 
-      <fieldset class="related-fields mb-5 ml-3">
+      <fieldset class="related-fields mb-5 ms-3">
         {hf inputId='field-summary' label="{t}label-summary{/t}"}
           <textarea
             name="summary"
@@ -120,7 +120,7 @@
           errors=$errors.links|default:null}
       </fieldset>
 
-      <fieldset class="related-fields mb-5 ml-3">
+      <fieldset class="related-fields mb-5 ms-3">
         {hf inputId='field-involvements' label="{t}label-involvements{/t}"}
           <select
             name="involvedEntityIds[]"
@@ -181,7 +181,7 @@
           <button
             name="deleteButton"
             type="submit"
-            class="btn btn-sm btn-outline-danger col-sm-4 col-lg-2 mr-2 mb-2"
+            class="btn btn-sm btn-outline-danger col-sm-4 col-lg-2 me-2 mb-2"
             data-confirm="{t}info-confirm-delete-statement{/t}">
             {include "bits/icon.tpl" i=delete_forever}
             {t}link-delete{/t}
@@ -192,13 +192,13 @@
           <button
             name="reopenButton"
             type="submit"
-            class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2"
+            class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 me-2 mb-2"
             data-confirm="{t}info-confirm-reopen-statement{/t}">
             {t}link-reopen{/t}
           </button>
         {/if}
 
-        <a href="{$referrer}" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2">
+        <a href="{$referrer}" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 me-2 mb-2">
           {include "bits/icon.tpl" i=cancel}
           {t}link-cancel{/t}
         </a>

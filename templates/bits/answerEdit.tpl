@@ -25,7 +25,7 @@
 
       {$url=LocaleUtil::getVerdictUrl()}
       {if $url}
-        <span class="ml-2">
+        <span class="ms-2">
           <a href="{$url}"
             title="{t}link-verdict-details{/t}"
             target="_blank">
@@ -56,7 +56,7 @@
       <button
         name="deleteButton"
         type="submit"
-        class="btn btn-sm btn-outline-danger col-sm-4 col-lg-2 mr-2 mb-2"
+        class="btn btn-sm btn-outline-danger col-sm-4 col-lg-2 me-2 mb-2"
         data-confirm="{t}info-confirm-delete-answer{/t}">
         {include "bits/icon.tpl" i=delete_forever}
         {t}link-delete{/t}
@@ -67,13 +67,13 @@
       <button
         name="reopenButton"
         type="submit"
-        class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2"
+        class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 me-2 mb-2"
         data-confirm="{t}info-confirm-reopen-answer{/t}">
         {t}link-reopen{/t}
       </button>
     {/if}
 
-    <a href="{$referrer}" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2">
+    <a href="{$referrer}" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 me-2 mb-2">
       {include "bits/icon.tpl" i=cancel}
       {t}link-cancel{/t}
     </a>
@@ -82,7 +82,7 @@
       <button
         name="saveDraftButton"
         type="submit"
-        class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2"
+        class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 me-2 mb-2"
         data-bs-toggle="tooltip"
         title="{t}tooltip-save-draft{/t}">
         {include "bits/icon.tpl" i=insert_drive_file}

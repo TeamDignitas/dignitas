@@ -8,7 +8,7 @@
 
     <form method="post">
 
-      <fieldset class="related-fields mb-5 ml-3">
+      <fieldset class="related-fields mb-5 ms-3">
         {hf inputId='field-category-id' label="{t}label-category{/t}"}
           <select
             name="categoryId"
@@ -59,7 +59,7 @@
               data-bs-trigger="#tab-{$loc}"
               role="tabpanel">
 
-              <fieldset class="related-fields mb-5 ml-3">
+              <fieldset class="related-fields mb-5 ms-3">
                 {hf inputId='field-title' label="{t}label-title{/t}"}
                   <input type="text"
                     class="form-control {if isset($errors.title.$locale)}is-invalid{/if}"
@@ -80,7 +80,7 @@
                 {/hf}
               </fieldset>
 
-              <fieldset class="related-fields mb-5 ml-3">
+              <fieldset class="related-fields mb-5 ms-3">
                 {hf inputId='field-contents' label="{t}label-contents{/t}"}
                   <textarea
                     id="field-contents"
@@ -101,14 +101,14 @@
           <button
             name="deleteButton"
             type="submit"
-            class="btn btn-sm btn-outline-danger col-sm-12 col-md-2 mr-2 mb-2"
+            class="btn btn-sm btn-outline-danger col-sm-12 col-md-2 me-2 mb-2"
             data-confirm="{t}info-confirm-delete-help-page{/t}">
             {include "bits/icon.tpl" i=delete_forever}
             {t}link-delete{/t}
           </button>
         {/if}
 
-        <a href="{$page->getViewUrl()}" class="btn btn-sm btn-outline-secondary col-sm-12 col-md-2 mr-2 mb-2">
+        <a href="{$page->getViewUrl()}" class="btn btn-sm btn-outline-secondary col-sm-12 col-md-2 me-2 mb-2">
           {include "bits/icon.tpl" i=cancel}
           {t}link-cancel{/t}
         </a>

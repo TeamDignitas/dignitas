@@ -21,7 +21,7 @@
 
       <div class="mt-4 text-end">
         <a href="{Router::link('entity/view')}/{$fromEntity->id}"
-          class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2">
+          class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 me-2 mb-2">
           {include "bits/icon.tpl" i=cancel}
           {t}link-cancel{/t}
         </a>

@@ -113,7 +113,7 @@
           <button
             name="deleteButton"
             type="submit"
-            class="btn btn-sm btn-outline-danger col-sm-4 col-lg-2 mr-2 mb-2"
+            class="btn btn-sm btn-outline-danger col-sm-4 col-lg-2 me-2 mb-2"
             data-confirm="{t}info-confirm-delete-relation-type{/t}">
             {include "bits/icon.tpl" i=delete_forever}
             {t}link-delete{/t}
@@ -124,13 +124,13 @@
           <button
             name="cloneButton"
             type="submit"
-            class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2">
+            class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 me-2 mb-2">
             {include "bits/icon.tpl" i=content_copy}
             {t}link-clone{/t}
           </button>
         {/if}
 
-        <a href="{Router::link('relationType/list')}" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mr-2 mb-2">
+        <a href="{Router::link('relationType/list')}" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 me-2 mb-2">
           {include "bits/icon.tpl" i=cancel}
           {t}link-cancel{/t}
         </a>

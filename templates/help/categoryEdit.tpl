@@ -38,7 +38,7 @@
               class="tab-pane fade {if $locale == Config::DEFAULT_LOCALE}show active{/if}"
               role="tabpanel">
 
-              <fieldset class="related-fields mb-5 ml-3">
+              <fieldset class="related-fields mb-5 ms-3">
                 {hf inputId='field-name' label="{t}label-name{/t}"}
                   <input type="text"
                     class="form-control {if isset($errors.name.$locale)}is-invalid{/if}"
@@ -90,14 +90,14 @@
           <button
             name="deleteButton"
             type="submit"
-            class="btn btn-sm btn-outline-danger col-sm-12 col-md-2 mr-2 mb-2"
+            class="btn btn-sm btn-outline-danger col-sm-12 col-md-2 me-2 mb-2"
             data-confirm="{t}info-confirm-delete-help-category{/t}">
             {include "bits/icon.tpl" i=delete_forever}
             {t}link-delete{/t}
           </button>
         {/if}
 
-        <a href="{$cat->getViewUrl()}" class="btn btn-sm btn-outline-secondary col-sm-12 col-md-2 mr-2 mb-2">
+        <a href="{$cat->getViewUrl()}" class="btn btn-sm btn-outline-secondary col-sm-12 col-md-2 me-2 mb-2">
           {include "bits/icon.tpl" i=cancel}
           {t}link-cancel{/t}
         </a>
