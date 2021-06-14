@@ -186,18 +186,13 @@
         {/hf}
 
         {hf inputId='field-image' label="{t}label-image{/t}"}
-          <div class="custom-file">
-            <input
-              id="field-image"
-              name="image"
-              type="file"
-              data-bs-toggle="tooltip"
-              title="{t}tooltip-upload-entity-image{/t}"
-              class="custom-file-input {if isset($errors.image)}is-invalid{/if}">
-            <label class="custom-file-label" for="field-image">
-              {t}info-upload-image{/t}
-            </label>
-          </div>
+          <input
+            class="form-control {if isset($errors.image)}is-invalid{/if}"
+            data-bs-toggle="tooltip"
+            id="field-image"
+            name="image"
+            title="{t}tooltip-upload-entity-image{/t}"
+            type="file">
           {include "bits/fieldErrors.tpl" errors=$errors.image|default:null}
 
           {include 'bs/checkbox.tpl'

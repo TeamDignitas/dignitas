@@ -429,13 +429,6 @@ body, main {
   height: 20px;
 }
 
-/****************************** file inputs ******************************/
-
-.custom-file-input ~ .custom-file-label::after {
-  content: 'folder';
-  font-family: 'Material Icons';
-}
-
 /****************************** SortableJS ******************************/
 
 .drag-indicator {
