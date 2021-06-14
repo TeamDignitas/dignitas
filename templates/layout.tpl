@@ -35,7 +35,7 @@
 
     <main class="container-fluid">
       {block "content"}{/block}
-      {include "bits/snackbars.tpl"}
+      {include "bs/snackbars.tpl"}
     </main>
 
     <footer>
