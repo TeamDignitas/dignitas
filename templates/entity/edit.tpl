@@ -204,7 +204,7 @@
             obj=$entity
             geometry=Config::THUMB_ENTITY_LARGE
             spanClass="col-3"
-            imgClass="pic float-right"}
+            imgClass="pic float-end"}
         {/hf}
       </fieldset>
 
