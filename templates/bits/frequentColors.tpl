@@ -1,5 +1,5 @@
 {* used on the tag edit page *}
-<small class="form-text">
+<div class="form-text">
   {t}label-frequent-colors{/t}:
   {foreach $colors as $color}
     <span
@@ -10,4 +10,4 @@
       &nbsp;
     </span>
   {/foreach}
-</small>
+</div>
