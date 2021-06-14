@@ -11,5 +11,5 @@ Smart::assign([
   'n' => $n,
   'k' => $k,
 ]);
-$html = Smart::fetch('bits/pagination.tpl');
+$html = Smart::fetch('bs/pagination.tpl');
 print $html;
