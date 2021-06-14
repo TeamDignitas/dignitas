@@ -86,9 +86,9 @@
               value="{$t->icon}">
           </div>
 
-          <small class="form-text text-muted">
+          <div class="form-text">
             {t}info-tag-icon-name{/t}
-          </small>
+          </div>
 
           {include 'bs/checkbox.tpl'
             checked=$t->iconOnly
