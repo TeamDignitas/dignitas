@@ -576,8 +576,8 @@ $(function() {
   function clearErrors() {
     $(this)
       .removeClass('is-invalid')
-      .closest('.form-group, .form-check')
-      .find('.field-error')
+      .closest('.input-group, .form-check')
+      .find('.invalid-feedback')
       .fadeOut();
   }
 });
