@@ -26,7 +26,7 @@
           name="name"
           value="{$r->name}"
           autofocus>
-        {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
+        {include "bs/feedback.tpl" errors=$errors.name|default:null}
       {/hf}
 
       {hf inputId='parent-id' label="{t}label-parent-region{/t}"}
@@ -43,7 +43,7 @@
             </option>
           {/foreach}
         </select>
-        {include "bits/fieldErrors.tpl" errors=$errors.parentId|default:null}
+        {include "bs/feedback.tpl" errors=$errors.parentId|default:null}
       {/hf}
 
       <div class="mt-4 text-end">

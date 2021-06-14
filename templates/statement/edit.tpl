@@ -34,7 +34,7 @@
               <option value="{$statement->entityId}"></option>
             {/if}
           </select>
-          {include "bits/fieldErrors.tpl" errors=$errors.entityId|default:null}
+          {include "bs/feedback.tpl" errors=$errors.entityId|default:null}
           {if !$statement->entityId}
             <small class="text-muted">
               {t 1=Router::link('entity/edit')}
@@ -52,7 +52,7 @@
             data-allow-partial="false"
             required>
           <input type="hidden" name="dateMade" value="{$statement->dateMade}">
-          {include "bits/fieldErrors.tpl" errors=$errors.dateMade|default:null}
+          {include "bs/feedback.tpl" errors=$errors.dateMade|default:null}
         {/hf}
 
         {hf inputId='field-type' label="{t}label-type{/t}"}
@@ -85,7 +85,7 @@
             rows="3"
             required>{$statement->summary|escape}</textarea>
 
-          {include "bits/fieldErrors.tpl" errors=$errors.summary|default:null}
+          {include "bs/feedback.tpl" errors=$errors.summary|default:null}
           <span class="chars-remaining form-text"></span>
         {/hf}
 
@@ -96,7 +96,7 @@
             class="form-control has-unload-warning easy-mde {if isset($errors.context)}is-invalid{/if}"
             data-statement-id="{$statement->id}"
             rows="10">{$statement->context|escape}</textarea>
-          {include "bits/fieldErrors.tpl" errors=$errors.context|default:null}
+          {include "bs/feedback.tpl" errors=$errors.context|default:null}
           {include "bits/markdownHelp.tpl"}
         {/hf}
 
@@ -109,7 +109,7 @@
             rows="3"
             required>{$statement->goal|escape}</textarea>
 
-          {include "bits/fieldErrors.tpl" errors=$errors.goal|default:null}
+          {include "bs/feedback.tpl" errors=$errors.goal|default:null}
 
           <span class="chars-remaining form-text"></span>
         {/hf}
@@ -171,7 +171,7 @@
               {/foreach}
             </select>
 
-            {include "bits/fieldErrors.tpl" errors=$errors.verdict|default:null}
+            {include "bs/feedback.tpl" errors=$errors.verdict|default:null}
           {/hf}
         {/if}
       </fieldset>

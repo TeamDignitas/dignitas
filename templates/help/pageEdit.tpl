@@ -22,7 +22,7 @@
               </option>
             {/foreach}
           </select>
-          {include "bits/fieldErrors.tpl" errors=$errors.categoryId|default:null}
+          {include "bs/feedback.tpl" errors=$errors.categoryId|default:null}
         {/hf}
       </fieldset>
 
@@ -66,7 +66,7 @@
                     id="field-title"
                     name="title-{$locale}"
                     value="{$hpt->title|escape}">
-                  {include "bits/fieldErrors.tpl" errors=$errors.title.$locale|default:null}
+                  {include "bs/feedback.tpl" errors=$errors.title.$locale|default:null}
                 {/hf}
 
                 {hf inputId='field-path' label="{t}label-help-page-path{/t}"}
@@ -76,7 +76,7 @@
                     name="path-{$locale}"
                     value="{$hpt->path|escape}"
                     placeholder="{t}info-help-page-path{/t}">
-                  {include "bits/fieldErrors.tpl" errors=$errors.path.$locale|default:null}
+                  {include "bs/feedback.tpl" errors=$errors.path.$locale|default:null}
                 {/hf}
               </fieldset>
 
@@ -87,7 +87,7 @@
                     class="form-control has-unload-warning easy-mde {if isset($errors.contents.$locale)}is-invalid{/if}"
                     name="contents-{$locale}">{$hpt->contents|escape}</textarea>
                   {include "bits/markdownHelp.tpl"}
-                  {include "bits/fieldErrors.tpl" errors=$errors.contents.$locale|default:null}
+                  {include "bs/feedback.tpl" errors=$errors.contents.$locale|default:null}
                 {/hf}
               </fieldset>
             </div>

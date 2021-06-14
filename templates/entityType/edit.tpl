@@ -16,7 +16,7 @@
             name="name"
             value="{$et->name|escape}"
             placeholder="{t}info-entity-type-name{/t}">
-          {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
+          {include "bs/feedback.tpl" errors=$errors.name|default:null}
         {/hf}
       </fieldset>
 

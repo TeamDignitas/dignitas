@@ -15,6 +15,6 @@
       </tbody>
     </table>
 
-    {include "bits/fieldErrors.tpl" errors=$errors|default:null}
+    {include "bs/feedback.tpl" errors=$errors|default:null}
   </div>
 {/hf}

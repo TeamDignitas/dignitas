@@ -45,7 +45,7 @@
                     id="field-name"
                     name="name-{$locale}"
                     value="{$hct->name|escape}">
-                  {include "bits/fieldErrors.tpl" errors=$errors.name.$locale|default:null}
+                  {include "bs/feedback.tpl" errors=$errors.name.$locale|default:null}
                 {/hf}
 
                 {hf inputId='field-path' label="{t}label-help-category-path{/t}"}
@@ -55,7 +55,7 @@
                     name="path-{$locale}"
                     value="{$hct->path|escape}"
                     placeholder="{t}info-help-category-path{/t}">
-                  {include "bits/fieldErrors.tpl" errors=$errors.path.$locale|default:null}
+                  {include "bs/feedback.tpl" errors=$errors.path.$locale|default:null}
                 {/hf}
               </fieldset>
             </div>

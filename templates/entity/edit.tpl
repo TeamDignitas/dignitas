@@ -31,7 +31,7 @@
             value="{$entity->name|escape}"
             id="field-name"
             class="form-control {if isset($errors.name)}is-invalid{/if}">
-          {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
+          {include "bs/feedback.tpl" errors=$errors.name|default:null}
         {/hf}
 
         {if User::isModerator()}
@@ -97,7 +97,7 @@
               </option>
             {/foreach}
           </select>
-          {include "bits/fieldErrors.tpl" errors=$errors.type|default:null}
+          {include "bs/feedback.tpl" errors=$errors.type|default:null}
         {/hf}
 
         <div id="color-wrapper" {if !$entity->hasColor()}hidden{/if}>
@@ -138,7 +138,7 @@
             </tbody>
           </table>
 
-          {include "bits/fieldErrors.tpl" errors=$errors.relations|default:null}
+          {include "bs/feedback.tpl" errors=$errors.relations|default:null}
         {/hf}
       </fieldset>
 
@@ -153,7 +153,7 @@
 
           <span class="chars-remaining form-text"></span>
           {include "bits/markdownHelp.tpl"}
-          {include "bits/fieldErrors.tpl" errors=$errors.profile|default:null}
+          {include "bs/feedback.tpl" errors=$errors.profile|default:null}
         {/hf}
 
         {include "bits/linkEditor.tpl"
@@ -193,7 +193,7 @@
             name="image"
             title="{t}tooltip-upload-entity-image{/t}"
             type="file">
-          {include "bits/fieldErrors.tpl" errors=$errors.image|default:null}
+          {include "bs/feedback.tpl" errors=$errors.image|default:null}
 
           {include 'bs/checkbox.tpl'
             divClass='mt-1'

@@ -44,7 +44,7 @@
             name="image"
             title="{t}tooltip-upload-user-image{/t}"
             type="file">
-          {include "bits/fieldErrors.tpl" errors=$errors.image|default:null}
+          {include "bs/feedback.tpl" errors=$errors.image|default:null}
 
           {include 'bs/checkbox.tpl'
             divClass='mt-1'
