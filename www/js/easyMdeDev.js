@@ -137,7 +137,7 @@ $(function() {
         len += change.text.join('\n').length;
       }
 
-      if (len > max) {
+      if ((len > max) && (change.origin != '+delete')) {
         change.cancel();
       }
     }
