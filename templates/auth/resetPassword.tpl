@@ -15,9 +15,7 @@
 
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-prepend">
-                  {include "bits/icon.tpl" i=lock class="input-group-text"}
-                </span>
+                {include "bits/icon.tpl" i=lock class="input-group-text"}
                 <input
                   class="form-control {if isset($errors.password)}is-invalid{/if}"
                   type="password"
@@ -30,9 +28,7 @@
 
             <div class="form-group">
               <div class="input-group voffset3">
-                <span class="input-group-prepend">
-                  {include "bits/icon.tpl" i=lock class="input-group-text"}
-                </span>
+                {include "bits/icon.tpl" i=lock class="input-group-text"}
                 <input
                   class="form-control"
                   type="password"

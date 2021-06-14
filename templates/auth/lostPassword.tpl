@@ -20,9 +20,7 @@
 
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-prepend">
-                  {include "bits/icon.tpl" i=email class="input-group-text"}
-                </span>
+                {include "bits/icon.tpl" i=email class="input-group-text"}
                 <input
                   class="form-control {if isset($errors.email)}is-invalid{/if}"
                   type="text"

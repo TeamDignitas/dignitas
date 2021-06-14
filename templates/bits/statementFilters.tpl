@@ -68,7 +68,7 @@
 
   <div id="more-filters" class="collapse {if $term}show{/if}">
     <div class="row mb-2 small statement-filters">
-      <div class="input-group col-12 col-sm-12 col-md-3 col-lg-3 mb-2">
+      <div class="col-12 col-sm-12 col-md-3 col-lg-3 mb-2">
         <input
           type="text"
           name="term"
@@ -77,7 +77,7 @@
           placeholder="{t}label-term{/t}">
         {$url=LocaleUtil::getSearchUrl()}
         {if $url}
-          <div class="input-group-append mt-1">
+          <div class="col-12">
             <a href="{$url}"
               class="btn btn-sm btn-link"
               title="{t}link-search-details{/t}"
