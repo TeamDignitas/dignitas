@@ -39,12 +39,12 @@ $btn-border-radius-sm: 0.25rem;
 
 /**
  * These are usable
- *   - in class names like btn-darkish;
- *   - in CSS variables like color: var(--darkish) !important.
+ *   - in class names like btn-carbon;
+ *   - in CSS variables like color: var(--carbon) !important.
  **/
 $custom-colors: (
-  "darkish": #343a40,
   "butter": $butter,
+  "carbon": #343a40,
 );
 $theme-colors: map-merge($theme-colors, $custom-colors);
 

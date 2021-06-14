@@ -71,7 +71,7 @@ blockquote {
 
 @media (max-width: 768px) {
   .navbar-collapse {
-    background-color: var(--bs-darkish);
+    background-color: var(--bs-carbon);
     height: 100%;
     margin-top: 3px;
     padding: 1rem;
