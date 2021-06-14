@@ -24,7 +24,7 @@
   </label>
 
   {if $help}
-    <div class="form-text text-muted">{$help}</div>
+    <div class="form-text">{$help}</div>
   {/if}
 
   {if $cbErrors}

@@ -73,9 +73,9 @@
             </option>
           {/foreach}
         </select>
-        <small class="form-text text-muted">
+        <div class="form-text">
           {t}info-relation-type-phrase{/t}
-        </small>
+        </div>
       </div>
 
       <div class="form-group">
