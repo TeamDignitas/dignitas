@@ -12,31 +12,18 @@
 
 .meta-heading {
   font-size: 1rem;
-  display: inline-block;
+  margin-bottom: 0.5rem;
   min-width: 190px;
+  padding-left: 0;
 }
 
 .meta-line {
-  display: inline-block;
-  width: 100%;
+  border: 1px solid #0d0e0e;
   height: 2px;
   margin-bottom: 4px;
-  border: 1px solid #0d0e0e;
-}
-
-.white {
-  border-color: #fff;
 }
 
 .hero {
-  margin-left: -15px;
-  margin-right: -15px;
-}
-
-.ivory.meta-heading {
-  color: #F3E6D7;
-}
-
-.ivory.meta-line {
-  border: 1px solid #F3E6D7;
+  /* cancel the padding on the parent .container-fluid */
+  margin: 0 calc(-1 * var(--bs-gutter-x, .75rem));
 }
