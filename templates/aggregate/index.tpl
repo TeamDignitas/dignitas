@@ -11,16 +11,16 @@
   {if User::getActive()}
     <div class="bg-dark hero">
       <div class="f-container py-5">
-        <div class="col-sm-12 col-lg-3 mt-3 mb-5">
-          <div>
-            <span class="col-6 text-uppercase ivory meta-heading ps-0">
+        <div class="col-12 col-lg-3 mt-3 mb-5">
+          <div class="row align-items-center me-3">
+            <span class="col-6 col-xl-8 text-uppercase text-butter meta-heading">
               {t}label-contribute-index{/t}
             </span>
-            <span class="col-2 ivory meta-line"></span>
+            <span class="col-3 col-xl-3 border-butter meta-line"></span>
           </div>
         </div>
 
-        <div class="col-sm-12 col-lg-9 mt-3">
+        <div class="col-12 col-lg-9 mt-3">
           <div class="row mx-0">
             {if User::may(User::PRIV_ADD_STATEMENT)}
               <a
@@ -55,10 +55,12 @@
   {/if}
 
   <div class="f-container py-5">
-    <div class="col-lg-3 col-sm-12 mt-3 mb-5">
-      <div>
-        <span class="col-6 text-uppercase meta-heading ps-0">{t}title-recent-statements{/t}</span>
-        <span class="col-2 meta-line"></span>
+    <div class="col-12 col-lg-3 mt-3 mb-5">
+      <div class="row align-items-center me-3">
+        <span class="col-6 col-xl-8 text-uppercase meta-heading">
+          {t}title-recent-statements{/t}
+        </span>
+        <span class="col-3 col-xl-3 meta-line"></span>
       </div>
     </div>
 
