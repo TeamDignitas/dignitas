@@ -391,9 +391,9 @@ img.pic.no-outline,
   margin-bottom: 0;
 }
 
-.dropdown-canned-responses .dropdown-menu {
+.dropdown-canned-responses {
   max-height: 500px;
-  min-width: 400px;
+  width: 400px;
   overflow-y: auto;
 }
 

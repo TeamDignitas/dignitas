@@ -403,7 +403,7 @@ $(function() {
   $('a.delete-comment').click(deleteComment);
   $('body').on('click', 'button.comment-save', saveComment);
   $('body').on('click', 'button.comment-cancel', hideCommentForm);
-  $('body').on('hide.bs.dropdown', '.dropdown-canned-responses', copyCannedResponse);
+  $('body').on('hide.bs.dropdown', '.toggle-canned-responses', copyCannedResponse);
 
   function addCommentForm() {
     // clone the form and populate some fields
@@ -487,9 +487,12 @@ $(function() {
   }
 
   function copyCannedResponse(e) {
-    var wrap = $(e.clickEvent.target).closest('.canned-response-wrapper');
-    var textarea =  wrap.closest('form').find('textarea');
-    textarea.val(wrap.data('raw')).change().focus();
+    var evt = e.clickEvent;
+    if (evt) {
+      var wrap = $(evt.target).closest('.canned-response-wrapper');
+      var textarea =  wrap.closest('form').find('textarea');
+      textarea.val(wrap.data('raw')).change().focus();
+    }
   }
 
 });
