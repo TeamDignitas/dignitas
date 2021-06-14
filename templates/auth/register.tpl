@@ -12,57 +12,35 @@
       <div class="card-body">
         <form method="post">
 
-          <div class="form-group">
-            <div class="input-group">
-              {include "bits/icon.tpl" i=person class="input-group-text"}
-              <input
-                class="form-control {if isset($errors.nickname)}is-invalid{/if}"
-                type="text"
-                name="nickname"
-                value="{$nickname|escape}"
-                autofocus
-                placeholder="{t}label-nickname{/t}">
-            </div>
-            {include "bits/fieldErrors.tpl" errors=$errors.nickname|default:null}
-          </div>
+          {include "bs/iconField.tpl"
+            icon='person'
+            ifErrors=$errors.nickname|default:null
+            name='nickname'
+            placeholder="{t}label-nickname{/t}"
+            value=$nickname}
 
-          <div class="form-group">
-            <div class="input-group">
-              {include "bits/icon.tpl" i=email class="input-group-text"}
-              <input
-                class="form-control {if isset($errors.email)}is-invalid{/if}"
-                type="email"
-                name="email"
-                value="{$email|escape}"
-                placeholder="{t}label-email{/t}">
-            </div>
-            {include "bits/fieldErrors.tpl" errors=$errors.email|default:null}
-          </div>
+          {include "bs/iconField.tpl"
+            icon='email'
+            ifErrors=$errors.email|default:null
+            name='email'
+            placeholder="{t}label-email{/t}"
+            type='email'
+            value=$email}
 
-          <div class="form-group">
-            <div class="input-group">
-              {include "bits/icon.tpl" i=lock class="input-group-text"}
-              <input
-                class="form-control {if isset($errors.password)}is-invalid{/if}"
-                type="password"
-                name="password"
-                value="{$password|escape}"
-                placeholder="{t}label-password{/t}">
-            </div>
-            {include "bits/fieldErrors.tpl" errors=$errors.password|default:null}
-          </div>
+          {include "bs/iconField.tpl"
+            icon='lock'
+            ifErrors=$errors.password|default:null
+            name='password'
+            placeholder="{t}label-password{/t}"
+            type='password'
+            value=$password}
 
-          <div class="form-group">
-            <div class="input-group">
-              {include "bits/icon.tpl" i=lock class="input-group-text"}
-              <input
-                class="form-control"
-                type="password"
-                name="password2"
-                value="{$password2|escape}"
-                placeholder="{t}label-password-again{/t}">
-            </div>
-          </div>
+          {include "bs/iconField.tpl"
+            icon='lock'
+            name='password2'
+            placeholder="{t}label-password-again{/t}"
+            type='password'
+            value=$password2}
 
           {include 'bs/checkbox.tpl'
             checked=$remember

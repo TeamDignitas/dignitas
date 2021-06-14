@@ -74,17 +74,12 @@
             target="#background"}
         {/hf}
 
-        {hf inputId='icon' label="{t}label-icon{/t}"}
-          <div class="input-group">
-            {if $t->icon}
-              {include "bits/icon.tpl" i=$t->icon class="input-group-text"}
-            {/if}
-            <input type="text"
-              class="form-control"
-              id="icon"
-              name="icon"
-              value="{$t->icon}">
-          </div>
+        {hf label="{t}label-icon{/t}"}
+          {include "bs/iconField.tpl"
+            icon=$t->icon
+            mb=2
+            name='icon'
+            value=$t->icon}
 
           <div class="form-text">
             {t}info-tag-icon-name{/t}

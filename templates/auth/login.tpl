@@ -6,7 +6,7 @@
   <div class="container my-5">
     {$allowFakeLogins=$allowFakeLogins|default:false}
 
-    <div class="col-sm-12 col-md-8 col-lg-6 mx-auto">
+    <div class="col-12 col-md-8 col-lg-6 mx-auto">
 
       {if $allowFakeLogins}
         {include "bits/fakeLogin.tpl"}
@@ -21,47 +21,39 @@
           <form method="post">
             <input type="hidden" name="referrer" value="{$referrer|escape}">
 
-            <div class="form-group">
-              <div class="input-group">
-                {include "bits/icon.tpl" i=email class="input-group-text"}
-                <input
-                  class="form-control {if isset($errors.email)}is-invalid{/if}"
-                  type="text"
-                  name="email"
-                  value="{$email|escape}"
-                  {if !$email}autofocus{/if}
-                  placeholder="{t}label-email{/t}">
-              </div>
-              {include "bits/fieldErrors.tpl" errors=$errors.email|default:null}
-            </div>
+            {include "bs/iconField.tpl"
+              autofocus=!$email
+              icon='email'
+              ifErrors=$errors.email|default:null
+              name='email'
+              placeholder="{t}label-email{/t}"
+              type='email'
+              value=$email}
 
-            <div class="form-group">
-              <div class="input-group">
-                {include "bits/icon.tpl" i=lock class="input-group-text"}
-                <input
-                  class="form-control {if isset($errors.password)}is-invalid{/if}"
-                  type="password"
-                  name="password"
-                  {if $email}autofocus{/if}
-                  placeholder="{t}label-password{/t}">
-              </div>
-              <a class="btn btn-sm btn-link ms-5 mt-1" href="{Router::link('auth/lostPassword')}">
-                {t}link-forgot-password{/t}
-              </a>
-              {include "bits/fieldErrors.tpl" errors=$errors.password|default:null}
-            </div>
+            {include "bs/iconField.tpl"
+              autofocus=!empty($email)
+              icon='lock'
+              ifErrors=$errors.password|default:null
+              mb=2
+              name='password'
+              placeholder="{t}label-password{/t}"
+              type='password'}
+
+            <a class="small ms-5 mb-3 d-block" href="{Router::link('auth/lostPassword')}">
+              {t}link-forgot-password{/t}
+            </a>
 
             {include 'bs/checkbox.tpl'
               checked=$remember
               label="{t}label-remember-me{/t}"
               name='remember'}
 
-            <div class="mt-2 mx-2 row">
-              <button class="btn btn-primary col-sm-12 col-md-6" type="submit" name="submitButton">
+            <div class="mt-3 mx-2 row">
+              <button class="btn btn-primary col-12 col-md-6" type="submit" name="submitButton">
                 {t}link-log-in{/t}
               </button>
 
-              <div class="col-sm-12 col-md-6 text-center">
+              <div class="col-12 col-md-6 text-center">
                 {if Config::ALLOW_REGISTRATION}
                   <a class="btn btn-link" href="{Router::link('auth/register')}">
                     {t}link-sign-up{/t}

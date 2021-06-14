@@ -13,30 +13,20 @@
         <div class="card-body">
           <form method="post">
 
-            <div class="form-group">
-              <div class="input-group">
-                {include "bits/icon.tpl" i=lock class="input-group-text"}
-                <input
-                  class="form-control {if isset($errors.password)}is-invalid{/if}"
-                  type="password"
-                  name="password"
-                  value="{$password|escape}"
-                  placeholder="{t}label-password{/t}">
-              </div>
-              {include "bits/fieldErrors.tpl" errors=$errors.password|default:null}
-            </div>
+            {include "bs/iconField.tpl"
+              icon='lock'
+              ifErrors=$errors.password|default:null
+              name='password'
+              placeholder="{t}label-password{/t}"
+              type='password'
+              value=$password}
 
-            <div class="form-group">
-              <div class="input-group voffset3">
-                {include "bits/icon.tpl" i=lock class="input-group-text"}
-                <input
-                  class="form-control"
-                  type="password"
-                  name="password2"
-                  value="{$password2|escape}"
-                  placeholder="{t}label-password-again{/t}">
-              </div>
-            </div>
+            {include "bs/iconField.tpl"
+              icon='lock'
+              name='password2'
+              placeholder="{t}label-password-again{/t}"
+              type='password'
+              value=$password2}
 
             <button class="btn btn-primary" type="submit" name="submitButton">
               {t}link-save{/t}

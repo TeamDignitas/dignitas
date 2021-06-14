@@ -18,19 +18,14 @@
 
           <form method="post">
 
-            <div class="form-group">
-              <div class="input-group">
-                {include "bits/icon.tpl" i=email class="input-group-text"}
-                <input
-                  class="form-control {if isset($errors.email)}is-invalid{/if}"
-                  type="text"
-                  name="email"
-                  value="{$email|escape}"
-                  autofocus
-                  placeholder="{t}label-email{/t}">
-              </div>
-              {include "bits/fieldErrors.tpl" errors=$errors.email|default:null}
-            </div>
+            {include "bs/iconField.tpl"
+              autofocus=true
+              icon='email'
+              ifErrors=$errors.email|default:null
+              name='email'
+              placeholder="{t}label-email{/t}"
+              type='email'
+              value=$email}
 
             <button
               class="btn btn-primary col-sm-12 col-md-6"

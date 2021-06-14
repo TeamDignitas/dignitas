@@ -7,37 +7,29 @@
     <form method="post">
       <input type="hidden" name="referrer" value="{$referrer|escape}">
 
-      <div class="form-group">
-        <div class="input-group">
-          {include "bits/icon.tpl" i=email class="input-group-text"}
-          <input
-            class="form-control"
-            type="text"
-            name="fakeEmail"
-            value="test@test.com">
-        </div>
-      </div>
+      {include "bs/iconField.tpl"
+        icon='email'
+        name='fakeEmail'
+        value='test@test.com'}
 
-      <div class="form-group">
-        <div class="input-group">
-          {include "bits/icon.tpl" i=emoji_events class="input-group-text"}
+      <div class="input-group mb-3">
+        {include "bits/icon.tpl" i=emoji_events class="input-group-text"}
 
-          <input
-            class="form-control"
-            type="text"
-            name="fakeReputation"
-            placeholder="{t}label-reputation{/t}"
-            list="preset">
-          <datalist id="preset">
-            <option>10000</option>
-            <option>2000</option>
-            <option>125</option>
-            <option>100</option>
-            <option>15</option>
-            <option>10</option>
-            <option>1</option>
-          </datalist>
-        </div>
+        <input
+          class="form-control"
+          type="text"
+          name="fakeReputation"
+          placeholder="{t}label-reputation{/t}"
+          list="preset">
+        <datalist id="preset">
+          <option>10000</option>
+          <option>2000</option>
+          <option>125</option>
+          <option>100</option>
+          <option>15</option>
+          <option>10</option>
+          <option>1</option>
+        </datalist>
       </div>
 
       {include 'bs/checkbox.tpl'
