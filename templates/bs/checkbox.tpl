@@ -6,7 +6,8 @@
 {$inputId=$inputId|default:null}
 
 {if !$inputId}
-  {$inputId='cb-'|uniqid}
+  {assign var=SEQUENTIAL_CB_ID value=1+{$SEQUENTIAL_CB_ID|default:0} scope="global"}
+  {$inputId="cb-{$SEQUENTIAL_CB_ID}"}
 {/if}
 
 <div class="form-check {$divClass}">
