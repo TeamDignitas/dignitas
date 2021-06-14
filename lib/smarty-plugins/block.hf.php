@@ -10,7 +10,7 @@ const HF_TEMPLATE = '
 
     <label
       for="%s"
-      class="col-form-label col-12 col-%s-%s ps-0">
+      class="col-form-label col-12 col-%s-%s ps-0 text-nowrap">
       %s
     </label>
 
