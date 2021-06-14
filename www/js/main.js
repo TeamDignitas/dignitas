@@ -338,16 +338,6 @@ $(function() {
   }
 });
 
-/****************************** file inputs ******************************/
-
-$(function() {
-  $('.custom-file-input').on('change', function() {
-    // change the label value
-    let fileName = $(this).val().split('\\').pop();
-    $(this).next('.custom-file-label').addClass('selected').html(fileName);
-  });
-});
-
 /****************************** SortableJS ******************************/
 
 $(function() {

@@ -51,17 +51,15 @@
             rows="10">{$sr->getEditableContents()|escape}</textarea>
           {/strip}
 
-          <div class="custom-file mb-2">
-            <input
-              name="file"
-              type="file"
-              class="custom-file-input {if isset($errors.file)}is-invalid{/if}"
-              id="field-file">
+          <label class="form-label my-2" for="field-file">
+            {t}info-choose-static-resource-file{/t}:
+          </label>
 
-            <label class="custom-file-label mt-2" for="field-file">
-              {t}info-choose-static-resource-file{/t}
-            </label>
-          </div>
+          <input
+            class="form-control {if isset($errors.file)}is-invalid{/if}"
+            id="field-file"
+            name="file"
+            type="file">
           {include "bits/fieldErrors.tpl" errors=$errors.file|default:null}
         {/hf}
       </fieldset>

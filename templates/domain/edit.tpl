@@ -36,16 +36,11 @@
               geometry=Config::THUMB_DOMAIN}
           </div>
 
-          <div class="custom-file">
-            <input
-              name="image"
-              type="file"
-              class="custom-file-input {if isset($errors.image)}is-invalid{/if}"
-              id="field-image">
-            <label class="custom-file-label" for="field-image">
-              {t}info-upload-image{/t}
-            </label>
-          </div>
+          <input
+            class="form-control {if isset($errors.image)}is-invalid{/if}"
+            id="field-image"
+            name="image"
+            type="file">
           {include "bits/fieldErrors.tpl" errors=$errors.image|default:null}
 
           {include 'bs/checkbox.tpl'
