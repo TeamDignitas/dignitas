@@ -26,7 +26,7 @@
             id="value"
             name="value"
             value="{$t->value}">
-          {include "bits/fieldErrors.tpl" errors=$errors.value|default:null}
+          {include "bs/feedback.tpl" errors=$errors.value|default:null}
         {/hf}
 
         {hf inputId='tooltip' label="{t}label-details{/t}"}
@@ -47,7 +47,7 @@
               <option value="{$t->parentId}" selected></option>
             {/if}
           </select>
-          {include "bits/fieldErrors.tpl" errors=$errors.parentId|default:null}
+          {include "bs/feedback.tpl" errors=$errors.parentId|default:null}
         {/hf}
       </fieldset>
 

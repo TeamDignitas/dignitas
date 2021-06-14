@@ -23,7 +23,7 @@
     {if $value}value="{$value|escape}"{/if}>
 
   {if $ifErrors}
-    {include "bits/fieldErrors.tpl" errors=$ifErrors}
+    {include "bs/feedback.tpl" errors=$ifErrors}
   {/if}
 
 </div>

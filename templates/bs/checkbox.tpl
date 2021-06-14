@@ -28,7 +28,7 @@
   {/if}
 
   {if $cbErrors}
-    {include "bits/fieldErrors.tpl" errors=$cbErrors}
+    {include "bs/feedback.tpl" errors=$cbErrors}
   {/if}
 
 </div>

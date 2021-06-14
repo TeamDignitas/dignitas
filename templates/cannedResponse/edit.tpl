@@ -18,7 +18,7 @@
         >{$cannedResponse->contents|escape}</textarea>
         <span class="chars-remaining form-text"></span>
         {include "bits/markdownHelp.tpl"}
-        {include "bits/fieldErrors.tpl" errors=$errors.contents|default:null}
+        {include "bs/feedback.tpl" errors=$errors.contents|default:null}
       </div>
 
       <div class="mt-4 text-end">

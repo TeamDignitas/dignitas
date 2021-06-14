@@ -16,7 +16,7 @@
             name="name"
             value="{$domain->name|escape}"
             placeholder="{t}info-domain-name{/t}">
-          {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
+          {include "bs/feedback.tpl" errors=$errors.name|default:null}
         {/hf}
 
         {hf inputId='field-display-value' label="{t}label-display-value{/t}"}
@@ -26,7 +26,7 @@
             name="displayValue"
             value="{$domain->displayValue|escape}"
             placeholder="{t}info-domain-display-value{/t}">
-          {include "bits/fieldErrors.tpl" errors=$errors.displayValue|default:null}
+          {include "bs/feedback.tpl" errors=$errors.displayValue|default:null}
         {/hf}
 
         {hf inputId='field-image' label="{t}label-image{/t}"}
@@ -41,7 +41,7 @@
             id="field-image"
             name="image"
             type="file">
-          {include "bits/fieldErrors.tpl" errors=$errors.image|default:null}
+          {include "bs/feedback.tpl" errors=$errors.image|default:null}
 
           {include 'bs/checkbox.tpl'
             divClass='mt-1'

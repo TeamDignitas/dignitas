@@ -15,7 +15,7 @@
             id="field-name"
             name="name"
             value="{$sr->name|escape}">
-          {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
+          {include "bs/feedback.tpl" errors=$errors.name|default:null}
           <div class="form-text">
             {t}info-static-resource-name{/t}
           </div>
@@ -60,7 +60,7 @@
             id="field-file"
             name="file"
             type="file">
-          {include "bits/fieldErrors.tpl" errors=$errors.file|default:null}
+          {include "bs/feedback.tpl" errors=$errors.file|default:null}
         {/hf}
       </fieldset>
 

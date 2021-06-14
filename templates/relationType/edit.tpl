@@ -18,7 +18,7 @@
           name="name"
           value="{$rt->name|escape}"
           placeholder="{t}info-relation-type-name{/t}">
-        {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
+        {include "bs/feedback.tpl" errors=$errors.name|default:null}
       </div>
 
       <div class="form-group">
@@ -91,7 +91,7 @@
           max="1.0"
           step="0.001"
           placeholder="{t}info-relation-type-weight{/t}">
-        {include "bits/fieldErrors.tpl" errors=$errors.weight|default:null}
+        {include "bs/feedback.tpl" errors=$errors.weight|default:null}
       </div>
 
       {include 'bs/checkbox.tpl'
