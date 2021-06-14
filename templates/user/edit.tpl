@@ -10,28 +10,20 @@
 
       <fieldset class="related-fields mb-5 ms-3">
         {hf label="{t}label-nickname{/t}"}
-          <div class="input-group">
-            {include "bits/icon.tpl" i=person class="input-group-text"}
-            <input
-              class="form-control {if isset($errors.nickname)}is-invalid{/if}"
-              type="text"
-              name="nickname"
-              value="{$user->nickname}"
-              autofocus>
-          </div>
-          {include "bits/fieldErrors.tpl" errors=$errors.nickname|default:null}
+          {include "bs/iconField.tpl"
+            icon='person'
+            ifErrors=$errors.nickname|default:null
+            name='nickname'
+            value=$user->nickname}
         {/hf}
 
         {hf label="{t}label-email{/t}"}
-          <div class="input-group">
-            {include "bits/icon.tpl" i=email class="input-group-text"}
-            <input
-              class="form-control {if isset($errors.email)}is-invalid{/if}"
-              type="email"
-              name="email"
-              value="{$user->email|escape}">
-          </div>
-          {include "bits/fieldErrors.tpl" errors=$errors.email|default:null}
+          {include "bs/iconField.tpl"
+            icon='email'
+            ifErrors=$errors.email|default:null
+            name='email'
+            type='email'
+            value=$user->email}
         {/hf}
       </fieldset>
 
@@ -73,27 +65,20 @@
         </legend>
 
         {hf label="{t}label-password{/t}"}
-          <div class="input-group">
-            {include "bits/icon.tpl" i=lock class="input-group-text"}
-
-            <input
-              class="form-control {if isset($errors.password)}is-invalid{/if}"
-              type="password"
-              name="password"
-              value="{$password|default:''}">
-          </div>
-          {include "bits/fieldErrors.tpl" errors=$errors.password|default:null}
+          {include "bs/iconField.tpl"
+            icon='lock'
+            ifErrors=$errors.password|default:null
+            name='password'
+            type='password'
+            value=$password}
         {/hf}
 
         {hf label="{t}label-password-again{/t}"}
-          <div class="input-group">
-            {include "bits/icon.tpl" i=lock class="input-group-text"}
-            <input
-              class="form-control"
-              type="password"
-              name="password2"
-              value="{$password2|default:''}">
-          </div>
+          {include "bs/iconField.tpl"
+            icon='lock'
+            name='password2'
+            type='password'
+            value=$password2}
         {/hf}
       </fieldset>
 

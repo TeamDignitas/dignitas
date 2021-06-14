@@ -8,20 +8,14 @@
 
     <form method="post">
 
-      <div class="form-group">
-        <label for="field-email">{t}label-email{/t}</label>
-        <div class="input-group">
-          {include "bits/icon.tpl" i=email class="input-group-text"}
-          <input
-            class="form-control {if isset($errors.email)}is-invalid{/if}"
-            type="text"
-            name="email"
-            value="{$i->email|escape}"
-            autofocus
-            placeholder="{t}label-email{/t}">
-        </div>
-        {include "bits/fieldErrors.tpl" errors=$errors.email|default:null}
-      </div>
+      {include "bs/iconField.tpl"
+        autofocus=true
+        icon='email'
+        ifErrors=$errors.email|default:null
+        name='email'
+        placeholder="{t}label-email{/t}"
+        type='email'
+        value=$i->email}
 
       <div class="mt-4 text-end">
         <a href="{Router::link('invite/list')}" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 mb-2 me-2">
