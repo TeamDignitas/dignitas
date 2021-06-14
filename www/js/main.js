@@ -364,10 +364,10 @@ $(function() {
       // the browser extension is allowed to submit strings longer than the
       // limit.
       span.text(_('remaining-chars', remaining));
-      span.removeClass('text-danger').addClass('text-muted');
+      span.removeClass('text-danger');
     } else {
       span.text(_('exceeding-chars', -remaining));
-      span.addClass('text-danger').removeClass('text-muted');
+      span.addClass('text-danger');
     }
 
     // Never prevent the change. We trust the browser to obey maxlength. This

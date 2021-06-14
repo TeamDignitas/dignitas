@@ -86,7 +86,7 @@
             required>{$statement->summary|escape}</textarea>
 
           {include "bits/fieldErrors.tpl" errors=$errors.summary|default:null}
-          <span class="chars-remaining form-text small"></span>
+          <span class="chars-remaining form-text"></span>
         {/hf}
 
         {hf inputId='field-context' label="{t}label-context{/t}"}
@@ -111,7 +111,7 @@
 
           {include "bits/fieldErrors.tpl" errors=$errors.goal|default:null}
 
-          <span class="chars-remaining form-text small float-left"></span>
+          <span class="chars-remaining form-text"></span>
         {/hf}
 
         {include "bits/linkEditor.tpl"

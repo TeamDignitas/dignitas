@@ -16,9 +16,9 @@
             name="name"
             value="{$sr->name|escape}">
           {include "bits/fieldErrors.tpl" errors=$errors.name|default:null}
-          <small class="form-text">
+          <div class="form-text">
             {t}info-static-resource-name{/t}
-          </small>
+          </div>
         {/hf}
 
         {hf inputId='field-locale' label="{t}label-locale{/t}"}
