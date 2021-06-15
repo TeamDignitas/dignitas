@@ -15,9 +15,12 @@
           class="form-control has-unload-warning size-limit easy-mde {if isset($errors.contents)}is-invalid{/if}"
           maxlength="{Comment::MAX_LENGTH}"
         >{$cannedResponse->contents|escape}</textarea>
-        <span class="chars-remaining form-text"></span>
-        {include "bits/markdownHelp.tpl"}
+
         {include "bs/feedback.tpl" errors=$errors.contents|default:null}
+        <div class="d-flex flex-column flex-md-row justify-content-between">
+          <span class="chars-remaining form-text"></span>
+          {include "bits/markdownHelp.tpl"}
+        </div>
       {/field}
 
       <div class="mt-4 text-end">

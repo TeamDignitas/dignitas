@@ -151,9 +151,11 @@
             maxlength="{Entity::PROFILE_MAX_LENGTH}"
             rows="5">{$entity->profile|escape}</textarea>
 
-          <span class="chars-remaining form-text"></span>
-          {include "bits/markdownHelp.tpl"}
           {include "bs/feedback.tpl" errors=$errors.profile|default:null}
+          <div class="d-flex flex-column flex-md-row justify-content-between">
+            <span class="chars-remaining form-text"></span>
+            {include "bits/markdownHelp.tpl"}
+          </div>
         {/hf}
 
         {include "bits/linkEditor.tpl"

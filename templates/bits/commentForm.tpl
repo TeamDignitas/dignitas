@@ -9,7 +9,7 @@
       rows="2"
       maxlength="{Comment::MAX_LENGTH}"
     ></textarea>
-    <div class="clearfix">
+    <div class="d-flex flex-column flex-xl-row justify-content-between">
       <span class="chars-remaining form-text"></span>
       {include "bits/markdownHelp.tpl"}
     </div>
