@@ -86,8 +86,8 @@
                     id="field-contents"
                     class="form-control has-unload-warning easy-mde {if isset($errors.contents.$locale)}is-invalid{/if}"
                     name="contents-{$locale}">{$hpt->contents|escape}</textarea>
-                  {include "bits/markdownHelp.tpl"}
                   {include "bs/feedback.tpl" errors=$errors.contents.$locale|default:null}
+                  {include "bits/markdownHelp.tpl"}
                 {/hf}
               </fieldset>
             </div>
