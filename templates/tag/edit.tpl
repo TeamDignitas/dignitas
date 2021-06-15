@@ -16,7 +16,7 @@
       {include "bits/tagAncestors.tpl" tag=$t}
     </h1>
 
-    <form class="form-horizontal mb-5" method="post">
+    <form class="mb-5" method="post">
       <input type="hidden" name="id" value="{$t->id}">
 
       <fieldset class="related-fields mb-5 ms-3">
@@ -92,7 +92,6 @@
             name='iconOnly'}
 
         {/hf}
-        </div>
       </fieldset>
 
       <div class="mt-4 text-end">
