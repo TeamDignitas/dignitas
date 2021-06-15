@@ -16,7 +16,7 @@
       {include "bits/regionAncestors.tpl" region=$r}
     </h1>
 
-    <form class="form-horizontal mb-5" method="post">
+    <form class="mb-5" method="post">
       <input type="hidden" name="id" value="{$r->id}">
 
       {hf inputId='name' label="{t}label-name{/t}"}
