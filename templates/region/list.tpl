@@ -23,17 +23,14 @@
       <form method="post">
         {for $d=0 to $maxDepth}
           {foreach Config::LOCALES as $locale => $localeName}
-            <div class="form-group">
-              <label>
-                {t}info-region-depth{/t} {$d}, {$localeName}
-              </label>
+            {capture 'label'}{t}info-region-depth{/t} {$d}, {$localeName}{/capture}
+            {field label=$smarty.capture.label}
               <input
                 type="text"
                 class="form-control"
                 name="name[]"
-                value="{$nomenclature[$d][$locale]}"
-              >
-            </div>
+                value="{$nomenclature[$d][$locale]}">
+            {/field}
           {/foreach}
         {/for}
 

@@ -37,10 +37,9 @@
         label="{t}label-moderator{/t}"
         name='fakeModerator'}
 
-      <input
-        class="btn btn-warning"
-        type=submit
-        value="{t}link-test-login{/t}">
+      <button class="btn btn-warning" type="submit">
+        {t}link-test-login{/t}
+      </button>
 
     </form>
   </div>

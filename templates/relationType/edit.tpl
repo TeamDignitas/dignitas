@@ -8,10 +8,7 @@
 
     <form method="post">
 
-      <div class="form-group">
-        <label for="field-name" class="control-label">
-          {t}label-name{/t}
-        </label>
+      {field inputId="field-name" label="{t}label-name{/t}"}
         <input type="text"
           class="form-control {if isset($errors.name)}is-invalid{/if}"
           id="field-name"
@@ -19,12 +16,11 @@
           value="{$rt->name|escape}"
           placeholder="{t}info-relation-type-name{/t}">
         {include "bs/feedback.tpl" errors=$errors.name|default:null}
-      </div>
+      {/field}
 
-      <div class="form-group">
-        <label for="field-from-entity-type-id" class="control-label">
-          {t}label-from-entity-type{/t}
-        </label>
+      {field
+        inputId="field-from-entity-type-id"
+        label="{t}label-from-entity-type{/t}"}
         <select
           class="form-select"
           id="field-from-entity-type-id"
@@ -37,12 +33,11 @@
             </option>
           {/foreach}
         </select>
-      </div>
+      {/field}
 
-      <div class="form-group">
-        <label for="field-to-entity-type-id" class="control-label">
-          {t}label-to-entity-type{/t}
-        </label>
+      {field
+        inputId="field-to-entity-type-id"
+        label="{t}label-to-entity-type{/t}"}
         <select
           class="form-select"
           id="field-to-entity-type-id"
@@ -55,12 +50,9 @@
             </option>
           {/foreach}
         </select>
-      </div>
+      {/field}
 
-      <div class="form-group">
-        <label for="field-phrase" class="control-label">
-          {t}label-phrase{/t}
-        </label>
+      {field inputId="field-phrase" label="{t}label-phrase{/t}"}
         <select
           class="form-select"
           id="field-phrase"
@@ -76,12 +68,9 @@
         <div class="form-text">
           {t}info-relation-type-phrase{/t}
         </div>
-      </div>
+      {/field}
 
-      <div class="form-group">
-        <label for="field-weight" class="control-label">
-          {t}label-weight{/t}
-        </label>
+      {field inputId="field-weight" label="{t}label-weight{/t}"}
         <input type="number"
           class="form-control {if isset($errors.weight)}is-invalid{/if}"
           id="field-weight"
@@ -92,7 +81,7 @@
           step="0.001"
           placeholder="{t}info-relation-type-weight{/t}">
         {include "bs/feedback.tpl" errors=$errors.weight|default:null}
-      </div>
+      {/field}
 
       {include 'bs/checkbox.tpl'
         cbErrors=$errors.symmetric|default:null

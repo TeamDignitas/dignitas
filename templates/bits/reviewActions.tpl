@@ -63,7 +63,7 @@
         </div>
       </div>
 
-      <div class="form-group">
+      <div class="mb-3">
         <input
           type="text"
           name="details"

@@ -11,13 +11,15 @@
       {include "bits/relation.tpl" r=$relation showEditLink=false class="d-inline"}
     </h5>
 
-    <form class="add-relation-sources my-5 mx-3" method="post">
+    <form class="my-5 mx-3" method="post">
       <input type="hidden" name="id" value="{$relation->id}">
 
-      {include "bits/linkEditor.tpl"
-        addButtonText="{t}link-add-relation-link{/t}"
-        labelText="{t}label-relation-links{/t}"
-        errors=$errors.links|default:null}
+      <div class="link-editor-wrapper">
+        {include "bits/linkEditor.tpl"
+          addButtonText="{t}link-add-relation-link{/t}"
+          labelText="{t}label-relation-links{/t}"
+          errors=$errors.links|default:null}
+      </div>
 
       <div class="mt-4 text-end">
         <a href="{Router::link('entity/view')}/{$fromEntity->id}"
