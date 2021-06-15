@@ -2,7 +2,7 @@
   <input type="hidden" name="objectType">
   <input type="hidden" name="objectId">
 
-  <div class="form-group mb-2">
+  <div class="mb-2">
     <textarea
       name="contents"
       class="form-control size-limit"

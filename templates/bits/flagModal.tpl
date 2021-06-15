@@ -68,7 +68,7 @@
             <p class="text-muted" data-flag-visibility="{Flag::TYPE_ENTITY}">
               {t}info-reason-entity-duplicate{/t}
             </p>
-            <div class="form-group flag-related" id="duplicate-search">
+            <div class="mb-3 flag-related" id="duplicate-search">
               <select
                 id="flag-duplicate-id"
                 class="form-select"

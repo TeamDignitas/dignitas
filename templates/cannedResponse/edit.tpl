@@ -8,8 +8,7 @@
 
     <form method="post">
 
-      <div class="form-group">
-        <label for="field-contents">{t}label-contents{/t}</label>
+      {field inputId="field-contents" label="{t}label-contents{/t}"}
         <textarea
           id="field-contents"
           name="contents"
@@ -19,7 +18,7 @@
         <span class="chars-remaining form-text"></span>
         {include "bits/markdownHelp.tpl"}
         {include "bs/feedback.tpl" errors=$errors.contents|default:null}
-      </div>
+      {/field}
 
       <div class="mt-4 text-end">
         {if $cannedResponse->id}

@@ -1,6 +1,6 @@
 {* optional argument: $links: array of Link objects *}
 {hf label=$labelText}
-  <button class="add-link btn btn-outline-secondary btn-sm mb-2" type="button">
+  <button class="add-link btn btn-outline-secondary btn-sm my-2" type="button">
     {include "bits/icon.tpl" i=add_circle}
     {$addButtonText}
   </button>

@@ -9,7 +9,7 @@
   <input type="hidden" name="statementId" value="{$answer->statementId}">
   <input type="hidden" name="referrer" value="{$referrer}">
 
-  <div class="form-group">
+  <div class="mb-3 clearfix">
     <textarea
       name="contents"
       class="form-control has-unload-warning easy-mde {if isset($errors.contents)}is-invalid{/if}"
@@ -19,7 +19,7 @@
     {include "bits/markdownHelp.tpl"}
   </div>
 
-  <div class="form-group row">
+  <div class="row mb-3">
     <label for="field-verdict" class="col-md-6 col-sm-4 col-form-label text-end">
       {t}label-verdict{/t}
 
