@@ -15,7 +15,7 @@
         </div>
         {if $user->moderator}
           <h4 class="user-badge mt-3">
-            <span class="badge badge-info">
+            <span class="badge bg-info">
               {t}label-moderator{/t}
             </span>
           </h4>
