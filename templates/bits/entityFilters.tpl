@@ -1,14 +1,14 @@
 {$term=$term|default:''}
 <form data-url="{Config::URL_PREFIX}ajax/search-entities">
 
-  <div class="row mb-2 small statement-filters">
-    <div class="col-12 col-md-1">
-      <label class="col-form-label text-capitalize">
+  <div class="row gx-2 gx-xl-3 gy-2 mb-2 statement-filters">
+    <div class="col-12 col-sm-4 col-lg-auto">
+      <label class="col-form-label col-form-label-sm text-capitalize">
         {t}label-sort{/t}:
       </label>
     </div>
 
-    <div class="col-12 col-md-3">
+    <div class="col-12 col-sm-8 col-lg-auto">
       <select
         name="order"
         class="form-select form-select-sm actionable">
@@ -19,28 +19,29 @@
       </select>
     </div>
 
-    <div class="col-12 col-md-1">
-      <label class="col-form-label text-capitalize">
-        {t}label-filter{/t}:
+    <div class="col-12 col-sm-4 col-lg-auto">
+      <label class="col-form-label col-form-label-sm text-capitalize">
+        {t}label-term{/t}:
       </label>
     </div>
 
-    <div class="col-12 col-md-3 mb-2">
+    <div class="col-12 col-sm-8 col-lg-auto">
       <input
         type="text"
         name="term"
         class="form-control form-control-sm actionable"
         value="{$term}"
-        placeholder="{t}label-term{/t}">
+        placeholder="{t}label-term{/t}"
+        size="10">
     </div>
 
-    <div class="col-12 col-md-1">
-      <label class="col-form-label text-capitalize">
+    <div class="col-12 col-sm-4 col-lg-auto">
+      <label class="col-form-label col-form-label-sm text-capitalize">
         {t}label-region{/t}:
       </label>
     </div>
 
-    <div class="col-12 col-md-3 mb-2">
+    <div class="col-12 col-sm-8 col-lg-auto">
       <select name="regionId" class="form-select form-select-sm actionable">
         <option value="0"></option>
         {foreach $regions as $option}
