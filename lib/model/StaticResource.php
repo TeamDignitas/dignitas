@@ -54,6 +54,7 @@ class StaticResource extends Proto {
     $path = $this->getFilePath();
     $ext = pathinfo($path, PATHINFO_EXTENSION);
     switch ($ext) {
+      case '':     return '';   // e.g. while adding a new resource
       case 'html': return 'text/html';
       case 'js':   return 'text/javascript';
       case 'css':  return 'text/css';

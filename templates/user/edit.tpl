@@ -70,7 +70,7 @@
             ifErrors=$errors.password|default:null
             name='password'
             type='password'
-            value=$password}
+            value=$password|default:''}
         {/hf}
 
         {hf label="{t}label-password-again{/t}"}
@@ -78,21 +78,12 @@
             icon='lock'
             name='password2'
             type='password'
-            value=$password2}
+            value=$password2|default:''}
         {/hf}
       </fieldset>
 
-      <div class="mt-4 text-end">
-        <a href="{Router::userLink($user)}" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 me-2 mb-2">
-          {include "bits/icon.tpl" i=cancel}
-          {t}link-cancel{/t}
-        </a>
+      {include "bs/actions.tpl" cancelLink=Router::userLink($user)}
 
-        <button name="saveButton" type="submit" class="btn btn-sm btn-primary col-sm-4 col-lg-2 mb-2">
-          {include "bits/icon.tpl" i=save}
-          {t}link-save{/t}
-        </button>
-      </div>
     </form>
   </div>
 {/block}

@@ -50,35 +50,12 @@
         {/hf}
       </fieldset>
 
-      <div class="mt-4 text-end">
-        {if $canDelete}
-          <button
-            name="deleteButton"
-            type="submit"
-            class="btn btn-sm btn-outline-danger col-sm-4 col-lg-2 me-2 mb-2"
-            data-confirm="{t}info-confirm-delete-domain{/t}">
-            {include "bits/icon.tpl" i=delete_forever}
-            {t}link-delete{/t}
-          </button>
-        {/if}
+      {include "bs/actions.tpl"
+        cancelLink=Router::link('domain/list')
+        cloneButton=$domain->id
+        deleteButton=$canDelete
+        deleteButtonConfirm="{t}info-confirm-delete-domain{/t}"}
 
-        {if $domain->id}
-          <button name="cloneButton" type="submit" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 me-2 mb-2">
-            {include "bits/icon.tpl" i=content_copy}
-            {t}link-clone{/t}
-          </button>
-        {/if}
-
-        <a href="{Router::link('domain/list')}" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 me-2 mb-2">
-          {include "bits/icon.tpl" i=cancel}
-          {t}link-cancel{/t}
-        </a>
-
-        <button name="saveButton" type="submit" class="btn btn-sm btn-primary col-sm-4 col-lg-2 mb-2">
-          {include "bits/icon.tpl" i=save}
-          {t}link-save{/t}
-        </button>
-      </div>
     </form>
   </div>
 {/block}

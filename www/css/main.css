@@ -36,6 +36,12 @@ blockquote {
   margin-top: 3px;
 }
 
+/* override Bootstrap's behavior for disabled buttons, because it hides */
+/* our tooltips explaining why the button is disabled */
+.btn:disabled, .btn.disabled, fieldset:disabled .btn {
+  cursor: default;
+  pointer-events: auto;
+}
 
 /**************************** Select2 tweaks ****************************/
 

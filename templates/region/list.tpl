@@ -34,15 +34,7 @@
           {/foreach}
         {/for}
 
-        <div class="mt-4 text-end">
-          <button
-            name="saveButton"
-            type="submit"
-            class="btn btn-sm btn-outline-primary col-sm-3 col-lg-2 me-2 mb-2">
-            {include "bits/icon.tpl" i=save}
-            {t}link-save{/t}
-          </button>
-        </div>
+        {include "bs/actions.tpl" cancelLink=false}
 
       </form>
     {/if}

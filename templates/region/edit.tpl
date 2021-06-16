@@ -46,44 +46,20 @@
         {include "bs/feedback.tpl" errors=$errors.parentId|default:null}
       {/hf}
 
-      <div class="mt-4 text-end">
-
-        {if $r->isDeletable()}
-          <button
-            name="deleteButton"
-            type="submit"
-            class="btn btn-sm btn-outline-danger col-sm-3 col-lg-2 me-2 mb-2"
-            data-confirm="{t}info-confirm-delete-region{/t}"
-            {if !$canDelete}
-            disabled
-            title="{t}info-cannot-delete-region{/t}"
-            {/if}
-          >
-            {include "bits/icon.tpl" i=delete_forever}
-            {t}link-delete{/t}
-          </button>
+      {capture 'cancelLink'}
+        {if $r->id}
+          {Router::link('region/view')}/{$r->id}
+        {else}
+          {Router::link('region/list')}
         {/if}
+      {/capture}
+      {include "bs/actions.tpl"
+        cancelLink=$smarty.capture.cancelLink
+        deleteButton=$r->isDeletable()
+        deleteButtonConfirm="{t}info-confirm-delete-region{/t}"
+        deleteButtonDisabled=!$canDelete
+        deleteButtonTitle="{t}info-cannot-delete-region{/t}"}
 
-        <a
-          class="btn btn-sm btn-outline-secondary col-sm-3 col-lg-2 me-2 mb-2"
-          {if $r->id}
-          href="{Router::link('region/view')}/{$r->id}"
-          {else}
-          href="{Router::link('region/list')}"
-          {/if}
-        >
-          {include "bits/icon.tpl" i=cancel}
-          {t}link-cancel{/t}
-        </a>
-
-        <button
-          name="saveButton"
-          type="submit"
-          class="btn btn-sm btn-primary col-sm-3 col-lg-2 me-2 mb-2">
-          {include "bits/icon.tpl" i=save}
-          {t}link-save{/t}
-        </button>
-      </div>
     </form>
 
     {if count($children)}

@@ -51,50 +51,16 @@
     </div>
   </div>
 
-  <div class="mt-4 text-end answer-buttons">
-    {if $answer->isDeletable()}
-      <button
-        name="deleteButton"
-        type="submit"
-        class="btn btn-sm btn-outline-danger col-sm-4 col-lg-2 me-2 mb-2"
-        data-confirm="{t}info-confirm-delete-answer{/t}">
-        {include "bits/icon.tpl" i=delete_forever}
-        {t}link-delete{/t}
-      </button>
-    {/if}
+  {include "bs/actions.tpl"
+    cancelLink=$referrer
+    deleteButton=$answer->isDeletable()
+    deleteButtonConfirm="{t}info-confirm-delete-answer{/t}"
+    divClass='answer-buttons'
+    reopenButton=$answer->isReopenable()
+    reopenButtonConfirm="{t}info-confirm-reopen-answer{/t}"
+    saveButtonText=$buttonText
+    saveDraftButton=($answer->status == Ct::STATUS_DRAFT)}
 
-    {if $answer->isReopenable()}
-      <button
-        name="reopenButton"
-        type="submit"
-        class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 me-2 mb-2"
-        data-confirm="{t}info-confirm-reopen-answer{/t}">
-        {t}link-reopen{/t}
-      </button>
-    {/if}
-
-    <a href="{$referrer}" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 me-2 mb-2">
-      {include "bits/icon.tpl" i=cancel}
-      {t}link-cancel{/t}
-    </a>
-
-    {if $answer->status == Ct::STATUS_DRAFT}
-      <button
-        name="saveDraftButton"
-        type="submit"
-        class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 me-2 mb-2"
-        data-bs-toggle="tooltip"
-        title="{t}tooltip-save-draft{/t}">
-        {include "bits/icon.tpl" i=insert_drive_file}
-        {t}link-save-draft{/t}
-      </button>
-    {/if}
-
-    <button name="saveButton" type="submit" class="btn btn-sm btn-primary col-sm-4 col-lg-2 mb-2">
-      {include "bits/icon.tpl" i=save}
-      {$buttonText}
-    </button>
-  </div>
 </form>
 
 {include "bits/answerResources.tpl"}

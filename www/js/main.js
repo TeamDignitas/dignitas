@@ -168,7 +168,7 @@ $(function() {
       choice = true;
     });
 
-    m.on('hide.bs.modal', function() {
+    m.on('hidden.bs.modal', function() {
       // Call the handlers again if necessary. This will include ourselves,
       // but we'll just return.
       if (evt.type == 'change') {
