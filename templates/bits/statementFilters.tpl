@@ -39,12 +39,14 @@
 
     <div class="col-12 col-md-2">
       <select
+        class="selectpicker actionable"
+        data-selected-text-format="count"
+        data-style-base="form-select"
+        data-style="form-select-sm"
         id="statement-filters-verdicts"
-        name="verdicts[]"
-        class="form-select form-select-sm selectpicker actionable"
         multiple
-        title="{t}label-verdict{/t}"
-        data-selected-text-format="count">
+        name="verdicts[]"
+        title="{t}label-verdict{/t}">
         {foreach Statement::getVerdictsByType(Statement::TYPE_ANY) as $v}
           <option
             value="{$v}"
