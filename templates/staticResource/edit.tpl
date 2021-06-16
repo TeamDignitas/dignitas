@@ -64,29 +64,10 @@
         {/hf}
       </fieldset>
 
-      <div class="mt-4 text-end">
-        {if $sr->id}
-          <button
-            name="deleteButton"
-            type="submit"
-            class="btn btn-sm btn-outline-danger col-sm-4 col-lg-2 me-2 mb-2"
-            data-confirm="{t}info-confirm-delete-static-resource{/t}">
-            {include "bits/icon.tpl" i=delete_forever}
-            {t}link-delete{/t}
-          </button>
-        {/if}
-
-        <a href="{Router::link('staticResource/list')}" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 me-2 mb-2">
-          {include "bits/icon.tpl" i=cancel}
-          {t}link-cancel{/t}
-        </a>
-
-        <button name="saveButton" type="submit" class="btn btn-sm btn-primary col-sm-4 col-lg-2 mb-2">
-          {include "bits/icon.tpl" i=save}
-          {t}link-save{/t}
-        </button>
-
-      </div>
+      {include "bs/actions.tpl"
+        cancelLink=Router::link('staticResource/list')
+        deleteButton=$sr->id
+        deleteButtonConfirm="{t}info-confirm-delete-static-resource{/t}"}
     </form>
   </div>
 {/block}

@@ -176,38 +176,13 @@
         {/if}
       </fieldset>
 
-      <div class="mt-4 text-end">
-        {if $statement->isDeletable()}
-          <button
-            name="deleteButton"
-            type="submit"
-            class="btn btn-sm btn-outline-danger col-sm-4 col-lg-2 me-2 mb-2"
-            data-confirm="{t}info-confirm-delete-statement{/t}">
-            {include "bits/icon.tpl" i=delete_forever}
-            {t}link-delete{/t}
-          </button>
-        {/if}
+      {include "bs/actions.tpl"
+        cancelLink=$referrer
+        deleteButton=$statement->isDeletable()
+        deleteButtonConfirm="{t}info-confirm-delete-statement{/t}"
+        reopenButton=$statement->isReopenable()
+        reopenButtonConfirm="{t}info-confirm-reopen-statement{/t}"}
 
-        {if $statement->isReopenable()}
-          <button
-            name="reopenButton"
-            type="submit"
-            class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 me-2 mb-2"
-            data-confirm="{t}info-confirm-reopen-statement{/t}">
-            {t}link-reopen{/t}
-          </button>
-        {/if}
-
-        <a href="{$referrer}" class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 me-2 mb-2">
-          {include "bits/icon.tpl" i=cancel}
-          {t}link-cancel{/t}
-        </a>
-
-        <button name="saveButton" type="submit" class="btn btn-sm btn-primary col-sm-4 col-lg-2 mb-2">
-          {include "bits/icon.tpl" i=save}
-          {t}link-save{/t}
-        </button>
-      </div>
     </form>
   </div>
 {/block}

@@ -95,29 +95,18 @@
         </div>
       </div>
 
-      <div class="mt-4 text-end">
-
+      {capture 'cancelLink'}
         {if $page->id}
-          <button
-            name="deleteButton"
-            type="submit"
-            class="btn btn-sm btn-outline-danger col-12 col-md-2 me-2 mb-2"
-            data-confirm="{t}info-confirm-delete-help-page{/t}">
-            {include "bits/icon.tpl" i=delete_forever}
-            {t}link-delete{/t}
-          </button>
+          {$page->getViewUrl()}
+        {else}
+          {Router::link('help/index')}
         {/if}
+      {/capture}
+      {include "bs/actions.tpl"
+        cancelLink=$smarty.capture.cancelLink
+        deleteButton=$page->id
+        deleteButtonConfirm="{t}info-confirm-delete-help-page{/t}"}
 
-        <a href="{$page->getViewUrl()}" class="btn btn-sm btn-outline-secondary col-12 col-md-2 me-2 mb-2">
-          {include "bits/icon.tpl" i=cancel}
-          {t}link-cancel{/t}
-        </a>
-
-        <button name="saveButton" type="submit" class="btn btn-sm btn-primary col-12 col-md-2 mb-2">
-          {include "bits/icon.tpl" i=save}
-          {t}link-save{/t}
-        </button>
-      </div>
     </form>
   </div>
 {/block}

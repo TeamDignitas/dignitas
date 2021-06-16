@@ -85,28 +85,18 @@
         </table>
       </fieldset>
 
-      <div class="mb-4 text-end">
-        {if $canDelete}
-          <button
-            name="deleteButton"
-            type="submit"
-            class="btn btn-sm btn-outline-danger col-12 col-md-2 me-2 mb-2"
-            data-confirm="{t}info-confirm-delete-help-category{/t}">
-            {include "bits/icon.tpl" i=delete_forever}
-            {t}link-delete{/t}
-          </button>
+      {capture 'cancelLink'}
+        {if $cat->id}
+          {$cat->getViewUrl()}
+        {else}
+          {Router::link('help/index')}
         {/if}
+      {/capture}
+      {include "bs/actions.tpl"
+        cancelLink=$smarty.capture.cancelLink
+        deleteButton=$canDelete
+        deleteButtonConfirm="{t}info-confirm-delete-help-category{/t}"}
 
-        <a href="{$cat->getViewUrl()}" class="btn btn-sm btn-outline-secondary col-12 col-md-2 me-2 mb-2">
-          {include "bits/icon.tpl" i=cancel}
-          {t}link-cancel{/t}
-        </a>
-
-        <button name="saveButton" type="submit" class="btn btn-sm btn-primary col-12 col-md-2 mb-2">
-          {include "bits/icon.tpl" i=save}
-          {t}link-save{/t}
-        </button>
-      </div>
     </form>
   </div>
 {/block}

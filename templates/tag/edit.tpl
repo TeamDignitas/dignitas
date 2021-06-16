@@ -94,50 +94,21 @@
         {/hf}
       </fieldset>
 
-      <div class="mt-4 text-end">
-        {if $t->isDeletable()}
-          <button
-            name="deleteButton"
-            type="submit"
-            class="btn btn-sm btn-outline-danger col-sm-4 col-lg-2 me-2 mb-2"
-            data-confirm="{t}info-confirm-delete-tag{/t}"
-            {if !$canDelete}
-            disabled
-            title="{t}info-cannot-delete-tag{/t}"
-            {/if}
-          >
-            {include "bits/icon.tpl" i=delete_forever}
-            {t}link-delete{/t}
-          </button>
-        {/if}
-
+      {capture 'cancelLink'}
         {if $t->id}
-          <button
-            name="cloneButton"
-            type="submit"
-            class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 me-2 mb-2">
-            {include "bits/icon.tpl" i=content_copy}
-            {t}link-clone{/t}
-          </button>
+          {Router::link('tag/view')}/{$t->id}
+        {else}
+          {Router::link('tag/list')}
         {/if}
+      {/capture}
+      {include "bs/actions.tpl"
+        cancelLink=$smarty.capture.cancelLink
+        cloneButton=$t->id
+        deleteButton=$t->isDeletable()
+        deleteButtonConfirm="{t}info-confirm-delete-canned-response{/t}"
+        deleteButtonDisabled=!$canDelete
+        deleteButtonTitle="{t}info-cannot-delete-tag{/t}"}
 
-        <a
-          class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 me-2 mb-2"
-          {if $t->id}
-          href="{Router::link('tag/view')}/{$t->id}"
-          {else}
-          href="{Router::link('tag/list')}"
-          {/if}
-        >
-          {include "bits/icon.tpl" i=cancel}
-          {t}link-cancel{/t}
-        </a>
-
-        <button name="saveButton" type="submit" class="btn btn-sm btn-primary col-sm-4 col-lg-2 mb-2">
-          {include "bits/icon.tpl" i=save}
-          {t}link-save{/t}
-        </button>
-      </div>
     </form>
 
     {if count($children)}

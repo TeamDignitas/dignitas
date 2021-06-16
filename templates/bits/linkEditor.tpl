@@ -1,4 +1,6 @@
 {* optional argument: $links: array of Link objects *}
+{$errors=$errors|default:[]}
+
 {hf label=$labelText}
   <button class="add-link btn btn-outline-secondary btn-sm my-2" type="button">
     {include "bits/icon.tpl" i=add_circle}
@@ -6,7 +8,7 @@
   </button>
 
   <div class="px-0">
-    <table class="table table-sm sortable">
+    <table class="table table-sm sortable {if $errors}is-invalid{/if}">
       <tbody id="link-container">
         {include "bits/linkEditorRow.tpl" rowId="linkStem"}
         {foreach $links as $link}
