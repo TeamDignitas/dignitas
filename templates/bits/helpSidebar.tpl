@@ -4,7 +4,7 @@
   {foreach HelpCategory::loadAll() as $c}
 
     {$active=($c->id == $activeCategoryId)}
-    <h6 class="help-sidebar-category {if $active}active{/if} mb-0 mt-2 font-weight-bold">
+    <h6 class="help-sidebar-category {if $active}active{/if} mb-0 mt-2 fw-bold">
       <a {if !$active}href="{$c->getViewUrl()}"{/if}>{$c->getName()}</a>
     </h6>
 

@@ -18,7 +18,7 @@
   </div>
 
   <div class="col-12 col-md-9 mt-2">
-    <h1 class="font-weight-bold mb-0 center-mobile">
+    <h1 class="fw-bold mb-0 center-mobile">
       {$entity->name|escape}
       {if $statusInfo}
         [{$statusInfo['status']}]
@@ -55,7 +55,7 @@
 
     {$relations=$entity->getRelations()}
     {if count($relations)}
-      <h6 class="font-weight-bold capitalize-first-word mt-4">{t}title-relations{/t}</h6>
+      <h6 class="fw-bold capitalize-first-word mt-4">{t}title-relations{/t}</h6>
       <ul class="relations">
         {foreach $relations as $r}
           <li>
@@ -66,14 +66,14 @@
     {/if}
 
     {if $entity->regionId}
-      <h6 class="font-weight-bold capitalize-first-word mt-4">{t}title-region{/t}</h6>
+      <h6 class="fw-bold capitalize-first-word mt-4">{t}title-region{/t}</h6>
       {include "bits/regionAncestors.tpl" region=$entity->getRegion() link=true}
     {/if}
 
     {include "bits/loyalty.tpl" data=$entity->getLoyalties()}
 
     {if $entity->profile}
-      <h6 class="font-weight-bold capitalize-first-word mt-4">{t}title-profile{/t}</h6>
+      <h6 class="fw-bold capitalize-first-word mt-4">{t}title-profile{/t}</h6>
       <div class="archivable">
         {$entity->profile|md}
       </div>
@@ -81,7 +81,7 @@
 
     {$links=$entity->getLinks()}
     {if count($links)}
-      <h6 class="font-weight-bold capitalize-first-word mt-4">{t}title-entity-links{/t}</h6>
+      <h6 class="fw-bold capitalize-first-word mt-4">{t}title-entity-links{/t}</h6>
 
       <ul id="links" class="list-inline list-inline-bullet">
         {foreach $links as $l}
@@ -95,7 +95,7 @@
     <div class="title-members">
       {$members=$entity->getMembers()}
       {if count($members)}
-        <h6 class="font-weight-bold capitalize-first-word mt-4">{t}title-members{/t}</h6>
+        <h6 class="fw-bold capitalize-first-word mt-4">{t}title-members{/t}</h6>
 
         <ul>
           {foreach $members as $m}

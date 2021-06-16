@@ -23,7 +23,7 @@
       </div>
 
       <div class="col-12 col-md-9 mt-2">
-        <h1 class="font-weight-bold mb-5 center-mobile">
+        <h1 class="fw-bold mb-5 center-mobile">
           {t}label-user{/t} {$user}
         </h1>
 
@@ -43,14 +43,14 @@
         </dl>
 
         {if $user->aboutMe}
-          <h5 class="capitalize-first-word font-weight-bold mt-5">{t}title-about-me{/t}</h5>
+          <h5 class="capitalize-first-word fw-bold mt-5">{t}title-about-me{/t}</h5>
           <div class="archivable">
             {$user->aboutMe|md}
           </div>
         {/if}
 
         {if count($bans)}
-          <h5 class="capitalize-first-word font-weight-bold mt-5">{t}title-user-bans{/t}</h5>
+          <h5 class="capitalize-first-word fw-bold mt-5">{t}title-user-bans{/t}</h5>
 
           {foreach $bans as $ban}
             <div class="row">
@@ -98,7 +98,7 @@
         {/if}
 
         {if count($actions)}
-          <h5 class="capitalize-first-word font-weight-bold mt-5">
+          <h5 class="capitalize-first-word fw-bold mt-5">
             {t}actions{/t}
           </h5>
 
