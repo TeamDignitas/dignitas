@@ -25,12 +25,12 @@
       </table>
 
       <div class="mt-4 text-end">
-        <a href="{Router::link('help/index')}" class="btn btn-sm btn-outline-secondary col-sm-12 col-md-2 me-2 mb-2">
+        <a href="{Router::link('help/index')}" class="btn btn-sm btn-outline-secondary col-12 col-md-2 me-2 mb-2">
           {include "bits/icon.tpl" i=cancel}
           {t}link-cancel{/t}
         </a>
 
-        <button type="submit" class="btn btn-sm btn-primary col-sm-12 col-md-2 mb-2" name="saveButton">
+        <button type="submit" class="btn btn-sm btn-primary col-12 col-md-2 mb-2" name="saveButton">
           {include "bits/icon.tpl" i=save}
           {t}link-save-order{/t}
         </button>

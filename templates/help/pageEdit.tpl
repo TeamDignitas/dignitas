@@ -101,19 +101,19 @@
           <button
             name="deleteButton"
             type="submit"
-            class="btn btn-sm btn-outline-danger col-sm-12 col-md-2 me-2 mb-2"
+            class="btn btn-sm btn-outline-danger col-12 col-md-2 me-2 mb-2"
             data-confirm="{t}info-confirm-delete-help-page{/t}">
             {include "bits/icon.tpl" i=delete_forever}
             {t}link-delete{/t}
           </button>
         {/if}
 
-        <a href="{$page->getViewUrl()}" class="btn btn-sm btn-outline-secondary col-sm-12 col-md-2 me-2 mb-2">
+        <a href="{$page->getViewUrl()}" class="btn btn-sm btn-outline-secondary col-12 col-md-2 me-2 mb-2">
           {include "bits/icon.tpl" i=cancel}
           {t}link-cancel{/t}
         </a>
 
-        <button name="saveButton" type="submit" class="btn btn-sm btn-primary col-sm-12 col-md-2 mb-2">
+        <button name="saveButton" type="submit" class="btn btn-sm btn-primary col-12 col-md-2 mb-2">
           {include "bits/icon.tpl" i=save}
           {t}link-save{/t}
         </button>

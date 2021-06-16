@@ -3,7 +3,7 @@
 {$statusInfo=$entity->getStatusInfo()}
 
 <div class="row">
-  <div class="col-md-3 col-sm-12 mt-2 text-center">
+  <div class="col-md-3 col-12 mt-2 text-center">
     {include "bits/image.tpl"
       obj=$entity
       geometry=Config::THUMB_ENTITY_LARGE
@@ -17,7 +17,7 @@
     </div>
   </div>
 
-  <div class="col-md-9 col-sm-12 mt-2">
+  <div class="col-md-9 col-12 mt-2">
     <h1 class="font-weight-bold mb-0 center-mobile">
       {$entity->name|escape}
       {if $statusInfo}

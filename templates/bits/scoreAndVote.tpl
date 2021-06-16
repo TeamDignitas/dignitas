@@ -33,7 +33,7 @@
 {/if}
 
 {* keep div class in sync with bits/draftIndicator.tpl *}
-<div class="vote-box col-sm-12 col-md-1">
+<div class="vote-box col-12 col-md-1">
 
   <div
     data-bs-toggle="tooltip"

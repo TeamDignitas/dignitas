@@ -6,7 +6,7 @@
   <div class="container my-5">
     <h1 class="mb-5">{cap}{t}title-domains{/t}{/cap}</h1>
 
-    <a class="btn btn-sm btn-primary col-sm-12 col-md-3" href="{Router::link('domain/edit')}">
+    <a class="btn btn-sm btn-primary col-12 col-md-3" href="{Router::link('domain/edit')}">
       {include "bits/icon.tpl" i=add_circle}
       {t}link-add-domain{/t}
     </a>
