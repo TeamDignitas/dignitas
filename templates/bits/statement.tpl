@@ -92,13 +92,13 @@
       </div>
     {/if}
 
-    <h6 class="text-uppercase font-weight-bold">{t}title-context{/t}</h6>
+    <h6 class="text-uppercase fw-bold">{t}title-context{/t}</h6>
 
     <div class="archivable">
       {$statement->context|md}
     </div>
 
-    <h6 class="text-uppercase font-weight-bold">{t}title-goal{/t}</h6>
+    <h6 class="text-uppercase fw-bold">{t}title-goal{/t}</h6>
 
     {$statement->goal|escape}
 
@@ -175,7 +175,7 @@
 
   <div class="verdict-area col-12 col-md-3 offset-md-1 pe-0">
     <aside class="card px-2 bg-verdict-{$statement->verdict}">
-      <h5 class="card-title mt-4 mb-1 text-center font-weight-bold">
+      <h5 class="card-title mt-4 mb-1 text-center fw-bold">
         {$statement->getEntity()}
       </h5>
       <span class="card-date mb-3">{$statement->dateMade|ld}</span>
