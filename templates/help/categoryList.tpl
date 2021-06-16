@@ -24,17 +24,10 @@
         </tbody>
       </table>
 
-      <div class="mt-4 text-end">
-        <a href="{Router::link('help/index')}" class="btn btn-sm btn-outline-secondary col-12 col-md-2 me-2 mb-2">
-          {include "bits/icon.tpl" i=cancel}
-          {t}link-cancel{/t}
-        </a>
+      {include "bs/actions.tpl"
+        cancelLink=Router::link('help/index')
+        saveButtonText="{t}link-save-order{/t}"}
 
-        <button type="submit" class="btn btn-sm btn-primary col-12 col-md-2 mb-2" name="saveButton">
-          {include "bits/icon.tpl" i=save}
-          {t}link-save-order{/t}
-        </button>
-      </div>
     </form>
   </div>
 {/block}
