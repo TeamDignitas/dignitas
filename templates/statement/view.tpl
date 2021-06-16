@@ -9,7 +9,7 @@
       addComment=User::canComment($statement)}
 
     <div class="row mt-5 answers-area">
-      <div class="col-sm-12 col-md-8 px-0">
+      <div class="col-12 col-md-8 px-0">
         {if count($answers)}
           <h6 class="mt-4 pb-2 ps-0 subsection text-uppercase font-weight-bold">
             {t count=count($answers) 1=count($answers) plural="title-answers-plural"}

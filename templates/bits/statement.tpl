@@ -23,15 +23,15 @@
 </h1>
 
 <div class="row statement-authors-date px-0 mb-1">
-  <span class="col-sm-12 col-md-3 ps-0">
+  <span class="col-12 col-md-3 ps-0">
     {include "bits/entityLink.tpl" e=$statement->getEntity()}
   </span>
-  <span class="col-sm-12 col-md-3 ps-0">
+  <span class="col-12 col-md-3 ps-0">
     {$statement->dateMade|ld}
   </span>
 
   {if count($statement->getLinks())}
-    <span class="col-sm-12 col-md-6 ps-0 text-muted sources">
+    <span class="col-12 col-md-6 ps-0 text-muted sources">
       {t}statement-links{/t}:
       <ul class="list-inline list-inline-bullet d-inline">
         {foreach $statement->getLinks() as $l}
@@ -66,7 +66,7 @@
     }
   {/if}
 
-  <div class="col-sm-12 col-md-7 px-0">
+  <div class="col-12 col-md-7 px-0">
     {$statusInfo=$statement->getStatusInfo()}
 
     {if isset($pendingEditReview)}
@@ -173,7 +173,7 @@
 
   </div>
 
-  <div class="verdict-area col-sm-12 col-md-3 offset-md-1 pe-0">
+  <div class="verdict-area col-12 col-md-3 offset-md-1 pe-0">
     <aside class="card px-2 bg-verdict-{$statement->verdict}">
       <h5 class="card-title mt-4 mb-1 text-center font-weight-bold">
         {$statement->getEntity()}

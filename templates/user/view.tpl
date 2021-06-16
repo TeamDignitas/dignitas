@@ -5,7 +5,7 @@
 {block "content"}
   <div class="container my-5">
     <div class="row">
-      <div class="col-md-3 col-sm-12 mt-2 text-center">
+      <div class="col-md-3 col-12 mt-2 text-center">
         <div>
           {include "bits/image.tpl"
             obj=$user
@@ -22,7 +22,7 @@
         {/if}
       </div>
 
-      <div class="col-md-9 col-sm-12 mt-2">
+      <div class="col-md-9 col-12 mt-2">
         <h1 class="font-weight-bold mb-5 center-mobile">
           {t}label-user{/t} {$user}
         </h1>

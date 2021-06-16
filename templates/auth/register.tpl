@@ -4,7 +4,7 @@
 
 {block "content"}
   <div class="container my-5">
-    <div class="card col-sm-12 col-md-8 col-lg-6 m-auto">
+    <div class="card col-12 col-md-8 col-lg-6 m-auto">
       <h3 class="card-title m-4">
         {cap}{t}title-sign-up{/t}{/cap}
       </h3>
@@ -59,11 +59,11 @@
             name='manual'}
 
           <div class="mt-2 mx-2 row">
-            <button class="btn btn-primary col-sm-12 col-md-6" type="submit" name="submitButton">
+            <button class="btn btn-primary col-12 col-md-6" type="submit" name="submitButton">
               {t}link-sign-up{/t}
             </button>
 
-            <a class="btn btn-link col-sm-12 col-md-6 text-center" href="{Router::link('auth/login')}">
+            <a class="btn btn-link col-12 col-md-6 text-center" href="{Router::link('auth/login')}">
               {t}link-has-account-already{/t}
             </a>
           </div>

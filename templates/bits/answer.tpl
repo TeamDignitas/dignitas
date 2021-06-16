@@ -24,7 +24,7 @@
     } {* no upvote tooltip for now *}
   {/if}
 
-  <div class="col-sm-12 col-md-11 mt-2 mb-1">
+  <div class="col-12 col-md-11 mt-2 mb-1">
     <div class="answer-body archivable col-md-12 px-0">
       {$answer->contents|md}
     </div>
@@ -44,13 +44,13 @@
 
     <div class="answer-footer col-md-12 px-0">
       <div class="text-muted mb-2 row">
-        <div class="answer-read-only col-sm-12 col-md-9 mt-2 mb-1 pe-0">
+        <div class="answer-read-only col-12 col-md-9 mt-2 mb-1 pe-0">
           {t}answer-posted-by{/t}
           {include 'bits/userLink.tpl' u=$answer->getUser()}
           {include 'bits/moment.tpl' t=$answer->createDate}
         </div>
 
-        <div class="col-sm-12 col-md-3 px-0 text-end">
+        <div class="col-12 col-md-3 px-0 text-end">
           {$comments=Comment::getFor($answer)}
           {if $addComment && empty($comments)}
             {include "bits/addCommentLink.tpl" object=$answer}

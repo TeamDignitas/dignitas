@@ -4,7 +4,7 @@
 
 {block "content"}
   <div class="container my-5">
-    <div class="col-sm-12 col-md-8 col-lg-6 mx-auto">
+    <div class="col-12 col-md-8 col-lg-6 mx-auto">
 
       <div class="card">
         <div class="card-header">
@@ -28,7 +28,7 @@
               value=$email}
 
             <button
-              class="btn btn-primary col-sm-12 col-md-6"
+              class="btn btn-primary col-12 col-md-6"
               type="submit"
               name="submitButton">
 
