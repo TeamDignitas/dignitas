@@ -64,7 +64,7 @@
       </div>
     </div>
 
-    <div class="col-lg-9 col-12 mt-3">
+    <div class="col-12 col-lg-9 mt-3">
 
       {include "bits/statementFilters.tpl"}
 
