@@ -118,7 +118,7 @@
       {foreach $statement->getTags() as $t}
         {include "bits/tag.tpl" link=true tooltip="{t}info-tag-view-statements{/t}"}
       {/foreach}
-      <div class="text-muted col-md-12 mb-2 mt-1 ps-0">
+      <div class="text-muted mb-2 mt-1 ps-0">
         {t}title-added-by{/t}
         {include 'bits/userLink.tpl' u=$statement->getUser()}
         {include 'bits/moment.tpl' t=$statement->createDate}

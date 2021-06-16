@@ -25,7 +25,7 @@
   {/if}
 
   <div class="col-12 col-md-11 mt-2 mb-1">
-    <div class="answer-body archivable col-md-12 px-0">
+    <div class="answer-body archivable px-0">
       {$answer->contents|md}
     </div>
 
@@ -42,7 +42,7 @@
       </div>
     {/if}
 
-    <div class="answer-footer col-md-12 px-0">
+    <div class="answer-footer px-0">
       <div class="text-muted mb-2 row">
         <div class="answer-read-only col-12 col-md-9 mt-2 mb-1 pe-0">
           {t}answer-posted-by{/t}

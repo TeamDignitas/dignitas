@@ -3,7 +3,7 @@
   id="answer-edit"
   method="post"
   action="{Router::link('answer/edit')}"
-  class="col-md-12 px-0">
+  class="px-0">
 
   <input type="hidden" name="id" value="{$answer->id}">
   <input type="hidden" name="statementId" value="{$answer->statementId}">
