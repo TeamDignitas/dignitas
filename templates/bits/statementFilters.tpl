@@ -75,7 +75,7 @@
         <input
           type="text"
           name="term"
-          class="form-control d-inline-block form-control-sm actionable"
+          class="form-control form-control-sm actionable"
           value="{$term}"
           placeholder="{t}label-term{/t}"
           size="10">
