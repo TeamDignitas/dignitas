@@ -6,122 +6,64 @@
   <div class="container my-5">
     <h1 class="mb-5">{cap}{t}title-dashboard{/t}{/cap}</h1>
 
-    <div class="row dashboard-cards">
+    <div class="row justify-content-center g-3 dashboard-cards">
+
       {if User::may(User::PRIV_ADD_STATEMENT)}
-        <div class="card col-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
-          <div class="card-body">
-            <h3 class="card-title">
-              {include "bits/icon.tpl" i=mode_edit}
-            </h3>
-            <a href="{Router::link('statement/edit')}" class="stretched-link">
-              {t}link-add-statement{/t}
-            </a>
-          </div>
-        </div>
+        {include "bs/dashcard.tpl"
+          icon='mode_edit'
+          link=Router::link('statement/edit')
+          text="{t}link-add-statement{/t}"}
       {/if}
 
       {if User::may(User::PRIV_ADD_ENTITY)}
-        <div class="card col-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
-          <div class="card-body">
-            <h3 class="card-title">
-              {include "bits/icon.tpl" i="person_add_alt_1"}
-            </h3>
-            <a href="{Router::link('entity/edit')}" class="stretched-link">
-              {t}link-add-entity{/t}
-            </a>
-          </div>
-        </div>
+        {include "bs/dashcard.tpl"
+          icon='person_add_alt_1'
+          link=Router::link('entity/edit')
+          text="{t}link-add-entity{/t}"}
       {/if}
 
       {if User::isModerator()}
-        <div class="card col-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
-          <div class="card-body">
-            <h3 class="card-title">
-              {include "bits/icon.tpl" i="insert_link"}
-            </h3>
-            <a href="{Router::link('domain/list')}" class="stretched-link">
-              {t}link-domains{/t}
-            </a>
-          </div>
-        </div>
+        {include "bs/dashcard.tpl"
+          icon='insert_link'
+          link=Router::link('domain/list')
+          text="{t}link-domains{/t}"}
 
-        <div class="card col-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
-          <div class="card-body">
-            <h3 class="card-title">
-              {include "bits/icon.tpl" i="text_snippet"}
-            </h3>
-            <a href="{Router::link('cannedResponse/list')}" class="stretched-link">
-              {t}link-canned-responses{/t}
-            </a>
-          </div>
-        </div>
+        {include "bs/dashcard.tpl"
+          icon='text_snippet'
+          link=Router::link('cannedResponse/list')
+          text="{t}link-canned-responses{/t}"}
 
-        <div class="card col-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
-          <div class="card-body">
-            <h3 class="card-title">
-              {include "bits/icon.tpl" i="insert_invitation"}
-            </h3>
-            <a href="{Router::link('invite/list')}" class="stretched-link">
-              {t}link-invites{/t}
-            </a>
-          </div>
-        </div>
+        {include "bs/dashcard.tpl"
+          icon='insert_invitation'
+          link=Router::link('invite/list')
+          text="{t}link-invites{/t}"}
 
-        <div class="card col-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
-          <div class="card-body">
-            <h3 class="card-title">
-              {include "bits/icon.tpl" i="groups"}
-            </h3>
-            <a href="{Router::link('entityType/list')}" class="stretched-link">
-              {t}link-entity-types{/t}
-            </a>
-          </div>
-        </div>
+        {include "bs/dashcard.tpl"
+          icon='groups'
+          link=Router::link('entityType/list')
+          text="{t}link-entity-types{/t}"}
 
-        <div class="card col-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
-          <div class="card-body">
-            <h3 class="card-title">
-              {include "bits/icon.tpl" i="compare_arrows"}
-            </h3>
-            <a href="{Router::link('relationType/list')}" class="stretched-link">
-              {t}link-relation-types{/t}
-            </a>
-          </div>
-        </div>
+        {include "bs/dashcard.tpl"
+          icon='compare_arrows'
+          link=Router::link('relationType/list')
+          text="{t}link-relation-types{/t}"}
 
-        <div class="card col-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
-          <div class="card-body">
-            <h3 class="card-title">
-              {include "bits/icon.tpl" i="integration_instructions"}
-            </h3>
-            <a href="{Router::link('staticResource/list')}" class="stretched-link">
-              {t}link-static-resources{/t}
-            </a>
-          </div>
-        </div>
+        {include "bs/dashcard.tpl"
+          icon='integration_instructions'
+          link=Router::link('staticResource/list')
+          text="{t}link-static-resources{/t}"}
       {/if}
 
-      <div class="card col-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
-        <div class="card-body">
-          <h3 class="card-title">
-            {include "bits/icon.tpl" i="local_offer"}
-          </h3>
-          <a href="{Router::link('tag/list')}" class="stretched-link">
-            {t}link-tags{/t}
-          </a>
-        </div>
-      </div>
+      {include "bs/dashcard.tpl"
+        icon='local_offer'
+        link=Router::link('tag/list')
+        text="{t}link-tags{/t}"}
 
-      <div class="card col-12 col-lg-3 pt-2 pb-1 m-2 text-center dashcard">
-        <div class="card-body">
-          <h3 class="card-title">
-            {include "bits/icon.tpl" i="map"}
-          </h3>
-          <a href="{Router::link('region/list')}" class="stretched-link">
-            {t}link-regions{/t}
-          </a>
-        </div>
-      </div>
+      {include "bs/dashcard.tpl"
+        icon='map'
+        link=Router::link('region/list')
+        text="{t}link-regions{/t}"}
+
     </div>
 
     {if User::may(User::PRIV_REVIEW) && !empty($activeReviewReasons)}
