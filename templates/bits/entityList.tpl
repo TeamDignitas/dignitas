@@ -1,5 +1,5 @@
 {foreach $entities as $e}
-  <div class="card col-sm-11 col-md-3 col-lg-3 m-2 p-3 text-center">
+  <div class="card col-sm-11 col-md-3 m-2 p-3 text-center">
     {include "bits/image.tpl"
       obj=$e
       geometry=Config::THUMB_ENTITY_SMALL
