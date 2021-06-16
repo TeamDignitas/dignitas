@@ -3,7 +3,7 @@
 <form data-url="{Config::URL_PREFIX}ajax/search-statements">
   <div class="row mb-2 small statement-filters">
 
-    <div class="col-12 col-md-3 col-lg-3 mb-2">
+    <div class="col-12 col-md-3 mb-2">
       <select
         name="order"
         class="form-select form-select-sm actionable">
@@ -16,7 +16,7 @@
       </select>
     </div>
 
-    <div class="col-12 col-md-3 col-lg-3 mb-2">
+    <div class="col-12 col-md-3 mb-2">
       <select
         name="entityId"
         class="form-select form-select-sm actionable"
@@ -25,7 +25,7 @@
       </select>
     </div>
 
-    <div class="col-12 col-md-2 col-lg-2 mb-2">
+    <div class="col-12 col-md-2 mb-2">
       <select
         name="type"
         class="form-select form-select-sm actionable">
@@ -37,7 +37,7 @@
       </select>
     </div>
 
-    <div class="col-12 col-md-2 col-lg-2">
+    <div class="col-12 col-md-2">
       <select
         id="statement-filters-verdicts"
         name="verdicts[]"
@@ -56,7 +56,7 @@
       </select>
     </div>
 
-    <div class="col-12 col-md-2 col-lg-2">
+    <div class="col-12 col-md-2">
       <a class="btn btn-link btn-lg text-nowrap py-1 px-0"
         data-bs-toggle="collapse"
         href="#more-filters">
@@ -68,7 +68,7 @@
 
   <div id="more-filters" class="collapse {if $term}show{/if}">
     <div class="row mb-2 small statement-filters">
-      <div class="col-12 col-md-3 col-lg-3 mb-2">
+      <div class="col-12 col-md-3 mb-2">
         <input
           type="text"
           name="term"
@@ -88,7 +88,7 @@
         {/if}
       </div>
 
-      <div class="col-12 col-md-3 col-lg-3 mb-2">
+      <div class="col-12 col-md-3 mb-2">
         <input
           type="text"
           id="field-min-date"
@@ -97,7 +97,7 @@
         <input type="hidden" name="minDate" class="actionable">
       </div>
 
-      <div class="col-12 col-md-3 col-lg-3 mb-2">
+      <div class="col-12 col-md-3 mb-2">
         <input
           type="text"
           id="field-max-date"
@@ -106,7 +106,7 @@
         <input type="hidden" name="maxDate" class="actionable">
       </div>
 
-      <div class="col-12 col-md-3 col-lg-3 mb-2">
+      <div class="col-12 col-md-3 mb-2">
         <select name="regionId" class="form-select form-select-sm actionable">
           <option value="0">{t}label-region{/t}</option>
           {foreach Region::loadAll() as $option}
