@@ -3,7 +3,7 @@
 if (SELECT2_LOCALE) {
   $.fn.select2.defaults.set('language', SELECT2_LOCALE);
 }
-$.fn.select2.defaults.set('theme', 'bootstrap4');
+$.fn.select2.defaults.set('theme', 'bootstrap-5');
 
 
 $(function() {

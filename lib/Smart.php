@@ -32,7 +32,7 @@ class Smart {
     'select2' => [
       'css' => [
         'third-party/select2.min.css',
-        'third-party/select2-bootstrap4.min.css',
+        'third-party/select2-bootstrap-5-theme.min.css',
       ],
       'js' => [
         'third-party/select2/select2.min.js',
