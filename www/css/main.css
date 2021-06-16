@@ -493,37 +493,6 @@ body, main {
 
 /************************ statement filter tweaks ************************/
 
-.statement-filters .selection-entity-id .select2-selection__placeholder {
-  color: inherit;
-}
-
-.statement-filters,
-.dropdown-entity-id li {
-  font-size: 14px !important;
-}
-
-.statement-filters .btn-light {
-  background-color: white;
-  border: 1px solid #ced4da;
-  color: #495057 !important;
-  height: calc(1.5em + .75rem + 2px) !important; /* same as select2 */
-  line-height: 1.5 !important;
-  padding-top: 6px !important;
-}
-
-.statement-filters input {
-  padding-top: 6px;
-  padding-bottom: 6px;
-  height: inherit;
-}
-
-.statement-filters .selection-entity-id .select2-selection__clear {
-  background-color: #495057;
-  border-radius: 4px;
-  line-height: 1.4em;
-  margin-right: 1.5em;
-}
-
 /* hide the caret on the bootstrap-select verdict dropdown */
 .statement-filters .bootstrap-select .dropdown-toggle::after {
   display: none;

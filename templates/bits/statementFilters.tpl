@@ -59,7 +59,7 @@
     </div>
 
     <div class="col-12 col-md-2">
-      <a class="btn btn-link btn-lg text-nowrap py-1 px-0"
+      <a class="btn btn-link btn-sm text-nowrap py-1 px-0"
         data-bs-toggle="collapse"
         href="#more-filters">
         {include "bits/icon.tpl" i=filter_list}

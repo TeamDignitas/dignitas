@@ -18,9 +18,9 @@ $(function() {
         url: URL_PREFIX + 'ajax/search-entities',
       },
       allowClear: true,
-      dropdownCssClass: 'dropdown-entity-id',
+      dropdownCssClass: 'select2--small',
       minimumInputLength: 2,
-      selectionCssClass: 'selection-entity-id',
+      selectionCssClass: 'select2--small',
     });
     $('select.actionable[name="type"]').change(typeChange);
 
