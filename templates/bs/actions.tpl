@@ -11,72 +11,86 @@
 {$saveButtonText=$saveButtonText|default:"{t}link-save{/t}"}
 {$saveDraftButton=$saveDraftButton|default:false}
 
-<div class="mt-4 text-end {$divClass}">
+{$colDef="col-12 col-sm-6 col-md-3 col-lg-2"}
+{$btnDef="btn btn-sm w-100"}
+
+<div class="row g-2 justify-content-end mt-4 {$divClass}">
 
   {if $deleteButton}
-    <button
-      class="btn btn-sm btn-outline-danger col-sm-4 col-lg-2 me-2 mb-2"
-      {if $deleteButtonConfirm}data-confirm="{$deleteButtonConfirm}"{/if}
-      {if $deleteButtonDisabled}
-      disabled
-      title="{$deleteButtonTitle}"
-      {/if}
-      name="deleteButton"
-      type="submit">
-      {include "bits/icon.tpl" i=delete_forever}
-      {t}link-delete{/t}
-    </button>
+    <div class="{$colDef}">
+      <button
+        class="{$btnDef} btn-outline-danger"
+        {if $deleteButtonConfirm}data-confirm="{$deleteButtonConfirm}"{/if}
+        {if $deleteButtonDisabled}
+        disabled
+        title="{$deleteButtonTitle}"
+        {/if}
+        name="deleteButton"
+        type="submit">
+        {include "bits/icon.tpl" i=delete_forever}
+        {t}link-delete{/t}
+      </button>
+    </div>
   {/if}
 
   {if $reopenButton}
-    <button
-      class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 me-2 mb-2"
-      {if $reopenButtonConfirm}data-confirm="{$reopenButtonConfirm}"{/if}
-      name="reopenButton"
-      type="submit">
+    <div class="{$colDef}">
+      <button
+        class="{$btnDef} btn-outline-secondary"
+        {if $reopenButtonConfirm}data-confirm="{$reopenButtonConfirm}"{/if}
+        name="reopenButton"
+        type="submit">
       {t}link-reopen{/t}
     </button>
   {/if}
 
   {if $cloneButton}
-    <button
-      class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 me-2 mb-2"
-      name="cloneButton"
-      type="submit">
-      {include "bits/icon.tpl" i=content_copy}
-      {t}link-clone{/t}
-    </button>
+    <div class="{$colDef}">
+      <button
+        class="{$btnDef} btn-outline-secondary"
+        name="cloneButton"
+        type="submit">
+        {include "bits/icon.tpl" i=content_copy}
+        {t}link-clone{/t}
+      </button>
+    </div>
   {/if}
 
   {if $cancelLink}
-    <a
-      class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 me-2 mb-2"
-      href="{$cancelLink}">
-      {include "bits/icon.tpl" i=cancel}
-      {t}link-cancel{/t}
-    </a>
+    <div class="{$colDef}">
+      <a
+        class="{$btnDef} btn-outline-secondary"
+        href="{$cancelLink}">
+        {include "bits/icon.tpl" i=cancel}
+        {t}link-cancel{/t}
+      </a>
+    </div>
   {/if}
 
   {if $saveDraftButton}
-    <button
-      name="saveDraftButton"
-      type="submit"
-      class="btn btn-sm btn-outline-secondary col-sm-4 col-lg-2 me-2 mb-2"
-      data-bs-toggle="tooltip"
-      title="{t}tooltip-save-draft{/t}">
-      {include "bits/icon.tpl" i=insert_drive_file}
-      {t}link-save-draft{/t}
-    </button>
+    <div class="{$colDef}">
+      <button
+        class="{$btnDef} btn-outline-secondary"
+        data-bs-toggle="tooltip"
+        name="saveDraftButton"
+        title="{t}tooltip-save-draft{/t}"
+        type="submit">
+        {include "bits/icon.tpl" i=insert_drive_file}
+        {t}link-save-draft{/t}
+      </button>
+    </div>
   {/if}
 
   {if $saveButton}
-    <button
-      class="btn btn-sm btn-primary col-sm-4 col-lg-2 mb-2"
-      name="saveButton"
-      type="submit">
-      {include "bits/icon.tpl" i=save}
-      {$saveButtonText}
-    </button>
+    <div class="{$colDef}">
+      <button
+        class="{$btnDef} btn-primary"
+        name="saveButton"
+        type="submit">
+        {include "bits/icon.tpl" i=save}
+        {$saveButtonText}
+      </button>
+    </div>
   {/if}
 
 </div>
