@@ -502,11 +502,6 @@ body, main {
   font-size: 14px !important;
 }
 
-.statement-filters select.form-control-sm {
-  height: inherit;
-  padding: 8px;
-}
-
 .statement-filters .btn-light {
   background-color: white;
   border: 1px solid #ced4da;
@@ -527,6 +522,11 @@ body, main {
   border-radius: 4px;
   line-height: 1.4em;
   margin-right: 1.5em;
+}
+
+/* hide the caret on the bootstrap-select verdict dropdown */
+.statement-filters .bootstrap-select .dropdown-toggle::after {
+  display: none;
 }
 
 @media (max-width: 768px){
