@@ -498,6 +498,18 @@ body, main {
   display: none;
 }
 
+/* give the verdict placeholder the same color as regular selects */
+.statement-filters .dropdown-toggle.bs-placeholder {
+  color: inherit;
+}
+
+/* give the entity select2 the same color as regular selects */
+.statement-filters .select2-selection,
+.statement-filters .select2-selection__rendered,
+.statement-filters .select2-selection__placeholder {
+  color: inherit !important;
+}
+
 @media (max-width: 768px){
   .statement-filters .select2-container {
     width: 100% !important;
