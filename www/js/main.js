@@ -538,14 +538,13 @@ $(function() {
 
   function createPopover(url) {
     // Create and show the popover.
-    link.popover({
+    var p = new bootstrap.Popover(link, {
       content: _('archived-version-tooltip', url),
+      customClass: 'popover-archive shadow',
       html: true,
       placement: 'auto',
     });
-    link.popover('show');
-    var pop = $(link.data('bs.popover').tip);
-    pop.addClass('popover-archive shadow');
+    p.show();
 
     // Hide the popover when the mouse leaves *the popover*.
     $('.popover').mouseleave(function () {
