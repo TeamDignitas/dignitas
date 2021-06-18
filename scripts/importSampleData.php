@@ -41,6 +41,9 @@ if ($answer !== 'yes') {
 $url = Config::DATABASE_SCHEMA_URL;
 $sql = file_get_contents($url)
   or die("Cannot download database schema from {$url}\n");
+// remove DEFINER from trigger definitions as it requires the MySQL user to
+// have super privileges
+$sql = preg_replace('/\sDEFINER=`[^`]*`@`[^`]*`/', '', $sql);
 
 $url = Config::SAMPLE_DATA_URL;
 $json = file_get_contents($url)
