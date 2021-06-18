@@ -501,15 +501,10 @@ $(function() {
 
 $(function() {
 
-  $('.expand').click(toggleSubtree);
-
-  // collapse all subtrees
-  $('#tag-tree ul ul').hide();
-
-  function toggleSubtree() {
+  $('.expand').click(function() {
     $(this).siblings('ul').stop().slideToggle();
     $(this).toggleClass('expanded');
-  }
+  });
 
 });
 
