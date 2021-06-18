@@ -8,7 +8,7 @@
 
     <form method="post" enctype="multipart/form-data">
 
-      <fieldset class="related-fields mb-5 ms-3">
+      <fieldset class="mb-5 ms-3">
         {hf label="{t}label-nickname{/t}"}
           {include "bs/iconField.tpl"
             icon='person'
@@ -27,7 +27,7 @@
         {/hf}
       </fieldset>
 
-      <fieldset class="related-fields mb-5 ms-3">
+      <fieldset class="mb-5 ms-3">
         {hf label="{t}label-about-me{/t}"}
           <textarea
             name="aboutMe"
@@ -59,7 +59,7 @@
         {/hf}
       </fieldset>
 
-      <fieldset class="related-fields mb-5 ms-3">
+      <fieldset class="mb-5 ms-3">
         <legend class="row capitalize-first-word">
           {t}title-change-password{/t}
         </legend>

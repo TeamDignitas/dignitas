@@ -8,7 +8,7 @@
 
     <form method="post" enctype="multipart/form-data">
 
-      <fieldset class="related-fields mb-5 ms-3">
+      <fieldset class="mb-5 ms-3">
         {hf inputId='field-name' label="{t}label-name{/t}"}
           <input type="text"
             class="form-control {if isset($errors.name)}is-invalid{/if}"
@@ -40,7 +40,7 @@
         {/hf}
       </fieldset>
 
-      <fieldset class="related-fields mb-5 ms-3">
+      <fieldset class="mb-5 ms-3">
         {hf inputId='field-contents' label="{t}label-contents{/t}"}
           {strip}
           <textarea

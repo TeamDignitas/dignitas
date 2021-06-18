@@ -24,7 +24,7 @@
       <input type="hidden" name="id" value="{$entity->id}">
       <input type="hidden" name="referrer" value="{$referrer}">
 
-      <fieldset class="related-fields mb-5 ms-3">
+      <fieldset class="mb-5 ms-3">
         {hf inputId='field-name' label="{t}label-name{/t}"}
           <input
             name="name"
@@ -81,7 +81,7 @@
 
       </fieldset>
 
-      <fieldset class="related-fields mb-5 ms-3">
+      <fieldset class="mb-5 ms-3">
         {hf inputId='field-entity-type-id' label="{t}label-type{/t}"}
           <select
             name="entityTypeId"
@@ -142,7 +142,7 @@
         {/hf}
       </fieldset>
 
-      <fieldset class="related-fields mb-5 ms-3">
+      <fieldset class="mb-5 ms-3">
         {hf inputId='field-profile' label="{t}label-profile{/t}"}
           <textarea
             id="field-profile"
@@ -165,7 +165,7 @@
 
       </fieldset>
 
-      <fieldset class="related-fields mb-5 ms-3">
+      <fieldset class="mb-5 ms-3">
         {hf label="{t}label-region{/t}"}
           <select name="regionId" class="form-select">
             <option value="0"></option>

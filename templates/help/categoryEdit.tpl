@@ -38,7 +38,7 @@
               class="tab-pane fade {if $locale == Config::DEFAULT_LOCALE}show active{/if}"
               role="tabpanel">
 
-              <fieldset class="related-fields mb-5 ms-3">
+              <fieldset class="mb-5 ms-3">
                 {hf inputId='field-name' label="{t}label-name{/t}"}
                   <input type="text"
                     class="form-control {if isset($errors.name.$locale)}is-invalid{/if}"

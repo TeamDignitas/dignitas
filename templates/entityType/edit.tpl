@@ -8,7 +8,7 @@
 
     <form method="post">
 
-      <fieldset class="related-fields mb-5 ms-3">
+      <fieldset class="mb-5 ms-3">
         {hf inputId='field-name' label="{t}label-name{/t}"}
           <input type="text"
             class="form-control {if isset($errors.name)}is-invalid{/if}"
@@ -20,7 +20,7 @@
         {/hf}
       </fieldset>
 
-      <fieldset class="related-fields mb-5">
+      <fieldset class="mb-5">
         {include 'bs/checkbox.tpl'
           checked=$et->loyaltySource
           divClass='mb-3'

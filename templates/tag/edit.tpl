@@ -19,7 +19,7 @@
     <form class="mb-5" method="post">
       <input type="hidden" name="id" value="{$t->id}">
 
-      <fieldset class="related-fields mb-5 ms-3">
+      <fieldset class="mb-5 ms-3">
         {hf inputId='value' label="{t}label-name{/t}"}
           <input type="text"
             class="form-control {if isset($errors.value)}is-invalid{/if}"
@@ -51,7 +51,7 @@
         {/hf}
       </fieldset>
 
-      <fieldset class="related-fields mb-5 ms-3">
+      <fieldset class="mb-5 ms-3">
         {hf inputId='color' label="{t}label-text-color{/t}"}
           <input type="color"
             class="form-control form-control-color"

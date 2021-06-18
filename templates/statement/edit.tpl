@@ -24,7 +24,7 @@
       <input type="hidden" name="id" value="{$statement->id}">
       <input type="hidden" name="referrer" value="{$referrer}">
 
-      <fieldset class="related-fields mb-5 ms-3">
+      <fieldset class="mb-5 ms-3">
         {hf inputId='field-entity-id' label="{t}label-entity{/t}"}
           <select
             name="entityId"
@@ -75,7 +75,7 @@
         {/hf}
       </fieldset>
 
-      <fieldset class="related-fields mb-5 ms-3">
+      <fieldset class="mb-5 ms-3">
         {hf inputId='field-summary' label="{t}label-summary{/t}"}
           <textarea
             name="summary"
@@ -120,7 +120,7 @@
           errors=$errors.links|default:null}
       </fieldset>
 
-      <fieldset class="related-fields mb-5 ms-3">
+      <fieldset class="mb-5 ms-3">
         {hf inputId='field-involvements' label="{t}label-involvements{/t}"}
           <select
             name="involvedEntityIds[]"

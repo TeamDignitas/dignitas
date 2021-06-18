@@ -8,7 +8,7 @@
 
     <form method="post">
 
-      <fieldset class="related-fields mb-5 ms-3">
+      <fieldset class="mb-5 ms-3">
         {hf inputId='field-category-id' label="{t}label-category{/t}"}
           <select
             name="categoryId"
@@ -59,7 +59,7 @@
               data-bs-trigger="#tab-{$loc}"
               role="tabpanel">
 
-              <fieldset class="related-fields mb-5 ms-3">
+              <fieldset class="mb-5 ms-3">
                 {hf inputId='field-title' label="{t}label-title{/t}"}
                   <input type="text"
                     class="form-control {if isset($errors.title.$locale)}is-invalid{/if}"
@@ -80,7 +80,7 @@
                 {/hf}
               </fieldset>
 
-              <fieldset class="related-fields mb-5 ms-3">
+              <fieldset class="mb-5 ms-3">
                 {hf inputId='field-contents' label="{t}label-contents{/t}"}
                   <textarea
                     id="field-contents"
