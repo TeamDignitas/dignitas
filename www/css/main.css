@@ -214,74 +214,85 @@ img.pic.no-outline,
   line-height: 1.5;
 }
 
+/* define variables for verdict colors */
+:root {
+  --v-none: #eee;
+  --v-undecidable: #aaa;
+  --v-red: #d90404;
+  --v-orange: #ec771f;
+  --v-yellow: #ffeb3b;
+  --v-olive: #9bad22;
+  --v-green: #37700a;
+}
+
 /* keep these values in sync with lib/model/Statement.php::VERDICT_* constants */
 .bg-verdict-0 { /* none */
-  background-color: #eee !important;
+  background-color: var(--v-none) !important;
 }
 .statement.verdict-0 {
-  border-color: #eee;
+  border-color: var(--v-none);
 }
 
 .bg-verdict-1 { /* undecidable */
-  background-color: #aaa !important;
+  background-color: var(--v-undecidable) !important;
 }
 .statement.verdict-1 {
-  border-color: #aaa;
+  border-color: var(--v-undecidable);
 }
 
 .bg-verdict-2,   /* false */
 .bg-verdict-7,   /* flop */
 .bg-verdict-10 { /* broken promise */
-  background-color: #D90404 !important;
-  color: #FFFFFF !important;
+  background-color: var(--v-red) !important;
+  color: white !important;
 }
 .statement.verdict-2,
 .statement.verdict-7,
 .statement.verdict-10 {
-  border-color: #D90404;
+  border-color: var(--v-red);
 }
 
 .bg-verdict-3,   /* mostly false */
 .bg-verdict-11 { /* stalled promise */
-  background-image: linear-gradient(110deg, #D90404, #FFEB3B 86%) !important;
+  background-image: linear-gradient(110deg, var(--v-red), var(--v-yellow) 86%) !important;
   border: 0;
 }
 .statement.verdict-3,
 .statement.verdict-11 {
-  border-color: #ec771f;
+  border-color: var(--v-orange);
 }
 
 .bg-verdict-4,   /* mixed */
 .bg-verdict-8,   /* half flop */
 .bg-verdict-12 { /* partially kept promise */
-  background-color: #FFEB3B !important;
+  background-color: var(--v-yellow) !important;
 }
 .statement.verdict-4,
 .statement.verdict-8,
 .statement.verdict-12 {
-  border-color: #FFEB3B;
+  border-color: var(--v-yellow);
 }
 
 .bg-verdict-5,   /* mostly true */
 .bg-verdict-13 { /* promise kept past the deadline */
-  background-image: linear-gradient(110deg, #37700A, #FFEB3B 86%) !important;
+  background-image: linear-gradient(110deg, var(--v-green), var(--v-yellow) 86%) !important;
   border: 0;
 }
 .statement.verdict-5,
 .statement.verdict-13 {
-  border-color: #9bad22;
+  border-color: var(--v-olive);
 }
 
 .bg-verdict-6,   /* true */
 .bg-verdict-9,   /* no flop */
 .bg-verdict-14 { /* kept promise */
-  background-color: #37700A !important;
-  color: #FFFFFF !important;
+  background-color: var(--v-green) !important;
+  color: white !important;
 }
 .statement.verdict-6,
 .statement.verdict-9,
 .statement.verdict-14 {
-  border-color: #37700A;
+  border-color: var(--v-green);
 }
 
 .statement.card {
