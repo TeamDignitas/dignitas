@@ -24,7 +24,7 @@
     {include "bits/relAlternate.tpl"}
     {include "bits/phpConstants.tpl"}
     <script src="{$jsFile.path}?v={$jsFile.date}" defer></script>
-
+    {block "claimReview"}{/block}
   </head>
 
   <body>

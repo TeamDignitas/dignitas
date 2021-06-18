@@ -226,6 +226,10 @@ class Entity extends Proto {
       ->find_many();
   }
 
+  function isPerson() {
+    return $this->entityTypeId == Config::PERSON_ENTITY_TYPE_ID;
+  }
+
   function hasLoyalties() {
     return Loyalty::count_by_fromEntityId($this->id) > 0;
   }

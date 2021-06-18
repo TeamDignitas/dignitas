@@ -2,6 +2,16 @@
 
 {block "title"}{cap}{$statement->summary|escape}{/cap}{/block}
 
+{* publish the ClaimReview structured object if the statement has one *}
+{block "claimReview"}
+  {$crJson=$statement->getClaimReviewJson()}
+  {if $crJson}
+    <script type="application/ld+json">
+      {$crJson}
+    </script>
+  {/if}
+{/block}
+
 {block "content"}
   <div class="container my-5">
     {include "bits/statement.tpl"

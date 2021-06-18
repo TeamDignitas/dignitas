@@ -92,6 +92,17 @@ class Statement extends Proto {
     [ self::VERDICT_PROMISE_KEPT_LATE, self::VERDICT_PROMISE_BROKEN ],
   ];
 
+  // For ClaimReview ratings
+  const CR_WORST_RATING = 1;
+  const CR_BEST_RATING = 5;
+  const CR_RATINGS = [
+    self::VERDICT_FALSE => 1,
+    self::VERDICT_MOSTLY_FALSE => 2,
+    self::VERDICT_MIXED => 3,
+    self::VERDICT_MOSTLY_TRUE => 4,
+    self::VERDICT_TRUE => 5,
+  ];
+
   static function create($entityId) {
     $s = Model::factory('Statement')->create();
     $s->dateMade = Time::today();
@@ -146,8 +157,8 @@ class Statement extends Proto {
     }
   }
 
-  function getViewUrl() {
-    return Router::link('statement/view') . '/' . $this->id;
+  function getViewUrl($absolute = false) {
+    return Router::link('statement/view', $absolute) . '/' . $this->id;
   }
 
   function getEditUrl() {
@@ -481,6 +492,65 @@ class Statement extends Proto {
     StatementExt::delete_all_by_statementId($this->id);
 
     parent::delete();
+  }
+
+  /**
+   * Returns a ClaimReview object in JSON format, or null if this statement
+   * should not have a structured ClaimReview tag.
+   * See https://developers.google.com/search/docs/data-types/factcheck
+   */
+  function getClaimReviewJson() {
+    // only allow claims with verdicts
+    if ($this->type != self::TYPE_CLAIM ||
+        $this->verdict == self::VERDICT_NONE ||
+        $this->verdict == self::VERDICT_UNDECIDABLE) {
+      return null;
+    }
+
+    $author = $this->getEntity();
+    $authorLinks = Link::getFor($author);
+
+    $data = [
+      '@context' => 'https://schema.org',
+      '@type' => 'ClaimReview',
+      'datePublished' => date('Y-m-d', $this->verdictDate),
+      'url' => $this->getViewUrl(true),
+      'claimReviewed' => Str::shorten($this->summary, 80),
+
+      'itemReviewed' => [
+        '@type' => 'Claim',
+        'author' => [
+          '@type' => $author->isPerson() ? 'Person' : 'Organization',
+          'name' => $author->name,
+          'sameAs' => Util::objectProperty($authorLinks, 'url'),
+        ],
+        'datePublished' => $this->dateMade,
+
+        'appearance' => [
+          '@type' => 'OpinionNewsArticle',
+          'url' => Link::getFor($this)[0]->url ?? '',
+          'datePublished' => $this->dateMade,
+        ],
+
+      ],
+
+      'author' => [
+        '@type' => 'Organization',
+        'name' => 'Dignitas',
+        'image' => Config::URL_HOST . Config::URL_PREFIX . 'img/logo-white.svg',
+        'url' => Router::link('aggregate/index', true),
+      ],
+
+      'reviewRating' => [
+        '@type' => 'Rating',
+        'ratingValue' => self::CR_RATINGS[$this->verdict],
+        'bestRating' => self::CR_BEST_RATING,
+        'worstRating' => self::CR_WORST_RATING,
+        'alternateName' => $this->getVerdictName(),
+      ],
+    ];
+
+    return json_encode($data, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
   }
 
   /**

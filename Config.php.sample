@@ -272,4 +272,9 @@ class Config {
 
   // Refer to the archiver class for available options.
   const ARCHIVER_OPTIONS = [];
+
+  // ID of the entity_type used to denote persons (ideally you should have at
+  // most one of these). This is used in the ClaimReview structure to report
+  // authors as persons or organizations.
+  const PERSON_ENTITY_TYPE_ID = 1;
 }
