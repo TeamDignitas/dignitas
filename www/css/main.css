@@ -43,28 +43,6 @@ blockquote {
   pointer-events: auto;
 }
 
-/**************************** Select2 tweaks ****************************/
-
-.select2-container {
-  width: 100%;
-}
-
-/* The Bootstrap theme needs some adjustments for Select2 4.1. */
-.select2-container--bootstrap4 .select2-selection--multiple {
-  padding-left: 5px;
-}
-
-.select2-container--bootstrap4 .select2-selection--multiple .select2-selection__choice__remove {
-  background-color: white;
-  border: 0;
-}
-
-.select2-container--bootstrap4 .select2-selection--multiple .select2-selection__choice__remove span {
-  display: inline-block;
-  margin-bottom: -2px;
-  margin-top: 2px;
-}
-
 /******************************** navbar *********************************/
 
 .navbar-nav {
@@ -200,6 +178,7 @@ blockquote {
 }
 
 /******************************** statement ********************************/
+
 .statement-title {
   font-size: 2rem;
   line-height: 2.6rem;
@@ -334,8 +313,8 @@ img.pic.no-outline,
   font-style: italic;
 }
 
-
 /*************** answers, entity statements, user profile ***************/
+
 .subsection {
   border-bottom: 1px solid #999;
 }
@@ -442,7 +421,6 @@ body, main {
   padding-top: 12px;
 }
 
-
 /************************ help pages and sidebar ************************/
 
 .help-sidebar {
@@ -465,6 +443,7 @@ body, main {
 }
 
 /******************************* markdown *******************************/
+
 .markdown table {
   width: 100%;
 }
@@ -475,6 +454,7 @@ body, main {
 }
 
 /***************************** help pages ****************************/
+
 .breadcrumb {
   background-color: white !important;
   padding-left: 0 !important;
@@ -517,6 +497,7 @@ body, main {
 }
 
 /******** collapsible card with expand/collapse visual indicator ********/
+
 #answer-resources .card-header {
   padding: 1rem 1.25rem .5rem;
 }
@@ -539,6 +520,8 @@ body, main {
 .card-collapse-icon .card-header.active a:before {
   transform: rotate(180deg);
 }
+
+/**************************** material icons ****************************/
 
 .material-icons {
   font-family: 'Material Icons';
@@ -576,8 +559,8 @@ body, main {
   margin-right: 3px;
 }
 
-
 /************************ EasyMDEContainer ************************/
+
 .editor-toolbar button {
   color: var(--bs-gray);
 }
@@ -588,6 +571,7 @@ body, main {
 }
 
 /**************************** archived links ****************************/
+
 .popover-archive {
   max-width: 350px;
 }
