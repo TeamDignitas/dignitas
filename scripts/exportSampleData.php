@@ -32,6 +32,7 @@ $statements = Model::factory('Statement')
   ->where('duplicateId', 0)
   ->where('pendingEditId', 0)
   ->where_not_equal('status', Ct::STATUS_PENDING_EDIT)
+  ->order_by_desc('createDate')
   ->limit(20)
   ->find_array();
 $statementIds = array_column($statements, 'id');
