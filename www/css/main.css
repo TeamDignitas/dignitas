@@ -410,6 +410,28 @@ body, main {
   cursor: help;
 }
 
+#tag-tree {
+  line-height: 200%;
+}
+
+#tag-tree > ul {
+  padding-left: 0px;
+}
+
+#tag-tree li {
+  list-style: none;
+}
+
+.expand {
+  cursor: pointer;
+  transition: all 0.5s;
+  vertical-align: middle;
+}
+
+.expand.expanded {
+  transform: rotate(180deg);
+}
+
 /**************************** loyalty widget ****************************/
 
 .loyalty-widget {

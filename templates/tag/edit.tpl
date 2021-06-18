@@ -111,12 +111,12 @@
 
     </form>
 
-    {if count($children)}
-      <h3 class="capitalize-first-word mt-5">{t}title-direct-descendants{/t}</h3>
+    {if count($t->children)}
+      <h3 class="capitalize-first-word mt-5">{t}title-descendants{/t}</h3>
 
-      {foreach $children as $c}
-        {include "bits/tag.tpl" t=$c link=true}
-      {/foreach}
+      <div id="tag-tree" class="mt-4">
+        {include "bits/tagTree.tpl" tags=$t->children link=true}
+      </div>
     {/if}
 
     {if count($homonyms)}

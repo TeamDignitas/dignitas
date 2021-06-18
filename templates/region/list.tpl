@@ -13,7 +13,7 @@
       </a>
     {/if}
 
-    <div id="region-tree" class="voffset3 mt-4">
+    <div id="region-tree" class="mt-4">
       {include "bits/regionTree.tpl" link=User::may(User::PRIV_EDIT_TAG)}
     </div>
 

@@ -5,7 +5,7 @@ class Tag extends Proto {
   const DEFAULT_COLOR = '#ffffff';
   const DEFAULT_BACKGROUND = '#1e83c2';
 
-  // populated during loadTree()
+  // populated during loadSubtree()
   public $children = [];
 
   function getObjectType() {
@@ -57,28 +57,30 @@ class Tag extends Proto {
       ->find_many();
   }
 
-  // Returns an array of root tags with their $children fields populated
-  static function loadTree() {
-    $tags = Model::factory('Tag')->order_by_asc('value')->find_many();
+  /**
+   * Loads the subtree of this tag. Populates the $children field for the tag
+   * and its subtree.
+   */
+  function loadSubtree() {
+    $map = [ (int)$this->id => $this ];
+    $list = [ (int)$this->id ];
 
-    // Map the tags by id
-    $map = [];
-    foreach ($tags as $t) {
-      $map[$t->id] = $t;
-    }
+    // at the k-th iteration, we load all the descendants k levels below $this
+    while (!empty($list)) {
+      $childTags = Model::factory('Tag')
+        ->where_in('parentId', $list)
+        ->order_by_asc('value')
+        ->find_many();
 
-    // Make each tag its parent's child
-    foreach ($tags as $t) {
-      if ($t->parentId) {
-        $p = $map[$t->parentId];
-        $p->children[] = $t;
+      $list = []; // start preparing the list for the next level
+
+      foreach ($childTags as $ct) {
+        $map[$ct->id] = $ct;
+        $parent = $map[$ct->parentId];
+        $parent->children[] = $ct;
+        $list[] = $ct->id;
       }
     }
-
-    // Return just the roots
-    return array_filter($tags, function($t) {
-      return !$t->parentId;
-    });
   }
 
   function getAncestors() {

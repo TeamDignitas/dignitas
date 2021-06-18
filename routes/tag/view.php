@@ -10,6 +10,7 @@ if (!$tag) {
 }
 
 $query = $tag->getStatementQuery();
+$tag->loadSubtree();
 
 Smart::assign([
   'tag' => $tag,

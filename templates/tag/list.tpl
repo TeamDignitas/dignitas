@@ -13,8 +13,8 @@
       </a>
     {/if}
 
-    <div id="tag-tree" class="voffset3 mt-4">
-      {include "bits/tagTree.tpl" link=User::may(User::PRIV_EDIT_TAG)}
+    <div id="tag-tree" class="mt-4">
+      {include "bits/tagTree.tpl" tags=$root->children link=User::may(User::PRIV_EDIT_TAG)}
     </div>
   </div>
 {/block}

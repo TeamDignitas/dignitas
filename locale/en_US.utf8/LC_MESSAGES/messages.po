@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-06-16 17:50+0300\n"
-"PO-Revision-Date: 2021-06-16 17:50+0300\n"
+"POT-Creation-Date: 2021-06-18 16:16+0300\n"
+"PO-Revision-Date: 2021-06-18 16:16+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -115,7 +115,7 @@ msgstr "search results"
 msgid "title-entities"
 msgstr "authors"
 
-#: templates/aggregate/search.tpl:20 templates/tag/view.tpl:22
+#: templates/aggregate/search.tpl:20 templates/tag/view.tpl:36
 msgid "title-statements"
 msgstr "statements"
 
@@ -295,7 +295,7 @@ msgstr "permalink"
 
 #: templates/bits/answerEdit.tpl:24 templates/bits/statementFilters.tpl:50
 #: templates/statement/edit.tpl:159 lib/model/RevisionAnswer.php:15
-#: lib/model/RevisionStatement.php:22 lib/model/Statement.php:127
+#: lib/model/RevisionStatement.php:22 lib/model/Statement.php:138
 msgid "label-verdict"
 msgstr "verdict"
 
@@ -1270,7 +1270,7 @@ msgstr ""
 "Cannot delete this region because (1) it has descendants or (2) it is being "
 "used."
 
-#: templates/region/edit.tpl:66 templates/tag/edit.tpl:115
+#: templates/region/edit.tpl:66
 msgid "title-direct-descendants"
 msgstr "direct descendants"
 
@@ -1497,17 +1497,17 @@ msgstr "statements with a verdict, but no proof"
 msgid "title-statements-verdict-mismatch"
 msgstr "statements with a verdict opposite to the proof's verdict"
 
-#: templates/statement/view.tpl:15
+#: templates/statement/view.tpl:25
 msgid "title-answers-singular"
 msgid_plural "title-answers-plural"
 msgstr[0] "one answer"
 msgstr[1] "%1 answers"
 
-#: templates/statement/view.tpl:31
+#: templates/statement/view.tpl:41
 msgid "title-your-answer"
 msgstr "your answer"
 
-#: templates/statement/view.tpl:36
+#: templates/statement/view.tpl:46
 msgid "link-post-answer"
 msgstr "post answer"
 
@@ -1588,11 +1588,15 @@ msgstr ""
 msgid "label-icon-only"
 msgstr "show only the icon, no text"
 
-#: templates/tag/edit.tpl:110 routes/tag/edit.php:33
+#: templates/tag/edit.tpl:110 routes/tag/edit.php:30
 msgid "info-cannot-delete-tag"
 msgstr ""
 "Cannot delete this tag because (1) it has descendants or (2) it is being "
 "used."
+
+#: templates/tag/edit.tpl:115 templates/tag/view.tpl:26
+msgid "title-descendants"
+msgstr "descendants"
 
 #: templates/tag/edit.tpl:123
 msgid "title-duplicate-tags"
@@ -1605,6 +1609,10 @@ msgstr "add a tag"
 #: templates/tag/view.tpl:3 templates/tag/view.tpl:7
 msgid "title-tag"
 msgstr "tag"
+
+#: templates/tag/view.tpl:19
+msgid "link-tag-list"
+msgstr "all tags"
 
 #: templates/user/ban.tpl:3 templates/user/ban.tpl:7
 msgid "title-ban-user"
@@ -1903,12 +1911,12 @@ msgid "info-answer-by-owner"
 msgstr "by its author."
 
 #: lib/model/Answer.php:88 lib/model/Comment.php:62 lib/model/Entity.php:158
-#: lib/model/Statement.php:285
+#: lib/model/Statement.php:296
 msgid "info-by"
 msgstr "by"
 
 #: lib/model/Answer.php:89 lib/model/Comment.php:63 lib/model/Entity.php:159
-#: lib/model/Statement.php:286
+#: lib/model/Statement.php:297
 msgid "info-other-reason"
 msgstr "for other reasons."
 
@@ -2056,21 +2064,21 @@ msgstr "because it is unverifiable."
 msgid "info-entity-by-owner"
 msgstr "by the user who added it."
 
-#: lib/model/Entity.php:277
+#: lib/model/Entity.php:281
 #, php-format
 msgid "info-minimum-reputation-add-entity-%s"
 msgstr "You need at least %s reputation to add authors."
 
-#: lib/model/Entity.php:285
+#: lib/model/Entity.php:289
 #, php-format
 msgid "info-minimum-reputation-edit-entity-%s"
 msgstr "You need at least %s reputation to edit authors."
 
-#: lib/model/Entity.php:290
+#: lib/model/Entity.php:294
 msgid "info-banned-add-entity"
 msgstr "You are banned from adding authors."
 
-#: lib/model/Entity.php:294
+#: lib/model/Entity.php:298
 msgid "info-banned-edit-entity"
 msgstr "You are banned from editing authors."
 
@@ -2469,101 +2477,101 @@ msgstr "added mentions"
 msgid "label-deleted-involvements"
 msgstr "deleted mentions"
 
-#: lib/model/Statement.php:112
+#: lib/model/Statement.php:123
 msgid "statement-type-any"
 msgstr "any type"
 
-#: lib/model/Statement.php:113
+#: lib/model/Statement.php:124
 msgid "statement-type-claim"
 msgstr "claim"
 
-#: lib/model/Statement.php:114
+#: lib/model/Statement.php:125
 msgid "statement-type-flop"
 msgstr "flip-flop"
 
-#: lib/model/Statement.php:115
+#: lib/model/Statement.php:126
 msgid "statement-type-promise"
 msgstr "promise"
 
-#: lib/model/Statement.php:124
+#: lib/model/Statement.php:135
 msgid "label-claim-verdict"
 msgstr "claim verdict"
 
-#: lib/model/Statement.php:125
+#: lib/model/Statement.php:136
 msgid "label-flop-verdict"
 msgstr "flip-flop verdict"
 
-#: lib/model/Statement.php:126
+#: lib/model/Statement.php:137
 msgid "label-promise-verdict"
 msgstr "promise verdict"
 
-#: lib/model/Statement.php:262
+#: lib/model/Statement.php:273
 msgid "status-statement-duplicate"
 msgstr "duplicate"
 
-#: lib/model/Statement.php:264
+#: lib/model/Statement.php:275
 msgid "status-statement-closed"
 msgstr "closed"
 
-#: lib/model/Statement.php:265
+#: lib/model/Statement.php:276
 msgid "status-statement-deleted"
 msgstr "deleted"
 
-#: lib/model/Statement.php:274
+#: lib/model/Statement.php:285
 msgid "info-statement-closed"
 msgstr "This statement was closed"
 
-#: lib/model/Statement.php:275
+#: lib/model/Statement.php:286
 msgid "info-statement-deleted"
 msgstr "This statement was deleted"
 
-#: lib/model/Statement.php:278
+#: lib/model/Statement.php:289
 msgid "info-statement-spam"
 msgstr "because it is spam."
 
-#: lib/model/Statement.php:279
+#: lib/model/Statement.php:290
 msgid "info-statement-abuse"
 msgstr "because it is rude or abusive."
 
-#: lib/model/Statement.php:280
+#: lib/model/Statement.php:291
 msgid "info-statement-duplicate-of"
 msgstr "as a duplicate of the statement"
 
-#: lib/model/Statement.php:281
+#: lib/model/Statement.php:292
 msgid "info-statement-off-topic"
 msgstr "because it is off-topic."
 
-#: lib/model/Statement.php:282
+#: lib/model/Statement.php:293
 msgid "info-statement-unverifiable"
 msgstr "because it is unverifiable."
 
-#: lib/model/Statement.php:283
+#: lib/model/Statement.php:294
 msgid "info-statement-low-quality"
 msgstr "because it is low-quality."
 
-#: lib/model/Statement.php:284
+#: lib/model/Statement.php:295
 msgid "info-statement-by-owner"
 msgstr "by the user who added it."
 
-#: lib/model/Statement.php:340
+#: lib/model/Statement.php:351
 #, php-format
 msgid "info-minimum-reputation-add-statement-%s"
 msgstr "You need at least %s reputation to add statements."
 
-#: lib/model/Statement.php:348
+#: lib/model/Statement.php:359
 #, php-format
 msgid "info-minimum-reputation-edit-statement-%s"
 msgstr "You need at least %s reputation to edit statements."
 
-#: lib/model/Statement.php:354
+#: lib/model/Statement.php:365
 msgid "info-only-moderator-edit-statement-verdict"
 msgstr "This statement has a verdict. Only moderators can edit it directly."
 
-#: lib/model/Statement.php:358
+#: lib/model/Statement.php:369
 msgid "info-banned-add-statement"
 msgstr "You are banned from adding statements."
 
-#: lib/model/Statement.php:362
+#: lib/model/Statement.php:373
 msgid "info-banned-edit-statement"
 msgstr "You are banned from editing statements."
 
@@ -2956,7 +2964,7 @@ msgid "info-domain-cloned"
 msgstr "Domain cloned. This is the clone's page."
 
 #: routes/domain/edit.php:35 routes/relationType/edit.php:31
-#: routes/tag/edit.php:49
+#: routes/tag/edit.php:46
 msgid "label-clone"
 msgstr "clone"
 
@@ -2971,7 +2979,7 @@ msgstr "Domain saved."
 #: routes/domain/edit.php:80 routes/entity/edit.php:143
 #: routes/entityType/edit.php:57 routes/help/categoryEdit.php:91
 #: routes/region/edit.php:86 routes/relationType/edit.php:72
-#: routes/staticResource/edit.php:49 routes/tag/edit.php:108
+#: routes/staticResource/edit.php:49 routes/tag/edit.php:104
 msgid "info-must-enter-name"
 msgstr "Please enter a name."
 
@@ -3372,28 +3380,28 @@ msgstr "You unsubscribed from this item."
 msgid "info-subscribed"
 msgstr "You subscribed to this item."
 
-#: routes/tag/edit.php:28
+#: routes/tag/edit.php:25
 #, php-format
 msgid "tag-deleted-%s"
 msgstr "Tag [%s] deleted."
 
-#: routes/tag/edit.php:41
+#: routes/tag/edit.php:38
 msgid "info-banned-tag"
 msgstr "You are banned from managing tags."
 
-#: routes/tag/edit.php:47
+#: routes/tag/edit.php:44
 msgid "info-tag-cloned"
 msgstr "Tag cloned. This is the clone's page."
 
-#: routes/tag/edit.php:54
+#: routes/tag/edit.php:51
 msgid "info-save-tag-before-clone"
 msgstr "Please save the tag before cloning it."
 
-#: routes/tag/edit.php:76
+#: routes/tag/edit.php:73
 msgid "info-tag-saved"
 msgstr "Tag saved."
 
-#: routes/tag/edit.php:117
+#: routes/tag/edit.php:113
 msgid "info-tag-loop"
 msgstr "You cannot select a descendant as the parent."
 

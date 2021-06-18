@@ -14,7 +14,21 @@
           {include "bits/icon.tpl" i=mode_edit}
           {t}link-edit{/t}
         </a>
+        <a href="{Router::link('tag/list')}" class="btn btn-sm btn-link">
+          {include "bits/icon.tpl" i=arrow_back}
+          {t}link-tag-list{/t}
+        </a>
       </p>
+    {/if}
+
+    {if count($tag->children)}
+      <h4 class="mt-5 capitalize-first-word">
+        {t}title-descendants{/t}
+      </h4>
+
+      <div id="tag-tree" class="mt-4">
+        {include "bits/tagTree.tpl" tags=$tag->children link=User::may(User::PRIV_EDIT_TAG)}
+      </div>
     {/if}
 
     {if count($statements)}

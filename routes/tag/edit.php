@@ -11,17 +11,14 @@ $deleteButton = Request::has('deleteButton');
 
 if ($id) {
   $tag = Tag::get_by_id($id);
+  $tag->loadSubtree();
 } else {
   $tag = Model::factory('Tag')->create();
 }
 
 // tags can be deleted if (1) they have no children and (2) no objects use them
-$children = Model::factory('Tag')
-  ->where('parentId', $tag->id)
-  ->order_by_asc('value')
-  ->find_many();
 $used = ObjectTag::get_by_tagId($tag->id);
-$canDelete = empty($children) && !$used;
+$canDelete = empty($tag->children) && !$used;
 
 if ($deleteButton) {
   if ($tag->isDeletable() && $canDelete) {
@@ -92,7 +89,6 @@ $homonyms = Model::factory('Tag')
 
 Smart::assign([
   't' => $tag,
-  'children' => $children,
   'canDelete' => $canDelete,
   'homonyms' => $homonyms,
   'frequentColors' => $frequentColors,
