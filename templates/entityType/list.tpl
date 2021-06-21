@@ -15,11 +15,11 @@
       <table class="table table-hover mt-5 mb-4">
         <thead>
           <tr class="small">
-            <th class="border-0">{t}label-name{/t}</th>
-            <th class="border-0 text-center">{t}label-loyalty-source{/t}</th>
-            <th class="border-0 text-center">{t}label-loyalty-sink{/t}</th>
-            <th class="border-0 text-center">{t}label-has-color{/t}</th>
-            <th class="border-0">{t}actions{/t}</th>
+            <th>{t}label-name{/t}</th>
+            <th class="text-center">{t}label-loyalty-source{/t}</th>
+            <th class="text-center">{t}label-loyalty-sink{/t}</th>
+            <th class="text-center">{t}label-has-color{/t}</th>
+            <th>{t}actions{/t}</th>
           </tr>
         </thead>
         <tbody>

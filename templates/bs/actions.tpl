@@ -8,6 +8,7 @@
 {$reopenButton=$reopenButton|default:false}
 {$reopenButtonConfirm=$reopenButtonConfirm|default:''}
 {$saveButton=$saveButton|default:true}
+{$saveButtonClass=$saveButtonClass|default:'btn-primary'}
 {$saveButtonText=$saveButtonText|default:"{t}link-save{/t}"}
 {$saveDraftButton=$saveDraftButton|default:false}
 
@@ -84,7 +85,7 @@
   {if $saveButton}
     <div class="{$colDef}">
       <button
-        class="{$btnDef} btn-primary"
+        class="{$btnDef} {$saveButtonClass}"
         name="saveButton"
         type="submit">
         {include "bits/icon.tpl" i=save}

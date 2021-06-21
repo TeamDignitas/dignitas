@@ -34,7 +34,9 @@
           {/foreach}
         {/for}
 
-        {include "bs/actions.tpl" cancelLink=false}
+        {include "bs/actions.tpl"
+          cancelLink=false
+          saveButtonClass='btn-outline-primary'}
 
       </form>
     {/if}

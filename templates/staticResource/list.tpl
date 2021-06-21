@@ -15,10 +15,10 @@
       <table class="table table-hover mt-5 mb-4">
         <thead>
           <tr class="small">
-            <th class="border-0">{t}label-name{/t}</th>
-            <th class="border-0">{t}label-locale{/t}</th>
-            <th class="border-0">{t}label-url{/t}</th>
-            <th class="border-0">{t}actions{/t}</th>
+            <th>{t}label-name{/t}</th>
+            <th>{t}label-locale{/t}</th>
+            <th>{t}label-url{/t}</th>
+            <th>{t}actions{/t}</th>
           </tr>
         </thead>
         <tbody>

@@ -21,11 +21,11 @@
       <table class="table table-hover mt-5 mb-4">
         <thead>
           <tr class="small">
-            <th class="border-0">{t}label-name{/t}</th>
-            <th class="border-0">{t}label-from-entity-type{/t}</th>
-            <th class="border-0">{t}label-to-entity-type{/t}</th>
-            <th class="border-0">{t}label-weight{/t}</th>
-            <th class="border-0">{t}actions{/t}</th>
+            <th>{t}label-name{/t}</th>
+            <th>{t}label-from-entity-type{/t}</th>
+            <th>{t}label-to-entity-type{/t}</th>
+            <th>{t}label-weight{/t}</th>
+            <th>{t}actions{/t}</th>
           </tr>
         </thead>
         <tbody>

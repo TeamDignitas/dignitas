@@ -12,12 +12,12 @@
     </a>
 
     <form method="post">
-      <table class="table table-hover mt-5 sortable border-bottom">
+      <table class="table table-hover mt-5 sortable">
         <thead>
           <tr class="d-flex small">
-            <th class="col-sm-3 col-md-2 border-0">{t}title-order{/t}</th>
-            <th class="col-sm-7 col-md-8 border-0">{t}title-comment-text{/t}</th>
-            <th class="col-sm-2 col-md-2 border-0">{t}title-actions{/t}</th>
+            <th class="col-sm-3 col-md-2">{t}title-order{/t}</th>
+            <th class="col-sm-7 col-md-8">{t}title-comment-text{/t}</th>
+            <th class="col-sm-2 col-md-2">{t}title-actions{/t}</th>
           </tr>
         </thead>
         <tbody>
