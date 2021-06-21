@@ -89,6 +89,13 @@ class LocaleUtil {
   }
 
   /**
+   * Returns the URL for upload documentation, in the current locale.
+   */
+  static function getUploadUrl() {
+    return Config::UPLOAD_URL[self::$current] ?? '';
+  }
+
+  /**
    * Returns the URL for verdict documentation, in the current locale.
    */
   static function getVerdictUrl() {

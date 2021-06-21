@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-06-18 16:17+0300\n"
-"PO-Revision-Date: 2021-06-18 16:17+0300\n"
+"POT-Creation-Date: 2021-06-18 17:13+0300\n"
+"PO-Revision-Date: 2021-06-18 17:23+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -599,9 +599,8 @@ msgid "link-show-revisions"
 msgstr "arată versiunile"
 
 #: templates/bits/inlineAttachment.tpl:1
-msgid "info-read-guide-inline-attachment"
-msgstr ""
-"Te rugăm citește TODO pentru moduri de personalizare a iconiței și a adresei."
+msgid "info-read-guide-inline-attachment-%1"
+msgstr "Vezi %1 pentru moduri de personalizare a fișierului încărcat."
 
 #: templates/bits/inlineAttachment.tpl:3
 msgid "label-uploaded-file"

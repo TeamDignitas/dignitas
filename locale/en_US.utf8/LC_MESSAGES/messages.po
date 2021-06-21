@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-06-18 16:16+0300\n"
-"PO-Revision-Date: 2021-06-18 16:16+0300\n"
+"POT-Creation-Date: 2021-06-18 17:16+0300\n"
+"PO-Revision-Date: 2021-06-18 17:17+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -593,8 +593,8 @@ msgid "link-show-revisions"
 msgstr "show revisions"
 
 #: templates/bits/inlineAttachment.tpl:1
-msgid "info-read-guide-inline-attachment"
-msgstr "Please read TODO for ways of customizing the thumbnail and link."
+msgid "info-read-guide-inline-attachment-%1"
+msgstr "See %1 for ways of customizing the uploaded file."
 
 #: templates/bits/inlineAttachment.tpl:3
 msgid "label-uploaded-file"
