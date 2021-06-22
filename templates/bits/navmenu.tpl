@@ -10,16 +10,17 @@
       aria-controls="navbar-left"
       aria-expanded="false"
       aria-label="{t}label-toggle-menu{/t}">
-      <span class="navbar-toggler-icon"></span>
+      {* Do not use navbar-toggler-icon. That gives the two togglers different heights. *}
+      {include "bits/icon.tpl" i=menu}
     </button>
 
-    <div class="collapse navbar-collapse py-2" id="navbar-left">
+    <div class="collapse navbar-collapse py-1" id="navbar-left">
       {include "bits/searchForm.tpl"}
 
       <ul class="navbar-nav">
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle py-2"
+          <a class="nav-link dropdown-toggle py-1"
             href="#"
             id="nav-dropdown-info"
             role="button"
@@ -30,12 +31,12 @@
           </a>
           <div class="dropdown-menu dropdown-menu-dark py-0" aria-labelledby="nav-dropdown-info">
             <a
-              class="dropdown-item py-2"
+              class="dropdown-item py-1"
               href="{Router::link('aggregate/about')}">
               {cap}{t}link-about{/t}{/cap}
             </a>
             <a
-              class="dropdown-item py-2"
+              class="dropdown-item py-1"
               href="{Router::link('aggregate/contact')}">
               {cap}{t}link-contact{/t}{/cap}
             </a>
@@ -73,7 +74,7 @@
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <a
-            class="nav-link capitalize-first-word py-2"
+            class="nav-link capitalize-first-word py-1"
             href="{Router::link('help/index')}"
             title="{t}help-center{/t}"
           >
@@ -81,7 +82,7 @@
           </a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link py-2"
+          <a class="nav-link py-1"
             href="#"
             id="nav-dropdown-lang"
             role="button"
@@ -95,7 +96,7 @@
           <div class="dropdown-menu dropdown-menu-dark py-0" aria-labelledby="nav-dropdown-lang">
             {foreach LocaleUtil::getAll() as $id => $name}
               <a
-                class="dropdown-item py-2"
+                class="dropdown-item py-1"
                 href="{Router::getRelAlternate($id)}">
                 <span {if $id != LocaleUtil::getCurrent()}class="invisible"{/if}>
                   {include "bits/icon.tpl" i=done}
@@ -112,7 +113,7 @@
 
           <li class="nav-item">
             <a
-              class="nav-link py-2"
+              class="nav-link py-1"
               href="{Router::link('notification/view')}"
               title="{t}link-notifications{/t}">
 
@@ -123,7 +124,7 @@
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle py-2"
+            <a class="nav-link dropdown-toggle py-1"
               href="#"
               id="nav-dropdown-user"
               role="button"
@@ -144,11 +145,11 @@
               </span>
             </a>
             <div class="dropdown-menu dropdown-menu-dark dropdown-menu-end py-0" aria-labelledby="nav-dropdown-user">
-              <a class="dropdown-item py-2" href="{Router::userLink($u)}">
+              <a class="dropdown-item py-1" href="{Router::userLink($u)}">
                 {include "bits/icon.tpl" i=person}
                 {t}link-my-profile{/t}
               </a>
-              <a class="dropdown-item py-2" href="{Router::link('aggregate/dashboard')}">
+              <a class="dropdown-item py-1" href="{Router::link('aggregate/dashboard')}">
                 {include "bits/icon.tpl" i=inventory}
                 {t}link-dashboard{/t}
               </a>
@@ -183,7 +184,7 @@
                 </form>
               {/if}
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item py-2" href="{Router::link('auth/logout')}">
+              <a class="dropdown-item py-1" href="{Router::link('auth/logout')}">
                 {include "bits/icon.tpl" i=logout}
                 {t}link-log-out{/t}
               </a>
