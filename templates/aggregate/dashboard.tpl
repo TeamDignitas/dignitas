@@ -69,29 +69,41 @@
     {if User::may(User::PRIV_REVIEW) && !empty($activeReviewReasons)}
       <h4 class="mt-5">{cap}{t}title-review-queues{/t}{/cap}</h4>
 
-      <ul class="row list-unstyled ps-0">
+      <div class="row g-3">
         {foreach $activeReviewReasons as $r}
-          <li class="card col-12 col-lg-4 py-3 m-2 text-center dashcard">
-            <a href="{Router::link('review/view')}/{Review::getUrlName($r)}" class="capitalize-first-word stretched-link">
-              {Review::getDescription($r)}
-            </a>
-          </li>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card py-3 text-center dashcard">
+              <div class="card-body">
+                <a
+                  href="{Router::link('review/view')}/{Review::getUrlName($r)}"
+                  class="stretched-link">
+                  {cap}{Review::getDescription($r)}{/cap}
+                </a>
+              </div>
+            </div>
+          </div>
         {/foreach}
-      </ul>
+      </div>
     {/if}
 
     {if User::isModerator()}
       {if $numBadVerdicts}
         <h4 class="mt-5">{cap}{t}title-reports{/t}{/cap}</h4>
 
-        <ul class="row list-unstyled ps-0">
-          <li class="card col-12 col-lg-4 py-3 m-2 text-center dashcard">
-            <a href="{Router::link('statement/verdictReport')}" class="capitalize-first-word stretched-link">
-              {t}link-verdict-report{/t}
-            </a>
-            ({$numBadVerdicts})
-          </li>
-        </ul>
+        <div class="row g-3">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card py-3 text-center dashcard">
+              <div class="card-body">
+                <a
+                  href="{Router::link('statement/verdictReport')}"
+                  class="stretched-link">
+                  {cap}{t}link-verdict-report{/t}{/cap}
+                </a>
+                ({$numBadVerdicts})
+              </div>
+            </div>
+          </div>
+        </div>
       {/if}
     {/if}
   </div>
