@@ -15,7 +15,7 @@
       class="form-control">
   </td>
 
-  <td class="narrow-column">
+  <td>
     <button
       type="button"
       class="btn btn-outline-danger delete-link"

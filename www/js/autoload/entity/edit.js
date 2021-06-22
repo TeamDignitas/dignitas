@@ -4,8 +4,9 @@ $(function() {
     ajax: {
       url: URL_PREFIX + 'ajax/search-entities',
     },
+    dropdownCssClass: "select2--small",
     minimumInputLength: 2,
-    selectionCssClass: 'selection-mine',
+    selectionCssClass: "select2--small",
     width: '100%',
   };
 

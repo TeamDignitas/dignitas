@@ -2,22 +2,6 @@
   width: auto !important;
 }
 
-.col-entity-id {
-  min-width: 200px;
-}
-
-.select2-container .selection-mine {
-  border-radius: .2rem;
-  font-size: .875rem;
-  height: calc(1.5em + .5rem + 2px) !important;
-  padding: 0rem .5rem !important;
-}
-
-.narrow-column {
-  max-width: 100px;
-  display: block;
-}
-
 .relation-fit {
-  max-width: 250px;
+  max-width: 200px;
 }
