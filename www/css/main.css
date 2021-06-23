@@ -594,8 +594,16 @@ body, main {
 
 /************************ EasyMDEContainer ************************/
 
+.editor-toolbar {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .editor-toolbar button {
   color: var(--bs-gray);
+  margin-bottom: 8px !important;
+  margin-top: 8px !important;
 }
 
 .is-invalid + .EasyMDEContainer > .editor-toolbar,
