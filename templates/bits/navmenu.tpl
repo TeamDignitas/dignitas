@@ -192,7 +192,9 @@
           </li>
         {else}
           <li class="nav-item">
-            <a class="nav-link capitalize-first-word" href="{Router::link('auth/login')}">
+            <a
+              class="nav-link capitalize-first-word py-1"
+              href="{Router::link('auth/login')}">
               {t}link-log-in{/t}
             </a>
           </li>
