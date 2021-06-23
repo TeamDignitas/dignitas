@@ -59,6 +59,23 @@
         {/hf}
       </fieldset>
 
+      {if User::isModerator()}
+        <fieldset class="mb-5 ms-3">
+          <legend class="row">
+            {cap}{t}title-preferences{/t}{/cap}
+          </legend>
+
+          {hf label=""}
+            {include 'bs/checkbox.tpl'
+              checked=$newUserNotification
+              divClass='mt-2'
+              label="{t}label-new-user-notification{/t}"
+              name='newUserNotification'}
+          {/hf}
+
+        </fieldset>
+      {/if}
+
       <fieldset class="mb-5 ms-3">
         <legend class="row capitalize-first-word">
           {t}title-change-password{/t}
