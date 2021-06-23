@@ -10,7 +10,8 @@ class Notification extends Precursor {
   const TYPE_MENTION = 0x10;
   const TYPE_ANSWER_ACCEPTED = 0x20;
   const TYPE_ANSWER_REJECTED = 0x40;
-  const TYPE_ALL = 0x7f;
+  const TYPE_NEW_USER = 0x80;
+  const TYPE_ALL = 0xff;
 
   const PAGE_SIZE = 50;
 
@@ -58,7 +59,6 @@ class Notification extends Precursor {
    * would be useless when there are 20 answers already.
    */
   static function notify($obj, $type, $delegate = null) {
-    $objType = $obj->getObjectType();
     $target = $delegate ?? $obj;
     $targetType = $target->getObjectType();
 

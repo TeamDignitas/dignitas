@@ -12,6 +12,7 @@ if ($saveButton) {
   $user->nickname = Request::get('nickname');
   $user->email = Request::get('email');
   $user->aboutMe = Request::get('aboutMe');
+  $newUserNotification = Request::has('newUserNotification');
   $password = Request::get('password');
   $password2 = Request::get('password2');
 
@@ -26,6 +27,12 @@ if ($saveButton) {
     $user->saveWithFile($fileData, $deleteImage);
     Action::create(Action::TYPE_UPDATE, $user);
 
+    if ($newUserNotification) {
+      Subscription::subscribeNewUser();
+    } else {
+      Subscription::unsubscribeNewUser();
+    }
+
     Snackbar::add(_('info-changes-saved'));
     Util::redirect(Router::userLink($user));
   } else {
@@ -33,10 +40,14 @@ if ($saveButton) {
       'errors' => $errors,
       'password' => $password,
       'password2' => $password2,
+      'newUserNotification' => $newUserNotification,
     ]);
   }
 } else {
   // first time loading the page
+  Smart::assign([
+    'newUserNotification' => Subscription::isSubscribedNewUser(),
+  ]);
 }
 
 Smart::addResources('easymde');
