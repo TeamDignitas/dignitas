@@ -6,7 +6,7 @@
 {* When we print the initial page we include this template. Subsequent *}
 {* refreshes via Ajax will include only pagination.tpl. *}
 <div
-  class="pagination-wrapper"
+  class="pagination-wrapper mt-3"
   data-url="{$url}"
   data-bs-target="{$target}">
 

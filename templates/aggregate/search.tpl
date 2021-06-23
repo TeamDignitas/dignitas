@@ -45,7 +45,7 @@
         <div id="results-entities" class="tab-pane fade show active" role="tabpanel" aria-labelledby="entities-tab">
           {include "bits/entityFilters.tpl" term=$query}
 
-          <div id="entity-list-wrapper" class="row mt-4">
+          <div id="entity-list-wrapper">
             {include "bits/entityList.tpl" entities=$results.entities}
           </div>
 
