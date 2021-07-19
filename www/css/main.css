@@ -60,7 +60,7 @@ blockquote {
     margin-top: 3px;
     padding: 1rem;
     position: fixed;
-    top: 55px;
+    top: 36px;
     transition: left 0.3s linear;
     width: 75%;
     z-index: 10;
