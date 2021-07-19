@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-06-23 16:56+0300\n"
-"PO-Revision-Date: 2021-06-23 16:56+0300\n"
+"POT-Creation-Date: 2021-07-19 12:13+0300\n"
+"PO-Revision-Date: 2021-07-19 12:14+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -673,7 +673,7 @@ msgstr "schimbă"
 msgid "link-log-out"
 msgstr "ieșire"
 
-#: templates/bits/notifications.tpl:41
+#: templates/bits/notifications.tpl:43
 msgid "info-notification-unsubscribe"
 msgstr "dezabonează-mă de la toate notificările pentru acest articol"
 
@@ -2144,6 +2144,10 @@ msgstr "răspuns acceptat ca demonstrație:"
 msgid "notification-answer-rejected"
 msgstr "răspuns respins ca demonstrație:"
 
+#: lib/model/Notification.php:50
+msgid "notification-user-registered"
+msgstr "utilizator nou înregistrat:"
+
 #: lib/model/Relation.php:32
 msgid "since"
 msgstr "începînd cu"
@@ -2601,67 +2605,67 @@ msgstr "Îți este interzisă adăugarea de afirmații."
 msgid "info-banned-edit-statement"
 msgstr "Îți este interzisă editarea de afirmații."
 
-#: lib/model/User.php:224 routes/auth/login.php:61
+#: lib/model/User.php:228 routes/auth/login.php:61
 #: routes/auth/lostPassword.php:49 routes/invite/add.php:42
 msgid "info-must-enter-email"
 msgstr "Te rugăm să introduci o adresă de e-mail."
 
-#: lib/model/User.php:229
+#: lib/model/User.php:233
 msgid "info-email-taken"
 msgstr "Această adresă de e-mail este deja folosită."
 
-#: lib/model/User.php:233 routes/auth/lostPassword.php:51
+#: lib/model/User.php:237 routes/auth/lostPassword.php:51
 #: routes/invite/add.php:44
 msgid "info-incorrect-email"
 msgstr "Adresa de e-mail pare incorectă."
 
-#: lib/model/User.php:243
+#: lib/model/User.php:247
 msgid "info-nickname-syntax"
 msgstr ""
 "Porecla trebuie să înceapă cu o literă sau cifră și să conțină 3-30 de "
 "litere, cifre și semne de punctuație dintre -_."
 
-#: lib/model/User.php:248
+#: lib/model/User.php:252
 msgid "info-nickname-taken"
 msgstr "Această poreclă este deja folosită."
 
-#: lib/model/User.php:257 routes/auth/login.php:65
+#: lib/model/User.php:261 routes/auth/login.php:65
 msgid "info-must-enter-password"
 msgstr "Te rugăm să introduci o parolă."
 
-#: lib/model/User.php:259
+#: lib/model/User.php:263
 msgid "info-must-enter-password-2"
 msgstr ""
 "Te rugăm să introduci parola de două ori pentru a preveni greșelile de "
 "tastare."
 
-#: lib/model/User.php:261
+#: lib/model/User.php:265
 msgid "info-password-mismatch"
 msgstr "Parolele nu coincid."
 
-#: lib/model/User.php:263
+#: lib/model/User.php:267
 msgid "info-password-length"
 msgstr "Parola trebuie să aibă cel puțin 8 caractere."
 
-#: lib/model/User.php:287
+#: lib/model/User.php:291
 #, php-format
 msgid "info-minimum-reputation-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru această acțiune."
 
-#: lib/model/User.php:301
+#: lib/model/User.php:305
 msgid "info-moderator-only"
 msgstr "Doar moderatorii pot face această acțiune."
 
-#: lib/model/User.php:319
+#: lib/model/User.php:323
 #, php-format
 msgid "info-minimum-reputation-flag-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a face raportări."
 
-#: lib/model/User.php:324
+#: lib/model/User.php:328
 msgid "info-banned-flag"
 msgstr "Îți este interzisă raportarea articolelor."
 
-#: lib/model/User.php:331
+#: lib/model/User.php:335
 #, php-format
 msgid "info-flag-limit-singular"
 msgid_plural "info-flag-limit-plural-%d"
@@ -2669,23 +2673,23 @@ msgstr[0] "Poți face cel mult o raportare la 24 de ore."
 msgstr[1] "Puteți face cel mult %d raportări la 24 de ore."
 msgstr[2] "Puteți face cel mult %d de raportări la 24 de ore."
 
-#: lib/model/User.php:338
+#: lib/model/User.php:342
 msgid "info-flag-no-object"
 msgstr "Nu pot face raportarea: articolul nu există."
 
-#: lib/model/User.php:343
+#: lib/model/User.php:347
 msgid "info-already-flagged"
 msgstr "Ai raportat deja acest articol."
 
-#: lib/model/User.php:371
+#: lib/model/User.php:375
 msgid "info-banned-comment"
 msgstr "Îți este interzisă adăugarea de comentarii."
 
-#: lib/model/User.php:376
+#: lib/model/User.php:380
 msgid "info-cannot-comment-draft"
 msgstr "Nu poți comenta la ciorne."
 
-#: lib/model/User.php:397
+#: lib/model/User.php:401
 #, php-format
 msgid "info-minimum-reputation-comment-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a comenta."
@@ -2931,7 +2935,7 @@ msgstr "Codul invitației este incorect."
 msgid "info-invite-already-accepted"
 msgstr "Această invitație a fost deja acceptată."
 
-#: routes/auth/register.php:94
+#: routes/auth/register.php:96
 msgid "info-register-manual"
 msgstr ""
 "Confirmă că ai citit manualul. El explică succint funcționarea și "
