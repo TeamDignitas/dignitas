@@ -6,7 +6,14 @@
   <div class="container my-5">
     <h1 class="mb-5">{cap}{t}title-dashboard{/t}{/cap}</h1>
 
-    <div class="row justify-content-center g-3">
+    <div class="row g-3">
+
+      {if User::hasDrafts()}
+        {include "bs/dashcard.tpl"
+          icon='insert_drive_file'
+          link=Router::link('aggregate/drafts')
+          text="{t}link-my-drafts{/t}"}
+      {/if}
 
       {if User::may(User::PRIV_ADD_STATEMENT)}
         {include "bs/dashcard.tpl"

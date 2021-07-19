@@ -34,6 +34,10 @@ class Router {
       'en_US.utf8' => 'dashboard',
       'ro_RO.utf8' => 'panou-control',
     ],
+    'aggregate/drafts' => [
+      'en_US.utf8' => 'my-drafts',
+      'ro_RO.utf8' => 'ciornele-mele',
+    ],
     'aggregate/home' => [
       'en_US.utf8' => 'home',
       'ro_RO.utf8' => 'acasa',

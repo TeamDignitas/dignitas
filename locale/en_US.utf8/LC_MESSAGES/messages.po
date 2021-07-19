@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-07-19 12:14+0300\n"
-"PO-Revision-Date: 2021-07-19 12:14+0300\n"
+"POT-Creation-Date: 2021-07-19 16:50+0300\n"
+"PO-Revision-Date: 2021-07-19 16:50+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -42,58 +42,84 @@ msgstr "contact us"
 msgid "title-dashboard"
 msgstr "dashboard"
 
-#: templates/aggregate/dashboard.tpl:15 templates/aggregate/index.tpl:30
+#: templates/aggregate/dashboard.tpl:15
+msgid "link-my-drafts"
+msgstr "my drafts"
+
+#: templates/aggregate/dashboard.tpl:22 templates/aggregate/index.tpl:30
 #: templates/bits/entity.tpl:117
 msgid "link-add-statement"
 msgstr "add a statement"
 
-#: templates/aggregate/dashboard.tpl:22 templates/aggregate/index.tpl:39
+#: templates/aggregate/dashboard.tpl:29 templates/aggregate/index.tpl:39
 msgid "link-add-entity"
 msgstr "add an author"
 
-#: templates/aggregate/dashboard.tpl:29
+#: templates/aggregate/dashboard.tpl:36
 msgid "link-domains"
 msgstr "domains"
 
-#: templates/aggregate/dashboard.tpl:34
+#: templates/aggregate/dashboard.tpl:41
 msgid "link-canned-responses"
 msgstr "canned responses"
 
-#: templates/aggregate/dashboard.tpl:39
+#: templates/aggregate/dashboard.tpl:46
 msgid "link-invites"
 msgstr "invites"
 
-#: templates/aggregate/dashboard.tpl:44
+#: templates/aggregate/dashboard.tpl:51
 msgid "link-entity-types"
 msgstr "author types"
 
-#: templates/aggregate/dashboard.tpl:49
+#: templates/aggregate/dashboard.tpl:56
 msgid "link-relation-types"
 msgstr "relationship types"
 
-#: templates/aggregate/dashboard.tpl:54
+#: templates/aggregate/dashboard.tpl:61
 msgid "link-static-resources"
 msgstr "static resources"
 
-#: templates/aggregate/dashboard.tpl:60
+#: templates/aggregate/dashboard.tpl:67
 msgid "link-tags"
 msgstr "tags"
 
-#: templates/aggregate/dashboard.tpl:65 templates/bits/regionAncestors.tpl:8
+#: templates/aggregate/dashboard.tpl:72 templates/bits/regionAncestors.tpl:8
 msgid "link-regions"
 msgstr "regions"
 
-#: templates/aggregate/dashboard.tpl:70
+#: templates/aggregate/dashboard.tpl:77
 msgid "title-review-queues"
 msgstr "review queues"
 
-#: templates/aggregate/dashboard.tpl:91
+#: templates/aggregate/dashboard.tpl:98
 msgid "title-reports"
 msgstr "reports in need of attention"
 
-#: templates/aggregate/dashboard.tpl:100
+#: templates/aggregate/dashboard.tpl:107
 msgid "link-verdict-report"
 msgstr "statements with unclear verdicts"
+
+#: templates/aggregate/drafts.tpl:3 templates/aggregate/drafts.tpl:7
+msgid "title-my-drafts"
+msgstr "my drafts"
+
+#: templates/aggregate/drafts.tpl:10 templates/entity/view.tpl:25
+#: templates/user/view.tpl:33
+msgid "label-statements"
+msgstr "statements"
+
+#: templates/aggregate/drafts.tpl:16 templates/user/view.tpl:35
+msgid "label-answers"
+msgstr "answers"
+
+#: templates/aggregate/drafts.tpl:27 templates/bits/editButton.tpl:10
+#: templates/cannedResponse/list.tpl:39 templates/domain/list.tpl:38
+#: templates/entityType/list.tpl:53 templates/help/categoryView.tpl:39
+#: templates/help/pageView.tpl:36 templates/region/view.tpl:15
+#: templates/relationType/list.tpl:42 templates/staticResource/list.tpl:44
+#: templates/tag/view.tpl:15 templates/user/view.tpl:94
+msgid "link-edit"
+msgstr "edit"
 
 #: templates/aggregate/index.tpl:17
 msgid "label-contribute-index"
@@ -138,7 +164,7 @@ msgid "title-edit-answer"
 msgstr "edit answer"
 
 #: templates/answer/edit.tpl:16 templates/auth/resetPassword.tpl:32
-#: templates/bits/commentForm.tpl:43 templates/bs/actions.tpl:12
+#: templates/bits/commentForm.tpl:43 templates/bs/actions.tpl:13
 msgid "link-save"
 msgstr "save"
 
@@ -181,7 +207,7 @@ msgstr "I forgot my password"
 msgid "label-remember-me"
 msgstr "Remember me for one year."
 
-#: templates/auth/login.tpl:53 templates/bits/navmenu.tpl:198
+#: templates/auth/login.tpl:53 templates/bits/navmenu.tpl:204
 msgid "link-log-in"
 msgstr "log in"
 
@@ -295,7 +321,7 @@ msgstr "permalink"
 
 #: templates/bits/answerEdit.tpl:24 templates/bits/statementFilters.tpl:50
 #: templates/statement/edit.tpl:159 lib/model/RevisionAnswer.php:15
-#: lib/model/RevisionStatement.php:22 lib/model/Statement.php:138
+#: lib/model/RevisionStatement.php:22 lib/model/Statement.php:139
 msgid "label-verdict"
 msgstr "verdict"
 
@@ -327,7 +353,7 @@ msgstr "permanent link to this comment"
 msgid "info-confirm-delete-comment"
 msgstr "Are you sure you want to delete this comment?"
 
-#: templates/bits/comment.tpl:49 templates/bs/actions.tpl:32
+#: templates/bits/comment.tpl:49 templates/bs/actions.tpl:33
 msgid "link-delete"
 msgstr "delete"
 
@@ -336,7 +362,7 @@ msgid "link-pick-canned-response"
 msgstr "canned responses"
 
 #: templates/bits/commentForm.tpl:38 templates/bits/flagModal.tpl:190
-#: templates/bs/actions.tpl:66 templates/cannedResponse/list.tpl:52
+#: templates/bs/actions.tpl:67 templates/cannedResponse/list.tpl:52
 #: templates/invite/add.tpl:23
 msgid "link-cancel"
 msgstr "cancel"
@@ -366,15 +392,6 @@ msgstr[1] "%1 identical lines skipped"
 #: templates/bits/draftIndicator.tpl:8
 msgid "label-draft"
 msgstr "draft"
-
-#: templates/bits/editButton.tpl:10 templates/cannedResponse/list.tpl:39
-#: templates/domain/list.tpl:38 templates/entityType/list.tpl:53
-#: templates/help/categoryView.tpl:39 templates/help/pageView.tpl:36
-#: templates/region/view.tpl:15 templates/relationType/list.tpl:42
-#: templates/staticResource/list.tpl:44 templates/tag/view.tpl:15
-#: templates/user/view.tpl:94
-msgid "link-edit"
-msgstr "edit"
 
 #: templates/bits/editButton.tpl:12
 msgid "link-suggest-edit"
@@ -443,7 +460,7 @@ msgstr "test user login"
 msgid "label-reputation"
 msgstr "reputation"
 
-#: templates/bits/fakeLogin.tpl:37 templates/bits/navmenu.tpl:174
+#: templates/bits/fakeLogin.tpl:37 templates/bits/navmenu.tpl:180
 #: templates/user/view.tpl:19
 msgid "label-moderator"
 msgstr "moderator"
@@ -643,27 +660,27 @@ msgstr "Dignitas logo"
 msgid "help-center"
 msgstr "help center"
 
-#: templates/bits/navmenu.tpl:118
+#: templates/bits/navmenu.tpl:116
 msgid "link-notifications"
 msgstr "notifications"
 
-#: templates/bits/navmenu.tpl:150
-msgid "link-my-profile"
-msgstr "my profile"
-
-#: templates/bits/navmenu.tpl:154
+#: templates/bits/navmenu.tpl:128
 msgid "link-dashboard"
 msgstr "dashboard"
 
 #: templates/bits/navmenu.tpl:160
+msgid "link-my-profile"
+msgstr "my profile"
+
+#: templates/bits/navmenu.tpl:166
 msgid "info-reputation-manual"
 msgstr "change reputation manually (will refresh the page)"
 
-#: templates/bits/navmenu.tpl:179
+#: templates/bits/navmenu.tpl:185
 msgid "link-change"
 msgstr "schimbă"
 
-#: templates/bits/navmenu.tpl:189
+#: templates/bits/navmenu.tpl:195
 msgid "link-log-out"
 msgstr "log out"
 
@@ -765,7 +782,7 @@ msgstr "visit the statement's page"
 msgid "statement-links"
 msgstr "sources"
 
-#: templates/bits/statement.tpl:53
+#: templates/bits/statement.tpl:55
 msgid "tooltip-downvote-statement-singular-%1"
 msgid_plural "tooltip-downvote-statement-plural-%1"
 msgstr[0] ""
@@ -775,31 +792,31 @@ msgstr[1] ""
 "Downvote poorly sourced and formatted statements. Downvoting costs %1 "
 "reputation points."
 
-#: templates/bits/statement.tpl:64
+#: templates/bits/statement.tpl:66
 msgid "tooltip-upvote-statement"
 msgstr ""
 "Upvote properly sourced and formatted statements. Do not vote the "
 "statement's truth value."
 
-#: templates/bits/statement.tpl:74
+#: templates/bits/statement.tpl:76
 msgid "link-statement-review-pending-edit"
 msgstr ""
 "This statement has a pending edit. You can <a href=\"%1\" class=\"alert-link"
 "\">review it</a>."
 
-#: templates/bits/statement.tpl:95
+#: templates/bits/statement.tpl:97
 msgid "title-context"
 msgstr "context"
 
-#: templates/bits/statement.tpl:101
+#: templates/bits/statement.tpl:103
 msgid "title-goal"
 msgstr "goal"
 
-#: templates/bits/statement.tpl:119
+#: templates/bits/statement.tpl:121
 msgid "info-tag-view-statements"
 msgstr "View all statements with this tag."
 
-#: templates/bits/statement.tpl:122 templates/review/view.tpl:89
+#: templates/bits/statement.tpl:124 templates/review/view.tpl:89
 msgid "title-added-by"
 msgstr "added by"
 
@@ -855,21 +872,21 @@ msgstr "stop watching this item"
 msgid "link-unsubscribe"
 msgstr "unwatch"
 
-#: templates/bs/actions.tpl:44
+#: templates/bs/actions.tpl:45
 msgid "link-reopen"
 msgstr "reopen"
 
-#: templates/bs/actions.tpl:55
+#: templates/bs/actions.tpl:56
 msgid "link-clone"
 msgstr "clone"
 
-#: templates/bs/actions.tpl:77
+#: templates/bs/actions.tpl:78
 msgid "tooltip-save-draft"
 msgstr ""
 "Save a private draft. You can edit the draft until you decide to publish it "
 "or delete it."
 
-#: templates/bs/actions.tpl:80
+#: templates/bs/actions.tpl:81
 msgid "link-save-draft"
 msgstr "save draft"
 
@@ -1098,10 +1115,6 @@ msgid "link-entity-review-pending-edit"
 msgstr ""
 "This author has a pending edit. You can <a href=\"%1\" class=\"alert-link"
 "\">review it</a>."
-
-#: templates/entity/view.tpl:25 templates/user/view.tpl:33
-msgid "label-statements"
-msgstr "statements"
 
 #: templates/entity/view.tpl:37 templates/statement/edit.tpl:124
 msgid "label-involvements"
@@ -1714,10 +1727,6 @@ msgstr "user"
 msgid "label-user"
 msgstr "user"
 
-#: templates/user/view.tpl:35
-msgid "label-answers"
-msgstr "answers"
-
 #: templates/user/view.tpl:37
 msgid "label-member-since"
 msgstr "member since"
@@ -1746,7 +1755,7 @@ msgstr "until"
 msgid "link-ban"
 msgstr "ban..."
 
-#: lib/Router.php:457
+#: lib/Router.php:461
 msgid "info-language-changed"
 msgstr ""
 "Interface language changed. Page contents (statements, answers etc.) are "
@@ -1919,12 +1928,12 @@ msgid "info-answer-by-owner"
 msgstr "by its author."
 
 #: lib/model/Answer.php:88 lib/model/Comment.php:62 lib/model/Entity.php:158
-#: lib/model/Statement.php:296
+#: lib/model/Statement.php:297
 msgid "info-by"
 msgstr "by"
 
 #: lib/model/Answer.php:89 lib/model/Comment.php:63 lib/model/Entity.php:159
-#: lib/model/Statement.php:297
+#: lib/model/Statement.php:298
 msgid "info-other-reason"
 msgstr "for other reasons."
 
@@ -2489,186 +2498,186 @@ msgstr "added mentions"
 msgid "label-deleted-involvements"
 msgstr "deleted mentions"
 
-#: lib/model/Statement.php:123
+#: lib/model/Statement.php:124
 msgid "statement-type-any"
 msgstr "any type"
 
-#: lib/model/Statement.php:124
+#: lib/model/Statement.php:125
 msgid "statement-type-claim"
 msgstr "claim"
 
-#: lib/model/Statement.php:125
+#: lib/model/Statement.php:126
 msgid "statement-type-flop"
 msgstr "flip-flop"
 
-#: lib/model/Statement.php:126
+#: lib/model/Statement.php:127
 msgid "statement-type-promise"
 msgstr "promise"
 
-#: lib/model/Statement.php:135
+#: lib/model/Statement.php:136
 msgid "label-claim-verdict"
 msgstr "claim verdict"
 
-#: lib/model/Statement.php:136
+#: lib/model/Statement.php:137
 msgid "label-flop-verdict"
 msgstr "flip-flop verdict"
 
-#: lib/model/Statement.php:137
+#: lib/model/Statement.php:138
 msgid "label-promise-verdict"
 msgstr "promise verdict"
 
-#: lib/model/Statement.php:273
+#: lib/model/Statement.php:274
 msgid "status-statement-duplicate"
 msgstr "duplicate"
 
-#: lib/model/Statement.php:275
+#: lib/model/Statement.php:276
 msgid "status-statement-closed"
 msgstr "closed"
 
-#: lib/model/Statement.php:276
+#: lib/model/Statement.php:277
 msgid "status-statement-deleted"
 msgstr "deleted"
 
-#: lib/model/Statement.php:285
+#: lib/model/Statement.php:286
 msgid "info-statement-closed"
 msgstr "This statement was closed"
 
-#: lib/model/Statement.php:286
+#: lib/model/Statement.php:287
 msgid "info-statement-deleted"
 msgstr "This statement was deleted"
 
-#: lib/model/Statement.php:289
+#: lib/model/Statement.php:290
 msgid "info-statement-spam"
 msgstr "because it is spam."
 
-#: lib/model/Statement.php:290
+#: lib/model/Statement.php:291
 msgid "info-statement-abuse"
 msgstr "because it is rude or abusive."
 
-#: lib/model/Statement.php:291
+#: lib/model/Statement.php:292
 msgid "info-statement-duplicate-of"
 msgstr "as a duplicate of the statement"
 
-#: lib/model/Statement.php:292
+#: lib/model/Statement.php:293
 msgid "info-statement-off-topic"
 msgstr "because it is off-topic."
 
-#: lib/model/Statement.php:293
+#: lib/model/Statement.php:294
 msgid "info-statement-unverifiable"
 msgstr "because it is unverifiable."
 
-#: lib/model/Statement.php:294
+#: lib/model/Statement.php:295
 msgid "info-statement-low-quality"
 msgstr "because it is low-quality."
 
-#: lib/model/Statement.php:295
+#: lib/model/Statement.php:296
 msgid "info-statement-by-owner"
 msgstr "by the user who added it."
 
-#: lib/model/Statement.php:351
+#: lib/model/Statement.php:354
 #, php-format
 msgid "info-minimum-reputation-add-statement-%s"
 msgstr "You need at least %s reputation to add statements."
 
-#: lib/model/Statement.php:359
+#: lib/model/Statement.php:362
 #, php-format
 msgid "info-minimum-reputation-edit-statement-%s"
 msgstr "You need at least %s reputation to edit statements."
 
-#: lib/model/Statement.php:365
+#: lib/model/Statement.php:368
 msgid "info-only-moderator-edit-statement-verdict"
 msgstr "This statement has a verdict. Only moderators can edit it directly."
 
-#: lib/model/Statement.php:369
+#: lib/model/Statement.php:372
 msgid "info-banned-add-statement"
 msgstr "You are banned from adding statements."
 
-#: lib/model/Statement.php:373
+#: lib/model/Statement.php:376
 msgid "info-banned-edit-statement"
 msgstr "You are banned from editing statements."
 
-#: lib/model/User.php:228 routes/auth/login.php:61
+#: lib/model/User.php:238 routes/auth/login.php:61
 #: routes/auth/lostPassword.php:49 routes/invite/add.php:42
 msgid "info-must-enter-email"
 msgstr "Please enter an email address."
 
-#: lib/model/User.php:233
+#: lib/model/User.php:243
 msgid "info-email-taken"
 msgstr "This email address is already taken."
 
-#: lib/model/User.php:237 routes/auth/lostPassword.php:51
+#: lib/model/User.php:247 routes/auth/lostPassword.php:51
 #: routes/invite/add.php:44
 msgid "info-incorrect-email"
 msgstr "This email address looks incorrect."
 
-#: lib/model/User.php:247
+#: lib/model/User.php:257
 msgid "info-nickname-syntax"
 msgstr ""
 "Your nickname must begin with a letter or digit and consist of 3 to 30 "
 "letters, digits and punctuation from among -_."
 
-#: lib/model/User.php:252
+#: lib/model/User.php:262
 msgid "info-nickname-taken"
 msgstr "This nickname is already taken."
 
-#: lib/model/User.php:261 routes/auth/login.php:65
+#: lib/model/User.php:271 routes/auth/login.php:65
 msgid "info-must-enter-password"
 msgstr "Please enter a password."
 
-#: lib/model/User.php:263
+#: lib/model/User.php:273
 msgid "info-must-enter-password-2"
 msgstr "Please enter your password twice to prevent typos."
 
-#: lib/model/User.php:265
+#: lib/model/User.php:275
 msgid "info-password-mismatch"
 msgstr "Passwords don't match."
 
-#: lib/model/User.php:267
+#: lib/model/User.php:277
 msgid "info-password-length"
 msgstr "Your password must be at least 8 characters long."
 
-#: lib/model/User.php:291
+#: lib/model/User.php:301
 #, php-format
 msgid "info-minimum-reputation-%s"
 msgstr "You need at least %s reputation to perform this action."
 
-#: lib/model/User.php:305
+#: lib/model/User.php:315
 msgid "info-moderator-only"
 msgstr "Only moderators may perform this action."
 
-#: lib/model/User.php:323
+#: lib/model/User.php:333
 #, php-format
 msgid "info-minimum-reputation-flag-%s"
 msgstr "You need at least %s reputation to flag."
 
-#: lib/model/User.php:328
+#: lib/model/User.php:338
 msgid "info-banned-flag"
 msgstr "You are banned from flagging."
 
-#: lib/model/User.php:335
+#: lib/model/User.php:345
 #, php-format
 msgid "info-flag-limit-singular"
 msgid_plural "info-flag-limit-plural-%d"
 msgstr[0] "You can use at most one flag every 24 hours."
 msgstr[1] "You can use at most %d flags every 24 hours."
 
-#: lib/model/User.php:342
+#: lib/model/User.php:352
 msgid "info-flag-no-object"
 msgstr "Cannot flag: object does not exist."
 
-#: lib/model/User.php:347
+#: lib/model/User.php:357
 msgid "info-already-flagged"
 msgstr "You already have a pending flag for this object."
 
-#: lib/model/User.php:375
+#: lib/model/User.php:385
 msgid "info-banned-comment"
 msgstr "You are banned from commenting."
 
-#: lib/model/User.php:380
+#: lib/model/User.php:390
 msgid "info-cannot-comment-draft"
 msgstr "You cannot comment on a draft."
 
-#: lib/model/User.php:401
+#: lib/model/User.php:411
 #, php-format
 msgid "info-minimum-reputation-comment-%s"
 msgstr "You need at least %s reputation to comment."
@@ -2816,7 +2825,7 @@ msgid "info-confirm-answer-reopened"
 msgstr "Answer reopened."
 
 #: routes/answer/edit.php:95 routes/entity/edit.php:99
-#: routes/statement/edit.php:112
+#: routes/statement/edit.php:135
 msgid "info-changes-queued"
 msgstr "Your changes were placed in the review queue."
 
@@ -3028,7 +3037,7 @@ msgid "info-entity-updated"
 msgstr "Author updated."
 
 #: routes/entity/edit.php:107 routes/help/categoryEdit.php:63
-#: routes/help/pageEdit.php:50 routes/statement/edit.php:119
+#: routes/help/pageEdit.php:50 routes/statement/edit.php:142
 msgid "info-validation-error"
 msgstr "There are some errors in the data. Please fix them."
 
@@ -3287,65 +3296,69 @@ msgstr ""
 "This review is now complete. We have redirected you to the next review in "
 "this queue."
 
-#: routes/statement/edit.php:20
+#: routes/statement/edit.php:21
 msgid "info-cannot-delete-statement"
 msgstr "You cannot delete this answer."
 
-#: routes/statement/edit.php:27
+#: routes/statement/edit.php:25
+msgid "info-confirm-statement-draft-deleted"
+msgstr "Draft deleted."
+
+#: routes/statement/edit.php:31
 msgid "info-confirm-statement-deleted"
 msgstr "Statement deleted."
 
-#: routes/statement/edit.php:33
+#: routes/statement/edit.php:38
 msgid "info-cannot-reopen-statement"
 msgstr "You cannot reopen this statement."
 
-#: routes/statement/edit.php:42
+#: routes/statement/edit.php:47
 msgid "info-confirm-statement-reopened."
 msgstr "Statement reopened."
 
-#: routes/statement/edit.php:108
+#: routes/statement/edit.php:131
 msgid "info-statement-added"
 msgstr "Statement added."
 
-#: routes/statement/edit.php:114
+#: routes/statement/edit.php:137
 msgid "info-statement-updated"
 msgstr "Statement updated."
 
-#: routes/statement/edit.php:139 routes/statement/edit.php:179
-#: routes/statement/edit.php:191
+#: routes/statement/edit.php:162 routes/statement/edit.php:202
+#: routes/statement/edit.php:214
 #, php-format
 msgid "info-field-length-limit-%d"
 msgstr "This field can be at most %d characters long."
 
-#: routes/statement/edit.php:171
+#: routes/statement/edit.php:194
 msgid "info-must-enter-statement-entity"
 msgstr "Please enter an author."
 
-#: routes/statement/edit.php:175
+#: routes/statement/edit.php:198
 msgid "info-must-enter-statement-summary"
 msgstr "Please enter the statement summary."
 
-#: routes/statement/edit.php:183
+#: routes/statement/edit.php:206
 msgid "info-must-enter-statement-context"
 msgstr "Please enter the statement context."
 
-#: routes/statement/edit.php:187
+#: routes/statement/edit.php:210
 msgid "info-must-enter-statement-goal"
 msgstr "Please enter the statement goal."
 
-#: routes/statement/edit.php:195
+#: routes/statement/edit.php:218
 msgid "info-must-enter-statement-date"
 msgstr "Please enter a date."
 
-#: routes/statement/edit.php:197
+#: routes/statement/edit.php:220
 msgid "info-date-not-future"
 msgstr "This date may not be in the future."
 
-#: routes/statement/edit.php:207
+#: routes/statement/edit.php:230
 msgid "info-invalid-statement-links"
 msgstr "Some source URLs are invalid."
 
-#: routes/statement/edit.php:213
+#: routes/statement/edit.php:236
 msgid "info-mismatch-statement-type-verdict"
 msgstr ""
 "The verdict does not match the statement type. We reset it to \"none\" "

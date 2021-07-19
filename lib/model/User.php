@@ -206,6 +206,16 @@ class User extends Proto {
   }
 
   /**
+   * Returns true iff the active user has draft statements or answers.
+   */
+  static function hasDrafts() {
+    $userId = self::getActiveId();
+    return
+      Statement::count_by_userId_status($userId, Ct::STATUS_DRAFT) +
+      Answer::count_by_userId_status($userId, Ct::STATUS_DRAFT);
+  }
+
+  /**
    * Chooses a very high ID for a fake user. Using IDs outside the normal
    * space helps avoid ID conflicts during database imports, which could cause
    * confusing behavior. For example, if a developer uses a fake login with an
