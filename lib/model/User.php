@@ -119,6 +119,10 @@ class User extends Proto {
     $this->setReputation($this->getReputation() + $delta);
   }
 
+  function getViewUrl() {
+    return Router::userLink($this);
+  }
+
   function getNumPendingEdits() {
     return UserExt::getField($this->id, 'numPendingEdits');
   }
@@ -426,6 +430,15 @@ class User extends Proto {
 
   function __toString() {
     return $this->nickname;
+  }
+
+  /**
+   * Notify moderators who are listening for new user registrations. To be
+   * called when the user is created.
+   */
+  function notify() {
+    $stub = Model::factory('User')->create();
+    Notification::notify($stub, Notification::TYPE_NEW_USER, $this);
   }
 
 }

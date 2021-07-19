@@ -22,6 +22,8 @@
             {$text=$target->summary}
           {elseif $target->getObjectType() == Proto::TYPE_ENTITY}
             {$text=$target->name}
+          {elseif $target->getObjectType() == Proto::TYPE_USER}
+            {$text=$target|escape}
           {else}
             {$text=$target->contents}
           {/if}

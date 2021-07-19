@@ -46,6 +46,8 @@ class Notification extends Precursor {
         return _('notification-answer-accepted');
       case self::TYPE_ANSWER_REJECTED:
         return _('notification-answer-rejected');
+      case self::TYPE_NEW_USER:
+        return _('notification-user-registered');
     }
   }
 
@@ -57,6 +59,10 @@ class Notification extends Precursor {
    * Rationale: When issuing notifications of a new answer to a statement, we
    * should link to the answer, not to the statement. Linking to the statement
    * would be useless when there are 20 answers already.
+   *
+   * Also, when a new user registers, we notify moderators. But the
+   * subscriptions in that case are for null objectIds (they are not connected
+   * to any one user), so we pass the new user in $delegate.
    */
   static function notify($obj, $type, $delegate = null) {
     $target = $delegate ?? $obj;
@@ -68,7 +74,7 @@ class Notification extends Precursor {
       ->distinct()
       ->where_not_equal('userId', User::getActiveId())
       ->where('objectType', $obj->getObjectType())
-      ->where('objectId', $obj->id)
+      ->where('objectId', (int)$obj->id)
       ->where('active', true)
       ->where_raw("typeMask & {$type} != 0")
       ->find_array();
