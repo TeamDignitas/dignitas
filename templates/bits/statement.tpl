@@ -47,7 +47,9 @@
 <hr class="row title-divider mt-0"/>
 
 <article class="row mt-5 me-0">
-  {if $voteBox}
+  {if $statement->status == Ct::STATUS_DRAFT}
+    {include "bits/draftIndicator.tpl"}
+  {elseif $voteBox}
     {capture "tooltipDownvote"}
       {t
         count=-Config::REP_DOWNVOTE_STATEMENT

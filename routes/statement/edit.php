@@ -4,6 +4,7 @@ $id = Request::get('id');
 // prepopulated so we can quickly add statements from the entity page
 $entityId = Request::get('entityId');
 $saveButton = Request::has('saveButton');
+$saveDraftButton = Request::has('saveDraftButton');
 $deleteButton = Request::has('deleteButton');
 $reopenButton = Request::has('reopenButton');
 $extensionSubmit = Request::has('extensionSubmit');
@@ -19,12 +20,16 @@ if ($deleteButton) {
   if (!$statement->isDeletable()) {
     Snackbar::add(_('info-cannot-delete-statement'));
     Util::redirectToSelf();
+  } else if ($statement->status == Ct::STATUS_DRAFT) {
+    $statement->purge();
+    Snackbar::add(_('info-confirm-statement-draft-deleted'));
+  } else {
+    $statement->markDeleted(Ct::REASON_BY_USER);
+    $statement->subscribe();
+    $statement->notify();
+    Action::create(Action::TYPE_DELETE, $statement);
+    Snackbar::add(_('info-confirm-statement-deleted'));
   }
-  $statement->markDeleted(Ct::REASON_BY_USER);
-  $statement->subscribe();
-  $statement->notify();
-  Action::create(Action::TYPE_DELETE, $statement);
-  Snackbar::add(_('info-confirm-statement-deleted'));
   Util::redirectToHome();
 }
 
@@ -46,7 +51,9 @@ if ($reopenButton) {
 
 $statement->enforceEditPrivileges();
 
-if ($saveButton) {
+if ($saveButton || $saveDraftButton) {
+  $publicized = false; // true if the statement was a draft and is now publicized
+
   $statement->entityId = $entityId;
   $statement->regionId = Request::get('regionId');
   $statement->summary = Request::get('summary');
@@ -61,6 +68,12 @@ if ($saveButton) {
     $statement->updateVerdictDate($origVerdict);
   }
 
+  if ($saveButton && ($statement->status == Ct::STATUS_DRAFT)) {
+    $publicized = true;
+    $statement->status = Ct::STATUS_ACTIVE;
+    $statement->createDate = time(); // make it look like $statement was just created
+  }
+
   $links = Link::build(
     Request::getArray('linkIds'),
     Request::getArray('linkUrls'));
@@ -70,39 +83,49 @@ if ($saveButton) {
 
   $errors = validate($statement, $links);
   if (empty($errors)) {
-    $originalId = $statement->id;
+    // This will trigger the new user review when the answer is published, not
+    // while it is a draft. Also, the action logged will be a create, not an
+    // update.
+    $originalId = $publicized ? null : $statement->id;
     $statement = $statement->maybeClone();
     $statement->save();
-    $statement->subscribe();
-    $statement->notify();
-    Action::createUpdateAction($statement, $originalId);
 
-    if (!$originalId) {
-      Review::checkNewUser($statement);
+    if ($statement->status != Ct::STATUS_DRAFT) {
+      if ($publicized) {
+        $statement->deleteDraftRevisions();
+      }
+      $statement->subscribe();
+      $statement->notify();
+      Action::createUpdateAction($statement, $originalId);
+
+      if (!$originalId) {
+        Review::checkNewUser($statement);
+      }
+      Review::checkRecentlyClosedDeleted($statement);
+
+      // grant verdict reputation
+      if (User::isModerator()) {
+        $hadVerdict = ($origVerdict != Statement::VERDICT_NONE);
+        $hasVerdict = ($statement->verdict != Statement::VERDICT_NONE);
+        if ($hadVerdict ^ $hasVerdict) {
+          $u = User::get_by_id($statement->userId);
+          $sign = $hasVerdict ? +1 : -1;
+          $u->grantReputation($sign * Config::REP_VERDICT);
+        }
+      }
+
+      if ($origType != $statement->type) {
+        $answers = Answer::get_all_by_statementId($statement->id);
+        foreach ($answers as $answer) {
+          $answer->verdict = Statement::VERDICT_NONE;
+          $answer->save();
+        }
+      }
     }
-    Review::checkRecentlyClosedDeleted($statement);
+
     Link::update($statement, $links);
     ObjectTag::update($statement, $tagIds);
     Involvement::updateDependants($involvements, $statement, 'statementId', 'rank');
-
-    // grant verdict reputation
-    if (User::isModerator()) {
-      $hadVerdict = ($origVerdict != Statement::VERDICT_NONE);
-      $hasVerdict = ($statement->verdict != Statement::VERDICT_NONE);
-      if ($hadVerdict ^ $hasVerdict) {
-        $u = User::get_by_id($statement->userId);
-        $sign = $hasVerdict ? +1 : -1;
-        $u->grantReputation($sign * Config::REP_VERDICT);
-      }
-    }
-
-    if ($origType != $statement->type) {
-      $answers = Answer::get_all_by_statementId($statement->id);
-      foreach ($answers as $answer) {
-        $answer->verdict = Statement::VERDICT_NONE;
-        $answer->save();
-      }
-    }
 
     if (!$originalId) {
       Snackbar::add(_('info-statement-added'));

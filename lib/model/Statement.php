@@ -111,6 +111,7 @@ class Statement extends Proto {
     $s->entityId = $entityId;
     $s->verdict = self::VERDICT_NONE;
     $s->verdictDate = time();
+    $s->status = Ct::STATUS_DRAFT;
     return $s;
   }
 
@@ -317,7 +318,9 @@ class Statement extends Proto {
    * Keep this in sync with isViewable().
    */
   static function filterViewable(ORMWrapper $query) {
-    $query = $query->where_not_equal('status', Ct::STATUS_PENDING_EDIT);
+    $query = $query->where_not_in(
+      'status',
+      [ Ct::STATUS_PENDING_EDIT, Ct::STATUS_DRAFT ]);
 
     if (!User::may(User::PRIV_DELETE_STATEMENT)) { // unprivileged user
       $query = $query->where_raw(
@@ -404,7 +407,8 @@ class Statement extends Proto {
   function isDeletable() {
     if (!$this->id) {
       return false; // not on the add statement page
-    } else if (in_array($this->status, [Ct::STATUS_DELETED, Ct::STATUS_PENDING_EDIT])) {
+    } else if (in_array($this->status,
+                        [Ct::STATUS_DELETED, Ct::STATUS_PENDING_EDIT, Ct::STATUS_DRAFT])) {
       return false; // already deleted or pending edit
     } else if (($this->verdict != self::VERDICT_NONE) && !User::isModerator()) {
       return false; // only moderators can delete statements with verdicts
@@ -479,7 +483,7 @@ class Statement extends Proto {
   }
 
   function delete() {
-    if ($this->status != Ct::STATUS_PENDING_EDIT) {
+    if (!in_array($this->status, [ Ct::STATUS_PENDING_EDIT, Ct::STATUS_DRAFT ])) {
       throw new Exception('Statements should never be deleted at the DB level.');
     }
 
@@ -492,6 +496,17 @@ class Statement extends Proto {
     StatementExt::delete_all_by_statementId($this->id);
 
     parent::delete();
+  }
+
+  /**
+   * Deletes the statement from the database, including its revisions. Call
+   * for drafts only!
+   */
+  function purge() {
+    $this->delete();
+    Model::factory('RevisionStatement')
+      ->where('id', $this->id)
+      ->delete_many();
   }
 
   /**

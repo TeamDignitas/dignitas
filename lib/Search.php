@@ -121,7 +121,7 @@ class Search {
     $query = Model::factory('Statement')
       ->table_alias('s')
       ->select('s.*')
-      ->where_not_equal('s.status', Ct::STATUS_PENDING_EDIT);
+      ->where_not_in('s.status', [ Ct::STATUS_PENDING_EDIT, Ct::STATUS_DRAFT ]);
     if (!User::may(User::PRIV_DELETE_STATEMENT)) {
       $query = $query->where_not_equal('s.status', Ct::STATUS_DELETED);
     }

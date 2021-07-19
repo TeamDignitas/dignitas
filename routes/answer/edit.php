@@ -78,7 +78,7 @@ if ($saveButton || $saveDraftButton) {
 
     if ($answer->status != Ct::STATUS_DRAFT) {
       if ($publicized) {
-        RevisionAnswer::deleteDraftRevisions($answer);
+        $answer->deleteDraftRevisions();
       }
       $answer->subscribe();
       $answer->notify();
