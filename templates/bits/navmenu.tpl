@@ -109,16 +109,26 @@
 
         {$u=User::getActive()}
         {if $u}
-          {$notCount=$u->countNotifications()}
-
           <li class="nav-item">
             <a
               class="nav-link py-1"
               href="{Router::link('notification/view')}"
               title="{t}link-notifications{/t}">
 
-              <span class="{if $notCount}text-danger{/if}">
+              <span class="{if $u->countNotifications()}text-danger{/if}">
                 {include "bits/icon.tpl" i=notifications}
+              </span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a
+              class="nav-link py-1"
+              href="{Router::link('aggregate/dashboard')}"
+              title="{t}link-dashboard{/t}">
+
+              <span class="{if $u->countAvailableReviews()}text-danger{/if}">
+                {include "bits/icon.tpl" i=inventory}
               </span>
             </a>
           </li>
@@ -148,10 +158,6 @@
               <a class="dropdown-item py-1" href="{Router::userLink($u)}">
                 {include "bits/icon.tpl" i=person}
                 {t}link-my-profile{/t}
-              </a>
-              <a class="dropdown-item py-1" href="{Router::link('aggregate/dashboard')}">
-                {include "bits/icon.tpl" i=inventory}
-                {t}link-dashboard{/t}
               </a>
               {if Config::DEVELOPMENT_MODE}
                 <div class="dropdown-divider"></div>

@@ -415,6 +415,28 @@ class User extends Proto {
     return Notification::count_by_userId_seen($this->id, false);
   }
 
+  function countAvailableReviews() {
+    if (!User::may(User::PRIV_REVIEW)) {
+      return 0;
+    }
+
+    $reviews = Model::factory('Review')
+      ->table_alias('r')
+      ->select('r.id')
+      ->distinct()
+      ->raw_join(
+        'left join review_log',
+        'r.id = rl.reviewId and rl.userId = ?',
+        'rl',
+        [User::getActiveId()])
+      ->where('r.status', Review::STATUS_PENDING)
+      ->where_null('rl.id');
+    if (!User::isModerator()) {
+      $reviews = $reviews->where('moderator', false);
+    }
+    return $reviews->count();
+  }
+
   /**
    * Returns true iff the an active user needs a snackbar after voting.
    * @return boolean
