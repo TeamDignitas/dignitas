@@ -11,8 +11,12 @@ $user = User::getActive();
 
 if ($not && $user && $user->id == $not->userId) {
 
-  $subs = Subscription::get_all_by_userId_objectType_objectId_active(
-    $not->userId, $not->objectType, $not->objectId, true);
+  $subs = Model::factory('Subscription')
+    ->where('userId', $not->userId)
+    ->where('objectType', $not->objectType)
+    ->where_in('objectId', [ 0, $not->objectId ])
+    ->where('active', true)
+    ->find_many();
 
   foreach ($subs as $sub) {
     $sub->active = false;

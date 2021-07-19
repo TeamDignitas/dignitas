@@ -41,6 +41,8 @@ class Subscription extends Precursor {
   static function subscribeNewUser() {
     if (User::isModerator()) {
       $stub = Model::factory('User')->create();
+      // clean up any inactive subscriptions
+      self::unsubscribeNewUser();
       self::subscribe($stub, null, Notification::TYPE_NEW_USER);
     }
   }
@@ -61,10 +63,11 @@ class Subscription extends Precursor {
    * notifications about new users being created.
    */
   static function isSubscribedNewUser() {
-    $s = Subscription::get_by_userId_objectType_objectId(
+    $s = Subscription::get_by_userId_objectType_objectId_active(
       User::getActiveId(),
       Proto::TYPE_USER,
-      0);
+      0,
+      true);
     return User::isModerator() && ($s != null);
   }
 
