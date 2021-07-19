@@ -8,6 +8,7 @@
 {$reopenButton=$reopenButton|default:false}
 {$reopenButtonConfirm=$reopenButtonConfirm|default:''}
 {$saveButton=$saveButton|default:true}
+{* $saveButtonClass will be ignored if $saveDraftButton is set *}
 {$saveButtonClass=$saveButtonClass|default:'btn-primary'}
 {$saveButtonText=$saveButtonText|default:"{t}link-save{/t}"}
 {$saveDraftButton=$saveDraftButton|default:false}
@@ -71,7 +72,7 @@
   {if $saveDraftButton}
     <div class="{$colDef}">
       <button
-        class="{$btnDef} btn-outline-secondary"
+        class="{$btnDef} btn-primary"
         data-bs-toggle="tooltip"
         name="saveDraftButton"
         title="{t}tooltip-save-draft{/t}"
@@ -85,7 +86,7 @@
   {if $saveButton}
     <div class="{$colDef}">
       <button
-        class="{$btnDef} {$saveButtonClass}"
+        class="{$btnDef} {if $saveDraftButton}btn-outline-secondary{else}{$saveButtonClass}{/if}"
         name="saveButton"
         type="submit">
         {include "bits/icon.tpl" i=save}
