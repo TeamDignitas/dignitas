@@ -48,6 +48,8 @@ if ($submitButton) {
     $user->save();
     $user->setReputation(0);
 
+    $user->notify();
+
     // invalidate this invite
     if ($invite) {
       $invite->acceptedBy($user);
