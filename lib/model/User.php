@@ -27,7 +27,6 @@ class User extends Proto {
 
   const PRIV_COMMENT = 50;
 
-  // applicable to tags and regions
   const PRIV_ADD_TAG = 1500;
   const PRIV_EDIT_TAG = 1500;
   const PRIV_DELETE_TAG = 5000;

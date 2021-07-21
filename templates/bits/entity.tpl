@@ -67,7 +67,7 @@
 
     {if $entity->regionId}
       <h6 class="fw-bold capitalize-first-word mt-4">{t}title-region{/t}</h6>
-      {include "bits/regionAncestors.tpl" region=$entity->getRegion() link=true}
+      {include "bits/regionAncestors.tpl" region=$entity->getRegion()}
     {/if}
 
     {include "bits/loyalty.tpl" data=$entity->getLoyalties()}

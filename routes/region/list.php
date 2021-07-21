@@ -1,5 +1,7 @@
 <?php
 
+User::enforceModerator();
+
 $saveButton = Request::has('saveButton');
 
 $maxDepth = Region::getMaxDepth();

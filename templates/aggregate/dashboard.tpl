@@ -59,17 +59,17 @@
           icon='integration_instructions'
           link=Router::link('staticResource/list')
           text="{t}link-static-resources{/t}"}
+
+        {include "bs/dashcard.tpl"
+          icon='map'
+          link=Router::link('region/list')
+          text="{t}link-regions{/t}"}
       {/if}
 
       {include "bs/dashcard.tpl"
         icon='local_offer'
         link=Router::link('tag/list')
         text="{t}link-tags{/t}"}
-
-      {include "bs/dashcard.tpl"
-        icon='map'
-        link=Router::link('region/list')
-        text="{t}link-regions{/t}"}
 
     </div>
 

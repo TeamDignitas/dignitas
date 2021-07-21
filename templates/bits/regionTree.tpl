@@ -3,8 +3,8 @@
   <ul>
     {foreach $regions as $r}
       <li>
-        {include "bits/region.tpl" link=$link}
-        {include "bits/regionTree.tpl" regions=$r->children link=$link}
+        {include "bits/region.tpl"}
+        {include "bits/regionTree.tpl" regions=$r->children}
       </li>
     {/foreach}
   </ul>

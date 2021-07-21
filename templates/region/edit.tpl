@@ -67,7 +67,7 @@
 
       {foreach $children as $c}
         <div>
-          {include "bits/region.tpl" r=$c link=true}
+          {include "bits/region.tpl" r=$c}
         </div>
       {/foreach}
     {/if}
@@ -77,7 +77,7 @@
 
       {foreach $homonyms as $h}
         <div>
-          {include "bits/regionAncestors.tpl" region=$h link=true}
+          {include "bits/regionAncestors.tpl" region=$h}
         </div>
       {/foreach}
     {/if}

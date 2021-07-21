@@ -104,8 +104,7 @@ class Region extends Proto {
   function isDeletable() {
     return
       $this->id &&
-      !Ban::exists(Ban::TYPE_TAG) &&
-      User::may(User::PRIV_DELETE_TAG);
+      User::isModerator();
   }
 
   function delete() {

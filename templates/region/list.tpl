@@ -6,15 +6,13 @@
   <div class="container my-5">
     <h1 class="mb-4">{cap}{t}title-regions{/t}{/cap}</h1>
 
-    {if User::may(User::PRIV_ADD_TAG)}
-      <a class="btn btn-sm btn-primary col-12 col-md-3" href="{Router::link('region/edit')}">
-        {include "bits/icon.tpl" i=add_circle}
-        {t}link-add-region{/t}
-      </a>
-    {/if}
+    <a class="btn btn-sm btn-primary col-12 col-md-3" href="{Router::link('region/edit')}">
+      {include "bits/icon.tpl" i=add_circle}
+      {t}link-add-region{/t}
+    </a>
 
     <div id="region-tree" class="mt-4">
-      {include "bits/regionTree.tpl" link=User::may(User::PRIV_EDIT_TAG)}
+      {include "bits/regionTree.tpl"}
     </div>
 
     {if $maxDepth !== null}

@@ -2,6 +2,8 @@
 
 const ENTITY_LIMIT = 10;
 
+User::enforceModerator();
+
 $id = Request::get('id');
 $saveButton = Request::has('saveButton');
 $deleteButton = Request::has('deleteButton');
@@ -31,8 +33,6 @@ if ($deleteButton) {
     Util::redirect("/{$region->id}");
   }
 }
-
-User::enforce($region->id ? User::PRIV_EDIT_TAG : User::PRIV_ADD_TAG);
 
 if (Ban::exists(Ban::TYPE_TAG)) {
   Snackbar::add(_('info-banned-region'));

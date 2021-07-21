@@ -74,7 +74,7 @@
       {if count($results.regions)}
         <div id="results-regions" class="tab-pane fade" role="tabpanel" aria-labelledby="regions-tab">
           {foreach $results.regions as $r}
-            {include "bits/regionAncestors.tpl" region=$r link=true}
+            {include "bits/regionAncestors.tpl" region=$r}
           {/foreach}
         </div>
       {/if}
