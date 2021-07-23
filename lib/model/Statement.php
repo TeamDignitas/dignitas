@@ -584,7 +584,7 @@ class Statement extends Proto {
     $haveVerdict = Model::factory('Statement')
       ->select('id')
       ->where('status', Ct::STATUS_ACTIVE)
-      ->where_not_equal('verdict', self::VERDICT_NONE)
+      ->where_not_in('verdict', [ self::VERDICT_NONE, self::VERDICT_UNDECIDABLE ])
       ->find_array();
     $haveVerdict = array_column($haveVerdict, 'id');
 
