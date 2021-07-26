@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-07-19 16:49+0300\n"
-"PO-Revision-Date: 2021-07-19 16:50+0300\n"
+"POT-Creation-Date: 2021-07-26 11:09+0300\n"
+"PO-Revision-Date: 2021-07-26 11:12+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -80,13 +80,13 @@ msgstr "tipuri de relații"
 msgid "link-static-resources"
 msgstr "resurse statice"
 
-#: templates/aggregate/dashboard.tpl:67
-msgid "link-tags"
-msgstr "etichete"
-
-#: templates/aggregate/dashboard.tpl:72 templates/bits/regionAncestors.tpl:8
+#: templates/aggregate/dashboard.tpl:66 templates/bits/regionAncestors.tpl:7
 msgid "link-regions"
 msgstr "regiuni"
+
+#: templates/aggregate/dashboard.tpl:72
+msgid "link-tags"
+msgstr "etichete"
 
 #: templates/aggregate/dashboard.tpl:77
 msgid "title-review-queues"
@@ -325,7 +325,7 @@ msgstr "legătură permanentă"
 
 #: templates/bits/answerEdit.tpl:24 templates/bits/statementFilters.tpl:50
 #: templates/statement/edit.tpl:159 lib/model/RevisionAnswer.php:15
-#: lib/model/RevisionStatement.php:22 lib/model/Statement.php:139
+#: lib/model/RevisionStatement.php:22 lib/model/Statement.php:140
 msgid "label-verdict"
 msgstr "verdict"
 
@@ -753,11 +753,11 @@ msgstr ""
 "Am înregistrat votul tău negativ. Ai pierdut un punct de reputație. Apreciem "
 "însă implicarea ta."
 
-#: templates/bits/scoreAndVote.tpl:26 lib/model/Answer.php:66
+#: templates/bits/scoreAndVote.tpl:26 lib/model/Answer.php:67
 msgid "info-confirm-accept"
 msgstr "Răspuns acceptat ca demonstrație."
 
-#: templates/bits/scoreAndVote.tpl:29 lib/model/Answer.php:66
+#: templates/bits/scoreAndVote.tpl:29 lib/model/Answer.php:67
 msgid "info-confirm-unaccept"
 msgstr "Răspuns respins ca demonstrație."
 
@@ -899,6 +899,12 @@ msgstr ""
 #: templates/bs/actions.tpl:81
 msgid "link-save-draft"
 msgstr "salvează ciornă"
+
+#: templates/bs/actions.tpl:90
+msgid "info-confirm-publish"
+msgstr ""
+"Confirmi publicarea articolului? El va deveni vizibil pentru toți "
+"utilizatorii."
 
 #: templates/cannedResponse/edit.tpl:3 templates/cannedResponse/edit.tpl:7
 msgid "title-edit-canned-response"
@@ -1288,7 +1294,7 @@ msgstr "regiunea-părinte"
 msgid "info-confirm-delete-region"
 msgstr "Confirmi ștergerea acestei regiuni?"
 
-#: templates/region/edit.tpl:61 routes/region/edit.php:30
+#: templates/region/edit.tpl:61 routes/region/edit.php:32
 msgid "info-cannot-delete-region"
 msgstr ""
 "Nu pot șterge regiuni deoarece (1) are descendenți sau (2) este folosită."
@@ -1301,15 +1307,15 @@ msgstr "descendenți direcți"
 msgid "title-duplicate-regions"
 msgstr "regiuni cu același nume"
 
-#: templates/region/list.tpl:12
+#: templates/region/list.tpl:11
 msgid "link-add-region"
 msgstr "adaugă o regiune"
 
-#: templates/region/list.tpl:21
+#: templates/region/list.tpl:19
 msgid "title-region-nomenclature"
 msgstr "nomenclatura regiunilor"
 
-#: templates/region/list.tpl:26
+#: templates/region/list.tpl:24
 msgid "info-region-depth"
 msgstr "nivelul"
 
@@ -1916,61 +1922,61 @@ msgstr "a votat pentru a nu redeschide"
 msgid "action-retracted-flag"
 msgstr "și-a retras raportarea pentru"
 
-#: lib/model/Answer.php:80
+#: lib/model/Answer.php:81
 msgid "info-answer-deleted"
 msgstr "Acest răspuns a fost șters"
 
-#: lib/model/Answer.php:83
+#: lib/model/Answer.php:84
 msgid "info-answer-spam"
 msgstr "deoarece este spam."
 
-#: lib/model/Answer.php:84
+#: lib/model/Answer.php:85
 msgid "info-answer-abuse"
 msgstr "deoarece conține insulte sau abuzuri."
 
-#: lib/model/Answer.php:85
+#: lib/model/Answer.php:86
 msgid "info-answer-off-topic"
 msgstr "deoarece este pe lîngă subiect."
 
-#: lib/model/Answer.php:86
+#: lib/model/Answer.php:87
 msgid "info-answer-low-quality"
 msgstr "deoarece este de slabă calitate."
 
-#: lib/model/Answer.php:87
+#: lib/model/Answer.php:88
 msgid "info-answer-by-owner"
 msgstr "de către autorul său."
 
-#: lib/model/Answer.php:88 lib/model/Comment.php:62 lib/model/Entity.php:158
-#: lib/model/Statement.php:297
+#: lib/model/Answer.php:89 lib/model/Comment.php:62 lib/model/Entity.php:158
+#: lib/model/Statement.php:298
 msgid "info-by"
 msgstr "de către"
 
-#: lib/model/Answer.php:89 lib/model/Comment.php:63 lib/model/Entity.php:159
-#: lib/model/Statement.php:298
+#: lib/model/Answer.php:90 lib/model/Comment.php:63 lib/model/Entity.php:159
+#: lib/model/Statement.php:299
 msgid "info-other-reason"
 msgstr "pentru alt motiv."
 
-#: lib/model/Answer.php:124
+#: lib/model/Answer.php:125
 #, php-format
 msgid "info-minimum-reputation-add-answer-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a adăuga răspunsuri."
 
-#: lib/model/Answer.php:132
+#: lib/model/Answer.php:133
 #, php-format
 msgid "info-minimum-reputation-edit-answer-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a edita răspunsuri."
 
-#: lib/model/Answer.php:138
+#: lib/model/Answer.php:139
 msgid "info-only-moderator-edit-proof-answer"
 msgstr ""
 "Acest răspuns a fost acceptat ca demonstrație. Doar moderatorii îl mai pot "
 "modifica direct."
 
-#: lib/model/Answer.php:142
+#: lib/model/Answer.php:143
 msgid "info-banned-add-answer"
 msgstr "Îți este interzisă adăugarea de răspunsuri."
 
-#: lib/model/Answer.php:146
+#: lib/model/Answer.php:147
 msgid "info-banned-edit-answer"
 msgstr "Îți este interzisă editarea de răspunsuri."
 
@@ -2514,167 +2520,167 @@ msgstr "mențiuni adăugate"
 msgid "label-deleted-involvements"
 msgstr "mențiuni șterse"
 
-#: lib/model/Statement.php:124
+#: lib/model/Statement.php:125
 msgid "statement-type-any"
 msgstr "orice tip"
 
-#: lib/model/Statement.php:125
+#: lib/model/Statement.php:126
 msgid "statement-type-claim"
 msgstr "aserțiune"
 
-#: lib/model/Statement.php:126
+#: lib/model/Statement.php:127
 msgid "statement-type-flop"
 msgstr "răzgîndire"
 
-#: lib/model/Statement.php:127
+#: lib/model/Statement.php:128
 msgid "statement-type-promise"
 msgstr "promisiune"
 
-#: lib/model/Statement.php:136
+#: lib/model/Statement.php:137
 msgid "label-claim-verdict"
 msgstr "verdictul afirmației"
 
-#: lib/model/Statement.php:137
+#: lib/model/Statement.php:138
 msgid "label-flop-verdict"
 msgstr "verdictul răzgîndirii"
 
-#: lib/model/Statement.php:138
+#: lib/model/Statement.php:139
 msgid "label-promise-verdict"
 msgstr "verdictul promisiunii"
 
-#: lib/model/Statement.php:274
+#: lib/model/Statement.php:275
 msgid "status-statement-duplicate"
 msgstr "duplicat"
 
-#: lib/model/Statement.php:276
+#: lib/model/Statement.php:277
 msgid "status-statement-closed"
 msgstr "închisă"
 
-#: lib/model/Statement.php:277
+#: lib/model/Statement.php:278
 msgid "status-statement-deleted"
 msgstr "ștearsă"
 
-#: lib/model/Statement.php:286
+#: lib/model/Statement.php:287
 msgid "info-statement-closed"
 msgstr "Această afirmație a fost închisă"
 
-#: lib/model/Statement.php:287
+#: lib/model/Statement.php:288
 msgid "info-statement-deleted"
 msgstr "Această afirmație a fost ștearsă"
 
-#: lib/model/Statement.php:290
+#: lib/model/Statement.php:291
 msgid "info-statement-spam"
 msgstr "deoarece este spam."
 
-#: lib/model/Statement.php:291
+#: lib/model/Statement.php:292
 msgid "info-statement-abuse"
 msgstr "deoarece conține insulte sau abuzuri."
 
-#: lib/model/Statement.php:292
+#: lib/model/Statement.php:293
 msgid "info-statement-duplicate-of"
 msgstr "ca duplicat al afirmației"
 
-#: lib/model/Statement.php:293
+#: lib/model/Statement.php:294
 msgid "info-statement-off-topic"
 msgstr "deoarece este pe lîngă subiect."
 
-#: lib/model/Statement.php:294
+#: lib/model/Statement.php:295
 msgid "info-statement-unverifiable"
 msgstr "deoarece este neverificabilă."
 
-#: lib/model/Statement.php:295
+#: lib/model/Statement.php:296
 msgid "info-statement-low-quality"
 msgstr "deoarece este de slabă calitate."
 
-#: lib/model/Statement.php:296
+#: lib/model/Statement.php:297
 msgid "info-statement-by-owner"
 msgstr "de către autorul său."
 
-#: lib/model/Statement.php:354
+#: lib/model/Statement.php:355
 #, php-format
 msgid "info-minimum-reputation-add-statement-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
-#: lib/model/Statement.php:362
+#: lib/model/Statement.php:363
 #, php-format
 msgid "info-minimum-reputation-edit-statement-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a edita afirmații."
 
-#: lib/model/Statement.php:368
+#: lib/model/Statement.php:369
 msgid "info-only-moderator-edit-statement-verdict"
 msgstr ""
 "Această afirmație a primit un verdict. Doar moderatorii o mai pot modifica "
 "direct."
 
-#: lib/model/Statement.php:372
+#: lib/model/Statement.php:373
 msgid "info-banned-add-statement"
 msgstr "Îți este interzisă adăugarea de afirmații."
 
-#: lib/model/Statement.php:376
+#: lib/model/Statement.php:377
 msgid "info-banned-edit-statement"
 msgstr "Îți este interzisă editarea de afirmații."
 
-#: lib/model/User.php:238 routes/auth/login.php:61
+#: lib/model/User.php:237 routes/auth/login.php:61
 #: routes/auth/lostPassword.php:49 routes/invite/add.php:42
 msgid "info-must-enter-email"
 msgstr "Te rugăm să introduci o adresă de e-mail."
 
-#: lib/model/User.php:243
+#: lib/model/User.php:242
 msgid "info-email-taken"
 msgstr "Această adresă de e-mail este deja folosită."
 
-#: lib/model/User.php:247 routes/auth/lostPassword.php:51
+#: lib/model/User.php:246 routes/auth/lostPassword.php:51
 #: routes/invite/add.php:44
 msgid "info-incorrect-email"
 msgstr "Adresa de e-mail pare incorectă."
 
-#: lib/model/User.php:257
+#: lib/model/User.php:256
 msgid "info-nickname-syntax"
 msgstr ""
 "Porecla trebuie să înceapă cu o literă sau cifră și să conțină 3-30 de "
 "litere, cifre și semne de punctuație dintre -_."
 
-#: lib/model/User.php:262
+#: lib/model/User.php:261
 msgid "info-nickname-taken"
 msgstr "Această poreclă este deja folosită."
 
-#: lib/model/User.php:271 routes/auth/login.php:65
+#: lib/model/User.php:270 routes/auth/login.php:65
 msgid "info-must-enter-password"
 msgstr "Te rugăm să introduci o parolă."
 
-#: lib/model/User.php:273
+#: lib/model/User.php:272
 msgid "info-must-enter-password-2"
 msgstr ""
 "Te rugăm să introduci parola de două ori pentru a preveni greșelile de "
 "tastare."
 
-#: lib/model/User.php:275
+#: lib/model/User.php:274
 msgid "info-password-mismatch"
 msgstr "Parolele nu coincid."
 
-#: lib/model/User.php:277
+#: lib/model/User.php:276
 msgid "info-password-length"
 msgstr "Parola trebuie să aibă cel puțin 8 caractere."
 
-#: lib/model/User.php:301
+#: lib/model/User.php:300
 #, php-format
 msgid "info-minimum-reputation-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru această acțiune."
 
-#: lib/model/User.php:315
+#: lib/model/User.php:314
 msgid "info-moderator-only"
 msgstr "Doar moderatorii pot face această acțiune."
 
-#: lib/model/User.php:333
+#: lib/model/User.php:332
 #, php-format
 msgid "info-minimum-reputation-flag-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a face raportări."
 
-#: lib/model/User.php:338
+#: lib/model/User.php:337
 msgid "info-banned-flag"
 msgstr "Îți este interzisă raportarea articolelor."
 
-#: lib/model/User.php:345
+#: lib/model/User.php:344
 #, php-format
 msgid "info-flag-limit-singular"
 msgid_plural "info-flag-limit-plural-%d"
@@ -2682,23 +2688,23 @@ msgstr[0] "Poți face cel mult o raportare la 24 de ore."
 msgstr[1] "Puteți face cel mult %d raportări la 24 de ore."
 msgstr[2] "Puteți face cel mult %d de raportări la 24 de ore."
 
-#: lib/model/User.php:352
+#: lib/model/User.php:351
 msgid "info-flag-no-object"
 msgstr "Nu pot face raportarea: articolul nu există."
 
-#: lib/model/User.php:357
+#: lib/model/User.php:356
 msgid "info-already-flagged"
 msgstr "Ai raportat deja acest articol."
 
-#: lib/model/User.php:385
+#: lib/model/User.php:384
 msgid "info-banned-comment"
 msgstr "Îți este interzisă adăugarea de comentarii."
 
-#: lib/model/User.php:390
+#: lib/model/User.php:389
 msgid "info-cannot-comment-draft"
 msgstr "Nu poți comenta la ciorne."
 
-#: lib/model/User.php:411
+#: lib/model/User.php:410
 #, php-format
 msgid "info-minimum-reputation-comment-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a comenta."
@@ -3228,7 +3234,7 @@ msgstr "Există deja o invitație către această adresă."
 msgid "email-subject-invite"
 msgstr "Invitație la Dignitas"
 
-#: routes/region/edit.php:25
+#: routes/region/edit.php:27
 #, php-format
 msgid "region-deleted-%s"
 msgstr "Am șters regiunea [%s]."
@@ -3245,7 +3251,7 @@ msgstr "Am salvat regiunea."
 msgid "info-region-loop"
 msgstr "Nu poți alege un descendent ca părinte."
 
-#: routes/region/list.php:24
+#: routes/region/list.php:26
 msgid "info-region-nomenclature-saved"
 msgstr "Am salvat nomenclatura regiunilor."
 

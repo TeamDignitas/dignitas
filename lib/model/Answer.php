@@ -3,6 +3,7 @@
 class Answer extends Proto {
   use
     ArchivableLinksTrait,
+    DraftTrait,
     FlaggableTrait,
     MarkdownTrait,
     PendingEditTrait,

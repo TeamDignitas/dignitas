@@ -182,7 +182,8 @@
         deleteButtonConfirm="{t}info-confirm-delete-statement{/t}"
         reopenButton=$statement->isReopenable()
         reopenButtonConfirm="{t}info-confirm-reopen-statement{/t}"
-        saveDraftButton=($statement->status == Ct::STATUS_DRAFT)}
+        saveButtonConfirm=$statement->isDraft()
+        saveDraftButton=$statement->isDraftOrNew()}
 
     </form>
   </div>

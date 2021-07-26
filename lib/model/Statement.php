@@ -2,6 +2,7 @@
 
 class Statement extends Proto {
   use ArchivableLinksTrait,
+    DraftTrait,
     DuplicateTrait,
     FlaggableTrait,
     RevisionTrait,

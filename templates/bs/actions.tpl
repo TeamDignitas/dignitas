@@ -87,6 +87,7 @@
     <div class="{$colDef}">
       <button
         class="{$btnDef} {if $saveDraftButton}btn-outline-secondary{else}{$saveButtonClass}{/if}"
+        {if $saveButtonConfirm}data-confirm="{t}info-confirm-publish{/t}"{/if}
         name="saveButton"
         type="submit">
         {include "bits/icon.tpl" i=save}

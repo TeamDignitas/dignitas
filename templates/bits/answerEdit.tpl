@@ -58,8 +58,9 @@
     divClass='answer-buttons'
     reopenButton=$answer->isReopenable()
     reopenButtonConfirm="{t}info-confirm-reopen-answer{/t}"
+    saveButtonConfirm=$answer->isDraft()
     saveButtonText=$buttonText
-    saveDraftButton=($answer->status == Ct::STATUS_DRAFT)}
+    saveDraftButton=$answer->isDraftOrNew()}
 
 </form>
 

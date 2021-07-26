@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-07-19 16:50+0300\n"
-"PO-Revision-Date: 2021-07-19 16:50+0300\n"
+"POT-Creation-Date: 2021-07-26 11:10+0300\n"
+"PO-Revision-Date: 2021-07-26 11:11+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -79,13 +79,13 @@ msgstr "relationship types"
 msgid "link-static-resources"
 msgstr "static resources"
 
-#: templates/aggregate/dashboard.tpl:67
-msgid "link-tags"
-msgstr "tags"
-
-#: templates/aggregate/dashboard.tpl:72 templates/bits/regionAncestors.tpl:8
+#: templates/aggregate/dashboard.tpl:66 templates/bits/regionAncestors.tpl:7
 msgid "link-regions"
 msgstr "regions"
+
+#: templates/aggregate/dashboard.tpl:72
+msgid "link-tags"
+msgstr "tags"
 
 #: templates/aggregate/dashboard.tpl:77
 msgid "title-review-queues"
@@ -321,7 +321,7 @@ msgstr "permalink"
 
 #: templates/bits/answerEdit.tpl:24 templates/bits/statementFilters.tpl:50
 #: templates/statement/edit.tpl:159 lib/model/RevisionAnswer.php:15
-#: lib/model/RevisionStatement.php:22 lib/model/Statement.php:139
+#: lib/model/RevisionStatement.php:22 lib/model/Statement.php:140
 msgid "label-verdict"
 msgstr "verdict"
 
@@ -746,11 +746,11 @@ msgstr ""
 "Your downvote was saved. You lost one reputation point, but we thank you for "
 "helping!"
 
-#: templates/bits/scoreAndVote.tpl:26 lib/model/Answer.php:66
+#: templates/bits/scoreAndVote.tpl:26 lib/model/Answer.php:67
 msgid "info-confirm-accept"
 msgstr "Answer accepted as proof."
 
-#: templates/bits/scoreAndVote.tpl:29 lib/model/Answer.php:66
+#: templates/bits/scoreAndVote.tpl:29 lib/model/Answer.php:67
 msgid "info-confirm-unaccept"
 msgstr "Answer rejected as proof."
 
@@ -889,6 +889,12 @@ msgstr ""
 #: templates/bs/actions.tpl:81
 msgid "link-save-draft"
 msgstr "save draft"
+
+#: templates/bs/actions.tpl:90
+msgid "info-confirm-publish"
+msgstr ""
+"Are you sure you want to publish this article? It will become visible to "
+"everyone."
 
 #: templates/cannedResponse/edit.tpl:3 templates/cannedResponse/edit.tpl:7
 msgid "title-edit-canned-response"
@@ -1277,7 +1283,7 @@ msgstr "parent region"
 msgid "info-confirm-delete-region"
 msgstr "Are you sure you want to delete this region?"
 
-#: templates/region/edit.tpl:61 routes/region/edit.php:30
+#: templates/region/edit.tpl:61 routes/region/edit.php:32
 msgid "info-cannot-delete-region"
 msgstr ""
 "Cannot delete this region because (1) it has descendants or (2) it is being "
@@ -1291,15 +1297,15 @@ msgstr "direct descendants"
 msgid "title-duplicate-regions"
 msgstr "duplicate regions"
 
-#: templates/region/list.tpl:12
+#: templates/region/list.tpl:11
 msgid "link-add-region"
 msgstr "add a region"
 
-#: templates/region/list.tpl:21
+#: templates/region/list.tpl:19
 msgid "title-region-nomenclature"
 msgstr "region nomenclature"
 
-#: templates/region/list.tpl:26
+#: templates/region/list.tpl:24
 msgid "info-region-depth"
 msgstr "level"
 
@@ -1903,60 +1909,60 @@ msgstr "voted to ignore reopen request for"
 msgid "action-retracted-flag"
 msgstr "retracted flag for"
 
-#: lib/model/Answer.php:80
+#: lib/model/Answer.php:81
 msgid "info-answer-deleted"
 msgstr "This answer was deleted"
 
-#: lib/model/Answer.php:83
+#: lib/model/Answer.php:84
 msgid "info-answer-spam"
 msgstr "because it is spam."
 
-#: lib/model/Answer.php:84
+#: lib/model/Answer.php:85
 msgid "info-answer-abuse"
 msgstr "because it is rude or abusive."
 
-#: lib/model/Answer.php:85
+#: lib/model/Answer.php:86
 msgid "info-answer-off-topic"
 msgstr "because it is off-topic."
 
-#: lib/model/Answer.php:86
+#: lib/model/Answer.php:87
 msgid "info-answer-low-quality"
 msgstr "because it is low-quality."
 
-#: lib/model/Answer.php:87
+#: lib/model/Answer.php:88
 msgid "info-answer-by-owner"
 msgstr "by its author."
 
-#: lib/model/Answer.php:88 lib/model/Comment.php:62 lib/model/Entity.php:158
-#: lib/model/Statement.php:297
+#: lib/model/Answer.php:89 lib/model/Comment.php:62 lib/model/Entity.php:158
+#: lib/model/Statement.php:298
 msgid "info-by"
 msgstr "by"
 
-#: lib/model/Answer.php:89 lib/model/Comment.php:63 lib/model/Entity.php:159
-#: lib/model/Statement.php:298
+#: lib/model/Answer.php:90 lib/model/Comment.php:63 lib/model/Entity.php:159
+#: lib/model/Statement.php:299
 msgid "info-other-reason"
 msgstr "for other reasons."
 
-#: lib/model/Answer.php:124
+#: lib/model/Answer.php:125
 #, php-format
 msgid "info-minimum-reputation-add-answer-%s"
 msgstr "You need at least %s reputation to add answers."
 
-#: lib/model/Answer.php:132
+#: lib/model/Answer.php:133
 #, php-format
 msgid "info-minimum-reputation-edit-answer-%s"
 msgstr "You need at least %s reputation to edit answers."
 
-#: lib/model/Answer.php:138
+#: lib/model/Answer.php:139
 msgid "info-only-moderator-edit-proof-answer"
 msgstr ""
 "This answer was accepted as proof. Only moderators can edit it directly."
 
-#: lib/model/Answer.php:142
+#: lib/model/Answer.php:143
 msgid "info-banned-add-answer"
 msgstr "You are banned from adding answers."
 
-#: lib/model/Answer.php:146
+#: lib/model/Answer.php:147
 msgid "info-banned-edit-answer"
 msgstr "You are banned from editing answers."
 
@@ -2498,186 +2504,186 @@ msgstr "added mentions"
 msgid "label-deleted-involvements"
 msgstr "deleted mentions"
 
-#: lib/model/Statement.php:124
+#: lib/model/Statement.php:125
 msgid "statement-type-any"
 msgstr "any type"
 
-#: lib/model/Statement.php:125
+#: lib/model/Statement.php:126
 msgid "statement-type-claim"
 msgstr "claim"
 
-#: lib/model/Statement.php:126
+#: lib/model/Statement.php:127
 msgid "statement-type-flop"
 msgstr "flip-flop"
 
-#: lib/model/Statement.php:127
+#: lib/model/Statement.php:128
 msgid "statement-type-promise"
 msgstr "promise"
 
-#: lib/model/Statement.php:136
+#: lib/model/Statement.php:137
 msgid "label-claim-verdict"
 msgstr "claim verdict"
 
-#: lib/model/Statement.php:137
+#: lib/model/Statement.php:138
 msgid "label-flop-verdict"
 msgstr "flip-flop verdict"
 
-#: lib/model/Statement.php:138
+#: lib/model/Statement.php:139
 msgid "label-promise-verdict"
 msgstr "promise verdict"
 
-#: lib/model/Statement.php:274
+#: lib/model/Statement.php:275
 msgid "status-statement-duplicate"
 msgstr "duplicate"
 
-#: lib/model/Statement.php:276
+#: lib/model/Statement.php:277
 msgid "status-statement-closed"
 msgstr "closed"
 
-#: lib/model/Statement.php:277
+#: lib/model/Statement.php:278
 msgid "status-statement-deleted"
 msgstr "deleted"
 
-#: lib/model/Statement.php:286
+#: lib/model/Statement.php:287
 msgid "info-statement-closed"
 msgstr "This statement was closed"
 
-#: lib/model/Statement.php:287
+#: lib/model/Statement.php:288
 msgid "info-statement-deleted"
 msgstr "This statement was deleted"
 
-#: lib/model/Statement.php:290
+#: lib/model/Statement.php:291
 msgid "info-statement-spam"
 msgstr "because it is spam."
 
-#: lib/model/Statement.php:291
+#: lib/model/Statement.php:292
 msgid "info-statement-abuse"
 msgstr "because it is rude or abusive."
 
-#: lib/model/Statement.php:292
+#: lib/model/Statement.php:293
 msgid "info-statement-duplicate-of"
 msgstr "as a duplicate of the statement"
 
-#: lib/model/Statement.php:293
+#: lib/model/Statement.php:294
 msgid "info-statement-off-topic"
 msgstr "because it is off-topic."
 
-#: lib/model/Statement.php:294
+#: lib/model/Statement.php:295
 msgid "info-statement-unverifiable"
 msgstr "because it is unverifiable."
 
-#: lib/model/Statement.php:295
+#: lib/model/Statement.php:296
 msgid "info-statement-low-quality"
 msgstr "because it is low-quality."
 
-#: lib/model/Statement.php:296
+#: lib/model/Statement.php:297
 msgid "info-statement-by-owner"
 msgstr "by the user who added it."
 
-#: lib/model/Statement.php:354
+#: lib/model/Statement.php:355
 #, php-format
 msgid "info-minimum-reputation-add-statement-%s"
 msgstr "You need at least %s reputation to add statements."
 
-#: lib/model/Statement.php:362
+#: lib/model/Statement.php:363
 #, php-format
 msgid "info-minimum-reputation-edit-statement-%s"
 msgstr "You need at least %s reputation to edit statements."
 
-#: lib/model/Statement.php:368
+#: lib/model/Statement.php:369
 msgid "info-only-moderator-edit-statement-verdict"
 msgstr "This statement has a verdict. Only moderators can edit it directly."
 
-#: lib/model/Statement.php:372
+#: lib/model/Statement.php:373
 msgid "info-banned-add-statement"
 msgstr "You are banned from adding statements."
 
-#: lib/model/Statement.php:376
+#: lib/model/Statement.php:377
 msgid "info-banned-edit-statement"
 msgstr "You are banned from editing statements."
 
-#: lib/model/User.php:238 routes/auth/login.php:61
+#: lib/model/User.php:237 routes/auth/login.php:61
 #: routes/auth/lostPassword.php:49 routes/invite/add.php:42
 msgid "info-must-enter-email"
 msgstr "Please enter an email address."
 
-#: lib/model/User.php:243
+#: lib/model/User.php:242
 msgid "info-email-taken"
 msgstr "This email address is already taken."
 
-#: lib/model/User.php:247 routes/auth/lostPassword.php:51
+#: lib/model/User.php:246 routes/auth/lostPassword.php:51
 #: routes/invite/add.php:44
 msgid "info-incorrect-email"
 msgstr "This email address looks incorrect."
 
-#: lib/model/User.php:257
+#: lib/model/User.php:256
 msgid "info-nickname-syntax"
 msgstr ""
 "Your nickname must begin with a letter or digit and consist of 3 to 30 "
 "letters, digits and punctuation from among -_."
 
-#: lib/model/User.php:262
+#: lib/model/User.php:261
 msgid "info-nickname-taken"
 msgstr "This nickname is already taken."
 
-#: lib/model/User.php:271 routes/auth/login.php:65
+#: lib/model/User.php:270 routes/auth/login.php:65
 msgid "info-must-enter-password"
 msgstr "Please enter a password."
 
-#: lib/model/User.php:273
+#: lib/model/User.php:272
 msgid "info-must-enter-password-2"
 msgstr "Please enter your password twice to prevent typos."
 
-#: lib/model/User.php:275
+#: lib/model/User.php:274
 msgid "info-password-mismatch"
 msgstr "Passwords don't match."
 
-#: lib/model/User.php:277
+#: lib/model/User.php:276
 msgid "info-password-length"
 msgstr "Your password must be at least 8 characters long."
 
-#: lib/model/User.php:301
+#: lib/model/User.php:300
 #, php-format
 msgid "info-minimum-reputation-%s"
 msgstr "You need at least %s reputation to perform this action."
 
-#: lib/model/User.php:315
+#: lib/model/User.php:314
 msgid "info-moderator-only"
 msgstr "Only moderators may perform this action."
 
-#: lib/model/User.php:333
+#: lib/model/User.php:332
 #, php-format
 msgid "info-minimum-reputation-flag-%s"
 msgstr "You need at least %s reputation to flag."
 
-#: lib/model/User.php:338
+#: lib/model/User.php:337
 msgid "info-banned-flag"
 msgstr "You are banned from flagging."
 
-#: lib/model/User.php:345
+#: lib/model/User.php:344
 #, php-format
 msgid "info-flag-limit-singular"
 msgid_plural "info-flag-limit-plural-%d"
 msgstr[0] "You can use at most one flag every 24 hours."
 msgstr[1] "You can use at most %d flags every 24 hours."
 
-#: lib/model/User.php:352
+#: lib/model/User.php:351
 msgid "info-flag-no-object"
 msgstr "Cannot flag: object does not exist."
 
-#: lib/model/User.php:357
+#: lib/model/User.php:356
 msgid "info-already-flagged"
 msgstr "You already have a pending flag for this object."
 
-#: lib/model/User.php:385
+#: lib/model/User.php:384
 msgid "info-banned-comment"
 msgstr "You are banned from commenting."
 
-#: lib/model/User.php:390
+#: lib/model/User.php:389
 msgid "info-cannot-comment-draft"
 msgstr "You cannot comment on a draft."
 
-#: lib/model/User.php:411
+#: lib/model/User.php:410
 #, php-format
 msgid "info-minimum-reputation-comment-%s"
 msgstr "You need at least %s reputation to comment."
@@ -3199,7 +3205,7 @@ msgstr "An invite was already sent to this email address."
 msgid "email-subject-invite"
 msgstr "Invitation to Dignitas"
 
-#: routes/region/edit.php:25
+#: routes/region/edit.php:27
 #, php-format
 msgid "region-deleted-%s"
 msgstr "Region [%s] deleted."
@@ -3216,7 +3222,7 @@ msgstr "Region saved."
 msgid "info-region-loop"
 msgstr "You cannot select a descendant as the parent."
 
-#: routes/region/list.php:24
+#: routes/region/list.php:26
 msgid "info-region-nomenclature-saved"
 msgstr "Region nomenclature saved."
 
