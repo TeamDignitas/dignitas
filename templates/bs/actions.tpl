@@ -10,6 +10,7 @@
 {$saveButton=$saveButton|default:true}
 {* $saveButtonClass will be ignored if $saveDraftButton is set *}
 {$saveButtonClass=$saveButtonClass|default:'btn-primary'}
+{$saveButtonConfirm=$saveButtonConfirm|default:false} {* boolean *}
 {$saveButtonText=$saveButtonText|default:"{t}link-save{/t}"}
 {$saveDraftButton=$saveDraftButton|default:false}
 
