@@ -9,6 +9,8 @@ $(function() {
   $('body').on('click', 'a.expand', function() {
     var href = $(this).attr('href');
     var noHash = href.split('#')[0]; // strip the fragment
+    // true if the article's author wants the image to pop up at its original size
+    var original = $(this).hasClass('original-size');
 
     if (noHash.endsWith('.pdf')) {
       // open PDFs in separate tab
@@ -16,6 +18,7 @@ $(function() {
     } else {
       $('#image-modal').show();
       $('#image-modal img').attr('src', href);
+      $('#image-modal img').toggleClass('original-size', original);
       $('#image-modal div.caption').html($(this).find('img').attr('alt'));
     }
 

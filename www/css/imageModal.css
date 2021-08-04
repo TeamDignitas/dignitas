@@ -24,6 +24,11 @@
   width: 80%;
 }
 
+#image-modal img.original-size {
+  max-width: initial;
+  width: initial;
+}
+
 /* 100% image width on smaller screens */
 @media only screen and (max-width: 700px){
   #image-modal img {
