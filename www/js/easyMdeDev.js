@@ -77,6 +77,7 @@ $(function() {
 
   // initialize EasyMDE editors
   $('.easy-mde').each(function() {
+    var readonly = $(this).is('[readonly]');
     var easyMde = new EasyMDE({
       autoDownloadFontAwesome: false,
       element: this,
@@ -88,7 +89,7 @@ $(function() {
       previewRender: customPreview,
       spellChecker: false, // disable in favor of nativeSpellchecker
       status: false,
-      toolbar: EASY_MDE_TOOLBAR,
+      toolbar: readonly ? false : EASY_MDE_TOOLBAR,
     });
 
     var cm = easyMde.codemirror;
@@ -101,6 +102,9 @@ $(function() {
     if ($(this).data('statementId')) {
       // only register the @-listener when @-mentions are useful
       cm.on('keyup', showHint);
+    }
+    if (readonly) {
+      cm.setOption('readOnly', true);
     }
 
     // If inside a tab, refresh the editor when the tab is shown.

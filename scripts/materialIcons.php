@@ -15,6 +15,7 @@ const CODEPOINTS = [
   'arrow_back',
   'cancel',
   'chevron_right',
+  'code',
   'compare_arrows',
   'content_copy',
   'delete_forever',

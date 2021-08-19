@@ -51,6 +51,7 @@
         {/if}
 
         {include "bits/flagLinks.tpl" obj=$comment class="dropdown-item"}
+        {include "bits/viewMarkdownButton.tpl" obj=$comment}
       </div>
     {/if}
 

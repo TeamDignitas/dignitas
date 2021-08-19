@@ -1,9 +1,10 @@
 <?php
 
 class Comment extends Proto {
-  // Comments support Markdown, but do not support attachments explicitly.
-  // Therefore, using MarkdownTrait is not necessary.
-  use ArchivableLinksTrait, FlaggableTrait, ObjectTypeIdTrait, VotableTrait;
+  // We use MarkdownTrait, not for attachment references, but for displaying
+  // the Markdown source code.
+  use ArchivableLinksTrait, FlaggableTrait, MarkdownTrait, ObjectTypeIdTrait,
+    VotableTrait;
 
   const MAX_LENGTH = 500;
 
@@ -28,6 +29,10 @@ class Comment extends Proto {
     } else {
       return [];
     }
+  }
+
+  function getMarkdownFields() {
+    return [ 'contents' ];
   }
 
   function getUser() {

@@ -18,7 +18,7 @@ class Router {
       'en_US.utf8' => 'ajax/action-log',
     ],
 
-    // aggregate
+    // aggregate: pages that don't relate to any one object in particular
     'aggregate/about' => [
       'en_US.utf8' => 'about',
       'ro_RO.utf8' => 'despre',
@@ -48,6 +48,10 @@ class Router {
     'aggregate/search' => [
       'en_US.utf8' => 'search',
       'ro_RO.utf8' => 'cautare',
+    ],
+    'aggregate/viewMarkdown' => [
+      'en_US.utf8' => 'markdown-code',
+      'ro_RO.utf8' => 'cod-markdown',
     ],
 
     // answers
@@ -376,6 +380,7 @@ class Router {
   const PARAMS = [
     'action/list' => [ 'userId' ],
     'aggregate/search' => [ 'q' ],
+    'aggregate/viewMarkdown' => [ 'objectType', 'objectId' ],
     'answer/edit' => [ 'id' ],
     'answer/history' => [ 'id' ],
     'archivedLink/view' => [ 'id' ],

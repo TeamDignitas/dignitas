@@ -153,6 +153,7 @@
           {include "bits/subscribeLinks.tpl" obj=$statement class="dropdown-item"}
           {include "bits/flagLinks.tpl" obj=$statement class="dropdown-item"}
           {include "bits/historyButton.tpl" obj=$statement class="dropdown-item"}
+          {include "bits/viewMarkdownButton.tpl" obj=$statement}
         </div>
       {/if}
     </div>

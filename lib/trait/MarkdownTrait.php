@@ -1,8 +1,11 @@
 <?php
 
-// Method implementations for objects that have Markdown fields. For now, we
-// care about extracting references to uploaded attachments from those
-// Markdown fields.
+/**
+ * Method implementations for objects that have Markdown fields. For now, we
+ * care about
+ * (1) extracting references to uploaded attachments from Markdown fields;
+ * (2) displaying the source code of Markdown fields.
+ */
 
 trait MarkdownTrait {
 

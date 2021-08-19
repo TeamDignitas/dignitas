@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-07-26 11:10+0300\n"
-"PO-Revision-Date: 2021-07-26 11:11+0300\n"
+"POT-Creation-Date: 2021-08-19 17:10+0300\n"
+"PO-Revision-Date: 2021-08-19 17:13+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -159,12 +159,27 @@ msgstr "tags"
 msgid "info-no-search-results"
 msgstr "Your search «%1» produced no results."
 
+#: templates/aggregate/viewMarkdown.tpl:3
+#: templates/aggregate/viewMarkdown.tpl:7
+msgid "title-markdown-code"
+msgstr "Markdown Code"
+
+#: templates/aggregate/viewMarkdown.tpl:12
+msgid "label-back"
+msgstr "back"
+
+#: templates/aggregate/viewMarkdown.tpl:27
+msgid "info-markdown-code"
+msgstr ""
+"Markdown is the notation that produces the article's formatted text. Only "
+"the content of Markdown-aware fields is displayed."
+
 #: templates/answer/edit.tpl:4 templates/answer/edit.tpl:8
 msgid "title-edit-answer"
 msgstr "edit answer"
 
 #: templates/answer/edit.tpl:16 templates/auth/resetPassword.tpl:32
-#: templates/bits/commentForm.tpl:43 templates/bs/actions.tpl:13
+#: templates/bits/commentForm.tpl:43 templates/bs/actions.tpl:14
 msgid "link-save"
 msgstr "save"
 
@@ -353,7 +368,7 @@ msgstr "permanent link to this comment"
 msgid "info-confirm-delete-comment"
 msgstr "Are you sure you want to delete this comment?"
 
-#: templates/bits/comment.tpl:49 templates/bs/actions.tpl:33
+#: templates/bits/comment.tpl:49 templates/bs/actions.tpl:34
 msgid "link-delete"
 msgstr "delete"
 
@@ -362,7 +377,7 @@ msgid "link-pick-canned-response"
 msgstr "canned responses"
 
 #: templates/bits/commentForm.tpl:38 templates/bits/flagModal.tpl:190
-#: templates/bs/actions.tpl:67 templates/cannedResponse/list.tpl:52
+#: templates/bs/actions.tpl:68 templates/cannedResponse/list.tpl:52
 #: templates/invite/add.tpl:23
 msgid "link-cancel"
 msgstr "cancel"
@@ -872,25 +887,29 @@ msgstr "stop watching this item"
 msgid "link-unsubscribe"
 msgstr "unwatch"
 
-#: templates/bs/actions.tpl:45
+#: templates/bits/viewMarkdownButton.tpl:10
+msgid "link-view-markdown"
+msgstr "show Markdown code"
+
+#: templates/bs/actions.tpl:46
 msgid "link-reopen"
 msgstr "reopen"
 
-#: templates/bs/actions.tpl:56
+#: templates/bs/actions.tpl:57
 msgid "link-clone"
 msgstr "clone"
 
-#: templates/bs/actions.tpl:78
+#: templates/bs/actions.tpl:79
 msgid "tooltip-save-draft"
 msgstr ""
 "Save a private draft. You can edit the draft until you decide to publish it "
 "or delete it."
 
-#: templates/bs/actions.tpl:81
+#: templates/bs/actions.tpl:82
 msgid "link-save-draft"
 msgstr "save draft"
 
-#: templates/bs/actions.tpl:90
+#: templates/bs/actions.tpl:91
 msgid "info-confirm-publish"
 msgstr ""
 "Are you sure you want to publish this article? It will become visible to "
@@ -1761,7 +1780,7 @@ msgstr "until"
 msgid "link-ban"
 msgstr "ban..."
 
-#: lib/Router.php:461
+#: lib/Router.php:466
 msgid "info-language-changed"
 msgstr ""
 "Interface language changed. Page contents (statements, answers etc.) are "
@@ -1933,12 +1952,12 @@ msgstr "because it is low-quality."
 msgid "info-answer-by-owner"
 msgstr "by its author."
 
-#: lib/model/Answer.php:89 lib/model/Comment.php:62 lib/model/Entity.php:158
+#: lib/model/Answer.php:89 lib/model/Comment.php:67 lib/model/Entity.php:158
 #: lib/model/Statement.php:298
 msgid "info-by"
 msgstr "by"
 
-#: lib/model/Answer.php:90 lib/model/Comment.php:63 lib/model/Entity.php:159
+#: lib/model/Answer.php:90 lib/model/Comment.php:68 lib/model/Entity.php:159
 #: lib/model/Statement.php:299
 msgid "info-other-reason"
 msgstr "for other reasons."
@@ -2018,27 +2037,27 @@ msgstr "tags and regions"
 msgid "ban-review"
 msgstr "reviews"
 
-#: lib/model/Comment.php:56
+#: lib/model/Comment.php:61
 msgid "info-this-comment-was-deleted"
 msgstr "This comment was deleted"
 
-#: lib/model/Comment.php:59
+#: lib/model/Comment.php:64
 msgid "info-comment-spam"
 msgstr "because it is spam."
 
-#: lib/model/Comment.php:60
+#: lib/model/Comment.php:65
 msgid "info-comment-abuse"
 msgstr "because it is rude or abusive."
 
-#: lib/model/Comment.php:61
+#: lib/model/Comment.php:66
 msgid "info-comment-by-owner"
 msgstr "by its author."
 
-#: lib/model/Comment.php:64
+#: lib/model/Comment.php:69
 msgid "info-comment-not-needed"
 msgstr "because it is no longer needed."
 
-#: lib/model/Comment.php:120
+#: lib/model/Comment.php:125
 #, php-format
 msgid "info-comment-length-limit-%d"
 msgstr "Comments can be at most %d characters long."
@@ -2805,6 +2824,18 @@ msgstr "kept"
 #: routes/action/list.php:19 routes/user/view.php:9
 msgid "info-no-such-user"
 msgstr "The user you are looking for does not exist."
+
+#: routes/aggregate/viewMarkdown.php:17
+msgid "info-view-markdown-bad-object-type"
+msgstr "Invalid object type."
+
+#: routes/aggregate/viewMarkdown.php:23
+msgid "info-view-markdown-no-object"
+msgstr "Article not found."
+
+#: routes/aggregate/viewMarkdown.php:28
+msgid "info-view-markdown-restricted-object"
+msgstr "You have insufficient privileges to view that article."
 
 #: routes/answer/edit.php:15 routes/answer/saveProof.php:20
 msgid "info-no-such-answer"

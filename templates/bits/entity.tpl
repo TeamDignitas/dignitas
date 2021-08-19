@@ -133,6 +133,7 @@
           {include "bits/subscribeLinks.tpl" obj=$entity class="dropdown-item"}
           {include "bits/flagLinks.tpl" obj=$entity class="dropdown-item"}
           {include "bits/historyButton.tpl" obj=$entity class="dropdown-item"}
+          {include "bits/viewMarkdownButton.tpl" obj=$entity}
         </div>
       {/if}
     </div>

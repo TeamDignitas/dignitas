@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-07-26 11:09+0300\n"
-"PO-Revision-Date: 2021-07-26 11:12+0300\n"
+"POT-Creation-Date: 2021-08-19 15:50+0300\n"
+"PO-Revision-Date: 2021-08-19 17:12+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -160,12 +160,27 @@ msgstr "etichete"
 msgid "info-no-search-results"
 msgstr "Căutarea «%1» nu a dat rezultate."
 
+#: templates/aggregate/viewMarkdown.tpl:3
+#: templates/aggregate/viewMarkdown.tpl:7
+msgid "title-markdown-code"
+msgstr "Codul Markdown"
+
+#: templates/aggregate/viewMarkdown.tpl:12
+msgid "label-back"
+msgstr "înapoi"
+
+#: templates/aggregate/viewMarkdown.tpl:27
+msgid "info-markdown-code"
+msgstr ""
+"Codul Markdown este notația care produce textul formatat al articolului. "
+"Este afișat doar conținutul cîmpurilor care admit notația Markdown."
+
 #: templates/answer/edit.tpl:4 templates/answer/edit.tpl:8
 msgid "title-edit-answer"
 msgstr "editează răspunsul"
 
 #: templates/answer/edit.tpl:16 templates/auth/resetPassword.tpl:32
-#: templates/bits/commentForm.tpl:43 templates/bs/actions.tpl:13
+#: templates/bits/commentForm.tpl:43 templates/bs/actions.tpl:14
 msgid "link-save"
 msgstr "salvează"
 
@@ -357,7 +372,7 @@ msgstr "legătură permanentă către acest comentariu"
 msgid "info-confirm-delete-comment"
 msgstr "Confirmi ștergerea acestui comentariu?"
 
-#: templates/bits/comment.tpl:49 templates/bs/actions.tpl:33
+#: templates/bits/comment.tpl:49 templates/bs/actions.tpl:34
 msgid "link-delete"
 msgstr "șterge"
 
@@ -366,7 +381,7 @@ msgid "link-pick-canned-response"
 msgstr "mesaje predefinite"
 
 #: templates/bits/commentForm.tpl:38 templates/bits/flagModal.tpl:190
-#: templates/bs/actions.tpl:67 templates/cannedResponse/list.tpl:52
+#: templates/bs/actions.tpl:68 templates/cannedResponse/list.tpl:52
 #: templates/invite/add.tpl:23
 msgid "link-cancel"
 msgstr "renunță"
@@ -882,25 +897,29 @@ msgstr "dezabonează-mă de la toate notificările despre acest articol"
 msgid "link-unsubscribe"
 msgstr "nu mai urmări"
 
-#: templates/bs/actions.tpl:45
+#: templates/bits/viewMarkdownButton.tpl:10
+msgid "link-view-markdown"
+msgstr "arată codul Markdown"
+
+#: templates/bs/actions.tpl:46
 msgid "link-reopen"
 msgstr "redeschide"
 
-#: templates/bs/actions.tpl:56
+#: templates/bs/actions.tpl:57
 msgid "link-clone"
 msgstr "clonează"
 
-#: templates/bs/actions.tpl:78
+#: templates/bs/actions.tpl:79
 msgid "tooltip-save-draft"
 msgstr ""
 "Salvează o ciornă privată. Poți edita ciorna pînă cînd decizi să o publici "
 "sau să o ștergi."
 
-#: templates/bs/actions.tpl:81
+#: templates/bs/actions.tpl:82
 msgid "link-save-draft"
 msgstr "salvează ciornă"
 
-#: templates/bs/actions.tpl:90
+#: templates/bs/actions.tpl:91
 msgid "info-confirm-publish"
 msgstr ""
 "Confirmi publicarea articolului? El va deveni vizibil pentru toți "
@@ -1770,7 +1789,7 @@ msgstr "pînă la"
 msgid "link-ban"
 msgstr "blochează..."
 
-#: lib/Router.php:461
+#: lib/Router.php:466
 msgid "info-language-changed"
 msgstr ""
 "Am schimbat limba interfeței. Conținutul paginilor (afirmații, răspunsuri "
@@ -1946,12 +1965,12 @@ msgstr "deoarece este de slabă calitate."
 msgid "info-answer-by-owner"
 msgstr "de către autorul său."
 
-#: lib/model/Answer.php:89 lib/model/Comment.php:62 lib/model/Entity.php:158
+#: lib/model/Answer.php:89 lib/model/Comment.php:67 lib/model/Entity.php:158
 #: lib/model/Statement.php:298
 msgid "info-by"
 msgstr "de către"
 
-#: lib/model/Answer.php:90 lib/model/Comment.php:63 lib/model/Entity.php:159
+#: lib/model/Answer.php:90 lib/model/Comment.php:68 lib/model/Entity.php:159
 #: lib/model/Statement.php:299
 msgid "info-other-reason"
 msgstr "pentru alt motiv."
@@ -2032,27 +2051,27 @@ msgstr "etichete și regiuni"
 msgid "ban-review"
 msgstr "evaluări"
 
-#: lib/model/Comment.php:56
+#: lib/model/Comment.php:61
 msgid "info-this-comment-was-deleted"
 msgstr "Acest comentariu a fost șters"
 
-#: lib/model/Comment.php:59
+#: lib/model/Comment.php:64
 msgid "info-comment-spam"
 msgstr "deoarece este spam."
 
-#: lib/model/Comment.php:60
+#: lib/model/Comment.php:65
 msgid "info-comment-abuse"
 msgstr "deoarece conține insulte sau abuzuri."
 
-#: lib/model/Comment.php:61
+#: lib/model/Comment.php:66
 msgid "info-comment-by-owner"
 msgstr "de către autorul său."
 
-#: lib/model/Comment.php:64
+#: lib/model/Comment.php:69
 msgid "info-comment-not-needed"
 msgstr "deoarece nu mai este necesar."
 
-#: lib/model/Comment.php:120
+#: lib/model/Comment.php:125
 #, php-format
 msgid "info-comment-length-limit-%d"
 msgstr "Comentariile pot avea maximum %d de caractere."
@@ -2827,6 +2846,18 @@ msgstr "îndeplinită"
 #: routes/action/list.php:19 routes/user/view.php:9
 msgid "info-no-such-user"
 msgstr "Utilizatorul căutat nu există."
+
+#: routes/aggregate/viewMarkdown.php:17
+msgid "info-view-markdown-bad-object-type"
+msgstr "Ați ales un tip de obiect incorect."
+
+#: routes/aggregate/viewMarkdown.php:23
+msgid "info-view-markdown-no-object"
+msgstr "Articolul căutat nu există."
+
+#: routes/aggregate/viewMarkdown.php:28
+msgid "info-view-markdown-restricted-object"
+msgstr "Aveți privilegii insuficiente pentru a vedea acel articol."
 
 #: routes/answer/edit.php:15 routes/answer/saveProof.php:20
 msgid "info-no-such-answer"

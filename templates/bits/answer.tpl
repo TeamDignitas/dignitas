@@ -80,6 +80,7 @@
               {include "bits/subscribeLinks.tpl" obj=$answer class="dropdown-item"}
               {include "bits/flagLinks.tpl" obj=$answer class="dropdown-item"}
               {include "bits/historyButton.tpl" obj=$answer class="dropdown-item"}
+              {include "bits/viewMarkdownButton.tpl" obj=$answer}
             </div>
           {/if}
         </div>
