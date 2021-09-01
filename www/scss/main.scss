@@ -39,13 +39,24 @@ $btn-white-space: nowrap;
 
 /**
  * These are usable
- *   - in class names like btn-carbon;
- *   - in CSS variables like color: var(--carbon) !important.
+ *   - in some class names like btn-carbon;
+ *   - in CSS variables like color: var(--bs-carbon) !important.
  **/
 $custom-colors: (
   "butter": $butter,
   "carbon": #343a40,
 );
 $theme-colors: map-merge($theme-colors, $custom-colors);
+
+/**
+ * These are necessary as of BS 5.1 in order to generate certain CSS classes
+ * like text-carbon. See:
+ * https://stackoverflow.com/a/68762902/6022817
+ * https://blog.getbootstrap.com/2021/08/04/bootstrap-5-1-0/#updated-bg--and-text--utilities
+ */
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
+$utilities-colors: map-merge($utilities-colors, $theme-colors-rgb);
+$utilities-text-colors: map-loop($utilities-colors, rgba-css-var, "$key", "text");
+$utilities-bg-colors: map-loop($utilities-colors, rgba-css-var, "$key", "bg");
 
 @import "third-party/bootstrap/bootstrap";
