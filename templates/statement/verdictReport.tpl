@@ -8,7 +8,7 @@
 
     {if count($map['proofNoVerdict'])}
 
-      <h5 class="alert alert-secondary capitalize-first-word">{t}title-statements-proof-no-verdict{/t}</h5>
+      <h5 class="capitalize-first-word">{t}title-statements-proof-no-verdict{/t}</h5>
 
       <ol>
         {foreach $map['proofNoVerdict'] as $statement}
@@ -22,7 +22,7 @@
 
     {if count($map['verdictNoProof'])}
 
-      <h5 class="alert alert-secondary capitalize-first-word">{t}title-statements-verdict-no-proof{/t}</h5>
+      <h5 class="capitalize-first-word">{t}title-statements-verdict-no-proof{/t}</h5>
 
       <ol>
         {foreach $map['verdictNoProof'] as $statement}
@@ -36,7 +36,7 @@
 
     {if count($map['verdictMismatch'])}
 
-      <h5 class="alert alert-secondary capitalize-first-word">{t}title-statements-verdict-mismatch{/t}</h5>
+      <h5 class="capitalize-first-word">{t}title-statements-verdict-mismatch{/t}</h5>
 
       <ol>
         {foreach $map['verdictMismatch'] as $statement}

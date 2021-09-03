@@ -3,7 +3,7 @@
    $review, the review being performed;
    $object, the object being reviewed.
   **}
-<div class="card bg-light mb-5">
+<div id="reviewActions" class="card mb-5">
   <div class="card-body pb-1">
     <form method="post">
 

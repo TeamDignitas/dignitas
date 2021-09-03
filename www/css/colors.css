@@ -1,0 +1,303 @@
+/****************************** light mode ******************************/
+:root {
+  --c-light: var(--bs-light);
+  --c-tab-border: #999;
+
+  /* verdict colors */
+  --v-none: #eee;
+  --v-undecidable: #aaa;
+  --v-red: #d90404;
+  --v-orange: #ec771f;
+  --v-yellow: #ffeb3b;
+  --v-olive: #9bad22;
+  --v-green: #37700a;
+}
+
+
+/******************************* dark mode *******************************/
+
+/**
+ * We only override classes that our code curently uses. If you begin to use a
+ * previously unused class and it looks wrong, see what Bootstrap has and
+ * override it here. Try to consistently replace:
+ *
+ *   #000 with #fff
+ *   #1e2125 with #e1deda (hover on dropdown items)
+ *   #212529 with --bs-gray-100
+ *   #495057 with --bs-gray-300 (except for --bs-body-color)
+ *   #6c757d with --bs-gray-400
+ *   #86b7fe with #237afc (bluish border around focused inputs)
+ *   #adb5bd with --bs-gray-500 (identical value, but helps with clarity)
+ *   #ced4da with --bs-gray-600
+ *   #dde0e3 with --bs-gray-700 (hover on file selector buttons)
+ *   #dee2e6 with --bs-gray-700
+ *   #e9ecef with --bs-gray-800
+ *   #fff with --bs-gray-900 (possibly except for --bs-body-bg)
+ *   rgba(0, 0, 0, X) with rgba(255, 255, 255, X)
+ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bs-body-bg: var(--bs-gray-900);
+    --bs-body-color: white;
+    --c-alert-secondary: var(--bs-gray-400);    /* replaces #6c757d aka gray-600 */
+    --c-alert-secondary-bg: #1d1c1a;            /* replaces #e2e3e5 */
+    --c-dark: #dcdbd6;                          /* replaces #232429 */
+    --c-light: var(--bs-gray-800);              /* replaces #f8f9fa aka gray-100 */
+    --c-light-hover: #3c4248;                   /* replaces #f9fafb */
+    --c-primary-hover: #0a58ca;
+
+    /* our colors */
+    --c-tab-border: #666;
+  }
+
+  .alert-secondary {
+    background-color: var(--c-alert-secondary-bg);
+    color: var(--c-alert-secondary);
+  }
+
+  .border {
+    border-color: var(--bs-gray-700) !important;
+  }
+  .border-bottom {
+    border-bottom-color: var(--bs-gray-700) !important;
+  }
+  .border-dark {
+    border-color: var(--c-dark) !important;
+  }
+
+  .breadcrumb-item + .breadcrumb-item::before {
+    color: var(--bs-gray-400);
+  }
+
+  .btn {
+    /* this overrides all other colors, so we will also need to redefine */
+    /* things like .btn-outline-primary */
+    color: var(--bs-gray-300);
+  }
+  .btn:hover {
+    color: var(--bs-gray-300);
+  }
+
+  .btn-close {
+    /* this is stupid */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e");
+  }
+
+  .btn-light {
+    background-color: var(--c-light);
+    border-color: var(--c-light);
+    color: #fff;
+  }
+  .btn-light:hover {
+    background-color: var(--c-light-hover);
+    border-color: var(--c-light-hover);
+    color: #fff;
+  }
+
+  .btn-link {
+    color: var(--bs-primary);
+  }
+  .btn-link:hover {
+    color: var(--c-primary-hover);
+  }
+
+  .btn-outline-danger {
+    color: var(--bs-danger);
+  }
+  .btn-outline-danger:hover {
+    color: var(--bs-body-bg);
+  }
+  .btn-outline-danger:disabled, .btn-outline-danger.disabled {
+    color: var(--bs-danger);
+  }
+
+  .btn-outline-primary {
+    color: var(--bs-primary);
+  }
+  .btn-outline-primary:hover {
+    color: var(--bs-body-bg);
+  }
+
+  .btn-outline-secondary {
+    border-color: var(--bs-gray-400);
+    color: var(--bs-gray-400);
+  }
+  .btn-outline-secondary:hover {
+    background-color: var(--bs-gray-400);
+    border-color: var(--bs-gray-400);
+    color: var(--bs-gray-900);
+  }
+
+  .btn-outline-warning {
+    color: var(--bs-warning);
+  }
+  .btn-outline-warning:hover {
+    color: var(--bs-body-bg);
+  }
+
+  .card {
+    background-color: var(--bs-gray-900);
+    border-color: rgba(255, 255, 255, 0.125);
+  }
+  .card-footer {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-top-color: rgba(255, 255, 255, 0.125);
+  }
+  .card-header {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-bottom-color: rgba(255, 255, 255, 0.125);
+  }
+
+  .dropdown-divider {
+    border-top-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .dropdown-item {
+    color: var(--bs-gray-100);
+  }
+  .dropdown-item:hover, .dropdown-item:focus {
+    color: #e1deda;
+    background-color: var(--bs-gray-800);
+  }
+  .dropdown-item.disabled, .dropdown-item:disabled {
+    color: var(--bs-gray-500);
+  }
+
+  .dropdown-menu {
+    background-color: var(--bs-gray-900);
+    border-color: rgba(255, 255, 255, 0.15);
+    color: var(--bs-gray-300);
+  }
+
+  .form-check-input {
+    background-color: var(--bs-gray-900);
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+  .form-check-input:focus {
+    border-color: #237afc;
+  }
+
+  .form-control {
+    background-color: var(--bs-gray-900);
+    border-color: var(--bs-gray-600);
+    color: var(--bs-gray-300);
+  }
+  .form-control:disabled, .form-control[readonly] {
+    background-color: var(--bs-gray-800);
+  }
+  .form-control::file-selector-button {
+    background-color: var(--bs-gray-800);
+    color: var(--bs-gray-300);
+  }
+  .form-control:hover:not(:disabled):not([readonly])::file-selector-button {
+    background-color: var(--bs-gray-700);
+  }
+  .form-control:focus {
+    background-color: var(--bs-gray-900);
+    border-color: #237afc;
+    color: var(--bs-gray-300);
+  }
+  .form-control::placeholder {
+    color: --bs-gray-400;
+  }
+
+  .form-select {
+    background-color: var(--bs-gray-900);
+    border-color: var(--bs-gray-600);
+    color: var(--bs-gray-300);
+  }
+  .form-select:disabled {
+    background-color: var(--bs-gray-800);
+  }
+  .form-select:focus {
+    border-color: #237afc;
+  }
+
+  .form-text {
+    color: var(--bs-gray-400);
+  }
+
+  .input-group-text {
+    background-color: var(--bs-gray-800);
+    border-color: var(--bs-gray-600);
+    color: var(--bs-gray-300);
+  }
+
+  .modal-backdrop {
+    background-color: #fff;
+  }
+
+  .modal-content {
+    background-color: var(--bs-gray-900);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .modal-footer {
+    border-top-color: var(--bs-gray-700);
+  }
+
+  .modal-header {
+    border-bottom-color: var(--bs-gray-700);
+  }
+
+  .nav-pills .nav-link.active,
+  .nav-pills .show > .nav-link {
+    background-color: var(--bs-gray-900);
+    border-bottom-color: var(--bs-gray-600);
+  }
+
+  .page-item.active .page-link {
+    background-color: var(--bs-gray-400);
+    border-color: var(--bs-gray-400);
+    color: var(--bs-gray-900);
+  }
+  .page-item.disabled .page-link {
+    background-color: var(--bs-gray-900);
+    border-color: var(--bs-gray-700);
+    color: var(--bs-gray-400);
+ }
+
+  .page-link {
+    background-color: var(--bs-gray-900);
+    border-color: var(--bs-gray-700);
+  }
+  .page-link:hover {
+    background-color: var(--bs-gray-800);
+    border-color: var(--bs-gray-700);
+  }
+  .page-link:focus {
+    background-color: var(--bs-gray-800);
+  }
+
+  .popover {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  .bs-popover-bottom > .popover-arrow::before,
+  .bs-popover-auto[data-popper-placement^="bottom"] > .popover-arrow::before {
+    border-bottom-color: rgba(255, 255, 255, 0.25);
+  }
+  .bs-popover-end > .popover-arrow::before,
+  .bs-popover-auto[data-popper-placement^="right"] > .popover-arrow::before {
+    border-right-color: rgba(255, 255, 255, 0.25);
+  }
+  .bs-popover-start > .popover-arrow::before,
+  .bs-popover-auto[data-popper-placement^="left"] > .popover-arrow::before {
+    border-left-color: rgba(255, 255, 255, 0.25);
+  }
+  .bs-popover-top > .popover-arrow::before,
+  .bs-popover-auto[data-popper-placement^="top"] > .popover-arrow::before {
+    border-top-color: rgba(255, 255, 255, 0.25);
+  }
+
+  .table {
+    --bs-table-hover-bg: rgba(255, 255, 255, 0.075);
+    --bs-table-hover-color: var(--bs-gray-300);
+    border-color: var(--bs-gray-700);
+    color: var(--bs-gray-300);
+  }
+
+  .text-muted {
+    color: var(--bs-gray-400) !important;
+  }
+
+}

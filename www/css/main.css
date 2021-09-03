@@ -107,13 +107,8 @@ blockquote {
   border-width: 0;
 }
 
-.page-item.active .page-link {
-  background-color: #999;
-  border-color: #999;
-}
-
 .tabs-wrapper .nav {
-  border-bottom: 1px solid #999;
+  border-bottom: 1px solid var(--c-tab-border);
 }
 
 .nav-pills .nav-link.active {
@@ -214,15 +209,8 @@ img.pic.no-outline,
   line-height: 1.5;
 }
 
-/* define variables for verdict colors */
-:root {
-  --v-none: #eee;
-  --v-undecidable: #aaa;
-  --v-red: #d90404;
-  --v-orange: #ec771f;
-  --v-yellow: #ffeb3b;
-  --v-olive: #9bad22;
-  --v-green: #37700a;
+.verdict-area {
+  color: var(--bs-gray-900);
 }
 
 /* keep these values in sync with lib/model/Statement.php::VERDICT_* constants */
@@ -489,7 +477,6 @@ body, main {
 /***************************** help pages ****************************/
 
 .breadcrumb {
-  background-color: white !important;
   padding-left: 0 !important;
 }
 

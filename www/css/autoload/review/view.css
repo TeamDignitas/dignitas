@@ -1,3 +1,7 @@
+#reviewActions {
+  background-color: var(--c-light);
+}
+
 #parent-object {
   opacity: 0.65;
 }
