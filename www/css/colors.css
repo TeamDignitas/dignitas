@@ -24,6 +24,7 @@
  *   #000 with #fff
  *   #1e2125 with #e1deda (hover on dropdown items)
  *   #212529 with --bs-gray-100
+ *   #343a40 with --bs-gray-200
  *   #495057 with --bs-gray-300 (except for --bs-body-color)
  *   #6c757d with --bs-gray-400
  *   #86b7fe with #237afc (bluish border around focused inputs)
@@ -294,6 +295,12 @@
     --bs-table-hover-color: var(--bs-gray-300);
     border-color: var(--bs-gray-700);
     color: var(--bs-gray-300);
+  }
+
+  .toast {
+    background-color: var(--bs-gray-200);
+    box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.3);
+    color: var(--c-light);
   }
 
   .text-muted {

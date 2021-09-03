@@ -5,6 +5,7 @@
 
 /* our variables, not Bootstrap's */
 $butter: #f3e6d7;
+$carbon: #343a40;
 
 /* Bootstrap overrides */
 $dark: #232429;
@@ -17,8 +18,8 @@ $dropdown-dark-color: $butter;
 $dropdown-dark-divider-bg: $butter;
 $dropdown-dark-link-color: $butter;
 
-$pagination-active-bg: #6c757d;
-$pagination-active-border-color: #6c757d;
+$pagination-active-bg: #6c757d; /* secondary */
+$pagination-active-border-color: #6c757d; /* secondary */
 
 $popover-bg: #ccc;
 
@@ -30,6 +31,11 @@ $tooltip-max-width: 300px;
 $tooltip-opacity: 1.0;
 $tooltip-padding-x: 0.75rem;
 $tooltip-padding-y: 0.75rem;
+
+$toast-background-color: $carbon;
+$toast-border-width: 0;
+$toast-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+$toast-color: #f8f9fa; /* light */
 
 $navbar-dark-color: $butter;   /* only used by the togglers */
 $navbar-dark-toggler-border-color: $butter;
@@ -49,7 +55,7 @@ $btn-white-space: nowrap;
  **/
 $custom-colors: (
   "butter": $butter,
-  "carbon": #343a40,
+  "carbon": $carbon,
 );
 $theme-colors: map-merge($theme-colors, $custom-colors);
 
