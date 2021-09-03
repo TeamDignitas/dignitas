@@ -45,6 +45,10 @@ blockquote {
 
 /******************************** navbar *********************************/
 
+.navbar {
+  background-color: var(--c-navbar-bg);
+}
+
 .navbar-nav {
   white-space: nowrap;
 }

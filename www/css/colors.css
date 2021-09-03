@@ -2,6 +2,7 @@
 
 :root {
   --c-light: var(--bs-light);
+  --c-navbar-bg: var(--bs-dark);
   --c-tab-border: #999;
 
   /* verdict colors */
@@ -41,11 +42,12 @@
   :root {
     --bs-body-bg: var(--bs-gray-900);
     --bs-body-color: white;
-    --c-alert-secondary: var(--bs-gray-400);    /* replaces #6c757d aka gray-600 */
-    --c-alert-secondary-bg: #1d1c1a;            /* replaces #e2e3e5 */
-    --c-dark: #dcdbd6;                          /* replaces #232429 */
-    --c-light: var(--bs-gray-800);              /* replaces #f8f9fa aka gray-100 */
-    --c-light-hover: #3c4248;                   /* replaces #f9fafb */
+    --c-alert-secondary: var(--bs-gray-400);  /* replaces #6c757d aka gray-600 */
+    --c-alert-secondary-bg: #1d1c1a;          /* replaces #e2e3e5 */
+    --c-dark: #dcdbd6;                        /* replaces #232429 */
+    --c-light: var(--bs-gray-800);            /* replaces #f8f9fa aka gray-100 */
+    --c-light-hover: #3c4248;                 /* replaces #f9fafb */
+    --c-navbar-bg: #2a2f3a;                   /* slightly lighter than --bs-body-bg */
     --c-primary-hover: #0a58ca;
 
     /* our colors */

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark">
 
   <div class="container-fluid"> {* see https://getbootstrap.com/docs/5.0/migration/#navbars *}
 
