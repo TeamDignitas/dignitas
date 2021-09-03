@@ -1,9 +1,10 @@
 /****************************** light mode ******************************/
 
 :root {
-  --c-light: var(--bs-light);
+  --c-review-actions: var(--bs-gray-100);
   --c-navbar-bg: var(--bs-dark);
   --c-tab-border: #999;
+  --c-toast-color: var(--bs-gray-100);
 
   /* verdict colors */
   --v-none: #eee;
@@ -45,10 +46,10 @@
     --c-alert-secondary: var(--bs-gray-400);  /* replaces #6c757d aka gray-600 */
     --c-alert-secondary-bg: #1d1c1a;          /* replaces #e2e3e5 */
     --c-dark: #dcdbd6;                        /* replaces #232429 */
-    --c-light: var(--bs-gray-800);            /* replaces #f8f9fa aka gray-100 */
-    --c-light-hover: #3c4248;                 /* replaces #f9fafb */
+    --c-review-actions: var(--bs-gray-800);
     --c-navbar-bg: #2a2f3a;                   /* slightly lighter than --bs-body-bg */
     --c-primary-hover: #0a58ca;
+    --c-toast-color: var(--bs-gray-800);
 
     /* our colors */
     --c-tab-border: #666;
@@ -85,17 +86,6 @@
   .btn-close {
     /* this is stupid */
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e");
-  }
-
-  .btn-light {
-    background-color: var(--c-light);
-    border-color: var(--c-light);
-    color: #fff;
-  }
-  .btn-light:hover {
-    background-color: var(--c-light-hover);
-    border-color: var(--c-light-hover);
-    color: #fff;
   }
 
   .btn-link {
@@ -309,7 +299,7 @@
   .toast {
     background-color: var(--bs-gray-200);
     box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.3);
-    color: var(--c-light);
+    color: var(--c-toast-color);
   }
 
   .text-muted {
