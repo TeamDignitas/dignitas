@@ -1,11 +1,3 @@
-@media (max-width: 768px){
-  .highlight-sm {
-    background-color: #ccc;
-    margin-top: 0.75rem;
-    margin-bottom: 0.5rem;
-  }
-}
-
 .history {
   font-size: 1.75rem;
   line-height: 2.3rem;
@@ -24,7 +16,7 @@ pre.identical-block {
 }
 
 pre.diff {
-  color: gray;
+  color: var(--c-777);
   margin-top: 1em;
   white-space: pre-wrap;
 }
@@ -32,9 +24,12 @@ pre.diff {
 .diff-op1 {
   background-color: #c8ffc8;
   color: black;
+  padding: 2px 3px;
 }
 
 .diff-op2 {
   background-color: #ffc8c8;
   color: black;
+  margin-right: 2px;
+  padding: 2px 3px;
 }

@@ -92,7 +92,6 @@ blockquote {
 /****************** navbar search box & search results ******************/
 
 .navbar .select2 {
-  background-color: #fff;
   /* Add rounded corners explicitly. This is necessary because the span is */
   /* not the first in the input-group; the hidden <select> comes before. */
   border-bottom-left-radius: 0.25rem !important;
@@ -108,9 +107,9 @@ blockquote {
 }
 
 .nav-pills .nav-link.active {
-  background-color: #fff;
-  border-bottom: 3px solid #999;
-  color: #999;
+  background-color: var(--c-fff);
+  border-bottom: 3px solid var(--c-999);
+  color: var(--c-999);
   border-radius: 0;
   vertical-align: baseline;
 }
@@ -131,8 +130,8 @@ blockquote {
 }
 
 @keyframes answer-highlight-animation {
-  from { background-color: #777; }
-  to { background-color: white; }
+  from { background-color: var(--c-777); }
+  to { background-color: var(--c-fff); }
 }
 
 .vote-box {
@@ -149,7 +148,7 @@ blockquote {
 }
 
 .vote-box button {
-  color: #777;
+  color: var(--c-777);
   display: block;
   font-size: 25px;
   margin: 0px auto;
@@ -177,7 +176,7 @@ blockquote {
 }
 
 .title-divider {
-  border-color: #ccc;
+  border-color: var(--c-ccc);
 }
 
 .statement-read-only .text-muted,
@@ -298,7 +297,7 @@ blockquote {
 }
 
 .statement-link a {
-  color: #555;
+  color: var(--c-444);
   font-size: 0.9rem;
   font-style: italic;
 }
@@ -306,7 +305,7 @@ blockquote {
 /*************** answers, entity statements, user profile ***************/
 
 .subsection {
-  border-bottom: 1px solid #999;
+  border-bottom: 1px solid var(--c-999);
 }
 
 .capitalize-first-word::first-letter {
@@ -314,7 +313,7 @@ blockquote {
 }
 
 .your-answer {
-  background-color: #eee;
+  background-color: var(--c-eee);
   padding: 3rem;
 }
 
@@ -333,14 +332,14 @@ blockquote {
 /******************************* comments *******************************/
 
 .comment {
-  border-bottom: 1px solid #ccc;
-  color: #777;
+  border-bottom: 1px solid var(--c-ccc);
+  color: var(--c-777);
   font-size: 80%;
   padding: 5px 0px;
 }
 
 .comment-list .comment:first-child {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--c-ccc);
 }
 
 .comment p {
@@ -348,15 +347,15 @@ blockquote {
 }
 
 .comment-actions {
-  color: #bbb;
+  color: var(--c-bbb) !important;
 }
 
 .comment-actions:hover {
-  color: #777;
+  color: var(--c-777) !important;
 }
 
 .dropdown-canned-responses a {
-  color: black;
+  color: var(--c-000);
   pointer-events: none;
   text-decoration: none;
 }
@@ -436,7 +435,7 @@ body, main {
 /************************ help pages and sidebar ************************/
 
 .help-sidebar {
-  border: 1px solid #ccc;
+  border: 1px solid var(--c-ccc);
   border-radius: .25rem;
   font-size: 0.8rem;
   padding: 0.5rem 0;
@@ -461,7 +460,7 @@ body, main {
 }
 
 .markdown table td, .markdown table th {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--c-ccc);
   padding: 0.75rem;
 }
 
@@ -473,7 +472,7 @@ body, main {
 
 .help-sidebar-category a,
 .help-sidebar-page a {
-  color: #777;
+  color: var(--c-777);
 }
 
 /******************************* tooltips *******************************/
@@ -514,7 +513,7 @@ body, main {
 }
 
 .card-collapse-icon .card-header a {
-  color: #555;
+  color: var(--c-555);
   display: block;
   text-decoration: none;
 }
@@ -579,7 +578,7 @@ body, main {
 }
 
 .editor-toolbar button {
-  color: var(--bs-gray);
+  color: var(--c-666);
   margin-bottom: 8px !important;
   margin-top: 8px !important;
 }

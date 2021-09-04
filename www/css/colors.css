@@ -281,12 +281,6 @@
     border-bottom-color: var(--bs-gray-700);
   }
 
-  .nav-pills .nav-link.active,
-  .nav-pills .show > .nav-link {
-    background-color: var(--bs-gray-900);
-    border-bottom-color: var(--bs-gray-600);
-  }
-
   .page-item.active .page-link {
     background-color: var(--bs-gray-400);
     border-color: var(--bs-gray-400);
