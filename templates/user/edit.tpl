@@ -55,7 +55,7 @@
             obj=$user
             geometry=Config::THUMB_USER_PROFILE
             spanClass="col-3"
-            imgClass="pic float-end"}
+            imgClass="rounded-circle float-end"}
         {/hf}
       </fieldset>
 

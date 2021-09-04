@@ -2,7 +2,7 @@
   {include "bits/image.tpl"
     obj=$entity
     geometry=Config::THUMB_ENTITY_AUTOCOMPLETE
-    imgClass="pic me-2 align-middle"}
+    imgClass="me-2 align-middle rounded-circle"}
 
   {$entity->name|escape}
 

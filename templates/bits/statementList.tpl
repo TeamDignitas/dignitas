@@ -25,7 +25,7 @@
             {include "bits/image.tpl"
               obj=$e
               geometry=Config::THUMB_ENTITY_STATEMENT_LIST
-              imgClass="pic rounded-circle img-fluid no-outline"}
+              imgClass="rounded-circle img-fluid"}
           </div>
         {/if}
 

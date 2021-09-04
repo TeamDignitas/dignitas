@@ -6,10 +6,6 @@ h1::first-letter {
   text-transform: capitalize;
 }
 
-img.pic {
-  outline: 1px solid #ddd;
-}
-
 .user-link {
   font-weight: bold;
 }
@@ -186,11 +182,6 @@ blockquote {
 
 .title-divider {
   border-color: #ccc;
-}
-
-img.pic.no-outline,
-.no-outline {
-  outline: 0;
 }
 
 .statement-read-only .text-muted,

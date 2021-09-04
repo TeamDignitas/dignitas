@@ -7,7 +7,7 @@
     {include "bits/image.tpl"
       obj=$entity
       geometry=Config::THUMB_ENTITY_LARGE
-      imgClass="pic rounded-circle img-fluid no-outline"
+      imgClass="rounded-circle img-fluid"
       link=true}
 
     <div class="tags mt-2 text-center">

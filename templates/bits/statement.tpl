@@ -186,7 +186,7 @@
         {include "bits/image.tpl"
           obj=$entity
           geometry=Config::THUMB_ENTITY_LARGE
-          imgClass="pic rounded-circle img-fluid no-outline"}
+          imgClass="rounded-circle img-fluid"}
       </span>
       <h6 class="card-body mx-auto text-center">
         <div class="capitalize-first-word">{$statement->getVerdictLabel()}:</div>
