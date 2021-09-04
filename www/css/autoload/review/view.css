@@ -1,5 +1,5 @@
 #reviewActions {
-  background-color: var(--c-review-actions);
+  background-color: var(--c-eee);
 }
 
 #parent-object {
@@ -20,7 +20,7 @@
 /* hide everything except the verdict from statement side cards */
 aside .card-title,
 aside .card-date,
-aside .rounded-circle {
+aside img {
   display: none;
 }
 

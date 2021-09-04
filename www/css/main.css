@@ -11,8 +11,8 @@ h1::first-letter {
 }
 
 blockquote {
-  border-left: 3px solid #777;
-  color: #777;
+  border-left: 3px solid var(--c-777);
+  color: var(--c-777);
   margin: 1em 2em;
   padding-left: 1em;
 }
@@ -21,10 +21,6 @@ blockquote {
   content: '•';
   opacity: 0.5; /* don't force a color, use opacity instead */
   padding-right: 8px;
-}
-
-.row-border {
-  border-top: 1px solid #dee2e6;
 }
 
 /* fix vertical centering of checkbox and label inside a .small */
@@ -108,7 +104,7 @@ blockquote {
 }
 
 .tabs-wrapper .nav {
-  border-bottom: 1px solid var(--c-tab-border);
+  border-bottom: 1px solid var(--c-999);
 }
 
 .nav-pills .nav-link.active {
@@ -379,7 +375,7 @@ blockquote {
 /******************************** footer ********************************/
 
 footer {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--c-ddd);
   padding-top: 5px;
 }
 

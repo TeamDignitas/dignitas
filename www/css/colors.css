@@ -1,10 +1,25 @@
 /****************************** light mode ******************************/
 
 :root {
-  --c-review-actions: var(--bs-gray-100);
   --c-navbar-bg: var(--bs-dark);
-  --c-tab-border: #999;
-  --c-toast-color: var(--bs-gray-100);
+
+  /* these are replaced by their complements in dark mode */
+  --c-000: #000;
+  --c-111: #111;
+  --c-222: #222;
+  --c-333: #333;
+  --c-444: #444;
+  --c-555: #555;
+  --c-666: #666;
+  --c-777: #777;
+  --c-888: #888;
+  --c-999: #999;
+  --c-aaa: #aaa;
+  --c-bbb: #bbb;
+  --c-ccc: #ccc;
+  --c-ddd: #ddd;
+  --c-eee: #eee;
+  --c-fff: #fff;
 
   /* verdict colors */
   --v-none: #eee;
@@ -20,24 +35,29 @@
 /******************************* dark mode *******************************/
 
 /**
- * We only override classes that our code curently uses. If you begin to use a
- * previously unused class and it looks wrong, see what Bootstrap has and
- * override it here. Try to consistently replace:
+ * General rules:
  *
- *   #000 with #fff
- *   #1e2125 with #e1deda (hover on dropdown items)
- *   #212529 with --bs-gray-100
- *   #343a40 with --bs-gray-200
- *   #495057 with --bs-gray-300 (except for --bs-body-color)
- *   #6c757d with --bs-gray-400
- *   #86b7fe with #237afc (bluish border around focused inputs)
- *   #adb5bd with --bs-gray-500 (identical value, but helps with clarity)
- *   #ced4da with --bs-gray-600
- *   #dde0e3 with --bs-gray-700 (hover on file selector buttons)
- *   #dee2e6 with --bs-gray-700
- *   #e9ecef with --bs-gray-800
- *   #fff with --bs-gray-900 (possibly except for --bs-body-bg)
- *   rgba(0, 0, 0, X) with rgba(255, 255, 255, X)
+ * 1. We only override components that we actually use. If something looks
+ *    wrong, see what Bootstrap has and override it here.
+ *
+ * 2. We generaly replace gray shades with their complements. For predefined
+ *    gray shades:
+ *
+ *    #000 with #fff
+ *    #212529 / --bs-gray-900 with --bs-gray-100
+ *    #343a40 / --bs-gray-800 with --bs-gray-200
+ *    #495057 / --bs-gray-700 with --bs-gray-300 (except for --bs-body-color)
+ *    #6c757d / --bs-gray-600 with --bs-gray-400
+ *    #adb5bd / --bs-gray-500 with --bs-gray-500 (identical value, but helps with clarity)
+ *    #ced4da / --bs-gray-400 with --bs-gray-600
+ *    #dee2e6 / --bs-gray-300 with --bs-gray-700
+ *    #e9ecef / --bs-gray-200 with --bs-gray-800
+ *    #fff with --bs-gray-900
+ *
+ *    For other gray (and grayish) shades, subtract each component from 0xFF.
+ *    For example, replace #1e2125 with #e1deda. Similarly, replace rgba(0, 0, 0, X)
+ *    with rgba(255, 255, 255, X).
+ *
  */
 @media (prefers-color-scheme: dark) {
   :root {
@@ -46,13 +66,34 @@
     --c-alert-secondary: var(--bs-gray-400);  /* replaces #6c757d aka gray-600 */
     --c-alert-secondary-bg: #1d1c1a;          /* replaces #e2e3e5 */
     --c-dark: #dcdbd6;                        /* replaces #232429 */
-    --c-review-actions: var(--bs-gray-800);
-    --c-navbar-bg: #2a2f3a;                   /* slightly lighter than --bs-body-bg */
-    --c-primary-hover: #0a58ca;
-    --c-toast-color: var(--bs-gray-800);
+    --c-dropdown-item-hover: #e1deda;         /* replaces #1e2125 */
+    --c-file-selector-hover: #221f1c;         /* replaces #dde0e3 */
+    --c-input-focus-border: #237afc;          /* replaces #86b7fe */
+    --c-primary-hover: #0a58ca;               /* does not change, but needs to be redefined */
 
     /* our colors */
-    --c-tab-border: #666;
+    --c-navbar-bg: #2a2f3a;                   /* slightly lighter than --bs-body-bg */
+
+    /**
+     * Complements are not defined relative to 0xFF. Instead, we split the
+     * interval #212529-#ffffff into 16 shades.
+     **/
+    --c-000: #fff;
+    --c-111: #f0f0f1;
+    --c-222: #e1e2e3;
+    --c-333: #d3d3d4;
+    --c-444: #c4c5c6;
+    --c-555: #b5b6b8;
+    --c-666: #a6a8aa;
+    --c-777: #97999b;
+    --c-888: #898b8d;
+    --c-999: #7a7c7e;
+    --c-aaa: #6b6e70;
+    --c-bbb: #5c5f62;
+    --c-ccc: #4d5154;
+    --c-ddd: #3f4245;
+    --c-eee: #303437;
+    --c-fff: #212529;
   }
 
   .alert-secondary {
@@ -155,7 +196,7 @@
     color: var(--bs-gray-100);
   }
   .dropdown-item:hover, .dropdown-item:focus {
-    color: #e1deda;
+    color: var(--c-dropdown-item-hover);
     background-color: var(--bs-gray-800);
   }
   .dropdown-item.disabled, .dropdown-item:disabled {
@@ -173,7 +214,7 @@
     border-color: rgba(255, 255, 255, 0.25);
   }
   .form-check-input:focus {
-    border-color: #237afc;
+    border-color: var(--c-input-focus-border);
   }
 
   .form-control {
@@ -189,11 +230,11 @@
     color: var(--bs-gray-300);
   }
   .form-control:hover:not(:disabled):not([readonly])::file-selector-button {
-    background-color: var(--bs-gray-700);
+    background-color: var(--c-file-selector-hover);
   }
   .form-control:focus {
     background-color: var(--bs-gray-900);
-    border-color: #237afc;
+    border-color: var(--c-input-focus-border);
     color: var(--bs-gray-300);
   }
   .form-control::placeholder {
@@ -210,7 +251,7 @@
     background-color: var(--bs-gray-800);
   }
   .form-select:focus {
-    border-color: #237afc;
+    border-color: var(--c-input-focus-border);
   }
 
   .form-text {
@@ -297,9 +338,9 @@
   }
 
   .toast {
-    background-color: var(--bs-gray-200);
-    box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.3);
-    color: var(--c-toast-color);
+    background-color: var(--bs-gray-400);
+    box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.2);
+    color: var(--bs-gray-800);
   }
 
   .text-muted {
@@ -323,7 +364,7 @@
 
   .select2-container--bootstrap-5.select2-container--focus .select2-selection,
   .select2-container--bootstrap-5.select2-container--open .select2-selection {
-    border-color: #237afc;
+    border-color: var(--c-input-focus-border);
   }
 
   .select2-container--bootstrap-5 .select2-dropdown {
