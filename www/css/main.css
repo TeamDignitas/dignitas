@@ -571,8 +571,15 @@ body, main {
 
 /************************ EasyMDEContainer ************************/
 
+.CodeMirror  {
+  background-color: var(--c-fff) !important;
+  border-color: var(--c-ddd) !important;
+  color: var(--c-000) !important;
+}
+
 .editor-toolbar {
   align-items: center;
+  border-color: var(--c-bbb) !important;
   display: flex;
   flex-wrap: wrap;
 }
@@ -586,6 +593,15 @@ body, main {
 .is-invalid + .EasyMDEContainer > .editor-toolbar,
 .is-invalid + .EasyMDEContainer > .CodeMirror {
   border-color: red;
+}
+
+.cm-s-easymde .cm-link,
+.cm-s-easymde .cm-quote {
+  color: var(--c-888) !important;
+}
+
+.cm-s-easymde .cm-url {
+  color: var(--c-aaa) !important;
 }
 
 /**************************** archived links ****************************/
