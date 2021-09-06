@@ -10,7 +10,7 @@
       <input type="text" class="form-control" name="q" aria-label="search">
     </noscript>
 
-    <button type="submit" class="btn btn-carbon">
+    <button type="submit" class="btn">
       {include "bits/icon.tpl" i=search}
     </button>
   </div>

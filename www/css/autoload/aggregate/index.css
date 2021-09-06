@@ -18,12 +18,13 @@
 }
 
 .meta-line {
-  border: 1px solid #0d0e0e;
+  border: 1px solid var(--c-111);
   height: 2px;
   margin-bottom: 4px;
 }
 
 .hero {
   /* cancel the padding on the parent .container-fluid */
+  background-color: var(--c-hero-bg);
   margin: 0 calc(-1 * var(--bs-gutter-x, .75rem));
 }

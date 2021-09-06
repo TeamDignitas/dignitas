@@ -48,7 +48,7 @@
 
         {elseif $type == Proto::TYPE_ANSWER}
 
-          <div class="rounded border border-dark pt-4 pb-3 ps-3 pe-4">
+          <div class="rounded border pt-4 pb-3 ps-3 pe-4">
             {include "bits/answer.tpl"
               answer=$object
               addComment=true
@@ -100,7 +100,7 @@
 
             <h3>{cap}{t}title-pertaining-to-answer{/t}{/cap}</h3>
 
-            <div id="parent-object" class="border border-dark px-4 py-4">
+            <div id="parent-object" class="rounded border px-4 py-4">
               {include "bits/answer.tpl"
                 answer=$parent
                 ellipsisMenu=false

@@ -51,7 +51,7 @@ blockquote {
 
 @media (max-width: 768px) {
   .navbar-collapse {
-    background-color: var(--bs-carbon);
+    background-color: var(--bs-gray-800);
     height: 100%;
     margin-top: 3px;
     padding: 1rem;
@@ -90,6 +90,12 @@ blockquote {
 }
 
 /****************** navbar search box & search results ******************/
+
+#form-search .btn {
+  color: #fff;
+  background-color: var(--bs-gray-800);
+  border-color: var(--bs-gray-800);
+}
 
 .navbar .select2 {
   /* Add rounded corners explicitly. This is necessary because the span is */

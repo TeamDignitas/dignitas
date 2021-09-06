@@ -24,13 +24,6 @@ aside img {
   display: none;
 }
 
-.review-message .answer {
-  margin-left: 0;
-  margin-right: 0;
-  border: 1px solid #007bff;
-  border-radius: .25rem;
-}
-
 .review-message .card-body {
   margin-top: 8px;
 }
@@ -38,7 +31,7 @@ aside img {
 .callout {
   padding: 20px 40px;
   margin: 20px 0;
-  border: 1px solid #eee;
+  border: 1px solid var(--c-eee);
   border-left-width: 5px;
   border-radius: 3px;
 }

@@ -9,7 +9,7 @@
   {/foreach}
 
   {if User::getActive()}
-    <div class="bg-dark hero">
+    <div class="hero">
       <div class="f-container py-5">
         <div class="col-12 col-lg-3 mt-3 mb-5">
           <div class="row align-items-center me-3">

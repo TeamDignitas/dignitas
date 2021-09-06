@@ -1,6 +1,7 @@
 /****************************** light mode ******************************/
 
 :root {
+  --c-hero-bg: var(--bs-dark);
   --c-navbar-bg: var(--bs-dark);
 
   /* these are replaced by their complements in dark mode */
@@ -61,17 +62,19 @@
  */
 @media (prefers-color-scheme: dark) {
   :root {
+    color-scheme: dark;
+
     --bs-body-bg: var(--bs-gray-900);
     --bs-body-color: white;
     --c-alert-secondary: var(--bs-gray-400);  /* replaces #6c757d aka gray-600 */
     --c-alert-secondary-bg: #1d1c1a;          /* replaces #e2e3e5 */
-    --c-dark: #dcdbd6;                        /* replaces #232429 */
     --c-dropdown-item-hover: #e1deda;         /* replaces #1e2125 */
     --c-file-selector-hover: #221f1c;         /* replaces #dde0e3 */
     --c-input-focus-border: #237afc;          /* replaces #86b7fe */
     --c-primary-hover: #0a58ca;               /* does not change, but needs to be redefined */
 
     /* our colors */
+    --c-hero-bg: #252a31;                     /* midpoint between navbar and body bg */
     --c-navbar-bg: #2a2f3a;                   /* slightly lighter than --bs-body-bg */
 
     /**
@@ -106,9 +109,6 @@
   }
   .border-bottom {
     border-bottom-color: var(--bs-gray-700) !important;
-  }
-  .border-dark {
-    border-color: var(--c-dark) !important;
   }
 
   .breadcrumb-item + .breadcrumb-item::before {

@@ -5,7 +5,6 @@
 
 /* our variables, not Bootstrap's */
 $butter: #f3e6d7;
-$carbon: #343a40;
 
 /* Bootstrap overrides */
 $dark: #232429;
@@ -32,7 +31,7 @@ $tooltip-opacity: 1.0;
 $tooltip-padding-x: 0.75rem;
 $tooltip-padding-y: 0.75rem;
 
-$toast-background-color: $carbon;
+$toast-background-color: #343a40;
 $toast-border-width: 0;
 $toast-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
 $toast-color: #f8f9fa; /* light */
@@ -50,18 +49,17 @@ $btn-white-space: nowrap;
 
 /**
  * These are usable
- *   - in some class names like btn-carbon;
- *   - in CSS variables like color: var(--bs-carbon) !important.
+ *   - in some class names like btn-butter;
+ *   - in CSS variables like color: var(--bs-butter).
  **/
 $custom-colors: (
   "butter": $butter,
-  "carbon": $carbon,
 );
 $theme-colors: map-merge($theme-colors, $custom-colors);
 
 /**
  * These are necessary as of BS 5.1 in order to generate certain CSS classes
- * like text-carbon. See:
+ * like text-butter. See:
  * https://stackoverflow.com/a/68762902/6022817
  * https://blog.getbootstrap.com/2021/08/04/bootstrap-5-1-0/#updated-bg--and-text--utilities
  */

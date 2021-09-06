@@ -1,5 +1,5 @@
 .markdown-heading a {
-  color: #444;
+  color: var(--c-444);
   visibility: hidden;
 }
 
