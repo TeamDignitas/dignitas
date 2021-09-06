@@ -62,8 +62,6 @@
  */
 @media (prefers-color-scheme: dark) {
   :root {
-    color-scheme: dark;
-
     --bs-body-bg: var(--bs-gray-900);
     --bs-body-color: white;
     --c-alert-secondary: var(--bs-gray-400);  /* replaces #6c757d aka gray-600 */
