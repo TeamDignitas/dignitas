@@ -87,8 +87,12 @@ $(function() {
   // intercept the submit button because Select2 doesn't populate the <select>
   // element properly and the search term is not submitted.
   $('#form-search').submit(function() {
-    var value = $('#searchField').find('option').val();
-    window.location.href = SEARCH_URL + '/' + value;
+    var opt = $('#searchField').find('option');
+
+    if (!opt.length) {
+      return false; // no search term
+    }
+    window.location.href = SEARCH_URL + '/' + opt.val();
     return false;
   });
 
