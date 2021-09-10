@@ -43,8 +43,9 @@
         {if $reopenButtonConfirm}data-confirm="{$reopenButtonConfirm}"{/if}
         name="reopenButton"
         type="submit">
-      {t}link-reopen{/t}
-    </button>
+        {t}link-reopen{/t}
+      </button>
+    </div>
   {/if}
 
   {if $cloneButton}
