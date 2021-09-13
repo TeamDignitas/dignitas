@@ -5,3 +5,8 @@
 .relation-fit {
   max-width: 200px;
 }
+
+.to-entity-id {
+  /* select2 will match this */
+  min-width: 250px;
+}

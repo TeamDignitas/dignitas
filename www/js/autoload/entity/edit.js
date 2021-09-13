@@ -7,7 +7,6 @@ $(function() {
     dropdownCssClass: "select2--small",
     minimumInputLength: 2,
     selectionCssClass: "select2--small",
-    width: '100%',
   };
 
   var stemAlias = null;
