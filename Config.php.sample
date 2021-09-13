@@ -35,6 +35,9 @@ class Config {
   const DATABASE_SCHEMA_URL = 'https://dignitas.ro/static/database-schema.sql';
   const SAMPLE_DATA_URL = 'https://dignitas.ro/static/sample-data.json';
 
+  // See https://github.com/TeamDignitas/dignitas/wiki/Color-scheme
+  const COLOR_SCHEMES = [ 'light', 'dark' ];
+
   // Allowed MIME type => canonical file extension
   // In particular, we accept .jpg and .jpeg uploads, but canonicalize both to .jpg.
   const MIME_TYPES = [

@@ -18,6 +18,7 @@ const CODEPOINTS = [
   'code',
   'compare_arrows',
   'content_copy',
+  'dark_mode',
   'delete_forever',
   'done',
   'drag_indicator',
@@ -46,6 +47,7 @@ const CODEPOINTS = [
   'integration_instructions',
   'inventory',
   'language',
+  'light_mode',
   'lightbulb',
   'local_offer',
   'lock',
@@ -74,7 +76,7 @@ const ASCII_GLYPHS = [ '5f-7a', '30-39' ]; // always include [_a-z0-9]
 // Use the stable font, but the master codepoints (there are no codepoints in
 // the release).
 const CODEPOINT_URL = 'https://raw.githubusercontent.com/google/material-design-icons/master/font/MaterialIcons-Regular.codepoints';
-const FONT_URL = 'https://github.com/google/material-design-icons/raw/4.0.0/font/MaterialIcons-Regular.ttf';
+const FONT_URL = 'https://github.com/google/material-design-icons/blob/master/font/MaterialIcons-Regular.ttf?raw=true';
 
 const TMP_FONT_FILE = '/tmp/material-icons.ttf';
 const OUTPUT_FILE = __DIR__ . '/../www/fonts/material-icons.woff2';

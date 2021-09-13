@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-08-19 17:10+0300\n"
-"PO-Revision-Date: 2021-08-19 17:13+0300\n"
+"POT-Creation-Date: 2021-09-13 13:36+0300\n"
+"PO-Revision-Date: 2021-09-13 13:37+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -222,7 +222,7 @@ msgstr "I forgot my password"
 msgid "label-remember-me"
 msgstr "Remember me for one year."
 
-#: templates/auth/login.tpl:53 templates/bits/navmenu.tpl:204
+#: templates/auth/login.tpl:53 templates/bits/navmenu.tpl:240
 msgid "link-log-in"
 msgstr "log in"
 
@@ -475,7 +475,7 @@ msgstr "test user login"
 msgid "label-reputation"
 msgstr "reputation"
 
-#: templates/bits/fakeLogin.tpl:37 templates/bits/navmenu.tpl:180
+#: templates/bits/fakeLogin.tpl:37 templates/bits/navmenu.tpl:197
 #: templates/user/view.tpl:19
 msgid "label-moderator"
 msgstr "moderator"
@@ -687,15 +687,23 @@ msgstr "dashboard"
 msgid "link-my-profile"
 msgstr "my profile"
 
-#: templates/bits/navmenu.tpl:166
+#: templates/bits/navmenu.tpl:168 templates/bits/navmenu.tpl:222
+msgid "link-light-mode"
+msgstr "light mode"
+
+#: templates/bits/navmenu.tpl:176 templates/bits/navmenu.tpl:230
+msgid "link-dark-mode"
+msgstr "dark mode"
+
+#: templates/bits/navmenu.tpl:183
 msgid "info-reputation-manual"
 msgstr "change reputation manually (will refresh the page)"
 
-#: templates/bits/navmenu.tpl:185
+#: templates/bits/navmenu.tpl:202
 msgid "link-change"
 msgstr "schimbă"
 
-#: templates/bits/navmenu.tpl:195
+#: templates/bits/navmenu.tpl:212
 msgid "link-log-out"
 msgstr "log out"
 
@@ -887,7 +895,7 @@ msgstr "stop watching this item"
 msgid "link-unsubscribe"
 msgstr "unwatch"
 
-#: templates/bits/viewMarkdownButton.tpl:10
+#: templates/bits/viewMarkdownButton.tpl:9
 msgid "link-view-markdown"
 msgstr "show Markdown code"
 
@@ -2825,15 +2833,15 @@ msgstr "kept"
 msgid "info-no-such-user"
 msgstr "The user you are looking for does not exist."
 
-#: routes/aggregate/viewMarkdown.php:17
+#: routes/aggregate/viewMarkdown.php:14
 msgid "info-view-markdown-bad-object-type"
 msgstr "Invalid object type."
 
-#: routes/aggregate/viewMarkdown.php:23
+#: routes/aggregate/viewMarkdown.php:20
 msgid "info-view-markdown-no-object"
 msgstr "Article not found."
 
-#: routes/aggregate/viewMarkdown.php:28
+#: routes/aggregate/viewMarkdown.php:25
 msgid "info-view-markdown-restricted-object"
 msgstr "You have insufficient privileges to view that article."
 

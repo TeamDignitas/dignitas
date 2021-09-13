@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-08-19 15:50+0300\n"
-"PO-Revision-Date: 2021-08-19 17:12+0300\n"
+"POT-Creation-Date: 2021-09-13 13:36+0300\n"
+"PO-Revision-Date: 2021-09-13 13:36+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -223,7 +223,7 @@ msgstr "mi-am uitat parola"
 msgid "label-remember-me"
 msgstr "Ține-mă minte un an."
 
-#: templates/auth/login.tpl:53 templates/bits/navmenu.tpl:204
+#: templates/auth/login.tpl:53 templates/bits/navmenu.tpl:240
 msgid "link-log-in"
 msgstr "autentificare"
 
@@ -480,7 +480,7 @@ msgstr "autentificare ca utilizator de test"
 msgid "label-reputation"
 msgstr "reputație"
 
-#: templates/bits/fakeLogin.tpl:37 templates/bits/navmenu.tpl:180
+#: templates/bits/fakeLogin.tpl:37 templates/bits/navmenu.tpl:197
 #: templates/user/view.tpl:19
 msgid "label-moderator"
 msgstr "moderator"
@@ -693,15 +693,23 @@ msgstr "panou de control"
 msgid "link-my-profile"
 msgstr "profilul meu"
 
-#: templates/bits/navmenu.tpl:166
+#: templates/bits/navmenu.tpl:168 templates/bits/navmenu.tpl:222
+msgid "link-light-mode"
+msgstr "modul luminos"
+
+#: templates/bits/navmenu.tpl:176 templates/bits/navmenu.tpl:230
+msgid "link-dark-mode"
+msgstr "modul întunecat"
+
+#: templates/bits/navmenu.tpl:183
 msgid "info-reputation-manual"
 msgstr "schimbă reputația manual (va reîncărca pagina)"
 
-#: templates/bits/navmenu.tpl:185
+#: templates/bits/navmenu.tpl:202
 msgid "link-change"
 msgstr "schimbă"
 
-#: templates/bits/navmenu.tpl:195
+#: templates/bits/navmenu.tpl:212
 msgid "link-log-out"
 msgstr "ieșire"
 
@@ -897,7 +905,7 @@ msgstr "dezabonează-mă de la toate notificările despre acest articol"
 msgid "link-unsubscribe"
 msgstr "nu mai urmări"
 
-#: templates/bits/viewMarkdownButton.tpl:10
+#: templates/bits/viewMarkdownButton.tpl:9
 msgid "link-view-markdown"
 msgstr "arată codul Markdown"
 
@@ -2847,15 +2855,15 @@ msgstr "îndeplinită"
 msgid "info-no-such-user"
 msgstr "Utilizatorul căutat nu există."
 
-#: routes/aggregate/viewMarkdown.php:17
+#: routes/aggregate/viewMarkdown.php:14
 msgid "info-view-markdown-bad-object-type"
 msgstr "Ați ales un tip de obiect incorect."
 
-#: routes/aggregate/viewMarkdown.php:23
+#: routes/aggregate/viewMarkdown.php:20
 msgid "info-view-markdown-no-object"
 msgstr "Articolul căutat nu există."
 
-#: routes/aggregate/viewMarkdown.php:28
+#: routes/aggregate/viewMarkdown.php:25
 msgid "info-view-markdown-restricted-object"
 msgstr "Aveți privilegii insuficiente pentru a vedea acel articol."
 

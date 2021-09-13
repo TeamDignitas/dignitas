@@ -159,6 +159,24 @@
                 {include "bits/icon.tpl" i=person}
                 {t}link-my-profile{/t}
               </a>
+
+              {if count(Config::COLOR_SCHEMES) > 1}
+                <a
+                  class="dropdown-item py-1 light-mode-toggle"
+                  data-mode="light"
+                  href="#">
+                  {include "bits/icon.tpl" i=light_mode}
+                  {t}link-light-mode{/t}
+                </a>
+                <a
+                  class="dropdown-item py-1 dark-mode-toggle"
+                  data-mode="dark"
+                  href="#">
+                  {include "bits/icon.tpl" i=dark_mode}
+                  {t}link-dark-mode{/t}
+                </a>
+              {/if}
+
               {if Config::DEVELOPMENT_MODE}
                 <div class="dropdown-divider"></div>
                 <form id="rep-change" class="px-4">
@@ -197,6 +215,27 @@
             </div>
           </li>
         {else}
+          {if count(Config::COLOR_SCHEMES) > 1}
+            <li class="nav-item">
+              <a
+                class="nav-link py-1 light-mode-toggle"
+                data-mode="light"
+                href="#"
+                title="{t}link-light-mode{/t}">
+
+                {include "bits/icon.tpl" i=light_mode}
+              </a>
+              <a
+                class="nav-link py-1 dark-mode-toggle"
+                data-mode="dark"
+                href="#"
+                title="{t}link-dark-mode{/t}">
+
+                {include "bits/icon.tpl" i=dark_mode}
+              </a>
+            </li>
+          {/if}
+
           <li class="nav-item">
             <a
               class="nav-link capitalize-first-word py-1"
