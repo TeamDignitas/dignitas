@@ -214,14 +214,14 @@ blockquote {
   background-color: var(--v-none) !important;
 }
 .statement.verdict-0 {
-  border-color: var(--v-none);
+  border-color: var(--v-none) !important;
 }
 
 .bg-verdict-1 { /* undecidable */
   background-color: var(--v-undecidable) !important;
 }
 .statement.verdict-1 {
-  border-color: var(--v-undecidable);
+  border-color: var(--v-undecidable) !important;
 }
 
 .bg-verdict-2,   /* false */
@@ -233,7 +233,7 @@ blockquote {
 .statement.verdict-2,
 .statement.verdict-7,
 .statement.verdict-10 {
-  border-color: var(--v-red);
+  border-color: var(--v-red) !important;
 }
 
 .bg-verdict-3,   /* mostly false */
@@ -243,7 +243,7 @@ blockquote {
 }
 .statement.verdict-3,
 .statement.verdict-11 {
-  border-color: var(--v-orange);
+  border-color: var(--v-orange) !important;
 }
 
 .bg-verdict-4,   /* mixed */
@@ -254,7 +254,7 @@ blockquote {
 .statement.verdict-4,
 .statement.verdict-8,
 .statement.verdict-12 {
-  border-color: var(--v-yellow);
+  border-color: var(--v-yellow) !important;
 }
 
 .bg-verdict-5,   /* mostly true */
@@ -264,7 +264,7 @@ blockquote {
 }
 .statement.verdict-5,
 .statement.verdict-13 {
-  border-color: var(--v-olive);
+  border-color: var(--v-olive) !important;
 }
 
 .bg-verdict-6,   /* true */
@@ -276,7 +276,7 @@ blockquote {
 .statement.verdict-6,
 .statement.verdict-9,
 .statement.verdict-14 {
-  border-color: var(--v-green);
+  border-color: var(--v-green) !important;
 }
 
 .statement.card {

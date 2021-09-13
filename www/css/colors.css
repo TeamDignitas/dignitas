@@ -1,3 +1,16 @@
+/******************************** globals ********************************/
+
+:root {
+  /* verdict colors */
+  --v-none: #eee;
+  --v-undecidable: #aaa;
+  --v-red: #d90404;
+  --v-orange: #ec771f;
+  --v-yellow: #ffeb3b;
+  --v-olive: #9bad22;
+  --v-green: #37700a;
+}
+
 /****************************** light mode ******************************/
 
 html.light {
@@ -21,15 +34,6 @@ html.light {
   --c-ddd: #ddd;
   --c-eee: #eee;
   --c-fff: #fff;
-
-  /* verdict colors */
-  --v-none: #eee;
-  --v-undecidable: #aaa;
-  --v-red: #d90404;
-  --v-orange: #ec771f;
-  --v-yellow: #ffeb3b;
-  --v-olive: #9bad22;
-  --v-green: #37700a;
 }
 
 html.light .light-mode-toggle {
