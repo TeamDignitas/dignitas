@@ -197,24 +197,25 @@ html.dark .card-header {
   border-bottom-color: rgba(255, 255, 255, 0.125);
 }
 
-html.dark .dropdown-divider {
+/* Use main so that we don't affect the navbar dropdowns */
+html.dark main .dropdown-divider {
   border-top-color: rgba(255, 255, 255, 0.15);
 }
 
-html.dark .dropdown-item {
+html.dark main .dropdown-item {
   color: var(--bs-gray-100);
 }
-html.dark .dropdown-item:hover,
-html.dark .dropdown-item:focus {
+html.dark main .dropdown-item:hover,
+html.dark main .dropdown-item:focus {
   color: var(--c-dropdown-item-hover);
   background-color: var(--bs-gray-800);
 }
-html.dark .dropdown-item.disabled,
-html.dark .dropdown-item:disabled {
+html.dark main .dropdown-item.disabled,
+html.dark main .dropdown-item:disabled {
   color: var(--bs-gray-500);
 }
 
-html.dark .dropdown-menu {
+html.dark main .dropdown-menu {
   background-color: var(--bs-gray-900);
   border-color: rgba(255, 255, 255, 0.15);
   color: var(--bs-gray-300);
