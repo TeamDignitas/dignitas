@@ -9,6 +9,7 @@ echo "The root of your client appears to be $ROOT_DIR"
 
 INPUT=www/scss/main.scss
 OUTPUT=www/css/third-party/bootstrap.min.css
+export SASS_PATH=www/scss/third-party/bootstrap/
 
 echo "Recompiling $INPUT into $OUTPUT"
 sassc -t compressed $INPUT > $OUTPUT
