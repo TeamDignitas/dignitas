@@ -46,7 +46,6 @@ $btn-white-space: nowrap;
 @import "functions";
 @import "variables";
 @import "mixins";
-@import "utilities";
 
 /**
  * These are usable
@@ -57,6 +56,13 @@ $custom-colors: (
   "butter": $butter,
 );
 $theme-colors: map-merge($theme-colors, $custom-colors);
+
+/**
+ * Remove unused colors.
+ */
+$theme-colors: map-remove($theme-colors, "dark", "info", "light", "success");
+$utilities-colors: map-remove($utilities-colors, "dark", "info", "light", "success");
+$table-variants: (); /* no colors */
 
 /**
  * These are necessary as of BS 5.1 in order to generate certain CSS classes
@@ -73,6 +79,8 @@ $utilities-bg-colors: map-loop($utilities-colors, rgba-css-var, "$key", "bg");
  * Keep the rest of the file in sync with third-party/bootstrap/bootstrap.scss.
  * Comment out what we don't use.
  */
+@import "utilities";
+
 @import "root";
 @import "reboot";
 @import "type";
