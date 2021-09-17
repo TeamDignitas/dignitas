@@ -130,7 +130,7 @@ trait UploadTrait {
     if (!file_exists($thumbLocation)) {
       $origLocation =  $this->getFileLocation(self::$FULL_GEOMETRY);
       @mkdir(dirname($thumbLocation), 0777, true);
-      $cmd = sprintf('convert -resize %s -sharpen 1x1 %s[0] %s',
+      $cmd = sprintf('convert -alpha remove -resize %s -sharpen 1x1 %s[0] %s',
                      $geometry, $origLocation, $thumbLocation);
       OS::execute($cmd, $ignored);
     }
