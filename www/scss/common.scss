@@ -1,42 +1,24 @@
 /**
+ * Common definitions for Bootstrap light and dark themes.
+ *
  * If you modify this file, remember to recompile the CSS file by running
  * scripts/recompileCss.sh
  **/
 
-/* our variables, not Bootstrap's */
-$butter: #f3e6d7;
-
 /* Bootstrap overrides */
-$dark: #232429;
-$body-color: #495057;
 $font-family-sans-serif: Spartan, Helvetica, Calibri, Arial, sans-serif;
-
 $link-decoration: none;
-
 $dropdown-dark-color: $butter;
 $dropdown-dark-divider-bg: $butter;
 $dropdown-dark-link-color: $butter;
 
-$pagination-active-bg: #6c757d; /* secondary */
-$pagination-active-border-color: #6c757d; /* secondary */
-
-$popover-bg: #ccc;
-
 $tooltip-arrow-height: .6rem;
 $tooltip-arrow-width: 1.2rem;
-$tooltip-bg: #ccc;
-$tooltip-color: black;
 $tooltip-max-width: 300px;
 $tooltip-opacity: 1.0;
 $tooltip-padding-x: 0.75rem;
 $tooltip-padding-y: 0.75rem;
 
-$toast-background-color: #343a40;
-$toast-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
-$toast-color: #f8f9fa; /* light */
-
-$navbar-dark-color: $butter;   /* only used by the togglers */
-$navbar-dark-toggler-border-color: $butter;
 $navbar-padding-y: 0.125rem;
 
 $input-btn-padding-y: 0.5rem;

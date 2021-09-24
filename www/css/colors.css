@@ -14,9 +14,6 @@
 /****************************** light mode ******************************/
 
 html.light {
-  --c-hero-bg: #232429;
-  --c-navbar-bg: #232429;
-
   /* these are replaced by their complements in dark mode */
   --c-000: #000;
   --c-111: #111;
@@ -68,18 +65,7 @@ html.light .light-mode-toggle {
  *
  */
 html.dark {
-  --bs-body-bg: var(--bs-gray-900);
-  --bs-body-color: white;
-  --c-alert-secondary: var(--bs-gray-400);  /* replaces #6c757d aka gray-600 */
-  --c-alert-secondary-bg: #1d1c1a;          /* replaces #e2e3e5 */
-  --c-dropdown-item-hover: #e1deda;         /* replaces #1e2125 */
   --c-file-selector-hover: #221f1c;         /* replaces #dde0e3 */
-  --c-input-focus-border: #237afc;          /* replaces #86b7fe */
-  --c-primary-hover: #0a58ca;               /* does not change, but needs to be redefined */
-
-  /* our colors */
-  --c-hero-bg: #252a31;                     /* midpoint between navbar and body bg */
-  --c-navbar-bg: #2a2f3a;                   /* slightly lighter than --bs-body-bg */
 
   /**
    * Complements are not defined relative to 0xFF. Instead, we split the
@@ -107,258 +93,11 @@ html.dark .dark-mode-toggle {
   display: none;
 }
 
-html.dark .alert-secondary {
-  background-color: var(--c-alert-secondary-bg);
-  color: var(--c-alert-secondary);
-}
-
-html.dark .border {
-  border-color: var(--bs-gray-700) !important;
-}
-html.dark .border-bottom {
-  border-bottom-color: var(--bs-gray-700) !important;
-}
-
-html.dark .breadcrumb-item + .breadcrumb-item::before {
-  color: var(--bs-gray-400);
-}
-
-html.dark .btn {
-  /* this overrides all other colors, so we will also need to redefine */
-  /* things like .btn-outline-primary */
-  color: var(--bs-gray-300);
-}
-html.dark .btn:hover {
-  color: var(--bs-gray-300);
-}
-
-html.dark .btn-close {
-  /* this is stupid */
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e");
-}
-
-html.dark .btn-link {
-  color: var(--bs-primary);
-}
-html.dark .btn-link:hover {
-  color: var(--c-primary-hover);
-}
-
-html.dark .btn-outline-danger {
-  color: var(--bs-danger);
-}
-html.dark .btn-outline-danger:hover {
-  color: var(--bs-body-bg);
-}
-html.dark .btn-outline-danger:disabled,
-html.dark .btn-outline-danger.disabled {
-  color: var(--bs-danger);
-}
-
-html.dark .btn-outline-primary {
-  color: var(--bs-primary);
-}
-html.dark .btn-outline-primary:hover {
-  color: var(--bs-body-bg);
-}
-
-html.dark .btn-outline-secondary {
-  border-color: var(--bs-gray-400);
-  color: var(--bs-gray-400);
-}
-html.dark .btn-outline-secondary:hover {
-  background-color: var(--bs-gray-400);
-  border-color: var(--bs-gray-400);
-  color: var(--bs-gray-900);
-}
-
-html.dark .btn-outline-warning {
-  color: var(--bs-warning);
-}
-html.dark .btn-outline-warning:hover {
-  color: var(--bs-body-bg);
-}
-
-html.dark .btn-warning,
-html.dark .btn-warning:hover {
-  color: var(--bs-body-bg);
-}
-
-html.dark .card {
-  background-color: var(--bs-gray-900);
-  border-color: rgba(255, 255, 255, 0.125);
-}
-html.dark .card-footer {
-  background-color: rgba(255, 255, 255, 0.03);
-  border-top-color: rgba(255, 255, 255, 0.125);
-}
-html.dark .card-header {
-  background-color: rgba(255, 255, 255, 0.03);
-  border-bottom-color: rgba(255, 255, 255, 0.125);
-}
-
-/* Use main so that we don't affect the navbar dropdowns */
-html.dark main .dropdown-divider {
-  border-top-color: rgba(255, 255, 255, 0.15);
-}
-
-html.dark main .dropdown-item {
-  color: var(--bs-gray-100);
-}
-html.dark main .dropdown-item:hover,
-html.dark main .dropdown-item:focus {
-  color: var(--c-dropdown-item-hover);
-  background-color: var(--bs-gray-800);
-}
-html.dark main .dropdown-item.disabled,
-html.dark main .dropdown-item:disabled {
-  color: var(--bs-gray-500);
-}
-
-html.dark main .dropdown-menu {
-  background-color: var(--bs-gray-900);
-  border-color: rgba(255, 255, 255, 0.15);
-  color: var(--bs-gray-300);
-}
-
-html.dark .form-check-input {
-  background-color: var(--bs-gray-900);
-  border-color: rgba(255, 255, 255, 0.25);
-}
-html.dark .form-check-input:focus {
-  border-color: var(--c-input-focus-border);
-}
-
-html.dark .form-control {
-  background-color: var(--bs-gray-900);
-  border-color: var(--bs-gray-600);
-  color: var(--bs-gray-300);
-}
-html.dark .form-control:disabled,
-html.dark .form-control[readonly] {
-  background-color: var(--bs-gray-800);
-}
-html.dark .form-control::file-selector-button {
-  background-color: var(--bs-gray-800);
-  color: var(--bs-gray-300);
-}
-html.dark .form-control:hover:not(:disabled):not([readonly])::file-selector-button {
-  background-color: var(--c-file-selector-hover);
-}
-html.dark .form-control:focus {
-  background-color: var(--bs-gray-900);
-  border-color: var(--c-input-focus-border);
-  color: var(--bs-gray-300);
-}
-html.dark .form-control::placeholder {
-  color: --bs-gray-400;
-}
-
-html.dark .form-select {
-  background-color: var(--bs-gray-900);
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23e9ecef' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
-  border-color: var(--bs-gray-600);
-  color: var(--bs-gray-300);
-}
-html.dark .form-select:disabled {
-  background-color: var(--bs-gray-800);
-}
-html.dark .form-select:focus {
-  border-color: var(--c-input-focus-border);
-}
-
-html.dark .form-text {
-  color: var(--bs-gray-400);
-}
-
-html.dark .input-group-text {
-  background-color: var(--bs-gray-800);
-  border-color: var(--bs-gray-600);
-  color: var(--bs-gray-300);
-}
-
-html.dark .modal-backdrop {
-  background-color: #fff;
-}
-
-html.dark .modal-content {
-  background-color: var(--bs-gray-900);
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-html.dark .modal-footer {
-  border-top-color: var(--bs-gray-700);
-}
-
-html.dark .modal-header {
-  border-bottom-color: var(--bs-gray-700);
-}
-
-html.dark .page-item.active .page-link {
-  background-color: var(--bs-gray-400);
-  border-color: var(--bs-gray-400);
-  color: var(--bs-gray-900);
-}
-html.dark .page-item.disabled .page-link {
-  background-color: var(--bs-gray-900);
-  border-color: var(--bs-gray-700);
-  color: var(--bs-gray-400);
-}
-
-html.dark .page-link {
-  background-color: var(--bs-gray-900);
-  border-color: var(--bs-gray-700);
-}
-html.dark .page-link:hover {
-  background-color: var(--bs-gray-800);
-  border-color: var(--bs-gray-700);
-}
-html.dark .page-link:focus {
-  background-color: var(--bs-gray-800);
-}
-
-html.dark .popover {
-  border-color: rgba(255, 255, 255, 0.2);
-}
-html.dark .bs-popover-bottom > .popover-arrow::before,
-html.dark .bs-popover-auto[data-popper-placement^="bottom"] > .popover-arrow::before {
-  border-bottom-color: rgba(255, 255, 255, 0.25);
-}
-html.dark .bs-popover-end > .popover-arrow::before,
-html.dark .bs-popover-auto[data-popper-placement^="right"] > .popover-arrow::before {
-  border-right-color: rgba(255, 255, 255, 0.25);
-}
-html.dark .bs-popover-start > .popover-arrow::before,
-html.dark .bs-popover-auto[data-popper-placement^="left"] > .popover-arrow::before {
-  border-left-color: rgba(255, 255, 255, 0.25);
-}
-html.dark .bs-popover-top > .popover-arrow::before,
-html.dark .bs-popover-auto[data-popper-placement^="top"] > .popover-arrow::before {
-  border-top-color: rgba(255, 255, 255, 0.25);
-}
-
-html.dark .table {
-  --bs-table-hover-bg: rgba(255, 255, 255, 0.075);
-  --bs-table-hover-color: var(--bs-gray-300);
-  border-color: var(--bs-gray-700);
-  color: var(--bs-gray-300);
-}
-
-html.dark .toast {
-  background-color: var(--bs-gray-400);
-  box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.2);
-  color: var(--bs-gray-800);
-}
-
-html.dark .text-muted {
-  color: var(--bs-gray-400) !important;
-}
-
 /* select2 colors */
 html.dark .select2-container--bootstrap-5 .select2-selection {
-  background-color: var(--bs-gray-900);
-  border-color: var(--bs-gray-600);
-  color: var(--bs-gray-300);
+  background-color: var(--bs-gray-100);
+  border-color: var(--bs-gray-400);
+  color: var(--bs-gray-700);
 }
 
 html.dark .select2-container--bootstrap-5 .select2-selection--single {
@@ -366,32 +105,27 @@ html.dark .select2-container--bootstrap-5 .select2-selection--single {
 }
 
 html.dark .select2-container--bootstrap-5 .select2-selection--single .select2-selection__rendered {
-  color: var(--bs-gray-100);
-}
-
-html.dark .select2-container--bootstrap-5.select2-container--focus .select2-selection,
-html.dark .select2-container--bootstrap-5.select2-container--open .select2-selection {
-  border-color: var(--c-input-focus-border);
+  color: var(--bs-gray-900);
 }
 
 html.dark .select2-container--bootstrap-5 .select2-dropdown {
-  border-color: var(--bs-gray-600);
+  border-color: var(--bs-gray-400);
 }
 
 html.dark .select2-dropdown {
-  background-color: var(--bs-gray-900);
+  background-color: var(--bs-gray-100);
   border: 1px solid #555;
 }
 
 html.dark .select2-container--bootstrap-5 .select2-dropdown .select2-search .select2-search__field {
   background-color: black; /* breaking our rule -- looks clearer than var(--bs-gray-900) */
-  border-color: var(--bs-gray-600);
-  color: var(--bs-gray-100);
+  border-color: var(--bs-gray-400);
+  color: var(--bs-gray-900);
 }
 
 html.dark .select2-container--bootstrap-5 .select2-selection--multiple .select2-selection__rendered .select2-selection__choice {
-  border-color: var(--bs-gray-600);
-  color: var(--bs-gray-100);
+  border-color: var(--bs-gray-400);
+  color: var(--bs-gray-900);
 }
 
 html.dark .select2-container--bootstrap-5 .select2-selection--multiple .select2-search .select2-search__field {
