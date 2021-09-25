@@ -29,16 +29,20 @@ $body-bg: #232429;
 $body-color: #c4c5c6;
 $border-color: #495057;
 $card-bg: $body-bg;
+$dropdown-bg: $body-bg;
 
 /* don't allow these to use the inverted gray scale */
 $dropdown-dark-color: $butter;
 $dropdown-dark-bg: #303035;
 $dropdown-dark-border-color: #232429;
+$dropdown-dark-link-hover-color: $secondary;
+$dropdown-dark-link-hover-bg: $gray-300;
 
 $input-placeholder-color: $gray-400;
 $modal-backdrop-bg: #ccc;
 $modal-content-bg: $body-bg;
-$navbar-dark-color: $butter;   /* only used by the togglers */
+$navbar-dark-color: $butter;
+$navbar-dark-hover-color: $secondary;
 $navbar-dark-toggler-border-color: $butter;
 $pagination-bg: $body-bg;
 $pagination-disabled-bg: $body-bg;

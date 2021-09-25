@@ -522,7 +522,7 @@ html.dark .btn-link:disabled, html.dark .btn-link.disabled {
 
 html.dark .dropdown-menu {
   color: #c4c5c6;
-  background-color: #000;
+  background-color: #232429;
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
@@ -570,8 +570,8 @@ html.dark .dropdown-menu-dark {
 }
 
 html.dark .dropdown-menu-dark .dropdown-item:hover, html.dark .dropdown-menu-dark .dropdown-item:focus {
-  color: #000;
-  background-color: rgba(0, 0, 0, 0.15);
+  color: #c9bcae;
+  background-color: #495057;
 }
 
 html.dark .dropdown-menu-dark .dropdown-item.active, html.dark .dropdown-menu-dark .dropdown-item:active {
@@ -664,7 +664,7 @@ html.dark .navbar-dark .navbar-brand:hover, html.dark .navbar-dark .navbar-brand
 }
 
 html.dark .navbar-dark .navbar-nav .nav-link:hover, html.dark .navbar-dark .navbar-nav .nav-link:focus {
-  color: rgba(0, 0, 0, 0.75);
+  color: #c9bcae;
 }
 
 html.dark .navbar-dark .navbar-nav .nav-link.disabled {

@@ -206,7 +206,7 @@ blockquote {
 }
 
 .verdict-area {
-  color: var(--bs-gray-900);
+  color: #222; /* in both dark and light mode */
 }
 
 /* keep these values in sync with lib/model/Statement.php::VERDICT_* constants */
