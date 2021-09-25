@@ -19,7 +19,10 @@ class Smart {
       'js' => [ 'third-party/jquery-3.3.1.min.js' ],
     ],
     'bootstrap' => [
-      'css' => [ 'third-party/bootstrap.min.css' ],
+      'css' => [
+        'third-party/bootstrap.min.css',
+        'third-party/bootstrap-diff.css',
+      ],
       'js' => [ 'third-party/bootstrap.bundle.min.js' ],
     ],
     'bootstrap-select' => [

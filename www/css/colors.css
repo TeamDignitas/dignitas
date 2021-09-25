@@ -65,8 +65,6 @@ html.light .light-mode-toggle {
  *
  */
 html.dark {
-  --c-file-selector-hover: #221f1c;         /* replaces #dde0e3 */
-
   /**
    * Complements are not defined relative to 0xFF. Instead, we split the
    * interval #212529-#ffffff into 16 shades.
