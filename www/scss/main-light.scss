@@ -28,6 +28,7 @@ $navbar-dark-toggler-border-color: $butter;
 html.light {
   --c-hero-bg: #232429;
   --c-navbar-bg: #232429;
+  --c-search-btn: var(--bs-gray-800);
 }
 
 @import "common.scss";

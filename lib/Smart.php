@@ -18,20 +18,6 @@ class Smart {
     'jquery' => [
       'js' => [ 'third-party/jquery-3.3.1.min.js' ],
     ],
-    'bootstrap' => [
-      'css' => [
-        'third-party/bootstrap.min.css',
-        'third-party/bootstrap-diff.css',
-      ],
-      'js' => [ 'third-party/bootstrap.bundle.min.js' ],
-    ],
-    'bootstrap-select' => [
-      'css' => [ 'third-party/bootstrap-select.min.css' ],
-      'js' => [
-        'third-party/bootstrap-select/bootstrap-select.min.js',
-        'third-party/bootstrap-select/i18n/defaults-%l.js',
-      ],
-    ],
     'select2' => [
       'css' => [
         'third-party/select2.min.css',
@@ -42,6 +28,22 @@ class Smart {
         'select2/i18n/ro.js',
         'select2/select2Dev.js',
       ],
+    ],
+    'bootstrap' => [
+      'css' => [
+        'third-party/bootstrap.min.css',
+        'third-party/bootstrap-diff.css',
+      ],
+      'js' => [ 'third-party/bootstrap.bundle.min.js' ],
+      'deps' => [ 'select2' ], /* because our themes include Select overrides */
+    ],
+    'bootstrap-select' => [
+      'css' => [ 'third-party/bootstrap-select.min.css' ],
+      'js' => [
+        'third-party/bootstrap-select/bootstrap-select.min.js',
+        'third-party/bootstrap-select/i18n/defaults-%l.js',
+      ],
+      'deps' => [ 'bootstrap' ],
     ],
     'main' => [
       'css' => [ 'main.css', 'fonts.css', 'colors.css' ],

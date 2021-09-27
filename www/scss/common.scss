@@ -98,3 +98,34 @@ $utilities-bg-colors: map-loop($utilities-colors, rgba-css-var, "$key", "bg");
 @import "helpers";
 
 @import "utilities/api";
+
+/* Select2 overrides to replace hard-coded colors with variables */
+.select2-container--bootstrap-5 .select2-selection {
+  background-color: transparent;
+  border-color: var(--bs-gray-400);
+  color: inherit;
+}
+
+.select2-container--bootstrap-5 .select2-selection--single .select2-selection__rendered {
+  color: inherit;
+}
+
+.select2-container--bootstrap-5 .select2-dropdown {
+  background-color: var(--bs-body-bg);
+  border-color: var(--bs-gray-400);
+}
+
+.select2-container--bootstrap-5 .select2-dropdown .select2-search .select2-search__field {
+  background-color: var(--bs-body-bg);
+  border-color: var(--bs-gray-400);
+  color: var(--bs-body-color);
+}
+
+.select2-container--bootstrap-5 .select2-selection--multiple .select2-selection__rendered .select2-selection__choice {
+  border-color: var(--bs-gray-400);
+  color: inherit;
+}
+
+.select2-container--bootstrap-5 .select2-selection--multiple .select2-search .select2-search__field {
+  color: var(--bs-body-color);
+}
