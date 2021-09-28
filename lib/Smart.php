@@ -35,7 +35,7 @@ class Smart {
         'third-party/bootstrap-diff.css',
       ],
       'js' => [ 'third-party/bootstrap.bundle.min.js' ],
-      'deps' => [ 'select2' ], /* because our themes include Select overrides */
+      'deps' => [ 'select2' ], /* because our themes include Select2 overrides */
     ],
     'bootstrap-select' => [
       'css' => [ 'third-party/bootstrap-select.min.css' ],
