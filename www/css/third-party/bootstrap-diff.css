@@ -3,6 +3,13 @@ html.dark {
   --c-hero-bg: var(--bs-body-bg);
   --c-navbar-bg: var(--bs-gray-200);
   --c-search-btn: var(--bs-gray-300);
+  --v-none: #eee;
+  --v-undecidable: #aaa;
+  --v-red: #d90404;
+  --v-orange: #ec771f;
+  --v-yellow: #ffeb3b;
+  --v-olive: #9bad22;
+  --v-green: #37700a;
 }
 
 html.dark {

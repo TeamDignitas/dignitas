@@ -16,7 +16,7 @@ pre.identical-block {
 }
 
 pre.diff {
-  color: var(--c-777);
+  color: var(--bs-gray-600);
   margin-top: 1em;
   white-space: pre-wrap;
 }

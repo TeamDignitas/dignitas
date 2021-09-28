@@ -1,4 +1,4 @@
 .CodeMirror {
-  border: 1px solid var(--c-ccc) !important;
   border-radius: .25rem;
+  border-style: solid;
 }

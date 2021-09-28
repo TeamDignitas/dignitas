@@ -81,6 +81,12 @@ blockquote {
   }
 }
 
+/* hide the theme icon for the current theme */
+html.light .light-mode-toggle,
+html.dark .dark-mode-toggle {
+  display: none;
+}
+
 /******************************* snackbars *******************************/
 
 #snackbars {

@@ -46,7 +46,7 @@ class Smart {
       'deps' => [ 'bootstrap' ],
     ],
     'main' => [
-      'css' => [ 'main.css', 'fonts.css', 'colors.css' ],
+      'css' => [ 'main.css', 'fonts.css' ],
       'js' => [ 'main.js' ],
       'deps' => ['i18n', 'jquery', 'bootstrap', 'select2'],
     ],
