@@ -51,7 +51,7 @@ blockquote {
 
 @media (max-width: 768px) {
   .navbar-collapse {
-    background-color: var(--bs-gray-800);
+    background-color: var(--c-navbar-bg);
     height: 100%;
     margin-top: 3px;
     padding: 1rem;
@@ -155,7 +155,7 @@ blockquote {
 }
 
 .vote-box button {
-  color: var(--bs-gray-600);
+  color: var(--bs-gray-600) !important;
   display: block;
   font-size: 25px;
   margin: 0px auto;
@@ -438,6 +438,10 @@ body, main {
 
 /************************ help pages and sidebar ************************/
 
+.breadcrumb {
+  padding-left: 0 !important;
+}
+
 .help-sidebar {
   border: 1px solid var(--bs-gray-400);
   border-radius: .25rem;
@@ -457,6 +461,11 @@ body, main {
   font-weight: bold;
 }
 
+.help-sidebar-category a,
+.help-sidebar-page a {
+  color: var(--bs-gray-600) !important;
+}
+
 /******************************* markdown *******************************/
 
 .markdown table {
@@ -466,17 +475,6 @@ body, main {
 .markdown table td, .markdown table th {
   border-top: 1px solid var(--bs-gray-400);
   padding: 0.75rem;
-}
-
-/***************************** help pages ****************************/
-
-.breadcrumb {
-  padding-left: 0 !important;
-}
-
-.help-sidebar-category a,
-.help-sidebar-page a {
-  color: var(--bs-gray-600) !important;
 }
 
 /******************************* tooltips *******************************/
