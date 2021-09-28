@@ -598,6 +598,11 @@ body, main {
   margin-top: 8px !important;
 }
 
+.editor-toolbar button.active, .editor-toolbar button:hover {
+  background: var(--bs-gray-100) !important;
+  border-color: var(--bs-gray-500) !important;
+}
+
 .is-invalid + .EasyMDEContainer > .editor-toolbar,
 .is-invalid + .EasyMDEContainer > .CodeMirror {
   border-color: red;
