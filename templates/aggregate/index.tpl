@@ -16,7 +16,7 @@
             <span class="col-6 col-xl-8 text-uppercase meta-heading">
               {t}label-contribute-index{/t}
             </span>
-            <span class="col-3 col-xl-3 border-butter meta-line"></span>
+            <span class="col-3 col-xl-3 meta-line"></span>
           </div>
         </div>
 
@@ -56,7 +56,7 @@
 
   <div class="f-container py-5">
     <div class="col-12 col-lg-3 mt-3 mb-5">
-      <div class="row align-items-center me-3 text-butter">
+      <div class="row align-items-center me-3 recent-statements">
         <span class="col-6 col-xl-8 text-uppercase meta-heading">
           {t}title-recent-statements{/t}
         </span>

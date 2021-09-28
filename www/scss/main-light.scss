@@ -28,6 +28,7 @@ $navbar-dark-toggler-border-color: $butter;
 html.light {
   --c-hero-bg: #232429;
   --c-navbar-bg: #232429;
+  --c-recent-statements: var(--bs-body-color);
   --c-search-btn: var(--bs-gray-800);
 
   /* verdict colors */

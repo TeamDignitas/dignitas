@@ -68,6 +68,7 @@ $toast-color: $body-bg;
 html.dark {
   --c-hero-bg: var(--bs-body-bg);
   --c-navbar-bg: var(--bs-gray-200);
+  --c-recent-statements: var(--bs-butter);
   --c-search-btn: var(--bs-gray-300);
 
   /* verdict colors */

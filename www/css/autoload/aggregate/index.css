@@ -24,6 +24,10 @@
   margin-bottom: 4px;
 }
 
+.recent-statements {
+  color: var(--c-recent-statements);
+}
+
 .hero {
   /* cancel the padding on the parent .container-fluid */
   background-color: var(--c-hero-bg);
