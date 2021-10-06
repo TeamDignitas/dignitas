@@ -72,13 +72,13 @@ html.dark {
   --c-search-btn: var(--bs-gray-300);
 
   /* verdict colors */
-  --v-none: #eee;
-  --v-undecidable: #aaa;
-  --v-red: #d90404;
-  --v-orange: #ec771f;
-  --v-yellow: #ffeb3b;
-  --v-olive: #9bad22;
-  --v-green: #37700a;
+  --v-none: #303035;
+  --v-undecidable: #3c3c42;
+  --v-red: #5d1717;
+  --v-orange: #8a6022; /* midpoint between red and yellow */
+  --v-yellow: #b7a92d;
+  --v-olive: #707e1a;  /* midpoint between yellow and green */
+  --v-green: #285206;
 }
 
 @import "common.scss";

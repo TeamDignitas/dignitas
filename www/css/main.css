@@ -208,10 +208,6 @@ html.dark .dark-mode-toggle {
   line-height: 1.5;
 }
 
-.verdict-area {
-  color: #222; /* in both dark and light mode */
-}
-
 /* keep these values in sync with lib/model/Statement.php::VERDICT_* constants */
 .bg-verdict-0 { /* none */
   background-color: var(--v-none) !important;
@@ -243,6 +239,7 @@ html.dark .dark-mode-toggle {
 .bg-verdict-11 { /* stalled promise */
   background-image: linear-gradient(110deg, var(--v-red), var(--v-yellow) 86%) !important;
   border: 0;
+  color: var(--bs-body-bg);
 }
 .statement.verdict-3,
 .statement.verdict-11 {
@@ -253,6 +250,7 @@ html.dark .dark-mode-toggle {
 .bg-verdict-8,   /* half flop */
 .bg-verdict-12 { /* partially kept promise */
   background-color: var(--v-yellow) !important;
+  color: #222;
 }
 .statement.verdict-4,
 .statement.verdict-8,
@@ -263,7 +261,7 @@ html.dark .dark-mode-toggle {
 .bg-verdict-5,   /* mostly true */
 .bg-verdict-13 { /* promise kept past the deadline */
   background-image: linear-gradient(110deg, var(--v-green), var(--v-yellow) 86%) !important;
-  border: 0;
+  border: 0 !important;
 }
 .statement.verdict-5,
 .statement.verdict-13 {

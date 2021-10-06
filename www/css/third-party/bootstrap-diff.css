@@ -4,13 +4,13 @@ html.dark {
   --c-navbar-bg: var(--bs-gray-200);
   --c-recent-statements: var(--bs-butter);
   --c-search-btn: var(--bs-gray-300);
-  --v-none: #eee;
-  --v-undecidable: #aaa;
-  --v-red: #d90404;
-  --v-orange: #ec771f;
-  --v-yellow: #ffeb3b;
-  --v-olive: #9bad22;
-  --v-green: #37700a;
+  --v-none: #303035;
+  --v-undecidable: #3c3c42;
+  --v-red: #5d1717;
+  --v-orange: #8a6022;
+  --v-yellow: #b7a92d;
+  --v-olive: #707e1a;
+  --v-green: #285206;
 }
 
 html.dark {
