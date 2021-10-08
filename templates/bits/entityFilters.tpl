@@ -43,7 +43,7 @@
 
     <div class="col-12 col-sm-8 col-lg-auto">
       <select name="regionId" class="form-select form-select-sm actionable">
-        <option value="0"></option>
+        <option value="0">{t}label-all-regions{/t}</option>
         {foreach $regions as $option}
           <option value="{$option->id}">
             {$option->name}

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-09-13 13:36+0300\n"
-"PO-Revision-Date: 2021-09-13 13:37+0300\n"
+"POT-Creation-Date: 2021-10-08 11:44+0300\n"
+"PO-Revision-Date: 2021-10-08 11:44+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -222,7 +222,7 @@ msgstr "I forgot my password"
 msgid "label-remember-me"
 msgstr "Remember me for one year."
 
-#: templates/auth/login.tpl:53 templates/bits/navmenu.tpl:240
+#: templates/auth/login.tpl:53 templates/bits/navmenu.tpl:243
 msgid "link-log-in"
 msgstr "log in"
 
@@ -467,6 +467,10 @@ msgstr "text"
 msgid "label-region"
 msgstr "region"
 
+#: templates/bits/entityFilters.tpl:46
+msgid "label-all-regions"
+msgstr "all"
+
 #: templates/bits/fakeLogin.tpl:3
 msgid "title-test-login"
 msgstr "test user login"
@@ -475,7 +479,7 @@ msgstr "test user login"
 msgid "label-reputation"
 msgstr "reputation"
 
-#: templates/bits/fakeLogin.tpl:37 templates/bits/navmenu.tpl:197
+#: templates/bits/fakeLogin.tpl:37 templates/bits/navmenu.tpl:198
 #: templates/user/view.tpl:19
 msgid "label-moderator"
 msgstr "moderator"
@@ -687,23 +691,23 @@ msgstr "dashboard"
 msgid "link-my-profile"
 msgstr "my profile"
 
-#: templates/bits/navmenu.tpl:168 templates/bits/navmenu.tpl:222
+#: templates/bits/navmenu.tpl:169 templates/bits/navmenu.tpl:224
 msgid "link-light-mode"
 msgstr "light mode"
 
-#: templates/bits/navmenu.tpl:176 templates/bits/navmenu.tpl:230
+#: templates/bits/navmenu.tpl:176 templates/bits/navmenu.tpl:232
 msgid "link-dark-mode"
 msgstr "dark mode"
 
-#: templates/bits/navmenu.tpl:183
+#: templates/bits/navmenu.tpl:184
 msgid "info-reputation-manual"
 msgstr "change reputation manually (will refresh the page)"
 
-#: templates/bits/navmenu.tpl:202
+#: templates/bits/navmenu.tpl:203
 msgid "link-change"
 msgstr "schimbă"
 
-#: templates/bits/navmenu.tpl:212
+#: templates/bits/navmenu.tpl:213
 msgid "link-log-out"
 msgstr "log out"
 

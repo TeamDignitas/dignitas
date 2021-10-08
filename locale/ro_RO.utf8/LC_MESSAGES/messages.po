@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-09-13 13:36+0300\n"
-"PO-Revision-Date: 2021-09-13 13:36+0300\n"
+"POT-Creation-Date: 2021-10-08 11:43+0300\n"
+"PO-Revision-Date: 2021-10-08 11:43+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -223,7 +223,7 @@ msgstr "mi-am uitat parola"
 msgid "label-remember-me"
 msgstr "Ține-mă minte un an."
 
-#: templates/auth/login.tpl:53 templates/bits/navmenu.tpl:240
+#: templates/auth/login.tpl:53 templates/bits/navmenu.tpl:243
 msgid "link-log-in"
 msgstr "autentificare"
 
@@ -472,6 +472,10 @@ msgstr "text"
 msgid "label-region"
 msgstr "regiune"
 
+#: templates/bits/entityFilters.tpl:46
+msgid "label-all-regions"
+msgstr "toate"
+
 #: templates/bits/fakeLogin.tpl:3
 msgid "title-test-login"
 msgstr "autentificare ca utilizator de test"
@@ -480,7 +484,7 @@ msgstr "autentificare ca utilizator de test"
 msgid "label-reputation"
 msgstr "reputație"
 
-#: templates/bits/fakeLogin.tpl:37 templates/bits/navmenu.tpl:197
+#: templates/bits/fakeLogin.tpl:37 templates/bits/navmenu.tpl:198
 #: templates/user/view.tpl:19
 msgid "label-moderator"
 msgstr "moderator"
@@ -693,23 +697,23 @@ msgstr "panou de control"
 msgid "link-my-profile"
 msgstr "profilul meu"
 
-#: templates/bits/navmenu.tpl:168 templates/bits/navmenu.tpl:222
+#: templates/bits/navmenu.tpl:169 templates/bits/navmenu.tpl:224
 msgid "link-light-mode"
 msgstr "modul luminos"
 
-#: templates/bits/navmenu.tpl:176 templates/bits/navmenu.tpl:230
+#: templates/bits/navmenu.tpl:176 templates/bits/navmenu.tpl:232
 msgid "link-dark-mode"
 msgstr "modul întunecat"
 
-#: templates/bits/navmenu.tpl:183
+#: templates/bits/navmenu.tpl:184
 msgid "info-reputation-manual"
 msgstr "schimbă reputația manual (va reîncărca pagina)"
 
-#: templates/bits/navmenu.tpl:202
+#: templates/bits/navmenu.tpl:203
 msgid "link-change"
 msgstr "schimbă"
 
-#: templates/bits/navmenu.tpl:212
+#: templates/bits/navmenu.tpl:213
 msgid "link-log-out"
 msgstr "ieșire"
 
