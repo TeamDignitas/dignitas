@@ -209,6 +209,10 @@ html.dark .dark-mode-toggle {
 }
 
 /* keep these values in sync with lib/model/Statement.php::VERDICT_* constants */
+.verdict-area .card {
+  border: none !important;
+}
+
 .bg-verdict-0 { /* none */
   background-color: var(--v-none) !important;
 }
@@ -238,8 +242,7 @@ html.dark .dark-mode-toggle {
 .bg-verdict-3,   /* mostly false */
 .bg-verdict-11 { /* stalled promise */
   background-image: linear-gradient(110deg, var(--v-red), var(--v-yellow) 86%) !important;
-  border: 0;
-  color: var(--bs-body-bg);
+  color: #222;
 }
 .statement.verdict-3,
 .statement.verdict-11 {
@@ -261,7 +264,7 @@ html.dark .dark-mode-toggle {
 .bg-verdict-5,   /* mostly true */
 .bg-verdict-13 { /* promise kept past the deadline */
   background-image: linear-gradient(110deg, var(--v-green), var(--v-yellow) 86%) !important;
-  border: 0 !important;
+  color: #222;
 }
 .statement.verdict-5,
 .statement.verdict-13 {
@@ -289,7 +292,6 @@ html.dark .dark-mode-toggle {
 .statement.card .mask {
   border-top-right-radius: 4px;
   bottom: 0;
-  color: black;
   font-size: 0.8rem;
   left: 0;
   opacity: 0;
