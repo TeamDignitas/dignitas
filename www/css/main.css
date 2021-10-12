@@ -173,11 +173,11 @@ html.dark .dark-mode-toggle {
 }
 
 .btn-vote.voted {
-  color: green;
+  color: green !important;
 }
 
 .btn-proof.accepted {
-  color: green;
+  color: green !important;
 }
 
 /******************************** statement ********************************/

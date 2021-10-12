@@ -817,50 +817,56 @@ html.dark .badge {
   color: #232429;
 }
 
+html.dark .alert {
+  border: 0 solid transparent;
+}
+
 html.dark .alert-primary {
-  color: #355c98;
-  background-color: #deebff;
+  color: #deebff;
+  background-color: #1b2e4c;
   border-color: #cde1fe;
 }
 
 html.dark .alert-primary .alert-link {
-  color: #2a4a7a;
+  color: #b2bccc;
 }
 
 html.dark .alert-secondary {
-  color: #66615e;
-  background-color: #f4f2ef;
+  color: #f4f2ef;
+  background-color: #3c3834;
   border-color: #efebe7;
 }
 
 html.dark .alert-secondary .alert-link {
-  color: #524e4b;
+  color: #c3c2bf;
 }
 
 html.dark .alert-warning {
-  color: #7b631c;
+  color: #fff3cd;
+  background-color: #4d3a02;
 }
 
 html.dark .alert-warning .alert-link {
-  color: #624f16;
+  color: #ccc2a4;
 }
 
 html.dark .alert-danger {
-  color: #994649;
-  background-color: #ffe3e4;
+  color: #ffe3e4;
+  background-color: #4d2324;
   border-color: #ffd6d7;
 }
 
 html.dark .alert-danger .alert-link {
-  color: #7a383a;
+  color: #ccb6b6;
 }
 
 html.dark .alert-butter {
-  color: #76726f;
+  color: #fdfaf7;
+  background-color: #494541;
 }
 
 html.dark .alert-butter .alert-link {
-  color: #5e5b59;
+  color: #cac8c6;
 }
 
 html.dark .btn-close {

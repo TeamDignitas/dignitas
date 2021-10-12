@@ -48,6 +48,9 @@ $gray-900: hsl(230, 16%,  87%);
 $black:    hsl(230, 17%, 100%);
 
 /* Bootstrap overrides */
+$alert-bg-scale: 70%;
+$alert-border-width: 0;
+$alert-color-scale: -80%;
 $body-bg: $white;
 $body-color: #c4c5c6;
 
