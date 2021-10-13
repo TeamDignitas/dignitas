@@ -622,3 +622,23 @@ body, main {
 .popover-archive {
   max-width: 350px;
 }
+
+/******************** our clone of Bootstrap's alerts ********************/
+
+.notice {
+  background-color: var(--c-notice-bg);
+  border-radius: .25rem;
+  color: var(--c-notice);
+  margin-bottom: 1rem;
+  padding: 0.75rem 0.75rem;
+  position: relative;
+}
+
+.notice .notice-icon {
+  font-size: 200%;
+}
+
+.notice a {
+  color: inherit !important;
+  font-weight: bold;
+}

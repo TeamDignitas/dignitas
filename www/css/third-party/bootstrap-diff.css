@@ -2,6 +2,8 @@
 html.dark {
   --c-hero-bg: var(--bs-body-bg);
   --c-navbar-bg: var(--bs-gray-200);
+  --c-notice: black;
+  --c-notice-bg: #8a8178;
   --c-recent-statements: var(--bs-butter);
   --c-search-btn: var(--bs-gray-300);
   --v-none: #303035;
@@ -815,58 +817,6 @@ html.dark .page-item.disabled .page-link {
 
 html.dark .badge {
   color: #232429;
-}
-
-html.dark .alert {
-  border: 0 solid transparent;
-}
-
-html.dark .alert-primary {
-  color: #deebff;
-  background-color: #1b2e4c;
-  border-color: #cde1fe;
-}
-
-html.dark .alert-primary .alert-link {
-  color: #b2bccc;
-}
-
-html.dark .alert-secondary {
-  color: #f4f2ef;
-  background-color: #3c3834;
-  border-color: #efebe7;
-}
-
-html.dark .alert-secondary .alert-link {
-  color: #c3c2bf;
-}
-
-html.dark .alert-warning {
-  color: #fff3cd;
-  background-color: #4d3a02;
-}
-
-html.dark .alert-warning .alert-link {
-  color: #ccc2a4;
-}
-
-html.dark .alert-danger {
-  color: #ffe3e4;
-  background-color: #4d2324;
-  border-color: #ffd6d7;
-}
-
-html.dark .alert-danger .alert-link {
-  color: #ccb6b6;
-}
-
-html.dark .alert-butter {
-  color: #fdfaf7;
-  background-color: #494541;
-}
-
-html.dark .alert-butter .alert-link {
-  color: #cac8c6;
 }
 
 html.dark .btn-close {

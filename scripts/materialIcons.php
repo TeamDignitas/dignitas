@@ -39,6 +39,7 @@ const CODEPOINTS = [
   'groups',
   'help',
   'hourglass_full',
+  'info',
   'insert_comment',
   'insert_drive_file',
   'insert_invitation',
@@ -69,6 +70,7 @@ const CODEPOINTS = [
   'view_column',
   'visibility',
   'visibility_off',
+  'warning',
 ];
 
 const ASCII_GLYPHS = [ '5f-7a', '30-39' ]; // always include [_a-z0-9]

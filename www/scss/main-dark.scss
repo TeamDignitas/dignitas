@@ -48,9 +48,6 @@ $gray-900: hsl(230, 16%,  87%);
 $black:    hsl(230, 17%, 100%);
 
 /* Bootstrap overrides */
-$alert-bg-scale: 70%;
-$alert-border-width: 0;
-$alert-color-scale: -80%;
 $body-bg: $white;
 $body-color: #c4c5c6;
 
@@ -71,6 +68,8 @@ $toast-color: $body-bg;
 html.dark {
   --c-hero-bg: var(--bs-body-bg);
   --c-navbar-bg: var(--bs-gray-200);
+  --c-notice: black;
+  --c-notice-bg: #8a8178;
   --c-recent-statements: var(--bs-butter);
   --c-search-btn: var(--bs-gray-300);
 

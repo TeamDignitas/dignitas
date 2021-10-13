@@ -140,10 +140,6 @@ class Entity extends Proto {
 
     $rec['dup'] = $dup;
 
-    $rec['cssClass'] = ($this->status == Ct::STATUS_DELETED)
-      ? 'alert-danger'
-      : 'alert-warning';
-
     $rec['details'] = ($this->status == Ct::STATUS_CLOSED)
       ? _('info-entity-closed')
       : _('info-entity-deleted');

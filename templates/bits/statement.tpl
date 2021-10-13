@@ -72,18 +72,16 @@
     {$statusInfo=$statement->getStatusInfo()}
 
     {if isset($pendingEditReview)}
-      <div class="alert alert-warning mx-5">
+      {notice icon=info}
         {t 1=$pendingEditReview->getUrl()}link-statement-review-pending-edit{/t}
-      </div>
+      {/notice}
     {/if}
 
     {if $statusInfo}
-      <div class="alert {$statusInfo['cssClass']} small overflow-hidden">
+      {notice icon=warning}
         {$statusInfo['details']}
         {if $statusInfo['dup']}
-          {include "bits/statementLink.tpl"
-            statement=$statusInfo['dup']
-            class="alert-link"}
+          {include "bits/statementLink.tpl" statement=$statusInfo['dup']}
         {/if}
         {if $statement->reason == Ct::REASON_BY_USER}
           {include "bits/userLink.tpl" u=$statement->getStatusUser()}
@@ -91,7 +89,7 @@
           <hr>
           {include "bits/reviewFlagList.tpl" review=$statement->getRemovalReview()}
         {/if}
-      </div>
+      {/notice}
     {/if}
 
     <h6 class="text-uppercase fw-bold">{t}title-context{/t}</h6>

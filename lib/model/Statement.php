@@ -279,10 +279,6 @@ class Statement extends Proto {
 
     $rec['dup'] = $dup;
 
-    $rec['cssClass'] = ($this->status == Ct::STATUS_DELETED)
-      ? 'alert-danger'
-      : 'alert-warning';
-
     $rec['details'] = ($this->status == Ct::STATUS_CLOSED)
       ? _('info-statement-closed')
       : _('info-statement-deleted');

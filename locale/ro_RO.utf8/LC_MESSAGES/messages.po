@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2021-10-08 11:43+0300\n"
-"PO-Revision-Date: 2021-10-08 11:43+0300\n"
+"PO-Revision-Date: 2021-10-13 13:23+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -838,8 +838,8 @@ msgstr ""
 #: templates/bits/statement.tpl:76
 msgid "link-statement-review-pending-edit"
 msgstr ""
-"Această afirmație are o modificare sugerată. O poți <a href=\"%1\" class="
-"\"alert-link\">evalua</a>."
+"Această afirmație are o modificare sugerată. O poți <a href=\"%1\">evalua</"
+"a>."
 
 #: templates/bits/statement.tpl:97
 msgid "title-context"
@@ -1161,8 +1161,7 @@ msgstr "Confirmi redeschiderea acestui autor?"
 #: templates/entity/view.tpl:9
 msgid "link-entity-review-pending-edit"
 msgstr ""
-"Acest autor are o modificare sugerată. O poți <a href=\"%1\" class=\"alert-"
-"link\">evalua</a>."
+"Acest autor are o modificare sugerată. O poți <a href=\"%1\">evalua</a>."
 
 #: templates/entity/view.tpl:37 templates/statement/edit.tpl:124
 msgid "label-involvements"
@@ -1451,7 +1450,7 @@ msgstr "Articolul complet:"
 
 #: templates/review/view.tpl:36
 msgid "info-statement-duplicate"
-msgstr "Această afirmație a fost marcată ca duplicat al afirmației"
+msgstr "Această afirmație a fost raportată ca duplicat al afirmației"
 
 #: templates/review/view.tpl:58 templates/review/view.tpl:111
 #: templates/review/view.tpl:124
@@ -1460,7 +1459,7 @@ msgstr "referitor la afirmația:"
 
 #: templates/review/view.tpl:73
 msgid "info-entity-duplicate"
-msgstr "Acest autor a fost marcat ca duplicat al autorului"
+msgstr "Acest autor a fost raportat ca duplicat al autorului"
 
 #: templates/review/view.tpl:76
 msgid "info-entity-duplicate-process"

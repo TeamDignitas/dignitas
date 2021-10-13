@@ -32,10 +32,10 @@
         {if $type == Proto::TYPE_STATEMENT}
 
           {if $review->reason == Ct::REASON_DUPLICATE}
-            <div class="alert alert-warning">
+            {notice icon=warning}
               {t}info-statement-duplicate{/t}
               {include "bits/statementLink.tpl" statement=$review->getDuplicate()}
-            </div>
+            {/notice}
           {/if}
 
           <div class="me-1 callout">
@@ -69,12 +69,12 @@
         {elseif $type == Proto::TYPE_ENTITY}
 
           {if $review->reason == Ct::REASON_DUPLICATE}
-            <div class="alert alert-warning">
+            {notice icon=warning}
               {t}info-entity-duplicate{/t}
               {include "bits/entityLink.tpl" e=$review->getDuplicate()}.
 
               {t}info-entity-duplicate-process{/t}
-            </div>
+            {/notice}
           {/if}
 
           {include "bits/entity.tpl"

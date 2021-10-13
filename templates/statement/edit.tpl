@@ -15,9 +15,9 @@
     <h1 class="mb-5">{$smarty.capture.title}</h1>
 
     {if !$statement->isEditable()}
-      <div class="alert alert-warning">
+      {notice icon=info}
         {$statement->getEditMessage()}
-      </div>
+      {/notice}
     {/if}
 
     <form method="post">

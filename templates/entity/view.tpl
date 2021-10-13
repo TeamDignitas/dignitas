@@ -5,9 +5,9 @@
 {block "content"}
   <div class="container my-5">
     {if isset($pendingEditReview)}
-      <div class="alert alert-warning">
+      {notice icon=info}
         {t 1=$pendingEditReview->getUrl()}link-entity-review-pending-edit{/t}
-      </div>
+      {/notice}
     {/if}
 
     {include "bits/entity.tpl"}

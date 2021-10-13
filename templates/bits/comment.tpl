@@ -56,7 +56,7 @@
     {/if}
 
     {if $comment->status == Ct::STATUS_DELETED}
-      <div class="alert alert-secondary">
+      {notice icon=info}
         {$comment->getDeletedMessage()}
 
         {if $comment->reason == Ct::REASON_BY_USER}
@@ -65,7 +65,7 @@
           <hr>
           {include "bits/reviewFlagList.tpl" review=$comment->getRemovalReview()}
         {/if}
-      </div>
+      {/notice}
     {/if}
   </div>
 

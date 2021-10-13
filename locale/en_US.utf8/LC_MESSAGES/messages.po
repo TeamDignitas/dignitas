@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2021-10-08 11:44+0300\n"
-"PO-Revision-Date: 2021-10-08 11:44+0300\n"
+"PO-Revision-Date: 2021-10-13 13:23+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -828,8 +828,7 @@ msgstr ""
 #: templates/bits/statement.tpl:76
 msgid "link-statement-review-pending-edit"
 msgstr ""
-"This statement has a pending edit. You can <a href=\"%1\" class=\"alert-link"
-"\">review it</a>."
+"This statement has a pending edit. You can <a href=\"%1\">review it</a>."
 
 #: templates/bits/statement.tpl:97
 msgid "title-context"
@@ -1149,9 +1148,7 @@ msgstr "Are you sure you want to reopen this author?"
 
 #: templates/entity/view.tpl:9
 msgid "link-entity-review-pending-edit"
-msgstr ""
-"This author has a pending edit. You can <a href=\"%1\" class=\"alert-link"
-"\">review it</a>."
+msgstr "This author has a pending edit. You can <a href=\"%1\">review it</a>."
 
 #: templates/entity/view.tpl:37 templates/statement/edit.tpl:124
 msgid "label-involvements"
