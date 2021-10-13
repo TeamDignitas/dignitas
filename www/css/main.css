@@ -7,7 +7,12 @@ h1::first-letter {
 }
 
 .user-link {
+  color: inherit !important;
   font-weight: bold;
+}
+
+.user-link:hover {
+  opacity: 0.8;
 }
 
 blockquote {
@@ -641,4 +646,8 @@ body, main {
 .notice a {
   color: inherit !important;
   font-weight: bold;
+}
+
+.notice a:hover {
+  opacity: 0.7;
 }
