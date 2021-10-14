@@ -12,9 +12,9 @@
       <table class="table table-hover">
         <thead>
           <tr class="d-flex small">
-            <th class="col-sm-3 col-md-2 border-0">{t}label-author{/t}</th>
-            <th class="col-sm-2 col-md-2 border-0">{t}label-date{/t}</th>
-            <th class="col-sm-7 col-md-8 border-0">{t}label-changes{/t}</th>
+            <th class="col-sm-3 col-md-2">{t}label-author{/t}</th>
+            <th class="col-sm-2 col-md-2">{t}label-date{/t}</th>
+            <th class="col-sm-7 col-md-8">{t}label-changes{/t}</th>
           </tr>
         </thead>
 
