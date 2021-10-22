@@ -595,6 +595,10 @@ body, main {
   color: var(--bs-body-color) !important;
 }
 
+.CodeMirror-cursor {
+  border-left-color: inherit !important;
+}
+
 .editor-toolbar {
   align-items: center;
   border-color: var(--bs-gray-400) !important;
