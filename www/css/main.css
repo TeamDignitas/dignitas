@@ -488,9 +488,13 @@ body, main {
   width: 100%;
 }
 
-.markdown table td, .markdown table th {
-  border-top: 1px solid var(--bs-gray-400);
-  padding: 0.75rem;
+.markdown table td,
+.markdown table th,
+.EasyMDEContainer .editor-preview th,
+.EasyMDEContainer .editor-preview td {
+  border: 0 !important;
+  border-top: 1px solid var(--bs-gray-400) !important;
+  padding: 0.75rem !important;
 }
 
 /******************************* tooltips *******************************/
