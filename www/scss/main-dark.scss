@@ -66,6 +66,8 @@ $toast-background-color: $gray-800;
 $toast-color: $body-bg;
 
 html.dark {
+  --c-draft-indicator-bg: #e6b41e; /* 80% lightness of Bootstrap warning color */
+  --c-draft-indicator-color: var(--bs-body-bg);
   --c-hero-bg: var(--bs-body-bg);
   --c-navbar-bg: var(--bs-gray-200);
   --c-notice: black;

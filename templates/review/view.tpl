@@ -15,7 +15,8 @@
         {if $review->status == Review::STATUS_PENDING}
           {include "bits/reviewActions.tpl"}
         {else}
-          <p class="text-warning">
+          <p class="text-secondary">
+            {include "bits/icon.tpl" i=info}
             {t}info-review-complete{/t}
           </p>
         {/if}

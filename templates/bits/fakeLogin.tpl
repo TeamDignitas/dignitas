@@ -37,7 +37,8 @@
         label="{t}label-moderator{/t}"
         name='fakeModerator'}
 
-      <button class="btn btn-warning" type="submit">
+      <button class="btn btn-outline-secondary" type="submit">
+        {include "bits/icon.tpl" i=warning}
         {t}link-test-login{/t}
       </button>
 

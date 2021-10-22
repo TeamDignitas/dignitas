@@ -185,6 +185,11 @@ html.dark .dark-mode-toggle {
   color: green !important;
 }
 
+.draft-indicator {
+  background-color: var(--c-draft-indicator-bg);
+  color: var(--c-draft-indicator-color) !important;
+}
+
 /******************************** statement ********************************/
 
 .statement-title {

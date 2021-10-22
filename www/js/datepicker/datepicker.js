@@ -33,7 +33,7 @@ $(function() {
       '      </div>' +
       '    </div>' +
       '    <div class="modal-footer">' +
-      '      <button type="button" class="btn btn-sm btn-outline-warning btn-clear"></button>' +
+      '      <button type="button" class="btn btn-sm btn-outline-danger btn-clear"></button>' +
       '      <button type="button" class="btn btn-sm btn-outline-secondary btn-today"></button>' +
       '      <button type="button" class="btn btn-sm btn-primary btn-accept"></button>' +
       '    </div>' +

@@ -42,8 +42,8 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 /**
  * Remove unused colors.
  */
-$theme-colors: map-remove($theme-colors, "dark", "info", "light", "success");
-$utilities-colors: map-remove($utilities-colors, "dark", "info", "light", "success");
+$theme-colors: map-remove($theme-colors, "dark", "info", "light", "success", "warning");
+$utilities-colors: map-remove($utilities-colors, "dark", "info", "light", "success", "warning");
 $table-variants: (); /* no colors */
 
 /**

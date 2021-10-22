@@ -26,6 +26,8 @@ $navbar-dark-color: $butter;   /* only used by the togglers */
 $navbar-dark-toggler-border-color: $butter;
 
 html.light {
+  --c-draft-indicator-bg: #ffc107; /* Bootstrap warning color */
+  --c-draft-indicator-color: #232429;
   --c-hero-bg: #232429;
   --c-navbar-bg: #232429;
   --c-notice: black;
