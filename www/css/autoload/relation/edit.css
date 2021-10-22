@@ -3,7 +3,7 @@
 }
 
 .link-editor-wrapper {
-  background-color: #eee;
+  background-color: var(--bs-gray-200);
   padding: 1rem;
   border-radius: .25rem;
 }

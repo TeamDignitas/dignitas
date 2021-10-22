@@ -34,6 +34,17 @@ $(document).on(
   }
 );
 
+/************************ light/dark mode toggle ************************/
+
+$(function() {
+  $('.light-mode-toggle, .dark-mode-toggle').click(function() {
+    setColorScheme($(this).data('mode'));
+    $(this).hide();
+    $(this).siblings('[data-mode]').css('display', 'block');
+    return false;
+  });
+});
+
 
 /****************************** search form ******************************/
 $(function() {

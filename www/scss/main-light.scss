@@ -1,0 +1,48 @@
+/**
+ * Entry point for the Bootstrap light theme.
+ *
+ * If you modify this file, remember to recompile the CSS file by running
+ * scripts/recompileCss.sh
+ **/
+
+/* our variables, not Bootstrap's */
+$butter: #f3e6d7;
+
+/* Bootstrap overrides */
+$body-color: #495057;
+
+$pagination-active-bg: #6c757d; /* secondary */
+$pagination-active-border-color: #6c757d; /* secondary */
+
+$popover-bg: #ccc;
+$tooltip-bg: #ccc;
+$tooltip-color: black;
+
+$toast-background-color: #343a40;
+$toast-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+$toast-color: #f8f9fa; /* light */
+
+$navbar-dark-color: $butter;   /* only used by the togglers */
+$navbar-dark-toggler-border-color: $butter;
+
+html.light {
+  --c-draft-indicator-bg: #ffc107; /* Bootstrap warning color */
+  --c-draft-indicator-color: #232429;
+  --c-hero-bg: #232429;
+  --c-navbar-bg: #232429;
+  --c-notice: black;
+  --c-notice-bg: #e0d9d1;
+  --c-recent-statements: var(--bs-body-color);
+  --c-search-btn: var(--bs-gray-800);
+
+  /* verdict colors */
+  --v-none: #eee;
+  --v-undecidable: #aaa;
+  --v-red: #d90404;
+  --v-orange: #ec771f; /* midpoint between red and yellow */
+  --v-yellow: #ffeb3b;
+  --v-olive: #9bad22;  /* midpoint between yellow and green */
+  --v-green: #37700a;
+}
+
+@import "common.scss";

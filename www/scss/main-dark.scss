@@ -1,0 +1,102 @@
+/**
+ * Entry point for the Bootstrap dark theme.
+ *
+ * If you modify this file, remember to recompile the CSS file by running
+ * scripts/recompileCss.sh
+ **/
+
+/* theme colors */
+$butter: #f3e6d7; /* ours */
+$danger: #ff7579;
+$primary: #599afd;
+$secondary: #c9bcae;
+
+/**
+ * Invert the gray scale. Start from the default scale as HSL:
+ *
+ *   $white:    #ffffff = (210, .17, 1.00)
+ *   $gray-100: #f8f9fa = (210, .17, .98)
+ *   $gray-200: #e9ecef = (210, .16, .93)
+ *   $gray-300: #dee2e6 = (210, .14, .89)
+ *   $gray-400: #ced4da = (210, .14, .83)
+ *   $gray-500: #adb5bd = (210, .11, .71)
+ *   $gray-600: #6c757d = (208, .07, .46)
+ *   $gray-700: #495057 = (210, .09, .31)
+ *   $gray-800: #343a40 = (210, .10, .23)
+ *   $gray-900: #212529 = (210, .11, .15)
+ *   $black:    #000000 = (210, .11, .00)
+ *
+ * Next, convert the desired body-bg (#232429) to HSL => (230, 0.08, 0.15).
+ * That's our new $white.
+ *
+ * Choose saturations from .08 for darker shades up to .17 for lighter
+ * shades. This looks like what the default does. It shouldn't matter much.
+ *
+ * Finally, convert the lightness range (1.00 - 0.00) to (0.15 - 1.00).
+ * The formula for any lightness 0 <= x <= 1 is 1 - x * 0.85.
+ **/
+$white:    hsl(230,  8%,  15%);
+$gray-100: hsl(230,  9%,  17%);
+$gray-200: hsl(230, 10%,  21%);
+$gray-300: hsl(230, 11%,  24%);
+$gray-400: hsl(230, 12%,  29%);
+$gray-500: hsl(230, 13%,  40%);
+$gray-600: hsl(230, 13%,  61%);
+$gray-700: hsl(230, 14%,  74%);
+$gray-800: hsl(230, 15%,  80%);
+$gray-900: hsl(230, 16%,  87%);
+$black:    hsl(230, 17%, 100%);
+
+/* Bootstrap overrides */
+$body-bg: $white;
+$body-color: #c4c5c6;
+
+/* don't allow these to use the inverted gray scale */
+$dropdown-dark-color: $butter;
+$dropdown-dark-bg: $gray-200;
+$dropdown-dark-border-color: $white;
+$dropdown-dark-link-hover-color: $secondary;
+$dropdown-dark-link-hover-bg: $gray-300;
+
+$modal-backdrop-bg: $gray-700;
+$navbar-dark-color: $butter;
+$navbar-dark-hover-color: $secondary;
+$navbar-dark-toggler-border-color: $butter;
+$toast-background-color: $gray-800;
+$toast-color: $body-bg;
+
+html.dark {
+  --c-draft-indicator-bg: #e6b41e; /* 80% lightness of Bootstrap warning color */
+  --c-draft-indicator-color: var(--bs-body-bg);
+  --c-hero-bg: var(--bs-body-bg);
+  --c-navbar-bg: var(--bs-gray-200);
+  --c-notice: black;
+  --c-notice-bg: #8a8178;
+  --c-recent-statements: var(--bs-butter);
+  --c-search-btn: var(--bs-gray-300);
+
+  /* verdict colors */
+  --v-none: #303035;
+  --v-undecidable: #3c3c42;
+  --v-red: #5d1717;
+  --v-orange: #8a6022; /* midpoint between red and yellow */
+  --v-yellow: #b7a92d;
+  --v-olive: #707e1a;  /* midpoint between yellow and green */
+  --v-green: #285206;
+}
+
+@import "common.scss";
+
+/* Select2 overrides for dark mode only */
+.select2-container--bootstrap-5 .select2-selection--single {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23e9ecef' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+}
+
+/* Overrides for Chrome/Chromium autocomplete. <insert harsh opinion here> */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px var(--bs-body-bg) inset !important;
+  -webkit-text-fill-color: var(--bs-body-color) !important;
+}

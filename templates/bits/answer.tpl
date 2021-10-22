@@ -30,7 +30,7 @@
     </div>
 
     {if $answer->status == Ct::STATUS_DELETED}
-      <div class="alert alert-secondary small">
+      {notice icon="info"}
         {$answer->getDeletedMessage()}
 
         {if $answer->reason == Ct::REASON_BY_USER}
@@ -39,7 +39,7 @@
           <hr>
           {include "bits/reviewFlagList.tpl" review=$answer->getRemovalReview()}
         {/if}
-      </div>
+      {/notice}
     {/if}
 
     <div class="answer-footer px-0">

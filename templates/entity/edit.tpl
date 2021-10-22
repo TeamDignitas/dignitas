@@ -15,9 +15,9 @@
     <h1 class="mb-5">{$smarty.capture.title}</h1>
 
     {if !$entity->isEditable()}
-      <div class="alert alert-warning">
+      {notice icon=info}
         {$entity->getEditMessage()}
-      </div>
+      {/notice}
     {/if}
 
     <form method="post" enctype="multipart/form-data">
@@ -206,7 +206,7 @@
             obj=$entity
             geometry=Config::THUMB_ENTITY_LARGE
             spanClass="col-3"
-            imgClass="pic float-end"}
+            imgClass="rounded-circle float-end"}
         {/hf}
       </fieldset>
 

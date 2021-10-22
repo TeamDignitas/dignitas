@@ -6,17 +6,18 @@ h1::first-letter {
   text-transform: capitalize;
 }
 
-img.pic {
-  outline: 1px solid #ddd;
-}
-
 .user-link {
+  color: inherit !important;
   font-weight: bold;
 }
 
+.user-link:hover {
+  opacity: 0.8;
+}
+
 blockquote {
-  border-left: 3px solid #777;
-  color: #777;
+  border-left: 3px solid var(--bs-gray-600);
+  color: var(--bs-gray-600);
   margin: 1em 2em;
   padding-left: 1em;
 }
@@ -25,10 +26,6 @@ blockquote {
   content: '•';
   opacity: 0.5; /* don't force a color, use opacity instead */
   padding-right: 8px;
-}
-
-.row-border {
-  border-top: 1px solid #dee2e6;
 }
 
 /* fix vertical centering of checkbox and label inside a .small */
@@ -45,6 +42,10 @@ blockquote {
 
 /******************************** navbar *********************************/
 
+.navbar {
+  background-color: var(--c-navbar-bg);
+}
+
 .navbar-nav {
   white-space: nowrap;
 }
@@ -55,7 +56,7 @@ blockquote {
 
 @media (max-width: 768px) {
   .navbar-collapse {
-    background-color: var(--bs-carbon);
+    background-color: var(--c-navbar-bg);
     height: 100%;
     margin-top: 3px;
     padding: 1rem;
@@ -85,6 +86,12 @@ blockquote {
   }
 }
 
+/* hide the theme icon for the current theme */
+html.light .light-mode-toggle,
+html.dark .dark-mode-toggle {
+  display: none;
+}
+
 /******************************* snackbars *******************************/
 
 #snackbars {
@@ -95,8 +102,13 @@ blockquote {
 
 /****************** navbar search box & search results ******************/
 
+#form-search .btn {
+  color: #fff;
+  background-color: var(--c-search-btn);
+  border: none;
+}
+
 .navbar .select2 {
-  background-color: #fff;
   /* Add rounded corners explicitly. This is necessary because the span is */
   /* not the first in the input-group; the hidden <select> comes before. */
   border-bottom-left-radius: 0.25rem !important;
@@ -104,22 +116,18 @@ blockquote {
 }
 
 .navbar .navbar-selection {
+  background-color: var(--bs-body-bg);
   border-width: 0;
 }
 
-.page-item.active .page-link {
-  background-color: #999;
-  border-color: #999;
-}
-
 .tabs-wrapper .nav {
-  border-bottom: 1px solid #999;
+  border-bottom: 1px solid var(--bs-gray-500);
 }
 
 .nav-pills .nav-link.active {
-  background-color: #fff;
-  border-bottom: 3px solid #999;
-  color: #999;
+  background-color: inherit !important;
+  border-bottom: 3px solid var(--bs-gray-500);
+  color: var(--bs-gray-500) !important;
   border-radius: 0;
   vertical-align: baseline;
 }
@@ -140,8 +148,8 @@ blockquote {
 }
 
 @keyframes answer-highlight-animation {
-  from { background-color: #777; }
-  to { background-color: white; }
+  from { background-color: var(--bs-gray-500); }
+  to { background-color: var(--bs-body-bg); }
 }
 
 .vote-box {
@@ -158,7 +166,7 @@ blockquote {
 }
 
 .vote-box button {
-  color: #777;
+  color: var(--bs-gray-600) !important;
   display: block;
   font-size: 25px;
   margin: 0px auto;
@@ -170,11 +178,16 @@ blockquote {
 }
 
 .btn-vote.voted {
-  color: green;
+  color: green !important;
 }
 
 .btn-proof.accepted {
-  color: green;
+  color: green !important;
+}
+
+.draft-indicator {
+  background-color: var(--c-draft-indicator-bg);
+  color: var(--c-draft-indicator-color) !important;
 }
 
 /******************************** statement ********************************/
@@ -183,15 +196,6 @@ blockquote {
   font-size: 2rem;
   line-height: 2.6rem;
   font-weight: 700;
-}
-
-.title-divider {
-  border-color: #ccc;
-}
-
-img.pic.no-outline,
-.no-outline {
-  outline: 0;
 }
 
 .statement-read-only .text-muted,
@@ -214,30 +218,23 @@ img.pic.no-outline,
   line-height: 1.5;
 }
 
-/* define variables for verdict colors */
-:root {
-  --v-none: #eee;
-  --v-undecidable: #aaa;
-  --v-red: #d90404;
-  --v-orange: #ec771f;
-  --v-yellow: #ffeb3b;
-  --v-olive: #9bad22;
-  --v-green: #37700a;
+/* keep these values in sync with lib/model/Statement.php::VERDICT_* constants */
+.verdict-area .card {
+  border: none !important;
 }
 
-/* keep these values in sync with lib/model/Statement.php::VERDICT_* constants */
 .bg-verdict-0 { /* none */
   background-color: var(--v-none) !important;
 }
 .statement.verdict-0 {
-  border-color: var(--v-none);
+  border-color: var(--v-none) !important;
 }
 
 .bg-verdict-1 { /* undecidable */
   background-color: var(--v-undecidable) !important;
 }
 .statement.verdict-1 {
-  border-color: var(--v-undecidable);
+  border-color: var(--v-undecidable) !important;
 }
 
 .bg-verdict-2,   /* false */
@@ -249,38 +246,39 @@ img.pic.no-outline,
 .statement.verdict-2,
 .statement.verdict-7,
 .statement.verdict-10 {
-  border-color: var(--v-red);
+  border-color: var(--v-red) !important;
 }
 
 .bg-verdict-3,   /* mostly false */
 .bg-verdict-11 { /* stalled promise */
   background-image: linear-gradient(110deg, var(--v-red), var(--v-yellow) 86%) !important;
-  border: 0;
+  color: #222;
 }
 .statement.verdict-3,
 .statement.verdict-11 {
-  border-color: var(--v-orange);
+  border-color: var(--v-orange) !important;
 }
 
 .bg-verdict-4,   /* mixed */
 .bg-verdict-8,   /* half flop */
 .bg-verdict-12 { /* partially kept promise */
   background-color: var(--v-yellow) !important;
+  color: #222;
 }
 .statement.verdict-4,
 .statement.verdict-8,
 .statement.verdict-12 {
-  border-color: var(--v-yellow);
+  border-color: var(--v-yellow) !important;
 }
 
 .bg-verdict-5,   /* mostly true */
 .bg-verdict-13 { /* promise kept past the deadline */
   background-image: linear-gradient(110deg, var(--v-green), var(--v-yellow) 86%) !important;
-  border: 0;
+  color: #222;
 }
 .statement.verdict-5,
 .statement.verdict-13 {
-  border-color: var(--v-olive);
+  border-color: var(--v-olive) !important;
 }
 
 .bg-verdict-6,   /* true */
@@ -292,7 +290,7 @@ img.pic.no-outline,
 .statement.verdict-6,
 .statement.verdict-9,
 .statement.verdict-14 {
-  border-color: var(--v-green);
+  border-color: var(--v-green) !important;
 }
 
 .statement.card {
@@ -304,7 +302,6 @@ img.pic.no-outline,
 .statement.card .mask {
   border-top-right-radius: 4px;
   bottom: 0;
-  color: black;
   font-size: 0.8rem;
   left: 0;
   opacity: 0;
@@ -319,7 +316,7 @@ img.pic.no-outline,
 }
 
 .statement-link a {
-  color: #555;
+  color: var(--bs-gray-800) !important;
   font-size: 0.9rem;
   font-style: italic;
 }
@@ -327,7 +324,7 @@ img.pic.no-outline,
 /*************** answers, entity statements, user profile ***************/
 
 .subsection {
-  border-bottom: 1px solid #999;
+  border-bottom: 1px solid var(--bs-gray-500);
 }
 
 .capitalize-first-word::first-letter {
@@ -335,7 +332,7 @@ img.pic.no-outline,
 }
 
 .your-answer {
-  background-color: #eee;
+  background-color: var(--bs-gray-200);
   padding: 3rem;
 }
 
@@ -354,14 +351,14 @@ img.pic.no-outline,
 /******************************* comments *******************************/
 
 .comment {
-  border-bottom: 1px solid #ccc;
-  color: #777;
+  border-bottom: 1px solid var(--bs-gray-400);
+  color: var(--bs-gray-600);
   font-size: 80%;
   padding: 5px 0px;
 }
 
 .comment-list .comment:first-child {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--bs-gray-400);
 }
 
 .comment p {
@@ -369,15 +366,16 @@ img.pic.no-outline,
 }
 
 .comment-actions {
-  color: #bbb;
+  color: var(--bs-gray-400) !important;
 }
 
 .comment-actions:hover {
-  color: #777;
+  color: var(--bs-gray-500) !important;
 }
 
 .dropdown-canned-responses a {
-  color: black;
+  color: var(--bs-gray-800) !important;
+  font-weight: 500;
   pointer-events: none;
   text-decoration: none;
 }
@@ -396,7 +394,7 @@ img.pic.no-outline,
 /******************************** footer ********************************/
 
 footer {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--bs-gray-300);
   padding-top: 5px;
 }
 
@@ -456,8 +454,12 @@ body, main {
 
 /************************ help pages and sidebar ************************/
 
+.breadcrumb {
+  padding-left: 0 !important;
+}
+
 .help-sidebar {
-  border: 1px solid #ccc;
+  border: 1px solid var(--bs-gray-400);
   border-radius: .25rem;
   font-size: 0.8rem;
   padding: 0.5rem 0;
@@ -475,6 +477,11 @@ body, main {
   font-weight: bold;
 }
 
+.help-sidebar-category a,
+.help-sidebar-page a {
+  color: var(--bs-gray-600) !important;
+}
+
 /******************************* markdown *******************************/
 
 .markdown table {
@@ -482,20 +489,8 @@ body, main {
 }
 
 .markdown table td, .markdown table th {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--bs-gray-400);
   padding: 0.75rem;
-}
-
-/***************************** help pages ****************************/
-
-.breadcrumb {
-  background-color: white !important;
-  padding-left: 0 !important;
-}
-
-.help-sidebar-category a,
-.help-sidebar-page a {
-  color: #777;
 }
 
 /******************************* tooltips *******************************/
@@ -536,7 +531,7 @@ body, main {
 }
 
 .card-collapse-icon .card-header a {
-  color: #555;
+  color: var(--bs-gray-700);
   display: block;
   text-decoration: none;
 }
@@ -594,16 +589,28 @@ body, main {
 
 /************************ EasyMDEContainer ************************/
 
+.CodeMirror  {
+  background-color: var(--bs-body-bg) !important;
+  border-color: var(--bs-gray-400) !important;
+  color: var(--bs-body-color) !important;
+}
+
 .editor-toolbar {
   align-items: center;
+  border-color: var(--bs-gray-400) !important;
   display: flex;
   flex-wrap: wrap;
 }
 
 .editor-toolbar button {
-  color: var(--bs-gray);
+  color: var(--bs-gray-600);
   margin-bottom: 8px !important;
   margin-top: 8px !important;
+}
+
+.editor-toolbar button.active, .editor-toolbar button:hover {
+  background: var(--bs-gray-100) !important;
+  border-color: var(--bs-gray-500) !important;
 }
 
 .is-invalid + .EasyMDEContainer > .editor-toolbar,
@@ -611,8 +618,41 @@ body, main {
   border-color: red;
 }
 
+.cm-s-easymde .cm-link,
+.cm-s-easymde .cm-quote {
+  color: var(--bs-gray-600) !important;
+}
+
+.cm-s-easymde .cm-url {
+  color: var(--bs-gray-500) !important;
+}
+
 /**************************** archived links ****************************/
 
 .popover-archive {
   max-width: 350px;
+}
+
+/******************** our clone of Bootstrap's alerts ********************/
+
+.notice {
+  background-color: var(--c-notice-bg);
+  border-radius: .25rem;
+  color: var(--c-notice);
+  margin-bottom: 1rem;
+  padding: 0.75rem 0.75rem;
+  position: relative;
+}
+
+.notice .notice-icon {
+  font-size: 200%;
+}
+
+.notice a {
+  color: inherit !important;
+  font-weight: bold;
+}
+
+.notice a:hover {
+  opacity: 0.7;
 }

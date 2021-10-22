@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-08-19 15:50+0300\n"
-"PO-Revision-Date: 2021-08-19 17:12+0300\n"
+"POT-Creation-Date: 2021-10-08 11:43+0300\n"
+"PO-Revision-Date: 2021-10-13 13:23+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -223,7 +223,7 @@ msgstr "mi-am uitat parola"
 msgid "label-remember-me"
 msgstr "Ține-mă minte un an."
 
-#: templates/auth/login.tpl:53 templates/bits/navmenu.tpl:204
+#: templates/auth/login.tpl:53 templates/bits/navmenu.tpl:243
 msgid "link-log-in"
 msgstr "autentificare"
 
@@ -472,6 +472,10 @@ msgstr "text"
 msgid "label-region"
 msgstr "regiune"
 
+#: templates/bits/entityFilters.tpl:46
+msgid "label-all-regions"
+msgstr "toate"
+
 #: templates/bits/fakeLogin.tpl:3
 msgid "title-test-login"
 msgstr "autentificare ca utilizator de test"
@@ -480,7 +484,7 @@ msgstr "autentificare ca utilizator de test"
 msgid "label-reputation"
 msgstr "reputație"
 
-#: templates/bits/fakeLogin.tpl:37 templates/bits/navmenu.tpl:180
+#: templates/bits/fakeLogin.tpl:37 templates/bits/navmenu.tpl:198
 #: templates/user/view.tpl:19
 msgid "label-moderator"
 msgstr "moderator"
@@ -693,15 +697,23 @@ msgstr "panou de control"
 msgid "link-my-profile"
 msgstr "profilul meu"
 
-#: templates/bits/navmenu.tpl:166
+#: templates/bits/navmenu.tpl:169 templates/bits/navmenu.tpl:224
+msgid "link-light-mode"
+msgstr "modul luminos"
+
+#: templates/bits/navmenu.tpl:176 templates/bits/navmenu.tpl:232
+msgid "link-dark-mode"
+msgstr "modul întunecat"
+
+#: templates/bits/navmenu.tpl:184
 msgid "info-reputation-manual"
 msgstr "schimbă reputația manual (va reîncărca pagina)"
 
-#: templates/bits/navmenu.tpl:185
+#: templates/bits/navmenu.tpl:203
 msgid "link-change"
 msgstr "schimbă"
 
-#: templates/bits/navmenu.tpl:195
+#: templates/bits/navmenu.tpl:213
 msgid "link-log-out"
 msgstr "ieșire"
 
@@ -826,8 +838,8 @@ msgstr ""
 #: templates/bits/statement.tpl:76
 msgid "link-statement-review-pending-edit"
 msgstr ""
-"Această afirmație are o modificare sugerată. O poți <a href=\"%1\" class="
-"\"alert-link\">evalua</a>."
+"Această afirmație are o modificare sugerată. O poți <a href=\"%1\">evalua</"
+"a>."
 
 #: templates/bits/statement.tpl:97
 msgid "title-context"
@@ -897,7 +909,7 @@ msgstr "dezabonează-mă de la toate notificările despre acest articol"
 msgid "link-unsubscribe"
 msgstr "nu mai urmări"
 
-#: templates/bits/viewMarkdownButton.tpl:10
+#: templates/bits/viewMarkdownButton.tpl:9
 msgid "link-view-markdown"
 msgstr "arată codul Markdown"
 
@@ -1149,8 +1161,7 @@ msgstr "Confirmi redeschiderea acestui autor?"
 #: templates/entity/view.tpl:9
 msgid "link-entity-review-pending-edit"
 msgstr ""
-"Acest autor are o modificare sugerată. O poți <a href=\"%1\" class=\"alert-"
-"link\">evalua</a>."
+"Acest autor are o modificare sugerată. O poți <a href=\"%1\">evalua</a>."
 
 #: templates/entity/view.tpl:37 templates/statement/edit.tpl:124
 msgid "label-involvements"
@@ -1439,7 +1450,7 @@ msgstr "Articolul complet:"
 
 #: templates/review/view.tpl:36
 msgid "info-statement-duplicate"
-msgstr "Această afirmație a fost marcată ca duplicat al afirmației"
+msgstr "Această afirmație a fost raportată ca duplicat al afirmației"
 
 #: templates/review/view.tpl:58 templates/review/view.tpl:111
 #: templates/review/view.tpl:124
@@ -1448,7 +1459,7 @@ msgstr "referitor la afirmația:"
 
 #: templates/review/view.tpl:73
 msgid "info-entity-duplicate"
-msgstr "Acest autor a fost marcat ca duplicat al autorului"
+msgstr "Acest autor a fost raportat ca duplicat al autorului"
 
 #: templates/review/view.tpl:76
 msgid "info-entity-duplicate-process"
@@ -2847,15 +2858,15 @@ msgstr "îndeplinită"
 msgid "info-no-such-user"
 msgstr "Utilizatorul căutat nu există."
 
-#: routes/aggregate/viewMarkdown.php:17
+#: routes/aggregate/viewMarkdown.php:14
 msgid "info-view-markdown-bad-object-type"
 msgstr "Ați ales un tip de obiect incorect."
 
-#: routes/aggregate/viewMarkdown.php:23
+#: routes/aggregate/viewMarkdown.php:20
 msgid "info-view-markdown-no-object"
 msgstr "Articolul căutat nu există."
 
-#: routes/aggregate/viewMarkdown.php:28
+#: routes/aggregate/viewMarkdown.php:25
 msgid "info-view-markdown-restricted-object"
 msgstr "Aveți privilegii insuficiente pentru a vedea acel articol."
 

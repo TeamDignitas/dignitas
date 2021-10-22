@@ -1,6 +1,6 @@
 {$msg=$msg|default:''} {* can be empty if supplied by the backend at a later time *}
 <div
-  class="toast bg-carbon text-light"
+  class="toast"
   role="alert"
   data-delay="5000"
   aria-live="assertive"

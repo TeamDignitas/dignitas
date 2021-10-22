@@ -1,3 +1,7 @@
+#reviewActions {
+  background-color: var(--bs-gray-200);
+}
+
 #parent-object {
   opacity: 0.65;
 }
@@ -16,15 +20,8 @@
 /* hide everything except the verdict from statement side cards */
 aside .card-title,
 aside .card-date,
-aside .rounded-circle {
+aside img {
   display: none;
-}
-
-.review-message .answer {
-  margin-left: 0;
-  margin-right: 0;
-  border: 1px solid #007bff;
-  border-radius: .25rem;
 }
 
 .review-message .card-body {
@@ -34,7 +31,7 @@ aside .rounded-circle {
 .callout {
   padding: 20px 40px;
   margin: 20px 0;
-  border: 1px solid #eee;
+  border: 1px solid var(--bs-gray-200);
   border-left-width: 5px;
   border-radius: 3px;
 }

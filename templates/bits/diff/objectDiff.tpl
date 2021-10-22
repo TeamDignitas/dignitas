@@ -47,7 +47,7 @@
       <tr class="d-flex">
         <td class="col-4 border-0">
           <button
-            class="btn btn-sm btn-light"
+            class="btn btn-sm btn-link"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#collapse-{$id}">

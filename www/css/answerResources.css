@@ -55,7 +55,7 @@ button.answer-resources-link {
 }
 
 #answer-resources .card-header {
-  background-color: #fff;
+  background-color: inherit;
 }
 
 #answer-resources .card {
