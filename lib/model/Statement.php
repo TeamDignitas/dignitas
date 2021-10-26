@@ -577,25 +577,34 @@ class Statement extends Proto {
    * are any results without having to perform the addition.
    **/
   static function getStatementsWithBadVerdicts() {
-    // statements with verdicts
-    $haveVerdict = Model::factory('Statement')
-      ->select('id')
-      ->where('status', Ct::STATUS_ACTIVE)
-      ->where_not_in('verdict', [ self::VERDICT_NONE, self::VERDICT_UNDECIDABLE ])
-      ->find_array();
-    $haveVerdict = array_column($haveVerdict, 'id');
-
-    // statements with answers with proofs
-    $haveProof = Model::factory('Statement')
+    // statements with proof(s), but no verdict
+    $proofNoVerdict = Model::factory('Statement')
       ->table_alias('s')
       ->select('s.id')
       ->distinct()
       ->join('answer', ['s.id', '=', 'a.statementId'], 'a')
       ->where('s.status', Ct::STATUS_ACTIVE)
       ->where('a.status', Ct::STATUS_ACTIVE)
+      ->where('s.verdict', self::VERDICT_NONE)
       ->where('a.proof', true)
       ->find_array();
-    $haveProof = array_column($haveProof, 'id');
+    $results['proofNoVerdict'] = array_column($proofNoVerdict, 'id');
+
+    // statements with verdict, but no proof(s)
+    $verdictNoProof = Model::factory('Statement')
+      ->table_alias('s')
+      ->select('s.id')
+      ->distinct()
+      ->raw_join(
+        'left join answer',
+        '(s.id = a.statementId) and (a.proof = true) and (a.status = ?)',
+        'a',
+        [Ct::STATUS_ACTIVE])
+      ->where('s.status', Ct::STATUS_ACTIVE)
+      ->where_not_in('s.verdict', [ self::VERDICT_NONE, self::VERDICT_UNDECIDABLE ])
+      ->where_null('a.id')
+      ->find_array();
+    $results['verdictNoProof'] = array_column($verdictNoProof, 'id');
 
     // statement-answer pairs with mismatched verdicts
     $verdictPairs = [];
@@ -613,13 +622,7 @@ class Statement extends Proto {
       ->where('a.proof', true)
       ->where_any_is($verdictPairs)
       ->find_array();
-    $verdictMismatch = array_column($verdictMismatch, 'id');
-
-    $results = [
-      'proofNoVerdict' => array_diff($haveProof, $haveVerdict),
-      'verdictNoProof' => array_diff($haveVerdict, $haveProof),
-      'verdictMismatch' => $verdictMismatch,
-    ];
+    $results['verdictMismatch'] = array_column($verdictMismatch, 'id');
 
     // now replace IDs with statements
     foreach ($results as $category => $ids) {
