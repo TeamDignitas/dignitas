@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2021-10-08 11:44+0300\n"
-"PO-Revision-Date: 2021-10-13 13:23+0300\n"
+"PO-Revision-Date: 2021-10-26 12:04+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -3416,7 +3416,7 @@ msgstr "The statement you are looking for does not exist."
 
 #: routes/statement/history.php:12 routes/statement/view.php:12
 msgid "info-restricted-statement"
-msgstr "This statement was deleted and is only visible to privileged users."
+msgstr "This statement is only visible to privileged users."
 
 #: routes/statement/history.php:16
 msgid "title-statement-history"
