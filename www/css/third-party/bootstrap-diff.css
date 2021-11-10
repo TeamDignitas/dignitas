@@ -3,7 +3,7 @@ html.dark {
   --c-draft-indicator-bg: #e6b41e;
   --c-draft-indicator-color: var(--bs-body-bg);
   --c-hero-bg: var(--bs-body-bg);
-  --c-navbar-bg: var(--bs-gray-200);
+  --c-navbar-bg: var(--bs-body-bg);
   --c-notice: black;
   --c-notice-bg: #8a8178;
   --c-recent-statements: var(--bs-butter);
