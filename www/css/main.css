@@ -241,7 +241,7 @@ html.dark .dark-mode-toggle {
 .bg-verdict-7,   /* flop */
 .bg-verdict-10 { /* broken promise */
   background-color: var(--v-red) !important;
-  color: white !important;
+  color: var(--bs-body-bg) !important;
 }
 .statement.verdict-2,
 .statement.verdict-7,
@@ -263,7 +263,7 @@ html.dark .dark-mode-toggle {
 .bg-verdict-8,   /* half flop */
 .bg-verdict-12 { /* partially kept promise */
   background-color: var(--v-yellow) !important;
-  color: #222;
+  color: #232429 !important;
 }
 .statement.verdict-4,
 .statement.verdict-8,
@@ -285,7 +285,7 @@ html.dark .dark-mode-toggle {
 .bg-verdict-9,   /* no flop */
 .bg-verdict-14 { /* kept promise */
   background-color: var(--v-green) !important;
-  color: white !important;
+  color: var(--bs-body-bg) !important;
 }
 .statement.verdict-6,
 .statement.verdict-9,

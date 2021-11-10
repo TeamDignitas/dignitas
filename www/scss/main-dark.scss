@@ -78,11 +78,11 @@ html.dark {
   /* verdict colors */
   --v-none: #303035;
   --v-undecidable: #3c3c42;
-  --v-red: #5d1717;
-  --v-orange: #8a6022; /* midpoint between red and yellow */
-  --v-yellow: #b7a92d;
-  --v-olive: #707e1a;  /* midpoint between yellow and green */
-  --v-green: #285206;
+  --v-red: #ff5055;
+  --v-orange: #fe9e55; /* midpoint between red and yellow */
+  --v-yellow: #fceb55;
+  --v-olive: #d1df58;  /* midpoint between yellow and green */
+  --v-green: #a6d25b;
 }
 
 @import "common.scss";
