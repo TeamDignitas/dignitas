@@ -79,7 +79,7 @@
       <div class="row g-3">
         {foreach $activeReviewReasons as $r}
           <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="card py-3 text-center dashcard">
+            <div class="card surface py-3 text-center dashcard">
               <div class="card-body">
                 <a
                   href="{Router::link('review/view')}/{Review::getUrlName($r)}"
@@ -99,7 +99,7 @@
 
         <div class="row g-3">
           <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="card py-3 text-center dashcard">
+            <div class="card surface py-3 text-center dashcard">
               <div class="card-body">
                 <a
                   href="{Router::link('statement/verdictReport')}"

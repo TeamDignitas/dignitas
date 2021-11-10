@@ -40,6 +40,10 @@ blockquote {
   pointer-events: auto;
 }
 
+.surface {
+  background-color: var(--c-surface) !important;
+}
+
 /******************************** navbar *********************************/
 
 .navbar {
