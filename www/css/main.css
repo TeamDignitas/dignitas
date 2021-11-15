@@ -204,6 +204,10 @@ html.dark .dark-mode-toggle {
   margin-right: -0.75rem;
 }
 
+.statement-authors-date {
+  margin-left: -12px;
+}
+
 .statement-read-only .text-muted,
 .ellipsis-menu a,
 .answer-read-only,
