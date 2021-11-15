@@ -455,7 +455,8 @@ $(function() {
     var form = $(this).closest('form');
     $.post(
       URL_PREFIX + 'ajax/save-comment',
-      form.serialize()
+      // compensate for https://github.com/jquery/jquery/blob/main/src/serialize.js#L124
+      form.serialize().replace(/%0D/g, '')
     ).done(function(successMsg, textStatus, xhr) {
 
       window.location.hash = 'c' + successMsg;
