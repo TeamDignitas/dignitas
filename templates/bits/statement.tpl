@@ -24,16 +24,16 @@
   {/if}
 </h1>
 
-<div class="row statement-authors-date px-0 mb-1">
-  <span class="col-12 col-md-3 ps-0">
+<div class="statement-authors-date small text-muted px-0 mb-1">
+  <span class="d-inline-block pe-2">
     {include "bits/entityLink.tpl" e=$statement->getEntity()}
-  </span>
-  <span class="col-12 col-md-3 ps-0">
+  </span>&#183;
+  <span class="d-inline-block px-2">
     {$statement->dateMade|ld}
   </span>
 
   {if count($statement->getLinks())}
-    <span class="col-12 col-md-6 ps-0 text-muted sources">
+    &#183;<span class="d-inline-block px-2 sources">
       {t}statement-links{/t}:
       <ul class="list-inline list-inline-bullet d-inline">
         {foreach $statement->getLinks() as $l}
@@ -48,7 +48,7 @@
 
 <hr class="row title-divider mt-0"/>
 
-<article class="row mt-5 me-0">
+<article class="row mt-5">
   {if $statement->status == Ct::STATUS_DRAFT}
     {include "bits/draftIndicator.tpl"}
   {elseif $voteBox}
@@ -176,7 +176,7 @@
 
   </div>
 
-  <div class="verdict-area col-12 col-md-3 offset-md-1 pe-0">
+  <div class="verdict-area col-12 col-md-3 offset-md-1 px-0">
     <aside class="card px-2 bg-verdict-{$statement->verdict}">
       <h5 class="card-title mt-4 mb-1 text-center fw-bold">
         {$statement->getEntity()}
