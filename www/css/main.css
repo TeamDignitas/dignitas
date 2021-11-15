@@ -199,6 +199,8 @@ html.dark .dark-mode-toggle {
   font-size: 2rem;
   line-height: 2.6rem;
   font-weight: 700;
+  margin-left: -12px;
+  margin-right: -12px;
 }
 
 .statement-read-only .text-muted,
@@ -322,6 +324,20 @@ html.dark .dark-mode-toggle {
   color: var(--bs-gray-800) !important;
   font-size: 0.9rem;
   font-style: italic;
+}
+
+.quote-mark {
+  color: #444;
+  font-size: 4rem;
+  font-family: Arial;
+}
+
+.quote-mark-open {
+  margin-left: -2.5rem;
+}
+
+.quote-mark-closed {
+  vertical-align: text-top;
 }
 
 /*************** answers, entity statements, user profile ***************/
