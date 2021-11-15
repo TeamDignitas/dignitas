@@ -48,7 +48,7 @@
 
 <hr class="row title-divider mt-0"/>
 
-<article class="row mt-5 me-0">
+<article class="row mt-5">
   {if $statement->status == Ct::STATUS_DRAFT}
     {include "bits/draftIndicator.tpl"}
   {elseif $voteBox}
@@ -176,7 +176,7 @@
 
   </div>
 
-  <div class="verdict-area col-12 col-md-3 offset-md-1 pe-0">
+  <div class="verdict-area col-12 col-md-3 offset-md-1 px-0">
     <aside class="card px-2 bg-verdict-{$statement->verdict}">
       <h5 class="card-title mt-4 mb-1 text-center fw-bold">
         {$statement->getEntity()}
