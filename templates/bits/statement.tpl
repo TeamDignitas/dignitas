@@ -8,8 +8,10 @@
 
 {$entity=$statement->getEntity()}
 
-<h1 class="row statement-title py-4 px-0">
-  {$statement->summary|escape}
+<h1 class="statement-title py-4 px-0">
+  <span class="quote-mark quote-mark-open">„</span>
+    {$statement->summary|escape}
+  <span class="quote-mark quote-mark-closed">”</span>
   {if $statusInfo}
     [{$statusInfo['status']}]
   {/if}
