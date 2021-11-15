@@ -199,8 +199,9 @@ html.dark .dark-mode-toggle {
   font-size: 2rem;
   line-height: 2.6rem;
   font-weight: 700;
-  margin-left: -12px;
-  margin-right: -12px;
+  /* keep in sync with row margins */
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
 }
 
 .statement-read-only .text-muted,
@@ -327,7 +328,7 @@ html.dark .dark-mode-toggle {
 }
 
 .quote-mark {
-  color: #444;
+  color: var(--bs-gray-400);
   font-size: 4rem;
   font-family: Arial;
 }

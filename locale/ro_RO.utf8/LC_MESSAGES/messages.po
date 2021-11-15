@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-10-08 11:43+0300\n"
-"PO-Revision-Date: 2021-10-26 12:03+0300\n"
+"POT-Creation-Date: 2021-11-15 15:58+0200\n"
+"PO-Revision-Date: 2021-11-15 15:58+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -48,7 +48,7 @@ msgid "link-my-drafts"
 msgstr "ciornele mele"
 
 #: templates/aggregate/dashboard.tpl:22 templates/aggregate/index.tpl:30
-#: templates/bits/entity.tpl:117
+#: templates/bits/entity.tpl:115
 msgid "link-add-statement"
 msgstr "adaugă o afirmație"
 
@@ -114,11 +114,12 @@ msgid "label-answers"
 msgstr "răspunsuri"
 
 #: templates/aggregate/drafts.tpl:27 templates/bits/editButton.tpl:10
-#: templates/cannedResponse/list.tpl:39 templates/domain/list.tpl:38
-#: templates/entityType/list.tpl:53 templates/help/categoryView.tpl:39
-#: templates/help/pageView.tpl:36 templates/region/view.tpl:15
-#: templates/relationType/list.tpl:42 templates/staticResource/list.tpl:44
-#: templates/tag/view.tpl:15 templates/user/view.tpl:94
+#: templates/bits/relation.tpl:22 templates/cannedResponse/list.tpl:39
+#: templates/domain/list.tpl:38 templates/entityType/list.tpl:53
+#: templates/help/categoryView.tpl:39 templates/help/pageView.tpl:36
+#: templates/region/view.tpl:15 templates/relationType/list.tpl:42
+#: templates/staticResource/list.tpl:44 templates/tag/view.tpl:15
+#: templates/user/view.tpl:94
 msgid "link-edit"
 msgstr "editează"
 
@@ -381,7 +382,7 @@ msgid "link-pick-canned-response"
 msgstr "mesaje predefinite"
 
 #: templates/bits/commentForm.tpl:38 templates/bits/flagModal.tpl:190
-#: templates/bs/actions.tpl:68 templates/cannedResponse/list.tpl:52
+#: templates/bs/actions.tpl:69 templates/cannedResponse/list.tpl:52
 #: templates/invite/add.tpl:23
 msgid "link-cancel"
 msgstr "renunță"
@@ -421,23 +422,23 @@ msgstr "sugerează o modificare"
 msgid "title-alias"
 msgstr "alias"
 
-#: templates/bits/entity.tpl:58
+#: templates/bits/entity.tpl:56
 msgid "title-relations"
 msgstr "relații"
 
-#: templates/bits/entity.tpl:69 templates/region/view.tpl:3
+#: templates/bits/entity.tpl:67 templates/region/view.tpl:3
 msgid "title-region"
 msgstr "regiune"
 
-#: templates/bits/entity.tpl:76
+#: templates/bits/entity.tpl:74
 msgid "title-profile"
 msgstr "profil"
 
-#: templates/bits/entity.tpl:84
+#: templates/bits/entity.tpl:82
 msgid "title-entity-links"
 msgstr "legături externe"
 
-#: templates/bits/entity.tpl:98
+#: templates/bits/entity.tpl:96
 msgid "title-members"
 msgstr "membri"
 
@@ -489,7 +490,7 @@ msgstr "reputație"
 msgid "label-moderator"
 msgstr "moderator"
 
-#: templates/bits/fakeLogin.tpl:41
+#: templates/bits/fakeLogin.tpl:42
 msgid "link-test-login"
 msgstr "autentificare ca utilizator de test"
 
@@ -721,11 +722,11 @@ msgstr "ieșire"
 msgid "info-notification-unsubscribe"
 msgstr "dezabonează-mă de la toate notificările pentru acest articol"
 
-#: templates/bits/relation.tpl:20
+#: templates/bits/relation.tpl:33
 msgid "relation-links"
 msgstr "surse"
 
-#: templates/bits/relation.tpl:28 templates/relation/edit.tpl:20
+#: templates/bits/relation.tpl:38 templates/relation/edit.tpl:20
 msgid "label-relation-links"
 msgstr "surse"
 
@@ -808,15 +809,23 @@ msgstr "Acceptă/respinge răspunsul ca demonstrație."
 msgid "tooltip-answer-is-proof"
 msgstr "Răspuns acceptat ca demonstrație."
 
-#: templates/bits/statement.tpl:19
+#: templates/bits/statement.tpl:12
+msgid "quote-open"
+msgstr "„"
+
+#: templates/bits/statement.tpl:14
+msgid "quote-closed"
+msgstr "”"
+
+#: templates/bits/statement.tpl:21
 msgid "link-visit-statement-page"
 msgstr "mergi la pagina afirmației"
 
-#: templates/bits/statement.tpl:35
+#: templates/bits/statement.tpl:37
 msgid "statement-links"
 msgstr "surse"
 
-#: templates/bits/statement.tpl:55
+#: templates/bits/statement.tpl:57
 msgid "tooltip-downvote-statement-singular-%1"
 msgid_plural "tooltip-downvote-statement-plural-%1"
 msgstr[0] ""
@@ -829,13 +838,13 @@ msgstr[2] ""
 "Votează negativ afirmațiile preluate inexact sau formatate defectuos. "
 "Această acțiune te costă %1 de puncte de reputație."
 
-#: templates/bits/statement.tpl:66
+#: templates/bits/statement.tpl:68
 msgid "tooltip-upvote-statement"
 msgstr ""
 "Votează pozitiv afirmațiile preluate exact și bine formatate. Valoarea de "
 "adevăr a afirmației nu se votează."
 
-#: templates/bits/statement.tpl:76
+#: templates/bits/statement.tpl:78
 msgid "link-statement-review-pending-edit"
 msgstr ""
 "Această afirmație are o modificare sugerată. O poți <a href=\"%1\">evalua</"
@@ -853,7 +862,7 @@ msgstr "scop"
 msgid "info-tag-view-statements"
 msgstr "Vezi toate afirmațiile cu această etichetă."
 
-#: templates/bits/statement.tpl:124 templates/review/view.tpl:89
+#: templates/bits/statement.tpl:124 templates/review/view.tpl:90
 msgid "title-added-by"
 msgstr "adăugată de"
 
@@ -917,21 +926,21 @@ msgstr "arată codul Markdown"
 msgid "link-reopen"
 msgstr "redeschide"
 
-#: templates/bs/actions.tpl:57
+#: templates/bs/actions.tpl:58
 msgid "link-clone"
 msgstr "clonează"
 
-#: templates/bs/actions.tpl:79
+#: templates/bs/actions.tpl:80
 msgid "tooltip-save-draft"
 msgstr ""
 "Salvează o ciornă privată. Poți edita ciorna pînă cînd decizi să o publici "
 "sau să o ștergi."
 
-#: templates/bs/actions.tpl:82
+#: templates/bs/actions.tpl:83
 msgid "link-save-draft"
 msgstr "salvează ciornă"
 
-#: templates/bs/actions.tpl:91
+#: templates/bs/actions.tpl:92
 msgid "info-confirm-publish"
 msgstr ""
 "Confirmi publicarea articolului? El va deveni vizibil pentru toți "
@@ -1440,39 +1449,39 @@ msgstr ""
 "Trebuie să <a href=\"%1\">adaugi un tip de entitate</a> înainte să poți "
 "adăuga tipuri de relații."
 
-#: templates/review/view.tpl:19
+#: templates/review/view.tpl:20
 msgid "info-review-complete"
 msgstr "Această evaluare este completă. Nu mai poți face alte acțiuni."
 
-#: templates/review/view.tpl:28
+#: templates/review/view.tpl:29
 msgid "info-review-target-item"
 msgstr "Articolul complet:"
 
-#: templates/review/view.tpl:36
+#: templates/review/view.tpl:37
 msgid "info-statement-duplicate"
 msgstr "Această afirmație a fost raportată ca duplicat al afirmației"
 
-#: templates/review/view.tpl:58 templates/review/view.tpl:111
-#: templates/review/view.tpl:124
+#: templates/review/view.tpl:59 templates/review/view.tpl:112
+#: templates/review/view.tpl:125
 msgid "title-pertaining-to-statement"
 msgstr "referitor la afirmația:"
 
-#: templates/review/view.tpl:73
+#: templates/review/view.tpl:74
 msgid "info-entity-duplicate"
 msgstr "Acest autor a fost raportat ca duplicat al autorului"
 
-#: templates/review/view.tpl:76
+#: templates/review/view.tpl:77
 msgid "info-entity-duplicate-process"
 msgstr ""
 "Acceptarea acestei raportări va transfera toate afirmațiile de la acest "
 "duplicat la autorul canonic. Aliasurile, relațiile și alte atribute nu vor "
 "fi transferate."
 
-#: templates/review/view.tpl:101
+#: templates/review/view.tpl:102
 msgid "title-pertaining-to-answer"
 msgstr "referitor la răspunsul:"
 
-#: templates/review/view.tpl:142
+#: templates/review/view.tpl:143
 msgid "info-review-queue-empty"
 msgstr "Această coadă de evaluare este goală."
 
@@ -1976,13 +1985,13 @@ msgstr "deoarece este de slabă calitate."
 msgid "info-answer-by-owner"
 msgstr "de către autorul său."
 
-#: lib/model/Answer.php:89 lib/model/Comment.php:67 lib/model/Entity.php:158
-#: lib/model/Statement.php:298
+#: lib/model/Answer.php:89 lib/model/Comment.php:67 lib/model/Entity.php:154
+#: lib/model/Statement.php:294
 msgid "info-by"
 msgstr "de către"
 
-#: lib/model/Answer.php:90 lib/model/Comment.php:68 lib/model/Entity.php:159
-#: lib/model/Statement.php:299
+#: lib/model/Answer.php:90 lib/model/Comment.php:68 lib/model/Entity.php:155
+#: lib/model/Statement.php:295
 msgid "info-other-reason"
 msgstr "pentru alt motiv."
 
@@ -2099,53 +2108,53 @@ msgstr "închis"
 msgid "status-entity-deleted"
 msgstr "șters"
 
-#: lib/model/Entity.php:148
+#: lib/model/Entity.php:144
 msgid "info-entity-closed"
 msgstr "Acest autor a fost închis"
 
-#: lib/model/Entity.php:149
+#: lib/model/Entity.php:145
 msgid "info-entity-deleted"
 msgstr "Acest autor a fost șters"
 
-#: lib/model/Entity.php:152
+#: lib/model/Entity.php:148
 msgid "info-entity-spam"
 msgstr "deoarece profilul său conține spam."
 
-#: lib/model/Entity.php:153
+#: lib/model/Entity.php:149
 msgid "info-entity-abuse"
 msgstr "deoarece profilul său conține insulte sau abuzuri."
 
-#: lib/model/Entity.php:154
+#: lib/model/Entity.php:150
 msgid "info-entity-duplicate-of"
 msgstr "ca duplicat al autorului"
 
-#: lib/model/Entity.php:155
+#: lib/model/Entity.php:151
 msgid "info-entity-off-topic"
 msgstr "deoarece este pe lîngă subiect."
 
-#: lib/model/Entity.php:156
+#: lib/model/Entity.php:152
 msgid "info-entity-unverifiable"
 msgstr "deoarece este neverificabil."
 
-#: lib/model/Entity.php:157
+#: lib/model/Entity.php:153
 msgid "info-entity-by-owner"
 msgstr "de către autorul său."
 
-#: lib/model/Entity.php:281
+#: lib/model/Entity.php:277
 #, php-format
 msgid "info-minimum-reputation-add-entity-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
-#: lib/model/Entity.php:289
+#: lib/model/Entity.php:285
 #, php-format
 msgid "info-minimum-reputation-edit-entity-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
-#: lib/model/Entity.php:294
+#: lib/model/Entity.php:290
 msgid "info-banned-add-entity"
 msgstr "Îți este interzisă adăugarea de autori."
 
-#: lib/model/Entity.php:298
+#: lib/model/Entity.php:294
 msgid "info-banned-edit-entity"
 msgstr "Îți este interzisă editarea de autori."
 
@@ -2590,63 +2599,63 @@ msgstr "închisă"
 msgid "status-statement-deleted"
 msgstr "ștearsă"
 
-#: lib/model/Statement.php:287
+#: lib/model/Statement.php:283
 msgid "info-statement-closed"
 msgstr "Această afirmație a fost închisă"
 
-#: lib/model/Statement.php:288
+#: lib/model/Statement.php:284
 msgid "info-statement-deleted"
 msgstr "Această afirmație a fost ștearsă"
 
-#: lib/model/Statement.php:291
+#: lib/model/Statement.php:287
 msgid "info-statement-spam"
 msgstr "deoarece este spam."
 
-#: lib/model/Statement.php:292
+#: lib/model/Statement.php:288
 msgid "info-statement-abuse"
 msgstr "deoarece conține insulte sau abuzuri."
 
-#: lib/model/Statement.php:293
+#: lib/model/Statement.php:289
 msgid "info-statement-duplicate-of"
 msgstr "ca duplicat al afirmației"
 
-#: lib/model/Statement.php:294
+#: lib/model/Statement.php:290
 msgid "info-statement-off-topic"
 msgstr "deoarece este pe lîngă subiect."
 
-#: lib/model/Statement.php:295
+#: lib/model/Statement.php:291
 msgid "info-statement-unverifiable"
 msgstr "deoarece este neverificabilă."
 
-#: lib/model/Statement.php:296
+#: lib/model/Statement.php:292
 msgid "info-statement-low-quality"
 msgstr "deoarece este de slabă calitate."
 
-#: lib/model/Statement.php:297
+#: lib/model/Statement.php:293
 msgid "info-statement-by-owner"
 msgstr "de către autorul său."
 
-#: lib/model/Statement.php:355
+#: lib/model/Statement.php:351
 #, php-format
 msgid "info-minimum-reputation-add-statement-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
-#: lib/model/Statement.php:363
+#: lib/model/Statement.php:359
 #, php-format
 msgid "info-minimum-reputation-edit-statement-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a edita afirmații."
 
-#: lib/model/Statement.php:369
+#: lib/model/Statement.php:365
 msgid "info-only-moderator-edit-statement-verdict"
 msgstr ""
 "Această afirmație a primit un verdict. Doar moderatorii o mai pot modifica "
 "direct."
 
-#: lib/model/Statement.php:373
+#: lib/model/Statement.php:369
 msgid "info-banned-add-statement"
 msgstr "Îți este interzisă adăugarea de afirmații."
 
-#: lib/model/Statement.php:377
+#: lib/model/Statement.php:373
 msgid "info-banned-edit-statement"
 msgstr "Îți este interzisă editarea de afirmații."
 

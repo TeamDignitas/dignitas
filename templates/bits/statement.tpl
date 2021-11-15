@@ -9,9 +9,9 @@
 {$entity=$statement->getEntity()}
 
 <h1 class="statement-title py-4 px-0">
-  <span class="quote-mark quote-mark-open">„</span>
-    {$statement->summary|escape}
-  <span class="quote-mark quote-mark-closed">”</span>
+  <span class="quote-mark quote-mark-open">{t}quote-open{/t}</span>
+  {$statement->summary|escape}
+  <span class="quote-mark quote-mark-closed">{t}quote-closed{/t}</span>
   {if $statusInfo}
     [{$statusInfo['status']}]
   {/if}

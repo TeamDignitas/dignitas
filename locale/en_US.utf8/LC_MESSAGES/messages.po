@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-10-08 11:44+0300\n"
-"PO-Revision-Date: 2021-10-26 12:04+0300\n"
+"POT-Creation-Date: 2021-11-15 16:00+0200\n"
+"PO-Revision-Date: 2021-11-15 16:01+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -47,7 +47,7 @@ msgid "link-my-drafts"
 msgstr "my drafts"
 
 #: templates/aggregate/dashboard.tpl:22 templates/aggregate/index.tpl:30
-#: templates/bits/entity.tpl:117
+#: templates/bits/entity.tpl:115
 msgid "link-add-statement"
 msgstr "add a statement"
 
@@ -113,11 +113,12 @@ msgid "label-answers"
 msgstr "answers"
 
 #: templates/aggregate/drafts.tpl:27 templates/bits/editButton.tpl:10
-#: templates/cannedResponse/list.tpl:39 templates/domain/list.tpl:38
-#: templates/entityType/list.tpl:53 templates/help/categoryView.tpl:39
-#: templates/help/pageView.tpl:36 templates/region/view.tpl:15
-#: templates/relationType/list.tpl:42 templates/staticResource/list.tpl:44
-#: templates/tag/view.tpl:15 templates/user/view.tpl:94
+#: templates/bits/relation.tpl:22 templates/cannedResponse/list.tpl:39
+#: templates/domain/list.tpl:38 templates/entityType/list.tpl:53
+#: templates/help/categoryView.tpl:39 templates/help/pageView.tpl:36
+#: templates/region/view.tpl:15 templates/relationType/list.tpl:42
+#: templates/staticResource/list.tpl:44 templates/tag/view.tpl:15
+#: templates/user/view.tpl:94
 msgid "link-edit"
 msgstr "edit"
 
@@ -377,7 +378,7 @@ msgid "link-pick-canned-response"
 msgstr "canned responses"
 
 #: templates/bits/commentForm.tpl:38 templates/bits/flagModal.tpl:190
-#: templates/bs/actions.tpl:68 templates/cannedResponse/list.tpl:52
+#: templates/bs/actions.tpl:69 templates/cannedResponse/list.tpl:52
 #: templates/invite/add.tpl:23
 msgid "link-cancel"
 msgstr "cancel"
@@ -416,23 +417,23 @@ msgstr "suggest an edit"
 msgid "title-alias"
 msgstr "also known as"
 
-#: templates/bits/entity.tpl:58
+#: templates/bits/entity.tpl:56
 msgid "title-relations"
 msgstr "relationships"
 
-#: templates/bits/entity.tpl:69 templates/region/view.tpl:3
+#: templates/bits/entity.tpl:67 templates/region/view.tpl:3
 msgid "title-region"
 msgstr "region"
 
-#: templates/bits/entity.tpl:76
+#: templates/bits/entity.tpl:74
 msgid "title-profile"
 msgstr "profile"
 
-#: templates/bits/entity.tpl:84
+#: templates/bits/entity.tpl:82
 msgid "title-entity-links"
 msgstr "external links"
 
-#: templates/bits/entity.tpl:98
+#: templates/bits/entity.tpl:96
 msgid "title-members"
 msgstr "members"
 
@@ -484,7 +485,7 @@ msgstr "reputation"
 msgid "label-moderator"
 msgstr "moderator"
 
-#: templates/bits/fakeLogin.tpl:41
+#: templates/bits/fakeLogin.tpl:42
 msgid "link-test-login"
 msgstr "test user login"
 
@@ -715,11 +716,11 @@ msgstr "log out"
 msgid "info-notification-unsubscribe"
 msgstr "unsubscribe from notifications for this item"
 
-#: templates/bits/relation.tpl:20
+#: templates/bits/relation.tpl:33
 msgid "relation-links"
 msgstr "sources"
 
-#: templates/bits/relation.tpl:28 templates/relation/edit.tpl:20
+#: templates/bits/relation.tpl:38 templates/relation/edit.tpl:20
 msgid "label-relation-links"
 msgstr "sources"
 
@@ -801,15 +802,23 @@ msgstr "Accept/reject the answer as proof."
 msgid "tooltip-answer-is-proof"
 msgstr "Answer accepted as proof."
 
-#: templates/bits/statement.tpl:19
+#: templates/bits/statement.tpl:12
+msgid "quote-open"
+msgstr "“"
+
+#: templates/bits/statement.tpl:14
+msgid "quote-closed"
+msgstr "”"
+
+#: templates/bits/statement.tpl:21
 msgid "link-visit-statement-page"
 msgstr "visit the statement's page"
 
-#: templates/bits/statement.tpl:35
+#: templates/bits/statement.tpl:37
 msgid "statement-links"
 msgstr "sources"
 
-#: templates/bits/statement.tpl:55
+#: templates/bits/statement.tpl:57
 msgid "tooltip-downvote-statement-singular-%1"
 msgid_plural "tooltip-downvote-statement-plural-%1"
 msgstr[0] ""
@@ -819,13 +828,13 @@ msgstr[1] ""
 "Downvote poorly sourced and formatted statements. Downvoting costs %1 "
 "reputation points."
 
-#: templates/bits/statement.tpl:66
+#: templates/bits/statement.tpl:68
 msgid "tooltip-upvote-statement"
 msgstr ""
 "Upvote properly sourced and formatted statements. Do not vote the "
 "statement's truth value."
 
-#: templates/bits/statement.tpl:76
+#: templates/bits/statement.tpl:78
 msgid "link-statement-review-pending-edit"
 msgstr ""
 "This statement has a pending edit. You can <a href=\"%1\">review it</a>."
@@ -842,7 +851,7 @@ msgstr "goal"
 msgid "info-tag-view-statements"
 msgstr "View all statements with this tag."
 
-#: templates/bits/statement.tpl:124 templates/review/view.tpl:89
+#: templates/bits/statement.tpl:124 templates/review/view.tpl:90
 msgid "title-added-by"
 msgstr "added by"
 
@@ -906,21 +915,21 @@ msgstr "show Markdown code"
 msgid "link-reopen"
 msgstr "reopen"
 
-#: templates/bs/actions.tpl:57
+#: templates/bs/actions.tpl:58
 msgid "link-clone"
 msgstr "clone"
 
-#: templates/bs/actions.tpl:79
+#: templates/bs/actions.tpl:80
 msgid "tooltip-save-draft"
 msgstr ""
 "Save a private draft. You can edit the draft until you decide to publish it "
 "or delete it."
 
-#: templates/bs/actions.tpl:82
+#: templates/bs/actions.tpl:83
 msgid "link-save-draft"
 msgstr "save draft"
 
-#: templates/bs/actions.tpl:91
+#: templates/bs/actions.tpl:92
 msgid "info-confirm-publish"
 msgstr ""
 "Are you sure you want to publish this article? It will become visible to "
@@ -1429,39 +1438,39 @@ msgstr ""
 "You must <a href=\"%1\">add an entity type</a> before adding relationship "
 "types."
 
-#: templates/review/view.tpl:19
+#: templates/review/view.tpl:20
 msgid "info-review-complete"
 msgstr "This review is now complete. No further actions can be taken."
 
-#: templates/review/view.tpl:28
+#: templates/review/view.tpl:29
 msgid "info-review-target-item"
 msgstr "Complete item:"
 
-#: templates/review/view.tpl:36
+#: templates/review/view.tpl:37
 msgid "info-statement-duplicate"
 msgstr "This statement was flagged as a duplicate of"
 
-#: templates/review/view.tpl:58 templates/review/view.tpl:111
-#: templates/review/view.tpl:124
+#: templates/review/view.tpl:59 templates/review/view.tpl:112
+#: templates/review/view.tpl:125
 msgid "title-pertaining-to-statement"
 msgstr "pertaining to statement:"
 
-#: templates/review/view.tpl:73
+#: templates/review/view.tpl:74
 msgid "info-entity-duplicate"
 msgstr "This author was flagged as a duplicate of"
 
-#: templates/review/view.tpl:76
+#: templates/review/view.tpl:77
 msgid "info-entity-duplicate-process"
 msgstr ""
 "Accepting this flag will transfer all statements from this duplicate to its "
 "canonical author. The aliases, relationships and other attributes will not "
 "be transferred."
 
-#: templates/review/view.tpl:101
+#: templates/review/view.tpl:102
 msgid "title-pertaining-to-answer"
 msgstr "pertaining to answer:"
 
-#: templates/review/view.tpl:142
+#: templates/review/view.tpl:143
 msgid "info-review-queue-empty"
 msgstr "This review queue is empty."
 
@@ -1961,13 +1970,13 @@ msgstr "because it is low-quality."
 msgid "info-answer-by-owner"
 msgstr "by its author."
 
-#: lib/model/Answer.php:89 lib/model/Comment.php:67 lib/model/Entity.php:158
-#: lib/model/Statement.php:298
+#: lib/model/Answer.php:89 lib/model/Comment.php:67 lib/model/Entity.php:154
+#: lib/model/Statement.php:294
 msgid "info-by"
 msgstr "by"
 
-#: lib/model/Answer.php:90 lib/model/Comment.php:68 lib/model/Entity.php:159
-#: lib/model/Statement.php:299
+#: lib/model/Answer.php:90 lib/model/Comment.php:68 lib/model/Entity.php:155
+#: lib/model/Statement.php:295
 msgid "info-other-reason"
 msgstr "for other reasons."
 
@@ -2083,53 +2092,53 @@ msgstr "closed"
 msgid "status-entity-deleted"
 msgstr "deleted"
 
-#: lib/model/Entity.php:148
+#: lib/model/Entity.php:144
 msgid "info-entity-closed"
 msgstr "This author was closed"
 
-#: lib/model/Entity.php:149
+#: lib/model/Entity.php:145
 msgid "info-entity-deleted"
 msgstr "This author was deleted"
 
-#: lib/model/Entity.php:152
+#: lib/model/Entity.php:148
 msgid "info-entity-spam"
 msgstr "because its profile contains spam."
 
-#: lib/model/Entity.php:153
+#: lib/model/Entity.php:149
 msgid "info-entity-abuse"
 msgstr "because its profile contains insults or abuse."
 
-#: lib/model/Entity.php:154
+#: lib/model/Entity.php:150
 msgid "info-entity-duplicate-of"
 msgstr "as a duplicate of the author"
 
-#: lib/model/Entity.php:155
+#: lib/model/Entity.php:151
 msgid "info-entity-off-topic"
 msgstr "because it is off-topic."
 
-#: lib/model/Entity.php:156
+#: lib/model/Entity.php:152
 msgid "info-entity-unverifiable"
 msgstr "because it is unverifiable."
 
-#: lib/model/Entity.php:157
+#: lib/model/Entity.php:153
 msgid "info-entity-by-owner"
 msgstr "by the user who added it."
 
-#: lib/model/Entity.php:281
+#: lib/model/Entity.php:277
 #, php-format
 msgid "info-minimum-reputation-add-entity-%s"
 msgstr "You need at least %s reputation to add authors."
 
-#: lib/model/Entity.php:289
+#: lib/model/Entity.php:285
 #, php-format
 msgid "info-minimum-reputation-edit-entity-%s"
 msgstr "You need at least %s reputation to edit authors."
 
-#: lib/model/Entity.php:294
+#: lib/model/Entity.php:290
 msgid "info-banned-add-entity"
 msgstr "You are banned from adding authors."
 
-#: lib/model/Entity.php:298
+#: lib/model/Entity.php:294
 msgid "info-banned-edit-entity"
 msgstr "You are banned from editing authors."
 
@@ -2572,61 +2581,61 @@ msgstr "closed"
 msgid "status-statement-deleted"
 msgstr "deleted"
 
-#: lib/model/Statement.php:287
+#: lib/model/Statement.php:283
 msgid "info-statement-closed"
 msgstr "This statement was closed"
 
-#: lib/model/Statement.php:288
+#: lib/model/Statement.php:284
 msgid "info-statement-deleted"
 msgstr "This statement was deleted"
 
-#: lib/model/Statement.php:291
+#: lib/model/Statement.php:287
 msgid "info-statement-spam"
 msgstr "because it is spam."
 
-#: lib/model/Statement.php:292
+#: lib/model/Statement.php:288
 msgid "info-statement-abuse"
 msgstr "because it is rude or abusive."
 
-#: lib/model/Statement.php:293
+#: lib/model/Statement.php:289
 msgid "info-statement-duplicate-of"
 msgstr "as a duplicate of the statement"
 
-#: lib/model/Statement.php:294
+#: lib/model/Statement.php:290
 msgid "info-statement-off-topic"
 msgstr "because it is off-topic."
 
-#: lib/model/Statement.php:295
+#: lib/model/Statement.php:291
 msgid "info-statement-unverifiable"
 msgstr "because it is unverifiable."
 
-#: lib/model/Statement.php:296
+#: lib/model/Statement.php:292
 msgid "info-statement-low-quality"
 msgstr "because it is low-quality."
 
-#: lib/model/Statement.php:297
+#: lib/model/Statement.php:293
 msgid "info-statement-by-owner"
 msgstr "by the user who added it."
 
-#: lib/model/Statement.php:355
+#: lib/model/Statement.php:351
 #, php-format
 msgid "info-minimum-reputation-add-statement-%s"
 msgstr "You need at least %s reputation to add statements."
 
-#: lib/model/Statement.php:363
+#: lib/model/Statement.php:359
 #, php-format
 msgid "info-minimum-reputation-edit-statement-%s"
 msgstr "You need at least %s reputation to edit statements."
 
-#: lib/model/Statement.php:369
+#: lib/model/Statement.php:365
 msgid "info-only-moderator-edit-statement-verdict"
 msgstr "This statement has a verdict. Only moderators can edit it directly."
 
-#: lib/model/Statement.php:373
+#: lib/model/Statement.php:369
 msgid "info-banned-add-statement"
 msgstr "You are banned from adding statements."
 
-#: lib/model/Statement.php:377
+#: lib/model/Statement.php:373
 msgid "info-banned-edit-statement"
 msgstr "You are banned from editing statements."
 
