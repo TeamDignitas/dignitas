@@ -36,7 +36,7 @@
     </div>
 
     {if $statement->isAnswerable()}
-      <div class="your-answer rounded mt-5">
+      <div class="row your-answer rounded mt-5">
         <h6 class="answer-label text-uppercase fw-bold ps-0 pb-2">
           {t}title-your-answer{/t}
         </h6>
