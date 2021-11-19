@@ -55,6 +55,7 @@ class User extends Proto {
   const REP_FOR_ARCHIVING = 200;
 
   private static $active = null; // user currently logged in
+  private ?float $accuracy = null; // cached so we don't recompute it
 
   function getMarkdownFields() {
     return [ 'aboutMe' ];
@@ -202,6 +203,62 @@ class User extends Proto {
                   [ Ban::EXPIRATION_NEVER, time() ])
       ->order_by_asc('type')
       ->find_many();
+  }
+
+  /**
+   * Returns a number between 0 and 100 representing the match between
+   * statement verdicts and user's answer verdicts. This function scans all of
+   * the user's answers and thus can become expensive.
+   */
+  function getAccuracy() {
+    if ($this->accuracy === null) {
+      $noVerdict = [ Statement::VERDICT_NONE, Statement::VERDICT_UNDECIDABLE ];
+      $pairs = Model::factory('Answer')
+        ->table_alias('a')
+        ->select('a.verdict', 'av')
+        ->select('s.verdict', 'sv')
+        ->join('statement', ['s.id', '=', 'a.statementId'], 's')
+        ->where('a.userId', $this->id)
+        ->where('a.status', Ct::STATUS_ACTIVE)
+        ->where('s.status', Ct::STATUS_ACTIVE)
+        ->where_not_in('a.verdict', $noVerdict)
+        ->where_not_in('s.verdict', $noVerdict)
+        ->find_array();
+
+      $sum = 0.0;
+      $count = 0;
+      foreach ($pairs as $pair) {
+        $av = Statement::VERDICT_ACCURACY_SCALE[$pair['av']] ?? null;
+        $sv = Statement::VERDICT_ACCURACY_SCALE[$pair['sv']] ?? null;
+        if ($av !== null && $sv !== null) {
+          // the closer the verdicts are on the scale, the closer to 1 point earned
+          $sum += 1 - abs($av - $sv);
+          $count++;
+        }
+      }
+
+      $this->accuracy = $count
+        ? $sum / $count * 100
+        : null; // no answer-statement pairs
+    }
+    return $this->accuracy;
+  }
+
+  function getAccuracyClass() {
+    $a = $this->getAccuracy();
+    if ($a === false) {
+      return 'bg-verdict-1';
+    } else if ($a < 20) {
+      return 'bg-verdict-2';
+    } else if ($a < 40) {
+      return 'bg-verdict-3';
+    } else if ($a < 60) {
+      return 'bg-verdict-4';
+    } else if ($a < 80) {
+      return 'bg-verdict-5';
+    } else {
+      return 'bg-verdict-6';
+    }
   }
 
   /**

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-11-15 16:00+0200\n"
-"PO-Revision-Date: 2021-11-15 16:01+0200\n"
+"POT-Creation-Date: 2021-11-19 15:29+0200\n"
+"PO-Revision-Date: 2021-11-19 15:30+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -46,12 +46,12 @@ msgstr "dashboard"
 msgid "link-my-drafts"
 msgstr "my drafts"
 
-#: templates/aggregate/dashboard.tpl:22 templates/aggregate/index.tpl:30
+#: templates/aggregate/dashboard.tpl:22 templates/aggregate/index.tpl:34
 #: templates/bits/entity.tpl:115
 msgid "link-add-statement"
 msgstr "add a statement"
 
-#: templates/aggregate/dashboard.tpl:29 templates/aggregate/index.tpl:39
+#: templates/aggregate/dashboard.tpl:29 templates/aggregate/index.tpl:43
 msgid "link-add-entity"
 msgstr "add an author"
 
@@ -104,11 +104,11 @@ msgid "title-my-drafts"
 msgstr "my drafts"
 
 #: templates/aggregate/drafts.tpl:10 templates/entity/view.tpl:25
-#: templates/user/view.tpl:33
+#: templates/user/view.tpl:46
 msgid "label-statements"
 msgstr "statements"
 
-#: templates/aggregate/drafts.tpl:16 templates/user/view.tpl:35
+#: templates/aggregate/drafts.tpl:16 templates/user/view.tpl:48
 msgid "label-answers"
 msgstr "answers"
 
@@ -118,19 +118,19 @@ msgstr "answers"
 #: templates/help/categoryView.tpl:39 templates/help/pageView.tpl:36
 #: templates/region/view.tpl:15 templates/relationType/list.tpl:42
 #: templates/staticResource/list.tpl:44 templates/tag/view.tpl:15
-#: templates/user/view.tpl:94
+#: templates/user/view.tpl:107
 msgid "link-edit"
 msgstr "edit"
 
-#: templates/aggregate/index.tpl:17
+#: templates/aggregate/index.tpl:21
 msgid "label-contribute-index"
 msgstr "contribute"
 
-#: templates/aggregate/index.tpl:48
+#: templates/aggregate/index.tpl:52
 msgid "link-add-answer"
 msgstr "add an answer"
 
-#: templates/aggregate/index.tpl:61
+#: templates/aggregate/index.tpl:65
 msgid "title-recent-statements"
 msgstr "recent statements"
 
@@ -337,7 +337,7 @@ msgstr "permalink"
 
 #: templates/bits/answerEdit.tpl:24 templates/bits/statementFilters.tpl:50
 #: templates/statement/edit.tpl:159 lib/model/RevisionAnswer.php:15
-#: lib/model/RevisionStatement.php:22 lib/model/Statement.php:140
+#: lib/model/RevisionStatement.php:22 lib/model/Statement.php:158
 msgid "label-verdict"
 msgstr "verdict"
 
@@ -476,12 +476,12 @@ msgstr "all"
 msgid "title-test-login"
 msgstr "test user login"
 
-#: templates/bits/fakeLogin.tpl:22 templates/user/view.tpl:31
+#: templates/bits/fakeLogin.tpl:22 templates/user/view.tpl:44
 msgid "label-reputation"
 msgstr "reputation"
 
 #: templates/bits/fakeLogin.tpl:37 templates/bits/navmenu.tpl:198
-#: templates/user/view.tpl:19
+#: templates/user/view.tpl:21
 msgid "label-moderator"
 msgstr "moderator"
 
@@ -1026,7 +1026,7 @@ msgstr "icon"
 #: templates/domain/list.tpl:21 templates/entity/edit.tpl:70
 #: templates/entity/edit.tpl:129 templates/entityType/list.tpl:22
 #: templates/relationType/list.tpl:28 templates/staticResource/list.tpl:21
-#: templates/user/view.tpl:102
+#: templates/user/view.tpl:115
 msgid "actions"
 msgstr "acțiuni"
 
@@ -1553,17 +1553,17 @@ msgstr "statements with a verdict, but no proof"
 msgid "title-statements-verdict-mismatch"
 msgstr "statements with a verdict opposite to the proof's verdict"
 
-#: templates/statement/view.tpl:25
+#: templates/statement/view.tpl:29
 msgid "title-answers-singular"
 msgid_plural "title-answers-plural"
 msgstr[0] "one answer"
 msgstr[1] "%1 answers"
 
-#: templates/statement/view.tpl:41
+#: templates/statement/view.tpl:45
 msgid "title-your-answer"
 msgstr "your answer"
 
-#: templates/statement/view.tpl:46
+#: templates/statement/view.tpl:50
 msgid "link-post-answer"
 msgstr "post answer"
 
@@ -1766,35 +1766,45 @@ msgstr "Change password (optional)"
 msgid "title-user"
 msgstr "user"
 
-#: templates/user/view.tpl:27
+#: templates/user/view.tpl:28
+msgid "info-accuracy"
+msgstr ""
+"Accuracy is a measure of the agreement between verdicts given by this user "
+"and the respective statements' verdicts."
+
+#: templates/user/view.tpl:31
+msgid "label-accuracy"
+msgstr "accuracy"
+
+#: templates/user/view.tpl:40
 msgid "label-user"
 msgstr "user"
 
-#: templates/user/view.tpl:37
+#: templates/user/view.tpl:50
 msgid "label-member-since"
 msgstr "member since"
 
-#: templates/user/view.tpl:40
+#: templates/user/view.tpl:53
 msgid "label-last-seen"
 msgstr "last seen"
 
-#: templates/user/view.tpl:46
+#: templates/user/view.tpl:59
 msgid "title-about-me"
 msgstr "about me"
 
-#: templates/user/view.tpl:53
+#: templates/user/view.tpl:66
 msgid "title-user-bans"
 msgstr "bans"
 
-#: templates/user/view.tpl:60
+#: templates/user/view.tpl:73
 msgid "ban-permanent"
 msgstr "permanent"
 
-#: templates/user/view.tpl:62
+#: templates/user/view.tpl:75
 msgid "label-ban-until"
 msgstr "until"
 
-#: templates/user/view.tpl:87
+#: templates/user/view.tpl:100
 msgid "link-ban"
 msgstr "ban..."
 
@@ -1971,12 +1981,12 @@ msgid "info-answer-by-owner"
 msgstr "by its author."
 
 #: lib/model/Answer.php:89 lib/model/Comment.php:67 lib/model/Entity.php:154
-#: lib/model/Statement.php:294
+#: lib/model/Statement.php:312
 msgid "info-by"
 msgstr "by"
 
 #: lib/model/Answer.php:90 lib/model/Comment.php:68 lib/model/Entity.php:155
-#: lib/model/Statement.php:295
+#: lib/model/Statement.php:313
 msgid "info-other-reason"
 msgstr "for other reasons."
 
@@ -2541,186 +2551,186 @@ msgstr "added mentions"
 msgid "label-deleted-involvements"
 msgstr "deleted mentions"
 
-#: lib/model/Statement.php:125
+#: lib/model/Statement.php:143
 msgid "statement-type-any"
 msgstr "any type"
 
-#: lib/model/Statement.php:126
+#: lib/model/Statement.php:144
 msgid "statement-type-claim"
 msgstr "claim"
 
-#: lib/model/Statement.php:127
+#: lib/model/Statement.php:145
 msgid "statement-type-flop"
 msgstr "flip-flop"
 
-#: lib/model/Statement.php:128
+#: lib/model/Statement.php:146
 msgid "statement-type-promise"
 msgstr "promise"
 
-#: lib/model/Statement.php:137
+#: lib/model/Statement.php:155
 msgid "label-claim-verdict"
 msgstr "claim verdict"
 
-#: lib/model/Statement.php:138
+#: lib/model/Statement.php:156
 msgid "label-flop-verdict"
 msgstr "flip-flop verdict"
 
-#: lib/model/Statement.php:139
+#: lib/model/Statement.php:157
 msgid "label-promise-verdict"
 msgstr "promise verdict"
 
-#: lib/model/Statement.php:275
+#: lib/model/Statement.php:293
 msgid "status-statement-duplicate"
 msgstr "duplicate"
 
-#: lib/model/Statement.php:277
+#: lib/model/Statement.php:295
 msgid "status-statement-closed"
 msgstr "closed"
 
-#: lib/model/Statement.php:278
+#: lib/model/Statement.php:296
 msgid "status-statement-deleted"
 msgstr "deleted"
 
-#: lib/model/Statement.php:283
+#: lib/model/Statement.php:301
 msgid "info-statement-closed"
 msgstr "This statement was closed"
 
-#: lib/model/Statement.php:284
+#: lib/model/Statement.php:302
 msgid "info-statement-deleted"
 msgstr "This statement was deleted"
 
-#: lib/model/Statement.php:287
+#: lib/model/Statement.php:305
 msgid "info-statement-spam"
 msgstr "because it is spam."
 
-#: lib/model/Statement.php:288
+#: lib/model/Statement.php:306
 msgid "info-statement-abuse"
 msgstr "because it is rude or abusive."
 
-#: lib/model/Statement.php:289
+#: lib/model/Statement.php:307
 msgid "info-statement-duplicate-of"
 msgstr "as a duplicate of the statement"
 
-#: lib/model/Statement.php:290
+#: lib/model/Statement.php:308
 msgid "info-statement-off-topic"
 msgstr "because it is off-topic."
 
-#: lib/model/Statement.php:291
+#: lib/model/Statement.php:309
 msgid "info-statement-unverifiable"
 msgstr "because it is unverifiable."
 
-#: lib/model/Statement.php:292
+#: lib/model/Statement.php:310
 msgid "info-statement-low-quality"
 msgstr "because it is low-quality."
 
-#: lib/model/Statement.php:293
+#: lib/model/Statement.php:311
 msgid "info-statement-by-owner"
 msgstr "by the user who added it."
 
-#: lib/model/Statement.php:351
+#: lib/model/Statement.php:369
 #, php-format
 msgid "info-minimum-reputation-add-statement-%s"
 msgstr "You need at least %s reputation to add statements."
 
-#: lib/model/Statement.php:359
+#: lib/model/Statement.php:377
 #, php-format
 msgid "info-minimum-reputation-edit-statement-%s"
 msgstr "You need at least %s reputation to edit statements."
 
-#: lib/model/Statement.php:365
+#: lib/model/Statement.php:383
 msgid "info-only-moderator-edit-statement-verdict"
 msgstr "This statement has a verdict. Only moderators can edit it directly."
 
-#: lib/model/Statement.php:369
+#: lib/model/Statement.php:387
 msgid "info-banned-add-statement"
 msgstr "You are banned from adding statements."
 
-#: lib/model/Statement.php:373
+#: lib/model/Statement.php:391
 msgid "info-banned-edit-statement"
 msgstr "You are banned from editing statements."
 
-#: lib/model/User.php:237 routes/auth/login.php:61
+#: lib/model/User.php:294 routes/auth/login.php:61
 #: routes/auth/lostPassword.php:49 routes/invite/add.php:42
 msgid "info-must-enter-email"
 msgstr "Please enter an email address."
 
-#: lib/model/User.php:242
+#: lib/model/User.php:299
 msgid "info-email-taken"
 msgstr "This email address is already taken."
 
-#: lib/model/User.php:246 routes/auth/lostPassword.php:51
+#: lib/model/User.php:303 routes/auth/lostPassword.php:51
 #: routes/invite/add.php:44
 msgid "info-incorrect-email"
 msgstr "This email address looks incorrect."
 
-#: lib/model/User.php:256
+#: lib/model/User.php:313
 msgid "info-nickname-syntax"
 msgstr ""
 "Your nickname must begin with a letter or digit and consist of 3 to 30 "
 "letters, digits and punctuation from among -_."
 
-#: lib/model/User.php:261
+#: lib/model/User.php:318
 msgid "info-nickname-taken"
 msgstr "This nickname is already taken."
 
-#: lib/model/User.php:270 routes/auth/login.php:65
+#: lib/model/User.php:327 routes/auth/login.php:65
 msgid "info-must-enter-password"
 msgstr "Please enter a password."
 
-#: lib/model/User.php:272
+#: lib/model/User.php:329
 msgid "info-must-enter-password-2"
 msgstr "Please enter your password twice to prevent typos."
 
-#: lib/model/User.php:274
+#: lib/model/User.php:331
 msgid "info-password-mismatch"
 msgstr "Passwords don't match."
 
-#: lib/model/User.php:276
+#: lib/model/User.php:333
 msgid "info-password-length"
 msgstr "Your password must be at least 8 characters long."
 
-#: lib/model/User.php:300
+#: lib/model/User.php:357
 #, php-format
 msgid "info-minimum-reputation-%s"
 msgstr "You need at least %s reputation to perform this action."
 
-#: lib/model/User.php:314
+#: lib/model/User.php:371
 msgid "info-moderator-only"
 msgstr "Only moderators may perform this action."
 
-#: lib/model/User.php:332
+#: lib/model/User.php:389
 #, php-format
 msgid "info-minimum-reputation-flag-%s"
 msgstr "You need at least %s reputation to flag."
 
-#: lib/model/User.php:337
+#: lib/model/User.php:394
 msgid "info-banned-flag"
 msgstr "You are banned from flagging."
 
-#: lib/model/User.php:344
+#: lib/model/User.php:401
 #, php-format
 msgid "info-flag-limit-singular"
 msgid_plural "info-flag-limit-plural-%d"
 msgstr[0] "You can use at most one flag every 24 hours."
 msgstr[1] "You can use at most %d flags every 24 hours."
 
-#: lib/model/User.php:351
+#: lib/model/User.php:408
 msgid "info-flag-no-object"
 msgstr "Cannot flag: object does not exist."
 
-#: lib/model/User.php:356
+#: lib/model/User.php:413
 msgid "info-already-flagged"
 msgstr "You already have a pending flag for this object."
 
-#: lib/model/User.php:384
+#: lib/model/User.php:441
 msgid "info-banned-comment"
 msgstr "You are banned from commenting."
 
-#: lib/model/User.php:389
+#: lib/model/User.php:446
 msgid "info-cannot-comment-draft"
 msgstr "You cannot comment on a draft."
 
-#: lib/model/User.php:410
+#: lib/model/User.php:467
 #, php-format
 msgid "info-minimum-reputation-comment-%s"
 msgstr "You need at least %s reputation to comment."

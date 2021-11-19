@@ -13,13 +13,27 @@
             imgClass="rounded-circle img-fluid"
             link=true}
         </div>
-        {if $user->moderator}
-          <h4 class="user-badge mt-3">
-            <span class="badge bg-info">
-              {t}label-moderator{/t}
-            </span>
-          </h4>
-        {/if}
+
+        <div class="mt-3">
+          {if $user->moderator}
+            <h5 class="d-inline">
+              <span class="badge bg-primary">
+                {t}label-moderator{/t}
+              </span>
+            </h5>
+          {/if}
+          {if $user->getAccuracy() !== null}
+            <h5
+              class="d-inline"
+              data-bs-toggle="tooltip"
+              title="{t}info-accuracy{/t}">
+              <span class="badge {$user->getAccuracyClass()}">
+                {$user->getAccuracy()|number_format:0}%
+                {t}label-accuracy{/t}
+              </span>
+            </h5>
+          {/if}
+        </div>
       </div>
 
       <div class="col-12 col-md-9 mt-2">

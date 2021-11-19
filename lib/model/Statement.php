@@ -93,6 +93,24 @@ class Statement extends Proto {
     [ self::VERDICT_PROMISE_KEPT_LATE, self::VERDICT_PROMISE_BROKEN ],
   ];
 
+  const VERDICT_ACCURACY_SCALE = [
+    self::VERDICT_FALSE => 0,
+    self::VERDICT_MOSTLY_FALSE => 0.25,
+    self::VERDICT_MIXED => 0.5,
+    self::VERDICT_MOSTLY_TRUE => 0.75,
+    self::VERDICT_TRUE => 1,
+
+    self::VERDICT_FLOP => 0,
+    self::VERDICT_HALF_FLOP => 0.5,
+    self::VERDICT_NO_FLOP => 1,
+
+    self::VERDICT_PROMISE_BROKEN => 0,
+    self::VERDICT_PROMISE_STALLED => 0.25,
+    self::VERDICT_PROMISE_PARTIAL => 0.5,
+    self::VERDICT_PROMISE_KEPT_LATE => 0.75,
+    self::VERDICT_PROMISE_KEPT => 1,
+  ];
+
   // For ClaimReview ratings
   const CR_WORST_RATING = 1;
   const CR_BEST_RATING = 5;
