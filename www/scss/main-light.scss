@@ -7,16 +7,13 @@
 
 /* our variables, not Bootstrap's */
 $butter: #f3e6d7;
+$surface: #f8f9fa;
 
 /* Bootstrap overrides */
 $body-color: #495057;
 
 $pagination-active-bg: #6c757d; /* secondary */
 $pagination-active-border-color: #6c757d; /* secondary */
-
-$popover-bg: #ccc;
-$tooltip-bg: #ccc;
-$tooltip-color: black;
 
 $toast-background-color: #343a40;
 $toast-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
@@ -34,7 +31,7 @@ html.light {
   --c-notice-bg: #e0d9d1;
   --c-recent-statements: var(--bs-body-color);
   --c-search-btn: var(--bs-gray-800);
-  --c-surface: #f8f9fa;
+  --c-surface: $surface;
 
   /* verdict colors */
   --v-none: #eee;

@@ -567,7 +567,7 @@ $(function() {
     // Create and show the popover.
     var p = new bootstrap.Popover(link, {
       content: _('archived-version-tooltip', url),
-      customClass: 'popover-archive shadow',
+      customClass: 'popover-archive',
       html: true,
       placement: 'auto',
     });
