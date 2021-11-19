@@ -70,6 +70,10 @@ class LocaleUtil {
     self::configure();
   }
 
+  static function getMetaDescription() {
+    return Config::META_DESCRIPTION[self::$current] ?? '';
+  }
+
   static function getSelect2Locale() {
     return Config::SELECT2_LOCALES[self::$current] ?? null;
   }

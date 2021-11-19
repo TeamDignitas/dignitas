@@ -507,6 +507,22 @@ class Statement extends Proto {
   }
 
   /**
+   * Returns a value suitable for the HTML <title> of the statement's page.
+   */
+  function getPageTitle() {
+    $title = sprintf('%s: %s', $this->getEntity(), $this->summary);
+    return Str::shortenPhrase($title, 100, 80);
+  }
+
+  /**
+   * Returns a value suitable for the <meta name="description"> tag on the
+   * statement's page.
+   */
+  function getMetaDescription() {
+    return Str::shortenPhrase($this->goal, 200, 160);
+  }
+
+  /**
    * Returns a ClaimReview object in JSON format, or null if this statement
    * should not have a structured ClaimReview tag.
    * See https://developers.google.com/search/docs/data-types/factcheck

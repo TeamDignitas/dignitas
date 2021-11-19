@@ -51,6 +51,23 @@ class Str {
   }
 
   /**
+   * Shortens a string without retaining half words.
+   * @param string $s The string to shorten.
+   * @param int $maxLen The maximum length $s can have before shortening occurs.
+   * @param int $targetLen The desired len after shortening (excluding the ellipsis).
+   */
+  static function shortenPhrase(string $s, int $maxLen, int $targetLen) {
+    if (mb_strlen($s) > $maxLen) {
+      $pos = $targetLen;
+      while ($s[$pos] != ' ') {
+        $pos--;
+      }
+      $s = substr($s, 0, $pos) . '...';
+    }
+    return $s;
+  }
+
+  /**
    * Transliterates Unicode to ASCII.
    **/
   static function flatten($s) {

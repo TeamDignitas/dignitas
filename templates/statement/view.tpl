@@ -1,6 +1,10 @@
 {extends "layout.tpl"}
 
-{block "title"}{cap}{$statement->summary|escape}{/cap}{/block}
+{block "title"}{$statement->getPageTitle()|escape}{/block}
+
+{block "metaDescription"}
+  <meta name="description" content="{$statement->getMetaDescription()|escape}">
+{/block}
 
 {* publish the ClaimReview structured object if the statement has one *}
 {block "claimReview"}

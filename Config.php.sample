@@ -146,6 +146,11 @@ class Config {
   // all files and should match the language in which our PHP files are named.
   const DEFAULT_ROUTING_LOCALE = 'en_US.utf8';
 
+  const META_DESCRIPTION = [
+    'en_US.utf8' => 'Collaborative fact-checking for Romanian political statements',
+    'ro_RO.utf8' => 'Fact-checking colaborativ pentru afirmații politice românești',
+  ];
+
   // result list settings
   const ENTITY_LIST_PAGE_SIZE = 20;
   const STATEMENT_LIST_PAGE_SIZE = 20;

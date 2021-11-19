@@ -10,6 +10,7 @@ $staticResourcesBottom = StaticResource::addCustomSections("homepage-bottom-{$ke
 
 Smart::assign([
   'pageType' => 'home',
+  'metaDescription' => StaticResource::getLocalizedByName('meta-description.txt'),
   'numStatementPages' => $numStatementPages,
   'statements' => $statements,
   'staticResourcesTop' => $staticResourcesTop,

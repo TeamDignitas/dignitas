@@ -2,6 +2,10 @@
 
 {block "title"}Dignitas{/block}
 
+{block "metaDescription"}
+  <meta name="description" content="{LocaleUtil::getMetaDescription()}">
+{/block}
+
 {block "content"}
 
   {foreach $staticResourcesTop as $sr}
