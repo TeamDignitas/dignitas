@@ -21,7 +21,7 @@ foreach ($objects['statements'] as $s) {
   Smart::assign('entity', $s->getEntity());
   $results[] = [
     'id' => $s->id,
-    'url' => Router::link('statement/view') . '/' . $s->id,
+    'url' => $s->getViewUrl(),
     'html' => Smart::fetch('bits/ajaxSearchResultStatement.tpl'),
   ];
 }
@@ -39,7 +39,7 @@ foreach ($objects['regions'] as $r) {
   Smart::assign('region', $r);
   $results[] = [
     'id' => $r->id,
-    'url' => Router::link('region/view') . '/' . $r->id,
+    'url' => $r->getViewUrl(),
     'html' => Smart::fetch('bits/ajaxSearchResultRegion.tpl'),
   ];
 }

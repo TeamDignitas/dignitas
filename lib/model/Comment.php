@@ -19,8 +19,8 @@ class Comment extends Proto {
       $answer = $this->getObject();
       $statementId = $answer->statementId;
     }
-    return sprintf('%s/%s#c%s', Router::link('statement/view'),
-                   $statementId, $this->id);
+    $s = Statement::get_by_id($statementId);
+    return $s->getViewUrl() . '#c' . $this->id;
   }
 
   function getArchivableUrls() {

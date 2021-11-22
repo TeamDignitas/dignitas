@@ -20,6 +20,8 @@ if ($id) {
   $answer->userId = User::getActiveId();
 }
 
+$statement = $answer->getStatement();
+
 if ($deleteButton) {
   if (!$answer->isDeletable()) {
     Snackbar::add(_('info-cannot-delete-answer'));
@@ -33,7 +35,7 @@ if ($deleteButton) {
     Action::create(Action::TYPE_DELETE, $answer);
     Snackbar::add(_('info-confirm-answer-deleted'));
   }
-  Util::redirect(Router::link('statement/view') . '/' . $answer->statementId);
+  Util::redirect($statement->getViewUrl());
 }
 
 if ($reopenButton) {
@@ -47,10 +49,7 @@ if ($reopenButton) {
     Snackbar::add(_('info-confirm-answer-reopened'));
   }
 
-  Util::redirect(sprintf('%s/%s#a%s',
-                         Router::link('statement/view'),
-                         $answer->statementId,
-                         $answer->id));
+  Util::redirect($statement->getViewUrl() . '#a' . $answer->id);
 }
 
 $answer->enforceEditPrivileges();
@@ -99,7 +98,7 @@ if ($saveButton || $saveDraftButton) {
         'success');
     }
     // pass the original answer ID, not the pending edit one
-    $returnTo = getReturnTo($id ?: $answer->id, $answer->statementId, $referrer);
+    $returnTo = getReturnTo($id ?: $answer->id, $statement, $referrer);
     Util::redirect($returnTo);
   } else {
     Smart::assign([
@@ -138,7 +137,7 @@ function validate($answer) {
   return $errors;
 }
 
-function getReturnTo($answerId, $statementId, $referrer) {
+function getReturnTo($answerId, $statement, $referrer) {
   if (Str::startsWith($referrer, Router::link('review/view', true))) {
 
     // origin is a review view page
@@ -147,10 +146,7 @@ function getReturnTo($answerId, $statementId, $referrer) {
   } else {
 
     // origin is a statement view page
-    return sprintf('%s/%d#a%d',
-                   Router::link('statement/view'),
-                   $statementId,
-                   $answerId);
+    return $statement->getViewUrl() . '#a' . $answerId;
   }
 
 }

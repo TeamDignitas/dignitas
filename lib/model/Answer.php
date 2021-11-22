@@ -15,8 +15,8 @@ class Answer extends Proto {
   }
 
   function getViewUrl() {
-    return sprintf('%s/%s#a%s', Router::link('statement/view'),
-                   $this->statementId, $this->id);
+    $s = $this->getStatement();
+    return $s->getViewUrl() . '#a' . $this->id;
   }
 
   function getEditUrl() {

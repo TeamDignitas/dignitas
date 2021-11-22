@@ -93,7 +93,7 @@ if ($saveButton) {
     if (!$originalId) {
       Review::checkNewUser($entity);
       Snackbar::add(_('info-entity-added'));
-      Util::redirect(Router::link('entity/view') . '/' . $entity->id);
+      Util::redirect($entity->getViewUrl());
     } else {
       if ($entity->status == Ct::STATUS_PENDING_EDIT) {
         Snackbar::add(_('info-changes-queued'));

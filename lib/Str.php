@@ -68,6 +68,23 @@ class Str {
   }
 
   /**
+   * Shortens a string and makes it URL-friendly.
+   */
+  static function urlize(string $s, int $maxLen = PHP_INT_MAX) {
+    $s = str_replace([' ', '.', ',', ':', ';', '/', '%'], '-', $s);
+    $s = str_replace(['"', "'"], '', $s);
+    $s = strtolower(Str::flatten($s));
+    $s = preg_replace('/\-+/', '-', $s);
+    if (strlen($s) > $maxLen) {
+      while ($s[$maxLen] != '-') {
+        $maxLen--;
+      }
+      $s = substr($s, 0, $maxLen);
+    }
+    return $s;
+  }
+
+  /**
    * Transliterates Unicode to ASCII.
    **/
   static function flatten($s) {

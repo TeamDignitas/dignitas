@@ -178,7 +178,11 @@ class Statement extends Proto {
   }
 
   function getViewUrl($absolute = false) {
-    return Router::link('statement/view', $absolute) . '/' . $this->id;
+    // For SEO purposes we also output a URL-friendly summary.
+    return sprintf('%s/%s/%s',
+                   Router::link('statement/view', $absolute),
+                   $this->id,
+                   Str::urlize($this->summary, 50));
   }
 
   function getEditUrl() {

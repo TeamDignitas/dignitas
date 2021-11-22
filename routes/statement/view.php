@@ -35,7 +35,7 @@ if (User::getActive()) {
 Smart::assign([
   'answers' => $statement->getAnswers(),
   'newAnswer' => Answer::create($statement->id),
-  'referrer' => Router::link('statement/view', true) . '/' . $statement->id,
+  'referrer' => $statement->getViewUrl(true),
   'statement' => $statement,
   'sideSheet' => $sideSheet,
 ]);

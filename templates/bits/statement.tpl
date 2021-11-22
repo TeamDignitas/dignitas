@@ -110,7 +110,7 @@
         {* mimic tag presentation *}
         <span class="tag me-1">
           <a
-            href="{Router::link('region/view')}/{$region->id}"
+            href="{$region->getViewUrl()}"
             class="badge rounded-pill bg-secondary py-1 px-2">
             {$region->name}
           </a>

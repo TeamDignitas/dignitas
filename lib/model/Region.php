@@ -9,6 +9,14 @@ class Region extends Proto {
     return Proto::TYPE_REGION;
   }
 
+  function getViewUrl() {
+    // For SEO purposes we also output a URL-friendly name.
+    return sprintf('%s/%d/%s',
+                   Router::link('region/view'),
+                   $this->id,
+                   Str::urlize($this->name));
+  }
+
   /**
    * Returns the maximum depth among all regions or null if no regions are
    * defined.

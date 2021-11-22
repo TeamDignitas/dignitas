@@ -21,8 +21,7 @@
           errors=$errors.links|default:null}
       </div>
 
-      {include "bs/actions.tpl"
-        cancelLink="{Router::link('entity/view')}/{$fromEntity->id}"}
+      {include "bs/actions.tpl" cancelLink="{$fromEntity->getViewUrl()}"}
 
     </form>
   </div>

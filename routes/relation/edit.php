@@ -12,7 +12,7 @@ if (!$relation) {
 $fromEntity = Entity::get_by_id($relation->fromEntityId);
 if (!$fromEntity || !$fromEntity->isEditable()) {
   Snackbar::add(_('info-cannot-edit-relations'));
-  Util::redirect(Router::link('entity/view') . '/' . $fromEntity->id);
+  Util::redirect($fromEntity->getViewUrl());
 }
 
 if ($saveButton) {
@@ -24,7 +24,7 @@ if ($saveButton) {
   if (empty($errors)) {
     Link::update($relation, $links);
     Snackbar::add(_('info-relation-updated'));
-    Util::redirect(Router::link('entity/view') . '/' . $fromEntity->id);
+    Util::redirect($fromEntity->getViewUrl());
   } else {
     Smart::assign([
       'errors' => $errors,

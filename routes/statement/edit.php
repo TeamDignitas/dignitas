@@ -129,7 +129,7 @@ if ($saveButton || $saveDraftButton) {
 
     if (!$originalId) {
       Snackbar::add(_('info-statement-added'));
-      Util::redirect(Router::link('statement/view') . '/' . $statement->id);
+      Util::redirect($statement->getViewUrl());
     } else {
       if ($statement->status == Ct::STATUS_PENDING_EDIT) {
         Snackbar::add(_('info-changes-queued'));

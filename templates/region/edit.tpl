@@ -12,8 +12,11 @@
 
 {block "content"}
   <div class="container my-5">
-    <h1 class="mb-5">{$smarty.capture.title}
-      {include "bits/regionAncestors.tpl" region=$r}
+    <h1 class="mb-5">
+      {$smarty.capture.title}
+      {if $r->id}
+        {include "bits/regionAncestors.tpl" region=$r}
+      {/if}
     </h1>
 
     <form class="mb-5" method="post">
@@ -48,7 +51,7 @@
 
       {capture 'cancelLink'}
         {if $r->id}
-          {Router::link('region/view')}/{$r->id}
+          {$r->getViewUrl()}
         {else}
           {Router::link('region/list')}
         {/if}
