@@ -1,7 +1,7 @@
 {$ellipsisMenu=$ellipsisMenu|default:true}
 {$voteBox=$voteBox|default:true}
 
-<div class="vote-container comment mb-2 mt-2" id="c{$comment->id}">
+<div class="vote-container comment row my-2" id="c{$comment->id}">
 
   {if $voteBox}
     {include "bits/scoreAndVote.tpl"
@@ -11,7 +11,7 @@
       downvotePriv=User::PRIV_DOWNVOTE_COMMENT}
   {/if}
 
-  <div class="text-start">
+  <div class="text-start col-12 col-md-11">
     <span class="archivable">
       {$comment->contents|md}
     </span>

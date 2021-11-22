@@ -101,7 +101,7 @@
         </div>
 
         {if !empty($comments)}
-          <div class="comment-list">
+          <div class="comment-list container px-1">
             {foreach $comments as $comment}
               {include 'bits/comment.tpl'}
             {/foreach}
