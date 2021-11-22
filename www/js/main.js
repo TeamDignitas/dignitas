@@ -557,7 +557,7 @@ $(function() {
     }).done(function(data) {
       var url = data.archivedUrl;
 
-      if (url) {
+      if (!url) {
         createPopover(url);
       }
     });

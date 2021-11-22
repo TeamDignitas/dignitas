@@ -829,23 +829,24 @@ html.dark .tooltip {
 }
 
 html.dark .bs-tooltip-top .tooltip-arrow::before, html.dark .bs-tooltip-auto[data-popper-placement^="top"] .tooltip-arrow::before {
-  border-top-color: #303035;
+  border-top-color: white;
 }
 
 html.dark .bs-tooltip-end .tooltip-arrow::before, html.dark .bs-tooltip-auto[data-popper-placement^="right"] .tooltip-arrow::before {
-  border-right-color: #303035;
+  border-right-color: white;
 }
 
 html.dark .bs-tooltip-bottom .tooltip-arrow::before, html.dark .bs-tooltip-auto[data-popper-placement^="bottom"] .tooltip-arrow::before {
-  border-bottom-color: #303035;
+  border-bottom-color: white;
 }
 
 html.dark .bs-tooltip-start .tooltip-arrow::before, html.dark .bs-tooltip-auto[data-popper-placement^="left"] .tooltip-arrow::before {
-  border-left-color: #303035;
+  border-left-color: white;
 }
 
 html.dark .tooltip-inner {
-  background-color: #303035;
+  color: #232429;
+  background-color: white;
 }
 
 html.dark .popover {
