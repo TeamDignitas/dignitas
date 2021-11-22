@@ -7,11 +7,15 @@
     <div class="row">
       <div class="col-12 col-md-3 mt-2 text-center">
         <div>
-          {include "bits/image.tpl"
-            obj=$user
-            geometry=Config::THUMB_USER_PROFILE
-            imgClass="rounded-circle img-fluid"
-            link=true}
+          {if $user->fileExtension}
+            {include "bits/image.tpl"
+              obj=$user
+              geometry=Config::THUMB_USER_PROFILE
+              imgClass="rounded-circle img-fluid"
+              link=true}
+          {else}
+            {include "bits/icon.tpl" i=person class='surface rounded-circle generic-avatar'}
+          {/if}
         </div>
 
         <div class="mt-3">

@@ -1,0 +1,6 @@
+.generic-avatar {
+  /* Keep these in sync with Config::THUMB_USER_PROFILE */
+  font-size: 200px;
+  height: 200px;
+  width: 200px;
+}
