@@ -13,7 +13,9 @@
 {block "content"}
   <div class="container my-5">
     <h1 class="mb-5">{$smarty.capture.title}
-      {include "bits/tagAncestors.tpl" tag=$t}
+      {if $t->id}
+        {include "bits/tagAncestors.tpl" tag=$t}
+      {/if}
     </h1>
 
     <form class="mb-5" method="post">
@@ -96,7 +98,7 @@
 
       {capture 'cancelLink'}
         {if $t->id}
-          {Router::link('tag/view')}/{$t->id}
+          {$t->getViewUrl()}
         {else}
           {Router::link('tag/list')}
         {/if}

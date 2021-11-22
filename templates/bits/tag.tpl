@@ -7,7 +7,7 @@
 {strip}
 <span class="tag me-1 {if $t->tooltip}tag-tooltip{/if}" title="{$t->tooltip}">
   <a
-    href="{Router::link('tag/view')}/{$t->id}"
+    href="{$t->getViewUrl()}"
     class="badge rounded-pill {if !$link}disabled{/if} py-1 px-2"
     {if !$link} disabled tabindex="-1"{/if}
     {if $colors} style="{$style}"{/if}

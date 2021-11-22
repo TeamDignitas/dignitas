@@ -12,6 +12,13 @@ class Tag extends Proto {
     return Proto::TYPE_TAG;
   }
 
+  function getViewUrl() {
+    return sprintf('%s/%d/%s',
+                   Router::link('tag/view'),
+                   $this->id,
+                   Str::urlize($this->value));
+  }
+
   function getEditUrl() {
     return Router::link('tag/edit') . '/' . $this->id;
   }

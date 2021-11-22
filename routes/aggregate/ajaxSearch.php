@@ -30,7 +30,7 @@ foreach ($objects['tags'] as $t) {
   Smart::assign('tag', $t);
   $results[] = [
     'id' => $t->id,
-    'url' => Router::link('tag/view') . '/' . $t->id,
+    'url' => $t->getViewUrl(),
     'html' => Smart::fetch('bits/ajaxSearchResultTag.tpl'),
   ];
 }
