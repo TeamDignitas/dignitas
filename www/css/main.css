@@ -346,11 +346,6 @@ html.dark .dark-mode-toggle {
 }
 
 /*************** answers, entity statements, user profile ***************/
-
-.subsection {
-  border-bottom: 1px solid var(--bs-gray-500);
-}
-
 .capitalize-first-word::first-letter {
   text-transform: capitalize;
 }
@@ -362,6 +357,10 @@ html.dark .dark-mode-toggle {
 
 .answer-container {
   border-bottom: 1px solid var(--bs-gray-400);
+}
+
+.answer-container:first-of-type {
+  border-top: 1px solid var(--bs-gray-500);
 }
 
 .answer-container:last-of-type {

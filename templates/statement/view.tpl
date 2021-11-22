@@ -19,20 +19,18 @@
       addComment=User::canComment($statement)}
 
     <div class="row mt-5 answers-area">
-      <div class="col-12 col-md-8 px-0">
-        {if count($answers)}
-          <h6 class="mt-4 pb-2 ps-0 subsection text-uppercase fw-bold">
-            {t count=count($answers) 1=count($answers) plural="title-answers-plural"}
-            title-answers-singular
-            {/t}
-          </h6>
+      {if count($answers)}
+        <h6 class="mt-4 pb-2 ps-0 subsection text-uppercase fw-bold">
+          {t count=count($answers) 1=count($answers) plural="title-answers-plural"}
+          title-answers-singular
+          {/t}
+        </h6>
 
-          {foreach $answers as $answer}
-            {include "bits/answer.tpl"
-              addComment=User::canComment($answer)}
-          {/foreach}
-        {/if}
-      </div>
+        {foreach $answers as $answer}
+          {include "bits/answer.tpl"
+            addComment=User::canComment($answer)}
+        {/foreach}
+      {/if}
     </div>
 
     {if $statement->isAnswerable()}
