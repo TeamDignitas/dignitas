@@ -19,7 +19,11 @@ class Entity extends Proto {
   }
 
   function getViewUrl() {
-    return Router::link('entity/view') . '/' . $this->id;
+    // For SEO purposes we also output a URL-friendly entity name.
+    $name = str_replace([' ', '.', ','], ['-', '', ''], $this->name);
+    $name = strtolower(Str::flatten($name));
+    return sprintf('%s/%d/%s',
+                   Router::link('entity/view'), $this->id, $name);
   }
 
   function getEditUrl() {

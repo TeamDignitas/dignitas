@@ -11,7 +11,7 @@ foreach ($objects['entities'] as $e) {
   Smart::assign('aliases', $e->getAliases());
   $results[] = [
     'id' => $e->id,
-    'url' => Router::link('entity/view') . '/' . $e->id,
+    'url' => $e->getViewUrl(),
     'html' => Smart::fetch('bits/ajaxSearchResultEntity.tpl'),
   ];
 }
