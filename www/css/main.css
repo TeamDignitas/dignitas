@@ -360,6 +360,14 @@ html.dark .dark-mode-toggle {
   padding: 3rem;
 }
 
+.answer-container {
+  border-bottom: 1px solid var(--bs-gray-400);
+}
+
+.answer-container:last-of-type {
+  border-bottom: 0;
+}
+
 @media (max-width: 768px) {
   .center-mobile {
     text-align: center;
