@@ -75,7 +75,7 @@ html.dark {
   --c-notice-bg: #8a8178;
   --c-recent-statements: var(--bs-butter);
   --c-search-btn: var(--bs-gray-300);
-  --c-surface: $surface;
+  --c-surface: #{$surface};
 
   /* verdict colors */
   --v-none: #303035;

@@ -31,7 +31,7 @@ html.light {
   --c-notice-bg: #e0d9d1;
   --c-recent-statements: var(--bs-body-color);
   --c-search-btn: var(--bs-gray-800);
-  --c-surface: $surface;
+  --c-surface: #{$surface};
 
   /* verdict colors */
   --v-none: #eee;
