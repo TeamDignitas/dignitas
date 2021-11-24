@@ -7,7 +7,7 @@
  * JSON-encoded error message.
  **/
 
-$p = Request::get('p', 1);
+$page = Request::get('page', 1);
 
 header('Content-Type: application/json');
 
@@ -17,11 +17,14 @@ try {
     throw new Exception(_('info-must-log-in'));
   }
 
-  $notifications = Notification::getPage($p);
+  $notifications = Notification::getPage($page);
 
   Smart::assign('notifications', $notifications);
   $html = Smart::fetch('bits/notifications.tpl');
-  print json_encode($html);
+  $response = [
+    'html' => $html,
+  ];
+  print json_encode($response);
 
 } catch (Exception $e) {
 

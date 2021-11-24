@@ -1,3 +1,13 @@
 .notification {
   border-top: 1px solid var(--bs-gray-200);
 }
+
+@media (max-width: 768px) {
+  th, tr {
+    display: table;
+    width:100%;
+  }
+  td {
+    display: table-row;
+  }
+}

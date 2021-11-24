@@ -18,9 +18,9 @@
     <table class="table table-hover">
       <thead>
         <tr class="small">
-          <th class="border-0">{t}label-invite-from{/t}</th>
-          <th class="border-0">{t}label-invite-to{/t}</th>
-          <th class="border-0">{t}label-invite-accepted-by{/t}</th>
+          <th>{t}label-invite-from{/t}</th>
+          <th>{t}label-invite-to{/t}</th>
+          <th>{t}label-invite-accepted-by{/t}</th>
         </tr>
       </thead>
       <tbody>
