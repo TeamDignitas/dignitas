@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-11-19 15:29+0200\n"
-"PO-Revision-Date: 2021-11-19 15:30+0200\n"
+"POT-Creation-Date: 2021-11-24 17:11+0200\n"
+"PO-Revision-Date: 2021-11-24 17:11+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -104,11 +104,11 @@ msgid "title-my-drafts"
 msgstr "my drafts"
 
 #: templates/aggregate/drafts.tpl:10 templates/entity/view.tpl:25
-#: templates/user/view.tpl:46
+#: templates/user/view.tpl:51
 msgid "label-statements"
 msgstr "statements"
 
-#: templates/aggregate/drafts.tpl:16 templates/user/view.tpl:48
+#: templates/aggregate/drafts.tpl:16 templates/user/view.tpl:53
 msgid "label-answers"
 msgstr "answers"
 
@@ -118,7 +118,7 @@ msgstr "answers"
 #: templates/help/categoryView.tpl:39 templates/help/pageView.tpl:36
 #: templates/region/view.tpl:15 templates/relationType/list.tpl:42
 #: templates/staticResource/list.tpl:44 templates/tag/view.tpl:15
-#: templates/user/view.tpl:107
+#: templates/user/view.tpl:112
 msgid "link-edit"
 msgstr "edit"
 
@@ -286,10 +286,11 @@ msgid "title-reset-password"
 msgstr "reset password"
 
 #: templates/bits/actions.tpl:4 templates/bits/history.tpl:16
+#: templates/bits/notifications.tpl:4
 msgid "label-date"
 msgstr "date"
 
-#: templates/bits/actions.tpl:5
+#: templates/bits/actions.tpl:5 templates/bits/notifications.tpl:6
 msgid "label-action"
 msgstr "action"
 
@@ -317,21 +318,21 @@ msgstr "tag"
 msgid "link-delete-alias"
 msgstr "delete the alias"
 
-#: templates/bits/answer.tpl:12
+#: templates/bits/answer.tpl:14
 msgid "tooltip-downvote-answer-singular-%1"
 msgid_plural "tooltip-downvote-answer-plural-%1"
 msgstr[0] "Downvoting costs one reputation point."
 msgstr[1] "Downvoting costs %1 reputation points."
 
-#: templates/bits/answer.tpl:48
+#: templates/bits/answer.tpl:50
 msgid "answer-posted-by"
 msgstr "posted by"
 
-#: templates/bits/answer.tpl:74
+#: templates/bits/answer.tpl:76
 msgid "info-answer-permalink"
 msgstr "permanent link to this answer"
 
-#: templates/bits/answer.tpl:76 templates/bits/comment.tpl:39
+#: templates/bits/answer.tpl:78 templates/bits/comment.tpl:39
 msgid "link-permalink"
 msgstr "permalink"
 
@@ -476,12 +477,12 @@ msgstr "all"
 msgid "title-test-login"
 msgstr "test user login"
 
-#: templates/bits/fakeLogin.tpl:22 templates/user/view.tpl:44
+#: templates/bits/fakeLogin.tpl:22 templates/user/view.tpl:49
 msgid "label-reputation"
 msgstr "reputation"
 
 #: templates/bits/fakeLogin.tpl:37 templates/bits/navmenu.tpl:198
-#: templates/user/view.tpl:21
+#: templates/user/view.tpl:25
 msgid "label-moderator"
 msgstr "moderator"
 
@@ -712,7 +713,11 @@ msgstr "schimbă"
 msgid "link-log-out"
 msgstr "log out"
 
-#: templates/bits/notifications.tpl:43
+#: templates/bits/notifications.tpl:5
+msgid "label-event"
+msgstr "event"
+
+#: templates/bits/notifications.tpl:53
 msgid "info-notification-unsubscribe"
 msgstr "unsubscribe from notifications for this item"
 
@@ -944,7 +949,7 @@ msgstr "edit canned response"
 msgid "label-contents"
 msgstr "contents"
 
-#: templates/cannedResponse/edit.tpl:29 templates/tag/edit.tpl:108
+#: templates/cannedResponse/edit.tpl:29 templates/tag/edit.tpl:110
 msgid "info-confirm-delete-canned-response"
 msgstr "Are you sure you want to delete this canned response?"
 
@@ -979,9 +984,9 @@ msgstr "edit domain"
 #: templates/domain/edit.tpl:12 templates/domain/list.tpl:19
 #: templates/entity/edit.tpl:28 templates/entityType/edit.tpl:12
 #: templates/entityType/list.tpl:18 templates/help/categoryEdit.tpl:42
-#: templates/region/edit.tpl:22 templates/relationType/edit.tpl:11
+#: templates/region/edit.tpl:25 templates/relationType/edit.tpl:11
 #: templates/relationType/list.tpl:24 templates/staticResource/edit.tpl:12
-#: templates/staticResource/list.tpl:18 templates/tag/edit.tpl:23
+#: templates/staticResource/list.tpl:18 templates/tag/edit.tpl:25
 msgid "label-name"
 msgstr "name"
 
@@ -1019,14 +1024,14 @@ msgstr "domains"
 msgid "link-add-domain"
 msgstr "add a domain"
 
-#: templates/domain/list.tpl:18 templates/tag/edit.tpl:77
+#: templates/domain/list.tpl:18 templates/tag/edit.tpl:79
 msgid "label-icon"
 msgstr "icon"
 
 #: templates/domain/list.tpl:21 templates/entity/edit.tpl:70
 #: templates/entity/edit.tpl:129 templates/entityType/list.tpl:22
 #: templates/relationType/list.tpl:28 templates/staticResource/list.tpl:21
-#: templates/user/view.tpl:115
+#: templates/user/view.tpl:120
 msgid "actions"
 msgstr "acțiuni"
 
@@ -1312,25 +1317,25 @@ msgstr "edit region"
 msgid "title-add-region"
 msgstr "add a region"
 
-#: templates/region/edit.tpl:32
+#: templates/region/edit.tpl:35
 msgid "label-parent-region"
 msgstr "parent region"
 
-#: templates/region/edit.tpl:59
+#: templates/region/edit.tpl:62
 msgid "info-confirm-delete-region"
 msgstr "Are you sure you want to delete this region?"
 
-#: templates/region/edit.tpl:61 routes/region/edit.php:32
+#: templates/region/edit.tpl:64 routes/region/edit.php:32
 msgid "info-cannot-delete-region"
 msgstr ""
 "Cannot delete this region because (1) it has descendants or (2) it is being "
 "used."
 
-#: templates/region/edit.tpl:66
+#: templates/region/edit.tpl:69
 msgid "title-direct-descendants"
 msgstr "direct descendants"
 
-#: templates/region/edit.tpl:76
+#: templates/region/edit.tpl:79
 msgid "title-duplicate-regions"
 msgstr "duplicate regions"
 
@@ -1553,17 +1558,17 @@ msgstr "statements with a verdict, but no proof"
 msgid "title-statements-verdict-mismatch"
 msgstr "statements with a verdict opposite to the proof's verdict"
 
-#: templates/statement/view.tpl:29
+#: templates/statement/view.tpl:28
 msgid "title-answers-singular"
 msgid_plural "title-answers-plural"
 msgstr[0] "one answer"
 msgstr[1] "%1 answers"
 
-#: templates/statement/view.tpl:45
+#: templates/statement/view.tpl:43
 msgid "title-your-answer"
 msgstr "your answer"
 
-#: templates/statement/view.tpl:50
+#: templates/statement/view.tpl:48
 msgid "link-post-answer"
 msgstr "post answer"
 
@@ -1613,48 +1618,48 @@ msgstr "edit tag"
 msgid "title-add-tag"
 msgstr "add a tag"
 
-#: templates/tag/edit.tpl:32
+#: templates/tag/edit.tpl:34
 msgid "label-details"
 msgstr "details"
 
-#: templates/tag/edit.tpl:38
+#: templates/tag/edit.tpl:40
 msgid "label-optional-tooltip"
 msgstr "optional; visible in a tooltip while hovering"
 
-#: templates/tag/edit.tpl:41
+#: templates/tag/edit.tpl:43
 msgid "label-parent-tag"
 msgstr "parent tag"
 
-#: templates/tag/edit.tpl:55
+#: templates/tag/edit.tpl:57
 msgid "label-text-color"
 msgstr "text color"
 
-#: templates/tag/edit.tpl:66
+#: templates/tag/edit.tpl:68
 msgid "label-background-color"
 msgstr "background color"
 
-#: templates/tag/edit.tpl:85
+#: templates/tag/edit.tpl:87
 msgid "info-tag-icon-name"
 msgstr ""
 "Optionally, an icon name. Here is <a href=\"https://material.io/resources/"
 "icons/\">the set of available icons</a>. If we don't have the icon, you can "
 "contact us and ask that we add it to our set."
 
-#: templates/tag/edit.tpl:91
+#: templates/tag/edit.tpl:93
 msgid "label-icon-only"
 msgstr "show only the icon, no text"
 
-#: templates/tag/edit.tpl:110 routes/tag/edit.php:30
+#: templates/tag/edit.tpl:112 routes/tag/edit.php:30
 msgid "info-cannot-delete-tag"
 msgstr ""
 "Cannot delete this tag because (1) it has descendants or (2) it is being "
 "used."
 
-#: templates/tag/edit.tpl:115 templates/tag/view.tpl:26
+#: templates/tag/edit.tpl:117 templates/tag/view.tpl:26
 msgid "title-descendants"
 msgstr "descendants"
 
-#: templates/tag/edit.tpl:123
+#: templates/tag/edit.tpl:125
 msgid "title-duplicate-tags"
 msgstr "duplicate tags"
 
@@ -1766,45 +1771,45 @@ msgstr "Change password (optional)"
 msgid "title-user"
 msgstr "user"
 
-#: templates/user/view.tpl:28
+#: templates/user/view.tpl:33
 msgid "info-accuracy"
 msgstr ""
 "Accuracy is a measure of the agreement between verdicts given by this user "
 "and the respective statements' verdicts."
 
-#: templates/user/view.tpl:31
+#: templates/user/view.tpl:36
 msgid "label-accuracy"
 msgstr "accuracy"
 
-#: templates/user/view.tpl:40
+#: templates/user/view.tpl:45
 msgid "label-user"
 msgstr "user"
 
-#: templates/user/view.tpl:50
+#: templates/user/view.tpl:55
 msgid "label-member-since"
 msgstr "member since"
 
-#: templates/user/view.tpl:53
+#: templates/user/view.tpl:58
 msgid "label-last-seen"
 msgstr "last seen"
 
-#: templates/user/view.tpl:59
+#: templates/user/view.tpl:64
 msgid "title-about-me"
 msgstr "about me"
 
-#: templates/user/view.tpl:66
+#: templates/user/view.tpl:71
 msgid "title-user-bans"
 msgstr "bans"
 
-#: templates/user/view.tpl:73
+#: templates/user/view.tpl:78
 msgid "ban-permanent"
 msgstr "permanent"
 
-#: templates/user/view.tpl:75
+#: templates/user/view.tpl:80
 msgid "label-ban-until"
 msgstr "until"
 
-#: templates/user/view.tpl:100
+#: templates/user/view.tpl:105
 msgid "link-ban"
 msgstr "ban..."
 
@@ -1980,13 +1985,13 @@ msgstr "because it is low-quality."
 msgid "info-answer-by-owner"
 msgstr "by its author."
 
-#: lib/model/Answer.php:89 lib/model/Comment.php:67 lib/model/Entity.php:154
-#: lib/model/Statement.php:312
+#: lib/model/Answer.php:89 lib/model/Comment.php:67 lib/model/Entity.php:158
+#: lib/model/Statement.php:316
 msgid "info-by"
 msgstr "by"
 
-#: lib/model/Answer.php:90 lib/model/Comment.php:68 lib/model/Entity.php:155
-#: lib/model/Statement.php:313
+#: lib/model/Answer.php:90 lib/model/Comment.php:68 lib/model/Entity.php:159
+#: lib/model/Statement.php:317
 msgid "info-other-reason"
 msgstr "for other reasons."
 
@@ -2090,65 +2095,65 @@ msgstr "because it is no longer needed."
 msgid "info-comment-length-limit-%d"
 msgstr "Comments can be at most %d characters long."
 
-#: lib/model/Entity.php:136
+#: lib/model/Entity.php:140
 msgid "status-entity-duplicate"
 msgstr "duplicate"
 
-#: lib/model/Entity.php:138
+#: lib/model/Entity.php:142
 msgid "status-entity-closed"
 msgstr "closed"
 
-#: lib/model/Entity.php:139
+#: lib/model/Entity.php:143
 msgid "status-entity-deleted"
 msgstr "deleted"
 
-#: lib/model/Entity.php:144
+#: lib/model/Entity.php:148
 msgid "info-entity-closed"
 msgstr "This author was closed"
 
-#: lib/model/Entity.php:145
+#: lib/model/Entity.php:149
 msgid "info-entity-deleted"
 msgstr "This author was deleted"
 
-#: lib/model/Entity.php:148
+#: lib/model/Entity.php:152
 msgid "info-entity-spam"
 msgstr "because its profile contains spam."
 
-#: lib/model/Entity.php:149
+#: lib/model/Entity.php:153
 msgid "info-entity-abuse"
 msgstr "because its profile contains insults or abuse."
 
-#: lib/model/Entity.php:150
+#: lib/model/Entity.php:154
 msgid "info-entity-duplicate-of"
 msgstr "as a duplicate of the author"
 
-#: lib/model/Entity.php:151
+#: lib/model/Entity.php:155
 msgid "info-entity-off-topic"
 msgstr "because it is off-topic."
 
-#: lib/model/Entity.php:152
+#: lib/model/Entity.php:156
 msgid "info-entity-unverifiable"
 msgstr "because it is unverifiable."
 
-#: lib/model/Entity.php:153
+#: lib/model/Entity.php:157
 msgid "info-entity-by-owner"
 msgstr "by the user who added it."
 
-#: lib/model/Entity.php:277
+#: lib/model/Entity.php:281
 #, php-format
 msgid "info-minimum-reputation-add-entity-%s"
 msgstr "You need at least %s reputation to add authors."
 
-#: lib/model/Entity.php:285
+#: lib/model/Entity.php:289
 #, php-format
 msgid "info-minimum-reputation-edit-entity-%s"
 msgstr "You need at least %s reputation to edit authors."
 
-#: lib/model/Entity.php:290
+#: lib/model/Entity.php:294
 msgid "info-banned-add-entity"
 msgstr "You are banned from adding authors."
 
-#: lib/model/Entity.php:294
+#: lib/model/Entity.php:298
 msgid "info-banned-edit-entity"
 msgstr "You are banned from editing authors."
 
@@ -2579,73 +2584,73 @@ msgstr "flip-flop verdict"
 msgid "label-promise-verdict"
 msgstr "promise verdict"
 
-#: lib/model/Statement.php:293
+#: lib/model/Statement.php:297
 msgid "status-statement-duplicate"
 msgstr "duplicate"
 
-#: lib/model/Statement.php:295
+#: lib/model/Statement.php:299
 msgid "status-statement-closed"
 msgstr "closed"
 
-#: lib/model/Statement.php:296
+#: lib/model/Statement.php:300
 msgid "status-statement-deleted"
 msgstr "deleted"
 
-#: lib/model/Statement.php:301
+#: lib/model/Statement.php:305
 msgid "info-statement-closed"
 msgstr "This statement was closed"
 
-#: lib/model/Statement.php:302
+#: lib/model/Statement.php:306
 msgid "info-statement-deleted"
 msgstr "This statement was deleted"
 
-#: lib/model/Statement.php:305
+#: lib/model/Statement.php:309
 msgid "info-statement-spam"
 msgstr "because it is spam."
 
-#: lib/model/Statement.php:306
+#: lib/model/Statement.php:310
 msgid "info-statement-abuse"
 msgstr "because it is rude or abusive."
 
-#: lib/model/Statement.php:307
+#: lib/model/Statement.php:311
 msgid "info-statement-duplicate-of"
 msgstr "as a duplicate of the statement"
 
-#: lib/model/Statement.php:308
+#: lib/model/Statement.php:312
 msgid "info-statement-off-topic"
 msgstr "because it is off-topic."
 
-#: lib/model/Statement.php:309
+#: lib/model/Statement.php:313
 msgid "info-statement-unverifiable"
 msgstr "because it is unverifiable."
 
-#: lib/model/Statement.php:310
+#: lib/model/Statement.php:314
 msgid "info-statement-low-quality"
 msgstr "because it is low-quality."
 
-#: lib/model/Statement.php:311
+#: lib/model/Statement.php:315
 msgid "info-statement-by-owner"
 msgstr "by the user who added it."
 
-#: lib/model/Statement.php:369
+#: lib/model/Statement.php:373
 #, php-format
 msgid "info-minimum-reputation-add-statement-%s"
 msgstr "You need at least %s reputation to add statements."
 
-#: lib/model/Statement.php:377
+#: lib/model/Statement.php:381
 #, php-format
 msgid "info-minimum-reputation-edit-statement-%s"
 msgstr "You need at least %s reputation to edit statements."
 
-#: lib/model/Statement.php:383
+#: lib/model/Statement.php:387
 msgid "info-only-moderator-edit-statement-verdict"
 msgstr "This statement has a verdict. Only moderators can edit it directly."
 
-#: lib/model/Statement.php:387
+#: lib/model/Statement.php:391
 msgid "info-banned-add-statement"
 msgstr "You are banned from adding statements."
 
-#: lib/model/Statement.php:391
+#: lib/model/Statement.php:395
 msgid "info-banned-edit-statement"
 msgstr "You are banned from editing statements."
 
@@ -2869,40 +2874,40 @@ msgstr "You have insufficient privileges to view that article."
 msgid "info-no-such-answer"
 msgstr "The answer you are looking for does not exist."
 
-#: routes/answer/edit.php:25
+#: routes/answer/edit.php:27
 msgid "info-cannot-delete-answer"
 msgstr "You cannot delete this answer."
 
-#: routes/answer/edit.php:28
+#: routes/answer/edit.php:30
 msgid "info-confirm-answer-draft-deleted"
 msgstr "Draft deleted."
 
-#: routes/answer/edit.php:34
+#: routes/answer/edit.php:36
 msgid "info-confirm-answer-deleted"
 msgstr "Answer deleted."
 
-#: routes/answer/edit.php:41
+#: routes/answer/edit.php:43
 msgid "info-cannot-reopen-answer"
 msgstr "You cannot reopen this answer."
 
-#: routes/answer/edit.php:47
+#: routes/answer/edit.php:49
 msgid "info-confirm-answer-reopened"
 msgstr "Answer reopened."
 
-#: routes/answer/edit.php:95 routes/entity/edit.php:99
+#: routes/answer/edit.php:94 routes/entity/edit.php:99
 #: routes/statement/edit.php:135
 msgid "info-changes-queued"
 msgstr "Your changes were placed in the review queue."
 
-#: routes/answer/edit.php:98
+#: routes/answer/edit.php:97
 msgid "info-answer-updated"
 msgstr "Answer updated."
 
-#: routes/answer/edit.php:98
+#: routes/answer/edit.php:97
 msgid "info-answer-posted"
 msgstr "Answer posted."
 
-#: routes/answer/edit.php:135
+#: routes/answer/edit.php:134
 msgid "info-empty-answer"
 msgstr "Cannot post an empty answer."
 
