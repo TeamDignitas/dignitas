@@ -730,3 +730,29 @@ body, main {
 .notice a:hover {
   opacity: 0.7;
 }
+
+/****************************** grid tables ******************************/
+
+.gtable {
+  font-size: .875rem; /* same as .small */
+}
+
+.gtable-header {
+  border-bottom-color: currentColor;
+  font-weight: bold;
+}
+
+.gtable-row {
+  align-items: center;
+  border-bottom-color: var(--bs-gray-300);
+}
+
+.gtable > * {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  display: flex;
+}
+
+.gtable > * > * {
+  padding: 0.5rem 0.5rem;
+}
