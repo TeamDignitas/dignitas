@@ -15,23 +15,26 @@
       </div>
     {/if}
 
-    <table class="table table-hover">
-      <thead>
-        <tr class="small">
-          <th>{t}label-invite-from{/t}</th>
-          <th>{t}label-invite-to{/t}</th>
-          <th>{t}label-invite-accepted-by{/t}</th>
-        </tr>
-      </thead>
-      <tbody>
-        {foreach $invites as $i}
-          <tr class="small">
-            <td>{include "bits/userLink.tpl" u=$i->getSender()}</td>
-            <td>{$i->email}</td>
-            <td>{include "bits/userLink.tpl" u=$i->getReceiver()}</td>
-          </tr>
-        {/foreach}
-      </tbody>
-    </table>
+    <div class="gtable container">
+      <div class="row gtable-header">
+        <div class="col-3 col-sm-4">{t}label-invite-from{/t}</div>
+        <div class="col-6 col-sm-4">{t}label-invite-to{/t}</div>
+        <div class="col-3 col-sm-4">{t}label-invite-accepted-by{/t}</div>
+      </div>
+
+      {foreach $invites as $i}
+        <div class="row gtable-row">
+          <div class="col-3 col-sm-4">
+            {include "bits/userLink.tpl" u=$i->getSender()}
+          </div>
+          <div class="col-6 col-sm-4">
+            {$i->email}
+          </div>
+          <div class="col-3 col-sm-4">
+            {include "bits/userLink.tpl" u=$i->getReceiver()}
+          </div>
+        </div>
+      {/foreach}
+    </div>
   </div>
 {/block}
