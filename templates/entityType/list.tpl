@@ -12,52 +12,49 @@
     </a>
 
     {if count($entityTypes)}
-      <table class="table table-hover mt-5 mb-4">
-        <thead>
-          <tr class="small">
-            <th>{t}label-name{/t}</th>
-            <th class="text-center">{t}label-loyalty-source{/t}</th>
-            <th class="text-center">{t}label-loyalty-sink{/t}</th>
-            <th class="text-center">{t}label-has-color{/t}</th>
-            <th>{t}actions{/t}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {foreach $entityTypes as $et}
-            <tr class="small">
-              <td class="align-middle">
-                {$et->name|escape}
-                {if $et->isDefault}
-                  ({t}label-is-default{/t})
-                {/if}
-              </td>
-              <td class="align-middle text-center">
-                {if $et->loyaltySource}
-                  {include "bits/icon.tpl" i=done}
-                {/if}
-              </td>
-              <td class="align-middle text-center">
-                {if $et->loyaltySink}
-                  {include "bits/icon.tpl" i=done}
-                {/if}
-              </td>
-              <td class="align-middle text-center">
-                {if $et->hasColor}
-                  {include "bits/icon.tpl" i=done}
-                {/if}
-              </td>
-              <td>
-                <a
-                  href="{$et->getEditUrl()}"
-                  class="btn"
-                  title="{t}link-edit{/t}">
-                  {include "bits/icon.tpl" i=mode_edit}
-                </a>
-              </td>
-            </tr>
-          {/foreach}
-        </tbody>
-      </table>
+      <div class="gtable container">
+        <div class="row gtable-header">
+          <div class="col-12 col-sm-5">{t}label-name{/t}</div>
+          <div class="col-3 col-sm-2 text-center">{t}label-loyalty-source{/t}</div>
+          <div class="col-3 col-sm-2 text-center">{t}label-loyalty-sink{/t}</div>
+          <div class="col-3 col-sm-2 text-center">{t}label-has-color{/t}</div>
+          <div class="col-3 col-sm-1 text-center">{t}actions{/t}</div>
+        </div>
+
+        {foreach $entityTypes as $et}
+          <div  class="row gtable-row">
+            <div class="col-12 col-sm-5">
+              {$et->name|escape}
+              {if $et->isDefault}
+                ({t}label-is-default{/t})
+              {/if}
+            </div>
+            <div class="col-3 col-sm-2 text-center">
+              {if $et->loyaltySource}
+                {include "bits/icon.tpl" i=done}
+              {/if}
+            </div>
+            <div class="col-3 col-sm-2 text-center">
+              {if $et->loyaltySink}
+                {include "bits/icon.tpl" i=done}
+              {/if}
+            </div>
+            <div class="col-3 col-sm-2 text-center">
+              {if $et->hasColor}
+                {include "bits/icon.tpl" i=done}
+              {/if}
+            </div>
+            <div class="col-3 col-sm-1 text-center">
+              <a
+                href="{$et->getEditUrl()}"
+                class="btn"
+                title="{t}link-edit{/t}">
+                {include "bits/icon.tpl" i=mode_edit}
+              </a>
+            </div>
+          </div>
+        {/foreach}
+      </div>
     {/if}
   </div>
 {/block}
