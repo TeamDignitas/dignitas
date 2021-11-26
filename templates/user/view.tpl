@@ -47,7 +47,19 @@
 
         <dl class="row">
           <dd class="col-7 col-md-4 capitalize-first-word">{t}label-reputation{/t}</dd>
-          <dt class="col-5 col-md-8">{$user->getReputation()|nf}</dt>
+          <dt class="col-5 col-md-8">
+            {$user->getReputation()|nf}
+            {$url=LocaleUtil::getHelpUrl('privileges')}
+            {if $url}
+              <span class="ms-2">
+                <a href="{$url}"
+                  title="{t}link-privilege-details{/t}"
+                  target="_blank">
+                  {include "bits/icon.tpl" i=help class="align-top"}
+                </a>
+              </span>
+            {/if}
+          </dt>
           <dd class="col-7 col-md-4 capitalize-first-word">{t}label-statements{/t}</dd>
           <dt class="col-5 col-md-8">{$statements}</dt>
           <dd class="col-7 col-md-4 capitalize-first-word">{t}label-answers{/t}</dd>

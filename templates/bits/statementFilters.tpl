@@ -112,7 +112,7 @@
         </select>
       </div>
 
-      {$url=LocaleUtil::getSearchUrl()}
+      {$url=LocaleUtil::getHelpUrl('search')}
       {if $url}
         <div class="col-12 col-md-auto text-center">
           <a href="{$url}"

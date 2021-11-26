@@ -79,31 +79,10 @@ class LocaleUtil {
   }
 
   /**
-   * Returns the URL for loyalty documentation, in the current locale.
+   * Returns the URL for a help topic in the current locale.
    */
-  static function getLoyaltyUrl() {
-    return Config::LOYALTY_URL[self::$current] ?? '';
-  }
-
-  /**
-   * Returns the URL for search documentation, in the current locale.
-   */
-  static function getSearchUrl() {
-    return Config::SEARCH_URL[self::$current] ?? '';
-  }
-
-  /**
-   * Returns the URL for upload documentation, in the current locale.
-   */
-  static function getUploadUrl() {
-    return Config::UPLOAD_URL[self::$current] ?? '';
-  }
-
-  /**
-   * Returns the URL for verdict documentation, in the current locale.
-   */
-  static function getVerdictUrl() {
-    return Config::VERDICT_URL[self::$current] ?? '';
+  static function getHelpUrl(string $topic) {
+    return Config::HELP_PAGES[$topic][self::$current] ?? '';
   }
 
 }

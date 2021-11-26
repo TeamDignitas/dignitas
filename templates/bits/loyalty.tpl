@@ -14,7 +14,7 @@
     </div>
     {/strip}
 
-    {$url=LocaleUtil::getLoyaltyUrl()}
+    {$url=LocaleUtil::getHelpUrl('loyalty')}
     {if $url}
       <div class="ms-2">
         <a href="{$url}" title="{t}link-loyalty-details{/t}">

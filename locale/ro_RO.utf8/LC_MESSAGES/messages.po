@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-11-24 17:11+0200\n"
-"PO-Revision-Date: 2021-11-24 17:11+0200\n"
+"POT-Creation-Date: 2021-11-26 10:56+0200\n"
+"PO-Revision-Date: 2021-11-26 10:57+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -105,21 +105,21 @@ msgid "title-my-drafts"
 msgstr "ciornele mele"
 
 #: templates/aggregate/drafts.tpl:10 templates/entity/view.tpl:25
-#: templates/user/view.tpl:51
+#: templates/user/view.tpl:63
 msgid "label-statements"
 msgstr "afirmații"
 
-#: templates/aggregate/drafts.tpl:16 templates/user/view.tpl:53
+#: templates/aggregate/drafts.tpl:16 templates/user/view.tpl:65
 msgid "label-answers"
 msgstr "răspunsuri"
 
 #: templates/aggregate/drafts.tpl:27 templates/bits/editButton.tpl:10
 #: templates/bits/relation.tpl:22 templates/cannedResponse/list.tpl:39
-#: templates/domain/list.tpl:38 templates/entityType/list.tpl:53
+#: templates/domain/list.tpl:40 templates/entityType/list.tpl:51
 #: templates/help/categoryView.tpl:39 templates/help/pageView.tpl:36
-#: templates/region/view.tpl:15 templates/relationType/list.tpl:42
+#: templates/region/view.tpl:15 templates/relationType/list.tpl:40
 #: templates/staticResource/list.tpl:44 templates/tag/view.tpl:15
-#: templates/user/view.tpl:112
+#: templates/user/view.tpl:124
 msgid "link-edit"
 msgstr "editează"
 
@@ -293,19 +293,19 @@ msgstr "recuperarea parolei"
 msgid "label-date"
 msgstr "dată"
 
-#: templates/bits/actions.tpl:5 templates/bits/notifications.tpl:6
+#: templates/bits/actions.tpl:5 templates/bits/notifications.tpl:5
 msgid "label-action"
 msgstr "acțiune"
 
-#: templates/bits/actions.tpl:22
+#: templates/bits/actions.tpl:21
 msgid "action-target-answer"
 msgstr "un răspuns"
 
-#: templates/bits/actions.tpl:30
+#: templates/bits/actions.tpl:29
 msgid "action-target-comment"
 msgstr "un comentariu"
 
-#: templates/bits/actions.tpl:45
+#: templates/bits/actions.tpl:44
 msgid "action-updated-user-profile"
 msgstr "și-a actualizat profilul"
 
@@ -719,11 +719,11 @@ msgstr "schimbă"
 msgid "link-log-out"
 msgstr "ieșire"
 
-#: templates/bits/notifications.tpl:5
+#: templates/bits/notifications.tpl:6
 msgid "label-event"
 msgstr "eveniment"
 
-#: templates/bits/notifications.tpl:53
+#: templates/bits/notifications.tpl:18
 msgid "info-notification-unsubscribe"
 msgstr "dezabonează-mă de la toate notificările pentru acest articol"
 
@@ -992,11 +992,11 @@ msgstr "salvează ordinea"
 msgid "title-edit-domain"
 msgstr "editează domeniul"
 
-#: templates/domain/edit.tpl:12 templates/domain/list.tpl:19
+#: templates/domain/edit.tpl:12 templates/domain/list.tpl:17
 #: templates/entity/edit.tpl:28 templates/entityType/edit.tpl:12
-#: templates/entityType/list.tpl:18 templates/help/categoryEdit.tpl:42
+#: templates/entityType/list.tpl:17 templates/help/categoryEdit.tpl:42
 #: templates/region/edit.tpl:25 templates/relationType/edit.tpl:11
-#: templates/relationType/list.tpl:24 templates/staticResource/edit.tpl:12
+#: templates/relationType/list.tpl:23 templates/staticResource/edit.tpl:12
 #: templates/staticResource/list.tpl:18 templates/tag/edit.tpl:25
 msgid "label-name"
 msgstr "nume"
@@ -1005,7 +1005,7 @@ msgstr "nume"
 msgid "info-domain-name"
 msgstr "un nume de domeniu ca google.com"
 
-#: templates/domain/edit.tpl:22 templates/domain/list.tpl:20
+#: templates/domain/edit.tpl:22 templates/domain/list.tpl:19
 msgid "label-display-value"
 msgstr "valoare vizibilă"
 
@@ -1039,10 +1039,10 @@ msgstr "adaugă un domeniu"
 msgid "label-icon"
 msgstr "iconiță"
 
-#: templates/domain/list.tpl:21 templates/entity/edit.tpl:70
-#: templates/entity/edit.tpl:129 templates/entityType/list.tpl:22
-#: templates/relationType/list.tpl:28 templates/staticResource/list.tpl:21
-#: templates/user/view.tpl:120
+#: templates/domain/list.tpl:20 templates/entity/edit.tpl:70
+#: templates/entity/edit.tpl:129 templates/entityType/list.tpl:21
+#: templates/relationType/list.tpl:27 templates/staticResource/list.tpl:21
+#: templates/user/view.tpl:132
 msgid "actions"
 msgstr "acțiuni"
 
@@ -1193,7 +1193,7 @@ msgstr "nume"
 msgid "info-loyalty-source"
 msgstr "Autorii de acest tip au o loialitate."
 
-#: templates/entityType/edit.tpl:28 templates/entityType/list.tpl:19
+#: templates/entityType/edit.tpl:28 templates/entityType/list.tpl:18
 msgid "label-loyalty-source"
 msgstr "are loialitate"
 
@@ -1201,7 +1201,7 @@ msgstr "are loialitate"
 msgid "info-loyalty-sink"
 msgstr "Autorii de acest tip sînt obiect al loialității."
 
-#: templates/entityType/edit.tpl:36 templates/entityType/list.tpl:20
+#: templates/entityType/edit.tpl:36 templates/entityType/list.tpl:19
 msgid "label-loyalty-sink"
 msgstr "obiect al loialității"
 
@@ -1209,7 +1209,7 @@ msgstr "obiect al loialității"
 msgid "info-has-color"
 msgstr "Autorii de acest tip au o culoare."
 
-#: templates/entityType/edit.tpl:43 templates/entityType/list.tpl:21
+#: templates/entityType/edit.tpl:43 templates/entityType/list.tpl:20
 msgid "label-has-color"
 msgstr "are culoare"
 
@@ -1217,7 +1217,7 @@ msgstr "are culoare"
 msgid "info-is-default"
 msgstr "Oferă implicit acest tip pentru autorii nou creați."
 
-#: templates/entityType/edit.tpl:50 templates/entityType/list.tpl:31
+#: templates/entityType/edit.tpl:50 templates/entityType/list.tpl:29
 msgid "label-is-default"
 msgstr "implicit"
 
@@ -1306,15 +1306,15 @@ msgstr "invitații"
 msgid "link-add-invite"
 msgstr "trimite o invitație"
 
-#: templates/invite/list.tpl:21
+#: templates/invite/list.tpl:20
 msgid "label-invite-from"
 msgstr "de la"
 
-#: templates/invite/list.tpl:22
+#: templates/invite/list.tpl:21
 msgid "label-invite-to"
 msgstr "pentru"
 
-#: templates/invite/list.tpl:23
+#: templates/invite/list.tpl:22
 msgid "label-invite-accepted-by"
 msgstr "acceptată de"
 
@@ -1395,11 +1395,11 @@ msgstr "editează tipul de relație"
 msgid "info-relation-type-name"
 msgstr "nume"
 
-#: templates/relationType/edit.tpl:23 templates/relationType/list.tpl:25
+#: templates/relationType/edit.tpl:23 templates/relationType/list.tpl:24
 msgid "label-from-entity-type"
 msgstr "de la tipul de autor"
 
-#: templates/relationType/edit.tpl:40 templates/relationType/list.tpl:26
+#: templates/relationType/edit.tpl:40 templates/relationType/list.tpl:25
 msgid "label-to-entity-type"
 msgstr "la tipul de autor"
 
@@ -1411,7 +1411,7 @@ msgstr "tip de frază"
 msgid "info-relation-type-phrase"
 msgstr "Cum se referă relația la autorul-destinatar?"
 
-#: templates/relationType/edit.tpl:73 templates/relationType/list.tpl:27
+#: templates/relationType/edit.tpl:73 templates/relationType/list.tpl:26
 msgid "label-weight"
 msgstr "greutate"
 
@@ -1796,31 +1796,35 @@ msgstr "acuratețe"
 msgid "label-user"
 msgstr "utilizator"
 
-#: templates/user/view.tpl:55
+#: templates/user/view.tpl:56
+msgid "link-privilege-details"
+msgstr "Ce privilegii obțin cu această reputație?"
+
+#: templates/user/view.tpl:67
 msgid "label-member-since"
 msgstr "membr(u/ă) de pe"
 
-#: templates/user/view.tpl:58
+#: templates/user/view.tpl:70
 msgid "label-last-seen"
 msgstr "ultima vizită"
 
-#: templates/user/view.tpl:64
+#: templates/user/view.tpl:76
 msgid "title-about-me"
 msgstr "despre mine"
 
-#: templates/user/view.tpl:71
+#: templates/user/view.tpl:83
 msgid "title-user-bans"
 msgstr "blocaje"
 
-#: templates/user/view.tpl:78
+#: templates/user/view.tpl:90
 msgid "ban-permanent"
 msgstr "permanent"
 
-#: templates/user/view.tpl:80
+#: templates/user/view.tpl:92
 msgid "label-ban-until"
 msgstr "pînă la"
 
-#: templates/user/view.tpl:105
+#: templates/user/view.tpl:117
 msgid "link-ban"
 msgstr "blochează..."
 

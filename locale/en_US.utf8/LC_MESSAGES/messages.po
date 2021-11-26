@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-11-24 17:11+0200\n"
-"PO-Revision-Date: 2021-11-24 17:11+0200\n"
+"POT-Creation-Date: 2021-11-26 10:57+0200\n"
+"PO-Revision-Date: 2021-11-26 10:58+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -104,21 +104,21 @@ msgid "title-my-drafts"
 msgstr "my drafts"
 
 #: templates/aggregate/drafts.tpl:10 templates/entity/view.tpl:25
-#: templates/user/view.tpl:51
+#: templates/user/view.tpl:63
 msgid "label-statements"
 msgstr "statements"
 
-#: templates/aggregate/drafts.tpl:16 templates/user/view.tpl:53
+#: templates/aggregate/drafts.tpl:16 templates/user/view.tpl:65
 msgid "label-answers"
 msgstr "answers"
 
 #: templates/aggregate/drafts.tpl:27 templates/bits/editButton.tpl:10
 #: templates/bits/relation.tpl:22 templates/cannedResponse/list.tpl:39
-#: templates/domain/list.tpl:38 templates/entityType/list.tpl:53
+#: templates/domain/list.tpl:40 templates/entityType/list.tpl:51
 #: templates/help/categoryView.tpl:39 templates/help/pageView.tpl:36
-#: templates/region/view.tpl:15 templates/relationType/list.tpl:42
+#: templates/region/view.tpl:15 templates/relationType/list.tpl:40
 #: templates/staticResource/list.tpl:44 templates/tag/view.tpl:15
-#: templates/user/view.tpl:112
+#: templates/user/view.tpl:124
 msgid "link-edit"
 msgstr "edit"
 
@@ -290,19 +290,19 @@ msgstr "reset password"
 msgid "label-date"
 msgstr "date"
 
-#: templates/bits/actions.tpl:5 templates/bits/notifications.tpl:6
+#: templates/bits/actions.tpl:5 templates/bits/notifications.tpl:5
 msgid "label-action"
 msgstr "action"
 
-#: templates/bits/actions.tpl:22
+#: templates/bits/actions.tpl:21
 msgid "action-target-answer"
 msgstr "an answer"
 
-#: templates/bits/actions.tpl:30
+#: templates/bits/actions.tpl:29
 msgid "action-target-comment"
 msgstr "a comment"
 
-#: templates/bits/actions.tpl:45
+#: templates/bits/actions.tpl:44
 msgid "action-updated-user-profile"
 msgstr "updated user profile"
 
@@ -713,11 +713,11 @@ msgstr "schimbă"
 msgid "link-log-out"
 msgstr "log out"
 
-#: templates/bits/notifications.tpl:5
+#: templates/bits/notifications.tpl:6
 msgid "label-event"
 msgstr "event"
 
-#: templates/bits/notifications.tpl:53
+#: templates/bits/notifications.tpl:18
 msgid "info-notification-unsubscribe"
 msgstr "unsubscribe from notifications for this item"
 
@@ -981,11 +981,11 @@ msgstr "save order"
 msgid "title-edit-domain"
 msgstr "edit domain"
 
-#: templates/domain/edit.tpl:12 templates/domain/list.tpl:19
+#: templates/domain/edit.tpl:12 templates/domain/list.tpl:17
 #: templates/entity/edit.tpl:28 templates/entityType/edit.tpl:12
-#: templates/entityType/list.tpl:18 templates/help/categoryEdit.tpl:42
+#: templates/entityType/list.tpl:17 templates/help/categoryEdit.tpl:42
 #: templates/region/edit.tpl:25 templates/relationType/edit.tpl:11
-#: templates/relationType/list.tpl:24 templates/staticResource/edit.tpl:12
+#: templates/relationType/list.tpl:23 templates/staticResource/edit.tpl:12
 #: templates/staticResource/list.tpl:18 templates/tag/edit.tpl:25
 msgid "label-name"
 msgstr "name"
@@ -994,7 +994,7 @@ msgstr "name"
 msgid "info-domain-name"
 msgstr "a domain name like google.com"
 
-#: templates/domain/edit.tpl:22 templates/domain/list.tpl:20
+#: templates/domain/edit.tpl:22 templates/domain/list.tpl:19
 msgid "label-display-value"
 msgstr "display value"
 
@@ -1028,10 +1028,10 @@ msgstr "add a domain"
 msgid "label-icon"
 msgstr "icon"
 
-#: templates/domain/list.tpl:21 templates/entity/edit.tpl:70
-#: templates/entity/edit.tpl:129 templates/entityType/list.tpl:22
-#: templates/relationType/list.tpl:28 templates/staticResource/list.tpl:21
-#: templates/user/view.tpl:120
+#: templates/domain/list.tpl:20 templates/entity/edit.tpl:70
+#: templates/entity/edit.tpl:129 templates/entityType/list.tpl:21
+#: templates/relationType/list.tpl:27 templates/staticResource/list.tpl:21
+#: templates/user/view.tpl:132
 msgid "actions"
 msgstr "acțiuni"
 
@@ -1180,7 +1180,7 @@ msgstr "name"
 msgid "info-loyalty-source"
 msgstr "Authors of this type have loyalty."
 
-#: templates/entityType/edit.tpl:28 templates/entityType/list.tpl:19
+#: templates/entityType/edit.tpl:28 templates/entityType/list.tpl:18
 msgid "label-loyalty-source"
 msgstr "has loyalty"
 
@@ -1188,7 +1188,7 @@ msgstr "has loyalty"
 msgid "info-loyalty-sink"
 msgstr "Authors of this type can be the object of loyalty."
 
-#: templates/entityType/edit.tpl:36 templates/entityType/list.tpl:20
+#: templates/entityType/edit.tpl:36 templates/entityType/list.tpl:19
 msgid "label-loyalty-sink"
 msgstr "object of loyalty"
 
@@ -1196,7 +1196,7 @@ msgstr "object of loyalty"
 msgid "info-has-color"
 msgstr "Authors of this type have a color."
 
-#: templates/entityType/edit.tpl:43 templates/entityType/list.tpl:21
+#: templates/entityType/edit.tpl:43 templates/entityType/list.tpl:20
 msgid "label-has-color"
 msgstr "has a color"
 
@@ -1204,7 +1204,7 @@ msgstr "has a color"
 msgid "info-is-default"
 msgstr "Show this type by default for newly created authors."
 
-#: templates/entityType/edit.tpl:50 templates/entityType/list.tpl:31
+#: templates/entityType/edit.tpl:50 templates/entityType/list.tpl:29
 msgid "label-is-default"
 msgstr "default"
 
@@ -1293,15 +1293,15 @@ msgstr "invites"
 msgid "link-add-invite"
 msgstr "send an invite"
 
-#: templates/invite/list.tpl:21
+#: templates/invite/list.tpl:20
 msgid "label-invite-from"
 msgstr "from"
 
-#: templates/invite/list.tpl:22
+#: templates/invite/list.tpl:21
 msgid "label-invite-to"
 msgstr "to"
 
-#: templates/invite/list.tpl:23
+#: templates/invite/list.tpl:22
 msgid "label-invite-accepted-by"
 msgstr "accepted by"
 
@@ -1383,11 +1383,11 @@ msgstr "edit relationship type"
 msgid "info-relation-type-name"
 msgstr "name"
 
-#: templates/relationType/edit.tpl:23 templates/relationType/list.tpl:25
+#: templates/relationType/edit.tpl:23 templates/relationType/list.tpl:24
 msgid "label-from-entity-type"
 msgstr "from author type"
 
-#: templates/relationType/edit.tpl:40 templates/relationType/list.tpl:26
+#: templates/relationType/edit.tpl:40 templates/relationType/list.tpl:25
 msgid "label-to-entity-type"
 msgstr "to author type"
 
@@ -1399,7 +1399,7 @@ msgstr "phrase type"
 msgid "info-relation-type-phrase"
 msgstr "How does the relationship refer to the target author?"
 
-#: templates/relationType/edit.tpl:73 templates/relationType/list.tpl:27
+#: templates/relationType/edit.tpl:73 templates/relationType/list.tpl:26
 msgid "label-weight"
 msgstr "weight"
 
@@ -1785,31 +1785,35 @@ msgstr "accuracy"
 msgid "label-user"
 msgstr "user"
 
-#: templates/user/view.tpl:55
+#: templates/user/view.tpl:56
+msgid "link-privilege-details"
+msgstr "What privileges do I gain from this?"
+
+#: templates/user/view.tpl:67
 msgid "label-member-since"
 msgstr "member since"
 
-#: templates/user/view.tpl:58
+#: templates/user/view.tpl:70
 msgid "label-last-seen"
 msgstr "last seen"
 
-#: templates/user/view.tpl:64
+#: templates/user/view.tpl:76
 msgid "title-about-me"
 msgstr "about me"
 
-#: templates/user/view.tpl:71
+#: templates/user/view.tpl:83
 msgid "title-user-bans"
 msgstr "bans"
 
-#: templates/user/view.tpl:78
+#: templates/user/view.tpl:90
 msgid "ban-permanent"
 msgstr "permanent"
 
-#: templates/user/view.tpl:80
+#: templates/user/view.tpl:92
 msgid "label-ban-until"
 msgstr "until"
 
-#: templates/user/view.tpl:105
+#: templates/user/view.tpl:117
 msgid "link-ban"
 msgstr "ban..."
 

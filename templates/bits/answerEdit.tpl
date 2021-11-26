@@ -23,7 +23,7 @@
     <label for="field-verdict" class="col-md-6 col-sm-4 col-form-label text-end">
       {t}label-verdict{/t}
 
-      {$url=LocaleUtil::getVerdictUrl()}
+      {$url=LocaleUtil::getHelpUrl('verdict')}
       {if $url}
         <span class="ms-2">
           <a href="{$url}"
