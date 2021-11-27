@@ -47,3 +47,10 @@ if [ ! -e .git/hooks/post-merge ]; then
 else
   echo "* .git/hooks/post-merge already exists, skipping"
 fi
+
+if [ ! -e .git/hooks/post-rewrite ]; then
+  echo "* symlinking scripts/git-hooks/post-merge.sh as .git/hooks/post-rewrite"
+  ln -s $ROOT_DIR/scripts/git-hooks/post-merge.sh .git/hooks/post-rewrite
+else
+  echo "* .git/hooks/post-rewrite already exists, skipping"
+fi
