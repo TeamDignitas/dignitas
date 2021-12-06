@@ -9,23 +9,17 @@
     {if empty($history)}
       {t}info-no-history{/t}
     {else}
-      <table class="table table-hover">
-        <thead>
-          <tr class="d-flex small">
-            <th class="col-sm-3 col-md-2">{t}label-author{/t}</th>
-            <th class="col-sm-2 col-md-2">{t}label-date{/t}</th>
-            <th class="col-sm-7 col-md-8">{t}label-changes{/t}</th>
-          </tr>
-        </thead>
+      <div class="gtable container">
+        <div class="row gtable-header">
+          <div class="col-6">{t}label-author{/t}</div>
+          <div class="col-6">{t}label-date{/t}</div>
+          <div class="col-12">{t}label-changes{/t}</div>
+        </div>
 
-        <tbody>
-          {foreach $history as $od}
-            <tr class="d-flex small">
-              {include "bits/diff/objectDiff.tpl"}
-            </tr>
-          {/foreach}
-        </tbody>
-      </table>
+        {foreach $history as $od}
+          {include "bits/diff/objectDiff.tpl"}
+        {/foreach}
+      </div>
     {/if}
 
     <div class="mt-3">

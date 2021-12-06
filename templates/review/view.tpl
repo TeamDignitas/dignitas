@@ -23,7 +23,9 @@
 
         {* Display the object being reviewed. *}
         {if isset($objectDiff)}
-          {include "bits/diff/objectDiff.tpl" od=$objectDiff}
+          <div class="gtable container">
+            {include "bits/diff/objectDiff.tpl" od=$objectDiff}
+          </div>
 
           <h3 class="mt-5 mb-3">
             {t}info-review-target-item{/t}
