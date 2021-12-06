@@ -20,7 +20,7 @@
           <a href="{$obj->getViewUrl()}">
             {t}action-target-answer{/t}
           </a>
-          <div class="text-muted">
+          <div class="text-muted text-break">
             {$obj->contents|shorten:120}
           </div>
         {elseif $a->objectType == Proto::TYPE_COMMENT}
@@ -28,7 +28,7 @@
           <a href="{$obj->getViewUrl()}">
             {t}action-target-comment{/t}
           </a>
-          <div class="text-muted">
+          <div class="text-muted text-break">
             {$obj->contents|shorten:120}
           </div>
         {elseif $a->objectType == Proto::TYPE_ENTITY}

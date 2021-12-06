@@ -18,6 +18,7 @@ pre.identical-block {
 pre.diff {
   color: var(--bs-gray-600);
   margin-top: 1em;
+  overflow-wrap: break-word;
   white-space: pre-wrap;
 }
 

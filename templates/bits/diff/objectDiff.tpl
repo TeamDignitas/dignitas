@@ -51,7 +51,7 @@
     {$id=$od->review->id}
     <div class="col-12">
       <button
-        class="btn btn-sm btn-link"
+        class="btn btn-sm btn-link text-wrap"
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#collapse-{$id}">
