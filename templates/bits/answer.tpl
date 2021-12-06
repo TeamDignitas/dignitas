@@ -44,7 +44,16 @@
           {/notice}
         {/if}
 
-        <div class="text-muted mb-2 row align-items-center">
+        {if $answer->verdict != Statement::VERDICT_NONE}
+          <div class="mb-1">
+            <span class="badge rounded-pill bg-secondary py-1 px-2">
+              {include "bits/icon.tpl" i=gavel}
+              {$answer->getVerdictName()}
+            </span>
+          </div>
+        {/if}
+
+        <div class="text-muted mt-2 mb-2 row align-items-center surface">
           <div class="answer-read-only col-12 col-md-9">
             {t}answer-posted-by{/t}
             {include 'bits/userLink.tpl' u=$answer->getUser()}
@@ -85,15 +94,6 @@
               </div>
             {/if}
           </div>
-
-          {if $answer->verdict != Statement::VERDICT_NONE}
-            <div class="col-12 mt-2 mb-1">
-              <span class="badge rounded-pill bg-secondary py-1 px-2">
-                {include "bits/icon.tpl" i=gavel}
-                {$answer->getVerdictName()}
-              </span>
-            </div>
-          {/if}
 
         </div>
 

@@ -121,7 +121,7 @@
         {include "bits/tag.tpl" link=true tooltip="{t}info-tag-view-statements{/t}"}
       {/foreach}
 
-      <div class="text-muted mb-2 mt-1 row align-items-center">
+      <div class="text-muted mb-2 mt-2 row align-items-center surface">
         <div class="col-12 col-md-9">
           {t}title-added-by{/t}
           {include 'bits/userLink.tpl' u=$statement->getUser()}

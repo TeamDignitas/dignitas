@@ -15,45 +15,48 @@
     <span class="archivable">
       {$comment->contents|md}
     </span>
-    &mdash;
-    {include 'bits/userLink.tpl' u=$comment->getUser()}
-    {include 'bits/moment.tpl' t=$comment->createDate}
 
-    {if $ellipsisMenu}
-      <button
-        class="btn comment-actions"
-        type="button"
-        id="comment-menu-{$comment->id}"
-        data-bs-toggle="dropdown"
-        aria-haspopup="true"
-        aria-expanded="false">
-        {include "bits/icon.tpl" i=more_vert}
-      </button>
+    <div class="surface mt-2 mb-2 px-2">
+      &mdash;
+      {include 'bits/userLink.tpl' u=$comment->getUser()}
+      {include 'bits/moment.tpl' t=$comment->createDate}
 
-      <div class="dropdown-menu ellipsis-menu" aria-labelledby="comment-menu-{$comment->id}">
-        <a
-          href="#c{$comment->id}"
-          class="dropdown-item"
-          title="{t}info-comment-permalink{/t}">
-          {include "bits/icon.tpl" i=insert_link}
-          {t}link-permalink{/t}
-        </a>
+      {if $ellipsisMenu}
+        <button
+          class="btn comment-actions"
+          type="button"
+          id="comment-menu-{$comment->id}"
+          data-bs-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false">
+          {include "bits/icon.tpl" i=more_vert}
+        </button>
 
-        {if $comment->isDeletable()}
+        <div class="dropdown-menu ellipsis-menu" aria-labelledby="comment-menu-{$comment->id}">
           <a
-            href="#"
-            class="dropdown-item delete-comment"
-            data-comment-id="{$comment->id}"
-            data-confirm="{t}info-confirm-delete-comment{/t}">
-            {include "bits/icon.tpl" i=delete_forever}
-            {t}link-delete{/t}
+            href="#c{$comment->id}"
+            class="dropdown-item"
+            title="{t}info-comment-permalink{/t}">
+            {include "bits/icon.tpl" i=insert_link}
+            {t}link-permalink{/t}
           </a>
-        {/if}
 
-        {include "bits/flagLinks.tpl" obj=$comment class="dropdown-item"}
-        {include "bits/viewMarkdownButton.tpl" obj=$comment}
-      </div>
-    {/if}
+          {if $comment->isDeletable()}
+            <a
+              href="#"
+              class="dropdown-item delete-comment"
+              data-comment-id="{$comment->id}"
+              data-confirm="{t}info-confirm-delete-comment{/t}">
+              {include "bits/icon.tpl" i=delete_forever}
+              {t}link-delete{/t}
+            </a>
+          {/if}
+
+          {include "bits/flagLinks.tpl" obj=$comment class="dropdown-item"}
+          {include "bits/viewMarkdownButton.tpl" obj=$comment}
+        </div>
+      {/if}
+    </div>
 
     {if $comment->status == Ct::STATUS_DELETED}
       {notice icon=info}
