@@ -120,42 +120,46 @@
       {foreach $statement->getTags() as $t}
         {include "bits/tag.tpl" link=true tooltip="{t}info-tag-view-statements{/t}"}
       {/foreach}
-      <div class="text-muted mb-2 mt-1 ps-0">
-        {t}title-added-by{/t}
-        {include 'bits/userLink.tpl' u=$statement->getUser()}
-        {include 'bits/moment.tpl' t=$statement->createDate}
-      </div>
-    </div>
 
-    {$comments=Comment::getFor($statement)}
-    <div class="clearfix mb-2 mt-1 text-end">
-      {* when there are no comments, the add comment button sits on the same
-         row as the other buttons *}
-      {if empty($comments) && $addComment}
-        {include "bits/addCommentLink.tpl" object=$statement}
-      {/if}
-
-      {if $ellipsisMenu}
-        <button
-          class="btn"
-          type="button"
-          id="statement-menu-{$statement->id}"
-          data-bs-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false">
-          {include "bits/icon.tpl" i=more_vert}
-        </button>
-
-        <div class="dropdown-menu ellipsis-menu" aria-labelledby="statement-menu-{$statement->id}">
-          {if $editLink}
-            {include "bits/editButton.tpl" obj=$statement class="dropdown-item"}
-          {/if}
-          {include "bits/subscribeLinks.tpl" obj=$statement class="dropdown-item"}
-          {include "bits/flagLinks.tpl" obj=$statement class="dropdown-item"}
-          {include "bits/historyButton.tpl" obj=$statement class="dropdown-item"}
-          {include "bits/viewMarkdownButton.tpl" obj=$statement}
+      <div class="text-muted mb-2 mt-1 row align-items-center">
+        <div class="col-12 col-md-9">
+          {t}title-added-by{/t}
+          {include 'bits/userLink.tpl' u=$statement->getUser()}
+          {include 'bits/moment.tpl' t=$statement->createDate}
         </div>
-      {/if}
+
+        <div class="col-12 col-md-3 px-0 text-end">
+          {* when there are no comments, the add comment button sits on the same
+             row as the other buttons *}
+          {$comments=Comment::getFor($statement)}
+          {if empty($comments) && $addComment}
+            {include "bits/addCommentLink.tpl" object=$statement}
+          {/if}
+
+          {if $ellipsisMenu}
+            <button
+              class="btn"
+              type="button"
+              id="statement-menu-{$statement->id}"
+              data-bs-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false">
+              {include "bits/icon.tpl" i=more_vert}
+            </button>
+
+            <div class="dropdown-menu ellipsis-menu" aria-labelledby="statement-menu-{$statement->id}">
+              {if $editLink}
+                {include "bits/editButton.tpl" obj=$statement class="dropdown-item"}
+              {/if}
+              {include "bits/subscribeLinks.tpl" obj=$statement class="dropdown-item"}
+              {include "bits/flagLinks.tpl" obj=$statement class="dropdown-item"}
+              {include "bits/historyButton.tpl" obj=$statement class="dropdown-item"}
+              {include "bits/viewMarkdownButton.tpl" obj=$statement}
+            </div>
+          {/if}
+        </div>
+
+      </div>
     </div>
 
     {if !empty($comments)}

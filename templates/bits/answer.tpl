@@ -27,7 +27,7 @@
       {/if}
 
       <div class="col-12 col-md-11 mt-2 mb-1">
-        <div class="answer-body archivable px-0">
+        <div class="archivable px-0">
           {$answer->contents|md}
         </div>
 
@@ -44,59 +44,56 @@
           {/notice}
         {/if}
 
-        <div class="answer-footer px-0">
-          <div class="text-muted mb-2 row">
-            <div class="answer-read-only col-12 col-md-9 mt-2 mb-1 pe-0">
-              {t}answer-posted-by{/t}
-              {include 'bits/userLink.tpl' u=$answer->getUser()}
-              {include 'bits/moment.tpl' t=$answer->createDate}
-            </div>
+        <div class="text-muted mb-2 row align-items-center">
+          <div class="answer-read-only col-12 col-md-9">
+            {t}answer-posted-by{/t}
+            {include 'bits/userLink.tpl' u=$answer->getUser()}
+            {include 'bits/moment.tpl' t=$answer->createDate}
+          </div>
 
-            <div class="col-12 col-md-3 px-0 text-end">
-              {$comments=Comment::getFor($answer)}
-              {if $addComment && empty($comments)}
-                {include "bits/addCommentLink.tpl" object=$answer}
-              {/if}
-
-              {if $ellipsisMenu}
-                <button
-                  class="btn"
-                  type="button"
-                  id="answer-menu-{$answer->id}"
-                  data-bs-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false">
-                  {include "bits/icon.tpl" i=more_vert}
-                </button>
-
-                <div class="dropdown-menu ellipsis-menu" aria-labelledby="answer-menu-{$answer->id}">
-                  <a
-                    href="#a{$answer->id}"
-                    class="dropdown-item"
-                    title="{t}info-answer-permalink{/t}">
-                    {include "bits/icon.tpl" i=insert_link}
-                    {t}link-permalink{/t}
-                  </a>
-
-                  {include "bits/editButton.tpl" obj=$answer class="dropdown-item"}
-                  {include "bits/subscribeLinks.tpl" obj=$answer class="dropdown-item"}
-                  {include "bits/flagLinks.tpl" obj=$answer class="dropdown-item"}
-                  {include "bits/historyButton.tpl" obj=$answer class="dropdown-item"}
-                  {include "bits/viewMarkdownButton.tpl" obj=$answer}
-                </div>
-              {/if}
-            </div>
-
-            {if $answer->verdict != Statement::VERDICT_NONE}
-              <div class="col-12 mt-2 mb-1">
-                <span class="badge rounded-pill bg-secondary py-1 px-2">
-                  {include "bits/icon.tpl" i=gavel}
-                  {$answer->getVerdictName()}
-                </span>
-              </div>
+          <div class="col-12 col-md-3 px-0 text-end">
+            {$comments=Comment::getFor($answer)}
+            {if $addComment && empty($comments)}
+              {include "bits/addCommentLink.tpl" object=$answer}
             {/if}
 
+            {if $ellipsisMenu}
+              <button
+                class="btn"
+                type="button"
+                id="answer-menu-{$answer->id}"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false">
+                {include "bits/icon.tpl" i=more_vert}
+              </button>
+
+              <div class="dropdown-menu ellipsis-menu" aria-labelledby="answer-menu-{$answer->id}">
+                <a
+                  href="#a{$answer->id}"
+                  class="dropdown-item"
+                  title="{t}info-answer-permalink{/t}">
+                  {include "bits/icon.tpl" i=insert_link}
+                  {t}link-permalink{/t}
+                </a>
+
+                {include "bits/editButton.tpl" obj=$answer class="dropdown-item"}
+                {include "bits/subscribeLinks.tpl" obj=$answer class="dropdown-item"}
+                {include "bits/flagLinks.tpl" obj=$answer class="dropdown-item"}
+                {include "bits/historyButton.tpl" obj=$answer class="dropdown-item"}
+                {include "bits/viewMarkdownButton.tpl" obj=$answer}
+              </div>
+            {/if}
           </div>
+
+          {if $answer->verdict != Statement::VERDICT_NONE}
+            <div class="col-12 mt-2 mb-1">
+              <span class="badge rounded-pill bg-secondary py-1 px-2">
+                {include "bits/icon.tpl" i=gavel}
+                {$answer->getVerdictName()}
+              </span>
+            </div>
+          {/if}
 
         </div>
 
