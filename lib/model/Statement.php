@@ -368,6 +368,11 @@ class Statement extends Proto {
   }
 
   protected function isEditableCore() {
+    if ($this->isDraft() &&
+        $this->userId != User::getActiveId()) {   // can only edit one's own drafts
+      throw new Exception(_('info-edit-other-peoples-drafts'));
+    }
+
     if (!$this->id && !User::may(User::PRIV_ADD_STATEMENT)) {
       throw new Exception(sprintf(
         _('info-minimum-reputation-add-statement-%s'),
@@ -427,7 +432,7 @@ class Statement extends Proto {
     if (!$this->id) {
       return false; // not on the add statement page
     } else if (in_array($this->status,
-                        [Ct::STATUS_DELETED, Ct::STATUS_PENDING_EDIT, Ct::STATUS_DRAFT])) {
+                        [Ct::STATUS_DELETED, Ct::STATUS_PENDING_EDIT])) {
       return false; // already deleted or pending edit
     } else if (($this->verdict != self::VERDICT_NONE) && !User::isModerator()) {
       return false; // only moderators can delete statements with verdicts

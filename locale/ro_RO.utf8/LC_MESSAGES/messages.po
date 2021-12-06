@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-11-26 10:56+0200\n"
-"PO-Revision-Date: 2021-11-26 10:57+0200\n"
+"POT-Creation-Date: 2021-12-06 13:16+0200\n"
+"PO-Revision-Date: 2021-12-06 13:16+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -288,7 +288,7 @@ msgstr "click aici dacă nu ești redirectat(ă) automat"
 msgid "title-reset-password"
 msgstr "recuperarea parolei"
 
-#: templates/bits/actions.tpl:4 templates/bits/history.tpl:16
+#: templates/bits/actions.tpl:4 templates/bits/history.tpl:15
 #: templates/bits/notifications.tpl:4
 msgid "label-date"
 msgstr "dată"
@@ -388,19 +388,19 @@ msgstr "mesaje predefinite"
 msgid "link-cancel"
 msgstr "renunță"
 
-#: templates/bits/diff/objectDiff.tpl:34
+#: templates/bits/diff/objectDiff.tpl:38
 msgid "label-duplicate-of"
 msgstr "duplicat al lui"
 
-#: templates/bits/diff/objectDiff.tpl:55
+#: templates/bits/diff/objectDiff.tpl:59
 msgid "info-reviewed-because"
 msgstr "evaluare pentru motivul"
 
-#: templates/bits/diff/objectDiff.tpl:58
+#: templates/bits/diff/objectDiff.tpl:62
 msgid "label-resolution"
 msgstr "rezoluție"
 
-#: templates/bits/diff/objectDiff.tpl:68
+#: templates/bits/diff/objectDiff.tpl:72
 msgid "title-votes"
 msgstr "voturi"
 
@@ -624,11 +624,11 @@ msgid "info-no-history"
 msgstr ""
 "Nu există modificări la acest articol. Versiunea curentă este unica versiune."
 
-#: templates/bits/history.tpl:15 templates/bits/statementFilters.tpl:23
+#: templates/bits/history.tpl:14 templates/bits/statementFilters.tpl:23
 msgid "label-author"
 msgstr "autor"
 
-#: templates/bits/history.tpl:17
+#: templates/bits/history.tpl:16
 msgid "label-changes"
 msgstr "modificări"
 
@@ -867,7 +867,7 @@ msgstr "scop"
 msgid "info-tag-view-statements"
 msgstr "Vezi toate afirmațiile cu această etichetă."
 
-#: templates/bits/statement.tpl:124 templates/review/view.tpl:90
+#: templates/bits/statement.tpl:124 templates/review/view.tpl:92
 msgid "title-added-by"
 msgstr "adăugată de"
 
@@ -1458,35 +1458,35 @@ msgstr ""
 msgid "info-review-complete"
 msgstr "Această evaluare este completă. Nu mai poți face alte acțiuni."
 
-#: templates/review/view.tpl:29
+#: templates/review/view.tpl:31
 msgid "info-review-target-item"
 msgstr "Articolul complet:"
 
-#: templates/review/view.tpl:37
+#: templates/review/view.tpl:39
 msgid "info-statement-duplicate"
 msgstr "Această afirmație a fost raportată ca duplicat al afirmației"
 
-#: templates/review/view.tpl:59 templates/review/view.tpl:112
-#: templates/review/view.tpl:125
+#: templates/review/view.tpl:61 templates/review/view.tpl:114
+#: templates/review/view.tpl:127
 msgid "title-pertaining-to-statement"
 msgstr "referitor la afirmația:"
 
-#: templates/review/view.tpl:74
+#: templates/review/view.tpl:76
 msgid "info-entity-duplicate"
 msgstr "Acest autor a fost raportat ca duplicat al autorului"
 
-#: templates/review/view.tpl:77
+#: templates/review/view.tpl:79
 msgid "info-entity-duplicate-process"
 msgstr ""
 "Acceptarea acestei raportări va transfera toate afirmațiile de la acest "
 "duplicat la autorul canonic. Aliasurile, relațiile și alte atribute nu vor "
 "fi transferate."
 
-#: templates/review/view.tpl:102
+#: templates/review/view.tpl:104
 msgid "title-pertaining-to-answer"
 msgstr "referitor la răspunsul:"
 
-#: templates/review/view.tpl:143
+#: templates/review/view.tpl:145
 msgid "info-review-queue-empty"
 msgstr "Această coadă de evaluare este goală."
 
@@ -2014,27 +2014,31 @@ msgstr "de către"
 msgid "info-other-reason"
 msgstr "pentru alt motiv."
 
-#: lib/model/Answer.php:125
+#: lib/model/Answer.php:125 lib/model/Statement.php:373
+msgid "info-edit-other-peoples-drafts"
+msgstr "Nu poți edita ciornele altor utilizatori."
+
+#: lib/model/Answer.php:130
 #, php-format
 msgid "info-minimum-reputation-add-answer-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a adăuga răspunsuri."
 
-#: lib/model/Answer.php:133
+#: lib/model/Answer.php:138
 #, php-format
 msgid "info-minimum-reputation-edit-answer-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a edita răspunsuri."
 
-#: lib/model/Answer.php:139
+#: lib/model/Answer.php:144
 msgid "info-only-moderator-edit-proof-answer"
 msgstr ""
 "Acest răspuns a fost acceptat ca demonstrație. Doar moderatorii îl mai pot "
 "modifica direct."
 
-#: lib/model/Answer.php:143
+#: lib/model/Answer.php:148
 msgid "info-banned-add-answer"
 msgstr "Îți este interzisă adăugarea de răspunsuri."
 
-#: lib/model/Answer.php:147
+#: lib/model/Answer.php:152
 msgid "info-banned-edit-answer"
 msgstr "Îți este interzisă editarea de răspunsuri."
 
@@ -2654,27 +2658,27 @@ msgstr "deoarece este de slabă calitate."
 msgid "info-statement-by-owner"
 msgstr "de către autorul său."
 
-#: lib/model/Statement.php:373
+#: lib/model/Statement.php:378
 #, php-format
 msgid "info-minimum-reputation-add-statement-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
-#: lib/model/Statement.php:381
+#: lib/model/Statement.php:386
 #, php-format
 msgid "info-minimum-reputation-edit-statement-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a edita afirmații."
 
-#: lib/model/Statement.php:387
+#: lib/model/Statement.php:392
 msgid "info-only-moderator-edit-statement-verdict"
 msgstr ""
 "Această afirmație a primit un verdict. Doar moderatorii o mai pot modifica "
 "direct."
 
-#: lib/model/Statement.php:391
+#: lib/model/Statement.php:396
 msgid "info-banned-add-statement"
 msgstr "Îți este interzisă adăugarea de afirmații."
 
-#: lib/model/Statement.php:395
+#: lib/model/Statement.php:400
 msgid "info-banned-edit-statement"
 msgstr "Îți este interzisă editarea de afirmații."
 
@@ -2804,7 +2808,7 @@ msgstr ""
 "Ai atins limita zilnică de %d modificări sugerate. Te rugăm să aștepți "
 "evaluarea unora din ele."
 
-#: lib/trait/PendingEditTrait.php:136
+#: lib/trait/PendingEditTrait.php:139
 msgid "can-suggest-changes"
 msgstr "Poți sugera modificări care vor fi puse în coada de evaluare."
 

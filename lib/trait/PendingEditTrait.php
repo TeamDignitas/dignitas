@@ -88,6 +88,9 @@ trait PendingEditTrait {
       // object is not itself a pending edit
       ($this->status != Ct::STATUS_PENDING_EDIT) &&
 
+      // object is not a draft
+      ($this->status != Ct::STATUS_DRAFT) &&
+
       // object does not already have pending edits
       !$this->pendingEditId &&
 

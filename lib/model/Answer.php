@@ -120,6 +120,11 @@ class Answer extends Proto {
   }
 
   protected function isEditableCore() {
+    if ($this->isDraft() &&
+        $this->userId != User::getActiveId()) {   // can only edit one's own drafts
+      throw new Exception(_('info-edit-other-peoples-drafts'));
+    }
+
     if (!$this->id && !User::may(User::PRIV_ADD_ANSWER)) {
       throw new Exception(sprintf(
         _('info-minimum-reputation-add-answer-%s'),

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-11-26 10:57+0200\n"
-"PO-Revision-Date: 2021-11-26 10:58+0200\n"
+"POT-Creation-Date: 2021-12-06 13:15+0200\n"
+"PO-Revision-Date: 2021-12-06 13:15+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -285,7 +285,7 @@ msgstr "click here if you are not redirected automatically"
 msgid "title-reset-password"
 msgstr "reset password"
 
-#: templates/bits/actions.tpl:4 templates/bits/history.tpl:16
+#: templates/bits/actions.tpl:4 templates/bits/history.tpl:15
 #: templates/bits/notifications.tpl:4
 msgid "label-date"
 msgstr "date"
@@ -384,19 +384,19 @@ msgstr "canned responses"
 msgid "link-cancel"
 msgstr "cancel"
 
-#: templates/bits/diff/objectDiff.tpl:34
+#: templates/bits/diff/objectDiff.tpl:38
 msgid "label-duplicate-of"
 msgstr "duplicate of"
 
-#: templates/bits/diff/objectDiff.tpl:55
+#: templates/bits/diff/objectDiff.tpl:59
 msgid "info-reviewed-because"
 msgstr "review reason"
 
-#: templates/bits/diff/objectDiff.tpl:58
+#: templates/bits/diff/objectDiff.tpl:62
 msgid "label-resolution"
 msgstr "resolution"
 
-#: templates/bits/diff/objectDiff.tpl:68
+#: templates/bits/diff/objectDiff.tpl:72
 msgid "title-votes"
 msgstr "votes"
 
@@ -618,11 +618,11 @@ msgid "info-no-history"
 msgstr ""
 "There are no changes to this item. The current version is the only version."
 
-#: templates/bits/history.tpl:15 templates/bits/statementFilters.tpl:23
+#: templates/bits/history.tpl:14 templates/bits/statementFilters.tpl:23
 msgid "label-author"
 msgstr "author"
 
-#: templates/bits/history.tpl:17
+#: templates/bits/history.tpl:16
 msgid "label-changes"
 msgstr "changes"
 
@@ -856,7 +856,7 @@ msgstr "goal"
 msgid "info-tag-view-statements"
 msgstr "View all statements with this tag."
 
-#: templates/bits/statement.tpl:124 templates/review/view.tpl:90
+#: templates/bits/statement.tpl:124 templates/review/view.tpl:92
 msgid "title-added-by"
 msgstr "added by"
 
@@ -1447,35 +1447,35 @@ msgstr ""
 msgid "info-review-complete"
 msgstr "This review is now complete. No further actions can be taken."
 
-#: templates/review/view.tpl:29
+#: templates/review/view.tpl:31
 msgid "info-review-target-item"
 msgstr "Complete item:"
 
-#: templates/review/view.tpl:37
+#: templates/review/view.tpl:39
 msgid "info-statement-duplicate"
 msgstr "This statement was flagged as a duplicate of"
 
-#: templates/review/view.tpl:59 templates/review/view.tpl:112
-#: templates/review/view.tpl:125
+#: templates/review/view.tpl:61 templates/review/view.tpl:114
+#: templates/review/view.tpl:127
 msgid "title-pertaining-to-statement"
 msgstr "pertaining to statement:"
 
-#: templates/review/view.tpl:74
+#: templates/review/view.tpl:76
 msgid "info-entity-duplicate"
 msgstr "This author was flagged as a duplicate of"
 
-#: templates/review/view.tpl:77
+#: templates/review/view.tpl:79
 msgid "info-entity-duplicate-process"
 msgstr ""
 "Accepting this flag will transfer all statements from this duplicate to its "
 "canonical author. The aliases, relationships and other attributes will not "
 "be transferred."
 
-#: templates/review/view.tpl:102
+#: templates/review/view.tpl:104
 msgid "title-pertaining-to-answer"
 msgstr "pertaining to answer:"
 
-#: templates/review/view.tpl:143
+#: templates/review/view.tpl:145
 msgid "info-review-queue-empty"
 msgstr "This review queue is empty."
 
@@ -1999,26 +1999,30 @@ msgstr "by"
 msgid "info-other-reason"
 msgstr "for other reasons."
 
-#: lib/model/Answer.php:125
+#: lib/model/Answer.php:125 lib/model/Statement.php:373
+msgid "info-edit-other-peoples-drafts"
+msgstr "You cannot edit other people's drafts."
+
+#: lib/model/Answer.php:130
 #, php-format
 msgid "info-minimum-reputation-add-answer-%s"
 msgstr "You need at least %s reputation to add answers."
 
-#: lib/model/Answer.php:133
+#: lib/model/Answer.php:138
 #, php-format
 msgid "info-minimum-reputation-edit-answer-%s"
 msgstr "You need at least %s reputation to edit answers."
 
-#: lib/model/Answer.php:139
+#: lib/model/Answer.php:144
 msgid "info-only-moderator-edit-proof-answer"
 msgstr ""
 "This answer was accepted as proof. Only moderators can edit it directly."
 
-#: lib/model/Answer.php:143
+#: lib/model/Answer.php:148
 msgid "info-banned-add-answer"
 msgstr "You are banned from adding answers."
 
-#: lib/model/Answer.php:147
+#: lib/model/Answer.php:152
 msgid "info-banned-edit-answer"
 msgstr "You are banned from editing answers."
 
@@ -2636,25 +2640,25 @@ msgstr "because it is low-quality."
 msgid "info-statement-by-owner"
 msgstr "by the user who added it."
 
-#: lib/model/Statement.php:373
+#: lib/model/Statement.php:378
 #, php-format
 msgid "info-minimum-reputation-add-statement-%s"
 msgstr "You need at least %s reputation to add statements."
 
-#: lib/model/Statement.php:381
+#: lib/model/Statement.php:386
 #, php-format
 msgid "info-minimum-reputation-edit-statement-%s"
 msgstr "You need at least %s reputation to edit statements."
 
-#: lib/model/Statement.php:387
+#: lib/model/Statement.php:392
 msgid "info-only-moderator-edit-statement-verdict"
 msgstr "This statement has a verdict. Only moderators can edit it directly."
 
-#: lib/model/Statement.php:391
+#: lib/model/Statement.php:396
 msgid "info-banned-add-statement"
 msgstr "You are banned from adding statements."
 
-#: lib/model/Statement.php:395
+#: lib/model/Statement.php:400
 msgid "info-banned-edit-statement"
 msgstr "You are banned from editing statements."
 
@@ -2780,7 +2784,7 @@ msgstr ""
 "You have reached your limit of %d pending edits. Please wait for some of "
 "them to be reviewed."
 
-#: lib/trait/PendingEditTrait.php:136
+#: lib/trait/PendingEditTrait.php:139
 msgid "can-suggest-changes"
 msgstr "You can suggest changes which will be placed in the review queue."
 
