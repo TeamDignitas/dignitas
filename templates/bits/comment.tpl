@@ -16,7 +16,7 @@
       {$comment->contents|md}
     </span>
 
-    <div class="surface mt-2 mb-2 px-2">
+    <div class="mt-2 mb-2 px-2">
       &mdash;
       {include 'bits/userLink.tpl' u=$comment->getUser()}
       {include 'bits/moment.tpl' t=$comment->createDate}

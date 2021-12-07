@@ -53,7 +53,7 @@
           </div>
         {/if}
 
-        <div class="text-muted mt-2 mb-2 row align-items-center surface">
+        <div class="text-muted mt-2 mb-2 row align-items-center">
           <div class="answer-read-only col-12 col-md-9">
             {t}answer-posted-by{/t}
             {include 'bits/userLink.tpl' u=$answer->getUser()}
