@@ -62,37 +62,35 @@ class Markdown extends Parsedown {
    * This is aimed at HTML blocks, not at Markdown code like [text](url).
    */
   protected function inlineMarkup($excerpt) {
-    $results = parent::inlineMarkup($excerpt);
-    if ($results) {
-      self::addUrlPrefix($results);
-    }
-    return $results;
+    $excerpt['text'] = self::addUrlPrefix($excerpt['text']);
+    return parent::inlineMarkup($excerpt);
   }
 
   protected function blockMarkup($line) {
-    $results = parent::blockMarkup($line);
-    if ($results) {
-      self::addUrlPrefix($results);
-    }
-    return $results;
+    $line['text'] = self::addUrlPrefix($line['text']);
+    return parent::blockMarkup($line);
+  }
+
+  protected function blockMarkupContinue($line, $block) {
+    $line['body'] = self::addUrlPrefix($line['body']);
+    return parent::blockMarkupContinue($line, $block);
   }
 
   /**
-   * Modifies $a['markup'] to prepend URL_PREFIX to URLs.
+   * Modifies $s to prepend URL_PREFIX to relative URLs.
    */
-  static function addUrlPrefix(array &$arr) {
-    if (isset($arr['markup'])) {
-      preg_match_all(
-        '/\b(href|src)=\"([^\"]+)\"/',
-        $arr['markup'],
-        $matches,
-        PREG_OFFSET_CAPTURE);
-      foreach (array_reverse($matches[2]) as $rec) {
-        if (Str::isRelativeUrl($rec[0])) {
-          $arr['markup'] = substr_replace($arr['markup'], Config::URL_PREFIX, $rec[1], 0);
-        }
+  static function addUrlPrefix(string $s) {
+    preg_match_all(
+      '/\b(href|src)=\"([^\"]+)\"/',
+      $s,
+      $matches,
+      PREG_OFFSET_CAPTURE);
+    foreach (array_reverse($matches[2]) as $rec) {
+      if (Str::isRelativeUrl($rec[0])) {
+        $s = substr_replace($s, Config::URL_PREFIX, $rec[1], 0);
       }
     }
+    return $s;
   }
 
   /**
