@@ -260,8 +260,8 @@ class Config {
       'ro_RO.utf8' => 'https://dignitas.ro/ajutor/cautare',
     ],
     'upload' => [ // for uploaded files inside Markdown fields
-      'en_US.utf8' => 'https://dignitas.ro/help/image-upload',
-      'ro_RO.utf8' => 'https://dignitas.ro/ajutor/incarcare-imagini',
+      'en_US.utf8' => 'https://dignitas.ro/help/file-upload',
+      'ro_RO.utf8' => 'https://dignitas.ro/ajutor/incarcare-fisiere',
     ],
     'verdict' => [ // next to the verdict field on the answer form
       'en_US.utf8' => 'https://dignitas.ro/help/verdicts',
