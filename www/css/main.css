@@ -531,6 +531,15 @@ body, main {
   padding: 0.75rem !important;
 }
 
+.markdown-heading a {
+  margin-left: 0.5em;
+  visibility: hidden;
+}
+
+.markdown-heading:hover a {
+  visibility: visible;
+}
+
 /******************************* tooltips *******************************/
 
 .tooltip-inner {
