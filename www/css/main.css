@@ -367,7 +367,7 @@ html.dark .dark-mode-toggle {
   border-bottom: 1px solid var(--bs-gray-400);
 }
 
-.answer-container:first-of-type {
+.answers-area .answer-container:first-of-type {
   border-top: 1px solid var(--bs-gray-500);
 }
 
