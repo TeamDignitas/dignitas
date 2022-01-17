@@ -375,6 +375,10 @@ html.dark .dark-mode-toggle {
   border-bottom: 0;
 }
 
+.editor-toolbar {
+  background-color: var(--bs-gray-200);
+}
+
 @media (max-width: 768px) {
   .center-mobile {
     text-align: center;
