@@ -12,7 +12,7 @@
     </a>
 
     {if count($entityTypes)}
-      <div class="gtable container">
+      <div class="gtable container mt-5">
         <div class="row gtable-header">
           <div class="col-12 col-sm-5">{t}label-name{/t}</div>
           <div class="col-3 col-sm-2 text-center">{t}label-loyalty-source{/t}</div>
