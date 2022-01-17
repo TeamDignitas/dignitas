@@ -12,7 +12,7 @@
     </a>
 
     {if count($domains)}
-      <div class="gtable container">
+      <div class="gtable container mt-5">
         <div class="row gtable-header">
           <div class="col-10 col-sm-5">{t}label-name{/t}</div>
           <div class="col-2 col-sm-1">{t}label-icon{/t}</div>

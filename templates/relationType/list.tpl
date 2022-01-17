@@ -18,7 +18,7 @@
     {/if}
 
     {if count($relationTypes)}
-      <div class="gtable container">
+      <div class="gtable container mt-5">
         <div class="row gtable-header">
           <div class="col-12 col-md-5">{t}label-name{/t}</div>
           <div class="col-4 col-md-2">{t}label-from-entity-type{/t}</div>
