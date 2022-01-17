@@ -337,12 +337,20 @@ html.dark .dark-mode-toggle {
   font-family: Arial;
 }
 
+.callout .quote-mark {
+  font-size: 2.5rem;
+}
+
 .quote-mark-open {
   margin-left: -2.5rem;
 }
 
 .quote-mark-closed {
   vertical-align: text-top;
+}
+
+.callout .quote-mark-open {
+  margin-left: 0;
 }
 
 /*************** answers, entity statements, user profile ***************/
@@ -374,6 +382,10 @@ html.dark .dark-mode-toggle {
 
   .your-answer {
    padding: 1rem;
+ }
+
+ .statement-title {
+   padding-left: 1.75rem !important;
  }
 }
 
