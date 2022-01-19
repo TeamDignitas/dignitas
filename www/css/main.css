@@ -762,26 +762,13 @@ body, main {
 
 /****************************** grid tables ******************************/
 
-.gtable {
+.dtable {
   font-size: .875rem; /* same as .small */
+  vertical-align: middle;
 }
 
-.gtable-header {
-  border-bottom-color: currentColor;
-  font-weight: bold;
-}
-
-.gtable-row {
-  align-items: center;
-  border-bottom-color: var(--bs-gray-300);
-}
-
-.gtable > * {
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  display: flex;
-}
-
-.gtable > * > * {
-  padding: 0.5rem 0.5rem;
+/* avoid unnecessary horizontal scrollbar for object diffs */
+.dtable td .row {
+  margin-left: 0;
+  margin-right: 0;
 }

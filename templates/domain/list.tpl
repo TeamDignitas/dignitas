@@ -12,37 +12,45 @@
     </a>
 
     {if count($domains)}
-      <div class="gtable container mt-5">
-        <div class="row gtable-header">
-          <div class="col-10 col-sm-5">{t}label-name{/t}</div>
-          <div class="col-2 col-sm-1">{t}label-icon{/t}</div>
-          <div class="col-10 col-sm-5">{t}label-display-value{/t}</div>
-          <div class="col-2 col-sm-1">{t}actions{/t}</div>
-        </div>
+      <div class="table-responsive">
+        <table class="table dtable text-nowrap">
 
-        {foreach $domains as $d}
-          <div class="row gtable-row">
-            <div class="col-10 col-sm-5">
-              {$d->name|escape}
-            </div>
-            <div class="col-2 col-sm-1">
-              {include "bits/image.tpl"
-                obj=$d
-                geometry=Config::THUMB_DOMAIN}
-            </div>
-            <div class="col-10 col-sm-5">
-              {$d->displayValue|escape}
-            </div>
-            <div class="col-2 col-sm-1">
-              <a
-                href="{$d->getEditUrl()}"
-                class="btn"
-                title="{t}link-edit{/t}">
-                {include "bits/icon.tpl" i=mode_edit}
-              </a>
-            </div>
-          </div>
-        {/foreach}
+          <thead>
+            <tr>
+              <th>{t}label-name{/t}</th>
+              <th>{t}label-icon{/t}</th>
+              <th>{t}label-display-value{/t}</th>
+              <th>{t}actions{/t}</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {foreach $domains as $d}
+              <tr>
+                <td>
+                  {$d->name|escape}
+                </td>
+                <td>
+                  {include "bits/image.tpl"
+                    obj=$d
+                    geometry=Config::THUMB_DOMAIN}
+                </td>
+                <td>
+                  {$d->displayValue|escape}
+                </td>
+                <td>
+                  <a
+                    href="{$d->getEditUrl()}"
+                    class="btn btn-sm"
+                    title="{t}link-edit{/t}">
+                    {include "bits/icon.tpl" i=mode_edit}
+                  </a>
+                </td>
+              </tr>
+            {/foreach}
+          </tbody>
+
+        </table>
       </div>
     {/if}
   </div>

@@ -23,8 +23,21 @@
 
         {* Display the object being reviewed. *}
         {if isset($objectDiff)}
-          <div class="gtable container">
-            {include "bits/diff/objectDiff.tpl" od=$objectDiff}
+          <div class="table-responsive">
+            <table class="table dtable">
+
+              <thead>
+                <tr>
+                  <th>{t}label-author{/t}</th>
+                  <th>{t}label-date{/t}</th>
+                  <th>{t}label-changes{/t}</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {include "bits/diff/objectDiff.tpl" od=$objectDiff}
+              </tbody>
+            </table>
           </div>
 
           <h3 class="mt-5 mb-3">

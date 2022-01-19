@@ -18,31 +18,39 @@
     {/if}
 
     {if count($relationTypes)}
-      <div class="gtable container mt-5">
-        <div class="row gtable-header">
-          <div class="col-12 col-md-5">{t}label-name{/t}</div>
-          <div class="col-4 col-md-2">{t}label-from-entity-type{/t}</div>
-          <div class="col-4 col-md-3">{t}label-to-entity-type{/t}</div>
-          <div class="col-2 col-md-1 text-center">{t}label-weight{/t}</div>
-          <div class="col-2 col-md-1 text-center">{t}actions{/t}</div>
-        </div>
+      <div class="table-responsive">
+        <table class="table dtable mt-5">
 
-        {foreach $relationTypes as $rt}
-          <div class="row gtable-row">
-            <div class="col-12 col-md-5">{$rt->name|escape}</div>
-            <div class="col-4 col-md-2">{$rt->getFromEntityType()->name|escape}</div>
-            <div class="col-4 col-md-3">{$rt->getToEntityType()->name|escape}</div>
-            <div class="col-2 col-md-1 text-center">{$rt->weight}</div>
-            <div class="col-2 col-md-1 text-center">
-              <a
-                href="{$rt->getEditUrl()}"
-                class="btn"
-                title="{t}link-edit{/t}">
-                {include "bits/icon.tpl" i=mode_edit}
-              </a>
-            </div>
-          </div>
-        {/foreach}
+          <thead>
+            <tr>
+              <th>{t}label-name{/t}</th>
+              <th>{t}label-from-entity-type{/t}</th>
+              <th>{t}label-to-entity-type{/t}</th>
+              <th class="text-center">{t}label-weight{/t}</th>
+              <th class="text-center">{t}actions{/t}</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {foreach $relationTypes as $rt}
+              <tr>
+                <td>{$rt->name|escape}</td>
+                <td>{$rt->getFromEntityType()->name|escape}</td>
+                <td>{$rt->getToEntityType()->name|escape}</td>
+                <td class="text-center">{$rt->weight}</td>
+                <td class="text-center">
+                  <a
+                    href="{$rt->getEditUrl()}"
+                    class="btn btn-sm"
+                    title="{t}link-edit{/t}">
+                    {include "bits/icon.tpl" i=mode_edit}
+                  </a>
+                </td>
+              </tr>
+            {/foreach}
+          </tbody>
+
+        </table>
       </div>
     {/if}
   </div>
