@@ -1,16 +1,16 @@
 <div class="gtable gx-2">
 
   <div class="row gtable-header">
-    <div class="col-12 col-lg-3">{t}label-date{/t}</div>
-    <div class="col-12 col-lg-9">{t}label-action{/t}</div>
+    <div class="col-3">{t}label-date{/t}</div>
+    <div class="col-9">{t}label-action{/t}</div>
   </div>
 
   {foreach $actions as $a}
     <div class="row gtable-row">
-      <div class="col-12 col-lg-3 text-muted">
+      <div class="col-3 text-muted">
         {include "bits/moment.tpl" t=$a->createDate}
       </div>
-      <div class="col-12 col-lg-9">
+      <div class="col-9">
         {$obj=$a->getObject()}
         {if !$obj}   {* Underlying object has been deleted *}
           {$a->getTypeName()}

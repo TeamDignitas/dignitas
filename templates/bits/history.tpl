@@ -11,9 +11,9 @@
     {else}
       <div class="gtable container">
         <div class="row gtable-header">
-          <div class="col-6">{t}label-author{/t}</div>
-          <div class="col-6">{t}label-date{/t}</div>
-          <div class="col-12">{t}label-changes{/t}</div>
+          <div class="col-4 col-xl-2">{t}label-author{/t}</div>
+          <div class="col-8 col-xl-2">{t}label-date{/t}</div>
+          <div class="col-12 col-xl-8">{t}label-changes{/t}</div>
         </div>
 
         {foreach $history as $od}
