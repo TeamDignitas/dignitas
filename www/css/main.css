@@ -6,6 +6,10 @@ h1::first-letter {
   text-transform: capitalize;
 }
 
+.user-capitalise::first-letter {
+  text-transform: none;
+}
+
 .user-link {
   color: inherit !important;
   font-weight: bold;
