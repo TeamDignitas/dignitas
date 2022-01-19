@@ -42,7 +42,7 @@
 
       <div class="col-12 col-md-9 mt-2">
         <h1 class="fw-bold mb-5 center-mobile">
-          {t}label-user{/t} {$user}
+          {$user}
         </h1>
 
         <dl class="row">
