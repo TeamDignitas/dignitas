@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2022-01-21 15:09+0200\n"
-"PO-Revision-Date: 2022-01-21 15:09+0200\n"
+"PO-Revision-Date: 2022-01-21 15:29+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -2217,7 +2217,7 @@ msgstr "new registered user:"
 
 #: lib/model/Relation.php:32
 msgid "since"
-msgstr "începînd cu"
+msgstr "since"
 
 #: lib/model/Relation.php:34
 msgid "until"
