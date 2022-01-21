@@ -18,6 +18,15 @@ class Util {
     return $results;
   }
 
+  /* Replaces [ $x ] by [ $x->id => $x ] */
+  static function mapById($objects) {
+    $results = [];
+    foreach ($objects as $obj) {
+      $results[$obj->id] = $obj;
+    }
+    return $results;
+  }
+
   static function redirect($location, $statusCode = 303) {
     Snackbar::saveToSession();
     header("Location: $location", true, $statusCode);

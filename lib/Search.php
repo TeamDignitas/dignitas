@@ -12,18 +12,22 @@ class Search {
       self::searchStatements([ 'term' => $escapedQuery ], Ct::SORT_VERDICT_DATE_DESC, 1);
     list ($numEntityPages, $entities) =
       self::searchEntities([ 'term' => $escapedQuery ], Ct::SORT_NAME_ASC, 1);
+    $relations =
+      self::searchRelations([ 'term' => $escapedQuery ], $limit);
 
     $results = [
       'entities' => $entities,
       'numEntityPages' => $numEntityPages,
       'statements' => $statements,
       'numStatementPages' => $numStatementPages,
+      'relations' => $relations,
       'tags' => self::searchTags($escapedQuery, $limit),
       'regions' => self::searchRegions($escapedQuery, $limit),
     ];
     $results['empty'] =
       empty($results['entities']) &&
       empty($results['statements']) &&
+      empty($results['relations']) &&
       empty($results['tags']) &&
       empty($results['regions']);
     return $results;
@@ -229,6 +233,109 @@ class Search {
         ->select_expr('ifnull(se.score, 0)', 'score')
         ->left_outer_join('statement_ext', [ 's.id', '=', 'se.statementId' ], 'se');
     }
+  }
+
+  /**
+   * Searches entity relationships.
+   *
+   * @param array $filters A map of field => value.
+   *   - term: mandatory; the search term
+   *   - active: optional; only load active (ongoing) relationships
+   */
+  static function searchRelations($filters, $limit = self::LIMIT) {
+    // Idiorm cannot retrieve individual objects from a tuple. Fields with
+    // identical names only appear once. So we do this in stages by object type.
+
+    $query = $filters['term'];
+    if (!$query) {
+      return [];
+    }
+
+    // Stage 1: relation types
+    $rts = Model::factory('RelationType')
+      ->where_any_is([
+        [ 'name' => "{$query}%" ],
+        [ 'name' => "% {$query}%" ],
+        [ 'name' => "%-{$query}%" ],
+      ], 'like')
+      ->find_many();
+    $relationTypeIds = Util::objectProperty($rts, 'id');
+    $relationTypeMap = Util::mapById($rts);
+
+    // Stage 2: relations
+    $relations = Model::factory('Relation')
+      ->where_in('relationTypeId', $relationTypeIds ?? [ 0 ]);
+
+    if (isset($filters['active'])) {
+      $today = Time::today();
+      $relations = $relations
+        >where_raw('(`endDate` = ? OR `endDate` >= ?)', [ '0000-00-00', $today ]);
+    }
+    $relations = $relations->find_many();
+
+    // Stage 3: necessary, active entities
+    // Load them all at once to minimize the number of queries.
+    $entityIds = array_unique(array_merge(
+      Util::objectProperty($relations, 'fromEntityId'),
+      Util::objectProperty($relations, 'toEntityId')));
+
+    $entities = Model::factory('Entity')
+      ->where_in('id', $entityIds ?? [ 0 ])
+      ->where('status', Ct::STATUS_ACTIVE)
+      ->find_many();
+    $entityMap = Util::mapById($entities);
+
+    // Stage 4: group relations by (relationType, toEntity)
+    $helper = []; // $helper[$relationTypeId][$toEntityId] is a position in $results
+    $results = [];
+    foreach ($relations as $rel) {
+      if (isset($entityMap[$rel->fromEntityId]) &&
+          isset($entityMap[$rel->toEntityId])) {
+
+        $pos = $helper[$rel->relationTypeId][$rel->toEntityId] ?? null;
+        if ($pos === null) {
+          $pos = $helper[$rel->relationTypeId][$rel->toEntityId] = count($results);
+          $results[] = [
+            'relationType' => $relationTypeMap[$rel->relationTypeId],
+            'toEntity' => $entityMap[$rel->toEntityId],
+            'data' => [],
+          ];
+        }
+
+        $results[$pos]['data'][] = [
+          'relation' => $rel,
+          'fromEntity' => $entityMap[$rel->fromEntityId],
+        ];
+      }
+    }
+
+    // Stage 5: sort groups and data within each group
+    usort($results, function($a, $b) {
+      $rtA = mb_strtolower($a['relationType']->name);
+      $rtB = mb_strtolower($b['relationType']->name);
+      if ($rtA != $rtB) {
+        return $rtA <=> $rtB;
+      }
+
+      $entityA = mb_strtolower($a['toEntity']->name);
+      $entityB = mb_strtolower($b['toEntity']->name);
+      return $entityA <=> $entityB;
+    });
+
+    foreach ($results as &$rec) {
+      usort($rec['data'], function($a, $b) {
+        $dateCmp = $a['relation']->newerThan($b['relation']);
+        if ($dateCmp) {
+          return $dateCmp;
+        }
+
+        $entityA = mb_strtolower($a['fromEntity']->name);
+        $entityB = mb_strtolower($b['fromEntity']->name);
+        return $entityA <=> $entityB;
+      });
+    }
+
+    return $results;
   }
 
   // load tags by prefix match

@@ -9,8 +9,15 @@
       <nav class="nav nav-pills mt-5 pt-5 activate-first-tab">
         {if count($results.entities)}
           <a class="nav-link text-capitalize" id="entities-tab" data-bs-toggle="tab" role="tab" aria-controls="results-entities"
-             href="#results-entities">
+            href="#results-entities">
             {t}title-entities{/t}
+          </a>
+        {/if}
+
+        {if count($results.relations)}
+          <a class="nav-link text-capitalize" id="relations-tab" data-bs-toggle="tab" role="tab" aria-controls="results-relations"
+            href="#results-relations">
+            {t}title-relations{/t}
           </a>
         {/if}
 
@@ -53,6 +60,25 @@
             n=$results.numEntityPages
             url="{Config::URL_PREFIX}ajax/search-entities"
             target="#entity-list-wrapper"}
+        </div>
+      {/if}
+
+      {if count($results.relations)}
+        <div id="results-relations" class="tab-pane fade" role="tabpanel" aria-labelledby="relations-tab">
+          {foreach $results.relations as $tuple}
+            <h5>
+              {$tuple.relationType->name|escape}
+              {include "bits/entityLink.tpl" e=$tuple.toEntity phrase=$tuple.relationType->phrase}
+            </h5>
+            <ul>
+              {foreach $tuple.data as $rec}
+                <li {if $rec.relation->ended()}class="text-muted"{/if}>
+                  {include "bits/entityLink.tpl" e=$rec.fromEntity}
+                  {$rec.relation->getDateRangeString()}
+                </li>
+              {/foreach}
+            </ul>
+          {/foreach}
         </div>
       {/if}
 

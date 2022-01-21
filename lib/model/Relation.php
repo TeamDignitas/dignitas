@@ -68,8 +68,23 @@ class Relation extends Proto {
    * @return bool
    */
   function ended() {
-    return $this->endDate != '0000-00-00' &&
+    return !$this->isOpenEnded() &&
       $this->endDate < Time::today();
+  }
+
+  function isOpenEnded() {
+    return $this->endDate == '0000-00-00';
+  }
+
+  /**
+   * Returns -1, 0 or 1 if this relation is newer, as new or older than $other.
+   */
+  function newerThan($other) {
+    if ($this->isOpenEnded() ^ $other->isOpenEnded()) {
+      return -($this->isOpenEnded() <=> $other->isOpenEnded());
+    }
+
+    return -($this->endDate <=> $other->endDate);
   }
 
   /**
