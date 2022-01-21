@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-12-06 13:15+0200\n"
-"PO-Revision-Date: 2021-12-06 13:15+0200\n"
+"POT-Creation-Date: 2022-01-21 15:09+0200\n"
+"PO-Revision-Date: 2022-01-21 15:09+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -114,9 +114,9 @@ msgstr "answers"
 
 #: templates/aggregate/drafts.tpl:27 templates/bits/editButton.tpl:10
 #: templates/bits/relation.tpl:22 templates/cannedResponse/list.tpl:39
-#: templates/domain/list.tpl:40 templates/entityType/list.tpl:51
+#: templates/domain/list.tpl:45 templates/entityType/list.tpl:56
 #: templates/help/categoryView.tpl:39 templates/help/pageView.tpl:36
-#: templates/region/view.tpl:15 templates/relationType/list.tpl:40
+#: templates/region/view.tpl:15 templates/relationType/list.tpl:45
 #: templates/staticResource/list.tpl:44 templates/tag/view.tpl:15
 #: templates/user/view.tpl:124
 msgid "link-edit"
@@ -142,21 +142,25 @@ msgstr "search results"
 msgid "title-entities"
 msgstr "authors"
 
-#: templates/aggregate/search.tpl:20 templates/tag/view.tpl:36
+#: templates/aggregate/search.tpl:20 templates/bits/entity.tpl:56
+msgid "title-relations"
+msgstr "relationships"
+
+#: templates/aggregate/search.tpl:27 templates/tag/view.tpl:36
 msgid "title-statements"
 msgstr "statements"
 
-#: templates/aggregate/search.tpl:27 templates/region/list.tpl:3
+#: templates/aggregate/search.tpl:34 templates/region/list.tpl:3
 #: templates/region/list.tpl:7
 msgid "title-regions"
 msgstr "regions"
 
-#: templates/aggregate/search.tpl:34 templates/tag/list.tpl:3
+#: templates/aggregate/search.tpl:41 templates/tag/list.tpl:3
 #: templates/tag/list.tpl:7
 msgid "title-tags"
 msgstr "tags"
 
-#: templates/aggregate/search.tpl:39
+#: templates/aggregate/search.tpl:46
 msgid "info-no-search-results"
 msgstr "Your search «%1» produced no results."
 
@@ -285,24 +289,24 @@ msgstr "click here if you are not redirected automatically"
 msgid "title-reset-password"
 msgstr "reset password"
 
-#: templates/bits/actions.tpl:4 templates/bits/history.tpl:15
-#: templates/bits/notifications.tpl:4
+#: templates/bits/actions.tpl:6 templates/bits/history.tpl:19
+#: templates/bits/notifications.tpl:6 templates/review/view.tpl:32
 msgid "label-date"
 msgstr "date"
 
-#: templates/bits/actions.tpl:5 templates/bits/notifications.tpl:5
+#: templates/bits/actions.tpl:7 templates/bits/notifications.tpl:8
 msgid "label-action"
 msgstr "action"
 
-#: templates/bits/actions.tpl:21
+#: templates/bits/actions.tpl:25
 msgid "action-target-answer"
 msgstr "an answer"
 
-#: templates/bits/actions.tpl:29
+#: templates/bits/actions.tpl:33
 msgid "action-target-comment"
 msgstr "a comment"
 
-#: templates/bits/actions.tpl:44
+#: templates/bits/actions.tpl:48
 msgid "action-updated-user-profile"
 msgstr "updated user profile"
 
@@ -324,15 +328,15 @@ msgid_plural "tooltip-downvote-answer-plural-%1"
 msgstr[0] "Downvoting costs one reputation point."
 msgstr[1] "Downvoting costs %1 reputation points."
 
-#: templates/bits/answer.tpl:50
+#: templates/bits/answer.tpl:58
 msgid "answer-posted-by"
 msgstr "posted by"
 
-#: templates/bits/answer.tpl:76
+#: templates/bits/answer.tpl:84
 msgid "info-answer-permalink"
 msgstr "permanent link to this answer"
 
-#: templates/bits/answer.tpl:78 templates/bits/comment.tpl:39
+#: templates/bits/answer.tpl:86 templates/bits/comment.tpl:41
 msgid "link-permalink"
 msgstr "permalink"
 
@@ -362,15 +366,15 @@ msgstr "Tips for answering"
 msgid "label-answer-resources-checkbox"
 msgstr "show tips when I'm composing an answer"
 
-#: templates/bits/comment.tpl:37
+#: templates/bits/comment.tpl:39
 msgid "info-comment-permalink"
 msgstr "permanent link to this comment"
 
-#: templates/bits/comment.tpl:47
+#: templates/bits/comment.tpl:49
 msgid "info-confirm-delete-comment"
 msgstr "Are you sure you want to delete this comment?"
 
-#: templates/bits/comment.tpl:49 templates/bs/actions.tpl:34
+#: templates/bits/comment.tpl:51 templates/bs/actions.tpl:34
 msgid "link-delete"
 msgstr "delete"
 
@@ -384,19 +388,19 @@ msgstr "canned responses"
 msgid "link-cancel"
 msgstr "cancel"
 
-#: templates/bits/diff/objectDiff.tpl:38
+#: templates/bits/diff/objectDiff.tpl:41
 msgid "label-duplicate-of"
 msgstr "duplicate of"
 
-#: templates/bits/diff/objectDiff.tpl:59
+#: templates/bits/diff/objectDiff.tpl:63
 msgid "info-reviewed-because"
 msgstr "review reason"
 
-#: templates/bits/diff/objectDiff.tpl:62
+#: templates/bits/diff/objectDiff.tpl:66
 msgid "label-resolution"
 msgstr "resolution"
 
-#: templates/bits/diff/objectDiff.tpl:72
+#: templates/bits/diff/objectDiff.tpl:76
 msgid "title-votes"
 msgstr "votes"
 
@@ -418,10 +422,6 @@ msgstr "suggest an edit"
 msgid "title-alias"
 msgstr "also known as"
 
-#: templates/bits/entity.tpl:56
-msgid "title-relations"
-msgstr "relationships"
-
 #: templates/bits/entity.tpl:67 templates/region/view.tpl:3
 msgid "title-region"
 msgstr "region"
@@ -438,15 +438,15 @@ msgstr "external links"
 msgid "title-members"
 msgstr "members"
 
-#: templates/bits/entityFilters.tpl:7
+#: templates/bits/entityFilters.tpl:7 templates/bits/relationFilters.tpl:7
 msgid "label-sort"
 msgstr "order by"
 
-#: templates/bits/entityFilters.tpl:15
+#: templates/bits/entityFilters.tpl:15 templates/bits/relationFilters.tpl:15
 msgid "sort-name-asc"
 msgstr "alphabetical order"
 
-#: templates/bits/entityFilters.tpl:16
+#: templates/bits/entityFilters.tpl:16 templates/bits/relationFilters.tpl:16
 msgid "sort-name-desc"
 msgstr "reverse alphabetical order"
 
@@ -459,11 +459,12 @@ msgid "sort-create-date-asc"
 msgstr "least recently added"
 
 #: templates/bits/entityFilters.tpl:24 templates/bits/entityFilters.tpl:34
+#: templates/bits/relationFilters.tpl:22 templates/bits/relationFilters.tpl:32
 #: templates/bits/statementFilters.tpl:80
 msgid "label-term"
 msgstr "text"
 
-#: templates/bits/entityFilters.tpl:40 templates/bits/statementFilters.tpl:106
+#: templates/bits/entityFilters.tpl:40 templates/bits/statementFilters.tpl:104
 #: templates/entity/edit.tpl:169 templates/statement/edit.tpl:137
 #: lib/model/RevisionEntity.php:36 lib/model/RevisionStatement.php:30
 msgid "label-region"
@@ -618,11 +619,12 @@ msgid "info-no-history"
 msgstr ""
 "There are no changes to this item. The current version is the only version."
 
-#: templates/bits/history.tpl:14 templates/bits/statementFilters.tpl:23
+#: templates/bits/history.tpl:18 templates/bits/statementFilters.tpl:23
+#: templates/review/view.tpl:31
 msgid "label-author"
 msgstr "author"
 
-#: templates/bits/history.tpl:16
+#: templates/bits/history.tpl:20 templates/review/view.tpl:33
 msgid "label-changes"
 msgstr "changes"
 
@@ -713,11 +715,11 @@ msgstr "schimbă"
 msgid "link-log-out"
 msgstr "log out"
 
-#: templates/bits/notifications.tpl:6
+#: templates/bits/notifications.tpl:7
 msgid "label-event"
 msgstr "event"
 
-#: templates/bits/notifications.tpl:18
+#: templates/bits/notifications.tpl:55
 msgid "info-notification-unsubscribe"
 msgstr "unsubscribe from notifications for this item"
 
@@ -732,6 +734,14 @@ msgstr "sources"
 #: templates/bits/relationEdit.tpl:45
 msgid "link-delete-relation"
 msgstr "delete the relationship"
+
+#: templates/bits/relationFilters.tpl:38
+msgid "label-active-on"
+msgstr "active on"
+
+#: templates/bits/relationFilters.tpl:54
+msgid "label-active-relation"
+msgstr "active now"
 
 #: templates/bits/reviewActions.tpl:15
 msgid "info-confirm-moderator-review-remove"
@@ -856,7 +866,7 @@ msgstr "goal"
 msgid "info-tag-view-statements"
 msgstr "View all statements with this tag."
 
-#: templates/bits/statement.tpl:124 templates/review/view.tpl:92
+#: templates/bits/statement.tpl:126 templates/review/view.tpl:105
 msgid "title-added-by"
 msgstr "added by"
 
@@ -880,15 +890,15 @@ msgstr "oldest statements"
 msgid "label-other-filters"
 msgstr "other filters"
 
-#: templates/bits/statementFilters.tpl:89 templates/entity/edit.tpl:127
+#: templates/bits/statementFilters.tpl:88 templates/entity/edit.tpl:127
 msgid "label-start-date"
 msgstr "start date"
 
-#: templates/bits/statementFilters.tpl:99 templates/entity/edit.tpl:128
+#: templates/bits/statementFilters.tpl:97 templates/entity/edit.tpl:128
 msgid "label-end-date"
 msgstr "end date"
 
-#: templates/bits/statementFilters.tpl:119
+#: templates/bits/statementFilters.tpl:117
 msgid "link-search-details"
 msgstr "search help"
 
@@ -981,11 +991,11 @@ msgstr "save order"
 msgid "title-edit-domain"
 msgstr "edit domain"
 
-#: templates/domain/edit.tpl:12 templates/domain/list.tpl:17
+#: templates/domain/edit.tpl:12 templates/domain/list.tpl:20
 #: templates/entity/edit.tpl:28 templates/entityType/edit.tpl:12
-#: templates/entityType/list.tpl:17 templates/help/categoryEdit.tpl:42
+#: templates/entityType/list.tpl:20 templates/help/categoryEdit.tpl:42
 #: templates/region/edit.tpl:25 templates/relationType/edit.tpl:11
-#: templates/relationType/list.tpl:23 templates/staticResource/edit.tpl:12
+#: templates/relationType/list.tpl:26 templates/staticResource/edit.tpl:12
 #: templates/staticResource/list.tpl:18 templates/tag/edit.tpl:25
 msgid "label-name"
 msgstr "name"
@@ -994,7 +1004,7 @@ msgstr "name"
 msgid "info-domain-name"
 msgstr "a domain name like google.com"
 
-#: templates/domain/edit.tpl:22 templates/domain/list.tpl:19
+#: templates/domain/edit.tpl:22 templates/domain/list.tpl:22
 msgid "label-display-value"
 msgstr "display value"
 
@@ -1024,13 +1034,13 @@ msgstr "domains"
 msgid "link-add-domain"
 msgstr "add a domain"
 
-#: templates/domain/list.tpl:18 templates/tag/edit.tpl:79
+#: templates/domain/list.tpl:21 templates/tag/edit.tpl:79
 msgid "label-icon"
 msgstr "icon"
 
-#: templates/domain/list.tpl:20 templates/entity/edit.tpl:70
-#: templates/entity/edit.tpl:129 templates/entityType/list.tpl:21
-#: templates/relationType/list.tpl:27 templates/staticResource/list.tpl:21
+#: templates/domain/list.tpl:23 templates/entity/edit.tpl:70
+#: templates/entity/edit.tpl:129 templates/entityType/list.tpl:24
+#: templates/relationType/list.tpl:30 templates/staticResource/list.tpl:21
 #: templates/user/view.tpl:132
 msgid "actions"
 msgstr "acțiuni"
@@ -1180,7 +1190,7 @@ msgstr "name"
 msgid "info-loyalty-source"
 msgstr "Authors of this type have loyalty."
 
-#: templates/entityType/edit.tpl:28 templates/entityType/list.tpl:18
+#: templates/entityType/edit.tpl:28 templates/entityType/list.tpl:21
 msgid "label-loyalty-source"
 msgstr "has loyalty"
 
@@ -1188,7 +1198,7 @@ msgstr "has loyalty"
 msgid "info-loyalty-sink"
 msgstr "Authors of this type can be the object of loyalty."
 
-#: templates/entityType/edit.tpl:36 templates/entityType/list.tpl:19
+#: templates/entityType/edit.tpl:36 templates/entityType/list.tpl:22
 msgid "label-loyalty-sink"
 msgstr "object of loyalty"
 
@@ -1196,7 +1206,7 @@ msgstr "object of loyalty"
 msgid "info-has-color"
 msgstr "Authors of this type have a color."
 
-#: templates/entityType/edit.tpl:43 templates/entityType/list.tpl:20
+#: templates/entityType/edit.tpl:43 templates/entityType/list.tpl:23
 msgid "label-has-color"
 msgstr "has a color"
 
@@ -1204,7 +1214,7 @@ msgstr "has a color"
 msgid "info-is-default"
 msgstr "Show this type by default for newly created authors."
 
-#: templates/entityType/edit.tpl:50 templates/entityType/list.tpl:29
+#: templates/entityType/edit.tpl:50 templates/entityType/list.tpl:34
 msgid "label-is-default"
 msgstr "default"
 
@@ -1293,15 +1303,15 @@ msgstr "invites"
 msgid "link-add-invite"
 msgstr "send an invite"
 
-#: templates/invite/list.tpl:20
+#: templates/invite/list.tpl:23
 msgid "label-invite-from"
 msgstr "from"
 
-#: templates/invite/list.tpl:21
+#: templates/invite/list.tpl:24
 msgid "label-invite-to"
 msgstr "to"
 
-#: templates/invite/list.tpl:22
+#: templates/invite/list.tpl:25
 msgid "label-invite-accepted-by"
 msgstr "accepted by"
 
@@ -1383,11 +1393,11 @@ msgstr "edit relationship type"
 msgid "info-relation-type-name"
 msgstr "name"
 
-#: templates/relationType/edit.tpl:23 templates/relationType/list.tpl:24
+#: templates/relationType/edit.tpl:23 templates/relationType/list.tpl:27
 msgid "label-from-entity-type"
 msgstr "from author type"
 
-#: templates/relationType/edit.tpl:40 templates/relationType/list.tpl:25
+#: templates/relationType/edit.tpl:40 templates/relationType/list.tpl:28
 msgid "label-to-entity-type"
 msgstr "to author type"
 
@@ -1399,7 +1409,7 @@ msgstr "phrase type"
 msgid "info-relation-type-phrase"
 msgstr "How does the relationship refer to the target author?"
 
-#: templates/relationType/edit.tpl:73 templates/relationType/list.tpl:26
+#: templates/relationType/edit.tpl:73 templates/relationType/list.tpl:29
 msgid "label-weight"
 msgstr "weight"
 
@@ -1447,35 +1457,35 @@ msgstr ""
 msgid "info-review-complete"
 msgstr "This review is now complete. No further actions can be taken."
 
-#: templates/review/view.tpl:31
+#: templates/review/view.tpl:44
 msgid "info-review-target-item"
 msgstr "Complete item:"
 
-#: templates/review/view.tpl:39
+#: templates/review/view.tpl:52
 msgid "info-statement-duplicate"
 msgstr "This statement was flagged as a duplicate of"
 
-#: templates/review/view.tpl:61 templates/review/view.tpl:114
-#: templates/review/view.tpl:127
+#: templates/review/view.tpl:74 templates/review/view.tpl:127
+#: templates/review/view.tpl:140
 msgid "title-pertaining-to-statement"
 msgstr "pertaining to statement:"
 
-#: templates/review/view.tpl:76
+#: templates/review/view.tpl:89
 msgid "info-entity-duplicate"
 msgstr "This author was flagged as a duplicate of"
 
-#: templates/review/view.tpl:79
+#: templates/review/view.tpl:92
 msgid "info-entity-duplicate-process"
 msgstr ""
 "Accepting this flag will transfer all statements from this duplicate to its "
 "canonical author. The aliases, relationships and other attributes will not "
 "be transferred."
 
-#: templates/review/view.tpl:104
+#: templates/review/view.tpl:117
 msgid "title-pertaining-to-answer"
 msgstr "pertaining to answer:"
 
-#: templates/review/view.tpl:145
+#: templates/review/view.tpl:158
 msgid "info-review-queue-empty"
 msgstr "This review queue is empty."
 
@@ -1781,10 +1791,6 @@ msgstr ""
 msgid "label-accuracy"
 msgstr "accuracy"
 
-#: templates/user/view.tpl:45
-msgid "label-user"
-msgstr "user"
-
 #: templates/user/view.tpl:56
 msgid "link-privilege-details"
 msgstr "What privileges do I gain from this?"
@@ -1817,33 +1823,33 @@ msgstr "until"
 msgid "link-ban"
 msgstr "ban..."
 
-#: lib/Router.php:466
+#: lib/Router.php:469
 msgid "info-language-changed"
 msgstr ""
 "Interface language changed. Page contents (statements, answers etc.) are "
 "still in the language in which they were written."
 
-#: lib/Search.php:279
+#: lib/Search.php:402
 msgid "search-keyword-closed"
 msgstr "closed"
 
-#: lib/Search.php:279 lib/Search.php:283 lib/Search.php:305 lib/Search.php:309
+#: lib/Search.php:402 lib/Search.php:406 lib/Search.php:428 lib/Search.php:432
 msgid "search-keyword-yes"
 msgstr "yes"
 
-#: lib/Search.php:279 lib/Search.php:283
+#: lib/Search.php:402 lib/Search.php:406
 msgid "search-keyword-no"
 msgstr "no"
 
-#: lib/Search.php:283
+#: lib/Search.php:406
 msgid "search-keyword-duplicate"
 msgstr "duplicate"
 
-#: lib/Search.php:288
+#: lib/Search.php:411
 msgid "search-keyword-answers"
 msgstr "answers"
 
-#: lib/Search.php:293
+#: lib/Search.php:416
 msgid "search-keyword-score"
 msgstr "score"
 
@@ -1896,7 +1902,7 @@ msgstr[1] "%d seconds ago"
 msgid "info-already-logged-in"
 msgstr "You are already logged in."
 
-#: lib/Util.php:39 routes/notification/list.php:17
+#: lib/Util.php:48 routes/notification/list.php:17
 #: routes/subscription/save.php:17 routes/user/changeReputation.php:16
 msgid "info-must-log-in"
 msgstr "Please log in to perform this action."
@@ -2217,20 +2223,20 @@ msgstr "începînd cu"
 msgid "until"
 msgstr "pînă la"
 
-#: lib/model/Relation.php:87
+#: lib/model/Relation.php:102
 msgid "info-target-entity"
 msgstr "Please choose a target author."
 
-#: lib/model/Relation.php:89
+#: lib/model/Relation.php:104
 msgid "info-related-itself"
 msgstr "An author cannot be related to itself."
 
-#: lib/model/Relation.php:94
+#: lib/model/Relation.php:109
 #, php-format
 msgid "info-incorrect-relation-%s-%s-%s"
 msgstr "%s cannot be %s %s."
 
-#: lib/model/Relation.php:101
+#: lib/model/Relation.php:116
 msgid "info-dates-out-of-order"
 msgstr "The start date cannot be past the end date."
 
@@ -3549,3 +3555,6 @@ msgstr "Cannot vote: object does not exist."
 #: routes/vote/save.php:50
 msgid "info-cannot-self-vote"
 msgstr "You cannot vote on your own messages."
+
+#~ msgid "label-user"
+#~ msgstr "user"

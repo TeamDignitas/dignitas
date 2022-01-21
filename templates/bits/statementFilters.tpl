@@ -84,7 +84,6 @@
       <div class="col-12 col-md-auto">
         <input
           type="text"
-          id="field-min-date"
           class="form-control form-control-sm datepicker"
           placeholder="{t}label-start-date{/t}"
           size="15">
@@ -94,7 +93,6 @@
       <div class="col-12 col-md-auto">
         <input
           type="text"
-          id="field-max-date"
           class="form-control form-control-sm datepicker"
           placeholder="{t}label-end-date{/t}"
           size="15">

@@ -267,10 +267,24 @@ class Search {
     $relations = Model::factory('Relation')
       ->where_in('relationTypeId', $relationTypeIds ?: [ 0 ]);
 
-    if ($filters['active'] ?? false) {
-      $today = Time::today();
-      $relations = $relations
-        ->where_raw('(`endDate` = ? OR `endDate` >= ?)', [ '0000-00-00', $today ]);
+    foreach ($filters as $field => $value) {
+      if (!empty($value)) {
+        switch ($field) {
+          case 'active':
+            $today = Time::today();
+            $relations = $relations
+              ->where_raw('(`endDate` = ? OR `endDate` >= ?)', [ '0000-00-00', $today ]);
+            break;
+          case 'activeDate':
+            $relations = $relations
+              ->where_raw('(`startDate` != ? AND `startDate` <= ?)', [ '0000-00-00', $value ])
+              ->where_raw('(`endDate` = ? OR `endDate` >= ?)', [ '0000-00-00', $value ]);
+            break;
+          case 'term':
+            break; // processed before
+          default: die('Bad filter field.');
+        }
+      }
     }
     $relations = $relations->find_many();
 

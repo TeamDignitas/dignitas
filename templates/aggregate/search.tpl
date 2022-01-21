@@ -64,7 +64,12 @@
       {/if}
 
       {if count($results.relations)}
-        <div id="results-relations" class="tab-pane fade" role="tabpanel" aria-labelledby="relations-tab"
+        <div
+          id="results-relations"
+          class="tab-pane fade"
+          role="tabpanel"
+          aria-labelledby="relations-tab">
+
           {include "bits/relationFilters.tpl" term=$query}
 
           <div id="relation-list-wrapper">
@@ -75,6 +80,7 @@
             n=1
             url="{Config::URL_PREFIX}ajax/search-relations"
             target="#relation-list-wrapper"}
+
         </div>
       {/if}
 

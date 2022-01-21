@@ -127,7 +127,10 @@ $(function() {
     form.find('input.actionable, select.actionable').each(function() {
       // strip [] from array inputs
       var name = $(this).attr('name').replace(/[\[\]]+/g,'');
-      args[name] = $(this).val();
+
+      args[name] = $(this).is(':checkbox')
+        ? +$(this).is(':checked') // convert to int
+        : $(this).val();
     });
 
     return args;

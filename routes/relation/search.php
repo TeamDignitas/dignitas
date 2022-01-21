@@ -4,7 +4,8 @@ $order = Request::get('order', 0);
 
 $filters = [
   'term' =>  addslashes(Request::get('term')),
-  'active' => Request::has('active'),
+  'active' => Request::get('active', 0),
+  'activeDate' => Request::get('activeDate'),
 ];
 
 $results = Search::searchRelations($filters, $order);
