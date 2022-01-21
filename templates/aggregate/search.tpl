@@ -64,21 +64,17 @@
       {/if}
 
       {if count($results.relations)}
-        <div id="results-relations" class="tab-pane fade" role="tabpanel" aria-labelledby="relations-tab">
-          {foreach $results.relations as $tuple}
-            <h5>
-              {$tuple.relationType->name|escape}
-              {include "bits/entityLink.tpl" e=$tuple.toEntity phrase=$tuple.relationType->phrase}
-            </h5>
-            <ul>
-              {foreach $tuple.data as $rec}
-                <li {if $rec.relation->ended()}class="text-muted"{/if}>
-                  {include "bits/entityLink.tpl" e=$rec.fromEntity}
-                  {$rec.relation->getDateRangeString()}
-                </li>
-              {/foreach}
-            </ul>
-          {/foreach}
+        <div id="results-relations" class="tab-pane fade" role="tabpanel" aria-labelledby="relations-tab"
+          {include "bits/relationFilters.tpl" term=$query}
+
+          <div id="relation-list-wrapper">
+            {include "bits/relationSearchResults.tpl" results=$results.relations}
+          </div>
+
+          {include "bits/paginationWrapper.tpl"
+            n=1
+            url="{Config::URL_PREFIX}ajax/search-relations"
+            target="#relation-list-wrapper"}
         </div>
       {/if}
 

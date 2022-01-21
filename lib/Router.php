@@ -255,6 +255,9 @@ class Router {
       'en_US.utf8' => 'edit-relation',
       'ro_RO.utf8' => 'editare-relatie',
     ],
+    'relation/search' => [
+      'en_US.utf8' => 'ajax/search-relations',
+    ],
 
     // relation types
     'relationType/edit' => [

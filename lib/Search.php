@@ -13,7 +13,7 @@ class Search {
     list ($numEntityPages, $entities) =
       self::searchEntities([ 'term' => $escapedQuery ], Ct::SORT_NAME_ASC, 1);
     $relations =
-      self::searchRelations([ 'term' => $escapedQuery ], $limit);
+      self::searchRelations([ 'term' => $escapedQuery ], Ct::SORT_NAME_ASC);
 
     $results = [
       'entities' => $entities,
@@ -242,7 +242,8 @@ class Search {
    *   - term: mandatory; the search term
    *   - active: optional; only load active (ongoing) relationships
    */
-  static function searchRelations($filters, $limit = self::LIMIT) {
+  static function searchRelations($filters, $order = Ct::SORT_NAME_ASC) {
+
     // Idiorm cannot retrieve individual objects from a tuple. Fields with
     // identical names only appear once. So we do this in stages by object type.
 
@@ -264,12 +265,12 @@ class Search {
 
     // Stage 2: relations
     $relations = Model::factory('Relation')
-      ->where_in('relationTypeId', $relationTypeIds ?? [ 0 ]);
+      ->where_in('relationTypeId', $relationTypeIds ?: [ 0 ]);
 
-    if (isset($filters['active'])) {
+    if ($filters['active'] ?? false) {
       $today = Time::today();
       $relations = $relations
-        >where_raw('(`endDate` = ? OR `endDate` >= ?)', [ '0000-00-00', $today ]);
+        ->where_raw('(`endDate` = ? OR `endDate` >= ?)', [ '0000-00-00', $today ]);
     }
     $relations = $relations->find_many();
 
@@ -280,7 +281,7 @@ class Search {
       Util::objectProperty($relations, 'toEntityId')));
 
     $entities = Model::factory('Entity')
-      ->where_in('id', $entityIds ?? [ 0 ])
+      ->where_in('id', $entityIds ?: [ 0 ])
       ->where('status', Ct::STATUS_ACTIVE)
       ->find_many();
     $entityMap = Util::mapById($entities);
@@ -310,16 +311,17 @@ class Search {
     }
 
     // Stage 5: sort groups and data within each group
-    usort($results, function($a, $b) {
+    $mult = ($order == Ct::SORT_NAME_DESC) ? -1 : 1;
+    usort($results, function($a, $b) use ($mult) {
       $rtA = mb_strtolower($a['relationType']->name);
       $rtB = mb_strtolower($b['relationType']->name);
       if ($rtA != $rtB) {
-        return $rtA <=> $rtB;
+        return $mult * ($rtA <=> $rtB);
       }
 
       $entityA = mb_strtolower($a['toEntity']->name);
       $entityB = mb_strtolower($b['toEntity']->name);
-      return $entityA <=> $entityB;
+      return $mult * ($entityA <=> $entityB);
     });
 
     foreach ($results as &$rec) {
