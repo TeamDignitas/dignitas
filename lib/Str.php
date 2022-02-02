@@ -39,7 +39,7 @@ class Str {
 
   static function formatNumber($n, int $decimals = 0) {
     $l = localeconv();
-    return number_format($n, $decimals, $l['decimal_point'], $l['thousands_sep']);
+    return number_format((int)$n, $decimals, $l['decimal_point'], $l['thousands_sep']);
   }
 
   static function shorten($s, $maxLength) {

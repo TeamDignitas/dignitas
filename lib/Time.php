@@ -12,7 +12,7 @@ class Time {
     self::$YM_DATE_FORMATTER = self::createDateFormatter(_('date-format-ym'));
     self::$YMD_DATE_FORMATTER = self::createDateFormatter(_('date-format-ymd'));
     self::$YMDHMS_DATE_FORMATTER = self::createDateFormatter(
-      _('date-format-ymd') . ' hh:mm:ss');
+      _('date-format-ymd') . ' HH:mm:ss');
   }
 
   static function createDateFormatter(string $format) {
