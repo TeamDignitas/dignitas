@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2022-01-21 15:09+0200\n"
-"PO-Revision-Date: 2022-01-21 15:29+0200\n"
+"PO-Revision-Date: 2022-02-02 14:23+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -1855,11 +1855,11 @@ msgstr "score"
 
 #: lib/Time.php:21 lib/Time.php:44
 msgid "date-format-ymd"
-msgstr "%B %e, %Y"
+msgstr "MMMM d, yyyy"
 
 #: lib/Time.php:42
 msgid "date-format-ym"
-msgstr "%B %Y"
+msgstr "MMMM yyyy"
 
 #: lib/Time.php:53
 #, php-format

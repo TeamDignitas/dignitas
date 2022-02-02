@@ -4,25 +4,37 @@
 
 class Time {
 
-  static function today() {
-    return date('Y-m-d');
+  private static $YM_DATE_FORMATTER;
+  private static $YMD_DATE_FORMATTER;
+  private static $YMDHMS_DATE_FORMATTER;
+
+  static function init() {
+    self::$YM_DATE_FORMATTER = self::createDateFormatter(_('date-format-ym'));
+    self::$YMD_DATE_FORMATTER = self::createDateFormatter(_('date-format-ymd'));
+    self::$YMDHMS_DATE_FORMATTER = self::createDateFormatter(
+      _('date-format-ymd') . ' hh:mm:ss');
   }
 
-  // Returns the short or long localized name of the $n-th month.
-  static function getMonthName($n, $shortMonthName = false) {
-    $format = $shortMonthName ? '%b' : '%B';
-    return strftime($format, mktime(0, 0, 0, $n));
+  static function createDateFormatter(string $format) {
+    return new IntlDateFormatter(
+      LocaleUtil::getCurrent(),
+      IntlDateFormatter::NONE,
+      IntlDateFormatter::NONE,
+      null,
+      null,
+      $format);
+  }
+
+  static function today() {
+    return date('Y-m-d');
   }
 
   /**
    * @return string The localized date with long month names.
    **/
   static function localTimestamp($timestamp, $withTime = true) {
-    $format = _('date-format-ymd');
-    if ($withTime) {
-      $format .= ' %H:%M:%S';
-    }
-    return trim(strftime($format, $timestamp));
+    $fmt = $withTime ? self::$YMDHMS_DATE_FORMATTER : self::$YMD_DATE_FORMATTER;
+    return trim($fmt->format($timestamp));
   }
 
   /**
@@ -39,9 +51,9 @@ class Time {
     } else if ($month == '00') {
       return $year;
     } else if ($day == '00') {
-      return trim(strftime(_('date-format-ym'), $timestamp));
+      return trim(self::$YM_DATE_FORMATTER->format($timestamp));
     } else {
-      return trim(strftime(_('date-format-ymd'), $timestamp));
+      return trim(self::$YMD_DATE_FORMATTER->format($timestamp));
     }
   }
 

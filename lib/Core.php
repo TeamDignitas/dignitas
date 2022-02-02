@@ -38,6 +38,7 @@ class Core {
     }
     Smart::init();
     LocaleUtil::init();
+    Time::init();
     Router::init();
   }
 

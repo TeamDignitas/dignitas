@@ -130,7 +130,6 @@ class Smart {
     $s->registerPlugin('modifier', 'lt', 'Time::localTimestamp');
     $s->registerPlugin('modifier', 'md', 'Markdown::convert');
     $s->registerPlugin('modifier', 'moment', 'Time::moment');
-    $s->registerPlugin('modifier', 'monthName', 'Time::getMonthName');
     $s->registerPlugin('modifier', 'nf', 'Str::formatNumber');
     $s->registerPlugin('modifier', 'shorten', 'Str::shorten');
     self::$theSmarty = $s;
