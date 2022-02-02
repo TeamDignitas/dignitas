@@ -176,6 +176,13 @@
         {/if}
       </fieldset>
 
+      {capture "saveButtonText"}
+        {if $statement->isDraftOrNew()}
+          {t}link-publish{/t}
+        {else}
+          {t}link-save{/t}
+        {/if}
+      {/capture}
       {include "bs/actions.tpl"
         cancelLink=$referrer
         deleteButton=$statement->isDeletable()
@@ -183,6 +190,7 @@
         reopenButton=$statement->isReopenable()
         reopenButtonConfirm="{t}info-confirm-reopen-statement{/t}"
         saveButtonConfirm=$statement->isDraft()
+        saveButtonText=$smarty.capture.saveButtonText
         saveDraftButton=$statement->isDraftOrNew()}
 
     </form>

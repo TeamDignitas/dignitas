@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-01-21 15:09+0200\n"
-"PO-Revision-Date: 2022-02-02 14:23+0200\n"
+"POT-Creation-Date: 2022-02-02 17:23+0200\n"
+"PO-Revision-Date: 2022-02-02 17:23+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -183,8 +183,13 @@ msgstr ""
 msgid "title-edit-answer"
 msgstr "edit answer"
 
-#: templates/answer/edit.tpl:16 templates/auth/resetPassword.tpl:32
+#: templates/answer/edit.tpl:18 templates/statement/edit.tpl:181
+msgid "link-publish"
+msgstr "publish"
+
+#: templates/answer/edit.tpl:20 templates/auth/resetPassword.tpl:32
 #: templates/bits/commentForm.tpl:43 templates/bs/actions.tpl:14
+#: templates/statement/edit.tpl:183
 msgid "link-save"
 msgstr "save"
 
@@ -1539,11 +1544,11 @@ msgstr "add a source"
 msgid "info-involvements"
 msgstr "authors mentioned in the statement"
 
-#: templates/statement/edit.tpl:182
+#: templates/statement/edit.tpl:189
 msgid "info-confirm-delete-statement"
 msgstr "Are you sure you want to delete this statement?"
 
-#: templates/statement/edit.tpl:184
+#: templates/statement/edit.tpl:191
 msgid "info-confirm-reopen-statement"
 msgstr "Are you sure you want to reopen this statement?"
 
@@ -1853,45 +1858,45 @@ msgstr "answers"
 msgid "search-keyword-score"
 msgstr "score"
 
-#: lib/Time.php:21 lib/Time.php:44
-msgid "date-format-ymd"
-msgstr "MMMM d, yyyy"
-
-#: lib/Time.php:42
+#: lib/Time.php:12
 msgid "date-format-ym"
 msgstr "MMMM yyyy"
 
-#: lib/Time.php:53
+#: lib/Time.php:13 lib/Time.php:15
+msgid "date-format-ymd"
+msgstr "MMMM d, yyyy"
+
+#: lib/Time.php:65
 #, php-format
 msgid "time-full-%s"
 msgstr "on %s"
 
-#: lib/Time.php:55
+#: lib/Time.php:67
 #, php-format
 msgid "time-day-ago-singular"
 msgid_plural "time-day-ago-plural-%d"
 msgstr[0] "one day ago"
 msgstr[1] "%d days ago"
 
-#: lib/Time.php:58
+#: lib/Time.php:70
 msgid "time-yesterday"
 msgstr "yesterday"
 
-#: lib/Time.php:63
+#: lib/Time.php:75
 #, php-format
 msgid "time-hour-ago-singular"
 msgid_plural "time-hour-ago-plural-%d"
 msgstr[0] "one hour ago"
 msgstr[1] "%d hours ago"
 
-#: lib/Time.php:69
+#: lib/Time.php:81
 #, php-format
 msgid "time-minute-ago-singular"
 msgid_plural "time-minute-ago-plural-%d"
 msgstr[0] "one minute ago"
 msgstr[1] "%d minutes ago"
 
-#: lib/Time.php:73
+#: lib/Time.php:85
 #, php-format
 msgid "time-second-ago-singular"
 msgid_plural "time-second-ago-plural-%d"

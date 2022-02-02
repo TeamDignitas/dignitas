@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-01-21 15:06+0200\n"
-"PO-Revision-Date: 2022-02-02 14:22+0200\n"
+"POT-Creation-Date: 2022-02-02 17:16+0200\n"
+"PO-Revision-Date: 2022-02-02 17:16+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -1558,6 +1558,10 @@ msgstr "Confirmi ștergerea acestei afirmații?"
 msgid "info-confirm-reopen-statement"
 msgstr "Confirmi redeschiderea acestei afirmații?"
 
+#: templates/statement/edit.tpl:186
+msgid "link-publish"
+msgstr "publică"
+
 #: templates/statement/unanswered.tpl:3 templates/statement/unanswered.tpl:8
 msgid "title-unanswered-statements"
 msgstr "afirmații fără răspuns"
@@ -1864,20 +1868,20 @@ msgstr "raspunsuri"
 msgid "search-keyword-score"
 msgstr "scor"
 
-#: lib/Time.php:21 lib/Time.php:44
-msgid "date-format-ymd"
-msgstr "d MMMM yyyy"
-
-#: lib/Time.php:42
+#: lib/Time.php:12
 msgid "date-format-ym"
 msgstr "d MMMM yyyy"
 
-#: lib/Time.php:53
+#: lib/Time.php:13 lib/Time.php:15
+msgid "date-format-ymd"
+msgstr "d MMMM yyyy"
+
+#: lib/Time.php:65
 #, php-format
 msgid "time-full-%s"
 msgstr "pe %s"
 
-#: lib/Time.php:55
+#: lib/Time.php:67
 #, php-format
 msgid "time-day-ago-singular"
 msgid_plural "time-day-ago-plural-%d"
@@ -1885,11 +1889,11 @@ msgstr[0] "acum o zi"
 msgstr[1] "acum %d zile"
 msgstr[2] "acum %d de zile"
 
-#: lib/Time.php:58
+#: lib/Time.php:70
 msgid "time-yesterday"
 msgstr "ieri"
 
-#: lib/Time.php:63
+#: lib/Time.php:75
 #, php-format
 msgid "time-hour-ago-singular"
 msgid_plural "time-hour-ago-plural-%d"
@@ -1897,7 +1901,7 @@ msgstr[0] "acum o oră"
 msgstr[1] "acum %d ore"
 msgstr[2] "acum %d de ore"
 
-#: lib/Time.php:69
+#: lib/Time.php:81
 #, php-format
 msgid "time-minute-ago-singular"
 msgid_plural "time-minute-ago-plural-%d"
@@ -1905,7 +1909,7 @@ msgstr[0] "acum un minut"
 msgstr[1] "acum %d minute"
 msgstr[2] "acum %d de minute"
 
-#: lib/Time.php:73
+#: lib/Time.php:85
 #, php-format
 msgid "time-second-ago-singular"
 msgid_plural "time-second-ago-plural-%d"

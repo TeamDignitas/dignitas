@@ -13,6 +13,13 @@
       {/notice}
     {/if}
 
-    {include "bits/answerEdit.tpl" buttonText="{t}link-save{/t}"}
+    {capture "buttonText"}
+      {if $answer->isDraftOrNew()}
+        {t}link-publish{/t}
+      {else}
+        {t}link-save{/t}
+      {/if}
+    {/capture}
+    {include "bits/answerEdit.tpl" buttonText=$smarty.capture.buttonText}
   </div>
 {/block}
