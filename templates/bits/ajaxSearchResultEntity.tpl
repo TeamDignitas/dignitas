@@ -4,7 +4,7 @@
     geometry=Config::THUMB_ENTITY_AUTOCOMPLETE
     imgClass="me-2 align-middle rounded-circle"}
 
-  {$entity->name|escape}
+  {$entity->name|esc}
 
   {if count($aliases)}
     <small class="text-muted">
@@ -22,7 +22,7 @@
 
   <div class="float-end">
     <small class="text-muted">
-      {$entity->getEntityType()->name|escape}
+      {$entity->getEntityType()->name|esc}
     </small>
   </div>
 </div>

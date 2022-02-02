@@ -12,7 +12,7 @@
     <input
       type="text"
       name="aliasNames[]"
-      value="{$alias->name|escape|default:''}"
+      value="{$alias->name|default:''|esc}"
       class="form-control">
   </td>
 

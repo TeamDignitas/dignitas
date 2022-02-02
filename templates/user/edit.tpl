@@ -32,7 +32,7 @@
           <textarea
             name="aboutMe"
             class="form-control has-unload-warning easy-mde"
-            rows="5">{$user->aboutMe|escape}</textarea>
+            rows="5">{$user->aboutMe|esc}</textarea>
           {include "bits/markdownHelp.tpl"}
         {/hf}
 

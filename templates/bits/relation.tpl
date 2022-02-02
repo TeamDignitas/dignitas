@@ -6,7 +6,7 @@
 
 <div class="{$class} {if $r->ended()}text-muted{/if}">
   {$rt=$r->getRelationType()}
-  {$rt->name|escape}
+  {$rt->name|esc}
 
   {$to=$r->getToEntity()}
   {include "bits/entityLink.tpl" e=$to phrase=$rt->phrase}

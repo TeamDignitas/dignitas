@@ -102,4 +102,11 @@ class Str {
     $scheme = parse_url($s, PHP_URL_SCHEME);
     return $scheme === null; // false is reserved for malformed URLs
   }
+
+  /**
+   * Null-safe version of htmlspecialchars(). Replaces the built-in Smarty |escape.
+   **/
+  static function htmlEscape(?string $s) {
+    return htmlspecialchars($s ?? '');
+  }
 }

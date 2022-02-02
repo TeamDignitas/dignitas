@@ -10,7 +10,7 @@
       quoted-string-%1
       {/t}
     {else}
-      {$statement->summary|escape}
+      {$statement->summary|esc}
     {/if}
   </a>
   {$statusInfo=$statement->getStatusInfo()}

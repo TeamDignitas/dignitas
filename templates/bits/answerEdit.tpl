@@ -14,7 +14,7 @@
       name="contents"
       class="form-control has-unload-warning easy-mde {if isset($errors.contents)}is-invalid{/if}"
       data-statement-id="{$answer->statementId}"
-      rows="10">{$answer->contents|escape}</textarea>
+      rows="10">{$answer->contents|esc}</textarea>
     {include "bs/feedback.tpl" errors=$errors.contents|default:null}
     {include "bits/markdownHelp.tpl"}
   </div>

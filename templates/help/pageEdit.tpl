@@ -65,7 +65,7 @@
                     class="form-control {if isset($errors.title.$locale)}is-invalid{/if}"
                     id="field-title"
                     name="title-{$locale}"
-                    value="{$hpt->title|escape}">
+                    value="{$hpt->title|esc}">
                   {include "bs/feedback.tpl" errors=$errors.title.$locale|default:null}
                 {/hf}
 
@@ -74,7 +74,7 @@
                     class="form-control {if isset($errors.path.$locale)}is-invalid{/if}"
                     id="field-path"
                     name="path-{$locale}"
-                    value="{$hpt->path|escape}"
+                    value="{$hpt->path|esc}"
                     placeholder="{t}info-help-page-path{/t}">
                   {include "bs/feedback.tpl" errors=$errors.path.$locale|default:null}
                 {/hf}
@@ -85,7 +85,7 @@
                   <textarea
                     id="field-contents"
                     class="form-control has-unload-warning easy-mde {if isset($errors.contents.$locale)}is-invalid{/if}"
-                    name="contents-{$locale}">{$hpt->contents|escape}</textarea>
+                    name="contents-{$locale}">{$hpt->contents|esc}</textarea>
                   {include "bs/feedback.tpl" errors=$errors.contents.$locale|default:null}
                   {include "bits/markdownHelp.tpl"}
                 {/hf}

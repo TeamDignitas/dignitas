@@ -35,7 +35,7 @@
                 {elseif $target->getObjectType() == Proto::TYPE_ENTITY}
                   {$text=$target->name}
                 {elseif $target->getObjectType() == Proto::TYPE_USER}
-                  {$text=$target|escape}
+                  {$text=$target|esc}
                 {else}
                   {$text=$target->contents}
                 {/if}

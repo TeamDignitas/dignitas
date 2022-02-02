@@ -20,7 +20,7 @@
     name="{$name}"
     {if $placeholder}placeholder="{$placeholder|default}"{/if}
     type="{$type}"
-    {if $value}value="{$value|escape}"{/if}>
+    {if $value}value="{$value|esc}"{/if}>
 
   {if $ifErrors}
     {include "bs/feedback.tpl" errors=$ifErrors}

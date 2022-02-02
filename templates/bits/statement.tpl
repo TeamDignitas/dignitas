@@ -10,7 +10,7 @@
 
 <h1 class="statement-title py-4 px-0">
   <span class="quote-mark quote-mark-open">{t}quote-open{/t}</span>
-  {$statement->summary|escape}
+  {$statement->summary|esc}
   <span class="quote-mark quote-mark-closed">{t}quote-closed{/t}</span>
   {if $statusInfo}
     [{$statusInfo['status']}]
@@ -102,7 +102,7 @@
 
     <h6 class="text-uppercase fw-bold">{t}title-goal{/t}</h6>
 
-    {$statement->goal|escape}
+    {$statement->goal|esc}
 
     <div class="statement-read-only ms-0 mt-2">
       {if $statement->regionId}

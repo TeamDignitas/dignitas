@@ -15,7 +15,7 @@
         <option
           value="{$rt->id}"
           {if $relation && $relation->relationTypeId == $rt->id}selected{/if}>
-          {$rt->name|escape}
+          {$rt->name|esc}
         </option>
       {/foreach}
     </select>

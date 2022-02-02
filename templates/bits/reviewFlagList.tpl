@@ -21,7 +21,7 @@
 
     {if $f->details}
       <div class="ps-3">
-        {$f->details|escape}
+        {$f->details|esc}
       </div>
     {/if}
   {/foreach}

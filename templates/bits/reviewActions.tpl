@@ -67,7 +67,7 @@
         <input
           type="text"
           name="details"
-          value="{$details|default:''|escape}"
+          value="{$details|default:''|esc}"
           class="form-control"
           placeholder="{t}label-details-optional{/t}">
       </div>

@@ -1,10 +1,10 @@
 {extends "layout.tpl"}
 
-{block "title"}{$title|escape}{/block}
+{block "title"}{$title|esc}{/block}
 
 {block "content"}
   <div class="container my-5">
-    <h1 class="history mb-4">{$title|escape}</h1>
+    <h1 class="history mb-4">{$title|esc}</h1>
 
     {if empty($history)}
       {t}info-no-history{/t}

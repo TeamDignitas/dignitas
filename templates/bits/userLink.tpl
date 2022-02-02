@@ -12,7 +12,7 @@
   {/if}
 
   <a href="{Router::userLink($u)}" class="user-link">
-    {$u|escape}
+    {$u|esc}
   </a>
 
 {/if}

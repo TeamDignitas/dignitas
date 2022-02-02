@@ -11,7 +11,7 @@
     <input
       type="text"
       name="linkUrls[]"
-      value="{$link->url|escape|default:''}"
+      value="{$link->url|default:''|esc}"
       class="form-control">
   </td>
 

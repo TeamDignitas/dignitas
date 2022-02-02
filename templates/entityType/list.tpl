@@ -29,7 +29,7 @@
             {foreach $entityTypes as $et}
               <tr>
                 <td>
-                  {$et->name|escape}
+                  {$et->name|esc}
                   {if $et->isDefault}
                     ({t}label-is-default{/t})
                   {/if}

@@ -8,7 +8,7 @@
           imgClass="rounded-circle img-fluid"}
 
         <span class="ms-2 mt-2">{include "bits/entityLink.tpl" e=$e}</span>
-        <div class="ms-2 text-muted small">{$e->getEntityType()->name|escape}</div>
+        <div class="ms-2 text-muted small">{$e->getEntityType()->name|esc}</div>
       </div>
     </div>
   {/foreach}

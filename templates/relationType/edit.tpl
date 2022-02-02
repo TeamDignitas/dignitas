@@ -13,7 +13,7 @@
           class="form-control {if isset($errors.name)}is-invalid{/if}"
           id="field-name"
           name="name"
-          value="{$rt->name|escape}"
+          value="{$rt->name|esc}"
           placeholder="{t}info-relation-type-name{/t}">
         {include "bs/feedback.tpl" errors=$errors.name|default:null}
       {/field}

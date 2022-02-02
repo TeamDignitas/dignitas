@@ -5,14 +5,14 @@
 {block "content"}
   <div class="container my-5">
     <h3>{t}title-redirecting{/t}</h3>
-    <form id="form-repost" action="{$referrer|escape}" method="post">
+    <form id="form-repost" action="{$referrer|esc}" method="post">
       {foreach $postData as $key => $value}
         {if is_array($value)}
           {foreach $value as $v}
-            <input type="hidden" name="{$key|escape}[]" value="{$v|escape}">
+            <input type="hidden" name="{$key|esc}[]" value="{$v|esc}">
           {/foreach}
         {else}
-          <input type="hidden" name="{$key|escape}" value="{$value|escape}">
+          <input type="hidden" name="{$key|esc}" value="{$value|esc}">
         {/if}
       {/foreach}
       <button type="submit" class="btn btn-link">

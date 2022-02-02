@@ -14,7 +14,7 @@
           name="contents"
           class="form-control has-unload-warning size-limit easy-mde {if isset($errors.contents)}is-invalid{/if}"
           maxlength="{Comment::MAX_LENGTH}"
-        >{$cannedResponse->contents|escape}</textarea>
+        >{$cannedResponse->contents|esc}</textarea>
 
         {include "bs/feedback.tpl" errors=$errors.contents|default:null}
         <div class="d-flex flex-column flex-md-row justify-content-between">

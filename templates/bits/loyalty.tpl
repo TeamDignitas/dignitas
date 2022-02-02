@@ -27,7 +27,7 @@
       {foreach $data as $e}
         <div>
           {$percent=($e->value*100)|nf:0}
-          {$e->name|escape}: {$percent}%
+          {$e->name|esc}: {$percent}%
         </div>
       {/foreach}
     </div>

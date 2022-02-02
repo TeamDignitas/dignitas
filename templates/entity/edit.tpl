@@ -28,7 +28,7 @@
         {hf inputId='field-name' label="{t}label-name{/t}"}
           <input
             name="name"
-            value="{$entity->name|escape}"
+            value="{$entity->name|esc}"
             id="field-name"
             class="form-control {if isset($errors.name)}is-invalid{/if}">
           {include "bs/feedback.tpl" errors=$errors.name|default:null}
@@ -38,7 +38,7 @@
           {hf inputId='field-long-possessive' label="{t}phrase-long-possessive{/t}"}
             <input
               name="longPossessive"
-              value="{$entity->longPossessive|escape}"
+              value="{$entity->longPossessive|esc}"
               id="field-long-possessive"
               class="form-control"
               placeholder="{t}label-optional{/t}">
@@ -47,7 +47,7 @@
           {hf inputId='field-short-possessive' label="{t}phrase-short-possessive{/t}"}
             <input
               name="shortPossessive"
-              value="{$entity->shortPossessive|escape}"
+              value="{$entity->shortPossessive|esc}"
               id="field-short-possessive"
               class="form-control"
               placeholder="{t}label-optional{/t}">
@@ -93,7 +93,7 @@
                 value="{$et->id}"
                 data-has-color="{$et->hasColor}"
                 {if $entity->entityTypeId == $et->id}selected{/if}>
-                {$et->name|escape}
+                {$et->name|esc}
               </option>
             {/foreach}
           </select>
@@ -149,7 +149,7 @@
             name="profile"
             class="form-control has-unload-warning size-limit easy-mde {if isset($errors.profile)}is-invalid{/if}"
             maxlength="{Entity::PROFILE_MAX_LENGTH}"
-            rows="5">{$entity->profile|escape}</textarea>
+            rows="5">{$entity->profile|esc}</textarea>
 
           {include "bs/feedback.tpl" errors=$errors.profile|default:null}
           <div class="d-flex flex-column flex-md-row justify-content-between">

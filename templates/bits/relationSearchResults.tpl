@@ -1,7 +1,7 @@
 <div class="mt-4">
   {foreach $results as $tuple}
     <h5>
-      {$tuple.relationType->name|escape}
+      {$tuple.relationType->name|esc}
       {include "bits/entityLink.tpl" e=$tuple.toEntity phrase=$tuple.relationType->phrase}
     </h5>
     <ul>

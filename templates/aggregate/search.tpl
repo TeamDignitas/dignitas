@@ -43,7 +43,7 @@
         {/if}
       </nav>
     {else}
-      <h5 class="pt-5">{t 1=$query|escape}info-no-search-results{/t}</h5>
+      <h5 class="pt-5">{t 1=$query|esc}info-no-search-results{/t}</h5>
     {/if}
 
 

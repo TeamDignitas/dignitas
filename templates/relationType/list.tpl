@@ -34,9 +34,9 @@
           <tbody>
             {foreach $relationTypes as $rt}
               <tr>
-                <td>{$rt->name|escape}</td>
-                <td>{$rt->getFromEntityType()->name|escape}</td>
-                <td>{$rt->getToEntityType()->name|escape}</td>
+                <td>{$rt->name|esc}</td>
+                <td>{$rt->getFromEntityType()->name|esc}</td>
+                <td>{$rt->getToEntityType()->name|esc}</td>
                 <td class="text-center">{$rt->weight}</td>
                 <td class="text-center">
                   <a

@@ -19,7 +19,7 @@
           name="$field"
           class="easy-mde"
           readonly
-          rows="10">{$obj->$field|escape}</textarea>
+          rows="10">{$obj->$field|esc}</textarea>
       {/foreach}
     </form>
 

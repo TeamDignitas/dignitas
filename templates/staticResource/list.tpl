@@ -24,10 +24,10 @@
         <tbody>
           {foreach $staticResources as $sr}
             <tr class="small">
-              <td class="align-middle">{$sr->name|escape}</td>
+              <td class="align-middle">{$sr->name|esc}</td>
               <td class="align-middle">
                 {if $sr->locale}
-                  {LocaleUtil::getDisplayName($sr->locale)|escape}
+                  {LocaleUtil::getDisplayName($sr->locale)|esc}
                 {else}
                   {t}label-all-locales{/t}
                 {/if}

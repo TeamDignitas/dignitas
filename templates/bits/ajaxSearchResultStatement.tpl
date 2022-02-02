@@ -1,7 +1,7 @@
 <div>
-  {$statement->summary|escape}
+  {$statement->summary|esc}
 
   <small class="text-muted">
-    ({$entity->name|escape})
+    ({$entity->name|esc})
   </small>
 </div>

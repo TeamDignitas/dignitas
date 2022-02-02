@@ -83,7 +83,7 @@
             class="form-control single-line size-limit has-unload-warning {if isset($errors.summary)}is-invalid{/if}"
             maxlength="{Statement::MAX_SUMMARY_LENGTH}"
             rows="3"
-            required>{$statement->summary|escape}</textarea>
+            required>{$statement->summary|esc}</textarea>
 
           {include "bs/feedback.tpl" errors=$errors.summary|default:null}
           <span class="chars-remaining form-text"></span>
@@ -95,7 +95,7 @@
             id="field-context"
             class="form-control has-unload-warning easy-mde {if isset($errors.context)}is-invalid{/if}"
             data-statement-id="{$statement->id}"
-            rows="10">{$statement->context|escape}</textarea>
+            rows="10">{$statement->context|esc}</textarea>
           {include "bs/feedback.tpl" errors=$errors.context|default:null}
           {include "bits/markdownHelp.tpl"}
         {/hf}
@@ -107,7 +107,7 @@
             class="form-control single-line size-limit has-unload-warning {if isset($errors.goal)}is-invalid{/if}"
             maxlength="{Statement::MAX_GOAL_LENGTH}"
             rows="3"
-            required>{$statement->goal|escape}</textarea>
+            required>{$statement->goal|esc}</textarea>
 
           {include "bs/feedback.tpl" errors=$errors.goal|default:null}
 

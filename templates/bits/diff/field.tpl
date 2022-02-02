@@ -22,7 +22,7 @@
 
     <ul class="list-inline list-inline-bullet">
       {foreach $old as $s}
-        <li class="list-inline-item">{$s|escape}</li>
+        <li class="list-inline-item">{$s|esc}</li>
       {/foreach}
     </ul>
 

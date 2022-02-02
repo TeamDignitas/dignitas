@@ -14,7 +14,7 @@
             class="form-control {if isset($errors.name)}is-invalid{/if}"
             id="field-name"
             name="name"
-            value="{$sr->name|escape}">
+            value="{$sr->name|esc}">
           {include "bs/feedback.tpl" errors=$errors.name|default:null}
           <div class="form-text">
             {t}info-static-resource-name{/t}
@@ -33,7 +33,7 @@
               <option
                 value="{$code}"
                 {if $sr->locale == $code}selected{/if}>
-                {$name|escape}
+                {$name|esc}
               </option>
             {/foreach}
           </select>
@@ -48,7 +48,7 @@
             name="contents"
             class="form-control has-unload-warning size-limit easy-mde"
             data-mime="{$sr->getMimeType()}"
-            rows="10">{$sr->getEditableContents()|escape}</textarea>
+            rows="10">{$sr->getEditableContents()|esc}</textarea>
           {/strip}
 
           <label class="form-label my-2" for="field-file">

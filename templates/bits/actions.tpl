@@ -18,7 +18,7 @@
             {$obj=$a->getObject()}
             {if !$obj}   {* Underlying object has been deleted *}
               {$a->getTypeName()}
-              {$a->description|escape}
+              {$a->description|esc}
             {elseif $a->objectType == Proto::TYPE_ANSWER}
               {$a->getTypeName()}
               <a href="{$obj->getViewUrl()}">

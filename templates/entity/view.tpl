@@ -1,6 +1,6 @@
 {extends "layout.tpl"}
 
-{block "title"}{$entity->name|escape}{/block}
+{block "title"}{$entity->name|esc}{/block}
 
 {block "content"}
   <div class="container my-5">

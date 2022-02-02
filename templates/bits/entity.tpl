@@ -19,7 +19,7 @@
 
   <div class="col-12 col-md-9 mt-2">
     <h1 class="fw-bold mb-0 center-mobile">
-      {$entity->name|escape}
+      {$entity->name|esc}
       {if $statusInfo}
         [{$statusInfo['status']}]
       {/if}
@@ -30,7 +30,7 @@
         <span class="capitalize-first-word d-inline-block">{t}title-alias{/t}:</span>
         <ul class="d-inline list-inline list-inline-bullet">
           {foreach $aliases as $a}
-            <li class="list-inline-item">{$a->name|escape}
+            <li class="list-inline-item">{$a->name|esc}
           {/foreach}
         </ul>
       {/if}

@@ -44,7 +44,7 @@
                     class="form-control {if isset($errors.name.$locale)}is-invalid{/if}"
                     id="field-name"
                     name="name-{$locale}"
-                    value="{$hct->name|escape}">
+                    value="{$hct->name|esc}">
                   {include "bs/feedback.tpl" errors=$errors.name.$locale|default:null}
                 {/hf}
 
@@ -53,7 +53,7 @@
                     class="form-control {if isset($errors.path.$locale)}is-invalid{/if}"
                     id="field-path"
                     name="path-{$locale}"
-                    value="{$hct->path|escape}"
+                    value="{$hct->path|esc}"
                     placeholder="{t}info-help-category-path{/t}">
                   {include "bs/feedback.tpl" errors=$errors.path.$locale|default:null}
                 {/hf}

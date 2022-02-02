@@ -28,7 +28,7 @@
             {foreach $domains as $d}
               <tr>
                 <td>
-                  {$d->name|escape}
+                  {$d->name|esc}
                 </td>
                 <td>
                   {include "bits/image.tpl"
@@ -36,7 +36,7 @@
                     geometry=Config::THUMB_DOMAIN}
                 </td>
                 <td>
-                  {$d->displayValue|escape}
+                  {$d->displayValue|esc}
                 </td>
                 <td>
                   <a

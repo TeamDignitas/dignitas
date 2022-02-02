@@ -14,7 +14,7 @@
             class="form-control {if isset($errors.name)}is-invalid{/if}"
             id="field-name"
             name="name"
-            value="{$et->name|escape}"
+            value="{$et->name|esc}"
             placeholder="{t}info-entity-type-name{/t}">
           {include "bs/feedback.tpl" errors=$errors.name|default:null}
         {/hf}

@@ -27,7 +27,7 @@
         {if $i}
           <div class="dropdown-divider"></div>
         {/if}
-        <div class="canned-response-wrapper" data-raw="{$cr->contents|escape:html}">
+        <div class="canned-response-wrapper" data-raw="{$cr->contents|esc}">
           {$cr->contents|md}
         </div>
       {/foreach}

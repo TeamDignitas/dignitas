@@ -5,7 +5,7 @@
 
   <div class="card-body">
     <form method="post">
-      <input type="hidden" name="referrer" value="{$referrer|escape}">
+      <input type="hidden" name="referrer" value="{$referrer|esc}">
 
       {include "bs/iconField.tpl"
         icon='email'

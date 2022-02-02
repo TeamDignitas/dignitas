@@ -14,7 +14,7 @@
             class="form-control {if isset($errors.name)}is-invalid{/if}"
             id="field-name"
             name="name"
-            value="{$domain->name|escape}"
+            value="{$domain->name|esc}"
             placeholder="{t}info-domain-name{/t}">
           {include "bs/feedback.tpl" errors=$errors.name|default:null}
         {/hf}
@@ -24,7 +24,7 @@
             class="form-control {if isset($errors.displayValue)}is-invalid{/if}"
             id="field-display-value"
             name="displayValue"
-            value="{$domain->displayValue|escape}"
+            value="{$domain->displayValue|esc}"
             placeholder="{t}info-domain-display-value{/t}">
           {include "bs/feedback.tpl" errors=$errors.displayValue|default:null}
         {/hf}
