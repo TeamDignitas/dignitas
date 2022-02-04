@@ -72,15 +72,6 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbar-right">
 
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a
-            class="nav-link capitalize-first-word py-1"
-            href="{Router::link('help/index')}"
-            title="{t}help-center{/t}"
-          >
-            {t}help-center{/t}
-          </a>
-        </li>
         <li class="nav-item dropdown">
           <a class="nav-link py-1"
             href="#"
@@ -132,7 +123,39 @@
               </span>
             </a>
           </li>
+        {else}
+          {if count(Config::COLOR_SCHEMES) > 1}
+            <li class="nav-item">
+              <a
+                class="nav-link py-1 light-mode-toggle"
+                data-mode="light"
+                href="#"
+                title="{t}link-light-mode{/t}">
 
+                {include "bits/icon.tpl" i=light_mode}
+              </a>
+              <a
+                class="nav-link py-1 dark-mode-toggle"
+                data-mode="dark"
+                href="#"
+                title="{t}link-dark-mode{/t}">
+
+                {include "bits/icon.tpl" i=dark_mode}
+              </a>
+            </li>
+          {/if}
+        {/if}
+
+        <li class="nav-item">
+          <a
+            class="nav-link capitalize-first-word py-1"
+            href="{Router::link('help/index')}"
+            title="{t}help-center{/t}">
+            {t}help-center{/t}
+          </a>
+        </li>
+
+        {if $u}
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle py-1"
               href="#"
@@ -215,27 +238,6 @@
             </div>
           </li>
         {else}
-          {if count(Config::COLOR_SCHEMES) > 1}
-            <li class="nav-item">
-              <a
-                class="nav-link py-1 light-mode-toggle"
-                data-mode="light"
-                href="#"
-                title="{t}link-light-mode{/t}">
-
-                {include "bits/icon.tpl" i=light_mode}
-              </a>
-              <a
-                class="nav-link py-1 dark-mode-toggle"
-                data-mode="dark"
-                href="#"
-                title="{t}link-dark-mode{/t}">
-
-                {include "bits/icon.tpl" i=dark_mode}
-              </a>
-            </li>
-          {/if}
-
           <li class="nav-item">
             <a
               class="nav-link capitalize-first-word py-1"
