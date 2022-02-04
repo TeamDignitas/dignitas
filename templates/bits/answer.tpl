@@ -86,9 +86,9 @@
                   {t}link-permalink{/t}
                 </a>
 
-                {include "bits/editButton.tpl" obj=$answer class="dropdown-item"}
-                {include "bits/subscribeLinks.tpl" obj=$answer class="dropdown-item"}
-                {include "bits/flagLinks.tpl" obj=$answer class="dropdown-item"}
+                {include "bits/editButton.tpl" obj=$answer}
+                {include "bits/subscribeLinks.tpl" obj=$answer}
+                {include "bits/flagLinks.tpl" obj=$answer}
                 {include "bits/historyButton.tpl" obj=$answer class="dropdown-item"}
                 {include "bits/viewMarkdownButton.tpl" obj=$answer}
               </div>

@@ -9,13 +9,11 @@
     {if User::isModerator()}
       <div class="my-4">
         <a class="btn btn-sm btn-primary col-12 col-md-4 col-lg-3 me-2 mb-2" href="{Router::link('help/categoryEdit')}">
-          {include "bits/icon.tpl" i=add_circle}
           {t}link-add-category{/t}
         </a>
 
         {if count($categories)}
           <a class="btn btn-sm btn-outline-secondary col-12 col-md-4 col-lg-3 mb-2" href="{Router::link('help/pageEdit')}">
-            {include "bits/icon.tpl" i=add_circle}
             {t}link-add-help-page{/t}
           </a>
         {/if}

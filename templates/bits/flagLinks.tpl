@@ -1,6 +1,5 @@
 {* Mandatory argument: $obj *}
 {$flagLinks=$flagLinks|default:true} {* pages can request the absence of flag links *}
-{$class=$class|default:''}
 
 {if $flagLinks && ($obj->isFlaggable() || $obj->isFlagged())}
   {$flagId="flag_{$obj->getObjectType()}_{$obj->id}"}
@@ -9,7 +8,7 @@
   <a
     id="{$flagId}"
     href="#"
-    class="{$class}"
+    class="dropdown-item"
     data-bs-toggle="modal"
     data-bs-target="#modal-flag"
     data-object-type="{$obj->getObjectType()}"
@@ -23,7 +22,7 @@
   <a
     id="{$unflagId}"
     href="#"
-    class="unflag {$class}"
+    class="unflag dropdown-item"
     data-object-type="{$obj->getObjectType()}"
     data-object-id="{$obj->id}"
     data-flag-link="#{$flagId}"

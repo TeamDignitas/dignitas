@@ -7,7 +7,6 @@
     <h1 class="mb-5">{cap}{t}title-entity-types{/t}{/cap}</h1>
 
     <a class="btn btn-sm btn-primary col-12 col-md-3" href="{Router::link('entityType/edit')}">
-      {include "bits/icon.tpl" i=add_circle}
       {t}link-add-entity-type{/t}
     </a>
 

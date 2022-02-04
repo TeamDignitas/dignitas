@@ -9,7 +9,6 @@
     {if Config::ALLOW_INVITES}
       <div class="mb-5">
         <a href="{Router::link('invite/add')}" class="btn btn-sm btn-primary col-12 col-md-3">
-          {include "bits/icon.tpl" i=add_circle}
           {t}link-add-invite{/t}
         </a>
       </div>

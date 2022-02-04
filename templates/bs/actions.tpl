@@ -30,7 +30,6 @@
         {/if}
         name="deleteButton"
         type="submit">
-        {include "bits/icon.tpl" i=delete_forever}
         {t}link-delete{/t}
       </button>
     </div>
@@ -54,7 +53,6 @@
         class="{$btnDef} btn-outline-secondary"
         name="cloneButton"
         type="submit">
-        {include "bits/icon.tpl" i=content_copy}
         {t}link-clone{/t}
       </button>
     </div>
@@ -65,7 +63,6 @@
       <a
         class="{$btnDef} btn-outline-secondary"
         href="{$cancelLink}">
-        {include "bits/icon.tpl" i=cancel}
         {t}link-cancel{/t}
       </a>
     </div>
@@ -79,7 +76,6 @@
         name="saveDraftButton"
         title="{t}tooltip-save-draft{/t}"
         type="submit">
-        {include "bits/icon.tpl" i=insert_drive_file}
         {t}link-save-draft{/t}
       </button>
     </div>
@@ -92,7 +88,6 @@
         {if $saveButtonConfirm}data-confirm="{t}info-confirm-publish{/t}"{/if}
         name="saveButton"
         type="submit">
-        {include "bits/icon.tpl" i=save}
         {$saveButtonText}
       </button>
     </div>

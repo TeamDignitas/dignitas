@@ -35,7 +35,6 @@
             <a
               class="btn btn-sm btn-primary"
               href="{Router::link('help/categoryEdit')}/{$category->id}">
-              {include "bits/icon.tpl" i=mode_edit}
               {t}link-edit{/t}
             </a>
           </div>

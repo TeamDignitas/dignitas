@@ -56,7 +56,6 @@
 
         {hf label="{t}label-alias{/t}"}
           <button id="add-alias" class="btn btn-outline-secondary btn-sm mb-2" type="button">
-            {include "bits/icon.tpl" i=add_circle}
             {t}link-add-alias{/t}
           </button>
 
@@ -112,7 +111,6 @@
 
         {hf label="{t}label-relations{/t}"}
           <button id="add-relation" class="btn btn-outline-secondary btn-sm mb-2" type="button">
-            {include "bits/icon.tpl" i=add_circle}
             {t}label-add-relation{/t}
           </button>
 

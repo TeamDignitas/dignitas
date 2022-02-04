@@ -11,7 +11,6 @@
     {if User::isModerator()}
       <p>
         <a href="{Router::link('region/edit')}/{$region->id}" class="btn btn-sm btn-primary">
-          {include "bits/icon.tpl" i=mode_edit}
           {t}link-edit{/t}
         </a>
       </p>

@@ -8,7 +8,6 @@
 
     {if $numEntityTypes}
       <a class="btn btn-sm btn-primary col-12 col-md-3" href="{Router::link('relationType/edit')}">
-        {include "bits/icon.tpl" i=add_circle}
         {t}link-add-relation-type{/t}
       </a>
     {else}

@@ -15,7 +15,6 @@
           data-confirm="{t}info-confirm-moderator-review-remove{/t}"
           {/if}
           type="submit">
-          {include "bits/icon.tpl" i=cancel}
           {$review->getVoteName(Flag::VOTE_REMOVE)}
         </button>
 
@@ -25,7 +24,6 @@
           type="submit"
           data-bs-toggle="tooltip"
           title="{t}tooltip-review-keep{/t}">
-          {include "bits/icon.tpl" i=done}
           {$review->getVoteName(Flag::VOTE_KEEP)}
         </button>
 
@@ -43,10 +41,10 @@
 
           <div class="dropdown-menu ellipsis-menu" aria-labelledby="review-ellipsis">
             {if $object->getEditUrl()} {* comments aren't editable and have no history *}
-              {include "bits/editButton.tpl" obj=$object class="dropdown-item"}
+              {include "bits/editButton.tpl" obj=$object}
               {include "bits/historyButton.tpl" obj=$object class="dropdown-item"}
             {/if}
-            {include "bits/flagLinks.tpl" obj=$object class="dropdown-item"}
+            {include "bits/flagLinks.tpl" obj=$object}
           </div>
 
           <div class="flex-grow-1"></div>

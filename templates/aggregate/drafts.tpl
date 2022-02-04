@@ -23,7 +23,6 @@
 
           <div class="card-footer">
             <a href="{$a->getEditUrl()}" class="btn btn-sm btn-outline-secondary">
-              {include "bits/icon.tpl" i=mode_edit}
               {t}link-edit{/t}
             </a>
           </div>

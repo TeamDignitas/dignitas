@@ -34,12 +34,10 @@
     </div>
 
     <button type="button" class="btn btn-sm btn-outline-secondary comment-cancel mb-1 me-0 me-md-1">
-      {include "bits/icon.tpl" i=cancel}
       {t}link-cancel{/t}
     </button>
 
     <button type="submit" class="btn btn-sm btn-outline-primary comment-save mb-1">
-      {include "bits/icon.tpl" i=save}
       {t}link-save{/t}
     </button>
   </div>

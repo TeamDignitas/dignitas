@@ -149,10 +149,10 @@
 
             <div class="dropdown-menu ellipsis-menu" aria-labelledby="statement-menu-{$statement->id}">
               {if $editLink}
-                {include "bits/editButton.tpl" obj=$statement class="dropdown-item"}
+                {include "bits/editButton.tpl" obj=$statement}
               {/if}
-              {include "bits/subscribeLinks.tpl" obj=$statement class="dropdown-item"}
-              {include "bits/flagLinks.tpl" obj=$statement class="dropdown-item"}
+              {include "bits/subscribeLinks.tpl" obj=$statement}
+              {include "bits/flagLinks.tpl" obj=$statement}
               {include "bits/historyButton.tpl" obj=$statement class="dropdown-item"}
               {include "bits/viewMarkdownButton.tpl" obj=$statement}
             </div>

@@ -120,7 +120,6 @@
 
             {if $user->id == User::getActiveId()}
               <a href="{Router::link('user/edit')}" class="btn btn-sm btn-primary col-sm-4 col-lg-2 mb-2">
-                {include "bits/icon.tpl" i=mode_edit}
                 {t}link-edit{/t}
               </a>
             {/if}

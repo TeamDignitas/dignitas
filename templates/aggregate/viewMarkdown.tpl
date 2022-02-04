@@ -8,7 +8,6 @@
 
     <div class="mb-2">
       <a href="{$obj->getViewUrl()}" class="btn btn-outline-primary">
-        {include "bits/icon.tpl" i=arrow_back}
         {t}label-back{/t}
       </a>
     </div>

@@ -7,7 +7,6 @@
     <h1 class="mb-4">{cap}{t}title-regions{/t}{/cap}</h1>
 
     <a class="btn btn-sm btn-primary col-12 col-md-3" href="{Router::link('region/edit')}">
-      {include "bits/icon.tpl" i=add_circle}
       {t}link-add-region{/t}
     </a>
 

@@ -127,9 +127,9 @@
         </button>
         <div class="dropdown-menu" aria-labelledby="entity-menu">
 
-          {include "bits/editButton.tpl" obj=$entity class="dropdown-item"}
-          {include "bits/subscribeLinks.tpl" obj=$entity class="dropdown-item"}
-          {include "bits/flagLinks.tpl" obj=$entity class="dropdown-item"}
+          {include "bits/editButton.tpl" obj=$entity}
+          {include "bits/subscribeLinks.tpl" obj=$entity}
+          {include "bits/flagLinks.tpl" obj=$entity}
           {include "bits/historyButton.tpl" obj=$entity class="dropdown-item"}
           {include "bits/viewMarkdownButton.tpl" obj=$entity}
         </div>

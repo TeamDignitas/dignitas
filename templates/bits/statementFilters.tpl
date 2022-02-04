@@ -63,7 +63,6 @@
       <a class="btn btn-link btn-sm text-nowrap py-1 px-0"
         data-bs-toggle="collapse"
         href="#more-filters">
-        {include "bits/icon.tpl" i=filter_list}
         <small>{t}label-other-filters{/t}</small>
       </a>
     </div>

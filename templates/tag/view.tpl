@@ -11,11 +11,9 @@
     {if User::may(User::PRIV_EDIT_TAG)}
       <p>
         <a href="{Router::link('tag/edit')}/{$tag->id}" class="btn btn-sm btn-primary">
-          {include "bits/icon.tpl" i=mode_edit}
           {t}link-edit{/t}
         </a>
         <a href="{Router::link('tag/list')}" class="btn btn-sm btn-link">
-          {include "bits/icon.tpl" i=arrow_back}
           {t}link-tag-list{/t}
         </a>
       </p>

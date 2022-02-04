@@ -1,6 +1,4 @@
 {* edit / suggest edit button for objects that admit pending edits *}
-{$class=$class|default:"btn mt-1"}
-
 {$editable=$obj->isEditable()}
 {$suggestable=$obj->acceptsSuggestions()}
 
@@ -15,7 +13,7 @@
 
   <a
     href="{$obj->getEditUrl()}"
-    class="{$class}">
+    class="dropdown-item">
     {include "bits/icon.tpl" i=mode_edit class=""}
     {$smarty.capture.msg}
   </a>

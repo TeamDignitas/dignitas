@@ -32,7 +32,6 @@
               type="submit"
               name="submitButton">
 
-              {include "bits/icon.tpl" i=send}
               {t}link-send{/t}
 
             </button>
