@@ -11,39 +11,11 @@
       aria-expanded="false"
       aria-label="{t}label-toggle-menu{/t}">
       {* Do not use navbar-toggler-icon. That gives the two togglers different heights. *}
-      {include "bits/icon.tpl" i=menu}
+      {include "bits/icon.tpl" i=search}
     </button>
 
     <div class="collapse navbar-collapse py-1" id="navbar-left">
       {include "bits/searchForm.tpl"}
-
-      <ul class="navbar-nav">
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle py-1"
-            href="#"
-            id="nav-dropdown-info"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false">
-            {cap}{t}link-info{/t}{/cap}
-          </a>
-          <div class="dropdown-menu dropdown-menu-dark py-0" aria-labelledby="nav-dropdown-info">
-            <a
-              class="dropdown-item py-1"
-              href="{Router::link('aggregate/about')}">
-              {cap}{t}link-about{/t}{/cap}
-            </a>
-            <a
-              class="dropdown-item py-1"
-              href="{Router::link('aggregate/contact')}">
-              {cap}{t}link-contact{/t}{/cap}
-            </a>
-          </div>
-        </li>
-
-      </ul>
     </div>
 
     <!-- logo -->

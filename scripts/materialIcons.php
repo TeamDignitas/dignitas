@@ -48,7 +48,6 @@ const CODEPOINTS = [
   'lock',
   'logout',
   'map',
-  'menu',
   'mode_edit',
   'more_vert',
   'notifications',

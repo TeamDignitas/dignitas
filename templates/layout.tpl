@@ -42,11 +42,24 @@
 
     <footer>
       <div class="text-center container mt-3">
+
         <ul class="list-inline list-inline-bullet">
           <li class="list-inline-item">
-            © 2019-{'Y'|date} <a href="https://github.com/TeamDignitas">Team Dignitas</a>
+            <a href="{Router::link('aggregate/about')}">
+              {cap}{t}link-about{/t}{/cap}
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="{Router::link('aggregate/contact')}">
+              {cap}{t}link-contact{/t}{/cap}
+            </a>
           </li>
         </ul>
+
+        <p>
+          © 2019-{'Y'|date} <a href="https://github.com/TeamDignitas">Team Dignitas</a>
+        </p>
+
       </div>
     </footer>
 
