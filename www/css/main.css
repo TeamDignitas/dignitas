@@ -310,6 +310,7 @@ html.dark .dark-mode-toggle {
 .statement.card {
   font-family: 'Spartan', sans-serif;
   font-weight: 400;
+  border-width: 2px;
 }
 
 /* statement hover effect showing the verdict */
