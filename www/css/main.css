@@ -593,6 +593,10 @@ body, main {
 }
 
 /******** collapsible card with expand/collapse visual indicator ********/
+#answer-resources .modal-content,
+#answer-resources .card {
+  background-color: var(--c-surface);
+}
 
 #answer-resources .card-header {
   padding: 1rem 1.25rem .5rem;
