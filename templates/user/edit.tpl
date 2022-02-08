@@ -9,7 +9,7 @@
     <form method="post" enctype="multipart/form-data">
 
       <fieldset class="mb-5 ms-3">
-        {hf label="{t}label-nickname{/t}"}
+        {hf label="{t}label-nickname{/t}" required=true}
           {include "bs/iconField.tpl"
             icon='person'
             ifErrors=$errors.nickname|default:null
@@ -17,7 +17,7 @@
             value=$user->nickname}
         {/hf}
 
-        {hf label="{t}label-email{/t}"}
+        {hf label="{t}label-email{/t}" required=true}
           {include "bs/iconField.tpl"
             icon='email'
             ifErrors=$errors.email|default:null

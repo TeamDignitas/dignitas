@@ -446,6 +446,13 @@ html.dark .dark-mode-toggle {
   overflow-y: auto;
 }
 
+/************************* required form labels *************************/
+
+label.required:after {
+  color: var(--bs-danger);
+  content: '*';
+}
+
 /******************************** footer ********************************/
 
 footer {

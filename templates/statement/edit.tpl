@@ -25,7 +25,7 @@
       <input type="hidden" name="referrer" value="{$referrer}">
 
       <fieldset class="mb-5 ms-3">
-        {hf inputId='field-entity-id' label="{t}label-entity{/t}"}
+        {hf inputId='field-entity-id' label="{t}label-entity{/t}" required=true}
           <select
             name="entityId"
             id="field-entity-id"
@@ -44,7 +44,7 @@
           {/if}
         {/hf}
 
-        {hf inputId='field-date-made' label="{t}label-statement-date{/t}"}
+        {hf inputId='field-date-made' label="{t}label-statement-date{/t}" required=true}
           <input
             type="text"
             id="field-date-made"
@@ -55,7 +55,7 @@
           {include "bs/feedback.tpl" errors=$errors.dateMade|default:null}
         {/hf}
 
-        {hf inputId='field-type' label="{t}label-type{/t}"}
+        {hf inputId='field-type' label="{t}label-type{/t}" required=true}
           <select
             id="field-type"
             name="type"
@@ -76,7 +76,7 @@
       </fieldset>
 
       <fieldset class="mb-5 ms-3">
-        {hf inputId='field-summary' label="{t}label-summary{/t}"}
+        {hf inputId='field-summary' label="{t}label-summary{/t}" required=true}
           <textarea
             name="summary"
             id="field-summary"
@@ -89,7 +89,7 @@
           <span class="chars-remaining form-text"></span>
         {/hf}
 
-        {hf inputId='field-context' label="{t}label-context{/t}"}
+        {hf inputId='field-context' label="{t}label-context{/t}" required=true}
           <textarea
             name="context"
             id="field-context"
@@ -100,7 +100,7 @@
           {include "bits/markdownHelp.tpl"}
         {/hf}
 
-        {hf inputId='field-goal' label="{t}label-goal{/t}"}
+        {hf inputId='field-goal' label="{t}label-goal{/t}" required=true}
           <textarea
             name="goal"
             id="field-goal"

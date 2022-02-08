@@ -22,7 +22,7 @@
       <input type="hidden" name="id" value="{$t->id}">
 
       <fieldset class="mb-5 ms-3">
-        {hf inputId='value' label="{t}label-name{/t}"}
+        {hf inputId='value' label="{t}label-name{/t}" required=true}
           <input type="text"
             class="form-control {if isset($errors.value)}is-invalid{/if}"
             id="value"

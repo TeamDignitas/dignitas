@@ -9,7 +9,7 @@
     <form method="post" enctype="multipart/form-data">
 
       <fieldset class="mb-5 ms-3">
-        {hf inputId='field-name' label="{t}label-name{/t}"}
+        {hf inputId='field-name' label="{t}label-name{/t}" required=true}
           <input type="text"
             class="form-control {if isset($errors.name)}is-invalid{/if}"
             id="field-name"
@@ -19,7 +19,7 @@
           {include "bs/feedback.tpl" errors=$errors.name|default:null}
         {/hf}
 
-        {hf inputId='field-display-value' label="{t}label-display-value{/t}"}
+        {hf inputId='field-display-value' label="{t}label-display-value{/t}" required=true}
           <input type="text"
             class="form-control {if isset($errors.displayValue)}is-invalid{/if}"
             id="field-display-value"

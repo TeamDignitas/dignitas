@@ -25,7 +25,7 @@
       <input type="hidden" name="referrer" value="{$referrer}">
 
       <fieldset class="mb-5 ms-3">
-        {hf inputId='field-name' label="{t}label-name{/t}"}
+        {hf inputId='field-name' label="{t}label-name{/t}" required=true}
           <input
             name="name"
             value="{$entity->name|esc}"
@@ -81,7 +81,7 @@
       </fieldset>
 
       <fieldset class="mb-5 ms-3">
-        {hf inputId='field-entity-type-id' label="{t}label-type{/t}"}
+        {hf inputId='field-entity-type-id' label="{t}label-type{/t}" required=true}
           <select
             name="entityTypeId"
             id="field-entity-type-id"

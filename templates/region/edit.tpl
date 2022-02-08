@@ -22,7 +22,7 @@
     <form class="mb-5" method="post">
       <input type="hidden" name="id" value="{$r->id}">
 
-      {hf inputId='name' label="{t}label-name{/t}"}
+      {hf inputId='name' label="{t}label-name{/t}" required=true}
         <input type="text"
           class="form-control {if isset($errors.name)}is-invalid{/if}"
           id="name"

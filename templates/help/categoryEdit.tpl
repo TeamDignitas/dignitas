@@ -39,7 +39,7 @@
               role="tabpanel">
 
               <fieldset class="mb-5 ms-3">
-                {hf inputId='field-name' label="{t}label-name{/t}"}
+                {hf inputId='field-name' label="{t}label-name{/t}" required=true}
                   <input type="text"
                     class="form-control {if isset($errors.name.$locale)}is-invalid{/if}"
                     id="field-name"
@@ -48,7 +48,7 @@
                   {include "bs/feedback.tpl" errors=$errors.name.$locale|default:null}
                 {/hf}
 
-                {hf inputId='field-path' label="{t}label-help-category-path{/t}"}
+                {hf inputId='field-path' label="{t}label-help-category-path{/t}" required=true}
                   <input type="text"
                     class="form-control {if isset($errors.path.$locale)}is-invalid{/if}"
                     id="field-path"

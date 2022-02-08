@@ -8,7 +8,7 @@
 
     <form method="post">
 
-      {field inputId="field-contents" label="{t}label-contents{/t}"}
+      {field inputId="field-contents" label="{t}label-contents{/t}" required="true"}
         <textarea
           id="field-contents"
           name="contents"

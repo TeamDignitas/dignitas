@@ -9,7 +9,7 @@
     <form method="post">
 
       <fieldset class="mb-5 ms-3">
-        {hf inputId='field-category-id' label="{t}label-category{/t}"}
+        {hf inputId='field-category-id' label="{t}label-category{/t}" required=true}
           <select
             name="categoryId"
             id="field-category-id"
@@ -60,7 +60,7 @@
               role="tabpanel">
 
               <fieldset class="mb-5 ms-3">
-                {hf inputId='field-title' label="{t}label-title{/t}"}
+                {hf inputId='field-title' label="{t}label-title{/t}" required=true}
                   <input type="text"
                     class="form-control {if isset($errors.title.$locale)}is-invalid{/if}"
                     id="field-title"
@@ -69,7 +69,7 @@
                   {include "bs/feedback.tpl" errors=$errors.title.$locale|default:null}
                 {/hf}
 
-                {hf inputId='field-path' label="{t}label-help-page-path{/t}"}
+                {hf inputId='field-path' label="{t}label-help-page-path{/t}" required=true}
                   <input type="text"
                     class="form-control {if isset($errors.path.$locale)}is-invalid{/if}"
                     id="field-path"
@@ -81,7 +81,7 @@
               </fieldset>
 
               <fieldset class="mb-5 ms-3">
-                {hf inputId='field-contents' label="{t}label-contents{/t}"}
+                {hf inputId='field-contents' label="{t}label-contents{/t}" required=true}
                   <textarea
                     id="field-contents"
                     class="form-control has-unload-warning easy-mde {if isset($errors.contents.$locale)}is-invalid{/if}"

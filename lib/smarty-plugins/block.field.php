@@ -9,7 +9,7 @@ const FORM_FIELD_TEMPLATE = '
 
     <label
       for="%s"
-      class="form-label">
+      class="form-label %s">
       %s
     </label>
 
@@ -23,6 +23,7 @@ function smarty_block_field($params, $content, $template, &$repeat) {
     return sprintf(
       FORM_FIELD_TEMPLATE,
       $params['inputId'] ?? '',
+      ($params['required'] ?? false) ? 'required' : '',
       $params['label'] ?? '',
       $content,
     );

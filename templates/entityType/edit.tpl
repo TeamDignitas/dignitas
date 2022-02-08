@@ -9,7 +9,7 @@
     <form method="post">
 
       <fieldset class="mb-5 ms-3">
-        {hf inputId='field-name' label="{t}label-name{/t}"}
+        {hf inputId='field-name' label="{t}label-name{/t}" required=true}
           <input type="text"
             class="form-control {if isset($errors.name)}is-invalid{/if}"
             id="field-name"

@@ -8,7 +8,7 @@
 
     <form method="post">
 
-      {field inputId="field-name" label="{t}label-name{/t}"}
+      {field inputId="field-name" label="{t}label-name{/t}" required=true}
         <input type="text"
           class="form-control {if isset($errors.name)}is-invalid{/if}"
           id="field-name"

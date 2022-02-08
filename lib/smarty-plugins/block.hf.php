@@ -10,7 +10,7 @@ const HF_TEMPLATE = '
 
     <label
       for="%s"
-      class="col-form-label col-12 col-%s-%s ps-0 text-nowrap">
+      class="col-form-label col-12 col-%s-%s ps-0 text-nowrap %s">
       %s
     </label>
 
@@ -28,6 +28,7 @@ function smarty_block_hf($params, $content, $template, &$repeat) {
       $params['inputId'] ?? '',
       $params['breakpoint'] ?? 'lg',
       $params['col'] ?? 2,
+      ($params['required'] ?? false) ? 'required' : '',
       $params['label'] ?? '',
       $params['breakpoint'] ?? 'lg',
       12 - ($params['col'] ?? 2),
