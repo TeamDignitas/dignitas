@@ -41,7 +41,7 @@
       {include "bits/icon.tpl" i=person}
     </button>
 
-    <div class="collapse navbar-collapse justify-content-end" id="navbar-right">
+    <div class="collapse navbar-collapse justify-content-end h-100" id="navbar-right">
 
       <ul class="navbar-nav ms-auto">
         <li class="nav-item dropdown">

@@ -22,6 +22,11 @@ $(function() {
     });
     bsCollapse.hide();
   });
+
+  var leftMenu = document.getElementById('navbar-left');
+  leftMenu.addEventListener('shown.bs.collapse', function() {
+    $('#searchField').select2('focus');
+  });
 });
 
 
