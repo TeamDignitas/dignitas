@@ -1,7 +1,4 @@
-<form
-  id="form-search"
-  action="{Router::link('aggregate/search')}"
-  class="d-inline w-50">
+<form id="form-search" action="{Router::link('aggregate/search')}">
 
   <div id="search-field-container" class="input-group">
     {* the <select> element for Select2 is created in main.js *}

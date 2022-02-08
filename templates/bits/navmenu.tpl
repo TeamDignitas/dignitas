@@ -19,16 +19,14 @@
     </div>
 
     <!-- logo -->
-    <div class="mx-auto">
-      <a class="navbar-brand" href="{Config::URL_PREFIX}">
-        <img
-          src="{Config::URL_PREFIX}img/logo-white.svg"
-          width="151"
-          height="24"
-          class="align-middle"
-          alt="{t}tooltip-dignitas-logo{/t}">
-      </a>
-    </div>
+    <a class="navbar-brand mx-auto" href="{Config::URL_PREFIX}">
+      <img
+        src="{Config::URL_PREFIX}img/logo-white.svg"
+        width="151"
+        height="24"
+        class="align-middle"
+        alt="{t}tooltip-dignitas-logo{/t}">
+    </a>
 
     <button
       class="navbar-toggler"
@@ -43,7 +41,7 @@
 
     <div class="collapse navbar-collapse justify-content-end h-100" id="navbar-right">
 
-      <ul class="navbar-nav ms-auto">
+      <ul class="navbar-nav">
         <li class="nav-item dropdown">
           <a class="nav-link py-1"
             href="#"
