@@ -107,7 +107,7 @@ function recursiveScan($path) {
 
         $geometry = $match['geom'] ?? null;
         if ($geometry &&
-            ($geometry != UploadTrait::$FULL_GEOMETRY) &&
+            ($geometry != $class::$FULL_GEOMETRY) &&
             !in_array($geometry, Config::UPLOAD_SPECS[$class]['geometries'])) {
           throw new BadFileException(sprintf('Undefined %s geometry %s', $class, $geometry));
         }
@@ -155,8 +155,8 @@ function deleteAttachmentsWithoutFiles() {
 
   do {
     $attachments = Model::factory('Attachment')
-      ->where_gte('id', $shard * UploadTrait::$SHARD_SIZE)
-      ->where_lt('id', ($shard + 1) * UploadTrait::$SHARD_SIZE)
+      ->where_gte('id', $shard * Attachment::$SHARD_SIZE)
+      ->where_lt('id', ($shard + 1) * Attachment::$SHARD_SIZE)
       ->find_many();
 
     // This could terminate early if an entire shard is empty, but higher
@@ -167,7 +167,7 @@ function deleteAttachmentsWithoutFiles() {
         printf("Found %d attachment records but only %d files for shard %d\n",
                count($attachments), count($files), $shard);
         foreach ($attachments as $a) {
-          $fullPath = $a->getFileLocation(UploadTrait::$FULL_GEOMETRY);
+          $fullPath = $a->getFileLocation(Attachment::$FULL_GEOMETRY);
           if (!file_exists($fullPath)) {
             deleteAttachmentWithMessage($a, 'no corresponding file');
           }

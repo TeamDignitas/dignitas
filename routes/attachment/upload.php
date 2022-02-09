@@ -3,7 +3,7 @@
 $output = [];
 
 $fileData = Request::getFile('file', 'Attachment');
-$fileError = UploadTrait::validateFileData($fileData);
+$fileError = Request::validateFileData($fileData);
 
 if (!User::may(User::PRIV_UPLOAD_ATTACHMENT)) {
 
@@ -22,7 +22,7 @@ if (!User::may(User::PRIV_UPLOAD_ATTACHMENT)) {
   $a->saveWithFile($fileData, false);
 
   Smart::assign([
-    'fullUrl' => $a->getFileUrl(UploadTrait::$FULL_GEOMETRY, false),
+    'fullUrl' => $a->getFileUrl(Attachment::$FULL_GEOMETRY, false),
     'thumbUrl' => $a->getFileUrl(Config::THUMB_INLINE_ATTACHMENT, false),
     'docUrl' => LocaleUtil::getHelpUrl('upload'),
   ]);
@@ -30,7 +30,7 @@ if (!User::may(User::PRIV_UPLOAD_ATTACHMENT)) {
 
   Log::info('uploaded attachment %s to %s',
             $a->id,
-            $a->getFileLocation(UploadTrait::$FULL_GEOMETRY));
+            $a->getFileLocation(Attachment::$FULL_GEOMETRY));
 
 }
 

@@ -79,7 +79,7 @@ foreach ($data['files'] as $class => $files) {
     $obj = Model::factory($class)->where('id', $id)->find_one();
     $path = ($class == 'StaticResource')
       ? $obj->getFilePath()
-      : $obj->getFileLocation(UploadTrait::$FULL_GEOMETRY);
+      : $obj->getFileLocation($class::$FULL_GEOMETRY);
     @mkdir(dirname($path), 0777, true);
     file_put_contents($path, $contents);
   }

@@ -79,7 +79,7 @@ function validate($user, $password, $password2, $fileData) {
   }
 
   // image field
-  $fileError = UploadTrait::validateFileData($fileData);
+  $fileError = Request::validateFileData($fileData);
   if ($fileError) {
     $errors['image'][] = $fileError;
   }

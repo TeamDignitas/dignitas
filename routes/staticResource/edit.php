@@ -55,7 +55,7 @@ function validate($sr, $fileData) {
   }
 
   // borrow some code from UploadTrait even though we don't use the trait
-  $fileError = UploadTrait::validateFileData($fileData);
+  $fileError = Request::validateFileData($fileData);
   if ($fileError) {
     $errors['file'][] = $fileError;
   }

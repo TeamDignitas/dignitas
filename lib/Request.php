@@ -111,4 +111,27 @@ class Request {
       Str::startsWith($_SERVER['REQUEST_URI'], Config::URL_PREFIX . 'ajax/');
   }
 
+  /**
+   * Checks if a file was uploaded successfully and returns an error message
+   * if not.
+   */
+  static function validateFileData($fileData) {
+    switch ($fileData['status']) {
+      case self::UPLOAD_TOO_LARGE:
+        $mb = $fileData['limit'] >> 20;
+        return sprintf(_('info-upload-size-%d'), $mb);
+
+      case self::UPLOAD_BAD_MIME_TYPE:
+        $extString = implode(', ', $fileData['allowedExtensions']);
+        $extString = strtoupper($extString);
+        return sprintf(_('info-upload-type-%s'), $extString);
+
+      case self::UPLOAD_OTHER_ERROR:
+        return _('info-upload-error');
+
+      default:
+        return null;
+    }
+  }
+
 }

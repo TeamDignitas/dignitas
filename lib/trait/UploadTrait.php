@@ -167,26 +167,6 @@ trait UploadTrait {
     }
   }
 
-  // checks if a file was uploaded successfully and returns an error message if not
-  static function validateFileData($fileData) {
-    switch ($fileData['status']) {
-      case Request::UPLOAD_TOO_LARGE:
-        $mb = $fileData['limit'] >> 20;
-        return sprintf(_('info-upload-size-%d'), $mb);
-
-      case Request::UPLOAD_BAD_MIME_TYPE:
-        $extString = implode(', ', $fileData['allowedExtensions']);
-        $extString = strtoupper($extString);
-        return sprintf(_('info-upload-type-%s'), $extString);
-
-      case Request::UPLOAD_OTHER_ERROR:
-        return _('info-upload-error');
-
-      default:
-        return null;
-    }
-  }
-
   // Saves an object that may contain a new uploaded file or a "delete
   // uploaded file" command.  Assumes all fields in $this are correctly
   // populated with the exception of fileExtension and possibly id if $this is
