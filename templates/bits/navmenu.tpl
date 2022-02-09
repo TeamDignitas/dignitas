@@ -14,7 +14,7 @@
       {include "bits/icon.tpl" i=search}
     </button>
 
-    <div class="collapse navbar-collapse py-1" id="navbar-left">
+    <div class="collapse navbar-collapse py-3" id="navbar-left">
       {include "bits/searchForm.tpl"}
     </div>
 

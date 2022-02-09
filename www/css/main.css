@@ -68,22 +68,24 @@ blockquote {
 
 @media (max-width: 768px) {
   .navbar-collapse {
-    background-color: var(--c-surface);
     margin-top: 3px;
     padding: 1rem;
     position: fixed;
     top: 36px;
     transition: left 0.3s linear;
-    width: 75%;
     z-index: 10;
   }
 
   #navbar-left {
-    left: -75%;
+    background-color: var(--c-navbar-bg);
+    left: -100%;
+    width: 100%;
   }
 
   #navbar-right {
+    background-color: var(--c-navbar-collapse-bg);
     left: 100%;
+    width: 75%;
   }
 
   #navbar-left.show {

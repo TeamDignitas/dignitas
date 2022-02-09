@@ -70,6 +70,7 @@ html.dark {
   --c-draft-indicator-color: var(--bs-body-bg);
   --c-hero-bg: var(--bs-body-bg);
   --c-navbar-bg: var(--bs-body-bg);
+  --c-navbar-collapse-bg: #{$surface}; /* for the slide menus */
   --c-notice: black;
   --c-notice-bg: #8a8178;
   --c-recent-statements: var(--bs-butter);

@@ -4,6 +4,7 @@ html.dark {
   --c-draft-indicator-color: var(--bs-body-bg);
   --c-hero-bg: var(--bs-body-bg);
   --c-navbar-bg: var(--bs-body-bg);
+  --c-navbar-collapse-bg: #303035;
   --c-notice: black;
   --c-notice-bg: #8a8178;
   --c-recent-statements: var(--bs-butter);
@@ -996,3 +997,4 @@ html.dark input:-webkit-autofill, html.dark input:-webkit-autofill:hover, html.d
   -webkit-box-shadow: 0 0 0px 1000px var(--bs-body-bg) inset !important;
   -webkit-text-fill-color: var(--bs-body-color) !important;
 }
+

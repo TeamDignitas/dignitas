@@ -112,7 +112,7 @@ class CssStream {
    * consumed.
    */
   function peek() {
-    while (ctype_space($this->peek0)) {
+    while (ctype_space((string)$this->peek0)) {
       $this->getc();
     }
     return $this->peek0;
