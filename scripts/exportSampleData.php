@@ -283,7 +283,7 @@ function getUploads($objects, $class, &$result) {
     if ($rec['fileExtension']) {
       $id = $rec['id'];
       $obj = Model::factory($class)->where('id', $id)->find_one();
-      $file = $obj->getFileLocation(UploadTrait::$FULL_GEOMETRY);
+      $file = $obj->getFileLocation($class::$FULL_GEOMETRY);
       $result[$class][$id] = base64_encode(file_get_contents($file));
     }
   }
