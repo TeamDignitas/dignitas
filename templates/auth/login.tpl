@@ -18,7 +18,7 @@
         </h3>
 
         <div class="card-body">
-          <form method="post">
+          <form method="post" class="needs-validation" novalidate>
             <input type="hidden" name="referrer" value="{$referrer|esc}">
 
             {include "bs/iconField.tpl"

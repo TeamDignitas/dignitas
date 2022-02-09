@@ -6,6 +6,7 @@
 {$inputClass=$inputClass|default:''}
 {$inputId=$inputId|default:null}
 {$labelClass=$labelClass|default:''}
+{$required=$required|default:false}
 
 {if !$inputId}
   {assign var=SEQUENTIAL_CB_ID value=1+{$SEQUENTIAL_CB_ID|default:0} scope="global"}
@@ -19,7 +20,8 @@
     type="checkbox"
     class="form-check-input {$inputClass} {if $cbErrors}is-invalid{/if}"
     {if $name}name="{$name}"{/if}
-    {if $checked}checked{/if}>
+    {if $checked}checked{/if}
+    {if $required}required{/if}>
 
   <label for="{$inputId}" class="form-check-label {$labelClass}">
     {$label}

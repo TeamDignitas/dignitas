@@ -86,6 +86,7 @@
             icon='lock'
             ifErrors=$errors.password|default:null
             name='password'
+            required=false
             type='password'
             value=$password|default:''}
         {/hf}
@@ -94,6 +95,7 @@
           {include "bs/iconField.tpl"
             icon='lock'
             name='password2'
+            required=false
             type='password'
             value=$password2|default:''}
         {/hf}

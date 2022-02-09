@@ -613,6 +613,27 @@ $(function() {
   }
 });
 
+/********* Disable form submissions if there are invalid fields *********/
+// see https://getbootstrap.com/docs/5.1/forms/validation/#custom-styles
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
 
 /**************************** number padding ****************************/
 

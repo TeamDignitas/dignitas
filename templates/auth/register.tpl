@@ -10,7 +10,7 @@
       </h3>
 
       <div class="card-body">
-        <form method="post">
+        <form method="post" class="needs-validation" novalidate>
 
           {include "bs/iconField.tpl"
             icon='person'
@@ -56,7 +56,8 @@
             checked=$manual
             divClass='mb-1'
             label=$smarty.capture.label
-            name='manual'}
+            name='manual'
+            required=true}
 
           <div class="mt-2 mx-2 row">
             <button class="btn btn-primary col-12 col-md-6" type="submit" name="submitButton">

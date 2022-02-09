@@ -81,6 +81,7 @@
             icon=$t->icon
             mb=2
             name='icon'
+            required=false
             value=$t->icon}
 
           <div class="form-text">

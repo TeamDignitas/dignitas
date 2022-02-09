@@ -5,10 +5,11 @@
 {$ifErrors=$ifErrors|default:null}
 {$mb=$mb|default:3}
 {$placeholder=$placeholder|default:null}
+{$required=$required|default:true}
 {$type=$type|default:'text'}
 {$value=$value|default:null}
 
-<div class="input-group mb-{$mb}">
+<div class="input-group has-validation mb-{$mb}">
 
   {if $icon}
     {include "bits/icon.tpl" i=$icon class="input-group-text"}
@@ -18,7 +19,8 @@
     {if $autofocus}autofocus{/if}
     class="form-control {if $ifErrors}is-invalid{/if}"
     name="{$name}"
-    {if $placeholder}placeholder="{$placeholder|default}"{/if}
+    {if $placeholder}placeholder="{$placeholder}"{/if}
+    {if $required}required{/if}
     type="{$type}"
     {if $value}value="{$value|esc}"{/if}>
 
