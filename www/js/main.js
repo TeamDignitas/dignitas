@@ -547,6 +547,8 @@ $(function() {
       $('#tag-tree ul ul').stop().slideDown();
       $(this).data('isExpanded', true);
     }
+
+    return false;
   });
 
 });
