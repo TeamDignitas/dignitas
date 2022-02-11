@@ -12,6 +12,7 @@ require_once __DIR__ . '/../lib/Core.php';
 const CODEPOINTS = [
   'alarm',
   'chevron_right',
+  'close',
   'code',
   'compare_arrows',
   'dark_mode',

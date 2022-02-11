@@ -26,6 +26,10 @@ $(function() {
   var leftMenu = document.getElementById('navbar-left');
   leftMenu.addEventListener('shown.bs.collapse', function() {
     $('#searchField').select2('focus');
+    $('#navbar-toggler-left .material-icons').html('close');
+  });
+  leftMenu.addEventListener('hidden.bs.collapse', function() {
+    $('#navbar-toggler-left .material-icons').html('search');
   });
 });
 

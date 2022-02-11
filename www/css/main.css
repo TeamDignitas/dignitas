@@ -79,6 +79,8 @@ blockquote {
   #navbar-left {
     background-color: var(--c-navbar-bg);
     left: -100%;
+    padding-bottom: 1rem !important; /* override py-1 */
+    padding-top: 1rem !important;
     width: 100%;
   }
 
