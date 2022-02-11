@@ -12,6 +12,14 @@
       </a>
     {/if}
 
+    <a
+      class="btn btn-sm btn-outline-secondary col-12 col-md-3"
+      data-other-text="{t}link-collapse-all{/t}"
+      href="#"
+      id="link-expand-all">
+      {t}link-expand-all{/t}
+    </a>
+
     <div id="tag-tree" class="mt-4">
       {include "bits/tagTree.tpl" tags=$root->children link=User::may(User::PRIV_EDIT_TAG)}
     </div>

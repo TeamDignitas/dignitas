@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-02-11 12:41+0200\n"
-"PO-Revision-Date: 2022-02-11 12:42+0200\n"
+"POT-Creation-Date: 2022-02-11 14:07+0200\n"
+"PO-Revision-Date: 2022-02-11 14:08+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -1669,6 +1669,14 @@ msgstr "duplicate tags"
 #: templates/tag/list.tpl:11
 msgid "link-add-tag"
 msgstr "add a tag"
+
+#: templates/tag/list.tpl:17
+msgid "link-collapse-all"
+msgstr "shrink all"
+
+#: templates/tag/list.tpl:20
+msgid "link-expand-all"
+msgstr "expand all"
 
 #: templates/tag/view.tpl:3 templates/tag/view.tpl:7
 msgid "title-tag"

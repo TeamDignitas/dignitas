@@ -531,6 +531,24 @@ $(function() {
     $(this).toggleClass('expanded');
   });
 
+  $('#link-expand-all').click(function() {
+    var isExpanded = $(this).data('isExpanded');
+
+    var tmp = $(this).text();
+    $(this).text($(this).attr('data-other-text'));
+    $(this).attr('data-other-text', tmp);
+
+    if (isExpanded) {
+      $('#tag-tree .expand').removeClass('expanded');
+      $('#tag-tree ul ul').stop().slideUp();
+      $(this).data('isExpanded', false);
+    } else {
+      $('#tag-tree .expand').addClass('expanded');
+      $('#tag-tree ul ul').stop().slideDown();
+      $(this).data('isExpanded', true);
+    }
+  });
+
 });
 
 /**************************** archived links ****************************/
