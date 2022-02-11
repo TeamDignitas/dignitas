@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-02-07 14:47+0200\n"
-"PO-Revision-Date: 2022-02-07 14:47+0200\n"
+"POT-Creation-Date: 2022-02-11 12:41+0200\n"
+"PO-Revision-Date: 2022-02-11 12:42+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -232,11 +232,11 @@ msgstr "I forgot my password"
 msgid "label-remember-me"
 msgstr "Remember me for one year."
 
-#: templates/auth/login.tpl:53 templates/bits/navmenu.tpl:217
+#: templates/auth/login.tpl:53 templates/bits/navmenu.tpl:216
 msgid "link-log-in"
 msgstr "log in"
 
-#: templates/auth/login.tpl:59 templates/auth/register.tpl:63
+#: templates/auth/login.tpl:59 templates/auth/register.tpl:64
 msgid "link-sign-up"
 msgstr "sign up"
 
@@ -269,7 +269,7 @@ msgid "label-nickname"
 msgstr "nickname"
 
 #: templates/auth/register.tpl:41 templates/auth/resetPassword.tpl:27
-#: templates/user/edit.tpl:93
+#: templates/user/edit.tpl:94
 msgid "label-password-again"
 msgstr "password (again)"
 
@@ -278,7 +278,7 @@ msgid "label-register-manual"
 msgstr ""
 "I have read the <a href=\"%1\">Dignitas user manual</a> and agree with it."
 
-#: templates/auth/register.tpl:67
+#: templates/auth/register.tpl:68
 msgid "link-has-account-already"
 msgstr "I already have an account"
 
@@ -487,7 +487,7 @@ msgstr "test user login"
 msgid "label-reputation"
 msgstr "reputation"
 
-#: templates/bits/fakeLogin.tpl:37 templates/bits/navmenu.tpl:193
+#: templates/bits/fakeLogin.tpl:37 templates/bits/navmenu.tpl:192
 #: templates/user/view.tpl:25
 msgid "label-moderator"
 msgstr "moderator"
@@ -615,10 +615,6 @@ msgstr "other reason"
 msgid "label-provide-details"
 msgstr "please provide details..."
 
-#: templates/bits/frequentColors.tpl:3
-msgid "label-frequent-colors"
-msgstr "frequently used colors"
-
 #: templates/bits/history.tpl:10
 msgid "info-no-history"
 msgstr ""
@@ -661,7 +657,7 @@ msgstr "How is loyalty computed?"
 msgid "info-markdown-help"
 msgstr "Markdown help"
 
-#: templates/bits/navmenu.tpl:12 templates/bits/navmenu.tpl:40
+#: templates/bits/navmenu.tpl:13 templates/bits/navmenu.tpl:39
 msgid "label-toggle-menu"
 msgstr "toggle sidebar"
 
@@ -669,42 +665,42 @@ msgstr "toggle sidebar"
 msgid "tooltip-dignitas-logo"
 msgstr "Dignitas logo"
 
-#: templates/bits/navmenu.tpl:79
+#: templates/bits/navmenu.tpl:78
 msgid "link-notifications"
 msgstr "notifications"
 
-#: templates/bits/navmenu.tpl:91
+#: templates/bits/navmenu.tpl:90
 msgid "link-dashboard"
 msgstr "dashboard"
 
-#: templates/bits/navmenu.tpl:105 templates/bits/navmenu.tpl:164
+#: templates/bits/navmenu.tpl:104 templates/bits/navmenu.tpl:163
 msgid "link-light-mode"
 msgstr "light mode"
 
-#: templates/bits/navmenu.tpl:113 templates/bits/navmenu.tpl:171
+#: templates/bits/navmenu.tpl:112 templates/bits/navmenu.tpl:170
 msgid "link-dark-mode"
 msgstr "dark mode"
 
-#: templates/bits/navmenu.tpl:125 templates/bits/navmenu.tpl:126
+#: templates/bits/navmenu.tpl:124 templates/bits/navmenu.tpl:125
 #: templates/help/categoryView.tpl:3 templates/help/categoryView.tpl:14
 #: templates/help/index.tpl:3 templates/help/index.tpl:7
 #: templates/help/pageView.tpl:3 templates/help/pageView.tpl:14
 msgid "help-center"
 msgstr "help center"
 
-#: templates/bits/navmenu.tpl:155
+#: templates/bits/navmenu.tpl:154
 msgid "link-my-profile"
 msgstr "my profile"
 
-#: templates/bits/navmenu.tpl:179
+#: templates/bits/navmenu.tpl:178
 msgid "info-reputation-manual"
 msgstr "change reputation manually (will refresh the page)"
 
-#: templates/bits/navmenu.tpl:198
+#: templates/bits/navmenu.tpl:197
 msgid "link-change"
 msgstr "schimbă"
 
-#: templates/bits/navmenu.tpl:208
+#: templates/bits/navmenu.tpl:207
 msgid "link-log-out"
 msgstr "log out"
 
@@ -809,6 +805,10 @@ msgstr "Accept/reject the answer as proof."
 #: templates/bits/scoreAndVote.tpl:101
 msgid "tooltip-answer-is-proof"
 msgstr "Answer accepted as proof."
+
+#: templates/bits/selectPickerTag.tpl:3
+msgid "label-sample"
+msgstr "sample"
 
 #: templates/bits/statement.tpl:12
 msgid "quote-open"
@@ -952,7 +952,7 @@ msgstr "edit canned response"
 msgid "label-contents"
 msgstr "contents"
 
-#: templates/cannedResponse/edit.tpl:29 templates/tag/edit.tpl:110
+#: templates/cannedResponse/edit.tpl:29 templates/tag/edit.tpl:108
 msgid "info-confirm-delete-canned-response"
 msgstr "Are you sure you want to delete this canned response?"
 
@@ -1027,7 +1027,7 @@ msgstr "domains"
 msgid "link-add-domain"
 msgstr "add a domain"
 
-#: templates/domain/list.tpl:20 templates/tag/edit.tpl:79
+#: templates/domain/list.tpl:20 templates/tag/edit.tpl:76
 msgid "label-icon"
 msgstr "icon"
 
@@ -1117,7 +1117,7 @@ msgstr ""
 "If you change the author type, all existing relations will be deleted. You "
 "can add new relations after you save the page."
 
-#: templates/entity/edit.tpl:103
+#: templates/entity/edit.tpl:103 templates/tag/edit.tpl:57
 msgid "label-color"
 msgstr "color"
 
@@ -1641,36 +1641,28 @@ msgstr "optional; visible in a tooltip while hovering"
 msgid "label-parent-tag"
 msgstr "parent tag"
 
-#: templates/tag/edit.tpl:57
-msgid "label-text-color"
-msgstr "text color"
-
-#: templates/tag/edit.tpl:68
-msgid "label-background-color"
-msgstr "background color"
-
-#: templates/tag/edit.tpl:87
+#: templates/tag/edit.tpl:85
 msgid "info-tag-icon-name"
 msgstr ""
 "Optionally, an icon name. Here is <a href=\"https://material.io/resources/"
 "icons/\">the set of available icons</a>. If we don't have the icon, you can "
 "contact us and ask that we add it to our set."
 
-#: templates/tag/edit.tpl:93
+#: templates/tag/edit.tpl:91
 msgid "label-icon-only"
 msgstr "show only the icon, no text"
 
-#: templates/tag/edit.tpl:112 routes/tag/edit.php:30
+#: templates/tag/edit.tpl:110 routes/tag/edit.php:30
 msgid "info-cannot-delete-tag"
 msgstr ""
 "Cannot delete this tag because (1) it has descendants or (2) it is being "
 "used."
 
-#: templates/tag/edit.tpl:117 templates/tag/view.tpl:24
+#: templates/tag/edit.tpl:115 templates/tag/view.tpl:24
 msgid "title-descendants"
 msgstr "descendants"
 
-#: templates/tag/edit.tpl:125
+#: templates/tag/edit.tpl:123
 msgid "title-duplicate-tags"
 msgstr "duplicate tags"
 
@@ -1823,6 +1815,20 @@ msgstr "until"
 #: templates/user/view.tpl:117
 msgid "link-ban"
 msgstr "ban..."
+
+#: lib/Request.php:122
+#, php-format
+msgid "info-upload-size-%d"
+msgstr "Maximum file size is %d MB."
+
+#: lib/Request.php:127
+#, php-format
+msgid "info-upload-type-%s"
+msgstr "Supported file types are: %s."
+
+#: lib/Request.php:130
+msgid "info-upload-error"
+msgstr "An error occurred while uploading the file."
 
 #: lib/Router.php:469
 msgid "info-language-changed"
@@ -2795,20 +2801,6 @@ msgstr ""
 msgid "can-suggest-changes"
 msgstr "You can suggest changes which will be placed in the review queue."
 
-#: lib/trait/UploadTrait.php:175
-#, php-format
-msgid "info-upload-size-%d"
-msgstr "Maximum file size is %d MB."
-
-#: lib/trait/UploadTrait.php:180
-#, php-format
-msgid "info-upload-type-%s"
-msgstr "Supported file types are: %s."
-
-#: lib/trait/UploadTrait.php:183
-msgid "info-upload-error"
-msgstr "An error occurred while uploading the file."
-
 #: lib/trait/VerdictTrait.php:11
 msgid "verdict-none"
 msgstr "none"
@@ -3085,7 +3077,7 @@ msgstr "Domain saved."
 #: routes/domain/edit.php:80 routes/entity/edit.php:143
 #: routes/entityType/edit.php:57 routes/help/categoryEdit.php:91
 #: routes/region/edit.php:86 routes/relationType/edit.php:72
-#: routes/staticResource/edit.php:49 routes/tag/edit.php:104
+#: routes/staticResource/edit.php:49 routes/tag/edit.php:98
 msgid "info-must-enter-name"
 msgstr "Please enter a name."
 
@@ -3507,11 +3499,11 @@ msgstr "Tag cloned. This is the clone's page."
 msgid "info-save-tag-before-clone"
 msgstr "Please save the tag before cloning it."
 
-#: routes/tag/edit.php:73
+#: routes/tag/edit.php:72
 msgid "info-tag-saved"
 msgstr "Tag saved."
 
-#: routes/tag/edit.php:113
+#: routes/tag/edit.php:107
 msgid "info-tag-loop"
 msgstr "You cannot select a descendant as the parent."
 

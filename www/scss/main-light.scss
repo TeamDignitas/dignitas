@@ -34,6 +34,40 @@ html.light {
   --c-search-btn: var(--bs-gray-800);
   --c-surface: #{$surface};
 
+  /* tag backgrounds */
+  --c-tag-bg-1: #e01e00;
+  --c-tag-bg-2: #ff9800;
+  --c-tag-bg-3: #ffc107;
+  --c-tag-bg-4: #006615;
+  --c-tag-bg-5: #006cd1;
+  --c-tag-bg-6: #ab0065;
+  --c-tag-bg-7: #555555;
+
+  --c-tag-bg-8: #ffc7b8;
+  --c-tag-bg-9: #ffe0b2;
+  --c-tag-bg-10: #ffecb3;
+  --c-tag-bg-11: #c5e9c9;
+  --c-tag-bg-12: #b3ecf0;
+  --c-tag-bg-13: #f5bad6;
+  --c-tag-bg-14: #e2e3e5;
+
+  /* tag colors */
+  --c-tag-1: #fff;
+  --c-tag-2: #000;
+  --c-tag-3: #000;
+  --c-tag-4: #fff;
+  --c-tag-5: #fff;
+  --c-tag-6: #fff;
+  --c-tag-7: #fff;
+
+  --c-tag-8: #000;
+  --c-tag-9: #000;
+  --c-tag-10: #000;
+  --c-tag-11: #000;
+  --c-tag-12: #000;
+  --c-tag-13: #000;
+  --c-tag-14: #000;
+
   /* verdict colors */
   --v-none: #eee;
   --v-undecidable: #aaa;

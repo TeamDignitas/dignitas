@@ -54,26 +54,23 @@
       </fieldset>
 
       <fieldset class="mb-5 ms-3">
-        {hf inputId='color' label="{t}label-text-color{/t}"}
-          <input type="color"
-            class="form-control form-control-color"
+        {hf inputId='color' label="{t}label-color{/t}"}
+          <select
+            class="selectpicker"
+            data-style-base="form-select"
+            data-width="100%"
             id="color"
-            name="color"
-            value="{$t->getColor()}">
-          {include "bits/frequentColors.tpl"
-            colors=$frequentColors.color
-            target="#color"}
-        {/hf}
-
-        {hf inputId='background' label="{t}label-background-color{/t}"}
-          <input type="color"
-            class="form-control form-control-color"
-            id="background"
-            name="background"
-            value="{$t->getBackground()}">
-          {include "bits/frequentColors.tpl"
-            colors=$frequentColors.background
-            target="#background"}
+            name="color">
+            {for $c=1 to Tag::NUM_COLORS}
+              <option
+                data-content="{include 'bits/selectPickerTag.tpl'}"
+                {if ($c == $t->color) || (!$t->color && ($c == Tag::DEFAULT_COLOR))}
+                selected
+                {/if}
+                value="{$c}">
+              </option>
+            {/for}
+          </select>
         {/hf}
 
         {hf label="{t}label-icon{/t}"}

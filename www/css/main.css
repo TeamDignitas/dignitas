@@ -606,7 +606,7 @@ body, main {
 /************************ statement filter tweaks ************************/
 
 /* hide the caret on the bootstrap-select verdict dropdown */
-.statement-filters .bootstrap-select .dropdown-toggle::after {
+.bootstrap-select .dropdown-toggle::after {
   display: none;
 }
 

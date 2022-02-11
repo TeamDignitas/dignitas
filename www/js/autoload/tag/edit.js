@@ -7,13 +7,6 @@ $(function() {
       minimumInputLength: 1,
       width: '100%',
     });
-
-    $('.frequent-color').click(frequentColorClick);
-  }
-
-  function frequentColorClick() {
-    var input = $($(this).data('target'));
-    input.val($(this).data('value'));
   }
 
   init();

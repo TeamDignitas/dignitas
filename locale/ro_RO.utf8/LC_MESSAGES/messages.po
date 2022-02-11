@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-02-07 14:47+0200\n"
-"PO-Revision-Date: 2022-02-07 14:47+0200\n"
+"POT-Creation-Date: 2022-02-11 12:41+0200\n"
+"PO-Revision-Date: 2022-02-11 12:42+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -233,11 +233,11 @@ msgstr "mi-am uitat parola"
 msgid "label-remember-me"
 msgstr "Ține-mă minte un an."
 
-#: templates/auth/login.tpl:53 templates/bits/navmenu.tpl:217
+#: templates/auth/login.tpl:53 templates/bits/navmenu.tpl:216
 msgid "link-log-in"
 msgstr "autentificare"
 
-#: templates/auth/login.tpl:59 templates/auth/register.tpl:63
+#: templates/auth/login.tpl:59 templates/auth/register.tpl:64
 msgid "link-sign-up"
 msgstr "înregistrare"
 
@@ -271,7 +271,7 @@ msgid "label-nickname"
 msgstr "poreclă"
 
 #: templates/auth/register.tpl:41 templates/auth/resetPassword.tpl:27
-#: templates/user/edit.tpl:93
+#: templates/user/edit.tpl:94
 msgid "label-password-again"
 msgstr "parola (din nou)"
 
@@ -281,7 +281,7 @@ msgstr ""
 "Am citit <a href=\"%1\">Manualul de utilizare</a> al platformei Dignitas și "
 "sînt de acord cu el."
 
-#: templates/auth/register.tpl:67
+#: templates/auth/register.tpl:68
 msgid "link-has-account-already"
 msgstr "am deja un cont"
 
@@ -492,7 +492,7 @@ msgstr "autentificare ca utilizator de test"
 msgid "label-reputation"
 msgstr "reputație"
 
-#: templates/bits/fakeLogin.tpl:37 templates/bits/navmenu.tpl:193
+#: templates/bits/fakeLogin.tpl:37 templates/bits/navmenu.tpl:192
 #: templates/user/view.tpl:25
 msgid "label-moderator"
 msgstr "moderator"
@@ -621,10 +621,6 @@ msgstr "alt motiv"
 msgid "label-provide-details"
 msgstr "te rugăm să dai detalii..."
 
-#: templates/bits/frequentColors.tpl:3
-msgid "label-frequent-colors"
-msgstr "culori folosite frecvent"
-
 #: templates/bits/history.tpl:10
 msgid "info-no-history"
 msgstr ""
@@ -667,7 +663,7 @@ msgstr "Cum calculăm loialitatea?"
 msgid "info-markdown-help"
 msgstr "ajutor pentru Markdown"
 
-#: templates/bits/navmenu.tpl:12 templates/bits/navmenu.tpl:40
+#: templates/bits/navmenu.tpl:13 templates/bits/navmenu.tpl:39
 msgid "label-toggle-menu"
 msgstr "arată/ascunde meniul"
 
@@ -675,42 +671,42 @@ msgstr "arată/ascunde meniul"
 msgid "tooltip-dignitas-logo"
 msgstr "logoul Dignitas"
 
-#: templates/bits/navmenu.tpl:79
+#: templates/bits/navmenu.tpl:78
 msgid "link-notifications"
 msgstr "notificări"
 
-#: templates/bits/navmenu.tpl:91
+#: templates/bits/navmenu.tpl:90
 msgid "link-dashboard"
 msgstr "panou de control"
 
-#: templates/bits/navmenu.tpl:105 templates/bits/navmenu.tpl:164
+#: templates/bits/navmenu.tpl:104 templates/bits/navmenu.tpl:163
 msgid "link-light-mode"
 msgstr "modul luminos"
 
-#: templates/bits/navmenu.tpl:113 templates/bits/navmenu.tpl:171
+#: templates/bits/navmenu.tpl:112 templates/bits/navmenu.tpl:170
 msgid "link-dark-mode"
 msgstr "modul întunecat"
 
-#: templates/bits/navmenu.tpl:125 templates/bits/navmenu.tpl:126
+#: templates/bits/navmenu.tpl:124 templates/bits/navmenu.tpl:125
 #: templates/help/categoryView.tpl:3 templates/help/categoryView.tpl:14
 #: templates/help/index.tpl:3 templates/help/index.tpl:7
 #: templates/help/pageView.tpl:3 templates/help/pageView.tpl:14
 msgid "help-center"
 msgstr "ajutor"
 
-#: templates/bits/navmenu.tpl:155
+#: templates/bits/navmenu.tpl:154
 msgid "link-my-profile"
 msgstr "profilul meu"
 
-#: templates/bits/navmenu.tpl:179
+#: templates/bits/navmenu.tpl:178
 msgid "info-reputation-manual"
 msgstr "schimbă reputația manual (va reîncărca pagina)"
 
-#: templates/bits/navmenu.tpl:198
+#: templates/bits/navmenu.tpl:197
 msgid "link-change"
 msgstr "schimbă"
 
-#: templates/bits/navmenu.tpl:208
+#: templates/bits/navmenu.tpl:207
 msgid "link-log-out"
 msgstr "ieșire"
 
@@ -816,6 +812,10 @@ msgstr "Acceptă/respinge răspunsul ca demonstrație."
 #: templates/bits/scoreAndVote.tpl:101
 msgid "tooltip-answer-is-proof"
 msgstr "Răspuns acceptat ca demonstrație."
+
+#: templates/bits/selectPickerTag.tpl:3
+msgid "label-sample"
+msgstr "exemplu"
 
 #: templates/bits/statement.tpl:12
 msgid "quote-open"
@@ -963,7 +963,7 @@ msgstr "editează răspunsul predefinit"
 msgid "label-contents"
 msgstr "conținut"
 
-#: templates/cannedResponse/edit.tpl:29 templates/tag/edit.tpl:110
+#: templates/cannedResponse/edit.tpl:29 templates/tag/edit.tpl:108
 msgid "info-confirm-delete-canned-response"
 msgstr "Confirmi ștergerea acestui răspuns predefinit?"
 
@@ -1038,7 +1038,7 @@ msgstr "domenii"
 msgid "link-add-domain"
 msgstr "adaugă un domeniu"
 
-#: templates/domain/list.tpl:20 templates/tag/edit.tpl:79
+#: templates/domain/list.tpl:20 templates/tag/edit.tpl:76
 msgid "label-icon"
 msgstr "iconiță"
 
@@ -1129,7 +1129,7 @@ msgstr ""
 "Dacă schimbi tipul de autor, toate relațiile existente vor fi șterse. Pentru "
 "a putea adăuga alte relații, va trebui să salvezi mai întîi pagina."
 
-#: templates/entity/edit.tpl:103
+#: templates/entity/edit.tpl:103 templates/tag/edit.tpl:57
 msgid "label-color"
 msgstr "culoare"
 
@@ -1653,35 +1653,27 @@ msgstr "opționale; vizibile la survol"
 msgid "label-parent-tag"
 msgstr "eticheta-părinte"
 
-#: templates/tag/edit.tpl:57
-msgid "label-text-color"
-msgstr "culoarea textului"
-
-#: templates/tag/edit.tpl:68
-msgid "label-background-color"
-msgstr "culoarea fundalului"
-
-#: templates/tag/edit.tpl:87
+#: templates/tag/edit.tpl:85
 msgid "info-tag-icon-name"
 msgstr ""
 "Opțional, un nume de iconiță. Poți vedea <a href=\"https://material.io/"
 "resources/icons/\">setul de iconițe disponibile</a>. Dacă nu avem iconița, "
 "ne poți contacta ca să ceri să o adăugăm la set."
 
-#: templates/tag/edit.tpl:93
+#: templates/tag/edit.tpl:91
 msgid "label-icon-only"
 msgstr "arată doar iconița, fără text"
 
-#: templates/tag/edit.tpl:112 routes/tag/edit.php:30
+#: templates/tag/edit.tpl:110 routes/tag/edit.php:30
 msgid "info-cannot-delete-tag"
 msgstr ""
 "Nu pot șterge eticheta deoarece (1) are descendenți sau (2) este folosită."
 
-#: templates/tag/edit.tpl:117 templates/tag/view.tpl:24
+#: templates/tag/edit.tpl:115 templates/tag/view.tpl:24
 msgid "title-descendants"
 msgstr "descendenți"
 
-#: templates/tag/edit.tpl:125
+#: templates/tag/edit.tpl:123
 msgid "title-duplicate-tags"
 msgstr "etichete duplicate"
 
@@ -1834,6 +1826,20 @@ msgstr "pînă la"
 #: templates/user/view.tpl:117
 msgid "link-ban"
 msgstr "blochează..."
+
+#: lib/Request.php:122
+#, php-format
+msgid "info-upload-size-%d"
+msgstr "Dimensiunea maximă acceptată este %d MB."
+
+#: lib/Request.php:127
+#, php-format
+msgid "info-upload-type-%s"
+msgstr "Tipurile de fișier acceptate sînt: %s."
+
+#: lib/Request.php:130
+msgid "info-upload-error"
+msgstr "A apărut o eroare la încărcarea fișierului."
 
 #: lib/Router.php:469
 msgid "info-language-changed"
@@ -2819,20 +2825,6 @@ msgstr ""
 msgid "can-suggest-changes"
 msgstr "Poți sugera modificări care vor fi puse în coada de evaluare."
 
-#: lib/trait/UploadTrait.php:175
-#, php-format
-msgid "info-upload-size-%d"
-msgstr "Dimensiunea maximă acceptată este %d MB."
-
-#: lib/trait/UploadTrait.php:180
-#, php-format
-msgid "info-upload-type-%s"
-msgstr "Tipurile de fișier acceptate sînt: %s."
-
-#: lib/trait/UploadTrait.php:183
-msgid "info-upload-error"
-msgstr "A apărut o eroare la încărcarea fișierului."
-
 #: lib/trait/VerdictTrait.php:11
 msgid "verdict-none"
 msgstr "niciunul"
@@ -3113,7 +3105,7 @@ msgstr "Am salvat domeniul."
 #: routes/domain/edit.php:80 routes/entity/edit.php:143
 #: routes/entityType/edit.php:57 routes/help/categoryEdit.php:91
 #: routes/region/edit.php:86 routes/relationType/edit.php:72
-#: routes/staticResource/edit.php:49 routes/tag/edit.php:104
+#: routes/staticResource/edit.php:49 routes/tag/edit.php:98
 msgid "info-must-enter-name"
 msgstr "Te rugăm să introduci un nume."
 
@@ -3540,11 +3532,11 @@ msgstr "Am clonat eticheta. Aceasta este pagina clonei."
 msgid "info-save-tag-before-clone"
 msgstr "Te rugăm să salvezi eticheta înainte de a o clona."
 
-#: routes/tag/edit.php:73
+#: routes/tag/edit.php:72
 msgid "info-tag-saved"
 msgstr "Am salvat eticheta."
 
-#: routes/tag/edit.php:113
+#: routes/tag/edit.php:107
 msgid "info-tag-loop"
 msgstr "Nu poți alege un descendent ca părinte."
 

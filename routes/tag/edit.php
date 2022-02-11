@@ -56,8 +56,7 @@ if ($cloneButton) {
 if ($saveButton) {
   $tag->value = Request::get('value');
   $tag->parentId = Request::get('parentId', 0);
-  $tag->setColor(Request::get('color'));
-  $tag->setBackground(Request::get('background'));
+  $tag->color = Request::get('color');
   $tag->icon = Request::get('icon');
   $tag->iconOnly = Request::has('iconOnly');
   $tag->tooltip = Request::get('tooltip');
@@ -77,11 +76,6 @@ if ($saveButton) {
   }
 }
 
-$frequentColors = [
-  'color' => Tag::getFrequentValues('color', Tag::DEFAULT_COLOR),
-  'background' => Tag::getFrequentValues('background', Tag::DEFAULT_BACKGROUND),
-];
-
 $homonyms = Model::factory('Tag')
   ->where('value', $tag->value)
   ->where_not_equal('id', $tag->id)
@@ -91,8 +85,8 @@ Smart::assign([
   't' => $tag,
   'canDelete' => $canDelete,
   'homonyms' => $homonyms,
-  'frequentColors' => $frequentColors,
 ]);
+Smart::addResources('bootstrap-select');
 Smart::display('tag/edit.tpl');
 
 /*************************************************************************/
