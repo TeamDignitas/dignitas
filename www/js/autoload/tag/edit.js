@@ -5,6 +5,7 @@ $(function() {
       ajax: { url: URL_PREFIX + 'ajax/search-tags', },
       allowClear: true,
       minimumInputLength: 1,
+      placeholder: '',
       width: '100%',
     });
   }
