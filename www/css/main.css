@@ -480,6 +480,8 @@ html.dark .dark-mode-toggle {
 label.required:after {
   color: var(--bs-danger);
   content: '*';
+  font-size: 1.4rem;
+  vertical-align: top;
 }
 
 /******************************** footer ********************************/
