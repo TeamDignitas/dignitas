@@ -77,30 +77,31 @@ html.dark {
   --c-search-btn: var(--bs-gray-300);
   --c-surface: #{$surface};
 
-  /* tag backgrounds */
-  --c-tag-bg-1: #93061b;
-  --c-tag-bg-2: #ff7c5b;
-  --c-tag-bg-3: #e3c968;
-  --c-tag-bg-4: #5bb574;
-  --c-tag-bg-5: #1e83c2;
-  --c-tag-bg-6: #961ec2;
-  --c-tag-bg-7: #b2b2b2;
+  /* tag backgrounds;
+     colours used are from Google Material Palette https://material.io/resources/color/#!/?view.left=0&view.right=0 , saturation level 300 */
+  --c-tag-bg-1: #e57373; /* red */
+  --c-tag-bg-2: #f06292; /* pink */
+  --c-tag-bg-3: #ba68c8; /* purple */
+  --c-tag-bg-4: #7986cb; /* indigo */
+  --c-tag-bg-5: #64b5f6; /* blue */
+  --c-tag-bg-6: #4db6ac; /* teal */
+  --c-tag-bg-7: #81c784; /* green */
 
-  --c-tag-bg-8: #ffc7b8;
-  --c-tag-bg-9: #ffe0b2;
-  --c-tag-bg-10: #ffecb3;
-  --c-tag-bg-11: #c5e9c9;
-  --c-tag-bg-12: #b3ecf0;
-  --c-tag-bg-13: #f5bad6;
-  --c-tag-bg-14: #e2e3e5;
+  --c-tag-bg-8: #fff176; /* yellow */
+  --c-tag-bg-9: #ffb74d; /* orange */
+  --c-tag-bg-10: #ff8a65; /* deep orange */
+  --c-tag-bg-11: #a1887f; /* brown */
+  --c-tag-bg-12: #e0e0e0; /* grey, 300 */
+  --c-tag-bg-13: #bdbdbd; /* grey, 400 */
+  --c-tag-bg-14: #90a4ae; /* blue gray */
 
   /* tag colors */
-  --c-tag-1: #fff;
+  --c-tag-1: #000;
   --c-tag-2: #000;
   --c-tag-3: #000;
   --c-tag-4: #000;
-  --c-tag-5: #fff;
-  --c-tag-6: #fff;
+  --c-tag-5: #000;
+  --c-tag-6: #000;
   --c-tag-7: #000;
 
   --c-tag-8: #000;
