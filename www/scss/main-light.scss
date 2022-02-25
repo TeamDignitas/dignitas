@@ -34,38 +34,39 @@ html.light {
   --c-search-btn: var(--bs-gray-800);
   --c-surface: #{$surface};
 
-  /* tag backgrounds */
-  --c-tag-bg-1: #e01e00;
-  --c-tag-bg-2: #ff9800;
-  --c-tag-bg-3: #ffc107;
-  --c-tag-bg-4: #006615;
-  --c-tag-bg-5: #006cd1;
-  --c-tag-bg-6: #ab0065;
-  --c-tag-bg-7: #555555;
+  /* tag backgrounds
+     colours used are from Google Material Palette https://material.io/resources/color/#!/?view.left=0&view.right=0 , saturation level 500 */
+  --c-tag-bg-1: #f44336; /* red */
+  --c-tag-bg-2: #e91e63; /* pink */
+  --c-tag-bg-3: #9c27b0; /* purple */
+  --c-tag-bg-4: #3f51b5; /* indigo */
+  --c-tag-bg-5: #2196f3; /* blue */
+  --c-tag-bg-6: #009688; /* teal */
+  --c-tag-bg-7: #4caf50; /* green */
 
-  --c-tag-bg-8: #ffc7b8;
-  --c-tag-bg-9: #ffe0b2;
-  --c-tag-bg-10: #ffecb3;
-  --c-tag-bg-11: #c5e9c9;
-  --c-tag-bg-12: #b3ecf0;
-  --c-tag-bg-13: #f5bad6;
-  --c-tag-bg-14: #e2e3e5;
+  --c-tag-bg-8: #ffeb3b; /* yellow */
+  --c-tag-bg-9: #ff9800; /* orange */
+  --c-tag-bg-10: #ff5722; /* deep orange */
+  --c-tag-bg-11: #795548; /* brown */
+  --c-tag-bg-12: #9e9e9e; /* grey, 500 */
+  --c-tag-bg-13: #757575; /* grey, 600 */
+  --c-tag-bg-14: #607d8b; /* blue grey */
 
-  /* tag colors */
-  --c-tag-1: #fff;
+  /* tag text colors, they pass WCAG AA contrast ratio with background tag colours, for Normal text */
+  --c-tag-1: #000;
   --c-tag-2: #000;
-  --c-tag-3: #000;
+  --c-tag-3: #fff;
   --c-tag-4: #fff;
-  --c-tag-5: #fff;
-  --c-tag-6: #fff;
-  --c-tag-7: #fff;
+  --c-tag-5: #000;
+  --c-tag-6: #000;
+  --c-tag-7: #000;
 
   --c-tag-8: #000;
   --c-tag-9: #000;
   --c-tag-10: #000;
-  --c-tag-11: #000;
+  --c-tag-11: #fff;
   --c-tag-12: #000;
-  --c-tag-13: #000;
+  --c-tag-13: #fff;
   --c-tag-14: #000;
 
   /* verdict colors */
