@@ -1,9 +1,9 @@
 <div class="mt-4">
   {foreach $results as $tuple}
-    <h5>
+    <h6>
       {$tuple.relationType->name|esc}
       {include "bits/entityLink.tpl" e=$tuple.toEntity phrase=$tuple.relationType->phrase}
-    </h5>
+    </h6>
     <ul>
       {foreach $tuple.data as $rec}
         <li {if $rec.relation->ended()}class="text-muted"{/if}>
