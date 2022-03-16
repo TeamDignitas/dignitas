@@ -1,7 +1,7 @@
 {$term=$term|default:''}
 <form data-url="{Config::URL_PREFIX}ajax/search-relations">
 
-  <div class="row gx-2 gx-xl-3 gy-2 mb-2 align-items-center statement-filters">
+  <div class="row gx-2 gx-xl-3 gy-2 mb-5 align-items-center statement-filters">
 
     <div class="col-12 col-sm-4 col-lg-auto">
       <label class="col-form-label col-form-label-sm text-capitalize">

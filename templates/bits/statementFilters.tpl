@@ -1,7 +1,7 @@
 {$term=$term|default:''}
 {$verdicts=$verdicts|default:[]}
 <form data-url="{Config::URL_PREFIX}ajax/search-statements">
-  <div class="statement-filters">
+  <div class="statement-filters mb-5">
 
     <div class="row gx-1 gx-xl-3 gy-2 mb-2">
       <div class="col-12 col-md-auto">
@@ -65,7 +65,7 @@
     </div>
 
 
-    <div id="more-filters" class="collapse {if $term}show{/if} row gx-1 gx-xl-3 gy-2 mb-2">
+    <div id="more-filters" class="collapse {if $term}show{/if} row gx-1 gx-xl-3 gy-2">
       <div class="col-12 col-md-auto">
         <select
           name="order"
