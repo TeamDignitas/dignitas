@@ -1,6 +1,6 @@
 <div class="mt-4">
   {foreach $results as $tuple}
-    <h6>
+    <h6 class="capitalize-first-word mt-4">
       {$tuple.relationType->name|esc}
       {include "bits/entityLink.tpl" e=$tuple.toEntity phrase=$tuple.relationType->phrase}
     </h6>
