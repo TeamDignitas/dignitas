@@ -86,6 +86,24 @@ class Entity extends Proto {
     }
   }
 
+  /**
+   * @return One of the entities' names as dictated by the $phrase type.
+   */
+  function getForm($phrase) {
+    switch ($phrase) {
+      case RelationType::PHRASE_REGULAR:
+        $form = $this->name; break;
+      case RelationType::PHRASE_LONG_POSSESSIVE:
+        $form = $this->longPossessive; break;
+      case RelationType::PHRASE_SHORT_POSSESSIVE:
+        $form = $this->shortPossessive; break;
+      case RelationType::PHRASE_NONE:
+        $form = ''; break;
+    }
+    $form = str_replace(['[', ']'], '', $form);
+    return $form;
+  }
+
   function getEntityType() {
     return EntityType::get_by_id($this->entityTypeId);
   }

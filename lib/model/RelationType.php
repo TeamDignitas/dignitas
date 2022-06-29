@@ -43,6 +43,11 @@ class RelationType extends Proto {
     return EntityType::get_by_id($this->toEntityTypeId);
   }
 
+  /* Returns a complete phrase such as 'President of the Jedi Party' */
+  function getNameWithEntity($entity) {
+    return trim($this->name . ' ' . $entity->getForm($this->phrase));
+  }
+
   static function loadAll() {
     return Model::factory('RelationType')
       ->order_by_asc('name')

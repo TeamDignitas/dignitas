@@ -327,15 +327,13 @@ class Search {
     // Stage 5: sort groups and data within each group
     $mult = ($order == Ct::SORT_NAME_DESC) ? -1 : 1;
     usort($results, function($a, $b) use ($mult) {
-      $rtA = mb_strtolower($a['relationType']->name);
-      $rtB = mb_strtolower($b['relationType']->name);
-      if ($rtA != $rtB) {
-        return $mult * ($rtA <=> $rtB);
-      }
+      $textA = $a['relationType']->getNameWithEntity($a['toEntity']);
+      $textA = mb_strtolower($textA);
 
-      $entityA = mb_strtolower($a['toEntity']->name);
-      $entityB = mb_strtolower($b['toEntity']->name);
-      return $mult * ($entityA <=> $entityB);
+      $textB = $b['relationType']->getNameWithEntity($b['toEntity']);
+      $textB = mb_strtolower($textB);
+
+      return $mult * ($textA <=> $textB);
     });
 
     foreach ($results as &$rec) {
