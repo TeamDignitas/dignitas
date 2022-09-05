@@ -45,16 +45,14 @@
     {else}
       <h5 class="pt-5">{t 1=$query|esc}info-no-search-results{/t}</h5>
 
-      {if User::getActive()}
+      {if User::may(User::PRIV_ADD_ENTITY)}
         <div class="col-12 col-lg-9 mt-5">
           <div class="row mx-0">
-            {if User::may(User::PRIV_ADD_ENTITY)}
-              <a
-                href="{Router::link('entity/edit')}"
-                class="btn btn-secondary me-3 mb-3 col-12 col-lg-4">
-                {t}link-add-entity{/t}
-              </a>
-            {/if}
+            <a
+              href="{Router::link('entity/edit')}"
+              class="btn btn-secondary me-3 mb-3 col-12 col-lg-4">
+              {t}link-add-entity{/t}
+            </a>
           </div>
         </div>
       {/if}
