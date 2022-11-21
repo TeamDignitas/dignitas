@@ -9,7 +9,7 @@ require_once __DIR__ . '/../lib/Core.php';
 
 ini_set('memory_limit', '512M');
 
-const APACHE_USER_GROUP = 'http.http';
+const APACHE_USER_GROUP = 'http:http';
 
 LocaleUtil::change('en_US.utf8');
 
