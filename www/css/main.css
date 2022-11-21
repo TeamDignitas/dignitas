@@ -513,13 +513,13 @@ body, main {
   list-style: none;
 }
 
-.expand {
+#tag-tree .expand {
   cursor: pointer;
   transition: all 0.5s;
   vertical-align: middle;
 }
 
-.expand.expanded {
+#tag-tree .expand.expanded {
   transform: rotate(180deg);
 }
 

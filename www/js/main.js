@@ -526,7 +526,7 @@ $(function() {
 
 $(function() {
 
-  $('.expand').click(function() {
+  $('#tag-tree .expand').click(function() {
     $(this).siblings('ul').stop().slideToggle();
     $(this).toggleClass('expanded');
   });
