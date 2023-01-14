@@ -1,6 +1,6 @@
 <?php
 
-require_once 'third-party/smarty-4.1.0/Smarty.class.php';
+require_once 'third-party/smarty-4.3.0/Smarty.class.php';
 
 class Smart {
   private static $theSmarty = null;
