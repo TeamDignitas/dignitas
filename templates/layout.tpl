@@ -57,7 +57,7 @@
         </ul>
 
         <p>
-          © 2019-{'Y'|date} <a href="https://github.com/TeamDignitas">Team Dignitas</a>
+          © 2019-{$copyrightYear} <a href="https://github.com/TeamDignitas">Team Dignitas</a>
         </p>
 
       </div>

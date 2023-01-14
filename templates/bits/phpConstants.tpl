@@ -2,7 +2,7 @@
 <script defer>
   const SELECT2_LOCALE = '{LocaleUtil::getSelect2Locale()}';
   const URL_PREFIX = '{Config::URL_PREFIX}';
-  const UPLOAD_MIME_TYPES = JSON.parse('{Util::getUploadMimeTypes()|json_encode}');
+  const UPLOAD_MIME_TYPES = JSON.parse('{Util::getUploadMimeTypes(true)}');
 
   {** used in the flagging modal **}
   const TYPE_ENTITY = {Proto::TYPE_ENTITY};

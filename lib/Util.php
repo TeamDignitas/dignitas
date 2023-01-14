@@ -73,7 +73,7 @@ class Util {
     return $referrer;
   }
 
-  static function getUploadMimeTypes() {
+  static function getUploadMimeTypes(bool $asJson = false) {
     $extensions = Config::UPLOAD_SPECS['Attachment']['extensions'];
     $extMap = array_flip(Config::MIME_TYPES);
 
@@ -81,7 +81,9 @@ class Util {
     foreach ($extensions as $ext) {
       $results[] = $extMap[$ext];
     }
-    return $results;
+    return $asJson
+      ? json_encode($results)
+      : $results;
   }
 
   /**

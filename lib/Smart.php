@@ -127,6 +127,7 @@ class Smart {
     $s->compile_dir = Config::TMP_DIR . 'templates_c';
     $s->addPluginsDir(__DIR__ . '/smarty-plugins');
     $s->registerPlugin('modifier', 'esc', 'Str::htmlEscape');
+    $s->registerPlugin('modifier', 'implode', 'implode');
     $s->registerPlugin('modifier', 'ld', 'Time::localDate');
     $s->registerPlugin('modifier', 'lt', 'Time::localTimestamp');
     $s->registerPlugin('modifier', 'md', 'Markdown::convert');
@@ -355,6 +356,7 @@ class Smart {
   static function fetch($templateName) {
     list ($cssFiles, $jsFiles) = self::orderResources();
     self::assign([
+      'copyrightYear' => date('Y'),
       'cssFile' => self::mergeResources($cssFiles, 'css'),
       'jsFile' => self::mergeResources($jsFiles, 'js'),
       'snackbars' => Snackbar::getAll(),
