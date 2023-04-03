@@ -168,8 +168,8 @@ class Diff {
   static function sesStr(string $a, string $b) {
     // Explode strings to arrays of words. Make sure to return [], not ['']
     // for empty strings.
-    $va = $a ? preg_split("/([\s]+)/", $a, null, PREG_SPLIT_DELIM_CAPTURE) : [];
-    $vb = $b ? preg_split("/([\s]+)/", $b, null, PREG_SPLIT_DELIM_CAPTURE) : [];
+    $va = $a ? preg_split("/([\s]+)/", $a, -1, PREG_SPLIT_DELIM_CAPTURE) : [];
+    $vb = $b ? preg_split("/([\s]+)/", $b, -1, PREG_SPLIT_DELIM_CAPTURE) : [];
 
     $ses = self::ses($va, $vb);
     $i = 0; // position in $va
