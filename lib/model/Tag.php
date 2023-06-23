@@ -9,6 +9,12 @@ class Tag extends Proto {
   // populated during loadSubtree()
   public $children = [];
 
+  static function create() {
+    $t = Model::factory('Tag')->create();
+    $t->visAnon = true;
+    return $t;
+  }
+
   function getObjectType() {
     return Proto::TYPE_TAG;
   }

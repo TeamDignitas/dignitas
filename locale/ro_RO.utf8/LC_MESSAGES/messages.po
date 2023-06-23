@@ -1,18 +1,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-02-11 14:06+0200\n"
-"PO-Revision-Date: 2022-02-11 14:06+0200\n"
+"POT-Creation-Date: 2023-06-23 09:03+0300\n"
+"PO-Revision-Date: 2023-06-23 09:23+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n==0 || (n!=1 && n%100>=1 && "
+"n%100<=19) ? 1 : 2);\n"
+"X-Generator: Poedit 3.3.1\n"
 "X-Poedit-Basepath: ../../..\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n==0 || (n!=1 && n%100>=1 && n"
-"%100<=19) ? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: lib\n"
 "X-Poedit-SearchPath-1: routes\n"
@@ -53,6 +53,7 @@ msgid "link-add-statement"
 msgstr "adaugă o afirmație"
 
 #: templates/aggregate/dashboard.tpl:29 templates/aggregate/index.tpl:41
+#: templates/aggregate/search.tpl:54
 msgid "link-add-entity"
 msgstr "adaugă un autor"
 
@@ -349,7 +350,7 @@ msgstr "legătură permanentă către acest răspuns"
 msgid "link-permalink"
 msgstr "legătură permanentă"
 
-#: templates/bits/answerEdit.tpl:24 templates/bits/statementFilters.tpl:50
+#: templates/bits/answerEdit.tpl:24 templates/bits/statementFilters.tpl:113
 #: templates/statement/edit.tpl:159 lib/model/RevisionAnswer.php:15
 #: lib/model/RevisionStatement.php:22 lib/model/Statement.php:158
 msgid "label-verdict"
@@ -448,39 +449,39 @@ msgstr "legături externe"
 msgid "title-members"
 msgstr "membri"
 
-#: templates/bits/entityFilters.tpl:7 templates/bits/relationFilters.tpl:7
-msgid "label-sort"
-msgstr "ordine"
-
-#: templates/bits/entityFilters.tpl:15 templates/bits/relationFilters.tpl:15
-msgid "sort-name-asc"
-msgstr "alfabetic"
-
-#: templates/bits/entityFilters.tpl:16 templates/bits/relationFilters.tpl:16
-msgid "sort-name-desc"
-msgstr "invers alfabetic"
-
-#: templates/bits/entityFilters.tpl:17 templates/bits/statementFilters.tpl:12
-msgid "sort-create-date-desc"
-msgstr "cel mai recent adăugate"
-
-#: templates/bits/entityFilters.tpl:18 templates/bits/statementFilters.tpl:13
-msgid "sort-create-date-asc"
-msgstr "cel mai demult adăugate"
-
-#: templates/bits/entityFilters.tpl:24 templates/bits/entityFilters.tpl:34
-#: templates/bits/relationFilters.tpl:22 templates/bits/relationFilters.tpl:32
-#: templates/bits/statementFilters.tpl:79
+#: templates/bits/entityFilters.tpl:8 templates/bits/entityFilters.tpl:18
+#: templates/bits/relationFilters.tpl:8 templates/bits/relationFilters.tpl:18
+#: templates/bits/statementFilters.tpl:13
 msgid "label-term"
 msgstr "text"
 
-#: templates/bits/entityFilters.tpl:40 templates/bits/statementFilters.tpl:103
+#: templates/bits/entityFilters.tpl:24 templates/bits/relationFilters.tpl:24
+msgid "label-sort"
+msgstr "ordine"
+
+#: templates/bits/entityFilters.tpl:32 templates/bits/relationFilters.tpl:32
+msgid "sort-name-asc"
+msgstr "alfabetic"
+
+#: templates/bits/entityFilters.tpl:33 templates/bits/relationFilters.tpl:33
+msgid "sort-name-desc"
+msgstr "invers alfabetic"
+
+#: templates/bits/entityFilters.tpl:34 templates/bits/statementFilters.tpl:75
+msgid "sort-create-date-desc"
+msgstr "cel mai recent adăugate"
+
+#: templates/bits/entityFilters.tpl:35 templates/bits/statementFilters.tpl:76
+msgid "sort-create-date-asc"
+msgstr "cel mai demult adăugate"
+
+#: templates/bits/entityFilters.tpl:41 templates/bits/statementFilters.tpl:37
 #: templates/entity/edit.tpl:167 templates/statement/edit.tpl:137
 #: lib/model/RevisionEntity.php:36 lib/model/RevisionStatement.php:30
 msgid "label-region"
 msgstr "regiune"
 
-#: templates/bits/entityFilters.tpl:46
+#: templates/bits/entityFilters.tpl:47
 msgid "label-all-regions"
 msgstr "toate"
 
@@ -626,7 +627,7 @@ msgid "info-no-history"
 msgstr ""
 "Nu există modificări la acest articol. Versiunea curentă este unica versiune."
 
-#: templates/bits/history.tpl:18 templates/bits/statementFilters.tpl:23
+#: templates/bits/history.tpl:18 templates/bits/statementFilters.tpl:86
 #: templates/review/view.tpl:31
 msgid "label-author"
 msgstr "autor"
@@ -730,11 +731,11 @@ msgstr "surse"
 msgid "link-delete-relation"
 msgstr "șterge relația"
 
-#: templates/bits/relationFilters.tpl:38
+#: templates/bits/relationFilters.tpl:39
 msgid "label-active-on"
 msgstr "active pe"
 
-#: templates/bits/relationFilters.tpl:54
+#: templates/bits/relationFilters.tpl:55
 msgid "label-active-relation"
 msgstr "active acum"
 
@@ -874,37 +875,37 @@ msgstr "Vezi toate afirmațiile cu această etichetă."
 msgid "title-added-by"
 msgstr "adăugată de"
 
-#: templates/bits/statementFilters.tpl:10
-msgid "sort-verdict-date-desc"
-msgstr "cele mai noi verdicte"
-
-#: templates/bits/statementFilters.tpl:11
-msgid "sort-verdict-date-asc"
-msgstr "cele mai vechi verdicte"
-
-#: templates/bits/statementFilters.tpl:14
-msgid "sort-date-made-desc"
-msgstr "cele mai recente afirmații"
-
-#: templates/bits/statementFilters.tpl:15
-msgid "sort-date-made-asc"
-msgstr "cele mai vechi afirmații"
-
-#: templates/bits/statementFilters.tpl:66
-msgid "label-other-filters"
-msgstr "alte filtre"
-
-#: templates/bits/statementFilters.tpl:87 templates/entity/edit.tpl:125
+#: templates/bits/statementFilters.tpl:21 templates/entity/edit.tpl:125
 msgid "label-start-date"
 msgstr "de la data"
 
-#: templates/bits/statementFilters.tpl:96 templates/entity/edit.tpl:126
+#: templates/bits/statementFilters.tpl:30 templates/entity/edit.tpl:126
 msgid "label-end-date"
 msgstr "pînă la data"
 
-#: templates/bits/statementFilters.tpl:116
+#: templates/bits/statementFilters.tpl:50
 msgid "link-search-details"
 msgstr "ajutor pentru căutare"
+
+#: templates/bits/statementFilters.tpl:61
+msgid "label-other-filters"
+msgstr "alte filtre"
+
+#: templates/bits/statementFilters.tpl:73
+msgid "sort-verdict-date-desc"
+msgstr "cele mai noi verdicte"
+
+#: templates/bits/statementFilters.tpl:74
+msgid "sort-verdict-date-asc"
+msgstr "cele mai vechi verdicte"
+
+#: templates/bits/statementFilters.tpl:77
+msgid "sort-date-made-desc"
+msgstr "cele mai recente afirmații"
+
+#: templates/bits/statementFilters.tpl:78
+msgid "sort-date-made-asc"
+msgstr "cele mai vechi afirmații"
 
 #: templates/bits/statementLink.tpl:9
 msgid "quoted-string-%1"
@@ -963,7 +964,7 @@ msgstr "editează răspunsul predefinit"
 msgid "label-contents"
 msgstr "conținut"
 
-#: templates/cannedResponse/edit.tpl:29 templates/tag/edit.tpl:108
+#: templates/cannedResponse/edit.tpl:29 templates/tag/edit.tpl:114
 msgid "info-confirm-delete-canned-response"
 msgstr "Confirmi ștergerea acestui răspuns predefinit?"
 
@@ -1038,7 +1039,7 @@ msgstr "domenii"
 msgid "link-add-domain"
 msgstr "adaugă un domeniu"
 
-#: templates/domain/list.tpl:20 templates/tag/edit.tpl:76
+#: templates/domain/list.tpl:20 templates/tag/edit.tpl:82
 msgid "label-icon"
 msgstr "iconiță"
 
@@ -1129,7 +1130,7 @@ msgstr ""
 "Dacă schimbi tipul de autor, toate relațiile existente vor fi șterse. Pentru "
 "a putea adăuga alte relații, va trebui să salvezi mai întîi pagina."
 
-#: templates/entity/edit.tpl:103 templates/tag/edit.tpl:57
+#: templates/entity/edit.tpl:103 templates/tag/edit.tpl:63
 msgid "label-color"
 msgstr "culoare"
 
@@ -1641,39 +1642,43 @@ msgstr "editează eticheta"
 msgid "title-add-tag"
 msgstr "adaugă o etichetă"
 
-#: templates/tag/edit.tpl:34
+#: templates/tag/edit.tpl:36
+msgid "label-tag-visibile-anonymous"
+msgstr "vizibilă pentru utilizatorii anonimi"
+
+#: templates/tag/edit.tpl:40
 msgid "label-details"
 msgstr "detalii"
 
-#: templates/tag/edit.tpl:40
+#: templates/tag/edit.tpl:46
 msgid "label-optional-tooltip"
 msgstr "opționale; vizibile la survol"
 
-#: templates/tag/edit.tpl:43
+#: templates/tag/edit.tpl:49
 msgid "label-parent-tag"
 msgstr "eticheta-părinte"
 
-#: templates/tag/edit.tpl:85
+#: templates/tag/edit.tpl:91
 msgid "info-tag-icon-name"
 msgstr ""
 "Opțional, un nume de iconiță. Poți vedea <a href=\"https://material.io/"
 "resources/icons/\">setul de iconițe disponibile</a>. Dacă nu avem iconița, "
 "ne poți contacta ca să ceri să o adăugăm la set."
 
-#: templates/tag/edit.tpl:91
+#: templates/tag/edit.tpl:97
 msgid "label-icon-only"
 msgstr "arată doar iconița, fără text"
 
-#: templates/tag/edit.tpl:110 routes/tag/edit.php:30
+#: templates/tag/edit.tpl:116 routes/tag/edit.php:30
 msgid "info-cannot-delete-tag"
 msgstr ""
 "Nu pot șterge eticheta deoarece (1) are descendenți sau (2) este folosită."
 
-#: templates/tag/edit.tpl:115 templates/tag/view.tpl:24
+#: templates/tag/edit.tpl:121 templates/tag/view.tpl:24
 msgid "title-descendants"
 msgstr "descendenți"
 
-#: templates/tag/edit.tpl:123
+#: templates/tag/edit.tpl:129
 msgid "title-duplicate-tags"
 msgstr "etichete duplicate"
 
@@ -1855,27 +1860,27 @@ msgstr ""
 "Am schimbat limba interfeței. Conținutul paginilor (afirmații, răspunsuri "
 "etc.) și-a păstrat limba în care a fost scris."
 
-#: lib/Search.php:402
+#: lib/Search.php:400
 msgid "search-keyword-closed"
 msgstr "inchis"
 
-#: lib/Search.php:402 lib/Search.php:406 lib/Search.php:428 lib/Search.php:432
+#: lib/Search.php:400 lib/Search.php:404 lib/Search.php:426 lib/Search.php:430
 msgid "search-keyword-yes"
 msgstr "da"
 
-#: lib/Search.php:402 lib/Search.php:406
+#: lib/Search.php:400 lib/Search.php:404
 msgid "search-keyword-no"
 msgstr "nu"
 
-#: lib/Search.php:406
+#: lib/Search.php:404
 msgid "search-keyword-duplicate"
 msgstr "duplicat"
 
-#: lib/Search.php:411
+#: lib/Search.php:409
 msgid "search-keyword-answers"
 msgstr "raspunsuri"
 
-#: lib/Search.php:416
+#: lib/Search.php:414
 msgid "search-keyword-score"
 msgstr "scor"
 
@@ -2025,12 +2030,12 @@ msgstr "deoarece este de slabă calitate."
 msgid "info-answer-by-owner"
 msgstr "de către autorul său."
 
-#: lib/model/Answer.php:89 lib/model/Comment.php:67 lib/model/Entity.php:158
+#: lib/model/Answer.php:89 lib/model/Comment.php:67 lib/model/Entity.php:176
 #: lib/model/Statement.php:316
 msgid "info-by"
 msgstr "de către"
 
-#: lib/model/Answer.php:90 lib/model/Comment.php:68 lib/model/Entity.php:159
+#: lib/model/Answer.php:90 lib/model/Comment.php:68 lib/model/Entity.php:177
 #: lib/model/Statement.php:317
 msgid "info-other-reason"
 msgstr "pentru alt motiv."
@@ -2140,65 +2145,65 @@ msgstr "deoarece nu mai este necesar."
 msgid "info-comment-length-limit-%d"
 msgstr "Comentariile pot avea maximum %d de caractere."
 
-#: lib/model/Entity.php:140
+#: lib/model/Entity.php:158
 msgid "status-entity-duplicate"
 msgstr "duplicat"
 
-#: lib/model/Entity.php:142
+#: lib/model/Entity.php:160
 msgid "status-entity-closed"
 msgstr "închis"
 
-#: lib/model/Entity.php:143
+#: lib/model/Entity.php:161
 msgid "status-entity-deleted"
 msgstr "șters"
 
-#: lib/model/Entity.php:148
+#: lib/model/Entity.php:166
 msgid "info-entity-closed"
 msgstr "Acest autor a fost închis"
 
-#: lib/model/Entity.php:149
+#: lib/model/Entity.php:167
 msgid "info-entity-deleted"
 msgstr "Acest autor a fost șters"
 
-#: lib/model/Entity.php:152
+#: lib/model/Entity.php:170
 msgid "info-entity-spam"
 msgstr "deoarece profilul său conține spam."
 
-#: lib/model/Entity.php:153
+#: lib/model/Entity.php:171
 msgid "info-entity-abuse"
 msgstr "deoarece profilul său conține insulte sau abuzuri."
 
-#: lib/model/Entity.php:154
+#: lib/model/Entity.php:172
 msgid "info-entity-duplicate-of"
 msgstr "ca duplicat al autorului"
 
-#: lib/model/Entity.php:155
+#: lib/model/Entity.php:173
 msgid "info-entity-off-topic"
 msgstr "deoarece este pe lîngă subiect."
 
-#: lib/model/Entity.php:156
+#: lib/model/Entity.php:174
 msgid "info-entity-unverifiable"
 msgstr "deoarece este neverificabil."
 
-#: lib/model/Entity.php:157
+#: lib/model/Entity.php:175
 msgid "info-entity-by-owner"
 msgstr "de către autorul său."
 
-#: lib/model/Entity.php:281
+#: lib/model/Entity.php:299
 #, php-format
 msgid "info-minimum-reputation-add-entity-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
-#: lib/model/Entity.php:289
+#: lib/model/Entity.php:307
 #, php-format
 msgid "info-minimum-reputation-edit-entity-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
-#: lib/model/Entity.php:294
+#: lib/model/Entity.php:312
 msgid "info-banned-add-entity"
 msgstr "Îți este interzisă adăugarea de autori."
 
-#: lib/model/Entity.php:298
+#: lib/model/Entity.php:316
 msgid "info-banned-edit-entity"
 msgstr "Îți este interzisă editarea de autori."
 
@@ -3113,7 +3118,7 @@ msgstr "Am salvat domeniul."
 #: routes/domain/edit.php:80 routes/entity/edit.php:143
 #: routes/entityType/edit.php:57 routes/help/categoryEdit.php:91
 #: routes/region/edit.php:86 routes/relationType/edit.php:72
-#: routes/staticResource/edit.php:49 routes/tag/edit.php:98
+#: routes/staticResource/edit.php:49 routes/tag/edit.php:99
 msgid "info-must-enter-name"
 msgstr "Te rugăm să introduci un nume."
 
@@ -3540,11 +3545,11 @@ msgstr "Am clonat eticheta. Aceasta este pagina clonei."
 msgid "info-save-tag-before-clone"
 msgstr "Te rugăm să salvezi eticheta înainte de a o clona."
 
-#: routes/tag/edit.php:72
+#: routes/tag/edit.php:73
 msgid "info-tag-saved"
 msgstr "Am salvat eticheta."
 
-#: routes/tag/edit.php:107
+#: routes/tag/edit.php:108
 msgid "info-tag-loop"
 msgstr "Nu poți alege un descendent ca părinte."
 

@@ -29,6 +29,12 @@
             name="value"
             value="{$t->value}">
           {include "bs/feedback.tpl" errors=$errors.value|default:null}
+
+          {include 'bs/checkbox.tpl'
+            checked=$t->visAnon
+            divClass='mt-1'
+            label="{t}label-tag-visibile-anonymous{/t}"
+            name='visAnon'}
         {/hf}
 
         {hf inputId='tooltip' label="{t}label-details{/t}"}

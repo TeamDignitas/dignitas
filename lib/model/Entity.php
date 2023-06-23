@@ -8,6 +8,7 @@ class Entity extends Proto {
     FlaggableTrait,
     MarkdownTrait,
     PendingEditTrait,
+    TaggableTrait,
     UploadTrait;
 
   const DEFAULT_COLOR = '#ffffff';
@@ -134,10 +135,6 @@ class Entity extends Proto {
 
   function hasColor() {
     return $this->getEntityType()->hasColor ?? false;
-  }
-
-  function getTags() {
-    return ObjectTag::getTags($this);
   }
 
   /**

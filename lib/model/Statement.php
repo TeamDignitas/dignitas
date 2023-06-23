@@ -8,6 +8,7 @@ class Statement extends Proto {
     RevisionTrait,
     MarkdownTrait,
     PendingEditTrait,
+    TaggableTrait,
     VerdictTrait,
     VotableTrait;
 
@@ -269,10 +270,6 @@ class Statement extends Proto {
 
   function getLinks() {
     return Link::getFor($this);
-  }
-
-  function getTags() {
-    return ObjectTag::getTags($this);
   }
 
   function getInvolvements() {

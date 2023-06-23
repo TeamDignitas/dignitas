@@ -1,7 +1,7 @@
 <?php
 
 // not a real tag, but serves as a parent for tags without a parent
-$root = Model::factory('Tag')->create();
+$root = Tag::create();
 $root->loadSubtree();
 
 Smart::assign('root', $root);

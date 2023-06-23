@@ -25,15 +25,26 @@ class ObjectTag extends Proto {
     return Util::objectProperty($ots, 'tagId');
   }
 
-  // loads the actual tags, not the ObjectTags
-  static function getTags($object) {
+  private static function buildGetTagsQuery(Proto $object): ORM {
     return Model::factory('Tag')
       ->table_alias('t')
       ->select('t.*')
       ->join('object_tag', ['t.id', '=', 'ot.tagId'], 'ot')
       ->where('ot.objectId', $object->id)
       ->where('ot.objectType', $object->getObjectType())
-      ->order_by_asc('ot.rank')
+      ->order_by_asc('ot.rank');
+  }
+
+  // loads the actual tags, not the ObjectTags
+  static function getTags(Proto $object): array {
+    $orm = self::buildGetTagsQuery($object);
+    return $orm->find_many();
+  }
+
+  static function getTagsVisibleToAnonymous(Proto $object): array {
+    $orm = self::buildGetTagsQuery($object);
+    return $orm
+      ->where('t.visAnon', true)
       ->find_many();
   }
 

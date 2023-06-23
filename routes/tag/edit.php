@@ -13,7 +13,7 @@ if ($id) {
   $tag = Tag::get_by_id($id);
   $tag->loadSubtree();
 } else {
-  $tag = Model::factory('Tag')->create();
+  $tag = Tag::create();
 }
 
 // tags can be deleted if (1) they have no children and (2) no objects use them
@@ -60,6 +60,7 @@ if ($saveButton) {
   $tag->icon = Request::get('icon');
   $tag->iconOnly = Request::has('iconOnly');
   $tag->tooltip = Request::get('tooltip');
+  $tag->visAnon = Request::has('visAnon');
 
   $errors = validate($tag);
   if (empty($errors)) {

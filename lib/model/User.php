@@ -89,6 +89,10 @@ class User extends Proto {
     return self::$active ? self::$active->id : 0;
   }
 
+  static function isAnonymous(): bool {
+    return !self::$active;
+  }
+
   /**
    * @return bool True iff a user with the given ID exists.
    */
