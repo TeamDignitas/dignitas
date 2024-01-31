@@ -35,8 +35,10 @@ class ArchiveBoxArchiver extends Archiver {
    * @return string
    */
   function wrapArchiveBoxCommand(string $cmd) {
+    $env = 'PYTHONPATH=/opt/archivebox/lib/python3.11/site-packages/';
     return sprintf(
-      "sudo su %s -c 'cd \"%s\" && archivebox %s 2>/dev/null'",
+      "sudo %s su %s -c 'cd \"%s\" && archivebox %s 2>/dev/null'",
+      $env,
       $this->user,
       $this->workingDir,
       $cmd
