@@ -140,7 +140,7 @@ trait UploadTrait {
   function renderFile($fileName) {
 
     @list($geometry, $extension) = explode('.', $fileName, 2);
-    $class = get_class(); // serves as index in UPLOAD_SPECS
+    $class = get_class($this); // serves as index in UPLOAD_SPECS
 
     // sanity checks
     if (!$this->fileExtension ||
