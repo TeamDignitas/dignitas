@@ -45,6 +45,19 @@ class Region extends Proto {
     return Variable::peek($varName);
   }
 
+  /**
+   * Returns a query that loads or counts this region's statements visible to
+   * the current user.
+   *
+   * @return ORMWrapper
+   */
+  function getStatementQuery() {
+    $query = Model::factory('Statement')
+      ->where('regionId', $this->id);
+
+    return Statement::filterViewable($query);
+  }
+
   static function loadAll() {
     return Model::factory('Region')
       ->order_by_asc('name')

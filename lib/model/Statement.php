@@ -23,6 +23,7 @@ class Statement extends Proto {
 
   // number of statements per page for paginated statement lists
   const PAGE_SIZE = 20;
+  const REGION_PAGE_SIZE = 10;
 
   // Verdicts for all statements
   const VERDICT_NONE = 0;
@@ -347,20 +348,20 @@ class Statement extends Proto {
     return $query;
   }
 
-  static function getNumPages(ORMWrapper $query) {
+  static function getNumPages(ORMWrapper $query, int $pageSize = self::PAGE_SIZE) {
     $numStatements = $query->count();
-    return ceil($numStatements / self::PAGE_SIZE);
+    return ceil($numStatements / $pageSize);
   }
 
   /**
    * @param int $page 1-based page number to load
    * @return Statement[]
    */
-  static function getPage(ORMWrapper $query, int $page) {
+  static function getPage(ORMWrapper $query, int $page, int $pageSize = self::PAGE_SIZE) {
     return $query
       ->order_by_desc('verdictDate')
-      ->offset(($page - 1) * self::PAGE_SIZE)
-      ->limit(self::PAGE_SIZE)
+      ->offset(($page - 1) * $pageSize)
+      ->limit($pageSize)
       ->find_many();
   }
 
