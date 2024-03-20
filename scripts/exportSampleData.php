@@ -8,6 +8,8 @@
  * - no revision data.
  **/
 
+ini_set('memory_limit','1G');
+
 require_once __DIR__ . '/../lib/Core.php';
 
 LocaleUtil::change('en_US.utf8');
