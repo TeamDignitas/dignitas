@@ -22,7 +22,7 @@
             role="tab"
             aria-controls="results-statements"
             href="#results-statements">
-            {t}label-statements{/t}
+            {t}label-statements{/t} ({$numStatements})
           </a>
         {/if}
 
@@ -34,7 +34,7 @@
             role="tab"
             aria-controls="results-mentions"
             href="#results-mentions">
-            {t}label-involvements{/t}
+            {t}label-involvements{/t} ({$numMentions})
           </a>
         {/if}
       </nav>

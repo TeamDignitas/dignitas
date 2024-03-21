@@ -19,8 +19,10 @@ $iq = $entity->getInvolvementQuery();
 
 Smart::assign([
   'entity' => $entity,
+  'numStatements' => $sq->count(),
   'statements' => Statement::getPage($sq, 1),
   'statementPages' => Statement::getNumPages($sq),
+  'numMentions' => $iq->count(),
   'mentions' => Statement::getPage($iq, 1),
   'mentionPages' => Statement::getNumPages($iq),
 ]);
