@@ -7,7 +7,7 @@
 
 require_once __DIR__ . '/../lib/Core.php';
 
-ini_set('memory_limit', '512M');
+ini_set('memory_limit', '1G');
 
 const APACHE_USER_GROUP = 'http:http';
 
