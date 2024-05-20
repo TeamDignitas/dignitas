@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2024-02-16 16:32+0200\n"
-"PO-Revision-Date: 2024-02-16 16:34+0200\n"
+"PO-Revision-Date: 2024-05-20 10:41+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -866,7 +866,7 @@ msgstr "context"
 
 #: templates/bits/statement.tpl:103
 msgid "title-goal"
-msgstr "scop"
+msgstr "de verificat"
 
 #: templates/bits/statement.tpl:121
 msgid "info-tag-view-statements"
@@ -1531,7 +1531,7 @@ msgstr "context"
 
 #: templates/statement/edit.tpl:103
 msgid "label-goal"
-msgstr "scop"
+msgstr "de verificat"
 
 #: templates/statement/edit.tpl:118
 msgid "label-statement-links"
@@ -3458,7 +3458,7 @@ msgstr "Te rugăm să introduci contextul afirmației."
 
 #: routes/statement/edit.php:210
 msgid "info-must-enter-statement-goal"
-msgstr "Te rugăm să introduci scopul afirmației."
+msgstr "Te rugăm să introduci elementul de verificat."
 
 #: routes/statement/edit.php:218
 msgid "info-must-enter-statement-date"
