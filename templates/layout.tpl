@@ -54,6 +54,20 @@
               {cap}{t}link-contact{/t}{/cap}
             </a>
           </li>
+          {if Config::FACEBOOK_URL}
+            <li class="list-inline-item">
+              <a href="{Config::FACEBOOK_URL}">
+                Facebook
+              </a>
+            </li>
+          {/if}
+          {if Config::LINKEDIN_URL}
+            <li class="list-inline-item">
+              <a href="{Config::LINKEDIN_URL}">
+                LinkedIn
+              </a>
+            </li>
+          {/if}
         </ul>
 
         <p>

@@ -288,4 +288,8 @@ class Config {
   // most one of these). This is used in the ClaimReview structure to report
   // authors as persons or organizations.
   const PERSON_ENTITY_TYPE_ID = 1;
+
+  // External links
+  const FACEBOOK_URL = '';
+  const LINKEDIN_URL = '';
 }
