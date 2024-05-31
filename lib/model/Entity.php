@@ -15,7 +15,7 @@ class Entity extends Proto {
 
   const PROFILE_MAX_LENGTH = 4000;
 
-  const REGION_PAGE_SIZE = 10;
+  const REGION_PAGE_SIZE = 12;
 
   function getObjectType() {
     return Proto::TYPE_ENTITY;
