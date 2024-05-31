@@ -11,11 +11,9 @@ if (!$region) {
   Util::redirectToHome();
 }
 
-$entityCount = Entity::count_by_regionId($region->id);
-$entities = Model::factory('Entity')
-  ->where('regionId', $region->id)
-  ->limit(ENTITY_LIMIT)
-  ->find_many();
+$query = $region->getEntityQuery();
+$entityPages = Entity::getNumPages($query, Entity::REGION_PAGE_SIZE);
+$entities = Entity::getPage($query, 1, Entity::REGION_PAGE_SIZE);
 
 $query = $region->getStatementQuery();
 $statementPages = Statement::getNumPages($query, Statement::REGION_PAGE_SIZE);
@@ -24,7 +22,7 @@ $statements = Statement::getPage($query, 1, Statement::REGION_PAGE_SIZE);
 Smart::assign([
   'region' => $region,
   'entities' => $entities,
-  'entityCount' => $entityCount,
+  'entityPages' => $entityPages,
   'statements' => $statements,
   'statementPages' => $statementPages,
 ]);

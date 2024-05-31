@@ -58,6 +58,19 @@ class Region extends Proto {
     return Statement::filterViewable($query);
   }
 
+  /**
+   * Returns a query that loads or counts this region's entities visible to
+   * the current user.
+   *
+   * @return ORMWrapper
+   */
+  function getEntityQuery() {
+    $query = Model::factory('Entity')
+      ->where('regionId', $this->id);
+
+    return Entity::filterViewable($query);
+  }
+
   static function loadAll() {
     return Model::factory('Region')
       ->order_by_asc('name')

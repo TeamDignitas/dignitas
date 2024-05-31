@@ -329,7 +329,7 @@ class Statement extends Proto {
   }
 
   /**
-   * Adds clauses to a SQL query to select only those that are visible to the
+   * Adds clauses to a SQL query to select only rows that are visible to the
    * current user. This is necessary for pagination because we cannot filter
    * the statements afterwards.
    * Keep this in sync with isViewable().

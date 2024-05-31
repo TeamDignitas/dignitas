@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-02-16 16:32+0200\n"
-"PO-Revision-Date: 2024-05-20 10:41+0300\n"
+"POT-Creation-Date: 2024-05-31 15:50+0300\n"
+"PO-Revision-Date: 2024-05-31 15:51+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -140,7 +140,7 @@ msgstr "afirmații recente"
 msgid "title-search-results"
 msgstr "rezultatele căutării"
 
-#: templates/aggregate/search.tpl:13
+#: templates/aggregate/search.tpl:13 templates/region/view.tpl:21
 msgid "title-entities"
 msgstr "autori"
 
@@ -148,7 +148,7 @@ msgstr "autori"
 msgid "title-relations"
 msgstr "relații"
 
-#: templates/aggregate/search.tpl:27 templates/region/view.tpl:33
+#: templates/aggregate/search.tpl:27 templates/region/view.tpl:36
 #: templates/tag/view.tpl:34
 msgid "title-statements"
 msgstr "afirmații"
@@ -1376,14 +1376,6 @@ msgstr "nomenclatura regiunilor"
 msgid "info-region-depth"
 msgstr "nivelul"
 
-#: templates/region/view.tpl:22
-msgid "title-entity-count-with-limit"
-msgstr "autori (%1 din %2 afișați)"
-
-#: templates/region/view.tpl:24
-msgid "title-entity-count"
-msgstr "autori (%1)"
-
 #: templates/relation/edit.tpl:3 templates/relation/edit.tpl:7
 msgid "title-edit-relation"
 msgstr "editează relația"
@@ -1847,7 +1839,7 @@ msgstr "Tipurile de fișier acceptate sînt: %s."
 msgid "info-upload-error"
 msgstr "A apărut o eroare la încărcarea fișierului."
 
-#: lib/Router.php:473
+#: lib/Router.php:477
 msgid "info-language-changed"
 msgstr ""
 "Am schimbat limba interfeței. Conținutul paginilor (afirmații, răspunsuri "
@@ -2023,12 +2015,12 @@ msgstr "deoarece este de slabă calitate."
 msgid "info-answer-by-owner"
 msgstr "de către autorul său."
 
-#: lib/model/Answer.php:89 lib/model/Comment.php:67 lib/model/Entity.php:173
+#: lib/model/Answer.php:89 lib/model/Comment.php:67 lib/model/Entity.php:175
 #: lib/model/Statement.php:314
 msgid "info-by"
 msgstr "de către"
 
-#: lib/model/Answer.php:90 lib/model/Comment.php:68 lib/model/Entity.php:174
+#: lib/model/Answer.php:90 lib/model/Comment.php:68 lib/model/Entity.php:176
 #: lib/model/Statement.php:315
 msgid "info-other-reason"
 msgstr "pentru alt motiv."
@@ -2138,65 +2130,65 @@ msgstr "deoarece nu mai este necesar."
 msgid "info-comment-length-limit-%d"
 msgstr "Comentariile pot avea maximum %d de caractere."
 
-#: lib/model/Entity.php:155
+#: lib/model/Entity.php:157
 msgid "status-entity-duplicate"
 msgstr "duplicat"
 
-#: lib/model/Entity.php:157
+#: lib/model/Entity.php:159
 msgid "status-entity-closed"
 msgstr "închis"
 
-#: lib/model/Entity.php:158
+#: lib/model/Entity.php:160
 msgid "status-entity-deleted"
 msgstr "șters"
 
-#: lib/model/Entity.php:163
+#: lib/model/Entity.php:165
 msgid "info-entity-closed"
 msgstr "Acest autor a fost închis"
 
-#: lib/model/Entity.php:164
+#: lib/model/Entity.php:166
 msgid "info-entity-deleted"
 msgstr "Acest autor a fost șters"
 
-#: lib/model/Entity.php:167
+#: lib/model/Entity.php:169
 msgid "info-entity-spam"
 msgstr "deoarece profilul său conține spam."
 
-#: lib/model/Entity.php:168
+#: lib/model/Entity.php:170
 msgid "info-entity-abuse"
 msgstr "deoarece profilul său conține insulte sau abuzuri."
 
-#: lib/model/Entity.php:169
+#: lib/model/Entity.php:171
 msgid "info-entity-duplicate-of"
 msgstr "ca duplicat al autorului"
 
-#: lib/model/Entity.php:170
+#: lib/model/Entity.php:172
 msgid "info-entity-off-topic"
 msgstr "deoarece este pe lîngă subiect."
 
-#: lib/model/Entity.php:171
+#: lib/model/Entity.php:173
 msgid "info-entity-unverifiable"
 msgstr "deoarece este neverificabil."
 
-#: lib/model/Entity.php:172
+#: lib/model/Entity.php:174
 msgid "info-entity-by-owner"
 msgstr "de către autorul său."
 
-#: lib/model/Entity.php:296
+#: lib/model/Entity.php:333
 #, php-format
 msgid "info-minimum-reputation-add-entity-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
-#: lib/model/Entity.php:304
+#: lib/model/Entity.php:341
 #, php-format
 msgid "info-minimum-reputation-edit-entity-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
-#: lib/model/Entity.php:309
+#: lib/model/Entity.php:346
 msgid "info-banned-add-entity"
 msgstr "Îți este interzisă adăugarea de autori."
 
-#: lib/model/Entity.php:313
+#: lib/model/Entity.php:350
 msgid "info-banned-edit-entity"
 msgstr "Îți este interzisă editarea de autori."
 
@@ -3330,7 +3322,8 @@ msgstr "Am salvat regiunea."
 msgid "info-region-loop"
 msgstr "Nu poți alege un descendent ca părinte."
 
-#: routes/region/getStatements.php:19 routes/region/view.php:10
+#: routes/region/getEntities.php:19 routes/region/getStatements.php:19
+#: routes/region/view.php:10
 msgid "info-no-such-region"
 msgstr "Regiunea căutată nu există."
 

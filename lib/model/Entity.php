@@ -15,6 +15,8 @@ class Entity extends Proto {
 
   const PROFILE_MAX_LENGTH = 4000;
 
+  const REGION_PAGE_SIZE = 10;
+
   function getObjectType() {
     return Proto::TYPE_ENTITY;
   }
@@ -288,6 +290,41 @@ class Entity extends Proto {
       ($this->status != Ct::STATUS_PENDING_EDIT) &&
       (($this->status != Ct::STATUS_DELETED) ||
        User::may(User::PRIV_DELETE_ENTITY));
+  }
+
+  /**
+   * Adds clauses to a SQL query to select only rows that are visible to the
+   * current user. This is necessary for pagination because we cannot filter
+   * the entities afterwards.
+   * Keep this in sync with isViewable().
+   */
+  static function filterViewable(ORMWrapper $query) {
+    $query = $query->where_not_equal('status', Ct::STATUS_PENDING_EDIT);
+
+    if (!User::may(User::PRIV_DELETE_ENTITY)) { // unprivileged user
+      $query = $query->where_raw(
+        '(status != ?) OR (userId = ?)',
+        [ Ct::STATUS_DELETED, User::getActiveId() ]);
+    }
+
+    return $query;
+  }
+
+  static function getNumPages(ORMWrapper $query, int $pageSize = self::PAGE_SIZE) {
+    $numEntities = $query->count();
+    return ceil($numEntities / $pageSize);
+  }
+
+  /**
+   * @param int $page 1-based page number to load
+   * @return Statement[]
+   */
+  static function getPage(ORMWrapper $query, int $page, int $pageSize = self::PAGE_SIZE) {
+    return $query
+      ->order_by_asc('name')
+      ->offset(($page - 1) * $pageSize)
+      ->limit($pageSize)
+      ->find_many();
   }
 
   protected function isEditableCore() {

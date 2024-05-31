@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-02-16 16:34+0200\n"
-"PO-Revision-Date: 2024-05-20 10:45+0300\n"
+"POT-Creation-Date: 2024-05-31 15:51+0300\n"
+"PO-Revision-Date: 2024-05-31 15:51+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -139,7 +139,7 @@ msgstr "recent statements"
 msgid "title-search-results"
 msgstr "search results"
 
-#: templates/aggregate/search.tpl:13
+#: templates/aggregate/search.tpl:13 templates/region/view.tpl:21
 msgid "title-entities"
 msgstr "authors"
 
@@ -147,7 +147,7 @@ msgstr "authors"
 msgid "title-relations"
 msgstr "relationships"
 
-#: templates/aggregate/search.tpl:27 templates/region/view.tpl:33
+#: templates/aggregate/search.tpl:27 templates/region/view.tpl:36
 #: templates/tag/view.tpl:34
 msgid "title-statements"
 msgstr "statements"
@@ -1364,14 +1364,6 @@ msgstr "region nomenclature"
 msgid "info-region-depth"
 msgstr "level"
 
-#: templates/region/view.tpl:22
-msgid "title-entity-count-with-limit"
-msgstr "entities (%1 of %2 shown)"
-
-#: templates/region/view.tpl:24
-msgid "title-entity-count"
-msgstr "entities (%1)"
-
 #: templates/relation/edit.tpl:3 templates/relation/edit.tpl:7
 msgid "title-edit-relation"
 msgstr "edit relationship"
@@ -1836,7 +1828,7 @@ msgstr "Supported file types are: %s."
 msgid "info-upload-error"
 msgstr "An error occurred while uploading the file."
 
-#: lib/Router.php:473
+#: lib/Router.php:477
 msgid "info-language-changed"
 msgstr ""
 "Interface language changed. Page contents (statements, answers etc.) are "
@@ -2008,12 +2000,12 @@ msgstr "because it is low-quality."
 msgid "info-answer-by-owner"
 msgstr "by its author."
 
-#: lib/model/Answer.php:89 lib/model/Comment.php:67 lib/model/Entity.php:173
+#: lib/model/Answer.php:89 lib/model/Comment.php:67 lib/model/Entity.php:175
 #: lib/model/Statement.php:314
 msgid "info-by"
 msgstr "by"
 
-#: lib/model/Answer.php:90 lib/model/Comment.php:68 lib/model/Entity.php:174
+#: lib/model/Answer.php:90 lib/model/Comment.php:68 lib/model/Entity.php:176
 #: lib/model/Statement.php:315
 msgid "info-other-reason"
 msgstr "for other reasons."
@@ -2122,65 +2114,65 @@ msgstr "because it is no longer needed."
 msgid "info-comment-length-limit-%d"
 msgstr "Comments can be at most %d characters long."
 
-#: lib/model/Entity.php:155
+#: lib/model/Entity.php:157
 msgid "status-entity-duplicate"
 msgstr "duplicate"
 
-#: lib/model/Entity.php:157
+#: lib/model/Entity.php:159
 msgid "status-entity-closed"
 msgstr "closed"
 
-#: lib/model/Entity.php:158
+#: lib/model/Entity.php:160
 msgid "status-entity-deleted"
 msgstr "deleted"
 
-#: lib/model/Entity.php:163
+#: lib/model/Entity.php:165
 msgid "info-entity-closed"
 msgstr "This author was closed"
 
-#: lib/model/Entity.php:164
+#: lib/model/Entity.php:166
 msgid "info-entity-deleted"
 msgstr "This author was deleted"
 
-#: lib/model/Entity.php:167
+#: lib/model/Entity.php:169
 msgid "info-entity-spam"
 msgstr "because its profile contains spam."
 
-#: lib/model/Entity.php:168
+#: lib/model/Entity.php:170
 msgid "info-entity-abuse"
 msgstr "because its profile contains insults or abuse."
 
-#: lib/model/Entity.php:169
+#: lib/model/Entity.php:171
 msgid "info-entity-duplicate-of"
 msgstr "as a duplicate of the author"
 
-#: lib/model/Entity.php:170
+#: lib/model/Entity.php:172
 msgid "info-entity-off-topic"
 msgstr "because it is off-topic."
 
-#: lib/model/Entity.php:171
+#: lib/model/Entity.php:173
 msgid "info-entity-unverifiable"
 msgstr "because it is unverifiable."
 
-#: lib/model/Entity.php:172
+#: lib/model/Entity.php:174
 msgid "info-entity-by-owner"
 msgstr "by the user who added it."
 
-#: lib/model/Entity.php:296
+#: lib/model/Entity.php:333
 #, php-format
 msgid "info-minimum-reputation-add-entity-%s"
 msgstr "You need at least %s reputation to add authors."
 
-#: lib/model/Entity.php:304
+#: lib/model/Entity.php:341
 #, php-format
 msgid "info-minimum-reputation-edit-entity-%s"
 msgstr "You need at least %s reputation to edit authors."
 
-#: lib/model/Entity.php:309
+#: lib/model/Entity.php:346
 msgid "info-banned-add-entity"
 msgstr "You are banned from adding authors."
 
-#: lib/model/Entity.php:313
+#: lib/model/Entity.php:350
 msgid "info-banned-edit-entity"
 msgstr "You are banned from editing authors."
 
@@ -3299,7 +3291,8 @@ msgstr "Region saved."
 msgid "info-region-loop"
 msgstr "You cannot select a descendant as the parent."
 
-#: routes/region/getStatements.php:19 routes/region/view.php:10
+#: routes/region/getEntities.php:19 routes/region/getStatements.php:19
+#: routes/region/view.php:10
 msgid "info-no-such-region"
 msgstr "The region you are looking for does not exist."
 

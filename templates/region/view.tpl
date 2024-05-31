@@ -18,14 +18,17 @@
 
     {if count($entities)}
       <h4 class="mt-5 capitalize-first-word">
-        {if $entityCount > count($entities)}
-          {t 1=count($entities) 2=$entityCount}title-entity-count-with-limit{/t}
-        {else}
-          {t 1=count($entities)}title-entity-count{/t}
-        {/if}
+        {t}title-entities{/t}
       </h4>
 
-      {include "bits/entityList.tpl"}
+      <div id="entity-list-wrapper">
+        {include "bits/entityList.tpl"}
+      </div>
+
+      {include "bits/paginationWrapper.tpl"
+        n=$entityPages
+        url="{Config::URL_PREFIX}ajax/get-region-entities/{$region->id}"
+        target="#entity-list-wrapper"}
     {/if}
 
     {if count($statements)}

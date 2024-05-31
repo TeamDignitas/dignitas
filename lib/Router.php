@@ -241,6 +241,9 @@ class Router {
       'en_US.utf8' => 'edit-region',
       'ro_RO.utf8' => 'editeaza-regiune',
     ],
+    'region/getEntities' => [
+      'en_US.utf8' => 'ajax/get-region-entities',
+    ],
     'region/getStatements' => [
       'en_US.utf8' => 'ajax/get-region-statements',
     ],
@@ -409,6 +412,7 @@ class Router {
     'help/pageEdit' => [ 'id' ],
     'help/pageHistory' => [ 'id' ],
     'region/edit' => [ 'id' ],
+    'region/getEntities' => [ 'id' ],
     'region/getStatements' => [ 'id' ],
     'region/view' => [ 'id' ],
     'relation/edit' => [ 'id', ],
