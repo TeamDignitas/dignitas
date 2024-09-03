@@ -6,6 +6,7 @@
  *   1. Replaces cedilla with comma in Romanian diacritics: şŞţŢ -> șȘțȚ.
  *   2. Compresses consecutive spaces and tabs.
  **/
+ini_set('memory_limit', '2G');
 
 processAllModels();
 
