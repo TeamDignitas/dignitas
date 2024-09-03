@@ -232,6 +232,14 @@ $(function() {
     });
   }
 
+  function replaceCedillasWithCommas(text) {
+    return text
+      .replaceAll('ş', 'ș')
+      .replaceAll('Ş', 'Ș')
+      .replaceAll('ţ', 'ț')
+      .replaceAll('Ţ', 'Ț');
+  }
+
   // Adds URL_PREFIX to relative URLs. See also addUrlPrefix() in lib/Markdown.php.
   function customPreview(text) {
     text = text.replace(
@@ -245,6 +253,8 @@ $(function() {
       }
 
     );
+
+    text = replaceCedillasWithCommas(text);
 
     return this.parent.markdown(text);
   }

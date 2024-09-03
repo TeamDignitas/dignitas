@@ -2,6 +2,14 @@
 
 class Str {
 
+  const CLEANUP_PATTERNS = [
+    '/(?<!\\\\)ş/'   => 'ș',
+    '/(?<!\\\\)Ş/'   => 'Ș',
+    '/(?<!\\\\)ţ/'   => 'ț',
+    '/(?<!\\\\)Ţ/'   => 'Ț',
+    '/[ \t]+/'       => ' ',     /* But not newlines */
+  ];
+
   static function endsWith($string, $substring) {
     $lenString = strlen($string);
     $lenSubstring = strlen($substring);
@@ -108,5 +116,19 @@ class Str {
    **/
   static function htmlEscape(?string $s) {
     return htmlspecialchars($s ?? '');
+  }
+
+  /**
+   * Generic purpose cleanup of a string. This should be true of all string
+   * columns of all tables.
+   */
+  static function cleanup(string $s): string {
+    $s = trim($s);
+
+    $from = array_keys(self::CLEANUP_PATTERNS);
+    $to = array_values(self::CLEANUP_PATTERNS);
+    $s = preg_replace($from, $to, $s);
+
+    return $s;
   }
 }

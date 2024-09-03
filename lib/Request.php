@@ -26,13 +26,23 @@ class Request {
     }
   }
 
+  static function cleanup(mixed $arg): mixed {
+    if (is_string($arg)) {
+      return Str::cleanup($arg);
+    } else {
+      return $arg;
+    }
+  }
+
   /* Reads a request parameter. Cleans up string and array values. */
-  static function get($name, $default = null) {
+  static function get(string $name, $default = null): mixed {
     // PHP does this to submitted variables names...
     // https://www.php.net/manual/en/language.variables.external.php
     $name = str_replace('.', '_', $name);
 
-    return $_REQUEST[$name] ?? $default;
+    $val = $_REQUEST[$name] ?? $default;
+    $val = self::cleanup($val);
+    return $val;
   }
 
   /* Reads a present-or-not parameter (checkbox, button etc.). */
