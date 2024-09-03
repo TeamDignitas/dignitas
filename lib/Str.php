@@ -3,11 +3,11 @@
 class Str {
 
   const CLEANUP_PATTERNS = [
-    '/(?<!\\\\)ş/'   => 'ș',
-    '/(?<!\\\\)Ş/'   => 'Ș',
-    '/(?<!\\\\)ţ/'   => 'ț',
-    '/(?<!\\\\)Ţ/'   => 'Ț',
-    '/[ \t]+/'       => ' ',     /* But not newlines */
+    '/(?<!\\\\)ş/'     => 'ș',
+    '/(?<!\\\\)Ş/'     => 'Ș',
+    '/(?<!\\\\)ţ/'     => 'ț',
+    '/(?<!\\\\)Ţ/'     => 'Ț',
+    '/(?<!\s)[ \t]+/m' => ' ', /* Not at the beginning of a line. */
   ];
 
   static function endsWith($string, $substring) {
@@ -130,5 +130,9 @@ class Str {
     $s = preg_replace($from, $to, $s);
 
     return $s;
+  }
+
+  static function toSnakeCase(string $camelCase): string {
+    return strtolower(preg_replace('/(?<!^)[A-Z]/', '_$0', $camelCase));
   }
 }
