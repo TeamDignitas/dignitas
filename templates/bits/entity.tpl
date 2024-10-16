@@ -18,7 +18,7 @@
     </div>
 
     {if $showTrustLevel}
-      <div class="mt-4 d-flex justify-content-center">
+      <div class="mt-4 mb-4 d-flex justify-content-center">
         {include "bits/trustLevel.tpl" val=$trustLevel}
       </div>
     {/if}
