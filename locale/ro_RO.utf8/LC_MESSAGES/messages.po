@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-05-31 15:50+0300\n"
-"PO-Revision-Date: 2024-05-31 15:51+0300\n"
+"POT-Creation-Date: 2024-10-16 22:07+0300\n"
+"PO-Revision-Date: 2024-10-16 22:07+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -48,7 +48,7 @@ msgid "link-my-drafts"
 msgstr "ciornele mele"
 
 #: templates/aggregate/dashboard.tpl:22 templates/aggregate/index.tpl:33
-#: templates/bits/entity.tpl:115
+#: templates/bits/entity.tpl:122
 msgid "link-add-statement"
 msgstr "adaugă o afirmație"
 
@@ -144,7 +144,7 @@ msgstr "rezultatele căutării"
 msgid "title-entities"
 msgstr "autori"
 
-#: templates/aggregate/search.tpl:20 templates/bits/entity.tpl:56
+#: templates/aggregate/search.tpl:20 templates/bits/entity.tpl:63
 msgid "title-relations"
 msgstr "relații"
 
@@ -430,23 +430,23 @@ msgstr "ciornă"
 msgid "link-suggest-edit"
 msgstr "sugerează o modificare"
 
-#: templates/bits/entity.tpl:30
+#: templates/bits/entity.tpl:37
 msgid "title-alias"
 msgstr "alias"
 
-#: templates/bits/entity.tpl:67 templates/region/view.tpl:3
+#: templates/bits/entity.tpl:74 templates/region/view.tpl:3
 msgid "title-region"
 msgstr "regiune"
 
-#: templates/bits/entity.tpl:74
+#: templates/bits/entity.tpl:81
 msgid "title-profile"
 msgstr "profil"
 
-#: templates/bits/entity.tpl:82
+#: templates/bits/entity.tpl:89
 msgid "title-entity-links"
 msgstr "legături externe"
 
-#: templates/bits/entity.tpl:96
+#: templates/bits/entity.tpl:103
 msgid "title-members"
 msgstr "membri"
 
@@ -872,7 +872,7 @@ msgstr "de verificat"
 msgid "info-tag-view-statements"
 msgstr "Vezi toate afirmațiile cu această etichetă."
 
-#: templates/bits/statement.tpl:126 templates/review/view.tpl:105
+#: templates/bits/statement.tpl:126 templates/review/view.tpl:106
 msgid "title-added-by"
 msgstr "adăugată de"
 
@@ -927,6 +927,10 @@ msgstr "dezabonează-mă de la toate notificările despre acest articol"
 #: templates/bits/subscribeLinks.tpl:30
 msgid "link-unsubscribe"
 msgstr "nu mai urmări"
+
+#: templates/bits/trustLevel.tpl:11
+msgid "label-trust-level"
+msgstr "nivel de încredere"
 
 #: templates/bits/viewMarkdownButton.tpl:9
 msgid "link-view-markdown"
@@ -1463,8 +1467,8 @@ msgstr "Articolul complet:"
 msgid "info-statement-duplicate"
 msgstr "Această afirmație a fost raportată ca duplicat al afirmației"
 
-#: templates/review/view.tpl:74 templates/review/view.tpl:127
-#: templates/review/view.tpl:140
+#: templates/review/view.tpl:74 templates/review/view.tpl:128
+#: templates/review/view.tpl:141
 msgid "title-pertaining-to-statement"
 msgstr "referitor la afirmația:"
 
@@ -1479,11 +1483,11 @@ msgstr ""
 "duplicat la autorul canonic. Aliasurile, relațiile și alte atribute nu vor "
 "fi transferate."
 
-#: templates/review/view.tpl:117
+#: templates/review/view.tpl:118
 msgid "title-pertaining-to-answer"
 msgstr "referitor la răspunsul:"
 
-#: templates/review/view.tpl:158
+#: templates/review/view.tpl:159
 msgid "info-review-queue-empty"
 msgstr "Această coadă de evaluare este goală."
 
@@ -1825,17 +1829,17 @@ msgstr "pînă la"
 msgid "link-ban"
 msgstr "blochează..."
 
-#: lib/Request.php:122
+#: lib/Request.php:132
 #, php-format
 msgid "info-upload-size-%d"
 msgstr "Dimensiunea maximă acceptată este %d MB."
 
-#: lib/Request.php:127
+#: lib/Request.php:137
 #, php-format
 msgid "info-upload-type-%s"
 msgstr "Tipurile de fișier acceptate sînt: %s."
 
-#: lib/Request.php:130
+#: lib/Request.php:140
 msgid "info-upload-error"
 msgstr "A apărut o eroare la încărcarea fișierului."
 
@@ -1917,6 +1921,22 @@ msgid_plural "time-second-ago-plural-%d"
 msgstr[0] "acum o secundă"
 msgstr[1] "acum %d secunde"
 msgstr[2] "acum %d de secunde"
+
+#: lib/TrustLevel.php:65
+msgid "label-above-75"
+msgstr "peste 75%"
+
+#: lib/TrustLevel.php:67
+msgid "label-above-50"
+msgstr "peste 50%"
+
+#: lib/TrustLevel.php:69
+msgid "label-below-50"
+msgstr "sub 50%"
+
+#: lib/TrustLevel.php:71
+msgid "label-below-25"
+msgstr "sub 25%"
 
 #: lib/Util.php:7
 msgid "info-already-logged-in"

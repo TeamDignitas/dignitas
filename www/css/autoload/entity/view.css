@@ -1,0 +1,75 @@
+.trust-wrapper {
+  position: absolute;
+  --arc-thick: 20px;
+  --filler-thick: 20px;
+  --siz: 200px;
+}
+
+/* Kudos https://css-shape.com/arc/ */
+.trust-arc {
+  --g: /var(--arc-thick) var(--arc-thick) no-repeat
+       radial-gradient(50% 50%,#000 97%,#0000);
+
+  aspect-ratio: 1;
+  border-radius: 50%;
+  mask: top var(--g),
+        calc(50% + 50%*sin(var(--angle)))
+            calc(50% - 50%*cos(var(--angle))) var(--g),
+        linear-gradient(#0000 0 0) content-box intersect,
+        conic-gradient(#000 var(--angle),#0000 0);
+  padding: var(--arc-thick);
+  width: var(--siz);
+}
+
+.trust-circle {
+  border-radius: 50%;
+  border: var(--filler-thick) solid var(--bs-gray-500);
+  height: calc(var(--siz) - var(--arc-thick) + var(--filler-thick));
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(var(--siz) - var(--arc-thick) + var(--filler-thick));
+  z-index: -1;
+}
+
+.trust-msg {
+  font-size: 80%;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space:nowrap;
+}
+
+.trust-arc-0 {
+  background: var(--v-red);
+}
+
+.trust-arc-25 {
+  background: var(--v-orange);
+}
+
+.trust-arc-50 {
+  background: var(--c-draft-indicator-bg);
+}
+
+.trust-arc-75 {
+  background: var(--v-green);
+}
+
+.trust-msg-0 {
+  color: var(--v-red);
+}
+
+.trust-msg-25 {
+  color: var(--v-orange);
+}
+
+.trust-msg-50 {
+  color: var(--c-draft-indicator-bg);
+}
+
+.trust-msg-75 {
+  color: var(--v-green);
+}

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-05-31 15:51+0300\n"
-"PO-Revision-Date: 2024-05-31 15:51+0300\n"
+"POT-Creation-Date: 2024-10-16 22:07+0300\n"
+"PO-Revision-Date: 2024-10-16 22:07+0300\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -47,7 +47,7 @@ msgid "link-my-drafts"
 msgstr "my drafts"
 
 #: templates/aggregate/dashboard.tpl:22 templates/aggregate/index.tpl:33
-#: templates/bits/entity.tpl:115
+#: templates/bits/entity.tpl:122
 msgid "link-add-statement"
 msgstr "add a statement"
 
@@ -143,7 +143,7 @@ msgstr "search results"
 msgid "title-entities"
 msgstr "authors"
 
-#: templates/aggregate/search.tpl:20 templates/bits/entity.tpl:56
+#: templates/aggregate/search.tpl:20 templates/bits/entity.tpl:63
 msgid "title-relations"
 msgstr "relationships"
 
@@ -425,23 +425,23 @@ msgstr "draft"
 msgid "link-suggest-edit"
 msgstr "suggest an edit"
 
-#: templates/bits/entity.tpl:30
+#: templates/bits/entity.tpl:37
 msgid "title-alias"
 msgstr "also known as"
 
-#: templates/bits/entity.tpl:67 templates/region/view.tpl:3
+#: templates/bits/entity.tpl:74 templates/region/view.tpl:3
 msgid "title-region"
 msgstr "region"
 
-#: templates/bits/entity.tpl:74
+#: templates/bits/entity.tpl:81
 msgid "title-profile"
 msgstr "profile"
 
-#: templates/bits/entity.tpl:82
+#: templates/bits/entity.tpl:89
 msgid "title-entity-links"
 msgstr "external links"
 
-#: templates/bits/entity.tpl:96
+#: templates/bits/entity.tpl:103
 msgid "title-members"
 msgstr "members"
 
@@ -861,7 +861,7 @@ msgstr "to verify"
 msgid "info-tag-view-statements"
 msgstr "View all statements with this tag."
 
-#: templates/bits/statement.tpl:126 templates/review/view.tpl:105
+#: templates/bits/statement.tpl:126 templates/review/view.tpl:106
 msgid "title-added-by"
 msgstr "added by"
 
@@ -916,6 +916,10 @@ msgstr "stop watching this item"
 #: templates/bits/subscribeLinks.tpl:30
 msgid "link-unsubscribe"
 msgstr "unwatch"
+
+#: templates/bits/trustLevel.tpl:11
+msgid "label-trust-level"
+msgstr "trust level"
 
 #: templates/bits/viewMarkdownButton.tpl:9
 msgid "link-view-markdown"
@@ -1452,8 +1456,8 @@ msgstr "Complete item:"
 msgid "info-statement-duplicate"
 msgstr "This statement was flagged as a duplicate of"
 
-#: templates/review/view.tpl:74 templates/review/view.tpl:127
-#: templates/review/view.tpl:140
+#: templates/review/view.tpl:74 templates/review/view.tpl:128
+#: templates/review/view.tpl:141
 msgid "title-pertaining-to-statement"
 msgstr "pertaining to statement:"
 
@@ -1468,11 +1472,11 @@ msgstr ""
 "canonical author. The aliases, relationships and other attributes will not "
 "be transferred."
 
-#: templates/review/view.tpl:117
+#: templates/review/view.tpl:118
 msgid "title-pertaining-to-answer"
 msgstr "pertaining to answer:"
 
-#: templates/review/view.tpl:158
+#: templates/review/view.tpl:159
 msgid "info-review-queue-empty"
 msgstr "This review queue is empty."
 
@@ -1814,17 +1818,17 @@ msgstr "until"
 msgid "link-ban"
 msgstr "ban..."
 
-#: lib/Request.php:122
+#: lib/Request.php:132
 #, php-format
 msgid "info-upload-size-%d"
 msgstr "Maximum file size is %d MB."
 
-#: lib/Request.php:127
+#: lib/Request.php:137
 #, php-format
 msgid "info-upload-type-%s"
 msgstr "Supported file types are: %s."
 
-#: lib/Request.php:130
+#: lib/Request.php:140
 msgid "info-upload-error"
 msgstr "An error occurred while uploading the file."
 
@@ -1902,6 +1906,22 @@ msgid "time-second-ago-singular"
 msgid_plural "time-second-ago-plural-%d"
 msgstr[0] "one second ago"
 msgstr[1] "%d seconds ago"
+
+#: lib/TrustLevel.php:65
+msgid "label-above-75"
+msgstr "above 75%"
+
+#: lib/TrustLevel.php:67
+msgid "label-above-50"
+msgstr "above 50%"
+
+#: lib/TrustLevel.php:69
+msgid "label-below-50"
+msgstr "below 50%"
+
+#: lib/TrustLevel.php:71
+msgid "label-below-25"
+msgstr "below 25%"
 
 #: lib/Util.php:7
 msgid "info-already-logged-in"

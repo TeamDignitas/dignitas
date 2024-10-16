@@ -96,7 +96,8 @@
           {include "bits/entity.tpl"
             entity=$object
             ellipsisMenu=false
-            showAddStatementButton=false}
+            showAddStatementButton=false
+            showTrustLevel=false}
 
           <hr>
 

@@ -1,5 +1,6 @@
 {$ellipsisMenu=$ellipsisMenu|default:true}
 {$showAddStatementButton=$showAddStatementButton|default:true}
+{$showTrustLevel=$showTrustLevel|default:true}
 {$statusInfo=$entity->getStatusInfo()}
 
 <div class="row">
@@ -15,6 +16,12 @@
         {include "bits/tag.tpl"}
       {/foreach}
     </div>
+
+    {if $showTrustLevel}
+      <div class="mt-4 d-flex justify-content-center">
+        {include "bits/trustLevel.tpl" val=$trustLevel}
+      </div>
+    {/if}
   </div>
 
   <div class="col-12 col-md-9 mt-2">
