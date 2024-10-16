@@ -1,5 +1,5 @@
 .trust-wrapper {
-  position: absolute;
+  position: relative;
   --arc-thick: 20px;
   --filler-thick: 20px;
   --siz: 200px;
