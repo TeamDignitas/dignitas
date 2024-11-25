@@ -28,10 +28,16 @@ class TrustLevel {
   ];
 
   static function getForEntity(Entity $e): float {
+    $entityIds = [ $e->id ];
+    $members = $e->getMembers();
+    foreach ($members as $member) {
+      $entityIds[] = $member->id;
+    }
+
     $statements = Model::factory('Statement')
       ->select('verdict')
       ->where('status', Ct::STATUS_ACTIVE)
-      ->where('entityId', $e->id)
+      ->where_in('entityId', $entityIds)
       ->where_in('verdict', array_keys(self::COEFS))
       ->find_array();
 
