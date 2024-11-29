@@ -71,7 +71,8 @@
         </ul>
 
         <p>
-          © 2019-{$copyrightYear} <a href="https://github.com/TeamDignitas">Team Dignitas</a>
+          © 2019-{$copyrightYear} <a href="https://dignitas.ro/">Dignitas.ro</a>,
+          {t}info-copyright{/t}
         </p>
 
       </div>

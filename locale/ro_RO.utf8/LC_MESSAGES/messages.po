@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-10-16 22:07+0300\n"
-"PO-Revision-Date: 2024-10-16 22:07+0300\n"
+"POT-Creation-Date: 2024-11-29 10:27+0200\n"
+"PO-Revision-Date: 2024-11-29 10:27+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -1335,6 +1335,10 @@ msgstr "despre noi"
 msgid "link-contact"
 msgstr "contact"
 
+#: templates/layout.tpl:82
+msgid "info-copyright"
+msgstr "un proiect implementat de Asociația Zero Minciuni"
+
 #: templates/notification/view.tpl:3 templates/notification/view.tpl:8
 msgid "title-notifications"
 msgstr "notificări"
@@ -1922,19 +1926,19 @@ msgstr[0] "acum o secundă"
 msgstr[1] "acum %d secunde"
 msgstr[2] "acum %d de secunde"
 
-#: lib/TrustLevel.php:65
+#: lib/TrustLevel.php:71
 msgid "label-above-75"
 msgstr "peste 75%"
 
-#: lib/TrustLevel.php:67
+#: lib/TrustLevel.php:73
 msgid "label-above-50"
 msgstr "peste 50%"
 
-#: lib/TrustLevel.php:69
+#: lib/TrustLevel.php:75
 msgid "label-below-50"
 msgstr "sub 50%"
 
-#: lib/TrustLevel.php:71
+#: lib/TrustLevel.php:77
 msgid "label-below-25"
 msgstr "sub 25%"
 
