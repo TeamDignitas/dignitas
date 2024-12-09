@@ -28,11 +28,7 @@ class TrustLevel {
   ];
 
   static function getForEntity(Entity $e): float {
-    $entityIds = [ $e->id ];
-    $members = $e->getMembers();
-    foreach ($members as $member) {
-      $entityIds[] = $member->id;
-    }
+    $entityIds = $e->getIdAndMemberIds();
 
     $statements = Model::factory('Statement')
       ->select('verdict')

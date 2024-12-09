@@ -206,8 +206,9 @@ class Entity extends Proto {
    * @return ORMWrapper
    */
   function getStatementQuery() {
+    $memberIds = $this->getIdAndMemberIds();
     $query = Model::factory('Statement')
-      ->where('entityId', $this->id);
+      ->where_in('entityId', $memberIds);
 
     return Statement::filterViewable($query);
   }
@@ -219,13 +220,34 @@ class Entity extends Proto {
    * @return ORMWrapper
    */
   function getInvolvementQuery() {
+    $memberIds = $this->getIdAndMemberIds();
     $query = Model::factory('Statement')
       ->select('s.*')
       ->table_alias('s')
       ->join('involvement', ['s.id', '=', 'i.statementId'], 'i')
-      ->where('i.entityId', $this->id);
+      ->where_in('i.entityId', $memberIds);
 
     return Statement::filterViewable($query);
+  }
+
+  function getIdAndMemberIds(): array {
+    $results = Model::factory('Entity')
+      ->table_alias('m')
+      ->select('m.id')
+      ->distinct()
+      ->join('relation', ['m.id', '=', 'r.fromEntityId'], 'r')
+      ->join('relation_type', ['r.relationTypeId', '=', 'rt.id'], 'rt')
+      ->where('r.toEntityId', $this->id)
+      ->where('rt.membership', true)
+      // where_any_is does not work with null values
+      ->where_raw('((r.startDate is null) or (r.startDate <= ?))', [ Time::today() ])
+      ->where_raw('((r.endDate is null) or (r.endDate >= ?))', [ Time::today() ])
+      ->find_array();
+
+    $results = array_column($results, 'id');
+    $results[] = $this->id;
+
+    return $results;
   }
 
   function getMembers() {

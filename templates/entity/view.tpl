@@ -76,7 +76,7 @@
           role="tabpanel"
           aria-labelledby="statements-tab">
           <div id="statement-wrapper">
-            {include "bits/statementList.tpl" showEntity=false}
+            {include "bits/statementList.tpl"}
           </div>
           {include "bits/paginationWrapper.tpl"
             n=$statementPages
