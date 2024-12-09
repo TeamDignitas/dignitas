@@ -12,7 +12,7 @@
 
     {include "bits/entity.tpl"}
 
-    {if count($statements) || count($mentions)}
+    {if count($statements) || count($mentions) || count($members)}
       <nav class="nav nav-pills mt-5 pt-5 activate-first-tab">
         {if count($members)}
           <a
