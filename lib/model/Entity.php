@@ -240,6 +240,7 @@ class Entity extends Proto {
       // where_any_is does not work with null values
       ->where_raw('((r.startDate is null) or (r.startDate <= ?))', [ Time::today() ])
       ->where_raw('((r.endDate is null) or (r.endDate >= ?))', [ Time::today() ])
+      ->order_by_asc('name')
       ->find_many();
   }
 
