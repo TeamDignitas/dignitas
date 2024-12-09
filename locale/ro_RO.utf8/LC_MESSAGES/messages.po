@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-11-29 10:27+0200\n"
-"PO-Revision-Date: 2024-11-29 10:27+0200\n"
+"POT-Creation-Date: 2024-12-09 16:16+0200\n"
+"PO-Revision-Date: 2024-12-09 16:16+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -48,7 +48,7 @@ msgid "link-my-drafts"
 msgstr "ciornele mele"
 
 #: templates/aggregate/dashboard.tpl:22 templates/aggregate/index.tpl:33
-#: templates/bits/entity.tpl:122
+#: templates/bits/entity.tpl:107
 msgid "link-add-statement"
 msgstr "adaugă o afirmație"
 
@@ -105,7 +105,7 @@ msgstr "afirmații cu verdicte neclare"
 msgid "title-my-drafts"
 msgstr "ciornele mele"
 
-#: templates/aggregate/drafts.tpl:10 templates/entity/view.tpl:25
+#: templates/aggregate/drafts.tpl:10 templates/entity/view.tpl:37
 #: templates/user/view.tpl:63
 msgid "label-statements"
 msgstr "afirmații"
@@ -445,10 +445,6 @@ msgstr "profil"
 #: templates/bits/entity.tpl:89
 msgid "title-entity-links"
 msgstr "legături externe"
-
-#: templates/bits/entity.tpl:103
-msgid "title-members"
-msgstr "membri"
 
 #: templates/bits/entityFilters.tpl:8 templates/bits/entityFilters.tpl:18
 #: templates/bits/relationFilters.tpl:8 templates/bits/relationFilters.tpl:18
@@ -1186,7 +1182,11 @@ msgid "link-entity-review-pending-edit"
 msgstr ""
 "Acest autor are o modificare sugerată. O poți <a href=\"%1\">evalua</a>."
 
-#: templates/entity/view.tpl:37 templates/statement/edit.tpl:124
+#: templates/entity/view.tpl:25
+msgid "label-members"
+msgstr "membri"
+
+#: templates/entity/view.tpl:49 templates/statement/edit.tpl:124
 msgid "label-involvements"
 msgstr "mențiuni"
 
@@ -1335,7 +1335,7 @@ msgstr "despre noi"
 msgid "link-contact"
 msgstr "contact"
 
-#: templates/layout.tpl:82
+#: templates/layout.tpl:75
 msgid "info-copyright"
 msgstr "un proiect implementat de Asociația Zero Minciuni"
 

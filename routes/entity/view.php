@@ -23,6 +23,7 @@ Smart::assign([
   'numStatements' => $sq->count(),
   'statements' => Statement::getPage($sq, 1),
   'statementPages' => Statement::getNumPages($sq),
+  'members' => $entity->getMembers(),
   'numMentions' => $iq->count(),
   'mentions' => Statement::getPage($iq, 1),
   'mentionPages' => Statement::getNumPages($iq),

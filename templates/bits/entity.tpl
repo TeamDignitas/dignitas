@@ -97,21 +97,6 @@
       </ul>
     {/if}
 
-    <div class="title-members">
-      {$members=$entity->getMembers()}
-      {if count($members)}
-        <h6 class="fw-bold capitalize-first-word mt-4">{t}title-members{/t}</h6>
-
-        <ul>
-          {foreach $members as $m}
-            <li>
-              {include "bits/entityLink.tpl" e=$m}
-            </li>
-          {/foreach}
-        </ul>
-      {/if}
-    </div>
-
     <hr class="w-100 title-divider mt-0 mb-2">
 
     <div class="entity-actions mb-2 text-end">

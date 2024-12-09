@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-11-29 10:29+0200\n"
-"PO-Revision-Date: 2024-11-29 10:29+0200\n"
+"POT-Creation-Date: 2024-12-09 16:17+0200\n"
+"PO-Revision-Date: 2024-12-09 16:17+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -47,7 +47,7 @@ msgid "link-my-drafts"
 msgstr "my drafts"
 
 #: templates/aggregate/dashboard.tpl:22 templates/aggregate/index.tpl:33
-#: templates/bits/entity.tpl:122
+#: templates/bits/entity.tpl:107
 msgid "link-add-statement"
 msgstr "add a statement"
 
@@ -104,7 +104,7 @@ msgstr "statements with unclear verdicts"
 msgid "title-my-drafts"
 msgstr "my drafts"
 
-#: templates/aggregate/drafts.tpl:10 templates/entity/view.tpl:25
+#: templates/aggregate/drafts.tpl:10 templates/entity/view.tpl:37
 #: templates/user/view.tpl:63
 msgid "label-statements"
 msgstr "statements"
@@ -440,10 +440,6 @@ msgstr "profile"
 #: templates/bits/entity.tpl:89
 msgid "title-entity-links"
 msgstr "external links"
-
-#: templates/bits/entity.tpl:103
-msgid "title-members"
-msgstr "members"
 
 #: templates/bits/entityFilters.tpl:8 templates/bits/entityFilters.tpl:18
 #: templates/bits/relationFilters.tpl:8 templates/bits/relationFilters.tpl:18
@@ -1173,7 +1169,11 @@ msgstr "Are you sure you want to reopen this author?"
 msgid "link-entity-review-pending-edit"
 msgstr "This author has a pending edit. You can <a href=\"%1\">review it</a>."
 
-#: templates/entity/view.tpl:37 templates/statement/edit.tpl:124
+#: templates/entity/view.tpl:25
+msgid "label-members"
+msgstr "members"
+
+#: templates/entity/view.tpl:49 templates/statement/edit.tpl:124
 msgid "label-involvements"
 msgstr "mentions"
 
@@ -1322,7 +1322,7 @@ msgstr "about us"
 msgid "link-contact"
 msgstr "contact us"
 
-#: templates/layout.tpl:82
+#: templates/layout.tpl:75
 msgid "info-copyright"
 msgstr "a project developed by Asociația Zero Minciuni"
 

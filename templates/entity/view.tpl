@@ -14,6 +14,18 @@
 
     {if count($statements) || count($mentions)}
       <nav class="nav nav-pills mt-5 pt-5 activate-first-tab">
+        {if count($members)}
+          <a
+            class="nav-link text-capitalize"
+            id="members-tab"
+            data-bs-toggle="tab"
+            role="tab"
+            aria-controls="results-members"
+            href="#results-members">
+            {t}label-members{/t} ({$members|count})
+          </a>
+        {/if}
+
         {if count($statements)}
           <a
             class="nav-link text-capitalize"
@@ -41,6 +53,22 @@
     {/if}
 
     <div class="tab-content my-5">
+      {if count($members)}
+        <div
+          id="results-members"
+          class="tab-pane fade"
+          role="tabpanel"
+          aria-labelledby="members-tab">
+          <ul>
+            {foreach $members as $m}
+              <li>
+                {include "bits/entityLink.tpl" e=$m}
+              </li>
+            {/foreach}
+          </ul>
+        </div>
+      {/if}
+
       {if count($statements)}
         <div
           id="results-statements"
