@@ -24,7 +24,6 @@ try {
     $query = $e->getInvolvementQuery();
   } else {
     $query = $e->getStatementQuery();
-    Smart::assign('showEntity', false);
   }
 
   Smart::assign('statements', Statement::getPage($query, $p));
