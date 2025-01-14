@@ -337,16 +337,31 @@ class Search {
     });
 
     foreach ($results as &$rec) {
-      usort($rec['data'], function($a, $b) {
-        $dateCmp = $a['relation']->newerThan($b['relation']);
-        if ($dateCmp) {
-          return $dateCmp;
-        }
+      $rec['data'] = self::sortAndRemoveDuplicates($rec['data']);
+    }
 
-        $entityA = mb_strtolower($a['fromEntity']->name);
-        $entityB = mb_strtolower($b['fromEntity']->name);
-        return $entityA <=> $entityB;
-      });
+    return $results;
+  }
+
+  private static function sortAndRemoveDuplicates(array $arr): array {
+    usort($arr, function($a, $b) {
+      $nameA = mb_strtolower($a['fromEntity']->name);
+      $nameB = mb_strtolower($b['fromEntity']->name);
+      if ($nameA !== $nameB) {
+        return $nameA <=> $nameB;
+      }
+
+      return $a['relation']->newerThan($b['relation']);
+    });
+
+    $results = [];
+    $lastId = 0;
+    foreach ($arr as $rec) {
+      $id = $rec['fromEntity']->id;
+      if ($id != $lastId) {
+        $results[] = $rec;
+        $lastId = $id;
+      }
     }
 
     return $results;
