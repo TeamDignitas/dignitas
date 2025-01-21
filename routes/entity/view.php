@@ -16,6 +16,7 @@ if ($entity->hasPendingEdit() && User::may(User::PRIV_REVIEW)) {
 
 $sq = $entity->getStatementQuery();
 $iq = $entity->getInvolvementQuery();
+$miq = $entity->getMemberInvolvementQuery();
 $trustLevel = TrustLevel::getForEntity($entity);
 
 Smart::assign([
@@ -25,6 +26,7 @@ Smart::assign([
   'statementPages' => Statement::getNumPages($sq),
   'members' => $entity->getMembers(),
   'numMentions' => $iq->count(),
+  'numMemberMentions' => $miq->count(),
   'mentions' => Statement::getPage($iq, 1),
   'mentionPages' => Statement::getNumPages($iq),
   'trustLevel' => $trustLevel,

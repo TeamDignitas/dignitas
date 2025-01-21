@@ -128,9 +128,15 @@ $(function() {
       // strip [] from array inputs
       var name = $(this).attr('name').replace(/[\[\]]+/g,'');
 
-      args[name] = $(this).is(':checkbox')
-        ? +$(this).is(':checked') // convert to int
-        : $(this).val();
+      if ($(this).is(':checkbox')) {
+        args[name] = +$(this).is(':checked'); // convert to int
+      } else if ($(this).is(':radio')) {
+        if ($(this).is(':checked')) {
+          args[name] = $(this).val();
+        }
+      } else {
+        args[name] = $(this).val();
+      }
     });
 
     return args;

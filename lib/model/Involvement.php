@@ -6,6 +6,9 @@
  */
 class Involvement extends Proto {
 
+  const TYPE_OWN = 1;
+  const TYPE_MEMBER = 2;
+
   static function create($statementId, $entityId) {
     $inv = Model::factory('Involvement')->create();
     $inv->statementId = $statementId;

@@ -215,12 +215,12 @@ class Entity extends Proto {
 
   /**
    * Returns a query that loads or counts statements involving this entity
-   * that are visible to the active user.
+   * (without its members) that are visible to the active user.
    *
    * @return ORMWrapper
    */
   function getInvolvementQuery() {
-    $memberIds = $this->getIdAndMemberIds();
+    $memberIds = [ $this->id ];
     $query = Model::factory('Statement')
       ->select('s.*')
       ->table_alias('s')
@@ -230,7 +230,24 @@ class Entity extends Proto {
     return Statement::filterViewable($query);
   }
 
-  function getIdAndMemberIds(): array {
+  /**
+   * Returns a query that loads or counts statements involving this entity's
+   * members (without the entity itself) that are visible to the active user.
+   *
+   * @return ORMWrapper
+   */
+  function getMemberInvolvementQuery() {
+    $memberIds = $this->getMemberIds();
+    $query = Model::factory('Statement')
+      ->select('s.*')
+      ->table_alias('s')
+      ->join('involvement', ['s.id', '=', 'i.statementId'], 'i')
+      ->where_in('i.entityId', $memberIds);
+
+    return Statement::filterViewable($query);
+  }
+
+  function getMemberIds(): array {
     $results = Model::factory('Entity')
       ->table_alias('m')
       ->select('m.id')
@@ -245,6 +262,12 @@ class Entity extends Proto {
       ->find_array();
 
     $results = array_column($results, 'id');
+    $results[] = 0; // because so many queries use this for WHERE_IN
+    return $results;
+  }
+
+  function getIdAndMemberIds(): array {
+    $results = $this->getMemberIds();
     $results[] = $this->id;
 
     return $results;

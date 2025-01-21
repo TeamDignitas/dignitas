@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-12-09 16:16+0200\n"
-"PO-Revision-Date: 2024-12-09 16:16+0200\n"
+"POT-Creation-Date: 2025-01-21 15:04+0200\n"
+"PO-Revision-Date: 2025-01-21 15:05+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n==0 || (n!=1 && n%100>=1 && "
 "n%100<=19) ? 1 : 2);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-Basepath: ../../..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: lib\n"
@@ -660,6 +660,14 @@ msgstr "Cum calculăm loialitatea?"
 #: templates/bits/markdownHelp.tpl:2
 msgid "info-markdown-help"
 msgstr "ajutor pentru Markdown"
+
+#: templates/bits/mentionFilters.tpl:21
+msgid "label-mentions-party"
+msgstr "mențiuni despre partid"
+
+#: templates/bits/mentionFilters.tpl:34
+msgid "label-mentions-member"
+msgstr "mențiuni despre membri"
 
 #: templates/bits/navmenu.tpl:13 templates/bits/navmenu.tpl:39
 msgid "label-toggle-menu"
@@ -1847,33 +1855,33 @@ msgstr "Tipurile de fișier acceptate sînt: %s."
 msgid "info-upload-error"
 msgstr "A apărut o eroare la încărcarea fișierului."
 
-#: lib/Router.php:477
+#: lib/Router.php:480
 msgid "info-language-changed"
 msgstr ""
 "Am schimbat limba interfeței. Conținutul paginilor (afirmații, răspunsuri "
 "etc.) și-a păstrat limba în care a fost scris."
 
-#: lib/Search.php:400
+#: lib/Search.php:415
 msgid "search-keyword-closed"
 msgstr "inchis"
 
-#: lib/Search.php:400 lib/Search.php:404 lib/Search.php:426 lib/Search.php:430
+#: lib/Search.php:415 lib/Search.php:419 lib/Search.php:441 lib/Search.php:445
 msgid "search-keyword-yes"
 msgstr "da"
 
-#: lib/Search.php:400 lib/Search.php:404
+#: lib/Search.php:415 lib/Search.php:419
 msgid "search-keyword-no"
 msgstr "nu"
 
-#: lib/Search.php:404
+#: lib/Search.php:419
 msgid "search-keyword-duplicate"
 msgstr "duplicat"
 
-#: lib/Search.php:409
+#: lib/Search.php:424
 msgid "search-keyword-answers"
 msgstr "raspunsuri"
 
-#: lib/Search.php:414
+#: lib/Search.php:429
 msgid "search-keyword-score"
 msgstr "scor"
 
@@ -1926,19 +1934,19 @@ msgstr[0] "acum o secundă"
 msgstr[1] "acum %d secunde"
 msgstr[2] "acum %d de secunde"
 
-#: lib/TrustLevel.php:71
+#: lib/TrustLevel.php:67
 msgid "label-above-75"
 msgstr "peste 75%"
 
-#: lib/TrustLevel.php:73
+#: lib/TrustLevel.php:69
 msgid "label-above-50"
 msgstr "peste 50%"
 
-#: lib/TrustLevel.php:75
+#: lib/TrustLevel.php:71
 msgid "label-below-50"
 msgstr "sub 50%"
 
-#: lib/TrustLevel.php:77
+#: lib/TrustLevel.php:73
 msgid "label-below-25"
 msgstr "sub 25%"
 
@@ -2198,21 +2206,21 @@ msgstr "deoarece este neverificabil."
 msgid "info-entity-by-owner"
 msgstr "de către autorul său."
 
-#: lib/model/Entity.php:333
+#: lib/model/Entity.php:379
 #, php-format
 msgid "info-minimum-reputation-add-entity-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
-#: lib/model/Entity.php:341
+#: lib/model/Entity.php:387
 #, php-format
 msgid "info-minimum-reputation-edit-entity-%s"
 msgstr "Îți trebuie o reputație de minimum %s pentru a adăuga afirmații."
 
-#: lib/model/Entity.php:346
+#: lib/model/Entity.php:392
 msgid "info-banned-add-entity"
 msgstr "Îți este interzisă adăugarea de autori."
 
-#: lib/model/Entity.php:350
+#: lib/model/Entity.php:396
 msgid "info-banned-edit-entity"
 msgstr "Îți este interzisă editarea de autori."
 
@@ -3187,8 +3195,8 @@ msgstr ""
 msgid "info-invalid-entity-links"
 msgstr "Unele dintre legături sînt incorecte."
 
-#: routes/entity/getStatements.php:20 routes/entity/history.php:7
-#: routes/entity/view.php:7
+#: routes/entity/getMentions.php:22 routes/entity/getStatements.php:20
+#: routes/entity/history.php:7 routes/entity/view.php:7
 msgid "info-no-such-entity"
 msgstr "Autorul căutat nu există."
 

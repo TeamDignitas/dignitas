@@ -12,7 +12,7 @@
 
     {include "bits/entity.tpl"}
 
-    {if count($statements) || count($mentions) || count($members)}
+    {if count($statements) || $numMentions || $numMemberMentions || count($members)}
       <nav class="nav nav-pills mt-5 pt-5 activate-first-tab">
         {if count($members)}
           <a
@@ -38,7 +38,7 @@
           </a>
         {/if}
 
-        {if count($mentions)}
+        {if $numMentions || $numMemberMentions}
           <a
             class="nav-link text-capitalize"
             id="mentions-tab"
@@ -46,7 +46,7 @@
             role="tab"
             aria-controls="results-mentions"
             href="#results-mentions">
-            {t}label-involvements{/t} ({$numMentions})
+            {t}label-involvements{/t} ({$numMentions + $numMemberMentions})
           </a>
         {/if}
       </nav>
@@ -91,12 +91,18 @@
           class="tab-pane fade"
           role="tabpanel"
           aria-labelledby="mentions-tab">
+
+          {if $numMemberMentions}
+            {include "bits/mentionFilters.tpl"}
+          {/if}
+
           <div id="mention-wrapper">
             {include "bits/statementList.tpl" statements=$mentions}
           </div>
+
           {include "bits/paginationWrapper.tpl"
             n=$mentionPages
-            url="{Config::URL_PREFIX}ajax/get-entity-statements/{$entity->id}/1"
+            url="{Config::URL_PREFIX}ajax/get-entity-mentions/{$entity->id}"
             target="#mention-wrapper"}
         </div>
       {/if}

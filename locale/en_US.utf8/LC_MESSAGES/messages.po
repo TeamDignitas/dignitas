@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-12-09 16:17+0200\n"
-"PO-Revision-Date: 2024-12-09 16:17+0200\n"
+"POT-Creation-Date: 2025-01-21 15:12+0200\n"
+"PO-Revision-Date: 2025-01-21 15:13+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-Basepath: ../../..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: lib\n"
@@ -654,6 +654,14 @@ msgstr "How is loyalty computed?"
 #: templates/bits/markdownHelp.tpl:2
 msgid "info-markdown-help"
 msgstr "Markdown help"
+
+#: templates/bits/mentionFilters.tpl:14
+msgid "label-mentions-party"
+msgstr "party mentions"
+
+#: templates/bits/mentionFilters.tpl:27
+msgid "label-mentions-member"
+msgstr "member mentions"
 
 #: templates/bits/navmenu.tpl:13 templates/bits/navmenu.tpl:39
 msgid "label-toggle-menu"
@@ -1836,33 +1844,33 @@ msgstr "Supported file types are: %s."
 msgid "info-upload-error"
 msgstr "An error occurred while uploading the file."
 
-#: lib/Router.php:477
+#: lib/Router.php:481
 msgid "info-language-changed"
 msgstr ""
 "Interface language changed. Page contents (statements, answers etc.) are "
 "still in the language in which they were written."
 
-#: lib/Search.php:400
+#: lib/Search.php:415
 msgid "search-keyword-closed"
 msgstr "closed"
 
-#: lib/Search.php:400 lib/Search.php:404 lib/Search.php:426 lib/Search.php:430
+#: lib/Search.php:415 lib/Search.php:419 lib/Search.php:441 lib/Search.php:445
 msgid "search-keyword-yes"
 msgstr "yes"
 
-#: lib/Search.php:400 lib/Search.php:404
+#: lib/Search.php:415 lib/Search.php:419
 msgid "search-keyword-no"
 msgstr "no"
 
-#: lib/Search.php:404
+#: lib/Search.php:419
 msgid "search-keyword-duplicate"
 msgstr "duplicate"
 
-#: lib/Search.php:409
+#: lib/Search.php:424
 msgid "search-keyword-answers"
 msgstr "answers"
 
-#: lib/Search.php:414
+#: lib/Search.php:429
 msgid "search-keyword-score"
 msgstr "score"
 
@@ -1911,19 +1919,19 @@ msgid_plural "time-second-ago-plural-%d"
 msgstr[0] "one second ago"
 msgstr[1] "%d seconds ago"
 
-#: lib/TrustLevel.php:71
+#: lib/TrustLevel.php:67
 msgid "label-above-75"
 msgstr "above 75%"
 
-#: lib/TrustLevel.php:73
+#: lib/TrustLevel.php:69
 msgid "label-above-50"
 msgstr "above 50%"
 
-#: lib/TrustLevel.php:75
+#: lib/TrustLevel.php:71
 msgid "label-below-50"
 msgstr "below 50%"
 
-#: lib/TrustLevel.php:77
+#: lib/TrustLevel.php:73
 msgid "label-below-25"
 msgstr "below 25%"
 
@@ -2182,21 +2190,21 @@ msgstr "because it is unverifiable."
 msgid "info-entity-by-owner"
 msgstr "by the user who added it."
 
-#: lib/model/Entity.php:333
+#: lib/model/Entity.php:379
 #, php-format
 msgid "info-minimum-reputation-add-entity-%s"
 msgstr "You need at least %s reputation to add authors."
 
-#: lib/model/Entity.php:341
+#: lib/model/Entity.php:387
 #, php-format
 msgid "info-minimum-reputation-edit-entity-%s"
 msgstr "You need at least %s reputation to edit authors."
 
-#: lib/model/Entity.php:346
+#: lib/model/Entity.php:392
 msgid "info-banned-add-entity"
 msgstr "You are banned from adding authors."
 
-#: lib/model/Entity.php:350
+#: lib/model/Entity.php:396
 msgid "info-banned-edit-entity"
 msgstr "You are banned from editing authors."
 
@@ -3159,8 +3167,8 @@ msgstr ""
 msgid "info-invalid-entity-links"
 msgstr "Some links are invalid."
 
-#: routes/entity/getStatements.php:20 routes/entity/history.php:7
-#: routes/entity/view.php:7
+#: routes/entity/getMentions.php:22 routes/entity/getStatements.php:20
+#: routes/entity/history.php:7 routes/entity/view.php:7
 msgid "info-no-such-entity"
 msgstr "The author you are looking for does not exist."
 
