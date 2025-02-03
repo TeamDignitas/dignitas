@@ -3,6 +3,7 @@
 <html>
 
   <head>
+    {include "bits/googleTagManager.tpl"}
     <title>
       {block "title"}{/block}
       {if $pageType != 'home'}| Dignitas{/if}

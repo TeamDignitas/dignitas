@@ -292,4 +292,6 @@ class Config {
   // External links
   const FACEBOOK_URL = '';
   const LINKEDIN_URL = '';
+
+  const GOOGLE_TAG_MANAGER_ID = '';
 }
