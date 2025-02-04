@@ -27,6 +27,7 @@
   {/if}
 
 {elseif $placeholder}
+
   <div class="img-placeholder">
     {if $obj->getObjectType() == Proto::TYPE_ENTITY}
       {if $obj->isPerson()}
@@ -37,4 +38,5 @@
     {/if}
     {** No placeholder for objects other than entities. **}
   </div>
+
 {/if}

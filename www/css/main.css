@@ -699,12 +699,12 @@ body, main {
 }
 
 .img-placeholder {
-  container-type: size;
+  container-type: inline-size;
 }
 
 .img-placeholder .material-icons {
   /* 10% of container's width, with a hard limit */
-  font-size: 70cqw;
+  font-size: min(70cqw, 200px);
   line-height: 68%;
 }
 
