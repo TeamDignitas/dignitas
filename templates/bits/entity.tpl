@@ -9,7 +9,8 @@
       obj=$entity
       geometry=Config::THUMB_ENTITY_LARGE
       imgClass="rounded-circle img-fluid"
-      link=true}
+      link=true
+      placeholder=true}
 
     <div class="tags mt-2 text-center">
       {foreach $entity->getTags() as $t}

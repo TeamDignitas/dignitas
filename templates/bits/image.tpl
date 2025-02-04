@@ -1,4 +1,5 @@
 {$imgClass=$imgClass|default:''}
+{$placeholder=$placeholder|default:false}
 {$spanClass=$spanClass|default:''}
 {$link=$link|default:false} {* whether to link to full-size image *}
 
@@ -25,4 +26,15 @@
     </span>
   {/if}
 
+{elseif $placeholder}
+  <div class="img-placeholder">
+    {if $obj->getObjectType() == Proto::TYPE_ENTITY}
+      {if $obj->isPerson()}
+        {include "bits/icon.tpl" i=person}
+      {else}
+        {include "bits/icon.tpl" i=groups}
+      {/if}
+    {/if}
+    {** No placeholder for objects other than entities. **}
+  </div>
 {/if}
