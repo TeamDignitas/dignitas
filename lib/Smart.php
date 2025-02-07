@@ -45,10 +45,18 @@ class Smart {
       ],
       'deps' => [ 'bootstrap' ],
     ],
+    'cookie-consent' => [
+      'css' => [ 'third-party/silktide-consent-manager.css' ],
+      'js' => [
+        'third-party/silktide-consent-manager.js',
+        'cookieConsent.js',
+      ],
+      'deps' => [ 'jquery' ],
+    ],
     'main' => [
       'css' => [ 'main.css', 'fonts.css' ],
       'js' => [ 'main.js' ],
-      'deps' => ['i18n', 'jquery', 'bootstrap', 'select2'],
+      'deps' => ['i18n', 'jquery', 'bootstrap', 'select2', 'cookie-consent' ],
     ],
     'codemirror' => [
       'css' => [

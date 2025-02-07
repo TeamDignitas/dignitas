@@ -34,6 +34,24 @@ const I18N_MESSAGES = {
     'șterge %1 de caractere',
   ],
 
+  // cookie consent
+  'consent-necessary-name': 'Necesare',
+  'consent-necessary-description': 'Aceste cookie-uri sînt necesare pentru ca site-ul să funcționeze și nu pot fi dezactivate. Cu ele implementăm autentificarea și îți stocăm preferințele de intimitate.',
+  'consent-analytical-name': 'Analitice',
+  'consent-analytical-description': 'Aceste cookie-uri ne ajută să îmbunătățim site-ul urmărind ce pagini sînt cele mai populare și cum navighează utilizatorii prin site.',
+
+  'consent-banner-description': '<p>Folosim cookie-uri pe site ca să îți îmbunătățim experiența ca utilizator, să îți oferim conținut personalizat și să analizăm traficul.</p>',
+  'consent-banner-accept': 'Acceptă toate',
+  'consent-banner-accept-label': 'Acceptă toate cookie-urile',
+  'consent-banner-reject': 'Respinge neesențiale',
+  'consent-banner-reject-label': 'Respinge cookie-urile neesențiale',
+  'consent-banner-prefs': 'Preferințe',
+  'consent-banner-prefs-label': 'Arată preferințele',
+
+  'consent-prefs-title': 'Personalizează preferințele pentru cookie-uri',
+  'consent-prefs-description': '<p>Îți respectăm dreptul la intimitate. Poți alege să nu permiți anumite tipuri de cookie-uri. Aceste preferințe se vor aplica pe întregul site.</p>',
+  'consent-prefs-credit': 'Obține gratuit acest banner',
+  'consent-prefs-credit-label': 'Obține gratuit acest banner',
 };
 
 function _plural(n) {
