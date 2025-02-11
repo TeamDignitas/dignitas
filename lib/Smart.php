@@ -47,10 +47,7 @@ class Smart {
     ],
     'cookie-consent' => [
       'css' => [ 'third-party/silktide-consent-manager.css' ],
-      'js' => [
-        'third-party/silktide-consent-manager.js',
-        'cookieConsent.js',
-      ],
+      'js' => [ 'third-party/silktide-consent-manager.js', ],
       'deps' => [ 'jquery' ],
     ],
     'main' => [

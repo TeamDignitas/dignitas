@@ -3,7 +3,8 @@
 <html>
 
   <head>
-    {include "bits/googleTagManager.tpl"}
+    {include "bits/consentTypes.tpl"}
+    {include "bits/googleTagManagerHead.tpl"}
     <title>
       {block "title"}{/block}
       {if $pageType != 'home'}| Dignitas{/if}
@@ -31,6 +32,7 @@
   </head>
 
   <body>
+    {include "bits/googleTagManagerBody.tpl"}
 
     <header>
       {include "bits/navmenu.tpl"}
