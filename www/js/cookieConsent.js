@@ -1,5 +1,10 @@
 // Obtained from https://silktide.com/consent-manager/install/,
 // then personalized for translations.
+//
+// Do NOT include this code for Google Analytics. Instead, upload it in a
+// Custom HTML tag in the Google Tag Manager. See:
+//
+// https://silktide.com/consent-manager/docs/google-consent-mode/
 $(function() {
   silktideCookieBannerManager.updateCookieBannerConfig({
     background: {
