@@ -20,7 +20,7 @@ $(function() {
         description: _('consent-necessary-description'),
         required: true,
         onAccept: function() {
-          console.log('Add logic for the required Necessary here');
+          // console.log('Add logic for the required Necessary here');
         }
       },
       {
