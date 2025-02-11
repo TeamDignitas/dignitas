@@ -53,7 +53,7 @@ class Smart {
     'main' => [
       'css' => [ 'main.css', 'fonts.css' ],
       'js' => [ 'main.js' ],
-      'deps' => ['i18n', 'jquery', 'bootstrap', 'select2', 'cookie-consent' ],
+      'deps' => ['i18n', 'jquery', 'bootstrap', 'select2' ],
     ],
     'codemirror' => [
       'css' => [
@@ -349,6 +349,9 @@ class Smart {
 
   /* Prepare and display a template. */
   static function display($templateName) {
+    if (Config::GOOGLE_TAG_MANAGER_ID) {
+      self::addResources('cookie-consent');
+    }
     self::addResources('main');
     self::addSameNameFiles($templateName);
     print self::fetch($templateName);

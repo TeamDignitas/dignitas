@@ -293,5 +293,6 @@ class Config {
   const FACEBOOK_URL = '';
   const LINKEDIN_URL = '';
 
+  // If empty, the cookie consent form and GTM script will not run
   const GOOGLE_TAG_MANAGER_ID = '';
 }
