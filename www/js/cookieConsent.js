@@ -1,11 +1,23 @@
-// Obtained from https://silktide.com/consent-manager/install/,
-// then personalized for translations.
+// Obtained from https://silktide.com/consent-manager/install/ and adapted:
+//
+// * translations;
+// * wait until our (local) JS defines silktideCookieBannerManager.
 //
 // Do NOT include this code for Google Analytics. Instead, upload it in a
 // Custom HTML tag in the Google Tag Manager. See:
 //
 // https://silktide.com/consent-manager/docs/google-consent-mode/
-$(function() {
+var silktidePromise = new Promise(function(resolve, reject) {
+  var loop = function() {
+    (typeof silktideCookieBannerManager !== 'undefined')
+      ? resolve()
+      : setTimeout(loop);
+  }
+  loop();
+});
+
+silktidePromise.then(function() {
+  console.log("Only now updating config");
   silktideCookieBannerManager.updateCookieBannerConfig({
     background: {
       showBackground: false
