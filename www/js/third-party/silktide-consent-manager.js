@@ -789,7 +789,6 @@ class SilktideCookieBanner {
 }
 
 (function () {
-  console.log('window.silktideCookieBannerManager created');
   window.silktideCookieBannerManager = {};
 
   let config = {};

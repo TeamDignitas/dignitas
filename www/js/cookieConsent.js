@@ -17,7 +17,6 @@ var silktidePromise = new Promise(function(resolve, reject) {
 });
 
 silktidePromise.then(function() {
-  console.log("Only now updating config");
   silktideCookieBannerManager.updateCookieBannerConfig({
     background: {
       showBackground: false
