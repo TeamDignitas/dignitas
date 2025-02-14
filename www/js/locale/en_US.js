@@ -41,8 +41,10 @@ const I18N_MESSAGES = {
   // cookie consent
   'consent-necessary-name': 'Necessary',
   'consent-necessary-description': '<p>These cookies are necessary for the website to function properly and cannot be switched off. They help with things like logging in and setting your privacy preferences.</p>',
-  'consent-analytical-name': 'Analytical',
-  'consent-analytical-description': '<p>These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.</p>',
+  'consent-analytics-name': 'Analytical',
+  'consent-analytics-description': '<p>These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.</p>',
+  'consent-advertising-name': 'Advertising',
+  'consent-advertising-description': '<p>These cookies provide extra features and personalization to improve your experience. They may be set by us or by partners whose services we use.</p>',
 
   'consent-banner-description': '<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic.</p>',
   'consent-banner-accept': 'Accept all',

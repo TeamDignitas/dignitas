@@ -24,21 +24,43 @@ $(function() {
         }
       },
       {
-        id: "analytical",
-        name: _('consent-analytical-name'),
-        description: _('consent-analytical-description'),
-        required: false,
+        id: "analytics",
+        name: _('consent-analytics-name'),
+        description: _('consent-analytics-description'),
+        defaultValue: true,
         onAccept: function() {
           gtag('consent', 'update', {
             analytics_storage: 'granted',
           });
           dataLayer.push({
-            'event': 'consent_accepted_analytical',
+            'event': 'consent_accepted_analytics',
           });
         },
         onReject: function() {
           gtag('consent', 'update', {
             analytics_storage: 'denied',
+          });
+        }
+      },
+      {
+        id: "advertising",
+        name: _('consent-advertising-name'),
+        description: _('consent-advertising-description'),
+        onAccept: function() {
+          gtag('consent', 'update', {
+            ad_storage: 'granted',
+            ad_user_data: 'granted',
+            ad_personalization: 'granted',
+          });
+          dataLayer.push({
+            'event': 'consent_accepted_advertising',
+          });
+        },
+        onReject: function() {
+          gtag('consent', 'update', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
           });
         }
       }

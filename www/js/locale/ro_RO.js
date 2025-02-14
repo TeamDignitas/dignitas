@@ -36,9 +36,11 @@ const I18N_MESSAGES = {
 
   // cookie consent
   'consent-necessary-name': 'Necesare',
-  'consent-necessary-description': 'Aceste cookie-uri sînt necesare pentru ca site-ul să funcționeze și nu pot fi dezactivate. Cu ele implementăm autentificarea și îți stocăm preferințele de intimitate.',
-  'consent-analytical-name': 'Analitice',
-  'consent-analytical-description': 'Aceste cookie-uri ne ajută să îmbunătățim site-ul urmărind ce pagini sînt cele mai populare și cum navighează utilizatorii prin site.',
+  'consent-necessary-description': '<p>Aceste cookie-uri sînt necesare pentru ca site-ul să funcționeze și nu pot fi dezactivate. Cu ele implementăm autentificarea și îți stocăm preferințele de intimitate.</p>',
+  'consent-analytics-name': 'Analitice',
+  'consent-analytics-description': '<p>Aceste cookie-uri ne ajută să îmbunătățim site-ul urmărind ce pagini sînt cele mai populare și cum navighează utilizatorii prin site.</p>',
+  'consent-advertising-name': 'Publicitate',
+  'consent-advertising-description': '<p>Aceste cookie-uri oferă funcții suplimentare și personalizare ca să îți îmbunătățim experiența. Pot fi salvate de noi sau de parteneri ai căror servicii le folosim.</p>',
 
   'consent-banner-description': '<p>Folosim cookie-uri pe site ca să îți îmbunătățim experiența ca utilizator, să îți oferim conținut personalizat și să analizăm traficul.</p>',
   'consent-banner-accept': 'Acceptă toate',
