@@ -1,6 +1,6 @@
 <?php
 
-require_once 'third-party/smarty-4.3.0/Smarty.class.php';
+require_once 'third-party/smarty-4.5.5/Smarty.class.php';
 
 class Smart {
   private static $theSmarty = null;
@@ -140,6 +140,20 @@ class Smart {
     $s->registerPlugin('modifier', 'nf', 'Str::formatNumber');
     $s->registerPlugin('modifier', 'shorten', 'Str::shorten');
     self::$theSmarty = $s;
+    self::registerStaticClasses();
+  }
+
+  // Define classes from which we can use {Class::CONSTANT} in Smarty.
+  static function registerStaticClasses(): void {
+    $registeredClasses = [
+      'Ban', 'CannedResponse', 'Comment', 'Config', 'Ct', 'Entity', 'Flag',
+      'HelpCategory', 'Involvement', 'LocaleUtil', 'Notification', 'ORM',
+      'Proto', 'Region', 'RelationType', 'Review', 'Router', 'Statement',
+      'Subscription', 'Tag', 'TrustLevel', 'User', 'Util', 'Vote',
+    ];
+    foreach ($registeredClasses as $class) {
+      self::$theSmarty->registerClass($class, $class);
+    }
   }
 
   // Add $template.css and $template.js to the file lists, if they exist.
