@@ -100,7 +100,7 @@ class Markdown extends Parsedown {
     $block = parent::blockHeader($line);
 
     // take the header text and flatten it, shorten it etc.
-    $text = $block['element']['text'];
+    $text = $block['element']['handler']['argument'];
     $text = Str::flatten($text);
     $text = str_replace(' ', '-', $text);
     $text = strtolower($text);
@@ -109,7 +109,7 @@ class Markdown extends Parsedown {
 
     // add an anchor to the header text
     $anchor = sprintf('<a href="#%s"><span class="material-icons">insert_link</span></a>', $text);
-    $block['element']['text'] .= $anchor;
+    $block['element']['handler']['argument'] .= $anchor;
 
     // add an ID and class to the header element
     $block['element']['attributes']['id'] = $text;
