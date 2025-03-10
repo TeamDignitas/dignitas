@@ -176,6 +176,10 @@ class Config {
     'contact' => [
       'html' => [ 'contact.html' ],
     ],
+    // donations page
+    'donate' => [
+      'html' => [ 'donate.html' ],
+    ],
     // top of the home page, before the statement list, for anonymous users
     'homepage-top-guest' => [
       'html' => [ 'homepage-top.html' ],
@@ -244,6 +248,20 @@ class Config {
     [ 1, 365, 1.0 ],
     [ 366, 1095, 0.5 ],
   ];
+
+  // Enable or disable the /donate page. If true, then there should be a
+  // corresponding entry in CUSTOM_SECTIONS.
+  const DONATE_PAGE = false;
+
+  // Enable or disable the widgets for the corresponding donation methods.
+  const DONATE_WIDGETS = false;
+  const DONATE_WIDGET_BANK_TRANSFER = false;
+  const DONATE_IBAN = '';
+  const DONATE_BANK = '';
+  const DONATE_WIDGET_STRIPE = false;
+  const DONATE_STRIPE_AMOUNTS = [ 20, 50, 100, 200 ];
+  const DONATE_STRIPE_DEFAULT_AMOUNT = 50;
+  const DONATE_STRIPE_CURRENCY = 'lei';
 
   // Help pages for various topics. These can be external URLs.
   const HELP_PAGES = [

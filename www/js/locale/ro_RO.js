@@ -34,6 +34,9 @@ const I18N_MESSAGES = {
     'șterge %1 de caractere',
   ],
 
+  // donations
+  'donate-minimum-amount': 'Suma minimă pe care o poți dona este %1 %2.',
+
   // cookie consent
   'consent-necessary-name': 'Necesare',
   'consent-necessary-description': '<p>Aceste cookie-uri sînt necesare pentru ca site-ul să funcționeze și nu pot fi dezactivate. Cu ele implementăm autentificarea și îți stocăm preferințele de intimitate.</p>',

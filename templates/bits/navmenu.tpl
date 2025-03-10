@@ -126,6 +126,17 @@
           </a>
         </li>
 
+        {if Config::DONATE_PAGE}
+          <li class="nav-item">
+            <a
+              class="btn btn-butter capitalize-first-word py-1"
+              href="{Router::link('aggregate/donate')}"
+              title="{t}link-donate{/t}">
+              {t}link-donate{/t}
+            </a>
+          </li>
+        {/if}
+
         {if $u}
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle py-1"

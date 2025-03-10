@@ -38,6 +38,9 @@ const I18N_MESSAGES = {
     'delete %1 characters',
   ],
 
+  // donations
+  'donate-minimum-amount': 'The minimum amount you can donate is %1 %2.',
+
   // cookie consent
   'consent-necessary-name': 'Necessary',
   'consent-necessary-description': '<p>These cookies are necessary for the website to function properly and cannot be switched off. They help with things like logging in and setting your privacy preferences.</p>',

@@ -34,6 +34,10 @@ class Router {
       'en_US.utf8' => 'dashboard',
       'ro_RO.utf8' => 'panou-control',
     ],
+    'aggregate/donate' => [
+      'en_US.utf8' => 'donate',
+      'ro_RO.utf8' => 'doneaza',
+    ],
     'aggregate/drafts' => [
       'en_US.utf8' => 'my-drafts',
       'ro_RO.utf8' => 'ciornele-mele',

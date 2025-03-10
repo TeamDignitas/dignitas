@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-01-21 15:04+0200\n"
-"PO-Revision-Date: 2025-01-21 15:05+0200\n"
+"POT-Creation-Date: 2025-03-10 15:27+0200\n"
+"PO-Revision-Date: 2025-03-10 15:28+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -48,7 +48,7 @@ msgid "link-my-drafts"
 msgstr "ciornele mele"
 
 #: templates/aggregate/dashboard.tpl:22 templates/aggregate/index.tpl:33
-#: templates/bits/entity.tpl:107
+#: templates/bits/entity.tpl:108
 msgid "link-add-statement"
 msgstr "adaugă o afirmație"
 
@@ -101,6 +101,14 @@ msgstr "rapoarte care necesită atenție"
 msgid "link-verdict-report"
 msgstr "afirmații cu verdicte neclare"
 
+#: templates/aggregate/donate.tpl:3
+msgid "title-donate"
+msgstr "donează"
+
+#: templates/aggregate/donate.tpl:10
+msgid "info-donations-disabled"
+msgstr "Pagina de donații este dezactivată în prezent."
+
 #: templates/aggregate/drafts.tpl:3 templates/aggregate/drafts.tpl:7
 msgid "title-my-drafts"
 msgstr "ciornele mele"
@@ -144,7 +152,7 @@ msgstr "rezultatele căutării"
 msgid "title-entities"
 msgstr "autori"
 
-#: templates/aggregate/search.tpl:20 templates/bits/entity.tpl:63
+#: templates/aggregate/search.tpl:20 templates/bits/entity.tpl:64
 msgid "title-relations"
 msgstr "relații"
 
@@ -235,7 +243,7 @@ msgstr "mi-am uitat parola"
 msgid "label-remember-me"
 msgstr "Ține-mă minte un an."
 
-#: templates/auth/login.tpl:53 templates/bits/navmenu.tpl:216
+#: templates/auth/login.tpl:53 templates/bits/navmenu.tpl:227
 msgid "link-log-in"
 msgstr "autentificare"
 
@@ -422,6 +430,39 @@ msgstr[0] "o linie identică omisă"
 msgstr[1] "%1 linii identice omise"
 msgstr[2] "%1 de linii identice omise"
 
+#: templates/bits/donateWidgets.tpl:7
+msgid "title-donate-stripe"
+msgstr "donează prin Stripe"
+
+#: templates/bits/donateWidgets.tpl:21
+msgid "label-donate-once"
+msgstr "o dată"
+
+#: templates/bits/donateWidgets.tpl:27 templates/bits/donateWidgets.tpl:66
+msgid "label-donate-monthly"
+msgstr "lunar"
+
+#: templates/bits/donateWidgets.tpl:46
+msgid "label-donate-other-amount"
+msgstr "altă sumă"
+
+#: templates/bits/donateWidgets.tpl:63 templates/bits/navmenu.tpl:134
+#: templates/bits/navmenu.tpl:135
+msgid "link-donate"
+msgstr "donează"
+
+#: templates/bits/donateWidgets.tpl:81
+msgid "title-donate-bank-transfer"
+msgstr "donează prin transfer bancar"
+
+#: templates/bits/donateWidgets.tpl:83
+msgid "label-donate-ron-account"
+msgstr "cont în lei"
+
+#: templates/bits/donateWidgets.tpl:84
+msgid "label-donate-account-opened"
+msgstr "deschis la"
+
 #: templates/bits/draftIndicator.tpl:8
 msgid "label-draft"
 msgstr "ciornă"
@@ -430,19 +471,19 @@ msgstr "ciornă"
 msgid "link-suggest-edit"
 msgstr "sugerează o modificare"
 
-#: templates/bits/entity.tpl:37
+#: templates/bits/entity.tpl:38
 msgid "title-alias"
 msgstr "alias"
 
-#: templates/bits/entity.tpl:74 templates/region/view.tpl:3
+#: templates/bits/entity.tpl:75 templates/region/view.tpl:3
 msgid "title-region"
 msgstr "regiune"
 
-#: templates/bits/entity.tpl:81
+#: templates/bits/entity.tpl:82
 msgid "title-profile"
 msgstr "profil"
 
-#: templates/bits/entity.tpl:89
+#: templates/bits/entity.tpl:90
 msgid "title-entity-links"
 msgstr "legături externe"
 
@@ -490,7 +531,7 @@ msgstr "autentificare ca utilizator de test"
 msgid "label-reputation"
 msgstr "reputație"
 
-#: templates/bits/fakeLogin.tpl:37 templates/bits/navmenu.tpl:192
+#: templates/bits/fakeLogin.tpl:37 templates/bits/navmenu.tpl:203
 #: templates/user/view.tpl:25
 msgid "label-moderator"
 msgstr "moderator"
@@ -661,11 +702,11 @@ msgstr "Cum calculăm loialitatea?"
 msgid "info-markdown-help"
 msgstr "ajutor pentru Markdown"
 
-#: templates/bits/mentionFilters.tpl:21
+#: templates/bits/mentionFilters.tpl:17
 msgid "label-mentions-party"
 msgstr "mențiuni despre partid"
 
-#: templates/bits/mentionFilters.tpl:34
+#: templates/bits/mentionFilters.tpl:30
 msgid "label-mentions-member"
 msgstr "mențiuni despre membri"
 
@@ -685,11 +726,11 @@ msgstr "notificări"
 msgid "link-dashboard"
 msgstr "panou de control"
 
-#: templates/bits/navmenu.tpl:104 templates/bits/navmenu.tpl:163
+#: templates/bits/navmenu.tpl:104 templates/bits/navmenu.tpl:174
 msgid "link-light-mode"
 msgstr "modul luminos"
 
-#: templates/bits/navmenu.tpl:112 templates/bits/navmenu.tpl:170
+#: templates/bits/navmenu.tpl:112 templates/bits/navmenu.tpl:181
 msgid "link-dark-mode"
 msgstr "modul întunecat"
 
@@ -700,19 +741,19 @@ msgstr "modul întunecat"
 msgid "help-center"
 msgstr "ajutor"
 
-#: templates/bits/navmenu.tpl:154
+#: templates/bits/navmenu.tpl:165
 msgid "link-my-profile"
 msgstr "profilul meu"
 
-#: templates/bits/navmenu.tpl:178
+#: templates/bits/navmenu.tpl:189
 msgid "info-reputation-manual"
 msgstr "schimbă reputația manual (va reîncărca pagina)"
 
-#: templates/bits/navmenu.tpl:197
+#: templates/bits/navmenu.tpl:208
 msgid "link-change"
 msgstr "schimbă"
 
-#: templates/bits/navmenu.tpl:207
+#: templates/bits/navmenu.tpl:218
 msgid "link-log-out"
 msgstr "ieșire"
 
@@ -1335,15 +1376,15 @@ msgstr "pentru"
 msgid "label-invite-accepted-by"
 msgstr "acceptată de"
 
-#: templates/layout.tpl:49
+#: templates/layout.tpl:52
 msgid "link-about"
 msgstr "despre noi"
 
-#: templates/layout.tpl:54
+#: templates/layout.tpl:57
 msgid "link-contact"
 msgstr "contact"
 
-#: templates/layout.tpl:75
+#: templates/layout.tpl:78
 msgid "info-copyright"
 msgstr "un proiect implementat de Asociația Zero Minciuni"
 
@@ -1855,7 +1896,7 @@ msgstr "Tipurile de fișier acceptate sînt: %s."
 msgid "info-upload-error"
 msgstr "A apărut o eroare la încărcarea fișierului."
 
-#: lib/Router.php:480
+#: lib/Router.php:485
 msgid "info-language-changed"
 msgstr ""
 "Am schimbat limba interfeței. Conținutul paginilor (afirmații, răspunsuri "
