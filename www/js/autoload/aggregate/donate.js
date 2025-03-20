@@ -17,7 +17,7 @@ $(function() {
       .removeClass(CL_ACTIVE)
       .addClass(CL_INACTIVE);
     $('#donate-label-monthly').addClass('d-none');
-    $('#donate-btn-other-amount').prop('disabled', false);
+    $('#donate-btn-other-amount').removeClass('invisible');
     updateLink();
   }
 
@@ -31,7 +31,7 @@ $(function() {
     $('#donate-label-monthly').removeClass('d-none');
 
     let other = $('#donate-btn-other-amount');
-    other.prop('disabled', true);
+    other.addClass('invisible');
     if (other.hasClass(CL_ACTIVE)) {
       selectAmountBtn($('.donate-btn-amount[data-default="1"]'));
     }
