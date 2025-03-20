@@ -6,14 +6,9 @@
           <div class="card-body">
             <h5 class="card-title">{cap}{t}title-donate-stripe{/t}{/cap}</h5>
             <p class="card-text">
-              <form id="stripe-form">
-                <input
-                  id="donate-currency"
-                  name="currency"
-                  type="hidden"
-                  value="{Config::DONATE_STRIPE_CURRENCY}">
-
-                <div class="donate-form-row my-2 d-flex">
+              <form>
+                {* first row: "once" and "monthly" buttons *}
+                <div class="my-2 d-flex">
                   <button
                     class="btn btn-sm btn-primary flex-fill mx-1"
                     id="donate-btn-once"
@@ -28,42 +23,50 @@
                   </button>
                 </div>
 
-                <div class="donate-form-row my-2 d-flex">
-                  {foreach Config::DONATE_STRIPE_AMOUNTS as $amt}
-                    {$active=($amt==Config::DONATE_STRIPE_DEFAULT_AMOUNT)}
-                    {if $active}{$cls="btn-primary"}{else}{$cls="btn-outline-primary"}{/if}
+                {* second row: fixed amount buttons plus an "other amount" button *}
+                <div class="my-2 d-flex">
+                  {foreach Config::DONATE_STRIPE_AMOUNTS as $row}
+                    {if $row.default}{$cls="btn-primary"}{else}{$cls="btn-outline-primary"}{/if}
                     <button
                       class="donate-btn-amount btn btn-sm {$cls} flex-fill mx-1"
-                      data-amount="{$amt}"
+                      data-default="{$row.default}"
+                      data-url-once="{$row.url_once}"
+                      data-url-monthly="{$row.url_monthly}"
                       type="button">
-                      {$amt} {Config::DONATE_STRIPE_CURRENCY}
+                      {$row.amount}
                     </button>
                   {/foreach}
+
                   <button
-                    class="btn btn-sm btn-outline-primary flex-fill mx-1"
+                    class="donate-btn-amount btn btn-sm btn-outline-primary flex-fill mx-1"
+                    data-url-once="{Config::DONATE_STRIPE_URL_OTHER_AMOUNT}"
                     id="donate-btn-other-amount"
                     type="button">
                     {t}label-donate-other-amount{/t}
                   </button>
-
-                  <input
-                    class="d-none flex-fill form-control form-control-sm mx-1"
-                    id="donate-field-amount"
-                    min="10"
-                    step="10"
-                    type="number">
-
                 </div>
 
-                <div class="donate-form-row my-2 d-flex">
+                {* identify default row *}
+                {foreach Config::DONATE_STRIPE_AMOUNTS as $row}
+                  {if $row.default}
+                    {$defaultRow=$row}
+                  {/if}
+                {/foreach}
+
+                {* third row: link to Stripe *}
+                <div class="my-2 d-flex">
                   <a
                     class="btn btn-sm btn-primary flex-fill mx-1"
-                    href="https://google.com/"
-                    id="donate-link-stripe" >
+                    href="{$defaultRow.url_once}"
+                    id="donate-link-stripe"
+                    target="_blank">
                     {t}link-donate{/t}
-                    <span id="donate-amount">{Config::DONATE_STRIPE_DEFAULT_AMOUNT}</span>
-                    {Config::DONATE_STRIPE_CURRENCY}
-                    <span id="donate-label-monthly" class="d-none">{t}label-donate-monthly{/t}</span>
+                    <span id="donate-amount">
+                      {$defaultRow.amount}
+                    </span>
+                    <span id="donate-label-monthly" class="d-none">
+                      {t}label-donate-monthly{/t}
+                    </span>
                   </a>
                 </div>
 
