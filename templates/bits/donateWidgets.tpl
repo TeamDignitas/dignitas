@@ -80,8 +80,18 @@
           <div class="card-body">
             <h5 class="card-title">{cap}{t}title-donate-bank-transfer{/t}{/cap}</h5>
             <p class="card-text">
-              {cap}{t}label-donate-ron-account{/t}{/cap}: {Config::DONATE_IBAN}<br>
-              {cap}{t}label-donate-account-opened{/t}{/cap}: {Config::DONATE_BANK}
+              <dl class="row">
+                <dt class="col-12">{Config::DONATE_COMPANY_NAME}</dt>
+                <dd></dd>
+                <dt class="col-xl-3">{cap}{t}label-donate-fiscal-code{/t}{/cap}:</dt>
+                <dd class="col-xl-9">{Config::DONATE_FISCAL_CODE}</dd>
+                <dt class="col-xl-3">{cap}{t}label-donate-ron-account{/t}{/cap}:</dt>
+                <dd class="col-xl-9">{Config::DONATE_IBAN}</dd>
+                <dt class="col-xl-3">{cap}{t}label-donate-account-opened{/t}{/cap}:</dt>
+                <dd class="col-xl-9">{Config::DONATE_BANK}</dd>
+                <dt class="col-xl-3">{cap}{t}label-donate-swift-code{/t}{/cap}:</dt>
+                <dd class="col-xl-9">{Config::DONATE_SWIFT_CODE}</dd>
+              </dl>
             </p>
           </div>
         </div>

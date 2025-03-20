@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-03-10 15:27+0200\n"
-"PO-Revision-Date: 2025-03-10 15:28+0200\n"
+"POT-Creation-Date: 2025-03-20 12:41+0200\n"
+"PO-Revision-Date: 2025-03-20 12:41+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -455,13 +455,21 @@ msgstr "donează"
 msgid "title-donate-bank-transfer"
 msgstr "donează prin transfer bancar"
 
-#: templates/bits/donateWidgets.tpl:83
+#: templates/bits/donateWidgets.tpl:86
+msgid "label-donate-fiscal-code"
+msgstr "CIF"
+
+#: templates/bits/donateWidgets.tpl:88
 msgid "label-donate-ron-account"
 msgstr "cont în lei"
 
-#: templates/bits/donateWidgets.tpl:84
+#: templates/bits/donateWidgets.tpl:90
 msgid "label-donate-account-opened"
 msgstr "deschis la"
+
+#: templates/bits/donateWidgets.tpl:92
+msgid "label-donate-swift-code"
+msgstr "cod SWIFT"
 
 #: templates/bits/draftIndicator.tpl:8
 msgid "label-draft"
