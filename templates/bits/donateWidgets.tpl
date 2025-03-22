@@ -1,4 +1,4 @@
-<div class="container my-2">
+<div id="donation-widgets" class="container my-2">
   <div class="row row-cols-1 row-cols-lg-2 g-3">
     {if Config::DONATE_WIDGET_STRIPE}
       <div class="col">

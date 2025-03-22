@@ -826,3 +826,17 @@ body, main {
   margin-left: 0;
   margin-right: 0;
 }
+
+/*************************** donation widgets ***************************/
+
+@media (min-width: 992px) { /* lg */
+  #donation-widgets .card {
+    min-height: 350px;
+  }
+}
+
+@media (min-width: 1200px) { /* xl */
+  #donation-widgets .card {
+    min-height: 250px;
+  }
+}
