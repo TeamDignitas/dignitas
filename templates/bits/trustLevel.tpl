@@ -15,7 +15,7 @@
     </div>
   </div>
 
-  <div class="text-muted trust-level-update">
+  <div class="mb-4 text-muted trust-level-update">
     {t}label-last-update{/t} {$trustLevel->lastTimestamp|lt:false}
   </div>
 {/if}
