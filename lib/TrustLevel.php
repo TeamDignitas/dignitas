@@ -4,8 +4,7 @@
  * Code related to an entity's trust level.
  */
 class TrustLevel {
-  const UNDEFINED = -1;
-  const MIN_STATEMENTS_NEEDED = 6;
+  private const MIN_STATEMENTS_NEEDED = 6;
 
   // Everything not listed below does not count towards MIN_STATEMENTS_NEEDED
   // and does not contribute to the average.
@@ -27,47 +26,59 @@ class TrustLevel {
     Statement::VERDICT_PROMISE_KEPT => 1.00,
   ];
 
-  static function getForEntity(Entity $e): float {
+  public float $value;
+  public int $lastTimestamp;
+
+  function __construct(float $value, int $lastTimestamp) {
+    $this->value = $value;
+    $this->lastTimestamp = $lastTimestamp;
+  }
+
+  static function getForEntity(Entity $e): ?TrustLevel {
     $entityIds = $e->getIdAndMemberIds();
 
     $statements = Model::factory('Statement')
       ->select('verdict')
+      ->select('modDate')
       ->where('status', Ct::STATUS_ACTIVE)
       ->where_in('entityId', $entityIds)
       ->where_in('verdict', array_keys(self::COEFS))
+      ->order_by_asc('modDate')
       ->find_array();
 
     if (count($statements) < self::MIN_STATEMENTS_NEEDED) {
-      return self::UNDEFINED;
+      return null;
     }
 
     $sum = 0;
+    $ts = 0;
     foreach ($statements as $s) {
       $sum += self::COEFS[$s['verdict']];
+      $ts = $s['modDate'];
     }
 
     $avg = $sum / count($statements);
-    return $avg;
+    return new TrustLevel($avg, $ts);
   }
 
-  static function getClass(float $val): string {
-    if ($val >= 0.75) {
+  function getClass(): string {
+    if ($this->value >= 0.75) {
       return '75';
-    } else if ($val >= 0.50) {
+    } else if ($this->value >= 0.50) {
       return '50';
-    } else if ($val >= 0.25) {
+    } else if ($this->value >= 0.25) {
       return '25';
     } else {
       return '0';
     }
   }
 
-  static function getMessage(float $val): string {
-    if ($val >= 0.75) {
+  function getMessage(): string {
+    if ($this->value >= 0.75) {
       return _('label-above-75');
-    } else if ($val >= 0.50) {
+    } else if ($this->value >= 0.50) {
       return _('label-above-50');
-    } else if ($val >= 0.25) {
+    } else if ($this->value >= 0.25) {
       return _('label-below-50');
     } else {
       return _('label-below-25');

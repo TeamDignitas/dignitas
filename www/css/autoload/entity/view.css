@@ -73,3 +73,7 @@
 .trust-msg-75 {
   color: var(--v-green);
 }
+
+.trust-level-update {
+  font-size: 75%;
+}

@@ -150,7 +150,7 @@ class Smart {
       'Ban', 'CannedResponse', 'Comment', 'Config', 'Ct', 'Entity', 'Flag',
       'HelpCategory', 'Involvement', 'LocaleUtil', 'Notification', 'ORM',
       'Proto', 'Region', 'RelationType', 'Review', 'Router', 'Statement',
-      'Subscription', 'Tag', 'TrustLevel', 'User', 'Util', 'Vote',
+      'Subscription', 'Tag', 'User', 'Util', 'Vote',
     ];
     foreach ($registeredClasses as $class) {
       self::$theSmarty->registerClass($class, $class);
