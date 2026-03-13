@@ -23,7 +23,7 @@ class DB {
 
     // choose a random 63-bit request_id; should be reasonably distinct
     ORM::configure('driver_options', [
-      PDO::MYSQL_ATTR_INIT_COMMAND => 'set names utf8mb4',
+      Pdo\Mysql::ATTR_INIT_COMMAND => 'set names utf8mb4',
     ]);
     self::pickRequestId();
   }
